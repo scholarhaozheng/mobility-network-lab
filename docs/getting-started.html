@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Installation and execution | Mobility Network Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="datasets.html">Data catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Installation and execution</p><h1 id="installation-and-execution">Installation and execution</h1>
+<h2 id="source-installation">Source installation</h2>
+<p>Download or clone this repository, then open a terminal in its root. Use Python 3.13 for the tested source configuration.</p>
+<p>Windows PowerShell:</p>
+<pre><code class="language-powershell">py -3.13 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe tools/mnl.py catalog
+</code></pre>
+<p>macOS or Linux:</p>
+<pre><code class="language-bash">python3.13 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python tools/mnl.py catalog
+</code></pre>
+<p>The rest of the examples use <code>python</code> to mean the interpreter of this environment. The listed package minima are dependency constraints, not a claim that every combination has been tested. The inspected numerical baseline is recorded in <code>requirements-tested.txt</code>.</p>
+<h2 id="run-from-raw-input">Run from raw input</h2>
+<pre><code class="language-bash">python tools/mnl.py validate --input app/cases/capacity_zone_probe/input --config app/cases/capacity_zone_probe/case.json
+python tools/mnl.py run --input app/cases/capacity_zone_probe/input --config app/cases/capacity_zone_probe/case.json --seed-mode auto --seed-k 1 --output results/capacity-demo
+python tools/mnl.py verify --run results/capacity-demo
+</code></pre>
+<p>Open <code>results/capacity-demo/report.html</code>. The result JSON and complete path-flow tables are next to it. <code>validate</code> checks input schema, attributes and identifiers; it is not a proof of feasibility. <code>verify</code> reads existing results without running an optimizer.</p>
+<h2 id="supply-an-initial-route-pool">Supply an initial route pool</h2>
+<pre><code class="language-bash">python tools/mnl.py run --input app/cases/capacity_zone_probe/input --config app/cases/capacity_zone_probe/case.json --seed-mode supplied --seeds results/capacity-demo/seeds/static_seed_candidates.csv --output results/capacity-supplied
+python tools/mnl.py verify --run results/capacity-supplied
+</code></pre>
+<p>Do not use <code>--seed-k</code> in supplied mode. The allowed network does not shrink to the supplied routes.</p>
+<h2 id="execution-limits">Execution limits</h2>
+<p>The profile specifies bounds on network size, time horizon, search effort and CG rounds. The source entry point applies a 300-second worker timeout by default (<code>--timeout</code> changes that outer budget). The engine also has its own time and iteration controls. A timeout or incomplete computation is not a successful result. This wrapper supervises the Python worker; it is not a general operating-system job scheduler.</p>
+<h2 id="portable-windows-package">Portable Windows package</h2>
+<p>The separately distributed <code>gmns_cg_0.3.0-rc5_win_x64.zip</code> is the existing Windows runtime artifact. It is not embedded in the Git source tree. When supplied as a release asset, extract it and run:</p>
+<pre><code class="language-bat">gmns.cmd doctor
+gmns.cmd run --input &quot;app\cases\capacity_zone_probe\input&quot; --config &quot;app\cases\capacity_zone_probe\case.json&quot; --seed-mode auto --seed-k 1 --output &quot;results\capacity-demo&quot;
+gmns.cmd verify --run &quot;results\capacity-demo&quot;
+</code></pre>
+<p>The portable distribution and this source tree have different launchers. Do not copy its <code>runtime/</code> into the source tree or overwrite a frozen release. Independent Windows receiver testing is recorded separately from Linux source checks. See <a href="releases.html">release channels</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

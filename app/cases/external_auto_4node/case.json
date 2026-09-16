@@ -1,0 +1,76 @@
+{
+  "schema_version": "gmns_external_finite_network_v1",
+  "benchmark_id": "synthetic_external_auto_4node",
+  "scope_label": "SYNTHETIC_FOUR_NODE_TWO_ROUTE_FINITE_EXAMPLE",
+  "files": {
+    "node": "node.csv",
+    "link": "link.csv",
+    "demand": "demand.csv"
+  },
+  "field_mapping": {
+    "node": {"node_id": "node_code"},
+    "link": {
+      "link_id": "road_id",
+      "from_node_id": "tail",
+      "to_node_id": "head",
+      "travel_time": "minutes",
+      "cost": "generalized_cost",
+      "capacity": "vehicles_per_time_arc"
+    },
+    "demand": {
+      "demand_id": "trip_id",
+      "origin": "origin",
+      "destination": "destination",
+      "departure_time": "departure_minute",
+      "volume": "vehicles"
+    }
+  },
+  "demand_endpoint_type": "node",
+  "model": {
+    "time_step_minutes": 1,
+    "departure_time": 0,
+    "horizon": 4,
+    "waiting_cost": 1.0,
+    "waiting_capacity": null
+  },
+  "seed": {
+    "default_k": 1,
+    "ranking_rule": "travel_time_then_link_id_sequence",
+    "simple_physical_paths_only": true
+  },
+  "cg": {
+    "max_phase_i_rounds": 4,
+    "max_phase_ii_rounds": 8,
+    "max_candidates_per_demand_per_round": 4,
+    "runtime_cap_seconds": 120,
+    "phase_ii_pricing_mode": "k_shortest",
+    "phase_ii_add_policy": "add_best_one_per_demand",
+    "k_shortest_k": 4,
+    "max_phase_ii_candidates_per_demand": 4,
+    "max_phase_ii_candidates_per_round": 4,
+    "strict_phase_ii_candidate_round_cap": false
+  },
+  "limits": {
+    "max_physical_nodes": 100,
+    "max_physical_links": 100,
+    "max_positive_demands": 20,
+    "max_dynamic_nodes": 1000,
+    "max_dynamic_arcs": 5000,
+    "max_reference_variables": 50000,
+    "max_seed_k": 5,
+    "max_seed_search_states_per_demand": 10000
+  },
+  "units": {
+    "travel_time": "positive integer minutes",
+    "cost": "finite nonnegative generalized cost per vehicle",
+    "capacity": "vehicles per time-indexed movement arc",
+    "demand_volume": "vehicles injected once at departure_time"
+  },
+  "unsupported_in_v1": [
+    "multiple departure times",
+    "zero-duration links/connectors",
+    "multiple access nodes per zone",
+    "negative generalized costs",
+    "implicit unit conversion"
+  ]
+}

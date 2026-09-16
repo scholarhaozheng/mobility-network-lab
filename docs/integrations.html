@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Ecosystem and integrations | Mobility Network Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="datasets.html">Data catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Ecosystem and integrations</p><h1 id="ecosystem-and-integrations">Ecosystem and integrations</h1>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Role</th>
+<th>Relationship to this repository</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/zephyr-data-specs/GMNS">GMNS</a></td>
+<td>Network data specification</td>
+<td>Vocabulary and explicit identifier conventions</td>
+</tr>
+<tr>
+<td><a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus Dataset</a></td>
+<td>Standardized network collections and preparation tools</td>
+<td>Referenced only; no upstream source or dataset is vendored</td>
+</tr>
+<tr>
+<td><a href="https://github.com/asu-trans-ai-lab/TAPLab">TAPLab</a></td>
+<td>Assignment interfaces, solver adapters, validation and views</td>
+<td>External workflow; not bundled into the CG entry point</td>
+</tr>
+<tr>
+<td><a href="https://github.com/asu-trans-ai-lab/OSM2GMNS">OSM2GMNS</a></td>
+<td>OpenStreetMap-to-network conversion</td>
+<td>Optional upstream preparation tool</td>
+</tr>
+<tr>
+<td><a href="https://github.com/asu-trans-ai-lab/grid2demand">grid2demand</a></td>
+<td>Zone/activity-based demand generation</td>
+<td>Optional upstream demand prior, not an observation or forecasting certificate</td>
+</tr>
+<tr>
+<td><a href="https://github.com/bstabler/TransportationNetworks">TransportationNetworks</a></td>
+<td>Classical road benchmark collection</td>
+<td>General benchmark source; exact historical bytes are not inferred</td>
+</tr>
+</tbody>
+</table>
+<h2 id="map-semantics-not-only-filenames">Map semantics, not only filenames</h2>
+<p>A TAPLab field such as <code>o_zone_id</code> may correspond to a profile's <code>origin_zone_id</code>, but time, capacity, demand units and centroid access must also agree. A settings file for static equilibrium is not a space–time configuration.</p>
+<h2 id="use-upstream-tools-independently">Use upstream tools independently</h2>
+<p>Follow the selected upstream version's own installation and execution instructions. Record its commit and the input/output conversion. Do not copy an upstream result into a new run directory and call it a local execution.</p>
+<h2 id="attribution">Attribution</h2>
+<p>GMNS, GMNS Plus, TAPLab, OSM2GMNS, grid2demand and TransportationNetworks retain their own authorship and license terms. No source code or raw dataset from those repositories is bundled here. This repository is not an official distribution of those projects and does not imply institutional sponsorship or endorsement. See the repository's <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/THIRD_PARTY_NOTICES.md">third-party notices</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/DATA_LICENSES.md">data license boundaries</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

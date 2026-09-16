@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Sioux Falls · static Frank–Wolfe | Mobility Network Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="../datasets.html">Data catalog</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Sioux Falls · static Frank–Wolfe</p><h1 id="sioux-falls--static-frankwolfe">Sioux Falls · static Frank–Wolfe</h1>
+<p><strong>Historical approximate static assignment result.</strong></p>
+<table>
+<thead>
+<tr>
+<th>Quantity</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical nodes / directed links</td>
+<td style="text-align:right">24 / 76</td>
+</tr>
+<tr>
+<td>OD records</td>
+<td style="text-align:right">528</td>
+</tr>
+<tr>
+<td>Total provided demand</td>
+<td style="text-align:right">360,600</td>
+</tr>
+<tr>
+<td>Saved iterations</td>
+<td style="text-align:right">100</td>
+</tr>
+<tr>
+<td>Recomputed Beckmann objective</td>
+<td style="text-align:right">4,236,715.140437842</td>
+</tr>
+<tr>
+<td>Maximum aggregate node-balance residual</td>
+<td style="text-align:right">1.4552e-11</td>
+</tr>
+<tr>
+<td>Fixed-flow gap / Beckmann objective</td>
+<td style="text-align:right">0.236154949%</td>
+</tr>
+</tbody>
+</table>
+<p>BPR travel times, the saved link flows and the Beckmann objective were recomputed. The gap above uses the final saved flow and the provided OD matrix, with the Beckmann objective as denominator. It is not interchangeable with a gap normalized by total travel cost. The original iteration log used a pre-update point, while its final CSV used the post-update flow.</p>
+<p>This is not a high-precision UE ground truth. Runtime OD-file hashes and a complete OD/path disaggregation were not preserved, so aggregate node balance is not presented as a full OD-level feasibility certificate.</p>
+<p>Raw input and output tables are not included in this public result record. The retained <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/static_fw">static implementation</a> is separate from the space–time CG run command.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

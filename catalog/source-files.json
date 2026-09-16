@@ -1,0 +1,192 @@
+{
+  "engine_archive_sha256": "03bab302074f52d418723bfc25c8c2b3719478219e806922e4fc6274397f90a7",
+  "selection": "transitive Python import closure for the external-network workflow and solver-free verifier; two synthetic reference inputs; static FW library source",
+  "files": [
+    {
+      "path": "app/cases/capacity_zone_probe/case.json",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "2909e6cde37666fcf28775ac7b11d3fb732a4f42f4d1455c707691d64a4ee070",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/demand.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "12567c7dca542e3cdbcf08c5267cecc667fa19dbd9bc125e3dacbe9b04f530e4",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/link.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "4f41df792fb7e06514a655b499ea666808d18c031e3db98fcadcc40065f50566",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/node.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "3bf6fc775ff0882ed52d05563c7e673061b8a7c9cc5d354a11ec7165f499774b",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/zone_access.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "9ab83c058d8fac65aaac3406d7994c1a97a900c15b7a1a4ebc85df7fca315997",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/external_auto_4node/case.json",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "69629746761706fbb1cc4e6a1ca66b65d3b7e46aa08b9465fe7ab58aa32dc211",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/demand.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "65fe6bbe85ceb6e5593b5f9e90b16bbbbeb69b2cb3be732e47d0616169963d3f",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/link.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "95fed32aac9b4d95e47018de1bb215086b8437759ea7ba938adbc2cf4eac84ea",
+      "transform": "none"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/node.csv",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "b698e993e8bfa59a02a5257561ae3c386651fe187b0156016476fc9d621bd88d",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/explicit_network_workflow.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_network_input.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_ingest.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_external_network_pipeline.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07",
+      "transform": "none"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_full_cg_v1.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae",
+      "transform": "none"
+    },
+    {
+      "path": "launcher/verify_artifacts.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "a244f367a3be9adcb161fc05e9a3bcf75ee7c79abbaaa0a4e8345f20baab0f22",
+      "transform": "none"
+    },
+    {
+      "path": "launcher/verify_external_run.py",
+      "source": "gmns-cg 0.3.0-rc5",
+      "sha256": "b187972bab2d51bae020d740c0242d2aeb714a07e2281acfcbbe86268c220a8e",
+      "transform": "none"
+    },
+    {
+      "path": "algorithms/static_fw/tap_frank_wolfe.py",
+      "source": "gmns-cg 0.3.0-rc5 auxiliary source",
+      "sha256": "2953536f51a614b359deaf122d9c6e96adf893059669b6325d25efc86fe23cc3",
+      "transform": "none"
+    }
+  ]
+}

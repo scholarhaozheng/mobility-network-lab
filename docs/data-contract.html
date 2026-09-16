@@ -1,0 +1,52 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Input specification | Mobility Network Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="datasets.html">Data catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Input specification</p><h1 id="input-specification">Input specification</h1>
+<p>The executable profile is <code>gmns_external_finite_network_v1</code>. It is a project-specific, GMNS-compatible profile, not a claim to implement every table in the full GMNS specification.</p>
+<h2 id="files-and-identifiers">Files and identifiers</h2>
+<table>
+<thead>
+<tr>
+<th>File</th>
+<th>Required meaning</th>
+<th>Example fields</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>node.csv</code></td>
+<td>Nodes used by the allowed graph</td>
+<td><code>node_id</code></td>
+</tr>
+<tr>
+<td><code>link.csv</code></td>
+<td>Directed physical links, travel time, fixed cost and capacity</td>
+<td><code>link_id,from_node_id,to_node_id,travel_time,cost,capacity</code></td>
+</tr>
+<tr>
+<td><code>demand.csv</code></td>
+<td>OD identity, endpoints, departure and injected volume</td>
+<td><code>demand_id,origin_zone_id,destination_zone_id,departure_time,volume</code></td>
+</tr>
+<tr>
+<td><code>zone_access.csv</code></td>
+<td>One access node per zone, when zone endpoints are used</td>
+<td><code>zone_id,node_id</code></td>
+</tr>
+<tr>
+<td><code>case.json</code></td>
+<td>File mappings, model settings, units, seeds, CG and size limits</td>
+<td>See the complete bundled configuration</td>
+</tr>
+</tbody>
+</table>
+<p>Identifiers are strings. Leading zeros and parallel links are retained. Node and zone IDs need not be equal. Blank IDs and reserved delimiters are rejected; demand IDs containing underscores are excluded by the retained engine's arc-ID parser. All file paths in the configuration are relative to the input directory.</p>
+<p>Use <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/cases/capacity_zone_probe/case.json"><code>app/cases/capacity_zone_probe/case.json</code></a> as a complete executable configuration. A renamed field is not a unit conversion.</p>
+<h2 id="model-profile">Model profile</h2>
+<p>The current run interface uses a one-minute time step, positive integer link travel times, a common departure time, a fixed horizon, nonnegative fixed generalized costs and continuous path flows. Capacity is <strong>vehicles per time-indexed movement arc</strong>. Demand is <strong>vehicles injected once at the declared departure time</strong>.</p>
+<p>Hourly traffic counts or capacity rates cannot be substituted without a documented conversion. A zero-time connector is not supported by this profile. Multiple access nodes per zone, mixed departure times and implicit unit conversion are also outside this version.</p>
+<p>Automatic routes are ordered by travel time and then by link-ID sequence, not by generalized optimization cost. Initial routes do not define the allowed graph. Shared capacities may require Phase-I to add a route before the initial pool becomes feasible.</p>
+<h2 id="spatial-metadata">Spatial metadata</h2>
+<p>Coordinates, geometric centerlines, area boundaries and TAZ polygons may be stored alongside solver inputs. The current solver profile does not require or invent them. A centroid point is not a zone polygon, and a straight-line network sketch is not surveyed road geometry.</p>
+<h2 id="demand-and-evidence">Demand and evidence</h2>
+<p>Record whether demand is observed, inferred, synthetic, or inherited from a benchmark. Keep observation time, units and mode separate from solver settings. GPS, traffic observations and GTFS should retain their source schema; future adapters must provide explicit mappings to this network's identifiers. These evidence adapters are not implemented by the present run command.</p>
+<h2 id="validation-scope">Validation scope</h2>
+<p>The input command checks the declared file contract, attributes and identifiers. The solver performs graph/time feasibility checks. The result verifier recomputes checks from final outputs. These are distinct stages; consult <a href="outputs.html">output semantics</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

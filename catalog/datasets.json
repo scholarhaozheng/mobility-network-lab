@@ -1,0 +1,83 @@
+{
+  "schema_version": "mnl_catalog_v1",
+  "datasets": [
+    {
+      "id": "sioux-200od",
+      "title": "Sioux Falls | 200 OD",
+      "kind": "road-benchmark",
+      "access": "results-only",
+      "profile": "historical-space-time-cg",
+      "nodes": 24,
+      "links": 64,
+      "od_pairs": 200,
+      "final_columns": 446,
+      "objective": 943155.589771,
+      "data_page": "docs/datasets/sioux-200od.md",
+      "verification": "Recovered final path flow; primal feasibility and saved reference comparison checked.",
+      "data_origin": "Sioux Falls benchmark subset",
+      "demand_origin": "historical benchmark demand subset",
+      "raw_data_bundled": false
+    },
+    {
+      "id": "sioux-250od",
+      "title": "Sioux Falls | 250 OD",
+      "kind": "road-benchmark",
+      "access": "results-only",
+      "profile": "historical-space-time-cg",
+      "nodes": 24,
+      "links": 69,
+      "od_pairs": 250,
+      "final_columns": 567,
+      "objective": 1521090.83662,
+      "data_page": "docs/datasets/sioux-250od.md",
+      "verification": "Recovered final path flow; primal feasibility and saved reference comparison checked.",
+      "data_origin": "Sioux Falls benchmark subset",
+      "demand_origin": "historical benchmark demand subset",
+      "raw_data_bundled": false
+    },
+    {
+      "id": "sioux-static-fw",
+      "title": "Sioux Falls | Static FW",
+      "kind": "road-benchmark",
+      "access": "results-only",
+      "profile": "static-beckmann-fw",
+      "nodes": 24,
+      "links": 76,
+      "od_pairs": 528,
+      "objective": 4236715.140437842,
+      "data_page": "docs/datasets/sioux-static-fw.md",
+      "verification": "Saved approximate flow: costs, objective and aggregate balance checked.",
+      "data_origin": "Sioux Falls benchmark",
+      "demand_origin": "provided benchmark OD; historical runtime bytes not certified",
+      "raw_data_bundled": false
+    },
+    {
+      "id": "capacity-zone",
+      "title": "Capacity-constrained network",
+      "kind": "synthetic-reference",
+      "access": "bundled-input",
+      "profile": "gmns_external_finite_network_v1",
+      "input": "app/cases/capacity_zone_probe/input",
+      "config": "app/cases/capacity_zone_probe/case.json",
+      "expected_objective": 27,
+      "data_page": "docs/examples.md",
+      "data_origin": "synthetic regression fixture",
+      "demand_origin": "synthetic",
+      "raw_data_bundled": true
+    },
+    {
+      "id": "auto-routing",
+      "title": "Automatic route initialization",
+      "kind": "synthetic-reference",
+      "access": "bundled-input",
+      "profile": "gmns_external_finite_network_v1",
+      "input": "app/cases/external_auto_4node/input",
+      "config": "app/cases/external_auto_4node/case.json",
+      "expected_objective": 10,
+      "data_page": "docs/examples.md",
+      "data_origin": "synthetic regression fixture",
+      "demand_origin": "synthetic",
+      "raw_data_bundled": true
+    }
+  ]
+}

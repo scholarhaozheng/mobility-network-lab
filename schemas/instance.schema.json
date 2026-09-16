@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Mobility Network Lab instance metadata",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "profile",
+    "source",
+    "demand_origin",
+    "access"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9-]*$"
+    },
+    "title": {
+      "type": "string"
+    },
+    "profile": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "required": [
+        "url",
+        "retrieved_at"
+      ],
+      "properties": {
+        "url": {
+          "type": "string"
+        },
+        "retrieved_at": {
+          "type": "string"
+        },
+        "revision": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "demand_origin": {
+      "enum": [
+        "observed",
+        "inferred",
+        "synthetic",
+        "benchmark"
+      ]
+    },
+    "access": {
+      "enum": [
+        "bundled-input",
+        "results-only",
+        "external-source"
+      ]
+    },
+    "license": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "input_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "config_path": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "optional_evidence": {
+      "type": "object",
+      "description": "Metadata references only; does not imply an implemented adapter."
+    }
+  },
+  "additionalProperties": true
+}

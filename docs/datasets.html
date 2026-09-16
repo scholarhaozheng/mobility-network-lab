@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Data catalog | Mobility Network Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="datasets.html">Data catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Data catalog</p><h1 id="data-catalog">Data catalog</h1>
+<p>The catalog separates <strong>runnable inputs</strong>, <strong>historical result records</strong> and <strong>external sources</strong>. Browse the machine-readable <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/datasets.json"><code>catalog/datasets.json</code></a> or run <code>python tools/mnl.py catalog</code>.</p>
+<h2 id="road-benchmark-results">Road benchmark results</h2>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Network</th>
+<th>Model</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="datasets/sioux-200od.html">Sioux Falls · 200 OD</a></td>
+<td>24 physical nodes, 64 selected links</td>
+<td>Historical finite space–time CG</td>
+<td>Results record</td>
+</tr>
+<tr>
+<td><a href="datasets/sioux-250od.html">Sioux Falls · 250 OD</a></td>
+<td>24 physical nodes, 69 selected links</td>
+<td>Historical finite space–time CG</td>
+<td>Results record</td>
+</tr>
+<tr>
+<td><a href="datasets/sioux-static-fw.html">Sioux Falls · static FW</a></td>
+<td>24 physical nodes, 76 links, 528 OD records</td>
+<td>Approximate static Beckmann assignment</td>
+<td>Results record</td>
+</tr>
+</tbody>
+</table>
+<p>These are benchmark instances rather than newly collected city networks. Historical source inputs are not bundled in this public candidate; consult each record for access and verification details.</p>
+<h2 id="runnable-reference-inputs">Runnable reference inputs</h2>
+<p><a href="examples.html">Two bundled synthetic examples</a> cover automatic routes and a zone-based capacity constraint. They support a clean source quick start without redistributing third-party road data.</p>
+<h2 id="city-contributions">City contributions</h2>
+<p>Add a source-backed city instance through the <a href="add-a-network.html">instance guide</a>. Publish only datasets that actually exist and have a declared access policy. Future city collections are listed in the <a href="roadmap.html">roadmap</a>, not in the available-data table.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>
