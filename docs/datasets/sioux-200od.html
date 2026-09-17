@@ -1,5 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>Sioux Falls · 200 OD | Mobility Network Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="../datasets.html">Data catalog</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Sioux Falls · 200 OD</p><h1 id="sioux-falls--200-od">Sioux Falls · 200 OD</h1>
 <p><strong>Historical road-benchmark result · finite space–time column generation.</strong></p>
+<p>This selected-OD benchmark applies the historical finite space–time path-flow model to a Sioux Falls network subset. <strong>It is not a full 528-OD Sioux Falls assignment.</strong></p>
 <table>
 <thead>
 <tr>
@@ -9,16 +10,24 @@
 </thead>
 <tbody>
 <tr>
-<td>Physical nodes / selected links</td>
-<td style="text-align:right">24 / 64</td>
+<td>Physical nodes</td>
+<td style="text-align:right">24</td>
+</tr>
+<tr>
+<td>Selected physical links</td>
+<td style="text-align:right">64</td>
 </tr>
 <tr>
 <td>OD pairs</td>
 <td style="text-align:right">200</td>
 </tr>
 <tr>
-<td>Dynamic nodes / arcs</td>
-<td style="text-align:right">1,192 / 9,406</td>
+<td>Dynamic nodes</td>
+<td style="text-align:right">1,192</td>
+</tr>
+<tr>
+<td>Dynamic arcs</td>
+<td style="text-align:right">9,406</td>
 </tr>
 <tr>
 <td>Final columns</td>
@@ -26,15 +35,25 @@
 </tr>
 <tr>
 <td>Recomputed path-flow objective</td>
-<td style="text-align:right">943155.589771</td>
+<td style="text-align:right">943,155.589771</td>
 </tr>
 </tbody>
 </table>
-<h2 id="verification">Verification</h2>
-<p>195 final candidate flows were directly saved. The remaining 251 final column flows were uniquely recovered from the saved final arc loads and the final path-link incidence identities. The reconstruction did not constrain the objective to the reference value. Path connectivity, demand conservation, shared capacity, nonnegativity and the objective were checked against saved records; the independently recomputed reference-primal objective agrees within the stated audit tolerance.</p>
-<p>This is a recovered historical result, not a rerun of the current source distribution. Conditional recovery of a missing vector does not establish uniqueness of the original LP optimum. Final RMP duals and a separate complete pricing certificate were not preserved.</p>
+<h2 id="final-physical-link-flow">Final physical-link flow</h2>
+<p><img src="../assets/benchmarks/sioux_200od_final_physical_link_flow.png" alt="Final physical-link movement flow for the selected 200-OD Sioux Falls benchmark subset" /></p>
+<p>Line width represents <strong>total final movement flow aggregated across the modeled time horizon</strong>. It does not represent static V/C or observed traffic. The map is for this selected 200-OD subset, not a full Sioux Falls assignment or a production-scale DTA result.</p>
+<p>The physical-link totals were cross-checked independently from (1) saved final dynamic-arc loads aggregated to physical links and (2) the reconstructed all-column final-flow vector mapped back through dynamic arcs. The maximum absolute aggregation difference was approximately <code>5.46e-12</code>.</p>
+<h2 id="phase-ii-objective-trajectory">Phase-II objective trajectory</h2>
+<p><img src="../assets/benchmarks/sioux_200od_phase2_objective_trace.png" alt="Phase-II objective trajectory for the selected 200-OD Sioux Falls benchmark subset" /></p>
+<p>The preserved Phase-II trace shows the solved restricted-master objectives alongside the independently recomputed arc-flow reference objective. The reported final objective is <code>943155.589771</code>.</p>
+<h2 id="phase-i-artificial-flow-trace">Phase-I artificial-flow trace</h2>
+<p><img src="../assets/benchmarks/sioux_200od_phase1_artificial_flow.png" alt="Phase-I artificial-flow clearance for the selected 200-OD Sioux Falls benchmark subset" /></p>
+<p>The historical Phase-I trace records artificial flow falling to zero before Phase II. It is explanatory evidence from the preserved result, not a new run.</p>
+<h2 id="verification-boundary">Verification boundary</h2>
+<p>Of the 446 final column flows, 195 were directly saved and 251 were uniquely reconstructed from preserved final-flow identities using the saved final arc loads and final path-link incidence. The reconstruction did not constrain the objective to the reference value. Path connectivity, demand conservation, shared capacity, nonnegativity and the objective were checked against saved records; the independently recomputed reference-primal objective agrees within the stated audit tolerance.</p>
+<p>No optimization was rerun to produce this page or its figures. This is a recovered historical result, not a rerun of the current source distribution. Conditional recovery of a missing vector does not establish uniqueness of the original LP optimum. Final RMP duals and a separate complete pricing certificate were not preserved.</p>
 <h2 id="data-access">Data access</h2>
-<p>Public access is limited to this result record and catalog metadata. Historical raw inputs and private reconstruction evidence are not redistributed here. The general Sioux Falls data source is linked under <a href="../integrations.html">upstream sources</a>; a freshly obtained upstream snapshot is not automatically byte-identical to the historical input.</p>
+<p>Public access is limited to this result record, its derived summary figures and catalog metadata. Historical raw inputs, reconstructed raw flow CSVs and private reconstruction evidence are not redistributed here. The general Sioux Falls data source is linked under <a href="../integrations.html">upstream sources</a>; a freshly obtained upstream snapshot is not automatically byte-identical to the historical input.</p>
 <h2 id="reuse">Reuse</h2>
 <p>Cite the exact instance and verification scope. To execute a new experiment with the current engine, supply a compatible input profile and record a new run; do not label it as a replay of this historical run without checking model and source identity.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

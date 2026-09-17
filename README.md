@@ -29,17 +29,24 @@ Use the repository to run a finite space–time path-flow model, inspect benchma
 | **Benchmark catalog** | Inspect documented road-network experiments and reference examples | [Available records](docs/datasets.md) |
 | **Instance extensions** | Add data, provenance and a matching input profile | [Add a network](docs/add-a-network.md) |
 
-## Data catalog
+## Verified road benchmarks
 
-Road benchmarks and synthetic reference examples are listed separately. A results record does not imply that its source data are redistributed in this repository.
+### Sioux Falls benchmark series
 
-| Road benchmark | Physical nodes | Physical links | OD pairs | Record |
-|---|---:|---:|---:|---|
-| **Sioux Falls · 200 OD** | 24 | 64 | 200 | [Space–time CG results](docs/datasets/sioux-200od.md) |
-| **Sioux Falls · 250 OD** | 24 | 69 | 250 | [Space–time CG results](docs/datasets/sioux-250od.md) |
-| **Sioux Falls · static assignment** | 24 | 76 | 528 | [Frank–Wolfe approximate baseline](docs/datasets/sioux-static-fw.md) |
+<p align="center">
+  <a href="docs/datasets/sioux-250od.md"><img src="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="760" alt="Final physical-link movement flow for the selected 250-OD Sioux Falls benchmark subset"></a>
+</p>
 
-The bundled [reference examples](docs/examples.md) exercise route initialization, zone access and capacity-constrained flow allocation. They are synthetic tests, not city datasets. Machine-readable records are available in [`catalog/datasets.json`](catalog/datasets.json).
+Line width represents total final movement flow aggregated across the modeled time horizon. This is a selected-OD benchmark visualization—not static V/C, observed traffic, a full 528-OD assignment, or production-scale DTA.
+
+| Case | Physical nodes | Selected links | OD pairs | Final columns | Objective |
+|---|---:|---:|---:|---:|---:|
+| **200-OD subset** | 24 | 64 | 200 | 446 | 943,155.589771 |
+| **250-OD subset** | 24 | 69 | 250 | 567 | 1,521,090.83662 |
+
+The objectives belong to different selected-OD instances and are not directly comparable. See the [200-OD details](docs/datasets/sioux-200od.md), [250-OD details](docs/datasets/sioux-250od.md), and [static Frank–Wolfe details](docs/datasets/sioux-static-fw.md).
+
+Road benchmarks and synthetic reference examples are listed separately. A results record does not imply that its source data are redistributed in this repository. The bundled [reference examples](docs/examples.md) exercise route initialization, zone access and capacity-constrained flow allocation. They are synthetic tests, not city datasets. Machine-readable records are available in [`catalog/datasets.json`](catalog/datasets.json).
 
 ## Quick start
 

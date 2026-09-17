@@ -2,23 +2,47 @@
 
 **Historical road-benchmark result · finite space–time column generation.**
 
+This selected-OD benchmark applies the historical finite space–time path-flow model to a Sioux Falls network subset. **It is not a full 528-OD Sioux Falls assignment.**
+
 | Quantity | Value |
 |---|---:|
-| Physical nodes / selected links | 24 / 64 |
+| Physical nodes | 24 |
+| Selected physical links | 64 |
 | OD pairs | 200 |
-| Dynamic nodes / arcs | 1,192 / 9,406 |
+| Dynamic nodes | 1,192 |
+| Dynamic arcs | 9,406 |
 | Final columns | 446 |
-| Recomputed path-flow objective | 943155.589771 |
+| Recomputed path-flow objective | 943,155.589771 |
 
-## Verification
+## Final physical-link flow
 
-195 final candidate flows were directly saved. The remaining 251 final column flows were uniquely recovered from the saved final arc loads and the final path-link incidence identities. The reconstruction did not constrain the objective to the reference value. Path connectivity, demand conservation, shared capacity, nonnegativity and the objective were checked against saved records; the independently recomputed reference-primal objective agrees within the stated audit tolerance.
+![Final physical-link movement flow for the selected 200-OD Sioux Falls benchmark subset](../assets/benchmarks/sioux_200od_final_physical_link_flow.png)
 
-This is a recovered historical result, not a rerun of the current source distribution. Conditional recovery of a missing vector does not establish uniqueness of the original LP optimum. Final RMP duals and a separate complete pricing certificate were not preserved.
+Line width represents **total final movement flow aggregated across the modeled time horizon**. It does not represent static V/C or observed traffic. The map is for this selected 200-OD subset, not a full Sioux Falls assignment or a production-scale DTA result.
+
+The physical-link totals were cross-checked independently from (1) saved final dynamic-arc loads aggregated to physical links and (2) the reconstructed all-column final-flow vector mapped back through dynamic arcs. The maximum absolute aggregation difference was approximately `5.46e-12`.
+
+## Phase-II objective trajectory
+
+![Phase-II objective trajectory for the selected 200-OD Sioux Falls benchmark subset](../assets/benchmarks/sioux_200od_phase2_objective_trace.png)
+
+The preserved Phase-II trace shows the solved restricted-master objectives alongside the independently recomputed arc-flow reference objective. The reported final objective is `943155.589771`.
+
+## Phase-I artificial-flow trace
+
+![Phase-I artificial-flow clearance for the selected 200-OD Sioux Falls benchmark subset](../assets/benchmarks/sioux_200od_phase1_artificial_flow.png)
+
+The historical Phase-I trace records artificial flow falling to zero before Phase II. It is explanatory evidence from the preserved result, not a new run.
+
+## Verification boundary
+
+Of the 446 final column flows, 195 were directly saved and 251 were uniquely reconstructed from preserved final-flow identities using the saved final arc loads and final path-link incidence. The reconstruction did not constrain the objective to the reference value. Path connectivity, demand conservation, shared capacity, nonnegativity and the objective were checked against saved records; the independently recomputed reference-primal objective agrees within the stated audit tolerance.
+
+No optimization was rerun to produce this page or its figures. This is a recovered historical result, not a rerun of the current source distribution. Conditional recovery of a missing vector does not establish uniqueness of the original LP optimum. Final RMP duals and a separate complete pricing certificate were not preserved.
 
 ## Data access
 
-Public access is limited to this result record and catalog metadata. Historical raw inputs and private reconstruction evidence are not redistributed here. The general Sioux Falls data source is linked under [upstream sources](../integrations.md); a freshly obtained upstream snapshot is not automatically byte-identical to the historical input.
+Public access is limited to this result record, its derived summary figures and catalog metadata. Historical raw inputs, reconstructed raw flow CSVs and private reconstruction evidence are not redistributed here. The general Sioux Falls data source is linked under [upstream sources](../integrations.md); a freshly obtained upstream snapshot is not automatically byte-identical to the historical input.
 
 ## Reuse
 
