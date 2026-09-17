@@ -8,13 +8,20 @@ Explore source-qualified evidence about cities, scheduled transit, realtime endp
 
 | Your task | Use this part | What you receive |
 |---|---|---|
+| Query/download accepted city evidence | [City evidence explorer](open-data-explorer.md) | 11,422 city rows, schemas and actual content/source relationships |
 | Understand source availability evidence | The six research layers below | Fixed, clearly scoped summaries with source references |
 | Organize your own city/feed tables | [Executable local data tools](data-tools.md) | Standardized records, exact name/country matches and a quality report |
 | Relate data to a network model | [City workflow](city-workflow.md) and [input contract](data-contract.md) | Guidance on identifiers, zones, demand and observations; no automatic raw-data compilation |
 
 The machine-readable source is [catalog/open-data-evidence.json](../catalog/open-data-evidence.json), with [metric provenance](omdv-provenance.md). Its public selection was checked on 2026-09-17 against accepted OMDV tables. **That is an assembly/check date, not a common observation date for all sources.** The layer-specific research views below retain their own scope. No download, endpoint probe or scientific rerun was performed to create this page.
 
-The public package includes compact summaries and selected code, not the full city registry, raw GTFS archives, endpoint lists, OSM extracts or manuscript material. [Data access and licenses](data-access.md)
+The public package includes a selected, non-geometric projection for all 11,422
+city rows, accepted content/source relationships, compact summaries and
+selected code. It does not include raw GTFS archives, provider/endpoint URLs,
+city geometry, OSM extracts, SEDAC fields or manuscript material.
+[Browse/download city evidence](open-data-explorer.md) ·
+[Sources and reproduction scope](open-data-sources.md) ·
+[Data access and licenses](data-access.md)
 
 ## How the layers support a city study
 

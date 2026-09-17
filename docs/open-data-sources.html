@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Open data sources and reproduction scope | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data-explorer.html">City evidence</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Open data sources and reproduction scope</p><h1 id="open-data-sources-and-reproduction-scope">Open data sources and reproduction scope</h1>
+<p>The downloadable tables are deterministic, non-geometric projections of
+tracked accepted results from Open Mobility Data Visibility (OMDV). They were
+prepared on 2026-09-17 from OMDV source head
+<code>09575a51973f4289fda7adae85130a10ab554b36</code> and accepted release commit
+<code>e0c7d2f7ca4e3f72563f14346d96df5f0c04e937</code>.</p>
+<h2 id="public-products">Public products</h2>
+<table>
+<thead>
+<tr>
+<th>Product</th>
+<th style="text-align:right">Rows</th>
+<th>Unit and scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="data/open-mobility/city_evidence.csv">City evidence CSV</a></td>
+<td style="text-align:right">11,422</td>
+<td>One accepted GHSL urban-centre row; selected catalog, GTFS and realtime fields</td>
+</tr>
+<tr>
+<td><a href="data/open-mobility/content_city.csv">Content–city CSV</a></td>
+<td style="text-align:right">12,442</td>
+<td>One accepted content-hash/city relationship</td>
+</tr>
+<tr>
+<td><a href="data/open-mobility/source_content_city.csv">Source–content–city CSV</a></td>
+<td style="text-align:right">16,705</td>
+<td>14,328 complete chains plus 2,377 explicit source/content rows without an accepted city link</td>
+</tr>
+</tbody>
+</table>
+<p>Equivalent JSON files and machine-readable schemas are in
+<a href="data/open-mobility/README.html"><code>data/open-mobility/</code></a>. The product hashes and
+row checks are recorded in
+<a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/open-data-products.json"><code>catalog/open-data-products.json</code></a>.</p>
+<h2 id="accepted-source-files">Accepted source files</h2>
+<table>
+<thead>
+<tr>
+<th>Role</th>
+<th>OMDV repository path</th>
+<th>SHA-256</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Complete city frame</td>
+<td><code>outputs/tables/v25a_3_4_global_city_analysis_matrix.csv</code></td>
+<td><code>9784dd2b2c4eaef94ae63b82b0904b9cf89920a03d96d77d1a7cd448eb354f09</code></td>
+</tr>
+<tr>
+<td>Source record → content</td>
+<td><code>outputs/tables/v25a_3_2_feed_provenance_roles.csv</code></td>
+<td><code>109b32d49e7aa4eb3984dbc1aa6f766ba230b77fa16b57816f97086b60a0e90f</code></td>
+</tr>
+<tr>
+<td>Content → city</td>
+<td><code>outputs/tables/v25a_3_1_gtfs_content_city_links.csv</code></td>
+<td><code>7d591d2ccfed082adcea48cdcc1121f11c7d5bedafbf5408f974013ca254c070</code></td>
+</tr>
+<tr>
+<td>Content view membership</td>
+<td><code>outputs/tables/v25a_3_2_gtfs_content_view_membership.csv</code></td>
+<td><code>07c9609796f2d92225b47b305d88c8fdca101d0dd691851eda3f753eee78defa</code></td>
+</tr>
+<tr>
+<td>Accepted accounting summary</td>
+<td><code>outputs/tables/v25a_3_3_gtfs_global_content_view_summary.csv</code></td>
+<td><code>0878b80eddc7109087ce493f4340a46a02006688ef1cab7b785b9e70b3757e8c</code></td>
+</tr>
+</tbody>
+</table>
+<p>The exporter verifies these hashes before writing. It selects and renames
+columns, performs exact <code>content_sha256</code> joins, adds explicit relationship-state
+labels, and sorts records. It does not spatially rematch stops, infer a city
+from a name/bbox, refetch a feed, or recompute an accepted scientific result.</p>
+<h2 id="relationship-accounting">Relationship accounting</h2>
+<ul>
+<li>5,182 mapped parseable source records reference 4,423 content hashes.</li>
+<li>The all-retained content universe has 4,425 hashes. Two accepted content
+hashes have no mapped source record.</li>
+<li>12,442 accepted content–city pairs cover 2,959 cities.</li>
+<li>Exact joins yield 14,328 source-record–city associations. Source records
+that have no accepted city link remain visible as
+<code>SOURCE_CONTENT_ONLY_NO_CITY_LINK</code>.</li>
+<li>Two content–city rows for one hash have no mapped source record and remain
+visible as <code>CONTENT_CITY_ONLY_NO_MAPPED_SOURCE_RECORD</code>.</li>
+</ul>
+<p>This deliberately preserves many-to-many relationships: different records can
+share one hash, and one content hash can link to several cities.</p>
+<h2 id="source-and-rights-boundaries">Source and rights boundaries</h2>
+<p>The city frame originates from GHSL UCDB R2024A under the European Commission
+reuse terms referenced by the OMDV source manifest. The public projection keeps
+the stable city identifier, label, country codes and accepted population value;
+it excludes geometry, area geometry, coordinates and SEDAC fields.</p>
+<p>GTFS and catalog columns are factual identifiers, hash relationships, counts
+and accepted research classifications. The projection excludes raw feed files,
+provider URLs, endpoint URLs, tokens, logins, cookies and provider metadata not
+needed for the relationship. It does not relicense any absent upstream feed.</p>
+<p>The root MIT License covers Mobility Computation Lab software and the selected
+OMDV original implementation authorized by the copyright holder. It is not a
+blanket license for upstream data. See <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/DATA_LICENSES.md">Data licenses</a>.</p>
+<h2 id="reproduction-modes">Reproduction modes</h2>
+<ul>
+<li><strong>Compact:</strong> run <code>tools/build_open_mobility_exports.py</code> against the named,
+hash-matched accepted OMDV outputs. This reproduces these public projections.</li>
+<li><strong>Exact historical:</strong> reconstruct the accepted OMDV analysis from its
+specified historical inputs. Some inputs may require separate lawful access;
+the public repository does not pretend to bundle them.</li>
+<li><strong>Current-source:</strong> acquire current external sources and rerun the relevant
+OMDV workflow. Results may differ from the fixed historical snapshot.</li>
+</ul>
+<p>The accepted R1.2.4 Package A and B files remain in the source OMDV project and
+were not rebuilt or copied. Their verified source hashes are respectively
+<code>c3e3a3c46a4126e110a6690b21f89e9b2853c0bbf13dedf996d8d2e57189a7bb</code>
+and <code>565f4edddeb528f2648b3a44e0edba1a1af9bd4eaf81387a31f8a104ad9e83fa</code>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

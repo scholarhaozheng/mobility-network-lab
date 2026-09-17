@@ -1,4 +1,4 @@
-# Local catalog and city-matching tools
+# Local city-evidence, catalog and GTFS tools
 
 Mobility Computation Lab includes a bounded, executable workflow selected from
 original Open Mobility Data Visibility code:
@@ -12,6 +12,10 @@ original Open Mobility Data Visibility code:
 
 This is local metadata processing. It makes no network request and does not
 require the OMDV source repository.
+
+The same command also queries the bundled 11,422-row public evidence table and
+runs an authorized OMDV-derived content parser on a user-supplied local GTFS
+ZIP. These modes are offline and do not modify the ZIP.
 
 ## Isolated installation
 
@@ -46,6 +50,47 @@ The output directory must be new or empty. The command writes:
 The report includes input hashes, row counts, match-status counts, ambiguous
 keys, output hashes, and explicit limitations. Every value depends on the
 supplied files; headline evidence constants are not used as processing output.
+
+## Query accepted city evidence
+
+Use the stable city ID when known:
+
+```bash
+python -B tools/mcl_data.py query-city --city-id ghsl_urban_centre:R2024A_V1_1:ID_UC_G0:11185 --include-relations
+```
+
+Or use an exact city name plus ISO2/ISO3 country code:
+
+```bash
+python -B tools/mcl_data.py query-city --name "Hong Kong" --country CHN --include-relations
+python -B tools/mcl_data.py query-city --name Melbourne --country AUS
+python -B tools/mcl_data.py query-city --name Cairo --country EGY
+python -B tools/mcl_data.py query-city --name Paris --country FRA
+```
+
+Hong Kong, Melbourne and Paris return accepted source/content relationships.
+Cairo returns a real matched city row with `no_stop_content` in the checked
+historical GTFS views; that state is not the same as a failed city lookup and
+does not claim Cairo has no transport data today.
+
+City names are not unique keys. `Lawrence, USA`, for example, resolves to three
+city IDs. The command exits with an ambiguity message unless `--all-matches`
+is supplied. A name absent from the table returns `not_found`, which remains
+distinct from a matched city with `no` evidence in a layer.
+
+The [browser](open-data-explorer.md) provides a no-server view. CSV, JSON and
+field dictionaries are in [`data/open-mobility/`](data/open-mobility/README.md).
+
+## Process one local GTFS ZIP
+
+```bash
+python -B tools/mcl_data.py process-gtfs --zip path/to/feed.zip --output results/gtfs-content-report
+```
+
+This OMDV-derived path calculates content/member, row-count, coordinate-quality,
+route-type, date and streamed stop-time metrics. It never downloads a feed or
+extracts files into the project. See the [GTFS tool specification and real-feed
+validation](gtfs-zip-tool.md).
 
 ## Catalog input
 
@@ -108,11 +153,12 @@ The selected lower-level functions are also importable from
 
 ## Related evidence and next steps
 
-The [open mobility evidence guide](open-data.md) provides fixed research summaries and their source scopes. The command above instead computes results from your own local tables; it does not regenerate those global totals. Use the [city workflow](city-workflow.md) to decide which identifiers and observations a network model still needs.
+The [open mobility evidence guide](open-data.md) provides fixed research summaries and their source scopes. `query-city` reads the bundled accepted projection; `catalog-city-match` and `process-gtfs` compute results from user-supplied local files. None regenerates the global study. Use the [city workflow](city-workflow.md) to decide which identifiers and observations a network model still needs.
 
 ## Scientific boundary
 
-Named-entity city matching is not GPS map matching. Catalog parsing is not a
-GTFS ZIP parser. A metadata URL is not evidence of current endpoint health.
-These tools do not compile a city network, estimate demand, build hierarchical
-zones, or connect GTFS/GPS data to the column-generation solver.
+Named-entity city matching is not GPS map matching. GTFS content metrics are
+not a service-quality or assignment model. A metadata URL is not evidence of
+current endpoint health. These tools do not compile a city road network,
+estimate demand, build hierarchical zones, or connect GTFS/GPS data to the
+column-generation solver.

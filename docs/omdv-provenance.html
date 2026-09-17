@@ -1,5 +1,5 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>OMDV provenance and integration boundary | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / OMDV provenance and integration boundary</p><h1 id="omdv-provenance-and-integration-boundary">OMDV provenance and integration boundary</h1>
-<p>The Open Mobility Data Visibility source repository was inspected at Git commit 09575a51973f4289fda7adae85130a10ab554b36. Its accepted R1.2.1 release evidence records final-release commit e0c7d2f7ca4e3f72563f14346d96df5f0c04e937.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>OMDV provenance and integration boundary | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data-explorer.html">City evidence</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / OMDV provenance and integration boundary</p><h1 id="omdv-provenance-and-integration-boundary">OMDV provenance and integration boundary</h1>
+<p>The Open Mobility Data Visibility source repository was inspected at Git commit 09575a51973f4289fda7adae85130a10ab554b36. Its accepted release evidence records final-release commit e0c7d2f7ca4e3f72563f14346d96df5f0c04e937. The same-name formal Package A/B files were verified as the later recorded R1.2.4 artifacts; they were not rebuilt.</p>
 <h2 id="accepted-package-identities">Accepted package identities</h2>
 <table>
 <thead>
@@ -13,14 +13,14 @@
 <tbody>
 <tr>
 <td>A</td>
-<td>Complete code, no research data</td>
-<td>a129bb01fd0a493ca6cfde8ed70512f3944fdd870fe198f840062102920a2693</td>
+<td>Complete code, no research data · 5,632,290 bytes · 1,173 members</td>
+<td>c3e3a3c46a4126e110a6690b21f89e9b2853c0bbf13dedf996d8d2e57189a7bb</td>
 <td>No</td>
 </tr>
 <tr>
 <td>B</td>
-<td>Downloadable reproduction package</td>
-<td>256b94d3c14bfc36ae61a210a2ab99b02f3bb054e48e0acc2ff84e805f30c19a</td>
+<td>Downloadable reproduction package · 11,172,418 bytes · 1,222 members</td>
+<td>565f4edddeb528f2648b3a44e0edba1a1af9bd4eaf81387a31f8a104ad9e83fa</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -28,12 +28,15 @@
 <p>The packages are identities for provenance. Neither archive is redistributed.</p>
 <h2 id="what-was-integrated">What was integrated</h2>
 <ul>
-<li>four selected original implementations: external-city normalization, exact
+<li>five selected original implementations: external-city normalization, exact
 municipality/country matching, MobilityDatabase-style catalog normalization
-and schema audit, and cleaned-catalog summaries;</li>
+and schema audit, cleaned-catalog summaries, and GTFS content metrics with a
+streamed stop-times pass;</li>
 <li>a thin MCL adapter and public local-file CLI;</li>
 <li>two controlled example fixtures;</li>
 <li>accepted aggregate city-frame, GTFS, realtime, OSM, and GBFS values;</li>
+<li>a non-geometric 11,422-city projection, all accepted content-city links, and
+explicit source-record/content/city relationships;</li>
 <li>exact source-table hashes and commit identities;</li>
 <li>layer-specific interpretation boundaries;</li>
 <li>a compact, independently authored interoperability catalog;</li>
@@ -52,18 +55,22 @@ adaptation in
 The root MIT license applies to these selected copies and MCL integration glue,
 not to external data or unselected repository contents.</p>
 <h2 id="remaining-upstream-only-scope">Remaining upstream-only scope</h2>
-<p>The GTFS unique-content parser and realtime endpoint probe remain
-<code>UPSTREAM_LINK_ONLY</code> / later-refactor items because they are coupled to
-versioned caches and research orchestration. The OSM extractor, GBFS builder,
-and source-layer registry are referenced but not shipped as executable APIs.
-The H3 manuscript analysis remains private.</p>
+<p>The realtime endpoint probe remains upstream-only because it is coupled to
+network access, credentials and versioned research orchestration. The OSM
+extractor, GBFS builder and source-layer registry are referenced but not shipped
+as executable APIs. The H3 manuscript analysis remains private.</p>
 <p>No OMDV figure was selected. Owner permission for original visual design is
 confirmed, but no candidate completed a file-specific review of underlying
 third-party data and basemap terms.</p>
 <h2 id="actual-public-operation">Actual public operation</h2>
-<p><code>tools/mcl_data.py catalog-city-match</code> processes user-supplied local CSV files.
-It produces input-dependent normalized tables, exact city/country matches,
-summary/audit tables, ambiguity records, and a quality report. It does not
-download data, parse GTFS ZIPs, probe realtime endpoints, perform GPS matching,
-or compile a city network.</p>
+<p><code>tools/mcl_data.py</code> has three bounded operations:</p>
+<ul>
+<li><code>query-city</code> reads the bundled accepted city/relationship projections;</li>
+<li><code>catalog-city-match</code> processes user-supplied local CSV files and writes
+input-dependent exact-match/audit outputs;</li>
+<li><code>process-gtfs</code> inspects one user-supplied local GTFS ZIP with the authorized
+content parser.</li>
+</ul>
+<p>None downloads data, probes realtime endpoints, performs GPS matching, compiles
+a city road network, estimates OD demand or runs the optimization models.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

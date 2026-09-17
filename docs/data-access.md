@@ -4,11 +4,16 @@ Code, source datasets and derived results have different provenance and may have
 
 ## Included content
 
-This source tree contains selected engine code, synthetic reference inputs, result metadata, compact aggregate open-mobility evidence, user documentation and original presentation assets. Source-file hashes are recorded in `catalog/source-files.json`; OMDV provenance is recorded separately in `catalog/omdv-provenance.json`.
+This source tree contains selected engine code, synthetic reference inputs, result metadata, compact aggregate evidence, selected non-geometric city/relationship result projections, user documentation and original presentation assets. Source-file hashes are recorded in `catalog/source-files.json`; OMDV provenance is recorded separately in `catalog/omdv-provenance.json`.
 
 ## Open-mobility evidence
 
-The OMDV-derived public layer contains factual aggregate summaries only. Raw GTFS, realtime, OSM, GBFS, GHSL, SEDAC, and manuscript materials are excluded. Evidence layers remain independent and must not be summed into a coverage count.
+The OMDV-derived public layer contains factual aggregate summaries plus the
+selected 11,422-city result table and accepted source/content/city relationship
+tables described in [open-data sources](open-data-sources.md). Raw GTFS ZIPs,
+provider and endpoint URLs, credentials, geometries, realtime payloads, OSM/GBFS
+source files, SEDAC fields and manuscript materials are excluded. Evidence
+layers remain independent and must not be summed into a coverage count.
 
 ## Historical road data
 

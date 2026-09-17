@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Local GTFS ZIP content tool | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data-explorer.html">City evidence</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Local GTFS ZIP content tool</p><h1 id="local-gtfs-zip-content-tool">Local GTFS ZIP content tool</h1>
+<p><code>process-gtfs</code> exposes the accepted OMDV content-metrics implementation as a
+small, parameterized offline command. It accepts one user-supplied local ZIP,
+never downloads a feed, never extracts into the source directory, and writes
+only to a new or empty output directory.</p>
+<pre><code class="language-bash">python -m pip install -r requirements-data-tools.txt
+python -B tools/mcl_data.py process-gtfs \
+  --zip path/to/feed.zip \
+  --output results/gtfs-content-report
+</code></pre>
+<p>Outputs:</p>
+<ul>
+<li><code>metrics.json</code>: content SHA-256; archive/member presence; agency, stop,
+route, trip, service, shape, frequency and transfer counts; coordinate
+validity; route-type/mode distributions; date evidence; streamed stop-time
+counts and referential checks.</li>
+<li><code>member_presence.csv</code>: required/optional member presence and uncompressed
+member size.</li>
+<li><code>warnings.csv</code>: retained parse warnings, including invalid stop-time
+references.</li>
+<li><code>report.json</code>: concise run state and output list.</li>
+</ul>
+<p><code>stop_times.txt</code> is processed in one streaming pass. The tool does not claim to
+evaluate service quality, current operations, road networks, TAZs, OD demand,
+GPS map matching or assignment readiness.</p>
+<h2 id="reused-implementation">Reused implementation</h2>
+<p>The public adapter is
+<a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/src/mobilitylab/omdv/gtfs/content_metrics.py"><code>src/mobilitylab/omdv/gtfs/content_metrics.py</code></a>.
+It is adapted from OMDV
+<code>scripts/analysis/parse_v25a_3_gtfs_unique_content.py</code>, source commit
+<code>b2dca4449445c474c77db72ba4c8d18947108606</code>, source SHA-256
+<code>bc4636f6eea18a66f4309d31f1e6576f50d5cbddc422e84f53709834426485cd</code>.
+The adaptation removes OMDV repository/SQLite state, makes the input and output
+paths caller-controlled, and adds a compact report. Parsing semantics and the
+memory-bounded stop-times pass are retained.</p>
+<h2 id="real-feed-validation">Real-feed validation</h2>
+<p>The adapter was run offline on one retained, read-only real feed already inside
+the authorized OMDV source root:</p>
+<ul>
+<li>source record: <code>tld-821</code> (<code>Mobility Database local feeds_v2</code>)</li>
+<li>accepted city link: Victoria, Canada,
+<code>ghsl_urban_centre:R2024A_V1_1:ID_UC_G0:6</code></li>
+<li>input size: 5,010 bytes</li>
+<li>content SHA-256:
+<code>5e16fc5ff45eb58fe99a3200d7f67a7628ec8ed99997c706561234a8f3a00d5b</code></li>
+<li>output status: <code>parsed</code></li>
+<li>matched accepted metrics: 1 agency, 3 stops, 2 routes, 11 trips, 22
+stop-time rows, 3 valid coordinates, 0 invalid coordinates, ferry mode,
+feed-info range 2025-10-30 through 2027-01-03</li>
+</ul>
+<p>All 11 compared fields matched the accepted OMDV content-metrics row. The ZIP
+is not redistributed; external users should run the command on a GTFS feed they
+are permitted to obtain and process.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>
