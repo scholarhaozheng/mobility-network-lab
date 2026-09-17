@@ -1,42 +1,36 @@
 # Architecture
 
-The public tree presents four layers while retaining the tested Mobility Network Lab numerical layout.
+## City modelling is the organizing workflow
 
-## 1. Local data tools and evidence
+Mobility Computation Lab centres on **networks, zones, demand, evidence and network computation**. Data catalogs support this workflow; they do not replace a city model. The [city workflow](city-workflow.md) distinguishes currently executable components from extensions.
 
-- catalog/open-data-evidence.json — accepted aggregate values and claim boundaries;
-- catalog/interoperability-sources.json — formats, standards, and upstream tools;
-- catalog/omdv-provenance.json — source commits, hashes, package identities, and reuse decisions;
-- catalog/omdv-authorized-files.json — selected-copy MIT allowlist and destination hashes;
-- src/mobilitylab/omdv/ — selected OMDV normalization, matching, audit, and summary implementations;
-- src/mobilitylab/data/ — the connected local workflow plus evidence loaders;
-- tools/mcl_data.py — public local-file CLI.
+## Network, zone-access and demand interface
 
-No raw OMDV dataset or source checkout is required. The executable workflow
-accepts caller-supplied CSVs and remains separate from the fixed accepted
-evidence catalog.
+- `app/src/gmns_dynamic/external_network_input.py` reads the current explicit model profile.
+- `app/cases/` contains self-contained synthetic regression inputs, not new city datasets.
+- `schemas/` and [data contract](data-contract.md) document IDs, field mappings, units and model conditions.
 
-## 2. City and model interface
+The supported route starts with prepared network and demand tables. Road acquisition, hierarchical-zone generation, OD estimation and GPS matching require separate actual implementations; a name in a registry is not a model-ready city.
 
-- app/src/gmns_dynamic/external_network_input.py — current input contract and normalization;
-- app/src/gmns_dynamic/external_sioux_ingest.py — benchmark-oriented ingestion support;
-- app/cases/ — small self-contained examples;
-- schemas/ — machine-readable catalog and instance contracts.
+## Assignment and optimization
 
-This is a model-ready interface, not a city compiler. Hierarchical zones and general network compilation remain on the roadmap.
+- `app/src/gmns_dynamic/explicit_network_workflow.py` prepares the explicit space–time problem.
+- `app/src/gmns_dynamic/run_full_cg_v1.py` retains the Phase-I/Phase-II column-generation engine.
+- `tools/mnl.py` is the network command entry point.
+- `algorithms/static_fw/` is a separate static Beckmann / Frank–Wolfe implementation.
 
-## 3. Assignment and optimization
+Do not compare these models as if a shared CSV vocabulary made their objectives, capacities or time definitions identical. New origin-based / Policy Bush and coupled methods are research extensions; existing CG remains a usable baseline.
 
-- algorithms/static_fw/ — static Frank–Wolfe implementation;
-- app/src/gmns_dynamic/explicit_network_workflow.py — explicit space–time network;
-- app/src/gmns_dynamic/run_full_cg_v1.py — reference LP and Phase-I/Phase-II column generation;
-- tools/mnl.py — public command entry point.
+## Supporting mobility data
 
-## 4. Benchmarks and verification
+`src/mobilitylab/omdv/` contains selected authorized city/catalog normalization and exact name/country matching functions. `src/mobilitylab/data/catalog_city_workflow.py` and `tools/mcl_data.py` call them on user-supplied local files. This is independent of the fixed aggregate evidence catalog.
 
-- catalog/datasets.json — runnable examples, evidence summaries, and benchmark records;
-- docs/datasets/ — result cards and interpretation boundaries;
-- launcher/ — solver-free verification;
-- tools/check_repository.py and tools/publication_gate.py — repository and publication checks.
+`catalog/open-data-evidence.json`, `omdv-provenance.json`, `omdv-authorized-files.json` and `interoperability-sources.json` preserve summaries, sources and reuse scope. The OMDV study does not supply city OD or GPS observations to the solver automatically.
 
-The compatibility layout avoids moving tested solver files merely to match a new package tree. Navigation and contracts provide the layer separation.
+## Results and visible verification
+
+`launcher/` verifies saved outputs. `catalog/datasets.json` and `benchmark-results.csv` identify the bundled examples and historical benchmark records. The [visual gallery](visualizations.md) exposes the retained six figures; data cards preserve their interpretation limits.
+
+## Maintain the working implementation
+
+The existing numerical and data-tool source layouts remain unchanged. The GitHub README and Pages homepage are different presentations of the same project; both must preserve the city-network focus and lead to real tools and figures. `tools/build_site.py` is the Pages generator, not a replacement for root `README.md`.

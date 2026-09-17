@@ -1,23 +1,27 @@
-# Roadmap
+# Development roadmap
 
-The current release surface includes a compact open-data evidence catalog, the finite-network optimization workflow, synthetic reference inputs, and documented road-benchmark results. This page describes future extensions rather than available datasets.
+The next substantial step is a **complete real-city network instance**, not another summary catalog or a new repository. Existing assignment code and supporting data tools remain the reusable base.
 
-## City instances
+## 1. Connect one city through the existing interface
 
-Add source-backed Hong Kong, Melbourne, Cairo and Paris instances through the same catalog and explicit input profiles. Begin with a defensible study area and data provenance; add more cities after the first instance is reproducible.
+Choose a bounded study area and reuse a lawful upstream network. Preserve its geometry and directed-link IDs. Supply or prepare zones, centroid/network access and a documented OD input. State whether demand is observed, estimated or synthetic. Run a model whose units and assumptions match those inputs, then map results back to the same network.
 
-## Spatial and demand layers
+This stage must not rename a synthetic fixture as a city or treat a GTFS feed as an OD matrix. Network acquisition and zone creation remain development work, not released automation.
 
-Support reusable zone boundaries, centroid/connector maps and cross-resolution relationships. Extend demand preparation with clearly separated benchmark, synthetic, inferred and observed inputs.
+## 2. Add evidence and spatial hierarchy
 
-## Data-to-model adapters
+Connect actual GPS, traffic counts, speeds or transit-service data to common network IDs and time intervals. Keep source, quality, unmatched observations and uncertainty. Record parent/child relations between zone or grid levels; coordinate aggregation alone is not a completed hierarchical transport model.
 
-Build a city compiler with hierarchical zones and explicit source-to-model transformations. Add permitted public GPS samples, segment-level quality control and explicit map-matching to network link IDs. Add OD generation and estimation as distinct workflows. A GTFS shape or a generated shortest path is not a GPS observation.
+GPS traces and map matching require a genuine trajectory source and matching implementation. Exact city-name matching in the current metadata tool is a different operation.
 
-## Solver adapters
+## 3. Extend the computational methods
 
-Integrate origin-based/Policy Bush methods and promote coupled primal-dual, Lagrangian, or ADMM methods only after the exact model, successful implementation and complete output evidence are aligned. Keep static UE, hard-capacitated space–time optimization and coupled dynamic models distinct.
+Retain current CG and static FW as distinct, documented baselines. Reuse an identified origin-based / Policy Bush implementation and develop transparent forward-flow, backward-value and feasible-update calculations. Do not label path aggregation as a completed Bush solver.
 
-## Release criteria
+Primal–dual, Lagrangian, ADMM and queue-state / dynamic-programming extensions need explicit models and their own tests. They are not mandatory substitutions for the working CG baseline.
 
-A feature enters the supported catalog when it has an actual entry point, declared inputs, a permitted example or documented acquisition route, and repeatable checks. Roadmap items carry no promised completion date.
+## 4. Transfer the same workflow
+
+Hong Kong, Melbourne, Cairo and Paris are candidate city extensions. Add them through common data contracts, configuration, provenance and verification rather than separate solver rewrites. No complete dataset for those cities is claimed by this release.
+
+[City workflow and current interfaces](city-workflow.md) · [Contribute a network](add-a-network.md)

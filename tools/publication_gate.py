@@ -118,8 +118,8 @@ def main() -> int:
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     required_readme = [
-        "Open city data → model-ready interfaces → assignment / optimization → verified results",
-        "city compiler and hierarchical zones",
+        "City networks, travel demand and reproducible network computation.",
+        "docs/city-workflow.md",
         "GPS traces and map matching",
         "Policy Bush",
         "ADMM",
@@ -131,15 +131,22 @@ def main() -> int:
         if phrase not in readme:
             errors.append(f"README missing required product or roadmap language: {phrase}")
         checks += 1
-    readme_images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", readme)
-    expected_image = "docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png"
-    if readme_images != [expected_image]:
-        errors.append(
-            f"README must contain exactly the approved 250OD image; found {readme_images}"
-        )
+    # Visual/content regression is checked independently of rights and payload safety.
+    # Retain the existing source allowlists; do not ban restored HTML image layouts.
+    presentation = subprocess.run(
+        [sys.executable, "-B", str(ROOT / "tools" / "check_readme_pages.py")],
+        cwd=ROOT, capture_output=True, text=True, check=False,
+    )
+    try:
+        presentation_result = json.loads(presentation.stdout)
+    except json.JSONDecodeError:
+        presentation_result = {"status": "FAIL", "errors": [presentation.stdout, presentation.stderr]}
+    if presentation.returncode != 0:
+        errors.extend(f"presentation: {item}" for item in presentation_result.get("errors", []))
+    checks += int(presentation_result.get("checks", 0))
     if "Repository candidate" in readme:
         errors.append("README still contains internal repository-candidate language")
-    checks += 2
+    checks += 1
 
     homepage = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
     css = (ROOT / "docs" / "assets" / "site.css").read_text(encoding="utf-8")
@@ -148,7 +155,7 @@ def main() -> int:
         "mobile breakpoint": "@media(max-width:800px)" in css,
         "single-column mobile grids": ".stripin,.cards,.tiles,.split{grid-template-columns:1fr}" in css,
         "responsive benchmark images": ".benchmark-feature img{display:block;width:100%;height:auto}" in css,
-        "open-data desktop section": "Open mobility data" in homepage,
+        "supporting data section": "Supporting mobility data" in homepage,
         "data-tools section": "Executable data tools" in homepage,
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
         "data-tools navigation": 'href="data-tools.html"' in homepage,

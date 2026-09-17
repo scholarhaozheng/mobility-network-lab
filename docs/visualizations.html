@@ -1,0 +1,33 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Road benchmark visualizations | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Road benchmark visualizations</p><h1 id="road-benchmark-visualizations">Road benchmark visualizations</h1>
+<p>These figures summarize saved, independently checked historical Sioux Falls <strong>selected-OD</strong> experiments. They are the same approved image assets shipped with the preceding release; this gallery does not rerun optimization or invent new observations.</p>
+<h2 id="physical-link-flow-views">Physical-link flow views</h2>
+<table>
+<tr><th>200 OD · 64 selected links</th><th>250 OD · 69 selected links</th></tr>
+<tr>
+<td width="50%"><a href="datasets/sioux-200od.html"><img src="assets/benchmarks/sioux_200od_final_physical_link_flow.png" width="100%" alt="200-OD physical-link movement-flow view"></a></td>
+<td width="50%"><a href="datasets/sioux-250od.html"><img src="assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="100%" alt="250-OD physical-link movement-flow view"></a></td>
+</tr>
+</table>
+<p>Line width encodes final movement flow aggregated across modelled time. These are schematic network views: opposite directions may overlap, and colours are not a quantitative colour scale. Do not read them as observed traffic, static V/C, precise road-shape GIS or a full 528-OD assignment.</p>
+<h2 id="phase-ii-objective-trajectories">Phase-II objective trajectories</h2>
+<table>
+<tr><th>200 OD</th><th>250 OD</th></tr>
+<tr>
+<td width="50%"><img src="assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="100%" alt="200-OD saved Phase-II solved-pool objectives"></td>
+<td width="50%"><img src="assets/benchmarks/sioux_250od_phase2_objective_trace.png" width="100%" alt="250-OD saved Phase-II solved-pool objectives"></td>
+</tr>
+</table>
+<p>Each curve is compared with its own same-model arc-flow reference. Different OD selections define different optimization instances; do not interpret the difference between their objective values as an algorithmic improvement.</p>
+<h2 id="phase-i-artificial-flow-clearance">Phase-I artificial-flow clearance</h2>
+<table>
+<tr><th>200 OD</th><th>250 OD</th></tr>
+<tr>
+<td width="50%"><img src="assets/benchmarks/sioux_200od_phase1_artificial_flow.png" width="100%" alt="200-OD successful-run Phase-I artificial-flow trace"></td>
+<td width="50%"><img src="assets/benchmarks/sioux_250od_phase1_artificial_flow.png" width="100%" alt="250-OD successful-run Phase-I artificial-flow trace"></td>
+</tr>
+</table>
+<p>Artificial flow is an algorithmic feasibility device, not an observed queue or discarded trip demand. Its progression belongs to the successful solve and is retained for interpretation.</p>
+<h2 id="data-cards-and-numerical-scope">Data cards and numerical scope</h2>
+<p>The <a href="datasets/sioux-200od.html">200-OD record</a> and <a href="datasets/sioux-250od.html">250-OD record</a> explain saved versus uniquely reconstructed final path flows, objective checks and remaining certificate boundaries. Full raw inputs and reconstruction evidence are not redistributed here. The <a href="datasets/sioux-static-fw.html">static FW record</a> is a separate approximate static model, not another point on these CG curves.</p>
+<p><a href="datasets.html">Network catalog</a> · <a href="outputs.html">Outputs and verification</a> · <a href="city-workflow.html">City workflow</a></p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

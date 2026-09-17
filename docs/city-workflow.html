@@ -1,0 +1,74 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>City network workflow | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / City network workflow</p><h1 id="city-network-workflow">City network workflow</h1>
+<p>A city instance connects a study area, road network, zones, demand and mobility evidence to a defined assignment or optimization model. The same identifiers, time conventions and validation rules should carry through the pipeline. This is the organizing direction of Mobility Computation Lab, not a claim that a raw-city compiler is already shipped.</p>
+<h2 id="the-shared-modelling-sequence">The shared modelling sequence</h2>
+<pre><code class="language-text">City / study area and data provenance
+                 ↓
+Road network and mode-specific links
+                 ↓
+Zones, spatial levels, centroids and network access
+                 ↓
+OD demand with explicit volume, time and source
+                 ↓
+Assignment / optimization → paths, flows, costs and checks
+                 ↑
+Supporting evidence: GPS, counts, speeds and transit services
+</code></pre>
+<p>Observation layers can inform model preparation or later calibration. They must not silently become demand or capacity merely because they are spatially nearby.</p>
+<h2 id="start-with-what-is-executable">Start with what is executable</h2>
+<p>The current network route begins with <strong>prepared node, link, demand and optional zone-access tables</strong>. Follow the <a href="data-contract.html">input contract</a>, <a href="routes.html">route initialization guide</a> and <a href="getting-started.html">quick start</a>. The public metadata route separately accepts local catalog and city tables; see <a href="data-tools.html">data tools</a>.</p>
+<table>
+<thead>
+<tr>
+<th>City component</th>
+<th>What the current release does</th>
+<th>What an extension must add</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Study area</td>
+<td>Record provenance in the instance data card</td>
+<td>Acquire/validate the actual boundary and document subarea treatment</td>
+</tr>
+<tr>
+<td>Road network</td>
+<td>Read explicit directed-node/link tables and check the finite model profile</td>
+<td>An actual OSM2GMNS or other preparation step with a recorded input/output mapping</td>
+</tr>
+<tr>
+<td>Zones / hierarchy</td>
+<td>Use supplied zone-to-node access mappings</td>
+<td>Zone geometry, parent/child spatial levels, centroid connectors and boundary gateways</td>
+</tr>
+<tr>
+<td>OD demand</td>
+<td>Read supplied demand with explicit time and volume</td>
+<td>A separately documented generation, estimation or prediction model</td>
+</tr>
+<tr>
+<td>Mobility evidence</td>
+<td>Normalize and match city/catalog metadata; preserve source summaries</td>
+<td>Actual GPS/count/speed/transit records mapped to this network and time support</td>
+</tr>
+<tr>
+<td>Computation</td>
+<td>Run finite space–time CG; retain a separate static FW baseline</td>
+<td>Additional model-compatible adapters; origin-based / Policy Bush extensions</td>
+</tr>
+<tr>
+<td>Results</td>
+<td>Export complete solved columns and verify stored outputs; show road benchmark figures</td>
+<td>New city-specific results produced by the new instance, with its own checks</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reuse-upstream-tools-rather-than-duplicate-them">Reuse upstream tools rather than duplicate them</h2>
+<p><a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus</a> provides reference network organization. <a href="https://github.com/asu-trans-ai-lab/OSM2GMNS">OSM2GMNS</a> and <a href="https://github.com/asu-trans-ai-lab/grid2demand">grid2demand</a> are candidate upstream preparation tools. <a href="https://github.com/asu-trans-ai-lab/TAPLab">TAPLab</a> provides separate assignment implementations and experiment conventions. Follow <a href="interoperability.html">interoperability</a> and the actual source licenses; these links do not mean all tools are bundled or already run by this release.</p>
+<p>The OMDV modules prepare metadata and support source discovery. Exact city-name matching is <strong>not GPS map matching</strong>. A GTFS service schedule is not passenger OD demand, and the evidence catalog is not a collection of assignment-ready city models.</p>
+<h2 id="a-complete-city-contribution">A complete city contribution</h2>
+<p>A contribution should identify its geographic scope; provide lawful inputs or acquisition instructions; document network, zone and OD identifiers; name every estimated or synthetic input; provide the executable model configuration; and retain results that map back to the same physical network. A small actual subarea is acceptable. Renaming a synthetic regression as a city is not.</p>
+<p>If trajectories or observations are not available, state the missing layer in the data card. Do not invent an observation layer or display calculated routes as GPS traces. All new executable commands must be backed by an implementation and a tested example.</p>
+<h2 id="beyond-one-instance">Beyond one instance</h2>
+<p>Use one complete case to exercise the interfaces before adding a second city. Hong Kong, Melbourne, Cairo and Paris are candidate extensions, not bundled city datasets. They should differ through data and configuration rather than independent solver rewrites.</p>
+<p><a href="datasets.html">Network catalog</a> · <a href="visualizations.html">Visual results</a> · <a href="roadmap.html">Development roadmap</a></p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

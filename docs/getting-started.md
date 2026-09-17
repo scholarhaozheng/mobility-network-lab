@@ -2,7 +2,7 @@
 
 ## Source installation
 
-Download or clone this repository, then open a terminal in its root. Python 3.12.14 is the v2 assembly-test baseline; the retained source had also been tested on Python 3.13.
+Download or clone this repository, then open a terminal in its root. This release was tested locally with Python 3.12.14; the retained source was also exercised with Python 3.13. Consult the requirements files for dependency profiles.
 
 Windows PowerShell:
 

@@ -29,11 +29,47 @@ def main() -> int:
 
     readme = ROOT / "README.md"
     readme_text = readme.read_text(encoding="utf-8")
-    readme_links = re.findall(r"\]\(([^)]+)\)", readme_text)
-    readme_images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", readme_text)
+    # GitHub READMEs support both Markdown images and limited HTML. Check both.
+    readme_links = re.findall(r"\]\(([^)]+)\)", readme_text) + re.findall(
+        r"(?:href|src)=[\"']([^\"']+)", readme_text
+    )
+    readme_images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", readme_text) + re.findall(
+        r"<img\b[^>]*\bsrc=[\"']([^\"']+)", readme_text
+    )
     expected_image = "docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png"
-    if readme_images != [expected_image]:
-        errors.append(f"README image contract failed: {readme_images}")
+    # Protect the banner and network-result access, not an arbitrary one-image cap.
+    required_images = {
+        "docs/assets/hero.png",
+        expected_image,
+        "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
+        "docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png",
+        "docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png",
+    }
+    for required in sorted(required_images):
+        if required not in readme_images:
+            errors.append(f"README required visual missing: {required}")
+        checks += 1
+    for raw in readme_images:
+        target = _local_target(readme, raw)
+        if target is None or not target.is_file():
+            errors.append(f"Unresolved/nonlocal README image: {raw}")
+        elif target.suffix.lower() == ".png" and not target.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
+            errors.append(f"Invalid PNG signature: {raw}")
+        checks += 1
+    for required in ("docs/city-workflow.md", "docs/visualizations.md", "docs/data-tools.md"):
+        if required not in readme_links:
+            errors.append(f"README required workflow link missing: {required}")
+        checks += 1
+    if not (0 <= readme_text.find("## City network workflow") < readme_text.find("## Mobility data support")):
+        errors.append("README must present the city/network workflow before optional metadata support")
+    checks += 1
+    gallery = (DOCS / "visualizations.md").read_text(encoding="utf-8")
+    for od in ("200", "250"):
+        for suffix in ("final_physical_link_flow", "phase1_artificial_flow", "phase2_objective_trace"):
+            asset = f"assets/benchmarks/sioux_{od}od_{suffix}.png"
+            if asset not in gallery or not (DOCS / asset).is_file():
+                errors.append(f"Gallery missing retained benchmark visual: {asset}")
+            checks += 1
     for raw in readme_links:
         target = _local_target(readme, raw)
         if target is not None and not target.exists():
@@ -62,6 +98,10 @@ def main() -> int:
         "data-tools navigation": 'href="data-tools.html"' in homepage,
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
         "approved benchmark image": expected_image.removeprefix("docs/") in homepage,
+        "city workflow navigation": 'href="city-workflow.html"' in homepage,
+        "visual gallery navigation": 'href="visualizations.html"' in homepage,
+        "network command": "tools/mnl.py run" in homepage,
+        "network-first homepage": 0 <= homepage.find("Networks and visual results") < homepage.find("Supporting mobility data"),
     }.items():
         if not present:
             errors.append(f"Homepage contract failed: {label}")
