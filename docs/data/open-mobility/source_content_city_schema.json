@@ -1,0 +1,186 @@
+{
+  "schema_version": "mcl_open_mobility_schema_v1",
+  "table_id": "source_content_city",
+  "primary_key": [
+    "source_execution_id",
+    "content_sha256",
+    "city_id"
+  ],
+  "missing_value_rule": "Blank source values remain blank; they are never replaced with zero or a negative finding.",
+  "columns": [
+    {
+      "name": "source_execution_id",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "execution_id",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique feed execution/source-record identifier in the accepted workflow."
+    },
+    {
+      "name": "source_registry",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "source_registry",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Source registry label."
+    },
+    {
+      "name": "source_record_id",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "source_record_id",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Registry-local source-record identifier."
+    },
+    {
+      "name": "source_country_code",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "country_code",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Country code recorded for the source record; not a city assignment."
+    },
+    {
+      "name": "content_sha256",
+      "type": "sha256",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "content_sha256",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "SHA-256 identity of retained GTFS ZIP content."
+    },
+    {
+      "name": "terminal_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "terminal_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Historical bounded-retrieval terminal state."
+    },
+    {
+      "name": "content_parse_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "v25a_3_1_parse_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted offline content parse state."
+    },
+    {
+      "name": "network_snapshot_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "network_retrieved_snapshot_source_record",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Whether this source record belongs to the V25A.2 network snapshot."
+    },
+    {
+      "name": "preexisting_local_zip_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "preexisting_local_zip_source_record",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Whether this source record belongs to the pre-existing local-ZIP sensitivity view."
+    },
+    {
+      "name": "source_record_count_for_content_sha",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "source_record_count_for_content_sha",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Number of source records mapped to the same content hash."
+    },
+    {
+      "name": "duplicate_source_record_for_same_content_sha",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "duplicate_source_record_for_same_content_sha",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Whether the source record shares content with another record."
+    },
+    {
+      "name": "city_id",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "external_city_id",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked GHSL urban-centre identifier."
+    },
+    {
+      "name": "city_name",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "city_name",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted linked-city label."
+    },
+    {
+      "name": "country_iso3",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "country_iso3",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked-city ISO alpha-3 country code."
+    },
+    {
+      "name": "inside_polygon_stop_rows",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "inside_polygon_stop_rows",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "GTFS stop rows located inside the city polygon."
+    },
+    {
+      "name": "unique_inside_stop_row_keys",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "unique_inside_stop_row_keys",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique inside-polygon stop row keys."
+    },
+    {
+      "name": "unique_inside_stop_ids",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "unique_inside_stop_ids",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique inside-polygon stop IDs for this content-city pair."
+    },
+    {
+      "name": "primary_assignment_rule",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "primary_assignment_rule",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted relationship rule; no bbox substitute is introduced."
+    },
+    {
+      "name": "all_retained_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv",
+      "source_column": "all_retained_parseable_unique_content",
+      "transformation": "validated membership; emitted rows are yes",
+      "description": "All rows belong to the accepted all-retained parseable-content view."
+    },
+    {
+      "name": "relationship_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "content_sha256",
+      "transformation": "SOURCE_CONTENT_CITY_LINK for exact hash joins; SOURCE_CONTENT_ONLY_NO_CITY_LINK when no accepted content-city row exists",
+      "description": "Separates complete chains from source/content records with no accepted city link."
+    },
+    {
+      "name": "evidence_type",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "inside_polygon_stop_rows / primary_assignment_rule",
+      "transformation": "constant label describing the accepted relationship table",
+      "description": "inside_polygon_gtfs_stop_content"
+    }
+  ],
+  "notes": [
+    "Different source records that resolve to identical content are intentionally preserved.",
+    "One content hash may link to multiple cities; the table is many-to-many.",
+    "Source/content records without an accepted city link remain as explicit SOURCE_CONTENT_ONLY_NO_CITY_LINK rows with blank city fields.",
+    "No URL, credential, raw feed, geometry or bbox-derived substitute relationship is included."
+  ]
+}

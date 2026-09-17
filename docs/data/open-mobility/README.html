@@ -1,0 +1,21 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Open mobility evidence files | Mobility Computation Lab</title><link rel="stylesheet" href="../../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../../city-workflow.html">City workflow</a><a href="../../datasets.html">Networks</a><a href="../../visualizations.html">Visual results</a><a href="../../open-data-explorer.html">City evidence</a><a href="../../open-data.html">Open data</a><a href="../../methods.html">Methods</a><a href="../../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Open mobility evidence files</p><h1 id="open-mobility-evidence-files">Open mobility evidence files</h1>
+<p>These are public, non-geometric projections of accepted Open Mobility Data
+Visibility (OMDV) result tables. They are historical research snapshots, not a
+live registry or a statement that an unmatched city has no transport data.</p>
+<h2 id="files">Files</h2>
+<ul>
+<li><code>city_evidence.csv</code> / <code>.json.gz</code>: all 11,422 cities in the accepted frame.</li>
+<li><code>content_city.csv</code> / <code>.json.gz</code>: all 12,442 accepted content-hash-to-city links.</li>
+<li><code>source_content_city.csv</code> / <code>.json.gz</code>: 14,328 complete source-to-content-to-city
+relations plus 2,377 explicit source/content rows with no accepted city link.</li>
+<li><code>*_schema.json</code>: field definitions, source columns and transformation rules.</li>
+</ul>
+<p>The JSON copies use deterministic gzip compression to keep the manual upload
+small. They expand to the same row arrays as the corresponding CSV files.</p>
+<p>The source/content/city files intentionally preserve many-to-many links. Two
+accepted content-city rows have no mapped source record; this state is retained
+in <code>content_city</code> as <code>CONTENT_CITY_ONLY_NO_MAPPED_SOURCE_RECORD</code>.</p>
+<p>No raw GTFS ZIP, provider URL, credential, geometry, SEDAC input or inferred
+bbox relationship is included. See <a href="../../open-data-sources.html">Sources</a> and
+the <a href="../../open-data-explorer.html">browser</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../../data-access.html">Data access</a> · <a href="../../citation.html">Cite</a> · <a href="../../roadmap.html">Roadmap</a></span></footer></div></body></html>

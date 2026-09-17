@@ -1,0 +1,303 @@
+{
+  "schema_version": "mcl_open_mobility_schema_v1",
+  "table_id": "city_evidence",
+  "primary_key": [
+    "city_id"
+  ],
+  "missing_value_rule": "Blank source values remain blank; they are never replaced with zero or a negative finding.",
+  "columns": [
+    {
+      "name": "city_id",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "external_city_id",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Stable GHSL urban-centre identifier."
+    },
+    {
+      "name": "city_name",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "city_name",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted city label; names are not unique."
+    },
+    {
+      "name": "country_iso2",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "country_iso2",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "ISO alpha-2 country code."
+    },
+    {
+      "name": "country_iso3",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "country_iso3",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "ISO alpha-3 country code."
+    },
+    {
+      "name": "population",
+      "type": "number",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "population",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted source population value."
+    },
+    {
+      "name": "catalog_mobilitydb_exact",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "mobilitydb_exact_438",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Exact Mobility Database scenario membership."
+    },
+    {
+      "name": "catalog_strict_two_registry",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "strict_catalog_439",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Frozen strict two-registry catalog scenario membership."
+    },
+    {
+      "name": "catalog_broader_candidate",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "mobilitydb_broader_candidate_2425",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Broader Mobility Database candidate scenario."
+    },
+    {
+      "name": "catalog_reviewed_alias_entity",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "reviewed_alias_entity_475",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Reviewed alias/entity scenario membership."
+    },
+    {
+      "name": "catalog_likely_not_visible",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "likely_not_visible_8837",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted likely-not-visible classification; not proof that no transport data exist."
+    },
+    {
+      "name": "catalog_unresolved_baseline",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "unresolved_baseline_160",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unresolved baseline classification."
+    },
+    {
+      "name": "gtfs_all_retained_stop_evidence",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_any_inside_polygon_gtfs_stop_content",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Inside-polygon GTFS stop-content evidence in the all-retained view."
+    },
+    {
+      "name": "gtfs_all_retained_unique_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_unique_content_hash_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique linked content hashes in the all-retained view."
+    },
+    {
+      "name": "gtfs_all_retained_complete_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_content_hashes_with_complete_relational_metrics",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked content hashes with complete relational metrics."
+    },
+    {
+      "name": "gtfs_all_retained_incomplete_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_content_hashes_with_incomplete_relational_metrics",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked content hashes with incomplete relational metrics."
+    },
+    {
+      "name": "gtfs_all_retained_completeness_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_city_deep_metric_completeness_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted city-level deep-metric completeness state."
+    },
+    {
+      "name": "gtfs_all_retained_source_feed_record_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_source_feed_record_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Distinct linked source feed records in the all-retained view."
+    },
+    {
+      "name": "gtfs_all_retained_raw_stop_records",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_raw_gtfs_stop_records",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Raw linked GTFS stop records; not service coverage."
+    },
+    {
+      "name": "gtfs_all_retained_preferred_stop_location_metric",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_preferred_gtfs_stop_location_metric",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted preferred deduplicated stop-location metric value."
+    },
+    {
+      "name": "gtfs_all_retained_location_metric_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_all_retained_gtfs_deduplicated_location_metric_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Availability/quality state for deduplicated location metrics."
+    },
+    {
+      "name": "gtfs_network_snapshot_stop_evidence",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_any_inside_polygon_gtfs_stop_content",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Inside-polygon GTFS stop-content evidence in the network snapshot."
+    },
+    {
+      "name": "gtfs_network_snapshot_unique_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_unique_content_hash_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique linked content hashes in the network snapshot."
+    },
+    {
+      "name": "gtfs_network_snapshot_complete_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_content_hashes_with_complete_relational_metrics",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Snapshot content hashes with complete relational metrics."
+    },
+    {
+      "name": "gtfs_network_snapshot_incomplete_content_hash_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_content_hashes_with_incomplete_relational_metrics",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Snapshot content hashes with incomplete relational metrics."
+    },
+    {
+      "name": "gtfs_network_snapshot_completeness_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_city_deep_metric_completeness_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted snapshot deep-metric completeness state."
+    },
+    {
+      "name": "gtfs_network_snapshot_source_feed_record_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_source_feed_record_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Distinct linked source records in the network snapshot."
+    },
+    {
+      "name": "gtfs_network_snapshot_raw_stop_records",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_raw_gtfs_stop_records",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Raw linked GTFS stop records in the network snapshot."
+    },
+    {
+      "name": "gtfs_network_snapshot_preferred_stop_location_metric",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_preferred_gtfs_stop_location_metric",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted preferred snapshot stop-location metric value."
+    },
+    {
+      "name": "gtfs_network_snapshot_location_metric_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "gtfs_network_snapshot_gtfs_deduplicated_location_metric_status",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Snapshot deduplicated-location availability/quality state."
+    },
+    {
+      "name": "realtime_all_retained_city_class",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_all_retained_static_realtime_city_class",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted all-retained static/realtime class; a historical snapshot, not live health."
+    },
+    {
+      "name": "realtime_all_retained_confirmed_endpoint_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_all_retained_confirmed_realtime_endpoint_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Confirmed endpoint representatives linked in the accepted all-retained snapshot."
+    },
+    {
+      "name": "realtime_all_retained_denominator_view",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_all_retained_static_denominator_view",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Denominator view used for the all-retained realtime class."
+    },
+    {
+      "name": "realtime_network_snapshot_city_class",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_network_snapshot_static_realtime_city_class",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted network-snapshot static/realtime class; not live health."
+    },
+    {
+      "name": "realtime_network_snapshot_confirmed_endpoint_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_network_snapshot_confirmed_realtime_endpoint_count",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Confirmed endpoint representatives linked in the network snapshot."
+    },
+    {
+      "name": "realtime_network_snapshot_denominator_view",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "source_column": "realtime_network_snapshot_static_denominator_view",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Denominator view used for the network-snapshot realtime class."
+    },
+    {
+      "name": "evidence_snapshot_scope",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_4_final_analysis_result_index.csv",
+      "source_column": "observation_or_snapshot_date",
+      "transformation": "one accepted scope label repeated for explicit row context",
+      "description": "Historical source scope, not a live status timestamp."
+    }
+  ],
+  "notes": [
+    "The table is non-geometric and contains the complete 11,422-row accepted city frame.",
+    "Catalog, GTFS all-retained, GTFS network-snapshot and realtime views are separate and non-additive.",
+    "A no/unmatched class means no evidence in the checked layer and view, not proof that no transport data exist."
+  ]
+}

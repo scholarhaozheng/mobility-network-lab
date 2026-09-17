@@ -1,0 +1,127 @@
+{
+  "schema_version": "mcl_open_mobility_schema_v1",
+  "table_id": "content_city",
+  "primary_key": [
+    "content_sha256",
+    "city_id"
+  ],
+  "missing_value_rule": "Blank source values remain blank; they are never replaced with zero or a negative finding.",
+  "columns": [
+    {
+      "name": "content_sha256",
+      "type": "sha256",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "content_sha256",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "SHA-256 identity of retained GTFS ZIP content."
+    },
+    {
+      "name": "city_id",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "external_city_id",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked GHSL urban-centre identifier."
+    },
+    {
+      "name": "city_name",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "city_name",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted linked-city label."
+    },
+    {
+      "name": "country_iso3",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "country_iso3",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Linked-city ISO alpha-3 country code."
+    },
+    {
+      "name": "inside_polygon_stop_rows",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "inside_polygon_stop_rows",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "GTFS stop rows located inside the city polygon."
+    },
+    {
+      "name": "unique_inside_stop_row_keys",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "unique_inside_stop_row_keys",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique inside-polygon stop row keys."
+    },
+    {
+      "name": "unique_inside_stop_ids",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "unique_inside_stop_ids",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Unique inside-polygon stop IDs for this content-city pair."
+    },
+    {
+      "name": "primary_assignment_rule",
+      "type": "string",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "primary_assignment_rule",
+      "transformation": "selected and renamed; value unchanged",
+      "description": "Accepted relationship rule; no bbox substitute is introduced."
+    },
+    {
+      "name": "all_retained_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv",
+      "source_column": "all_retained_parseable_unique_content",
+      "transformation": "exact content_sha256 lookup",
+      "description": "Membership in the accepted all-retained view."
+    },
+    {
+      "name": "network_snapshot_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv",
+      "source_column": "v25a_2_network_retrieved_snapshot",
+      "transformation": "exact content_sha256 lookup",
+      "description": "Membership in the network-retrieved snapshot."
+    },
+    {
+      "name": "preexisting_local_zip_view",
+      "type": "yes_no",
+      "source_path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv",
+      "source_column": "preexisting_local_zip_sensitivity",
+      "transformation": "exact content_sha256 lookup",
+      "description": "Membership in the pre-existing local-ZIP sensitivity view."
+    },
+    {
+      "name": "mapped_source_record_count",
+      "type": "integer",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "execution_id grouped by content_sha256 where mapped_parseable_content=yes",
+      "transformation": "exact hash-key count; zero is an observed no-mapped-source state",
+      "description": "Mapped source records for this content hash."
+    },
+    {
+      "name": "source_link_status",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "source_column": "mapped_parseable_content and content_sha256",
+      "transformation": "MAPPED_SOURCE_RECORDS when count>0; otherwise CONTENT_CITY_ONLY_NO_MAPPED_SOURCE_RECORD",
+      "description": "Makes the two accepted content-city rows without mapped source records explicit."
+    },
+    {
+      "name": "evidence_type",
+      "type": "enum",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "source_column": "inside_polygon_stop_rows / primary_assignment_rule",
+      "transformation": "constant label describing the accepted relationship table",
+      "description": "inside_polygon_gtfs_stop_content"
+    }
+  ],
+  "notes": [
+    "All 12,442 accepted content-city links are retained.",
+    "Two rows for one content hash have no mapped source record; their source_link_status is explicit rather than guessed."
+  ]
+}
