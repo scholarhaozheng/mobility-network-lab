@@ -1,0 +1,19 @@
+{
+  "schema_version": "mobilitylab_interoperability_sources_v1",
+  "city_availability_claim": false,
+  "entries": [
+    {"id": "gmns", "name": "GMNS", "category": "model-network format", "url": "https://github.com/zephyr-data-specs/GMNS", "relationship": "Vocabulary and explicit node/link/movement identifiers"},
+    {"id": "osm2gmns", "name": "OSM2GMNS", "category": "conversion tool", "url": "https://github.com/asu-trans-ai-lab/OSM2GMNS", "relationship": "Optional upstream OSM-to-GMNS preparation"},
+    {"id": "tntp", "name": "TNTP / TransportationNetworks", "category": "benchmark format and repository", "url": "https://github.com/bstabler/TransportationNetworks", "relationship": "External benchmark ecosystem; raw files are not bundled"},
+    {"id": "matsim", "name": "MATSim network XML", "category": "simulation format", "url": null, "relationship": "Interoperability reference only"},
+    {"id": "sumo", "name": "SUMO .net.xml / PlainXML", "category": "simulation format", "url": null, "relationship": "Interoperability reference only"},
+    {"id": "aequilibrae", "name": "AequilibraE project/network database", "category": "planning and assignment format", "url": null, "relationship": "Interoperability reference only"},
+    {"id": "opendrive", "name": "ASAM OpenDRIVE", "category": "road-network simulation format", "url": null, "relationship": "Interoperability reference only"},
+    {"id": "sharedstreets", "name": "SharedStreets", "category": "street-reference layer", "url": null, "relationship": "Conflation and reference context"},
+    {"id": "datex2", "name": "DATEX II", "category": "road-domain exchange standard", "url": null, "relationship": "Standards context only"},
+    {"id": "railml", "name": "railML", "category": "rail-domain exchange standard", "url": null, "relationship": "Standards context only"},
+    {"id": "gtfs", "name": "GTFS", "category": "public-transport feed format", "url": null, "relationship": "Format context; not a global registry"},
+    {"id": "netex", "name": "NeTEx", "category": "public-transport exchange standard", "url": null, "relationship": "Standards context only"},
+    {"id": "siri", "name": "SIRI", "category": "realtime public-transport exchange standard", "url": null, "relationship": "Standards context only"}
+  ]
+}

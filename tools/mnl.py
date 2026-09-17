@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""User entry point for the selected GMNS-CG engine and result verifier.
+"""Mobility Computation Lab entry point for the GMNS-CG engine and verifier.
 
 The numerical engine is retained from 0.3.0-rc5. This entry point only selects
 inputs, isolates the worker process, and presents results in English.
@@ -37,9 +37,9 @@ def public_report(run: Path, result: dict) -> None:
     ]
     rows = "".join(f"<tr><th>{html.escape(k)}</th><td>{html.escape(str(v) if v is not None else 'Not recorded')}</td></tr>" for k, v in fields)
     page = """<!doctype html><html lang="en"><meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1"><title>Run results | Mobility Network Lab</title>
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>Run results | Mobility Computation Lab</title>
 <style>body{font:16px/1.65 system-ui,sans-serif;background:#f5f7fa;color:#152c3a;margin:0}main{max-width:850px;margin:50px auto;padding:30px;background:white;border:1px solid #dbe4eb;border-radius:16px}h1{font-size:34px;line-height:1.2}table{border-collapse:collapse;width:100%;margin:28px 0}th,td{text-align:left;border-bottom:1px solid #e2e8ed;padding:11px}th{width:45%}a{color:#087e83}code{font-size:13px;overflow-wrap:anywhere}.label{letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:#087e83}@media(max-width:600px){main{margin:10px;padding:20px}h1{font-size:28px}}</style>
-<main><p class="label">Mobility Network Lab / Run results</p><h1>Network optimization,<br>with inspectable outputs.</h1>
+<main><p class="label">Mobility Computation Lab / Run results</p><h1>Network optimization,<br>with inspectable outputs.</h1>
 <p>This report is generated from the saved output tables. Verification does not run an optimizer.</p><table>""" + rows + """</table>
 <p><a href="offline_verification.json">Verification JSON</a> &middot;
 <a href="seeds/static_seed_candidates.csv">Initial routes</a> &middot;

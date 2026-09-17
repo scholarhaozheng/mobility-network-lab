@@ -1,0 +1,223 @@
+{
+  "schema_version": "mobilitylab_open_data_evidence_v1",
+  "snapshot_date": "2026-09-17",
+  "layers_are_additive": false,
+  "non_additivity_rule": "Layer values describe different units, source frames, and evidence meanings. They must never be summed into a global coverage count.",
+  "provenance": {
+    "source_project": "Open Mobility Data Visibility",
+    "source_git_head": "09575a51973f4289fda7adae85130a10ab554b36",
+    "accepted_release_commit": "e0c7d2f7ca4e3f72563f14346d96df5f0c04e937",
+    "reference_inventory": {
+      "path": "REFERENCE_RESULTS/reference_output_inventory.csv",
+      "sha256": "38d40ba5e3fe7e54c8f02435e0506e88cbaf7a1163727df304de51d20ad0202b"
+    },
+    "reformatting": "Manual deterministic selection of aggregate values from current tracked accepted summaries; no scientific recomputation.",
+    "raw_source_data_bundled": false
+  },
+  "layers": [
+    {
+      "id": "global_city_frame",
+      "title": "Global urban-centre frame and catalog visibility",
+      "observation_scope": "Current accepted local offline snapshot through V25A.3.3",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "ghsl_urban_centres",
+          "value": 11422,
+          "unit": "urban centres",
+          "strict_count_effect": 0,
+          "meaning": "Common GHSL analytical denominator; not all settlements."
+        },
+        {
+          "id": "mobilitydatabase_exact_cities",
+          "value": 438,
+          "unit": "cities",
+          "strict_count_effect": 0,
+          "meaning": "Exact MobilityDatabase catalog scenario."
+        },
+        {
+          "id": "strict_two_registry_catalog_cities",
+          "value": 439,
+          "unit": "cities",
+          "strict_count_effect": 439,
+          "meaning": "Frozen strict MobilityDatabase plus accepted Transitland catalog scenario."
+        }
+      ],
+      "supports": ["A common urban-centre frame", "Defined catalog-visibility scenarios"],
+      "does_not_support": ["All settlements", "Transport service coverage", "A claim that unmatched cities have no data"]
+    },
+    {
+      "id": "gtfs_static",
+      "title": "GTFS static evidence",
+      "observation_scope": "All-retained parseable unique-content view unless stated otherwise",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "eligible_source_records",
+          "value": 6951,
+          "unit": "source records",
+          "strict_count_effect": 0,
+          "meaning": "Eligible GTFS feed-record universe; not a city count."
+        },
+        {
+          "id": "all_retained_parseable_source_records",
+          "value": 5182,
+          "unit": "source records",
+          "strict_count_effect": 0,
+          "meaning": "Unique source records represented in the all-retained parseable-content view."
+        },
+        {
+          "id": "all_retained_unique_content_hashes",
+          "value": 4425,
+          "unit": "content hashes",
+          "strict_count_effect": 0,
+          "meaning": "Deduplicated parseable content identities; not feed records."
+        },
+        {
+          "id": "cities_with_inside_polygon_stop_evidence",
+          "value": 2959,
+          "unit": "cities",
+          "strict_count_effect": 0,
+          "meaning": "Cities with at least one inside-polygon GTFS stop-content association."
+        },
+        {
+          "id": "network_snapshot_unique_content_hashes",
+          "value": 4357,
+          "unit": "content hashes",
+          "strict_count_effect": 0,
+          "meaning": "V25A.2 network-retrieved snapshot view."
+        }
+      ],
+      "supports": ["Source-record accounting", "Unique-content accounting", "Inside-polygon stop evidence"],
+      "does_not_support": ["Service operation", "Schedule completeness", "Transit quality", "A global coverage percentage"]
+    },
+    {
+      "id": "gtfs_realtime",
+      "title": "GTFS-Realtime evidence",
+      "observation_scope": "Accepted metadata links and bounded parse snapshots",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "endpoint_representatives",
+          "value": 2465,
+          "unit": "endpoints",
+          "strict_count_effect": 0,
+          "meaning": "Metadata-level endpoint representatives; not a live endpoint-health result."
+        },
+        {
+          "id": "network_snapshot_parse_success_cities",
+          "value": 433,
+          "unit": "cities",
+          "strict_count_effect": 0,
+          "meaning": "Cities classified as static plus realtime parse success in the network snapshot."
+        },
+        {
+          "id": "all_retained_parse_success_cities",
+          "value": 505,
+          "unit": "cities",
+          "strict_count_effect": 0,
+          "meaning": "Cities classified as static plus realtime parse success in the all-retained sensitivity view."
+        },
+        {
+          "id": "all_retained_requires_key_or_blocked_cities",
+          "value": 59,
+          "unit": "cities",
+          "strict_count_effect": 0,
+          "meaning": "Cities in the accepted requires-key-or-blocked class."
+        }
+      ],
+      "supports": ["Endpoint metadata accounting", "Bounded snapshot classification"],
+      "does_not_support": ["Current endpoint health", "Continuous payload functionality", "Realtime service availability"]
+    },
+    {
+      "id": "osm_map_features",
+      "title": "OSM public-transport map-feature evidence",
+      "observation_scope": "Accepted V6 sample of 29 Geofabrik regional extracts",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "sample_extracts",
+          "value": 29,
+          "unit": "regional extracts",
+          "strict_count_effect": 0,
+          "meaning": "Bounded sample; not a global OSM census."
+        },
+        {
+          "id": "ghsl_rows_in_sample_countries",
+          "value": 916,
+          "unit": "urban centres",
+          "strict_count_effect": 0,
+          "meaning": "GHSL rows within the 29 extract countries."
+        },
+        {
+          "id": "ghsl_rows_with_point_features",
+          "value": 791,
+          "unit": "urban centres",
+          "strict_count_effect": 0,
+          "meaning": "Rows with at least one bbox-joined OSM point map feature."
+        },
+        {
+          "id": "joined_point_features",
+          "value": 245561,
+          "unit": "point-feature joins",
+          "strict_count_effect": 0,
+          "meaning": "Point-feature bbox joins only."
+        }
+      ],
+      "supports": ["Map-feature visibility within the bounded extract sample"],
+      "does_not_support": ["GTFS availability", "Official service", "Route or timetable coverage", "Service coverage"]
+    },
+    {
+      "id": "gbfs_shared_mobility",
+      "title": "GBFS shared-mobility registry evidence",
+      "observation_scope": "Accepted local V6 registry summary; no live GBFS fetch",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "system_rows",
+          "value": 1516,
+          "unit": "registry rows",
+          "strict_count_effect": 0,
+          "meaning": "Shared-mobility system metadata rows."
+        },
+        {
+          "id": "countries_with_rows",
+          "value": 48,
+          "unit": "countries",
+          "strict_count_effect": 0,
+          "meaning": "Countries represented where the registry country field was present."
+        },
+        {
+          "id": "location_strings",
+          "value": 1146,
+          "unit": "location strings",
+          "strict_count_effect": 0,
+          "meaning": "Metadata location strings; not reviewed GHSL city matches."
+        }
+      ],
+      "supports": ["Shared-mobility registry visibility", "Country-level metadata context"],
+      "does_not_support": ["Public-transport feed availability", "Reviewed city availability", "A live-system health result"]
+    },
+    {
+      "id": "model_interoperability",
+      "title": "Model and interoperability source catalog",
+      "observation_scope": "Accepted standards/tool crosswalk",
+      "additive_across_layers": false,
+      "metrics": [
+        {
+          "id": "crosswalk_entries",
+          "value": 13,
+          "unit": "standards or tools",
+          "strict_count_effect": 0,
+          "meaning": "Reference entries spanning model-network, simulation, map-reference, and exchange ecosystems."
+        }
+      ],
+      "supports": ["Interoperability navigation", "Model-reuse context"],
+      "does_not_support": ["City-level source availability", "Feed availability", "Implementation of every listed standard or tool"]
+    }
+  ],
+  "omdv_visuals": {
+    "included": [],
+    "reason": "No OMDV figure was selected because no candidate completed a file-specific review of underlying-data and basemap terms; this does not limit the separately authorized original code selection."
+  }
+}

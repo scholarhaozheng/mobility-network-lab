@@ -10,7 +10,9 @@ Follow [Add a network](docs/add-a-network.md). Include source metadata, a data-a
 
 Keep solver changes separate from data transformations. Add a small focused test and preserve the distinction between a feasible solution, a stopping condition, reference agreement and a pricing certificate. Never relax a tolerance merely to turn a result green.
 
-Run `python tools/check_repository.py`, `python -B -m unittest discover -s tests -v`, and the affected input/verification tests. Include expected-rejection tests when they protect the input contract. Large benchmark runs are not required for documentation changes.
+Run `python tools/check_repository.py --publication`, `python tools/publication_gate.py`, `python -B -m unittest discover -s tests -v`, and the affected input/verification tests. Include expected-rejection tests when they protect the input or evidence contract. Large benchmark runs are not required for documentation changes.
+
+Open-data contributions must keep layers separate. Do not sum GTFS, realtime, OSM, GBFS, or standards into a synthetic coverage count. Record what a metric supports and what it cannot support.
 
 ## Public artifacts
 

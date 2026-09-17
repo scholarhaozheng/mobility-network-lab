@@ -1,0 +1,103 @@
+{
+  "schema_version": "mcl_omdv_authorized_files_v1",
+  "authorization": {
+    "copyright_holder": "Hao Zheng",
+    "confirmed_date": "2026-09-17",
+    "license_in_this_repository": "MIT",
+    "scope": "Selected original OMDV implementations and fixtures only; this does not relicense the complete OMDV repository or third-party data."
+  },
+  "source_repository": {
+    "git_head": "09575a51973f4289fda7adae85130a10ab554b36",
+    "accepted_release_commit": "e0c7d2f7ca4e3f72563f14346d96df5f0c04e937"
+  },
+  "remaining_external_rights_issues": [
+    {
+      "scope": "OMDV figures (none included)",
+      "issue": "No candidate figure completed a file-specific review of underlying-data and basemap terms.",
+      "effect": "Figure reuse omitted; executable code integration is unaffected."
+    }
+  ],
+  "files": [
+    {
+      "classification": "EXECUTABLE_TOOL",
+      "source_path": "src/omdv/geospatial/external_city_universe.py",
+      "source_last_commit": "21c4d25a0f3380f414cf084adf9a7db2bb4714bb",
+      "source_sha256": "e9658212004c3eb80d06969523e88a60fed977012537ae53ba16e35826731035",
+      "destination_path": "src/mobilitylab/omdv/geospatial/external_city_universe.py",
+      "destination_sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea",
+      "adaptation": "Added attribution and changed one sibling import to the MCL namespace."
+    },
+    {
+      "classification": "EXECUTABLE_TOOL",
+      "source_path": "src/omdv/geospatial/city_matching.py",
+      "source_last_commit": "009cb81fe2a80d9d65d9c1c1c9d99003fe9043cb",
+      "source_sha256": "feefc70a12ff5e1bdd4bc847e2c2bff69eac727d3056161187b7ee5ad895c599",
+      "destination_path": "src/mobilitylab/omdv/geospatial/city_matching.py",
+      "destination_sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4",
+      "adaptation": "Added attribution only; computational semantics are unchanged."
+    },
+    {
+      "classification": "EXECUTABLE_TOOL",
+      "source_path": "src/omdv/ingest/mobility_database.py",
+      "source_last_commit": "1cd3377c29835481250d68e97ee66bb0d1109c62",
+      "source_sha256": "f0fef61239e531c9e3448bcbd38ce9fc1f14b6f38da33655b2a9a83eaa3b17b8",
+      "destination_path": "src/mobilitylab/omdv/ingest/mobility_database.py",
+      "destination_sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f",
+      "adaptation": "Added attribution only; computational semantics are unchanged."
+    },
+    {
+      "classification": "EXECUTABLE_TOOL",
+      "source_path": "src/omdv/ingest/catalog_summary.py",
+      "source_last_commit": "6de86bc4b2237ea7cb8f59ecd1f6a1b99713f5cd",
+      "source_sha256": "277a4c3bdfeb2b23c689fb790f63737051c696e42db9837f9cc922cd8fb4f51d",
+      "destination_path": "src/mobilitylab/omdv/ingest/catalog_summary.py",
+      "destination_sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57",
+      "adaptation": "Added attribution only; computational semantics are unchanged."
+    },
+    {
+      "classification": "PUBLIC_FIXTURE",
+      "source_path": "data/sample/feeds_sample.csv",
+      "source_last_commit": "92cb9c312a786801c6276daf57dd4d28fa540492",
+      "source_sha256": "9249e2ed1fc2bb10fbd0255d112dec748dce41a4ef205ee6ecf96cc65a7661ce",
+      "destination_path": "examples/data-tools/feeds_sample.csv",
+      "destination_sha256": "9249e2ed1fc2bb10fbd0255d112dec748dce41a4ef205ee6ecf96cc65a7661ce",
+      "adaptation": "Byte-for-byte selected example fixture."
+    },
+    {
+      "classification": "PUBLIC_FIXTURE",
+      "source_path": "data/sample/external_city_universe_sample.csv",
+      "source_last_commit": "6092c04d855ef9b25bb031b9be4cc5214e4242c1",
+      "source_sha256": "26eb65c01790375e232fed0d4f98e4fd7ee639a6069ca1636ab4730c1d415f5f",
+      "destination_path": "examples/data-tools/external_city_universe_sample.csv",
+      "destination_sha256": "26eb65c01790375e232fed0d4f98e4fd7ee639a6069ca1636ab4730c1d415f5f",
+      "adaptation": "Byte-for-byte selected example fixture."
+    },
+    {
+      "classification": "INTEGRATION_GLUE",
+      "source_path": null,
+      "source_last_commit": null,
+      "source_sha256": null,
+      "destination_path": "src/mobilitylab/omdv/__init__.py",
+      "destination_sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660",
+      "adaptation": "Original MCL package marker."
+    },
+    {
+      "classification": "INTEGRATION_GLUE",
+      "source_path": null,
+      "source_last_commit": null,
+      "source_sha256": null,
+      "destination_path": "src/mobilitylab/omdv/geospatial/__init__.py",
+      "destination_sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23",
+      "adaptation": "Original MCL public import surface."
+    },
+    {
+      "classification": "INTEGRATION_GLUE",
+      "source_path": null,
+      "source_last_commit": null,
+      "source_sha256": null,
+      "destination_path": "src/mobilitylab/omdv/ingest/__init__.py",
+      "destination_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5",
+      "adaptation": "Original MCL public import surface."
+    }
+  ]
+}

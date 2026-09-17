@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/scholarhaozheng/mobility-network-lab/schemas/catalog-city-quality-report.schema.json",
+  "title": "Mobility Computation Lab catalog-city quality report",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "operation",
+    "inputs",
+    "quality",
+    "outputs",
+    "matching_contract",
+    "limitations"
+  ],
+  "properties": {
+    "schema_version": {"const": "mcl_catalog_city_quality_v1"},
+    "operation": {"const": "catalog_normalization_and_exact_city_country_matching"},
+    "inputs": {"type": "object"},
+    "quality": {"type": "object"},
+    "outputs": {"type": "object"},
+    "matching_contract": {"type": "object"},
+    "limitations": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": false
+}

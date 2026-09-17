@@ -1,0 +1,9 @@
+external_city_id,city_name,country_iso2,country_name,population,latitude,longitude,source_dataset,source_year,is_capital,is_megacity,notes,admin1_name,population_year
+sample-ext-london,London,GB,United Kingdom,8900000,51.5074,-0.1278,sample_external_city_universe,2026,true,false,Expected to be visible if London is present in Mobility Database metadata.,England,2026
+sample-ext-new-york,New York,US,United States,18800000,40.7128,-74.0060,sample_external_city_universe,2026,false,,Megacity example with computed is_megacity.,New York,2026
+sample-ext-sao-paulo,Sao Paulo,BR,Brazil,22400000,-23.5505,-46.6333,sample_external_city_universe,2026,false,,Accent variation; v0 exact matching should not guess Sao Paulo equals São Paulo.,São Paulo,2026
+sample-ext-jakarta,Jakarta,ID,Indonesia,11000000,-6.2088,106.8456,sample_external_city_universe,2026,true,,Megacity example.,Jakarta,2026
+sample-ext-lagos,Lagos,NG,Nigeria,15900000,6.5244,3.3792,sample_external_city_universe,2026,false,,Megacity example.,Lagos,2026
+sample-ext-kinshasa,Kinshasa,CD,Democratic Republic of the Congo,17000000,-4.4419,15.2663,sample_external_city_universe,2026,true,,Expected to be invisible in current metadata match if absent from Mobility Database metadata.,Kinshasa,2026
+sample-ext-nuuk,Nuuk,GL,Greenland,,64.1835,-51.7216,sample_external_city_universe,2026,true,,Missing population example.,Sermersooq,
+sample-ext-munich-variant,Muenchen,DE,Germany,1600000,48.1351,11.5820,sample_external_city_universe,2026,false,false,Diacritic/transliteration variation for München; v0 exact matching should not guess.,Bavaria,2026

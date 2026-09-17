@@ -2,6 +2,41 @@
   "schema_version": "mnl_catalog_v1",
   "datasets": [
     {
+      "id": "open-mobility-evidence",
+      "title": "Open mobility data evidence",
+      "kind": "evidence-summary",
+      "access": "summary-only",
+      "profile": "non-additive-layered-evidence",
+      "data_page": "docs/open-data.md",
+      "verification": "Accepted OMDV aggregate values checked against tracked reference tables and source hashes.",
+      "data_origin": "Open Mobility Data Visibility accepted summaries",
+      "raw_data_bundled": false
+    },
+    {
+      "id": "catalog-city-match",
+      "title": "Local catalog normalization and exact city matching",
+      "kind": "data-tool",
+      "access": "bundled-example",
+      "profile": "authorized-omdv-catalog-city-v1",
+      "data_page": "docs/data-tools.md",
+      "verification": "Direct function, CLI, perturbed-input, ambiguity, unmatched-field, and output-guard tests.",
+      "data_origin": "Selected authorized OMDV implementations with original MCL integration glue",
+      "raw_data_bundled": false,
+      "example_catalog": "examples/data-tools/feeds_sample.csv",
+      "example_cities": "examples/data-tools/external_city_universe_sample.csv"
+    },
+    {
+      "id": "interoperability-sources",
+      "title": "Model and interoperability sources",
+      "kind": "source-catalog",
+      "access": "links-and-summary",
+      "profile": "interoperability-reference-only",
+      "data_page": "docs/interoperability.md",
+      "verification": "Factual crosswalk reauthored from the accepted OMDV model-ready standards table.",
+      "data_origin": "Open Mobility Data Visibility standards crosswalk and Mobility Network Lab integration notes",
+      "raw_data_bundled": false
+    },
+    {
       "id": "sioux-200od",
       "title": "Sioux Falls | 200 OD",
       "kind": "road-benchmark",

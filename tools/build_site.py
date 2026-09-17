@@ -23,12 +23,25 @@ CSS = """
 """
 
 
-def shell(title: str, body: str, depth: int = 0, repo_url: str = "", article: bool = False) -> str:
+def shell(
+    title: str,
+    body: str,
+    depth: int = 0,
+    repo_url: str = "",
+    site_url: str = "",
+    article: bool = False,
+) -> str:
     up = "../" * depth
     source = f'<a href="{html.escape(repo_url)}">GitHub ↗</a>' if repo_url else ""
-    nav = f'<header class="wrap"><nav class="nav"><a class="brand" href="{up}index.html"><span class="monogram">MNL</span>Mobility Network Lab</a><div class="navlinks"><a href="{up}datasets.html">Data catalog</a><a href="{up}methods.html">Methods</a><a href="{up}getting-started.html">Documentation</a>{source}</div></nav></header>'
-    foot = f'<div class="wrap"><footer class="footer"><span>Mobility Network Lab · GMNS-compatible network computing</span><span><a href="{up}data-access.html">Data access</a> · <a href="{up}citation.html">Cite</a> · <a href="{up}roadmap.html">Roadmap</a></span></footer></div>'
-    return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results."><title>{html.escape(title)} | Mobility Network Lab</title><link rel="stylesheet" href="{up}assets/site.css"></head><body>{nav}{body}{foot}</body></html>'
+    site_target = (
+        f'<meta name="project-site-target" content="{html.escape(site_url, quote=True)}">'
+        '<meta name="project-site-status" content="configured-target-not-deployment-confirmation">'
+        if site_url
+        else ""
+    )
+    nav = f'<header class="wrap"><nav class="nav"><a class="brand" href="{up}index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="{up}data-tools.html">Data tools</a><a href="{up}open-data.html">Evidence</a><a href="{up}datasets.html">Catalog</a><a href="{up}methods.html">Methods</a><a href="{up}getting-started.html">Documentation</a>{source}</div></nav></header>'
+    foot = f'<div class="wrap"><footer class="footer"><span>Mobility Computation Lab · open evidence to verified network results</span><span><a href="{up}data-access.html">Data access</a> · <a href="{up}citation.html">Cite</a> · <a href="{up}roadmap.html">Roadmap</a></span></footer></div>'
+    return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Open mobility data, model-ready network interfaces, reproducible assignment, and inspectable network optimization.">{site_target}<title>{html.escape(title)} | Mobility Computation Lab</title><link rel="stylesheet" href="{up}assets/site.css"></head><body>{nav}{body}{foot}</body></html>'
 
 
 def rewrite_link(match: re.Match, source: Path, repo_url: str) -> str:
@@ -70,12 +83,22 @@ def main() -> int:
     parser.add_argument('--repository-url', default=None)
     args = parser.parse_args()
     project = ROOT/'catalog/project.json'
-    config = json.loads(project.read_text(encoding='utf-8')) if project.exists() else {'title':'Mobility Network Lab','repository_url':None}
+    config = json.loads(project.read_text(encoding='utf-8')) if project.exists() else {
+        'title': 'Mobility Computation Lab',
+        'repository_url': None,
+        'site_url': None,
+    }
     if args.repository_url is not None:
         if not re.fullmatch(r'https://github.com/[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+/?',args.repository_url):
             parser.error('Use the confirmed GitHub repository URL, without a branch or token.')
         config['repository_url']=args.repository_url.rstrip('/')
     repo_url=config.get('repository_url') or ''
+    site_url=(config.get('site_url') or '').strip()
+    if site_url and not re.fullmatch(
+        r'https://[A-Za-z0-9_.-]+\.github\.io/[A-Za-z0-9_.-]+/',
+        site_url,
+    ):
+        parser.error('Use a GitHub Pages project URL ending in a slash.')
     project.write_text(json.dumps(config,indent=2)+'\n', encoding='utf-8', newline='\n')
     (DOCS/'assets').mkdir(parents=True,exist_ok=True)
     (DOCS/'assets/site.css').write_text(CSS, encoding='utf-8', newline='\n')
@@ -85,10 +108,26 @@ def main() -> int:
         title=path.read_text(encoding='utf-8').splitlines()[0].lstrip('# ').strip()
         depth=len(path.relative_to(DOCS).parents)-1
         article=f'<main class="article"><p class="crumb">Documentation / {html.escape(title)}</p>{render_markdown(path,repo_url)}</main>'
-        path.with_suffix('.html').write_text(shell(title,article,depth,repo_url,True),encoding='utf-8',newline='\n')
+        path.with_suffix('.html').write_text(
+            shell(
+                title,
+                article,
+                depth=depth,
+                repo_url=repo_url,
+                site_url=site_url,
+                article=True,
+            ),
+            encoding='utf-8',
+            newline='\n',
+        )
     body='''<main>
-<div class="wrap"><section class="hero"><div><p class="eyebrow">Network data · computational workflows</p><h1>From networks<br>to <em>inspectable<br>results.</em></h1><p class="lede">Connect GMNS-compatible road networks and OD demand to reproducible route generation, optimization and independent verification.</p><div class="actions"><a class="button primary" href="getting-started.html">Get started →</a><a class="button" href="datasets.html">Explore the catalog</a></div></div><div class="pipeline"><p class="eyebrow">One input profile. A reusable workflow.</p><div class="step"><small>01</small><div><b>Network & demand</b><span>Stable IDs · explicit units · zone access</span></div></div><div class="step"><small>02</small><div><b>Routes & optimization</b><span>Automatic seeds · reference LP · column generation</span></div></div><div class="step"><small>03</small><div><b>Flows & verification</b><span>Complete path pool · duals · independent checks</span></div></div></div></section></div>
-<div class="strip"><div class="wrap"><div class="stripin"><div><b>Data and models stay explicit</b><span>GMNS-compatible identifiers and declared profiles</span></div><div><b>Results remain inspectable</b><span>Path flows, objectives and verification records</span></div><div><b>Extend by adding instances</b><span>Keep the engine; change inputs and configuration</span></div></div></div></div>
+<div class="wrap"><section class="hero"><div><p class="eyebrow">Local data tools · evidence · computation</p><h1>Open city data<br>to <em>verified<br>results.</em></h1><p class="lede">Normalize local mobility metadata, preserve matching uncertainty, inspect bounded evidence, and move compatible networks through reproducible assignment and independently checked optimization.</p><div class="actions"><a class="button primary" href="data-tools.html">Run the data tools →</a><a class="button" href="getting-started.html">Run a network</a></div></div><div class="pipeline"><p class="eyebrow">Four layers. No hidden claims.</p><div class="step"><small>01</small><div><b>Data tools & evidence</b><span>Catalog normalization · exact city matching · bounded summaries</span></div></div><div class="step"><small>02</small><div><b>Model-ready interface</b><span>Stable IDs · explicit units · zone access</span></div></div><div class="step"><small>03</small><div><b>Assignment & optimization</b><span>Static FW · reference LP · column generation</span></div></div><div class="step"><small>04</small><div><b>Verified outputs</b><span>Complete path pool · objectives · independent checks</span></div></div></div></section></div>
+<div class="strip"><div class="wrap"><div class="stripin"><div><b>11,422 urban centres</b><span>A common GHSL frame, not transport coverage</span></div><div><b>4,425 unique GTFS contents</b><span>All-retained parseable view; 2,959 stop-evidence cities</span></div><div><b>2,465 realtime endpoints</b><span>Metadata representatives, not live health</span></div></div></div></div>
+<div class="wrap"><section><div class="sectionhead"><h2>Open mobility data</h2><p>Compact accepted evidence with source hashes and explicit limits. Layers remain separate and are never summed into a false coverage count.</p></div><div class="tiles"><div class="tile"><span class="tag">Global frame</span><h3>City and transit evidence</h3><p>GHSL denominator, GTFS static content and bounded realtime classifications.</p><a href="open-data.html">Read the evidence guide →</a></div><div class="tile"><span class="tag">Map and shared mobility</span><h3>OSM and GBFS</h3><p>Bounded map-feature and registry summaries that do not claim service coverage.</p><a href="open-data.html#osm">Inspect the boundaries →</a></div><div class="tile"><span class="tag">Interfaces</span><h3>Model interoperability</h3><p>Standards and tools are catalogued as reuse pathways, not city availability.</p><a href="interoperability.html">Open the source catalog →</a></div></div></section></div>
+<div class="soft"><div class="wrap"><section class="split"><div><p class="eyebrow">Executable data tools</p><h2>Normalize.<br>Match. Audit.</h2><p>Selected OMDV implementations process your local feed-catalog and city CSVs. Exact city/country matches, unmatched rows, and ambiguous keys remain inspectable.</p><a class="button" href="data-tools.html">Input and output guide →</a></div><div><pre><code>python -B tools/mcl_data.py catalog-city-match \\
+  --catalog examples/data-tools/feeds_sample.csv \\
+  --cities examples/data-tools/external_city_universe_sample.csv \\
+  --output results/data-tools-demo</code></pre><p class="note">No network request, source checkout, GTFS ZIP parsing, realtime probing, GPS matching, or city-network compilation.</p></div></section></div></div>
 <div class="wrap"><section><div class="sectionhead"><h2>Road benchmark records</h2><p>Documented numerical results, with source and access boundaries. These are historical benchmark records, not newly collected city datasets.</p></div><a class="benchmark-feature" href="datasets/sioux-250od.html"><img src="assets/benchmarks/sioux_250od_final_physical_link_flow.png" alt="Final physical-link movement flow for the selected 250-OD Sioux Falls benchmark subset"><span>Selected 250-OD Sioux Falls subset · line width is total final movement flow aggregated across modeled time, not static V/C or observed traffic.</span></a><div class="cards">
 <article class="card"><span class="tag">Finite space–time CG</span><h3>Sioux Falls<br>200 OD</h3><p>Recovered final path flows with independent demand, capacity and objective checks.</p><div class="meta">24 nodes · 64 links · 446 final columns</div><a href="datasets/sioux-200od.html">Explore the result record →</a></article>
 <article class="card"><span class="tag">Finite space–time CG</span><h3>Sioux Falls<br>250 OD</h3><p>A larger path pool, with saved records supporting final-flow reconstruction and verification.</p><div class="meta">24 nodes · 69 links · 567 final columns</div><a href="datasets/sioux-250od.html">Explore the result record →</a></article>
@@ -122,8 +161,17 @@ python tools/mnl.py verify --run results/capacity-demo</code></pre><p class="not
     body = body[:start] + ''.join(cards) + body[end:]
     if any(item['kind'] == 'city-network' for item in visible):
         body = body.replace('Road benchmark records', 'Network catalog').replace('Documented numerical results, with source and access boundaries. These are historical benchmark records, not newly collected city datasets.', 'Runnable instances and documented benchmark results. Each data card declares its provenance, input access and verification scope.').replace('Road input tables are not bundled with these records. Self-contained synthetic reference inputs are available for the source quick start.', 'Consult each data card for input availability. Synthetic reference inputs remain separate from city datasets.')
-    (DOCS/'index.html').write_text(shell('Home',body,repo_url=repo_url),encoding='utf-8',newline='\n')
-    print(f'Built static documentation in {DOCS}; repository URL: {repo_url or "local preview"}')
+    (DOCS/'index.html').write_text(
+        shell('Home', body, repo_url=repo_url, site_url=site_url),
+        encoding='utf-8',
+        newline='\n',
+    )
+    print(
+        f'Built static documentation in {DOCS}; '
+        f'repository URL: {repo_url or "local preview"}; '
+        f'Pages target: {site_url or "not configured"} '
+        '(configuration only)'
+    )
     return 0
 
 if __name__=='__main__':raise SystemExit(main())

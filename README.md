@@ -1,76 +1,85 @@
-<p align="center"><img src="docs/assets/hero.png" width="100%" alt="Mobility Network Lab — GMNS-compatible data and reproducible network optimization"></p>
+# Mobility Computation Lab
 
-<p align="center">
-  <a href="#quick-start">Quick start</a> ·
-  <a href="docs/datasets.md">Data catalog</a> ·
-  <a href="docs/methods.md">Methods</a> ·
-  <a href="docs/data-contract.md">Input specification</a> ·
-  <a href="CONTRIBUTING.md">Contribute</a>
-</p>
+**Open city data → model-ready interfaces → assignment / optimization → verified results**
 
-# Mobility Network Lab
+Mobility Computation Lab connects local mobility-metadata tools and carefully bounded open-data evidence to explicit network inputs, reproducible assignment workflows, and independently checked outputs. It combines selected authorized Open Mobility Data Visibility (OMDV) normalizers and matchers with the working Mobility Network Lab solver, verifier, examples, and benchmark records.
 
-**GMNS-compatible network data, reproducible assignment workflows, and inspectable optimization results.**
+[Open-data evidence](docs/open-data.md) · [Network inputs](docs/data-contract.md) · [Methods](docs/methods.md) · [Benchmark catalog](docs/datasets.md) · [Installation](docs/getting-started.md)
 
-Repository: [github.com/scholarhaozheng/mobility-network-lab](https://github.com/scholarhaozheng/mobility-network-lab)
+Source repository: [scholarhaozheng/mobility-network-lab](https://github.com/scholarhaozheng/mobility-network-lab) · Configured Pages target (not a deployment claim): [scholarhaozheng.github.io/mobility-network-lab/](https://scholarhaozheng.github.io/mobility-network-lab/)
 
-Mobility Network Lab connects road networks and origin–destination demand to route initialization, network optimization, and independently checked outputs. A shared codebase supports configurable instances, with explicit data provenance and model-specific input profiles.
+## What is available now
 
-Use the repository to run a finite space–time path-flow model, inspect benchmark results, or add a network without rewriting the optimization engine. The current runnable workflow includes automatic or supplied initial routes, two-phase column generation, a same-model reference LP, and complete final path-flow exports.
+| Open mobility data | Network computation |
+|---|---|
+| **Global city frame:** 11,422 GHSL urban centres used as a common analytical denominator | **Static assignment:** retained Frank–Wolfe implementation and a documented Sioux Falls baseline |
+| **GTFS static:** 6,951 eligible source records; 4,425 parseable unique-content hashes in the all-retained view; 2,959 cities with inside-polygon stop evidence | **Space–time optimization:** deterministic route initialization, explicit space–time construction, reference LP, and Phase-I/Phase-II column generation |
+| **GTFS-Realtime:** 2,465 metadata-level endpoint representatives with separate snapshot city classes | **Verification:** complete final path-pool export plus solver-free demand, capacity, objective, and provenance checks |
+| **OSM / shared mobility:** bounded OSM map-feature evidence and a 1,516-row GBFS registry summary, kept separate from transit-feed evidence | **Benchmarks:** verified 200-OD and 250-OD Sioux Falls subset records with approved result figures |
 
-## What you can use
+These evidence layers are not additive. An unmatched city is not “data-free”; metadata visibility is not service coverage; a model standard is not proof of city availability. See the [open-data evidence guide](docs/open-data.md) and machine-readable [`catalog/open-data-evidence.json`](catalog/open-data-evidence.json).
 
-| Component | Purpose | Entry point |
-|---|---|---|
-| **Network inputs** | Preserve node, link and zone identifiers; declare units and field mappings | [Input specification](docs/data-contract.md) |
-| **Route initialization** | Generate deterministic initial paths or validate supplied routes | [Route initialization](docs/routes.md) |
-| **Space–time optimization** | Allocate continuous path flows under fixed costs and shared arc capacities | [Model and solver](docs/methods.md) |
-| **Result verification** | Recompute flow, path, capacity and objective checks from saved files | [Outputs and verification](docs/outputs.md) |
-| **Benchmark catalog** | Inspect documented road-network experiments and reference examples | [Available records](docs/datasets.md) |
-| **Instance extensions** | Add data, provenance and a matching input profile | [Add a network](docs/add-a-network.md) |
+## Four-layer architecture
 
-## Verified road benchmarks
+1. **Open-data/evidence layer** — compact accepted summaries, provenance, and claim boundaries.
+2. **City/model interface** — explicit node, link, demand, zone-access, unit, and identifier contracts.
+3. **Assignment/optimization layer** — static Frank–Wolfe and finite space–time column generation.
+4. **Benchmarks/verification layer** — runnable synthetic examples, result records, and independent checks.
 
-### Sioux Falls benchmark series
-
-<p align="center">
-  <a href="docs/datasets/sioux-250od.md"><img src="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="760" alt="Final physical-link movement flow for the selected 250-OD Sioux Falls benchmark subset"></a>
-</p>
-
-Line width represents total final movement flow aggregated across the modeled time horizon. This is a selected-OD benchmark visualization—not static V/C, observed traffic, a full 528-OD assignment, or production-scale DTA.
-
-| Case | Physical nodes | Selected links | OD pairs | Final columns | Objective |
-|---|---:|---:|---:|---:|---:|
-| **200-OD subset** | 24 | 64 | 200 | 446 | 943,155.589771 |
-| **250-OD subset** | 24 | 69 | 250 | 567 | 1,521,090.83662 |
-
-The objectives belong to different selected-OD instances and are not directly comparable. See the [200-OD details](docs/datasets/sioux-200od.md), [250-OD details](docs/datasets/sioux-250od.md), and [static Frank–Wolfe details](docs/datasets/sioux-static-fw.md).
-
-Road benchmarks and synthetic reference examples are listed separately. A results record does not imply that its source data are redistributed in this repository. The bundled [reference examples](docs/examples.md) exercise route initialization, zone access and capacity-constrained flow allocation. They are synthetic tests, not city datasets. Machine-readable records are available in [`catalog/datasets.json`](catalog/datasets.json).
+The retained numerical implementation remains under `app/src/gmns_dynamic/` for compatibility. New public evidence helpers live under `src/mobilitylab/`. See [architecture](docs/architecture.md).
 
 ## Quick start
 
-Use an existing Python environment or create a project-local one. Python **3.13** is the source-testing baseline; NumPy, SciPy and PyYAML are required. No commercial solver is needed for the CG workflow.
+Python 3.12 is the v2 assembly-test baseline; the retained MNL source was previously checked on Python 3.13. NumPy, SciPy, and PyYAML are required for the network workflow.
 
 ```bash
 python -m pip install -r requirements.txt
 python tools/mnl.py catalog
 ```
 
-Run the bundled capacity example from raw network and demand tables:
+Run the small bundled capacity example:
 
 ```bash
 python tools/mnl.py run --input app/cases/capacity_zone_probe/input --config app/cases/capacity_zone_probe/case.json --seed-mode auto --seed-k 1 --output results/capacity-demo
 python tools/mnl.py verify --run results/capacity-demo
 ```
 
-Open `results/capacity-demo/report.html` to inspect the results. The expected solution sends 3 units through the lower-cost route and 7 through the alternative, for an objective of **27**. This expectation is specific to the bundled example.
+The expected solution sends 3 units through the lower-cost route and 7 through the alternative, for objective **27**. Inputs and outputs must be separate, and each run must use a new output directory.
 
-Choose a new output directory for each run. Inputs and outputs must be separate. See [installation and execution](docs/getting-started.md) for virtual environments, the portable Windows option, and supplied-route mode.
+Inspect the evidence catalog without loading raw mobility data:
 
-## Bring your own network
+```bash
+python -m unittest tests.test_open_data_evidence -v
+python tools/publication_gate.py
+```
 
-Start with the [input profile](docs/data-contract.md), declare your field mappings and units in `case.json`, then use the same entry point:
+## Data tools
+
+The executable data workflow normalizes a user-supplied feed-catalog CSV,
+standardizes a city CSV, performs transparent exact municipality/country
+matching, and writes standardized tables plus a quality report. Install its
+optional dependencies in a separate environment:
+
+```bash
+python -m venv .venv-data
+.venv-data/bin/python -m pip install -r requirements-data-tools.txt
+.venv-data/bin/python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
+```
+
+On Windows, use `.venv-data\Scripts\python.exe`. The output includes the
+normalized catalog, standardized cities, feed-city matches, city-level
+summaries, schema audits, ambiguity records, and `quality_report.json`.
+
+Matching is exact after lowercase/whitespace/hyphen normalization and requires
+a valid two-letter country code. Duplicate normalized city keys are reported as
+ambiguous rather than guessed; unmatched and missing-field records are
+preserved. This is named-entity matching—not GPS map matching, GTFS ZIP parsing,
+realtime probing, or city-network compilation. See the complete
+[data-tools guide](docs/data-tools.md).
+
+## Use your own network
+
+Declare field mappings and units in `case.json`, then validate and run the current finite profile:
 
 ```bash
 python tools/mnl.py validate --input /path/to/network/input --config /path/to/network/case.json
@@ -78,53 +87,47 @@ python tools/mnl.py run --input /path/to/network/input --config /path/to/network
 python tools/mnl.py verify --run results/network-run
 ```
 
-The current profile is deliberately finite: a one-minute time step, positive integer travel times, a common departure time, fixed costs and declared size limits. This is not an unrestricted city-scale DTA or static user-equilibrium interface. [Profile constraints →](docs/data-contract.md#model-profile)
+Current limitations are deliberate: one-minute time steps, positive integer travel times, a common departure time, fixed costs, continuous path flow, declared size limits, and hard shared arc capacities. This is not an unrestricted city-scale DTA, a GPS map matcher, an OD estimator, or a general static user-equilibrium interface. Read the exact [input contract](docs/data-contract.md).
 
-## From inputs to results
+## Verified road benchmarks
 
-```text
-Network + demand + configuration
-              │
-       Input normalization
-              │
-     Initial route generation
-              │
-    Explicit space–time network
-              │
-    Reference LP + Phase-I/II CG
-              │
-Final path pool · path flows · duals
-              │
-  Independent result verification
-```
+[![Final physical-link movement flow for the selected 250-OD Sioux Falls benchmark subset](docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png)](docs/datasets/sioux-250od.md)
 
-The allowed network is defined independently of the initial routes. The final export contains every column in the last successfully solved pool, including zero-flow columns. Reference agreement and independent pricing closure are reported as different forms of evidence.
+*Selected 250-OD Sioux Falls subset. Line width is final movement flow accumulated across modeled time—not static V/C and not observed traffic.*
 
-## Project layout
+| Case | Physical nodes | Selected links | OD pairs | Final columns | Objective |
+|---|---:|---:|---:|---:|---:|
+| **200-OD subset** | 24 | 64 | 200 | 446 | 943,155.589771 |
+| **250-OD subset** | 24 | 69 | 250 | 567 | 1,521,090.83662 |
 
-```text
-app/src/gmns_dynamic/   Selected numerical engine and input workflow
-app/cases/             Self-contained reference inputs
-launcher/              Solver-free result verification
-algorithms/static_fw/  Retained static FW implementation
-catalog/               Dataset records and source provenance
-schemas/               Catalog and instance metadata schemas
-docs/                  User documentation and static project website
-tools/                 Public entry point and repository checks
-```
+These are different selected-OD instances, so their objectives are not directly comparable. Neither is the full 528-OD static benchmark. See the [200-OD](docs/datasets/sioux-200od.md), [250-OD](docs/datasets/sioux-250od.md), and [static Frank–Wolfe](docs/datasets/sioux-static-fw.md) records.
 
-## Ecosystem and interoperability
+## Provenance and publication boundary
 
-The project follows the network vocabulary of [GMNS](https://github.com/zephyr-data-specs/GMNS) and references [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset) and [TAPLab](https://github.com/asu-trans-ai-lab/TAPLab). These are distinct upstream projects; their data preparation, algorithms and licenses remain attributed to their authors.
+The OMDV integration contains four selected original implementations, two
+bounded example fixtures, a thin MCL adapter, compact aggregate summaries, and
+cryptographic provenance. The maintainer explicitly authorized those selected
+original files for MIT distribution here; the complete OMDV research
+repository has not changed license.
 
-[Integration guide](docs/integrations.md) explains how to map compatible inputs without conflating different demand, capacity or time conventions. Network acquisition, GPS matching, transit and new city collections are tracked in the [roadmap](docs/roadmap.md); they are not advertised as shipped capabilities.
+The upload does **not** contain manuscripts, raw GTFS archives, endpoint lists
+or payloads, OSM extracts, GBFS registry rows, GHSL geometries, SEDAC material,
+review packages, or cached downloads. No OMDV figure was selected because no
+candidate completed a file-specific review of underlying-data and basemap
+terms.
 
-## Contributing and data access
+The root MIT license covers only code that the maintainer has the right to license here. External data, standards, tools, and source repositories keep their own terms. Read [data licenses](DATA_LICENSES.md), [third-party notices](THIRD_PARTY_NOTICES.md), and [OMDV provenance](docs/omdv-provenance.md).
 
-Contributions are welcome as reproducible instances, focused solver adapters, verification improvements and documentation. Follow the [contribution guide](CONTRIBUTING.md), include provenance, and separate observed data from estimated or synthetic inputs.
+## Roadmap, not shipped functionality
 
-Data access and licensing are component-specific. Consult [data access and notices](docs/data-access.md) before redistributing upstream files. Cite the version and dataset record used; see [citation guidance](docs/citation.md).
+- city compiler and hierarchical zones;
+- OD generation and estimation;
+- GPS traces and map matching;
+- origin-based assignment / Policy Bush;
+- coupled primal-dual, Lagrangian, and ADMM methods.
 
-## License and rights
+These are future directions, not current capabilities. See the [roadmap](docs/roadmap.md).
 
-Original project code is available under the [MIT License](LICENSE). The root license does not relicense external projects, third-party dependencies or upstream datasets. See [third-party notices](THIRD_PARTY_NOTICES.md) and [data licenses and publication boundaries](DATA_LICENSES.md).
+## Contributing
+
+Contributions should preserve provenance, data rights, layer boundaries, and executable tests. Start with [CONTRIBUTING.md](CONTRIBUTING.md) and the [network instance guide](docs/add-a-network.md).

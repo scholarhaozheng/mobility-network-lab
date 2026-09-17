@@ -8,9 +8,11 @@ import html
 import json
 from pathlib import Path
 import re
+import sys
 from urllib.parse import unquote
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / 'src'))
 
 
 def main() -> int:
@@ -65,8 +67,16 @@ def main() -> int:
     if not any((ROOT/name).is_file() for name in ('LICENSE','LICENSE.md','LICENSE.txt')):
         (errors if args.publication else warnings).append('The maintainer must select and authorize a root code license before public release.')
     if args.publication:
-        for name in ('THIRD_PARTY_NOTICES.md','DATA_LICENSES.md'):
+        for name in ('THIRD_PARTY_NOTICES.md','DATA_LICENSES.md','requirements-data-tools.txt','requirements-data-tools-tested.txt','catalog/open-data-evidence.json','catalog/omdv-provenance.json','catalog/omdv-authorized-files.json','schemas/catalog-city-quality-report.schema.json','docs/open-data.md','docs/data-tools.md','docs/architecture.md','examples/data-tools/feeds_sample.csv','examples/data-tools/external_city_universe_sample.csv'):
             if not (ROOT/name).is_file():errors.append(f'Missing publication rights notice: {name}')
+        try:
+            from mobilitylab.data.evidence import load_evidence_catalog
+            load_evidence_catalog()
+            checks+=1
+        except Exception as exc:
+            errors.append(f'Open-data evidence catalog failed validation: {exc}')
+        if project.get('title')!='Mobility Computation Lab':
+            errors.append('Public product title is not Mobility Computation Lab.')
     result={'status':'PASS' if not errors else 'FAIL','checks':checks,'errors':errors,'warnings':warnings,'publication_checks':args.publication}
     print(json.dumps(result,indent=2))
     return 0 if not errors else 1

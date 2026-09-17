@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/scholarhaozheng/mobility-network-lab/blob/main/schemas/open-data-evidence.schema.json",
+  "title": "Mobility Computation Lab open-data evidence catalog",
+  "type": "object",
+  "required": ["schema_version", "layers_are_additive", "layers"],
+  "properties": {
+    "schema_version": {"const": "mobilitylab_open_data_evidence_v1"},
+    "layers_are_additive": {"const": false},
+    "layers": {
+      "type": "array",
+      "minItems": 6,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "additive_across_layers", "metrics", "does_not_support"],
+        "properties": {
+          "id": {"type": "string"},
+          "title": {"type": "string"},
+          "additive_across_layers": {"const": false},
+          "metrics": {"type": "array", "minItems": 1},
+          "does_not_support": {"type": "array", "minItems": 1}
+        }
+      }
+    }
+  }
+}
