@@ -55,6 +55,15 @@
       "adaptation": "Added attribution only; computational semantics are unchanged."
     },
     {
+      "classification": "EXECUTABLE_TOOL",
+      "source_path": "scripts/analysis/parse_v25a_3_gtfs_unique_content.py",
+      "source_last_commit": "b2dca4449445c474c77db72ba4c8d18947108606",
+      "source_sha256": "bc4636f6eea18a66f4309d31f1e6576f50d5cbddc422e84f53709834426485cd",
+      "destination_path": "src/mobilitylab/omdv/gtfs/content_metrics.py",
+      "destination_sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9",
+      "adaptation": "Selected content parser adapted to a caller-supplied local ZIP; removed repository/SQLite state and retained the streamed stop-times pass."
+    },
+    {
       "classification": "PUBLIC_FIXTURE",
       "source_path": "data/sample/feeds_sample.csv",
       "source_last_commit": "92cb9c312a786801c6276daf57dd4d28fa540492",
@@ -97,6 +106,15 @@
       "source_sha256": null,
       "destination_path": "src/mobilitylab/omdv/ingest/__init__.py",
       "destination_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5",
+      "adaptation": "Original MCL public import surface."
+    },
+    {
+      "classification": "INTEGRATION_GLUE",
+      "source_path": null,
+      "source_last_commit": null,
+      "source_sha256": null,
+      "destination_path": "src/mobilitylab/omdv/gtfs/__init__.py",
+      "destination_sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391",
       "adaptation": "Original MCL public import surface."
     }
   ]

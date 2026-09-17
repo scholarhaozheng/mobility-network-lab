@@ -9,17 +9,17 @@
     "package_a": {
       "role": "complete code, no research data",
       "path_in_source": "outputs/reproducibility_packages/20260715_003934_omdv_complete_code_no_data.zip",
-      "sha256": "a129bb01fd0a493ca6cfde8ed70512f3944fdd870fe198f840062102920a2693",
-      "bytes": 5493067,
-      "members": 1163,
+      "sha256": "c3e3a3c46a4126e110a6690b21f89e9b2853c0bbf13dedf996d8d2e57189a7bb",
+      "bytes": 5632290,
+      "members": 1173,
       "copied": false
     },
     "package_b": {
       "role": "downloadable reproduction package",
       "path_in_source": "outputs/reproducibility_packages/20260715_004004_omdv_downloadable_reproduction.zip",
-      "sha256": "256b94d3c14bfc36ae61a210a2ab99b02f3bb054e48e0acc2ff84e805f30c19a",
-      "bytes": 11005986,
-      "members": 1209,
+      "sha256": "565f4edddeb528f2648b3a44e0edba1a1af9bd4eaf81387a31f8a104ad9e83fa",
+      "bytes": 11172418,
+      "members": 1222,
       "copied": false
     }
   },
@@ -33,12 +33,19 @@
     {"path": "outputs/tables/v6_gbfs_systems_summary.csv", "sha256": "f7a2443a90ce2c6d82e35ee728c8bbcb0a5227b21f0972615ead26a4196c25e0", "public_tree_action": "aggregate_values_reformatted"},
     {"path": "outputs/tables/model_ready_network_standards_crosswalk.csv", "sha256": "76db60dce169b8017f06455be4b64bcbe550375e94149e095696dad4ea5d464f", "public_tree_action": "compact_factual_crosswalk_reauthored"}
   ],
+  "accepted_public_projection_sources": [
+    {"path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv", "sha256": "9784dd2b2c4eaef94ae63b82b0904b9cf89920a03d96d77d1a7cd448eb354f09", "public_tree_action": "selected_non_geometric_fields"},
+    {"path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv", "sha256": "109b32d49e7aa4eb3984dbc1aa6f766ba230b77fa16b57816f97086b60a0e90f", "public_tree_action": "selected_source_to_content_fields"},
+    {"path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv", "sha256": "7d591d2ccfed082adcea48cdcc1121f11c7d5bedafbf5408f974013ca254c070", "public_tree_action": "selected_content_to_city_fields"},
+    {"path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv", "sha256": "07c9609796f2d92225b47b305d88c8fdca101d0dd691851eda3f753eee78defa", "public_tree_action": "selected_view_membership_fields"},
+    {"path": "outputs/tables/v25a_3_3_gtfs_global_content_view_summary.csv", "sha256": "0878b80eddc7109087ce493f4340a46a02006688ef1cab7b785b9e70b3757e8c", "public_tree_action": "validation_totals"}
+  ],
   "candidate_code_files": [
     {"path": "src/omdv/geospatial/external_city_universe.py", "sha256": "e9658212004c3eb80d06969523e88a60fed977012537ae53ba16e35826731035", "last_git_commit": "21c4d25a0f3380f414cf084adf9a7db2bb4714bb", "purpose": "global city registry normalization", "public_tree_action": "copied_authorized_mit"},
     {"path": "src/omdv/geospatial/city_matching.py", "sha256": "feefc70a12ff5e1bdd4bc847e2c2bff69eac727d3056161187b7ee5ad895c599", "last_git_commit": "009cb81fe2a80d9d65d9c1c1c9d99003fe9043cb", "purpose": "transparent city-name matching helper", "public_tree_action": "copied_authorized_mit"},
     {"path": "src/omdv/ingest/mobility_database.py", "sha256": "f0fef61239e531c9e3448bcbd38ce9fc1f14b6f38da33655b2a9a83eaa3b17b8", "last_git_commit": "1cd3377c29835481250d68e97ee66bb0d1109c62", "purpose": "catalog normalization", "public_tree_action": "copied_authorized_mit"},
     {"path": "src/omdv/ingest/catalog_summary.py", "sha256": "277a4c3bdfeb2b23c689fb790f63737051c696e42db9837f9cc922cd8fb4f51d", "last_git_commit": "6de86bc4b2237ea7cb8f59ecd1f6a1b99713f5cd", "purpose": "catalog summary tables", "public_tree_action": "copied_authorized_mit"},
-    {"path": "scripts/analysis/parse_v25a_3_gtfs_unique_content.py", "sha256": "bc4636f6eea18a66f4309d31f1e6576f50d5cbddc422e84f53709834426485cd", "last_git_commit": "b2dca4449445c474c77db72ba4c8d18947108606", "purpose": "GTFS content parsing", "public_tree_action": "link_or_refactor_later"},
+    {"path": "scripts/analysis/parse_v25a_3_gtfs_unique_content.py", "sha256": "bc4636f6eea18a66f4309d31f1e6576f50d5cbddc422e84f53709834426485cd", "last_git_commit": "b2dca4449445c474c77db72ba4c8d18947108606", "purpose": "GTFS content parsing", "public_tree_action": "copied_authorized_mit"},
     {"path": "scripts/synthesis/probe_v23a_gtfs_realtime_endpoints.py", "sha256": "9d81fb9e1d544f3e4f9e4d50717c44223c9a0528dc90feaed84569acfc4f2b4c", "last_git_commit": "a05b4547bd83690860b0c2b713e4a97b0f0b1c94", "purpose": "GTFS-Realtime endpoint classification", "public_tree_action": "link_or_refactor_later"},
     {"path": "scripts/osm/extract_osm_public_transport_features.py", "sha256": "2f1c684490491ab2d2dbccc8df24a41482a7b98221eaeca75297c77ded216d88", "last_git_commit": "1d98be2596a5eb1f814885a1453b055f5876a17b", "purpose": "local OSM public-transport feature extraction", "public_tree_action": "link_to_upstream_only"},
     {"path": "scripts/gbfs/build_v6_gbfs_systems_summary.py", "sha256": "76529c4921d94e37abf5909ee0ee80fa4af32564ac1e80fcbc124370e42c4aba", "last_git_commit": "5f085222bce1f98fa45131ce1e6309c90aec4798", "purpose": "GBFS registry summary", "public_tree_action": "link_to_upstream_only"},

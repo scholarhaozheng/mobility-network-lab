@@ -1,0 +1,124 @@
+{
+  "schema_version": "mcl_open_data_products_v1",
+  "prepared_date": "2026-09-17",
+  "source_project": "Open Mobility Data Visibility",
+  "source_git_head": "09575a51973f4289fda7adae85130a10ab554b36",
+  "source_release_commit": "e0c7d2f7ca4e3f72563f14346d96df5f0c04e937",
+  "publication_scope": "Selected non-geometric accepted result fields and relationships; no raw feeds or source URLs.",
+  "source_files": [
+    {
+      "role": "city_matrix",
+      "source_path": "outputs/tables/v25a_3_4_global_city_analysis_matrix.csv",
+      "expected_sha256": "9784dd2b2c4eaef94ae63b82b0904b9cf89920a03d96d77d1a7cd448eb354f09",
+      "observed_sha256": "9784dd2b2c4eaef94ae63b82b0904b9cf89920a03d96d77d1a7cd448eb354f09",
+      "hash_check": "match"
+    },
+    {
+      "role": "feed_roles",
+      "source_path": "outputs/tables/v25a_3_2_feed_provenance_roles.csv",
+      "expected_sha256": "109b32d49e7aa4eb3984dbc1aa6f766ba230b77fa16b57816f97086b60a0e90f",
+      "observed_sha256": "109b32d49e7aa4eb3984dbc1aa6f766ba230b77fa16b57816f97086b60a0e90f",
+      "hash_check": "match"
+    },
+    {
+      "role": "content_city",
+      "source_path": "outputs/tables/v25a_3_1_gtfs_content_city_links.csv",
+      "expected_sha256": "7d591d2ccfed082adcea48cdcc1121f11c7d5bedafbf5408f974013ca254c070",
+      "observed_sha256": "7d591d2ccfed082adcea48cdcc1121f11c7d5bedafbf5408f974013ca254c070",
+      "hash_check": "match"
+    },
+    {
+      "role": "content_views",
+      "source_path": "outputs/tables/v25a_3_2_gtfs_content_view_membership.csv",
+      "expected_sha256": "07c9609796f2d92225b47b305d88c8fdca101d0dd691851eda3f753eee78defa",
+      "observed_sha256": "07c9609796f2d92225b47b305d88c8fdca101d0dd691851eda3f753eee78defa",
+      "hash_check": "match"
+    },
+    {
+      "role": "accepted_summary",
+      "source_path": "outputs/tables/v25a_3_3_gtfs_global_content_view_summary.csv",
+      "expected_sha256": "0878b80eddc7109087ce493f4340a46a02006688ef1cab7b785b9e70b3757e8c",
+      "observed_sha256": "0878b80eddc7109087ce493f4340a46a02006688ef1cab7b785b9e70b3757e8c",
+      "hash_check": "match"
+    }
+  ],
+  "products": [
+    {
+      "path": "docs/data/open-mobility/city_evidence.csv",
+      "bytes": 6148613,
+      "sha256": "248e55146085605ba0cdd1683161eca786b94f7d3bfd9ec77b3a17a6847c6d3d",
+      "rows": 11422
+    },
+    {
+      "path": "docs/data/open-mobility/city_evidence.json",
+      "bytes": 24982213,
+      "sha256": "eded05d3319fc50ca72a03aa08f0d0ff2bf6f9c6fef3aab0cd7974861190498e",
+      "rows": 11422
+    },
+    {
+      "path": "docs/data/open-mobility/source_content_city.csv",
+      "bytes": 5784481,
+      "sha256": "0321d8fa818090d3043951f6b320c6c4739b5e32074834212c16e176dd1d3455",
+      "rows": 16705
+    },
+    {
+      "path": "docs/data/open-mobility/source_content_city.json",
+      "bytes": 16742526,
+      "sha256": "3d0f82e13c11f8fab05d52ff05901191091d4da79f7607aa34267395425343d1",
+      "rows": 16705
+    },
+    {
+      "path": "docs/data/open-mobility/content_city.csv",
+      "bytes": 2869593,
+      "sha256": "f10a64eac1f49097e9297824e7e9c8c50123ad92802e6e9b36173f314f63a6a2",
+      "rows": 12442
+    },
+    {
+      "path": "docs/data/open-mobility/content_city.json",
+      "bytes": 8107405,
+      "sha256": "a8194ac1293f663f3c0e705b677dcd1e4ad48645bc6b4bc21affcbb9d8039500",
+      "rows": 12442
+    },
+    {
+      "path": "docs/data/open-mobility/city_evidence_schema.json",
+      "bytes": 14372,
+      "sha256": "24e4f5044c1e621f01b04f435f1f1831b1a50b7c241617a1dfcf781690e46065",
+      "rows": null
+    },
+    {
+      "path": "docs/data/open-mobility/source_content_city_schema.json",
+      "bytes": 8008,
+      "sha256": "192cd4b6360862f6ef847f6454111cb895d70829ce38b8b71d61546f45fcd68c",
+      "rows": null
+    },
+    {
+      "path": "docs/data/open-mobility/content_city_schema.json",
+      "bytes": 5346,
+      "sha256": "c66da03670c4c4742375e94632243574379823af921b13cf11a31ac6e346c3a4",
+      "rows": null
+    }
+  ],
+  "checks": {
+    "city_rows": 11422,
+    "unique_city_ids": 11422,
+    "mapped_source_records": 5182,
+    "mapped_source_content_hashes": 4423,
+    "relationship_content_hashes": 4423,
+    "all_retained_content_hashes": 4425,
+    "source_content_city_rows": 16705,
+    "source_city_relations": 14328,
+    "source_content_rows_without_city": 2377,
+    "content_hashes_with_city_link_and_source": 2335,
+    "mapped_source_content_city_relations": 12440,
+    "content_city_relations": 12442,
+    "content_city_rows_without_mapped_source": 2,
+    "cities_with_relationship_rows": 2959,
+    "accepted_summary_comparison": {
+      "global_unique_source_record_count": "5182",
+      "global_unique_content_sha_count": "4425",
+      "source_record_city_association_count": "14328",
+      "content_city_association_count": "12442",
+      "cities_with_inside_polygon_stop_content": "2959"
+    }
+  }
+}
