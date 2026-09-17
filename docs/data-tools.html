@@ -1,0 +1,119 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Open mobility data, model-ready network interfaces, reproducible assignment, and inspectable network optimization."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Local catalog and city-matching tools | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="data-tools.html">Data tools</a><a href="open-data.html">Evidence</a><a href="datasets.html">Catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Local catalog and city-matching tools</p><h1 id="local-catalog-and-city-matching-tools">Local catalog and city-matching tools</h1>
+<p>Mobility Computation Lab includes a bounded, executable workflow selected from
+original Open Mobility Data Visibility code:</p>
+<ol>
+<li>normalize a user-supplied MobilityDatabase-style feed catalog;</li>
+<li>standardize a user-supplied external-city table;</li>
+<li>match feed municipality names to cities by exact normalized name plus
+two-letter country code;</li>
+<li>write catalog summaries, schema audits, match tables, city summaries, and a
+machine-readable quality report.</li>
+</ol>
+<p>This is local metadata processing. It makes no network request and does not
+require the OMDV source repository.</p>
+<h2 id="isolated-installation">Isolated installation</h2>
+<p>The data tools have their own dependency file so the retained RC5 numerical
+runtime is not changed. The exact pre-existing environment used for this
+release check is recorded in <code>requirements-data-tools-tested.txt</code>.</p>
+<pre><code class="language-bash">python -m venv .venv-data
+.venv-data/bin/python -m pip install -r requirements-data-tools.txt
+</code></pre>
+<p>On Windows PowerShell, use
+<code>.venv-data\Scripts\python.exe</code> instead of <code>.venv-data/bin/python</code>.</p>
+<h2 id="run-the-included-example">Run the included example</h2>
+<pre><code class="language-bash">python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
+</code></pre>
+<p>The output directory must be new or empty. The command writes:</p>
+<ul>
+<li><code>normalized_catalog.csv</code>;</li>
+<li><code>standardized_cities.csv</code>;</li>
+<li><code>feed_city_matches.csv</code>;</li>
+<li><code>city_feed_summary.csv</code>;</li>
+<li><code>ambiguous_city_keys.csv</code>;</li>
+<li>catalog summary and source-schema audit tables;</li>
+<li><code>quality_report.json</code>.</li>
+</ul>
+<p>The report includes input hashes, row counts, match-status counts, ambiguous
+keys, output hashes, and explicit limitations. Every value depends on the
+supplied files; headline evidence constants are not used as processing output.</p>
+<h2 id="catalog-input">Catalog input</h2>
+<p>The catalog input is CSV. The normalizer accepts common evolving aliases:</p>
+<table>
+<thead>
+<tr>
+<th>Meaning</th>
+<th>Example accepted names</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Feed identifier</td>
+<td><code>feed_id</code>, <code>source_id</code>, <code>mdb_source_id</code>, <code>id</code></td>
+</tr>
+<tr>
+<td>Feed type</td>
+<td><code>feed_type</code>, <code>data_type</code>, <code>format</code></td>
+</tr>
+<tr>
+<td>Municipality</td>
+<td><code>municipality</code>, <code>location.municipality</code>, <code>city</code></td>
+</tr>
+<tr>
+<td>Country code</td>
+<td><code>country_iso2</code>, <code>location.country_code</code>, <code>country_code</code></td>
+</tr>
+<tr>
+<td>Provider</td>
+<td><code>provider</code>, <code>operator</code>, <code>agency</code>, <code>organization_name</code></td>
+</tr>
+<tr>
+<td>URL</td>
+<td><code>url</code>, <code>feed_url</code>, <code>urls.latest</code>, direct-download aliases</td>
+</tr>
+<tr>
+<td>Bounding box</td>
+<td>minimum/maximum latitude and longitude aliases</td>
+</tr>
+</tbody>
+</table>
+<p>Missing optional columns are retained as missing values. Feed types and status
+labels are normalized. Invalid two-letter country codes are not silently
+accepted as ISO2 codes.</p>
+<h2 id="city-input">City input</h2>
+<p>The city input is CSV. Useful fields are:</p>
+<ul>
+<li><code>external_city_id</code> (or <code>city_id</code>/<code>id</code>); a deterministic identifier is
+generated when absent;</li>
+<li><code>city_name</code> (or <code>name</code>/<code>city</code>);</li>
+<li><code>country_iso2</code> (or <code>country_code</code>/<code>iso2</code>);</li>
+<li>optional country name, population, latitude, longitude, source, source year,
+capital/megacity flags, and notes.</li>
+</ul>
+<p>A city name and valid two-letter country code are needed for matching. Other
+fields remain available in <code>standardized_cities.csv</code>.</p>
+<h2 id="matching-and-ambiguity">Matching and ambiguity</h2>
+<p>The selected OMDV matcher lowercases names, trims whitespace, and treats
+hyphens and underscores as spaces. It does not remove diacritics, guess
+transliterations, use coordinates, or perform fuzzy matching.</p>
+<p>The MCL adapter detects duplicate normalized city/country keys before invoking
+the matcher. Such keys receive <code>ambiguous_city_key</code> and are not automatically
+assigned. Missing municipality and country fields remain distinct unmatched
+statuses. All source feed rows remain in the match output.</p>
+<h2 id="python-api">Python API</h2>
+<pre><code class="language-python">from mobilitylab.data.catalog_city_workflow import run_catalog_city_workflow
+
+report = run_catalog_city_workflow(
+    &quot;my_feed_catalog.csv&quot;,
+    &quot;my_cities.csv&quot;,
+    &quot;results/my_catalog_match&quot;,
+)
+print(report[&quot;quality&quot;][&quot;match_status_counts&quot;])
+</code></pre>
+<p>The selected lower-level functions are also importable from
+<code>mobilitylab.omdv.geospatial</code> and <code>mobilitylab.omdv.ingest</code>.</p>
+<h2 id="scientific-boundary">Scientific boundary</h2>
+<p>Named-entity city matching is not GPS map matching. Catalog parsing is not a
+GTFS ZIP parser. A metadata URL is not evidence of current endpoint health.
+These tools do not compile a city network, estimate demand, build hierarchical
+zones, or connect GTFS/GPS data to the column-generation solver.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · open evidence to verified network results</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

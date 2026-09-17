@@ -2,7 +2,7 @@
 
 ## Source installation
 
-Download or clone this repository, then open a terminal in its root. Use Python 3.13 for the tested source configuration.
+Download or clone this repository, then open a terminal in its root. Python 3.12.14 is the v2 assembly-test baseline; the retained source had also been tested on Python 3.13.
 
 Windows PowerShell:
 
@@ -21,6 +21,21 @@ python3.13 -m venv .venv
 ```
 
 The rest of the examples use `python` to mean the interpreter of this environment. The listed package minima are dependency constraints, not a claim that every combination has been tested. The inspected numerical baseline is recorded in `requirements-tested.txt`.
+
+## Optional local data-tools environment
+
+Catalog normalization and city matching use pandas and are intentionally kept
+outside the retained numerical environment:
+
+```bash
+python -m venv .venv-data
+.venv-data/bin/python -m pip install -r requirements-data-tools.txt
+.venv-data/bin/python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
+```
+
+On Windows use `.venv-data\Scripts\python.exe`. See
+[local catalog and city-matching tools](data-tools.md) for schemas, outputs,
+ambiguity handling, and scientific limitations.
 
 ## Run from raw input
 

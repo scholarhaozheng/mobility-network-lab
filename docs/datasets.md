@@ -1,6 +1,12 @@
 # Data catalog
 
-The catalog separates **runnable inputs**, **historical result records** and **external sources**. Browse the machine-readable [`catalog/datasets.json`](../catalog/datasets.json) or run `python tools/mnl.py catalog`.
+The catalog separates **open-data evidence summaries**, **runnable inputs**, **historical result records** and **external sources**. Browse the machine-readable [catalog/datasets.json](../catalog/datasets.json) or run python tools/mnl.py catalog.
+
+## Open-data evidence summaries
+
+The [open mobility data evidence page](open-data.md) publishes compact accepted OMDV-derived metrics for the global urban-centre frame, GTFS static, GTFS-Realtime, OSM, GBFS, and model interoperability.
+
+Only aggregate summaries and provenance are bundled. Raw feeds, registries, geometries, endpoint URLs, source archives, and OMDV code are excluded. Evidence layers are not additive.
 
 ## Road benchmark results
 

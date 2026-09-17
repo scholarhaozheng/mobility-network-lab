@@ -1,0 +1,62 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Open mobility data, model-ready network interfaces, reproducible assignment, and inspectable network optimization."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Open mobility data evidence | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="data-tools.html">Data tools</a><a href="open-data.html">Evidence</a><a href="datasets.html">Catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Open mobility data evidence</p><h1 id="open-mobility-data-evidence">Open mobility data evidence</h1>
+<p>Mobility Computation Lab publishes a compact, rights-conscious view of accepted Open Mobility Data Visibility results. It does not redistribute raw feeds, source registries, city geometries, endpoint URLs, or manuscript material.</p>
+<p>The machine-readable source for this page is <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/open-data-evidence.json">catalog/open-data-evidence.json</a>. Values were checked against current tracked OMDV reference files on 2026-09-17. They are not a new scientific run.</p>
+<p>These fixed evidence summaries are separate from the
+<a href="data-tools.html">executable local data tools</a>. Processing a user-supplied
+catalog does not reproduce or replace the accepted research totals below.</p>
+<h2 id="global-city-frame">Global city frame</h2>
+<p>The common analytical denominator contains <strong>11,422 GHSL urban centres</strong>. It is a frame for comparison, not a list of every settlement and not transport evidence by itself.</p>
+<p>The frozen strict two-registry catalog scenario contains <strong>439 cities</strong>. That number describes a defined metadata-visibility rule; it is not a service-coverage count.</p>
+<h2 id="gtfs-static">GTFS static</h2>
+<table>
+<thead>
+<tr>
+<th>Measure</th>
+<th style="text-align:right">Accepted value</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Eligible GTFS source records</td>
+<td style="text-align:right">6,951</td>
+<td>Feed-record universe; not cities</td>
+</tr>
+<tr>
+<td>All-retained parseable source records</td>
+<td style="text-align:right">5,182</td>
+<td>Source records represented in the retained content view</td>
+</tr>
+<tr>
+<td>All-retained unique content hashes</td>
+<td style="text-align:right">4,425</td>
+<td>Deduplicated parseable contents; not source records</td>
+</tr>
+<tr>
+<td>Cities with inside-polygon stop evidence</td>
+<td style="text-align:right">2,959</td>
+<td>Stop-content evidence; not operating-service coverage</td>
+</tr>
+<tr>
+<td>Network-snapshot unique content hashes</td>
+<td style="text-align:right">4,357</td>
+<td>Separate V25A.2 snapshot view</td>
+</tr>
+</tbody>
+</table>
+<p>The older example value 4,418 is not used: the current accepted tracked reference is <strong>4,425</strong>.</p>
+<h2 id="gtfs-realtime">GTFS-Realtime</h2>
+<p>The accepted table contains <strong>2,465 metadata-level endpoint representatives</strong>. It does not establish present endpoint health.</p>
+<p>In the bounded network snapshot, 433 cities were classified as having static evidence plus a realtime parse-success snapshot. In the all-retained sensitivity view, the corresponding class contains 505 cities and the requires-key-or-blocked class contains 59 cities. These classes are snapshot evidence, not continuous service availability.</p>
+<h2 id="osm">OSM</h2>
+<p>The accepted V6 evidence is a bounded <strong>29-extract</strong> sample. Within the sample countries, 916 GHSL urban-centre rows were evaluated, 791 had at least one bbox-joined OSM point feature, and 245,561 point-feature joins were recorded.</p>
+<p>OSM evidence means map-feature visibility. It does not prove GTFS availability, official service, a timetable, route coverage, or service coverage.</p>
+<h2 id="gbfs-and-shared-mobility">GBFS and shared mobility</h2>
+<p>The accepted local registry summary contains <strong>1,516 system rows</strong> across 48 countries and 1,146 location strings. No live GBFS feed was fetched for that summary. Location strings were not treated as reviewed GHSL city matches.</p>
+<p>GBFS is shared-mobility metadata and is kept separate from public-transport feed evidence.</p>
+<h2 id="model-and-interoperability-catalog">Model and interoperability catalog</h2>
+<p>The compact <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/interoperability-sources.json">interoperability catalog</a> records 13 formats, standards, and tools, including GMNS, OSM2GMNS, TNTP, MATSim, SUMO, AequilibraE, OpenDRIVE, GTFS, NeTEx, and SIRI.</p>
+<p>An entry documents an interface or reuse pathway. It does not establish that a city dataset exists, and it does not mean that every listed tool is implemented here.</p>
+<h2 id="non-additivity-rule">Non-additivity rule</h2>
+<p>Never sum these layers into a global “covered cities” total. Their units, source frames, observation dates, and meanings differ. Use a layer-qualified metric and preserve its boundary statement.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · open evidence to verified network results</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

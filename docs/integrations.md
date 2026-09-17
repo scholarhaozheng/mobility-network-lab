@@ -1,5 +1,7 @@
 # Ecosystem and integrations
 
+The separate [interoperability catalog](interoperability.md) records model and exchange standards without treating them as city-level availability evidence. The [open-data evidence catalog](open-data.md) records observed source layers without claiming that each layer is a runnable network.
+
 | Project | Role | Relationship to this repository |
 |---|---|---|
 | [GMNS](https://github.com/zephyr-data-specs/GMNS) | Network data specification | Vocabulary and explicit identifier conventions |

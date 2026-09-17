@@ -1,0 +1,39 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Open mobility data, model-ready network interfaces, reproducible assignment, and inspectable network optimization."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Architecture | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="data-tools.html">Data tools</a><a href="open-data.html">Evidence</a><a href="datasets.html">Catalog</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Architecture</p><h1 id="architecture">Architecture</h1>
+<p>The public tree presents four layers while retaining the tested Mobility Network Lab numerical layout.</p>
+<h2 id="1-local-data-tools-and-evidence">1. Local data tools and evidence</h2>
+<ul>
+<li>catalog/open-data-evidence.json — accepted aggregate values and claim boundaries;</li>
+<li>catalog/interoperability-sources.json — formats, standards, and upstream tools;</li>
+<li>catalog/omdv-provenance.json — source commits, hashes, package identities, and reuse decisions;</li>
+<li>catalog/omdv-authorized-files.json — selected-copy MIT allowlist and destination hashes;</li>
+<li>src/mobilitylab/omdv/ — selected OMDV normalization, matching, audit, and summary implementations;</li>
+<li>src/mobilitylab/data/ — the connected local workflow plus evidence loaders;</li>
+<li>tools/mcl_data.py — public local-file CLI.</li>
+</ul>
+<p>No raw OMDV dataset or source checkout is required. The executable workflow
+accepts caller-supplied CSVs and remains separate from the fixed accepted
+evidence catalog.</p>
+<h2 id="2-city-and-model-interface">2. City and model interface</h2>
+<ul>
+<li>app/src/gmns_dynamic/external_network_input.py — current input contract and normalization;</li>
+<li>app/src/gmns_dynamic/external_sioux_ingest.py — benchmark-oriented ingestion support;</li>
+<li>app/cases/ — small self-contained examples;</li>
+<li>schemas/ — machine-readable catalog and instance contracts.</li>
+</ul>
+<p>This is a model-ready interface, not a city compiler. Hierarchical zones and general network compilation remain on the roadmap.</p>
+<h2 id="3-assignment-and-optimization">3. Assignment and optimization</h2>
+<ul>
+<li>algorithms/static_fw/ — static Frank–Wolfe implementation;</li>
+<li>app/src/gmns_dynamic/explicit_network_workflow.py — explicit space–time network;</li>
+<li>app/src/gmns_dynamic/run_full_cg_v1.py — reference LP and Phase-I/Phase-II column generation;</li>
+<li>tools/mnl.py — public command entry point.</li>
+</ul>
+<h2 id="4-benchmarks-and-verification">4. Benchmarks and verification</h2>
+<ul>
+<li>catalog/datasets.json — runnable examples, evidence summaries, and benchmark records;</li>
+<li>docs/datasets/ — result cards and interpretation boundaries;</li>
+<li>launcher/ — solver-free verification;</li>
+<li>tools/check_repository.py and tools/publication_gate.py — repository and publication checks.</li>
+</ul>
+<p>The compatibility layout avoids moving tested solver files merely to match a new package tree. Navigation and contracts provide the layer separation.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · open evidence to verified network results</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>
