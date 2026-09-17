@@ -1,9 +1,77 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Open mobility data evidence | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Open mobility data evidence</p><h1 id="open-mobility-data-evidence">Open mobility data evidence</h1>
-<p>Mobility Computation Lab publishes a compact, rights-conscious view of accepted Open Mobility Data Visibility results. It does not redistribute raw feeds, source registries, city geometries, endpoint URLs, or manuscript material.</p>
-<p>The machine-readable source for this page is <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/open-data-evidence.json">catalog/open-data-evidence.json</a>. Values were checked against current tracked OMDV reference files on 2026-09-17. They are not a new scientific run.</p>
-<p>These fixed evidence summaries are separate from the
-<a href="data-tools.html">executable local data tools</a>. Processing a user-supplied
-catalog does not reproduce or replace the accepted research totals below.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Open mobility data evidence | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Open mobility data evidence</p><h1 id="open-mobility-data-evidence">Open mobility data evidence</h1>
+<p>Explore source-qualified evidence about cities, scheduled transit, realtime endpoints, map features and shared mobility. These selected OMDV research results support source selection and provenance in the <a href="city-workflow.html">city network workflow</a>; they are separate from the network solver.</p>
+<p><a href="#global-city-frame">City frame</a> · <a href="#gtfs-static">GTFS</a> · <a href="#gtfs-realtime">Realtime</a> · <a href="#osm">OSM</a> · <a href="#gbfs-and-shared-mobility">GBFS</a> · <a href="#model-and-interoperability-catalog">Model interfaces</a></p>
+<h2 id="choose-what-you-need">Choose what you need</h2>
+<table>
+<thead>
+<tr>
+<th>Your task</th>
+<th>Use this part</th>
+<th>What you receive</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Understand source availability evidence</td>
+<td>The six research layers below</td>
+<td>Fixed, clearly scoped summaries with source references</td>
+</tr>
+<tr>
+<td>Organize your own city/feed tables</td>
+<td><a href="data-tools.html">Executable local data tools</a></td>
+<td>Standardized records, exact name/country matches and a quality report</td>
+</tr>
+<tr>
+<td>Relate data to a network model</td>
+<td><a href="city-workflow.html">City workflow</a> and <a href="data-contract.html">input contract</a></td>
+<td>Guidance on identifiers, zones, demand and observations; no automatic raw-data compilation</td>
+</tr>
+</tbody>
+</table>
+<p>The machine-readable source is <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/open-data-evidence.json">catalog/open-data-evidence.json</a>, with <a href="omdv-provenance.html">metric provenance</a>. Its public selection was checked on 2026-09-17 against accepted OMDV tables. <strong>That is an assembly/check date, not a common observation date for all sources.</strong> The layer-specific research views below retain their own scope. No download, endpoint probe or scientific rerun was performed to create this page.</p>
+<p>The public package includes compact summaries and selected code, not the full city registry, raw GTFS archives, endpoint lists, OSM extracts or manuscript material. <a href="data-access.html">Data access and licenses</a></p>
+<h2 id="how-the-layers-support-a-city-study">How the layers support a city study</h2>
+<table>
+<thead>
+<tr>
+<th>Evidence layer</th>
+<th>Useful role</th>
+<th>Do not substitute it for</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>City frame and catalog visibility</td>
+<td>Define comparable study units and record city/source identities</td>
+<td>Traffic analysis zones, centroid connectors or OD demand</td>
+</tr>
+<tr>
+<td>GTFS static</td>
+<td>Describe retained schedule-content evidence and potential transit sources</td>
+<td>Passenger demand, observed vehicles or a working transit assignment model</td>
+</tr>
+<tr>
+<td>GTFS-Realtime</td>
+<td>Distinguish source metadata from past payload classifications</td>
+<td>Current endpoint health, collected GPS trajectories or a continuous live service</td>
+</tr>
+<tr>
+<td>OSM map features</td>
+<td>Describe public-transport point evidence in the declared sample</td>
+<td>A complete routable road network or an OSM-to-GMNS conversion</td>
+</tr>
+<tr>
+<td>GBFS registry</td>
+<td>Locate shared-mobility metadata categories</td>
+<td>GPS trips, a bike network or reviewed city matches</td>
+</tr>
+<tr>
+<td>Model-interface crosswalk</td>
+<td>Select a relevant data format or upstream tool</td>
+<td>Proof that each listed tool is integrated or a city dataset is available</td>
+</tr>
+</tbody>
+</table>
 <h2 id="global-city-frame">Global city frame</h2>
 <p>The common analytical denominator contains <strong>11,422 GHSL urban centres</strong>. It is a frame for comparison, not a list of every settlement and not transport evidence by itself.</p>
 <p>The frozen strict two-registry catalog scenario contains <strong>439 cities</strong>. That number describes a defined metadata-visibility rule; it is not a service-coverage count.</p>
@@ -44,7 +112,7 @@ catalog does not reproduce or replace the accepted research totals below.</p>
 </tr>
 </tbody>
 </table>
-<p>The older example value 4,418 is not used: the current accepted tracked reference is <strong>4,425</strong>.</p>
+<p>The all-retained and network-snapshot values are distinct views; keep their source scopes separate.</p>
 <h2 id="gtfs-realtime">GTFS-Realtime</h2>
 <p>The accepted table contains <strong>2,465 metadata-level endpoint representatives</strong>. It does not establish present endpoint health.</p>
 <p>In the bounded network snapshot, 433 cities were classified as having static evidence plus a realtime parse-success snapshot. In the all-retained sensitivity view, the corresponding class contains 505 cities and the requires-key-or-blocked class contains 59 cities. These classes are snapshot evidence, not continuous service availability.</p>

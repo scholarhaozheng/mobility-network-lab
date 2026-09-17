@@ -4,6 +4,7 @@
   <a href="#city-network-workflow">City workflow</a> ·
   <a href="docs/datasets.md">Network catalog</a> ·
   <a href="docs/visualizations.md">Visual results</a> ·
+  <a href="#mobility-data-support">Open data</a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="docs/data-contract.md">GMNS-compatible inputs</a> ·
   <a href="docs/methods.md">Methods</a>
@@ -65,6 +66,44 @@ Explore the actual saved results before running an example. The two panels below
 
 Historical road records include checked results and approved figures, **not redistributed raw inputs**. Self-contained [synthetic reference inputs](docs/examples.md) are bundled separately for installation and regression testing. Static FW and space–time CG solve different model formulations; their objective values are not directly comparable.
 
+## Mobility data support
+
+### Open mobility evidence
+
+**Explore the data behind a city model, then prepare the records you need.** Selected Open Mobility Data Visibility (OMDV) results provide source context for transit, map features and shared mobility; the executable tools below help organize your own catalog and city records.
+
+<!-- open-evidence-overview:start -->
+<table>
+<tr>
+<td width="50%" data-evidence-layer="global_city_frame"><b>11,422 urban centres</b><br><a href="docs/open-data.md#global-city-frame">City frame &amp; catalog visibility</a><br>A common GHSL study frame with explicitly defined catalog-matching scenarios.</td>
+<td width="50%" data-evidence-layer="gtfs_static"><b>2,959 cities with GTFS stop evidence</b><br><a href="docs/open-data.md#gtfs-static">Scheduled-transit evidence</a><br>4,425 unique parseable content hashes in the all-retained view; city evidence uses inside-polygon stops.</td>
+</tr>
+<tr>
+<td data-evidence-layer="gtfs_realtime"><b>2,465 endpoint representatives</b><br><a href="docs/open-data.md#gtfs-realtime">GTFS-Realtime source context</a><br>Metadata accounting and bounded snapshot classifications, not a live health monitor.</td>
+<td data-evidence-layer="osm_map_features"><b>29 regional extracts</b><br><a href="docs/open-data.md#osm">OSM map-feature evidence</a><br>791 of 916 sampled urban-centre rows have bbox-joined point-feature evidence.</td>
+</tr>
+<tr>
+<td data-evidence-layer="gbfs_shared_mobility"><b>1,516 shared-mobility registry rows</b><br><a href="docs/open-data.md#gbfs-and-shared-mobility">GBFS source context</a><br>48 countries represented; location strings are not reviewed city matches.</td>
+<td data-evidence-layer="model_interoperability"><b>13 standards and tools</b><br><a href="docs/interoperability.md">Model-interface crosswalk</a><br>GMNS, TNTP, GTFS and related formats: references and reuse pathways, not thirteen bundled converters.</td>
+</tr>
+</table>
+<!-- open-evidence-overview:end -->
+
+These evidence layers are not additive. Each value is tied to its own unit, source frame and retained research snapshot. They do not measure live service coverage or the number of runnable city models. The public release includes **compact summaries, provenance and selected executable tools**, not the complete city registry or archived feeds. [Definitions and snapshot scopes](docs/open-data.md) · [Trace each metric](docs/omdv-provenance.md)
+
+### Prepare your own source records
+
+The authorized OMDV workflow normalizes a user-supplied feed catalog and city table, performs exact city/country **named-entity matching**, and writes standardized records, unmatched/ambiguous statuses and quality checks.
+
+```bash
+python -m pip install -r requirements-data-tools.txt
+python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
+```
+
+Start with `quality_report.json`, `feed_city_matches.csv` and `standardized_cities.csv`. The bundled sample is a labelled fixture; use your own tables for an actual study. This is metadata preparation, not GPS-to-road matching, traffic-zone creation or OD estimation. No automatic connection to the network solver is implied.
+
+[**Use the data tools**](docs/data-tools.md) · [**Explore all six evidence layers**](docs/open-data.md) · [**Connect data to the city workflow**](docs/city-workflow.md)
+
 ## Quick start
 
 Use a compatible Python environment and install the network-workflow dependencies. The source has been exercised with Python 3.12 and 3.13; see the [tested profiles and installation guide](docs/getting-started.md).
@@ -98,19 +137,6 @@ The current CG profile uses one-minute steps, positive integer travel times, a c
 **Network + demand → route initialization → explicit space–time network → reference LP + Phase-I/II → final pool, flows and duals → independent checks.**
 
 The allowed network is independent of the initial route pool. Every column in the last successfully solved pool is exported, including zero-flow columns. Reference agreement and independently established pricing closure are distinct statements.
-
-## Mobility data support
-
-Selected OMDV code supports the city-data preparation layer without replacing the network-modelling workflow. It normalizes a local feed catalog and city table, performs exact city/country named-entity matching, and exports standardized records, ambiguities and quality checks.
-
-```bash
-python -m pip install -r requirements-data-tools.txt
-python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
-```
-
-[Data-tool input/output guide](docs/data-tools.md) · [Open mobility data summaries](docs/open-data.md) · [Source provenance](docs/omdv-provenance.md)
-
-This tool does not infer travel demand or match GPS to roads. The separate OMDV evidence catalog documents a study of **11,422 GHSL urban centres**; it is not a release of 11,422 runnable city models. These evidence layers are not additive. Complete source-specific statistics remain in the evidence guide, rather than defining the scope of the modelling software.
 
 ## Tools, methods and extensions
 

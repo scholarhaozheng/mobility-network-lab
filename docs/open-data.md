@@ -1,12 +1,31 @@
 # Open mobility data evidence
 
-Mobility Computation Lab publishes a compact, rights-conscious view of accepted Open Mobility Data Visibility results. It does not redistribute raw feeds, source registries, city geometries, endpoint URLs, or manuscript material.
+Explore source-qualified evidence about cities, scheduled transit, realtime endpoints, map features and shared mobility. These selected OMDV research results support source selection and provenance in the [city network workflow](city-workflow.md); they are separate from the network solver.
 
-The machine-readable source for this page is [catalog/open-data-evidence.json](../catalog/open-data-evidence.json). Values were checked against current tracked OMDV reference files on 2026-09-17. They are not a new scientific run.
+[City frame](#global-city-frame) · [GTFS](#gtfs-static) · [Realtime](#gtfs-realtime) · [OSM](#osm) · [GBFS](#gbfs-and-shared-mobility) · [Model interfaces](#model-and-interoperability-catalog)
 
-These fixed evidence summaries are separate from the
-[executable local data tools](data-tools.md). Processing a user-supplied
-catalog does not reproduce or replace the accepted research totals below.
+## Choose what you need
+
+| Your task | Use this part | What you receive |
+|---|---|---|
+| Understand source availability evidence | The six research layers below | Fixed, clearly scoped summaries with source references |
+| Organize your own city/feed tables | [Executable local data tools](data-tools.md) | Standardized records, exact name/country matches and a quality report |
+| Relate data to a network model | [City workflow](city-workflow.md) and [input contract](data-contract.md) | Guidance on identifiers, zones, demand and observations; no automatic raw-data compilation |
+
+The machine-readable source is [catalog/open-data-evidence.json](../catalog/open-data-evidence.json), with [metric provenance](omdv-provenance.md). Its public selection was checked on 2026-09-17 against accepted OMDV tables. **That is an assembly/check date, not a common observation date for all sources.** The layer-specific research views below retain their own scope. No download, endpoint probe or scientific rerun was performed to create this page.
+
+The public package includes compact summaries and selected code, not the full city registry, raw GTFS archives, endpoint lists, OSM extracts or manuscript material. [Data access and licenses](data-access.md)
+
+## How the layers support a city study
+
+| Evidence layer | Useful role | Do not substitute it for |
+|---|---|---|
+| City frame and catalog visibility | Define comparable study units and record city/source identities | Traffic analysis zones, centroid connectors or OD demand |
+| GTFS static | Describe retained schedule-content evidence and potential transit sources | Passenger demand, observed vehicles or a working transit assignment model |
+| GTFS-Realtime | Distinguish source metadata from past payload classifications | Current endpoint health, collected GPS trajectories or a continuous live service |
+| OSM map features | Describe public-transport point evidence in the declared sample | A complete routable road network or an OSM-to-GMNS conversion |
+| GBFS registry | Locate shared-mobility metadata categories | GPS trips, a bike network or reviewed city matches |
+| Model-interface crosswalk | Select a relevant data format or upstream tool | Proof that each listed tool is integrated or a city dataset is available |
 
 ## Global city frame
 
@@ -24,7 +43,7 @@ The frozen strict two-registry catalog scenario contains **439 cities**. That nu
 | Cities with inside-polygon stop evidence | 2,959 | Stop-content evidence; not operating-service coverage |
 | Network-snapshot unique content hashes | 4,357 | Separate V25A.2 snapshot view |
 
-The older example value 4,418 is not used: the current accepted tracked reference is **4,425**.
+The all-retained and network-snapshot values are distinct views; keep their source scopes separate.
 
 ## GTFS-Realtime
 

@@ -107,6 +107,30 @@ def main() -> int:
             errors.append(f"Homepage contract failed: {label}")
         checks += 1
 
+    # Protect the supporting evidence overview as well as the city-first presentation.
+    evidence = json.loads((ROOT / "catalog/open-data-evidence.json").read_text(encoding="utf-8"))
+    layers = {layer["id"]: layer for layer in evidence["layers"]}
+    metric_ids = {
+        "global_city_frame": "ghsl_urban_centres",
+        "gtfs_static": "cities_with_inside_polygon_stop_evidence",
+        "gtfs_realtime": "endpoint_representatives",
+        "osm_map_features": "sample_extracts",
+        "gbfs_shared_mobility": "system_rows",
+        "model_interoperability": "crosswalk_entries",
+    }
+    for layer_id, metric_id in metric_ids.items():
+        metric = next(m for m in layers[layer_id]["metrics"] if m["id"] == metric_id)
+        expected_value = f"{metric['value']:,}"
+        for label, surface in (("README", readme_text), ("Pages homepage", homepage)):
+            pattern = rf'<(?:td|article)\b[^>]*data-evidence-layer="{re.escape(layer_id)}"[^>]*>(.*?)</(?:td|article)>'
+            match = re.search(pattern, surface, re.S)
+            if not match or expected_value not in match.group(1):
+                errors.append(f"{label}: evidence card missing/stale for {layer_id}")
+            checks += 1
+    if not (readme_text.find("## City network workflow") < readme_text.find("## Sioux Falls benchmark series") < readme_text.find("## Mobility data support")):
+        errors.append("Data overview must follow the city workflow and road benchmarks")
+    checks += 1
+
     result = {
         "status": "PASS" if not errors else "FAIL",
         "checks": checks,

@@ -106,6 +106,10 @@ print(report["quality"]["match_status_counts"])
 The selected lower-level functions are also importable from
 `mobilitylab.omdv.geospatial` and `mobilitylab.omdv.ingest`.
 
+## Related evidence and next steps
+
+The [open mobility evidence guide](open-data.md) provides fixed research summaries and their source scopes. The command above instead computes results from your own local tables; it does not regenerate those global totals. Use the [city workflow](city-workflow.md) to decide which identifiers and observations a network model still needs.
+
 ## Scientific boundary
 
 Named-entity city matching is not GPS map matching. Catalog parsing is not a
