@@ -34,7 +34,8 @@ def main() -> int:
                 errors.append(f'Private machine path in {relative}')
         if p.suffix in ('.md','.html'):
             text=p.read_text(encoding='utf-8-sig')
-            if re.search(r'[\u4e00-\u9fff]',text):errors.append(f'Non-English public page: {relative}')
+            prose_text=re.sub(r'<script type="application/json"[^>]*>.*?</script>','',text,flags=re.DOTALL)
+            if re.search(r'[\u4e00-\u9fff]',prose_text):errors.append(f'Non-English public page: {relative}')
             # The README and documentation use plain relative links without spaces.
             refs=re.findall(r'(?:href|src)=["\']([^"\']+)',text) if p.suffix=='.html' else re.findall(r'\]\(([^)]+)\)',text)+re.findall(r'(?:href|src)=["\']([^"\']+)',text)
             for raw in refs:
@@ -67,8 +68,20 @@ def main() -> int:
     if not any((ROOT/name).is_file() for name in ('LICENSE','LICENSE.md','LICENSE.txt')):
         (errors if args.publication else warnings).append('The maintainer must select and authorize a root code license before public release.')
     if args.publication:
-        for name in ('THIRD_PARTY_NOTICES.md','DATA_LICENSES.md','requirements-data-tools.txt','requirements-data-tools-tested.txt','catalog/open-data-evidence.json','catalog/omdv-provenance.json','catalog/omdv-authorized-files.json','schemas/catalog-city-quality-report.schema.json','docs/open-data.md','docs/data-tools.md','docs/architecture.md','examples/data-tools/feeds_sample.csv','examples/data-tools/external_city_universe_sample.csv'):
+        for name in ('THIRD_PARTY_NOTICES.md','DATA_LICENSES.md','requirements-data-tools.txt','requirements-data-tools-tested.txt','catalog/open-data-evidence.json','catalog/open-data-products.json','catalog/omdv-provenance.json','catalog/omdv-authorized-files.json','schemas/catalog-city-quality-report.schema.json','docs/open-data.md','docs/open-data-explorer.md','docs/open-data-sources.md','docs/gtfs-zip-tool.md','docs/data-tools.md','docs/architecture.md','docs/data/open-mobility/city_evidence.csv','docs/data/open-mobility/city_evidence_schema.json','docs/data/open-mobility/content_city.csv','docs/data/open-mobility/content_city_schema.json','docs/data/open-mobility/source_content_city.csv','docs/data/open-mobility/source_content_city_schema.json','examples/data-tools/feeds_sample.csv','examples/data-tools/external_city_universe_sample.csv'):
             if not (ROOT/name).is_file():errors.append(f'Missing publication rights notice: {name}')
+        try:
+            products=json.loads((ROOT/'catalog/open-data-products.json').read_text(encoding='utf-8'))
+            for product in products['products']:
+                target=ROOT/product['path']
+                if not target.is_file():errors.append(f'Missing open-data product: {product["path"]}')
+                elif hashlib.sha256(target.read_bytes()).hexdigest()!=product['sha256']:
+                    errors.append(f'Open-data product hash mismatch: {product["path"]}')
+                checks+=1
+            if products['checks'].get('city_rows')!=11422:
+                errors.append('Open-data product catalog does not retain 11,422 city rows.')
+        except Exception as exc:
+            errors.append(f'Open-data product catalog failed validation: {exc}')
         try:
             from mobilitylab.data.evidence import load_evidence_catalog
             load_evidence_catalog()

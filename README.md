@@ -70,7 +70,7 @@ Historical road records include checked results and approved figures, **not redi
 
 ### Open mobility evidence
 
-**Explore the data behind a city model, then prepare the records you need.** Selected Open Mobility Data Visibility (OMDV) results provide source context for transit, map features and shared mobility; the executable tools below help organize your own catalog and city records.
+**Explore the data behind a city model, then prepare the records you need.** Selected Open Mobility Data Visibility (OMDV) results now include a downloadable, non-geometric 11,422-city evidence table and actual source-record → content-SHA → city relationships. The executable tools query those records, organize local catalogs and inspect a user-supplied GTFS ZIP.
 
 <!-- open-evidence-overview:start -->
 <table>
@@ -89,20 +89,22 @@ Historical road records include checked results and approved figures, **not redi
 </table>
 <!-- open-evidence-overview:end -->
 
-These evidence layers are not additive. Each value is tied to its own unit, source frame and retained research snapshot. They do not measure live service coverage or the number of runnable city models. The public release includes **compact summaries, provenance and selected executable tools**, not the complete city registry or archived feeds. [Definitions and snapshot scopes](docs/open-data.md) · [Trace each metric](docs/omdv-provenance.md)
+These evidence layers are not additive. Each value is tied to its own unit, source frame and retained research snapshot. They do not measure live service coverage or the number of runnable city models. The public release includes a **selected result projection**, provenance and executable tools—not raw feeds, provider URLs, geometry or live endpoint checks. [Browse/download 11,422 city rows](docs/open-data-explorer.md) · [Sources and reproduction scope](docs/open-data-sources.md) · [Trace each metric](docs/omdv-provenance.md)
 
-### Prepare your own source records
+### Query evidence and prepare your own records
 
 The authorized OMDV workflow normalizes a user-supplied feed catalog and city table, performs exact city/country **named-entity matching**, and writes standardized records, unmatched/ambiguous statuses and quality checks.
 
 ```bash
 python -m pip install -r requirements-data-tools.txt
 python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
+python -B tools/mcl_data.py query-city --name "Hong Kong" --country CHN --include-relations
+python -B tools/mcl_data.py process-gtfs --zip path/to/feed.zip --output results/gtfs-content-report
 ```
 
-Start with `quality_report.json`, `feed_city_matches.csv` and `standardized_cities.csv`. The bundled sample is a labelled fixture; use your own tables for an actual study. This is metadata preparation, not GPS-to-road matching, traffic-zone creation or OD estimation. No automatic connection to the network solver is implied.
+`query-city` prefers the stable city ID and explicitly rejects duplicate name/country keys unless `--all-matches` is requested. `process-gtfs` reuses the authorized OMDV content parser with a streamed stop-times pass; it makes no network request and does not extract or modify the ZIP. These are evidence/content tools, not GPS-to-road matching, traffic-zone creation, OD estimation or an automatic connection to the solver.
 
-[**Use the data tools**](docs/data-tools.md) · [**Explore all six evidence layers**](docs/open-data.md) · [**Connect data to the city workflow**](docs/city-workflow.md)
+[**Browse city evidence**](docs/open-data-explorer.md) · [**Use the data tools**](docs/data-tools.md) · [**Explore all six evidence layers**](docs/open-data.md) · [**Connect data to the city workflow**](docs/city-workflow.md)
 
 ## Quick start
 

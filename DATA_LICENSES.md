@@ -2,7 +2,7 @@
 
 ## Selected OMDV software and fixtures
 
-Hao Zheng explicitly authorized four selected original OMDV implementations
+Hao Zheng explicitly authorized five selected original OMDV implementations
 and two bounded example fixtures for distribution in this repository under the
 root MIT License. The exact source paths, commits, source hashes, destination
 paths, destination hashes, and adaptations are recorded in
@@ -16,22 +16,37 @@ The two `examples/data-tools/` CSV files are controlled fixtures used to test
 schema normalization and exact matching. Their URLs use `example.com` and they
 are not raw provider catalogs or bundled transit feeds.
 
-## OMDV-derived aggregate evidence
+## OMDV-derived public result projections
 
-The public evidence catalog also contains compact aggregate values re-expressed
-from tracked accepted OMDV summaries. It does not contain source rows, raw
-feeds, city geometries, endpoint lists, provider archives, or analytical source
-tables. These summaries are provenance-bound factual aggregates and do not
-grant a separate data license for absent source datasets. Consult
-[OMDV provenance](docs/omdv-provenance.md).
+The public evidence area contains compact aggregate values plus selected,
+non-geometric fields from accepted OMDV result tables:
+
+- all 11,422 accepted city-frame rows with identifiers, labels, country codes,
+  accepted population values and selected catalog/GTFS/realtime states;
+- all 12,442 accepted content-hash/city links;
+- 14,328 accepted source-record/content/city relations, with explicit rows for
+  source/content records that have no accepted city link.
+
+The projection does not contain raw feeds, city geometry, coordinates, endpoint
+or provider URLs, credentials, source archives, SEDAC fields or manuscript
+tables. Field-level lineage and exact source hashes are documented in
+[open-data sources](docs/open-data-sources.md) and the machine-readable schemas.
+Blank source values remain blank; unmatched and no-evidence states are not
+converted into a claim that transport data do not exist.
+
+These outputs do not grant a separate license for absent source datasets. The
+root MIT License applies to project software and selected authorized original
+OMDV code, not automatically to upstream data fields. GHSL-origin fields remain
+subject to the European Commission reuse terms referenced by the source
+manifest; GTFS/catalog source providers retain their own terms.
 
 ## External source boundaries
 
 | Source family | Included material | Excluded material |
 |---|---|---|
-| GHSL | Aggregate analytical-frame count | Geometry, attributes, or source download |
-| MobilityDatabase / Transitland | Aggregate catalog-scenario values | Feed registry rows, endpoints, raw metadata |
-| GTFS / GTFS-Realtime | Aggregate content and snapshot classifications | Feed archives, payloads, endpoint URLs |
+| GHSL | Selected non-geometric city-frame identifiers, labels, country codes, accepted population values and aggregate count | Geometry, coordinates, source archive |
+| MobilityDatabase / Transitland | Selected source registry/record IDs, content hashes and accepted catalog states | Provider URLs, endpoint URLs, raw provider metadata |
+| GTFS / GTFS-Realtime | Accepted content/city relationships, counts and historical snapshot classifications | Feed archives, payloads, credentials, live endpoint state |
 | OpenStreetMap / Geofabrik | Aggregate bounded-sample evidence | PBF extracts, feature rows, cached downloads |
 | GBFS | Aggregate registry summary | Registry rows, live system feeds |
 | SEDAC and manuscript analyses | None | Raw or derived analytical tables and figures |

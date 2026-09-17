@@ -47,6 +47,7 @@ class OpenDataEvidenceTests(unittest.TestCase):
                 "src/omdv/geospatial/city_matching.py",
                 "src/omdv/ingest/mobility_database.py",
                 "src/omdv/ingest/catalog_summary.py",
+                "scripts/analysis/parse_v25a_3_gtfs_unique_content.py",
             },
         )
         for item in allowlist["files"]:
