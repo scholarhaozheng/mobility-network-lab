@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Boston four-step figures: display data and provenance | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Boston four-step figures: display data and provenance</p><h1 id="boston-four-step-figures-display-data-and-provenance">Boston four-step figures: display data and provenance</h1>
+<p>These three new charts render accepted saved results. They do not execute trip generation, IPF, mode choice, GPS matching or assignment. The existing Boston maps remain unchanged.</p>
+<table>
+<thead>
+<tr>
+<th>Figure</th>
+<th>Saved source</th>
+<th>Display operation</th>
+<th>Download</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>01 · Trip generation</td>
+<td><code>public_component/data/trip_generation_by_purpose.csv</code></td>
+<td>Sum <code>productions_person_trips_daily</code> by original purpose code</td>
+<td><a href="../assets/boston/four_step_results_r1/data/generation_by_purpose.csv">Six totals</a></td>
+</tr>
+<tr>
+<td>02 · Trip distribution</td>
+<td><code>derived/regional_od_h3.csv</code> in the full English public asset</td>
+<td>Filter <code>purpose=HBW</code>; pivot the saved <code>person_trips_midday_od</code> into stable H3 order</td>
+<td><a href="../assets/boston/four_step_results_r1/data/hbw_midday_matrix.csv">Matrix</a> · <a href="../assets/boston/four_step_results_r1/data/zone_order.csv">ID order</a></td>
+</tr>
+<tr>
+<td>03 · Mode response</td>
+<td><code>public_component/data/od_mode_probabilities.csv</code></td>
+<td>Select <code>panel_od_019</code>, <code>12:30:00</code>, <code>mu_transit_sensitivity=1</code>; compute 100 × (S2−S1)</td>
+<td><a href="../assets/boston/four_step_results_r1/data/selected_mode_response.csv">Saved probabilities and percentage-point change</a></td>
+</tr>
+<tr>
+<td>Numeric GPS trace</td>
+<td><code>public_component/data/feedback_trace.csv</code></td>
+<td>Read the single published source-keyed trace</td>
+<td><a href="../assets/boston/four_step_results_r1/data/selected_feedback_trace.json">Display copy</a></td>
+</tr>
+</tbody>
+</table>
+<p><a href="../assets/boston/four_step_results_r1/data/PROVENANCE.json">Exact member hashes and transformations</a> identify the accepted English data archive (<code>a3f33648c4dff3d3f462e4bbf4ebedb198665afd165688d0f481c88cded31d71</code>). Full precision is retained in display data; chart text is rounded for legibility.</p>
+<p>The generation chart uses modeled workday <strong>person trips</strong>. The OD image uses modeled <strong>midday HBW person trips</strong>, not the whole daily total. Its <code>log(1+x)</code> colors have original-unit tick labels; blank means no exported entry, not a measured zero. The mode chart uses <strong>percentage points</strong>, with all nine source leaves retained. These scopes must not be added together.</p>
+<p>The 36-OD panel is a selected subset. Its approximately 202 vehicle trips are not the full regional demand. S1 shares are a common regional baseline; S2 is a nested pivot response. The illustrated GPS event does not necessarily match the segment in the separate road-projection map.</p>
+<h2 id="render-the-supplied-display-data">Render the supplied display data</h2>
+<p>Use an existing environment with NumPy and Matplotlib, then run from the repository root:</p>
+<pre><code class="language-bash">python -B tools/visuals/render_boston_four_step_results.py
+</code></pre>
+<p>The script reads the included display CSVs and writes PNG/SVG files under <code>docs/assets/boston/four_step_results_r1/</code>. It checks totals, zone order and probability sums before plotting. It makes no network request and does not change numerical results. Rendering libraries may produce different file bytes across versions even with identical numerical data.</p>
+<p>The credited underlying sources remain ACS, MassGIS, CTPS TDM23 and MBTA, as registered by the public Boston component. The original <a href="boston-visual-sources.html">network/map credits</a> continue to apply to the retained maps. Project-derived display tables are not a new release of household microdata or raw vehicle archives.</p>
+<p><a href="boston-behavior-feedback.html">Four-step result</a> · <a href="boston-central.html">Network and earlier layers</a></p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

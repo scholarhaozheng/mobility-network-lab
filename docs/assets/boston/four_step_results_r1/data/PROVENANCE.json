@@ -1,0 +1,58 @@
+{
+  "plot_scope": "Read-only visualization of accepted saved tables; no model execution or new observations.",
+  "source_archive": "BOSTON_BEHAVIOR_FEEDBACK_PUBLIC_DATA_EN.zip",
+  "source_archive_sha256": "a3f33648c4dff3d3f462e4bbf4ebedb198665afd165688d0f481c88cded31d71",
+  "source_members": {
+    "public_component/data/trip_generation_by_purpose.csv": {
+      "sha256": "a12a59f44473ca3ae846b8acf734f493b311667a0f0f3a7a050d8b2c578666e1",
+      "bytes": 366401
+    },
+    "derived/regional_od_h3.csv": {
+      "sha256": "d9a0c890790d35881e1c5e43f10d16970fc47b5fda5154d23216f62d0328120b",
+      "bytes": 115944913
+    },
+    "public_component/data/od_mode_probabilities.csv": {
+      "sha256": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c",
+      "bytes": 2234104
+    },
+    "public_component/data/feedback_trace.csv": {
+      "sha256": "4da6560e8a1d46f4f64a5f1ec727aa372504141f9871ac048f3270f80f8eac13",
+      "bytes": 2248
+    }
+  },
+  "generation": {
+    "unit": "modeled average-workday person trips",
+    "purpose_codes": [
+      "HBW",
+      "HBSC",
+      "HBSR",
+      "HBPB",
+      "NHBW",
+      "NHBNW"
+    ],
+    "total": 816054.6735706696,
+    "method": "sum saved zonal productions by source purpose code; household estimates multiplied by transferred regional effective mean rates",
+    "not": "observed city trip count or amount loaded to FW"
+  },
+  "distribution": {
+    "purpose": "HBW",
+    "unit": "modeled midday person trips",
+    "zones": 177,
+    "exported_cells": 30961,
+    "total_midday": 22807.21691394174,
+    "order": "lexicographic source H3 zone ID; index-to-ID table included",
+    "display": "log1p color transformation; numeric colorbar labels are untransformed person trips",
+    "blank_cells": "no exported record; left blank, not inferred to be observed zero",
+    "not": "a route map, measured OD or full assignment"
+  },
+  "choice": {
+    "od_id": "panel_od_019",
+    "departure_time": "12:30:00",
+    "mu_transit": 1.0,
+    "display": "S2-S1 probability difference in percentage points; all nine source leaves retained",
+    "source_model": "common regional baseline shares plus nested pivot response",
+    "not": "newly estimated OD-specific absolute baseline choice"
+  },
+  "downstream_scope": "36 fixed HBW ODs x 3 departure samples; 78 eligible OD-time cases. Selected subset, not 816054.67 assigned person trips.",
+  "credits": "Project-derived display tables from the supplied Boston English public release. Source registers retain ACS, MassGIS, CTPS, MBTA and network attribution."
+}

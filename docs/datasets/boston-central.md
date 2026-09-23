@@ -4,6 +4,22 @@ This is the first bounded real-city instance in the repository. It connects a co
 
 [Open the corrected network/GPS map](../../examples/boston/map/boston_central_layers.html) · [Open the activity-prior map](../../examples/boston/map/boston_activity_prior_layers.html) · [Five-map visual gallery](#boston-visual-gallery) · [Browse the component](../../examples/boston/README.md) · [Query the compact SQLite copy](../../examples/boston/query_boston.py)
 
+## Start with the four-step result
+
+[**Open the four-stage calculation and GPS feedback →**](boston-behavior-feedback.md)
+
+| What to inspect | Its role |
+|---|---|
+| Network / zones below | Shared spatial foundation, not trip generation |
+| Residential assessment map below | Activity input, not generated trips |
+| [Generation totals](boston-behavior-feedback.md#step-1-trip-generation) | Stage 01 output |
+| [HBW OD matrix](boston-behavior-feedback.md#step-2-trip-distribution) | Stage 02 output |
+| [Mode-share changes](boston-behavior-feedback.md#step-3-mode-choice) | Stage 03 output |
+| S1 / S2−S1 road maps below | Stage 04 output for the fixed feedback panel |
+| GPS projection below | Spatial linkage illustration; the [numeric feedback trace](boston-behavior-feedback.md#gps-feedback) shows how a separate recorded event reaches the model |
+
+The later regional-rate generation output and the fixed feedback panel are documented together in that walkthrough. The earlier 50,000-person-trip activity scenario remains a separate retained prior, not the demand loaded in the current feedback comparison.
+
 ## Boston visual gallery
 
 These saved figures use the actual Central Boston network and a common EPSG:32619 display projection. The maps convey different source relations; the selected activity and GPS examples are not asserted to be the same observation or scenario as the fixed-panel feedback trace. [Source versions, units and image paths](boston-visual-sources.md) accompany the gallery.
@@ -53,9 +69,9 @@ Saved S2 exploratory GPS-overlay flow minus saved S1 planned-service flow uses i
 
 Catalog city IDs, GHSL IDs, feed IDs, source TAZ IDs and project H3 IDs remain separate. The component does not infer identity from similar labels.
 
-## Demand and assignment
+## Retained activity and engineering-demand scenarios
 
-Two demand tracks now coexist. The original network-accessibility proxy remains byte-separated as the legacy engineering scenario. The activity run `boston_activity_prior_r1_20260922` executes the same four declared steps with new spatial margins:
+These two earlier demand tracks coexist with the later regional-rate and feedback example linked above. The original network-accessibility proxy remains byte-separated as the legacy engineering scenario. The activity run `boston_activity_prior_r1_20260922` provides generation, distribution, fixed-share conversion and assignment-ready inputs with new spatial margins:
 
 1. Trip generation scales official residential assessment area to the production margin and official nonresidential/mixed building area to the attraction margin. These inputs are no longer network proxies. Parcel geometry and stacked assessment records are kept distinct, area overlay uses EPSG:32619, outside-core weights are retained, and r7 is summed from r9.
 2. A doubly constrained gravity model reuses the unchanged free-flow network skim. The new matrix has 25,075 positive OD cells and balances to the assumed 50,000 total with relative maximum margin error below `7.2e-8`.
@@ -64,13 +80,15 @@ Two demand tracks now coexist. The original network-accessibility proxy remains 
 
 The 50,000 daily total, gravity beta, mode shares, AM share, and occupancy remain explicit assumptions. MassGIS assessment area is an activity prior, not observed trips, population, or employment. LODES8 WAC/RAC/OD was identified but the official host timed out after bounded retries, so the release contains no workplace/residence job association and makes no all-purpose-travel claim from LODES.
 
-The existing `solve_fw_refined(...)` entry ran the baseline and a capacity-stress scenario without invoking the solver module's historical `__main__`. Both stopped at the implemented relative-gap criterion in one iteration; the light-load baseline maximum V/C is about 0.143. Link-volume sums are not reported as trip totals.
+The network-proxy baseline and capacity-stress calculations used the existing `solve_fw_refined(...)` entry. They are separate from both the activity-prior input and the current 36-OD feedback panel. The current behavior-feedback maps use the semantic-fix S1/S2 records; see [their exact scope and saved numbers](boston-behavior-feedback.md#step-4-traffic-assignment). Do not use an earlier scenario's V/C, gamma or flow map as the latest result. Link-volume sums are not trip totals.
 
 ## GPS and calibration evidence
 
-The build retained 2,091 cleaned bus-position points in 235 capture-window-censored segments. Thirty segments entered matching; 28 produced continuous directed physical paths. The external HMM succeeded on 19. After recorded HMM failures, the native connected-path engine succeeded on nine more. Two selected failures and all unselected segments remain visible in the private QC tables.
+The original local build retained 2,091 cleaned bus-position points in 235 capture-window-censored segments. Thirty entered matching: 28 returned continuous paths and two did not. The other 205 were not selected. The later joint spatial/time/path checks qualified nine of the returned segments; all nine native-fallback paths were rejected for trusted-observation use. Returning a connected path is not an accuracy certificate.
 
-Ten quality-filtered matched segments support a one-parameter path-time scale diagnostic. Eight vehicle groups form the training set and two independent groups form the holdout. The fitted scale is approximately 2.033. Training RMSE improves, but holdout RMSE worsens from 4.372 to 12.101 minutes, so the parameter is **estimated but not validated**.
+The earlier path-time scale was corrected to approximately 2.185624 after aligning first/last partial-link windows. It remains a development diagnostic: the previously inspected holdout is not new independent validation, and the observed midday period does not align with the separate AM engineering scenario. It is not applied as an automobile cost multiplier.
+
+The current [service-feedback example](boston-behavior-feedback.md#gps-feedback) instead uses 13 separately registered station-interval events as default-off exploratory inputs. Those interval-event counts are not the same objects as the nine quality-qualified road-matching segments. The gallery's GPS illustration and the numeric feedback trace preserve their distinct source identities.
 
 ## Transit and query scope
 

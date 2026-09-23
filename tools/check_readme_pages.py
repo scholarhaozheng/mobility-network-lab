@@ -23,6 +23,37 @@ def _local_target(source: Path, raw: str) -> Path | None:
     return (source.parent / filepart).resolve()
 
 
+def presentation_errors(readme: str, home: str, detail: str) -> list[str]:
+    """Check explicit four-stage navigation, result figures and GPS entry points."""
+    errors: list[str] = []
+    stages = (
+        ("Trip generation", "step-1-trip-generation", "stage-1"),
+        ("Trip distribution", "step-2-trip-distribution", "stage-2"),
+        ("Mode choice", "step-3-mode-choice", "stage-3"),
+        ("Traffic assignment", "step-4-traffic-assignment", "stage-4"),
+    )
+    for label, anchor, home_id in stages:
+        if label.lower() not in readme.lower() or ("boston-behavior-feedback.md#" + anchor) not in readme:
+            errors.append(f"README must name and link the actual stage: {label}")
+        if f'id="{home_id}"' not in home or label.lower() not in home.lower():
+            errors.append(f"Homepage is missing its actual stage card: {label}")
+        if f'id="{anchor}"' not in detail:
+            errors.append(f"Boston detail anchor missing: {anchor}")
+    if "## How GPS changes the result" not in readme or 'id="gps-feedback"' not in home:
+        errors.append("GPS must have a primary, visible explanatory section")
+    for key in ("panel_od_019", "29.052", "27.486", "4.0990%", "4.2246%", "Srestore"):
+        if key not in readme or key not in home:
+            errors.append(f"Saved GPS-to-response evidence not exposed on both primary surfaces: {key}")
+    for stem in ("step1_generation", "step2_distribution", "step3_mode_response"):
+        if stem + ".png" not in readme or stem + ".png" not in home:
+            errors.append(f"A saved stage result figure is not visible: {stem}")
+    if not (0 <= readme.find("## Four-step workflow") < readme.find("## Mobility data support")):
+        errors.append("Four-stage explanation must precede the supporting Open section")
+    if not (0 <= home.find('id="four-step-workflow"') < home.find("Supporting mobility data")):
+        errors.append("Homepage four-stage explanation must precede supporting Open data")
+    return errors
+
+
 def main() -> int:
     errors: list[str] = []
     checks = 0
@@ -42,6 +73,9 @@ def main() -> int:
         "docs/assets/boston/visual_release_r1/mcl_boston_hero.png",
         "docs/assets/boston/visual_release_r1/boston_network_zones.png",
         expected_image,
+        "docs/assets/boston/four_step_results_r1/step1_generation.png",
+        "docs/assets/boston/four_step_results_r1/step2_distribution.png",
+        "docs/assets/boston/four_step_results_r1/step3_mode_response.png",
         "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
         "docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png",
         "docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png",
@@ -101,7 +135,7 @@ def main() -> int:
     for label, present in {
         "Boston-backed site cover": 'src="assets/boston/visual_release_r1/mcl_boston_hero.png"' in homepage,
         "Boston network feature": 'src="assets/boston/visual_release_r1/boston_network_zones.png"' in homepage,
-        "Boston five-map gallery link": 'href="datasets/boston-central.html#boston-visual-gallery"' in homepage,
+        "retained Boston map gallery link": 'href="datasets/boston-central.html#boston-visual-gallery"' in homepage,
         "data-tools navigation": 'href="data-tools.html"' in homepage,
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
         "approved benchmark image": expected_image.removeprefix("docs/") in homepage,
@@ -143,6 +177,10 @@ def main() -> int:
             checks += 1
     if not (readme_text.find("## City network workflow") < readme_text.find("## Sioux Falls benchmark series") < readme_text.find("## Mobility data support")):
         errors.append("Data overview must follow the city workflow and road benchmarks")
+    checks += 1
+
+    detail = (DOCS / "datasets/boston-behavior-feedback.html").read_text(encoding="utf-8")
+    errors.extend(presentation_errors(readme_text, homepage, detail))
     checks += 1
 
     result = {

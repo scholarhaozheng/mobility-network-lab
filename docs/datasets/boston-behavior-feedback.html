@@ -1,49 +1,158 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Central Boston demand and transit feedback | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Central Boston demand and transit feedback</p><h1 id="central-boston-demand-and-transit-feedback">Central Boston demand and transit feedback</h1>
-<p>The current <a href="boston-central.html">Central Boston example</a> connects GMNS-compatible roads and H3 zones with household and activity inputs, a four-step demand workflow, transit service observations, and static road assignment. Its public CSVs rebuild a queryable SQLite database; the upstream research inputs are documented separately.</p>
-<p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/README.md">Open the current component</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md">Follow one observation to a road flow</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/SCHEMA.md">Explore the data dictionary</a></p>
-<h2 id="four-step-workflow">Four-step workflow</h2>
-<ol>
-<li><strong>Trip generation:</strong> area-weighted ACS household estimates and transferred CTPS TDM23.2.0 effective average rates produce approximately 816,054.67 modeled daily person trips. This is a generation result, not the panel's assigned traffic.</li>
-<li><strong>Trip distribution:</strong> activity-based attraction proxies and a gravity/IPF calculation produce a production-attraction matrix. Purpose and time factors convert it to directed OD. External traffic remains unknown and is not loaded.</li>
-<li><strong>Mode choice:</strong> scheduled and observation-adjusted transit journeys enter a nested response around regional baseline mode shares. These shares are not estimated separately from each OD's absolute costs. Official numerical nest scales are unavailable; the reported assignment uses the declared <code>mu_transit=1</code> sensitivity branch.</li>
-<li><strong>Traffic assignment:</strong> selected private and occupied ride-service vehicles enter the existing static Frank-Wolfe solver on the same road network. The result is a conditional panel calculation without regional background traffic.</li>
-</ol>
-<p>The fixed panel has 36 home-based-work OD pairs at three midday departure times. Seventy-eight complete OD-time cases enter the response; exclusions and their person-demand weights remain in the public records. Thirteen registered service-interval adjustments each derive from one observed event. They are disabled by default and have no independent morning-peak validation.</p>
-<h2 id="inspect-the-saved-scenarios">Inspect the saved scenarios</h2>
-<p>S1 is scheduled service. S2 applies the exploratory transit observation overlay. Srestore independently turns it off and recomputes the affected itinerary, cost, probability and demand calculations. This checks the computational connection to the service input.</p>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Central Boston: the four stages and the GPS feedback | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Central Boston: the four stages and the GPS feedback</p><h1 id="central-boston-the-four-stages-and-the-gps-feedback">Central Boston: the four stages and the GPS feedback</h1>
+<p><strong>Follow a saved calculation from household and activity data to road flows.</strong> The four numbered sections show distinct model stages; the separate observation section shows where GPS enters. All figures below read accepted saved results. No new demand estimation, matching, mode calculation or assignment was run to prepare these pages.</p>
+<p><a href="#step-1-trip-generation">01 Generation</a> · <a href="#step-2-trip-distribution">02 Distribution</a> · <a href="#step-3-mode-choice">03 Mode choice</a> · <a href="#step-4-traffic-assignment">04 Assignment</a> · <a href="#gps-feedback">GPS feedback</a> · <a href="#run-the-saved-example">Run the saved example</a></p>
+<h2 id="shared-foundation-different-scopes">Shared foundation, different scopes</h2>
+<p><a href="boston-central.html">The real-city network</a> has 2,852 physical nodes, 5,091 directed roads, 177 H3 r9 zones and nine r7 parents. Zone access, transit, observations and results retain their source IDs and link to this common network. Model access connections are not automatically verified physical paths.</p>
 <table>
 <thead>
 <tr>
-<th>Saved result</th>
-<th style="text-align:right">S1</th>
-<th style="text-align:right">S2</th>
+<th>Scope</th>
+<th>What it contains</th>
+<th>What it does not mean</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Assigned vehicle trips</td>
-<td style="text-align:right">202.0783842283045</td>
-<td style="text-align:right">202.07073267183475</td>
+<td>Regional generation</td>
+<td>Six transferred purpose totals, approximately 816,054.67 person trips per modeled workday</td>
+<td>A measured trip total or the amount assigned in this example</td>
+</tr>
+<tr>
+<td>Regional distribution</td>
+<td>Saved purpose/time-specific PA and directed OD; the illustrated HBW midday total is 22,807.22 person trips</td>
+<td>That every trip is included in the downstream panel</td>
+</tr>
+<tr>
+<td>Fixed feedback panel</td>
+<td>36 HBW OD pairs and three departure samples; 78 eligible OD–time cases</td>
+<td>A random population sample or a whole-region assignment</td>
+</tr>
+<tr>
+<td>Road assignment</td>
+<td>S1/S2 private and occupied ride-service inputs, approximately 202 vehicle trips each</td>
+<td>Regional background traffic or complete allocation of all modes</td>
+</tr>
+</tbody>
+</table>
+<p>Thirty incomplete panel cases retain 78.079907 person trips in the exclusion ledger. The panel's three departure samples use declared engineering weights, not an observed continuous departure profile.</p>
+<p><a id="step-1-trip-generation"></a></p>
+<h2 id="01--trip-generation">01 · Trip Generation</h2>
+<h3 id="how-many-trips-are-produced-and-attracted">How many trips are produced and attracted?</h3>
+<p><strong>Input.</strong> Area-allocated ACS household estimates; CTPS TDM23.2.0 effective regional mean rates by purpose; MassGIS nonresidential/mixed assessment activity for attraction weights.</p>
+<p><strong>Calculation.</strong> For each purpose, multiply each zone's estimated households by the corresponding transferred effective mean rate. The saved area allocation yields about <strong>79,537.49 households</strong>. The six rounded report rates sum to <strong>10.26</strong>, yielding approximately <strong>816,054.67 person trips per modeled workday</strong>. The rates are regional summary transfers, not the complete segmented TDM23 generation model.</p>
+<p><strong>Output.</strong> Zonal, purpose-specific productions and attraction margins in <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv">trip_generation_by_purpose.csv</a>. The chart sums the saved production column across zones for each original purpose code; it does not rerun the model.</p>
+<p><img src="../assets/boston/four_step_results_r1/step1_generation.png" alt="01 Trip generation: saved daily productions by six source purpose codes" /></p>
+<p><a href="../assets/boston/four_step_results_r1/data/generation_by_purpose.csv">Download the six plotted totals</a> · <a href="boston-four-step-sources.html">Chart provenance</a></p>
+<p>The <a href="boston-central.html#residential-assessment-area-activity-prior">residential assessment map</a> is an <strong>activity input</strong> from the earlier 50,000-person-trip prior. It is not the current generation result or an observed population/trip map. That earlier scenario remains available as a separate baseline.</p>
+<p><a id="step-2-trip-distribution"></a></p>
+<h2 id="02--trip-distribution">02 · Trip Distribution</h2>
+<h3 id="where-do-those-trips-go">Where do those trips go?</h3>
+<p><strong>Input.</strong> Purpose-specific productions, activity-based attraction weights and the existing zone-to-zone free-flow impedance.</p>
+<p><strong>Calculation.</strong> Gravity/IPF balances the PA matrix. Registered purpose/time factors convert PA into directed OD, including reverse-direction support. The retained friction factor is <code>exp(-0.08 × time_in_minutes)</code>; the coefficient remains an engineering assumption. The core is treated as a bounded scenario: outside travel has not been estimated or loaded.</p>
+<p><strong>Output.</strong> The full accepted data asset contains <code>derived/regional_od_h3.csv</code>. The chart extracts its <strong>HBW midday</strong> field only, retaining all 177 origin and destination IDs in stable order. Exported cells sum to <strong>22,807.216914 person trips</strong>.</p>
+<p><img src="../assets/boston/four_step_results_r1/step2_distribution.png" alt="02 Trip distribution: 177 by 177 saved HBW midday OD values" /></p>
+<p><a href="../assets/boston/four_step_results_r1/data/hbw_midday_matrix.csv">Download the plotted matrix</a> · <a href="../assets/boston/four_step_results_r1/data/zone_order.csv">Index-to-H3 table</a></p>
+<p>Color uses <code>log(1+x)</code> to expose the spread while the colorbar is labeled in original person-trip units. Blank cells have no exported record; they are not silently treated as observed zeros. This is <strong>modeled demand</strong>, not a GPS-derived passenger OD or a map of traveled paths.</p>
+<p><strong>Selection into later stages.</strong> <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv">validation_panel.csv</a> records the fixed 36 HBW OD pairs. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/regional_od_panel_sample.csv">regional_od_panel_sample.csv</a> links those pairs to the regional demand. Only this selected panel, with its declared departure weights and exclusions, proceeds to the feedback calculation.</p>
+<p><a id="step-3-mode-choice"></a></p>
+<h2 id="03--mode-choice">03 · Mode Choice</h2>
+<h3 id="how-does-the-service-alternative-change-mode-demand">How does the service alternative change mode demand?</h3>
+<p><strong>Input.</strong> The same panel person-demand weights; scheduled/adjusted itineraries and costs; the registered regional base shares, utility-change coefficients and nested response definition.</p>
+<p><strong>Calculation.</strong> S1 copies regional baseline shares. S2 uses the actual OD-specific service-cost change in a nested pivot response. The release includes multiple declared nest-scale sensitivity branches; the saved FW comparison uses <strong>μ_transit = 1</strong>. This does not estimate an absolute-cost S1 baseline separately for each OD.</p>
+<p><strong>Output.</strong> <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_multimodal_skims.csv">od_multimodal_skims.csv</a> records journey costs and availability; <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv">od_mode_probabilities.csv</a> records probabilities. The example chart includes all nine source leaves and plots <strong>percentage-point changes</strong>, not relative percentages.</p>
+<p><img src="../assets/boston/four_step_results_r1/step3_mode_response.png" alt="03 Mode choice: S2 minus S1 response for panel_od_019 at 12:30" /></p>
+<p><a href="../assets/boston/four_step_results_r1/data/selected_mode_response.csv">Download the plotted S1/S2 probabilities</a></p>
+<p>For <code>panel_od_019</code> at <code>12:30</code>, walk-access transit changes from <strong>4.0990% to 4.2246%</strong>, an increase of <strong>0.1256 percentage points</strong>. Unknown alternatives remain explicit. Auto-access transit legs are not assigned; ride service represents occupied movements, with empty repositioning unknown. A zero school-bus response in this panel is a saved model value, not a statement about service availability across Boston.</p>
+<p><a id="step-4-traffic-assignment"></a></p>
+<h2 id="04--traffic-assignment">04 · Traffic Assignment</h2>
+<h3 id="which-roads-carry-the-resulting-vehicles">Which roads carry the resulting vehicles?</h3>
+<p><strong>Input.</strong> Eligible panel person trips are converted to vehicles under the registered occupancy/loading rules. Both scenarios use the same directed network, effective-capacity interpretation and static Frank–Wolfe implementation.</p>
+<p><strong>Calculation.</strong> The existing static solver distributes private and occupied ride-service demand. This Boston panel does not run the project's separate space–time CG engine, and it does not allocate every mode's passengers to their full network.</p>
+<table>
+<thead>
+<tr>
+<th>Saved panel result</th>
+<th style="text-align:right">S1 · planned service</th>
+<th style="text-align:right">S2 · exploratory adjustment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vehicle trips</td>
+<td style="text-align:right">202.078384</td>
+<td style="text-align:right">202.070733</td>
 </tr>
 <tr>
 <td>Road-node demand pairs</td>
 <td style="text-align:right">26</td>
 <td style="text-align:right">26</td>
 </tr>
+<tr>
+<td>Beckmann objective</td>
+<td style="text-align:right">700.850087</td>
+<td style="text-align:right">700.814799</td>
+</tr>
 </tbody>
 </table>
-<p>Seventy-eight links change by more than <code>1e-10</code> vehicle trips. The maximum absolute link-flow change is about <code>0.006602639856733816</code>. These are panel-only model responses, not measured citywide traffic effects. The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md">feedback walkthrough</a> gives the source observation, selected itinerary, mode response, vehicle conversion and one aggregate road-link result.</p>
-<p>From the repository root, rebuild and inspect the saved data:</p>
-<pre><code class="language-bash">python -B examples/boston/behavior_feedback_r1_semantic_fix_r1/build_public_database.py
-python -B examples/boston/behavior_feedback_r1_semantic_fix_r1/validate_public.py
-python -B examples/boston/behavior_feedback_r1_semantic_fix_r1/query_behavior_feedback.py trace
+<p><img src="../assets/boston/visual_release_r1/boston_panel_flow_s1.png" alt="04 Traffic assignment: saved S1 vehicle flow on the Boston network" /></p>
+<p><img src="../assets/boston/visual_release_r1/boston_panel_flow_delta.png" alt="Saved S2 minus S1 fixed-panel road-flow difference" /></p>
+<p>The two original maps are preserved byte-for-byte. Seventy-eight links differ above <code>1e-10</code> vehicle trips; the largest absolute change is <strong>0.00660264</strong>. There is <strong>no regional background traffic</strong>. Small simulated differences do not establish measured congestion relief or empirical policy effects. <a href="boston-visual-sources.html">Map sources and units</a>.</p>
+<p>Saved-output checks covered costs, aggregate node balance and a shortest-path gap at the saved flow. They are computational checks, not a separate full per-OD path decomposition or validation against traffic counts.</p>
+<p><a id="gps-feedback"></a></p>
+<h2 id="how-gps-changes-stages-03-and-04">How GPS changes stages 03 and 04</h2>
+<h3 id="two-distinct-uses-spatial-linkage-and-a-service-time-input">Two distinct uses: spatial linkage and a service-time input</h3>
+<p>The <a href="boston-central.html#one-saved-transit-position-projection">GPS projection map</a> shows one selected quality-qualified segment aligned to road reference lines. That illustration is <strong>not the same segment</strong> as the numeric trace below. It shows spatial linkage; this trace shows the subsequent model use.</p>
+<p>For the numeric trace, public record <code>gps-stop-pair:mbtav:cccdb505033abedc:s01:5-10</code> refers to MBTA trip <strong>78591067</strong>, route <strong>749</strong>, direction <strong>1</strong>, stop pair <strong>1788 → 5093</strong>. Its derived interval is <strong>86 seconds</strong> versus <strong>180 seconds planned</strong>. Snapshot-derived events are estimates, not exact door-opening/closing observations.</p>
+<pre><code class="language-text">Raw positions → road/service identity → observed interval estimate
+                                             ↓
+                           exploratory interval adjustment
+                                             ↓
+GTFS itinerary/time/cost → 03 mode response → vehicle conversion
+                                             ↓
+                                04 same-network FW → road flow
 </code></pre>
-<p>The component provides 26 CSV data tables, one build-manifest table, two views and 38,800 data records. These commands reconstruct and query the supplied derived results. They do not acquire all source data or rerun the model.</p>
-<p>For one command that rebuilds the same query database and exports five saved queries, follow the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/SAVED_EXAMPLE.md">saved-result example guide</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Same OD–departure: panel_od_019, 12:30</th>
+<th style="text-align:right">S1</th>
+<th style="text-align:right">S2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Transit time</td>
+<td style="text-align:right">29.052381 min</td>
+<td style="text-align:right">27.485714 min</td>
+</tr>
+<tr>
+<td>Fare</td>
+<td style="text-align:right">USD 1.70</td>
+<td style="text-align:right">USD 1.70</td>
+</tr>
+<tr>
+<td>Walk-access transit probability</td>
+<td style="text-align:right">4.0990%</td>
+<td style="text-align:right">4.2246%</td>
+</tr>
+<tr>
+<td>Private/occupied ride-service vehicles</td>
+<td style="text-align:right">2.164631</td>
+<td style="text-align:right">2.161796</td>
+</tr>
+</tbody>
+</table>
+<p>The registered factor is approximately <code>0.477778</code>. Transferring it to other services in the declared direction/interval is exploratory. <strong>Thirteen adjustments each have one supporting event and are off by default.</strong> Srestore independently disables the overlay and recomputes service costs, probabilities and demand, returning the comparable outputs to S1.</p>
+<p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md">Follow the full, source-keyed trace</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/feedback_trace.csv">Inspect its source row</a></p>
+<p>A road's aggregate response sums multiple OD contributions; it is not solely caused by this one illustrated trace. GPS is <strong>not</strong> used here to estimate the regional household trip total, gravity β, all passenger OD or automobile BPR parameters. No independent AM validation is included.</p>
+<h2 id="run-the-saved-example">Run the saved example</h2>
+<p>From the repository root:</p>
 <pre><code class="language-bash">python -B examples/boston/run_saved_example.py --data-dir &quot;examples/boston/behavior_feedback_r1_semantic_fix_r1&quot; --output &quot;results/boston_saved_example&quot;
 </code></pre>
-<p>Here <code>--data-dir</code> is the compact component included in the checkout. If using the separately downloaded full public data ZIP, extract it first and instead point <code>--data-dir</code> at its <code>public_component/</code> subdirectory; keep the trusted builder and query code beside <code>run_saved_example.py</code> in the checkout. This inspects saved outputs only and does not rerun demand, matching, mode choice or assignment.</p>
-<h2 id="model-scope-and-data-reuse">Model scope and data reuse</h2>
-<p>The household rates are a regional transfer, attraction weights and impedance include declared assumptions, and the GPS overlay is a same-sample midday sensitivity. Empty ride-service repositioning is unknown and excluded; transit-auto access legs are not assigned. The results do not imply CTPS endorsement, a complete TDM23 reproduction, a calibrated full-city model or independently validated prediction.</p>
-<p>Source and parameter registers accompany the data. The project code license does not replace the individual network, ACS, MassGIS, MBTA, OSM and regional-report terms. The public package omits private receiver archives, correspondence and raw transit feeds.</p>
+<p>Use a new output directory. This rebuilds the compact query database from released CSVs and exports five saved queries. It does not retrieve observations, estimate demand, match GPS, reroute transit or run FW/CG. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/SAVED_EXAMPLE.md">Complete command and download guide</a>.</p>
+<p>The compact component has <strong>26 data tables plus one build-manifest table, two views and 38,800 records</strong>. To use the full English data asset, keep the trusted code in the checkout and point <code>--data-dir</code> to the extracted asset's <code>public_component/</code> directory. The full regional OD is in that asset's <code>derived/</code> directory, not the small panel query table.</p>
+<h2 id="scope-and-assumptions">Scope and assumptions</h2>
+<p>This is a source-backed, bounded four-step <strong>technical example</strong> with exploratory observation feedback. Household rates are transferred regional effective means; attraction, impedance, external travel and discrete departures retain explicit assumptions. Baseline shares are common regional shares, not a local absolute-cost choice model. The service overlay is retrospective midday evidence, not an independently validated AM parameter set.</p>
+<p>The original 50,000-person-trip engineering scenarios, MassGIS activity prior, current regional-rate output and fixed feedback panel are distinct versions and scopes. Their charts and totals must not be silently mixed. <a href="boston-central.html">Earlier layers and retained maps</a>.</p>
+<p>All source registrations and data terms remain in force. A code license does not replace network, ACS, MassGIS, MBTA or CTPS source terms. Private reviews, correspondence and unnecessary report caches are not required to use this public component.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

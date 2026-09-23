@@ -1,8 +1,14 @@
-# Road benchmark visualizations
+# Visual results: four stages, observations and benchmarks
 
 These figures summarize saved, independently checked historical Sioux Falls **selected-OD** experiments. They are the same approved image assets shipped with the preceding release; this gallery does not rerun optimization or invent new observations.
 
 For the separate real-city example, see the [Central Boston five-map gallery](datasets/boston-central.md#boston-visual-gallery): network and zones, the MassGIS residential-area prior, one qualified GPS projection, and saved S1 and S2−S1 fixed-panel flows. Its source credits and units are documented alongside each map.
+
+## Central Boston: read results in calculation order
+
+The [four-step walkthrough](datasets/boston-behavior-feedback.md) links actual data to each stage. [Generation](datasets/boston-behavior-feedback.md#step-1-trip-generation), [OD distribution](datasets/boston-behavior-feedback.md#step-2-trip-distribution), [mode response](datasets/boston-behavior-feedback.md#step-3-mode-choice) and [road assignment](datasets/boston-behavior-feedback.md#step-4-traffic-assignment) have separate result figures. The [GPS feedback](datasets/boston-behavior-feedback.md#gps-feedback) explains where observations enter; the [original five-map gallery](datasets/boston-central.md#boston-visual-gallery) remains available as spatial context and saved outputs.
+
+## Separate historical Sioux Falls benchmarks
 
 ## Physical-link flow views
 

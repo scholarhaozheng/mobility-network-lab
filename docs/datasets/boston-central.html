@@ -1,6 +1,47 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Central Boston source-backed city instance | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Central Boston source-backed city instance</p><h1 id="central-boston-source-backed-city-instance">Central Boston source-backed city instance</h1>
 <p>This is the first bounded real-city instance in the repository. It connects a common physical GMNS road network to model zones, a preserved network-proxy demand chain, an independent actual-assessment activity prior, real public-bus GPS road matching, scheduled transit relationships, static assignment, queries, and offline maps.</p>
 <p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/map/boston_central_layers.html">Open the corrected network/GPS map</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/map/boston_activity_prior_layers.html">Open the activity-prior map</a> · <a href="#boston-visual-gallery">Five-map visual gallery</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/README.md">Browse the component</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/query_boston.py">Query the compact SQLite copy</a></p>
+<h2 id="start-with-the-four-step-result">Start with the four-step result</h2>
+<p><a href="boston-behavior-feedback.html"><strong>Open the four-stage calculation and GPS feedback →</strong></a></p>
+<table>
+<thead>
+<tr>
+<th>What to inspect</th>
+<th>Its role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Network / zones below</td>
+<td>Shared spatial foundation, not trip generation</td>
+</tr>
+<tr>
+<td>Residential assessment map below</td>
+<td>Activity input, not generated trips</td>
+</tr>
+<tr>
+<td><a href="boston-behavior-feedback.html#step-1-trip-generation">Generation totals</a></td>
+<td>Stage 01 output</td>
+</tr>
+<tr>
+<td><a href="boston-behavior-feedback.html#step-2-trip-distribution">HBW OD matrix</a></td>
+<td>Stage 02 output</td>
+</tr>
+<tr>
+<td><a href="boston-behavior-feedback.html#step-3-mode-choice">Mode-share changes</a></td>
+<td>Stage 03 output</td>
+</tr>
+<tr>
+<td>S1 / S2−S1 road maps below</td>
+<td>Stage 04 output for the fixed feedback panel</td>
+</tr>
+<tr>
+<td>GPS projection below</td>
+<td>Spatial linkage illustration; the <a href="boston-behavior-feedback.html#gps-feedback">numeric feedback trace</a> shows how a separate recorded event reaches the model</td>
+</tr>
+</tbody>
+</table>
+<p>The later regional-rate generation output and the fixed feedback panel are documented together in that walkthrough. The earlier 50,000-person-trip activity scenario remains a separate retained prior, not the demand loaded in the current feedback comparison.</p>
 <h2 id="boston-visual-gallery">Boston visual gallery</h2>
 <p>These saved figures use the actual Central Boston network and a common EPSG:32619 display projection. The maps convey different source relations; the selected activity and GPS examples are not asserted to be the same observation or scenario as the fixed-panel feedback trace. <a href="boston-visual-sources.html">Source versions, units and image paths</a> accompany the gallery.</p>
 <h3 id="physical-network-zones-and-corridor">Physical network, zones and corridor</h3>
@@ -62,8 +103,8 @@
 </tbody>
 </table>
 <p>Catalog city IDs, GHSL IDs, feed IDs, source TAZ IDs and project H3 IDs remain separate. The component does not infer identity from similar labels.</p>
-<h2 id="demand-and-assignment">Demand and assignment</h2>
-<p>Two demand tracks now coexist. The original network-accessibility proxy remains byte-separated as the legacy engineering scenario. The activity run <code>boston_activity_prior_r1_20260922</code> executes the same four declared steps with new spatial margins:</p>
+<h2 id="retained-activity-and-engineering-demand-scenarios">Retained activity and engineering-demand scenarios</h2>
+<p>These two earlier demand tracks coexist with the later regional-rate and feedback example linked above. The original network-accessibility proxy remains byte-separated as the legacy engineering scenario. The activity run <code>boston_activity_prior_r1_20260922</code> provides generation, distribution, fixed-share conversion and assignment-ready inputs with new spatial margins:</p>
 <ol>
 <li>Trip generation scales official residential assessment area to the production margin and official nonresidential/mixed building area to the attraction margin. These inputs are no longer network proxies. Parcel geometry and stacked assessment records are kept distinct, area overlay uses EPSG:32619, outside-core weights are retained, and r7 is summed from r9.</li>
 <li>A doubly constrained gravity model reuses the unchanged free-flow network skim. The new matrix has 25,075 positive OD cells and balances to the assumed 50,000 total with relative maximum margin error below <code>7.2e-8</code>.</li>
@@ -71,10 +112,11 @@
 <li>Drive demand is converted at 1.2 persons per vehicle. Of 2,750 AM vehicle trips, 2,723.944 are assignment-ready and 26.056 remain explicitly unassigned because endpoints share an access node or are intrazonal. No new FW assignment was run.</li>
 </ol>
 <p>The 50,000 daily total, gravity beta, mode shares, AM share, and occupancy remain explicit assumptions. MassGIS assessment area is an activity prior, not observed trips, population, or employment. LODES8 WAC/RAC/OD was identified but the official host timed out after bounded retries, so the release contains no workplace/residence job association and makes no all-purpose-travel claim from LODES.</p>
-<p>The existing <code>solve_fw_refined(...)</code> entry ran the baseline and a capacity-stress scenario without invoking the solver module's historical <code>__main__</code>. Both stopped at the implemented relative-gap criterion in one iteration; the light-load baseline maximum V/C is about 0.143. Link-volume sums are not reported as trip totals.</p>
+<p>The network-proxy baseline and capacity-stress calculations used the existing <code>solve_fw_refined(...)</code> entry. They are separate from both the activity-prior input and the current 36-OD feedback panel. The current behavior-feedback maps use the semantic-fix S1/S2 records; see <a href="boston-behavior-feedback.html#step-4-traffic-assignment">their exact scope and saved numbers</a>. Do not use an earlier scenario's V/C, gamma or flow map as the latest result. Link-volume sums are not trip totals.</p>
 <h2 id="gps-and-calibration-evidence">GPS and calibration evidence</h2>
-<p>The build retained 2,091 cleaned bus-position points in 235 capture-window-censored segments. Thirty segments entered matching; 28 produced continuous directed physical paths. The external HMM succeeded on 19. After recorded HMM failures, the native connected-path engine succeeded on nine more. Two selected failures and all unselected segments remain visible in the private QC tables.</p>
-<p>Ten quality-filtered matched segments support a one-parameter path-time scale diagnostic. Eight vehicle groups form the training set and two independent groups form the holdout. The fitted scale is approximately 2.033. Training RMSE improves, but holdout RMSE worsens from 4.372 to 12.101 minutes, so the parameter is <strong>estimated but not validated</strong>.</p>
+<p>The original local build retained 2,091 cleaned bus-position points in 235 capture-window-censored segments. Thirty entered matching: 28 returned continuous paths and two did not. The other 205 were not selected. The later joint spatial/time/path checks qualified nine of the returned segments; all nine native-fallback paths were rejected for trusted-observation use. Returning a connected path is not an accuracy certificate.</p>
+<p>The earlier path-time scale was corrected to approximately 2.185624 after aligning first/last partial-link windows. It remains a development diagnostic: the previously inspected holdout is not new independent validation, and the observed midday period does not align with the separate AM engineering scenario. It is not applied as an automobile cost multiplier.</p>
+<p>The current <a href="boston-behavior-feedback.html#gps-feedback">service-feedback example</a> instead uses 13 separately registered station-interval events as default-off exploratory inputs. Those interval-event counts are not the same objects as the nine quality-qualified road-matching segments. The gallery's GPS illustration and the numeric feedback trace preserve their distinct source identities.</p>
 <h2 id="transit-and-query-scope">Transit and query scope</h2>
 <p>For 2026-09-22, the local GTFS slice contains 12,901 trips on 112 routes, 3,553 referenced stops (1,391 in the analysis area), and 286,151 stop-time records. Foreign-key and time checks pass. Stop access is a modelled nearest-road-node relation. One planned shape was geometrically conflated to roads; a planned shape is not an observed vehicle path.</p>
 <p>The corrected baseline keeps its acceptance-query families. Seven additional executed queries cover one source record's zone allocation, a zone activity/prior chain, one complete OD chain, municipality/fiscal-year coverage, allocation conservation, old/new scenario differences, and assignment-input accounting. Their compact result CSVs and SQL are included in <code>examples/boston/queries/</code>.</p>

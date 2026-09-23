@@ -1,48 +1,94 @@
 <p align="center"><img src="docs/assets/boston/visual_release_r1/mcl_boston_hero.png" width="100%" alt="Dark navy Mobility Computation Lab cover with real Central Boston street and zone geometry on the right."></p>
 <p align="center"><small>Central Boston road geometry: GMNS Plus 21_Boston (Apache-2.0), commit 116447ab641cca1ed34797d019c8e704063393c3; H3 zones and cover composition: Mobility Computation Lab. Geography only—not measured or modeled traffic.</small></p>
 
+
 <p align="center">
-  <a href="#city-network-workflow">City workflow</a> ·
-  <a href="docs/datasets.md">Network catalog</a> ·
-  <a href="docs/visualizations.md">Visual results</a> ·
+  <a href="#four-step-workflow">Four-step workflow</a> ·
+  <a href="#how-gps-changes-the-result">GPS → model response</a> ·
+  <a href="docs/datasets/boston-behavior-feedback.md">Boston results</a> ·
+  <a href="#quick-start">Run the saved example</a> ·
   <a href="#mobility-data-support">Open data</a> ·
-  <a href="#quick-start">Quick start</a> ·
-  <a href="docs/data-contract.md">GMNS-compatible inputs</a> ·
-  <a href="docs/methods.md">Methods</a>
+  <a href="docs/visualizations.md">Visual results</a>
 </p>
 
 # Mobility Computation Lab
 
-**City networks, travel demand and reproducible network computation.**
+**From city activity to travel demand, mode choice and road flows.**
 
-Mobility Computation Lab organizes road networks, zone access, origin–destination demand and supporting mobility evidence around a shared city-modelling workflow. Its computational core turns **prepared network and demand tables** into paths, flows and independently checked results.
+Mobility Computation Lab connects city data and transportation calculations through a common **GMNS road network, spatial zones and explicit data relationships**. The Central Boston example makes the four-step workflow visible: **trip generation → trip distribution → mode choice → traffic assignment**. Transit observations form a separate input that changes service costs and propagates to mode demand and road flows.
 
-Use the current release to run finite space–time column generation, inspect road-benchmark visualizations, apply a separate static Frank–Wolfe baseline, or prepare local city/catalog metadata. New cities are added through explicit inputs, units and provenance—not by creating another solver for every city.
+The project also provides reusable space–time column generation, a separate static Frank–Wolfe baseline, historical Sioux Falls results, and Open Mobility Data Visibility tools. **Boston demonstrates the connected workflow; it does not replace the broader network-computation project.**
 
 ## City network workflow
 
-The organizing unit is a **city network instance**, not a count of available data feeds. A complete city model connects the following components; the linked guides distinguish the current interfaces from extensions.
+The common foundation is a real city network: **2,852 physical nodes, 5,091 directed links, 177 H3 r9 zones and nine r7 parents**. Zone-access mappings attach demand to roads; ordered link membership defines a corridor; transit and GPS records retain their own identities and connect to the same network. Model access lines are not automatically verified physical routes.
 
-| Component | What belongs together | Current entry |
+[GMNS-compatible input contract](docs/data-contract.md) · [City and hierarchy guide](docs/city-workflow.md) · [Boston network and data layers](docs/datasets/boston-central.md)
+
+<p align="center"><a href="docs/datasets/boston-central.md#boston-visual-gallery"><img src="docs/assets/boston/visual_release_r1/boston_network_zones.png" width="780" alt="Shared Central Boston foundation: physical roads, H3 zones, study boundary and one ordered 23-link corridor."></a></p>
+
+*This is the spatial foundation, not one of the four demand-model stages. Parcel outlines provide geographic context, not building footprints. [Sources, units and original map gallery](docs/datasets/boston-visual-sources.md).*
+
+## Four-step workflow
+
+**Four questions. Four calculations. Four inspectable outputs.** The numbered sections below describe the saved Boston implementation—not four generic software components.
+
+| Stage | Question and actual calculation | What you can inspect |
 |---|---|---|
-| **Road network** | Directed nodes and links, identifiers, geometry and mode | [Prepared network tables and input profile](docs/data-contract.md) |
-| **Zones and hierarchy** | Zone IDs, centroids, network access and spatial levels | Supplied [zone-access mappings](docs/data-contract.md); [hierarchical extensions](docs/city-workflow.md) |
-| **OD demand** | Origin, destination, volume, time and declared data source | Supplied [demand tables](docs/data-contract.md); generation and estimation are separate extensions |
-| **Mobility evidence** | GPS, counts, speeds and transit data linked to the same network | [Local metadata preparation](docs/data-tools.md) and [source summaries](docs/open-data.md); trace matching is a separate extension |
-| **Assignment and optimization** | Model-specific routes, path flows, arc loads and checks | [Space–time CG and static FW](docs/methods.md) |
+| **01 · Trip generation** | How many trips start and end in each zone? Area-allocated ACS household estimates are multiplied by transferred regional rates by purpose; MassGIS activity supplies attraction weights. | [Zonal productions and six purpose totals](docs/datasets/boston-behavior-feedback.md#step-1-trip-generation): **816,054.67 modeled workday person trips**, not observed trips. |
+| **02 · Trip distribution** | Where do those trips go? Gravity/IPF and purpose/time-specific PA-to-OD conversion create directed demand. | [The saved 177 × 177 HBW midday matrix](docs/datasets/boston-behavior-feedback.md#step-2-trip-distribution), totaling **22,807.22 modeled person trips**. |
+| **03 · Mode choice** | Which travel alternatives are selected? Scheduled and observation-adjusted journey costs drive a nested response around regional baseline shares. | [Saved S1/S2 costs and probability changes](docs/datasets/boston-behavior-feedback.md#step-3-mode-choice). S1 is still a shared regional baseline, not an OD-specific absolute-cost model. |
+| **04 · Traffic assignment** | Which roads carry the resulting vehicles? The selected private/occupied-vehicle demand is loaded through the same static FW model. | [S1 road flows and S2−S1 differences](docs/datasets/boston-behavior-feedback.md#step-4-traffic-assignment), with input and result tables. |
 
-The [Central Boston instance](docs/datasets/boston-central.md) implements this chain once within a bounded study area. Its [behavior-feedback pilot](docs/datasets/boston-behavior-feedback.md) adds ACS-linked demand evidence, real-network multimodal skims, a source-backed nested-choice sensitivity, and a disabled-by-default GPS→service→mode→vehicle→FW trace. Both remain auditable examples, not official forecasts. The generic prepared-network solver remains usable independently.
+**The scope narrows deliberately:** regional generation → saved HBW demand → **36 fixed OD pairs × three midday departures** → **78 eligible OD–time cases** → about **202 assigned vehicle trips**. These are different populations and units, not one mass-conserving funnel. The remaining 30 cases retain their exclusion and person-demand records; the full regional demand is not assigned by this panel.
 
-### Central Boston: one real connected instance
+<table>
+<tr><th>01 · Actual generation output</th><th>02 · Actual distribution output</th></tr>
+<tr>
+<td width="50%"><a href="docs/datasets/boston-behavior-feedback.md#step-1-trip-generation"><img src="docs/assets/boston/four_step_results_r1/step1_generation.png" width="100%" alt="Trip generation: saved modeled workday productions summed by the six source purpose codes."></a></td>
+<td width="50%"><a href="docs/datasets/boston-behavior-feedback.md#step-2-trip-distribution"><img src="docs/assets/boston/four_step_results_r1/step2_distribution.png" width="100%" alt="Trip distribution: saved HBW midday origin-destination matrix in stable H3 ID order, with a declared log color scale."></a></td>
+</tr>
+<tr><td>Households and regional effective mean rates generate the modeled total. This is a result chart—not the residential-area input map.</td><td>Rows are origins and columns are destinations. These are modeled OD values, not GPS-inferred trips or mapped routes.</td></tr>
+<tr><th>03 · Actual mode response</th><th>04 · Actual assignment output</th></tr>
+<tr>
+<td><a href="docs/datasets/boston-behavior-feedback.md#step-3-mode-choice"><img src="docs/assets/boston/four_step_results_r1/step3_mode_response.png" width="100%" alt="Mode choice: saved S2 minus S1 percentage-point changes for all nine model leaves in panel_od_019 at 12:30."></a></td>
+<td><a href="docs/datasets/boston-behavior-feedback.md#step-4-traffic-assignment"><img src="docs/assets/boston/visual_release_r1/boston_panel_flow_s1.png" width="100%" alt="Traffic assignment: modeled S1 fixed-panel vehicle trips on the actual Boston road network."></a></td>
+</tr>
+<tr><td>The illustrated response depends on this OD's changed service costs. The common S1 shares are not newly estimated local baseline probabilities.</td><td>Static FW loads the selected vehicle panel. No regional background flow is included; this is not measured citywide congestion.</td></tr>
+</table>
 
-The public component contains a compact SQLite copy, six executed query examples and a self-contained layered map. It preserves failed GPS matches and assignment accounting, separates source TAZ/catalog/feed/H3 identifiers, and excludes raw MBTA archives and realtime snapshots.
+[**Read the four stages with their inputs, operations and outputs →**](docs/datasets/boston-behavior-feedback.md) · [Download the display data and check the source mapping](docs/datasets/boston-four-step-sources.md)
 
-[**Open the Boston data card →**](docs/datasets/boston-central.md) · [Component and commands](examples/boston/README.md) · [Offline map](examples/boston/map/boston_central_layers.html)
+## How GPS changes the result
 
-[**Open the current demand and transit feedback example →**](docs/datasets/boston-behavior-feedback.md) · [Rebuild its SQLite component](examples/boston/behavior_feedback_r1_semantic_fix_r1/README.md)
+**GPS is not an unused map layer, and it is not a fifth stage.** MBTA vehicle positions are matched to the network and related to transit service intervals. In this example, a saved interval observation changes the transit service input; stages 03 and 04 then recompute the dependent response. GPS does **not** determine the regional trip total or the gravity-model OD in this release.
 
-<p align="center"><a href="docs/datasets/boston-central.md#boston-visual-gallery"><img src="docs/assets/boston/visual_release_r1/boston_network_zones.png" width="780" alt="Map of Central Boston roads, H3 zones, analysis and core boundaries, with one orange ordered corridor."></a></p>
-<p align="center"><small>Central Boston GMNS/H3 overview: 5,091 directed physical links, 177 r9 zones and one 23-link corridor. Parcel outlines are context, not building footprints. Roads: GMNS Plus 21_Boston (Apache-2.0); parcels: MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS. <a href="docs/datasets/boston-central.md#boston-visual-gallery">See all five analytical maps and credits →</a></small></p>
+```text
+Vehicle positions → road/service linkage → interval-time adjustment
+                                               ↓
+                 transit itinerary and travel cost
+                                               ↓
+                03  mode-share response → vehicle demand
+                                               ↓
+                04  FW road assignment → link-flow response
+```
+
+One saved trace uses route **749**, direction **1**, stop pair **1788 → 5093**: **86 s sample-derived elapsed time versus 180 s planned**. Applying the declared exploratory interval adjustment gives the following result for **panel_od_019 at 12:30**:
+
+| Quantity in the same OD–departure case | S1 · planned service | S2 · exploratory adjustment |
+|---|---:|---:|
+| Transit journey time | 29.052 min | 27.486 min |
+| Selected-itinerary fare | USD 1.70 | USD 1.70 |
+| Walk-access-transit probability, μ_transit = 1 | 4.0990% | 4.2246% |
+| Private/occupied ride-service demand | 2.164631 vehicle trips | 2.161796 vehicle trips |
+
+Across the **whole eligible panel**, S1/S2 vehicle inputs are **202.078384 / 202.070733**. Seventy-eight links differ by more than `1e-10`; the maximum absolute link difference is **0.006603 modeled vehicle trips**. A link difference aggregates contributing OD cases and is not attributable solely to the one trace above.
+
+**Srestore** switches the service overlay off and independently recomputes the affected costs, probabilities and demand, returning them to S1. This demonstrates an executable dependency, not independent prediction accuracy. The 13 interval adjustments each have one supporting event and are disabled by default.
+
+[**Follow the exact observation → parameter → itinerary → probability → vehicle → road records →**](examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md) · [See the saved S2−S1 road map](docs/datasets/boston-behavior-feedback.md#step-4-traffic-assignment) · [Inspect the separate GPS-to-road projection illustration](docs/datasets/boston-central.md#one-saved-transit-position-projection)
+
+*The projection map illustrates a different recorded segment; it is not presented as the same event as this feedback trace. The released calculation is a bounded technical example: no independently validated AM forecast, complete TDM23 reproduction or full-city multimodal assignment is claimed. [Scope and assumptions](docs/datasets/boston-behavior-feedback.md#scope-and-assumptions).*
 
 ## Sioux Falls benchmark series
 
