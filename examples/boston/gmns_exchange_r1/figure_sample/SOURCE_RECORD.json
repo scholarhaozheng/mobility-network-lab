@@ -1,0 +1,58 @@
+{
+  "scope": "One quality-eligible saved derived GPS segment only; no raw feed or vehicle identity",
+  "segment_id": "mbtav:4624d3319dcfdec1:s01",
+  "source_root": "examples/boston/data (existing local derived public tree)",
+  "license_attribution": "MBTA V3 JSON derived positions: MBTA/MassDOT attribution",
+  "files": {
+    "gps_point_progress.csv": {
+      "source_path": "examples/boston/data/gps_point_progress.csv",
+      "source_sha256": "ec76e314bda73d09b474babcdaa7dc2cf5040dd9e830da8c4e57765bd84d61d3",
+      "sample_sha256": "6a723d9216807392edfcfec483dcb6d178c05d763b19a334325369315cf4cdfd",
+      "selected_row_count": 12,
+      "retained_fields": [
+        "segment_id",
+        "point_seq",
+        "timestamp",
+        "original_lon",
+        "original_lat",
+        "matched_link_id",
+        "path_occurrence",
+        "projected_lon",
+        "projected_lat",
+        "lateral_error_m",
+        "match_status"
+      ]
+    },
+    "gps_path_links.csv": {
+      "source_path": "examples/boston/data/gps_path_links.csv",
+      "source_sha256": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+      "sample_sha256": "33e3d5541410cf9dce17c6f5682205cc74f1df800e8a5312f81b7cfef4e8d1fc",
+      "selected_row_count": 26,
+      "retained_fields": [
+        "segment_id",
+        "path_order",
+        "path_occurrence",
+        "link_id",
+        "direction",
+        "point_projection_count",
+        "evidence_status"
+      ]
+    },
+    "gps_segment_quality.csv": {
+      "source_path": "examples/boston/data/gps_segment_quality.csv",
+      "source_sha256": "798815f6cd3c067af194b0e215e5d7c5e57b6322515fd5a403da6ca2e302cbe1",
+      "sample_sha256": "d19b4007607452d155859e7e04b00274e464e40e1ee8a759a57f1617d6ecb3a2",
+      "selected_row_count": 1,
+      "retained_fields": [
+        "segment_id",
+        "route_id",
+        "observation_eligible",
+        "quality_class",
+        "point_count",
+        "path_occurrences",
+        "start_censored",
+        "end_censored"
+      ]
+    }
+  }
+}

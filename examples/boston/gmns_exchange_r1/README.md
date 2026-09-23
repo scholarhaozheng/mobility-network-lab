@@ -26,3 +26,11 @@ python -B tools/gmns/run_gmns_plus_reader.py --upstream-file tools/gmns/vendor/G
 ```
 
 The accepted physical files reappear at `readback/S1` and `readback/S2`. [Full mapping, exact status and evidence](../../../docs/datasets/boston-gmns-exchange.md) explain each claim. Road data: GMNS Plus 21_Boston, Apache-2.0. Zone indexing and derived exchange: Mobility Computation Lab. MBTA/MassGIS evidence retains its source-specific rights; this repository's code license is not a blanket data sublicense.
+
+For the [two real-data GMNS in Action figures](../../../docs/datasets/boston-gmns-exchange.md#one-network-multiple-connected-data-layers), the existing `trace` command is a generic relationship inspector; it may choose a different first GPS record. From the repository root, query the exact figure records without writing data or running a model:
+
+```powershell
+python -B tools/gmns/trace_gmns_figure.py --exchange examples/boston/gmns_exchange_r1/data --gps-dir examples/boston/gmns_exchange_r1/figure_sample --zone-id 35 --segment-id mbtav:4624d3319dcfdec1:s01
+```
+
+The zone/OD and route-60 GPS examples are separate references to the shared network, not one observed trip. The [minimal saved-position sample and source record](figure_sample/SOURCE_RECORD.json) are included so this command works from the upload set alone. The [figure source manifest](../../../docs/assets/boston/gmns_in_action_r1/FIGURE_SOURCES.json) records the exact published CSV hashes.

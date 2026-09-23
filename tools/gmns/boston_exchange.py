@@ -461,7 +461,24 @@ def main():
     else:
         result = trace(args.exchange)
     print(json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True))
+    # Preserve the JSON report while making the CLI usable as a process gate.
+    if args.command == "validate":
+        return 0 if result.get("pass") is True else 1
+    if args.command == "roundtrip":
+        passed = True
+        for scenario in SCENARIOS:
+            item = result.get(scenario, {})
+            error = float(item.get("max_physical_od_abs_error", math.inf))
+            passed = passed and (
+                item.get("physical_link_ids_match") is True
+                and item.get("physical_link_row_errors") == 0
+                and item.get("physical_od_ids_match") is True
+                and math.isfinite(error)
+                and error <= 1e-12
+            )
+        return 0 if passed else 1
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(main())

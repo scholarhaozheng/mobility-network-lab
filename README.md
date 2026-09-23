@@ -3,6 +3,7 @@
 
 
 <p align="center">
+  <a href="#gmns-in-action">GMNS in Action</a> ·
   <a href="#four-step-workflow">Four-step workflow</a> ·
   <a href="#how-gps-changes-the-result">GPS → model response</a> ·
   <a href="docs/datasets/boston-behavior-feedback.md">Boston results</a> ·
@@ -18,6 +19,16 @@
 Mobility Computation Lab connects city data and transportation calculations through a common **GMNS road network, spatial zones and explicit data relationships**. The Central Boston example makes the four-step workflow visible: **trip generation → trip distribution → mode choice → traffic assignment**. Transit observations form a separate input that changes service costs and propagates to mode demand and road flows.
 
 The project also provides reusable space–time column generation, a separate static Frank–Wolfe baseline, historical Sioux Falls results, and Open Mobility Data Visibility tools. **Boston demonstrates the connected workflow; it does not replace the broader network-computation project.**
+
+## GMNS in Action
+
+**One network reference for zones, demand, observations, and results.** The actual Boston exchange keeps H3 zone 35, its centroid, nonphysical access connector and physical road node distinct. A documented crosswalk maps zone identities to road access; zonal S1 demand remains modeled panel vehicle trips. A separate saved GPS path occurrence can reference a physical link and its saved S1 road result without claiming it is the same OD or observed journey.
+
+<p align="center"><a href="docs/datasets/boston-gmns-exchange.md#one-network-multiple-connected-data-layers"><img src="docs/assets/boston/gmns_in_action_r1/gmns_connected_layers.png" width="100%" alt="Actual Boston H3 zones 35 and 71, centroid 35, dashed nonphysical access to road node 14285, an OD relation, and a separate GPS-to-link result branch."></a></p>
+
+*Separate objects, explicit relationships. Model access connectors are not physical roads. Shared link references do not imply a shared observed trip.* [Figure records, field mappings and provenance](docs/datasets/boston-gmns-exchange.md) · [Versioned exchange and GMNS Plus profile](examples/boston/gmns_exchange_r1/README.md) · [Read-only relationship lookup](tools/gmns/trace_gmns_figure.py).
+
+From the repository root, inspect the generic relationships with `python -B tools/gmns/boston_exchange.py trace --exchange examples/boston/gmns_exchange_r1/data`; the [exact figure segment query](docs/datasets/boston-gmns-exchange.md#reproduce-the-relationships) is separate. GMNS is the data/exchange contract, not the matching algorithm or evidence of improved prediction. The pinned GMNS Plus Level 2 reader accepted S1/S2 node/link/demand; a separate zone-schema check and the declared `mcl_solver_*` fields support the existing solver round-trip.
 
 ## City network workflow
 
@@ -66,6 +77,10 @@ The [versioned Boston exchange](examples/boston/gmns_exchange_r1/README.md) now 
 ## How GPS changes the result
 
 **GPS is not an unused map layer, and it is not a fifth stage.** MBTA vehicle positions are matched to the network and related to transit service intervals. In this example, a saved interval observation changes the transit service input; stages 03 and 04 then recompute the dependent response. GPS does **not** determine the regional trip total or the gravity-model OD in this release.
+
+<p align="center"><a href="docs/datasets/boston-gmns-exchange.md#from-gps-coordinates-to-gmns-linked-evidence"><img src="docs/assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png" width="100%" alt="The same twelve saved route-60 GPS positions before and after saved path association on identical Boston map bounds; ordered matched links join a separate modeled S1 road result."></a></p>
+
+*Source observations → algorithm-derived matching → physical road attributes → separately modeled assignment results.* This **qualified route-60 segment** is a spatial-reference illustration, not the route-749 service-feedback event below or a matching-accuracy test. Its 26 ordered path occurrences and projected positions are saved outputs, not newly matched here. [Shared network reference—not the same observed trip; inspect exact records →](docs/datasets/boston-gmns-exchange.md#from-gps-coordinates-to-gmns-linked-evidence)
 
 ```text
 Vehicle positions → road/service linkage → interval-time adjustment

@@ -41,6 +41,15 @@ def presentation_errors(readme: str, home: str, detail: str) -> list[str]:
             errors.append(f"Boston detail anchor missing: {anchor}")
     if "## How GPS changes the result" not in readme or 'id="gps-feedback"' not in home:
         errors.append("GPS must have a primary, visible explanatory section")
+    if "## GMNS in Action" not in readme or 'id="gmns-in-action"' not in home:
+        errors.append("GMNS in Action must be visible on README and homepage")
+    if not (0 <= readme.find("## GMNS in Action") < readme.find("## Four-step workflow")):
+        errors.append("GMNS data foundation must precede the four model stages in README")
+    if not (0 <= home.find('id="gmns-in-action"') < home.find('id="four-step-workflow"')):
+        errors.append("GMNS data foundation must precede the four model stages on homepage")
+    for stem in ("gmns_connected_layers", "gps_to_gmns_evidence"):
+        if stem + ".png" not in readme or stem + ".png" not in home:
+            errors.append(f"Real-data GMNS figure missing on a primary surface: {stem}")
     for key in ("panel_od_019", "29.052", "27.486", "4.0990%", "4.2246%", "Srestore"):
         if key not in readme or key not in home:
             errors.append(f"Saved GPS-to-response evidence not exposed on both primary surfaces: {key}")
@@ -76,6 +85,8 @@ def main() -> int:
         "docs/assets/boston/four_step_results_r1/step1_generation.png",
         "docs/assets/boston/four_step_results_r1/step2_distribution.png",
         "docs/assets/boston/four_step_results_r1/step3_mode_response.png",
+        "docs/assets/boston/gmns_in_action_r1/gmns_connected_layers.png",
+        "docs/assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png",
         "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
         "docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png",
         "docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png",
@@ -143,6 +154,9 @@ def main() -> int:
         "visual gallery navigation": 'href="visualizations.html"' in homepage,
         "network command": "tools/mnl.py run" in homepage,
         "network-first homepage": 0 <= homepage.find("Networks and visual results") < homepage.find("Supporting mobility data"),
+        "GMNS in Action section": 'id="gmns-in-action"' in homepage,
+        "GMNS relationship figure": 'src="assets/boston/gmns_in_action_r1/gmns_connected_layers.png"' in homepage,
+        "GPS relationship figure": 'src="assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png"' in homepage,
     }.items():
         if not present:
             errors.append(f"Homepage contract failed: {label}")
@@ -182,6 +196,18 @@ def main() -> int:
     detail = (DOCS / "datasets/boston-behavior-feedback.html").read_text(encoding="utf-8")
     errors.extend(presentation_errors(readme_text, homepage, detail))
     checks += 1
+    gmns_detail = (DOCS / "datasets/boston-gmns-exchange.html").read_text(encoding="utf-8")
+    for required in (
+        'id="one-network-multiple-connected-data-layers"',
+        'id="from-gps-coordinates-to-gmns-linked-evidence"',
+        'id="reproduce-the-relationships"',
+        "trace_gmns_figure.py",
+        "Separate objects, explicit relationships",
+        "Shared network reference",
+    ):
+        if required not in gmns_detail:
+            errors.append(f"GMNS detail missing required relationship evidence: {required}")
+        checks += 1
 
     result = {
         "status": "PASS" if not errors else "FAIL",
