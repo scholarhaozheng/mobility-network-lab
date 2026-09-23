@@ -30,7 +30,7 @@ def main() -> int:
             except SyntaxError as exc:errors.append(f'{relative}: {exc}')
         if p.suffix in ('.md','.html','.json','.txt','.py','.cff'):
             text=p.read_text(encoding='utf-8-sig')
-            if p.name not in ('check_repository.py',) and any(x in text for x in ('SuperDoctorCat','/mnt/data/','C:\\Users\\')):
+            if p.name not in ('check_repository.py',) and any(x in text for x in ('/mnt/data/','C:\\Users\\','/home/','/Users/')):
                 errors.append(f'Private machine path in {relative}')
         if p.suffix in ('.md','.html'):
             text=p.read_text(encoding='utf-8-sig')

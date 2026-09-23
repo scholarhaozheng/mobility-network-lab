@@ -1,0 +1,83 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Central Boston source-backed city instance | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Central Boston source-backed city instance</p><h1 id="central-boston-source-backed-city-instance">Central Boston source-backed city instance</h1>
+<p>This is the first bounded real-city instance in the repository. It connects a common physical GMNS road network to model zones, a preserved network-proxy demand chain, an independent actual-assessment activity prior, real public-bus GPS road matching, scheduled transit relationships, static assignment, queries, and offline maps.</p>
+<p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/map/boston_central_layers.html">Open the corrected network/GPS map</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/map/boston_activity_prior_layers.html">Open the activity-prior map</a> · <a href="#boston-visual-gallery">Five-map visual gallery</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/README.md">Browse the component</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/query_boston.py">Query the compact SQLite copy</a></p>
+<h2 id="boston-visual-gallery">Boston visual gallery</h2>
+<p>These saved figures use the actual Central Boston network and a common EPSG:32619 display projection. The maps convey different source relations; the selected activity and GPS examples are not asserted to be the same observation or scenario as the fixed-panel feedback trace. <a href="boston-visual-sources.html">Source versions, units and image paths</a> accompany the gallery.</p>
+<h3 id="physical-network-zones-and-corridor">Physical network, zones and corridor</h3>
+<p><a href="../assets/boston/visual_release_r1/boston_network_zones.svg"><img src="../assets/boston/visual_release_r1/boston_network_zones.png" alt="Map of Central Boston roads, H3 zones, analysis and core boundaries, with one orange ordered corridor." /></a></p>
+<p>Central Boston contains 5,091 directed physical GMNS links, 177 clipped H3 r9 zones, nine r7 parent zones, the core boundary and a 2.5 km analysis buffer. Orange marks one continuous model corridor with 23 ordered member links. MassGIS parcel outlines supply context and are not building footprints; model access connectors are omitted. Roads: GMNS Plus 21_Boston (Apache-2.0), commit <code>116447ab641cca1ed34797d019c8e704063393c3</code>; parcels: MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS; zones and boundaries: Mobility Computation Lab.</p>
+<h3 id="residential-assessment-area-activity-prior">Residential assessment-area activity prior</h3>
+<p><a href="../assets/boston/visual_release_r1/boston_activity_prior.svg"><img src="../assets/boston/visual_release_r1/boston_activity_prior.png" alt="Central Boston H3 zone choropleth of residential assessment area, with teal value bins and grey missing zones." /></a></p>
+<p>Official MassGIS residential assessment area (<code>RES_AREA</code>, square feet) is allocated by parcel intersection area in EPSG:32619 to the 177 clipped r9 zones. Boston records use FY2023 and Cambridge records FY2026. The selected field has values in 145 zones and is blank in 32; blank is not zero and does <strong>not</strong> mean those zones lack every source record. This is a spatial activity prior, not observed trips, population or the full generated demand result. Source: MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS; roads: GMNS Plus 21_Boston (Apache-2.0); zones: Mobility Computation Lab.</p>
+<h3 id="one-saved-transit-position-projection">One saved transit-position projection</h3>
+<p><a href="../assets/boston/visual_release_r1/boston_gps_projection.svg"><img src="../assets/boston/visual_release_r1/boston_gps_projection.png" alt="Detailed road map with twelve orange transit vehicle positions, white projected points, a teal matched path, and short offset connectors." /></a></p>
+<p>Twelve saved public MBTA vehicle positions and projections lie along one qualified 26-occurrence matched road path. The segment is the first eligible one by stable identifier among those with at least six published derived points; the rule does not select a large effect. Lateral offsets span 0.98–14.04 m. Overall, nine of 28 returned paths met the quality rules. This representative view is neither passenger travel nor an overall or lane-level accuracy certificate, and it is not necessarily the observation used in the feedback trace. Position source: MassDOT / MBTA V3; derived projection: Mobility Computation Lab; roads: GMNS Plus 21_Boston (Apache-2.0); parcel context: MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS.</p>
+<h3 id="s1-fixed-panel-road-flow">S1 fixed-panel road flow</h3>
+<p><a href="../assets/boston/visual_release_r1/boston_panel_flow_s1.svg"><img src="../assets/boston/visual_release_r1/boston_panel_flow_s1.png" alt="Central Boston network map with teal directed links scaled to S1 modeled vehicle trips and a fixed 0–89.5 legend." /></a></p>
+<p>Saved S1 planned-service road flow appears on 319 nonzero directed links, with a maximum of 89.481820 modeled vehicle trips. Reciprocal directions are offset 2.7 screen pixels and indicated by arrows. This fixed home-based-work panel has no regional background traffic; values are modeled panel trips, not observed road counts. Roads: GMNS Plus 21_Boston (Apache-2.0), commit <code>116447ab641cca1ed34797d019c8e704063393c3</code>; saved assignment: Mobility Computation Lab.</p>
+<h3 id="s2s1-exploratory-panel-flow-difference">S2−S1 exploratory panel-flow difference</h3>
+<p><a href="../assets/boston/visual_release_r1/boston_panel_flow_delta.svg"><img src="../assets/boston/visual_release_r1/boston_panel_flow_delta.png" alt="Central Boston network map with 78 blue directed links for small negative S2 minus S1 modeled flow differences and a symmetric signed legend." /></a></p>
+<p>Saved S2 exploratory GPS-overlay flow minus saved S1 planned-service flow uses identical directed physical links and the same viewport. Seventy-eight links decrease and none increase beyond <code>1e-10</code>; the largest absolute difference is about <code>0.006602639857</code> modeled vehicle trips. The signed legend is symmetric about zero. This is a small fixed-panel sensitivity without regional background traffic, not congestion relief or a citywide causal effect. Roads: GMNS Plus 21_Boston (Apache-2.0), commit <code>116447ab641cca1ed34797d019c8e704063393c3</code>; saved assignments: Mobility Computation Lab. See the <a href="boston-behavior-feedback.html">current feedback data card</a> for the precise panel and scenario scope.</p>
+<h2 id="study-area-and-data-identity">Study area and data identity</h2>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Core</td>
+<td>Central Boston, bbox <code>[-71.105, 42.335, -71.045, 42.370]</code>, about 19.22 km²</td>
+</tr>
+<tr>
+<td>Analysis buffer</td>
+<td>2.5 km for road context and GPS matching</td>
+</tr>
+<tr>
+<td>Road source</td>
+<td>GMNS Plus <code>21_Boston</code>, commit <code>116447ab641cca1ed34797d019c8e704063393c3</code> (Apache-2.0)</td>
+</tr>
+<tr>
+<td>Physical matcher network</td>
+<td>2,852 nodes; 5,091 directed links; source <code>link_type=0</code> connectors excluded</td>
+</tr>
+<tr>
+<td>Project zones</td>
+<td>177 H3 r9 cells; 9 logical H3 r7 parents; 177 explicit access records</td>
+</tr>
+<tr>
+<td>Activity source</td>
+<td>Official MassGIS Property Tax Parcels slice: 54,411 assessment rows, 13,585 unique parcel geometries; Boston FY2023 and Cambridge FY2026</td>
+</tr>
+<tr>
+<td>Transit source</td>
+<td>MBTA feed <code>mdb-437</code>, Fall 2026 version D; service date 2026-09-22</td>
+</tr>
+<tr>
+<td>GPS source</td>
+<td>Twelve MBTA V3 bus-position snapshots captured during a short 2026-09-21 local window</td>
+</tr>
+</tbody>
+</table>
+<p>Catalog city IDs, GHSL IDs, feed IDs, source TAZ IDs and project H3 IDs remain separate. The component does not infer identity from similar labels.</p>
+<h2 id="demand-and-assignment">Demand and assignment</h2>
+<p>Two demand tracks now coexist. The original network-accessibility proxy remains byte-separated as the legacy engineering scenario. The activity run <code>boston_activity_prior_r1_20260922</code> executes the same four declared steps with new spatial margins:</p>
+<ol>
+<li>Trip generation scales official residential assessment area to the production margin and official nonresidential/mixed building area to the attraction margin. These inputs are no longer network proxies. Parcel geometry and stacked assessment records are kept distinct, area overlay uses EPSG:32619, outside-core weights are retained, and r7 is summed from r9.</li>
+<li>A doubly constrained gravity model reuses the unchanged free-flow network skim. The new matrix has 25,075 positive OD cells and balances to the assumed 50,000 total with relative maximum margin error below <code>7.2e-8</code>.</li>
+<li>Fixed engineering shares split mode and the weekday AM period. This is not a calibrated discrete-choice model.</li>
+<li>Drive demand is converted at 1.2 persons per vehicle. Of 2,750 AM vehicle trips, 2,723.944 are assignment-ready and 26.056 remain explicitly unassigned because endpoints share an access node or are intrazonal. No new FW assignment was run.</li>
+</ol>
+<p>The 50,000 daily total, gravity beta, mode shares, AM share, and occupancy remain explicit assumptions. MassGIS assessment area is an activity prior, not observed trips, population, or employment. LODES8 WAC/RAC/OD was identified but the official host timed out after bounded retries, so the release contains no workplace/residence job association and makes no all-purpose-travel claim from LODES.</p>
+<p>The existing <code>solve_fw_refined(...)</code> entry ran the baseline and a capacity-stress scenario without invoking the solver module's historical <code>__main__</code>. Both stopped at the implemented relative-gap criterion in one iteration; the light-load baseline maximum V/C is about 0.143. Link-volume sums are not reported as trip totals.</p>
+<h2 id="gps-and-calibration-evidence">GPS and calibration evidence</h2>
+<p>The build retained 2,091 cleaned bus-position points in 235 capture-window-censored segments. Thirty segments entered matching; 28 produced continuous directed physical paths. The external HMM succeeded on 19. After recorded HMM failures, the native connected-path engine succeeded on nine more. Two selected failures and all unselected segments remain visible in the private QC tables.</p>
+<p>Ten quality-filtered matched segments support a one-parameter path-time scale diagnostic. Eight vehicle groups form the training set and two independent groups form the holdout. The fitted scale is approximately 2.033. Training RMSE improves, but holdout RMSE worsens from 4.372 to 12.101 minutes, so the parameter is <strong>estimated but not validated</strong>.</p>
+<h2 id="transit-and-query-scope">Transit and query scope</h2>
+<p>For 2026-09-22, the local GTFS slice contains 12,901 trips on 112 routes, 3,553 referenced stops (1,391 in the analysis area), and 286,151 stop-time records. Foreign-key and time checks pass. Stop access is a modelled nearest-road-node relation. One planned shape was geometrically conflated to roads; a planned shape is not an observed vehicle path.</p>
+<p>The corrected baseline keeps its acceptance-query families. Seven additional executed queries cover one source record's zone allocation, a zone activity/prior chain, one complete OD chain, municipality/fiscal-year coverage, allocation conservation, old/new scenario differences, and assignment-input accounting. Their compact result CSVs and SQL are included in <code>examples/boston/queries/</code>.</p>
+<h2 id="publication-boundary">Publication boundary</h2>
+<p>The public component includes the Apache-licensed physical road slice, project-derived relations and engineering results, the privacy-minimised MassGIS source slice and dictionary, H3 crosswalks, both demand tracks, assignment-ready new input, aggregated GPS link use, executed query examples, a rebuildable SQLite database, and two self-contained maps. It excludes the raw MBTA GTFS ZIP, raw real-time snapshots, complete private observation tables, and the run-named 301 MB private SQLite copy. Third-party terms remain distinct from the project license.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

@@ -1,5 +1,31 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Network and data catalog | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data-explorer.html">City evidence</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Network and data catalog</p><h1 id="network-and-data-catalog">Network and data catalog</h1>
 <p>Browse <strong>network computations and their visual results</strong> first. Supporting data tools and OMDV evidence summaries are separate resources, not a count of runnable city models. Machine-readable records remain in <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/catalog/datasets.json">catalog/datasets.json</a>; use <code>python tools/mnl.py catalog</code> to list them.</p>
+<h2 id="source-backed-city-instance">Source-backed city instance</h2>
+<table>
+<thead>
+<tr>
+<th>Record</th>
+<th>Network</th>
+<th>Model</th>
+<th>Access</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="datasets/boston-central.html">Central Boston</a></td>
+<td>2,852 physical nodes, 5,091 directed links, 177 H3 model zones</td>
+<td>Preserved network-proxy demand plus actual-assessment activity prior, static FW baseline, real bus GPS road matching, GTFS linkage</td>
+<td>Rebuildable component, SQLite queries, two offline maps and a <a href="datasets/boston-central.html#boston-visual-gallery">five-map gallery</a></td>
+</tr>
+<tr>
+<td><a href="datasets/boston-behavior-feedback.html">Central Boston demand and transit feedback</a></td>
+<td>Shared Boston road network and 177 H3 zones; fixed 36-OD midday panel</td>
+<td>Transferred household rates, activity-weighted distribution, nested mode response, observation sensitivity and static FW</td>
+<td>Current semantic-fix component; 26 CSV data tables, queryable SQLite and a <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/SAVED_EXAMPLE.md">saved-result example</a></td>
+</tr>
+</tbody>
+</table>
+<p>The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included.</p>
 <h2 id="road-benchmark-results">Road benchmark results</h2>
 <table>
 <thead>
@@ -34,8 +60,8 @@
 <p><a href="visualizations.html">Open the six-figure gallery</a>. These are benchmark experiments, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. The static and space–time objectives are not the same model.</p>
 <h2 id="runnable-reference-inputs">Runnable reference inputs</h2>
 <p><a href="examples.html">Two bundled synthetic examples</a> cover automatic routes and a zone-based capacity constraint. They support installation and regression checks without redistributing third-party road inputs. <a href="getting-started.html">Run the network workflow</a>.</p>
-<h2 id="city-instances-and-common-interfaces">City instances and common interfaces</h2>
-<p><a href="add-a-network.html">Add a source-backed network</a> using the shared <a href="city-workflow.html">city workflow</a>. A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. Future city collections remain in the <a href="roadmap.html">roadmap</a> until their data and computations actually exist.</p>
+<h2 id="common-interfaces-and-additional-cities">Common interfaces and additional cities</h2>
+<p><a href="add-a-network.html">Add a source-backed network</a> using the shared <a href="city-workflow.html">city workflow</a>. A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Central Boston instance demonstrates one bounded implementation; it is not a universal raw-city compiler. Future city collections remain in the <a href="roadmap.html">roadmap</a> until their data and computations actually exist.</p>
 <h2 id="supporting-metadata-tools-and-evidence">Supporting metadata tools and evidence</h2>
 <p><a href="data-tools.html">Executable OMDV data tools</a> normalize local city/catalog records and perform exact city/country matching. Four authorized OMDV modules and two labelled fixtures are bundled; they are not a live downloader or GPS matcher.</p>
 <p>The separate <a href="open-data.html">open-data evidence guide</a> documents retained source-specific summaries for GHSL, GTFS, realtime, OSM, GBFS and interoperability. Raw feeds, endpoint lists, geometries and bulk archives are excluded. These evidence layers are not additive and do not imply bundled assignment-ready city models.</p>

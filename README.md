@@ -1,4 +1,5 @@
-<p align="center"><img src="docs/assets/hero.png" width="100%" alt="Mobility Computation Lab — city networks, travel demand and reproducible computation. Decorative network illustration."></p>
+<p align="center"><img src="docs/assets/boston/visual_release_r1/mcl_boston_hero.png" width="100%" alt="Dark navy Mobility Computation Lab cover with real Central Boston street and zone geometry on the right."></p>
+<p align="center"><small>Central Boston road geometry: GMNS Plus 21_Boston (Apache-2.0), commit 116447ab641cca1ed34797d019c8e704063393c3; H3 zones and cover composition: Mobility Computation Lab. Geography only—not measured or modeled traffic.</small></p>
 
 <p align="center">
   <a href="#city-network-workflow">City workflow</a> ·
@@ -30,7 +31,18 @@ The organizing unit is a **city network instance**, not a count of available dat
 | **Mobility evidence** | GPS, counts, speeds and transit data linked to the same network | [Local metadata preparation](docs/data-tools.md) and [source summaries](docs/open-data.md); trace matching is a separate extension |
 | **Assignment and optimization** | Model-specific routes, path flows, arc loads and checks | [Space–time CG and static FW](docs/methods.md) |
 
-The current release does **not** implement this entire chain from raw city data. Network acquisition, hierarchical zone generation, OD estimation and GPS map matching are documented in the [city workflow](docs/city-workflow.md) and [development roadmap](docs/roadmap.md). They are not prerequisites for using the prepared-network solver today.
+The [Central Boston instance](docs/datasets/boston-central.md) implements this chain once within a bounded study area. Its [behavior-feedback pilot](docs/datasets/boston-behavior-feedback.md) adds ACS-linked demand evidence, real-network multimodal skims, a source-backed nested-choice sensitivity, and a disabled-by-default GPS→service→mode→vehicle→FW trace. Both remain auditable examples, not official forecasts. The generic prepared-network solver remains usable independently.
+
+### Central Boston: one real connected instance
+
+The public component contains a compact SQLite copy, six executed query examples and a self-contained layered map. It preserves failed GPS matches and assignment accounting, separates source TAZ/catalog/feed/H3 identifiers, and excludes raw MBTA archives and realtime snapshots.
+
+[**Open the Boston data card →**](docs/datasets/boston-central.md) · [Component and commands](examples/boston/README.md) · [Offline map](examples/boston/map/boston_central_layers.html)
+
+[**Open the current demand and transit feedback example →**](docs/datasets/boston-behavior-feedback.md) · [Rebuild its SQLite component](examples/boston/behavior_feedback_r1_semantic_fix_r1/README.md)
+
+<p align="center"><a href="docs/datasets/boston-central.md#boston-visual-gallery"><img src="docs/assets/boston/visual_release_r1/boston_network_zones.png" width="780" alt="Map of Central Boston roads, H3 zones, analysis and core boundaries, with one orange ordered corridor."></a></p>
+<p align="center"><small>Central Boston GMNS/H3 overview: 5,091 directed physical links, 177 r9 zones and one 23-link corridor. Parcel outlines are context, not building footprints. Roads: GMNS Plus 21_Boston (Apache-2.0); parcels: MassGIS (Bureau of Geographic Information), Commonwealth of Massachusetts EOTSS. <a href="docs/datasets/boston-central.md#boston-visual-gallery">See all five analytical maps and credits →</a></small></p>
 
 ## Sioux Falls benchmark series
 
@@ -124,6 +136,14 @@ python tools/mnl.py verify --run results/capacity-demo
 
 Open `results/capacity-demo/report.html`. The reference example allocates 3 units to one route and 7 to the alternative, with objective **27**. This is a labelled regression example, not a city dataset. Use a new output directory for each run.
 
+To inspect the **saved** Central Boston feedback results without rerunning a model, use the included compact component and a new output directory:
+
+```bash
+python -B examples/boston/run_saved_example.py --data-dir "examples/boston/behavior_feedback_r1_semantic_fix_r1" --output "results/boston_saved_example"
+```
+
+The command rebuilds a query database from the released CSVs and exports five saved-result queries; it does not acquire sources, fit parameters, run FW/CG or validate predictions. The [saved-result guide](examples/boston/SAVED_EXAMPLE.md) also explains how to point `--data-dir` at `public_component` after extracting the separate full data asset. The trusted code stays beside the wrapper in this checkout.
+
 ## Use your own network
 
 Declare node/link/demand fields, units and zone-access rules in `case.json`, then use the same numerical entry point:
@@ -144,7 +164,7 @@ The allowed network is independent of the initial route pool. Every column in th
 
 [GMNS](https://github.com/zephyr-data-specs/GMNS) supplies the common network vocabulary. [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset), [OSM2GMNS](https://github.com/asu-trans-ai-lab/OSM2GMNS), [grid2demand](https://github.com/asu-trans-ai-lab/grid2demand) and [TAPLab](https://github.com/asu-trans-ai-lab/TAPLab) are upstream data/tools with their own implementations and licenses. A reference link is not evidence of a bundled executable integration.
 
-The computational release includes **space–time CG** and a separate **static Frank–Wolfe** implementation. The roadmap extends the city framework through hierarchical zones, OD generation/estimation, GPS traces and map matching, and origin-based / Policy Bush methods with forward-flow and backward-value computations. Coupled primal–dual, Lagrangian and ADMM methods remain research extensions, not shipped solvers. [Methods](docs/methods.md) · [City workflow](docs/city-workflow.md) · [Roadmap](docs/roadmap.md)
+The computational release includes **space–time CG** and a separate **static Frank–Wolfe** implementation. Central Boston exercises hierarchical zones, engineering OD generation and real bus GPS matching through the existing static FW core. Generalized raw-city automation, broader GPS traces and map matching, and origin-based / Policy Bush methods with forward-flow and backward-value computations remain research extensions. Coupled primal–dual, Lagrangian and ADMM methods also remain research extensions, not shipped solvers. [Methods](docs/methods.md) · [City workflow](docs/city-workflow.md) · [Roadmap](docs/roadmap.md)
 
 ## Project layout
 

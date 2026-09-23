@@ -37,9 +37,10 @@ def main() -> int:
         r"<img\b[^>]*\bsrc=[\"']([^\"']+)", readme_text
     )
     expected_image = "docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png"
-    # Protect the banner and network-result access, not an arbitrary one-image cap.
+    # Protect the new cover, Boston overview and retained benchmark access.
     required_images = {
-        "docs/assets/hero.png",
+        "docs/assets/boston/visual_release_r1/mcl_boston_hero.png",
+        "docs/assets/boston/visual_release_r1/boston_network_zones.png",
         expected_image,
         "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
         "docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png",
@@ -49,6 +50,9 @@ def main() -> int:
         if required not in readme_images:
             errors.append(f"README required visual missing: {required}")
         checks += 1
+    if not (DOCS / "assets/hero.png").is_file():
+        errors.append("Retained previous hero asset is missing")
+    checks += 1
     for raw in readme_images:
         target = _local_target(readme, raw)
         if target is None or not target.is_file():
@@ -95,6 +99,9 @@ def main() -> int:
 
     homepage = (DOCS / "index.html").read_text(encoding="utf-8")
     for label, present in {
+        "Boston-backed site cover": 'src="assets/boston/visual_release_r1/mcl_boston_hero.png"' in homepage,
+        "Boston network feature": 'src="assets/boston/visual_release_r1/boston_network_zones.png"' in homepage,
+        "Boston five-map gallery link": 'href="datasets/boston-central.html#boston-visual-gallery"' in homepage,
         "data-tools navigation": 'href="data-tools.html"' in homepage,
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
         "approved benchmark image": expected_image.removeprefix("docs/") in homepage,
@@ -105,6 +112,13 @@ def main() -> int:
     }.items():
         if not present:
             errors.append(f"Homepage contract failed: {label}")
+        checks += 1
+
+    boston_gallery = (DOCS / "datasets/boston-central.html").read_text(encoding="utf-8")
+    for stem in ("boston_network_zones", "boston_activity_prior", "boston_gps_projection", "boston_panel_flow_s1", "boston_panel_flow_delta"):
+        asset = f"../assets/boston/visual_release_r1/{stem}.png"
+        if asset not in boston_gallery or not (DOCS / "assets/boston/visual_release_r1" / f"{stem}.png").is_file():
+            errors.append(f"Boston gallery missing image: {asset}")
         checks += 1
 
     # Protect the supporting evidence overview as well as the city-first presentation.

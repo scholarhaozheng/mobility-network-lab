@@ -153,20 +153,20 @@ def render_visualization(output_root: Path, label: str, verification: dict[str, 
     status = str(verification.get("status", "UNKNOWN"))
     color = "#147d64" if status == "PASS" else "#b42318"
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="760" height="300" viewBox="0 0 760 300">
-<rect width="760" height="300" fill="#f7f4ed"/><text x="40" y="48" font-family="Segoe UI,Arial" font-size="26" fill="#17212b">{html.escape(label)} 离线验收</text>
-<text x="40" y="82" font-family="Segoe UI,Arial" font-size="18" fill="{color}">状态：{html.escape(status)}</text>
-<text x="40" y="128" font-family="Segoe UI,Arial" font-size="15" fill="#334155">实际目标值 {objective:g}</text><rect x="190" y="110" width="{actual_width:.2f}" height="24" rx="4" fill="#2563eb"/>
-<text x="40" y="174" font-family="Segoe UI,Arial" font-size="15" fill="#334155">期望目标值 {expected:g}</text><rect x="190" y="156" width="{expected_width:.2f}" height="24" rx="4" fill="#94a3b8"/>
-<text x="40" y="224" font-family="Segoe UI,Arial" font-size="14" fill="#475569">最终全列：{verification.get('final_solution_row_count', '')}；正流：{verification.get('positive_flow_row_count', '')}；零流：{verification.get('zero_flow_row_count', '')}</text>
-<text x="40" y="252" font-family="Segoe UI,Arial" font-size="14" fill="#475569">停机原因：{html.escape(str(verification.get('stop_reason', '')))}</text>
-<text x="40" y="278" font-family="Segoe UI,Arial" font-size="12" fill="#64748b">纯离线 SVG；不加载字体、脚本或网络资源。</text></svg>'''
+<rect width="760" height="300" fill="#f7f4ed"/><text x="40" y="48" font-family="Segoe UI,Arial" font-size="26" fill="#17212b">{html.escape(label)} offline verification</text>
+<text x="40" y="82" font-family="Segoe UI,Arial" font-size="18" fill="{color}">Status: {html.escape(status)}</text>
+<text x="40" y="128" font-family="Segoe UI,Arial" font-size="15" fill="#334155">Actual: {objective:g}</text><rect x="190" y="110" width="{actual_width:.2f}" height="24" rx="4" fill="#2563eb"/>
+<text x="40" y="174" font-family="Segoe UI,Arial" font-size="15" fill="#334155">Expected: {expected:g}</text><rect x="190" y="156" width="{expected_width:.2f}" height="24" rx="4" fill="#94a3b8"/>
+<text x="40" y="224" font-family="Segoe UI,Arial" font-size="14" fill="#475569">Final columns: {verification.get('final_solution_row_count', '')}; positive flow: {verification.get('positive_flow_row_count', '')}; zero flow: {verification.get('zero_flow_row_count', '')}</text>
+<text x="40" y="252" font-family="Segoe UI,Arial" font-size="14" fill="#475569">Stop reason: {html.escape(str(verification.get('stop_reason', '')))}</text>
+<text x="40" y="278" font-family="Segoe UI,Arial" font-size="12" fill="#64748b">Offline SVG; no fonts, scripts, or network resources are loaded.</text></svg>'''
     svg_path = visual_dir / "summary.svg"
     svg_path.write_text(svg, encoding="utf-8")
     html_path = visual_dir / "index.html"
     html_path.write_text(
-        "<!doctype html><meta charset='utf-8'><title>GMNS CG 离线验收</title>"
+        "<!doctype html><meta charset='utf-8'><title>GMNS CG offline verification</title>"
         "<style>body{font-family:Segoe UI,Arial;margin:2rem;background:#f7f4ed;color:#17212b}pre{background:white;padding:1rem;overflow:auto}</style>"
-        f"<h1>{html.escape(label)} 验收结果</h1><img src='summary.svg' alt='验收摘要'>"
+        f"<h1>{html.escape(label)} verification result</h1><img src='summary.svg' alt='Verification summary'>"
         f"<pre>{html.escape(json.dumps(verification, ensure_ascii=False, indent=2))}</pre>",
         encoding="utf-8",
     )

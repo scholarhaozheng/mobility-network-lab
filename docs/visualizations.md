@@ -2,6 +2,8 @@
 
 These figures summarize saved, independently checked historical Sioux Falls **selected-OD** experiments. They are the same approved image assets shipped with the preceding release; this gallery does not rerun optimization or invent new observations.
 
+For the separate real-city example, see the [Central Boston five-map gallery](datasets/boston-central.md#boston-visual-gallery): network and zones, the MassGIS residential-area prior, one qualified GPS projection, and saved S1 and S2−S1 fixed-panel flows. Its source credits and units are documented alongside each map.
+
 ## Physical-link flow views
 
 <table>

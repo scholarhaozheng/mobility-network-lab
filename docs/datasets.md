@@ -2,6 +2,15 @@
 
 Browse **network computations and their visual results** first. Supporting data tools and OMDV evidence summaries are separate resources, not a count of runnable city models. Machine-readable records remain in [catalog/datasets.json](../catalog/datasets.json); use `python tools/mnl.py catalog` to list them.
 
+## Source-backed city instance
+
+| Record | Network | Model | Access |
+|---|---|---|---|
+| [Central Boston](datasets/boston-central.md) | 2,852 physical nodes, 5,091 directed links, 177 H3 model zones | Preserved network-proxy demand plus actual-assessment activity prior, static FW baseline, real bus GPS road matching, GTFS linkage | Rebuildable component, SQLite queries, two offline maps and a [five-map gallery](datasets/boston-central.md#boston-visual-gallery) |
+| [Central Boston demand and transit feedback](datasets/boston-behavior-feedback.md) | Shared Boston road network and 177 H3 zones; fixed 36-OD midday panel | Transferred household rates, activity-weighted distribution, nested mode response, observation sensitivity and static FW | Current semantic-fix component; 26 CSV data tables, queryable SQLite and a [saved-result example](../examples/boston/SAVED_EXAMPLE.md) |
+
+The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included.
+
 ## Road benchmark results
 
 | Record | Network | Model | Access |
@@ -16,9 +25,9 @@ Browse **network computations and their visual results** first. Supporting data 
 
 [Two bundled synthetic examples](examples.md) cover automatic routes and a zone-based capacity constraint. They support installation and regression checks without redistributing third-party road inputs. [Run the network workflow](getting-started.md).
 
-## City instances and common interfaces
+## Common interfaces and additional cities
 
-[Add a source-backed network](add-a-network.md) using the shared [city workflow](city-workflow.md). A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. Future city collections remain in the [roadmap](roadmap.md) until their data and computations actually exist.
+[Add a source-backed network](add-a-network.md) using the shared [city workflow](city-workflow.md). A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Central Boston instance demonstrates one bounded implementation; it is not a universal raw-city compiler. Future city collections remain in the [roadmap](roadmap.md) until their data and computations actually exist.
 
 ## Supporting metadata tools and evidence
 

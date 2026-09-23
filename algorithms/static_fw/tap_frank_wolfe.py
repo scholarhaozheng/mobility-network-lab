@@ -10,7 +10,7 @@ from scipy.sparse.csgraph import shortest_path
 # --- Logger Setup ---
 class Logger:
     def __init__(self, filename):
-        self.terminal = sys.__stdout__  # 保存原始 stdout
+        self.terminal = sys.__stdout__  # Preserve the original stdout stream.
         self.log = open(filename, "w", encoding='utf-8')
 
     def write(self, message):
@@ -24,7 +24,7 @@ class Logger:
 
     def close(self):
         self.log.close()
-        # 恢复原始 stdout，防止日志文件没关掉
+        # Restore stdout after closing the log file.
         sys.stdout = self.terminal
 
 
@@ -33,7 +33,7 @@ def load_data(data_dir, cap_scale=1.0):
     link_df = pd.read_csv(os.path.join(data_dir, 'link.csv'))
     demand_df = pd.read_csv(os.path.join(data_dir, 'demand.csv'))
 
-    # 1. 字段映射
+    # 1. Map input columns.
     def get_col(df, candidates):
         for c in candidates:
             if c in df.columns: return c
@@ -42,7 +42,7 @@ def load_data(data_dir, cap_scale=1.0):
     u_col = get_col(link_df, ['from_node_id', 'from_node', 'a_node', 'init_node'])
     v_col = get_col(link_df, ['to_node_id', 'to_node', 'b_node', 'term_node'])
 
-    # 2. 构建节点映射
+    # 2. Build the node index.
     all_nodes = set(link_df[u_col].unique()) | set(link_df[v_col].unique())
     node_map = {n: i for i, n in enumerate(sorted(all_nodes))}
     n_nodes = len(node_map)
@@ -51,22 +51,21 @@ def load_data(data_dir, cap_scale=1.0):
     u_idx = link_df[u_col].map(node_map).values
     v_idx = link_df[v_col].map(node_map).values
 
-    # 3. 参数读取
-    # 强制 float64 精度
+    # 3. Read parameters in float64 precision.
     cap_col = get_col(link_df, ['capacity', 'link_capacity', 'cap'])
     cap = link_df[cap_col].values.astype(np.float64)
 
-    # [关键修改] 这里应用容量缩放，主要针对 Chicago 这种全天容量
+    # Apply capacity scaling, primarily for all-day capacity inputs.
     cap = cap / cap_scale
 
-    # 避免除以 0
+    # Avoid division by zero.
     cap = np.maximum(cap, 1.0)
 
     t0 = link_df[get_col(link_df, ['vdf_fftt', 'free_flow_time', 'fftt'])].values.astype(np.float64)
     alpha = link_df.get('vdf_alpha', np.full(n_links, 0.15)).values.astype(np.float64)
     beta = link_df.get('vdf_beta', np.full(n_links, 4.0)).values.astype(np.float64)
 
-    # 4. 需求读取
+    # 4. Read demand.
     o_col = get_col(demand_df, ['o_zone_id', 'origin'])
     d_col = get_col(demand_df, ['d_zone_id', 'destination'])
     vol_col = get_col(demand_df, ['volume', 'flow', 'demand'])
@@ -91,7 +90,7 @@ def load_data(data_dir, cap_scale=1.0):
         except:
             continue
 
-    # 5. 平行路段预处理
+    # 5. Index parallel links.
     uv_to_links = {}
     for i in range(n_links):
         pair = (u_idx[i], v_idx[i])
@@ -121,13 +120,13 @@ def bpr_integral(vol, cap, t0, alpha, beta):
     # Integral = t0*v + t0*alpha/(beta+1) * v * (v/c)^beta
     vc_ratio = vol / cap
     term_linear = np.sum(t0 * vol)
-    # 避免 beta+1 为 0 (虽然通常不会)
+    # Guard against a zero beta + 1 denominator.
     term_congestion = np.sum((t0 * alpha / (beta + 1)) * vol * np.power(vc_ratio, beta))
     return term_linear + term_congestion, term_congestion
 
 
 def build_min_graph(data, current_costs):
-    """只取当前 Cost 最小的平行路段构建图"""
+    """Build a graph using the lowest-cost link for each parallel pair."""
     n_nodes = data['n_nodes']
     u_list, v_list, w_list = [], [], []
     best_link_map = {}
@@ -155,47 +154,48 @@ def get_aon_flow(data, cost):
     graph, best_link_map = build_min_graph(data, cost)
     aux_vol = np.zeros(n_links)
 
-    # Scipy shortest_path 计算从 origin 到所有节点的距离和前驱
-    # 这种方式比对每个 OD 对单独算 Dijkstra 要快得多
+    # Compute distances and predecessors from each origin to all nodes.
+    # This avoids a separate shortest-path call for every OD pair.
     for o, dests in data['od'].items():
         if not dests: continue
 
         dist, preds = shortest_path(graph, directed=True, indices=o, return_predecessors=True)
 
-        # 优化：只对可达且有需求的目的地进行回溯
-        # 1. 计算每个节点的累积流量 (从目的地倒推回 O)
+        # Backtrack only reachable destinations with demand.
+        # Accumulate node flow from destinations toward the origin.
         node_load = np.zeros(n_nodes)
 
-        # 找出该 Origin 下所有的目的地，按距离从远到近排序 (拓扑逆序)
-        # 这样可以保证我们处理一个节点时，它的下游流量已经累积完毕
+        # Sort reachable nodes from farthest to nearest so downstream flow
+        # is accumulated before processing its predecessor.
         target_nodes = [d for d in dests.keys() if dist[d] != np.inf]
 
         if not target_nodes: continue
 
-        # 这里的排序是为了确保拓扑顺序，对于有环图 Dijkstra 处理的是最短路树，也是无环的
+        # The predecessor structure is a shortest-path tree, even if the
+        # underlying graph has cycles.
         active_nodes = np.where(dist != np.inf)[0]
         sorted_indices = np.argsort(dist[active_nodes])[::-1]
         sorted_nodes = active_nodes[sorted_indices]
 
-        # 加载 OD 需求到目的地节点
+        # Load OD demand at destination nodes.
         for d, f in dests.items():
             if dist[d] != np.inf:
                 node_load[d] += f
 
-        # 回溯加载流量到链路
+        # Backtrack flow onto links.
         for n in sorted_nodes:
             if n == o: continue
             load = node_load[n]
             if load <= 1e-12: continue
 
             p = preds[n]
-            if p >= 0:  # 有前驱
-                # 找到 (p, n) 之间最短的那条路段
+            if p >= 0:  # A predecessor exists.
+                # Use the lowest-cost link from p to n.
                 if (p, n) in best_link_map:
                     link_idx = best_link_map[(p, n)]
                     aux_vol[link_idx] += load
 
-                # 将流量推给上游节点
+                # Propagate flow to the upstream node.
                 node_load[p] += load
 
     return aux_vol
@@ -207,10 +207,10 @@ def golden_section_search(vol, target_vol, data):
     tol = 1e-5
     d_vol = target_vol - vol
 
-    # 预计算不变的部分以加速
+    # Precompute the invariant search direction.
     def func(lam):
         v_new = vol + lam * d_vol
-        # 我们只关心目标函数值
+        # Evaluate only the objective value.
         obj, _ = bpr_integral(v_new, data['cap'], data['t0'], data['alpha'], data['beta'])
         return obj
 
@@ -235,7 +235,7 @@ def golden_section_search(vol, target_vol, data):
 
 
 def solve_fw_refined(data_dir='.', run_name="default", max_iter=50, cap_scale=1.0):
-    # 配置特定运行的日志
+    # Configure a log for this run.
     log_filename = f"{run_name}_fw_log.txt"
     sys.stdout = Logger(log_filename)
 
@@ -255,13 +255,13 @@ def solve_fw_refined(data_dir='.', run_name="default", max_iter=50, cap_scale=1.
         f"{'Iter':<5} {'Objective':<15} {'LowerBound':<15} {'RelGap(%)':<12} {'Step':<8} {'CongestTerm':<12} {'Time':<6}")
     print("-" * 100)
 
-    # 1. 初始解 (Free Flow AON)
+    # 1. Initialize with free-flow all-or-nothing assignment.
     current_cost = data['t0']
     vol = get_aon_flow(data, current_cost)
     init_obj, init_cong = bpr_integral(vol, data['cap'], data['t0'], data['alpha'], data['beta'])
     print(f"{0:<5} {init_obj:<15.4e} {'-':<15} {'-':<12} {'(init)':<8} {init_cong:<12.2e} {0.00:<6.2f}")
 
-    # 初始化变量，防止 max_iter=0 时报错
+    # Initialize values so max_iter=0 remains defined.
     new_obj = init_obj
     rel_gap = 1.0
     it = 0
@@ -269,34 +269,34 @@ def solve_fw_refined(data_dir='.', run_name="default", max_iter=50, cap_scale=1.
     for it in range(1, max_iter + 1):
         iter_start = time.time()
 
-        # 2. 更新阻抗
+        # 2. Update link costs.
         current_cost = bpr_cost(vol, data['cap'], data['t0'], data['alpha'], data['beta'])
 
-        # 3. 寻找方向 (All-or-Nothing assignment based on current cost)
+        # 3. Find the all-or-nothing direction at current costs.
         target_vol = get_aon_flow(data, current_cost)
 
-        # 4. 计算 Lower Bound & Gap
+        # 4. Compute the lower bound and relative gap.
         # LB = Z(x) + grad(x) * (y - x)
         current_obj, _ = bpr_integral(vol, data['cap'], data['t0'], data['alpha'], data['beta'])
         direction = target_vol - vol
         directional_deriv = np.sum(current_cost * direction)
         lower_bound = current_obj + directional_deriv
 
-        # 避免分母为0
+        # Avoid a zero denominator.
         gap_denom = current_obj if current_obj > 1e-10 else 1.0
         rel_gap = abs(lower_bound - current_obj) / gap_denom
 
-        # 5. 线搜索
+        # 5. Perform line search.
         step = golden_section_search(vol, target_vol, data)
 
-        # 6. 更新流量
+        # 6. Update flows.
         vol = vol + step * direction
         new_obj, new_cong = bpr_integral(vol, data['cap'], data['t0'], data['alpha'], data['beta'])
 
         print(
             f"{it:<5} {new_obj:<15.4e} {lower_bound:<15.4e} {rel_gap * 100:<12.4f} {step:<8.4f} {new_cong:<12.2e} {time.time() - iter_start:<6.2f}")
 
-        # 收敛判定
+        # Check convergence.
         if rel_gap < 1e-4:
             print(f"\n*** Converged (Gap < 0.01%) ***")
             break
@@ -305,17 +305,17 @@ def solve_fw_refined(data_dir='.', run_name="default", max_iter=50, cap_scale=1.
     print(f"\nTotal Time: {total_time:.2f}s")
     print(f"Log saved to {log_filename}")
 
-    # 保存结果
+    # Save results.
     df = data['link_df'].copy()
     df['volume'] = vol
     df['travel_time'] = bpr_cost(vol, data['cap'], data['t0'], data['alpha'], data['beta'])
-    df['vc_ratio'] = df['volume'] / df['capacity']  # 这里的 capacity 是原始 CSV 里的，保持原样以便对比
+    df['vc_ratio'] = df['volume'] / df['capacity']  # Retain the source CSV capacity for comparison.
 
     out_csv = f"{run_name}_solution.csv"
     df.to_csv(out_csv, index=False)
     print(f"Results saved to {out_csv}")
 
-    # --- [新增] 自动生成 Baseline 报告 ---
+    # Generate the baseline summary.
     avg_vc = df['vc_ratio'].mean()
     max_vc = df['vc_ratio'].max()
 
@@ -333,17 +333,16 @@ def solve_fw_refined(data_dir='.', run_name="default", max_iter=50, cap_scale=1.
     print("="*70 + "\n")
     # ------------------------------------
 
-    # 恢复控制台输出，关闭文件
+    # Close the log and restore console output.
     sys.stdout.close()
 
 if __name__ == "__main__":
-    # 1. 运行 Chicago (当前目录)
-    # cap_scale=1.0 保持原样，展示"不堵"的情况
-    # 如果你想看 Chicago 堵车，可以把 cap_scale 改成 10.0 或 24.0
+    # 1. Run the Chicago sketch in the current directory.
+    # cap_scale=1.0 retains the original capacities.
+    # A larger cap_scale (for example, 10.0 or 24.0) tests tighter capacities.
     print(">>> Running Chicago Sketch ...")
     solve_fw_refined('.', run_name="chicago", max_iter=30, cap_scale=1.0)
 
-    # 2. 运行 Sioux Falls (data/SiouxFalls)
-    # Sioux Falls 不需要缩放，天生就堵
+    # 2. Run Sioux Falls from data/SiouxFalls without capacity scaling.
     print("\n>>> Running Sioux Falls ...")
     solve_fw_refined('data/SiouxFalls', run_name="siouxfalls", max_iter=100, cap_scale=1.0)
