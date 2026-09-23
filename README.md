@@ -6,6 +6,8 @@
   <a href="#gmns-in-action">GMNS in Action</a> ·
   <a href="#four-step-workflow">Four-step workflow</a> ·
   <a href="#how-gps-changes-the-result">GPS → model response</a> ·
+  <a href="#boston-case--saved-assignment-methods">Boston assignment</a> ·
+  <a href="#sioux-falls-benchmark-series">Sioux Falls</a> ·
   <a href="docs/datasets/boston-behavior-feedback.md">Boston results</a> ·
   <a href="#quick-start">Run the saved example</a> ·
   <a href="#mobility-data-support">Open data</a> ·
@@ -18,7 +20,7 @@
 
 Mobility Computation Lab connects city data and transportation calculations through a common **GMNS road network, spatial zones and explicit data relationships**. The Central Boston example makes the four-step workflow visible: **trip generation → trip distribution → mode choice → traffic assignment**. Transit observations form a separate input that changes service costs and propagates to mode demand and road flows.
 
-The project also provides reusable space–time column generation, a separate static Frank–Wolfe baseline, historical Sioux Falls results, and Open Mobility Data Visibility tools. **Boston demonstrates the connected workflow; it does not replace the broader network-computation project.**
+The project also provides reusable space–time column generation, static Frank–Wolfe, a solved finite-path reference, corrected native Diagnostic L3 profiles, historical Sioux Falls results, and Open Mobility Data Visibility tools. **Boston and Sioux Falls are two case entries in one framework**: Boston connects real-city four-stage/GPS evidence to saved assignment methods; Sioux is a classical assignment benchmark with different static and time-expanded experiments. [Boston case](docs/cases/boston.md) · [Sioux Falls case](docs/cases/sioux-falls.md).
 
 ## GMNS in Action
 
@@ -109,7 +111,57 @@ Across the **whole eligible panel**, S1/S2 vehicle inputs are **202.078384 / 202
 
 *The projection map illustrates a different recorded segment; it is not presented as the same event as this feedback trace. The released calculation is a bounded technical example: no independently validated AM forecast, complete TDM23 reproduction or full-city multimodal assignment is claimed. [Scope and assumptions](docs/datasets/boston-behavior-feedback.md#scope-and-assumptions).*
 
+## Boston case · saved assignment methods
+
+The real-city [Boston case](docs/cases/boston.md) includes **both** the GMNS/four-stage/GPS workflow above **and** executed static assignment methods. The earlier semantic S1/S2 service-feedback example used about **202.078384 / 202.070733** modeled vehicle trips. A separate conditional absolute-attribute choice sensitivity evaluates DA/S2/S3/TW for sufficient-vehicle households: 87 of 108 fixed OD-time objects had known four-mode inputs, 21 remained unknown, and only 78 common objects were road-loaded. Its [saved probabilities and specification](examples/boston/conditional_choice_r1/README.md) are a reduced transfer sensitivity, not calibrated all-mode TDM23 or an independent AM validation.
+
+For the **fixed ABS_PLANNED** algorithm comparison, FW, the solved uncompressed path reference and two native Diagnostic L3 representations all use the same 5,091 physical links, 26 endpoint OD pairs, 203.6604786350987 modeled vehicle trips, heterogeneous BPR costs and frozen 130-path pool. ABS_OBS_EXPLORATORY FW is a separate service scenario, not another compression method or the old S1 export. [Read full method/instance details and the full-size gallery](docs/cases/boston-assignment.md).
+
+| Boston saved method / run | Original Beckmann F (vehicle-minutes) | Original-space result and scope |
+|---|---:|---|
+| [FW · ABS_PLANNED](examples/boston/assignment_methods_r1/reference/fw_solution.csv) | 707.0579230712884 | Same-network static FW; [actual source](algorithms/static_fw/tap_frank_wolfe.py) |
+| [Uncompressed 130-path SLSQP](examples/boston/assignment_methods_r1/reference/full_path_flow.csv) | 707.0579230712882 | Exact saved OD equalities on this finite pool; [solver/config](algorithms/finite_path_reference/README.md) |
+| [Native L3 · rank 26 · outer 02](examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json) | 707.0578811137339 | Max OD residual 8.255328278750085e-7; signed full-network relative gap **−5.933966773022305e-8**; 52 path coordinates + 5,091 links = 5,143 variables |
+| [Native L3 · rank 52 · outer 02](examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json) | 707.0578811562873 | Max OD residual 8.254705861077127e-7; signed full-network relative gap **−5.927948547394401e-8**; 78 path coordinates + 5,091 links = 5,169 variables |
+| [FW · ABS_OBS_EXPLORATORY](examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv) | 707.043586277782 | **Different demand:** 203.6573680559407 vehicle trips; not a same-instance rank comparison |
+
+The two native points passed declared numerical checks, but their **negative gaps reflect tolerated OD deficits**, not exact feasible equilibria, improved traffic, or roundoff. Their initialization reused the full-path reference. No cold-start acceleration, peak IPOPT memory or independent performance validation is claimed.
+
+**FW · ABS_PLANNED, saved physical-link flow**
+<p align="center"><a href="docs/cases/boston-assignment.md#physical-link-flow-maps"><img src="docs/assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.png" width="100%" alt="FW ABS_PLANNED modeled physical-link flow on the frozen Boston network."></a></p>
+
+**Native Diagnostic L3 · rank 26, accepted outer-02 reconstructed flow**
+<p align="center"><a href="docs/cases/boston-assignment.md#physical-link-flow-maps"><img src="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png" width="100%" alt="Native L3 rank-26 accepted outer-02 reconstructed Boston flow, same scale as FW."></a></p>
+
+**Native Diagnostic L3 · rank 52, accepted outer-02 reconstructed flow**
+<p align="center"><a href="docs/cases/boston-assignment.md#physical-link-flow-maps"><img src="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_flow.png" width="100%" alt="Native L3 rank-52 accepted outer-02 reconstructed Boston flow, same scale as FW."></a></p>
+
+**Signed native rank 26 minus FW**
+<p align="center"><a href="docs/cases/boston-assignment.md#signed-native-minus-fw-differences"><img src="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_minus_fw.png" width="100%" alt="Signed rank-26 native minus FW micro-scale modeled link-flow differences."></a></p>
+
+**Signed native rank 52 minus FW**
+<p align="center"><a href="docs/cases/boston-assignment.md#signed-native-minus-fw-differences"><img src="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_minus_fw.png" width="100%" alt="Signed rank-52 native minus FW micro-scale modeled link-flow differences."></a></p>
+
+*All three absolute maps share one scale; the two signed maps share a zero-centred scale. They can look almost identical because the maximum native–FW link differences are only about **5.89 × 10⁻⁶ modeled vehicle trips**. These are saved model results, not GPS counts. [Inspect all 5,091 full-precision physical-link rows](docs/assets/boston/assignment_methods_r1/boston_abs_planned_assignment_links.csv) · [Source/field/scale manifest](docs/assets/boston/assignment_methods_r1/BOSTON_ASSIGNMENT_FIGURE_SOURCES.json) · [no-solve renderer](tools/visuals/render_boston_assignment.py). GMNS physical link identities and the documented export crosswalk let method outputs attach to the same road network without changing the older S1 demand exchange.*
+
+```bash
+python -B tools/mcl_results.py list --case boston
+python -B tools/mcl_results.py verify-saved --run boston-abs-planned-full-path
+python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-outer02
+```
+
+These commands inspect saved points; they do not solve, build paths, refit demand or match new GPS data.
+
 ## Sioux Falls benchmark series
+
+The [Sioux Falls case](docs/cases/sioux-falls.md) also has actual static assignment work. Its historical [FW result](docs/datasets/sioux-static-fw.md) has Beckmann F **4,236,715.140437842**, but the retained runtime OD identity is insufficient to declare it a same-input reference for the native profile. The corrected [native Diagnostic L3 implementation](algorithms/path_compression/diagnostic_l3/README.md) has accepted **outer-04** points on the frozen 76-link, 528-positive-OD, 2,218-path static instance (rank 50; 585 reduced path coordinates; 661 total native variables):
+
+| Sioux native configuration | Original Beckmann component F | Max OD residual | Full-network relative cost gap |
+|---|---:|---:|---:|
+| [A_REG001 · gamma=0.01](examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json) | 4,325,864.946597109 | 5.548833712509804e-7 | **8.167461%** |
+| [B_BECKMANN · gamma=0](examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json) | 4,289,674.484214505 | 6.957361051718181e-7 | **4.381867%** |
+
+Both pass recorded numerical feasibility, but neither has a full-network UE certificate or new empirical validation. A is regularized and B is not. The separate 200OD/250OD figures below are **historical finite time-expanded CG**, not native-L3 runs or present-day city observations. Sioux demand is exogenous; no real-city GPS/GTFS or Boston-style four-stage estimation was added.
 
 Explore the actual saved results before running an example. The two panels below are **different selected-OD benchmark instances**, not a comparison of algorithms on the same demand.
 
@@ -229,7 +281,7 @@ The allowed network is independent of the initial route pool. Every column in th
 
 [GMNS](https://github.com/zephyr-data-specs/GMNS) supplies the common network vocabulary. [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset), [OSM2GMNS](https://github.com/asu-trans-ai-lab/OSM2GMNS), [grid2demand](https://github.com/asu-trans-ai-lab/grid2demand) and [TAPLab](https://github.com/asu-trans-ai-lab/TAPLab) are upstream data/tools with their own implementations and licenses. A reference link is not evidence of a bundled executable integration.
 
-The computational release includes **space–time CG** and a separate **static Frank–Wolfe** implementation. Central Boston exercises hierarchical zones, engineering OD generation and real bus GPS matching through the existing static FW core. Generalized raw-city automation, broader GPS traces and map matching, and origin-based / Policy Bush methods with forward-flow and backward-value computations remain research extensions. Coupled primal–dual, Lagrangian and ADMM methods also remain research extensions, not shipped solvers. [Methods](docs/methods.md) · [City workflow](docs/city-workflow.md) · [Roadmap](docs/roadmap.md)
+The computational release includes **space–time CG**, **static Frank–Wolfe**, the solved **finite-path Boston reference**, and the corrected **native Diagnostic L3** source/profiles with selected saved Boston and Sioux records. [The method table](docs/methods.md) states their distinct objectives, instances and accuracy scopes; `python -B tools/mcl_results.py list` and `verify-saved --run <run-id>` inspect the released points without solving. Generalized raw-city automation, broader GPS traces and map matching, and origin-based / Policy Bush methods remain research extensions. Coupled primal–dual, Lagrangian and ADMM methods are not newly shipped or validated by this integration. [City workflow](docs/city-workflow.md) · [Roadmap](docs/roadmap.md)
 
 ## Project layout
 
@@ -237,6 +289,11 @@ The computational release includes **space–time CG** and a separate **static F
 app/src/gmns_dynamic/   Existing network input and space–time CG engine
 app/cases/             Self-contained, labelled regression examples
 algorithms/static_fw/  Separate static traffic-assignment baseline
+algorithms/finite_path_reference/  Boston 130-path SLSQP source/config
+algorithms/path_compression/diagnostic_l3/  Corrected native builder and profiles
+algorithms/mode_choice_conditional/  Reduced absolute-attribute choice evaluator
+examples/boston/assignment_methods_r1/  Saved FW/full-path/native results
+examples/sioux-falls/native_l3_r1/  Selected Sioux native results
 launcher/              Saved-output verification
 src/mobilitylab/        Authorized metadata tools and supporting adapters
 catalog/               Network records, evidence summaries and provenance
