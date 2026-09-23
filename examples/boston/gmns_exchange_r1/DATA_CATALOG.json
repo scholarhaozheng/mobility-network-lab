@@ -1,0 +1,20 @@
+{
+  "exchange": {
+    "location": "examples/boston/gmns_exchange_r1/data/",
+    "scope": "Central Boston H3 r9, accepted S1/S2 fixed panel, structural GMNS/GMNS Plus exchange",
+    "manifest": "data/manifest.json"
+  },
+  "rebuild_inputs": {
+    "asset": "BOSTON_GMNS_SOURCE_INPUTS_R1.zip",
+    "sha256": "45688e91ce14f3eda1f8045880c168b83f632f294944904399d37b114cbfd13d",
+    "root_after_extract": "source_inputs/",
+    "scope": "Fourteen selected frozen/accepted Boston tables (including planned-shape and stop-access relations) plus unchanged original GMNS Plus 21_Boston node/link/demand and license under source_inputs/source_gmns_plus_21_boston/; no raw MBTA observation snapshots"
+  },
+  "full_regional_behavior_data": {
+    "asset": "BOSTON_BEHAVIOR_FEEDBACK_PUBLIC_DATA_EN.zip",
+    "sha256": "a3f33648c4dff3d3f462e4bbf4ebedb198665afd165688d0f481c88cded31d71",
+    "regional_od_member": "derived/regional_od_h3.csv",
+    "generation_member": "derived/trip_generation_by_purpose.csv",
+    "scope": "Full purpose/time regional OD and accepted scientific result asset, unchanged"
+  }
+}

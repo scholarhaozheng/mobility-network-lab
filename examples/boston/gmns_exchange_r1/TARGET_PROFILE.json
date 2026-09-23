@@ -1,0 +1,42 @@
+{
+  "profile_id": "mcl-boston-gmns-plus-structural-r1",
+  "created_utc": "2026-09-23",
+  "community_gmns": {
+    "repository": "https://github.com/zephyr-data-specs/GMNS",
+    "commit": "4e51f4c7893f5df2c8c69ab21c5dc0abd9b69f48",
+    "datapackage_version": "0.96",
+    "schema_paths": ["spec/datapackage.json", "spec/node.schema.json", "spec/link.schema.json", "spec/zone.schema.json", "spec/config.schema.json"],
+    "schema_sha256": {
+      "spec/datapackage.json": "d0cbee7781712ad41278419146829e95e2a43a97730a04f0194cb2350a49429a",
+      "spec/node.schema.json": "1bfa1f546a362fafcbd946df82916bc7c28d0f784b21b049a7ccc1d42db27774",
+      "spec/link.schema.json": "7c5b58901cee56f91714da3d62b6a2ea47885fdd73a876c4514b183abfdb871c",
+      "spec/zone.schema.json": "e38981246f9ae0642d352b1ce086941b967a833b2e6838d78ab1adafd0cdffbe",
+      "spec/config.schema.json": "8681e390a42c3ad0b67841ffbe19d9f98886798b1437d8d0a925f539514831dc"
+    },
+    "identity": "Community table schema; not an end-to-end model certification"
+  },
+  "consumer": {
+    "name": "GMNS Plus Dataset structural readiness reader",
+    "repository": "https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset",
+    "commit": "116447ab641cca1ed34797d019c8e704063393c3",
+    "file": "GMNS_Plus_Readiness_Validator.py",
+    "sha256": "b2325cf622f92dd30a4ca7e6a6ca1c5500edc427c9a4189087389b1cbf7a1954",
+    "applicable_levels": [1, 2],
+    "level_3_status": "Only evaluate separately after checking assumptions; it is not ODME or assignment readiness",
+    "conventions": ["integer node/link/zone/demand IDs", "centroid node_id equals zone_id", "centroids precede physical nodes", "demand has exactly o_zone_id,d_zone_id,volume"]
+  },
+  "active_zone_system": "H3 resolution 9",
+  "parent_zone_system": "H3 resolution 7, metadata aggregation only",
+  "source_taz_status": "Preserved in unchanged source asset, inactive in H3 export",
+  "id_policy": "Deterministic export-only integer mapping; original H3 and source network IDs retained in crosswalk and extension fields",
+  "crs": "EPSG:4326",
+  "geometry_format": "WKT",
+  "standard_long_length": "meter",
+  "standard_speed": "kilometer/hour",
+  "standard_capacity": "passenger_car_equivalents/hour/lane",
+  "solver_capacity": "period-effective PCE, separate MCL adapter field",
+  "connector_status": "Nonphysical representation-only access; no invented cost/capacity and no generic through-routing claim",
+  "zonal_demand": "Frozen crosswalk, S1 mu=0.25 and S2 accepted FW boundary mu=1.0, assignment_inclusion=true, vehicle_trips",
+  "teacher_grid2demand2": "UNVERIFIED unless exact supplied contract found",
+  "competition_17882": "UNVERIFIED unless exact public example obtained"
+}

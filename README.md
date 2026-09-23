@@ -25,6 +25,10 @@ The common foundation is a real city network: **2,852 physical nodes, 5,091 dire
 
 [GMNS-compatible input contract](docs/data-contract.md) · [City and hierarchy guide](docs/city-workflow.md) · [Boston network and data layers](docs/datasets/boston-central.md)
 
+### GMNS Foundation and Toolchain Alignment
+
+The [versioned Boston exchange](examples/boston/gmns_exchange_r1/README.md) now exposes the actual [GMNS nodes](examples/boston/gmns_exchange_r1/data/node.csv), [directed links](examples/boston/gmns_exchange_r1/data/link.csv), [H3 zones and hierarchy](examples/boston/gmns_exchange_r1/data/zone.csv), and separate [S1](examples/boston/gmns_exchange_r1/data/demand_S1.csv)/[S2](examples/boston/gmns_exchange_r1/data/demand_S2.csv) zonal demand. A [reversible ID/access crosswalk](examples/boston/gmns_exchange_r1/data/id_crosswalk.csv) connects 177 distinct zones to 139 physical access nodes. The pinned GMNS Plus structural reader opened both exports; the adapter reconstructed the accepted physical solver inputs without rerunning the model. [Open/query/rebuild commands and precise scope](docs/datasets/boston-gmns-exchange.md) distinguish core GMNS fields, GMNS Plus conventions, and MCL GPS/service/result extensions. Source-hourly and solver-period capacities remain separate; nonphysical connectors have no invented routing costs. Grid2demand2/competition approval and empirical calibration are not claimed.
+
 <p align="center"><a href="docs/datasets/boston-central.md#boston-visual-gallery"><img src="docs/assets/boston/visual_release_r1/boston_network_zones.png" width="780" alt="Shared Central Boston foundation: physical roads, H3 zones, study boundary and one ordered 23-link corridor."></a></p>
 
 *This is the spatial foundation, not one of the four demand-model stages. Parcel outlines provide geographic context, not building footprints. [Sources, units and original map gallery](docs/datasets/boston-visual-sources.md).*

@@ -4,6 +4,8 @@ This is the first bounded real-city instance in the repository. It connects a co
 
 [Open the corrected network/GPS map](../../examples/boston/map/boston_central_layers.html) · [Open the activity-prior map](../../examples/boston/map/boston_activity_prior_layers.html) · [Five-map visual gallery](#boston-visual-gallery) · [Browse the component](../../examples/boston/README.md) · [Query the compact SQLite copy](../../examples/boston/query_boston.py)
 
+The [GMNS exchange and toolchain contract](boston-gmns-exchange.md) adds directly openable node/link/zone/H3-demand tables, a reversible centroid/access crosswalk, tested physical-solver readback, and an actual GMNS Plus structural-reader result. It preserves—not replaces—the four-stage and GPS calculations below. The 354 new model-access arcs are nonphysical; their routing costs have not been invented.
+
 ## Start with the four-step result
 
 [**Open the four-stage calculation and GPS feedback →**](boston-behavior-feedback.md)

@@ -1,0 +1,66 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Boston GMNS foundation and toolchain alignment | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Boston GMNS foundation and toolchain alignment</p><h1 id="boston-gmns-foundation-and-toolchain-alignment">Boston GMNS foundation and toolchain alignment</h1>
+<p>The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/README.md">actual exchange tables</a> are a new, reversible interface to the <strong>existing</strong> four-stage/GPS example—not a different demand model. Open the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/link.csv">network links</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/node.csv">nodes</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/zone.csv">zones</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/demand_S1.csv">S1</a> or <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/demand_S2.csv">S2</a> panel demand, then use the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/id_crosswalk.csv">ID crosswalk</a> to return to the original H3 and road IDs. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/TARGET_PROFILE.json">Profile</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/manifest.json">manifest</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/TOOLCHAIN_USAGE.json">tool usage</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/README.md#rebuild-and-inspect-no-optimization">commands</a> make the format checkable.</p>
+<table>
+<thead>
+<tr>
+<th>Object</th>
+<th>Exchange table / fields</th>
+<th>Authority</th>
+<th>Actual producer → consumer; evidence and scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical roads</td>
+<td><code>node.csv</code>; <code>link.csv</code> with <code>directed</code>, <code>dir_flag</code>, WKT, source IDs, source hourly capacity</td>
+<td>GMNS core node/link; accepted MCL fields prefixed <code>mcl_solver_</code></td>
+<td>GMNS Plus 21_Boston → MCL adapter and pinned GMNS Plus Level 2 reader. 2,852 nodes, 5,091 directed physical links.</td>
+</tr>
+<tr>
+<td>Fine zones / boundaries</td>
+<td><code>zone.csv</code> <code>zone_id,boundary,super_zone</code>; H3 extension fields</td>
+<td>GMNS core zone plus MCL H3 fields</td>
+<td>177 H3 r9 full-cell polygons; clipped-core geometry retained separately.</td>
+</tr>
+<tr>
+<td>Hierarchy</td>
+<td><code>zone.csv.super_zone</code>; <code>id_crosswalk.csv</code> original H3 IDs</td>
+<td>GMNS optional hierarchy plus MCL mapping</td>
+<td>Nine r7 parents are aggregation objects, not additional loaded OD origins.</td>
+</tr>
+<tr>
+<td>Centroids and access</td>
+<td><code>node.csv</code> centroid rows; 354 nonphysical <code>link.csv</code> arcs; <code>id_crosswalk.csv</code></td>
+<td>GMNS Plus integer centroid convention; MCL connector semantics</td>
+<td>177 centroids map to 139 distinct physical nodes without merging H3 identities. No arbitrary connector cost/through-routing claim.</td>
+</tr>
+<tr>
+<td>Panel zonal demand</td>
+<td><code>demand_S1.csv</code>, <code>demand_S2.csv</code> exactly three fields; <code>selected_demand_ledger.csv</code></td>
+<td>GMNS Plus consumer profile; MCL scenario ledger</td>
+<td>Frozen person-to-vehicle crosswalk → 26 H3 OD pairs/scenario; 202.078384 / 202.070733 modeled vehicle trips. Full regional purpose/time OD remains in separate full-data asset.</td>
+</tr>
+<tr>
+<td>Physical solver view</td>
+<td><code>mcl_solver_*</code> link fields and <code>roundtrip</code> CLI</td>
+<td>MCL extension, not core GMNS</td>
+<td>Export → read → original 5,091-row S1/S2 link inputs, 26 physical-node OD pairs, maximum OD error <code>1.78e-15</code>; no solver rerun.</td>
+</tr>
+<tr>
+<td>GPS/service evidence</td>
+<td><code>gps_path_links.csv</code> source <code>link_id</code>; <code>transit_shape_conflation.csv</code> matched link; <code>transit_stop_route_relation.csv</code> access node</td>
+<td>MCL evidence extension; native GTFS IDs separate</td>
+<td>Accepted mapmatching4gmns/mapmatcher4gmns roles; MBTA V3 JSON positions, not GTFS-Realtime. 581 GPS path-link rows, 56 planned-shape link rows, and 5,520 stop-route rows (2,614 with candidate physical access) retain quality/status distinctions.</td>
+</tr>
+<tr>
+<td>Corridor and saved results</td>
+<td><code>corridor_link.csv</code>, <code>assignment_result_by_scenario.csv</code></td>
+<td>MCL extensions</td>
+<td>One ordered 23-link corridor and 5,091 saved road result rows join by original physical <code>link_id</code>. Not official TAPLab output.</td>
+</tr>
+</tbody>
+</table>
+<p>The pinned <a href="https://github.com/zephyr-data-specs/GMNS">community GMNS 0.96</a> schemas are bundled <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/boston/gmns_exchange_r1/schema">here</a>; the actual <a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus Dataset</a> structural reader at commit <code>116447ab641cca1ed34797d019c8e704063393c3</code> read both new node/link/demand scenarios at Level 2 with zero errors/warnings. It does not parse <code>zone.csv</code> at that level; our separate project runner validates that table against the pinned upstream zone schema. This is a structural/format result, not simulation, connector cost suitability, observed-volume readiness, empirical validation or supervisor approval. The exact teacher grid2demand2 and competition-specific target remain unverified. The tool <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/TOOLCHAIN_USAGE.json">usage register</a> separates what was run from what is merely referenced.</p>
+<p>One concrete trace starts at <code>h3r9:892a306602bffff</code>, maps to export zone/centroid 35, parent <code>h3r7:872a30660ffffff</code>, nonphysical connector <code>1020334</code>, and source physical access node 4285. An S1 H3 OD row maps to the accepted physical OD through the crosswalk; an incident road link joins a saved result by link ID, <strong>not</strong> by claiming that this OD used that exact link. Separately, a saved GPS path occurrence on source link 17908 and an ordered corridor member on link 14697 each join their own road result; planned-shape and stop-access examples retain native feed IDs and their non-observed/candidate statuses. GPS point counts are not traffic volumes. Run <code>python -B tools/gmns/boston_exchange.py trace --exchange examples/boston/gmns_exchange_r1/data</code> to see current IDs.</p>
+<p>The four stages and GPS-to-service feedback remain explained in the <a href="boston-behavior-feedback.html">saved Boston walkthrough</a>. This GMNS exchange is their shared data foundation, not a fifth stage or a claim that every SQLite field is standard GMNS.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

@@ -1,0 +1,59 @@
+{
+  "capacity_policy": "GMNS capacity=source PCE/hour/lane; mcl_solver_capacity_effective=accepted 2-hour PCE in solver extensions",
+  "connector_policy": "Nonphysical read/relationship representation only; no free speed/capacity/length invented; use collapse-to-access adapter for accepted physical solver",
+  "consumer_commit": "116447ab641cca1ed34797d019c8e704063393c3",
+  "export_sha256": {
+    "assignment_result_by_scenario.csv": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+    "config.csv": "e871e2891fa9ab9d1f8d7864d80e18697a0463323cc7d9c007621f9d1620c09b",
+    "corridor_link.csv": "230d3e47b31bd4c27e8d4a6365ac05aaa15e4b6e777a2c6314b458b8a5b1b660",
+    "demand.csv": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+    "demand_S1.csv": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+    "demand_S2.csv": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c",
+    "gps_path_links.csv": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+    "id_crosswalk.csv": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+    "link.csv": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+    "node.csv": "2fbe54448e9805e09f4fa81028ad6f130dcfb2f7705463b5373b043069ae4f8b",
+    "selected_demand_ledger.csv": "c9b6e333c84930b127a0ef2a593c2b4d06a188757d20996b74ffc4cade10ee51",
+    "transit_shape_conflation.csv": "42cdb94b93b7f3f70c37d979e63b8f34cc6b56a3198c0b101def1d1b4d725c43",
+    "transit_stop_route_relation.csv": "579056e011215983cdf6699b3b44ddc2a651656d7e85268efb99424a72a8fb3b",
+    "zone.csv": "904ae5036a84c30ed441ccd1c04620ffc457d360ec68b0b9a155e04012722ca8"
+  },
+  "profile": "mcl-boston-gmns-plus-structural-r1",
+  "semantic_counts": {
+    "centroids": 177,
+    "connector_arcs": 354,
+    "distinct_access_nodes": 139,
+    "fine_zones": 177,
+    "parent_zones": 9,
+    "physical_links": 5091,
+    "physical_nodes": 2852,
+    "zonal_demand": {
+      "S1": {
+        "rows": 26,
+        "vehicle_trips": 202.0783842283045
+      },
+      "S2": {
+        "rows": 26,
+        "vehicle_trips": 202.07073267183475
+      }
+    }
+  },
+  "source_inputs_sha256": {
+    "S1_demand.csv": "690ba9c69a9767e0dd74c2dc6c21a64a4d4945bb6a7a6adfff972d209e7bc531",
+    "S1_link.csv": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+    "S2_demand.csv": "3df490d53bfb95b026cd8bc9a263fc972e466e9e04ab84d1c8ff266076e86c8a",
+    "S2_link.csv": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+    "assignment_result_by_scenario.csv": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+    "corridor_link.csv": "230d3e47b31bd4c27e8d4a6365ac05aaa15e4b6e777a2c6314b458b8a5b1b660",
+    "crosswalk.csv": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0",
+    "gps_path_links.csv": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+    "physical_node.csv": "971dbd554df9f50874ac5524ba591cdd9a7cb63b5e131caa5fc6e5959f4e1c67",
+    "transit_shape_conflation.csv": "42cdb94b93b7f3f70c37d979e63b8f34cc6b56a3198c0b101def1d1b4d725c43",
+    "transit_stop_route_relation.csv": "579056e011215983cdf6699b3b44ddc2a651656d7e85268efb99424a72a8fb3b",
+    "zone.csv": "3643d69bce8c1158b253ce611ed24da348b1828687ac7a7124eea11be9c76d1d",
+    "zone_access.csv": "0b9a96eb48c7941623da7f4e09eccc37cb2744f46052802ff3bef2d2f4b502e2",
+    "zone_hierarchy.csv": "46593adceee47d8a255094ae123b3cca7215816b10bd6a4611a1601aea411168"
+  },
+  "source_taz_policy": "Original TAZ centroids/connectors remain in immutable source asset; absent from active H3 exchange graph",
+  "standard_schema_commit": "4e51f4c7893f5df2c8c69ab21c5dc0abd9b69f48"
+}

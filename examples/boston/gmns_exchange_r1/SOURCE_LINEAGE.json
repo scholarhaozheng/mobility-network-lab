@@ -1,0 +1,14 @@
+{
+  "source": "GMNS Plus Dataset 21_Boston",
+  "repository": "https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset",
+  "commit": "116447ab641cca1ed34797d019c8e704063393c3",
+  "license": "Apache-2.0",
+  "asset_member_root": "source_inputs/source_gmns_plus_21_boston/",
+  "files_sha256": {
+    "node.csv": "ece2f68c6be48c9c8f44a70e01a341782f994636150bb7d56180321ab70b86d6",
+    "link.csv": "3e48d8c1eac4cb3c63698d030cb6f84560336f8aa37c79e1e66077e53741d056",
+    "demand.csv": "8053365d5fc2e319abf90f1f56310b1e950ce6f81b8b2d48bc00fa800bd30548"
+  },
+  "source_counts": {"nodes": 5542, "directed_links": 20487, "source_taz_centroids": 191, "od_pairs": 19262},
+  "active_exchange_policy": "Original TAZ centroids/connectors remain intact in the source asset but are excluded from the active H3 physical-and-access exchange. No TAZ-to-H3 one-to-one relation is asserted."
+}

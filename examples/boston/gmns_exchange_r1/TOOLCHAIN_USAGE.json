@@ -1,0 +1,19 @@
+{
+  "profile": "mcl-boston-gmns-plus-structural-r1",
+  "tools": [
+    {"name": "GMNS community specification", "status": "ADAPTER_VERIFIED", "evidence": "Pinned 0.96 schema bytes used by boston_exchange.py validate"},
+    {"name": "GMNS Plus 21_Boston source", "status": "SOURCE_DATA_REUSED", "evidence": "Original commit 116447ab641cca1ed34797d019c8e704063393c3"},
+    {"name": "GMNS Plus readiness reader", "status": "EXECUTED_THIS_TASK", "evidence": "Pinned Level 2 source invoked on both new demand scenarios"},
+    {"name": "MCL GMNS exporter and physical solver adapter", "status": "ADAPTER_VERIFIED", "evidence": "S1/S2 exported and original physical inputs reconstructed"},
+    {"name": "mapmatching4gmns 0.3.0", "status": "EXECUTED_IN_ACCEPTED_RUN", "evidence": "Recorded native/geometric roles in accepted GPS run; not rerun here"},
+    {"name": "mapmatcher4gmns 0.2.1", "status": "EXECUTED_IN_ACCEPTED_RUN", "evidence": "Recorded external HMM route role; not the native trace2route engine"},
+    {"name": "grid2demand 1.0.6", "status": "NOT_OBSERVED", "evidence": "Installed but accepted demand pipeline recorded not_used"},
+    {"name": "teacher grid2demand2", "status": "UNAVAILABLE_TARGET", "evidence": "Exact supplied interface not established in permitted handoff"},
+    {"name": "OSM2GMNS", "status": "REFERENCE_ONLY", "evidence": "Boston source reused GMNS Plus; no local generation execution established"},
+    {"name": "GTFS2GMNS", "status": "NOT_OBSERVED", "evidence": "Native MBTA GTFS used; no GTFS2GMNS execution established"},
+    {"name": "TAPLab", "status": "NOT_OBSERVED", "evidence": "No accepted Boston TAPLab run or adapter"},
+    {"name": "TAPLite", "status": "NOT_OBSERVED", "evidence": "No accepted Boston TAPLite run"},
+    {"name": "Path4GMNS", "status": "NOT_OBSERVED", "evidence": "No accepted Boston Path4GMNS run"},
+    {"name": "competition 17882", "status": "UNAVAILABLE_TARGET", "evidence": "Public page did not expose a definitive machine-readable interface"}
+  ]
+}
