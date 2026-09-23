@@ -1,0 +1,110 @@
+{
+  "title": "GMNS in Action figure source identity",
+  "source_paths_sha256": {
+    "examples/boston/gmns_exchange_r1/data/zone.csv": "904ae5036a84c30ed441ccd1c04620ffc457d360ec68b0b9a155e04012722ca8",
+    "examples/boston/gmns_exchange_r1/data/node.csv": "2fbe54448e9805e09f4fa81028ad6f130dcfb2f7705463b5373b043069ae4f8b",
+    "examples/boston/gmns_exchange_r1/data/link.csv": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+    "examples/boston/gmns_exchange_r1/data/id_crosswalk.csv": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+    "examples/boston/gmns_exchange_r1/data/demand_S1.csv": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+    "examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+    "examples/boston/gmns_exchange_r1/figure_sample/gps_point_progress.csv": "6a723d9216807392edfcfec483dcb6d178c05d763b19a334325369315cf4cdfd",
+    "examples/boston/gmns_exchange_r1/figure_sample/gps_path_links.csv": "33e3d5541410cf9dce17c6f5682205cc74f1df800e8a5312f81b7cfef4e8d1fc",
+    "examples/boston/gmns_exchange_r1/figure_sample/gps_segment_quality.csv": "d19b4007607452d155859e7e04b00274e464e40e1ee8a759a57f1617d6ecb3a2"
+  },
+  "selection": {
+    "zone_id": "35",
+    "zone_h3": "h3r9:892a306602bffff",
+    "parent_zone_id": "1003",
+    "centroid_node_id": "35",
+    "outbound_connector_link_id": "1020334",
+    "access_node_id": "14285",
+    "incident_physical_link_id": "16918",
+    "S1_OD": [
+      "35",
+      "71"
+    ],
+    "S1_OD_source_physical_access_nodes": [
+      "4285",
+      "1492"
+    ],
+    "S1_OD_vehicle_trips": "10.349852758647414",
+    "segment_id": "mbtav:4624d3319dcfdec1:s01",
+    "segment_route_id": "60",
+    "point_count": 12,
+    "ordered_path_occurrences": 26,
+    "example_path_link_id": "15893",
+    "S1_link_volume_vehicle_trips": "13.167906406832085",
+    "S1_link_travel_time_minutes": "0.5249053659293993"
+  },
+  "display": {
+    "source_crs": "EPSG:4326",
+    "map_crs": "EPSG:32619",
+    "transformation": "pyproj always_xy",
+    "gps_A_B_same_bounds_and_scale": true,
+    "gps_A_B_same_source_points": true,
+    "zoom_A_B_same_140m_bounds": true,
+    "zone_connector": "Nonphysical modeled access; dashed true projected node-to-node line",
+    "zone_OD_arrow": "Straight diagrammatic OD relation, not an assigned road path",
+    "gps_projection": "Saved derived position; not recomputed by this renderer"
+  },
+  "scope": "Figure 1 zone/OD and Figure 2 GPS segment are separate examples. Link S1 volumes are modeled panel results, not GPS observations.",
+  "rights": "GMNS Plus 21_Boston road geometry: Apache-2.0; MBTA V3 derived positions: MBTA/MassDOT attribution; H3/figure composition: MCL.",
+  "gps_sample_source_record": {
+    "scope": "One quality-eligible saved derived GPS segment only; no raw feed or vehicle identity",
+    "segment_id": "mbtav:4624d3319dcfdec1:s01",
+    "source_root": "examples/boston/data (existing local derived public tree)",
+    "license_attribution": "MBTA V3 JSON derived positions: MBTA/MassDOT attribution",
+    "files": {
+      "gps_point_progress.csv": {
+        "source_path": "examples/boston/data/gps_point_progress.csv",
+        "source_sha256": "ec76e314bda73d09b474babcdaa7dc2cf5040dd9e830da8c4e57765bd84d61d3",
+        "sample_sha256": "6a723d9216807392edfcfec483dcb6d178c05d763b19a334325369315cf4cdfd",
+        "selected_row_count": 12,
+        "retained_fields": [
+          "segment_id",
+          "point_seq",
+          "timestamp",
+          "original_lon",
+          "original_lat",
+          "matched_link_id",
+          "path_occurrence",
+          "projected_lon",
+          "projected_lat",
+          "lateral_error_m",
+          "match_status"
+        ]
+      },
+      "gps_path_links.csv": {
+        "source_path": "examples/boston/data/gps_path_links.csv",
+        "source_sha256": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+        "sample_sha256": "33e3d5541410cf9dce17c6f5682205cc74f1df800e8a5312f81b7cfef4e8d1fc",
+        "selected_row_count": 26,
+        "retained_fields": [
+          "segment_id",
+          "path_order",
+          "path_occurrence",
+          "link_id",
+          "direction",
+          "point_projection_count",
+          "evidence_status"
+        ]
+      },
+      "gps_segment_quality.csv": {
+        "source_path": "examples/boston/data/gps_segment_quality.csv",
+        "source_sha256": "798815f6cd3c067af194b0e215e5d7c5e57b6322515fd5a403da6ca2e302cbe1",
+        "sample_sha256": "d19b4007607452d155859e7e04b00274e464e40e1ee8a759a57f1617d6ecb3a2",
+        "selected_row_count": 1,
+        "retained_fields": [
+          "segment_id",
+          "route_id",
+          "observation_eligible",
+          "quality_class",
+          "point_count",
+          "path_occurrences",
+          "start_censored",
+          "end_censored"
+        ]
+      }
+    }
+  }
+}

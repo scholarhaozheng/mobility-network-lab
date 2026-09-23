@@ -61,6 +61,94 @@
 </tbody>
 </table>
 <p>The pinned <a href="https://github.com/zephyr-data-specs/GMNS">community GMNS 0.96</a> schemas are bundled <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/boston/gmns_exchange_r1/schema">here</a>; the actual <a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus Dataset</a> structural reader at commit <code>116447ab641cca1ed34797d019c8e704063393c3</code> read both new node/link/demand scenarios at Level 2 with zero errors/warnings. It does not parse <code>zone.csv</code> at that level; our separate project runner validates that table against the pinned upstream zone schema. This is a structural/format result, not simulation, connector cost suitability, observed-volume readiness, empirical validation or supervisor approval. The exact teacher grid2demand2 and competition-specific target remain unverified. The tool <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/TOOLCHAIN_USAGE.json">usage register</a> separates what was run from what is merely referenced.</p>
-<p>One concrete trace starts at <code>h3r9:892a306602bffff</code>, maps to export zone/centroid 35, parent <code>h3r7:872a30660ffffff</code>, nonphysical connector <code>1020334</code>, and source physical access node 4285. An S1 H3 OD row maps to the accepted physical OD through the crosswalk; an incident road link joins a saved result by link ID, <strong>not</strong> by claiming that this OD used that exact link. Separately, a saved GPS path occurrence on source link 17908 and an ordered corridor member on link 14697 each join their own road result; planned-shape and stop-access examples retain native feed IDs and their non-observed/candidate statuses. GPS point counts are not traffic volumes. Run <code>python -B tools/gmns/boston_exchange.py trace --exchange examples/boston/gmns_exchange_r1/data</code> to see current IDs.</p>
+<h2 id="one-network-multiple-connected-data-layers">One network, multiple connected data layers</h2>
+<p><img src="../assets/boston/gmns_in_action_r1/gmns_connected_layers.png" alt="Real Boston GMNS zone, access and road geometry, with separate OD and GPS-result relationships" /></p>
+<p><em>Separate objects, explicit relationships. Model access connectors are not physical roads. Shared link references do not imply a shared observed trip.</em> The geographic panel is transformed from source EPSG:4326 to metric EPSG:32619 for display. Its straight dotted arrow shows a zonal <strong>OD relation, not an assigned road route</strong>; the inset shows the true projected 24.97 m node-to-node access geometry. Parent <code>1003</code> is a logical <code>super_zone</code> relation, not a clipped polygon invented for this figure.</p>
+<table>
+<thead>
+<tr>
+<th>Record and authority</th>
+<th>Actual key/value</th>
+<th>What the join does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMNS core <code>zone.csv</code></td>
+<td><code>zone_id=35</code>, <code>name=h3r9:892a306602bffff</code>, <code>super_zone=1003</code>; parent name <code>h3r7:872a30660ffffff</code></td>
+<td>Retains the actual fine H3 boundary and its r7 hierarchy key.</td>
+</tr>
+<tr>
+<td>GMNS Plus profile <code>node.csv</code></td>
+<td>centroid <code>node_id=35</code>; physical access <code>node_id=14285</code></td>
+<td>Separate centroid and physical road node.</td>
+</tr>
+<tr>
+<td>MCL <code>id_crosswalk.csv</code></td>
+<td>origin 35: <code>physical_access_node_id=14285</code>, source <code>4285</code>; destination 71: exported access <code>11492</code>, source <code>1492</code></td>
+<td>Maps H3 and exported IDs without merging zones.</td>
+</tr>
+<tr>
+<td>GMNS Plus profile / MCL semantics <code>link.csv</code></td>
+<td>outbound access <code>link_id=1020334</code>, <code>35 → 14285</code>; physical outgoing <code>link_id=16918</code>, <code>14285 → 15112</code></td>
+<td>The connector is nonphysical and <code>mcl_gps_match_allowed=false</code>; the road is physical and directed.</td>
+</tr>
+<tr>
+<td>GMNS Plus profile <code>demand_S1.csv</code></td>
+<td><code>35 → 71</code>, <code>volume=10.349852758647414</code>; crosswalked physical access OD <code>4285 → 1492</code></td>
+<td>Modeled fixed-panel vehicle trips, aggregated from eligible ledger rows. This row does not say which physical road the OD used.</td>
+</tr>
+<tr>
+<td>Separate MCL evidence/result branch</td>
+<td>route-60 saved path occurrence <code>1 → link_id=15893 → S1 result 13.167906406832085</code></td>
+<td>A shared physical-link key supports a separate lookup; it is <strong>not</strong> the above OD's trip or an observed road count.</td>
+</tr>
+</tbody>
+</table>
+<p>The full r9 H3 ID, exported integer, source physical-node ID and GMNS link ID are different namespaces. The selected 177 fine zones keep their identities across 139 distinct access nodes. The published <a href="../assets/boston/gmns_in_action_r1/FIGURE_SOURCES.json">figure-source record</a> supplies exact public CSV hashes and selected IDs; the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/visuals/render_gmns_in_action.py">renderer</a> reads those same files. The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/figure_sample/SOURCE_RECORD.json">minimal route-60 display sample</a> retains only 12 already approved derived positions, 26 ordered path rows and one quality row, with source hashes and no vehicle-identity field; the full saved GPS tables are not required in the upload set.</p>
+<h2 id="from-gps-coordinates-to-gmns-linked-evidence">From GPS coordinates to GMNS-linked evidence</h2>
+<p><img src="../assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png" alt="The same saved GPS observations before and after path association, with an actual road-result lookup" /></p>
+<p>Panels A and B use <strong>the same 12 source positions</strong>, EPSG:32619 projection, bounds and scale. Their paired point-1 close-ups use identical 140 m windows. B adds only the <em>saved</em> matched path, projected positions and point-to-projection offsets; it does not move the actual vehicle or rerun matching. The quality-eligible, <code>qualified</code> saved segment <code>mbtav:4624d3319dcfdec1:s01</code> (route <code>60</code>) has 26 ordered path occurrences, with both window ends censored. It was chosen by the stable quality-eligible selection used for the existing Boston GPS illustration, not by the largest offset. One successful saved case is not an independent accuracy estimate.</p>
+<p>For narrow screens, the same evidence reads in order: <strong>A</strong> — source positions on real roads; <strong>B</strong> — those unchanged positions plus saved projected points and the ordered path; <strong>C</strong> — point/occurrence <code>1</code> joins physical link <code>15893</code>, whose separately modeled S1 result can be read by link ID. This text preserves the sequence when the full-width map labels are small.</p>
+<table>
+<thead>
+<tr>
+<th>Record type</th>
+<th>Actual key</th>
+<th>Reference, status and unit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source position in <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/figure_sample/gps_point_progress.csv">sample <code>gps_point_progress.csv</code></a></td>
+<td>segment <code>mbtav:4624d3319dcfdec1:s01</code>, <code>point_seq=1</code>, <code>2026-09-21T12:48:42-04:00</code></td>
+<td>Saved original coordinate and algorithm-derived projection; lateral offset <code>1.128122562325221 m</code>.</td>
+</tr>
+<tr>
+<td>Saved matching in <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/figure_sample/gps_path_links.csv">sample <code>gps_path_links.csv</code></a></td>
+<td><code>path_order=1</code>, <code>path_occurrence=1</code>, <code>link_id=15893</code>, direction <code>AB</code>; next links <code>15882</code>, <code>16110</code></td>
+<td>Ordered algorithm-derived physical-link path. Point 1 is associated with occurrence 1; intermediate occurrences with zero projected points are inferred traversal, not new observations.</td>
+</tr>
+<tr>
+<td>Physical road in <code>link.csv</code></td>
+<td><code>link_id=15893</code>, exported physical nodes <code>14999 → 13587</code></td>
+<td>Directed, GPS-match-allowed network geometry and attributes. This is not a nonphysical centroid connector.</td>
+</tr>
+<tr>
+<td>Saved model result in <code>assignment_result_by_scenario.csv</code></td>
+<td><code>link_id=15893</code>, <code>s1_volume=13.167906406832085</code>, <code>s1_travel_time=0.5249053659293993</code></td>
+<td>S1 aggregate modeled panel vehicle trips and link minutes; <code>delta_status=MODEL_INTERNAL_PANEL_RESPONSE_NOT_OBSERVED_CAUSAL_EFFECT</code>. These are not GPS-derived counts.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Source observations → algorithm-derived matching → network attributes → separately modeled assignment results. Shared network reference—not the same observed trip.</em> This route-60 spatial example is distinct from the route-749, stop-1788-to-5093 <a href="boston-behavior-feedback.html#gps-feedback">numerical service-feedback event</a>. The former demonstrates reference/link lookup; the latter demonstrates a saved calculation dependency. Neither makes GMNS itself a matcher or proves better prediction. MBTA V3 JSON-derived positions retain MBTA/MassDOT attribution; no raw vehicle feed or exact vehicle identity is redistributed by these figures.</p>
+<h2 id="reproduce-the-relationships">Reproduce the relationships</h2>
+<p>From the repository root, the existing generic inspector prints <strong>separate</strong> current relationship examples (its first GPS row need not be the figure segment):</p>
+<pre><code class="language-powershell">python -B tools/gmns/boston_exchange.py trace --exchange examples/boston/gmns_exchange_r1/data
+</code></pre>
+<p>The separate read-only helper queries the <strong>exact displayed</strong> zone and eligible segment from published CSVs. It does not create a new path, move a point or update the exchange:</p>
+<pre><code class="language-powershell">python -B tools/gmns/trace_gmns_figure.py --exchange examples/boston/gmns_exchange_r1/data --gps-dir examples/boston/gmns_exchange_r1/figure_sample --zone-id 35 --segment-id mbtav:4624d3319dcfdec1:s01
+</code></pre>
+<p>For a reproducible image export, run <code>python -B tools/visuals/render_gmns_in_action.py --help</code> and supply the same public paths, selected IDs and an output directory. The helper needs only Python's standard library; rendering additionally uses Matplotlib, Shapely and pyproj. Coordinate reprojection, algorithmic map matching and ID crosswalk lookup are different operations. The core/profile/extension boundaries above also limit interoperability claims: the pinned GMNS Plus Level 2 reader accepted both node/link/demand sets, the zone schema was checked separately, and the round-trip uses declared <code>mcl_solver_*</code> fields—not hypothetical universal core-only solver compatibility.</p>
 <p>The four stages and GPS-to-service feedback remain explained in the <a href="boston-behavior-feedback.html">saved Boston walkthrough</a>. This GMNS exchange is their shared data foundation, not a fifth stage or a claim that every SQLite field is standard GMNS.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>
