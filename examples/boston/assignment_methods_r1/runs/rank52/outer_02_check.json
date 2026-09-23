@@ -1,0 +1,99 @@
+{
+  "rank": 52,
+  "outer": 2,
+  "status": "PUBLIC_ELIGIBLE_NUMERICAL_UE_APPROXIMATION",
+  "numerical_feasibility_pass": true,
+  "public_eligibility_pass": true,
+  "criteria": {
+    "native_optimal_returned": true,
+    "all_values_finite": true,
+    "raw_path_nonnegative_tolerance": true,
+    "major_bound": true,
+    "explicit_link_bound": true,
+    "all_OD_residuals": true,
+    "all_link_equalities": true,
+    "path_sequence_and_matrix_agreement": true,
+    "all_IDs_and_order": true,
+    "exact_frozen_input_hashes": true,
+    "exact_saved_basis_payload": true,
+    "active_L3_constraint_counts": true,
+    "exact_source_hash": true,
+    "gamma_zero": true,
+    "native_objective_decomposition": true,
+    "pyomo_objective_decomposition": true
+  },
+  "native_status": "ok",
+  "native_termination": "optimal",
+  "model_counts": {
+    "path_coordinates": 78,
+    "major_variables": 26,
+    "latent_variables": 52,
+    "explicit_link_variables": 5091,
+    "total_native_variables": 5169,
+    "link_equalities": 5091,
+    "minor_nonnegative_inequalities": 104,
+    "total_active_constraints": 5195,
+    "od_alm_terms": 26
+  },
+  "raw_stats": {
+    "min_path_flow": 1.9725479297547995e-11,
+    "negative_path_count": 0,
+    "negative_path_mass": 0.0,
+    "min_minor_flow": 1.9725479297547995e-11,
+    "min_solver_link_flow": -2.1791499893746635e-46,
+    "max_abs_OD_residual": 8.254705861077127e-07,
+    "failed_OD_count": 0,
+    "max_abs_link_residual": 4.263256414560601e-14,
+    "failed_link_count": 0,
+    "max_abs_node_balance": 3.996424993601977e-06,
+    "matrix_link_error": 0.0,
+    "matrix_OD_error": 0.0
+  },
+  "objective": {
+    "F_solver_v": 707.0578811562873,
+    "F_reconstructed_paths": 707.0578811562873,
+    "lambda_dot_OD_residual": 4.1917487198078944e-05,
+    "rho_half_residual_square": 5.543308139292799e-11,
+    "gamma_regularization": 0.0,
+    "decomposed_native_objective": 707.05792307383,
+    "model_objective": 707.0579230738299,
+    "ipopt_unscaled_objective": 707.0579230738289,
+    "objective_tolerance": 8.0705792307383e-05,
+    "reference_F": 707.0579230712882,
+    "relative_F_error_from_reference": 5.9280858807843473e-08,
+    "F_paths_minus_reference": -4.191500090655609e-05
+  },
+  "gaps": {
+    "TSTT": 707.0743035544668,
+    "restricted_pool_shortest_total": 707.0743454694676,
+    "full_network_shortest_total": 707.0743454694676,
+    "restricted_pool_signed_gap": -4.191500079286925e-05,
+    "full_network_signed_gap": -4.191500079286925e-05,
+    "restricted_pool_relative_gap": -5.927948531315915e-08,
+    "full_network_relative_gap": -5.927948531315915e-08,
+    "OD_residual_weighted_full_shortest_cost": -4.1917598064435e-05,
+    "diagnostic_gap_using_reconstructed_OD_totals": 2.597175807750318e-09,
+    "denominator": "candidate current-cost TSTT",
+    "is_exact_UE_certificate": false,
+    "is_checked_numerical_UE_approximation": true,
+    "signed_gap_note": "A negative signed gap here reflects small accepted OD conservation residuals; it is not floating-point roundoff or an exact-feasibility certificate.",
+    "full_network_parallel_link_handling": "each directed link is a separate Dijkstra edge"
+  },
+  "link_difference": {
+    "Linf_from_full": 5.888287375910295e-06,
+    "L1_from_full": 0.000269238589221069,
+    "Linf_from_FW": 5.88828736169944e-06,
+    "L1_from_FW": 0.0002692385893027814
+  },
+  "acceptance_targets": {
+    "OD": "1e-6+1e-8*max(1,abs(q)) each",
+    "link": "1e-6+1e-8*max(1,abs(v_from_paths)) each",
+    "minimum_path_flow": -1e-08,
+    "full_network_relative_gap_absolute_max": 1e-05,
+    "reference_relative_F_error_max": 1e-06
+  },
+  "source_and_basis": {
+    "source_sha256": "0a054ab078d46a8b74fa257336a65275564c38cc3e60e5c4d8cb9c412a87a22a",
+    "basis_sha256": "bea5150006f1c5baf8e3c54be7f3e4d2ba9e754bb99723ba0835cee4e92e71b9"
+  }
+}
