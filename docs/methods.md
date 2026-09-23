@@ -15,7 +15,7 @@ The workflow computes a reference arc-flow LP on the same finite graph. This mak
 
 ## Static Frank–Wolfe reference implementation
 
-The retained implementation in [`algorithms/static_fw/`](../algorithms/static_fw/) uses BPR link costs, the Beckmann integral, all-or-nothing shortest-path loading and line search. The catalog includes a saved approximate Sioux Falls result with separately documented verification.
+The retained implementation in [`algorithms/static_fw/`](../algorithms/static_fw/) uses BPR link costs, the Beckmann integral, all-or-nothing shortest-path loading and line search. The catalog includes saved Boston conditional ABS runs and a separately documented historical approximate Sioux Falls result.
 
 This model is different from the hard-capacitated, fixed-cost space–time LP. Its numerical objective cannot be compared directly with the CG objective. The static file is an optional library source, not part of `tools/mnl.py run`; see its module documentation before calling it.
 
@@ -25,6 +25,21 @@ Distinguish input consistency, primal feasibility, agreement with a same-model r
 
 Synthetic reference examples protect implementation behavior. Road benchmark records describe previous experiments. Neither category is a calibrated city demand model.
 
-## Method extensions
+## Solved finite-path reference and native Diagnostic L3
 
-Origin-based/Bush methods, compressed ALM and coupled primal–dual models are extension directions, not advertised as fully validated methods in this source release. Adapters should declare their mathematical problem and output semantics, retain their own upstream identity, and use an independent evaluator.
+On the [frozen Boston ABS_PLANNED instance](cases/boston-assignment.md), the [actual uncompressed SLSQP solver](../algorithms/finite_path_reference/README.md) minimizes the original Beckmann objective over 130 nonnegative path variables with exact 26 OD equalities. Its saved F is 707.0579230712882 vehicle-minutes; it is a **finite-pool** reference, not a new full-network method.
+
+The corrected [native Diagnostic L3 implementation](../algorithms/path_compression/diagnostic_l3/README.md) uses one AST-isolated mathematical builder with distinct effective adapters for Boston and Sioux Falls. Boston's accepted rank-26 and rank-52 outer-02 saved results pass their numerical gate on the same ABS_PLANNED network/demand/pool, but small negative signed gaps reflect tolerated OD deficits. Sioux's accepted outer-04 gamma=0.01 and gamma=0 records have remaining full-network cost gaps of 8.167461% and 4.381867%, respectively; neither is a UE certificate. The older unconstrained ordinary-v4 attempt is not the active method.
+
+| Method | Mathematical role | Actual public implementation | Existing case evidence |
+|---|---|---|---|
+| Static FW | BPR/Beckmann link assignment | [Existing source](../algorithms/static_fw/tap_frank_wolfe.py) | [Boston ABS and semantic branches](cases/boston.md); [historical Sioux FW](cases/sioux-falls.md) |
+| Uncompressed finite path | Exact OD equalities on one finite pool | [SLSQP source/config](../algorithms/finite_path_reference/README.md) | [Boston 26OD/130-path reference](cases/boston-assignment.md) |
+| Native Diagnostic L3 | Reduced path coordinates plus explicit links, original-space checks | [Builder and two profiles](../algorithms/path_compression/diagnostic_l3/README.md) | [Boston ranks 26/52](cases/boston-assignment.md); [Sioux A/B](cases/sioux-falls.md) |
+| Finite time-expanded CG | Fixed-cost hard-capacity linear space–time path flow | [Existing CG source](../app/src/gmns_dynamic/run_full_cg_v1.py) | [Sioux 200OD/250OD history](cases/sioux-falls.md) |
+
+Inspect selected saved records without any solver: `python -B tools/mcl_results.py list --case boston`, then `python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-outer02`. The optional native rerun requires a separately prepared Pyomo/IPOPT/MUMPS environment and explicit output directory; the publication integration did not execute it. These existing records are not a strict paired Boston/Sioux performance experiment, cold-start speedup result, or empirical validation.
+
+## Other method extensions
+
+Origin-based/Bush methods and coupled primal–dual models remain at their individually documented source/evidence status, not newly completed or validated by these static examples. New path generation, model fitting and fair cross-case repetition are future work, not part of the current publication.

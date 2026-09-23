@@ -1,0 +1,87 @@
+{
+  "instance": "Boston ABS_PLANNED 26-OD static Beckmann panel",
+  "source_archive_sha256": "c2a7f64115659aa9c338f48c64aa17e7b3b084ebd4f1175dbbf29f9fc0075112",
+  "archive_member_prefix": "PUBLIC_SUCCESS_CANDIDATE/",
+  "source_members": {
+    "geometry": "inputs_snapshot/link.csv",
+    "fw": "reference/fw_solution.csv",
+    "full": "reference/link_flow.csv",
+    "rank26": "runs/rank26/outer_02_link_flows.csv",
+    "rank52": "runs/rank52/outer_02_link_flows.csv"
+  },
+  "flow_columns": {
+    "FW": "volume",
+    "full_path": "volume",
+    "rank26": "v_from_paths",
+    "rank52": "v_from_paths"
+  },
+  "selected_runs": {
+    "FW": "ABS_PLANNED",
+    "rank26": "outer_02",
+    "rank52": "outer_02"
+  },
+  "input_crs": "EPSG:4326",
+  "units": "modeled vehicle trips in frozen panel",
+  "plotting_table": "boston_abs_planned_assignment_links.csv",
+  "source_hashes": {
+    "geometry": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+    "fw": "c284b9018aacb1ecceb793670682474087da099d8fa7d8fd9b4b0008c87ae4a2",
+    "full": "edf3bc7136c8564b72a15158f503ebca860c1ef9464ecb129b6f4dbe8ee8e19a",
+    "rank26": "f53b7c80c6d2443be76df326c416e6d5d3959a456c58d82226e6d21e22b25ab6",
+    "rank52": "dddff8b55cf36f8a8b50c6b9b632a2c6d2ac47a248e6d8b2ce740040bc664a31"
+  },
+  "table_sha256": "7371614dbef3f89f13a65f420e75edf427b49efedd852d1152b0104258329b5e",
+  "statistics": {
+    "matched_physical_links": 5091,
+    "max_abs_full_minus_fw": 1.4210854715202004e-14,
+    "max_abs_rank26_minus_fw": 5.888579437396402e-06,
+    "max_abs_rank52_minus_fw": 5.88828736169944e-06,
+    "sum_abs_rank26_minus_fw": 0.0002693130967031505,
+    "sum_abs_rank52_minus_fw": 0.0002692385893027814
+  },
+  "image_hashes": {
+    "boston_abs_planned_fw_flow.png": "f238d172d0d04b7bd4cd2fb829f510085742adb114cc2e49d89f48935ed0348b",
+    "boston_abs_planned_fw_flow.svg": "f9a0dc40ab59862146e464b970496de3bcb58ff92da3fc8fa370511c528fbf2e",
+    "boston_abs_planned_l3_rank26_flow.png": "a23545df9181f89df0130fea32cabbd537bc5936fa08110c88c46c57955aa435",
+    "boston_abs_planned_l3_rank26_flow.svg": "9aee57bf8a636df018898cc69742594f76b85eef6a3391cd31283641231d7238",
+    "boston_abs_planned_l3_rank52_flow.png": "286e1d7b03dc3ff50e468f785f75fbdcc9b46889d310af27b4a4f9c3f5c3e854",
+    "boston_abs_planned_l3_rank52_flow.svg": "b3dd1f60c665278de24e1cf464aaa5f07a6903ead5bc1ad6d2610f719bbe49af",
+    "boston_abs_planned_l3_rank26_minus_fw.png": "0270ae7e503d5c1fbbe10a7c77cfe4828cc5184964e7d6b5616b4bad9c5916ff",
+    "boston_abs_planned_l3_rank26_minus_fw.svg": "9cc6dac273bc6a067813b99fe309381bb918f79ce1c812e1ea2d1f865e7976f1",
+    "boston_abs_planned_l3_rank52_minus_fw.png": "8f0bfe491f6afacb7cc7bd9c44ed47e231bc9a346e7cf4a62b15501e206e7f30",
+    "boston_abs_planned_l3_rank52_minus_fw.svg": "61f0248c5f2144b6f1aa08cb3d29ee16907f9c8a916bc07d74a4f32b3aaa8be0"
+  },
+  "plot_extent_km": [
+    -5.146512203652886,
+    5.900149491374239,
+    -5.962745734599996,
+    5.292788926000072
+  ],
+  "plot_projection": "Local equirectangular kilometers from EPSG:4326 lon0=-71.08 lat0=42.35",
+  "direction_handling": "3-meter right-of-travel offset for colored flows only; original WKT unchanged",
+  "absolute_normalization": {
+    "kind": "shared PowerNorm",
+    "gamma": 0.5,
+    "min": 0,
+    "max": 90.12810297495268
+  },
+  "signed_normalization": {
+    "kind": "shared zero-centered TwoSlopeNorm",
+    "min": -5.888579437396402e-06,
+    "max": 5.888579437396402e-06
+  },
+  "display_cutoffs": {
+    "absolute": "flow > 1e-6",
+    "signed": "abs(difference) > 1e-12"
+  },
+  "background_and_hidden": "all 5091 physical links remain as gray geometry and in full-precision CSV",
+  "hidden_colored_row_counts": {
+    "boston_abs_planned_fw_flow": 4772,
+    "boston_abs_planned_l3_rank26_flow": 4772,
+    "boston_abs_planned_l3_rank52_flow": 4772,
+    "boston_abs_planned_l3_rank26_minus_fw": 4620,
+    "boston_abs_planned_l3_rank52_minus_fw": 4620
+  },
+  "attribution": "GMNS Plus 21_Boston, Apache-2.0; Mobility Computation Lab saved method results",
+  "limitations": "Saved model outputs, not GPS counts, traffic observations or new solves."
+}

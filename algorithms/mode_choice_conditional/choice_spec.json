@@ -1,0 +1,19 @@
+{
+  "model_id": "REDUCED_TRANSFER_SENSITIVITY_HBW_AUTO_TW_SV_R1",
+  "purpose": "HBW",
+  "decision_unit": "directed_midday_OD_departure_transfer_not_TDM23_PA_tour_unit",
+  "conditioning": "sufficient_vehicle_household_and_four_known_alternatives_DA_S2_S3_TW",
+  "alternatives": {"Auto": ["DA", "S2", "S3"], "Transit": ["TW"]},
+  "excluded_source_alternatives": ["WK", "BK", "TA", "RS"],
+  "beta": {"ivtt_min": -0.0201, "ovtt_min": -0.0431, "cost_2010_usd": -0.0613},
+  "constant": {"DA": 0.0, "S2": -0.388, "S3": -0.892, "TW": -2.218},
+  "sufficient_vehicle_term": {"DA": 0.617, "S2": -0.264, "S3": -0.264, "TW": 0.0},
+  "auto_operating_cost_2010_usd_per_mile_assumed": 0.244,
+  "fare_2026_to_2010_cpi_u_factor": 0.6509522956594423,
+  "zero_context_sensitivity": ["auto_terminal_minutes", "auto_parking_cost", "auto_toll_cost"],
+  "official_scale": null,
+  "scale_vectors": {"UNIT_BOUNDARY_PRIMARY": {"Auto": 1.0, "Transit": 1.0}, "AUTO_0_7_SENSITIVITY": {"Auto": 0.7, "Transit": 1.0}},
+  "primary_scale_id": "UNIT_BOUNDARY_PRIMARY",
+  "price_year_status": "auto_0.244_per_mile_2010_dollar_interpretation_unverified",
+  "empirical_validation": "NOT_PERFORMED_THIS_TASK"
+}

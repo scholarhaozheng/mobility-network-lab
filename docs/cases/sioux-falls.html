@@ -1,0 +1,86 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Sioux Falls case · static assignment and historical space–time CG | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Sioux Falls case · static assignment and historical space–time CG</p><h1 id="sioux-falls-case--static-assignment-and-historical-spacetime-cg">Sioux Falls case · static assignment and historical space–time CG</h1>
+<p>Sioux Falls is a classical benchmark entry in the same network-computation framework, <strong>not</strong> a new present-day real-city GPS/four-stage dataset. Its static native Diagnostic L3 instance has 24 nodes, 76 directed links, 528 positive OD records, 2,218 paths and rank 50. The historical 200OD and 250OD time-expanded CG cases are separate selected-link/horizon instances. <a href="../index.html">Return to the project homepage</a>.</p>
+<h2 id="instance--gmns-structure">Instance &amp; GMNS Structure</h2>
+<p>The classic 76-link topology and OD table are <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/README.md">frozen with the native representation</a>. Their IDs and path/OD/link records are explicit; no Boston H3 zones, GTFS, GPS traces or present-day physical street tiles are imputed to this benchmark. The two CG diagrams below are schematic flows of their different selected-link instances.</p>
+<h2 id="trip-generation">Trip Generation</h2>
+<p>OD demand is <strong>provided exogenously</strong> for the classic benchmark. Trip-production rates were not estimated in this case.</p>
+<h2 id="trip-distribution">Trip Distribution</h2>
+<p>The static 528-record OD table is a supplied input, not a gravity/IPF result. Historical 200OD and 250OD CG instances select different demand subsets and links.</p>
+<h2 id="mode-choice">Mode Choice</h2>
+<p>No traveller mode-choice model was estimated for the classic Sioux assignment benchmark. Its fixed vehicle demand should not be confused with Boston's conditional DA/S2/S3/TW study.</p>
+<h2 id="traffic-assignment">Traffic Assignment</h2>
+<p>The <a href="../datasets/sioux-static-fw.html">historical static FW result</a> is actually executed: saved approximate Beckmann objective <strong>4,236,715.140437842</strong>, 24 nodes, 76 links, 528 OD records and a reported 0.236154949% fixed-flow gap under its own denominator. Its runtime OD-file hash and path disaggregation were not retained; therefore it is <strong>not</strong> asserted to be an exact matching reference for the native frozen input.</p>
+<p>The corrected <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">native Diagnostic L3 method</a> has accepted outer-04 results on the static 76-link instance. It keeps the rank-50 basis, 535 major and 1,683 minor paths, 585 reduced path coordinates and <strong>661 total native variables</strong>, including the explicit link flows.</p>
+<table>
+<thead>
+<tr>
+<th>Native configuration</th>
+<th style="text-align:right">Gamma</th>
+<th style="text-align:right">Original Beckmann component F</th>
+<th style="text-align:right">Max OD residual</th>
+<th style="text-align:right">Full-network relative cost gap</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json">A_REG001 · outer 04</a></td>
+<td style="text-align:right">0.01</td>
+<td style="text-align:right">4,325,864.946597109</td>
+<td style="text-align:right">5.548833712509804e-7</td>
+<td style="text-align:right">8.167461%</td>
+<td>Regularized diagnostic, numerically accepted</td>
+</tr>
+<tr>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json">B_BECKMANN · outer 04</a></td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">4,289,674.484214505</td>
+<td style="text-align:right">6.957361051718181e-7</td>
+<td style="text-align:right">4.381867%</td>
+<td>Unregularized numerical candidate, <strong>not</strong> full-network UE</td>
+</tr>
+</tbody>
+</table>
+<p>Both have zero negative path-flow mass and passed recorded original-space numerical tests. Their nonzero full-network gaps remain visible; a passing numerical-feasibility gate is not an equilibrium or empirical-validation certificate. Gamma=0.01 adds a reference-centred term, so the two F values are not a shared-objective leaderboard. The source and effective zero-link-bound adapter are released, but native portability has not been retested in this publication task.</p>
+<p>The historical <strong>finite space–time CG</strong> results solve a different fixed-cost, hard-capacity linear formulation with a reference LP. They belong inside this case, not in the static native comparison:</p>
+<table>
+<thead>
+<tr>
+<th>Historical CG experiment</th>
+<th style="text-align:right">Selected links</th>
+<th style="text-align:right">OD pairs</th>
+<th style="text-align:right">Final columns</th>
+<th style="text-align:right">Objective</th>
+<th>Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../datasets/sioux-200od.html">200OD</a></td>
+<td style="text-align:right">64</td>
+<td style="text-align:right">200</td>
+<td style="text-align:right">446</td>
+<td style="text-align:right">943,155.589771</td>
+<td>Saved final flow and Phase-I/II figures</td>
+</tr>
+<tr>
+<td><a href="../datasets/sioux-250od.html">250OD</a></td>
+<td style="text-align:right">69</td>
+<td style="text-align:right">250</td>
+<td style="text-align:right">567</td>
+<td style="text-align:right">1,521,090.836620</td>
+<td>Saved final flow and Phase-I/II figures</td>
+</tr>
+</tbody>
+</table>
+<p><img src="../assets/benchmarks/sioux_200od_final_physical_link_flow.png" alt="Historical Sioux Falls 200OD schematic physical-link movement flow" /></p>
+<p><img src="../assets/benchmarks/sioux_250od_final_physical_link_flow.png" alt="Historical Sioux Falls 250OD schematic physical-link movement flow" /></p>
+<h2 id="observations--feedback">Observations &amp; Feedback</h2>
+<p>No real-city GPS/GTFS observations or Boston-style service-feedback workflow are included in the classic Sioux instance. The benchmark is algorithmic, not an observed urban traffic panel.</p>
+<h2 id="experiments--reproduction">Experiments &amp; Reproduction</h2>
+<pre><code class="language-bash">python -B tools/mcl_results.py list --case sioux-falls
+python -B tools/mcl_results.py verify-saved --run sioux-native-l3-a-reg001-outer04
+python -B tools/mcl_results.py verify-saved --run sioux-native-l3-b-beckmann-outer04
+</code></pre>
+<p>The saved inspector reconstructs path-to-OD/link flows and the original Beckmann component without solving. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/README.md">Selected frozen data and checks</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">optional native staging instructions</a> are separate from the historical <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/run_full_cg_v1.py">CG implementation</a>. No new Sioux run was made for this publication.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>
