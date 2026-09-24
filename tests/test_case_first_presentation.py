@@ -37,17 +37,19 @@ def coverage(readme: str, home: str, detail: str) -> None:
     for image in GMNS:
         if f'gmns_in_action_r1/{image}' not in readme or f'gmns_in_action_r1/{image}' not in home:
             raise AssertionError(f"accepted inline GMNS evidence missing: {image}")
-    b_readme = section(readme, "## Boston case · saved assignment methods", "## Sioux Falls benchmark series")
-    s_readme = section(readme, "## Sioux Falls benchmark series", "## Mobility data support")
-    b_home = section(home, 'id="boston-case"', 'id="sioux-case"')
-    s_home = section(home, 'id="sioux-case"', "</main>")
+    b_readme = section(readme, '<a id="boston"></a>', '<a id="sioux-falls"></a>')
+    s_readme = section(readme, '<a id="sioux-falls"></a>', '<a id="run-your-input"></a>')
+    b_home = section(home, 'id="boston"', 'id="sioux-falls"')
+    s_home = section(home, 'id="sioux-falls"', 'id="run-your-input"')
     for text in (b_readme, b_home, detail):
         for token in ("ABS_PLANNED", "FW", "130", "rank 26", "rank 52", "outer 02"):
             if token not in text:
                 raise AssertionError(f"Boston case lacks {token}")
         for stem in STEMS:
             if stem + ".png" not in text:
-                raise AssertionError(f"Boston case lacks embedded {stem}")
+                raise AssertionError(f"Boston case lacks full-size map link {stem}")
+        if 'presentation_r3/boston_method_comparison.png' not in text:
+            raise AssertionError('Boston case lacks the comparison board')
         if "boston_panel_flow_s1.png" in text and "boston_abs_planned_fw_flow.png" not in text:
             raise AssertionError("semantic S1 image substituted for ABS_PLANNED FW")
     for text in (s_readme, s_home):
@@ -118,10 +120,10 @@ class CaseFirstPresentation(unittest.TestCase):
 
     def test_case_numbers_follow_registered_saved_rows(self) -> None:
         runs = json.loads(read("catalog/case-runs.json"))["runs"]
-        b_readme = section(self.readme, "## Boston case · saved assignment methods", "## Sioux Falls benchmark series")
-        s_readme = section(self.readme, "## Sioux Falls benchmark series", "## Mobility data support")
-        b_home = section(self.home, 'id="boston-case"', 'id="sioux-case"')
-        s_home = section(self.home, 'id="sioux-case"', "</main>")
+        b_readme = section(self.readme, '<a id="boston"></a>', '<a id="sioux-falls"></a>')
+        s_readme = section(self.readme, '<a id="sioux-falls"></a>', '<a id="run-your-input"></a>')
+        b_home = section(self.home, 'id="boston"', 'id="sioux-falls"')
+        s_home = section(self.home, 'id="sioux-falls"', 'id="run-your-input"')
         for run in runs:
             if run["run_id"] in ("boston-abs-planned-fw", "boston-abs-planned-full-path",
                                  "boston-abs-planned-l3-rank26-outer02", "boston-abs-planned-l3-rank52-outer02",

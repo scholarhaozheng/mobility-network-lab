@@ -25,6 +25,42 @@ def _local_target(source: Path, raw: str) -> Path | None:
 
 def presentation_errors(readme: str, home: str, detail: str) -> list[str]:
     """Check explicit four-stage navigation, result figures and GPS entry points."""
+    if '<a id="framework"></a>' in readme:
+        errors: list[str] = []
+        for label, anchor, image in (
+            ('Trip generation', 'step-1-trip-generation', 'step1_generation.png'),
+            ('Trip distribution', 'step-2-trip-distribution', 'step2_distribution.png'),
+            ('Mode choice', 'step-3-mode-choice', 'step3_mode_response.png'),
+            ('Traffic assignment', 'step-4-traffic-assignment', 'boston_panel_flow_s1.png'),
+        ):
+            if label.lower() not in readme.lower() or 'boston-behavior-feedback.md#' + anchor not in readme:
+                errors.append(f'README must name and link the actual stage: {label}')
+            if label.lower() not in home.lower() or image not in home:
+                errors.append(f'Homepage is missing its actual stage/result: {label}')
+            if f'id="{anchor}"' not in detail:
+                errors.append(f'Boston detail anchor missing: {anchor}')
+        for anchor, label in (
+            ('gmns-in-action', 'GMNS in Action'),
+            ('how-gps-changes-the-result', 'GPS'),
+        ):
+            if f'<a id="{anchor}"></a>' not in readme or f'id="{anchor}"' not in home:
+                errors.append(f'{label} must be visible on both primary surfaces')
+        for text, surface in ((readme, 'README'), (home, 'homepage')):
+            framework = text.find('id="framework"')
+            gmns = text.find('GMNS is the common object contract')
+            stages = text.find('id="four-step-workflow"')
+            boston = text.find('id="boston"')
+            open_data = text.find('Mobility data support')
+            if not (0 <= framework < gmns < stages < boston < open_data):
+                errors.append(f'{surface}: framework, GMNS, stages, Boston and Open order changed')
+            for stem in ('gmns_connected_layers', 'gps_to_gmns_evidence',
+                         'step1_generation', 'step2_distribution', 'step3_mode_response'):
+                if stem + '.png' not in text:
+                    errors.append(f'{surface}: saved evidence missing: {stem}')
+            for key in ('panel_od_019', '29.052', '27.486', '4.0990%', '4.2246%', 'Srestore'):
+                if key not in text:
+                    errors.append(f'{surface}: GPS-to-response evidence missing: {key}')
+        return errors
     errors: list[str] = []
     stages = (
         ("Trip generation", "step-1-trip-generation", "stage-1"),
@@ -153,7 +189,7 @@ def main() -> int:
         "city workflow navigation": 'href="city-workflow.html"' in homepage,
         "visual gallery navigation": 'href="visualizations.html"' in homepage,
         "network command": "tools/mnl.py run" in homepage,
-        "network-first homepage": 0 <= homepage.find("Networks and visual results") < homepage.find("Supporting mobility data"),
+        "framework-first homepage": 0 <= homepage.find('id="framework"') < homepage.find('id="coverage"') < homepage.find('id="boston"') < homepage.find('id="sioux-falls"') < homepage.find("Mobility data support"),
         "GMNS in Action section": 'id="gmns-in-action"' in homepage,
         "GMNS relationship figure": 'src="assets/boston/gmns_in_action_r1/gmns_connected_layers.png"' in homepage,
         "GPS relationship figure": 'src="assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png"' in homepage,
@@ -189,8 +225,8 @@ def main() -> int:
             if not match or expected_value not in match.group(1):
                 errors.append(f"{label}: evidence card missing/stale for {layer_id}")
             checks += 1
-    if not (readme_text.find("## City network workflow") < readme_text.find("## Sioux Falls benchmark series") < readme_text.find("## Mobility data support")):
-        errors.append("Data overview must follow the city workflow and road benchmarks")
+    if not (0 <= readme_text.find('id="framework"') < readme_text.find('id="coverage"') < readme_text.find('id="boston"') < readme_text.find('id="sioux-falls"') < readme_text.find("## Mobility data support")):
+        errors.append("Data overview must follow framework and both case introductions")
     checks += 1
 
     detail = (DOCS / "datasets/boston-behavior-feedback.html").read_text(encoding="utf-8")

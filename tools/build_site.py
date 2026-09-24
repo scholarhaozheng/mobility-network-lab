@@ -181,7 +181,16 @@ def main() -> int:
             encoding='utf-8',
             newline='\n',
         )
-    # The homepage is authored in docs/index.md, not duplicated in Python.
+    # The framework-first homepage is generated from the root README after the
+    # complete site build. Keep the established builder for unrelated pages.
+    if (DOCS / 'index.md').read_text(encoding='utf-8').startswith(
+        '<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->'
+    ):
+        from build_case_presentation import main as build_case_presentation
+        build_case_presentation()
+        print(f'Built complete documentation in {DOCS}; framework-first pages refreshed last')
+        return 0
+    # Legacy homepage source for trees that have not adopted the presentation.
     body = render_markdown(DOCS / "index.md", repo_url)
     for marker in ("<!-- EVIDENCE_OVERVIEW -->", "<!-- DATASET_CARDS -->"):
         if body.count(marker) != 1:
