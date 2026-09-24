@@ -1,0 +1,113 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boston population and household preparation · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="boston-population-and-household-preparation">Boston population and household preparation</h1>
+<p>This is an upstream preparation step for the saved Boston four-stage example, <strong>not a fifth model stage</strong>. Its source statistics, model zones, transferred trip rates and activity-attraction proxy are distinct objects. The figures below are area-weighted estimates for the fixed union of 177 clipped H3 r9 zones—not the City of Boston, the road buffer, or all three source counties. No household microdata, synthetic persons or observed external-trip matrix was produced.</p>
+<p><img alt="One recorded block group, its actual clipped H3 overlaps, and separate population/household contributions" src="../assets/boston/population_r1/population_allocation.png"/></p>
+<p><a href="../assets/boston/population_r1/population_allocation.svg">Editable SVG</a> · <a href="../assets/boston/population_r1/source_h3_cutout.geojson">Displayed geometry cutout</a> · <a href="../assets/boston/population_r1/FIGURE_PROVENANCE.json">Figure provenance</a> · <a href="../../tools/visuals/render_boston_population.py">Rendering source</a>. On narrow screens, scroll the figure horizontally. The figure selects the lexicographically first Suffolk GEOID in the released source-statistics table, not the largest allocation or effect. Its geometry is from the recorded Census Reporter TIGER2024 mirror file and the released clipped-zone WKT. Its numbers are one saved source-to-zone contribution, <strong>not</strong> that H3 zone's total. The cutout is a display subset, not a substitute for all raw county geometry.</p>
+<h2 id="inputs-identities-and-saved-transformation">Inputs, identities and saved transformation</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Role</th>
+<th>Recorded input and version</th>
+<th>Important distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population and households</td>
+<td>U.S. Census Bureau <strong>ACS 2024 five-year detailed tables</strong>, reference period <strong>2020–2024</strong>, accessed through Census Reporter <code>acs2024_5yr</code> for block groups in Massachusetts Suffolk <code>025</code>, Middlesex <code>017</code>, Norfolk <code>021</code> (state <code>25</code>)</td>
+<td><code>B01003</code> total persons and <code>B11001</code> total households; households are not family-household subtotal or dwelling units.</td>
+</tr>
+<tr>
+<td>Statistical boundaries</td>
+<td>Census Reporter <code>tiger2024</code> block-group GeoJSON, joined by <code>source_geoid</code></td>
+<td>Not an H3 population raster or an original direct TIGER shapefile download.</td>
+</tr>
+<tr>
+<td>Target geography</td>
+<td><a href="../../examples/boston/gmns_exchange_r1/data/zone.csv">177 clipped H3 r9 zones</a>, <a href="../../examples/boston/data/zone_hierarchy.csv">nine-parent hierarchy</a>, and <a href="../../examples/boston/gmns_exchange_r1/data/id_crosswalk.csv">reversible GMNS IDs/access</a></td>
+<td>The core is the union of the stored <code>mcl_clipped_geometry_wkt</code> values. Source block-group IDs and H3 IDs remain separate.</td>
+</tr>
+<tr>
+<td>Production parameters</td>
+<td>CTPS <strong>TDM23.2.0 Structures and Performance</strong>, March 2025, <a href="https://ctps.org/pub/tdm23_sc/tdm23.2.0/TDM23.2.0_Structures%20and%20Performance.pdf#page=148">Table 74, printed p. 148, <code>hh_mean</code></a></td>
+<td>Transferred regional effective mean rates, not local calibration or the full TDM23 package.</td>
+</tr>
+<tr>
+<td>Attraction weights</td>
+<td><a href="https://www.mass.gov/info-details/massgis-data-property-tax-parcels">MassGIS Property Tax Parcels</a>, separately recorded assessment slice</td>
+<td>Nonresidential/mixed building-area proxy, <strong>not measured employment</strong> and <strong>not</strong> a household disaggregation weight. The earlier residential-area/50,000-trip scenario is separate.</td>
+</tr>
+</tbody>
+</table></div>
+<p>The recorded code transforms source and target polygons to <strong>EPSG:32619</strong> before taking areas. For source block group <em>g</em> and clipped H3 zone <em>i</em>:</p>
+<p><code>w_gi = area(G_g ∩ H_i_clipped) / area(G_g)</code>; <code>N_i = Σ_g N_g w_gi</code>; <code>H_i = Σ_g H_g w_gi</code>.</p>
+<p>The denominator is the <strong>full source polygon</strong>, not its in-core portion. This is uniform-within-source-area allocation; it is not address-, building-, land-only- or population-density-weighted. The remainder outside the core stays in the <a href="../../examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv">spatial ledger</a>. The ledger's <code>external_person_trips</code> is blank and <code>external_trip_status</code> is <code>UNKNOWN_NOT_ZERO_NO_REGIONAL_OD_INPUT</code>: external travel is unknown, not zero. A no-data zone must not be interpreted as a known zero; all 177 saved zones happen to have source coverage.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Saved result</th>
+<th style="text-align:right">Quantity and unit</th>
+<th>Open file</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Source block groups intersecting the core</td>
+<td style="text-align:right">174 block groups</td>
+<td><a href="../../examples/boston/population_r1/data/acs_block_group_stats.csv">ACS source statistics</a></td>
+</tr>
+<tr>
+<td>Source-to-zone contributions</td>
+<td style="text-align:right">724 overlap rows</td>
+<td><a href="../../examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv">Area-share crosswalk</a></td>
+</tr>
+<tr>
+<td>Area-weighted core population</td>
+<td style="text-align:right"><strong>171,049.52015979076 persons</strong></td>
+<td><a href="../../examples/boston/population_r1/data/population_or_household_by_zone.csv">H3 attributes</a></td>
+</tr>
+<tr>
+<td>Area-weighted core households</td>
+<td style="text-align:right"><strong>79,537.49255074753 households</strong></td>
+<td><a href="../../examples/boston/population_r1/data/population_or_household_by_zone.csv">H3 attributes</a></td>
+</tr>
+<tr>
+<td>Six-purpose modeled daily productions</td>
+<td style="text-align:right"><strong>816,054.6735706696 person trips</strong></td>
+<td><a href="../../examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv">Generation rows</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The direct generation input is <strong>households</strong>, not the population total: <code>P_i,p = H_i × r_p</code> in modeled person trips per average weekday. The saved effective rates per household are HBW 1.90, HBSC 0.59, HBSR 2.19, HBPB 2.38, NHBW 0.51 and NHBNW 2.69. Their <strong>displayed six-rate sum is 10.26</strong>, while CTPS Table 74's separate <code>all_trips</code> <code>hh_mean</code> row displays <strong>10.25</strong>. Both are reported as printed; the saved project used the six displayed purpose values. The population column is retained as a zonal attribute, not multiplied by these rates. No household income, worker count or vehicle-sufficiency distribution is inferred from these two totals.</p>
+<p>The saved source table retains ACS margin-of-error fields. The H3 sums <strong>do not have a validated propagated MOE</strong>; do not read confidence bands into this allocation. Attractions were balanced separately by purpose from the MassGIS nonresidential/mixed building-area prior. No LODES WAC/RAC/OD values were acquired for this accepted branch.</p>
+<h2 id="trace-one-actual-contribution">Trace one actual contribution</h2>
+<p>In the released crosswalk, source <code>15000US250250101031</code> has <strong>957 persons</strong> and <strong>232 households</strong>. Its contribution to target <code>h3r9:892a30644a3ffff</code> has <code>source_area_share = 0.30570178112615354</code>, yielding <code>allocated_population = 292.55660453772896</code> and <code>allocated_households = 70.92281322126762</code>. Other source rows may also contribute to that target, and the block group's other overlap rows and outside-core remainder remain separately accounted for.</p>
+<p>The original build code used source IDs <code>census_reporter_acs2024_5yr_bg_mirror</code>, <code>ctps_tdm23_2_0_structures_performance_202503</code> and <code>massgis_property_tax_parcels_feature_service_20260917</code>; the release-normalized rows use <code>acs2024_5yr_bg_census_reporter_mirror</code>, <code>ctps_tdm23_2_0_report</code> and <code>massgis_property_assessment_20260917</code>. This is an explicit <a href="../../examples/boston/behavior_feedback_r1_semantic_fix_r1/data/source_id_alias_map.csv">alias map</a>, not a rewrite of frozen source IDs.</p>
+<h2 id="level-a-verify-released-arithmetic-without-a-solver">Level A · Verify released arithmetic without a solver</h2>
+<p>From the repository root, using Python 3.12+ standard library only:</p>
+<pre><code class="language-powershell">python -B tools/population/verify_saved_allocation.py `
+  --data-dir examples/boston/population_r1/data `
+  --generation examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv `
+  --ledger examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv
+</code></pre>
+<p>The helper validates required fields and string GEOIDs, the selected row, source × stored full-area share, per-H3 aggregation, <code>H_i × r_p</code>, and the distinct outside-core status; it exits nonzero for inconsistent inputs. <code>--help</code> documents configurable paths and an optional output JSON. It verifies <strong>saved-table arithmetic</strong>, not fresh county acquisition, spatial intersections, source MOE propagation, IPF, mode choice or assignment. The companion immutable <code>BOSTON_BEHAVIOR_FEEDBACK_PUBLIC_DATA_EN.zip</code> (SHA-256 <code>a3f33648c4dff3d3f462e4bbf4ebedb198665afd165688d0f481c88cded31d71</code>) retains more of the original data chain; no live Release URL is asserted here.</p>
+<h2 id="level-b-reacquire-source-inputs-and-rebuild-upstream-steps">Level B · Reacquire source inputs and rebuild upstream steps</h2>
+<p>Use the <a href="../../catalog/boston-population-sources.json">machine-readable source/asset registry</a> for the six recorded county JSON/GeoJSON snapshot hashes, fields and URLs. The exact historical raw files are <strong>not</strong> in this source upload. The following are <strong>reconstructed request recipes</strong>, not recovered historical request logs; availability of current bodies has not been verified:</p>
+<pre><code class="language-text">https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B01003%2CB11001&amp;geo_ids=150%7C05000US25025
+https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B01003%2CB11001&amp;geo_ids=150%7C05000US25017
+https://api.censusreporter.org/1.0/data/show/acs2024_5yr?table_ids=B01003%2CB11001&amp;geo_ids=150%7C05000US25021
+https://api.censusreporter.org/1.0/geo/show/tiger2024?geo_ids=150%7C05000US25025
+https://api.censusreporter.org/1.0/geo/show/tiger2024?geo_ids=150%7C05000US25017
+https://api.censusreporter.org/1.0/geo/show/tiger2024?geo_ids=150%7C05000US25021
+</code></pre>
+<p>The recorded <a href="../../examples/boston/behavior_feedback_r1/pipeline/build_regional_demand.py">builder</a> expects these files as <code>raw/demographics/acs2024_5yr_bg/{suffolk_025,middlesex_017,norfolk_021}.json</code> and matching <code>_tiger2024.geojson</code>, plus <code>database/zones/zone.csv</code> with <code>clipped_geometry_wkt</code>, the saved MassGIS activity prior and road impedance inputs under a supplied <code>--root</code>. It filters intersecting block groups after reading all three counties, projects to EPSG:32619 and produces the published table types. With a <strong>complete</strong> compatible instance assembled independently, its actual entry point is:</p>
+<pre><code class="language-powershell">python -B examples/boston/behavior_feedback_r1/pipeline/build_regional_demand.py --root "path/to/complete-instance" --run-dir "path/to/new-output"
+</code></pre>
+<p>Its <code>main()</code> <strong>continues into gravity/IPF and other demand steps</strong>; it is not a population-only command and was not run for this documentation update. A raw-source rebuild requires all those inputs, accepted code dependencies and source terms. The present public exchange includes clipped H3 geometry, but not all exact county raw JSON/GeoJSON or every private impedance input, so complete byte-identical upstream replay from this source tree alone is <strong>not claimed</strong>. Freshly acquired bytes should receive new hashes and be compared, not renamed to fake a historical snapshot.</p>
+<p>The Census Reporter's <code>estimate.B01003001</code> / <code>error.B01003001</code> and <code>estimate.B11001001</code> / <code>error.B11001001</code> correspond to official Census <code>B01003_001E/M</code> and <code>B11001_001E/M</code>. The <a href="https://api.census.gov/data/2024/acs/acs5.html">official ACS 2024 API</a>, <a href="https://api.census.gov/data/2024/acs/acs5/groups/B01003.html">population field definition</a>, <a href="https://api.census.gov/data/2024/acs/acs5/groups/B11001.html">household field definition</a> and <a href="https://api.census.gov/data/2024/acs/acs5/examples.html">examples/key notice</a> support an <strong>alternative</strong> acquisition route. An illustrative Suffolk request template is:</p>
+<pre><code class="language-text">https://api.census.gov/data/2024/acs/acs5?get=NAME,B01003_001E,B01003_001M,B11001_001E,B11001_001M&amp;for=block%20group:*&amp;in=state:25&amp;in=county:025&amp;in=tract:*&amp;key=YOUR_KEY_GOES_HERE
+</code></pre>
+<p>For Middlesex and Norfolk, replace county <code>025</code> with <code>017</code> and <code>021</code>. The official response is a different JSON contract requiring field, <code>state</code>/<code>county</code>/<code>tract</code>/<code>block group</code> → <code>15000US...</code> GEOID and geometry mapping before this builder can read it. The current examples page says data queries require an API key; use an environment variable or literal placeholder and never publish a real key. Similarly, the <a href="https://www2.census.gov/geo/tiger/TIGER2024/BG/">official TIGER2024 block-group directory</a> and <a href="https://www2.census.gov/geo/tiger/TIGER2024/BG/tl_2024_25_bg.zip">Massachusetts ZIP</a> are alternative geometry sources, <strong>not</strong> demonstrated coordinate- or byte-identical replacements for the used mirror GeoJSON. Older mirror geometry availability is not guaranteed.</p>
+<p>The <a href="https://www.ctps.org/travel-demand-model">CTPS TDM23.2.0 model page</a> and <a href="https://ctpsstaff.github.io/tdm23_users_guide/2.0/">user guide</a> give context, not the full source/input package. The recorded <a href="https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0">MassGIS FeatureServer layer</a> was accessed for a 2026-09-22 local slice with Boston FY2023, Cambridge FY2026 and retained null-FY rows. Selected fields included <code>OBJECTID</code>, <code>GlobalID</code>, <code>LOC_ID</code>, <code>MAP_PAR_ID</code>, <code>POLY_TYPE</code>, <code>TOWN_ID</code>, <code>PROP_ID</code>, <code>FY</code>, <code>USE_CODE</code>, <code>CITY</code>, <code>YEAR_BUILT</code>, <code>BLD_AREA</code>, <code>UNITS</code>, <code>RES_AREA</code>, <code>STORIES</code>, <code>USE_DESC</code> and <code>Shape__Area</code>; owner and address fields were not requested. Current service access does not establish the historical bytes. <a href="../../examples/boston/sources/activity_prior_r1/source_manifest.json">Original project parcel-source manifest</a> and <a href="../../examples/boston/sources/activity_prior_r1/selected_field_dictionary.csv">selected field dictionary</a> document the retained privacy-minimized slice.</p>
+<p><a href="../cases/boston.html">Boston case</a> · <a href="boston-behavior-feedback.html">Four-stage saved results</a> · <a href="boston-visual-sources.html">Road/GTFS/GPS/walk-bike source index</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/DATA_LICENSES.md">Data terms</a></p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

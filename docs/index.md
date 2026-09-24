@@ -1,5 +1,5 @@
 <!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->
-<p align="center"><img alt="Conceptual, city-neutral framework: GMNS objects support four demand-model stages, an observation-to-cost path, static methods and a separate finite space-time CG branch." src="assets/presentation_r3/framework_overview.png" width="100%"/></p>
+<p align="center"><img alt="City-neutral framework: GMNS objects and separate population-household/activity preparation feed four stages; observation linkage, static methods and finite space-time CG remain distinct." src="assets/presentation_r3/framework_overview.png" width="100%"/></p>
 <h1 id="mobility-computation-lab">Mobility Computation Lab</h1>
 <p><strong>An open-source computational framework for GMNS networks, demand, observation linkage and traffic assignment.</strong></p>
 <p>The reusable objects come first; cities are instances. Networks, zones and explicit units enter shared interfaces. Users can start with supplied vehicle OD, or prepare vehicle demand from a supported person-demand and choice specification. Static assignment and finite space–time column generation are <strong>different model branches</strong>, not interchangeable algorithms for one universal problem.</p>
@@ -9,6 +9,9 @@
 <h3 id="gmns-is-the-common-object-contract">GMNS is the common object contract</h3>
 <p><code>zone / super_zone → centroid / access → physical node / directed link</code> keeps the different objects distinct. Source-ID mappings connect supplied demand, matched observations and saved outputs without merging their identities. The exchange profile records directions, units, capacities and supported extensions. A nonphysical connector is not a road; a shared link reference does not make two datasets the same trip or observation.</p>
 <p>The <strong>framework diagram above is conceptual</strong>. It contains no city geography or empirical values. Actual source-backed objects and record-level demonstrations appear inside each labeled case below. <a href="data-contract.html">Data contract</a> · <a href="city-workflow.html">City and hierarchy workflow</a>.</p>
+<h3 id="population-households-activity-preparation">Population, Households &amp; Activity Preparation</h3>
+<p>Before any optional demand estimation, source statistics and activity evidence need <strong>version, field, unit and geography checks</strong>. Statistical polygons and model zones are different objects: a declared spatial allocation can create zonal population and household attributes with source IDs, coverage and uncertainty limits retained. Activity evidence can supply a separate attraction attribute. A generation model must then declare which attribute it uses; households are one possible input, not a universal rate base. This preparation is <strong>upstream of stage 01</strong>, not a fifth numbered stage or an automatic adapter for every city.</p>
+<p>Boston below demonstrates an actual aggregate ACS-to-H3 allocation and transferred household-rate example. Sioux Falls begins with supplied benchmark vehicle OD and has <strong>no estimated demographic stage</strong>. A user with valid vehicle OD may bypass population preparation and stages 01–03. <a href="datasets/boston-population-households.html">Boston's exact source fields, allocation and saved-table check</a>.</p>
 <p><a id="four-step-workflow"></a></p>
 <h3 id="four-stages-with-explicit-inputs-and-outputs">Four stages, with explicit inputs and outputs</h3>
 <div class="table-scroll"><table>
@@ -93,6 +96,11 @@
 <td>GMNS network, zones and access</td>
 <td><strong>Demonstrated:</strong> H3 hierarchy, centroid/access and source-ID round-trip</td>
 <td><strong>Benchmark network:</strong> supplied topology and demand; not a present-day H3 city dataset</td>
+</tr>
+<tr>
+<td>Population, households and activity preparation</td>
+<td><strong>Demonstrated, limited:</strong> source-backed ACS block-group → H3 aggregate allocation; separate MassGIS attraction proxy</td>
+<td><strong>Not estimated:</strong> classic benchmark supplies vehicle OD without a demographic build</td>
 </tr>
 <tr>
 <td>Trip generation</td>
@@ -197,6 +205,36 @@
 <p>The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/README.md">versioned Boston exchange</a> now exposes the actual <a href="../examples/boston/gmns_exchange_r1/data/node.csv">GMNS nodes</a>, <a href="../examples/boston/gmns_exchange_r1/data/link.csv">directed links</a>, <a href="../examples/boston/gmns_exchange_r1/data/zone.csv">H3 zones and hierarchy</a>, and separate <a href="../examples/boston/gmns_exchange_r1/data/demand_S1.csv">S1</a>/<a href="../examples/boston/gmns_exchange_r1/data/demand_S2.csv">S2</a> zonal demand. A <a href="../examples/boston/gmns_exchange_r1/data/id_crosswalk.csv">reversible ID/access crosswalk</a> connects 177 distinct zones to 139 physical access nodes. The pinned GMNS Plus structural reader opened both exports; the adapter reconstructed the accepted physical solver inputs without rerunning the model. <a href="datasets/boston-gmns-exchange.html">Open/query/rebuild commands and precise scope</a> distinguish core GMNS fields, GMNS Plus conventions, and MCL GPS/service/result extensions. Source-hourly and solver-period capacities remain separate; nonphysical connectors have no invented routing costs. Grid2demand2/competition approval and empirical calibration are not claimed.</p>
 <p align="center"><a href="datasets/boston-central.html#boston-visual-gallery"><img alt="Shared Central Boston foundation: physical roads, H3 zones, study boundary and one ordered 23-link corridor." src="assets/boston/visual_release_r1/boston_network_zones.png" width="780"/></a></p>
 <p><em>This is the spatial foundation, not one of the four demand-model stages. Parcel outlines provide geographic context, not building footprints. <a href="datasets/boston-visual-sources.html">Sources, units and original map gallery</a>.</em></p>
+<h3 id="boston-population-and-household-preparation">Boston / Population and Household Preparation</h3>
+<p>The <strong>U.S. Census Bureau's ACS 2024 five-year (2020–2024)</strong> block-group estimates were accessed through the <strong>Census Reporter <code>acs2024_5yr</code> mirror</strong> for Massachusetts Suffolk <code>025</code>, Middlesex <code>017</code> and Norfolk <code>021</code>; recorded source boundaries came from its <code>tiger2024</code> GeoJSON. The fixed core intersects <strong>174 source block groups</strong>. Those statistical polygons do not coincide with the <strong>177 clipped H3 r9 model zones</strong>. In EPSG:32619, each source estimate is assigned by <code>area(source ∩ clipped zone) / area(full source polygon)</code>; the outside-core share remains a spatial remainder, <strong>not</strong> an observed external-trip matrix. The allocation assumes uniform persons/households within each source polygon.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Prepared quantity</th>
+<th style="text-align:right">Saved core value</th>
+<th>Role and source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Population, ACS <a href="https://api.census.gov/data/2024/acs/acs5/groups/B01003.html"><code>B01003</code></a></td>
+<td style="text-align:right"><strong>171,049.520 persons</strong></td>
+<td>Retained H3 demographic attribute, not the household-rate multiplier; acquired via <a href="https://github.com/censusreporter/census-api/blob/master/API.md">Census Reporter <code>acs2024_5yr</code></a></td>
+</tr>
+<tr>
+<td>Households, ACS <a href="https://api.census.gov/data/2024/acs/acs5/groups/B11001.html"><code>B11001</code></a></td>
+<td style="text-align:right"><strong>79,537.493 households</strong></td>
+<td><code>P_i,p = H_i × r_p</code> with six transferred <a href="https://ctps.org/pub/tdm23_sc/tdm23.2.0/TDM23.2.0_Structures%20and%20Performance.pdf#page=148">CTPS TDM23.2.0 Table 74 rates</a></td>
+</tr>
+<tr>
+<td>Activity attraction</td>
+<td style="text-align:right">Separate <a href="https://www.mass.gov/info-details/massgis-data-property-tax-parcels">MassGIS Property Tax Parcels</a> nonresidential/mixed building-area weights</td>
+<td>Proxy attraction margins, <strong>not measured employment</strong> or ACS allocation weights</td>
+</tr>
+</tbody>
+</table></div>
+<p align="center"><a href="datasets/boston-population-households.html"><img alt="Actual saved Suffolk block-group and clipped H3 geometry; the selected area share allocates population and households separately before household-based generation." src="assets/boston/population_r1/population_allocation.png" width="100%"/></a></p>
+<p>The <a href="../examples/boston/population_r1/data/acs_block_group_stats.csv">ACS source statistics</a>, <a href="../examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv">source-to-H3 contributions</a>, <a href="../examples/boston/population_r1/data/population_or_household_by_zone.csv">H3 attributes</a>, <a href="../examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv">outside-core ledger</a> and <a href="../examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv">generation rows</a> are directly openable. <a href="datasets/boston-population-households.html">Source versions, provider/download links, exact fields, assumptions and no-solver reproduction command →</a>. Source margins of error were retained; the H3 estimates do not have a validated propagated MOE. All 177 saved zones have source coverage; in general, missing is not zero.</p>
 <h3 id="boston-the-retained-semantic-four-stage-chain">Boston / The retained semantic four-stage chain</h3>
 <p><strong>This retained branch is a fixed-panel service-feedback example. The expanded computation follows in the next section.</strong> The numbered sections below describe the saved Boston implementation—not four generic software components.</p>
 <div class="table-scroll"><table>
