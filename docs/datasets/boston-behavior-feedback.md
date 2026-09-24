@@ -2,7 +2,7 @@
 
 **Follow a saved calculation from household and activity data to road flows.** The four numbered sections show distinct model stages; the separate observation section shows where GPS enters. All figures below read accepted saved results. No new demand estimation, matching, mode calculation or assignment was run to prepare these pages.
 
-[01 Generation](#step-1-trip-generation) · [02 Distribution](#step-2-trip-distribution) · [03 Mode choice](#step-3-mode-choice) · [04 Assignment](#step-4-traffic-assignment) · [GPS feedback](#gps-feedback) · [Run the saved example](#run-the-saved-example)
+[Population/household preparation](boston-population-households.md) · [01 Generation](#step-1-trip-generation) · [02 Distribution](#step-2-trip-distribution) · [03 Mode choice](#step-3-mode-choice) · [04 Assignment](#step-4-traffic-assignment) · [GPS feedback](#gps-feedback) · [Run the saved example](#run-the-saved-example)
 
 ## Shared foundation, different scopes
 
@@ -16,6 +16,10 @@
 | Road assignment | S1/S2 private and occupied ride-service inputs, approximately 202 vehicle trips each | Regional background traffic or complete allocation of all modes |
 
 Thirty incomplete panel cases retain 78.079907 person trips in the exclusion ledger. The panel's three departure samples use declared engineering weights, not an observed continuous departure profile.
+
+## Upstream population and household preparation
+
+Before stage 01, U.S. Census Bureau **ACS 2024 five-year (2020–2024)** block-group totals, accessed through Census Reporter with `tiger2024` boundaries, were area-allocated to the fixed clipped H3 core. The recorded full-source-polygon denominator and uniform-within-block-group assumption yield **171,049.520 persons** and **79,537.493 households** in 177 covered zones. The households—not population—feed the purpose production rates; a separate MassGIS nonresidential/mixed-area prior supplies attraction weights. The outside-core share is a spatial remainder, not a known external-trip total. [See the figure, source links, exact fields and read-only verification command](boston-population-households.md).
 
 <a id="step-1-trip-generation"></a>
 ## 01 · Trip Generation

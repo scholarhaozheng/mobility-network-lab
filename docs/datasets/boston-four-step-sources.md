@@ -25,6 +25,6 @@ python -B tools/visuals/render_boston_four_step_results.py
 
 The script reads the included display CSVs and writes PNG/SVG files under `docs/assets/boston/four_step_results_r1/`. It checks totals, zone order and probability sums before plotting. It makes no network request and does not change numerical results. Rendering libraries may produce different file bytes across versions even with identical numerical data.
 
-The credited underlying sources remain ACS, MassGIS, CTPS TDM23 and MBTA, as registered by the public Boston component. The original [network/map credits](boston-visual-sources.md) continue to apply to the retained maps. Project-derived display tables are not a new release of household microdata or raw vehicle archives.
+The credited underlying sources remain ACS, MassGIS, CTPS TDM23 and MBTA, as registered by the public Boston component. [Population/household source versions, fields, preserved tables and reproduction](boston-population-households.md) now document the upstream step. The original [network/map credits](boston-visual-sources.md) continue to apply to the retained maps. Project-derived display tables are not a new release of household microdata or raw vehicle archives.
 
 [Four-step result](boston-behavior-feedback.md) · [Network and earlier layers](boston-central.md)

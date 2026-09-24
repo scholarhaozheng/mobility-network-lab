@@ -3,6 +3,7 @@
 | Capability / evidence | Boston | Sioux Falls |
 |---|---|---|
 | GMNS network, zones and access | **Demonstrated:** H3 hierarchy, centroid/access and source-ID round-trip | **Benchmark network:** supplied topology and demand; not a present-day H3 city dataset |
+| Population, households and activity preparation | **Demonstrated, limited:** ACS 2024 five-year block-group → H3 aggregate allocation; separate MassGIS activity proxy | **Not estimated:** supplied benchmark vehicle OD, no demographic build |
 | Trip generation | **Demonstrated, limited:** ACS households + transferred purpose rates; activity attraction prior | **Not modeled:** benchmark demand is supplied |
 | Trip distribution | **Demonstrated, limited:** saved gravity/IPF and PA-to-OD | **Not estimated:** given OD and selected subsets |
 | Mode choice | **Demonstrated, conditional:** regional-share feedback and absolute DA/S2/S3/TW research branch | **Not modeled:** fixed vehicle demand |

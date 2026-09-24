@@ -15,6 +15,20 @@ The largest accepted FW calculation has 17,522 loaded node OD, 16,259.122 PCE tr
 
 The Central Boston analysis network has 2,852 physical nodes, 5,091 directed physical links, 177 H3 r9 zones and nine r7 parents. The [GMNS in Action diagrams and record-level read-only query](../datasets/boston-gmns-exchange.md) explain source H3 IDs, exported zone/centroid/access mapping, nonphysical connectors, physical link IDs, observation references and saved results. The pinned reader checked node/link/demand separately from the zone schema; source capacities and effective two-hour solver capacities have separate fields. [Inspect the actual exchange](../../examples/boston/gmns_exchange_r1/README.md).
 
+## Population and Household Preparation
+
+The recorded workflow read **U.S. Census Bureau ACS 2024 five-year (2020–2024)** `B01003` population and `B11001` total-household estimates through **Census Reporter `acs2024_5yr`**, with its `tiger2024` block-group GeoJSON for Massachusetts Suffolk `025`, Middlesex `017` and Norfolk `021`. After the fixed-core intersection filter, **174 source block groups** were area-allocated to **177 clipped H3 r9 zones**. In EPSG:32619, each contribution uses `area(source ∩ clipped H3) / area(full source polygon)`, not a renormalized in-core denominator. The resulting core attributes are **171,049.520 persons** and **79,537.493 households**; outside-core source shares remain a spatial ledger, not measured external trips. Uniformity within each source polygon is an explicit assumption, and source MOEs are not validated H3 MOEs.
+
+![Saved source block group, clipped H3 overlap and separate attributes](../assets/boston/population_r1/population_allocation.png)
+
+| Prepared input | Use in this saved case | Source/reproduction |
+|---|---|---|
+| H3 households | `P_i,p = H_i × r_p` with transferred CTPS TDM23.2.0 Table 74 effective mean rates | [ACS fields, crosswalk and read-only verification](../datasets/boston-population-households.md) |
+| H3 population | Retained zonal demographic attribute; **not** multiplied by household rates | [Released H3 table](../../examples/boston/population_r1/data/population_or_household_by_zone.csv) |
+| MassGIS nonresidential/mixed area | Separate purpose-attraction proxy, not measured jobs or household allocation | [Recorded parcel source](../../examples/boston/sources/activity_prior_r1/source_manifest.json) |
+
+The [full source and reproduction page](../datasets/boston-population-households.md) links the actual dataset versions, original access route, official alternatives, six recorded raw hashes, saved tables and standard-library no-solver check. The earlier residential-area/50,000-trip scenario is a different branch.
+
 ## Trip Generation
 
 Area-allocated ACS household estimates and transferred regional rates produce **816,054.67 modelled workday person trips** across six purposes. MassGIS activity weights supply attraction context. This is not observed traffic or the 203.66 vehicle trips assigned in the conditional fixed panel. [Saved generation chart and table](../datasets/boston-behavior-feedback.md#step-1-trip-generation).

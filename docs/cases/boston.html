@@ -6,6 +6,36 @@
 <p><img alt="Expanded Boston conditional all-tier FW" src="../assets/boston/scalable_tool_r1/fw_all_flow.png"/></p>
 <h2 id="instance-gmns-structure">Instance &amp; GMNS Structure</h2>
 <p>The Central Boston analysis network has 2,852 physical nodes, 5,091 directed physical links, 177 H3 r9 zones and nine r7 parents. The <a href="../datasets/boston-gmns-exchange.html">GMNS in Action diagrams and record-level read-only query</a> explain source H3 IDs, exported zone/centroid/access mapping, nonphysical connectors, physical link IDs, observation references and saved results. The pinned reader checked node/link/demand separately from the zone schema; source capacities and effective two-hour solver capacities have separate fields. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/README.md">Inspect the actual exchange</a>.</p>
+<h2 id="population-and-household-preparation">Population and Household Preparation</h2>
+<p>The recorded workflow read <strong>U.S. Census Bureau ACS 2024 five-year (2020–2024)</strong> <code>B01003</code> population and <code>B11001</code> total-household estimates through <strong>Census Reporter <code>acs2024_5yr</code></strong>, with its <code>tiger2024</code> block-group GeoJSON for Massachusetts Suffolk <code>025</code>, Middlesex <code>017</code> and Norfolk <code>021</code>. After the fixed-core intersection filter, <strong>174 source block groups</strong> were area-allocated to <strong>177 clipped H3 r9 zones</strong>. In EPSG:32619, each contribution uses <code>area(source ∩ clipped H3) / area(full source polygon)</code>, not a renormalized in-core denominator. The resulting core attributes are <strong>171,049.520 persons</strong> and <strong>79,537.493 households</strong>; outside-core source shares remain a spatial ledger, not measured external trips. Uniformity within each source polygon is an explicit assumption, and source MOEs are not validated H3 MOEs.</p>
+<p><img alt="Saved source block group, clipped H3 overlap and separate attributes" src="../assets/boston/population_r1/population_allocation.png"/></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Prepared input</th>
+<th>Use in this saved case</th>
+<th>Source/reproduction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>H3 households</td>
+<td><code>P_i,p = H_i × r_p</code> with transferred CTPS TDM23.2.0 Table 74 effective mean rates</td>
+<td><a href="../datasets/boston-population-households.html">ACS fields, crosswalk and read-only verification</a></td>
+</tr>
+<tr>
+<td>H3 population</td>
+<td>Retained zonal demographic attribute; <strong>not</strong> multiplied by household rates</td>
+<td><a href="../../examples/boston/population_r1/data/population_or_household_by_zone.csv">Released H3 table</a></td>
+</tr>
+<tr>
+<td>MassGIS nonresidential/mixed area</td>
+<td>Separate purpose-attraction proxy, not measured jobs or household allocation</td>
+<td><a href="../../examples/boston/sources/activity_prior_r1/source_manifest.json">Recorded parcel source</a></td>
+</tr>
+</tbody>
+</table></div>
+<p>The <a href="../datasets/boston-population-households.html">full source and reproduction page</a> links the actual dataset versions, original access route, official alternatives, six recorded raw hashes, saved tables and standard-library no-solver check. The earlier residential-area/50,000-trip scenario is a different branch.</p>
 <h2 id="trip-generation">Trip Generation</h2>
 <p>Area-allocated ACS household estimates and transferred regional rates produce <strong>816,054.67 modelled workday person trips</strong> across six purposes. MassGIS activity weights supply attraction context. This is not observed traffic or the 203.66 vehicle trips assigned in the conditional fixed panel. <a href="../datasets/boston-behavior-feedback.html#step-1-trip-generation">Saved generation chart and table</a>.</p>
 <h2 id="trip-distribution">Trip Distribution</h2>

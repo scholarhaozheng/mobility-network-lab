@@ -1,4 +1,4 @@
-<p align="center"><img src="docs/assets/presentation_r3/framework_overview.png" width="100%" alt="Conceptual, city-neutral framework: GMNS objects support four demand-model stages, an observation-to-cost path, static methods and a separate finite space-time CG branch."></p>
+<p align="center"><img src="docs/assets/presentation_r3/framework_overview.png" width="100%" alt="City-neutral framework: GMNS objects and separate population-household/activity preparation feed four stages; observation linkage, static methods and finite space-time CG remain distinct."></p>
 
 # Mobility Computation Lab
 
@@ -16,6 +16,12 @@ The reusable objects come first; cities are instances. Networks, zones and expli
 `zone / super_zone → centroid / access → physical node / directed link` keeps the different objects distinct. Source-ID mappings connect supplied demand, matched observations and saved outputs without merging their identities. The exchange profile records directions, units, capacities and supported extensions. A nonphysical connector is not a road; a shared link reference does not make two datasets the same trip or observation.
 
 The **framework diagram above is conceptual**. It contains no city geography or empirical values. Actual source-backed objects and record-level demonstrations appear inside each labeled case below. [Data contract](docs/data-contract.md) · [City and hierarchy workflow](docs/city-workflow.md).
+
+### Population, Households & Activity Preparation
+
+Before any optional demand estimation, source statistics and activity evidence need **version, field, unit and geography checks**. Statistical polygons and model zones are different objects: a declared spatial allocation can create zonal population and household attributes with source IDs, coverage and uncertainty limits retained. Activity evidence can supply a separate attraction attribute. A generation model must then declare which attribute it uses; households are one possible input, not a universal rate base. This preparation is **upstream of stage 01**, not a fifth numbered stage or an automatic adapter for every city.
+
+Boston below demonstrates an actual aggregate ACS-to-H3 allocation and transferred household-rate example. Sioux Falls begins with supplied benchmark vehicle OD and has **no estimated demographic stage**. A user with valid vehicle OD may bypass population preparation and stages 01–03. [Boston's exact source fields, allocation and saved-table check](docs/datasets/boston-population-households.md).
 
 <a id="four-step-workflow"></a>
 ### Four stages, with explicit inputs and outputs
@@ -64,6 +70,7 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 | Capability / evidence | Boston | Sioux Falls |
 |---|---|---|
 | GMNS network, zones and access | **Demonstrated:** H3 hierarchy, centroid/access and source-ID round-trip | **Benchmark network:** supplied topology and demand; not a present-day H3 city dataset |
+| Population, households and activity preparation | **Demonstrated, limited:** source-backed ACS block-group → H3 aggregate allocation; separate MassGIS attraction proxy | **Not estimated:** classic benchmark supplies vehicle OD without a demographic build |
 | Trip generation | **Demonstrated, limited:** ACS households + transferred purpose rates; activity attraction prior | **Not modeled:** benchmark demand is supplied |
 | Trip distribution | **Demonstrated, limited:** saved gravity/IPF and PA-to-OD | **Not estimated:** given OD and selected subsets |
 | Mode choice | **Demonstrated, conditional:** regional-share feedback and absolute DA/S2/S3/TW research branch | **Not modeled:** fixed vehicle demand |
@@ -120,6 +127,20 @@ The [versioned Boston exchange](examples/boston/gmns_exchange_r1/README.md) now 
 <p align="center"><a href="docs/datasets/boston-central.md#boston-visual-gallery"><img src="docs/assets/boston/visual_release_r1/boston_network_zones.png" width="780" alt="Shared Central Boston foundation: physical roads, H3 zones, study boundary and one ordered 23-link corridor."></a></p>
 
 *This is the spatial foundation, not one of the four demand-model stages. Parcel outlines provide geographic context, not building footprints. [Sources, units and original map gallery](docs/datasets/boston-visual-sources.md).*
+
+### Boston / Population and Household Preparation
+
+The **U.S. Census Bureau's ACS 2024 five-year (2020–2024)** block-group estimates were accessed through the **Census Reporter `acs2024_5yr` mirror** for Massachusetts Suffolk `025`, Middlesex `017` and Norfolk `021`; recorded source boundaries came from its `tiger2024` GeoJSON. The fixed core intersects **174 source block groups**. Those statistical polygons do not coincide with the **177 clipped H3 r9 model zones**. In EPSG:32619, each source estimate is assigned by `area(source ∩ clipped zone) / area(full source polygon)`; the outside-core share remains a spatial remainder, **not** an observed external-trip matrix. The allocation assumes uniform persons/households within each source polygon.
+
+| Prepared quantity | Saved core value | Role and source |
+|---|---:|---|
+| Population, ACS [`B01003`](https://api.census.gov/data/2024/acs/acs5/groups/B01003.html) | **171,049.520 persons** | Retained H3 demographic attribute, not the household-rate multiplier; acquired via [Census Reporter `acs2024_5yr`](https://github.com/censusreporter/census-api/blob/master/API.md) |
+| Households, ACS [`B11001`](https://api.census.gov/data/2024/acs/acs5/groups/B11001.html) | **79,537.493 households** | `P_i,p = H_i × r_p` with six transferred [CTPS TDM23.2.0 Table 74 rates](https://ctps.org/pub/tdm23_sc/tdm23.2.0/TDM23.2.0_Structures%20and%20Performance.pdf#page=148) |
+| Activity attraction | Separate [MassGIS Property Tax Parcels](https://www.mass.gov/info-details/massgis-data-property-tax-parcels) nonresidential/mixed building-area weights | Proxy attraction margins, **not measured employment** or ACS allocation weights |
+
+<p align="center"><a href="docs/datasets/boston-population-households.md"><img src="docs/assets/boston/population_r1/population_allocation.png" width="100%" alt="Actual saved Suffolk block-group and clipped H3 geometry; the selected area share allocates population and households separately before household-based generation."></a></p>
+
+The [ACS source statistics](examples/boston/population_r1/data/acs_block_group_stats.csv), [source-to-H3 contributions](examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv), [H3 attributes](examples/boston/population_r1/data/population_or_household_by_zone.csv), [outside-core ledger](examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv) and [generation rows](examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv) are directly openable. [Source versions, provider/download links, exact fields, assumptions and no-solver reproduction command →](docs/datasets/boston-population-households.md). Source margins of error were retained; the H3 estimates do not have a validated propagated MOE. All 177 saved zones have source coverage; in general, missing is not zero.
 
 ### Boston / The retained semantic four-stage chain
 

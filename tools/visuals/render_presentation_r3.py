@@ -7,12 +7,16 @@ Different rendering-library versions can produce different image bytes.
 from pathlib import Path
 import html,json,csv,math,textwrap,hashlib
 from PIL import Image,ImageDraw,ImageFont
-import cairosvg
+try:
+    import cairosvg
+except ImportError:
+    cairosvg = None
 
 def main():
     import argparse
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.parse_args()
+    parser.add_argument('--framework-only', action='store_true', help='Regenerate the generic overview without touching saved case figures')
+    args=parser.parse_args()
     S=Path(__file__).resolve().parents[2]; OUT=S/'docs/assets/presentation_r3';OUT.mkdir(parents=True,exist_ok=True)
     INK='#132C42'; TEAL='#087F8C'; CYAN='#49C5B6'; MUTED='#5B7182'; BG='#F3F7FA'; AMBER='#DAA54A'; LINE='#CFDAE2'; BLUE='#427DA8'
     def esc(s):return html.escape(str(s))
@@ -29,26 +33,38 @@ def main():
      def circle(self,x,y,r,c,stroke='white',sw=1):self.a.append(f'<circle cx="{x}" cy="{y}" r="{r}" fill="{c}" stroke="{stroke}" stroke-width="{sw}"/>')
      def polygon(self,points,fill=BG,stroke=LINE,opacity=1):self.a.append(f'<polygon points="'+ ' '.join(f'{x},{y}' for x,y in points)+f'" fill="{fill}" stroke="{stroke}" opacity="{opacity}"/>')
      def save(self,stem):
-      b=(''.join(self.a)+'</svg>').encode();(OUT/(stem+'.svg')).write_bytes(b);cairosvg.svg2png(bytestring=b,write_to=str(OUT/(stem+'.png')),output_width=self.w*2,output_height=self.h*2)
+      b=(''.join(self.a)+'</svg>').encode();(OUT/(stem+'.svg')).write_bytes(b)
+      if cairosvg:
+       cairosvg.svg2png(bytestring=b,write_to=str(OUT/(stem+'.png')),output_width=self.w*2,output_height=self.h*2)
     # Generic framework: no city geography, identifiers or result numbers.
-    v=SVG(1440,890);v.rect(0,0,1440,890,'url(#dark)',0)
+    v=SVG(1440,1060);v.rect(0,0,1440,1060,'url(#dark)',0)
     v.text(55,68,'MOBILITY COMPUTATION LAB',20,CYAN,700);v.text(55,120,'One framework. Explicit inputs. Traceable computation.',35,'white',700)
     v.text(55,156,'Conceptual overview — capability support and case evidence are listed separately.',17,'#BDD0DB')
-    v.rect(55,197,1330,100,'#234B5C');v.text(78,232,'GMNS DATA FOUNDATION',17,CYAN,700)
-    v.text(78,273,'zones + hierarchy  •  centroids + access  •  directed physical links  •  source IDs + units',24,'white',600)
+    v.rect(55,197,1330,90,'#234B5C');v.text(78,230,'GMNS DATA FOUNDATION',17,CYAN,700)
+    v.text(78,268,'zones + hierarchy  •  centroids + access  •  directed physical links  •  source IDs + units',23,'white',600)
+    v.rect(55,317,1330,133,'#234B5C');v.text(78,349,'UPSTREAM PREPARATION  /  NOT A FIFTH STAGE',17,CYAN,700)
+    v.rect(78,366,390,62,'#315e6d');v.text(94,390,'Statistics + source boundaries',16,'white',600);v.text(94,414,'Population / households',14,'#dce9ee')
+    v.rect(488,366,330,62,'#315e6d');v.text(505,390,'Activity evidence',16,'white',600);v.text(505,414,'Distinct attraction attributes',14,'#dce9ee')
+    v.rect(838,366,523,62,'#315e6d');v.text(855,390,'Version + field + geography checks → zone allocation',15,'white',600)
+    v.text(855,414,'Zonal attributes + provenance → declared generation model',14,'#dce9ee')
+    v.text(478,404,'+',19,CYAN,700,'middle');v.line(819,397,836,397,CYAN,2,True)
+    v.path('M1020 428 L1020 466 L208 466 L208 484',CYAN,2,True)
     xs=[55,395,735,1075];titles=['Trip generation','Trip distribution','Mode choice','Traffic assignment'];subs=['Activities → productions / attractions','Margins + impedance → person OD','Costs + a declared model → mode demand','Vehicle OD → selected network method']
     for i,x in enumerate(xs):
-     v.rect(x,352,310,112,'white');v.text(x+19,380,f'0{i+1}',16,TEAL,700);v.text(x+19,410,titles[i],22,INK,700);v.text(x+19,441,subs[i],13,MUTED)
-     if i<3:v.line(x+310,408,x+331,408,CYAN,2,True)
-    v.rect(55,497,645,103,'#234B5C');v.text(77,530,'OBSERVATION PATH',17,CYAN,700);v.text(77,563,'GPS / service evidence → QC → map matching → parameters',17,'white');v.text(77,585,'Feeds supported cost/parameter inputs; not automatic passenger-OD recovery.',12,'#BDD0DB')
-    v.path('M700 548 L870 548 L870 466',CYAN,2,True)
-    v.rect(735,623,650,100,'#234B5C');v.text(757,653,'STATIC FIXED-DEMAND METHODS',16,CYAN,700);v.text(757,687,'Frank–Wolfe  |  finite-path reference  |  native Diagnostic L3',17,'white');v.text(757,708,'Beckmann objective • different representations • original-space checks',12,'#BDD0DB')
-    v.rect(55,623,650,100,'#234B5C');v.text(77,653,'FINITE SPACE–TIME METHOD',16,CYAN,700);v.text(77,687,'Time expansion → Phase I → Phase II / column generation',17,'white');v.text(77,708,'Linear cost + explicit capacities • same-instance arc-flow LP reference',12,'#BDD0DB')
-    v.path('M1230 465 L1230 608',CYAN,2,True);v.path('M1230 484 L710 484 L710 610 L670 610 L670 623',CYAN,2,True)
-    v.rect(55,774,1330,72,'white');v.text(79,816,'OUTPUT CONTRACT',16,TEAL,700);v.text(310,816,'path / link flow  •  demand accounting  •  validation  •  reproducible maps & tables',21,INK,600)
-    v.line(380,723,380,772,CYAN,2,True);v.line(1060,723,1060,772,CYAN,2,True)
-    v.text(57,878,'Users with declared vehicle OD may enter directly at assignment. These branches are not one interchangeable optimization problem.',13,'#BDD0DB')
+     v.rect(x,485,310,112,'white');v.text(x+19,513,f'0{i+1}',16,TEAL,700);v.text(x+19,543,titles[i],22,INK,700);v.text(x+19,574,subs[i],13,MUTED)
+     if i<3:v.line(x+310,541,x+331,541,CYAN,2,True)
+    v.rect(55,631,645,103,'#234B5C');v.text(77,664,'OBSERVATION PATH',17,CYAN,700);v.text(77,697,'GPS / service evidence → QC → map matching → parameters',17,'white');v.text(77,719,'Supported cost inputs; not automatic passenger-OD recovery.',12,'#BDD0DB')
+    v.path('M700 682 L870 682 L870 599',CYAN,2,True)
+    v.rect(735,778,650,100,'#234B5C');v.text(757,808,'STATIC FIXED-DEMAND METHODS',16,CYAN,700);v.text(757,842,'Frank–Wolfe  |  finite-path reference  |  native Diagnostic L3',17,'white');v.text(757,863,'Beckmann objective • different representations • original-space checks',12,'#BDD0DB')
+    v.rect(55,778,650,100,'#234B5C');v.text(77,808,'FINITE SPACE–TIME METHOD',16,CYAN,700);v.text(77,842,'Time expansion → Phase I → Phase II / column generation',17,'white');v.text(77,863,'Linear cost + explicit capacities • same-instance arc-flow LP reference',12,'#BDD0DB')
+    v.path('M1230 598 L1230 763',CYAN,2,True);v.path('M1230 610 L710 610 L710 760 L670 760 L670 778',CYAN,2,True)
+    v.rect(55,924,1330,72,'white');v.text(79,966,'OUTPUT CONTRACT',16,TEAL,700);v.text(310,966,'path / link flow  •  demand accounting  •  validation  •  reproducible maps & tables',21,INK,600)
+    v.line(380,878,380,922,CYAN,2,True);v.line(1060,878,1060,922,CYAN,2,True)
+    v.text(57,1034,'Supplied vehicle OD may enter directly at assignment. Household rates are one case-specific generation model, not a universal requirement.',13,'#BDD0DB')
     v.save('framework_overview')
+    if args.framework_only:
+     print('Regenerated framework overview only')
+     return 0
     # Source-grounded CG exploded local subgraph; horizontal wires not falsely actual movement arcs.
     display=json.loads((OUT/'DISPLAY_MODEL.json').read_text())
     topo=display['topology'];cap=display['capacity_rows'];lookup={x['arc_id']:x for x in cap}; selected=['8','6','5','9','4'];base={'8':(0,1),'6':(1,0),'5':(2,1),'9':(1,2),'4':(3,0)}
