@@ -1,0 +1,11 @@
+{
+  "scenario": "Generic zonal vehicle fixture",
+  "period": "two-hour fixture period",
+  "demand_unit": "vehicles_per_hour",
+  "period_hours": 2.0,
+  "capacity_basis": "hourly_pce_per_lane",
+  "pce_factor": 1.0,
+  "unreachable_policy": "exclude_and_account",
+  "access_csv": "zone_access.csv",
+  "physical_only": true
+}

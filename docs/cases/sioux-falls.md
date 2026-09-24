@@ -2,6 +2,14 @@
 
 Sioux Falls is a classical benchmark entry in the same network-computation framework, **not** a new present-day real-city GPS/four-stage dataset. Its static native Diagnostic L3 instance has 24 nodes, 76 directed links, 528 positive OD records, 2,218 paths and rank 50. The historical 200OD and 250OD time-expanded CG cases are separate selected-link/horizon instances. [Return to the project homepage](../index.md).
 
+## What this case demonstrates
+
+Supplied classic benchmark inputs, historical FW, executed native L3 profiles and finite space–time CG with Phase-I/II evidence. It does **not** execute modern city generation/distribution/mode choice or GPS feedback.
+
+[**Space–time construction, clearance and shared-capacity mechanism →**](sioux-space-time.md)
+
+![Source-grounded Sioux Falls time expansion and CG mechanism](../assets/presentation_r3/sioux_space_time_construction.png)
+
 ## Instance & GMNS Structure
 
 The classic 76-link topology and OD table are [frozen with the native representation](../../examples/sioux-falls/native_l3_r1/README.md). Their IDs and path/OD/link records are explicit; no Boston H3 zones, GTFS, GPS traces or present-day physical street tiles are imputed to this benchmark. The two CG diagrams below are schematic flows of their different selected-link instances.

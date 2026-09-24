@@ -2,6 +2,15 @@
 
 Boston is the real-city instance of the shared framework. Its separate public branches are (1) the accepted semantic S1/S2 service-feedback example, and (2) the conditional absolute-attribute ABS_PLANNED / ABS_OBS_EXPLORATORY sensitivity, including the fixed ABS_PLANNED FW/full-path/native-L3 comparison. They share the physical network but **not** the same demand identity. [Start at the project homepage](../index.md).
 
+## What this case now demonstrates
+
+GMNS exchanges and layer relationships; the retained four-stage/GPS service-feedback chain; fixed conditional absolute choice; controlled FW/full-path/native-L3 comparisons; and new-input FW on 500, 2,000 and all 30,790 source-zone OD tiers. **No Boston CG case result is included.**
+
+The largest accepted FW calculation has 17,522 loaded node OD, 16,259.122 PCE trips, 133 endpoints and 2,147 positive links. Expanded full-path/L3 were resource-gated; the accepted rank-26/52 control is still the separate 26-OD instance. [Full scale and resource details](../BOSTON_SCALE_RESULTS.md).
+
+![Expanded Boston conditional all-tier FW](../assets/boston/scalable_tool_r1/fw_all_flow.png)
+
+
 ## Instance & GMNS Structure
 
 The Central Boston analysis network has 2,852 physical nodes, 5,091 directed physical links, 177 H3 r9 zones and nine r7 parents. The [GMNS in Action diagrams and record-level read-only query](../datasets/boston-gmns-exchange.md) explain source H3 IDs, exported zone/centroid/access mapping, nonphysical connectors, physical link IDs, observation references and saved results. The pinned reader checked node/link/demand separately from the zone schema; source capacities and effective two-hour solver capacities have separate fields. [Inspect the actual exchange](../../examples/boston/gmns_exchange_r1/README.md).

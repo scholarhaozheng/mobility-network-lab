@@ -1,0 +1,26 @@
+{
+  "schema": "MCL_SCALABLE_ASSIGNMENT_R1",
+  "scenario": "Boston HBW midday conditional four-mode planned service",
+  "period": "HBW midday declared 2-hour assignment period",
+  "demand_unit_input": "vehicle_trips_per_period",
+  "assignment_unit": "pce_per_declared_period",
+  "period_hours": 2.0,
+  "capacity_basis": "effective_period_pce",
+  "pce_factor": 1.0,
+  "source_hashes": {
+    "link": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+    "demand": "a7b1d41aa5785a4a92ab975f0b31708a64c46b4e900ff5843ebee30c2cfdf0a0",
+    "config": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65"
+  },
+  "physical_links": 5091,
+  "declared_nodes": null,
+  "source_rows": 17522,
+  "node_od": 17522,
+  "source_effective_pce": 16259.12241674658,
+  "loaded_pce": 16259.12241674658,
+  "excluded_by_reason_pce": {},
+  "prepare_seconds": 0.6858707,
+  "link_sha256": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+  "demand_sha256": "a7b1d41aa5785a4a92ab975f0b31708a64c46b4e900ff5843ebee30c2cfdf0a0",
+  "instance_signature": "107a33f23feb33a34d4300a01391ec22db91a9964882d47f93c23cb9243effc6"
+}

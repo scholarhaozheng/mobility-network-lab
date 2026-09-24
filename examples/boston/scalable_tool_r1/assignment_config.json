@@ -1,0 +1,13 @@
+{
+  "scenario": "Boston HBW midday conditional four-mode planned service",
+  "period": "HBW midday declared 2-hour assignment period",
+  "demand_unit": "vehicle_trips_per_period",
+  "period_hours": 2.0,
+  "capacity_basis": "effective_period_pce",
+  "pce_factor": 1.0,
+  "unreachable_policy": "error",
+  "physical_only": true,
+  "max_iterations": 300,
+  "gap_tolerance": 0.00001,
+  "source_note": "Accepted physical solver link.csv already carries 2-hour effective PCE capacity; do not multiply lanes or hours again."
+}
