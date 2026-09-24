@@ -1,0 +1,256 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sioux Falls: constructing and using the space–time network · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="sioux-falls-constructing-and-using-the-spacetime-network">Sioux Falls: constructing and using the space–time network</h1>
+<p><strong>Case coverage:</strong> physical-to-time representation, same-instance arc-flow LP, Phase-I artificial-demand clearance, Phase-II cost improvement and saved record-level capacity evidence. This is a historical selected-OD experiment, not modern city demand/GPS inference.</p>
+<h2 id="construction-cutaway">Construction cutaway</h2>
+<p><img alt="Exploded local time-network view with actual selected XS170 arc IDs" src="../assets/presentation_r3/sioux_space_time_construction.png"/></p>
+<p>The diagram uses <strong>schematic display coordinates</strong> but actual node and time identities. It shows nodes 8, 6, 5, 9 and 4 over time indices 0–6; the recorded network extends beyond this slice. The highlighted path is <code>source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6</code>: 8 at t0, 6 at t2 and 5 at t6. Pale movement lines and waiting lines come from the saved local allowed-arc records. No new shortest path or optimizer was run. Source/sink connectors and most of the horizon are omitted from the cutaway.</p>
+<p><a href="../methods/space-time-cg.html">Generic construction and pricing explanation</a> · <a href="../assets/presentation_r3/FIGURE_PROVENANCE.json">Figure provenance</a>.</p>
+<h2 id="paired-phase-i-figures">Paired Phase-I figures</h2>
+<div class="table-scroll"><table class="figure-grid"><tr><th>200 OD</th><th>250 OD</th></tr><tr><td width="50%"><img alt="200-OD recorded Phase-I artificial-flow clearance" src="../assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png" width="100%"/></td><td width="50%"><img alt="250-OD recorded Phase-I artificial-flow clearance" src="../assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png" width="100%"/></td></tr></table></div>
+<h2 id="recorded-results">Recorded results</h2>
+<h2 id="what-the-two-recorded-runs-show">What the two recorded runs show</h2>
+<p>The 200-OD selection is contained in the 250-OD selection (matching OD IDs, origins, destinations, and demand volumes). Both recorded runs clear artificial flow, but these are single runs with different case sizes and runtime caps. The observations below are descriptive, not a statistical scaling estimate.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th style="text-align:right">Initial artificial flow</th>
+<th style="text-align:right">Total demand</th>
+<th style="text-align:right">Initial artificial share</th>
+<th style="text-align:right">Initially active ODs</th>
+<th style="text-align:right">Phase-I zero round</th>
+<th style="text-align:right">Phase-I added columns</th>
+<th style="text-align:right">Phase-II added columns</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">749.807</td>
+<td style="text-align:right">86,100</td>
+<td style="text-align:right">0.87%</td>
+<td style="text-align:right">2</td>
+<td style="text-align:right">51</td>
+<td style="text-align:right">51</td>
+<td style="text-align:right">195</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">4,082.888</td>
+<td style="text-align:right">154,000</td>
+<td style="text-align:right">2.65%</td>
+<td style="text-align:right">5</td>
+<td style="text-align:right">62</td>
+<td style="text-align:right">62</td>
+<td style="text-align:right">255</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="od-level-clearance">OD-level clearance</h2>
+<h3 id="200-od-pairs">200 OD pairs</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>OD ID</th>
+<th style="text-align:right">Initial artificial flow</th>
+<th style="text-align:right">First zero round</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XS168</td>
+<td style="text-align:right">200.000</td>
+<td style="text-align:right">51</td>
+</tr>
+<tr>
+<td>XS169</td>
+<td style="text-align:right">549.807</td>
+<td style="text-align:right">51</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="250-od-pairs">250 OD pairs</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>OD ID</th>
+<th style="text-align:right">Initial artificial flow</th>
+<th style="text-align:right">First zero round</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>XS168</td>
+<td style="text-align:right">200.000</td>
+<td style="text-align:right">62</td>
+</tr>
+<tr>
+<td>XS169</td>
+<td style="text-align:right">549.807</td>
+<td style="text-align:right">62</td>
+</tr>
+<tr>
+<td>XS216</td>
+<td style="text-align:right">1,900.000</td>
+<td style="text-align:right">17</td>
+</tr>
+<tr>
+<td>XS222</td>
+<td style="text-align:right">1,187.998</td>
+<td style="text-align:right">40</td>
+</tr>
+<tr>
+<td>XS223</td>
+<td style="text-align:right">245.082</td>
+<td style="text-align:right">17</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="clearance-events-and-selected-columns">Clearance events and selected columns</h2>
+<p>The selected candidate is the column added before re-solving that round. The OD flow changes are observed after re-solving; this table does not prove that the selected column alone caused the changes.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th style="text-align:right">Round</th>
+<th style="text-align:right">Total flow decrease</th>
+<th>Selected column (OD)</th>
+<th>OD-level flow changes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">34</td>
+<td style="text-align:right">500.000</td>
+<td>GEN_XS170_001 (XS170)</td>
+<td>XS169: -500.000</td>
+</tr>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">51</td>
+<td style="text-align:right">249.807</td>
+<td>GEN_XS169_001 (XS169)</td>
+<td>XS168: -200.000; XS169: -49.807</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">17</td>
+<td style="text-align:right">2,145.082</td>
+<td>GEN_XS223_001 (XS223)</td>
+<td>XS216: -1,900.000; XS223: -245.082</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">39</td>
+<td style="text-align:right">500.000</td>
+<td>GEN_XS170_001 (XS170)</td>
+<td>XS169: -500.000</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">40</td>
+<td style="text-align:right">1,187.998</td>
+<td>GEN_XS222_001 (XS222)</td>
+<td>XS222: -1,187.998</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">62</td>
+<td style="text-align:right">249.807</td>
+<td>GEN_XS169_001 (XS169)</td>
+<td>XS168: -200.000; XS169: -49.807</td>
+</tr>
+</tbody>
+</table></div>
+<p>At round 34 in the 200-OD run and round 39 in the 250-OD run, the selected candidate is for XS170 while XS169's artificial flow decreases by 500. The capacity and path audit below checks how the RMP reallocates flow.</p>
+<h2 id="xs170xs169-capacity-reallocation-audit">XS170/XS169 capacity reallocation audit</h2>
+<p>The added XS170 path is <code>source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6</code>. Before the addition, XS170's 500 units used <code>EXTSIOUX_CUR_XS170_DELAYED</code>, which traverses <code>xs_link21_t1</code>. After the addition, all 500 units use the new path and the delayed XS170 column no longer appears on <code>xs_link21_t1</code>. XS169's existing delayed column also traverses that arc.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th style="text-align:right">Round</th>
+<th style="text-align:right">XS170 real flow (before → after)</th>
+<th style="text-align:right">XS169 real flow (before → after)</th>
+<th style="text-align:right">XS169 artificial decrease</th>
+<th style="text-align:right"><code>xs_link21_t1</code> flow / capacity (before → after)</th>
+<th style="text-align:right">Raw capacity dual (before → after)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">34</td>
+<td style="text-align:right">500.000 → 500.000</td>
+<td style="text-align:right">150.193 → 650.193</td>
+<td style="text-align:right">500.000</td>
+<td style="text-align:right">5,050.193 / 5,050.193 → 5,050.193 / 5,050.193</td>
+<td style="text-align:right">-1 → -1</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">39</td>
+<td style="text-align:right">500.000 → 500.000</td>
+<td style="text-align:right">150.193 → 650.193</td>
+<td style="text-align:right">500.000</td>
+<td style="text-align:right">5,050.193 / 5,050.193 → 5,050.193 / 5,050.193</td>
+<td style="text-align:right">-1 → -1</td>
+</tr>
+</tbody>
+</table></div>
+<p>The recorded primal flows support a 500-unit exchange on a binding arc: XS170 leaves the shared delayed route and XS169 takes its place. The raw capacity dual stays approximately −1; its sign follows the solver's reported convention. This is a mechanism for these recorded RMP solutions, not evidence that a single path is uniquely necessary.</p>
+<h2 id="final-validation">Final validation</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th style="text-align:right">Phase-I zero round</th>
+<th style="text-align:right">CG objective</th>
+<th style="text-align:right">Arc-flow LP objective</th>
+<th style="text-align:right">Absolute gap</th>
+<th style="text-align:right">Max demand residual</th>
+<th style="text-align:right">Capacity violations</th>
+<th style="text-align:right">Runtime (s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">51</td>
+<td style="text-align:right">943,155.589771</td>
+<td style="text-align:right">943,155.589771</td>
+<td style="text-align:right">2.33e-10</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">1,416.7</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">62</td>
+<td style="text-align:right">1,521,090.836620</td>
+<td style="text-align:right">1,521,090.836620</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">0</td>
+<td style="text-align:right">2,634.1</td>
+</tr>
+</tbody>
+</table></div>
+<p>Both runs report a match to their same-subset arc-flow LP objective, zero final demand residual, and zero capacity violations. Their own run summaries set <code>optimality_claimed</code> and <code>full_cg_global_convergence_claimed</code> to false. The defensible statement is objective-level reference agreement on these two subsets, not a global convergence or unique flow-pattern claim.</p>
+<h2 id="limits-and-next-experiment">Limits and next experiment</h2>
+<ul>
+<li>There is one recorded run at each of 200 and 250 OD pairs; no sampling uncertainty or significance test can be estimated from these two traces alone.</li>
+<li>The Phase-I round caps differ (120 versus 160); Phase-II per-round candidate caps also differ (600 versus 750). Runtime differences therefore remain descriptive.</li>
+<li>For a scaling claim, run several independently selected, preferably nested OD subsets at each size with a fixed solver configuration; report median and range (or confidence interval) for clearance rounds, candidate additions, and wall time.</li>
+<li>The XS170/XS169 mechanism is documented for these recorded RMP solutions. A broader claim about necessity or uniqueness would require counterfactual runs or further sensitivity analysis.</li>
+</ul>
+<p><a id="shared-capacity-event"></a></p>
+<h2 id="shared-capacity-event-1">Shared-capacity event</h2>
+<p><img alt="Recorded XS170/XS169 before-after capacity use" src="../assets/presentation_r3/sioux_capacity_exchange.png"/></p>
+<p>The before/after values are observed saved RMP solutions, not a newly run counterfactual. The diagram does not assert the selected path is uniquely necessary.</p>
+<h2 id="od-level-supplementary-view">OD-level supplementary view</h2>
+<p><img alt="Supplied OD-level Phase-I clearance" src="../assets/sioux/phase_i_r1/od_level_phase_i_clearance.png"/></p>
+<h2 id="reproduction-and-source-boundaries">Reproduction and source boundaries</h2>
+<p>The approved display traces are available as <a href="../assets/sioux/phase_i_r1/data/200_phase_i_trace.csv">200 Phase I</a>, <a href="../assets/sioux/phase_i_r1/data/250_phase_i_trace.csv">250 Phase I</a>, <a href="../assets/sioux/phase_i_r1/data/200_phase_ii_trace.csv">200 Phase II</a>, and <a href="../assets/sioux/phase_i_r1/data/250_phase_ii_trace.csv">250 Phase II</a>. Original source/figure hashes are recorded in the accompanying provenance. No final dual vector has been newly reconstructed by this presentation update.</p>
+<p>Full private source paths and raw receiver archives are not published here. The supplied historical records and original run summaries, not a newly solved model, support these figures. Preserve source-data redistribution terms when rebuilding from upstream input.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

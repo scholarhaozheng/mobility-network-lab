@@ -1,0 +1,32 @@
+{
+  "schema": "MCL_SCALABLE_ASSIGNMENT_R1",
+  "method": "fw",
+  "instance_signature": "107a33f23feb33a34d4300a01391ec22db91a9964882d47f93c23cb9243effc6",
+  "invocation": [
+    "python",
+    "tools/mcl_assignment.py",
+    "solve",
+    "--instance",
+    "<private prepared instance>",
+    "--method",
+    "fw",
+    "--config",
+    "<private assignment config>",
+    "--output",
+    "<private run directory>"
+  ],
+  "tool_source_sha256": "728fbc02077e418acb99f9f0dcdb4e51ba0ab291a5ee843325cad46b1ed6074b",
+  "python_version": "3.9.25",
+  "instance_path": "<private prepared instance>",
+  "publication_redaction": "Only local invocation and instance paths were replaced; scientific fields are unchanged.",
+  "original_record_sha256": "a1fb233adc57f35b6e7a43b0006e00473fe87145d372f872d7ee02c5dc5f74f8",
+  "solver_status": "SOLVER_TERMINATED",
+  "iterations": 1,
+  "solver_wall_seconds": 35.5697013,
+  "objective": 73552.27755601742,
+  "signed_gap": 0.5022353495151037,
+  "relative_gap": 6.8120374777478e-06,
+  "path_count": 17522,
+  "link_flow_sha256": "c31e9f23f597514d6caa06aa3594255ab33264eb8af39d269b83e13b89bd7128",
+  "path_flow_sha256": "813e3471e1999e1c5061c3267f43d8e3631e0b706e1545b832f3a851e3c789ae"
+}

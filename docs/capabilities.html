@@ -1,0 +1,77 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capability coverage and evidence scope · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Shared framework</a><a href="index.html#coverage">Case coverage</a><a href="index.html#boston">Boston</a><a href="index.html#sioux-falls">Sioux Falls</a><a href="index.html#run-your-input">Use the tool</a><a href="index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="capability-coverage-and-evidence-scope">Capability coverage and evidence scope</h1>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Capability / evidence</th>
+<th>Boston</th>
+<th>Sioux Falls</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMNS network, zones and access</td>
+<td><strong>Demonstrated:</strong> H3 hierarchy, centroid/access and source-ID round-trip</td>
+<td><strong>Benchmark network:</strong> supplied topology and demand; not a present-day H3 city dataset</td>
+</tr>
+<tr>
+<td>Trip generation</td>
+<td><strong>Demonstrated, limited:</strong> ACS households + transferred purpose rates; activity attraction prior</td>
+<td><strong>Not modeled:</strong> benchmark demand is supplied</td>
+</tr>
+<tr>
+<td>Trip distribution</td>
+<td><strong>Demonstrated, limited:</strong> saved gravity/IPF and PA-to-OD</td>
+<td><strong>Not estimated:</strong> given OD and selected subsets</td>
+</tr>
+<tr>
+<td>Mode choice</td>
+<td><strong>Demonstrated, conditional:</strong> regional-share feedback and absolute DA/S2/S3/TW research branch</td>
+<td><strong>Not modeled:</strong> fixed vehicle demand</td>
+</tr>
+<tr>
+<td>GPS / service evidence</td>
+<td><strong>Demonstrated, exploratory:</strong> network linkage and default-off interval feedback; no independent AM validation</td>
+<td><strong>Not included</strong> in the classic benchmark</td>
+</tr>
+<tr>
+<td>Static Frank–Wolfe</td>
+<td><strong>Demonstrated:</strong> small controls and three expanded tiers, up to 17,522 loaded node ODs</td>
+<td><strong>Demonstrated:</strong> historical static benchmark; input-identity caveat retained</td>
+</tr>
+<tr>
+<td>Finite full-path reference</td>
+<td><strong>Solved:</strong> 26-OD / 130-path control; <strong>resource-gated</strong> at expanded tiers</td>
+<td>Used within the method/source framework; no equivalent solved full-path reference claimed by these supplied records</td>
+</tr>
+<tr>
+<td>Native Diagnostic L3 / compression</td>
+<td><strong>Accepted numerical controls:</strong> ranks 26/52; new-input fixture; <strong>not solved at expanded tiers</strong></td>
+<td><strong>Executed numerical candidates:</strong> rank 50; full-network gaps remain 8.17% / 4.38%, not exact UE</td>
+</tr>
+<tr>
+<td>Space–time network construction</td>
+<td><strong>No Boston run supplied</strong>; reusable code availability is not case execution</td>
+<td><strong>Demonstrated:</strong> finite time-expanded selected-OD instances</td>
+</tr>
+<tr>
+<td>Phase I / Phase II / pricing</td>
+<td><strong>No Boston CG result supplied</strong></td>
+<td><strong>Historical runs:</strong> 200 / 250 OD, objective-level arc-LP agreement</td>
+</tr>
+<tr>
+<td>New-input preparation and solving</td>
+<td><strong>Generic vehicle/person routes implemented</strong>, with declared profiles and optional dependencies</td>
+<td>Existing benchmark and external-network interfaces; case-specific scope is explicit</td>
+</tr>
+<tr>
+<td>Saved checks and visualization</td>
+<td>Tables, GMNS tracing, figures, original-space checks</td>
+<td>Static checks, space–time traces, phase and capacity evidence</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="reading-the-matrix">Reading the matrix</h2>
+<p><strong>Demonstrated</strong> means supplied executed records for the named instance, not every possible configuration. <strong>Resource-gated</strong> means the saved workflow stopped before the relevant solve under a stated resource budget; it is not a numerical success or proof of inherent impossibility. <strong>Not modeled / no supplied run</strong> is a case-coverage statement, not absence of reusable code. Numerical acceptance does not establish empirical validity.</p>
+<p>The Boston all-tier FW and 26-OD compression control are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results.</p>
+<p><a href="cases/boston.html">Boston</a> · <a href="cases/sioux-falls.html">Sioux Falls</a> · <a href="RUN_YOUR_OWN_GMNS.html">Generic commands</a></p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

@@ -1,0 +1,6 @@
+link_id,from_node_id,to_node_id,vdf_fftt,vdf_alpha,vdf_beta,capacity,lanes,vdf_plf,is_physical,geometry
+parallel-A,001,A,1,0.15,4,50,1,1,true,"LINESTRING (0 0, 1 0)"
+parallel-B,001,A,1.5,0.15,4,50,1,1,true,"LINESTRING (0 0.1, 1 0.1)"
+second,A,Z9,2,0.15,4,50,1,1,true,"LINESTRING (1 0, 2 0)"
+direct,001,Z9,4,0.15,4,50,1,1,true,"LINESTRING (0 0, 2 0)"
+island,X,Y,1,0.15,4,50,1,1,true,"LINESTRING (3 0, 4 0)"

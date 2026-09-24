@@ -1,0 +1,170 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boston HBW-midday scalable-tool research result · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Shared framework</a><a href="index.html#coverage">Case coverage</a><a href="index.html#boston">Boston</a><a href="index.html#sioux-falls">Sioux Falls</a><a href="index.html#run-your-input">Use the tool</a><a href="index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="boston-hbw-midday-scalable-tool-research-result">Boston HBW-midday scalable-tool research result</h1>
+<p>This page reports calculations on the accepted Central Boston <strong>5,091 physical directed links</strong>. The existing 36-source-zone-pair / 26-physical-node-pair ABS_PLANNED case is retained as the <strong>Fixed-panel algorithm check</strong>: it had 203.6604786350987 modeled vehicle trips and 319 strictly positive physical links. The new scenario selects additional OD from saved HBW-midday <strong>person</strong> demand, computes new planned-service costs, applies a fixed conditional four-mode specification, and assigns the eligible resulting vehicles. It does not estimate citywide traffic or validate behavior with new observations.</p>
+<h2 id="input-and-selection-scope">Input and selection scope</h2>
+<p>The locked regional source has 30,790 positive interzonal and 171 positive intrazonal HBW-midday H3 OD, totaling 22,807.21691394174 modeled person trips. The all-eligible selection is interzonal only, with 22,633.46972887332 person trips (99.2382% of source person mass); the remainder is intrazonal. Selection uses a deterministic coverage-first ordering with parent-pair and distance-stratum support followed by demand rank. Its expansion factor is 1. The labels 500 and 2000 count <strong>selected source-zone OD</strong>, not final road OD.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Selection</th>
+<th style="text-align:right">Source-zone OD</th>
+<th style="text-align:right">Source person mass</th>
+<th style="text-align:right">Fraction of full HBW midday</th>
+<th style="text-align:right">Distinct source-zone endpoints</th>
+<th style="text-align:right">Parent pairs</th>
+<th style="text-align:right">Mapped node OD before choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td style="text-align:right">500</td>
+<td style="text-align:right">2,643.766735</td>
+<td style="text-align:right">11.5918%</td>
+<td style="text-align:right">176</td>
+<td style="text-align:right">80</td>
+<td style="text-align:right">493</td>
+</tr>
+<tr>
+<td>2000</td>
+<td style="text-align:right">2,000</td>
+<td style="text-align:right">8,415.295048</td>
+<td style="text-align:right">36.8975%</td>
+<td style="text-align:right">176</td>
+<td style="text-align:right">80</td>
+<td style="text-align:right">1,944</td>
+</tr>
+<tr>
+<td>All interzonal</td>
+<td style="text-align:right">30,790</td>
+<td style="text-align:right">22,633.469729</td>
+<td style="text-align:right">99.2382%</td>
+<td style="text-align:right">176</td>
+<td style="text-align:right">80</td>
+<td style="text-align:right">19,182</td>
+</tr>
+</tbody>
+</table></div>
+<p>The source-zone access crosswalk has 139 distinct physical endpoint nodes. Some zone OD collapse to the same physical access node and are accounted as not road-loaded. Eligibility from complete DA/S2/S3/TW attributes is assessed after selection. No person's unknown alternative is assigned a guessed mode or vehicle count.</p>
+<h2 id="accepted-expanded-500-source-zone-run">Accepted expanded 500-source-zone run</h2>
+<p>New PLANNED, observation-overlay-off routing on 2026-09-21 at 12:30, 12:40 and 12:50 generated 3,000 OD-mode-time rows from the selected 500 source-zone OD. The three departure samples each represent one third of the saved midday person mass. This is an engineering sampling assumption; the assignment period is separately declared as two hours with effective-period PCE capacity. The routing stage took 1,924.046 s, including 24.150 s setup, across 176 origin chunks. The immutable skim output SHA-256 is <code>866e4c809d96b05b54c3cf6d89584fe2057bf02bd5e38dedf5c476fcb1b328a0</code>.</p>
+<p>The candidate retains the accepted semantic transit adapter. Eight reused OSM/service graph and four pure choice function definitions were compared by Python AST to their locked public sources and were identical; their unused historical fixed-panel entries were removed from the candidate modules. The fixed-panel probability adapter was separately regressed on all 348 saved supported planned probability rows (maximum absolute difference 1.11e−16). Neither check substitutes for the actual new 500-pair routing and assignment above.</p>
+<p>The fixed <code>REDUCED_TRANSFER_SENSITIVITY_HBW_AUTO_TW_SV_R1</code> choice model evaluated 2,413.603497 of the selected 2,643.766735 <strong>person trips</strong> and left 230.163238 person trips unknown because at least one required attribute or fare was unavailable. Of 1,500 OD-time objects, 1,353 had the four known alternatives. The selected source OD map through 139 physical access origins and 139 destinations before eligibility. Explicit DA/S2/S3 occupancy conversion produced 1,936.238475 <strong>vehicle trips/PCE in the declared period</strong>, aggregated into 453 physical-node OD over 130 physical origins, 131 physical destinations and 131 endpoint nodes in their union. Transit-walk person choices add no modeled road vehicle. The resulting vehicle quantity is a conditional engineering cohort sensitivity, not a population estimate.</p>
+<p>The instance signature is <code>bb1ac850c6ce0f530c2127f4b3a9dabb12e68319517929fce1e2be0a0eb98829</code>. The same generic FW CLI used for the independent direct-vehicle fixture solved it in 31.060 s, with a cold minimum-free-flow path seed that already satisfied the declared gap gate (0 line-search iterations). The independent verifier found objective <strong>7,922.083942188114 PCE-minutes</strong>, maximum OD residual 0, link reconstruction error 0 and signed full-network relative gap <strong>−4.590249237557149e−16</strong>. The tiny negative signed gap is floating-point evaluation roundoff, not a better-than-equilibrium flow. There are 1,653 strictly positive links (32.47% of physical links), including 1,650 above the disclosed map cutoff of 1e−6 PCE. The other physical links remain in the flow table and map background.</p>
+<p><img alt="500 selected-zone HBW-midday FW road flow" src="assets/boston/scalable_tool_r1/fw_500_flow.png"/></p>
+<p><img alt="500 selected-zone endpoint coverage" src="assets/boston/scalable_tool_r1/endpoint_500_coverage.png"/></p>
+<p><img alt="500 selected-source-zone production and attraction" src="assets/boston/scalable_tool_r1/source_zone_500_coverage.png"/></p>
+<p>The road-flow and mapped-endpoint figures use the complete physical-link table and explicit access mapping. The source-zone figure separately uses selected H3 person OD and the locked source zone centroids; source zones are not road nodes. Vector SVG versions and plotted source CSVs are beside the PNG files. Colors show modeled PCE or selected person mass on the clipped study network, not observed counts.</p>
+<h2 id="larger-fixed-demand-fw-calculations">Larger fixed-demand FW calculations</h2>
+<p>The 2,000 selection generated 12,000 planned-service cost rows. Its 500 overlapping OD were copied only after the preceding panel and skim hashes passed; the remaining OD were routed against the same source road, walk and service files. The original time-capped attempt completed 162 of 176 origin chunks, and the authorized continuation finished the remaining 14. The two routing-source wall times were 5,231.047 and 279.522 seconds. These are separate attempts, not a single uninterrupted wall measurement.</p>
+<p>The all-interzonal selection generated 184,740 cost rows, reusing the verified 2,000 OD and calculating the other 28,790. A destination-independent scheduled-label scan was shared within each origin and departure; the original stop-state and terminal itinerary statements match by AST, and eight synthetic route cases returned identical full outputs. The all-tier skim took 776.937 source seconds. The faster calculation is not a speedup estimate because these stages have different OD and cache scopes.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Fixed-demand tier</th>
+<th style="text-align:right">Selected person trips</th>
+<th style="text-align:right">Evaluated person trips</th>
+<th style="text-align:right">Unknown person trips</th>
+<th style="text-align:right">Loaded vehicle/PCE trips</th>
+<th style="text-align:right">Final node OD</th>
+<th style="text-align:right">Distinct physical endpoints</th>
+<th style="text-align:right">FW objective, PCE-min</th>
+<th style="text-align:right">Signed full gap</th>
+<th style="text-align:right">Positive links / 5,091</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>500</td>
+<td style="text-align:right">2,643.767</td>
+<td style="text-align:right">2,413.603</td>
+<td style="text-align:right">230.163</td>
+<td style="text-align:right">1,936.238</td>
+<td style="text-align:right">453</td>
+<td style="text-align:right">131</td>
+<td style="text-align:right">7,922.083942</td>
+<td style="text-align:right">−4.59e−16</td>
+<td style="text-align:right">1,653</td>
+</tr>
+<tr>
+<td>2,000</td>
+<td style="text-align:right">8,415.295</td>
+<td style="text-align:right">7,248.674</td>
+<td style="text-align:right">1,166.621</td>
+<td style="text-align:right">5,815.569</td>
+<td style="text-align:right">1,684</td>
+<td style="text-align:right">132</td>
+<td style="text-align:right">24,238.470872</td>
+<td style="text-align:right">5.60e−6</td>
+<td style="text-align:right">1,784</td>
+</tr>
+<tr>
+<td>All 30,790 interzonal</td>
+<td style="text-align:right">22,633.470</td>
+<td style="text-align:right">20,231.449</td>
+<td style="text-align:right">2,402.021</td>
+<td style="text-align:right">16,259.122</td>
+<td style="text-align:right">17,522</td>
+<td style="text-align:right">133</td>
+<td style="text-align:right">73,552.277556</td>
+<td style="text-align:right">6.81e−6</td>
+<td style="text-align:right">2,147</td>
+</tr>
+</tbody>
+</table></div>
+<p>All three independent FW checks found zero per-OD demand residual and no negative raw flow. The 2,000 result has zero link reconstruction error; all-interzonal link error is 2.84e−14 PCE. The all-tier FW made one line-search step (step length 1) after its free-flow seed, then met the prospective 1e−5 full-gap gate. These results increase modeled OD and physical-link coverage on the same 5,091-link clipped network; they do not establish citywide traffic coverage. Source origins and destinations each number 176 at every tier, while eligible physical endpoints expand from 131 to 133 between the new tiers.</p>
+<p><img alt="2,000 selected-zone HBW-midday FW road flow" src="assets/boston/scalable_tool_r1/fw_2000_flow.png"/></p>
+<p><img alt="All interzonal HBW-midday FW road flow" src="assets/boston/scalable_tool_r1/fw_all_flow.png"/></p>
+<p><img alt="All interzonal selected-source-zone production and attraction" src="assets/boston/scalable_tool_r1/source_zone_all_coverage.png"/></p>
+<p>Each tier's road colorbar is scaled to that tier's maximum modeled link flow, so compare numeric legend values rather than equal colors across tiers. All 5,091 physical links remain in every plotted table, including exact zeros; the colored cutoff is greater than 1e−6 PCE.</p>
+<h2 id="method-and-resource-status">Method and resource status</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Instance</th>
+<th>FW</th>
+<th>Finite full path</th>
+<th>Native Diagnostic L3, 25%</th>
+<th>Native Diagnostic L3, 50%</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>New 500-source-zone selection</td>
+<td><strong>Accepted</strong>, 453 loaded node OD</td>
+<td><code>RESOURCE_LIMIT</code> before solve</td>
+<td><code>RESOURCE_LIMIT</code> before basis/solve</td>
+<td><code>RESOURCE_LIMIT</code> before basis/solve</td>
+</tr>
+<tr>
+<td>New 2,000-source-zone selection</td>
+<td><strong>Accepted</strong>, 1,684 loaded node OD</td>
+<td><code>RESOURCE_LIMIT</code> after valid K=5 pool, before solve</td>
+<td><code>RESOURCE_LIMIT</code> before basis/solve</td>
+<td><code>RESOURCE_LIMIT</code> before basis/solve</td>
+</tr>
+<tr>
+<td>All 30,790 interzonal pairs</td>
+<td><strong>Accepted</strong>, 17,522 loaded node OD</td>
+<td><code>RESOURCE_LIMIT</code> at path-pool preparation gate</td>
+<td><code>RESOURCE_LIMIT</code> at path-pool preparation gate</td>
+<td><code>RESOURCE_LIMIT</code> at path-pool preparation gate</td>
+</tr>
+<tr>
+<td>New two-OD generic fixture</td>
+<td><strong>Accepted</strong></td>
+<td><strong>Accepted</strong></td>
+<td><strong>Accepted</strong> at actual rank 1</td>
+<td>Not requested</td>
+</tr>
+</tbody>
+</table></div>
+<p>An accepted generic fixture demonstrates tool execution and numerical checking on changed inputs. It does not upgrade the expanded Boston native cells to accepted status.</p>
+<p>The 500 instance has a new loopless K=5 path pool of 2,261 paths (453 OD, 1,808 nonseed/minor paths, 62,400 nonzero link-path incidences). Pool construction took 34.148 s. This pool is input-signature checked and shared by the expanded finite-path and native L3 attempts. The finite full-path SLSQP estimate was 707,637,600 bytes; the measured half-free-memory ceiling at that invocation was 307,646,464 bytes. It stopped at <code>RESOURCE_LIMIT</code> before optimization. Both requested native rank fractions were attempted against the same pool; basis construction estimated 909,785,600 bytes and exceeded the measured ceilings of 427,237,376 and 214,028,288 bytes. No 500-level L3 optimum or accepted rank is claimed.</p>
+<p>For the 2,000 tier a separate K=5 pool was actually built and independently checked: <strong>8,412 paths</strong>, 1,684 OD, 6,728 minor paths and 223,685 nonzero physical link-path incidences. Construction took 130.176 source seconds (135.557 monitored wall seconds) with an 80.237 MB sampled process-tree working-set peak. The prospective finite full-path workspace is 9,787,143,264 bytes and the weighted basis workspace is 3,650,343,680 bytes, both above the 286,369,792-byte measured half-free-memory ceiling at their gate. Those 2,000 methods were therefore not invoked. For all 30,790 source pairs, a conservative preparation projection from the observed 500 path-pool peak was 5,379,431,308 bytes, above the 1,344,948,224-byte half-free ceiling measured before that gate; no all-tier path pool or compression basis was allocated. These are resource-gated statuses, not failed numerical iterates or a claim that an adequately resourced machine could not solve them.</p>
+<p>Separately, the <strong>new-input generic person/vehicle fixture</strong> generated four paths over two OD and five physical links. Finite full-path SLSQP and native Diagnostic L3 rank 1 were actually invoked. The native Pyomo/IPOPT implementation used the accepted isolated Diagnostic L3 source, heterogeneous BPR potential, gamma 0, legal zero link bounds, nonnegative reconstructed minor paths and the source ALM update convention. IPOPT reported optimal subproblems in three outer iterations; the independent original-space check accepted outer 3 with maximum OD residual 9.596e−11, maximum link reconstruction error 1.78e−15, objective 30.28438606667062 and full relative gap 2.257e−12. This demonstrates new-dimension execution, not expanded-Boston compression performance.</p>
+<p>For that native fixture, two seed-major and two minor paths yielded rank 1, three path coordinates, five explicit link variables, <strong>eight total NLP variables and seven constraints</strong> (five link equalities and two minor-flow inequalities). The accepted state is essentially a one-path-per-OD example; it is a correctness check, not evidence of compression on a hard route-splitting instance. The expanded 500 FW output also has one positive seed path per loaded OD. A nominal 25%/50% expanded rank was never materialized after its memory gate, so no effective basis rank or expanded minor activity is claimed.</p>
+<p>Detailed stage times, memory samples, the retained first 2,000-tier partial skim attempt and the method gates are recorded in the delivery <code>SCALE_RESULTS.csv</code>, <code>RESOURCE_REPORT.md</code> and private run ledger. The FW tier is solved even where a later finite-path method is resource-gated. Sampled process-tree memory can miss short peaks. No speedup statistic is inferred from these one-off runs.</p>
+<h2 id="numerical-and-interpretation-limits">Numerical and interpretation limits</h2>
+<p>The prospective numerical gates were frozen before the expanded solves: per-OD absolute residual at most <code>1e-6 + 1e-8 max(1,q)</code>, relative total OD L1 at most <code>1e-8</code>, full-network relative gap magnitude at most <code>1e-5</code>, raw negative-flow tolerance <code>1e-8</code>, and link reconstruction tolerance <code>1e-7</code>. Solver termination alone is never an acceptance check. A finite path pool can have a small within-pool gap while failing the full-network gate. Accepted results are checked numerical approximations under fixed demand, not exact equilibria or empirically validated forecasts.</p>
+<p>The assignment excludes regional background traffic, turn-state constraints, transit vehicles, endogenous mode/departure feedback and observations. The conditional choice parameters were transferred and fixed; unknown four-mode inputs were retained as unknown. GMNS Plus H3 zone, centroid and nonphysical connector objects are distinct from physical roads. Source-to-solver flow correspondence is by physical <code>link_id</code> and the declared access crosswalk, not by connector flow or GPS point count.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

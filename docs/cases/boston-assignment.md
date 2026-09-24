@@ -4,6 +4,18 @@ The frozen **ABS_PLANNED** conditional panel is one 5,091-physical-link, 26-endp
 
 [Boston case](boston.md) · [Four-stage and GPS example](../datasets/boston-behavior-feedback.md) · [GMNS exchange and ID relationships](../datasets/boston-gmns-exchange.md) · [Saved files](../../examples/boston/assignment_methods_r1/README.md)
 
+## Primary scale result versus controlled method comparison
+
+The expanded conditional FW runs now provide the primary Boston road-coverage example: 453 / 1,684 / 17,522 loaded node ODs. [Scale results and input scope](../BOSTON_SCALE_RESULTS.md). **There is no accepted expanded full-path or L3 solution:** do not substitute the 26-OD maps below for those tiers.
+
+<a id="comparison-board"></a>
+## Controlled comparison board
+
+![Same-instance FW and native rank-26/52 absolute maps, followed by signed difference maps and numerical interpretation](../assets/presentation_r3/boston_method_comparison.png)
+
+The figure groups the five original maps rather than stacking them. [FW original](../assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.png) · [rank26 original](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png) · [rank52 original](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_flow.png) · [rank26 difference](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_minus_fw.png) · [rank52 difference](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_minus_fw.png).
+
+
 ## Same-instance saved result
 
 | Method / selected run | Path representation | Original Beckmann F (vehicle-minutes) | Max OD residual (trips) | Signed full-network gap | Full-network relative gap |
@@ -19,19 +31,9 @@ These native points pass the recorded numerical tolerances but are **not exact f
 
 The three absolute maps share one EPSG:4326 source geometry, local map projection, extent, background, PowerNorm colour scale and line-width rule. Modelled vehicle trips are the unit. Directed links are drawn with a **3 m right-of-travel display offset** so reciprocal arcs can be distinguished; source WKT and all numerical joins remain unaltered. Gray shows all 5,091 physical road links, including zero-flow links. Coloured absolute flow is drawn only above **1e-6** trips; omitted coloured-row counts are in the figure manifest, while every link stays in the full-precision CSV. A common scale means the three maps can legitimately look visually indistinguishable.
 
-![Boston ABS_PLANNED saved FW physical-link vehicle flow](../assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.png)
-
-![Boston ABS_PLANNED native L3 rank-26 accepted outer-02 physical-link vehicle flow](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png)
-
-![Boston ABS_PLANNED native L3 rank-52 accepted outer-02 physical-link vehicle flow](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_flow.png)
-
 ## Signed native-minus-FW differences
 
 Both maps use the same zero-centred symmetric scale. The maximum absolute link differences are **5.888579437396402e-6** (rank 26) and **5.88828736169944e-6** (rank 52) modelled vehicle trips. Full-path versus FW differs by at most **1.4210854715202004e-14**. The difference figures show micro-scale numerical variation; they are not service changes, observed traffic, or a congestion benefit. Values with `|Δ| ≤ 1e-12` are omitted from the coloured overlay but remain in the full-precision table.
-
-![Boston native L3 rank 26 minus FW signed physical-link flow](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_minus_fw.png)
-
-![Boston native L3 rank 52 minus FW signed physical-link flow](../assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_minus_fw.png)
 
 [All 5,091 linked rows with original WKT and full-precision FW/full/rank values](../assets/boston/assignment_methods_r1/boston_abs_planned_assignment_links.csv) · [Figure member hashes, fields, extents, scale and credits](../assets/boston/assignment_methods_r1/BOSTON_ASSIGNMENT_FIGURE_SOURCES.json) · [No-solve renderer](../../tools/visuals/render_boston_assignment.py)
 
