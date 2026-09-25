@@ -16,10 +16,10 @@ Artificial flow is not measured unserved passengers, an observed queue or a road
 
 ## Phase II: optimize real path cost
 
-Once the recorded real-path initialization is feasible, the cost restricted master and pricing loop continue on the declared time network. The project can compare the final objective with a same-instance arc-flow LP. A finite candidate cap, partial oracle or reference-objective stopping condition must not be relabeled exhaustive reduced-cost closure. The saved 200/250-OD runs explicitly do not claim global convergence.
+Once the recorded real-path initialization is feasible, the cost restricted master and pricing loop continue on the declared time network. The project can compare the final objective with a same-instance arc-flow LP. A finite candidate cap, partial oracle or reference-objective stopping condition must not be relabeled exhaustive reduced-cost closure. The saved Sioux Falls 200/250-OD runs match their own same-subset arc-flow references but do **not** establish independent full-DAG pricing closure. The bounded Boston pilot adds a separate R4 continuation that checks the complete finite DAG for every demand at the declared tolerance.
 
 ## Inspect the actual example
 
-[Sioux Falls construction and mechanism](../cases/sioux-space-time.md) provides actual IDs, phase traces, reference agreement and boundaries. [Current CG source](../../app/src/gmns_dynamic/run_full_cg_v1.py) implements the orchestration; the external-network and conversion modules govern which graph is actually available.
+[Boston's bounded real-city pilot](../cases/boston-space-time.md) and [Sioux Falls construction and mechanism](../cases/sioux-space-time.md) provide actual IDs, phase traces, reference agreement and boundaries. [Current CG source](../../app/src/gmns_dynamic/run_full_cg_v1.py) implements the orchestration; the external-network and conversion modules govern which graph is actually available.
 
-Boston's static expansion does not implicitly execute this branch. A Boston CG experiment would separately need a time/horizon/capacity model, demand support and resource plan. There is no case-specific Boston CG execution in the supplied release evidence.
+The executed cases are intentionally different. Boston is one 90-node / 125-link / 10-OD real-city subnetwork with 3-second steps and independent full-DAG pricing closure. Sioux Falls contains separate historical 200-OD and 250-OD selected subsets whose final objectives match their own same-subset arc-flow references; independent pricing closure is not imputed to them. Neither result is a citywide DTA claim, and neither objective is directly comparable with static BPR/Beckmann FW.

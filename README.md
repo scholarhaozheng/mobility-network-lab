@@ -2,11 +2,13 @@
 
 # Mobility Computation Lab
 
-**An open-source computational framework for GMNS networks, demand, observation linkage and traffic assignment.**
+**An open-source computational framework for GMNS city models, four-stage demand, static assignment, and finite space–time column generation.**
 
 The reusable objects come first; cities are instances. Networks, zones and explicit units enter shared interfaces. Users can start with supplied vehicle OD, or prepare vehicle demand from a supported person-demand and choice specification. Static assignment and finite space–time column generation are **different model branches**, not interchangeable algorithms for one universal problem.
 
-<p align="center"><a href="#framework">Framework</a> · <a href="#coverage">Case coverage</a> · <a href="#boston">Case 01 · Boston</a> · <a href="#sioux-falls">Case 02 · Sioux Falls</a> · <a href="#run-your-input">Run new inputs</a> · <a href="#mobility-data-support">Open data & tools</a></p>
+> **Executed CG evidence is part of the public release—not only a roadmap.** Boston has one accepted bounded real-city pilot that clears Phase I, reaches the identical-graph arc-flow LP objective, and is independently full-DAG pricing-closed for 10/10 demands. Sioux Falls retains separate 200-OD and 250-OD historical CG runs that clear Phase I and match their own same-subset references; independent pricing closure is not claimed for those historical runs.
+
+<p align="center"><a href="#framework">Framework</a> · <a href="#cg-experiments">Executed CG experiments</a> · <a href="#coverage">Case coverage</a> · <a href="#boston">Case 01 · Boston</a> · <a href="#sioux-falls">Case 02 · Sioux Falls</a> · <a href="#run-your-input">Run new inputs</a> · <a href="#mobility-data-support">Open data & tools</a></p>
 
 <a id="framework"></a>
 ## 01 / The shared framework
@@ -62,6 +64,23 @@ A physical node is replicated as `(node, time)`. A movement connects departure t
 
 [Construction and master/pricing guide](docs/methods/space-time-cg.md). Both cases now have source-grounded local time-network, clearance and capacity-exchange figures: [Boston's single bounded 10-OD pilot](docs/cases/boston-space-time.md) and the distinct [Sioux Falls 200/250-OD selected subsets](docs/cases/sioux-space-time.md). Boston has independent full-DAG pricing closure; that certificate is **not** imputed to Sioux Falls.
 
+<a id="cg-experiments"></a>
+## Executed finite space–time CG experiments
+
+The repository contains **two distinct executed CG evidence families**. Boston is one bounded real-city pilot on an accepted GMNS subnetwork. Sioux Falls contains two historical selected-OD benchmark instances. They share the same method family, but not the same graph, demand, objective value, scale, or certificate status.
+
+<p align="center"><a href="docs/methods/space-time-cg.md"><img src="docs/assets/presentation_r4/cg_experiments_overview.png" width="100%" alt="Executed finite space-time column generation overview: one bounded Boston pilot and two historical Sioux Falls selected-OD runs, with Phase-I, Phase-II, reference and pricing-closure scope shown separately."></a></p>
+
+| Executed evidence | Boston | Sioux Falls |
+|---|---|---|
+| **Instance** | One bounded real-city pilot: 90 physical nodes, 125 directed links, 10 ODs, 3-second steps, 100-step horizon | Two historical selected-OD subsets: 200 ODs and 250 ODs |
+| **Phase I** | Artificial flow **20.5536128974 → 0** in round **90** | Artificial flow reaches zero in rounds **51 / 62** |
+| **Phase II** | Objective **64.39686151152954**, matching the identical-graph arc-flow LP | Objectives **943,155.589771 / 1,521,090.836620**, each matching its own same-subset arc-flow reference |
+| **Pricing certificate** | Independent full-DAG closure passes **10/10 demands** at `1e-6` | Independent full-DAG closure **not established** for the saved historical runs |
+| **Open the evidence** | [Boston CG case and full figure family](docs/cases/boston-space-time.md) | [Sioux Falls CG case](docs/cases/sioux-space-time.md) · [200 OD](docs/datasets/sioux-200od.md) · [250 OD](docs/datasets/sioux-250od.md) |
+
+*These are saved-result visualizations. Boston is not citywide CG; Sioux Falls is not a modern real-city demand model. The fixed-cost hard-capacity CG objectives are not directly comparable with static BPR/Beckmann FW.* [Composite-source manifest](docs/assets/presentation_r4/CG_EXPERIMENTS_OVERVIEW_SOURCES.json).
+
 <a id="coverage"></a>
 ## 02 / What each case demonstrates
 
@@ -95,16 +114,9 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 | **Semantic service-feedback baseline** | 36 selected zone ODs × three departures; regional baseline shares; about 202.078 / 202.071 assigned vehicle trips | An absolute-cost baseline-choice model or the expanded all-OD run |
 | **Conditional ABS_PLANNED control** | 26 road-node ODs, 203.660479 vehicles, frozen 130-path comparison; FW and accepted native ranks 26/52 | Expanded L3 performance |
 | **Scalable conditional planned service** | 500 / 2,000 / all 30,790 interzonal source ODs; new absolute attributes and eligible demand | All real Boston traffic or independent behavioral validation |
+| **Bounded finite space–time CG pilot** | 90 nodes / 125 links / 10 ODs; Phase I + Phase II + independent full-DAG pricing closure | Citywide Boston CG, static BPR/Beckmann assignment, or a second Boston scale |
 
 [Complete Boston case](docs/cases/boston.md) · [Static assignment branches](docs/cases/boston-assignment.md) · [Bounded space–time CG result](docs/cases/boston-space-time.md).
-
-### Boston / finite space–time CG on one bounded pilot
-
-This is **one** accepted 90-physical-node, 125-directed-link, 10-OD time-expanded instance (3-second steps; 100-step horizon), not the 5,091-link static Boston assignment or a second Boston scale. The fixed-cost hard-capacity objective is distinct from FW/Beckmann. Saved Phase I removes **20.5536128974** artificial-flow units by round **90**; Phase II reaches **64.39686151152952** in **15** rounds, agreeing with the identical-graph arc-flow LP. R4 then adds **15 zero-final-flow certificate columns** across five degenerate continuation rounds (pool **152 → 167**) and independently checks the full DAG: **B01–B10 all pass at 1e−6**. Physical-link flows remain unchanged from R3 within numerical precision; the second-machine receiver check is pending.
-
-<p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png" width="100%" alt="Composed four-panel summary of the one bounded Boston CG pilot: 52 positive-flow road links, Phase-I clearance at round 90, Phase-II objective matching its arc-flow reference, and 10-of-10 full-DAG pricing closure."></a></p>
-
-The [detailed Boston CG page](docs/cases/boston-space-time.md) pairs the physical map with the actual B07 time-network cutaway, Phase-I total and OD-level traces, a recorded B10→B09 binding-arc exchange, Phase-II commits, final validation and R4 closure evidence. Each figure has PNG, editable SVG, plot input and hashed provenance. These are saved-result visualizations only; no model was rerun for this public update.
 
 <p align="center"><img src="docs/assets/boston/visual_release_r1/mcl_boston_hero.png" width="100%" alt="Dark navy Mobility Computation Lab cover with real Central Boston street and zone geometry on the right."></p>
 <p align="center"><small>Central Boston road geometry: GMNS Plus 21_Boston (Apache-2.0), commit 116447ab641cca1ed34797d019c8e704063393c3; H3 zones and cover composition: Mobility Computation Lab. Geography only—not measured or modeled traffic.</small></p>
@@ -274,13 +286,21 @@ python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-o
 
 These commands inspect saved points; they do not solve, build paths, refit demand or match new GPS data.
 
+### Boston / Bounded finite space–time CG
+
+This is **one** accepted 90-physical-node, 125-directed-link, 10-OD time-expanded instance (3-second steps; 100-step horizon), not the 5,091-link static Boston assignment or a second Boston scale. The fixed-cost hard-capacity objective is distinct from FW/Beckmann. Saved Phase I removes **20.5536128974** artificial-flow units by round **90**; Phase II reaches **64.39686151152952** in **15** rounds, agreeing with the identical-graph arc-flow LP. R4 then adds **15 zero-final-flow certificate columns** across five degenerate continuation rounds (pool **152 → 167**) and independently checks the full DAG: **B01–B10 all pass at 1e−6**. Physical-link flows remain unchanged from R3 within numerical precision; the second-machine receiver check is pending.
+
+<p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png" width="100%" alt="Composed four-panel summary of the one bounded Boston CG pilot: 52 positive-flow road links, Phase-I clearance at round 90, Phase-II objective matching its arc-flow reference, and 10-of-10 full-DAG pricing closure."></a></p>
+
+The [detailed Boston CG page](docs/cases/boston-space-time.md) pairs the physical map with the actual B07 time-network cutaway, Phase-I total and OD-level traces, a recorded B10→B09 binding-arc exchange, Phase-II commits, final validation and R4 closure evidence. Each figure has PNG, editable SVG, plot input and hashed provenance. These are saved-result visualizations only; no model was rerun for this public update.
+
 <a id="sioux-falls"></a>
 ## 04 / Case study — Sioux Falls
 
 **What this case demonstrates.** A classic supplied-demand benchmark with static FW and native L3 research, plus distinct 200/250-OD finite space–time CG instances. **Not modeled here:** real-city trip generation, destination/mode estimation or GPS service feedback. The benchmark does not become a modern city dataset because it shares the framework.
 
 <a id="sioux-falls-benchmark-series"></a>
-### Sioux Falls / Static methods and retained benchmarks
+### Sioux Falls / Static methods and retained numerical candidates
 
 The [Sioux Falls case](docs/cases/sioux-falls.md) also has actual static assignment work. Its historical [FW result](docs/datasets/sioux-static-fw.md) has Beckmann F **4,236,715.140437842**, but the retained runtime OD identity is insufficient to declare it a same-input reference for the native profile. The corrected [native Diagnostic L3 implementation](algorithms/path_compression/diagnostic_l3/README.md) has accepted **outer-04** points on the frozen 76-link, 528-positive-OD, 2,218-path static instance (rank 50; 585 reduced path coordinates; 661 total native variables):
 
@@ -289,9 +309,11 @@ The [Sioux Falls case](docs/cases/sioux-falls.md) also has actual static assignm
 | [A_REG001 · gamma=0.01](examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json) | 4,325,864.946597109 | 5.548833712509804e-7 | **8.167461%** |
 | [B_BECKMANN · gamma=0](examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json) | 4,289,674.484214505 | 6.957361051718181e-7 | **4.381867%** |
 
-Both pass recorded numerical feasibility, but neither has a full-network UE certificate or new empirical validation. A is regularized and B is not. The separate 200OD/250OD figures below are **historical finite time-expanded CG**, not native-L3 runs or present-day city observations. Sioux demand is exogenous; no real-city GPS/GTFS or Boston-style four-stage estimation was added.
+Both pass recorded numerical feasibility, but neither has a full-network UE certificate or new empirical validation. A is regularized and B is not. Sioux demand is exogenous; no real-city GPS/GTFS or Boston-style four-stage estimation was added.
 
-Explore the actual saved results before running an example. The two panels below are **different selected-OD benchmark instances**, not a comparison of algorithms on the same demand.
+### Sioux Falls / Historical 200/250-OD finite space–time CG
+
+The figures below are **historical finite time-expanded CG**, not native-L3 runs or present-day city observations. Explore the actual saved results before running an example. The two panels below are **different selected-OD benchmark instances**, not a comparison of algorithms on the same demand.
 
 <table>
 <tr>
