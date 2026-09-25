@@ -1,10 +1,10 @@
 # Boston case · GMNS, four stages, GPS and assignment methods
 
-Boston is the real-city instance of the shared framework. Its separate public branches are (1) the accepted semantic S1/S2 service-feedback example, and (2) the conditional absolute-attribute ABS_PLANNED / ABS_OBS_EXPLORATORY sensitivity, including the fixed ABS_PLANNED FW/full-path/native-L3 comparison. They share the physical network but **not** the same demand identity. [Start at the project homepage](../index.md).
+Boston is the real-city instance of the shared framework. Its separate public branches are (1) the accepted semantic S1/S2 service-feedback example, (2) the conditional absolute-attribute ABS_PLANNED / ABS_OBS_EXPLORATORY sensitivity and fixed ABS_PLANNED FW/full-path/native-L3 comparison, and (3) one **bounded 90-node/125-link/10-OD finite space–time CG pilot**. These branches use related Boston source geography but **not** the same demand identity or optimization objective. [Start at the project homepage](../index.md).
 
 ## What this case now demonstrates
 
-GMNS exchanges and layer relationships; the retained four-stage/GPS service-feedback chain; fixed conditional absolute choice; controlled FW/full-path/native-L3 comparisons; and new-input FW on 500, 2,000 and all 30,790 source-zone OD tiers. **No Boston CG case result is included.**
+GMNS exchanges and layer relationships; the retained four-stage/GPS service-feedback chain; fixed conditional absolute choice; controlled FW/full-path/native-L3 comparisons; new-input FW on 500, 2,000 and all 30,790 source-zone OD tiers; and an **accepted bounded finite space–time CG pilot**, independently full-DAG pricing-closed for its ten demands. This is not citywide CG and the second-machine receiver check is pending. [CG figures and complete numerical checks](boston-space-time.md).
 
 The largest accepted FW calculation has 17,522 loaded node OD, 16,259.122 PCE trips, 133 endpoints and 2,147 positive links. Expanded full-path/L3 were resource-gated; the accepted rank-26/52 control is still the separate 26-OD instance. [Full scale and resource details](../BOSTON_SCALE_RESULTS.md).
 
@@ -47,6 +47,8 @@ The semantic S1/S2 panel uses the existing static FW solver at about **202.07838
 
 On the exact ABS_PLANNED network/demand/BPR/pool instance, the [static assignment comparison](boston-assignment.md) exposes actual FW source/result, the solved **130-path uncompressed reference**, and both accepted native Diagnostic L3 **rank 26 and rank 52 outer-02** path/OD/link results. Five same-instance physical-link maps and a full-precision join table are included there and shown on both project homepages. Native results pass recorded numerical tolerances but are not exact feasible equilibria or an acceleration claim.
 
+The distinct [finite space–time CG pilot](boston-space-time.md) uses a fixed-cost hard-capacity LP on 90 physical nodes, 125 directed links and 10 ODs. Its Phase I reaches zero artificial flow at round 90; Phase II matches its identical-graph arc-flow reference, and R4 independently finds no improving ungenerated path below −1e−6 for any demand. The R4 certificate adds 15 zero-final-flow columns and does not change the saved physical-link projection. Do not compare its objective to static FW/Beckmann values.
+
 ## Observations & Feedback
 
 The GMNS route-60 figure shows the same saved 12 source positions before and after path association, with 26 ordered physical-link occurrences and a separate S1 road-result lookup. It is **not** the route-749 numeric event. In the separate service-feedback trace, route 749 direction 1 stop pair 1788 → 5093 has **86 s sample-derived versus 180 s planned**; the declared exploratory input changes itinerary time, mode response, vehicle demand and FW link flows. All 13 interval adjustments are off by default; no independent AM forecast validation is claimed. [Follow the saved trace](../../examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md).
@@ -56,6 +58,7 @@ The GMNS route-60 figure shows the same saved 12 source positions before and aft
 - [Semantic four-stage/GPS saved example](../../examples/boston/SAVED_EXAMPLE.md), including a read-only query database.
 - [Conditional probabilities, source scope and ABS_OBS FW result](../../examples/boston/conditional_choice_r1/README.md).
 - [FW / finite-path / native-L3 same-instance comparison, figures and limits](boston-assignment.md).
+- [Bounded finite space–time CG, all figure families, public plot inputs and R4 closure](boston-space-time.md).
 - [Shared method implementation and optional native reproduction boundary](../../algorithms/path_compression/diagnostic_l3/README.md).
 
 ```bash

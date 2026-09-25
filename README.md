@@ -60,7 +60,7 @@ Compression changes a representation and requires a checked reconstruction. It i
 
 A physical node is replicated as `(node, time)`. A movement connects departure to a later arrival state; waiting stays at the same physical node while advancing time; demand-specific source/sink connections attach departure and arrival support. A path through that network becomes a column in the restricted master. Phase I reduces artificial demand; Phase II optimizes real path cost, with candidate paths supplied by pricing. The same-instance arc-flow LP is a reference, not another city or the static FW objective.
 
-[Construction and master/pricing guide](docs/methods/space-time-cg.md). The detailed **Sioux Falls** section shows an actual local time-network slice, selected column and shared-capacity event. Boston has no supplied case-specific CG run; this is visible in the matrix rather than hidden or filled with invented results.
+[Construction and master/pricing guide](docs/methods/space-time-cg.md). Both cases now have source-grounded local time-network, clearance and capacity-exchange figures: [Boston's single bounded 10-OD pilot](docs/cases/boston-space-time.md) and the distinct [Sioux Falls 200/250-OD selected subsets](docs/cases/sioux-space-time.md). Boston has independent full-DAG pricing closure; that certificate is **not** imputed to Sioux Falls.
 
 <a id="coverage"></a>
 ## 02 / What each case demonstrates
@@ -78,17 +78,17 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 | Static Frank–Wolfe | **Demonstrated:** small controls and three expanded tiers, up to 17,522 loaded node ODs | **Demonstrated:** historical static benchmark; input-identity caveat retained |
 | Finite full-path reference | **Solved:** 26-OD / 130-path control; **resource-gated** at expanded tiers | Used within the method/source framework; no equivalent solved full-path reference claimed by these supplied records |
 | Native Diagnostic L3 / compression | **Accepted numerical controls:** ranks 26/52; new-input fixture; **not solved at expanded tiers** | **Executed numerical candidates:** rank 50; full-network gaps remain 8.17% / 4.38%, not exact UE |
-| Space–time network construction | **No Boston run supplied**; reusable code availability is not case execution | **Demonstrated:** finite time-expanded selected-OD instances |
-| Phase I / Phase II / pricing | **No Boston CG result supplied** | **Historical runs:** 200 / 250 OD, objective-level arc-LP agreement |
+| Space–time network construction | **Demonstrated, bounded pilot:** 90 nodes / 125 directed links / 10 ODs, 3-second steps and 100-step horizon | **Demonstrated:** finite time-expanded 200 / 250-OD selected subsets |
+| Phase I / Phase II / pricing | **Accepted bounded pilot:** reference-optimal and independently full-DAG pricing-closed (10/10, tolerance 1e−6); second-machine check pending | **Historical 200 / 250 OD:** feasible and same-subset arc-LP objective matched; independent pricing closure **not established** |
 | New-input preparation and solving | **Generic vehicle/person routes implemented**, with declared profiles and optional dependencies | Existing benchmark and external-network interfaces; case-specific scope is explicit |
-| Saved checks and visualization | Tables, GMNS tracing, figures, original-space checks | Static checks, space–time traces, phase and capacity evidence |
+| Saved checks and visualization | Tables, GMNS tracing, static original-space checks, and full bounded CG figure family with R4 closure | Static checks, space–time traces, phase and capacity evidence |
 
 [Capability definitions and evidence pointers](docs/capabilities.md). Both cases include assignment research; Boston is not only a data/GPS example and Sioux Falls is not the exclusive home of compression.
 
 <a id="boston"></a>
 ## 03 / Case study — Boston
 
-**What this case demonstrates.** Real-city GMNS object relationships; household/activity-based generation; modeled OD distribution; limited mode-choice branches; exploratory GPS/service linkage; new-input static computation; and FW at increasing demand coverage. It also retains a small **FW / full-path / native L3** control. **Not demonstrated here:** a Boston space–time CG run, full-city empirically calibrated demand, or independent AM accuracy.
+**What this case demonstrates.** Real-city GMNS object relationships; household/activity-based generation; modeled OD distribution; limited mode-choice branches; exploratory GPS/service linkage; new-input static computation; and FW at increasing demand coverage. It also retains a small **FW / full-path / native L3** control and a **separate bounded, independently pricing-closed finite space–time CG pilot**. **Not demonstrated here:** citywide CG, full-city empirically calibrated demand, or independent AM accuracy.
 
 | Boston branch | Scope and purpose | Keep it distinct from |
 |---|---|---|
@@ -96,7 +96,15 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 | **Conditional ABS_PLANNED control** | 26 road-node ODs, 203.660479 vehicles, frozen 130-path comparison; FW and accepted native ranks 26/52 | Expanded L3 performance |
 | **Scalable conditional planned service** | 500 / 2,000 / all 30,790 interzonal source ODs; new absolute attributes and eligible demand | All real Boston traffic or independent behavioral validation |
 
-[Complete Boston case](docs/cases/boston.md) · [Assignment branches and original result files](docs/cases/boston-assignment.md).
+[Complete Boston case](docs/cases/boston.md) · [Static assignment branches](docs/cases/boston-assignment.md) · [Bounded space–time CG result](docs/cases/boston-space-time.md).
+
+### Boston / finite space–time CG on one bounded pilot
+
+This is **one** accepted 90-physical-node, 125-directed-link, 10-OD time-expanded instance (3-second steps; 100-step horizon), not the 5,091-link static Boston assignment or a second Boston scale. The fixed-cost hard-capacity objective is distinct from FW/Beckmann. Saved Phase I removes **20.5536128974** artificial-flow units by round **90**; Phase II reaches **64.39686151152952** in **15** rounds, agreeing with the identical-graph arc-flow LP. R4 then adds **15 zero-final-flow certificate columns** across five degenerate continuation rounds (pool **152 → 167**) and independently checks the full DAG: **B01–B10 all pass at 1e−6**. Physical-link flows remain unchanged from R3 within numerical precision; the second-machine receiver check is pending.
+
+<p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png" width="100%" alt="Composed four-panel summary of the one bounded Boston CG pilot: 52 positive-flow road links, Phase-I clearance at round 90, Phase-II objective matching its arc-flow reference, and 10-of-10 full-DAG pricing closure."></a></p>
+
+The [detailed Boston CG page](docs/cases/boston-space-time.md) pairs the physical map with the actual B07 time-network cutaway, Phase-I total and OD-level traces, a recorded B10→B09 binding-arc exchange, Phase-II commits, final validation and R4 closure evidence. Each figure has PNG, editable SVG, plot input and hashed provenance. These are saved-result visualizations only; no model was rerun for this public update.
 
 <p align="center"><img src="docs/assets/boston/visual_release_r1/mcl_boston_hero.png" width="100%" alt="Dark navy Mobility Computation Lab cover with real Central Boston street and zone geometry on the right."></p>
 <p align="center"><small>Central Boston road geometry: GMNS Plus 21_Boston (Apache-2.0), commit 116447ab641cca1ed34797d019c8e704063393c3; H3 zones and cover composition: Mobility Computation Lab. Geography only—not measured or modeled traffic.</small></p>

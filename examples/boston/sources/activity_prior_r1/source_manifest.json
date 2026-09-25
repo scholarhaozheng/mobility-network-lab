@@ -1,0 +1,509 @@
+{
+  "run_id": "boston_activity_prior_r1_20260922",
+  "source_id": "massgis_property_tax_parcels_feature_service_20260917",
+  "provider": "Commonwealth of Massachusetts Bureau of Geographic Information (MassGIS)",
+  "official_landing_page": "https://www.mass.gov/info-details/massgis-data-property-tax-parcels",
+  "official_service_url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+  "service_item_id": "73d4c766167848b795f1048cad3919c7",
+  "downloaded_at_utc": "2026-09-22T08:35:39.903927+00:00",
+  "source_data_last_edit_epoch_ms": 1789655096278,
+  "source_schema_last_edit_epoch_ms": 1789655096278,
+  "service_crs": {
+    "wkid": 102100,
+    "latestWkid": 3857
+  },
+  "requested_output_crs": "EPSG:4326",
+  "study_bbox_wgs84": [
+    -71.105,
+    42.335,
+    -71.045,
+    42.37
+  ],
+  "selection_rule": "Official parcel-assessment features whose geometry intersects the unchanged Central Boston core bbox; exact overlay to existing clipped H3 zones is a later derived step.",
+  "selected_fields": [
+    "OBJECTID",
+    "GlobalID",
+    "LOC_ID",
+    "MAP_PAR_ID",
+    "POLY_TYPE",
+    "TOWN_ID",
+    "PROP_ID",
+    "FY",
+    "USE_CODE",
+    "CITY",
+    "YEAR_BUILT",
+    "BLD_AREA",
+    "UNITS",
+    "RES_AREA",
+    "STORIES",
+    "USE_DESC",
+    "Shape__Area"
+  ],
+  "explicitly_not_requested": [
+    "OWNER1",
+    "OWN_ADDR",
+    "OWN_CITY",
+    "OWN_STATE",
+    "OWN_ZIP",
+    "OWN_CO",
+    "SITE_ADDR",
+    "FULL_STR",
+    "LOCATION",
+    "LS_BOOK",
+    "LS_PAGE",
+    "REG_ID"
+  ],
+  "privacy_note": "Owner, mailing, site-address and registry fields were not requested or stored.",
+  "record_count": 54411,
+  "municipality_fiscal_year_coverage": [
+    {
+      "record_count": 4,
+      "CITY": "BOSTON",
+      "FY": null
+    },
+    {
+      "record_count": 49545,
+      "CITY": "BOSTON",
+      "FY": 2023
+    },
+    {
+      "record_count": 5,
+      "CITY": "CAMBRIDGE",
+      "FY": null
+    },
+    {
+      "record_count": 4857,
+      "CITY": "CAMBRIDGE",
+      "FY": 2026
+    }
+  ],
+  "raw_file": "raw/activity/boston_activity_prior_r1_20260922/massgis_property_tax_parcels/massgis_parcel_assessment_slice.geojsonl.gz",
+  "raw_file_bytes": 6306250,
+  "raw_file_sha256": "9b9e5d3a56ec77d3e93fd37e89430de4869655735f162a5a00a354a9d8059e6b",
+  "metadata_sha256": "492c7ce90e890906d77427f5104d536fbefd356fed047de0b691b7ef231f0f01",
+  "terms_note": "Official public MassGIS feature service; downstream package retains provider attribution and does not relicense source records.",
+  "object_semantics": "Hosted layer contains stacked polygons where multiple assessor records link to one parcel. Assessment records and unique parcel geometries must be aggregated separately.",
+  "request_evidence": {
+    "metadata": [
+      {
+        "attempt": 1,
+        "status": "success",
+        "http_status": 200,
+        "bytes": 26401,
+        "seconds": 1.944
+      }
+    ],
+    "count": [
+      {
+        "attempt": 1,
+        "status": "success",
+        "http_status": 200,
+        "bytes": 15,
+        "seconds": 3.234
+      }
+    ],
+    "municipality_statistics": [
+      {
+        "attempt": 1,
+        "status": "success",
+        "http_status": 200,
+        "bytes": 877,
+        "seconds": 4.263
+      }
+    ],
+    "pages": [
+      {
+        "offset": 0,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1834526,
+            "seconds": 4.429
+          }
+        ]
+      },
+      {
+        "offset": 2000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 5168431,
+            "seconds": 6.251
+          }
+        ]
+      },
+      {
+        "offset": 4000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2574783,
+            "seconds": 15.53
+          }
+        ]
+      },
+      {
+        "offset": 6000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1513563,
+            "seconds": 6.654
+          }
+        ]
+      },
+      {
+        "offset": 8000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1562597,
+            "seconds": 10.679
+          }
+        ]
+      },
+      {
+        "offset": 10000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1708340,
+            "seconds": 4.176
+          }
+        ]
+      },
+      {
+        "offset": 12000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2785784,
+            "seconds": 5.509
+          }
+        ]
+      },
+      {
+        "offset": 14000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 3298805,
+            "seconds": 5.47
+          }
+        ]
+      },
+      {
+        "offset": 16000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1804877,
+            "seconds": 4.28
+          }
+        ]
+      },
+      {
+        "offset": 18000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2118603,
+            "seconds": 4.544
+          }
+        ]
+      },
+      {
+        "offset": 20000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1687144,
+            "seconds": 4.733
+          }
+        ]
+      },
+      {
+        "offset": 22000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1679687,
+            "seconds": 4.525
+          }
+        ]
+      },
+      {
+        "offset": 24000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1594527,
+            "seconds": 5.126
+          }
+        ]
+      },
+      {
+        "offset": 26000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1824407,
+            "seconds": 4.81
+          }
+        ]
+      },
+      {
+        "offset": 28000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1508824,
+            "seconds": 4.494
+          }
+        ]
+      },
+      {
+        "offset": 30000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1544599,
+            "seconds": 6.538
+          }
+        ]
+      },
+      {
+        "offset": 32000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1962579,
+            "seconds": 4.991
+          }
+        ]
+      },
+      {
+        "offset": 34000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2030943,
+            "seconds": 4.963
+          }
+        ]
+      },
+      {
+        "offset": 36000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1567426,
+            "seconds": 5.08
+          }
+        ]
+      },
+      {
+        "offset": 38000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2302544,
+            "seconds": 4.996
+          }
+        ]
+      },
+      {
+        "offset": 40000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2163752,
+            "seconds": 4.814
+          }
+        ]
+      },
+      {
+        "offset": 42000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2738055,
+            "seconds": 5.392
+          }
+        ]
+      },
+      {
+        "offset": 44000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1735864,
+            "seconds": 5.127
+          }
+        ]
+      },
+      {
+        "offset": 46000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2922420,
+            "seconds": 5.516
+          }
+        ]
+      },
+      {
+        "offset": 48000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2212114,
+            "seconds": 5.317
+          }
+        ]
+      },
+      {
+        "offset": 50000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 2352662,
+            "seconds": 4.832
+          }
+        ]
+      },
+      {
+        "offset": 52000,
+        "returned": 2000,
+        "exceeded_transfer_limit": true,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 1735680,
+            "seconds": 5.474
+          }
+        ]
+      },
+      {
+        "offset": 54000,
+        "returned": 411,
+        "exceeded_transfer_limit": false,
+        "attempts": [
+          {
+            "attempt": 1,
+            "status": "success",
+            "http_status": 200,
+            "bytes": 353696,
+            "seconds": 3.71
+          }
+        ]
+      }
+    ]
+  }
+}

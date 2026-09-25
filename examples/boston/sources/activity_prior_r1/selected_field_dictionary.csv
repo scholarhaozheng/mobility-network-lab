@@ -1,0 +1,18 @@
+field,alias,esri_type,nullable,source_or_derived,project_note
+OBJECTID,OBJECTID,esriFieldTypeOID,False,official_service_field,Retained modelling field from the official service.
+GlobalID,GlobalID,esriFieldTypeGlobalID,False,official_service_field,Hosted-layer record identifier; used as source_feature_id.
+LOC_ID,LOC_ID,esriFieldTypeString,True,official_service_field,MassGIS location identifier used to recognize stacked assessor records sharing one parcel geometry.
+MAP_PAR_ID,MAP_PAR_ID,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+POLY_TYPE,POLY_TYPE,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+TOWN_ID,TOWN_ID,esriFieldTypeInteger,True,official_service_field,Retained modelling field from the official service.
+PROP_ID,PROP_ID,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+FY,FY,esriFieldTypeInteger,True,official_service_field,Retained modelling field from the official service.
+USE_CODE,USE_CODE,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+CITY,CITY,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+YEAR_BUILT,YEAR_BUILT,esriFieldTypeInteger,True,official_service_field,Retained modelling field from the official service.
+BLD_AREA,BLD_AREA,esriFieldTypeInteger,True,official_service_field,Assessor-reported building area. Official documentation warns that measurement basis varies by CAMA system; not treated as footprint or uniform floor area.
+UNITS,UNITS,esriFieldTypeInteger,True,official_service_field,Assessor-reported units; may include dwelling or non-residential units. Residential-only summaries also require the use classification.
+RES_AREA,RES_AREA,esriFieldTypeInteger,True,official_service_field,Assessor-reported residential/living area where supplied; local completeness and semantics vary.
+STORIES,STORIES,esriFieldTypeString,True,official_service_field,Retained modelling field from the official service.
+USE_DESC,Use Description,esriFieldTypeString,True,official_service_field,Official use description supplied with the hosted layer; grouped by an explicit project rule without overwriting the source value.
+Shape__Area,Shape__Area,esriFieldTypeDouble,True,official_service_field,Service-side geometry area in the service CRS; metric overlay is recomputed locally in EPSG:32619.

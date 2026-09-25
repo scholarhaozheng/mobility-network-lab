@@ -2,7 +2,7 @@
 
 The frozen **ABS_PLANNED** conditional panel is one 5,091-physical-link, 26-endpoint-OD, 203.6604786350987-modelled-vehicle-trip Beckmann/BPR instance with a 130-path finite pool. FW, the uncompressed SLSQP path reference, and the two accepted native Diagnostic L3 representations use those identical link/demand/pool bytes. This algorithm comparison is **not** the earlier semantic S1/S2 service-feedback comparison (about 202.078384/202.070733 vehicle trips) and is not measured congestion.
 
-[Boston case](boston.md) · [Four-stage and GPS example](../datasets/boston-behavior-feedback.md) · [GMNS exchange and ID relationships](../datasets/boston-gmns-exchange.md) · [Saved files](../../examples/boston/assignment_methods_r1/README.md)
+[Boston case](boston.md) · [Four-stage and GPS example](../datasets/boston-behavior-feedback.md) · [Separate bounded space–time CG pilot](boston-space-time.md) · [GMNS exchange and ID relationships](../datasets/boston-gmns-exchange.md) · [Saved files](../../examples/boston/assignment_methods_r1/README.md)
 
 ## Primary scale result versus controlled method comparison
 

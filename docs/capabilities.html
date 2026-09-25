@@ -55,13 +55,13 @@
 </tr>
 <tr>
 <td>Space–time network construction</td>
-<td><strong>No Boston run supplied</strong>; reusable code availability is not case execution</td>
-<td><strong>Demonstrated:</strong> finite time-expanded selected-OD instances</td>
+<td><strong>Demonstrated, bounded:</strong> 90-node / 125-directed-link / 10-OD accepted pilot, 3-second steps, 100-step horizon</td>
+<td><strong>Demonstrated:</strong> finite time-expanded 200 / 250-OD selected subsets</td>
 </tr>
 <tr>
 <td>Phase I / Phase II / pricing</td>
-<td><strong>No Boston CG result supplied</strong></td>
-<td><strong>Historical runs:</strong> 200 / 250 OD, objective-level arc-LP agreement</td>
+<td><strong>Accepted bounded pilot:</strong> same-graph reference-optimal and independently full-DAG pricing-closed for all ten demands at 1e−6; receiver check pending</td>
+<td><strong>Historical 200 / 250 OD:</strong> feasible and same-subset arc-LP objective matched; independent pricing closure <strong>not established</strong></td>
 </tr>
 <tr>
 <td>New-input preparation and solving</td>
@@ -70,13 +70,13 @@
 </tr>
 <tr>
 <td>Saved checks and visualization</td>
-<td>Tables, GMNS tracing, figures, original-space checks</td>
+<td>Tables, GMNS tracing, static original-space checks, bounded CG figure parity and R4 closure evidence</td>
 <td>Static checks, space–time traces, phase and capacity evidence</td>
 </tr>
 </tbody>
 </table></div>
 <h2 id="reading-the-matrix">Reading the matrix</h2>
 <p><strong>Demonstrated</strong> means supplied executed records for the named instance, not every possible configuration. <strong>Resource-gated</strong> means the saved workflow stopped before the relevant solve under a stated resource budget; it is not a numerical success or proof of inherent impossibility. <strong>Not modeled / no supplied run</strong> is a case-coverage statement, not absence of reusable code. Numerical acceptance does not establish empirical validity.</p>
-<p>The Boston all-tier FW and 26-OD compression control are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results.</p>
-<p><a href="cases/boston.html">Boston</a> · <a href="cases/sioux-falls.html">Sioux Falls</a> · <a href="RUN_YOUR_OWN_GMNS.html">Generic commands</a></p>
+<p>The Boston all-tier FW, 26-OD compression control and 10-OD finite space–time CG pilot are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's independent pricing certificate cannot be transferred to Sioux 200/250-OD records.</p>
+<p><a href="cases/boston.html">Boston</a> · <a href="cases/boston-space-time.html">Boston bounded CG evidence</a> · <a href="cases/sioux-falls.html">Sioux Falls</a> · <a href="RUN_YOUR_OWN_GMNS.html">Generic commands</a></p>
 </main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

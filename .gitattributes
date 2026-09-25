@@ -1,0 +1,7 @@
+# Preserve byte-for-byte provenance inputs under Windows core.autocrlf.
+/app/** text eol=lf
+/launcher/** text eol=lf
+
+# These published plot inputs and figures have SHA-256 hashes over exact bytes.
+# Do not apply Git newline conversion to them, including editable SVGs.
+/docs/assets/boston/space_time_cg_r4/** -text -diff
