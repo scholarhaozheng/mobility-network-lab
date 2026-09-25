@@ -51,7 +51,7 @@ def main():
     # This is a deliberate source file: the existing complete site build can render it without a second narrative.
     (S/'docs/index.md').write_text('<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->\n'+home+'\n',encoding='utf-8')
     (S/'docs/index.html').write_text(shell(home,'Framework and cases'),encoding='utf-8')
-    files=['docs/capabilities.md','docs/cases/boston.md','docs/cases/boston-assignment.md','docs/cases/sioux-falls.md','docs/cases/sioux-space-time.md','docs/methods/space-time-cg.md','docs/RUN_YOUR_OWN_GMNS.md','docs/BOSTON_SCALE_RESULTS.md','docs/SCALABLE_TOOL_DATA_NOTICE.md','docs/datasets/boston-population-households.md','docs/datasets/boston-behavior-feedback.md','docs/datasets/boston-four-step-sources.md','docs/datasets/boston-visual-sources.md']
+    files=['docs/capabilities.md','docs/cases/boston.md','docs/cases/boston-assignment.md','docs/cases/boston-space-time.md','docs/cases/sioux-falls.md','docs/cases/sioux-space-time.md','docs/methods/space-time-cg.md','docs/RUN_YOUR_OWN_GMNS.md','docs/BOSTON_SCALE_RESULTS.md','docs/SCALABLE_TOOL_DATA_NOTICE.md','docs/datasets/boston-population-households.md','docs/datasets/boston-behavior-feedback.md','docs/datasets/boston-four-step-sources.md','docs/datasets/boston-visual-sources.md']
     for f in files:
      p=S/f; depth=len(p.relative_to(S/'docs').parts)-1
      body=content(p);title=next(x.content for x in MD.parse(p.read_text(encoding='utf-8')) if x.type=='inline')

@@ -1,5 +1,7 @@
 # Sioux Falls: constructing and using the space–time network
 
+This page retains the two historical Sioux selected-OD instances. For the same scientific figure families on **one separate, bounded Boston pilot**, see [Boston space–time CG](boston-space-time.md). Boston's R4 independent full-DAG pricing certificate does **not** establish independent pricing closure for the Sioux 200/250-OD runs.
+
 **Case coverage:** physical-to-time representation, same-instance arc-flow LP, Phase-I artificial-demand clearance, Phase-II cost improvement and saved record-level capacity evidence. This is a historical selected-OD experiment, not modern city demand/GPS inference.
 
 ## Construction cutaway

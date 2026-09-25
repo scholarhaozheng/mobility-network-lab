@@ -1,0 +1,101 @@
+{
+  "method": "Read-only projection of accepted R2/R3/R4 saved records, no scientific rerun.",
+  "source_release": {
+    "R2": "accepted Phase-I completion",
+    "R3": "accepted Phase-II result",
+    "R4": "accepted full-DAG pricing closure",
+    "GMNS": "GMNS Plus 21_Boston physical geometry"
+  },
+  "source_files_sha256": {
+    "R3_case_link.csv": {
+      "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+      "role": "accepted saved source"
+    },
+    "BOSTON_FINAL_PHYSICAL_LINK_FLOWS.csv": {
+      "sha256": "8afa54910396d9ced0a5c54a893e2c788ba515ef32862a56d42e48463918aec1",
+      "role": "accepted saved source"
+    },
+    "GMNS_link.csv": {
+      "sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+      "role": "accepted saved source"
+    },
+    "BOSTON_PHASE_I_ARTIFICIAL_FLOW_TRACE_ENRICHED.csv": {
+      "sha256": "3bd4feb4fc11b121075928daf7f1d70590e14f5c93a69c6aedfc474ca084c6bf",
+      "role": "accepted saved source"
+    },
+    "BOSTON_PHASE_I_SELECTED_COLUMNS.csv": {
+      "sha256": "062f5feb42f87ad19dfe86689d715dc121516994c121725c08cad4a7053fea7b",
+      "role": "accepted saved source"
+    },
+    "round_000_initial_phase1_capacity_usage.csv": {
+      "sha256": "fbc1e861b5bd6c4e0b2af71f096bf3e93d7e6057164d6f82a578eb7d53bd012c",
+      "role": "accepted saved source"
+    },
+    "round_001_after_add_phase1_capacity_usage.csv": {
+      "sha256": "b65203b09cebd09105962991944ea765a21f981f2af847a1775cfc65dd08ed1d",
+      "role": "accepted saved source"
+    },
+    "round_000_initial_phase1_dual_solution.json": {
+      "sha256": "935dff53db121fac906d252cb103f5d1bfd9691edee1a95050e653c671167936",
+      "role": "accepted saved source"
+    },
+    "round_001_after_add_phase1_dual_solution.json": {
+      "sha256": "64617f54eb47b9be19db1d3775921e96028b28e19b2fd6e421d5494493d0c186",
+      "role": "accepted saved source"
+    },
+    "BOSTON_PHASE_II_ROUND_LOG_ENRICHED.csv": {
+      "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+      "role": "accepted saved source"
+    },
+    "CLOSURE_CONTINUATION_TRACE.csv": {
+      "sha256": "052e2e95da00cae62102dbc84c0d520b65d02a8ddbe984eb0f0b3b1b469f7a3a",
+      "role": "accepted saved source"
+    },
+    "INDEPENDENT_PRICING_CLOSURE_BY_DEMAND.csv": {
+      "sha256": "755efef8c3061c10a6ee42f725dd4a4ff8fd083fdd39b43180b6aad08ba2cf44",
+      "role": "accepted saved source"
+    },
+    "FINAL_CLOSURE_POOL.csv": {
+      "sha256": "5f214e66acd033f854b45a4f096b7ed5acbbece2ec7912bfaa9dc3e483bc00bc",
+      "role": "accepted saved source"
+    },
+    "FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv": {
+      "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+      "role": "accepted saved source"
+    },
+    "dynamic_arc.csv": {
+      "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+      "role": "accepted saved source"
+    },
+    "dynamic_node.csv": {
+      "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+      "role": "accepted saved source"
+    },
+    "BOSTON_EXACT_FINAL_RUN_SUMMARY.json": {
+      "sha256": "06c522c4d2ec6ee46bd272cb44623ada630ea29f26812b1ef0c332d193209fd7",
+      "role": "accepted saved source"
+    },
+    "INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json": {
+      "sha256": "5a5fc08d9183777450e8fa78319b0301321f0d6b3b9b7c27da696429dc587c92",
+      "role": "accepted saved source"
+    }
+  },
+  "plot_input_sha256": {
+    "closure_by_demand.csv": "2c22d0c03d82db1322d30cc3bc128619e494342164d91a9514886c49da342e84",
+    "closure_continuation.csv": "524ac25c7a4da10ea6d816db8323b439cb444122b60f14264ab811dc4f90ffed",
+    "construction_path.json": "32badca8cb1cbd813bbaefd8d8143d6b378a245e7a70505b2884bfb012d7f468",
+    "construction_path_arcs.csv": "6518c6cdf54a8a5ee13ca7edd655ac593245f875d4aceee3e699d2e6a858985c",
+    "construction_path_nodes.csv": "49188510e583aa99014b72f69c110d13e7c03aab77a4e62e4ff7ea69c7d0982d",
+    "figure_source_provenance.json": "2c2a294c31466e55ee051a668c31d80329dfece65d1c9955fd0219ba2e481465",
+    "phase_i_by_demand.csv": "9f897bb2fd69c2fb3319cd3a6ed759b3d46019c274ad474dd15b8c198d30b06e",
+    "phase_i_round1_capacity_exchange.csv": "89d1b7091e05e178c96db0536b6590a4a7586a594f0b57fa652bccf2058dd637",
+    "phase_i_round1_od_change.csv": "da044f9cd879e1d016b65c690d7453995db15d36487a98fc5b5295c0fe33ebae",
+    "phase_i_round1_selected_column.json": "8e719c8c3583346d189cc065afad9a2c7ec7bda68eb3d502d37d480c9e1b0973",
+    "phase_i_total.csv": "306a9e5e44e18af33848de8f6ae7c79ffcd5ba82a4b108310d2a4cd0f7a55830",
+    "phase_ii_objective.csv": "898a23b0d9c6fa120f82d51aa3edb3f6887759d41f72ab775f9c29481f3728ee",
+    "physical_link_flow_geometry.csv": "673405a563e325678f79cbbaa1379d23a0aff2691c0b7f4843715c38170a7a84",
+    "validation_summary.json": "b0fc0dee815ce1753ee47bf89a5ec41bfe9baa4f1ef196dfec27c6115b12261c"
+  },
+  "unit_warning": "The static FW/Beckmann objective is unrelated to this fixed-cost hard-capacity space-time LP.",
+  "scope_warning": "Only the accepted 90-node/125-link/10-OD bounded Boston pilot is shown."
+}

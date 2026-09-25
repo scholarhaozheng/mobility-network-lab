@@ -1,0 +1,9 @@
+# Data sources and redistribution boundaries
+
+- GMNS Plus `21_Boston`, commit `116447ab641cca1ed34797d019c8e704063393c3`, Apache-2.0. The physical road slice and source-field derivatives are included with the source license.
+- MBTA GTFS feed `mdb-437` and 12 MBTA V3 vehicle-position snapshots were used locally. The raw ZIP and raw JSON snapshots are excluded; only derived research relations with hashed vehicle identifiers are included.
+- H3 zone identifiers are project model identifiers. They are not source TAZ, Mobility Database city, feed, or GHSL identifiers.
+- MassGIS Property Tax Parcels official FeatureServer item `73d4c766167848b795f1048cad3919c7` supplies the activity run. The redistributed slice contains only selected parcel/assessment identifiers, fiscal year, use classification, year built, official building/residential area, units, stories text, and geometry. No owner, mailing, contact, site-address, or registry fields were requested. Boston FY2023 and Cambridge FY2026 are both retained; their different vintages are not merged into one reference year.
+- Source parcel geometry, assessment record, and derived H3 allocation remain separate. Area overlay is performed in EPSG:32619, outside-core allocation is retained, and r7 values aggregate the r9 table.
+- U.S. Census LODES8 Massachusetts 2023 WAC/RAC/OD was identified but not downloaded because `lehd.ces.census.gov` timed out after bounded sandboxed and approved unrestricted attempts. Consequently this release contains no employment association. WAC, RAC, and OD would describe workplace jobs, residence-associated jobs, and home–work job associations respectively—not all-purpose travel.
+- The original demand remains an engineering network proxy. The independent activity-informed scenario uses official assessment area as a spatial prior, but its 50,000 daily total, beta, mode shares, AM share, and occupancy remain assumptions; neither scenario is observed travel demand.

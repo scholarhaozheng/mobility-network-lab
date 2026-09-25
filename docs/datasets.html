@@ -23,9 +23,15 @@
 <td>Transferred household rates, activity-weighted distribution, nested mode response, observation sensitivity and static FW</td>
 <td>Current semantic-fix component; 26 CSV data tables, queryable SQLite and a <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/SAVED_EXAMPLE.md">saved-result example</a></td>
 </tr>
+<tr>
+<td><a href="cases/boston-space-time.html">Boston bounded space–time CG</a></td>
+<td>90 physical nodes, 125 directed links, 10 ODs; 3-second steps / 100-step horizon</td>
+<td>Fixed-cost hard-capacity Phase I/II; same-graph arc-LP match; R4 independent full-DAG pricing closure</td>
+<td>Ten PNG/SVG figure pairs, exact public plot inputs, source hashes and numerical validation; <strong>not citywide</strong></td>
+</tr>
 </tbody>
 </table>
-<p>The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included.</p>
+<p>The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. The bounded CG pilot is a <strong>separate demand/model instance</strong>, not a continuation of static FW or the semantic service-feedback panel.</p>
 <h2 id="road-benchmark-results">Road benchmark results</h2>
 <table>
 <thead>
