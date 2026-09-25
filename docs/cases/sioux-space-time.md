@@ -16,9 +16,7 @@ The diagram uses **schematic display coordinates** but actual node and time iden
 
 <table class="figure-grid"><tr><th>200 OD</th><th>250 OD</th></tr><tr><td width="50%"><img src="../assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png" width="100%" alt="200-OD recorded Phase-I artificial-flow clearance"></td><td width="50%"><img src="../assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png" width="100%" alt="250-OD recorded Phase-I artificial-flow clearance"></td></tr></table>
 
-## Recorded results
-
-## What the two recorded runs show
+## Recorded results: what the two saved runs show
 
 The 200-OD selection is contained in the 250-OD selection (matching OD IDs, origins, destinations, and demand volumes). Both recorded runs clear artificial flow, but these are single runs with different case sizes and runtime caps. The observations below are descriptive, not a statistical scaling estimate.
 
