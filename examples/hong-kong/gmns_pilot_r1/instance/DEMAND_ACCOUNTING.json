@@ -1,0 +1,23 @@
+{
+  "fine_zones": 95,
+  "source_population_sum_intersecting": 106010.0,
+  "allocated_population": 90677.15622225715,
+  "allocated_households": 36228.31539105156,
+  "tiers": {
+    "smoke": {
+      "person_od_rows": 475,
+      "person_trips": 181.3543124445143,
+      "vehicle_scenario_trips": 24.18057499260191
+    },
+    "pilot": {
+      "person_od_rows": 475,
+      "person_trips": 4533.857811112858,
+      "vehicle_scenario_trips": 604.5143748150477
+    }
+  },
+  "allocation": "source SSG population/households times clipped area fraction; not observed within-SSG distribution",
+  "production_conservation_error": {
+    "smoke": 0.0,
+    "pilot": 0.0
+  }
+}

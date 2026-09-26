@@ -13,6 +13,9 @@
 | Native Diagnostic L3 / compression | **Accepted numerical controls:** ranks 26/52; new-input fixture; **not solved at expanded tiers** | **Executed numerical candidates:** rank 50; full-network gaps remain 8.17% / 4.38%, not exact UE |
 | Space–time network construction | **Demonstrated, bounded:** 90-node / 125-directed-link / 10-OD accepted pilot, 3-second steps, 100-step horizon | **Demonstrated:** finite time-expanded 200 / 250-OD selected subsets |
 | Phase I / Phase II / pricing | **Accepted bounded pilot:** same-graph reference-optimal and independently full-DAG pricing-closed for all ten demands at 1e−6; receiver check pending | **Historical 200 / 250 OD:** feasible and same-subset arc-LP objective matched; independent pricing closure **not established** |
+| Lagrangian capacity pricing | **Gated R2 transfer:** feasible recovered primal but 1.1002% gap exceeds frozen 1% gate | **Accepted R2:** 200/250 selected-OD feasible recoveries, 0.0746% / 0.3177% duality gaps |
+| ADMM shared capacity | **Gated R1 transfer:** local conservation failed | **Accepted R1:** 200/250 selected-OD residual/feasibility gates pass; own-LP relative differences 0.000434% / 0.000607% |
+| Bush/OBA static UE | No accepted transfer | Research prototype only; 6.062 min used-arc slack exceeds 0.05 min gate |
 | New-input preparation and solving | **Generic vehicle/person routes implemented**, with declared profiles and optional dependencies | Existing benchmark and external-network interfaces; case-specific scope is explicit |
 | Saved checks and visualization | Tables, GMNS tracing, static original-space checks, bounded CG figure parity and R4 closure evidence | Static checks, space–time traces, phase and capacity evidence |
 
@@ -22,4 +25,10 @@
 
 The Boston all-tier FW, 26-OD compression control and 10-OD finite space–time CG pilot are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's independent pricing certificate cannot be transferred to Sioux 200/250-OD records.
 
-[Boston](cases/boston.md) · [Boston bounded CG evidence](cases/boston-space-time.md) · [Sioux Falls](cases/sioux-falls.md) · [Generic commands](RUN_YOUR_OWN_GMNS.md)
+## Hong Kong bounded GMNS/data pilot
+
+The [Hong Kong case](cases/hong-kong-gmns-pilot.md) adds a third, **pre-assignment** column to the public coverage. Official-derived records include 780 physical nodes, 1,239 directed links, 95 SSG/10 STPUG zones, 95 centroids, 190 nonphysical connectors, allocated 2021 population/households, 183 GTFS stops, 294 routes and 50 detector lane observations. Five public maps and offline relationship checks are available. The OD is a deterministic hypothetical seed; `assignment_ready=false`, no solver was invoked, and no Hong Kong FW/CG/Lagrangian/ADMM result is claimed. UrbanNav point-level data are excluded.
+
+[Distributed method contracts, accepted results and gates](methods/distributed-assignment.md).
+
+[Boston](cases/boston.md) · [Boston bounded CG evidence](cases/boston-space-time.md) · [Sioux Falls](cases/sioux-falls.md) · [Hong Kong pilot](cases/hong-kong-gmns-pilot.md) · [Generic commands](RUN_YOUR_OWN_GMNS.md)

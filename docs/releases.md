@@ -1,5 +1,9 @@
 # Release channels
 
+## Current public integration R1
+
+This cumulative source update adds the [Hong Kong bounded GMNS/data pilot](cases/hong-kong-gmns-pilot.md) and accepted [Sioux Lagrangian R2 / ADMM R1 selected-OD evidence](methods/distributed-assignment.md), while retaining the Boston/Sioux CG case-parallel structure and earlier public content. Bush/OBA, Boston Lagrangian and Boston ADMM transfers remain visibly gated. Scientific models were not rerun for this integration. The Hong Kong instance is not assignment-ready.
+
 ## Source repository
 
 The source tree contains the selected engine, user-facing entry point, synthetic reference inputs and documentation. `catalog/source-files.json` identifies retained engine files. The public wrapper and documentation are maintained separately from the numerical engine.

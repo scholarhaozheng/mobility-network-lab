@@ -41,6 +41,8 @@ Both have zero negative path-flow mass and passed recorded original-space numeri
 
 The historical **finite space–time CG** results solve a different fixed-cost, hard-capacity linear formulation with a reference LP. They belong inside this case, not in the static native comparison:
 
+The same bounded 200/250-OD selected-instance family now has separate accepted [Lagrangian R2 and ADMM R1 evidence](../methods/distributed-assignment.md). Lagrangian R2 certifies 0.0746% / 0.3177% duality gaps after **separate** feasible restricted-path recovery; ADMM R1 passes its residual/conservation/capacity gates with nonzero own-LP relative differences of 0.000434% / 0.000607%. These do not replace CG's certificate status or establish a full 528-OD result. Bush/OBA remains gated.
+
 | Historical CG experiment | Selected links | OD pairs | Final columns | Objective | Evidence |
 |---|---:|---:|---:|---:|---|
 | [200OD](../datasets/sioux-200od.md) | 64 | 200 | 446 | 943,155.589771 | Saved final flow and Phase-I/II figures |

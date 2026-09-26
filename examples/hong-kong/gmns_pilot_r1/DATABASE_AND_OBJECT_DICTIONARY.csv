@@ -1,0 +1,256 @@
+table,field,unit_or_type,source_or_derivation,meaning
+connector_link.csv,link_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,from_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,to_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,directed,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,dir_flag,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,length,m,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,free_speed,unknown for road; blank,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,free_flow_time,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,capacity,unknown for road; blank,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,lanes,unknown for road; blank,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,link_type,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,vdf_alpha,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,vdf_beta,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,vdf_plf,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,geometry,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,mcl_link_class,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,source_link_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,source_from_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,source_to_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,mcl_gps_match_allowed,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,source_kml_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,source_travel_direction,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,street_name,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,street_code,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,geometry_sampling,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,length_unit,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,capacity_unit,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+connector_link.csv,free_speed_unit,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+demand_S1.csv,o_zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+demand_S1.csv,d_zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+demand_S1.csv,volume,hypothetical vehicles / abstract hour or detector vehicles / 30 s by table,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,tier,"ID, category, text or declared source unit",scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,o_zone_id,"ID, category, text or declared source unit",scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,d_zone_id,"ID, category, text or declared source unit",scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,person_trips,hypothetical person trips / abstract hour,scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,straight_distance_m,m,scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_person.csv,method,"ID, category, text or declared source unit",scenario from allocated census population,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,tier,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,o_zone_id,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,d_zone_id,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,volume,hypothetical vehicles / abstract hour or detector vehicles / 30 s by table,hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,vehicle_fraction_assumption,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,persons_per_vehicle_assumption,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+demand_seed_vehicle.csv,status,"ID, category, text or declared source unit",hypothetical conversion of person seed,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,detector_id,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,date,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,period_from,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,period_to,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,source_direction,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,lane_id,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,speed_kmh,km/h,TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,volume_30s,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,occupancy_percent,percent,TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,source_valid,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,gmns_link_id,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_observations.csv,mapping_status,"ID, category, text or declared source unit",TD_DETECTOR_RAW,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,detector_id,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,source_direction,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,source_road,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,longitude,WGS84 degrees,TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,latitude,WGS84 degrees,TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,gmns_link_id,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,source_route_id,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,distance_m,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,direction_cosine,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,second_candidate_distance_m,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,match_status,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+detector_to_link.csv,grade_status,"ID, category, text or declared source unit",TD_DETECTOR_INFO / TD_ROAD_CENTERLINE,Saved field; inspect source table and methods for exact semantics
+excluded_or_unknown_demand.csv,source_ssbg,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+excluded_or_unknown_demand.csv,outside_pilot_population_estimate,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+excluded_or_unknown_demand.csv,outside_pilot_households_estimate,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+excluded_or_unknown_demand.csv,reason,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+link.csv,link_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,from_node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,to_node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,directed,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,dir_flag,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,length,m,TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,free_speed,unknown for road; blank,TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,free_flow_time,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,capacity,unknown for road; blank,TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,lanes,unknown for road; blank,TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,link_type,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,vdf_alpha,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,vdf_beta,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,vdf_plf,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,geometry,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,mcl_link_class,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,source_link_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,source_from_node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,source_to_node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,mcl_gps_match_allowed,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,source_kml_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,source_travel_direction,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,street_name,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,street_code,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,geometry_sampling,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,length_unit,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,capacity_unit,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+link.csv,free_speed_unit,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / TD_ROAD_TURN,Saved field; inspect source table and methods for exact semantics
+movement.csv,source_turn_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,source_edge_sequence,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,from_link_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,to_link_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,via_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,no_turn,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,included_vehicle_types,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,excluded_vehicle_types,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,part_time_restriction,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+movement.csv,status,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+network_quarantine.csv,source_route_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+network_quarantine.csv,kml_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+network_quarantine.csv,reason,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+node.csv,node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,zone_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,x_coord,WGS84 longitude,TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,y_coord,WGS84 latitude,TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,node_type,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,source_node_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,source_h3_zone_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+node.csv,mcl_source_taz_zone_id,"ID, category, text or declared source unit",TD_ROAD_CENTERLINE / model centroid construction,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,tier,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,person_trip_productions,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,attraction_proxy,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,production_rate_per_resident,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,period,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+production_attraction.csv,status,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,source_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,source_route_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,source_kml_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,gmns_link_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,direction,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_link_crosswalk.csv,source_travel_direction,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_node_crosswalk.csv,source_node_key,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_node_crosswalk.csv,node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_node_crosswalk.csv,method,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+source_node_crosswalk.csv,source_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,stop_id,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,physical_node_id,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,straight_distance_m,m,TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,pedestrian_route_id,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,pedestrian_straight_distance_m,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,pedestrian_floor_id,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,pedestrian_access_time_id,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_network.csv,status,"ID, category, text or declared source unit",TD_GTFS / LANDSD_PEDESTRIAN,Saved field; inspect source table and methods for exact semantics
+stop_to_zone.csv,stop_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+stop_to_zone.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+stop_to_zone.csv,straight_distance_m,m,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+stop_to_zone.csv,method,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+super_zone.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+super_zone.csv,name,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+super_zone.csv,boundary,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+super_zone.csv,super_zone,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+super_zone.csv,source_stpug,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,path_segment_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,trace_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,start_utc,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,end_utc,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,point_count,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,matched_point_count,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,physical_link_sequence,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_paths.csv,status,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,trace_id,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,point_index,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,source_line,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,utc_iso,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,utc_seconds,Unix seconds,URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,latitude,WGS84 degrees,URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,longitude,WGS84 degrees,URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,height_m,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,quality_code_uninterpreted,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,position_source,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,interpoint_speed_mps,m/s,URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,time_gap_s,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,speed_plausible,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,gmns_link_id,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,source_route_id,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,link_distance_m,m,URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,direction_cosine,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,candidate_link_count,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,continuity,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+trajectory_points.csv,match_method,"ID, category, text or declared source unit",URBANNAV_TST_GT (private),Saved field; inspect source table and methods for exact semantics
+transit_fares.csv,route_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_fares.csv,fare_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_fares.csv,price_hkd,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_fares.csv,currency,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_fares.csv,status,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,route_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,agency_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,route_short_name,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,route_long_name,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,route_type,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,service_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,pilot_intersecting_trip_patterns,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,frequency_records,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,headway_min_s,seconds,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,headway_max_s,seconds,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,calendar_start,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,calendar_end,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_route_service.csv,schedule_type,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_stop_route.csv,stop_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_stop_route.csv,route_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_stop_route.csv,service_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,stop_id,"ID, category, text or declared source unit",TD_GTFS,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,stop_name,"ID, category, text or declared source unit",TD_GTFS,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,stop_lon,WGS84 longitude,TD_GTFS,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,stop_lat,WGS84 latitude,TD_GTFS,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,location_type,"ID, category, text or declared source unit",TD_GTFS,Saved field; inspect source table and methods for exact semantics
+transit_stops.csv,source_zone_id,"ID, category, text or declared source unit",TD_GTFS,Saved field; inspect source table and methods for exact semantics
+turn_limitations.csv,source_turn_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+turn_limitations.csv,source_edge_sequence,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+turn_limitations.csv,reason,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone.csv,zone_id,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,name,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,boundary,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,super_zone,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,mcl_original_h3_id,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,mcl_h3_resolution,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,mcl_clipped_geometry_wkt,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,mcl_boundary_status,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,source_ssbg,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,source_stpug,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,centroid_lon,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone.csv,centroid_lat,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY / CENSUS_STPUG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,centroid_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,physical_access_node_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,access_distance_m,m,pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,access_status,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_access.csv,access_method,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,population_2021_area_allocated,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,households_2021_area_allocated,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,gtfs_stop_count,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,employment,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_activity.csv,activity_proxy,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,zone_id,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,source_ssbg,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,source_year,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,allocation_weight,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,source_population,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,population_allocated,persons (area-allocated),CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,source_households,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,households_allocated,households (area-allocated),CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_population_households.csv,status,"ID, category, text or declared source unit",CENSUS_SSG_GEOMETRY,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,zone_id,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,source_ssbg,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,source_stpug,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,source_population,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,source_households,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,allocation_method,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,allocation_weight,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,source_year,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics
+zone_source_crosswalk.csv,spatial_parent_match_count,"ID, category, text or declared source unit",pilot-derived relationship; see source register,Saved field; inspect source table and methods for exact semantics

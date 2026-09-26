@@ -21,3 +21,7 @@ python tools/mnl.py verify --run results/auto-demo
 ```
 
 Run expected-rejection checks when changing input validation. An input correctly rejected by its contract is a successful negative test, not a failed research experiment.
+
+## Bounded city-data and method components
+
+The [Hong Kong GMNS/data pilot](cases/hong-kong-gmns-pilot.md) supplies official-derived saved tables, five SVGs and offline validation/trace commands, but **no assignment-ready instance**. The [Lagrangian R2 and ADMM R1 components](methods/distributed-assignment.md) include synthetic fixtures and accepted saved Sioux selected-OD summaries; their small fixtures do not reconstruct the historical 200/250-OD networks.

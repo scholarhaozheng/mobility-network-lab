@@ -1,0 +1,20 @@
+{
+  "source_files": [
+    "instance/pilot_boundary.geojson",
+    "instance/link.csv",
+    "instance/transit_stops.csv",
+    "instance/detector_to_link.csv"
+  ],
+  "data_fields": [
+    "geometry",
+    "source_link_id",
+    "stop_lon",
+    "stop_lat",
+    "longitude",
+    "latitude"
+  ],
+  "units": "WGS84; mapped scale metres",
+  "limitations": "The rectangle is an engineering boundary, not a transport district; edge-crossing road features retained whole.",
+  "rendering_script": "render_visuals.py",
+  "filter_config": "bbox=114.164,22.295,114.181,22.312; selected source weak component"
+}

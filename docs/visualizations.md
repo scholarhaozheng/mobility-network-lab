@@ -1,6 +1,8 @@
 # Visual results: four stages, observations, static assignment and CG
 
-This gallery links saved-result figures for Boston and Sioux Falls. It does not rerun optimization or invent observations. Common finite space–time CG figure families use the same terminology and reading order in both cases; city-specific supplementary figures remain available and are not removed.
+This gallery links saved-result figures for Boston and Sioux Falls and the bounded Hong Kong data pilot. It does not rerun optimization or invent observations. Common finite space–time CG figure families use the same terminology and reading order in both assignment cases; city-specific supplementary figures remain available and are not removed.
+
+The additional [Sioux Lagrangian R2 and ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. The ADMM 250-OD view is drawn from accepted final metrics only; there is no invented iteration history. [Hong Kong's five official-derived data-layer SVGs](cases/hong-kong-gmns-pilot.md) have no assignment-flow interpretation.
 
 ## Central Boston: demand, observations and static assignment
 

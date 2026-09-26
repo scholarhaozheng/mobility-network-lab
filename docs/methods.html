@@ -49,9 +49,21 @@ subject to  A f = q,  B f &lt;= u,  f &gt;= 0
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/run_full_cg_v1.py">Existing CG source</a></td>
 <td><a href="cases/sioux-falls.html">Sioux 200OD/250OD history</a></td>
 </tr>
+<tr>
+<td>Lagrangian R2</td>
+<td>Shared-capacity dual lower bound plus separate restricted-path feasible recovery</td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/lagrangian_r2/README.md">Public source and fixtures</a></td>
+<td><a href="methods/distributed-assignment.html">Accepted Sioux 200/250 OD; Boston transfer gated</a></td>
+</tr>
+<tr>
+<td>ADMM R1</td>
+<td>Local/consensus decomposition of fixed-cost shared-capacity space–time flow</td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/admm_r1/README.md">Public source and saved evidence</a></td>
+<td><a href="methods/distributed-assignment.html">Accepted Sioux 200/250 OD; Boston transfer gated</a></td>
+</tr>
 </tbody>
 </table>
 <p>Inspect selected saved records without any solver: <code>python -B tools/mcl_results.py list --case boston</code>, then <code>python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-outer02</code>. The optional native rerun requires a separately prepared Pyomo/IPOPT/MUMPS environment and explicit output directory; the publication integration did not execute it. These existing records are not a strict paired Boston/Sioux performance experiment, cold-start speedup result, or empirical validation.</p>
 <h2 id="other-method-extensions">Other method extensions</h2>
-<p>Origin-based/Bush methods and coupled primal–dual models remain at their individually documented source/evidence status, not newly completed or validated by these static examples. New path generation, model fitting and fair cross-case repetition are future work, not part of the current publication.</p>
+<p>The <a href="methods/distributed-assignment.html">distributed assignment page</a> distinguishes accepted bounded Sioux Lagrangian/ADMM evidence from gated Boston transfers. Origin-based/Bush remains a research prototype with a failed used-arc verification condition, not an accepted UE solve. Coupled primal–dual work, model fitting and fair cross-case repetition are future work, not part of this publication.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

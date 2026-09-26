@@ -1,0 +1,18 @@
+{
+  "source_files": [
+    "instance/zone_population_households.csv",
+    "instance/demand_seed_person.csv",
+    "instance/demand_seed_vehicle.csv"
+  ],
+  "data_fields": [
+    "allocation_weight",
+    "population_allocated",
+    "person_trips",
+    "o_zone_id",
+    "d_zone_id"
+  ],
+  "units": "persons, households, abstract one-hour scenario trips",
+  "limitations": "Area allocation assumes uniform within-SSG population; productions and distribution are not observed.",
+  "rendering_script": "render_visuals.py",
+  "filter_config": "bbox=114.164,22.295,114.181,22.312; selected source weak component"
+}

@@ -1,0 +1,18 @@
+{
+  "source_files": [
+    "instance/zone_access.csv",
+    "instance/node.csv",
+    "instance/connector_link.csv"
+  ],
+  "data_fields": [
+    "zone_id",
+    "centroid_node_id",
+    "physical_access_node_id",
+    "access_distance_m",
+    "mcl_link_class"
+  ],
+  "units": "straight distance metres",
+  "limitations": "Connector geometries are display lines only and have no routing speed or capacity.",
+  "rendering_script": "render_visuals.py",
+  "filter_config": "bbox=114.164,22.295,114.181,22.312; selected source weak component"
+}

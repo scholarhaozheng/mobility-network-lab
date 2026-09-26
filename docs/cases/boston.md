@@ -49,6 +49,8 @@ On the exact ABS_PLANNED network/demand/BPR/pool instance, the [static assignmen
 
 The distinct [finite space–time CG pilot](boston-space-time.md) uses a fixed-cost hard-capacity LP on 90 physical nodes, 125 directed links and 10 ODs. Its Phase I reaches zero artificial flow at round 90; Phase II matches its identical-graph arc-flow reference, and R4 independently finds no improving ungenerated path below −1e−6 for any demand. The R4 certificate adds 15 zero-final-flow columns and does not change the saved physical-link projection. Do not compare its objective to static FW/Beckmann values.
 
+The later [distributed-method transfers](../methods/distributed-assignment.md) are separately **gated**: Lagrangian R2 recovered a feasible primal but missed its frozen 1% duality-gap gate at 1.1002%; ADMM R1 failed local conservation. Neither alters the accepted Boston FW or CG records, and neither is presented as an accepted Boston distributed assignment.
+
 ## Observations & Feedback
 
 The GMNS route-60 figure shows the same saved 12 source positions before and after path association, with 26 ordered physical-link occurrences and a separate S1 road-result lookup. It is **not** the route-749 numeric event. In the separate service-feedback trace, route 749 direction 1 stop pair 1788 → 5093 has **86 s sample-derived versus 180 s planned**; the declared exploratory input changes itinerary time, mode response, vehicle demand and FW link flows. All 13 interval adjustments are off by default; no independent AM forecast validation is claimed. [Follow the saved trace](../../examples/boston/behavior_feedback_r1_semantic_fix_r1/FEEDBACK_TRACE.md).
