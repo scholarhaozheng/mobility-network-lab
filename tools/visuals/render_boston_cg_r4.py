@@ -3,9 +3,11 @@
 
 This script does not call an optimizer or inspect private research directories.
 Run: python -B tools/visuals/render_boston_cg_r4.py
+Or regenerate only a terminology-inconsistent Phase-II panel with --only phase-ii.
 """
 from __future__ import annotations
 
+import argparse
 import csv
 import hashlib
 import json
@@ -98,7 +100,7 @@ def figure_a():
     fig.text(.06, .035, "R3→R4: physical-link flows unchanged within numerical precision; not citywide Boston traffic.", fontsize=9, color=SLATE)
     save(fig, "boston_cg_final_physical_link_flow", "Final physical-link flow",
          "Bounded Boston pilot street map: 52 of 125 directed physical links have positive final CG flow; pale links have zero flow.",
-         "R3 accepted final-column flow joined on physical_link_id to the accepted GMNS Plus 21_Boston geometry. The R4 closure adds zero-flow columns and leaves this physical projection unchanged; this is not a citywide traffic map.",
+         "R3 accepted final-column flow joined on physical_link_id to accepted GMNS Plus 21_Boston geometry. R4 adds zero-final-flow certificate columns and leaves final physical-link movement flow unchanged within numerical precision; this is not a citywide traffic map.",
          ["physical_link_flow_geometry.csv", "validation_summary.json"])
 
 
@@ -209,21 +211,21 @@ def figure_e():
 def figure_f():
     r=rows("phase_ii_objective.csv");v=j("validation_summary.json");x=np.array([int(z["round"]) for z in r]);y=np.array([float(z["objective"]) for z in r])
     fig,ax=plt.subplots(figsize=(9.5,5.2));fig.patch.set_facecolor(BG)
-    head(fig,"Boston | Phase II objective against same-graph reference","Fixed-cost, hard-capacity space–time LP objective · not the static FW/Beckmann objective")
+    head(fig,"Boston | Phase II objective and arc-flow LP reference","Reference on the same finite time-expanded graph · not the static FW/Beckmann objective")
     fig.subplots_adjust(top=.80,bottom=.18,left=.12,right=.95)
     ax.plot(x,y,color=TEAL,lw=2.2,zorder=2)
     for typ,color,mark in [("STRICT_OBJECTIVE_IMPROVEMENT",TEAL,"o"),("DEGENERATE_NONINCREASE",AMBER,"s")]:
         q=[z for z in r if z["commit_classification"]==typ]
         ax.scatter([int(z["round"]) for z in q],[float(z["objective"]) for z in q],c=color,marker=mark,s=42,label=typ.replace("_"," ").title(),zorder=3)
     ref=v["identical_graph_arc_lp_reference_objective"]
-    ax.axhline(ref,color=CORAL,ls="--",lw=1.4,label="Identical-graph arc-flow LP")
+    ax.axhline(ref,color=CORAL,ls="--",lw=1.4,label="Arc-flow LP reference")
     ax.annotate("round 15 · reference-level match",(15,y[-1]),xytext=(6,28),textcoords="offset points",color=NAVY,
                 arrowprops={"arrowstyle":"->","color":NAVY})
     ax.set(xlim=(-.2,15.8),xlabel="Phase-II round",ylabel="Restricted-master objective")
     ax.grid(axis="y",alpha=.65);ax.legend(frameon=False,fontsize=8,loc="upper right")
     save(fig,"boston_phase_ii_objective","Phase-II objective and reference",
-         "Saved Boston Phase-II objective falls from 64.829676 to 64.396862 over 15 rounds; strict and degenerate commits have different markers, with identical-graph reference line.",
-         "Accepted R3 Phase-II round log. Round 15 matches the identical-graph arc-flow LP objective to numerical precision. Square markers are degenerate nonincreasing commits, distinct from strict improvement. The R4 continuation later establishes full-DAG pricing closure without changing the final objective.",
+         "Saved Boston Phase-II objective falls from 64.829676 to 64.396862 over 15 rounds; strict and degenerate commits have different markers, with the arc-flow LP reference line for the same finite time-expanded graph.",
+         "Accepted R3 Phase-II round log. Round 15 establishes reference-objective agreement with the arc-flow LP on the same finite time-expanded graph. Square markers are degenerate nonincreasing commits, distinct from strict improvement. The R4 continuation later establishes independent pricing closure without changing the final objective.",
          ["phase_ii_objective.csv","validation_summary.json"])
 
 
@@ -313,18 +315,28 @@ def figure_h():
     ax3.text(.07,.15,"second-machine receiver check pending",transform=ax3.transAxes,fontsize=9,color=SLATE)
     save(fig,"boston_cg_summary_panel","Boston CG summary composite",
          "Four-panel Boston bounded-pilot summary: final road-flow map, Phase-I clearance, Phase-II reference objective, and R4 ten-demand pricing certificate.",
-         "Composed summary of the same accepted bounded Boston pilot, not four different scales. The final physical projection has 52 positive-flow links; Phase I clears at round 90; Phase II reaches identical-graph arc-LP objective; R4 establishes 10/10 independent pricing closure with 15 zero-flow certificate columns.",
+         "Composed summary of the same accepted bounded Boston pilot, not four different scales. Final physical-link movement flow has 52 positive-flow links; Phase I clears at round 90; Phase II establishes reference-objective agreement on the same finite time-expanded graph; R4 establishes 10/10 independent pricing closure with 15 zero-flow certificate columns.",
          ["physical_link_flow_geometry.csv","phase_i_total.csv","phase_ii_objective.csv","closure_continuation.csv","closure_by_demand.csv","validation_summary.json"])
 
 
 def main():
-    for fn in (figure_a,figure_b,figure_c,figure_d,figure_e,figure_f,figure_g,figure_i,figure_j,figure_h):
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--only",choices=("phase-ii",),help="Redraw one saved-result figure without touching other figure assets")
+    args=parser.parse_args()
+    functions=(figure_f,) if args.only=="phase-ii" else (figure_a,figure_b,figure_c,figure_d,figure_e,figure_f,figure_g,figure_i,figure_j,figure_h)
+    for fn in functions:
         fn()
     provenance=j("figure_source_provenance.json")
     for name,item in manifest.items():
         item["plot_input_sha256"]={p:hashlib.sha256((DATA/p).read_bytes()).hexdigest() for p in item["plot_inputs"]}
-    (ASSET/"figure_manifest.json").write_text(json.dumps({"source_provenance":"data/figure_source_provenance.json",
-      "source_file_hashes":provenance["source_files_sha256"],"figures":manifest},indent=2),encoding="utf-8")
+    if args.only:
+        previous=json.loads((ASSET/"figure_manifest.json").read_text(encoding="utf-8"))
+        previous["figures"].update(manifest)
+        manifest_to_write=previous
+    else:
+        manifest_to_write={"source_provenance":"data/figure_source_provenance.json",
+          "source_file_hashes":provenance["source_files_sha256"],"figures":manifest}
+    (ASSET/"figure_manifest.json").write_text(json.dumps(manifest_to_write,indent=2),encoding="utf-8")
     print("Rendered",len(manifest),"Boston CG PNG/SVG figure pairs")
 
 
