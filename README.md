@@ -309,9 +309,7 @@ This is **one** accepted 90-physical-node, 125-directed-link, 10-OD finite time-
 
 <p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/presentation_r5/boston_cg_case_sequence.png" width="100%" alt="Boston saved-result CG sequence in six panels: actual time-indexed column; Phase-I artificial-flow clearance; B07/B09/B10 shared-capacity reallocation; Phase-II reference-objective agreement; final physical-link movement flow and validation; independent pricing closure for 10 of 10 demands."></a></p>
 
-*Saved-result presentation composite; no scientific model was rerun.* [Matching Sioux Falls sequence below](#sioux-falls) · [Editable-text SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg) · [Exact source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
-
-<p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png" width="100%" alt="Composed summary of the one bounded Boston CG pilot: final physical-link movement flow, Phase-I clearance, Phase-II reference-objective agreement, and 10-of-10 independent pricing closure."></a></p>
+*Figure — Boston bounded CG pilot.* (a) A recorded B07 path mapped into time-indexed arcs; (b) Phase-I artificial-flow clearance; (c) the B07/B09/B10 shared-capacity event; (d) Phase-II objective against the same-graph arc-flow reference; (e) final physical-link movement flow; (f) independent by-demand pricing check. The display crops retain the plotted evidence; full uncropped figures, numerical validation and limitations are in the [case study](docs/cases/boston-space-time.md). [Supplementary four-panel summary](docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png) · [Matching Sioux Falls figure below](#sioux-falls) · [SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg) · [Source hashes and display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json). No scientific model was rerun.
 
 | Shared CG stage | Boston result |
 |---|---|
@@ -347,7 +345,7 @@ The figures below are **historical finite time-expanded CG**, not native-L3 runs
 
 <p align="center"><a href="docs/cases/sioux-space-time.md"><img src="docs/assets/presentation_r5/sioux_cg_case_sequence.png" width="100%" alt="Sioux Falls saved-result CG sequence in the same six-panel order as Boston: XS170 time-indexed column; separate 200- and 250-OD Phase-I clearance; XS170/XS169 shared-capacity reallocation; separate Phase-II reference-objective traces; final physical-link movement flows and validation; independent pricing closure explicitly not established."></a></p>
 
-*Saved-result presentation composite; no scientific model was rerun.* [Matching Boston sequence above](#boston) · [Editable-text SVG](docs/assets/presentation_r5/sioux_cg_case_sequence.svg) · [Exact source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
+*Figure — Sioux Falls historical CG benchmarks.* (a) A recorded XS170 time-indexed column; (b) separate 200- and 250-OD Phase-I traces; (c) the XS170/XS169 shared-capacity exchange; (d) separate Phase-II objective traces against each instance's own reference; (e) final physical-link movement flows; (f) independent pricing closure **not established**. The two OD selections are distinct benchmark instances, not repeated trials. Full uncropped figures and numerical checks are in the [case study](docs/cases/sioux-space-time.md). [Matching Boston figure above](#boston) · [SVG](docs/assets/presentation_r5/sioux_cg_case_sequence.svg) · [Source hashes and display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json). No scientific model was rerun.
 
 <table>
 <tr>
@@ -383,9 +381,7 @@ Historical road records include checked results and approved figures, **not redi
 
 **The CG examples solve a finite space–time linear flow model with fixed arc costs and explicit capacities.** They are not the same objective as static BPR/Beckmann FW or native L3. Source and sink connectors attach each demand to the time network, movement arcs advance to arrival times, and waiting arcs permit modeled delay.
 
-<p align="center"><a href="docs/cases/sioux-space-time.md"><img src="docs/assets/presentation_r3/sioux_space_time_construction.png" width="100%" alt="Source-grounded exploded local time-network slice with nodes at times zero through six, waiting and movement arcs, the actual selected XS170 path and the master/pricing loop."></a></p>
-
-**This is an explanatory local cutaway—not a plot of every node and arc.** Diagram positions are schematic; the selected IDs and times come from saved records. The highlighted column is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6`, corresponding to physical nodes `8 → 6 → 5` at times `0 → 2 → 6`. The rest of the horizon and demand-specific connectors are not drawn. [Construction, exact fields and source mappings](docs/cases/sioux-space-time.md).
+**Panel (a) is an explanatory local cutaway—not a plot of every node and arc.** Positions are schematic; selected IDs and times come from saved records. The highlighted column is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6`, corresponding to physical nodes `8 → 6 → 5` at times `0 → 2 → 6`. The rest of the horizon and demand-specific connectors are not drawn. [Full annotated construction source](docs/assets/presentation_r3/sioux_space_time_construction.png) · [Construction fields and mappings](docs/cases/sioux-space-time.md).
 
 ### Sioux Falls / Phase I restores feasibility
 
@@ -408,9 +404,7 @@ The 200-OD selection is contained in the 250-OD selection. There is one recorded
 
 At round 34 (200 OD) and round 39 (250 OD), pricing selected a new path for **XS170**, but **XS169** lost 500 units of artificial flow after restricted-master reoptimization. XS170's 500 real units moved away from `xs_link21_t1`; XS169's real flow on that binding shared arc grew from 150.193 to 650.193. The total arc load stayed at its 5,050.193 capacity.
 
-<p align="center"><a href="docs/cases/sioux-space-time.md#shared-capacity-event"><img src="docs/assets/presentation_r5/sioux_shared_capacity_canonical.png" width="100%" alt="Saved XS170/XS169 before-and-after shared-capacity accounting: XS170 frees 500 units on a binding arc, XS169 uses them and loses 500 units of artificial flow; total arc use stays at capacity."></a></p>
-
-This is a recorded coupled-master mechanism, not a proof that this one path was uniquely necessary. The raw capacity dual stays approximately −1 under the saved solver convention. [OD-level supplementary figure](docs/assets/sioux/phase_i_r1/od_level_phase_i_clearance.png) · [Earlier accepted capacity diagram](docs/assets/presentation_r3/sioux_capacity_exchange.png) · [Saved plot input and hashes](docs/assets/presentation_r5/SIOUX_CAPACITY_CANONICAL_SOURCES.json) · [Saved trace CSVs](docs/assets/sioux/phase_i_r1/data/200_phase_i_trace.csv) · [Full Sioux CG explanation](docs/cases/sioux-space-time.md).
+Panel (c) shows this recorded coupled-master mechanism, not a proof that this one path was uniquely necessary. The raw capacity dual stays approximately −1 under the saved solver convention. [Standalone capacity plot](docs/assets/presentation_r5/sioux_shared_capacity_canonical.png) · [OD-level supplementary figure](docs/assets/sioux/phase_i_r1/od_level_phase_i_clearance.png) · [Earlier accepted capacity diagram](docs/assets/presentation_r3/sioux_capacity_exchange.png) · [Saved plot input and hashes](docs/assets/presentation_r5/SIOUX_CAPACITY_CANONICAL_SOURCES.json) · [Saved trace CSVs](docs/assets/sioux/phase_i_r1/data/200_phase_i_trace.csv) · [Full Sioux CG explanation](docs/cases/sioux-space-time.md).
 
 
 ### Sioux Falls / Phase II improves the real-path objective
