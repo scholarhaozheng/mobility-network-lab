@@ -41,7 +41,9 @@ Both have zero negative path-flow mass and passed recorded original-space numeri
 
 The historical **finite space–time CG** results solve a different fixed-cost, hard-capacity linear formulation with a reference LP. They belong inside this case, not in the static native comparison:
 
-The same bounded 200/250-OD selected-instance family now has separate accepted [Lagrangian R2 and ADMM R1 evidence](../methods/distributed-assignment.md). Lagrangian R2 certifies 0.0746% / 0.3177% duality gaps after **separate** feasible restricted-path recovery; ADMM R1 passes its residual/conservation/capacity gates with nonzero own-LP relative differences of 0.000434% / 0.000607%. These do not replace CG's certificate status or establish a full 528-OD result. Bush/OBA remains gated.
+The same bounded 200/250-OD selected-instance family now has separate accepted [Lagrangian R2 evidence](../methods/distributed-assignment.md) and [ADMM R2_S evidence](sioux-admm.md). Lagrangian R2 certifies 0.0746% / 0.3177% duality gaps after **separate** feasible restricted-path recovery. ADMM R2_S passes independent conservation/capacity/KKT/projection gates at 85 / 101 iterations, with own-LP relative objective differences 6.30e-6 / 7.16e-6. Earlier ADMM R1 figures remain available as historical records. These do not replace CG's certificate status or establish a full 528-OD result.
+
+The separate [official `tap-b` Algorithm B classic static result](sioux-algorithm-b.md) passes independent UE checks on 24 nodes, 76 links and 528 positive ODs. The pinned official TAPLab registered adapter and direct callable reproduce its accepted physical-link flows exactly; `taplab verify` certified the standard output. This is a **static** BPR/Beckmann result, not a finite space–time CG or distributed-capacity result.
 
 | Historical CG experiment | Selected links | OD pairs | Final columns | Objective | Evidence |
 |---|---:|---:|---:|---:|---|
@@ -65,3 +67,5 @@ python -B tools/mcl_results.py verify-saved --run sioux-native-l3-b-beckmann-out
 ```
 
 The saved inspector reconstructs path-to-OD/link flows and the original Beckmann component without solving. [Selected frozen data and checks](../../examples/sioux-falls/native_l3_r1/README.md) and [optional native staging instructions](../../algorithms/path_compression/diagnostic_l3/README.md) are separate from the historical [CG implementation](../../app/src/gmns_dynamic/run_full_cg_v1.py). No new Sioux run was made for this publication.
+
+[ADMM R2_S matched Sioux figure families](sioux-admm.md) are saved-result visualizations of a separate finite shared-capacity method; no solver was rerun for their publication.

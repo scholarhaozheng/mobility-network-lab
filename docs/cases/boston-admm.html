@@ -1,0 +1,55 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boston ADMM R2 · frozen-policy 10-OD holdout · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body class="boston-admm-page"><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="boston-admm-r2-frozen-policy-10-od-holdout">Boston ADMM R2 · frozen-policy 10-OD holdout</h1>
+<p>The Boston ADMM R2 run used the already-selected, frozen <strong>R2_S</strong> source, input-derived fixed-rho rule and independent gates. It is one bounded finite time-expanded, fixed-cost, shared-capacity pilot: <strong>10 ODs, 90 physical nodes, 125 directed physical links, 3-second steps and a 100-step horizon</strong>. It is not a citywide Boston assignment or static Beckmann UE.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Accepted saved result</th>
+<th style="text-align:right">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADMM iterations</td>
+<td style="text-align:right">253</td>
+</tr>
+<tr>
+<td>ADMM objective</td>
+<td style="text-align:right">64.39729165541078</td>
+</tr>
+<tr>
+<td>Same-graph arc-flow LP objective</td>
+<td style="text-align:right">64.3968615115296</td>
+</tr>
+<tr>
+<td>Relative objective gap</td>
+<td style="text-align:right">6.68e-6</td>
+</tr>
+<tr>
+<td>Max original-unit local conservation residual</td>
+<td style="text-align:right">7.62e-8</td>
+</tr>
+<tr>
+<td>Max capacity excess</td>
+<td style="text-align:right">9.24e-7</td>
+</tr>
+<tr>
+<td>Max physical back-projection error</td>
+<td style="text-align:right">0</td>
+</tr>
+</tbody>
+</table></div>
+<p>All declared independent gates passed. The independent evaluator made <strong>zero optimizer calls</strong>. The policy was frozen after Sioux development, and no Boston retuning or scientific rerun contributed to these figures.</p>
+<p><img alt="Boston six-panel accepted sequence" src="../assets/admm_r2/figures/admm_boston_10od_case_sequence.png"/></p>
+<p><a href="../assets/admm_r2/figures/admm_boston_10od_case_sequence.svg">Editable six-panel SVG</a> · <a href="../assets/admm_r2/figures/convergence_Boston_10OD.svg">original accepted convergence SVG</a> · <a href="../assets/admm_r2/figures/physical_flow_Boston_10OD.svg">original accepted physical scatter SVG</a></p>
+<h2 id="physical-link-movement-flow-and-lp-comparison">Physical-link movement flow and LP comparison</h2>
+<p>The 125 saved project-generated per-link ADMM/LP comparison rows are joined by <code>physical_link_id</code> to <strong>previously public Boston GMNS Plus <code>21_Boston</code> physical-link geometry and identifiers</strong>. The public repository already records source commit <code>116447ab641cca1ed34797d019c8e704063393c3</code> and Apache-2.0 terms. The geometry file's SHA-256 is <code>673405a563e325678f79cbbaa1379d23a0aff2691c0b7f4843715c38170a7a84</code>. No basemap or private dynamic arcs are embedded.</p>
+<p><img alt="Boston ADMM and LP physical-link flow on shared scale" src="../assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.png"/></p>
+<p><img alt="Boston signed ADMM-minus-LP physical-link difference" src="../assets/admm_r2/figures/admm_boston_10od_minus_lp.png"/></p>
+<p>The absolute panels use <strong>one shared ADMM/LP scale</strong>. The signed map is centered at zero and labels its actual micro-scale maximum (<code>4.24e-4</code> vehicles); it does not magnify the scientific value. The full permitted <a href="../assets/admm_r2/data/boston_10od_physical_link_admm_lp_comparison.csv">125-row derived ADMM/LP table</a> contains only physical-link ID, two derived flow totals and signed difference. Objective closeness does not imply identical primal route/time splits.</p>
+<h2 id="commodity-level-local-conservation">Commodity-level local conservation</h2>
+<p><img alt="Boston 10-OD local-conservation heatmap" src="../assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.png"/></p>
+<p>The heatmap plots all ten saved commodity-by-iteration balance residuals as <code>log10(max(residual, 1e-12))</code> and marks the frozen <code>1e-5</code> original-unit gate. It is a plot of saved derived evidence, not a state replay.</p>
+<h2 id="rights-provenance-and-limitations">Rights, provenance and limitations</h2>
+<p><strong>Rights basis:</strong> “User-authorized project-generated derived output, joined only to previously public Boston GMNS geometry and identifiers.” The approved release covers the bounded numerical summary, figures, derived per-link table, captions, hashes and limitations. It does <strong>not</strong> include private <code>dynamic_arc.csv</code> or <code>dynamic_demand.csv</code>, <code>state.npz</code>, full dynamic-arc/commodity arrays, raw LP reference-flow files, private run logs or handoff archives. Public geometry remains credited to <a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus <code>21_Boston</code></a> under Apache-2.0; the project's <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/DATA_SOURCES.md">existing Boston source record</a> and <a href="../assets/boston/space_time_cg_r4/data/figure_source_provenance.json">visual provenance record</a> provide the local publication trail.</p>
+<p>Each new figure has editable SVG, caption/limitations and a source-hash sidecar. The plotting-only renderer uses accepted saved results and previously public physical geometry. This ADMM result is separate from the <a href="boston-space-time.html">bounded Boston CG pilot</a>; a CG full-DAG pricing certificate is not an ADMM certificate or an independent ADMM convergence theorem.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

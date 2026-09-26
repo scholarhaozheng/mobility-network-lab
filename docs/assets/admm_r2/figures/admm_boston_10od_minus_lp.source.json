@@ -1,0 +1,19 @@
+{
+  "figure": "admm_boston_10od_minus_lp",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "saved Boston_10OD derived physical comparison",
+      "sha256": "0afdfc961207a65e8b93a9dda1ded3180ade495be9c9abf366fbfb19719809a7"
+    },
+    {
+      "logical_source": "already-public Boston_10OD physical geometry or topology",
+      "sha256": "673405a563e325678f79cbbaa1379d23a0aff2691c0b7f4843715c38170a7a84"
+    }
+  ],
+  "caption": "Boston_10OD physical-link signed ADMM-minus-LP difference.",
+  "limitations": "WGS84 public GMNS geometry; no basemap. Selected subset only; objective closeness does not imply identical primal flows.",
+  "svg_sha256": "692f878d147a247605f900ce6fe28fa4a04beaba26fc12e2373cb3a3a350f4c6",
+  "png_sha256": "9d66c4700ff19c4bc30235a2216b042c1c7ec536c16887ffb0a2bc68cc26e760"
+}

@@ -2,7 +2,19 @@
 
 This gallery links saved-result figures for Boston and Sioux Falls and the bounded Hong Kong data pilot. It does not rerun optimization or invent observations. Common finite space–time CG figure families use the same terminology and reading order in both assignment cases; city-specific supplementary figures remain available and are not removed.
 
-The additional [Sioux Lagrangian R2 and ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. The ADMM 250-OD view is drawn from accepted final metrics only; there is no invented iteration history. [Hong Kong's five official-derived data-layer SVGs](cases/hong-kong-gmns-pilot.md) have no assignment-flow interpretation.
+The additional [Sioux Lagrangian R2 and earlier ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. That R1 ADMM 250-OD view is drawn from final metrics only; no R1 iteration history was invented. The new R2_S lane below uses its own accepted saved histories. [Hong Kong's five official-derived data-layer SVGs](cases/hong-kong-gmns-pilot.md) have no assignment-flow interpretation.
+
+## ADMM R2 · finite space–time shared capacity
+
+![Verified Sioux and Boston ADMM R2 overview](assets/admm_r2/figures/admm_results_overview.png)
+
+The [ADMM R2 method contract](methods/admm-space-time.md) leads to matched saved-result galleries for [Sioux Falls 200/250 selected ODs](cases/sioux-admm.md) and the [rights-cleared Boston 10-OD frozen holdout](cases/boston-admm.md). Each includes residual and feasibility traces, same-graph LP objective comparison, physical-link scatter and maps. Sioux 200 and Boston 10 also show commodity-level local conservation. The Boston signed map preserves its `4.24e-4`-vehicle maximum and uses only previously public GMNS geometry. All 22 accepted figure families retain individual SVG/PNG files and source sidecars; the 125-row Boston derived table is published without private dynamic inputs. This gallery does not rerun a solver.
+
+## Static Algorithm B / matched saved figure families
+
+![Accepted static Algorithm B evidence: Sioux Falls left and Boston B1 right, four matched evidence rows](assets/algorithm_b_r21/algorithm_b_cross_city_overview.png)
+
+The overview uses display crops of the eight accepted R2 SVGs, ordered as convergence, same-problem FW physical-link comparison, selected-origin flow reconstructed from exported OD paths, and independent verification. The complete panels and explanatory captions remain on the [Sioux Falls](cases/sioux-algorithm-b.md) and [Boston](cases/boston-algorithm-b.md) case pages. Boston's one-point convergence is the saved trace, not an invented sequence; its selected-origin bars are not native Bush internal state or observed traffic. [Editable overview](assets/algorithm_b_r21/algorithm_b_cross_city_overview.svg) · [Crop and source-hash contract](assets/algorithm_b_r21/FIGURE_CONTRACT.md) · [Adapter status](integrations/taplab-tapb.md).
 
 ## Central Boston: demand, observations and static assignment
 

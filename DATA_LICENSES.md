@@ -1,12 +1,16 @@
 # Data licenses and publication boundaries
 
+## Static Algorithm B selected derived evidence
+
+The accepted classic Sioux and Central Boston B1 aggregate physical-link flows, evaluation JSONs and eight figures under [`algorithms/origin_based_algorithm_b/`](algorithms/origin_based_algorithm_b/README.md) are selected derived public candidates, not redistributed raw benchmark or Boston input tables. Boston geography traces to GMNS Plus `21_Boston`, Apache-2.0, commit `116447ab641cca1ed34797d019c8e704063393c3`. Its B1 demand is a modeled conditional HBW-midday cohort rather than observed citywide traffic. Native executables, upstream source trees, original demand tables, private logs and path-level run archives are excluded. The project MIT notice covers original adapter/evaluator code only; upstream TAPLab and tap-b retain their own MIT terms.
+
 ## Hong Kong bounded GMNS/data pilot
 
 The compact official-derived pilot tables and figures under `examples/hong-kong/gmns_pilot_r1/` retain Hong Kong SAR Government, DATA.GOV.HK, CSDI, Transport Department, Census and Statistics Department and Lands Department attribution. [Exact source/download records](examples/hong-kong/gmns_pilot_r1/SOURCE_REGISTER.csv), [attribution](examples/hong-kong/gmns_pilot_r1/ATTRIBUTION.md) and [rights review](examples/hong-kong/gmns_pilot_r1/RIGHTS_AND_REDISTRIBUTION_REPORT.md) govern reuse. Provider archives are absent. The UrbanNav reference trajectory and all point-level derivatives remain private pending exact-file rights confirmation. The root MIT software license does not relicense these third-party datasets.
 
 ## Distributed-method benchmark evidence
 
-The selected public Sioux Lagrangian R2 and ADMM R1 source, fixtures, summaries and figures are bounded algorithmic evidence. They do not include private run archives or upstream historical Sioux input tables. Existing benchmark-data rights caveats below continue to apply.
+The selected public Sioux Lagrangian R2, earlier ADMM R1, and cross-city ADMM R2_S source, authored fixtures, summaries and figures are bounded algorithmic evidence. The ADMM R2 Sioux maps are project-authored schematic derivatives of already-public topology; Sioux per-link numerical comparison CSVs are excluded. The 125-row Boston ADMM/LP physical-link comparison table and its derived figures are released under the user's explicit approval, joined only to previously public GMNS Plus `21_Boston` identifiers and geometry, with Apache-2.0 attribution retained. Private dynamic arcs, demand, raw reference flows, full state arrays, run logs and handoff archives are excluded. No historical Sioux raw input table or upstream provider archive is copied. Existing benchmark-data rights caveats below continue to apply. [ADMM R2 scope and provenance](docs/methods/admm-space-time.md).
 
 ## Selected OMDV software and fixtures
 

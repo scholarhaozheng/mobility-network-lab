@@ -1,0 +1,19 @@
+{
+  "figure": "admm_boston_10od_local_conservation_heatmap",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "saved Boston_10OD commodity local conservation",
+      "sha256": "e8ac9f3dca1f280fee64dc5c45fc9339431a0254ab40b8c05756deb62f5ac79e"
+    },
+    {
+      "logical_source": "frozen gate",
+      "sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+    }
+  ],
+  "caption": "Commodity-by-iteration original-unit local conservation for Boston_10OD; 1e-5 gate shown in color key.",
+  "limitations": "Color is log10(max(residual,1e-12)); the floor prevents log(0), and only selected commodities are shown.",
+  "svg_sha256": "41c9f77fc5c3668432fca1d76ca8ab30f4d50b0901c662168f8e5a4468c910a5",
+  "png_sha256": "5ac8989425bd15885c1c57cf3a7b497dd4a2dc6c4156e220a79c4902342ec6e7"
+}

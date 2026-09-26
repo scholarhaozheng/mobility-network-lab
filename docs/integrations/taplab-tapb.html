@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TAPLab registered `tapb` adapter and task-local Algorithm B route · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="taplab-registered-tapb-adapter-and-task-local-algorithm-b-route">TAPLab registered <code>tapb</code> adapter and task-local Algorithm B route</h1>
+<p>The accepted mathematical solver is official <a href="https://github.com/spartalab/tap-b"><code>spartalab/tap-b</code></a> <strong>Algorithm B</strong>, frozen at commit <code>040135a20c771fbb84766df6a97cff981fa5df4b</code>. The official adapter audit used <a href="https://github.com/asu-trans-ai-lab/TAPLab"><code>TAPLab</code></a> commit <code>081e44a0dd451c549d6903933516bccb4166bbd0</code>. TAPLab is the CLI/registered-adapter and verification environment here, not a separate mathematical solver. Both upstream projects retain their MIT terms; neither upstream source tree nor native binary is redistributed.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Official TAPLab registered adapter</th>
+<th>Accepted numerical result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Classic Sioux Falls</td>
+<td>CLI + direct callable parity passed; standard <code>taplab verify</code> certified</td>
+<td>Official TAPLab adapter result and independent R2 checks</td>
+</tr>
+<tr>
+<td>Boston B0 interface</td>
+<td>Stock converter contract blocked <strong>before</strong> solve</td>
+<td>Official tap-b Algorithm B via task-local TAPLab-compatible lossless adapter</td>
+</tr>
+<tr>
+<td>Boston B1 frozen holdout</td>
+<td>Stock converter contract blocked <strong>before</strong> solve</td>
+<td>Official tap-b Algorithm B via task-local TAPLab-compatible lossless adapter</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <a href="../../algorithms/origin_based_algorithm_b/parity/TAPLAB_ADAPTER_PARITY_MATRIX.csv">R2.1 parity matrix</a>, <a href="../../algorithms/origin_based_algorithm_b/parity/TAPLAB_PUBLIC_ENTRYPOINT_RECORD.json">entry-point record</a>, and <a href="../../algorithms/origin_based_algorithm_b/parity/STANDARD_OUTPUT_CONTRACT_AUDIT.csv">standard-output audit</a> identify which route was actually exercised. They do not imply that a Boston official-adapter solve failed: none was invoked.</p>
+<h2 id="official-sioux-falls-route">Official Sioux Falls route</h2>
+<p>Obtain the pinned TAPLab source and the pinned tap-b source from their official repositories under their MIT notices; build tap-b locally and prepare a licensed classic Sioux instance that preserves the frozen 24-node/76-link/528-positive-OD contract. Use a task-local Python environment and task-local temporary directory. Set <code>TAPLAB_TAPB_EXE</code> to the locally built executable. From the pinned TAPLab source root, the accepted R2.1 CLI route was:</p>
+<pre><code class="language-powershell">$env:TAPLAB_TAPB_EXE = '&lt;absolute path to your locally built tap-b executable&gt;'
+$inst = '&lt;absolute path to your classic Sioux TAPLab instance&gt;'
+python -m taplab.cli validate $inst
+python -m taplab.cli run $inst --solver tapb --algorithm B --gap 1e-8 --max-time 1800
+python -m taplab.cli verify $inst --solver tapb --gap-target 1e-4
+</code></pre>
+<p>For the frozen audit, validation, run and verification returned zero; the registered adapter and <code>taplab.adapters.tapb.solve</code> direct call had zero physical-link-flow difference from accepted R2. <code>taplab verify</code> certified the standard output. The adapter did not expose R2's explicit 10,000-iteration cap or OD-path export, and did not itself inspect the native subprocess return code; the frozen parity run stopped at 18 iterations, so the cap was nonbinding. The independent R2 <a href="../../algorithms/origin_based_algorithm_b/accepted_results/sioux_evaluation.json">evaluation record</a> supplies path-level verification. This release does not claim byte-identical parameter settings across the two routes.</p>
+<h2 id="boston-task-local-lossless-route">Boston task-local lossless route</h2>
+<p>The pinned stock converter's pre-solve dry-run wrote <code>FIRST THRU NODE=13</code> for B0 and <code>132</code> for B1 instead of the required <code>1</code>, and rounded <strong>26/26</strong> and <strong>453/453</strong> OD values respectively to four decimals. Three positive B1 OD values became zero. B1 also lacked the stock converter's required <code>length</code> field; the dry-run supplied a placeholder <strong>only for converter inspection</strong>, while the authoritative BPR <code>vdf_fftt</code> was preserved. None of these converted inputs was passed to a Boston official-adapter solve.</p>
+<p>To reproduce a <em>new</em> compatible Boston-style run, supply your own lawful physical-link/OD CSVs with the original precision, build the pinned official tap-b executable, and use the selected <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/origin_based_algorithm_b/README.md">task-local contract/adapter code</a>:</p>
+<pre><code class="language-text">python algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py prepare --link LINKS.csv --demand DEMAND.csv --out RUN_DIR
+python algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py run --exe TAP_B_EXECUTABLE --link LINKS.csv --demand DEMAND.csv --out RUN_DIR
+python algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py --link LINKS.csv --demand DEMAND.csv --run RUN_DIR
+</code></pre>
+<p>The <code>run</code> line invokes the external solver and is <strong>documentation only</strong> for this publication task. The accepted R2 task-local executable had link-flow and OD-path text outputs widened from <code>%f</code> to <code>%.17g</code>; the source patch was not in the rights-cleared public candidate directory. See the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/origin_based_algorithm_b/README.md">code README</a> for what is and is not supplied. Public accepted B1 aggregate flows and evaluations are inspection artifacts, not a replacement for the original input or path-flow run directory.</p>
+<h2 id="claim-boundary">Claim boundary</h2>
+<p>The Boston B1 result is a conditional HBW-midday, two-hour modeled cohort, not observed traffic, an all-day citywide result, or empirical validation. Exported OD paths allow reconstructed origin-link flow; they do not disclose native Policy Bush internal merge/label/restriction-update state. Same-problem FW agreement in this low-congestion holdout is a numerical check, not a generalized Algorithm B speed or quality advantage. <a href="../cases/sioux-algorithm-b.html">Sioux case</a> · <a href="../cases/boston-algorithm-b.html">Boston case</a>.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

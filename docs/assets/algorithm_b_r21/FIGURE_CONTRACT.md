@@ -1,0 +1,11 @@
+# Cross-city Algorithm B figure contract
+
+**Conclusion and scope.** The figure places four accepted R2 static Algorithm B evidence families side by side for classic Sioux Falls and conditional Boston B1. It is a saved-result comparison, not an adapter-parity or performance-speed comparison. Boston's official TAPLab adapter remains blocked at input conversion; the figure itself does not override that status.
+
+**Evidence logic and panel order.** Two columns (Sioux Falls left, Boston B1 right), four rows: (1) solver convergence, (2) Algorithm B versus same-problem FW physical-link flow, (3) selected-origin flow reconstructed from exported OD paths, (4) independent verification. Every panel uses an accepted SVG unchanged as source. Within each row, both cities use the same display crop: `y=105..520`, `100..550`, `115..520`, and `105..530` respectively. This removes original title bands and footnotes from the montage. Complete source figures remain on the case pages. Boston convergence has only one saved point. No new solver values or extra iterations are drawn.
+
+**Display and export.** `tools/render_algorithm_b_overview.py` embeds the eight accepted SVG bytes into one self-contained SVG in this directory and rasterizes the same display crops to a PNG using Python/Pillow's primitives for the frozen SVG element set. The script validates the eight frozen source hashes and writes `SOURCE_SVG_SHA256.csv`. The PNG is a display derivative; complete source SVGs and evaluation JSON remain authoritative. Interpretive claims and limits are placed in page captions, not new figure text.
+
+**Review risks.** The overview hides some source axis labels and source footnotes along with the title bands; readers should open the full panels for exact labels. At narrow page widths individual text is small, so each complete source panel is separately linked on its case page. Sioux and Boston use different demand units and instances. The source figures do not show native Policy Bush internal state or empirical traffic observations.
+
+**Rights.** The eight selected SVGs were in the approved R2 public-candidate set. Source lineage and notices are in [the code directory](../../../algorithms/origin_based_algorithm_b/README.md). No raw datasets, private paths or native binaries are embedded.

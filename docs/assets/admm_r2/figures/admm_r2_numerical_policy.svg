@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1350" height="560" viewBox="0 0 1350 560">
+<rect width="1350" height="560" fill="#f6f9fb"/>
+<text x="45.00" y="46.00" font-family="Arial, sans-serif" font-size="29" fill="#153047" font-weight="bold" text-anchor="start">R2_S | accepted numerical policy</text>
+<text x="45.00" y="72.00" font-family="Arial, sans-serif" font-size="15" fill="#547086" font-weight="normal" text-anchor="start">Scaling and local correction selected before the Boston holdout</text>
+<rect x="45.00" y="130.00" width="610.00" height="155.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="63.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">Normalize each commodity</text>
+<text x="63.00" y="206.00" font-family="Arial, sans-serif" font-size="16" fill="#153047" font-weight="normal" text-anchor="start">d &gt; 0: y = x / d; By = b / d</text>
+<text x="63.00" y="243.00" font-family="Arial, sans-serif" font-size="16" fill="#547086" font-weight="normal" text-anchor="start">local QP uses c / (ρd)</text>
+<rect x="695.00" y="130.00" width="610.00" height="155.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="713.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">Fix ρ from input</text>
+<text x="713.00" y="206.00" font-family="Arial, sans-serif" font-size="16" fill="#153047" font-weight="normal" text-anchor="start">clip(median positive cost / median demand, 10⁻⁴, 1)</text>
+<text x="713.00" y="243.00" font-family="Arial, sans-serif" font-size="16" fill="#547086" font-weight="normal" text-anchor="start">same deterministic rule across cases</text>
+<rect x="45.00" y="320.00" width="610.00" height="155.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="63.00" y="350.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">Correct active support</text>
+<text x="63.00" y="396.00" font-family="Arial, sans-serif" font-size="16" fill="#153047" font-weight="normal" text-anchor="start">L-BFGS-B → semismooth Newton</text>
+<text x="63.00" y="433.00" font-family="Arial, sans-serif" font-size="16" fill="#547086" font-weight="normal" text-anchor="start">nonnegative support correction</text>
+<rect x="695.00" y="320.00" width="610.00" height="155.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="713.00" y="350.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">Check original units</text>
+<text x="713.00" y="396.00" font-family="Arial, sans-serif" font-size="16" fill="#153047" font-weight="normal" text-anchor="start">conservation, capacity, KKT, objective</text>
+<text x="713.00" y="433.00" font-family="Arial, sans-serif" font-size="16" fill="#547086" font-weight="normal" text-anchor="start">independent evaluator; zero optimizer calls</text>
+<text x="45.00" y="535.00" font-family="Arial, sans-serif" font-size="16" fill="#547086" font-weight="normal" text-anchor="start">Finite time-expanded shared-capacity LP. No general ADMM convergence guarantee is claimed for every instance.</text>
+</svg>

@@ -24,4 +24,6 @@ Run expected-rejection checks when changing input validation. An input correctly
 
 ## Bounded city-data and method components
 
-The [Hong Kong GMNS/data pilot](cases/hong-kong-gmns-pilot.md) supplies official-derived saved tables, five SVGs and offline validation/trace commands, but **no assignment-ready instance**. The [Lagrangian R2 and ADMM R1 components](methods/distributed-assignment.md) include synthetic fixtures and accepted saved Sioux selected-OD summaries; their small fixtures do not reconstruct the historical 200/250-OD networks.
+The [Hong Kong GMNS/data pilot](cases/hong-kong-gmns-pilot.md) supplies official-derived saved tables, five SVGs and offline validation/trace commands, but **no assignment-ready instance**. The [Lagrangian R2 component](methods/distributed-assignment.md) and [ADMM R2_S source with authored analytic/C0/C1 fixtures](../examples/admm-r2-fixtures/README.md) support public inspection and bounded tests; these small fixtures do not reconstruct the private historical Sioux/Boston dynamic instances. Earlier ADMM R1 material remains available.
+
+The [Algorithm B public candidate](../algorithms/origin_based_algorithm_b/README.md) supplies task-local adapter/evaluator code and accepted derived Sioux/Boston B1 outputs. Its original frozen inputs and native tap-b executable are not bundled, so the published files support inspection and new-input preparation rather than a self-contained rerun of the accepted cases. [Two reproduction routes](integrations/taplab-tapb.md).

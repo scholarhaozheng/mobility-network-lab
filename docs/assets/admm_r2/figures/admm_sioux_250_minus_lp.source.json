@@ -1,0 +1,19 @@
+{
+  "figure": "admm_sioux_250_minus_lp",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "saved Sioux_250OD derived physical comparison",
+      "sha256": "ce4b99018d458a87294f3671cfa5c5a52180044333567539132dc050ae918782"
+    },
+    {
+      "logical_source": "already-public Sioux_250OD physical geometry or topology",
+      "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38"
+    }
+  ],
+  "caption": "Sioux_250OD physical-link signed ADMM-minus-LP difference.",
+  "limitations": "deterministic schematic layout from already-public Sioux link topology; not geographic. Selected subset only; objective closeness does not imply identical primal flows.",
+  "svg_sha256": "856014c0b17d83495d6f342e4e8489c41b76d6d5c61f817b43c7a2e49056b1eb",
+  "png_sha256": "57ae175514d5a07009a6c911696d6d8c3fdfc8728aaac1021759c0a77131897f"
+}

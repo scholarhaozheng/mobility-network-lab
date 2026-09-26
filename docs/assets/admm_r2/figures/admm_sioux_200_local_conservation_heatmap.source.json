@@ -1,0 +1,19 @@
+{
+  "figure": "admm_sioux_200_local_conservation_heatmap",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "saved Sioux_200OD commodity local conservation",
+      "sha256": "f2ab7dc2178ca65baebcff5e98a69248126ce49a071591970dcc214370ce7ff1"
+    },
+    {
+      "logical_source": "frozen gate",
+      "sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+    }
+  ],
+  "caption": "Commodity-by-iteration original-unit local conservation for Sioux_200OD; 1e-5 gate shown in color key.",
+  "limitations": "Color is log10(max(residual,1e-12)); the floor prevents log(0), and only selected commodities are shown.",
+  "svg_sha256": "3e91180f3fbf7c2c01ae963d3ba940f20eac600bd8fb59d34becaf6d7e90b167",
+  "png_sha256": "07355ed0d19f817b8d6620f71d5199697de70c588baf010b1600e9b662c827a2"
+}

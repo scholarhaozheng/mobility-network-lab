@@ -1,0 +1,19 @@
+{
+  "figure": "admm_r2_numerical_policy",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "frozen policy",
+      "sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+    },
+    {
+      "logical_source": "preregistered plan",
+      "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+    }
+  ],
+  "caption": "Accepted R2_S scaling, fixed input-derived rho, active-support correction, original-unit gates.",
+  "limitations": "No general ADMM convergence guarantee.",
+  "svg_sha256": "34bde9347d5480984fb3f1e3d9600ba661dfd2c7ffa1a43e891f4500c56eeba2",
+  "png_sha256": "8891ef04742a3049a6c0d3753df059941b0d21a52b8edbd30c6187e3b6e742cd"
+}

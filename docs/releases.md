@@ -2,7 +2,7 @@
 
 ## Current public integration R1
 
-This cumulative source update adds the [Hong Kong bounded GMNS/data pilot](cases/hong-kong-gmns-pilot.md) and accepted [Sioux Lagrangian R2 / ADMM R1 selected-OD evidence](methods/distributed-assignment.md), while retaining the Boston/Sioux CG case-parallel structure and earlier public content. Bush/OBA, Boston Lagrangian and Boston ADMM transfers remain visibly gated. Scientific models were not rerun for this integration. The Hong Kong instance is not assignment-ready.
+This cumulative source update retains the [Hong Kong bounded GMNS/data pilot](cases/hong-kong-gmns-pilot.md), [Sioux Lagrangian R2](methods/distributed-assignment.md), Boston/Sioux CG case-parallel structure and all earlier public content. It adds accepted [official tap-b Algorithm B evidence](methods/origin-based-algorithm-b.md) with Sioux official TAPLab-adapter parity and Boston task-local lossless transfer, plus [ADMM R2_S](methods/admm-space-time.md) selected Sioux 200/250-OD and bounded Boston 10-OD saved results. Earlier ADMM R1 figures remain separately labeled. Scientific models were not rerun for this integration. Hong Kong is not assignment-ready; Boston Lagrangian transfer remains gated; no citywide or empirical Boston validation is claimed.
 
 ## Source repository
 

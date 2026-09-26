@@ -1,0 +1,19 @@
+{
+  "figure": "admm_sioux_200_final_physical_link_flow",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "saved Sioux_200OD derived physical comparison",
+      "sha256": "31ffb0cb2f6d8cf8a6125bd4704a04014593a3936ee45b8e2dc1c5e61883d0e4"
+    },
+    {
+      "logical_source": "already-public Sioux_200OD physical geometry or topology",
+      "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38"
+    }
+  ],
+  "caption": "Sioux_200OD physical-link ADMM and LP absolute movement-flow maps on one shared scale.",
+  "limitations": "deterministic schematic layout from already-public Sioux link topology; not geographic. Selected subset only; objective closeness does not imply identical primal flows.",
+  "svg_sha256": "178461b18bfbe5b1b67f8f6bea80ec051a47437946da7ec2a4fc7b487888f1a5",
+  "png_sha256": "0e9f45837cdf1e9055b90c59028d79d8b419005b4c4855c91770b553987245ba"
+}

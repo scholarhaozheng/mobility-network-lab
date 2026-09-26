@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sioux Falls ADMM R2 · selected finite space–time cases · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="sioux-falls-admm-r2-selected-finite-spacetime-cases">Sioux Falls ADMM R2 · selected finite space–time cases</h1>
+<p>The accepted R2_S development ladder ran analytic, C0, C1, then Sioux Falls 30, 60, 100, 150, 200 and 250 OD subsets. All mandatory cases passed before the policy and source hashes were frozen for Boston. These are selected time-expanded shared-capacity instances, <strong>not</strong> the complete 528-positive-OD Sioux benchmark and not static Beckmann UE.</p>
+<p><img alt="Sioux-first development and freeze sequence" src="../assets/admm_r2/figures/admm_sioux_freeze_boston_holdout.png"/></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Saved case</th>
+<th style="text-align:right">Iterations</th>
+<th style="text-align:right">ADMM objective</th>
+<th style="text-align:right">Same-graph LP objective</th>
+<th style="text-align:right">Relative objective gap</th>
+<th style="text-align:right">Max local balance</th>
+<th style="text-align:right">Max capacity excess</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sioux 200 OD</td>
+<td style="text-align:right">85</td>
+<td style="text-align:right">943161.533307</td>
+<td style="text-align:right">943155.589771</td>
+<td style="text-align:right">6.30e-6</td>
+<td style="text-align:right">9.40e-8</td>
+<td style="text-align:right">5.73e-8</td>
+</tr>
+<tr>
+<td>Sioux 250 OD</td>
+<td style="text-align:right">101</td>
+<td style="text-align:right">1521101.731718</td>
+<td style="text-align:right">1521090.836620</td>
+<td style="text-align:right">7.16e-6</td>
+<td style="text-align:right">9.63e-8</td>
+<td style="text-align:right">1.48e-8</td>
+</tr>
+</tbody>
+</table></div>
+<p>The independent evaluator passed conservation, capacity, KKT, projection, objective recomputation and physical back-projection with <strong>zero optimizer calls</strong>. The ADMM solver itself made local QP optimizer calls during the original accepted runs; zero applies to independent evaluation and this saved-result figure build.</p>
+<h2 id="matched-case-sequences">Matched case sequences</h2>
+<p>The two composites use the same 2×3 order: residuals, original-unit local balance/capacity, objective distance to the same-graph LP, fixed rho/status, physical-link ADMM-versus-LP scatter and an independent-check card.</p>
+<p><img alt="Sioux 200 OD six-panel accepted sequence" src="../assets/admm_r2/figures/admm_sioux_200_case_sequence.png"/></p>
+<p><a href="../assets/admm_r2/figures/admm_sioux_200_case_sequence.svg">200-OD SVG</a> · <a href="../assets/admm_r2/figures/convergence_Sioux_200OD.svg">original accepted convergence SVG</a> · <a href="../assets/admm_r2/figures/physical_flow_Sioux_200OD.svg">original accepted physical-flow scatter SVG</a></p>
+<p><img alt="Sioux 250 OD six-panel accepted sequence" src="../assets/admm_r2/figures/admm_sioux_250_case_sequence.png"/></p>
+<p><a href="../assets/admm_r2/figures/admm_sioux_250_case_sequence.svg">250-OD SVG</a> · <a href="../assets/admm_r2/figures/convergence_Sioux_250OD.svg">original accepted convergence SVG</a> · <a href="../assets/admm_r2/figures/physical_flow_Sioux_250OD.svg">original accepted physical-flow scatter SVG</a></p>
+<h2 id="physical-link-movement-flow">Physical-link movement flow</h2>
+<p>The maps join the saved project-generated per-link ADMM/LP comparisons to the <strong>already-public 76-link Sioux topology</strong> by <code>physical_link_id</code>. The layout is deterministic and schematic; it is not a geographic coordinate map. Each absolute ADMM/LP pair has one shared scale for its own subset. Signed maps are centered at zero and preserve their actual range.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>200 OD · absolute ADMM and LP</th>
+<th>200 OD · signed ADMM − LP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Sioux 200 physical flow" src="../assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.png"/></td>
+<td><img alt="Sioux 200 signed difference" src="../assets/admm_r2/figures/admm_sioux_200_minus_lp.png"/></td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>250 OD · absolute ADMM and LP</th>
+<th>250 OD · signed ADMM − LP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img alt="Sioux 250 physical flow" src="../assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png"/></td>
+<td><img alt="Sioux 250 signed difference" src="../assets/admm_r2/figures/admm_sioux_250_minus_lp.png"/></td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Interpretation.</strong> The largest saved physical-link ADMM/LP differences are about 600 vehicles (200 OD) and 3,032 vehicles (250 OD), even though objective gaps are small. The finite LP can have alternate route and time splits; objective agreement is not primal-flow identity. Movement flow sums over modeled time and is not observed traffic or static volume/capacity. The 200 and 250 cases have 64 and 69 selected physical links respectively.</p>
+<h2 id="commodity-level-local-conservation">Commodity-level local conservation</h2>
+<p><img alt="Sioux 200 OD commodity conservation heatmap" src="../assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.png"/></p>
+<p>The heatmap uses every saved commodity-by-iteration original-unit balance residual for the 200-OD case, transformed as <code>log10(max(residual, 1e-12))</code>. The color key marks the frozen <code>1e-5</code> gate. The image is saved-result evidence, not a reconstructed state file.</p>
+<h2 id="reproduction-and-rights-boundary">Reproduction and rights boundary</h2>
+<p>Each image has an editable SVG, caption/limitations sidecar and SHA-256 source record. The plotting-only renderer accepts a frozen handoff path and an existing public-repository path; it makes no optimizer calls. This release does <strong>not</strong> include historical Sioux raw road/OD tables, full arc flows, raw LP reference flows, state files or run logs. Sioux per-link numerical comparison CSVs are not released; the project-authored derived figures are covered by the repository's existing derived-benchmark-figure permission. See <a href="../methods/admm-space-time.html">ADMM method</a> and the separate <a href="sioux-space-time.html">historical Sioux CG record</a>.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>
