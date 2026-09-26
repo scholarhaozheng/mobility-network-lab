@@ -1,0 +1,38 @@
+{
+  "schema": "mcl-cg-saved-result-case-sequences-v1",
+  "status": "saved-result presentation composites; no scientific model rerun",
+  "renderer": "tools/visuals/render_cg_case_sequences.py",
+  "source_policy": "Accepted public PNG figures are displayed in full without cropping or local pixel adjustment. Case-specific numeric axes are not interpreted as cross-city comparable.",
+  "layout": {
+    "canvas_px": [3000, 3000],
+    "grid": "2 columns x 3 rows for each case; separate compact case-neutral overview",
+    "panel_order": [
+      "From the physical network to time-indexed columns",
+      "Phase I restores feasibility",
+      "A new path can help a different OD",
+      "Phase II improves the real-path objective",
+      "Final physical-link movement flow and validation",
+      "Independent pricing closure"
+    ]
+  },
+  "case_status": {
+    "boston": "One bounded 90-node, 125-link, 10-OD pilot; independent pricing closure established for 10/10 demands at 1e-6; second-machine receiver check pending.",
+    "sioux": "Two distinct historical selected-OD instances (200 and 250); reference-objective agreement established separately; independent pricing closure not established."
+  },
+  "sources": {
+    "boston/space_time_cg_r4/boston_space_time_construction.png": "fa3fd10d629bd0c4c0ff89f13150c5c9fe89e79f1fad6ca226acd1fe6ec14305",
+    "boston/space_time_cg_r4/boston_phase_i_artificial_flow.png": "ca2312775b0dc607b706b190307f68cdb04d5b0be98100a35387a9d726d061cb",
+    "boston/space_time_cg_r4/boston_shared_capacity_event.png": "1e8c66f40ed3639524ad1a2a5d2e1dd88a407ef05800f1de99744e216e9f1a45",
+    "boston/space_time_cg_r4/boston_phase_ii_objective.png": "f2b66bbc079c280864bb7a382daa4f14c73874a64e4dc40d385581766592dea3",
+    "boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png": "d61be20fe5894752e934d2d4a442f82581e91ebeaa0c3879a540579d3a8c7b3d",
+    "boston/space_time_cg_r4/boston_cg_validation.png": "749b34cbcf74af12f092a0c8f573e065d2538a500b558cecf39a3558e8de9e67",
+    "boston/space_time_cg_r4/boston_pricing_closure_by_demand.png": "b928e937f2fcde2eb8805a38ad5766775f00a35f48466b8b5fb301eefd45d061",
+    "presentation_r3/sioux_space_time_construction.png": "1f2d777e86e18d4a6cdcb434d2b91b4bf30158c7094630ffcf74abf1e59e01ed",
+    "presentation_r3/sioux_phase_i_pair.png": "e1c7c36f53c3d3bf1fbdc3a57511969128b9296891ccd5cf818f41d9240c178b",
+    "presentation_r5/sioux_shared_capacity_canonical.png": "37d19429644e2ac5087324d832ee20e3c2ae43e0f53d044f00f7ca98ea436018",
+    "benchmarks/sioux_200od_phase2_objective_trace.png": "a8259ef981432775fe117cf6d09e1bbe932f13c4fbd88e20cfa87f3f9acf5abf",
+    "benchmarks/sioux_250od_phase2_objective_trace.png": "f436aa39a51ffbedc58f5324d77b9d23e4e172094736b07643f44e6c863f7a44",
+    "benchmarks/sioux_200od_final_physical_link_flow.png": "e42eb38bbe4f9e431915868c42a8d6ba04be17bf705e8be0e26b16270be9b196",
+    "benchmarks/sioux_250od_final_physical_link_flow.png": "f70b40db425363a223c528d7f6cb092d79fb6e01b9c5c07d755d55c30a8e1938"
+  }
+}

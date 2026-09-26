@@ -1,0 +1,18 @@
+{
+  "schema": "mcl-sioux-saved-capacity-reallocation-r1",
+  "status": "saved-result visualization; no optimization or pricing rerun",
+  "renderer": "tools/visuals/render_sioux_capacity_canonical.py",
+  "source_note": "The plot-input CSV is a literal public projection of the recorded 200-OD round-34 and 250-OD round-39 before/after values retained in docs/cases/sioux-space-time.md. The earlier accepted diagram and its provenance remain linked and unchanged.",
+  "plot_input": "presentation_r5/data/sioux_shared_capacity_saved.csv",
+  "source_hashes": {
+    "presentation_r5/data/sioux_shared_capacity_saved.csv": "4622b8efbc53e38ef0a0ba77eaa7200ca709aa2e128d1a8e886fdbb06d1fcdae",
+    "presentation_r3/sioux_capacity_exchange.png": "575988989e4de34e2fd2c0cb1aefe1d79c8b833df853308d19fd80f469538d4d",
+    "presentation_r3/FIGURE_PROVENANCE.json": "0dc38d886a7aba6cec6fc7fdb06da81c3e88d442086db11e854c40018815ec45"
+  },
+  "claims": [
+    "Shared time arc xs_link21_t1 remains at its recorded 5050.193 capacity before and after the master reoptimization.",
+    "XS170's 500 units leave the shared arc; XS169's use grows from 150.193 to 650.193.",
+    "XS169 artificial flow decreases by 500; the recorded raw capacity dual stays approximately -1.",
+    "These before/after optima do not establish that the selected XS170 column was uniquely necessary."
+  ]
+}

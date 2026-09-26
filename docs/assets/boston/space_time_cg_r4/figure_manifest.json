@@ -78,7 +78,7 @@
     "boston_cg_final_physical_link_flow": {
       "title": "Final physical-link flow",
       "alt": "Bounded Boston pilot street map: 52 of 125 directed physical links have positive final CG flow; pale links have zero flow.",
-      "caption": "R3 accepted final-column flow joined on physical_link_id to the accepted GMNS Plus 21_Boston geometry. The R4 closure adds zero-flow columns and leaves this physical projection unchanged; this is not a citywide traffic map.",
+      "caption": "R3 accepted final-column flow joined on physical_link_id to accepted GMNS Plus 21_Boston geometry. R4 adds zero-final-flow certificate columns and leaves final physical-link movement flow unchanged within numerical precision; this is not a citywide traffic map.",
       "plot_inputs": [
         "physical_link_flow_geometry.csv",
         "validation_summary.json"
@@ -156,14 +156,14 @@
     },
     "boston_phase_ii_objective": {
       "title": "Phase-II objective and reference",
-      "alt": "Saved Boston Phase-II objective falls from 64.829676 to 64.396862 over 15 rounds; strict and degenerate commits have different markers, with identical-graph reference line.",
-      "caption": "Accepted R3 Phase-II round log. Round 15 matches the identical-graph arc-flow LP objective to numerical precision. Square markers are degenerate nonincreasing commits, distinct from strict improvement. The R4 continuation later establishes full-DAG pricing closure without changing the final objective.",
+      "alt": "Saved Boston Phase-II objective falls from 64.829676 to 64.396862 over 15 rounds; strict and degenerate commits have different markers, with the arc-flow LP reference line for the same finite time-expanded graph.",
+      "caption": "Accepted R3 Phase-II round log. Round 15 establishes reference-objective agreement with the arc-flow LP on the same finite time-expanded graph. Square markers are degenerate nonincreasing commits, distinct from strict improvement. The R4 continuation later establishes independent pricing closure without changing the final objective.",
       "plot_inputs": [
         "phase_ii_objective.csv",
         "validation_summary.json"
       ],
-      "png_sha256": "b043b24e7ee9d5cae63f468d10557bedbf477986ef3b5dad37f03b54c2328b87",
-      "svg_sha256": "275ec01980c2d44becee5fd7bed6bba8643b211e84c04261292e4ac37b5715f5",
+      "png_sha256": "f2b66bbc079c280864bb7a382daa4f14c73874a64e4dc40d385581766592dea3",
+      "svg_sha256": "9f814b5416186484ca444ca5a18d57c4120d008358c7b5fdba589f69eeae06c4",
       "plot_input_sha256": {
         "phase_ii_objective.csv": "898a23b0d9c6fa120f82d51aa3edb3f6887759d41f72ab775f9c29481f3728ee",
         "validation_summary.json": "b0fc0dee815ce1753ee47bf89a5ec41bfe9baa4f1ef196dfec27c6115b12261c"
@@ -213,7 +213,7 @@
     "boston_cg_summary_panel": {
       "title": "Boston CG summary composite",
       "alt": "Four-panel Boston bounded-pilot summary: final road-flow map, Phase-I clearance, Phase-II reference objective, and R4 ten-demand pricing certificate.",
-      "caption": "Composed summary of the same accepted bounded Boston pilot, not four different scales. The final physical projection has 52 positive-flow links; Phase I clears at round 90; Phase II reaches identical-graph arc-LP objective; R4 establishes 10/10 independent pricing closure with 15 zero-flow certificate columns.",
+      "caption": "Composed summary of the same accepted bounded Boston pilot, not four different scales. Final physical-link movement flow has 52 positive-flow links; Phase I clears at round 90; Phase II establishes reference-objective agreement on the same finite time-expanded graph; R4 establishes 10/10 independent pricing closure with 15 zero-flow certificate columns.",
       "plot_inputs": [
         "physical_link_flow_geometry.csv",
         "phase_i_total.csv",
