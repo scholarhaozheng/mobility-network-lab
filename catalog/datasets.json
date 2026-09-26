@@ -51,6 +51,21 @@
       "raw_data_bundled": false
     },
     {
+      "id": "hong-kong-gmns-pilot-r1",
+      "title": "Hong Kong | bounded GMNS and city-data pilot",
+      "kind": "city-network",
+      "access": "bundled-example",
+      "profile": "gmns-hierarchical-zones-official-data-pilot-no-assignment",
+      "nodes": 780,
+      "links": 1239,
+      "data_page": "docs/cases/hong-kong-gmns-pilot.md",
+      "verification": "Offline GMNS relationship validation and tracing; assignment_ready=false; no solver run.",
+      "data_origin": "Hong Kong Government Transport Department and CSDI official-derived compact tables with attribution",
+      "demand_origin": "Deterministic hypothetical seed, not observed or calibrated OD",
+      "raw_data_bundled": false,
+      "component": "examples/hong-kong/gmns_pilot_r1"
+    },
+    {
       "id": "open-mobility-evidence",
       "title": "Open mobility data evidence",
       "kind": "evidence-summary",

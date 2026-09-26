@@ -1,0 +1,67 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Hong Kong / bounded GMNS and city-data pilot | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Hong Kong / bounded GMNS and city-data pilot</p><h1 id="hong-kong--bounded-gmns-and-city-data-pilot">Hong Kong / bounded GMNS and city-data pilot</h1>
+<p>This Tsim Sha Tsui–Jordan pilot tests whether official road, census, transit and detector sources can be represented as traceable GMNS-related objects. It is <strong>not assignment-ready</strong> and is not a completed four-stage model or calibrated forecast. The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/README.md">public instance and offline tools</a> contain compact derivatives, not provider archives.</p>
+<h2 id="source-and-object-scope">Source and object scope</h2>
+<table>
+<thead>
+<tr>
+<th>Layer</th>
+<th style="text-align:right">Saved scope</th>
+<th>Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical network</td>
+<td style="text-align:right">780 nodes, 1,239 directed links</td>
+<td>Transport Department centerline-derived graph; direction and length retained</td>
+</tr>
+<tr>
+<td>Zone hierarchy</td>
+<td style="text-align:right">95 Census SSG fine zones, 10 STPUG parent zones</td>
+<td>Source statistical polygons and model zones remain identifiable</td>
+</tr>
+<tr>
+<td>Model access</td>
+<td style="text-align:right">95 centroids, 190 nonphysical connector arcs</td>
+<td>Centroid/access relationships; connectors are neither roads nor GPS-matchable</td>
+</tr>
+<tr>
+<td>Transit</td>
+<td style="text-align:right">183 GTFS stops, 294 route IDs</td>
+<td>Stop-to-zone/network and route relationships, not a complete multimodal assignment</td>
+</tr>
+<tr>
+<td>Detector evidence</td>
+<td style="text-align:right">50 lane observations at 11 sites in one linked snapshot</td>
+<td>Speed, 30-second volume and occupancy are measurements, not OD or calibrated link flows</td>
+</tr>
+<tr>
+<td>Demography</td>
+<td style="text-align:right">90,677.156 allocated persons; 36,228.315 households</td>
+<td>2021 census SSG estimates allocated by clipped-polygon area fraction</td>
+</tr>
+</tbody>
+</table>
+<p>The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/SOURCE_REGISTER.csv">source register</a> lists resource links, retrieval times, fields and hashes. Road, turn, GTFS and detector derivatives credit the Hong Kong SAR Government and Transport Department through <a href="https://data.gov.hk/en/terms-and-conditions">DATA.GOV.HK</a>; census and pedestrian source derivatives credit the Government, Census and Statistics Department/Lands Department and <a href="https://portal.csdi.gov.hk/csdi-webpage/doc/TNC">CSDI</a>. See the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/ATTRIBUTION.md">attribution</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/RIGHTS_AND_REDISTRIBUTION_REPORT.md">redistribution review</a>. Third-party source data are not relicensed by the project's software license.</p>
+<h2 id="saved-geographic-and-relational-evidence">Saved geographic and relational evidence</h2>
+<p><img src="../assets/hong_kong/gmns_pilot_r1/01_boundary_coverage.svg" alt="Pilot boundary and source coverage" /></p>
+<p><em>Pilot boundary and source coverage. The bounded polygon is not a citywide road model.</em></p>
+<p><img src="../assets/hong_kong/gmns_pilot_r1/02_roads_zones.svg" alt="Physical roads and statistical zones" /></p>
+<p><em>Directed physical roads over the SSG/STPUG hierarchy. The source-to-model crosswalk is retained in the public instance.</em></p>
+<p><img src="../assets/hong_kong/gmns_pilot_r1/03_centroid_access.svg" alt="Centroid and road access" /></p>
+<p><em>Centroids and access arcs are modeling objects; they are deliberately distinct from physical links.</em></p>
+<p><img src="../assets/hong_kong/gmns_pilot_r1/04_transit_pedestrian.svg" alt="Transit and pedestrian proximity" /></p>
+<p><em>Saved GTFS and pedestrian-proximity relationships do not imply verified walk routes or door-to-door travel times.</em></p>
+<p><img src="../assets/hong_kong/gmns_pilot_r1/06_demand_seed.svg" alt="Hypothetical demand seed" /></p>
+<p><em>The deterministic internal-only demand seed is an engineering scenario, not observed or calibrated OD.</em></p>
+<p>The source population and household attributes are allocated by <code>area(clipped SSG) / area(full SSG)</code>, assuming uniform distribution within each polygon. Three sub-1% slivers are excluded with recorded reasons. Activity fields preserve population, households and stop count separately; employment is unknown. Two hypothetical person-trip rates (0.002 and 0.05 per allocated resident in an abstract hour) and a stated illustrative vehicle conversion generate <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/instance/demand_seed_person.csv">seed tables</a>, not observations. The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/DEMAND_ASSUMPTIONS.md">assumption ledger</a> states totals and exclusions.</p>
+<h2 id="assignment-gate-and-observation-limits">Assignment gate and observation limits</h2>
+<p>The frozen <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/instance/ASSIGNMENT_GATE.json">assignment gate</a> says <code>assignment_ready=false</code>, <code>assignment_run=false</code>, and <code>solver_invoked=false</code>. Free speed, lane count, period capacity, turn enforcement and all-OD directed reachability are unresolved. A schema pass cannot close those modeling gaps. No FW, CG, Lagrangian or ADMM assignment is claimed for Hong Kong.</p>
+<p>The detector snapshot is a roadside observation layer. An optional UrbanNav reference trajectory was checked only in a private research handoff: it is not general traffic demand, and its raw/point-level data are excluded pending exact-file rights confirmation. Public aggregate QC statements are not a downloadable matched trajectory.</p>
+<h2 id="reproduce-the-public-checks">Reproduce the public checks</h2>
+<p>From <code>examples/hong-kong/gmns_pilot_r1</code> with Python 3.12+:</p>
+<pre><code class="language-bash">python -B validate_pilot.py --instance instance
+python -B trace_pilot.py --instance instance --zone 1 --detector AID05111 --stop 193
+</code></pre>
+<p>These commands check saved object relationships and trace one zone, detector and stop. They do not rebuild the official extraction or solve assignment. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/visuals/index.html">All five self-contained SVG views</a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/DATABASE_AND_OBJECT_DICTIONARY.csv">object dictionary</a>, and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/NETWORK_LIMITATIONS.csv">network limitations</a> remain available for audit.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

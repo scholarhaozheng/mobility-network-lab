@@ -37,9 +37,11 @@ The corrected [native Diagnostic L3 implementation](../algorithms/path_compressi
 | Uncompressed finite path | Exact OD equalities on one finite pool | [SLSQP source/config](../algorithms/finite_path_reference/README.md) | [Boston 26OD/130-path reference](cases/boston-assignment.md) |
 | Native Diagnostic L3 | Reduced path coordinates plus explicit links, original-space checks | [Builder and two profiles](../algorithms/path_compression/diagnostic_l3/README.md) | [Boston ranks 26/52](cases/boston-assignment.md); [Sioux A/B](cases/sioux-falls.md) |
 | Finite time-expanded CG | Fixed-cost hard-capacity linear space–time path flow | [Existing CG source](../app/src/gmns_dynamic/run_full_cg_v1.py) | [Sioux 200OD/250OD history](cases/sioux-falls.md) |
+| Lagrangian R2 | Shared-capacity dual lower bound plus separate restricted-path feasible recovery | [Public source and fixtures](../algorithms/distributed_assignment/lagrangian_r2/README.md) | [Accepted Sioux 200/250 OD; Boston transfer gated](methods/distributed-assignment.md) |
+| ADMM R1 | Local/consensus decomposition of fixed-cost shared-capacity space–time flow | [Public source and saved evidence](../algorithms/distributed_assignment/admm_r1/README.md) | [Accepted Sioux 200/250 OD; Boston transfer gated](methods/distributed-assignment.md) |
 
 Inspect selected saved records without any solver: `python -B tools/mcl_results.py list --case boston`, then `python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-outer02`. The optional native rerun requires a separately prepared Pyomo/IPOPT/MUMPS environment and explicit output directory; the publication integration did not execute it. These existing records are not a strict paired Boston/Sioux performance experiment, cold-start speedup result, or empirical validation.
 
 ## Other method extensions
 
-Origin-based/Bush methods and coupled primal–dual models remain at their individually documented source/evidence status, not newly completed or validated by these static examples. New path generation, model fitting and fair cross-case repetition are future work, not part of the current publication.
+The [distributed assignment page](methods/distributed-assignment.md) distinguishes accepted bounded Sioux Lagrangian/ADMM evidence from gated Boston transfers. Origin-based/Bush remains a research prototype with a failed used-arc verification condition, not an accepted UE solve. Coupled primal–dual work, model fitting and fair cross-case repetition are future work, not part of this publication.

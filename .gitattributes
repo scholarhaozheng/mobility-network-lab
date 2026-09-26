@@ -5,3 +5,16 @@
 # These published plot inputs and figures have SHA-256 hashes over exact bytes.
 # Do not apply Git newline conversion to them, including editable SVGs.
 /docs/assets/boston/space_time_cg_r4/** -text -diff
+
+# Preserve exact-byte SHA-256 records for selected OMDV sources and open-data exports.
+/src/mobilitylab/omdv/** text eol=lf
+/examples/data-tools/*.csv text eol=lf
+/docs/data/open-mobility/*.csv text eol=lf
+/docs/data/open-mobility/*_schema.json text eol=lf
+
+# Candidate manifests and saved scientific figures hash exact source bytes.
+# Some accepted ZIP entries use CRLF; do not normalize them on commit or checkout.
+/examples/hong-kong/gmns_pilot_r1/** -text -diff
+/algorithms/distributed_assignment/** -text -diff
+/docs/assets/hong_kong/gmns_pilot_r1/*.svg -text -diff
+/docs/assets/sioux/distributed_r1/*.svg -text -diff

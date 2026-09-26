@@ -29,6 +29,12 @@
 <td>Fixed-cost hard-capacity Phase I/II; same-graph arc-LP match; R4 independent full-DAG pricing closure</td>
 <td>Ten PNG/SVG figure pairs, exact public plot inputs, source hashes and numerical validation; <strong>not citywide</strong></td>
 </tr>
+<tr>
+<td><a href="cases/hong-kong-gmns-pilot.html">Hong Kong bounded GMNS/data pilot</a></td>
+<td>780 physical nodes, 1,239 directed links, 95 SSG fine/10 STPUG parent zones</td>
+<td>Official-derived network, 2021 census allocation, GTFS and detector relationships; deterministic seed</td>
+<td>Five SVGs, offline validation/trace; <strong>assignment_ready=false</strong>, no solver run</td>
+</tr>
 </tbody>
 </table>
 <p>The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. The bounded CG pilot is a <strong>separate demand/model instance</strong>, not a continuation of static FW or the semantic service-feedback panel.</p>
@@ -64,6 +70,7 @@
 </tbody>
 </table>
 <p><a href="visualizations.html">Open the six-figure gallery</a>. These are benchmark experiments, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. The static and space–time objectives are not the same model.</p>
+<p>Accepted Sioux 200/250-OD <a href="methods/distributed-assignment.html">Lagrangian R2 and ADMM R1</a> results use selected-OD finite space–time shared-capacity instances; they are additional bounded algorithm evidence, not full-network or static UE results.</p>
 <h2 id="runnable-reference-inputs">Runnable reference inputs</h2>
 <p><a href="examples.html">Two bundled synthetic examples</a> cover automatic routes and a zone-based capacity constraint. They support installation and regression checks without redistributing third-party road inputs. <a href="getting-started.html">Run the network workflow</a>.</p>
 <h2 id="common-interfaces-and-additional-cities">Common interfaces and additional cities</h2>

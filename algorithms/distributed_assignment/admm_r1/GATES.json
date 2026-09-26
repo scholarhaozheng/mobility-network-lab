@@ -1,0 +1,11 @@
+{
+  "task_id": "DISTRIBUTED_ASSIGNMENT_ALGORITHMS_R1_SIOUX_FIRST",
+  "frozen_before_non_toy_runs": true,
+  "static_bush": {"max_sweeps": 300, "relative_gap": 0.001, "max_node_residual": 1e-6, "max_negative_flow": 1e-8, "max_objective_increase": 1e-7, "wall_seconds": 1800},
+  "lagrangian": {"step_policy": "projected_diminishing", "step_scale": 0.01, "step_exponent": 0.5, "max_iterations": 150, "dual_primal_relative_gap": 0.01, "max_capacity_residual": 1e-6, "max_balance_residual": 1e-6, "max_paths_per_commodity": 50, "wall_seconds_per_case": 1800},
+  "admm": {"rho": 0.001, "rho_adaptation": "none", "max_iterations": 100, "local_dual_max_iterations": 500, "absolute_residual": 1e-5, "relative_residual": 1e-4, "max_capacity_residual": 1e-5, "max_balance_residual": 1e-5, "wall_seconds_per_case": 1800, "memory_gate_gib": 2.0},
+  "case_order": ["C1", "Sioux_30OD", "Sioux_60OD", "Sioux_100OD", "Sioux_150OD", "Sioux_200OD", "Sioux_250OD", "Boston_transfer"],
+  "stop_after_first_failed_gate_per_method": false,
+  "max_total_heavy_hours": 10,
+  "max_task_storage_gib": 15
+}

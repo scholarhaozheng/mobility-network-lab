@@ -1,0 +1,66 @@
+{
+  "zone_to_road_and_demand": {
+    "fine_zone_id": "1",
+    "source_ssbg": "21105",
+    "source_stpug": "211",
+    "super_zone_id": "1001",
+    "source_population": "564",
+    "area_allocation_weight": "1",
+    "allocated_population": "564.0",
+    "centroid_node_id": "1",
+    "connector_link_id": "10000002",
+    "connector_class": "nonphysical_zone_access_out",
+    "physical_access_node_id": "10244",
+    "access_distance_m": "29.87",
+    "smoke_person_OD_example": {
+      "tier": "smoke",
+      "o_zone_id": "1",
+      "d_zone_id": "80",
+      "person_trips": "0.30858841180172897",
+      "straight_distance_m": "633.847",
+      "method": "top5 population-weighted exponential distance; 1200 m decay"
+    }
+  },
+  "detector_to_physical_link": {
+    "detector_id": "AID05111",
+    "source_road": "Gascoigne Road near Diocesan Girls' School - Westbound",
+    "source_direction": "North West",
+    "match_status": "matched_direction_screened",
+    "distance_m": "8.474",
+    "source_route_id": "105100",
+    "physical_gmns_link_id": "310200",
+    "physical_link_class": "physical",
+    "observation_rows": 2,
+    "observation_example": {
+      "detector_id": "AID05111",
+      "date": "2026-09-26",
+      "period_from": "10:24:00",
+      "period_to": "10:24:30",
+      "source_direction": "North West",
+      "lane_id": "Fast Lane",
+      "speed_kmh": "70",
+      "volume_30s": "6",
+      "occupancy_percent": "4",
+      "source_valid": "Y",
+      "gmns_link_id": "310200",
+      "mapping_status": "matched_direction_screened"
+    },
+    "caution": "Detector lane data are observations, not GPS or calibrated link flow."
+  },
+  "transit_stop_access": {
+    "stop_id": "193",
+    "name": "[CTB] MAN MING LANE, NATHAN ROAD|[KMB] MAN MING LANE YAU MA TEI",
+    "zone_id": "42",
+    "stop_zone_straight_distance_m": "20.733",
+    "physical_node_id": "10355",
+    "stop_road_straight_distance_m": "39.404",
+    "pedestrian_route_id": "240013055",
+    "pedestrian_proximity_m": "1.42",
+    "route_service_example": {
+      "stop_id": "193",
+      "route_id": "1000059",
+      "service_id": "287"
+    },
+    "caution": "Published GTFS service and pedestrian proximity; no observed journey or validated walk path."
+  }
+}

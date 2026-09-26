@@ -1,5 +1,13 @@
 # Data licenses and publication boundaries
 
+## Hong Kong bounded GMNS/data pilot
+
+The compact official-derived pilot tables and figures under `examples/hong-kong/gmns_pilot_r1/` retain Hong Kong SAR Government, DATA.GOV.HK, CSDI, Transport Department, Census and Statistics Department and Lands Department attribution. [Exact source/download records](examples/hong-kong/gmns_pilot_r1/SOURCE_REGISTER.csv), [attribution](examples/hong-kong/gmns_pilot_r1/ATTRIBUTION.md) and [rights review](examples/hong-kong/gmns_pilot_r1/RIGHTS_AND_REDISTRIBUTION_REPORT.md) govern reuse. Provider archives are absent. The UrbanNav reference trajectory and all point-level derivatives remain private pending exact-file rights confirmation. The root MIT software license does not relicense these third-party datasets.
+
+## Distributed-method benchmark evidence
+
+The selected public Sioux Lagrangian R2 and ADMM R1 source, fixtures, summaries and figures are bounded algorithmic evidence. They do not include private run archives or upstream historical Sioux input tables. Existing benchmark-data rights caveats below continue to apply.
+
 ## Selected OMDV software and fixtures
 
 Hao Zheng explicitly authorized five selected original OMDV implementations

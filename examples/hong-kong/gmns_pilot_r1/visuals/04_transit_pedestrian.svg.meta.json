@@ -1,0 +1,19 @@
+{
+  "source_files": [
+    "instance/transit_stops.csv",
+    "instance/stop_to_network.csv",
+    "raw/pedestrian_0.json ... pedestrian_3.json"
+  ],
+  "data_fields": [
+    "stop_id",
+    "stop_lon",
+    "stop_lat",
+    "PedestrianRouteID",
+    "FloorID",
+    "AccessTimeID"
+  ],
+  "units": "WGS84; proximity metres",
+  "limitations": "The sampled drawing does not imply planar junctions or verified accessible paths.",
+  "rendering_script": "render_visuals.py",
+  "filter_config": "bbox=114.164,22.295,114.181,22.312; selected source weak component"
+}

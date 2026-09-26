@@ -1,0 +1,18 @@
+{
+  "source_files": [
+    "instance/link.csv",
+    "instance/zone_geometry.geojson",
+    "instance/zone_source_crosswalk.csv"
+  ],
+  "data_fields": [
+    "geometry",
+    "source_link_id",
+    "source_travel_direction",
+    "source_ssbg",
+    "source_stpug"
+  ],
+  "units": "WGS84 geometry; road length metres",
+  "limitations": "Speed, lane count and capacity remain unknown; turn restrictions are listed but not enforced in routing.",
+  "rendering_script": "render_visuals.py",
+  "filter_config": "bbox=114.164,22.295,114.181,22.312; selected source weak component"
+}

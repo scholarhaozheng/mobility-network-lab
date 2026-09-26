@@ -1,12 +1,12 @@
 <!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->
 <p align="center"><img alt="City-neutral framework: GMNS objects and separate population-household/activity preparation feed four stages; observation linkage, static methods and finite space-time CG remain distinct." src="assets/presentation_r3/framework_overview.png" width="100%"/></p>
 <h1 id="mobility-computation-lab">Mobility Computation Lab</h1>
-<p><strong>An open-source computational framework for GMNS city models, four-stage demand, static assignment, and finite space–time column generation.</strong></p>
+<p><strong>An open-source computational framework for GMNS city models, four-stage demand, static assignment, and finite space–time column generation.</strong> City networks, travel demand and reproducible network computation.</p>
 <p>The reusable objects come first; cities are instances. Networks, zones and explicit units enter shared interfaces. Users can start with supplied vehicle OD, or prepare vehicle demand from a supported person-demand and choice specification. Static assignment and finite space–time column generation are <strong>different model branches</strong>, not interchangeable algorithms for one universal problem.</p>
 <blockquote>
 <p><strong>Executed CG evidence is part of the public release—not only a roadmap.</strong> Boston has one accepted bounded real-city pilot that clears Phase I, reaches reference-objective agreement with the arc-flow LP on the same finite time-expanded graph, and establishes independent pricing closure for 10/10 demands. Sioux Falls retains separate 200-OD and 250-OD historical selected-OD runs that clear Phase I and each reach their own reference objective; independent pricing closure is not established for those retained runs.</p>
 </blockquote>
-<p align="center"><a href="#framework">Framework</a> · <a href="#cg-experiments">Executed CG experiments</a> · <a href="#cg-evidence">CG evidence map</a> · <a href="#coverage">Case coverage</a> · <a href="#boston">Case 01 · Boston</a> · <a href="#sioux-falls">Case 02 · Sioux Falls</a> · <a href="#run-your-input">Run new inputs</a> · <a href="#mobility-data-support">Open data &amp; tools</a></p>
+<p align="center"><a href="#framework">Framework</a> · <a href="#cg-experiments">Executed CG experiments</a> · <a href="#distributed-assignment">Distributed assignment</a> · <a href="#coverage">Case coverage</a> · <a href="#boston">Case 01 · Boston</a> · <a href="#sioux-falls">Case 02 · Sioux Falls</a> · <a href="#hong-kong">Case 03 · Hong Kong</a> · <a href="#run-your-input">Run new inputs</a> · <a href="#mobility-data-support">Open data &amp; tools</a></p>
 <p><a id="framework"></a></p>
 <h2 id="01-the-shared-framework">01 / The shared framework</h2>
 <h3 id="gmns-is-the-common-object-contract">GMNS is the common object contract</h3>
@@ -74,12 +74,12 @@
 </tr>
 <tr>
 <td><strong>Finite space–time, fixed-cost capacitated flow</strong></td>
-<td>Arc-flow reference LP; Phase-I feasibility restoration; Phase-II restricted master and pricing / column generation</td>
-<td>Time-indexed path columns and capacity use; physical-link back-projection</td>
+<td>Arc-flow reference LP; Phase-I/II column generation; bounded Sioux Lagrangian R2 and ADMM R1</td>
+<td>Time-indexed flows and shared-capacity checks; algorithm-specific certificates and physical-link back-projection</td>
 </tr>
 </tbody>
 </table></div>
-<p>Compression changes a representation and requires a checked reconstruction. It is <strong>not</strong> the same operation as time expansion. Diagnostic <strong>L3</strong> is an algorithm profile name, not GMNS Level 3 or stage 03 of the demand model. No unimplemented Bush/ADMM variant is listed as an available solver. <a href="methods.html">Actual method sources and supported scopes</a>.</p>
+<p>Compression changes a representation and requires a checked reconstruction. It is <strong>not</strong> the same operation as time expansion. Diagnostic <strong>L3</strong> is an algorithm profile name, not GMNS Level 3 or stage 03 of the demand model. The Bush/OBA research prototype is <strong>not verified</strong>; accepted ADMM evidence is limited to selected Sioux finite space–time instances. <a href="methods.html">Actual method sources and supported scopes</a>.</p>
 <h3 id="why-a-spacetime-network-is-built-before-cg">Why a space–time network is built before CG</h3>
 <p>A physical node is replicated as <code>(node, time)</code>. A movement connects departure to a later arrival state; waiting stays at the same physical node while advancing time; demand-specific source/sink connections attach departure and arrival support. A path through that network becomes a generated column in the restricted master. <strong>Phase I restores feasibility by clearing artificial flow. Phase II improves the real-path objective.</strong> The arc-flow LP on the same finite time-expanded graph is a reference, not another city or the static FW objective.</p>
 <p><a href="methods/space-time-cg.html">Construction and master/pricing guide</a>. Both cases now use the same CG evidence vocabulary and reading order: <a href="cases/boston-space-time.html">Boston's single bounded 10-OD pilot</a> and the distinct <a href="cases/sioux-space-time.html">Sioux Falls 200/250-OD selected-OD benchmarks</a>. Boston has independent pricing closure; that certificate is <strong>not</strong> imputed to Sioux Falls.</p>
@@ -169,6 +169,38 @@
 </tbody>
 </table></div>
 <p><em>These are saved-result visualizations. Boston is not citywide CG; Sioux Falls is not a modern real-city demand model. The fixed-cost hard-capacity CG objectives are not directly comparable with static BPR/Beckmann FW.</em> <a href="assets/presentation_r5/boston_sioux_cg_parallel_overview.svg">Current overview SVG</a> · <a href="assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json">Current source hashes</a> · <a href="assets/presentation_r4/cg_experiments_overview.png">Earlier saved overview</a> and <a href="assets/presentation_r4/CG_EXPERIMENTS_OVERVIEW_SOURCES.json">its source manifest</a>.</p>
+<p><a id="distributed-assignment"></a></p>
+<h3 id="distributed-assignment-algorithms-bounded-accepted-results">Distributed assignment algorithms / bounded accepted results</h3>
+<p>The Sioux 200/250-OD <strong>finite time-expanded shared-capacity</strong> instances also have accepted, method-specific saved results. These are not static user equilibrium or full 528-OD network solutions. Their mathematical contract is separate from static FW; no cross-contract objective comparison is implied.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Accepted Sioux 200 OD</th>
+<th>Accepted Sioux 250 OD</th>
+<th>Necessary distinction</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Lagrangian R2</strong></td>
+<td>Dual lower bound <strong>942,452.403471</strong>; separately recovered feasible primal <strong>943,155.589771</strong> vehicle-min; <strong>0.0746%</strong> certified gap</td>
+<td>Dual <strong>1,516,258.347432</strong>; feasible primal <strong>1,521,090.836620</strong> vehicle-min; <strong>0.3177%</strong> gap, below frozen 1% gate</td>
+<td>Capacity-price dual generates paths; a separate restricted-path LP recovers the primal. Both primals match their own same-graph arc-flow LP objectives.</td>
+</tr>
+<tr>
+<td><strong>ADMM R1</strong></td>
+<td>Objective <strong>943,159.682268</strong> vehicle-min, <strong>0.000434%</strong> above its LP reference</td>
+<td>Objective <strong>1,521,100.065788</strong> vehicle-min, <strong>0.000607%</strong> above its LP reference</td>
+<td>Local/consensus residual, conservation and capacity gates pass; neither is exact LP equality.</td>
+</tr>
+</tbody>
+</table></div>
+<div class="table-scroll"><table><tr><td width="50%"><a href="methods/distributed-assignment.html#lagrangian-capacity-pricing-with-separate-primal-recovery"><img alt="Sioux 200-OD Lagrangian saved lower-bound and feasible-recovery evidence" src="assets/sioux/distributed_r1/Sioux_200OD_P07.svg" width="100%"/></a></td><td width="50%"><a href="methods/distributed-assignment.html#lagrangian-capacity-pricing-with-separate-primal-recovery"><img alt="Sioux 250-OD Lagrangian saved lower-bound and feasible-recovery evidence" src="assets/sioux/distributed_r1/Sioux_250OD_P07.svg" width="100%"/></a></td></tr></table></div>
+<p><em>Saved Lagrangian R2 histories, in matching 200/250-OD layouts. The lower and upper bounds are different mathematical outputs; a dual lower bound alone is not a feasible assignment.</em></p>
+<div class="table-scroll"><table><tr><td width="50%"><a href="methods/distributed-assignment.html#admm-localconsensus-shared-capacity-decomposition"><img alt="200-OD ADMM result is 0.000434 percent above its own LP objective" src="assets/sioux/distributed_r1/sioux_200od_objective_difference.svg" width="100%"/></a></td><td width="50%"><a href="methods/distributed-assignment.html#admm-localconsensus-shared-capacity-decomposition"><img alt="250-OD ADMM result is 0.000607 percent above its own LP objective" src="assets/sioux/distributed_r1/sioux_250od_objective_difference.svg" width="100%"/></a></td></tr></table></div>
+<p><em>Paired ADMM final-metric figures use the same percentage axis. A 250-OD iteration history was not supplied, so none was created.</em> <a href="methods/distributed-assignment.html">Exact data, feasibility gates, figure source and code</a>.</p>
+<p><strong>Gated, not success cards:</strong> Bush/OBA's static positive-flow used-arc slack <strong>6.062 min</strong> exceeds its <strong>0.05 min</strong> verification gate; Boston Lagrangian R2 recovers a feasible primal but its <strong>1.1002%</strong> duality gap fails the frozen 1% gate; Boston ADMM fails local conservation. The previously accepted Boston FW and CG results are unaffected.</p>
 <p><a id="coverage"></a></p>
 <h2 id="02-what-each-case-demonstrates">02 / What each case demonstrates</h2>
 <p>The entries distinguish <strong>available code</strong>, <strong>executed case evidence</strong>, and <strong>the scale at which a method was actually accepted</strong>. A missing result is not a claim that the method can never run on that city. A tiny generic fixture does not certify a large Boston solve.</p>
@@ -178,6 +210,7 @@
 <th>Capability / evidence</th>
 <th>Boston</th>
 <th>Sioux Falls</th>
+<th>Hong Kong pilot</th>
 </tr>
 </thead>
 <tbody>
@@ -185,70 +218,83 @@
 <td>GMNS network, zones and access</td>
 <td><strong>Demonstrated:</strong> H3 hierarchy, centroid/access and source-ID round-trip</td>
 <td><strong>Benchmark network:</strong> supplied topology and demand; not a present-day H3 city dataset</td>
+<td><strong>Demonstrated, bounded:</strong> 780 physical nodes, 1,239 links, 95 SSG/10 STPUG zones and 190 nonphysical connectors</td>
 </tr>
 <tr>
 <td>Population, households and activity preparation</td>
 <td><strong>Demonstrated, limited:</strong> source-backed ACS block-group → H3 aggregate allocation; separate MassGIS attraction proxy</td>
 <td><strong>Not estimated:</strong> classic benchmark supplies vehicle OD without a demographic build</td>
+<td><strong>Demonstrated, limited:</strong> 2021 census SSG area allocation; population and households kept separate</td>
 </tr>
 <tr>
-<td>Trip generation</td>
-<td><strong>Demonstrated, limited:</strong> ACS households + transferred purpose rates; activity attraction prior</td>
-<td><strong>Not modeled:</strong> benchmark demand is supplied</td>
-</tr>
-<tr>
-<td>Trip distribution</td>
-<td><strong>Demonstrated, limited:</strong> saved gravity/IPF and PA-to-OD</td>
-<td><strong>Not estimated:</strong> given OD and selected subsets</td>
+<td>Trip generation / distribution</td>
+<td><strong>Demonstrated, limited:</strong> transferred household rates, activity prior, gravity/IPF and PA-to-OD</td>
+<td><strong>Not estimated:</strong> given benchmark OD</td>
+<td><strong>Hypothetical deterministic internal-only seed</strong>, not observed or calibrated OD</td>
 </tr>
 <tr>
 <td>Mode choice</td>
 <td><strong>Demonstrated, conditional:</strong> regional-share feedback and absolute DA/S2/S3/TW research branch</td>
 <td><strong>Not modeled:</strong> fixed vehicle demand</td>
+<td><strong>Not calibrated or modeled</strong>; illustrative vehicle conversion only</td>
 </tr>
 <tr>
 <td>GPS / service evidence</td>
 <td><strong>Demonstrated, exploratory:</strong> network linkage and default-off interval feedback; no independent AM validation</td>
 <td><strong>Not included</strong> in the classic benchmark</td>
+<td><strong>Linked layers:</strong> 183 GTFS stops, 294 routes and 50 detector lane observations; UrbanNav points private</td>
 </tr>
 <tr>
 <td>Static Frank–Wolfe</td>
 <td><strong>Demonstrated:</strong> small controls and three expanded tiers, up to 17,522 loaded node ODs</td>
 <td><strong>Demonstrated:</strong> historical static benchmark; input-identity caveat retained</td>
+<td><strong>Not run; assignment_ready=false</strong></td>
 </tr>
 <tr>
 <td>Finite full-path reference</td>
 <td><strong>Solved:</strong> 26-OD / 130-path control; <strong>resource-gated</strong> at expanded tiers</td>
-<td>Used within the method/source framework; no equivalent solved full-path reference claimed by these supplied records</td>
+<td>No equivalent solved full-path reference claimed by these supplied records</td>
+<td><strong>Not run</strong></td>
 </tr>
 <tr>
 <td>Native Diagnostic L3 / compression</td>
-<td><strong>Accepted numerical controls:</strong> ranks 26/52; new-input fixture; <strong>not solved at expanded tiers</strong></td>
-<td><strong>Executed numerical candidates:</strong> rank 50; full-network gaps remain 8.17% / 4.38%, not exact UE</td>
+<td><strong>Accepted numerical controls:</strong> ranks 26/52; not solved at expanded tiers</td>
+<td><strong>Executed numerical candidates:</strong> rank 50; full-network gaps 8.17% / 4.38%, not exact UE</td>
+<td><strong>Not run</strong></td>
 </tr>
 <tr>
-<td>Space–time network construction</td>
-<td><strong>Demonstrated, bounded pilot:</strong> 90 nodes / 125 directed links / 10 ODs, 3-second steps and 100-step horizon</td>
-<td><strong>Demonstrated:</strong> finite time-expanded 200 / 250-OD selected subsets</td>
+<td>Space–time CG</td>
+<td><strong>Accepted bounded pilot:</strong> 90 nodes / 125 links / 10 ODs; same-graph LP match and independent 10/10 pricing closure</td>
+<td><strong>Historical 200 / 250 OD:</strong> feasible and own-LP matched; independent pricing closure not established</td>
+<td><strong>Not run</strong></td>
 </tr>
 <tr>
-<td>Phase I / Phase II / pricing</td>
-<td><strong>Accepted bounded pilot:</strong> reference-optimal and independently full-DAG pricing-closed (10/10, tolerance 1e−6); second-machine check pending</td>
-<td><strong>Historical 200 / 250 OD:</strong> feasible, with reference-objective agreement on each selected-OD finite time-expanded graph; independent pricing closure <strong>not established</strong></td>
+<td>Lagrangian capacity pricing</td>
+<td><strong>Gated transfer:</strong> feasible recovered primal, 1.1002% duality gap fails 1% gate</td>
+<td><strong>Accepted R2:</strong> 200/250 OD separately feasible; duality gaps 0.0746% / 0.3177%</td>
+<td><strong>Not run</strong></td>
 </tr>
 <tr>
-<td>New-input preparation and solving</td>
-<td><strong>Generic vehicle/person routes implemented</strong>, with declared profiles and optional dependencies</td>
-<td>Existing benchmark and external-network interfaces; case-specific scope is explicit</td>
+<td>ADMM shared-capacity decomposition</td>
+<td><strong>Gated transfer:</strong> local conservation failed</td>
+<td><strong>Accepted R1:</strong> 200/250 OD residual and feasibility gates pass; objectives differ from own LPs by 0.000434% / 0.000607%</td>
+<td><strong>Not run</strong></td>
+</tr>
+<tr>
+<td>Bush/OBA static UE</td>
+<td><strong>No accepted transfer</strong></td>
+<td><strong>Research prototype, gated:</strong> used-arc slack 6.062 min &gt; 0.05 min</td>
+<td><strong>Not run</strong></td>
 </tr>
 <tr>
 <td>Saved checks and visualization</td>
-<td>Tables, GMNS tracing, static original-space checks, and full bounded CG figure family with R4 closure</td>
-<td>Static checks, space–time traces, phase and capacity evidence</td>
+<td>GMNS tracing, static original-space checks, full bounded CG figure family</td>
+<td>Static/CG records plus accepted bounded Lagrangian/ADMM views</td>
+<td>Five public SVGs, relationship validator and trace tool; no assignment figure</td>
 </tr>
 </tbody>
 </table></div>
-<p><a href="capabilities.html">Capability definitions and evidence pointers</a>. Both cases include assignment research; Boston is not only a data/GPS example and Sioux Falls is not the exclusive home of compression.</p>
+<p><a href="capabilities.html">Capability definitions and evidence pointers</a>. Boston and Sioux both include assignment research; Hong Kong adds a bounded, explicitly pre-assignment data portability pilot.</p>
 <p><a id="boston"></a></p>
 <h2 id="03-case-study-boston">03 / Case study — Boston</h2>
 <p><strong>What this case demonstrates.</strong> Real-city GMNS object relationships; household/activity-based generation; modeled OD distribution; limited mode-choice branches; exploratory GPS/service linkage; new-input static computation; and FW at increasing demand coverage. It also retains a small <strong>FW / full-path / native L3</strong> control and a <strong>separate bounded, independently pricing-closed finite space–time CG pilot</strong>. <strong>Not demonstrated here:</strong> citywide CG, full-city empirically calibrated demand, or independent AM accuracy.</p>
@@ -757,8 +803,13 @@ python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-o
 <p>The 200-OD and 250-OD saved views aggregate final time-indexed movement flow back to physical links. Both retained runs have zero final demand residual and zero capacity violations, and both have reference-objective agreement. These are schematic benchmark views, not observed traffic or static V/C.</p>
 <h3 id="sioux-falls-independent-pricing-closure">Sioux Falls / Independent pricing closure</h3>
 <p><strong>Not established for the retained 200-OD and 250-OD runs.</strong> Reference-objective agreement remains valid, but Boston's independent pricing-closure certificate is not transferred to Sioux Falls. <a href="cases/sioux-space-time.html#6-independent-pricing-closure">Exact status and reproduction limits</a>.</p>
+<p><a id="hong-kong"></a></p>
+<h2 id="05-case-study-hong-kong-bounded-gmnsdata-pilot">05 / Case study — Hong Kong bounded GMNS/data pilot</h2>
+<p><strong>What this case demonstrates.</strong> Official-derived object alignment in Tsim Sha Tsui–Jordan: <strong>780 physical nodes, 1,239 directed physical links, 95 SSG fine zones, 10 STPUG parent zones, 95 centroids and 190 nonphysical connectors</strong>. Transit relationships retain <strong>183 GTFS stops and 294 route IDs</strong>; a single detector snapshot retains <strong>50 lane observations</strong>. The 2021 census allocation yields <strong>90,677.156 persons and 36,228.315 households</strong> on the bounded pilot geography. <a href="cases/hong-kong-gmns-pilot.html">The full case, five figures, source/rights records and commands</a>.</p>
+<p align="center"><a href="cases/hong-kong-gmns-pilot.html"><img alt="Hong Kong bounded pilot physical road graph and source-backed hierarchical statistical zones" src="assets/hong_kong/gmns_pilot_r1/02_roads_zones.svg" width="100%"/></a></p>
+<p><em>Source-backed roads and zones, not modeled assignment flow.</em> Centroid access lines are nonphysical. The demand tables are deterministic engineering seeds, not observed/calibrated OD. The public validator and trace tool check relationships offline, but <strong><code>assignment_ready=false</code> and no assignment was run</strong>: accepted free speed, lanes, period capacities, turn enforcement and all-OD directed reachability are still missing. The optional UrbanNav reference trajectory is not traffic demand; its point-level derivatives are private. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/README.md">Open the public instance</a> · <a href="../examples/hong-kong/gmns_pilot_r1/instance/ASSIGNMENT_GATE.json">Assignment gate</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/ATTRIBUTION.md">Attribution</a>.</p>
 <p><a id="run-your-input"></a></p>
-<h2 id="05-run-new-inputs-or-inspect-saved-results">05 / Run new inputs, or inspect saved results</h2>
+<h2 id="06-run-new-inputs-or-inspect-saved-results">06 / Run new inputs, or inspect saved results</h2>
 <p><strong>These are two different operations.</strong> The new generic preparation/solve entry computes a fresh result from supplied inputs. The saved-result entries below inspect frozen experiments. A documentation build never silently invokes a solver.</p>
 <h3 id="new-vehicle-od-preparation-fw-verification-map">New vehicle OD → preparation → FW → verification → map</h3>
 <pre><code class="language-bash">python -B tools/mcl_assignment.py prepare --input examples/scalable_vehicle_fixture/network --demand examples/scalable_vehicle_fixture/vehicle.csv --config examples/scalable_vehicle_fixture/config.json --output "my results/instance"
@@ -768,7 +819,9 @@ python -B tools/mcl_assignment.py plot --run "my results/fw" --output "my result
 </code></pre>
 <p>The supported direct-vehicle profile is single-class, fixed-demand and static. It retains text IDs and parallel physical links; units, capacity basis, period and PCE factor are explicit. Unsupported turn-state or class/time inputs are rejected rather than ignored. <code>prepare</code>, FW and <code>verify</code> use the standard library; plotting and optional native methods have separate dependencies.</p>
 <p>A second entry accepts person OD, supported absolute skims, the fixed conditional choice specification and occupancy configuration. It feeds the same vehicle-assignment interface; it is not an arbitrary calibrated choice-model library. <a href="RUN_YOUR_OWN_GMNS.html">Full new-input contract and commands</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/scalable_tool_r1/README.md">Boston scale profile</a> · <a href="SCALABLE_TOOL_DATA_NOTICE.html">Data and dependency terms</a>.</p>
-<h2 id="mobility-data-support">Mobility data support</h2>
+<p><a id="mobility-data-support"></a></p>
+<h2 id="mobility-data-support-1">Mobility data support</h2>
+<p>Supporting mobility data remain distinct from runnable city models and from the bounded Hong Kong GMNS/data pilot.</p>
 <h3 id="open-mobility-evidence">Open mobility evidence</h3>
 <p><strong>Explore the data behind a city model, then prepare the records you need.</strong> Selected Open Mobility Data Visibility (OMDV) results now include a downloadable, non-geometric 11,422-city evidence table and actual source-record → content-SHA → city relationships. The executable tools query those records, organize local catalogs and inspect a user-supplied GTFS ZIP.</p>
 <!-- open-evidence-overview:start -->
@@ -788,7 +841,7 @@ python -B tools/mcl_assignment.py plot --run "my results/fw" --output "my result
 </table></div>
 <!-- open-evidence-overview:end -->
 <p>These evidence layers are not additive. Each value is tied to its own unit, source frame and retained research snapshot. They do not measure live service coverage or the number of runnable city models. The public release includes a <strong>selected result projection</strong>, provenance and executable tools—not raw feeds, provider URLs, geometry or live endpoint checks. <a href="open-data-explorer.html">Browse/download 11,422 city rows</a> · <a href="open-data-sources.html">Sources and reproduction scope</a> · <a href="omdv-provenance.html">Trace each metric</a></p>
-<h3 id="query-evidence-and-prepare-your-own-records">Query evidence and prepare your own records</h3>
+<h3 id="executable-data-tools-query-evidence-and-prepare-your-own-records">Executable data tools: query evidence and prepare your own records</h3>
 <p>The authorized OMDV workflow normalizes a user-supplied feed catalog and city table, performs exact city/country <strong>named-entity matching</strong>, and writes standardized records, unmatched/ambiguous statuses and quality checks.</p>
 <pre><code class="language-bash">python -m pip install -r requirements-data-tools.txt
 python -B tools/mcl_data.py catalog-city-match --catalog examples/data-tools/feeds_sample.csv --cities examples/data-tools/external_city_universe_sample.csv --output results/data-tools-demo
@@ -822,16 +875,18 @@ python tools/mnl.py verify --run results/network-run
 <p>The allowed network is independent of the initial route pool. Every column in the last successfully solved pool is exported, including zero-flow columns. Reference agreement and independently established pricing closure are distinct statements.</p>
 <h2 id="tools-methods-and-extensions">Tools, methods and extensions</h2>
 <p><a href="https://github.com/zephyr-data-specs/GMNS">GMNS</a> supplies the common network vocabulary. <a href="https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset">GMNS Plus Dataset</a>, <a href="https://github.com/asu-trans-ai-lab/OSM2GMNS">OSM2GMNS</a>, <a href="https://github.com/asu-trans-ai-lab/grid2demand">grid2demand</a> and <a href="https://github.com/asu-trans-ai-lab/TAPLab">TAPLab</a> are upstream data/tools with their own implementations and licenses. A reference link is not evidence of a bundled executable integration.</p>
-<p>The computational release includes <strong>space–time CG</strong>, <strong>static Frank–Wolfe</strong>, the solved <strong>finite-path Boston reference</strong>, and the corrected <strong>native Diagnostic L3</strong> source/profiles with selected saved Boston and Sioux records. <a href="methods.html">The method table</a> states their distinct objectives, instances and accuracy scopes; <code>python -B tools/mcl_results.py list</code> and <code>verify-saved --run &lt;run-id&gt;</code> inspect the released points without solving. Generalized raw-city automation, broader GPS traces and map matching, and origin-based / Policy Bush methods remain research extensions. Coupled primal–dual, Lagrangian and ADMM methods are not newly shipped or validated by this integration. <a href="city-workflow.html">City workflow</a> · <a href="roadmap.html">Roadmap</a></p>
+<p>The computational release includes <strong>space–time CG</strong>, <strong>static Frank–Wolfe</strong>, the solved <strong>finite-path Boston reference</strong>, corrected <strong>native Diagnostic L3</strong>, and bounded <strong>Sioux Lagrangian R2 and ADMM R1</strong> source/evidence. <a href="methods.html">The method table</a> states their distinct objectives, instances and accuracy scopes; <code>python -B tools/mcl_results.py list</code> and <code>verify-saved --run &lt;run-id&gt;</code> inspect previously released points without solving. Generalized raw-city automation, broader GPS traces and map matching, coupled primal–dual work and verified origin-based / Policy Bush remain research extensions. The current Bush prototype is explicitly gated. <a href="city-workflow.html">City workflow</a> · <a href="methods/distributed-assignment.html">Distributed methods and failed transfers</a> · <a href="roadmap.html">Roadmap</a></p>
 <h2 id="project-layout">Project layout</h2>
 <pre><code class="language-text">app/src/gmns_dynamic/   Existing network input and space–time CG engine
 app/cases/             Self-contained, labelled regression examples
 algorithms/static_fw/  Separate static traffic-assignment baseline
 algorithms/finite_path_reference/  Boston 130-path SLSQP source/config
 algorithms/path_compression/diagnostic_l3/  Corrected native builder and profiles
+algorithms/distributed_assignment/  Bounded Lagrangian R2 and ADMM R1 source/evidence
 algorithms/mode_choice_conditional/  Reduced absolute-attribute choice evaluator
 examples/boston/assignment_methods_r1/  Saved FW/full-path/native results
 examples/sioux-falls/native_l3_r1/  Selected Sioux native results
+examples/hong-kong/gmns_pilot_r1/  Bounded public GMNS/data instance and offline checks
 launcher/              Saved-output verification
 src/mobilitylab/        Authorized metadata tools and supporting adapters
 catalog/               Network records, evidence summaries and provenance

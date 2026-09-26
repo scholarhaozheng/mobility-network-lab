@@ -18,10 +18,10 @@ GPS traces and map matching require a genuine trajectory source and matching imp
 
 Retain current CG and static FW as distinct, documented baselines. Reuse an identified origin-based / Policy Bush implementation and develop transparent forward-flow, backward-value and feasible-update calculations. Do not label path aggregation as a completed Bush solver.
 
-Primal–dual, Lagrangian, ADMM and queue-state / dynamic-programming extensions need explicit models and their own tests. They are not mandatory substitutions for the working CG baseline.
+Bounded [Sioux Lagrangian R2 and ADMM R1 results](methods/distributed-assignment.md) now have explicit models, source and accepted selected-OD checks. They are not full-network solutions or mandatory substitutions for the working CG baseline. Boston transfers remain gated. Coupled primal–dual and queue-state / dynamic-programming extensions need their own models and tests.
 
 ## 4. Transfer the same workflow
 
-Hong Kong, Melbourne, Cairo and Paris are candidate city extensions. Add them through common data contracts, configuration, provenance and verification rather than separate solver rewrites. No complete dataset for those cities is claimed by this release.
+The [bounded Hong Kong GMNS/data pilot](cases/hong-kong-gmns-pilot.md) now demonstrates official-derived object relationships but is **not assignment-ready**. Melbourne, Cairo and Paris remain candidate extensions. Add them through common data contracts, configuration, provenance and verification rather than separate solver rewrites. No complete assignment-ready dataset for these cities is claimed by this release.
 
 [City workflow and current interfaces](city-workflow.md) · [Contribute a network](add-a-network.md)

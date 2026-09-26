@@ -14,8 +14,14 @@ class PresentationR3(unittest.TestCase):
         for value in ['816,054','route 749','zone 35','203.660','5,091']:
             self.assertNotIn(value,prefix)
     def test_method_coverage_and_gates(self):
-        for term in ['17,522','RESOURCE','resource-gated','No Boston CG','130-path','Phase I','Phase II']:
+        for term in ['17,522','RESOURCE','resource-gated','130-path','Phase I','Phase II',
+                     'Boston has one accepted bounded real-city pilot',
+                     'independent pricing closure', 'not citywide CG']:
             self.assertIn(term.lower(),self.text.lower())
+    def test_current_bounded_additions_keep_failed_transfers_gated(self):
+        for term in ['Case 03', 'assignment_ready=false', '0.0746%', '0.3177%',
+                     '0.000434%', '0.000607%', '1.1002%', '6.062 min']:
+            self.assertIn(term.lower(), self.text.lower())
     def test_protected_gmns_remains_visible(self):
         for name in ['gmns_connected_layers.png','gps_to_gmns_evidence.png','tools/gmns/trace_gmns_figure.py']:
             self.assertIn(name,self.text)

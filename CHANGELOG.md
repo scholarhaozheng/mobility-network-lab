@@ -1,5 +1,14 @@
 # Changelog
 
+## Current-results public integration R1 — 2026-09-26
+
+- Preserved the approved case-parallel Boston/Sioux CG text and unique figures.
+- Added the official-derived bounded Hong Kong GMNS/data pilot, five public maps, source/rights records and offline relationship checks; assignment remains gated.
+- Added accepted Sioux 200/250-OD Lagrangian R2 lower-bound and separately recovered feasible-primal evidence, with exact duality gaps and paired figures.
+- Added accepted Sioux 200/250-OD ADMM R1 final metrics, public source/fixtures, a retained 200-OD history and paired saved-result objective-difference figures; no 250-OD iteration trace was invented.
+- Documented gated Bush/OBA and Boston Lagrangian/ADMM transfers without recasting them as successes.
+- Reconciled pre-existing Windows line-ending provenance hashes and the already-published gzip JSON product inventory without changing accepted Open-data content.
+
 ## 2.0.0 candidate — 2026-09-17
 
 - Renamed the public product to Mobility Computation Lab.

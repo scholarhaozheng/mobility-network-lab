@@ -1,0 +1,73 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Distributed assignment / accepted bounded evidence and gates | Mobility Computation Lab</title><link rel="stylesheet" href="../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../city-workflow.html">City workflow</a><a href="../datasets.html">Networks</a><a href="../visualizations.html">Visual results</a><a href="../open-data-explorer.html">City evidence</a><a href="../open-data.html">Open data</a><a href="../methods.html">Methods</a><a href="../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Distributed assignment / accepted bounded evidence and gates</p><h1 id="distributed-assignment--accepted-bounded-evidence-and-gates">Distributed assignment / accepted bounded evidence and gates</h1>
+<p>These methods sit alongside, not in place of, the <a href="../methods.html">static FW and finite space–time CG branches</a>. Lagrangian R2 and ADMM R1 below use fixed-cost, hard-capacity <strong>selected-OD finite time-expanded</strong> Sioux instances. Bush/OBA addresses a different static BPR/Beckmann user-equilibrium problem and has not passed its verification gate. No cross-contract objective ranking is meaningful.</p>
+<h2 id="lagrangian-capacity-pricing-with-separate-primal-recovery">Lagrangian capacity pricing with separate primal recovery</h2>
+<p>The dual solver prices shared arc capacities and generates commodity paths. Its best dual value is a lower bound. A <strong>separate restricted-path LP</strong> recovers a feasible primal upper bound; the dual routine did not directly output that flow. The independent evaluator checked the recovered path and physical-link flows, demand conservation, capacities, connectors and objective without optimizer calls. Reference-LP primal paths, flows and duals were not used to generate the algorithm's paths. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/lagrangian_r2/README.md">Public source, fixtures, histories and exact summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Selected Sioux instance</th>
+<th style="text-align:right">Dual lower bound (vehicle-min)</th>
+<th style="text-align:right">Feasible recovered primal (vehicle-min)</th>
+<th style="text-align:right">Certified gap</th>
+<th>Gate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">942,452.403471</td>
+<td style="text-align:right">943,155.589771</td>
+<td style="text-align:right">0.0746%</td>
+<td>Accepted regression gate</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">1,516,258.347432</td>
+<td style="text-align:right">1,521,090.836620</td>
+<td style="text-align:right">0.3177%</td>
+<td>Accepted, frozen 1% gate</td>
+</tr>
+</tbody>
+</table>
+<table><tr><td width="50%"><img src="../assets/sioux/distributed_r1/Sioux_200OD_P07.svg" width="100%" alt="Saved Sioux 200-OD Lagrangian dual lower bound and separately recovered feasible upper bound"></td><td width="50%"><img src="../assets/sioux/distributed_r1/Sioux_250OD_P07.svg" width="100%" alt="Saved Sioux 250-OD Lagrangian dual lower bound and separately recovered feasible upper bound"></td></tr></table>
+<p><em>Accepted saved P07 histories. Each recovered primal matches the arc-flow LP objective on <strong>its own</strong> selected-OD finite graph. The two graphs and demands are different; the gap is not a static UE gap.</em></p>
+<p>Boston R2 is a <strong>gated transfer</strong>: its separately recovered primal is feasible and matches the accepted same-graph objective, but the certified dual gap is <strong>1.1002%</strong>, exceeding the frozen 1% gate. It is not an accepted Boston Lagrangian result. The older R1 Sioux 250-OD gate failure was superseded by R2; its former dual bound must not be reported as current.</p>
+<h2 id="admm-localconsensus-shared-capacity-decomposition">ADMM local/consensus shared-capacity decomposition</h2>
+<p>The R1 ADMM implementation uses local commodity arc flows and consensus/capacity variables on the same selected-OD fixed-cost space–time model. The declared primal/dual residual thresholds and independent conservation/capacity checks passed for Sioux 200 and 250 OD. The finite nonzero difference from each same-graph arc-flow LP is <strong>not exact equality</strong>. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/admm_r1/README.md">Public source, C0 fixture, 200-OD saved history and summary</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Selected Sioux instance</th>
+<th style="text-align:right">ADMM objective (vehicle-min)</th>
+<th style="text-align:right">Own arc-flow LP (vehicle-min)</th>
+<th style="text-align:right">LP-relative difference</th>
+<th style="text-align:right">Outer iterations</th>
+<th>Status</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200 OD</td>
+<td style="text-align:right">943,159.682268</td>
+<td style="text-align:right">943,155.589771</td>
+<td style="text-align:right">0.000434%</td>
+<td style="text-align:right">74</td>
+<td>Accepted bounded result</td>
+</tr>
+<tr>
+<td>250 OD</td>
+<td style="text-align:right">1,521,100.065788</td>
+<td style="text-align:right">1,521,090.836620</td>
+<td style="text-align:right">0.000607%</td>
+<td style="text-align:right">94</td>
+<td>Accepted bounded result</td>
+</tr>
+</tbody>
+</table>
+<table><tr><td width="50%"><img src="../assets/sioux/distributed_r1/sioux_200od_objective_difference.svg" width="100%" alt="200-OD accepted ADMM objective above its same-graph LP by 0.000434 percent"></td><td width="50%"><img src="../assets/sioux/distributed_r1/sioux_250od_objective_difference.svg" width="100%" alt="250-OD accepted ADMM objective above its same-graph LP by 0.000607 percent"></td></tr></table>
+<p><em>Paired scalar saved-result figures, identical axis and layout: the vertical tick is each instance's own LP reference (0%); the dot is the ADMM objective difference. The 250-OD public evidence supplies final metrics, <strong>not an iteration history</strong>, so no 250-OD trajectory was invented. The accepted 200-OD <a href="../assets/sioux/distributed_r1/admm_sioux_200.svg">detailed residual/consensus figure</a> is supplemental.</em></p>
+<p>The Boston ADMM transfer failed local commodity conservation (residual <strong>4.18414</strong> under the frozen check) and is <strong>not accepted</strong>. This says nothing about the separate accepted Boston CG or FW results.</p>
+<h2 id="bushoba-verification-gate">Bush/OBA verification gate</h2>
+<p><strong>Bush/OBA research prototype — verification gate not passed; verified upstream baseline work is in progress.</strong> The Sioux static reduced-cost variant's maximum positive-flow root-prefix slack was <strong>6.062 min</strong>, above its <strong>0.05 min</strong> gate. A small aggregate gap alone does not certify the origin-based UE conditions. No accepted Boston Bush transfer or successful Bush card is published.</p>
+<p>The accepted Sioux Lagrangian/ADMM selected subsets are not the full 528-OD network and are not a calibrated city forecast. See the <a href="../capabilities.html">case coverage matrix</a> and <a href="../cases/sioux-space-time.html">Sioux CG page</a> for the separate column-generation evidence and its certificate limits.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../data-access.html">Data access</a> · <a href="../citation.html">Cite</a> · <a href="../roadmap.html">Roadmap</a></span></footer></div></body></html>

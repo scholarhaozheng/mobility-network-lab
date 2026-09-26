@@ -1,0 +1,6 @@
+issue,count,impact,next_action
+source_road_quarantine,33,excluded disconnected or self-loop features,review source geometry and boundary connectors
+turns_unmapped,148,some source turn sequences lack exact directed link adjacency,audit geometry and movement positions
+turns_not_enforced,379,movement table is retained but no turn-aware route solver executed,turn-aware network adapter
+speed_lanes_capacity_unknown,1239,static assignment gate fails,source-backed speed/lane/capacity lookup and period contract
+one_way_scc,591,not all nodes in one directed SCC,route endpoint and external-boundary analysis
