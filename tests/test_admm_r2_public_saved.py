@@ -91,6 +91,36 @@ class ADMMR2PublicSaved(unittest.TestCase):
         ):
             self.assertIn(f"assets/admm_r2/figures/{stem}.png", homepage, stem)
 
+    def test_readme_boston_sioux_case_parity(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        boston = readme.split('<a id="boston-admm-readme"></a>', 1)[1].split('<a id="sioux-falls"></a>', 1)[0]
+        sioux = readme.split('<a id="sioux-admm-readme"></a>', 1)[1].split('<a id="hong-kong"></a>', 1)[0]
+        stages = (
+            "#### Convergence and original-unit feasibility",
+            "#### Commodity conservation",
+            "#### Final physical-link movement flow",
+            "#### Signed ADMM−LP physical-link difference",
+        )
+        for section in (boston, sioux):
+            positions = [section.index(stage) for stage in stages]
+            self.assertEqual(positions, sorted(positions))
+        for stem in (
+            "convergence_Boston_10OD", "admm_boston_10od_local_conservation_heatmap",
+            "admm_boston_10od_final_physical_link_flow", "admm_boston_10od_minus_lp",
+        ):
+            self.assertIn(f"docs/assets/admm_r2/figures/{stem}.png", boston, stem)
+        for stem in (
+            "convergence_Sioux_200OD", "convergence_Sioux_250OD",
+            "admm_sioux_200_local_conservation_heatmap",
+            "admm_sioux_200_final_physical_link_flow", "admm_sioux_250_final_physical_link_flow",
+            "admm_sioux_200_minus_lp", "admm_sioux_250_minus_lp",
+        ):
+            self.assertIn(f"docs/assets/admm_r2/figures/{stem}.png", sioux, stem)
+        self.assertIn("no separate 250-OD commodity heatmap was released", sioux)
+        homepage = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="boston-admm-readme"', homepage)
+        self.assertIn('id="sioux-admm-readme"', homepage)
+
 
 if __name__ == "__main__":
     unittest.main()
