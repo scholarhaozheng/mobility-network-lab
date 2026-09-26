@@ -427,6 +427,11 @@
 <td>90 nodes / 125 links / 10 ODs; Phase I + Phase II + independent full-DAG pricing closure</td>
 <td>Citywide Boston CG, static BPR/Beckmann assignment, or a second Boston scale</td>
 </tr>
+<tr>
+<td><strong>Bounded finite space–time ADMM R2_S holdout</strong></td>
+<td>Same bounded 90-node / 125-link / 10-OD finite graph; 253 iterations, 6.68e-6 own-LP relative objective gap and independent gates</td>
+<td>Citywide Boston ADMM, static UE, or observed traffic</td>
+</tr>
 </tbody>
 </table></div>
 <p><a href="cases/boston.html">Complete Boston case</a> · <a href="cases/boston-assignment.html">Static assignment branches</a> · <a href="cases/boston-algorithm-b.html">Algorithm B B0/B1</a> · <a href="cases/boston-space-time.html">Bounded space–time CG result</a>.
@@ -741,9 +746,21 @@ python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-o
 </tbody>
 </table></div>
 <p>The <a href="cases/boston-space-time.html">detailed Boston CG page</a> retains the full figure family, exact plot inputs, editable SVGs and hashed provenance. The 15 R4 certificate columns have zero final flow; they complete the dual/pricing certificate rather than create additional physical traffic. Final physical-link movement flows remain unchanged from R3 within numerical precision. The second-machine receiver check remains pending. These are saved-result visualizations only; no model was rerun for this public update.</p>
+<p><a id="boston-admm-readme"></a></p>
+<h3 id="boston-bounded-finite-spacetime-admm-r2_s">Boston / Bounded finite space–time ADMM R2_S</h3>
+<p>This is the accepted <strong>10-OD holdout on the 90-node/125-link finite graph</strong>, evaluated with the R2_S policy frozen before Boston. It is not the static Boston assignment, measured traffic, or a citywide ADMM run. The same four evidence stages appear in the Sioux Falls section below; each ADMM run is compared only with its <strong>own same-graph arc-flow LP</strong>. <a href="cases/boston-admm.html">Full Boston ADMM case and independent checks</a>.</p>
+<h4 id="convergence-and-original-unit-feasibility">Convergence and original-unit feasibility</h4>
+<p><img alt="Boston 10-OD ADMM R2 convergence, original-unit local balance and capacity, objective and fixed rho" src="assets/admm_r2/figures/convergence_Boston_10OD.png"/></p>
+<h4 id="commodity-conservation">Commodity conservation</h4>
+<p><img alt="Boston 10-OD commodity-level original-unit conservation heatmap" src="assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.png"/></p>
+<h4 id="final-physical-link-movement-flow">Final physical-link movement flow</h4>
+<p><img alt="Boston 10-OD final physical-link ADMM and same-graph LP movement flow" src="assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.png"/></p>
+<h4 id="signed-admmlp-physical-link-difference">Signed ADMM−LP physical-link difference</h4>
+<p><img alt="Boston 10-OD signed ADMM-minus-LP physical-link movement-flow difference" src="assets/admm_r2/figures/admm_boston_10od_minus_lp.png"/></p>
+<p><em>These are accepted saved-result figures, not newly solved flows. The signed map retains its actual ±<code>4.24e-4</code>-vehicle maximum. <a href="cases/boston-admm.html">Editable figures, source records and the 125-link derived table</a> document the bounded scope and GMNS Plus attribution.</em></p>
 <p><a id="sioux-falls"></a></p>
 <h2 id="04-case-study-sioux-falls">04 / Case study — Sioux Falls</h2>
-<p><strong>What this case demonstrates.</strong> A classic supplied-demand benchmark with static FW, accepted official TAPLab/<code>tap-b</code> Algorithm B parity and native L3 research, plus distinct 200/250-OD finite space–time CG instances. <strong>Not modeled here:</strong> real-city trip generation, destination/mode estimation or GPS service feedback. The benchmark does not become a modern city dataset because it shares the framework.</p>
+<p><strong>What this case demonstrates.</strong> A classic supplied-demand benchmark with static FW, accepted official TAPLab/<code>tap-b</code> Algorithm B parity and native L3 research, plus distinct 200/250-OD finite space–time <strong>CG and ADMM R2_S</strong> results. <strong>Not modeled here:</strong> real-city trip generation, destination/mode estimation or GPS service feedback. The benchmark does not become a modern city dataset because it shares the framework.</p>
 <p><a id="sioux-falls-benchmark-series"></a></p>
 <h3 id="sioux-falls-static-methods-and-retained-numerical-candidates">Sioux Falls / Static methods and retained numerical candidates</h3>
 <p>The <a href="cases/sioux-falls.html">Sioux Falls case</a> also has actual static assignment work. Its historical <a href="datasets/sioux-static-fw.html">FW result</a> has Beckmann F <strong>4,236,715.140437842</strong>, but the retained runtime OD identity is insufficient to declare it a same-input reference for the native profile. The corrected <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">native Diagnostic L3 implementation</a> has accepted <strong>outer-04</strong> points on the frozen 76-link, 528-positive-OD, 2,218-path static instance (rank 50; 585 reduced path coordinates; 661 total native variables):</p>
@@ -905,6 +922,22 @@ python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-o
 <p>The 200-OD and 250-OD saved views aggregate final time-indexed movement flow back to physical links. Both retained runs have zero final demand residual and zero capacity violations, and both have reference-objective agreement. These are schematic benchmark views, not observed traffic or static V/C.</p>
 <h3 id="sioux-falls-independent-pricing-closure">Sioux Falls / Independent pricing closure</h3>
 <p><strong>Not established for the retained 200-OD and 250-OD runs.</strong> Reference-objective agreement remains valid, but Boston's independent pricing-closure certificate is not transferred to Sioux Falls. <a href="cases/sioux-space-time.html#6-independent-pricing-closure">Exact status and reproduction limits</a>.</p>
+<p><a id="sioux-admm-readme"></a></p>
+<h3 id="sioux-falls-selected-od-finite-spacetime-admm-r2_s">Sioux Falls / Selected-OD finite space–time ADMM R2_S</h3>
+<p>The accepted <strong>200-OD and 250-OD selected subsets are different finite graphs and demand sets</strong>. The Sioux-selected R2_S policy passed independent conservation, capacity, KKT and physical-flow projection checks in 85 and 101 iterations, with own-LP relative objective gaps of 6.30e-6 and 7.16e-6. The four evidence stages below match the Boston ADMM section above; the two Sioux results are not one same-demand algorithm race. <a href="cases/sioux-admm.html">Full Sioux ADMM case and independent checks</a>.</p>
+<h4 id="convergence-and-original-unit-feasibility-1">Convergence and original-unit feasibility</h4>
+<p><img alt="Sioux Falls 200-OD ADMM R2 convergence, original-unit local balance and capacity, objective and fixed rho" src="assets/admm_r2/figures/convergence_Sioux_200OD.png"/></p>
+<p><img alt="Sioux Falls 250-OD ADMM R2 convergence, original-unit local balance and capacity, objective and fixed rho" src="assets/admm_r2/figures/convergence_Sioux_250OD.png"/></p>
+<h4 id="commodity-conservation-1">Commodity conservation</h4>
+<p><img alt="Sioux Falls 200-OD commodity-level original-unit conservation heatmap" src="assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.png"/></p>
+<p><em>The 250-OD accepted convergence figure above contains its original-unit local-balance and capacity traces; no separate 250-OD commodity heatmap was released.</em></p>
+<h4 id="final-physical-link-movement-flow-1">Final physical-link movement flow</h4>
+<p><img alt="Sioux Falls 200-OD final physical-link ADMM and own-graph LP movement flow" src="assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.png"/></p>
+<p><img alt="Sioux Falls 250-OD final physical-link ADMM and own-graph LP movement flow" src="assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png"/></p>
+<h4 id="signed-admmlp-physical-link-difference-1">Signed ADMM−LP physical-link difference</h4>
+<p><img alt="Sioux Falls 200-OD signed ADMM-minus-LP physical-link movement-flow difference" src="assets/admm_r2/figures/admm_sioux_200_minus_lp.png"/></p>
+<p><img alt="Sioux Falls 250-OD signed ADMM-minus-LP physical-link movement-flow difference" src="assets/admm_r2/figures/admm_sioux_250_minus_lp.png"/></p>
+<p><em>These are accepted saved-result figures. Physical-link views use a deterministic schematic layout, not geographic coordinates or observed traffic. <a href="cases/sioux-admm.html">Editable figures and source records</a> retain the distinct 200/250-OD scopes.</em></p>
 <p><a id="hong-kong"></a></p>
 <h2 id="05-case-study-hong-kong-bounded-gmnsdata-pilot">05 / Case study — Hong Kong bounded GMNS/data pilot</h2>
 <p><strong>What this case demonstrates.</strong> Official-derived object alignment in Tsim Sha Tsui–Jordan: <strong>780 physical nodes, 1,239 directed physical links, 95 SSG fine zones, 10 STPUG parent zones, 95 centroids and 190 nonphysical connectors</strong>. Transit relationships retain <strong>183 GTFS stops and 294 route IDs</strong>; a single detector snapshot retains <strong>50 lane observations</strong>. The 2021 census allocation yields <strong>90,677.156 persons and 36,228.315 households</strong> on the bounded pilot geography. <a href="cases/hong-kong-gmns-pilot.html">The full case, five figures, source/rights records and commands</a>.</p>
