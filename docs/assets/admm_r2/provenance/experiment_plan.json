@@ -1,0 +1,60 @@
+{
+  "task_id": "ADMM_R2_SIOUX_DEVELOPMENT_BOSTON_TRANSFER",
+  "preregistered_before_r2_runs": true,
+  "problem": "same finite time-expanded linear-cost multicommodity arc-flow LP as R1",
+  "splitting": {
+    "local_variables": "x[k,a]>=0 on allowed commodity arcs; B*x[k]=b[k] in vehicles",
+    "consensus_variables": "z[k,a]>=0 on allowed arcs; sum_k z[k,a]<=capacity[a]",
+    "equality": "x=z",
+    "scaled_dual": "w[k,a]=unscaled_multiplier[k,a]/rho",
+    "augmented_lagrangian": "sum_k c^T x[k]+rho/2*||x-z+w||_2^2-rho/2*||w||_2^2, with local conservation and consensus capacity indicators",
+    "local_subproblem": "min c^T x[k]+rho/2*||x[k]-(z[k]-w[k])||_2^2, x>=0, Bx=b, forbidden x=0",
+    "projection": "z=EuclideanProjection_{z>=0,sum_k z<=u,forbidden=0}(x+w), independently for each arc",
+    "dual_update": "w=w+x-z; on rho change w=(old_rho/new_rho)*w",
+    "primal_residual": "||x-z||_2 in vehicles",
+    "dual_residual": "rho*||z-z_previous||_2 in cost per vehicle",
+    "stopping": "R1 absolute/relative primal and dual thresholds plus original-unit local conservation, capacity, projection, nonnegative, KKT and objective gates"
+  },
+  "scaling": {
+    "row": "for commodity demand d>0, divide each incidence equality and its right-hand side by d: B*(x/d)=b/d; right-hand side source +1, sink -1",
+    "variable": "y=x/d and qbar=(z-w)/d; solve 0.5*||y||^2 + (c/(rho*d))^T y over By=b/d,y>=0",
+    "potential": "h=p/(rho*d); dual objective 0.5*||y||^2+(b/d)^T h up to a constant; y=max(0,qbar-c/(rho*d)-B^T h)",
+    "inverse": "x=d*y; p=rho*d*h; all public residuals, objective and gates recomputed from x,z,w in original units",
+    "rho_initial": "clip(median strictly positive finite arc cost / median commodity volume, 0.0001, 1.0); deterministic from input only"
+  },
+  "local_solver": {
+    "algorithm": "L-BFGS-B on scaled dual, then damped active-set semismooth Newton and nonnegative active-support least-squares correction if needed",
+    "lbfgs_max_iterations": 1200,
+    "lbfgs_gradient_tolerance_scaled": 1e-10,
+    "lbfgs_function_tolerance": 0.0,
+    "max_line_search_steps": 50,
+    "newton_max_iterations": 100,
+    "local_original_balance_target": 1e-7,
+    "warm_start": "input-cost shortest-path node potentials initially; carry physical-unit potentials between iterations and convert using current rho*d; no reference data",
+    "failure_rule": "stop the case if original-unit conservation exceeds 1e-5; independent KKT gate on final state"
+  },
+  "variants": [
+    {"id": "R2_S", "rho": "fixed rho_initial"},
+    {"id": "R2_R", "rho": "every 10 completed outer iterations, if primal>10*dual multiply rho by 2; if dual>10*primal divide rho by 2; clip to [max(0.0001,rho_initial/16),min(16,rho_initial*16)]; rescale w by old/new"}
+  ],
+  "limits": {"max_outer_iterations": 300, "wall_seconds_per_case": 1800, "max_total_heavy_seconds": 28800, "max_new_data_gib": 15, "max_heavy_processes": 1},
+  "gates": {
+    "absolute_residual": 1e-5,
+    "relative_residual": 1e-4,
+    "max_balance_residual": 1e-5,
+    "max_capacity_residual": 1e-5,
+    "max_kkt_residual": 0.001,
+    "max_projection_residual": 1e-7,
+    "max_dual_update_residual": 1e-7,
+    "objective_recompute_relative": 1e-7,
+    "c1_objective_absolute_gap_to_lp": 0.001,
+    "sioux_reference_relative_gap_max": 0.0001,
+    "sioux_regression_objective_ceiling": "accepted R1 objective + 1e-5*abs(same-graph LP objective)",
+    "boston_reference_relative_gap_max": 0.001,
+    "physical_link_back_projection_max": 1e-6
+  },
+  "development_order": ["analytic", "C0", "C1", "Sioux_30OD", "Sioux_60OD", "Sioux_100OD", "Sioux_150OD", "Sioux_200OD", "Sioux_250OD"],
+  "selection": "Run R2_S in order. Select R2_S if every mandatory gate passes. Otherwise run R2_R in the same order and select only if every mandatory gate passes. Stop the ladder at a failed case for a variant. If neither passes, do not freeze or run Boston.",
+  "boston_holdout": "Only after selected policy and source/evaluator hashes are frozen; same source and policy, no retuning; original-unit independent gates and same-graph LP comparison after run.",
+  "reference_boundary": "Solver receives arc and demand CSV plus this policy only; reference objectives and flows are read solely by final evaluator after a run."
+}

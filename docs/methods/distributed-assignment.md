@@ -1,6 +1,6 @@
 # Distributed assignment / accepted bounded evidence and gates
 
-These methods sit alongside, not in place of, the [static FW and finite space–time CG branches](../methods.md). Lagrangian R2 and ADMM R1 below use fixed-cost, hard-capacity **selected-OD finite time-expanded** Sioux instances. Bush/OBA addresses a different static BPR/Beckmann user-equilibrium problem and has not passed its verification gate. No cross-contract objective ranking is meaningful.
+These methods sit alongside, not in place of, the [static FW, official Algorithm B and finite space–time CG branches](../methods.md). Lagrangian R2 and the earlier ADMM R1 record below use fixed-cost, hard-capacity **selected-OD finite time-expanded** Sioux instances. The current [ADMM R2_S cross-city method](admm-space-time.md) and its [Sioux](../cases/sioux-admm.md) / [Boston](../cases/boston-admm.md) evidence are documented separately. [Official `tap-b` Algorithm B](origin-based-algorithm-b.md) addresses a different static BPR/Beckmann user-equilibrium problem. No cross-contract objective ranking is meaningful.
 
 ## Lagrangian capacity pricing with separate primal recovery
 
@@ -15,7 +15,7 @@ The dual solver prices shared arc capacities and generates commodity paths. Its 
 
 *Accepted saved P07 histories. Each recovered primal matches the arc-flow LP objective on **its own** selected-OD finite graph. The two graphs and demands are different; the gap is not a static UE gap.*
 
-Boston R2 is a **gated transfer**: its separately recovered primal is feasible and matches the accepted same-graph objective, but the certified dual gap is **1.1002%**, exceeding the frozen 1% gate. It is not an accepted Boston Lagrangian result. The older R1 Sioux 250-OD gate failure was superseded by R2; its former dual bound must not be reported as current.
+Only the accepted Sioux selected-OD Lagrangian results are summarized here; no Boston result is presented as accepted.
 
 ## ADMM local/consensus shared-capacity decomposition
 
@@ -30,10 +30,6 @@ The R1 ADMM implementation uses local commodity arc flows and consensus/capacity
 
 *Paired scalar saved-result figures, identical axis and layout: the vertical tick is each instance's own LP reference (0%); the dot is the ADMM objective difference. The 250-OD public evidence supplies final metrics, **not an iteration history**, so no 250-OD trajectory was invented. The accepted 200-OD [detailed residual/consensus figure](../assets/sioux/distributed_r1/admm_sioux_200.svg) is supplemental.*
 
-The Boston ADMM transfer failed local commodity conservation (residual **4.18414** under the frozen check) and is **not accepted**. This says nothing about the separate accepted Boston CG or FW results.
+Only the earlier Sioux selected-OD **R1** ADMM results are summarized in this section. The subsequently accepted frozen-policy [R2_S Boston holdout](../cases/boston-admm.md) is a different version and does not retroactively change the R1 record.
 
-## Bush/OBA verification gate
-
-**Bush/OBA research prototype — verification gate not passed; verified upstream baseline work is in progress.** The Sioux static reduced-cost variant's maximum positive-flow root-prefix slack was **6.062 min**, above its **0.05 min** gate. A small aggregate gap alone does not certify the origin-based UE conditions. No accepted Boston Bush transfer or successful Bush card is published.
-
-The accepted Sioux Lagrangian/ADMM selected subsets are not the full 528-OD network and are not a calibrated city forecast. See the [case coverage matrix](../capabilities.md) and [Sioux CG page](../cases/sioux-space-time.md) for the separate column-generation evidence and its certificate limits.
+The accepted Sioux Lagrangian/ADMM selected subsets are not the full 528-OD network and are not a calibrated city forecast. See the [case coverage matrix](../capabilities.md), [Sioux CG page](../cases/sioux-space-time.md), and [static Algorithm B method](origin-based-algorithm-b.md) for the distinct evidence and certificate limits.

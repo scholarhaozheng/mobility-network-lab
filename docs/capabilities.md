@@ -13,9 +13,9 @@
 | Native Diagnostic L3 / compression | **Accepted numerical controls:** ranks 26/52; new-input fixture; **not solved at expanded tiers** | **Executed numerical candidates:** rank 50; full-network gaps remain 8.17% / 4.38%, not exact UE |
 | Space–time network construction | **Demonstrated, bounded:** 90-node / 125-directed-link / 10-OD accepted pilot, 3-second steps, 100-step horizon | **Demonstrated:** finite time-expanded 200 / 250-OD selected subsets |
 | Phase I / Phase II / pricing | **Accepted bounded pilot:** same-graph reference-optimal and independently full-DAG pricing-closed for all ten demands at 1e−6; receiver check pending | **Historical 200 / 250 OD:** feasible and same-subset arc-LP objective matched; independent pricing closure **not established** |
-| Lagrangian capacity pricing | **Gated R2 transfer:** feasible recovered primal but 1.1002% gap exceeds frozen 1% gate | **Accepted R2:** 200/250 selected-OD feasible recoveries, 0.0746% / 0.3177% duality gaps |
-| ADMM shared capacity | **Gated R1 transfer:** local conservation failed | **Accepted R1:** 200/250 selected-OD residual/feasibility gates pass; own-LP relative differences 0.000434% / 0.000607% |
-| Bush/OBA static UE | No accepted transfer | Research prototype only; 6.062 min used-arc slack exceeds 0.05 min gate |
+| Lagrangian capacity pricing | **Gated transfer:** feasible recovered primal, but 1.1002% gap misses frozen 1% gate | **Accepted R2:** 200/250 selected-OD feasible recoveries, 0.0746% / 0.3177% duality gaps |
+| Finite space–time shared-capacity ADMM R2_S | **Accepted saved 10-OD holdout:** 90 nodes / 125 links, 253 iterations, 6.68e-6 relative gap to same-graph arc-flow LP; frozen Sioux-selected policy; not citywide | **Accepted selected subsets:** 200 OD / 85 iterations / 6.30e-6 gap and 250 OD / 101 iterations / 7.16e-6 gap; not full 528 OD |
+| Official `tap-b` Algorithm B static UE | Accepted B0/B1 through task-local lossless adapter; official converter blocked before solve | Accepted classic benchmark; official TAPLab registered-adapter parity and verification pass |
 | New-input preparation and solving | **Generic vehicle/person routes implemented**, with declared profiles and optional dependencies | Existing benchmark and external-network interfaces; case-specific scope is explicit |
 | Saved checks and visualization | Tables, GMNS tracing, static original-space checks, bounded CG figure parity and R4 closure evidence | Static checks, space–time traces, phase and capacity evidence |
 
@@ -23,12 +23,12 @@
 
 **Demonstrated** means supplied executed records for the named instance, not every possible configuration. **Resource-gated** means the saved workflow stopped before the relevant solve under a stated resource budget; it is not a numerical success or proof of inherent impossibility. **Not modeled / no supplied run** is a case-coverage statement, not absence of reusable code. Numerical acceptance does not establish empirical validity.
 
-The Boston all-tier FW, 26-OD compression control and 10-OD finite space–time CG pilot are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's independent pricing certificate cannot be transferred to Sioux 200/250-OD records.
+The Boston all-tier FW, 26-OD compression control, B1 Algorithm B holdout and 10-OD finite space–time CG/ADMM pilots are different model branches or instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's CG pricing certificate is not an ADMM certificate and cannot be transferred to Sioux 200/250-OD CG records. [ADMM R2 numerical scope](methods/admm-space-time.md) · [Algorithm B numerical scope](methods/origin-based-algorithm-b.md) · [Adapter distinction](integrations/taplab-tapb.md).
 
 ## Hong Kong bounded GMNS/data pilot
 
 The [Hong Kong case](cases/hong-kong-gmns-pilot.md) adds a third, **pre-assignment** column to the public coverage. Official-derived records include 780 physical nodes, 1,239 directed links, 95 SSG/10 STPUG zones, 95 centroids, 190 nonphysical connectors, allocated 2021 population/households, 183 GTFS stops, 294 routes and 50 detector lane observations. Five public maps and offline relationship checks are available. The OD is a deterministic hypothetical seed; `assignment_ready=false`, no solver was invoked, and no Hong Kong FW/CG/Lagrangian/ADMM result is claimed. UrbanNav point-level data are excluded.
 
-[Distributed method contracts, accepted results and gates](methods/distributed-assignment.md).
+[ADMM R2 method and independent gates](methods/admm-space-time.md) · [Earlier distributed-method records](methods/distributed-assignment.md).
 
 [Boston](cases/boston.md) · [Boston bounded CG evidence](cases/boston-space-time.md) · [Sioux Falls](cases/sioux-falls.md) · [Hong Kong pilot](cases/hong-kong-gmns-pilot.md) · [Generic commands](RUN_YOUR_OWN_GMNS.md)

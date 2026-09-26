@@ -1,10 +1,10 @@
 # Boston case · GMNS, four stages, GPS and assignment methods
 
-Boston is the real-city instance of the shared framework. Its separate public branches are (1) the accepted semantic S1/S2 service-feedback example, (2) the conditional absolute-attribute ABS_PLANNED / ABS_OBS_EXPLORATORY sensitivity and fixed ABS_PLANNED FW/full-path/native-L3 comparison, and (3) one **bounded 90-node/125-link/10-OD finite space–time CG pilot**. These branches use related Boston source geography but **not** the same demand identity or optimization objective. [Start at the project homepage](../index.md).
+Boston is the real-city instance of the shared framework. Its separate public branches are (1) the accepted semantic S1/S2 service-feedback example, (2) the conditional absolute-attribute ABS_PLANNED / ABS_OBS_EXPLORATORY sensitivity and fixed ABS_PLANNED FW/full-path/native-L3 comparison, and (3) bounded **90-node/125-link/10-OD finite space–time CG and ADMM R2_S** evidence on the same fixed-cost model class. These branches use related Boston source geography but **not** the same demand identity or optimization objective as the static branch. [Start at the project homepage](../index.md).
 
 ## What this case now demonstrates
 
-GMNS exchanges and layer relationships; the retained four-stage/GPS service-feedback chain; fixed conditional absolute choice; controlled FW/full-path/native-L3 comparisons; new-input FW on 500, 2,000 and all 30,790 source-zone OD tiers; and an **accepted bounded finite space–time CG pilot**, independently full-DAG pricing-closed for its ten demands. This is not citywide CG and the second-machine receiver check is pending. [CG figures and complete numerical checks](boston-space-time.md).
+GMNS exchanges and layer relationships; the retained four-stage/GPS service-feedback chain; fixed conditional absolute choice; controlled FW/full-path/native-L3 comparisons; new-input FW on 500, 2,000 and all 30,790 source-zone OD tiers; an **accepted bounded finite space–time CG pilot**, independently full-DAG pricing-closed for its ten demands; and a separate **accepted ADMM R2_S holdout** with independent conservation, capacity and numerical checks. Neither is citywide. [CG figures](boston-space-time.md) · [ADMM figures and derived table](boston-admm.md).
 
 The largest accepted FW calculation has 17,522 loaded node OD, 16,259.122 PCE trips, 133 endpoints and 2,147 positive links. Expanded full-path/L3 were resource-gated; the accepted rank-26/52 control is still the separate 26-OD instance. [Full scale and resource details](../BOSTON_SCALE_RESULTS.md).
 
@@ -47,9 +47,13 @@ The semantic S1/S2 panel uses the existing static FW solver at about **202.07838
 
 On the exact ABS_PLANNED network/demand/BPR/pool instance, the [static assignment comparison](boston-assignment.md) exposes actual FW source/result, the solved **130-path uncompressed reference**, and both accepted native Diagnostic L3 **rank 26 and rank 52 outer-02** path/OD/link results. Five same-instance physical-link maps and a full-precision join table are included there and shown on both project homepages. Native results pass recorded numerical tolerances but are not exact feasible equilibria or an acceleration claim.
 
+The distinct [Algorithm B B0/B1 static controls](boston-algorithm-b.md) use the official `tap-b` executable through a **task-local TAPLab-compatible lossless adapter**. B0 checks the 26-OD interface; the accepted B1 holdout has 453 physical-node OD pairs, 1,936.23847491 PCE in two hours and independent objective **7,922.083942188114 PCE-min**. The stock official TAPLab converter changes first-thru-node and OD precision, so no official TAPLab Boston solve was invoked. This conditional cohort is neither citywide nor empirical traffic validation.
+
 The distinct [finite space–time CG pilot](boston-space-time.md) uses a fixed-cost hard-capacity LP on 90 physical nodes, 125 directed links and 10 ODs. Its Phase I reaches zero artificial flow at round 90; Phase II matches its identical-graph arc-flow reference, and R4 independently finds no improving ungenerated path below −1e−6 for any demand. The R4 certificate adds 15 zero-final-flow columns and does not change the saved physical-link projection. Do not compare its objective to static FW/Beckmann values.
 
-The later [distributed-method transfers](../methods/distributed-assignment.md) are separately **gated**: Lagrangian R2 recovered a feasible primal but missed its frozen 1% duality-gap gate at 1.1002%; ADMM R1 failed local conservation. Neither alters the accepted Boston FW or CG records, and neither is presented as an accepted Boston distributed assignment.
+The [ADMM R2_S finite space–time holdout](boston-admm.md) uses the Sioux-selected frozen policy on the bounded 10-OD instance: **253 iterations**, objective **64.39729165541078**, same-graph LP **64.3968615115296**, relative difference **6.68e-6**, and passing independent original-unit feasibility gates. It does not inherit CG's pricing certificate, assert identical primal flows, or establish citywide validation. Its accepted derived maps and [125-row physical-link table](../assets/admm_r2/data/boston_10od_physical_link_admm_lp_comparison.csv) are rights-cleared, with only previously public GMNS geometry/IDs used for map layout.
+
+The separate [Lagrangian R2 transfer](../methods/distributed-assignment.md) recovered a feasible primal but missed its frozen 1% duality-gap gate at 1.1002%; it is not an accepted Boston Lagrangian result. The earlier ADMM R1 record is retained as historical context, not substituted for the accepted R2_S holdout.
 
 ## Observations & Feedback
 
@@ -61,6 +65,7 @@ The GMNS route-60 figure shows the same saved 12 source positions before and aft
 - [Conditional probabilities, source scope and ABS_OBS FW result](../../examples/boston/conditional_choice_r1/README.md).
 - [FW / finite-path / native-L3 same-instance comparison, figures and limits](boston-assignment.md).
 - [Bounded finite space–time CG, all figure families, public plot inputs and R4 closure](boston-space-time.md).
+- [Frozen-policy finite space–time ADMM R2_S holdout, matched figures and derived physical-link table](boston-admm.md).
 - [Shared method implementation and optional native reproduction boundary](../../algorithms/path_compression/diagnostic_l3/README.md).
 
 ```bash

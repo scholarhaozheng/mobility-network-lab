@@ -1,0 +1,39 @@
+{
+  "figure": "admm_sioux_250_case_sequence",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "frozen policy",
+      "sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+    },
+    {
+      "logical_source": "preregistered plan",
+      "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+    },
+    {
+      "logical_source": "saved Sioux_250OD history.csv",
+      "sha256": "38ddcd51b7a043cadb0227dac8d8f0bba173650e7f37a6032d141f4dd23b9062"
+    },
+    {
+      "logical_source": "saved Sioux_250OD result.json",
+      "sha256": "0e2739f303ee4c486a2393cd3e16eb3807e571465bf637f9404a38eca8a68358"
+    },
+    {
+      "logical_source": "saved Sioux_250OD evaluation.json",
+      "sha256": "f75b86f0db76bc09c3df4ead81ee0e01ef85dd261fd5892be2b3731ef8b3c1ad"
+    },
+    {
+      "logical_source": "saved Sioux_250OD physical_link_flow_comparison.csv",
+      "sha256": "ce4b99018d458a87294f3671cfa5c5a52180044333567539132dc050ae918782"
+    },
+    {
+      "logical_source": "reference objective summary Sioux_250OD",
+      "sha256": "fc10cb5ddd3866e5265a82ed8f7a478c2585c4feed7fadacb2cadce81865670f"
+    }
+  ],
+  "caption": "Matched six-panel residual, feasibility, objective, rho, physical scatter, and verification sequence for Sioux_250OD.",
+  "limitations": "Reference LP is same-graph arc flow; objective agreement does not imply identical primal route/time splits.",
+  "svg_sha256": "7eb81ec0fb85d5e5c5d095fa659a1d1f8a6c5b079061a299bcd133b6f071fbbc",
+  "png_sha256": "6f08987fd01bf65184639b9072f5d325c2dbb08239c40a891b15d9196cda0b0a"
+}

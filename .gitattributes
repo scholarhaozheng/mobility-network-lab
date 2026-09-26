@@ -18,3 +18,10 @@
 /algorithms/distributed_assignment/** -text -diff
 /docs/assets/hong_kong/gmns_pilot_r1/*.svg -text -diff
 /docs/assets/sioux/distributed_r1/*.svg -text -diff
+
+# R3 accepted source/figure sidecars use SHA-256 over the published bytes.
+/algorithms/admm_r2/*.py text eol=lf
+/docs/assets/admm_r2/** -text -diff
+/examples/admm-r2-fixtures/** -text -diff
+/algorithms/origin_based_algorithm_b/** -text -diff
+/docs/assets/algorithm_b_r21/** -text -diff

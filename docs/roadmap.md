@@ -16,9 +16,9 @@ GPS traces and map matching require a genuine trajectory source and matching imp
 
 ## 3. Extend the computational methods
 
-Retain current CG and static FW as distinct, documented baselines. Reuse an identified origin-based / Policy Bush implementation and develop transparent forward-flow, backward-value and feasible-update calculations. Do not label path aggregation as a completed Bush solver.
+Retain current CG and static FW as distinct, documented baselines. The accepted [official tap-b Algorithm B static results](methods/origin-based-algorithm-b.md) provide a bounded verified origin-based branch: official TAPLab registered-adapter parity is established for classic Sioux; Boston B0/B1 use a task-local lossless adapter because the stock converter changes the frozen input contract. Exporting and inspecting native internal Policy Bush state, and fair repeated runtime comparisons, remain future work.
 
-Bounded [Sioux Lagrangian R2 and ADMM R1 results](methods/distributed-assignment.md) now have explicit models, source and accepted selected-OD checks. They are not full-network solutions or mandatory substitutions for the working CG baseline. Boston transfers remain gated. Coupled primal–dual and queue-state / dynamic-programming extensions need their own models and tests.
+Bounded [Sioux Lagrangian R2 results](methods/distributed-assignment.md) and [Sioux/Boston ADMM R2_S results](methods/admm-space-time.md) now have explicit models, source and accepted saved checks. They are not full-network solutions or mandatory substitutions for the working CG baseline. The Boston Lagrangian transfer remains gated; the distinct frozen-policy Boston ADMM holdout passed its declared checks. Coupled primal–dual and queue-state / dynamic-programming extensions need their own models and tests.
 
 ## 4. Transfer the same workflow
 

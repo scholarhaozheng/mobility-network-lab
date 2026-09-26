@@ -30,6 +30,18 @@
 <td>Ten PNG/SVG figure pairs, exact public plot inputs, source hashes and numerical validation; <strong>not citywide</strong></td>
 </tr>
 <tr>
+<td><a href="cases/boston-admm.html">Boston bounded space–time ADMM R2_S</a></td>
+<td>Same bounded 90-node / 125-link / 10-OD finite time-expanded model class</td>
+<td>Frozen Sioux-selected policy; 253 iterations; 6.68e-6 relative objective gap to same-graph LP and independent feasibility gates</td>
+<td>Matched SVG/PNG family, source sidecars and rights-cleared 125-row derived table; <strong>not citywide</strong></td>
+</tr>
+<tr>
+<td><a href="cases/boston-algorithm-b.html">Boston Algorithm B B0/B1</a></td>
+<td>2,852 physical nodes, 5,091 directed links; 26-OD interface and 453-OD holdout</td>
+<td>Static BPR/Beckmann UE through task-local TAPLab-compatible lossless adapter</td>
+<td>Accepted B1 evaluation, aggregate physical-link flow and four SVGs; official TAPLab converter not used to solve Boston</td>
+</tr>
+<tr>
 <td><a href="cases/hong-kong-gmns-pilot.html">Hong Kong bounded GMNS/data pilot</a></td>
 <td>780 physical nodes, 1,239 directed links, 95 SSG fine/10 STPUG parent zones</td>
 <td>Official-derived network, 2021 census allocation, GTFS and detector relationships; deterministic seed</td>
@@ -62,15 +74,27 @@
 <td>Result record and figures</td>
 </tr>
 <tr>
+<td><a href="cases/sioux-admm.html">Sioux Falls · ADMM R2_S 200/250 OD</a></td>
+<td>Distinct 200/250 selected-OD finite shared-capacity instances</td>
+<td>Frozen-policy local QP / capacity projection / scaled dual; accepted independent gates</td>
+<td>Matched six-panel composites, schematic maps and figure source sidecars; no per-link numerical CSV</td>
+</tr>
+<tr>
 <td><a href="datasets/sioux-static-fw.html">Sioux Falls · static FW</a></td>
 <td>24 physical nodes, 76 links, 528 OD records</td>
 <td>Approximate static Beckmann assignment</td>
 <td>Result record</td>
 </tr>
+<tr>
+<td><a href="cases/sioux-algorithm-b.html">Sioux Falls · official <code>tap-b</code> Algorithm B</a></td>
+<td>24 physical nodes, 76 links, 528 positive OD pairs</td>
+<td>Static BPR/Beckmann UE; official TAPLab registered-adapter parity</td>
+<td>Accepted evaluation, aggregate physical-link flow and four SVGs</td>
+</tr>
 </tbody>
 </table>
 <p><a href="visualizations.html">Open the six-figure gallery</a>. These are benchmark experiments, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. The static and space–time objectives are not the same model.</p>
-<p>Accepted Sioux 200/250-OD <a href="methods/distributed-assignment.html">Lagrangian R2 and ADMM R1</a> results use selected-OD finite space–time shared-capacity instances; they are additional bounded algorithm evidence, not full-network or static UE results.</p>
+<p>Accepted Sioux 200/250-OD <a href="methods/distributed-assignment.html">Lagrangian R2</a> and <a href="methods/admm-space-time.html">ADMM R2_S</a> results use selected-OD finite space–time shared-capacity instances; they are additional bounded algorithm evidence, not full-network or static UE results. Earlier ADMM R1 figures are retained separately.</p>
 <h2 id="runnable-reference-inputs">Runnable reference inputs</h2>
 <p><a href="examples.html">Two bundled synthetic examples</a> cover automatic routes and a zone-based capacity constraint. They support installation and regression checks without redistributing third-party road inputs. <a href="getting-started.html">Run the network workflow</a>.</p>
 <h2 id="common-interfaces-and-additional-cities">Common interfaces and additional cities</h2>

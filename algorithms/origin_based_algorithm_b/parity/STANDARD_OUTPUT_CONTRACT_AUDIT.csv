@@ -1,0 +1,11 @@
+case,artifact,requirement,status,sha256,bytes
+Sioux Falls,summary.json,"solver, algorithm, iterations, gap, wall time, workdir",PASS,e944b304587973f9085d595e5b14928b23ff6cd18aaa82e75aedc6e3967bebe4,264
+Sioux Falls,convergence.csv,iteration/gap history,PASS,9aaf0e90341b9738bf53f3417a155d0817c038f210212eb514f2e16254694fc1,395
+Sioux Falls,link_performance.csv,all 76 physical link_id flows and times,PASS,9db7e5f81c8e0352f689ff2ae2cc3ca3e8526933eba25c0d85ac80ba186b75d2,2835
+Sioux Falls,report.md,TAPLab run report,PASS,b8bc6f0417ba722d141a9a4d9c73fe7cfbed6c52e8934faa07c8d1cd605a0f9e,173
+Sioux Falls,validation_report.json,independent TAPLab verify certificate,PASS,b526645958885dc3c06b6493f71eb29bce6e746992dae5714105fd9d124f50c9,542
+Sioux Falls,independent_static_ue_check,"objective, gap, conservation, link parity",PASS,77cac50ff7c9787cb0d2c2c772e027b7b004bfa35cfa67da34101be0c199d6dc,1630
+corrupt Sioux,verify_exit,negative flow fixture exits nonzero,PASS,4fa76b808b0441857562232acabf29490555d9e389f4509f2b240b0a5b5e3812,13
+Sioux Falls,native_replay_exit,"same executable and adapter-generated params exit 0, byte-identical native flows",PASS,a9f58776a09b5dac438049683f24bf85764e0ff8e7455952456165c68c158627,13
+Boston B0,converter_dry_run,first-thru=1 and exact OD representation,BLOCKED,942ca4ce888a08555bbc4055f18e8f3617b3d61e74db20f83c8b2f7a3c6bc03c,882
+Boston B1,converter_dry_run,first-thru=1 and exact OD representation,BLOCKED,438ca8d704597d6f0d0ca7dd3f9899a7ff1b1d50be0532305ba5962301c3a1d2,877

@@ -1,0 +1,70 @@
+{
+  "Boston": {
+    "public_geometry_sha256": "673405a563e325678f79cbbaa1379d23a0aff2691c0b7f4843715c38170a7a84",
+    "public_geometry_link_count": 125,
+    "source": "GMNS Plus 21_Boston",
+    "source_commit": "116447ab641cca1ed34797d019c8e704063393c3",
+    "license": "Apache-2.0",
+    "rights_basis": "User-authorized project-generated derived output, joined only to previously public Boston GMNS geometry and identifiers.",
+    "existing_flow_column_used": false
+  },
+  "Sioux": {
+    "public_topology_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+    "public_link_count": 76,
+    "layout": "new deterministic schematic; not geographic",
+    "raw_topology_table_redistributed": false,
+    "per_link_comparison_table_released": false
+  },
+  "approved_code_and_fixture_copies": [
+    {
+      "public_path": "examples/admm-r2-fixtures/analytic/dynamic_arc.csv",
+      "sha256": "6945817285ce37ddbe3c899aff993be2a1f911e924479341dbd58d6b2d198c5f",
+      "accepted_candidate_path": "fixtures/analytic/dynamic_arc.csv"
+    },
+    {
+      "public_path": "examples/admm-r2-fixtures/analytic/dynamic_demand.csv",
+      "sha256": "b88850d9715be71f7435c3ba6b9011afa7815477226c627759a1b2f45947376e",
+      "accepted_candidate_path": "fixtures/analytic/dynamic_demand.csv"
+    },
+    {
+      "public_path": "examples/admm-r2-fixtures/C0/dynamic_arc.csv",
+      "sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c",
+      "accepted_candidate_path": "fixtures/C0/dynamic_arc.csv"
+    },
+    {
+      "public_path": "examples/admm-r2-fixtures/C0/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "accepted_candidate_path": "fixtures/C0/dynamic_demand.csv"
+    },
+    {
+      "public_path": "examples/admm-r2-fixtures/C1/dynamic_arc.csv",
+      "sha256": "8cd1b6d7fff5b8cb259facc1025429419a87715e80ffadc7216f365fae92d5eb",
+      "accepted_candidate_path": "fixtures/C1/dynamic_arc.csv"
+    },
+    {
+      "public_path": "examples/admm-r2-fixtures/C1/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "accepted_candidate_path": "fixtures/C1/dynamic_demand.csv"
+    },
+    {
+      "public_path": "algorithms/admm_r2/admm_solver.py",
+      "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+      "accepted_candidate_path": "src/admm_solver.py"
+    },
+    {
+      "public_path": "algorithms/admm_r2/independent_admm_evaluator.py",
+      "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "accepted_candidate_path": "src/independent_admm_evaluator.py"
+    },
+    {
+      "public_path": "algorithms/admm_r2/local_subproblem_adapter.py",
+      "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+      "accepted_candidate_path": "src/local_subproblem_adapter.py"
+    },
+    {
+      "public_path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+      "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "accepted_candidate_path": "src/space_time_capacity_problem_contract.py"
+    }
+  ]
+}

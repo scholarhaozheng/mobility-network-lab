@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capability coverage and evidence scope · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Shared framework</a><a href="index.html#cg-experiments">CG experiments</a><a href="index.html#coverage">Case coverage</a><a href="index.html#boston">Boston</a><a href="index.html#sioux-falls">Sioux Falls</a><a href="index.html#run-your-input">Use the tool</a><a href="index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="capability-coverage-and-evidence-scope">Capability coverage and evidence scope</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capability coverage and evidence scope · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Shared framework</a><a href="index.html#cg-experiments">CG experiments</a><a href="index.html#admm-r2">ADMM R2</a><a href="index.html#coverage">Case coverage</a><a href="index.html#boston">Boston</a><a href="index.html#sioux-falls">Sioux Falls</a><a href="index.html#run-your-input">Use the tool</a><a href="index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="capability-coverage-and-evidence-scope">Capability coverage and evidence scope</h1>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -65,18 +65,18 @@
 </tr>
 <tr>
 <td>Lagrangian capacity pricing</td>
-<td><strong>Gated R2 transfer:</strong> feasible recovered primal but 1.1002% gap exceeds frozen 1% gate</td>
+<td><strong>Gated transfer:</strong> feasible recovered primal, but 1.1002% gap misses frozen 1% gate</td>
 <td><strong>Accepted R2:</strong> 200/250 selected-OD feasible recoveries, 0.0746% / 0.3177% duality gaps</td>
 </tr>
 <tr>
-<td>ADMM shared capacity</td>
-<td><strong>Gated R1 transfer:</strong> local conservation failed</td>
-<td><strong>Accepted R1:</strong> 200/250 selected-OD residual/feasibility gates pass; own-LP relative differences 0.000434% / 0.000607%</td>
+<td>Finite space–time shared-capacity ADMM R2_S</td>
+<td><strong>Accepted saved 10-OD holdout:</strong> 90 nodes / 125 links, 253 iterations, 6.68e-6 relative gap to same-graph arc-flow LP; frozen Sioux-selected policy; not citywide</td>
+<td><strong>Accepted selected subsets:</strong> 200 OD / 85 iterations / 6.30e-6 gap and 250 OD / 101 iterations / 7.16e-6 gap; not full 528 OD</td>
 </tr>
 <tr>
-<td>Bush/OBA static UE</td>
-<td>No accepted transfer</td>
-<td>Research prototype only; 6.062 min used-arc slack exceeds 0.05 min gate</td>
+<td>Official <code>tap-b</code> Algorithm B static UE</td>
+<td>Accepted B0/B1 through task-local lossless adapter; official converter blocked before solve</td>
+<td>Accepted classic benchmark; official TAPLab registered-adapter parity and verification pass</td>
 </tr>
 <tr>
 <td>New-input preparation and solving</td>
@@ -92,9 +92,9 @@
 </table></div>
 <h2 id="reading-the-matrix">Reading the matrix</h2>
 <p><strong>Demonstrated</strong> means supplied executed records for the named instance, not every possible configuration. <strong>Resource-gated</strong> means the saved workflow stopped before the relevant solve under a stated resource budget; it is not a numerical success or proof of inherent impossibility. <strong>Not modeled / no supplied run</strong> is a case-coverage statement, not absence of reusable code. Numerical acceptance does not establish empirical validity.</p>
-<p>The Boston all-tier FW, 26-OD compression control and 10-OD finite space–time CG pilot are different instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's independent pricing certificate cannot be transferred to Sioux 200/250-OD records.</p>
+<p>The Boston all-tier FW, 26-OD compression control, B1 Algorithm B holdout and 10-OD finite space–time CG/ADMM pilots are different model branches or instances. Sioux static and time-expanded objectives differ. A generic new-input fixture does not turn the expanded native L3 tiers into accepted results. Boston's CG pricing certificate is not an ADMM certificate and cannot be transferred to Sioux 200/250-OD CG records. <a href="methods/admm-space-time.html">ADMM R2 numerical scope</a> · <a href="methods/origin-based-algorithm-b.html">Algorithm B numerical scope</a> · <a href="integrations/taplab-tapb.html">Adapter distinction</a>.</p>
 <h2 id="hong-kong-bounded-gmnsdata-pilot">Hong Kong bounded GMNS/data pilot</h2>
 <p>The <a href="cases/hong-kong-gmns-pilot.html">Hong Kong case</a> adds a third, <strong>pre-assignment</strong> column to the public coverage. Official-derived records include 780 physical nodes, 1,239 directed links, 95 SSG/10 STPUG zones, 95 centroids, 190 nonphysical connectors, allocated 2021 population/households, 183 GTFS stops, 294 routes and 50 detector lane observations. Five public maps and offline relationship checks are available. The OD is a deterministic hypothetical seed; <code>assignment_ready=false</code>, no solver was invoked, and no Hong Kong FW/CG/Lagrangian/ADMM result is claimed. UrbanNav point-level data are excluded.</p>
-<p><a href="methods/distributed-assignment.html">Distributed method contracts, accepted results and gates</a>.</p>
+<p><a href="methods/admm-space-time.html">ADMM R2 method and independent gates</a> · <a href="methods/distributed-assignment.html">Earlier distributed-method records</a>.</p>
 <p><a href="cases/boston.html">Boston</a> · <a href="cases/boston-space-time.html">Boston bounded CG evidence</a> · <a href="cases/sioux-falls.html">Sioux Falls</a> · <a href="cases/hong-kong-gmns-pilot.html">Hong Kong pilot</a> · <a href="RUN_YOUR_OWN_GMNS.html">Generic commands</a></p>
 </main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

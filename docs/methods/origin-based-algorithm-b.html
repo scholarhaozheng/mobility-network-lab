@@ -1,0 +1,48 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Origin-based Algorithm B on static BPR user equilibrium · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="origin-based-algorithm-b-on-static-bpr-user-equilibrium">Origin-based Algorithm B on static BPR user equilibrium</h1>
+<p>The accepted static branch runs the official <code>spartalab/tap-b</code> <strong>Algorithm B</strong> executable on fixed-demand BPR/Beckmann instances. It is separate from the finite space–time fixed-cost, hard-capacity CG/Lagrangian/ADMM branch and from the retained FW and finite-path controls. TAPLab is the integration/verification framework, not a claim that it supplies its own mathematical Bush solver. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/origin_based_algorithm_b/README.md">Selected source and derived results</a>.</p>
+<h2 id="problem-and-frozen-checks">Problem and frozen checks</h2>
+<p>For every directed physical link, the task-local contract keeps <code>link_id</code>, endpoints, capacity and the <code>vdf_fftt</code>, <code>vdf_alpha</code>, <code>vdf_beta</code> BPR fields without mixing distance/speed units. The objective is the Beckmann integral in the case's demand-unit minutes. Positive fixed OD must be conserved, with nonnegative path/link flow; the independent evaluator checks shortest-path gap, used-path and used-arc slack, origin conservation, aggregate flow agreement, and positive-flow acyclicity. <code>FIRST THRU NODE=1</code> allows Boston's physical OD endpoints to be through nodes.</p>
+<p>The frozen R2 numerical policy used solver gap <code>1e-8</code>, evaluator gap gate <code>1e-4</code>, 10,000 maximum iterations, 1,800 seconds, one batch, and <code>RELATIVE GAP</code>; max used-arc/path slack gate was 0.05 minute. The policy was fixed before Boston B0/B1. The official TAPLab Sioux adapter has no explicit 10,000-iteration override; its default maximum was nonbinding because the parity run stopped at 18 iterations. <a href="../integrations/taplab-tapb.html">Official-adapter audit</a>.</p>
+<h2 id="accepted-results">Accepted results</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Case</th>
+<th>Adapter route</th>
+<th style="text-align:right">Accepted Beckmann objective</th>
+<th style="text-align:right">Independent relative gap</th>
+<th style="text-align:right">Physical links / positive ODs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="../cases/sioux-algorithm-b.html">Classic Sioux Falls</a></td>
+<td>Official TAPLab adapter parity and task-local R2 run</td>
+<td style="text-align:right">4,231,335.287110682 vehicle-min</td>
+<td style="text-align:right">4.49840770553e-9</td>
+<td style="text-align:right">76 / 528</td>
+</tr>
+<tr>
+<td><a href="../cases/boston-algorithm-b.html">Boston B0 interface</a></td>
+<td>Task-local lossless adapter only</td>
+<td style="text-align:right">707.057923071 vehicle-min</td>
+<td style="text-align:right">Checks passed in accepted private handoff</td>
+<td style="text-align:right">5,091 / 26</td>
+</tr>
+<tr>
+<td><a href="../cases/boston-algorithm-b.html">Boston B1 holdout</a></td>
+<td>Task-local lossless adapter only</td>
+<td style="text-align:right">7,922.083942188114 PCE-min</td>
+<td style="text-align:right">−2.29512461878e-16 (floating-point zero)</td>
+<td style="text-align:right">5,091 / 453</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sioux's official TAPLab CLI and direct-callable results have <strong>zero physical-link-flow difference</strong> from accepted R2 and <code>taplab verify</code> certified the standard output. The Boston official converter was audited but <strong>not used for solving</strong>: its first-thru-node choice and four-decimal demand output violate the frozen problem contract. Its status is an input-conversion limitation, not a numerical Algorithm B result.</p>
+<h2 id="reading-the-four-figure-families">Reading the four figure families</h2>
+<p><img alt="Two-column, four-row saved static Algorithm B evidence for Sioux Falls and Boston B1" src="../assets/algorithm_b_r21/algorithm_b_cross_city_overview.png"/></p>
+<p>Each column uses the same accepted R2 figure families in order: convergence, same-problem FW physical-link comparison, selected-origin reconstructed flow, independent verification. The Boston B1 convergence figure has one point because the saved low-congestion holdout met its criterion immediately; no additional trace was inferred. The Sioux and Boston objectives belong to <strong>different</strong> instances and demand units, so their magnitudes are not a performance ranking. <a href="../assets/algorithm_b_r21/FIGURE_CONTRACT.html">SVG composition and source hashes</a>.</p>
+<p>The exported OD paths support reconstructed origin-link flow. Native merge, approach-proportion, restriction-update and backward-label state was not exported, so no figure or prose claims to show it. Boston B1's near-zero flow difference from same-problem FW is an agreement check in a low-congestion conditional cohort, <strong>not</strong> solver superiority, observed traffic or citywide validation.</p>
+<h2 id="reproduction-and-limits">Reproduction and limits</h2>
+<p><a href="../integrations/taplab-tapb.html">The TAPLab integration page</a> separates the official Sioux CLI/verification route from the Boston task-local lossless route. Source-build and public-candidate scope are documented in <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/origin_based_algorithm_b/README.md">the code directory</a>. The publication update reused accepted artifacts and did not invoke any scientific solver.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

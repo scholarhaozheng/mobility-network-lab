@@ -187,7 +187,7 @@ def main() -> int:
         '<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->'
     ):
         from build_case_presentation import main as build_case_presentation
-        build_case_presentation()
+        build_case_presentation([])
         print(f'Built complete documentation in {DOCS}; framework-first pages refreshed last')
         return 0
     # Legacy homepage source for trees that have not adopted the presentation.

@@ -1,0 +1,43 @@
+{
+  "task_id": "TAPLAB_NATIVE_TAPB_ADAPTER_PARITY_R21",
+  "status": "TAPLAB_OFFICIAL_ADAPTER_SIOUX_PASS_BOSTON_CONTRACT_BLOCKED",
+  "taplab_commit": "081e44a0dd451c549d6903933516bccb4166bbd0",
+  "tapb_commit": "040135a20c771fbb84766df6a97cff981fa5df4b",
+  "taplab_commit_archive_sha256": "4028dffc0eb9162cd19323e9b20a12c771bd1dc88c2a4bbda79de386cb751321",
+  "tapb_commit_archive_sha256": "5163b43051457c5c72cfc53253db4fc3668524cd3a5190169c99d2606fc430a5",
+  "taplab_python_files_compared_identical": 28,
+  "frozen_executable_sha256": "c421c48200c033a8c37bf570ee7d1198bbb4689e2961dee61ae41f8d58f7ee1f",
+  "frozen_policy_sha256": "52c2eb4028e9bd1061e028b11e5fb5704d8f165ac40776f8c45f93ae3864fbc6",
+  "public_cli": {
+    "source": "taplab/cli.py:main -> cmd_run, cmd_verify",
+    "registry": "taplab/adapters/__init__.py:get('tapb')",
+    "run": "python -m taplab.cli run <instance> --solver tapb --algorithm B --gap 1e-8 --max-time 1800",
+    "verify": "python -m taplab.cli verify <instance> --solver tapb --gap-target 1e-4",
+    "run_exit": 0,
+    "verify_exit": 0,
+    "corrupt_verify_exit": 1,
+    "same_native_params_replay_exit": 0,
+    "native_flow_file_sha256_matches_replay": true
+  },
+  "internal_callable": {
+    "name": "taplab.adapters.tapb.solve",
+    "signature": "(instance, algorithm='B', gap=1e-06, max_time=600)",
+    "invoked": true,
+    "max_abs_flow_difference_vs_cli": 0.0
+  },
+  "adapter_source_sha256": "f89431551b5e4ef82206b38ccee799c3bdba8d28762a807b350836c82fe7d50e",
+  "cli_source_sha256": "23f554fd4e9562597a77d60dcb5cf2364174acde5606702e352da9eca966f545",
+  "adapter_contract": {
+    "temp_location": "task-local TEMP/TMP only",
+    "binary_selection": "TAPLAB_TAPB_EXE",
+    "prepared_native_input_supported": false,
+    "first_thru_override_supported": false,
+    "demand_precision": "4 fixed decimals",
+    "maximum_iteration_override_supported": false,
+    "effective_default_gap_function": "RELATIVE_GAP_1, matching frozen RELATIVE GAP",
+    "effective_default_batches": 1,
+    "effective_default_max_iterations": "INT_MAX; frozen R2 used 10000; Sioux stopped at 18, so cap was nonbinding",
+    "native_path_flow_export": false,
+    "subprocess_return_code_checked_by_adapter": false
+  }
+}

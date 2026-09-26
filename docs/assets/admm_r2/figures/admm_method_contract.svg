@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="500" viewBox="0 0 1400 500">
+<rect width="1400" height="500" fill="#f6f9fb"/>
+<text x="45.00" y="46.00" font-family="Arial, sans-serif" font-size="29" fill="#153047" font-weight="bold" text-anchor="start">ADMM R2 | method contract</text>
+<text x="45.00" y="72.00" font-family="Arial, sans-serif" font-size="15" fill="#547086" font-weight="normal" text-anchor="start">Finite time-expanded linear shared-capacity multicommodity arc-flow problem</text>
+<rect x="45.00" y="130.00" width="305.00" height="230.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="63.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">1  Commodity-local update</text>
+<text x="64.00" y="205.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">xₖ ≥ 0; Bxₖ = bₖ</text>
+<text x="64.00" y="267.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">min cᵀxₖ + (ρ/2)‖xₖ − zₖ + wₖ‖²</text>
+<line x1="352.00" y1="245.00" x2="375.00" y2="245.00" stroke="#087f8c" stroke-width="3" opacity="1"/>
+<polyline points="370.00,238.00 378.00,245.00 370.00,252.00" fill="none" stroke="#087f8c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="383.00" y="130.00" width="305.00" height="230.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="401.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">2  Shared projection</text>
+<text x="402.00" y="205.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">z ≥ 0;  Σₖ zₖₐ ≤ uₐ</text>
+<text x="402.00" y="267.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">arc-wise Euclidean capacity projection</text>
+<line x1="690.00" y1="245.00" x2="713.00" y2="245.00" stroke="#087f8c" stroke-width="3" opacity="1"/>
+<polyline points="708.00,238.00 716.00,245.00 708.00,252.00" fill="none" stroke="#087f8c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="721.00" y="130.00" width="305.00" height="230.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="739.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">3  Scaled-dual update</text>
+<text x="740.00" y="205.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">w ← w + x − z</text>
+<text x="740.00" y="267.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">fixed input-derived ρ in selected R2_S</text>
+<line x1="1028.00" y1="245.00" x2="1051.00" y2="245.00" stroke="#087f8c" stroke-width="3" opacity="1"/>
+<polyline points="1046.00,238.00 1054.00,245.00 1046.00,252.00" fill="none" stroke="#087f8c" stroke-width="3" stroke-linejoin="round" stroke-linecap="round" opacity="1"/>
+<rect x="1059.00" y="130.00" width="305.00" height="230.00" rx="9" fill="#ffffff" stroke="#dbe6ed" stroke-width="1"/>
+<text x="1077.00" y="160.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">4  Independent evaluator</text>
+<text x="1078.00" y="205.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">conservation, capacity, KKT, objective</text>
+<text x="1078.00" y="267.00" font-family="Arial, sans-serif" font-size="15" fill="#153047" font-weight="normal" text-anchor="start">projection and physical-link back-projection</text>
+<rect x="45.00" y="390.00" width="1315.00" height="68.00" rx="8" fill="#e6f3f4"/>
+<text x="65.00" y="430.00" font-family="Arial, sans-serif" font-size="18" fill="#153047" font-weight="bold" text-anchor="start">Scope: bounded finite time-expanded LP; not static Beckmann user equilibrium.</text>
+</svg>

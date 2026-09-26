@@ -51,11 +51,13 @@ class CurrentResultsPublicR1(unittest.TestCase):
             for suffix in (".svg", ".png"):
                 self.assertTrue((DIST / "admm_r1" / "figures" / (stem + suffix)).is_file())
 
-    def test_gated_claims_visible_without_regressing_cg(self):
+    def test_current_claims_visible_without_regressing_cg(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
-        for claim in ("1.1002%", "6.062 min", "assignment_ready=false",
+        for claim in ("1.1002%", "assignment_ready=false", "ADMM R2_S",
                       "independent pricing closure for 10/10 demands"):
             self.assertIn(claim, readme)
+        self.assertIn("Official TAPLab CLI", readme)
+        self.assertIn("6.68e-6", readme)
         self.assertIn("independent_pricing_closure_established = false",
                       (ROOT / "docs" / "cases" / "sioux-space-time.md").read_text(encoding="utf-8"))
 

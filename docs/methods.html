@@ -32,6 +32,12 @@ subject to  A f = q,  B f &lt;= u,  f &gt;= 0
 <td><a href="cases/boston.html">Boston ABS and semantic branches</a>; <a href="cases/sioux-falls.html">historical Sioux FW</a></td>
 </tr>
 <tr>
+<td>Official <code>tap-b</code> Algorithm B</td>
+<td>Origin-based static BPR/Beckmann UE, with adapter route made explicit</td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/origin_based_algorithm_b/README.md">Selected task-local adapter, evaluator and accepted derived results</a></td>
+<td><a href="cases/sioux-algorithm-b.html">Classic Sioux official TAPLab adapter parity</a>; <a href="cases/boston-algorithm-b.html">Boston B0/B1 task-local lossless runs</a></td>
+</tr>
+<tr>
 <td>Uncompressed finite path</td>
 <td>Exact OD equalities on one finite pool</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/finite_path_reference/README.md">SLSQP source/config</a></td>
@@ -56,14 +62,20 @@ subject to  A f = q,  B f &lt;= u,  f &gt;= 0
 <td><a href="methods/distributed-assignment.html">Accepted Sioux 200/250 OD; Boston transfer gated</a></td>
 </tr>
 <tr>
-<td>ADMM R1</td>
-<td>Local/consensus decomposition of fixed-cost shared-capacity space–time flow</td>
-<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/admm_r1/README.md">Public source and saved evidence</a></td>
-<td><a href="methods/distributed-assignment.html">Accepted Sioux 200/250 OD; Boston transfer gated</a></td>
+<td>ADMM R2_S</td>
+<td>Commodity-local QP, shared-capacity projection and scaled-dual updates for finite time-expanded arc flow</td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/admm_r2/README.md">Frozen public-safe source and authored fixtures</a></td>
+<td><a href="cases/sioux-admm.html">Accepted Sioux 200/250 selected ODs</a> and <a href="cases/boston-admm.html">bounded Boston 10-OD holdout</a>; <a href="methods/admm-space-time.html">method and gates</a></td>
+</tr>
+<tr>
+<td>Earlier ADMM R1</td>
+<td>Local/consensus decomposition on the same finite model class</td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/distributed_assignment/admm_r1/README.md">Retained R1 source and saved evidence</a></td>
+<td><a href="methods/distributed-assignment.html">Earlier Sioux-only records</a>; not the R2_S result</td>
 </tr>
 </tbody>
 </table>
 <p>Inspect selected saved records without any solver: <code>python -B tools/mcl_results.py list --case boston</code>, then <code>python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-outer02</code>. The optional native rerun requires a separately prepared Pyomo/IPOPT/MUMPS environment and explicit output directory; the publication integration did not execute it. These existing records are not a strict paired Boston/Sioux performance experiment, cold-start speedup result, or empirical validation.</p>
 <h2 id="other-method-extensions">Other method extensions</h2>
-<p>The <a href="methods/distributed-assignment.html">distributed assignment page</a> distinguishes accepted bounded Sioux Lagrangian/ADMM evidence from gated Boston transfers. Origin-based/Bush remains a research prototype with a failed used-arc verification condition, not an accepted UE solve. Coupled primal–dual work, model fitting and fair cross-case repetition are future work, not part of this publication.</p>
+<p>The <a href="methods/admm-space-time.html">ADMM R2 page</a> reports the frozen cross-city finite-flow policy and independently checked bounds. The <a href="methods/distributed-assignment.html">earlier distributed assignment page</a> retains Sioux Lagrangian R2 and ADMM R1 evidence. The accepted <a href="methods/origin-based-algorithm-b.html">Algorithm B method</a> uses official tap-b; its <a href="integrations/taplab-tapb.html">TAPLab adapter status</a> differs between Sioux and Boston. Coupled primal–dual work, model fitting and fair cross-case repetition are future work, not part of this publication.</p>
 </main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="data-access.html">Data access</a> · <a href="citation.html">Cite</a> · <a href="roadmap.html">Roadmap</a></span></footer></div></body></html>

@@ -1,0 +1,39 @@
+{
+  "figure": "admm_boston_10od_case_sequence",
+  "method": "deterministic plotting of accepted saved results; no scientific rerun; optimizer_calls=0",
+  "renderer": "render_public_visuals.py",
+  "inputs": [
+    {
+      "logical_source": "frozen policy",
+      "sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+    },
+    {
+      "logical_source": "preregistered plan",
+      "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+    },
+    {
+      "logical_source": "saved Boston_10OD history.csv",
+      "sha256": "0dd6730bca39257bbe11d5ec3a8c23931feacd85f92d860142e395ba94f2c180"
+    },
+    {
+      "logical_source": "saved Boston_10OD result.json",
+      "sha256": "3f7699b9add9c280c4b6907cb6bec902b76ccb5cab1c38354cdc7f285150da3b"
+    },
+    {
+      "logical_source": "saved Boston_10OD evaluation.json",
+      "sha256": "a132327219ee2f15208d9e295b569df85814e063582f98ac493eaf046cf5d33d"
+    },
+    {
+      "logical_source": "saved Boston_10OD physical_link_flow_comparison.csv",
+      "sha256": "0afdfc961207a65e8b93a9dda1ded3180ade495be9c9abf366fbfb19719809a7"
+    },
+    {
+      "logical_source": "reference objective summary Boston_10OD",
+      "sha256": "6a5212ed279fe43a0d35df88b8d3f00caa2644ea4b5a0bf39409e13c55200155"
+    }
+  ],
+  "caption": "Matched six-panel residual, feasibility, objective, rho, physical scatter, and verification sequence for Boston_10OD.",
+  "limitations": "Reference LP is same-graph arc flow; objective agreement does not imply identical primal route/time splits.",
+  "svg_sha256": "e5576a7bd09269ce9f4564c9334d3644f3c01451482cd851fc7b4c8a4993f65c",
+  "png_sha256": "4d15b8c3b5c075c1193315165a5828294e076f4d5dce9ad4b8df641a49b3d9ee"
+}
