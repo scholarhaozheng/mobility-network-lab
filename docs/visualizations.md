@@ -17,11 +17,11 @@ The [four-stage walkthrough](datasets/boston-behavior-feedback.md) links actual 
 | **Final physical-link movement flow and validation** | [Boston final flow and audit](cases/boston-space-time.md#5-final-physical-link-movement-flow-and-validation) | [200/250-OD final flow and audit](cases/sioux-space-time.md#5-final-physical-link-movement-flow-and-validation) |
 | **Independent pricing closure** | [Established for 10/10 demands](cases/boston-space-time.md#6-independent-pricing-closure) | [Not established for the retained historical runs](cases/sioux-space-time.md#6-independent-pricing-closure) |
 
-Both cases also have a matching six-panel saved-result sequence with identical canvas, panel order and caption hierarchy:
+Both cases have matching six-panel saved-result figures with identical canvas and panel order. The figures use restrained panel letters; explanations and limits sit in the case-page captions rather than in title cards inside the images:
 
 <table><tr><th>Boston · one bounded pilot</th><th>Sioux Falls · two historical selected-OD benchmarks</th></tr><tr><td width="50%"><a href="assets/presentation_r5/boston_cg_case_sequence.png"><img src="assets/presentation_r5/boston_cg_case_sequence.png" width="100%" alt="Boston six-panel CG case sequence ending with independent pricing closure established for 10 of 10 demands"></a></td><td width="50%"><a href="assets/presentation_r5/sioux_cg_case_sequence.png"><img src="assets/presentation_r5/sioux_cg_case_sequence.png" width="100%" alt="Sioux Falls six-panel CG case sequence ending with independent pricing closure not established for the historical runs"></a></td></tr></table>
 
-Saved-result visualization; no optimizer, pricing routine, demand model or map-matching routine was rerun for this public rendering. [Exact source hashes and no-solve renderer](assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Boston SVG](assets/presentation_r5/boston_cg_case_sequence.svg) · [Sioux Falls SVG](assets/presentation_r5/sioux_cg_case_sequence.svg).
+Display crops retain the plotted curves, axes, maps and time-network geometry while moving explanatory prose outside the composite; the complete originals remain linked in the case pages. No optimizer, pricing routine, demand model or map-matching routine was rerun. [Exact source hashes, crop coordinates and no-solve renderer](assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Boston SVG](assets/presentation_r5/boston_cg_case_sequence.svg) · [Sioux Falls SVG](assets/presentation_r5/sioux_cg_case_sequence.svg).
 
 
 ## Executed finite space–time CG at a glance

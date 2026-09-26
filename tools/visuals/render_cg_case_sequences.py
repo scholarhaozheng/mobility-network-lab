@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Render two matched CG case-sequence collages from accepted saved figures only.
+"""Render matched scientific CG evidence plates from accepted saved figures.
 
 This module never imports or calls a solver, pricing oracle, demand model, or
-map matcher. The scientific panels are existing public PNGs shown without crop.
+map matcher. Documented display crops remove presentation headers/footnotes,
+not axes, curves, legends, maps, or other scientific observations.
 """
 
 from __future__ import annotations
@@ -35,39 +36,16 @@ PANEL_TITLES = (
 
 CASES = {
     "boston": {
-        "title": "BOSTON  /  ONE BOUNDED CG PILOT",
-        "scope": "90 physical nodes · 125 directed links · 10 ODs · 3-second steps · 100-step horizon",
-        "notes": (
-            "Actual B07 column; schematic time cutaway",
-            "Artificial flow 20.5536 → 0 by round 90",
-            "Saved B07/B09/B10 shared-capacity reallocation",
-            "Reference-objective agreement by round 15",
-            "52 positive-flow links; final numerical checks pass",
-            "Established: 10/10 demands at 1e-6",
-        ),
         "panels": (
             ("boston/space_time_cg_r4/boston_space_time_construction.png",),
             ("boston/space_time_cg_r4/boston_phase_i_artificial_flow.png",),
             ("boston/space_time_cg_r4/boston_shared_capacity_event.png",),
             ("boston/space_time_cg_r4/boston_phase_ii_objective.png",),
-            (
-                "boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png",
-                "boston/space_time_cg_r4/boston_cg_validation.png",
-            ),
+            ("boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png",),
             ("boston/space_time_cg_r4/boston_pricing_closure_by_demand.png",),
         ),
     },
     "sioux": {
-        "title": "SIOUX FALLS  /  TWO HISTORICAL CG BENCHMARKS",
-        "scope": "Distinct selected-OD instances: 200 ODs and 250 ODs · not a real-city demand model",
-        "notes": (
-            "Actual XS170 local cutaway; schematic positions",
-            "Artificial flow clears at rounds 51 / 62",
-            "XS170/XS169 shared-capacity reallocation",
-            "Each selected-OD graph matches its own reference",
-            "Separate 200/250-OD flows; reported checks pass",
-            "Not established for the retained historical runs",
-        ),
         "panels": (
             ("presentation_r3/sioux_space_time_construction.png",),
             ("presentation_r3/sioux_phase_i_pair.png",),
@@ -113,70 +91,60 @@ def configure_plotting() -> None:
         "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
         "svg.fonttype": "none",
         "svg.hashsalt": "mcl-cg-case-sequence-r2",
-        "savefig.facecolor": "#f3f7f9",
+        "savefig.facecolor": "white",
     })
 
 
-def draw_source(fig: plt.Figure, name: str, x: float, y: float, w: float, h: float) -> None:
-    """Display the entire accepted panel: no crop or local pixel adjustment."""
+def normalize_svg(path: Path) -> None:
+    """Remove Matplotlib's inconsequential trailing spaces inside SVG paths."""
+    content = path.read_text(encoding="utf-8")
+    path.write_text("\n".join(line.rstrip() for line in content.splitlines()) + "\n",
+                    encoding="utf-8")
+
+
+def draw_source(fig: plt.Figure, name: str, crop: list[float],
+                x: float, y: float, w: float, h: float) -> None:
+    """Crop only documented presentation margins; preserve source pixels."""
     axis = fig.add_axes((x, y, w, h))
     with Image.open(ASSETS / name) as image:
-        axis.imshow(image.convert("RGB"), interpolation="antialiased")
+        left, top, right, bottom = crop
+        box = (round(left * image.width), round(top * image.height),
+               round(right * image.width), round(bottom * image.height))
+        axis.imshow(image.crop(box).convert("RGB"), interpolation="antialiased")
     axis.axis("off")
 
 
-def draw_case(case_id: str) -> None:
+def draw_case(case_id: str, crops: dict[str, list[float]]) -> None:
     case = CASES[case_id]
-    fig = plt.figure(figsize=(20, 20), facecolor="#f3f7f9")
-    fig.text(0.035, 0.967, case["title"], color="#173a4a", fontsize=27,
-             fontweight="bold", va="top")
-    fig.text(0.035, 0.928, case["scope"], color="#536b78", fontsize=15, va="top")
-
-    left, gap_x, card_h, gap_y, top = 0.035, 0.025, 0.265, 0.022, 0.901
-    card_w = (1.0 - 2.0 * left - gap_x) / 2.0
-    for index, (title, names, note) in enumerate(zip(PANEL_TITLES, case["panels"], case["notes"])):
+    fig = plt.figure(figsize=(20, 16), facecolor="white")
+    left, gap_x, panel_h, gap_y, top = 0.028, 0.026, 0.300, 0.019, 0.975
+    panel_w = (1.0 - 2.0 * left - gap_x) / 2.0
+    for index, names in enumerate(case["panels"]):
         row, col = divmod(index, 2)
-        x = left + col * (card_w + gap_x)
-        y = top - (row + 1) * card_h - row * gap_y
-        fig.add_artist(Rectangle((x, y), card_w, card_h,
-                                 transform=fig.transFigure, facecolor="white",
-                                 edgecolor="#c7d7df", linewidth=1.3, zorder=0))
-        fig.add_artist(Rectangle((x, y + card_h - 0.052), card_w, 0.052,
-                                 transform=fig.transFigure, facecolor="#173a4a",
-                                 edgecolor="none", zorder=1))
-        fig.text(x + 0.012, y + card_h - 0.025,
-                 f"{chr(65 + index)}  {title}", color="white", fontsize=16,
-                 fontweight="bold", va="center", zorder=2)
-        fig.text(x + 0.014, y + 0.023, note, color="#314e5b", fontsize=12,
-                 va="center", zorder=2)
-
-        image_y, image_h = y + 0.047, card_h - 0.108
+        x = left + col * (panel_w + gap_x)
+        y = top - (row + 1) * panel_h - row * gap_y
+        fig.text(x, y + panel_h - 0.002, chr(97 + index), color="#202b33",
+                 fontsize=18, fontweight="bold", va="top")
+        image_x, image_y = x + 0.023, y + 0.004
+        image_w, image_h = panel_w - 0.029, panel_h - 0.020
         if len(names) == 1:
-            draw_source(fig, names[0], x + 0.013, image_y, card_w - 0.026, image_h)
+            draw_source(fig, names[0], crops[names[0]],
+                        image_x, image_y, image_w, image_h)
         elif len(names) == 2:
-            inset_gap = 0.008
-            image_w = (card_w - 0.026 - inset_gap) / 2.0
+            inset_gap = 0.006
+            half_w = (image_w - inset_gap) / 2.0
             for j, name in enumerate(names):
-                draw_source(fig, name, x + 0.013 + j * (image_w + inset_gap),
-                            image_y, image_w, image_h)
+                draw_source(fig, name, crops[name],
+                            image_x + j * (half_w + inset_gap),
+                            image_y, half_w, image_h)
         else:
-            fig.add_artist(Rectangle((x + 0.046, image_y + 0.019), card_w - 0.092,
-                                     image_h - 0.038, transform=fig.transFigure,
-                                     facecolor="#f6f8fa", edgecolor="#b48b55",
-                                     linewidth=2, zorder=1))
-            fig.text(x + card_w / 2, image_y + image_h * 0.60,
-                     "NOT ESTABLISHED", color="#815a32", fontsize=24,
-                     fontweight="bold", ha="center", va="center", zorder=2)
-            fig.text(x + card_w / 2, image_y + image_h * 0.34,
-                     "Reference-objective agreement is a separate check",
-                     color="#536b78", fontsize=12, ha="center", va="center", zorder=2)
-
-    fig.text(0.035, 0.025,
-             "Saved-result presentation composite · accepted figures only · no scientific model rerun",
-             color="#536b78", fontsize=12, va="center")
+            fig.text(x + panel_w / 2, image_y + image_h / 2,
+                     "Not established", color="#4a5156", fontsize=19,
+                     ha="center", va="center")
     stem = OUTPUT / f"{case_id}_cg_case_sequence"
     fig.savefig(stem.with_suffix(".png"), dpi=150, metadata={"Software": "Matplotlib"})
     fig.savefig(stem.with_suffix(".svg"), metadata={"Date": None})
+    normalize_svg(stem.with_suffix(".svg"))
     plt.close(fig)
 
 
@@ -237,6 +205,7 @@ def draw_overview() -> None:
     stem = OUTPUT / "boston_sioux_cg_parallel_overview"
     fig.savefig(stem.with_suffix(".png"), dpi=150, metadata={"Software": "Matplotlib"})
     fig.savefig(stem.with_suffix(".svg"), metadata={"Date": None})
+    normalize_svg(stem.with_suffix(".svg"))
     plt.close(fig)
 
 
@@ -254,7 +223,7 @@ def verify_outputs() -> None:
         root = ET.parse(svg).getroot()
         if not any(element.tag.endswith("}text") for element in root.iter()):
             raise ValueError(f"SVG text is not editable: {svg}")
-    if sizes[0] != sizes[1] or sizes[0] != (3000, 3000):
+    if sizes[0] != sizes[1] or sizes[0] != (3000, 2400):
         raise ValueError(f"Case canvases differ or have wrong dimensions: {sizes}")
     overview_png = OUTPUT / "boston_sioux_cg_parallel_overview.png"
     overview_svg = OUTPUT / "boston_sioux_cg_parallel_overview.svg"
@@ -271,15 +240,25 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--verify-only", action="store_true",
                         help="Check accepted source hashes and both already-rendered outputs")
+    parser.add_argument("--case-only", action="store_true",
+                        help="Regenerate the two case figures without changing the overview")
     args = parser.parse_args()
     manifest = json.loads(SOURCES.read_text(encoding="utf-8"))
     verify_sources(manifest)
+    crops = manifest["display_crops"]
+    if set(crops) != set(manifest["sources"]):
+        raise ValueError("Every displayed source must have one documented crop")
+    for name, crop in crops.items():
+        if len(crop) != 4 or not (0 <= crop[0] < crop[2] <= 1 and
+                                 0 <= crop[1] < crop[3] <= 1):
+            raise ValueError(f"Invalid display crop: {name}")
     if not args.verify_only:
         configure_plotting()
         OUTPUT.mkdir(parents=True, exist_ok=True)
         for case_id in CASES:
-            draw_case(case_id)
-        draw_overview()
+            draw_case(case_id, crops)
+        if not args.case_only:
+            draw_overview()
     verify_outputs()
     print("CG case-sequence source hashes and matched PNG/SVG outputs: PASS")
 

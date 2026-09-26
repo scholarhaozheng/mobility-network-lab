@@ -22,14 +22,12 @@ The 200-OD selection is contained in the 250-OD selection, with matching OD IDs,
 
 ![Sioux Falls' six-panel saved-result case sequence matching Boston's panel order; separate 200- and 250-OD evidence and independent pricing closure explicitly not established](../assets/presentation_r5/sioux_cg_case_sequence.png)
 
-*Saved-result visualization; no optimizer, pricing routine, demand model or map-matching routine was rerun for this public rendering.* [Editable-text SVG](../assets/presentation_r5/sioux_cg_case_sequence.svg) · [Exact accepted source-asset hashes and no-solve renderer](../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
+*Figure — saved Sioux Falls CG evidence.* Panels (a–e) show the recorded time-indexed construction, paired Phase-I traces, XS170/XS169 capacity exchange, paired Phase-II traces and paired physical-link movement flows. Panel (f) records that independent pricing closure is **not established** for either historical run; reference-objective agreement is a separate result. Complete uncropped sources appear below. No optimizer, pricing routine, demand model or map-matching routine was rerun. [SVG](../assets/presentation_r5/sioux_cg_case_sequence.svg) · [Exact source hashes and display crops](../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
 
 <a id="construction-cutaway"></a>
 ## 1. From the physical network to time-indexed columns
 
-![Exploded local time-network view with actual selected XS170 arc IDs](../assets/presentation_r3/sioux_space_time_construction.png)
-
-The diagram uses **schematic display coordinates** but actual node and time identities. It shows nodes 8, 6, 5, 9 and 4 over time indices 0–6; the recorded network extends beyond this slice. The highlighted column is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6`: physical nodes `8 → 6 → 5` at times `0 → 2 → 6`. Pale movement lines and waiting lines come from the saved local allowed-arc records. No new shortest path or optimizer was run. Source/sink connectors and most of the horizon are omitted from the cutaway.
+Panel (a) above uses **schematic display coordinates** but actual node and time identities. It shows nodes 8, 6, 5, 9 and 4 over time indices 0–6; the recorded network extends beyond this slice. The highlighted column is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6`: physical nodes `8 → 6 → 5` at times `0 → 2 → 6`. Pale movement lines and waiting lines come from the saved local allowed-arc records. No new shortest path or optimizer was run. Source/sink connectors and most of the horizon are omitted from the cutaway. The [complete annotated construction figure](../assets/presentation_r3/sioux_space_time_construction.png) remains available as source detail.
 
 [Generic construction and pricing explanation](../methods/space-time-cg.md) · [Figure provenance](../assets/presentation_r3/FIGURE_PROVENANCE.json).
 

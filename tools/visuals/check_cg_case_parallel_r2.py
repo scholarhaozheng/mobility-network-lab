@@ -133,9 +133,12 @@ def main() -> int:
     for city in ("boston", "sioux"):
         png = ASSETS / "presentation_r5" / f"{city}_cg_case_sequence.png"
         svg = png.with_suffix(".svg")
-        require(png_size(png) == (3000, 3000), f"{city}: wrong canvas", errors)
-        require(any(node.tag.endswith("}text") for node in ET.parse(svg).getroot().iter()),
-                f"{city}: SVG text not editable", errors)
+        require(png_size(png) == (3000, 2400), f"{city}: wrong canvas", errors)
+        labels = ["".join(node.itertext()) for node in ET.parse(svg).getroot().iter()
+                  if node.tag.endswith("}text")]
+        expected_labels = list("abcdef") + (["Not established"] if city == "sioux" else [])
+        require(labels == expected_labels,
+                f"{city}: unexpected slide-style title or in-figure prose: {labels}", errors)
         require(png.name in pages[city], f"{city}: sequence absent from case page", errors)
         checks += 3
     canonical = ASSETS / "presentation_r5" / "sioux_shared_capacity_canonical.png"

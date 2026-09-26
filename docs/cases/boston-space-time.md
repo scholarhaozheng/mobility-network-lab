@@ -2,9 +2,7 @@
 
 This page reports **one accepted bounded Boston pilot**, not a citywide assignment or a second Boston scale: **90 physical nodes, 125 directed physical links, 10 OD demands, 3-second time steps and a 100-step horizon**. It solves a fixed-cost, hard-capacity flow problem on a finite time-expanded graph. Its objective and flows must not be compared numerically with Boston's separate [static BPR/Beckmann FW and native-L3 instance](boston-assignment.md), the semantic GPS feedback panel, or the Sioux Falls selected-OD benchmarks.
 
-![Four-panel summary of the one Boston bounded CG pilot: final physical-link movement flow, Phase-I clearance, Phase-II objective/reference, and ten-demand independent pricing closure](../assets/boston/space_time_cg_r4/boston_cg_summary_panel.png)
-
-*Single-instance summary.* Of 125 directed physical links, **52** have positive final physical-link movement flow. Artificial flow reaches zero at Phase-I round **90**. Phase II reaches the objective of the arc-flow LP on the same finite time-expanded graph. R4 independently checks full-DAG pricing for **10/10 demands**; its 15 added certificate columns have **zero final flow**. [Editable SVG](../assets/boston/space_time_cg_r4/boston_cg_summary_panel.svg) · [Plot inputs and figure hashes](../assets/boston/space_time_cg_r4/figure_manifest.json).
+*Single-instance summary.* Of 125 directed physical links, **52** have positive final physical-link movement flow. Artificial flow reaches zero at Phase-I round **90**. Phase II reaches the objective of the arc-flow LP on the same finite time-expanded graph. R4 independently checks full-DAG pricing for **10/10 demands**; its 15 added certificate columns have **zero final flow**. The earlier [four-panel summary](../assets/boston/space_time_cg_r4/boston_cg_summary_panel.png) remains available as supplementary material ([SVG](../assets/boston/space_time_cg_r4/boston_cg_summary_panel.svg); [plot inputs and figure hashes](../assets/boston/space_time_cg_r4/figure_manifest.json)).
 
 ## Case scope
 
@@ -22,7 +20,7 @@ This page reports **one accepted bounded Boston pilot**, not a citywide assignme
 
 ![Boston's six-panel saved-result case sequence, from a real time-indexed column through Phase I, shared-capacity reallocation, Phase II, final physical-link movement flow, and 10-of-10 independent pricing closure](../assets/presentation_r5/boston_cg_case_sequence.png)
 
-*Saved-result visualization; no optimizer, pricing routine, demand model or map-matching routine was rerun for this public rendering.* [Editable-text SVG](../assets/presentation_r5/boston_cg_case_sequence.svg) · [Exact accepted source-asset hashes and no-solve renderer](../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
+*Figure — saved Boston CG evidence.* Panels (a–f) show construction, Phase-I feasibility, cross-OD capacity reallocation, Phase-II objective, final physical-link movement flow and the independent pricing check, respectively. Display crops retain plotted evidence and omit presentation prose; complete originals and the numerical validation appear below. No optimizer, pricing routine, demand model or map-matching routine was rerun. [SVG](../assets/presentation_r5/boston_cg_case_sequence.svg) · [Exact source hashes and display crops](../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json).
 
 <a id="network-and-construction-physical-geography-versus-time-states"></a>
 ## 1. From the physical network to time-indexed columns
