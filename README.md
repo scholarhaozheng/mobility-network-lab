@@ -91,7 +91,7 @@ The two cases keep their own scale and unique supplementary evidence, but every 
 | Sioux Falls 250 OD | 101 | 7.16e-6 | Pass |
 | Boston 10 OD | 253 | 6.68e-6 | Pass |
 
-The R2_S scaling and input-derived fixed-rho rule were selected on authored fixtures and Sioux, then frozen before Boston. The independent evaluator made **zero optimizer calls**; the original ADMM solver did use local QP optimization. These are finite time-expanded shared-capacity LP instances, not static Beckmann UE. Sioux cases are selected subsets, and Boston is a 90-node/125-link holdout, not citywide. Objective closeness does not establish identical link, path or time flows. [Method and gates](docs/methods/admm-space-time.md) · [Sioux figure family](docs/cases/sioux-admm.md) · [Boston figure family and 125-row derived table](docs/cases/boston-admm.md) · [Editable overview](docs/assets/admm_r2/figures/admm_results_overview.svg).
+The R2_S scaling and input-derived fixed-rho rule were selected on authored fixtures and Sioux, then frozen before Boston. The independent evaluator made **zero optimizer calls**; the original ADMM solver did use local QP optimization. These are finite time-expanded shared-capacity LP instances, not static Beckmann UE. Sioux cases are selected subsets, and Boston is a 90-node/125-link holdout, not citywide. Objective closeness does not establish identical link, path or time flows. [Complete convergence, conservation and physical-flow figures below](#admm-r2-figures) · [Method and gates](docs/methods/admm-space-time.md) · [Sioux case](docs/cases/sioux-admm.md) · [Boston case and 125-row derived table](docs/cases/boston-admm.md) · [Editable overview](docs/assets/admm_r2/figures/admm_results_overview.svg).
 
 <a id="cg-experiments"></a>
 ## Executed finite space–time CG experiments
@@ -110,7 +110,58 @@ The repository contains **two distinct executed CG evidence families**. Boston i
 
 *These are saved-result visualizations. Boston is not citywide CG; Sioux Falls is not a modern real-city demand model. The fixed-cost hard-capacity CG objectives are not directly comparable with static BPR/Beckmann FW.* [Current overview SVG](docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Current source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](docs/assets/presentation_r4/cg_experiments_overview.png) and [its source manifest](docs/assets/presentation_r4/CG_EXPERIMENTS_OVERVIEW_SOURCES.json).
 
+<a id="admm-r2-figures"></a>
+## Executed finite space–time ADMM R2 figure families
+
+The figures below show the accepted convergence and original-unit feasibility traces, commodity conservation where an individual heatmap was released, and final physical-link movement flow against the same-graph LP with its signed difference. They use the frozen R2_S policy; no solver or figure was rerun for this README. [Method and independent gates](docs/methods/admm-space-time.md).
+
+#### Sioux Falls · 200 selected ODs
+
+![Sioux 200-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Sioux_200OD.png)
+
+*Convergence and feasibility on the 200-OD selected finite graph.* [SVG](docs/assets/admm_r2/figures/convergence_Sioux_200OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Sioux_200OD.source.json).
+
+![Sioux 200-OD commodity-level original-unit conservation heatmap](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.png)
+
+*Commodity-level local balance across the saved iterations; the frozen `1e-5` gate is marked.* [SVG](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.svg) · [Source and limits](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.source.json).
+
+![Sioux 200-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.png)
+
+![Sioux 200-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_sioux_200_minus_lp.png)
+
+*Final movement flow and signed difference. Sioux topology uses a deterministic schematic layout, not geographic coordinates.* [Flow SVG](docs/assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_sioux_200_minus_lp.svg) · [Full case](docs/cases/sioux-admm.md).
+
+#### Sioux Falls · 250 selected ODs
+
+![Sioux 250-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Sioux_250OD.png)
+
+*The right-hand panel contains the accepted original-unit local balance and capacity traces. A separate 250-OD commodity heatmap was not released; none is implied here.* [SVG](docs/assets/admm_r2/figures/convergence_Sioux_250OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Sioux_250OD.source.json).
+
+![Sioux 250-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png)
+
+![Sioux 250-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_sioux_250_minus_lp.png)
+
+*Final movement flow and signed difference on the 250-OD selected graph; the schematic layout is not a geographic map.* [Flow SVG](docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_sioux_250_minus_lp.svg) · [Full case](docs/cases/sioux-admm.md).
+
+#### Boston · bounded 10-OD holdout
+
+![Boston 10-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Boston_10OD.png)
+
+*Convergence and feasibility under the Sioux-selected policy frozen before Boston.* [SVG](docs/assets/admm_r2/figures/convergence_Boston_10OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Boston_10OD.source.json).
+
+![Boston 10-OD commodity-level original-unit conservation heatmap](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.png)
+
+*All ten saved commodity balance traces, with the frozen `1e-5` gate marked.* [SVG](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.svg) · [Source and limits](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.source.json).
+
+![Boston 10-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.png)
+
+![Boston 10-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.png)
+
+*The absolute panels share a scale; the signed map retains the actual ±`4.24e-4`-vehicle maximum rather than enlarging it. Maps use already-public GMNS Plus geometry and IDs under Apache-2.0 attribution.* [Flow SVG](docs/assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.svg) · [125-row derived table](docs/assets/admm_r2/data/boston_10od_physical_link_admm_lp_comparison.csv) · [Full case and rights limits](docs/cases/boston-admm.md).
+
 <a id="distributed-assignment"></a>
+## Static and distributed assignment results
+
 ### Distributed assignment algorithms / bounded accepted results
 
 The Sioux 200/250-OD **finite time-expanded shared-capacity** instances also have accepted, method-specific saved results. These are not static user equilibrium or full 528-OD network solutions. Their mathematical contract is separate from static FW; no cross-contract objective comparison is implied.

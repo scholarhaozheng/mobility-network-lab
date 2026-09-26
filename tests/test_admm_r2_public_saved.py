@@ -68,6 +68,28 @@ class ADMMR2PublicSaved(unittest.TestCase):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         self.assertIn("admm_results_overview.png", readme)
         self.assertIn("Boston 10 OD | 253 | 6.68e-6", readme)
+        for stem in (
+            "convergence_Sioux_200OD", "convergence_Sioux_250OD", "convergence_Boston_10OD",
+            "admm_sioux_200_local_conservation_heatmap",
+            "admm_boston_10od_local_conservation_heatmap",
+            "admm_sioux_200_final_physical_link_flow", "admm_sioux_250_final_physical_link_flow",
+            "admm_boston_10od_final_physical_link_flow",
+            "admm_sioux_200_minus_lp", "admm_sioux_250_minus_lp", "admm_boston_10od_minus_lp",
+        ):
+            self.assertIn(f"docs/assets/admm_r2/figures/{stem}.png", readme, stem)
+        self.assertIn("A separate 250-OD commodity heatmap was not released", readme)
+        self.assertNotIn("admm_sioux_250_local_conservation_heatmap", readme)
+        homepage = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
+        self.assertIn('id="admm-r2-figures"', homepage)
+        for stem in (
+            "convergence_Sioux_200OD", "convergence_Sioux_250OD", "convergence_Boston_10OD",
+            "admm_sioux_200_local_conservation_heatmap",
+            "admm_boston_10od_local_conservation_heatmap",
+            "admm_sioux_200_final_physical_link_flow", "admm_sioux_250_final_physical_link_flow",
+            "admm_boston_10od_final_physical_link_flow",
+            "admm_sioux_200_minus_lp", "admm_sioux_250_minus_lp", "admm_boston_10od_minus_lp",
+        ):
+            self.assertIn(f"assets/admm_r2/figures/{stem}.png", homepage, stem)
 
 
 if __name__ == "__main__":
