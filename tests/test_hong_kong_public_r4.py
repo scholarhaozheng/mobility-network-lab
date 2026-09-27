@@ -15,7 +15,7 @@ class HongKongPublicR4(unittest.TestCase):
             "### Retained R1 data checkpoint", 1
         )[0]
         figures = (
-            "r2r4_baseline/figures/hk_physical_to_time_expanded.png",
+            "presentation_r6/hk_physical_to_time_cutaway.png",
             "figures/hk_cg_phase_i_artificial_flow.png",
             "figures/hk_cg_phase_i_by_demand.png",
             "figures/hk_cg_phase_ii_objective.png",
@@ -25,15 +25,22 @@ class HongKongPublicR4(unittest.TestCase):
         )
         positions = []
         for figure in figures:
-            path = "docs/assets/hong_kong/full_stack_r5/" + figure
+            path = "docs/assets/hong_kong/" + figure if figure.startswith("presentation_r6/") else "docs/assets/hong_kong/full_stack_r5/" + figure
             self.assertTrue((ROOT / path).is_file(), path)
             positions.append(section.index(path))
         self.assertEqual(positions, sorted(positions))
-        self.assertEqual(section.count("!["), len(figures))
+        self.assertEqual(section.count("![") + section.count("<img "), len(figures))
+        self.assertEqual(section.count('<td width="50%">'), 4)
         home = (ROOT / "docs/index.html").read_text(encoding="utf-8")
         self.assertIn('id="hong-kong-cg-r5"', home)
         for figure in figures:
-            self.assertIn("assets/hong_kong/full_stack_r5/" + figure, home)
+            prefix = "assets/hong_kong/" if figure.startswith("presentation_r6/") else "assets/hong_kong/full_stack_r5/"
+            self.assertIn(prefix + figure, home)
+        detail = (ROOT / "docs/cases/hong-kong-space-time.md").read_text(encoding="utf-8")
+        self.assertIn("../assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png", detail)
+        source = json.loads((ROOT / "docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.source.json").read_text(encoding="utf-8"))
+        self.assertEqual(source["status"], "DERIVED_DISPLAY_ONLY")
+        self.assertIn("not an exported CG column", source["scope"])
 
     def test_current_pages_and_three_city_matrix(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")

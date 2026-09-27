@@ -49,6 +49,11 @@ class PresentationR3(unittest.TestCase):
         self.assertIn('docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.png',section)
     def test_requested_cg_pairs_and_boston_construction_heading(self):
         self.assertIn('#### Boston / From the physical network to time-indexed columns',self.text)
+        boston=self.text.split('### Boston / Bounded finite space–time CG pilot',1)[1].split('<a id="boston-admm-readme"></a>',1)[0]
+        paired=boston.split('#### Final physical-link movement flow and independent pricing closure',1)[1].split('| Shared CG stage |',1)[0]
+        self.assertEqual(paired.count('<td width="50%">'),2)
+        self.assertIn('boston_cg_final_physical_link_flow.png',paired)
+        self.assertIn('boston_pricing_closure_by_demand.png',paired)
         for heading in ('Phase I restores feasibility','Phase II improves the real-path objective',
                         'Final physical-link movement flow and validation'):
             section=self.text.split('### Sioux Falls / '+heading,1)[1].split('### Sioux Falls /',1)[0]
