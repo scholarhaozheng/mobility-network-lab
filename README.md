@@ -441,7 +441,7 @@ These commands inspect saved points; they do not solve, build paths, refit deman
 
 This is **one** accepted 90-physical-node, 125-directed-link, 10-OD finite time-expanded instance (3-second steps; 100-step horizon), not the 5,091-link static Boston assignment or a second Boston scale. The fixed-cost hard-capacity objective is distinct from FW/Beckmann.
 
-The six accepted evidence stages are displayed individually below, **one figure per row**. The former [six-panel PNG](docs/assets/presentation_r5/boston_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available; no scientific model was rerun.
+The six accepted evidence stages are displayed below. Final physical-link flow and independent pricing closure share one row; the preceding stages remain full width. The former [six-panel PNG](docs/assets/presentation_r5/boston_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available; no scientific model was rerun.
 
 #### Boston / From the physical network to time-indexed columns
 
@@ -467,17 +467,13 @@ The six accepted evidence stages are displayed individually below, **one figure 
 
 *The real-path objective reaches the reference level on this finite graph.*
 
-#### Final physical-link movement flow and validation
+<a id="final-physical-link-movement-flow-and-validation"></a>
+<a id="independent-pricing-closure"></a>
+#### Final physical-link movement flow and independent pricing closure
 
-![Boston CG final time-aggregated physical-link movement flow](docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png)
+<table class="figure-grid"><tr><td width="50%"><strong>Final physical-link movement flow and validation</strong><img src="docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png" width="100%" alt="Boston CG final time-aggregated physical-link movement flow"><small>52 of 125 directed physical links carry positive modeled movement flow; not observed traffic.</small></td><td width="50%"><strong>Independent pricing closure</strong><img src="docs/assets/boston/space_time_cg_r4/boston_pricing_closure_by_demand.png" width="100%" alt="Boston independent pricing closure by demand"><small>Full-DAG pricing closure passes all 10 demands at <code>1e-6</code>.</small></td></tr></table>
 
-*52 of 125 directed physical links carry positive final movement flow; this is modeled output, not observed traffic.*
-
-#### Independent pricing closure
-
-![Boston independent pricing closure by demand](docs/assets/boston/space_time_cg_r4/boston_pricing_closure_by_demand.png)
-
-*Independent full-DAG pricing closure passes all 10 demands at `1e-6`. [Full uncropped figures, numeric checks and limitations](docs/cases/boston-space-time.md) · [Matching Sioux Falls case below](#sioux-falls) · [Earlier four-panel summary](docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png).*
+[Full uncropped figures, numeric checks and limitations](docs/cases/boston-space-time.md) · [Matching Sioux Falls case below](#sioux-falls) · [Earlier four-panel summary](docs/assets/boston/space_time_cg_r4/boston_cg_summary_panel.png).
 
 | Shared CG stage | Boston result |
 |---|---|
@@ -640,37 +636,29 @@ The frozen 10-OD finite case has **11,954 dynamic nodes and 24,910 arcs**. Curre
 <a id="hong-kong-cg-r5"></a>
 ### Hong Kong / Bounded finite space–time CG R5
 
-These are the accepted saved figures for the **same unchanged 10-OD finite graph**. Each scientific figure appears on its own row; the separate LP/Lagrangian comparison is supporting context, not an additional CG run. The case page retains the full records, editable SVGs and reproduction limits.
+These are the accepted saved results for the **same unchanged 10-OD finite graph**. Phase-I total/by-demand evidence and Phase-II/independent-closure evidence form two paired rows; the construction, final flow and separate LP/Lagrangian comparison remain full width. The comparison is supporting context, not an additional CG run. The case page retains the full records, editable SVGs and reproduction limits.
 
 #### From physical links to time-indexed movement
 
-![Hong Kong physical-link to finite time-expanded graph construction](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png)
+![Hong Kong source-grounded local physical-link to time-indexed-arc cutaway](docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png)
 
-*The 111 selected physical links support a 30-second, 50-step graph; hourly physical capacity is converted to PCE per departure step. This is not the static BPR assignment.* [SVG](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.source.json).
+*A source-grounded local cutaway: two connected Austin Road physical links become actual movement arcs joined by a zero-time turn connector; pale arcs include saved waiting and other allowed movements. Positions are schematic, and the highlighted chain is permitted by the frozen graph—not an exported CG column or observed trajectory. The full graph has 111 selected physical links, 30-second steps and a 50-step horizon.* [Editable SVG](docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.svg) · [Source record and exact IDs](docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.source.json) · [Earlier aggregate construction graphic](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png).
 
-#### Phase I restores real-path feasibility
+<a id="phase-i-restores-real-path-feasibility"></a>
+<a id="phase-i-clearance-by-demand"></a>
+#### Phase I restores real-path feasibility and clears demand-level deficits
 
-![Hong Kong R5 Phase-I artificial-flow clearance on the unchanged 10-OD case](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png)
+<table class="figure-grid"><tr><td width="50%"><strong>Phase I restores real-path feasibility</strong><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png" width="100%" alt="Hong Kong R5 Phase-I total artificial-flow clearance"><small>4.3502187198 artificial PCE clears by round 12; modeled feasibility, not observation.</small></td><td width="50%"><strong>Phase I clearance by demand</strong><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.png" width="100%" alt="Hong Kong R5 initial and final Phase-I artificial flow for ten demands"><small>Initial deficit in HK03, HK05 and HK07; all ten have zero final artificial flow.</small></td></tr></table>
 
-*Phase I clears 4.3502187198 artificial PCE by round 12; this is modeled feasibility, not an observation.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json).
+[Total-flow SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.svg) · [Total-flow source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json) · [By-demand SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.svg) · [Saved Phase-I trace](docs/assets/hong_kong/full_stack_r5/cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv).
 
-#### Phase I clearance by demand
+<a id="phase-ii-improves-the-real-path-objective"></a>
+<a id="independent-pricing-closure-and-original-space-checks"></a>
+#### Phase II objective and independent pricing closure
 
-![Hong Kong R5 initial and final Phase-I artificial flow for ten demands](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.png)
+<table class="figure-grid"><tr><td width="50%"><strong>Phase II improves the real-path objective</strong><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png" width="100%" alt="Hong Kong R5 Phase-II objective against its same-graph arc-flow LP"><small>The real-only master falls from 75.075236 to 75.036330 vehicle-minutes after three added columns; reference LP is on the same graph.</small></td><td width="50%"><strong>Independent pricing closure and original-space checks</strong><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png" width="100%" alt="Hong Kong R5 independent full-DAG pricing closure for all ten demands"><small>10/10 full-DAG closure is separate from objective agreement; solver-free checks cover demand, capacity and link projection.</small></td></tr></table>
 
-*The initial deficit is concentrated in HK03, HK05 and HK07; all ten demands have zero final artificial flow.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.svg) · [Saved trace](docs/assets/hong_kong/full_stack_r5/cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv).
-
-#### Phase II improves the real-path objective
-
-![Hong Kong R5 Phase-II real-path objective against its same-graph arc-flow LP](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png)
-
-*The real-only restricted master falls from 75.075236 to 75.036330 vehicle-minutes after three added columns; the reference is the arc-flow LP on this same graph.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.source.json).
-
-#### Independent pricing closure and original-space checks
-
-![Hong Kong R5 independent full-DAG pricing closure for all ten demands](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png)
-
-*The 10/10 full-DAG pricing-closure certificate is separate from objective agreement. The solver-free public audit reconstructs the 25-column objective and checks original-space demand, capacity and physical-link projection.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.svg) · [Redacted certificate](docs/assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json) · [Solver-free public verifier](docs/assets/hong_kong/full_stack_r5/verify_receiver_r5.py).
+[Objective SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.svg) · [Objective source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.source.json) · [Closure SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.svg) · [Redacted closure certificate](docs/assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json) · [Solver-free public verifier](docs/assets/hong_kong/full_stack_r5/verify_receiver_r5.py).
 
 #### Final physical-link movement flow
 

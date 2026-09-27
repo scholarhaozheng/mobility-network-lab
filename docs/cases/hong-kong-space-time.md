@@ -14,9 +14,9 @@ Reference-objective agreement and independent pricing closure are distinct state
 
 ## 1. From physical links to time-indexed movement
 
-![Hong Kong physical-to-time-expanded construction](../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png)
+![Hong Kong source-grounded local physical-link to time-indexed-arc cutaway](../assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png)
 
-*Physical hourly capacity becomes departure-arc PCE per 30-second step. This construction is separate from the static BPR assignment.* [SVG](../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.svg) · [Source record](../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.source.json).
+*Two connected Austin Road physical links are shown with their saved turn-aware node-time movement, zero-time turn and waiting arcs over indices 0–3. Layout coordinates are schematic; link IDs, state IDs, arc types and times come from the unchanged 30-second finite graph. The highlighted permitted chain is **not** an exported CG column or observed trajectory. Physical hourly capacity becomes departure-arc PCE per 30-second step on the full graph; this construction is separate from static BPR assignment.* [Editable SVG](../assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.svg) · [Source record and exact IDs](../assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.source.json) · [Earlier aggregate construction graphic](../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png).
 
 ## 2. Phase I restores real-path feasibility
 
