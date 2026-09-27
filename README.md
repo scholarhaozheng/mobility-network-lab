@@ -186,7 +186,7 @@ The table describes accepted Sioux selected-OD results; [Hong Kong has a separat
 
 The official `spartalab/tap-b` Algorithm B executable was evaluated on frozen static BPR/Beckmann instances. **Sioux Falls** also passed parity through the pinned official TAPLab registered `tapb` CLI adapter and direct callable; **Boston B0/B1** passed through a *task-local TAPLab-compatible lossless adapter*. The stock official TAPLab converter was stopped **before** a Boston solve because it changed first-thru-node semantics and rounded OD demand. This is not an official TAPLab Boston parity result.
 
-The eight accepted R2 source figures are shown **one per row** so their axes and checks remain legible. Sioux Falls and Boston B1 are different static demand instances; these figures do not establish a cross-city speed comparison. The earlier [two-column overview PNG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.png) and [editable SVG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.svg) remain available, with [source hashes](docs/assets/algorithm_b_r21/SOURCE_SVG_SHA256.csv).
+Six accepted R2 source figures remain one per row; the physical-link pair below is re-rendered side by side from frozen source points. Sioux Falls and Boston B1 are different static demand instances; these figures do not establish a cross-city speed comparison. The earlier [two-column overview PNG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.png) and [editable SVG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.svg) remain available, with [source hashes](docs/assets/algorithm_b_r21/SOURCE_SVG_SHA256.csv).
 
 #### Solver convergence
 
@@ -200,13 +200,9 @@ The eight accepted R2 source figures are shown **one per row** so their axes and
 
 #### Physical-link flow against same-problem FW
 
-![Sioux Falls Algorithm B versus same-problem FW physical-link flow](docs/assets/algorithm_b_r21/source_panels/sioux_fw_flow.svg)
+<table class="figure-grid"><tr><td width="50%"><img src="docs/assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.svg" width="100%" alt="Sioux Falls Algorithm B against same-problem FW, compact physical-link scatter"><small>Sioux Falls · 76 physical links; saved static comparison, not empirical traffic validation.</small></td><td width="50%"><img src="docs/assets/algorithm_b_r21/presentation/boston_b1_fw_flow_compact.svg" width="100%" alt="Boston B1 Algorithm B against same-problem FW, compact physical-link scatter"><small>Boston B1 · 5,091 physical links; near-equality on a light modeled cohort is not a speed or superiority claim.</small></td></tr></table>
 
-*Sioux Falls · saved static comparison; not an empirical traffic validation.*
-
-![Boston B1 Algorithm B versus same-problem FW physical-link flow](docs/assets/algorithm_b_r21/source_panels/boston_b1_fw_flow.svg)
-
-*Boston B1 · near-equality on a light modeled cohort is not a speed or superiority claim.*
+*Each point is a saved physical link; the diagonal is equal flow. Both axes use log₁₀(1 + flow), in vehicles for Sioux Falls and PCE for Boston B1. The Sioux axis is labeled and zoomed to its occupied range; the cases do not share a numeric axis. Saved physical-link RMSE: 63.4701 vehicles (Sioux Falls) and 5.11551e-15 PCE (Boston B1). The compact figures only reframe the frozen points; [original Sioux Falls SVG](docs/assets/algorithm_b_r21/source_panels/sioux_fw_flow.svg) and [original Boston B1 SVG](docs/assets/algorithm_b_r21/source_panels/boston_b1_fw_flow.svg) retain the full source annotations.*
 
 #### Selected-origin reconstructed flow
 
@@ -447,7 +443,7 @@ This is **one** accepted 90-physical-node, 125-directed-link, 10-OD finite time-
 
 The six accepted evidence stages are displayed individually below, **one figure per row**. The former [six-panel PNG](docs/assets/presentation_r5/boston_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available; no scientific model was rerun.
 
-#### From the physical network to time-indexed columns
+#### Boston / From the physical network to time-indexed columns
 
 ![Recorded Boston B07 physical path and time-indexed column](docs/assets/boston/space_time_cg_r4/boston_space_time_construction.png)
 
@@ -540,7 +536,7 @@ The separate [official TAPLab-adapter Algorithm B classic result](docs/cases/sio
 
 The figures below are **historical finite time-expanded CG**, not native-L3 runs or present-day city observations. Explore the actual saved results before running an example. The 200- and 250-OD views represent **different selected-OD benchmark instances**, not a comparison of algorithms on the same demand.
 
-The accepted construction, Phase-I, capacity, Phase-II and final-flow figures now appear at their matching subsections below, **one figure per row**. The former [six-panel PNG](docs/assets/presentation_r5/sioux_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/sioux_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available. The final-flow maps are shown below at readable size; the former last panel was a status label, not an established Sioux pricing certificate. The two OD selections are distinct benchmark instances, not repeated trials. [Full numeric checks and limitations](docs/cases/sioux-space-time.md) · [Matching Boston case above](#boston). No scientific model was rerun.
+The accepted construction, Phase-I, capacity, Phase-II and final-flow figures appear at their matching subsections below. The paired 200/250-OD Phase-I, Phase-II and final-flow views are side by side; other figures remain one per row. The former [six-panel PNG](docs/assets/presentation_r5/sioux_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/sioux_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available. The former last panel was a status label, not an established Sioux pricing certificate. The two OD selections are distinct benchmark instances, not repeated trials. [Full numeric checks and limitations](docs/cases/sioux-space-time.md) · [Matching Boston case above](#boston). No scientific model was rerun.
 
 | Road benchmark | Physical nodes | Selected links | OD pairs | Final columns | Objective | Access |
 |---|---:|---:|---:|---:|---:|---|
@@ -562,13 +558,7 @@ Historical road records include checked results and approved figures, **not redi
 
 ### Sioux Falls / Phase I restores feasibility
 
-![Sioux Falls 200-OD saved Phase-I artificial-flow trace](docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png)
-
-*200 OD · artificial flow clears in round 51.*
-
-![Sioux Falls 250-OD saved Phase-I artificial-flow trace](docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png)
-
-*250 OD · artificial flow clears in round 62.*
+<table class="figure-grid"><tr><td width="50%"><img src="docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png" width="100%" alt="Sioux Falls 200-OD saved Phase-I artificial-flow trace"><small>200 OD · artificial flow clears in round 51.</small></td><td width="50%"><img src="docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png" width="100%" alt="Sioux Falls 250-OD saved Phase-I artificial-flow trace"><small>250 OD · artificial flow clears in round 62.</small></td></tr></table>
 
 | Saved observation | 200 OD | 250 OD |
 |---|---:|---:|
@@ -594,23 +584,13 @@ At round 34 (200 OD) and round 39 (250 OD), pricing selected a new path for **XS
 
 ### Sioux Falls / Phase II improves the real-path objective
 
-![Sioux Falls 200-OD saved Phase-II objective against its arc-flow LP](docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png)
+<table class="figure-grid"><tr><td width="50%"><img src="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="100%" alt="Sioux Falls 200-OD saved Phase-II objective against its arc-flow LP"><small>200 OD · objective on its own selected-OD finite graph.</small></td><td width="50%"><img src="docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png" width="100%" alt="Sioux Falls 250-OD saved Phase-II objective against its arc-flow LP"><small>250 OD · objective on its own selected-OD finite graph.</small></td></tr></table>
 
-*200 OD · objective on its own selected-OD finite graph.*
-
-![Sioux Falls 250-OD saved Phase-II objective against its arc-flow LP](docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png)
-
-*250 OD · objective on its own selected-OD finite graph.* Each objective is compared with the arc-flow LP on the **same selected-OD finite time-expanded graph**. The two benchmark objective values must not be compared as if they were alternative algorithms on one demand set.
+Each objective is compared with the arc-flow LP on the **same selected-OD finite time-expanded graph**. The two benchmark objective values must not be compared as if they were alternative algorithms on one demand set.
 
 ### Sioux Falls / Final physical-link movement flow and validation
 
-![Sioux Falls 200-OD final time-aggregated physical-link movement flow](docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png)
-
-*200 OD · 24 nodes, 64 selected links and 446 final columns.* [Open 200-OD results](docs/datasets/sioux-200od.md).
-
-![Sioux Falls 250-OD final time-aggregated physical-link movement flow](docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png)
-
-*250 OD · 24 nodes, 69 selected links and 567 final columns.* [Open 250-OD results](docs/datasets/sioux-250od.md).
+<table class="figure-grid"><tr><td width="50%"><img src="docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png" width="100%" alt="Sioux Falls 200-OD final time-aggregated physical-link movement flow"><small>200 OD · 24 nodes, 64 selected links and 446 final columns. <a href="docs/datasets/sioux-200od.md">Open results</a>.</small></td><td width="50%"><img src="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="100%" alt="Sioux Falls 250-OD final time-aggregated physical-link movement flow"><small>250 OD · 24 nodes, 69 selected links and 567 final columns. <a href="docs/datasets/sioux-250od.md">Open results</a>.</small></td></tr></table>
 
 The two saved views aggregate final time-indexed movement flow back to physical links. Both retained runs have zero final demand residual and zero capacity violations, and both have reference-objective agreement. Map line width represents final movement flow accumulated over the modeled time horizon. These are schematic benchmark views, not observed traffic, static V/C or a full 528-OD assignment. Opposite directions can overlap in the rendering; use the data cards for numerical interpretation.
 
