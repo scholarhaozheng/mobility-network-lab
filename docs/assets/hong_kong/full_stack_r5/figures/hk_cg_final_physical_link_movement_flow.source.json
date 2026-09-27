@@ -1,0 +1,26 @@
+{
+  "figure_id": "hk_cg_final_physical_link_movement_flow",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_cg_final_physical_link_movement_flow.svg",
+  "png": "figures/hk_cg_final_physical_link_movement_flow.png",
+  "caption": "The accepted final CG column solution was projected onto 111 physical links; 69 carry positive modeled movement flow. This is not an observed count map.",
+  "source_files": [
+    "case/selected_physical_links.csv",
+    "cg_run/solver_free_physical_link_flows.csv"
+  ],
+  "input_sha256": {
+    "case/selected_physical_links.csv": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6",
+    "cg_run/solver_free_physical_link_flows.csv": "2222437ace76bd5efcb25cabc29ac23f16cd51e7abbd6058d76a59140d399412"
+  },
+  "numerical_ranges": {
+    "physical_links": 111,
+    "positive_flow_links": 69,
+    "movement_flow_pce": [
+      0.0,
+      26.550842311795392
+    ]
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

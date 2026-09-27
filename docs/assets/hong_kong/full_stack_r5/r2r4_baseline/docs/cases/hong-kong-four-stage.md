@@ -1,0 +1,7 @@
+# Four-stage engineering scenario
+
+The [Transport Department 2022 Travel Characteristics Survey](https://www.td.gov.hk/en/publications_and_press_releases/publications/free_publications/tcsfr/index.html) territory-wide mechanised rate of 1.69 per person/weekday, purpose totals and approximately 13% 08:00–09:00 share are transferred to this pilot. Local capture 0.20/0.30/0.40 is an engineering sensitivity. Official SSG population supplies productions; CSDI building footprint, storeys and name keywords supply normalized attraction proxies. No observed employment or GFA is asserted.
+
+Gravity impedance uses turn-aware road time and IPF balances all directed reachable interzonal pairs. Transit cost uses GTFS same-trip rides, headway waiting, exact fares and pedestrian access. The 3D pedestrian subgraph is used where routable; explicit straight-line fallback is labeled. Mode choice is a sensitivity logit and is not locally calibrated. The TCS mechanised rate is a trip-opportunity reference; the modeled walk alternative does not turn it into an observed all-mode rate. Occupancy is assumed 1.5 persons/vehicle, PCE factor 1. See `phase_b/DISTRIBUTION_BALANCE_REPORT.json` and `phase_b/MODE_CHOICE_SOURCE_AND_SENSITIVITY.md`.
+
+The 2023/2024 Annual Traffic Census records for 81 station points are descriptive AADT context. The detector data are one 30-second snapshot, and the private UrbanNav reference trace is one research-vehicle route. None is a held-out traffic calibration sample.

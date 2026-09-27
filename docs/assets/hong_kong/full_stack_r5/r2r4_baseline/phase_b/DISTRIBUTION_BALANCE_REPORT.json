@@ -1,0 +1,62 @@
+{
+  "status": "PASS",
+  "zone_count": 95,
+  "positive_directed_interzonal_pairs": 8930,
+  "purpose_components": {
+    "HBW": {
+      "generated_person_trips": 2466.8963490904766,
+      "intrazonal_excluded_person_trips": 123.34481745452382,
+      "interzonal_person_trips": 2343.551531635953,
+      "ipf_iterations": 5,
+      "max_absolute_row_or_column_residual": 3.2128681937138026e-09,
+      "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+    },
+    "HBS": {
+      "generated_person_trips": 561.7349711234831,
+      "intrazonal_excluded_person_trips": 28.086748556174154,
+      "interzonal_person_trips": 533.648222567309,
+      "ipf_iterations": 5,
+      "max_absolute_row_or_column_residual": 3.2382985182266566e-11,
+      "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+    },
+    "HBO": {
+      "generated_person_trips": 2484.2994979376763,
+      "intrazonal_excluded_person_trips": 124.21497489688383,
+      "interzonal_person_trips": 2360.0845230407913,
+      "ipf_iterations": 5,
+      "max_absolute_row_or_column_residual": 1.8014247871178668e-09,
+      "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+    },
+    "NHB_EB": {
+      "generated_person_trips": 463.6005484573324,
+      "intrazonal_excluded_person_trips": 23.18002742286662,
+      "interzonal_person_trips": 440.420521034466,
+      "ipf_iterations": 5,
+      "max_absolute_row_or_column_residual": 3.317897068200182e-10,
+      "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+    }
+  },
+  "tcs_mechanised_reference_person_trips_per_day": 153244.39401561458,
+  "capture_fraction_base": 0.3,
+  "external_or_uncaptured_reference_person_trips_am": 13945.239855420927,
+  "generated_local_trip_opportunities_person_am": 5976.531366608969,
+  "intrazonal_excluded_person_am": 298.8265683304484,
+  "unreachable_excluded_person_am": 0.0,
+  "interzonal_trip_opportunities_person_am": 5677.704798278519,
+  "drive_person_am": 1084.7868418275327,
+  "transit_person_am": 583.865891903623,
+  "walk_person_am": 4009.0520645473634,
+  "drive_pce_per_one_hour_am": 723.1912278850218,
+  "total_conservation_residual": 1.8189894035458565e-12,
+  "rate_sensitivity_local_generated_person_am": {
+    "low": 3984.3542444059794,
+    "base": 5976.531366608969,
+    "high": 7968.708488811959
+  },
+  "impedance_beta_sensitivity_per_min": {
+    "low": 0.025,
+    "base": 0.05,
+    "high": 0.08
+  },
+  "interpretation": "Engineering trip-opportunity scenario transferred from territory-wide mechanised TCS. Walk mode is a counterfactual choice; neither total nor shares are locally observed or calibrated."
+}

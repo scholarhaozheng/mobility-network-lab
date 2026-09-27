@@ -1,0 +1,32 @@
+{
+  "figure_id": "hk_validation_panel",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_validation_panel.svg",
+  "png": "figures/hk_validation_panel.png",
+  "caption": "Current CG and independent closure pass on the bounded finite case. Frozen ADMM R2 remains gated; city demand and network assumptions retain their evidence grades.",
+  "source_files": [
+    "r2r4_baseline/phase_a/PHASE_A_CHECKPOINT.json",
+    "r2r4_baseline/phase_b/PHASE_B_CHECKPOINT.json",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json",
+    "r2r4_baseline/phase_c/lagrangian_evaluation.json",
+    "cg_run/full_cg_v1_run_summary.json",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+    "r2r4_baseline/phase_c/admm_run/result.json"
+  ],
+  "input_sha256": {
+    "r2r4_baseline/phase_a/PHASE_A_CHECKPOINT.json": "f166a87fce2ce1d11e43199a7dee4716331afdb16701fe925e87b1717090f69c",
+    "r2r4_baseline/phase_b/PHASE_B_CHECKPOINT.json": "4e688046fd3c4b8edb0c27ce61066a14e378729b470b553cac9ae7947342de3a",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4",
+    "r2r4_baseline/phase_c/lagrangian_evaluation.json": "683af8833159628feca91ef1b0ab830a5c61f9984d71fae0cdb68bcd9a7b4892",
+    "cg_run/full_cg_v1_run_summary.json": "337964dff3b97a04683d83335cd03514e09a16bfb23f8b99fa9f2dd63ae8500b",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json": "f218e43364062326d38d898e30a6ee2eaa70580bf6d7b4ffdb5d4b423c05195c",
+    "r2r4_baseline/phase_c/admm_run/result.json": "31a34a1ac9ce3741b19f66e92224054aef569b0169646216551edbc67a4b5500"
+  },
+  "numerical_ranges": {
+    "technical_checks_passed": 6,
+    "technical_checks_gated": 1
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

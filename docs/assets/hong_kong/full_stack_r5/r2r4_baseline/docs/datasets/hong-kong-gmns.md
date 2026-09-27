@@ -1,0 +1,5 @@
+# Hong Kong source and schema
+
+The physical network derives from [Transport Department Road Network v2](https://data.gov.hk/en-data/dataset/hk-td-tis_15-road-network-v2), with source route IDs and no-turn semantics. Hierarchical zones use the [2021 census SSG and STPUG geographies](https://portal.csdi.gov.hk/). Transit uses [Transport Department GTFS](https://data.gov.hk/en-data/dataset/hk-td-tis_11-pt-headway-en). Pedestrian routing uses a conservative subset of official Lands Department 3D pedestrian links. Activity uses official CSDI building footprints and storeys where available. Observation context uses [Annual Traffic Census](https://data.gov.hk/en-data/dataset/hk-td-tis_7-traffic-flow-census), one official detector snapshot and a private UrbanNav reference trace. See the root rights register for exact resource IDs, hashes and publication decisions.
+
+Physical links and nonphysical zone/turn links have distinct classes and stable IDs. Every public result is a derived table with a saved source/evidence grade. Raw provider archives and point-level UrbanNav material are excluded.

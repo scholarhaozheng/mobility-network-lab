@@ -66,6 +66,24 @@
       "component": "examples/hong-kong/gmns_pilot_r1"
     },
     {
+      "id": "hong-kong-full-stack-r5",
+      "title": "Hong Kong | bounded full-stack and current CG R5",
+      "kind": "city-network-result",
+      "access": "results-only",
+      "profile": "gmns-four-stage-static-fw-algorithm-b-finite-space-time-cg",
+      "nodes": 780,
+      "links": 1239,
+      "od_pairs": 10,
+      "final_columns": 25,
+      "objective": 75.03632985794835,
+      "data_page": "docs/cases/hong-kong.md",
+      "verification": "R2-R4 bounded static/four-stage/LP/Lagrangian public audit and R5 same-graph CG objective plus independent full-DAG pricing closure for 10/10 demands; ADMM transfer remains gated.",
+      "data_origin": "Hong Kong official-derived bounded roads, zones, transit, activity and accepted public R2-R5 saved artifacts",
+      "demand_origin": "Declared engineering scenario; finite CG uses frozen selected 10-OD case, not observed citywide demand",
+      "raw_data_bundled": false,
+      "component": "docs/assets/hong_kong/full_stack_r5"
+    },
+    {
       "id": "open-mobility-evidence",
       "title": "Open mobility data evidence",
       "kind": "evidence-summary",

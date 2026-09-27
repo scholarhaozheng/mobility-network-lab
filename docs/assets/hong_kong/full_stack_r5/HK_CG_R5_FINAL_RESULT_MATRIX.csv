@@ -1,0 +1,9 @@
+component,status,value,evidence
+Frozen Hong Kong model and K=1 pool,PASS,552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847,HK_CG_R5_CASE_FREEZE.json
+Current CG Phase I,PASS,0.0,cg_run/full_cg_v1_phase_i_summary.json
+Current CG Phase II,PASS,75.03632985794832,cg_run/full_cg_v1_run_summary.json
+Independent pricing closure,PASS,0.0,closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json
+Solver-free path/flow/objective audit,PASS,75.03632985794826,cg_run/solver_free_verification.json
+Same-graph reference LP,ACCEPTED_PRIOR,75.03632985794819,case/ARC_FLOW_REFERENCE_SUMMARY.json
+Frozen Lagrangian R3,ACCEPTED_PRIOR,75.03632985794827,R2–R4 phase_c/lagrangian_evaluation.json
+Frozen ADMM R2,GATED_PRIOR,0.082467622 PCE conservation residual,R2–R4 phase_c/admm_run/result.json

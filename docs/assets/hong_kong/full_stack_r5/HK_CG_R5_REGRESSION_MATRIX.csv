@@ -1,0 +1,23 @@
+regression,status,expected_status,exit_code,log,detail
+phase_i_dag_unit_negative,PASS,PASS,0,regressions\phase_i_dag_unit_negative.log,".......
+----------------------------------------------------------------------
+Ran 7 tests in 0.170s
+
+OK"
+phase_ii_progress_policy,PASS,PASS,0,regressions\phase_ii_progress_policy.log,".............
+----------------------------------------------------------------------
+Ran 13 tests in 0.855s
+
+OK"
+independent_closure_unit_negative,PASS,PASS,0,regressions\independent_closure_unit_negative.log,"st_nonnegative_ungenerated (__main__.CertificateTests.test_nonnegative_ungenerated) ... ok
+test_unreachable_demand (__main__.CertificateTests.test_unreachable_demand) ... ok
+test_upper_bound_existing_negative_raw (__main__.CertificateTests.test_upper_bound_existing_negative_raw) ... ok
+test_zero_objective_commit_then_closure (__main__.CertificateTests.test_zero_objective_commit_then_closure) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.002s
+
+OK"
+boston_r3_solver_free,PASS,PASS,0,regressions\boston_r3_solver_free.log," ""final_pool_columns"": 152, ""invalid_path_count"": 0, ""max_demand_residual"": 0.0, ""max_capacity_violation"": 4.440892098500626e-16, ""max_path_cost_error"": 8.881784197001252e-16, ""objective_recomputed"": 64.39686151152952, ""objective_reported"": 64.39686151152952, ""reference_objective"": 64.3968615115296, ""physical_link_count"": 72, ""physical_links_with_positive_flow"": 52, ""same_graph_reference_objective_match"": true, ""reference_match_tolerance"": 1e-05, ""independent_pricing_closure_established"": false}"
+boston_r4_closure_solver_free,PASS,PASS,0,regressions\boston_r4_closure_solver_free.log,"_pass"": true, ""demand_count"": true, ""pool_count"": true, ""graph_signature"": true, ""demand_signature"": true, ""pool_signature"": true, ""dual_signature"": true, ""objective"": true, ""reference_objective_posthoc"": true, ""all_demand_reduced_costs"": true}, ""optimization_invocations"": 0, ""objective_recomputed"": 64.39686151152954, ""pool_count"": 167, ""demand_count"": 10, ""stationarity_max_abs"": 8.881784197001252e-16, ""max_demand_residual"": 8.881784197001252e-16, ""max_capacity_violation"": 8.881784197001252e-16}"
+sioux_c1_saved_current_interface,PASS,PASS,0,regressions/sioux_c1_saved_result.json,"{""demand_count"": 1, ""objective_recomputed"": 27.0, ""closure_pass"": true}"

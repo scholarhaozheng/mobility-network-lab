@@ -1,0 +1,16 @@
+{
+  "official_pedestrian_features_queried": 10622,
+  "conservative_unrestricted_features_used": 8560,
+  "pedestrian_endpoint_nodes": 7765,
+  "zone_zone_pairs": 8930,
+  "zone_stop_pairs": 17385,
+  "status_counts": {
+    "ROUTED_OFFICIAL_UNRESTRICTED_SUBGRAPH": 23242,
+    "LABELED_STRAIGHT_LINE_FALLBACK_1_3": 3073
+  },
+  "walking_speed_m_per_min": 75,
+  "straight_line_fallback_detour_factor": 1.3,
+  "snap_limit_m": 100,
+  "exclusions": "Disabled, direction-coded, time-restricted, and floor-coded features excluded because the present cost model cannot verify their direction, opening hours, or vertical access.",
+  "limitation": "The first/last snap remains a straight connector; graph paths are not proof of legal or barrier-free access. Fallback costs are explicitly labeled."
+}

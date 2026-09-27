@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_trip_generation_distribution",
+  "caption": "IPF balances 95 productions and attractions for every purpose.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_trip_generation_distribution.svg",
+  "png": "figures/hk_trip_generation_distribution.png",
+  "source_files": [
+    "phase_b/DISTRIBUTION_BALANCE_REPORT.json",
+    "phase_b/production_attraction_r2.csv"
+  ],
+  "input_sha256": {
+    "phase_b/DISTRIBUTION_BALANCE_REPORT.json": "72e5d5247e19b3ce2c660c0b9e0cdd3eb469a157f9236bc0753bae8a3353cc7f",
+    "phase_b/production_attraction_r2.csv": "77e7b0738423f2926ecdd7cb4e699ead0d03334d2834643af18a2a58998dd68e"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

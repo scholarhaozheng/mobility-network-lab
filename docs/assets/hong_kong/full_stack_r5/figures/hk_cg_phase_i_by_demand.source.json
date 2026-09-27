@@ -1,0 +1,23 @@
+{
+  "figure_id": "hk_cg_phase_i_by_demand",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_cg_phase_i_by_demand.svg",
+  "png": "figures/hk_cg_phase_i_by_demand.png",
+  "caption": "Every one of the ten demands has zero final Phase I artificial flow; initial artificial flow was concentrated in three demands.",
+  "source_files": [
+    "cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv"
+  ],
+  "input_sha256": {
+    "cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv": "6b33852b1bdf0bf5343127f8c1cfc9307931692c0f35b35dd9227fd587ee13a6"
+  },
+  "numerical_ranges": {
+    "initial_artificial_pce": [
+      -0.0,
+      2.9343073081442888
+    ],
+    "final_max_abs_artificial_pce": 0.0
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

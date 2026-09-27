@@ -1,0 +1,3 @@
+# Capacity and units
+
+The static analysis period is one hour. Base transferred engineering rules use 1,500 PCE/hour/lane on strategic routes and 500 PCE/hour/lane on unclassified urban links, multiplied by the proxy lane count. Volume is not interpreted as capacity. The rule is informed by Transport Department TPDM road-design context, not an exact Hong Kong link attribute: https://www.td.gov.hk/filemanager/en/content_5055/V2_03_2026.pdf and https://www.td.gov.hk/filemanager/en/content_5055/V4_03_2026.pdf. Low/base/high capacities are separately retained. The finite case converts hourly physical capacity to PCE per 30-second movement departure via `capacity_hourly * 30/3600`. Nonphysical turn/access/wait arcs do not contribute physical road flow.

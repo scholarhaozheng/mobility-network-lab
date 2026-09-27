@@ -1,0 +1,14 @@
+{
+  "od_pairs": 8930,
+  "status_counts": {
+    "transit_access_candidates_total": 1112,
+    "served_transit_pairs": 8857,
+    "transit_transfer_pairs": 664,
+    "unserved_transit_pairs": 73
+  },
+  "transit_direct_pairs": 2745,
+  "drive_cost": "free-flow turn-aware time + 6 min parking/approach + HKD 2/km at 2 min/HKD",
+  "transit_cost": "same-GTFS-trip ride + half published/derived headway + per-leg exact published fare at 2 min/HKD + 2 min per transfer + walk access/egress",
+  "walk_cost": "conservative pedestrian graph when routed; labeled 1.3x straight-line fallback otherwise; 75 m/min",
+  "limitation": "No local choice calibration, crowding, parking observation, fare discount, empirical reliability, or published full walk-trip rate."
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PRIVATE_REFERENCE_TOPOLOGY_EVIDENCE_ONLY",
+  "method": "Viterbi candidate link-state sequence with emission distance/direction, directed official turn graph transition, bounded shortest route, explicit restart; fixed engineering penalties",
+  "input": "R1 private UrbanNav SPAN-CPT+IE reference positions (not raw GNSS)",
+  "point_count": 787,
+  "matched_points": 787,
+  "unmatched_points": 0,
+  "median_residual_m": 6.184,
+  "p95_residual_m": 13.121,
+  "r1_heuristic_median_residual_m": 5.472,
+  "r1_heuristic_p95_residual_m": 13.646,
+  "r1_heuristic_continuity_breaks": 11,
+  "viterbi_breaks_or_starts": 11,
+  "direction_adverse_points_with_gt2m_motion": 13,
+  "invalid_reconstructed_directed_transitions": 0,
+  "continuous_traversal_route_length_m": 3395.8800240662686,
+  "reference_time_span_s": 786.0,
+  "route_length_limit": "sum of directed traversals within matched segments; restarts excluded",
+  "point_level_derivative": "PRIVATE; not in public candidates",
+  "inference_limit": "One 2021 research-vehicle ground-truth trace; no representative speed, OD, mode share, or networkwide calibration claim"
+}

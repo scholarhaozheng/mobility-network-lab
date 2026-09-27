@@ -94,9 +94,42 @@ def main() -> int:
     boston_sequence = "docs/assets/presentation_r5/boston_cg_case_sequence.png"
     sioux_sequence = "docs/assets/presentation_r5/sioux_cg_case_sequence.png"
     for path in (boston_sequence, sioux_sequence):
-        require(re.search(rf'<img src="{re.escape(path)}" width="100%"', readme) is not None,
-                f"README missing full-width case sequence: {path}", errors)
-        checks += 1
+        require(f"]({path})" in readme,
+                f"README no longer links retained case sequence: {path}", errors)
+        require(re.search(rf'<img[^>]+src="{re.escape(path)}"', readme) is None,
+                f"README still embeds dense case sequence: {path}", errors)
+        checks += 2
+    boston_readme = readme.split("### Boston / Bounded finite space–time CG pilot", 1)[1].split(
+        '<a id="boston-admm-readme"></a>', 1)[0]
+    sioux_readme = readme.split("### Sioux Falls / Historical 200/250-OD finite space–time CG", 1)[1].split(
+        '<a id="sioux-admm-readme"></a>', 1)[0]
+    for name, section, figures in (
+        ("Boston", boston_readme, (
+            "boston/space_time_cg_r4/boston_space_time_construction.png",
+            "boston/space_time_cg_r4/boston_phase_i_artificial_flow.png",
+            "boston/space_time_cg_r4/boston_shared_capacity_event.png",
+            "boston/space_time_cg_r4/boston_phase_ii_objective.png",
+            "boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png",
+            "boston/space_time_cg_r4/boston_pricing_closure_by_demand.png",
+        )),
+        ("Sioux", sioux_readme, (
+            "presentation_r3/sioux_space_time_construction.png",
+            "sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png",
+            "sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png",
+            "presentation_r5/sioux_shared_capacity_canonical.png",
+            "benchmarks/sioux_200od_phase2_objective_trace.png",
+            "benchmarks/sioux_250od_phase2_objective_trace.png",
+            "benchmarks/sioux_200od_final_physical_link_flow.png",
+            "benchmarks/sioux_250od_final_physical_link_flow.png",
+        )),
+    ):
+        for rel in figures:
+            require(re.search(rf'^!\[[^\]]+\]\(docs/assets/{re.escape(rel)}\)$', section, re.M) is not None,
+                    f"{name}: accepted figure not on its own README row: {rel}", errors)
+            checks += 1
+    require('class="figure-grid"' not in sioux_readme,
+            "Sioux README CG section still uses side-by-side figure grid", errors)
+    checks += 1
     require(readme.index("### Boston / Population and Household Preparation")
             < readme.index("### Boston / Bounded finite space–time CG pilot")
             < readme.index("### Sioux Falls / Historical 200/250-OD finite space–time CG"),

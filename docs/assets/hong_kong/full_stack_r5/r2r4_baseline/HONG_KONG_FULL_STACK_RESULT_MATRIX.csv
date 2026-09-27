@@ -1,0 +1,7 @@
+phase,component,status,evidence
+A,turn-aware network and R1-seed static UE,ACCEPTED,"95 zones; 1,239 links; smoke and pilot FW/Algorithm B accepted"
+B,four-stage full matrix and observation context,ACCEPTED,"8,930 OD; 723.1912 PCE/h; full static accepted; ATC descriptive only"
+C,preregistered finite arc-flow LP,PASS,"10 OD; 24,910 arcs; objective 75.0363298579 vehicle-min"
+C,frozen CG transfer,GATED_PHASE_I,"4.3502187198 artificial PCE; 50,000-state enumerator limit"
+C,frozen Lagrangian R3,PASS,feasible recovered primal; 0.7444% independent duality gap
+C,frozen ADMM R2 transfer,GATED_LOCAL_QP,0.082467622 PCE local balance residual; zero completed outer iterations

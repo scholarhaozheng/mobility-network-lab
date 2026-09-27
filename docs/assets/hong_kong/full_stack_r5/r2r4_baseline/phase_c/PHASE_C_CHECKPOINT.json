@@ -1,0 +1,22 @@
+{
+  "phase_c_status": "GATED_FROZEN_TRANSFER",
+  "accepted_core": {
+    "preregistered_10_od": true,
+    "same_graph_lp": true,
+    "lagrangian_r3": true
+  },
+  "first_exact_blocking_gate": {
+    "method": "frozen CG Phase I",
+    "status": "PHASE_I_BLOCKED",
+    "artificial_flow_pce": 4.350218719795723,
+    "cause": "fixed oracle 50,000-state expansion limit reached for nine ODs; no improving nonduplicate candidate; Phase II not entered"
+  },
+  "second_transfer_gate": {
+    "method": "frozen ADMM R2",
+    "status": "NOT_CONVERGED",
+    "cause": "local commodity QP conservation residual 0.082467622 exceeds gate",
+    "completed_outer_iterations": 0
+  },
+  "model_signature": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+  "claim_boundary": "LP and Lagrangian accepted on one bounded graph; CG and ADMM are gated, so do not label the complete four-method transfer accepted."
+}

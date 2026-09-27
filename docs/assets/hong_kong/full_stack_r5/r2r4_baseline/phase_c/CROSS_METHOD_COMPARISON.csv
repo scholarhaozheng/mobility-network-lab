@@ -1,0 +1,7 @@
+method,status,objective,reference_difference,feasibility,certificate_or_gap,iterations,runtime_seconds,peak_memory_bytes,physical_reconstruction,limitations
+static Frank-Wolfe,ACCEPTED,1676.0121313288512,same-problem Algorithm B <1e-12,"8,930 OD; turn/path checks pass",independent UE evaluator,1,1.3910000000032596,unavailable,PASS,BPR static scenario; proxy demand/speed/capacity
+static Algorithm B,ACCEPTED,1676.0121313288516,same-problem FW <1e-12,"8,930 OD; no prohibited turns",4.205257275502759e-15,solver reported,0.9220000000204891,unavailable,PASS,official tap-b Algorithm B via accepted lossless task-local adapter
+finite arc-flow LP,ACCEPTED_REFERENCE,75.03632985794819,0,independent balance/capacity PASS,HiGHS optimal status; saved primal verified,solver internal,5.64000000001397,unavailable,PASS,fixed-cost finite 10 OD case
+frozen CG,GATED_PHASE_I,,,artificial flow remains 4.3502187198 PCE,"50,000 state oracle expansion limit reached for nine ODs",1,10.936999999976251,unavailable,NO_ACCEPTED_FLOW,Phase II and independent pricing closure not reached
+frozen Lagrangian R3,ACCEPTED,75.03632985794827,1.136317946954869e-15,separate restricted-path recovery PASS,0.0074441910224354625,25,6.071624399977736,unavailable,PASS,dual solver did not directly produce feasible primal
+frozen ADMM R2,GATED_LOCAL_QP,,,local balance residual 0.082467622 PCE > 1e-5,no completed outer iteration,0,44.530895499978215,unavailable,NO_ACCEPTED_FLOW,saved state fails independent original-unit checks

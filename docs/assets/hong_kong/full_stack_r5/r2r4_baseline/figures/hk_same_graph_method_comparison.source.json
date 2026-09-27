@@ -1,0 +1,21 @@
+{
+  "figure_id": "hk_same_graph_method_comparison",
+  "caption": "Only LP and Lagrangian objectives are comparable accepted results on this graph.",
+  "status": "GATED_TRANSFER",
+  "svg": "figures/hk_same_graph_method_comparison.svg",
+  "png": "figures/hk_same_graph_method_comparison.png",
+  "source_files": [
+    "phase_c/ARC_FLOW_REFERENCE_SUMMARY.json",
+    "phase_c/lagrangian_evaluation.json",
+    "phase_c/cg_run/full_cg_v1_run_summary.json",
+    "phase_c/admm_run/result.json"
+  ],
+  "input_sha256": {
+    "phase_c/ARC_FLOW_REFERENCE_SUMMARY.json": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4",
+    "phase_c/lagrangian_evaluation.json": "683af8833159628feca91ef1b0ab830a5c61f9984d71fae0cdb68bcd9a7b4892",
+    "phase_c/cg_run/full_cg_v1_run_summary.json": "13a9feec3c97fcb46af781a0320486b7beaa4dd6c96bcecf5b9e5bb259748d6f",
+    "phase_c/admm_run/result.json": "31a34a1ac9ce3741b19f66e92224054aef569b0169646216551edbc67a4b5500"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui–Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

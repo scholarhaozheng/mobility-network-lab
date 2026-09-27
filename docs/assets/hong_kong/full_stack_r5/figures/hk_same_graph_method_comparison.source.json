@@ -1,0 +1,29 @@
+{
+  "figure_id": "hk_same_graph_method_comparison",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_same_graph_method_comparison.svg",
+  "png": "figures/hk_same_graph_method_comparison.png",
+  "caption": "Arc-flow LP, recovered Lagrangian primal and current CG agree at 75.036330 vehicle-minutes on the same finite graph; ADMM remains gated and has no accepted objective.",
+  "source_files": [
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json",
+    "r2r4_baseline/phase_c/lagrangian_evaluation.json",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+    "r2r4_baseline/phase_c/admm_run/result.json"
+  ],
+  "input_sha256": {
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4",
+    "r2r4_baseline/phase_c/lagrangian_evaluation.json": "683af8833159628feca91ef1b0ab830a5c61f9984d71fae0cdb68bcd9a7b4892",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json": "f218e43364062326d38d898e30a6ee2eaa70580bf6d7b4ffdb5d4b423c05195c",
+    "r2r4_baseline/phase_c/admm_run/result.json": "31a34a1ac9ce3741b19f66e92224054aef569b0169646216551edbc67a4b5500"
+  },
+  "numerical_ranges": {
+    "accepted_objective_vehicle_minutes": [
+      75.03632985794819,
+      75.03632985794835
+    ],
+    "admm_accepted_objective": null
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

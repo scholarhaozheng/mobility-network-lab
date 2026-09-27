@@ -1,0 +1,19 @@
+{
+  "schema_version": "cross_city_lagrangian_case_v1",
+  "adapter": "finite_dynamic_csv_v1",
+  "case_id": "HK_TST_JORDAN_10OD_30S_50STEPS_R2_R4",
+  "city": "Hong Kong",
+  "arc_file": "dynamic_arc.csv",
+  "demand_file": "dynamic_demand.csv",
+  "arc_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+  "demand_sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+  "physical_link_file": "selected_physical_links.csv",
+  "physical_link_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6",
+  "physical_link_id_column": "link_id",
+  "model_signature": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+  "objective_unit": "vehicle_minutes",
+  "capacity_unit": "PCE_per_30s_movement_departure",
+  "time_step_seconds": 30,
+  "horizon_steps": 50,
+  "model_note": "turns and zone access are zero-time nonphysical DAG arcs; physical movement traversals use positive integer steps; waiting incurs elapsed time"
+}

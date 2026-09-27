@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_mode_choice_costs_and_shares",
+  "caption": "GTFS, fares and pedestrian routing supply generalized costs; fallback paths are labeled.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_mode_choice_costs_and_shares.svg",
+  "png": "figures/hk_mode_choice_costs_and_shares.png",
+  "source_files": [
+    "phase_b/mode_demand_by_od.csv",
+    "phase_b/MODE_COST_QUALITY.json"
+  ],
+  "input_sha256": {
+    "phase_b/mode_demand_by_od.csv": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+    "phase_b/MODE_COST_QUALITY.json": "f5ed0e0b8a16874518252d46ecc35060d7d099784afccd4f58f34f8490883e0d"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

@@ -1,6 +1,6 @@
 # Development roadmap
 
-The next substantial step is a **complete real-city network instance**, not another summary catalog or a new repository. Existing assignment code and supporting data tools remain the reusable base.
+The next substantial step is broader, independently validated real-city coverage, not another summary catalog or a new repository. Existing bounded Boston and Hong Kong instances, assignment code and supporting data tools remain the reusable base.
 
 ## 1. Connect one city through the existing interface
 
@@ -22,6 +22,6 @@ Bounded [Sioux Lagrangian R2 results](methods/distributed-assignment.md) and [Si
 
 ## 4. Transfer the same workflow
 
-The [bounded Hong Kong GMNS/data pilot](cases/hong-kong-gmns-pilot.md) now demonstrates official-derived object relationships but is **not assignment-ready**. Melbourne, Cairo and Paris remain candidate extensions. Add them through common data contracts, configuration, provenance and verification rather than separate solver rewrites. No complete assignment-ready dataset for these cities is claimed by this release.
+The [Hong Kong R1 GMNS/data pilot](cases/hong-kong-gmns-pilot.md) was historically not assignment-ready. The later [R2–R5 bounded technical case](cases/hong-kong.md) has an accepted turn-aware static branch and finite LP/CG/Lagrangian evidence, while its frozen ADMM transfer remains gated. This is not an empirical or citywide traffic forecast. Melbourne, Cairo and Paris remain candidate extensions; no assignment-ready dataset for them is claimed by this release.
 
 [City workflow and current interfaces](city-workflow.md) · [Contribute a network](add-a-network.md)

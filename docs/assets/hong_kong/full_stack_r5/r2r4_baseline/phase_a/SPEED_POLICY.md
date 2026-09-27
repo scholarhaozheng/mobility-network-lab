@@ -1,0 +1,3 @@
+# Speed policy
+
+Transport Department Road Network v2 SPEED_LIMIT.gml is joined by source ROUTE_ID and covered segment length. Thirty directed pilot links have full posted-limit coverage; 18 have partial or transferred coverage. The remaining 1,191 use the official general 50 km/h legal limit rule. Posted speed is **not** free speed: all 1,239 model free speeds use the disclosed 0.8 engineering conversion factor, with 0.65/0.8/0.95 sensitivities. The posted-limit grade and model free-speed grade are separate columns in `link_speed_evidence.csv`. No detector speed was used as free speed. Sources: https://data.gov.hk/en-data/dataset/hk-td-tis_15-road-network-v2 and https://www.td.gov.hk/en/road_safety/road_users_code/index/chapter_5_for_all_drivers/how_fast_/index.html.

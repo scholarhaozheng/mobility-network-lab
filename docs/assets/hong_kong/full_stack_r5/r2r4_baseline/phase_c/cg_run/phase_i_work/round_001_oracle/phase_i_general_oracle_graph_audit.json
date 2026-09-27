@@ -1,0 +1,107 @@
+{
+  "arc_count": 24910,
+  "benchmark_id": "HK_TST_JORDAN_10OD_30S_50STEPS_R2_R4",
+  "demands": [
+    {
+      "blocker": "",
+      "demand_id": "HK01",
+      "expansion_limit": 50000,
+      "paths_found": 4,
+      "start_node_time_id": "source_HK01_t0",
+      "states_expanded": 34262,
+      "terminal_node_time_id": "sink_HK01_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK02",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK02_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK02_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK03",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK03_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK03_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK04",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK04_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK04_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK05",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK05_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK05_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK06",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK06_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK06_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK07",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK07_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK07_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK08",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK08_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK08_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK09",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK09_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK09_t50"
+    },
+    {
+      "blocker": "no path found",
+      "demand_id": "HK10",
+      "expansion_limit": 50000,
+      "paths_found": 0,
+      "start_node_time_id": "source_HK10_t0",
+      "states_expanded": 50000,
+      "terminal_node_time_id": "sink_HK10_t50"
+    }
+  ],
+  "dynamic_arc_file": "phase_c/case/dynamic_arc.csv",
+  "dynamic_data_dir": "phase_c/case",
+  "dynamic_demand_file": "phase_c/case/dynamic_demand.csv",
+  "edge_weight_formula": "TRUE_COST_TIE_BREAKER_EPSILON * arc_cost + validated_capacity_sign * capacity_dual_raw",
+  "graph_status": "SAFE_BLOCKED",
+  "movement_arc_count": 5550,
+  "node_count": 11954,
+  "oracle_id": "bounded_full_cg_v1_general_phase_i_oracle",
+  "sink_connector_count": 510,
+  "source_connector_count": 10,
+  "waiting_arc_count": 11700
+}

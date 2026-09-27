@@ -37,7 +37,7 @@ Boston and Sioux Falls both retain saved shared-capacity examples, with differen
 
 After Phase I clears artificial flow, Phase II minimizes real path cost on the declared finite time-expanded graph. Pricing uses the current restricted-master duals to seek improving ungenerated columns. A strict objective decrease is not required in every degenerate linear-programming pivot; a valid nonincreasing commit may rotate the optimal basis and dual before a later strict decrease.
 
-A finite candidate cap, partial oracle or reference-objective stopping condition must not be relabeled exhaustive pricing closure. Boston R3 first established reference-objective agreement; Boston R4 then separately established independent pricing closure. The retained Sioux Falls 200/250-OD runs establish reference-objective agreement but not independent pricing closure.
+A finite candidate cap, partial oracle or reference-objective stopping condition must not be relabeled exhaustive pricing closure. Boston R3 first established reference-objective agreement; Boston R4 then separately established independent pricing closure. Hong Kong R5 likewise establishes both on its unchanged bounded ten-demand graph. The retained Sioux Falls 200/250-OD runs establish reference-objective agreement but not independent pricing closure.
 
 ## 5. Final physical-link movement flow and validation
 
@@ -54,12 +54,13 @@ Time-indexed movement arcs are aggregated by `physical_link_id` to obtain final 
 
 For each demand, an independent evaluator searches the complete finite time-expanded graph for the minimum-reduced-cost **ungenerated** feasible path under the final restricted-master duals. Closure is established only if every demand satisfies the declared tolerance. Existing-column KKT/stationarity and ungenerated-path pricing closure are different checks.
 
-Boston R4 establishes closure for 10/10 demands at `1e-6`. The retained Sioux Falls 200/250-OD results do not yet have an equivalent certificate.
+Boston R4 and Hong Kong R5 each establish closure for 10/10 demands at `1e-6` on **different** finite graphs. The retained Sioux Falls 200/250-OD results do not have an equivalent certificate.
 
 ## 7. Executed cases and boundaries
 
 - [Boston bounded pilot](../cases/boston-space-time.md): one real-city GMNS subnetwork, 90 physical nodes, 125 directed links, 10 ODs, 3-second steps, 100-step horizon; Phase I and Phase II completed; reference-objective agreement and independent pricing closure established.
 - [Sioux Falls historical selected-OD benchmarks](../cases/sioux-space-time.md): 200-OD and 250-OD finite time-expanded instances; Phase I and Phase II completed; reference-objective agreement established; independent pricing closure not established.
+- [Hong Kong bounded R5 case](../cases/hong-kong-space-time.md): unchanged 10-OD, 30-second, 50-step graph; Phase I artificial flow cleared in 12 rounds, Phase II reached the same-graph arc-flow LP objective, and independent full-DAG pricing closure passed 10/10 demands. Its separately frozen ADMM transfer remains gated.
 
 The [current CG orchestration source](../../app/src/gmns_dynamic/run_full_cg_v1.py) remains available for inspecting the implementation; its external-network and conversion modules govern which graph is actually built. The case pages distinguish inspecting saved results from running that source on new inputs.
 

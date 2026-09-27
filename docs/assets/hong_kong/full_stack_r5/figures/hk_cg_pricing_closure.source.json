@@ -1,0 +1,26 @@
+{
+  "figure_id": "hk_cg_pricing_closure",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_cg_pricing_closure.svg",
+  "png": "figures/hk_cg_pricing_closure.png",
+  "caption": "All ten demands satisfy the independent minimum ungenerated reduced-cost gate; the smallest value is numerical zero and the tolerance is −1e−6.",
+  "source_files": [
+    "closure/INDEPENDENT_PRICING_CLOSURE_BY_DEMAND.csv",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json"
+  ],
+  "input_sha256": {
+    "closure/INDEPENDENT_PRICING_CLOSURE_BY_DEMAND.csv": "4fdf545182bd9cf78d4ecf59a348900ee18c5732d57013a611aa72a473e134ff",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json": "f218e43364062326d38d898e30a6ee2eaa70580bf6d7b4ffdb5d4b423c05195c"
+  },
+  "numerical_ranges": {
+    "min_ungenerated_reduced_cost": [
+      0.0,
+      0.1397464260000003
+    ],
+    "tolerance": -1e-06,
+    "demand_count": 10
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}
