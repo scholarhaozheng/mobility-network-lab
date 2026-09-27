@@ -9,6 +9,32 @@ BUNDLE = ROOT / "docs/assets/hong_kong/full_stack_r5"
 
 
 class HongKongPublicR4(unittest.TestCase):
+    def test_homepage_has_complete_saved_hong_kong_cg_figure_family(self):
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
+        section = readme.split('<a id="hong-kong-cg-r5"></a>', 1)[1].split(
+            "### Retained R1 data checkpoint", 1
+        )[0]
+        figures = (
+            "r2r4_baseline/figures/hk_physical_to_time_expanded.png",
+            "figures/hk_cg_phase_i_artificial_flow.png",
+            "figures/hk_cg_phase_i_by_demand.png",
+            "figures/hk_cg_phase_ii_objective.png",
+            "figures/hk_cg_pricing_closure.png",
+            "figures/hk_cg_final_physical_link_movement_flow.png",
+            "figures/hk_same_graph_method_comparison.png",
+        )
+        positions = []
+        for figure in figures:
+            path = "docs/assets/hong_kong/full_stack_r5/" + figure
+            self.assertTrue((ROOT / path).is_file(), path)
+            positions.append(section.index(path))
+        self.assertEqual(positions, sorted(positions))
+        self.assertEqual(section.count("!["), len(figures))
+        home = (ROOT / "docs/index.html").read_text(encoding="utf-8")
+        self.assertIn('id="hong-kong-cg-r5"', home)
+        for figure in figures:
+            self.assertIn("assets/hong_kong/full_stack_r5/" + figure, home)
+
     def test_current_pages_and_three_city_matrix(self):
         readme = (ROOT / "README.md").read_text(encoding="utf-8")
         matrix = readme.split("## 02 / What each case demonstrates", 1)[1].split(

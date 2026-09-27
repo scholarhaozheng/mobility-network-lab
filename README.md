@@ -108,7 +108,7 @@ The repository contains **three distinct executed CG case families**. Boston is 
 | **Pricing certificate** | Independent full-DAG closure **10/10** at `1e-6` | **Not established** for retained historical runs | Independent full-DAG closure **10/10** at `1e-6` |
 | **Open the evidence** | [Boston case](docs/cases/boston-space-time.md) | [Sioux case](docs/cases/sioux-space-time.md) | [Hong Kong R5 case](docs/cases/hong-kong-space-time.md) |
 
-*The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 traces appear in its case page. None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.* [Boston/Sioux overview SVG](docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](docs/assets/presentation_r4/cg_experiments_overview.png).
+*The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 figures appear [below on this homepage](#hong-kong-cg-r5) and in its case page. None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.* [Boston/Sioux overview SVG](docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](docs/assets/presentation_r4/cg_experiments_overview.png).
 
 <a id="admm-r2-figures"></a>
 ## Executed finite space–time ADMM R2 figure families
@@ -637,13 +637,52 @@ The accepted **200-OD and 250-OD selected subsets are different finite graphs an
 
 The frozen 10-OD finite case has **11,954 dynamic nodes and 24,910 arcs**. Current CG R5 clears Phase I artificial flow **4.3502187198 → 0 in 12 rounds**, then reaches **75.03632985794835 vehicle-minutes**, agreeing with its same-graph arc-flow LP. An independent full-DAG check establishes **pricing closure for 10/10 demands at 1e-6**. Separate Lagrangian feasible-primal recovery has a **0.7444%** certified gap. Hong Kong ADMM R2 remains **gated before accepted outer iterations** and has no accepted objective. [Full finite case, individual scientific figures and redacted closure evidence](docs/cases/hong-kong-space-time.md).
 
+<a id="hong-kong-cg-r5"></a>
+### Hong Kong / Bounded finite space–time CG R5
+
+These are the accepted saved figures for the **same unchanged 10-OD finite graph**. Each scientific figure appears on its own row; the separate LP/Lagrangian comparison is supporting context, not an additional CG run. The case page retains the full records, editable SVGs and reproduction limits.
+
+#### From physical links to time-indexed movement
+
+![Hong Kong physical-link to finite time-expanded graph construction](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png)
+
+*The 111 selected physical links support a 30-second, 50-step graph; hourly physical capacity is converted to PCE per departure step. This is not the static BPR assignment.* [SVG](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.source.json).
+
+#### Phase I restores real-path feasibility
+
 ![Hong Kong R5 Phase-I artificial-flow clearance on the unchanged 10-OD case](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png)
 
-*Phase I clears the original real-path feasibility deficit; the plot is modeled PCE, not an observation.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json).
+*Phase I clears 4.3502187198 artificial PCE by round 12; this is modeled feasibility, not an observation.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json).
+
+#### Phase I clearance by demand
+
+![Hong Kong R5 initial and final Phase-I artificial flow for ten demands](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.png)
+
+*The initial deficit is concentrated in HK03, HK05 and HK07; all ten demands have zero final artificial flow.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.svg) · [Saved trace](docs/assets/hong_kong/full_stack_r5/cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv).
+
+#### Phase II improves the real-path objective
+
+![Hong Kong R5 Phase-II real-path objective against its same-graph arc-flow LP](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png)
+
+*The real-only restricted master falls from 75.075236 to 75.036330 vehicle-minutes after three added columns; the reference is the arc-flow LP on this same graph.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.source.json).
+
+#### Independent pricing closure and original-space checks
 
 ![Hong Kong R5 independent full-DAG pricing closure for all ten demands](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png)
 
-*The 10/10 closure certificate is separate from objective agreement.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.svg) · [Redacted certificate](docs/assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json) · [Solver-free public verifier](docs/assets/hong_kong/full_stack_r5/verify_receiver_r5.py).
+*The 10/10 full-DAG pricing-closure certificate is separate from objective agreement. The solver-free public audit reconstructs the 25-column objective and checks original-space demand, capacity and physical-link projection.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.svg) · [Redacted certificate](docs/assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json) · [Solver-free public verifier](docs/assets/hong_kong/full_stack_r5/verify_receiver_r5.py).
+
+#### Final physical-link movement flow
+
+![Hong Kong R5 final time-aggregated physical-link movement flow](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png)
+
+*Time-indexed movement is aggregated onto the original 111 physical-link IDs; 69 carry positive modeled flow. This is not a traffic count map.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.svg) · [Source record](docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.source.json).
+
+#### Same-graph reference and feasible-primal comparison
+
+![Hong Kong accepted same-graph LP, CG and Lagrangian feasible-primal objective comparison](docs/assets/hong_kong/full_stack_r5/figures/hk_same_graph_method_comparison.png)
+
+*The LP, current CG and separately recovered Lagrangian feasible primal agree at the reference objective. This does not establish identical link, path or time flows; ADMM has no accepted objective in this comparison.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_same_graph_method_comparison.svg) · [Lagrangian evaluation](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_evaluation.json).
 
 ### Retained R1 data checkpoint
 
