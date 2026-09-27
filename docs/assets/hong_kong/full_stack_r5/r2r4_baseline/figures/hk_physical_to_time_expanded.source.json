@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_physical_to_time_expanded",
+  "caption": "Physical capacity converts from hourly PCE to PCE per 30-second departure arc.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_physical_to_time_expanded.svg",
+  "png": "figures/hk_physical_to_time_expanded.png",
+  "source_files": [
+    "phase_c/DYNAMIC_GRAPH_BUILD_REPORT.json",
+    "phase_c/TIME_DISCRETIZATION_AND_CAPACITY_AUDIT.csv"
+  ],
+  "input_sha256": {
+    "phase_c/DYNAMIC_GRAPH_BUILD_REPORT.json": "54b9d2451b050671fa80deffe49c43a30e438f3d47b035e4e99449b185243103",
+    "phase_c/TIME_DISCRETIZATION_AND_CAPACITY_AUDIT.csv": "5d4db09b5ec41e2203a762b0a9ac0c60fea3293c5349e9f3c9d7bf386998c194"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

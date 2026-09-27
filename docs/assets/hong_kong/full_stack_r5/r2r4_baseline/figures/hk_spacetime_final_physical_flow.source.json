@@ -1,0 +1,19 @@
+{
+  "figure_id": "hk_spacetime_final_physical_flow",
+  "caption": "Time-indexed movement flow aggregated by original physical link ID.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_spacetime_final_physical_flow.svg",
+  "png": "figures/hk_spacetime_final_physical_flow.png",
+  "source_files": [
+    "phase_a/instance/link.csv",
+    "phase_c/reference_positive_commodity_arc_flow.csv",
+    "phase_c/case/dynamic_arc.csv"
+  ],
+  "input_sha256": {
+    "phase_a/instance/link.csv": "7158dfc3cc5342b59034b295636065c166f7ba92872713897ce8bc8946d77bf8",
+    "phase_c/reference_positive_commodity_arc_flow.csv": "90596e7ee4297581b09110a8d399cf52d5a5becce06a5adb6adf784411815e9d",
+    "phase_c/case/dynamic_arc.csv": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

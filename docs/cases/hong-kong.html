@@ -1,0 +1,50 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hong Kong · bounded Tsim Sha Tsui–Jordan case · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="hong-kong-bounded-tsim-sha-tsuijordan-case">Hong Kong · bounded Tsim Sha Tsui–Jordan case</h1>
+<p>This is an <strong>accepted bounded technical case</strong>, not an empirically calibrated Hong Kong forecast. It extends the retained <a href="hong-kong-gmns-pilot.html">R1 GMNS/data pilot</a> without rewriting that historical checkpoint. The R2–R4 public bundle adds an assignment-ready, turn-aware network, a four-stage engineering scenario, static Frank–Wolfe and Algorithm B, and a preregistered finite space–time reference LP. R5 completes current two-phase column generation (CG) and independent pricing closure on the <strong>unchanged ten-demand finite case</strong>. Hong Kong ADMM remains gated.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Saved result</th>
+<th>Scope</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>City graph and hierarchy</td>
+<td>780 physical nodes, 1,239 directed physical links, 95 fine SSG zones, 10 STPUG parents</td>
+<td>Source IDs, nonphysical access, turn and grade-separation checks retained</td>
+</tr>
+<tr>
+<td>Four-stage scenario</td>
+<td>8,930 reachable directed interzonal OD pairs; 723.191 PCE modeled one-hour road load</td>
+<td>Transferred rates, proxy activity, sensitivity mode choice; not observed demand</td>
+</tr>
+<tr>
+<td>Static assignment</td>
+<td>Turn-aware FW and official <code>tap-b</code> Algorithm B agree under the accepted task-local lossless TAPLab-compatible adapter</td>
+<td>Stock official-adapter parity is <strong>not</strong> claimed for Hong Kong</td>
+</tr>
+<tr>
+<td>Finite space–time LP / CG</td>
+<td>10 ODs, 111 selected physical links, 11,954 dynamic nodes, 24,910 arcs; CG and LP agree at 75.036329857948 vehicle-minutes</td>
+<td>Independent full-DAG pricing closure passes 10/10 demands at 1e-6</td>
+</tr>
+<tr>
+<td>Lagrangian / ADMM</td>
+<td>Feasible Lagrangian primal with 0.7444% certified gap; ADMM R2 gated before accepted outer iterations</td>
+<td>No accepted Hong Kong ADMM objective</td>
+</tr>
+</tbody>
+</table></div>
+<p><img alt="Hong Kong bounded physical network with modeled static flow" src="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.png"/></p>
+<p><em>Official-derived physical roads and <strong>modeled</strong> one-hour static PCE, not an observed traffic map.</em> <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.source.json">Source record</a>.</p>
+<h2 id="read-the-evidence-in-model-order">Read the evidence in model order</h2>
+<ol>
+<li><a href="../datasets/hong-kong-gmns.html">GMNS objects, source register and rights boundary</a> distinguish physical links, turn states, centroids, connectors and the two zone levels.</li>
+<li><a href="hong-kong-four-stage.html">Four-stage scenario</a> gives the population/household/activity preparation, transferred trip rates, distribution, mode costs and observation grades.</li>
+<li><a href="hong-kong-static-assignment.html">Static assignment</a> gives FW, Algorithm B, independent conservation and turn checks under one BPR objective.</li>
+<li><a href="hong-kong-space-time.html">Finite space–time CG, reference LP, Lagrangian and ADMM gate</a> separates each mathematical certificate.</li>
+<li><a href="../methods/hong-kong-evidence-contract.html">Evidence contract</a> names the assumptions, source rights and supported reproduction.</li>
+</ol>
+<p>The <a href="../assets/hong_kong/full_stack_r5/PUBLIC_CANDIDATE_README.md">R5 public bundle</a> preserves the accepted R2–R4 public candidate under <code>r2r4_baseline/</code> and adds only approved aggregate CG evidence. Its old gated CG text is <strong>historical R2–R4 evidence, superseded by R5</strong>; it is not the current Hong Kong CG status. The original R1 pilot remains a separately dated data checkpoint, not the assignment gate for this later case.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

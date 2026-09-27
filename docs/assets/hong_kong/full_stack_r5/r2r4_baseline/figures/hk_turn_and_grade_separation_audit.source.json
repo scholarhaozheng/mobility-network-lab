@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_turn_and_grade_separation_audit",
+  "caption": "Two source turn features quarantined outside an accepted directed transition.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_turn_and_grade_separation_audit.svg",
+  "png": "figures/hk_turn_and_grade_separation_audit.png",
+  "source_files": [
+    "phase_a/movement_resolved.csv",
+    "phase_a/movement_quarantine.csv"
+  ],
+  "input_sha256": {
+    "phase_a/movement_resolved.csv": "d4b4409c15d75a61baf6e8acca209891921f13bd30eaaf6040127f326d91c865",
+    "phase_a/movement_quarantine.csv": "dfcad61fc9489309c848a9ccf04cab4644c1d95160d9a0b6bf77552f6594cf47"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

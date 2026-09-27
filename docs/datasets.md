@@ -11,9 +11,9 @@ Browse **network computations and their visual results** first. Supporting data 
 | [Boston bounded space–time CG](cases/boston-space-time.md) | 90 physical nodes, 125 directed links, 10 ODs; 3-second steps / 100-step horizon | Fixed-cost hard-capacity Phase I/II; same-graph arc-LP match; R4 independent full-DAG pricing closure | Ten PNG/SVG figure pairs, exact public plot inputs, source hashes and numerical validation; **not citywide** |
 | [Boston bounded space–time ADMM R2_S](cases/boston-admm.md) | Same bounded 90-node / 125-link / 10-OD finite time-expanded model class | Frozen Sioux-selected policy; 253 iterations; 6.68e-6 relative objective gap to same-graph LP and independent feasibility gates | Matched SVG/PNG family, source sidecars and rights-cleared 125-row derived table; **not citywide** |
 | [Boston Algorithm B B0/B1](cases/boston-algorithm-b.md) | 2,852 physical nodes, 5,091 directed links; 26-OD interface and 453-OD holdout | Static BPR/Beckmann UE through task-local TAPLab-compatible lossless adapter | Accepted B1 evaluation, aggregate physical-link flow and four SVGs; official TAPLab converter not used to solve Boston |
-| [Hong Kong bounded GMNS/data pilot](cases/hong-kong-gmns-pilot.md) | 780 physical nodes, 1,239 directed links, 95 SSG fine/10 STPUG parent zones | Official-derived network, 2021 census allocation, GTFS and detector relationships; deterministic seed | Five SVGs, offline validation/trace; **assignment_ready=false**, no solver run |
+| [Hong Kong bounded full-stack case](cases/hong-kong.md) | 780 physical nodes, 1,239 directed links, 95 SSG fine/10 STPUG parent zones | Turn-aware network; four-stage engineering scenario; static FW/Algorithm B; finite LP, current CG and Lagrangian; ADMM remains gated | [Source/rights register](datasets/hong-kong-gmns.md), [four-stage evidence](cases/hong-kong-four-stage.md), [static checks](cases/hong-kong-static-assignment.md), [R5 CG figures and closure](cases/hong-kong-space-time.md). [Earlier R1 data pilot](cases/hong-kong-gmns-pilot.md) retained separately |
 
-The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. The bounded CG pilot is a **separate demand/model instance**, not a continuation of static FW or the semantic service-feedback panel.
+The original Boston network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. Each bounded CG pilot is a **separate demand/model instance**, not a continuation of its city's static FW scenario.
 
 ## Road benchmark results
 
@@ -25,7 +25,7 @@ The original network and activity-prior tracks remain bounded engineering exampl
 | [Sioux Falls · static FW](datasets/sioux-static-fw.md) | 24 physical nodes, 76 links, 528 OD records | Approximate static Beckmann assignment | Result record |
 | [Sioux Falls · official `tap-b` Algorithm B](cases/sioux-algorithm-b.md) | 24 physical nodes, 76 links, 528 positive OD pairs | Static BPR/Beckmann UE; official TAPLab registered-adapter parity | Accepted evaluation, aggregate physical-link flow and four SVGs |
 
-[Open the six-figure gallery](visualizations.md). These are benchmark experiments, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. The static and space–time objectives are not the same model.
+[Open the figure gallery](visualizations.md). Sioux experiments are benchmarks, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. Static and space–time objectives are not the same model.
 
 Accepted Sioux 200/250-OD [Lagrangian R2](methods/distributed-assignment.md) and [ADMM R2_S](methods/admm-space-time.md) results use selected-OD finite space–time shared-capacity instances; they are additional bounded algorithm evidence, not full-network or static UE results. Earlier ADMM R1 figures are retained separately.
 
@@ -35,7 +35,7 @@ Accepted Sioux 200/250-OD [Lagrangian R2](methods/distributed-assignment.md) and
 
 ## Common interfaces and additional cities
 
-[Add a source-backed network](add-a-network.md) using the shared [city workflow](city-workflow.md). A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Central Boston instance demonstrates one bounded implementation; it is not a universal raw-city compiler. Future city collections remain in the [roadmap](roadmap.md) until their data and computations actually exist.
+[Add a source-backed network](add-a-network.md) using the shared [city workflow](city-workflow.md). A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Boston and Hong Kong cases demonstrate bounded implementations, not a universal raw-city compiler. Future city collections remain in the [roadmap](roadmap.md) until their data and computations actually exist.
 
 ## Supporting metadata tools and evidence
 

@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hong Kong · bounded finite space–time optimization · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="hong-kong-bounded-finite-spacetime-optimization">Hong Kong · bounded finite space–time optimization</h1>
+<p>This page reports the <strong>unchanged</strong> <code>HK_TST_JORDAN_10OD_30S_50STEPS_R2_R4</code> finite case, not citywide dynamic assignment. The preregistered core has 111 selected physical links, <strong>11,954 dynamic nodes</strong>, <strong>24,910 arcs</strong>, ten demands, 30-second steps and a 50-step (25-minute) horizon. Physical hourly PCE capacity is scaled by <code>30/3600</code> for departure arcs; nonphysical turn/zone access and waiting arcs follow the saved <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/case.json">construction contract</a>. The original K=1 pool, graph and demand were not rebuilt for R5.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Independent method or check</th>
+<th>Accepted result on this same finite graph</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Arc-flow reference LP</td>
+<td>75.03632985794819 vehicle-minutes; demand/capacity and physical-ID mapping checks pass</td>
+</tr>
+<tr>
+<td>Current two-phase CG R5</td>
+<td>Phase I artificial flow <strong>4.350218719795723 → 0</strong> in 12 rounds; Phase II adds three columns and reaches approximately <strong>75.03632985794835</strong> vehicle-minutes</td>
+</tr>
+<tr>
+<td>Independent full-DAG pricing</td>
+<td>Closure passes <strong>10/10</strong> demands at <code>1e-6</code>; minimum ungenerated reduced cost is numerical zero; no continuation column is required</td>
+</tr>
+<tr>
+<td>Lagrangian R3</td>
+<td>Separate restricted-path recovery is feasible at the reference objective; independent duality gap <strong>0.7444%</strong></td>
+</tr>
+<tr>
+<td>ADMM R2</td>
+<td><strong>Gated:</strong> first local commodity QP has 0.082467622 PCE original-unit conservation residual; zero accepted outer iterations and no accepted objective</td>
+</tr>
+</tbody>
+</table></div>
+<p>Reference-objective agreement and independent pricing closure are distinct statements. The early R5 Phase-II summary predates the separate closure stage and is <strong>not</strong> the final certificate. <a href="../assets/hong_kong/full_stack_r5/HK_CG_R5_FINAL_RESULT_MATRIX.csv">Final result matrix</a> · <a href="../assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json">Independent closure certificate</a> · <a href="../assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_BY_DEMAND.csv">Closure-by-demand table</a>.</p>
+<h2 id="1-from-physical-links-to-time-indexed-movement">1. From physical links to time-indexed movement</h2>
+<p><img alt="Hong Kong physical-to-time-expanded construction" src="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.png"/></p>
+<p><em>Physical hourly capacity becomes departure-arc PCE per 30-second step. This construction is separate from the static BPR assignment.</em> <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.source.json">Source record</a>.</p>
+<h2 id="2-phase-i-restores-real-path-feasibility">2. Phase I restores real-path feasibility</h2>
+<p><img alt="Hong Kong R5 Phase-I total artificial-flow trace" src="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png"/></p>
+<p><em>Exact-DAG pricing clears 4.350218719795723 artificial PCE by round 12 on the original ten-demand case.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json">Source record</a>.</p>
+<p><img alt="Hong Kong R5 Phase-I artificial flow by demand" src="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.png"/></p>
+<p><em>All ten demands have zero final Phase-I artificial flow; the initial deficit was concentrated in three demands.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_by_demand.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/cg_run/full_cg_v1_phase_i_artificial_flow_trace.csv">Saved trace</a>.</p>
+<h2 id="3-phase-ii-and-the-same-graph-reference">3. Phase II and the same-graph reference</h2>
+<p><img alt="Hong Kong R5 Phase-II objective trace" src="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png"/></p>
+<p><em>The real-only restricted master falls from 75.075236 to 75.036330 vehicle-minutes after three added columns. The horizontal reference is the unchanged arc-flow LP on this graph.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.source.json">Source record</a>.</p>
+<h2 id="4-independent-pricing-closure-and-original-space-checks">4. Independent pricing closure and original-space checks</h2>
+<p><img alt="Hong Kong R5 independent pricing closure by demand" src="../assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png"/></p>
+<p><em>All ten demands pass the minimum ungenerated reduced-cost gate. The independent complete-DAG evaluator makes no optimizer call.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json">Redacted certificate</a> · <a href="../assets/hong_kong/full_stack_r5/verify_receiver_r5.py">Solver-free public verifier</a>.</p>
+<p>The final public RMP has 25 columns. A solver-free audit reconstructs objective <strong>75.03632985794826</strong> vehicle-minutes and checks zero demand/capacity residual within <code>1e-6</code>, model/seed signatures, result lineage and original physical-link projection. Private route sequences, full generated pools and dual arrays are excluded from the public projection. <a href="../assets/hong_kong/full_stack_r5/verify_receiver_r5.py">Public verifier</a> · <a href="../assets/hong_kong/full_stack_r5/HK_CG_R5_CASE_FREEZE.json">Model freeze</a>.</p>
+<h2 id="5-final-physical-link-movement-flow">5. Final physical-link movement flow</h2>
+<p><img alt="Hong Kong R5 final physical-link movement flow" src="../assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png"/></p>
+<p><em>Time-indexed movement is aggregated onto the 111 original physical-link IDs; 69 carry positive <strong>modeled</strong> flow. This is not an observed count map.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.source.json">Source record</a>.</p>
+<h2 id="6-other-finite-methods-and-the-retained-gate">6. Other finite methods and the retained gate</h2>
+<p><img alt="Hong Kong same-graph LP, CG and Lagrangian comparison" src="../assets/hong_kong/full_stack_r5/figures/hk_same_graph_method_comparison.png"/></p>
+<p><em>LP, current CG and the separately recovered Lagrangian feasible primal agree at the same reference objective. ADMM has no accepted objective and is not plotted as a numerical peer.</em> <a href="../assets/hong_kong/full_stack_r5/figures/hk_same_graph_method_comparison.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_evaluation.json">Lagrangian evaluation</a>.</p>
+<p>The frozen ADMM R2 transfer remains gated at its <strong>first</strong> original-unit local conservation check, before accepted outer iterations. Its <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_admm_residuals_and_feasibility.png">saved gate figure</a> and <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/admm_run/result.json">result record</a> are historical and were not converted into an accepted run.</p>
+<p>The earlier R2–R4 CG enumerator limit and its figures are preserved under <code>r2r4_baseline/</code> as <strong>superseded history only</strong>. They do not describe current R5 CG. Static Beckmann and finite fixed-cost vehicle-minute objectives cannot be compared numerically. <a href="hong-kong.html">Case landing</a> · <a href="../methods/hong-kong-evidence-contract.html">Evidence contract and no-solver checks</a>.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

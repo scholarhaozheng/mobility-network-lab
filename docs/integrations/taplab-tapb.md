@@ -7,6 +7,7 @@ The accepted mathematical solver is official [`spartalab/tap-b`](https://github.
 | Classic Sioux Falls | CLI + direct callable parity passed; standard `taplab verify` certified | Official TAPLab adapter result and independent R2 checks |
 | Boston B0 interface | Stock converter contract blocked **before** solve | Official tap-b Algorithm B via task-local TAPLab-compatible lossless adapter |
 | Boston B1 frozen holdout | Stock converter contract blocked **before** solve | Official tap-b Algorithm B via task-local TAPLab-compatible lossless adapter |
+| Hong Kong bounded static case | Official registered-adapter parity **not claimed** | Official tap-b Algorithm B through the accepted task-local lossless TAPLab-compatible adapter; independent static evaluator passed |
 
 The [R2.1 parity matrix](../../algorithms/origin_based_algorithm_b/parity/TAPLAB_ADAPTER_PARITY_MATRIX.csv), [entry-point record](../../algorithms/origin_based_algorithm_b/parity/TAPLAB_PUBLIC_ENTRYPOINT_RECORD.json), and [standard-output audit](../../algorithms/origin_based_algorithm_b/parity/STANDARD_OUTPUT_CONTRACT_AUDIT.csv) identify which route was actually exercised. They do not imply that a Boston official-adapter solve failed: none was invoked.
 
@@ -40,4 +41,4 @@ The `run` line invokes the external solver and is **documentation only** for thi
 
 ## Claim boundary
 
-The Boston B1 result is a conditional HBW-midday, two-hour modeled cohort, not observed traffic, an all-day citywide result, or empirical validation. Exported OD paths allow reconstructed origin-link flow; they do not disclose native Policy Bush internal merge/label/restriction-update state. Same-problem FW agreement in this low-congestion holdout is a numerical check, not a generalized Algorithm B speed or quality advantage. [Sioux case](../cases/sioux-algorithm-b.md) · [Boston case](../cases/boston-algorithm-b.md).
+The Boston B1 result is a conditional HBW-midday, two-hour modeled cohort, not observed traffic, an all-day citywide result, or empirical validation. Hong Kong is a separate one-hour 8,930-OD engineering scenario and likewise has no official registered-adapter parity claim. Exported OD paths allow reconstructed origin-link flow; they do not disclose native Policy Bush internal merge/label/restriction-update state. Same-problem FW agreement checks numerical consistency, not a generalized Algorithm B speed or quality advantage. [Sioux case](../cases/sioux-algorithm-b.md) · [Boston case](../cases/boston-algorithm-b.md) · [Hong Kong static case](../cases/hong-kong-static-assignment.md).

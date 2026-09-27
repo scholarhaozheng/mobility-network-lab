@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "benchmark_id": "HK_TST_JORDAN_10OD_30S_50STEPS_R2_R4",
+  "model_signature": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+  "seed_pool_signature": "663f62669debfac29eb130194e4a4f5e9f2b0576c8c41aaeb3b053bec61a2481",
+  "dynamic_nodes": 11954,
+  "dynamic_arcs": 24910,
+  "demand_count": 10,
+  "original_seed_column_count": 10,
+  "time_step_seconds": 30,
+  "horizon_steps": 50,
+  "dynamic_input_hashes": {
+    "case.json": "61d2c3827333b61cbbb333b2a571f5d50fe9ffaf7468f333a892d6487fe1fe02",
+    "dynamic_arc.csv": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+    "dynamic_columns.csv": "663f62669debfac29eb130194e4a4f5e9f2b0576c8c41aaeb3b053bec61a2481",
+    "dynamic_demand.csv": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+    "dynamic_node.csv": "5c74fe6d5a5bde3dc998eeb909e57f8751873387cb869656bfa6b736f9361c4e",
+    "selected_physical_links.csv": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6"
+  },
+  "node_file_note": "Deterministic metadata index derived from unchanged arc endpoints; graph, costs, capacities and demand unchanged",
+  "reference_lp_objective_vehicle_minutes": 75.03632985794819
+}

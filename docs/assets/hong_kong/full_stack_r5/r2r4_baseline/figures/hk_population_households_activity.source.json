@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_population_households_activity",
+  "caption": "Building activity is a name/storey proxy; employment and GFA are unobserved.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_population_households_activity.svg",
+  "png": "figures/hk_population_households_activity.png",
+  "source_files": [
+    "phase_b/zone_activity_r2.csv",
+    "phase_b/ACTIVITY_ALLOCATION_AUDIT.json"
+  ],
+  "input_sha256": {
+    "phase_b/zone_activity_r2.csv": "5eef6a8a26b43cb83ff6d970b5adf666485ddfc8a2303583a4854277ceccb5b2",
+    "phase_b/ACTIVITY_ALLOCATION_AUDIT.json": "c1be20b87692dfbbe221f65506c1e236495d64f6ab5dc53a3679363c85afe9c6"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

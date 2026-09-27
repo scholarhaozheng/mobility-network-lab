@@ -48,6 +48,6 @@ If trajectories or observations are not available, state the missing layer in th
 
 ## Beyond one instance
 
-Use one complete case to exercise the interfaces before adding a second city. Hong Kong, Melbourne, Cairo and Paris are candidate extensions, not bundled city datasets. They should differ through data and configuration rather than independent solver rewrites.
+Use a bounded complete case to exercise the interfaces before claiming a new citywide model. [Boston](cases/boston.md) and [Hong Kong](cases/hong-kong.md) now have separate accepted bounded technical cases with different evidence grades; neither is a calibrated citywide forecast. Melbourne, Cairo and Paris remain candidate extensions. New cities should differ through data and configuration rather than independent solver rewrites.
 
 [Network catalog](datasets.md) · [Visual results](visualizations.md) · [Development roadmap](roadmap.md)

@@ -1,0 +1,29 @@
+{
+  "figure_id": "hk_cg_phase_ii_objective",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_cg_phase_ii_objective.svg",
+  "png": "figures/hk_cg_phase_ii_objective.png",
+  "caption": "The real-only RMP fell from 75.075236 to 75.036330 vehicle-minutes after adding three Phase II columns; the reference LP is 75.036330 on the same graph.",
+  "source_files": [
+    "cg_run/full_cg_v1_phase_ii_objective_trace.csv",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json"
+  ],
+  "input_sha256": {
+    "cg_run/full_cg_v1_phase_ii_objective_trace.csv": "8468513da45d3c34719b54aa9c1de484c253851e8f8eb04db7446fe2bad2b458",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4"
+  },
+  "numerical_ranges": {
+    "round": [
+      0,
+      1
+    ],
+    "objective_vehicle_minutes": [
+      75.03632985794832,
+      75.07523596555359
+    ],
+    "reference_vehicle_minutes": 75.03632985794819
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

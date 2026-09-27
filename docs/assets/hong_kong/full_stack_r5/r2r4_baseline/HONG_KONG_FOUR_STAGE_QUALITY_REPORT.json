@@ -1,0 +1,116 @@
+{
+  "phase_b": {
+    "phase_b_status": "ACCEPTED",
+    "checks": {
+      "four_stage_balance": true,
+      "full_static_assignment": true,
+      "historical_official_observation_context": true,
+      "detector_role_truthful": true,
+      "reference_trace_turn_validity": true,
+      "private_trace_derivatives": true
+    },
+    "full_drive_pce": 723.1912278850218,
+    "full_positive_od": 8930,
+    "interpretation": "Unvalidated engineering trip opportunities; 2023/2024 station AADT is descriptive; one detector snapshot and one private reference trajectory are not traffic calibration."
+  },
+  "distribution": {
+    "status": "PASS",
+    "zone_count": 95,
+    "positive_directed_interzonal_pairs": 8930,
+    "purpose_components": {
+      "HBW": {
+        "generated_person_trips": 2466.8963490904766,
+        "intrazonal_excluded_person_trips": 123.34481745452382,
+        "interzonal_person_trips": 2343.551531635953,
+        "ipf_iterations": 5,
+        "max_absolute_row_or_column_residual": 3.2128681937138026e-09,
+        "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+      },
+      "HBS": {
+        "generated_person_trips": 561.7349711234831,
+        "intrazonal_excluded_person_trips": 28.086748556174154,
+        "interzonal_person_trips": 533.648222567309,
+        "ipf_iterations": 5,
+        "max_absolute_row_or_column_residual": 3.2382985182266566e-11,
+        "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+      },
+      "HBO": {
+        "generated_person_trips": 2484.2994979376763,
+        "intrazonal_excluded_person_trips": 124.21497489688383,
+        "interzonal_person_trips": 2360.0845230407913,
+        "ipf_iterations": 5,
+        "max_absolute_row_or_column_residual": 1.8014247871178668e-09,
+        "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+      },
+      "NHB_EB": {
+        "generated_person_trips": 463.6005484573324,
+        "intrazonal_excluded_person_trips": 23.18002742286662,
+        "interzonal_person_trips": 440.420521034466,
+        "ipf_iterations": 5,
+        "max_absolute_row_or_column_residual": 3.317897068200182e-10,
+        "attraction_basis": "official building footprint*reported storeys with name keyword use proxy; purpose-specific fixed weights"
+      }
+    },
+    "tcs_mechanised_reference_person_trips_per_day": 153244.39401561458,
+    "capture_fraction_base": 0.3,
+    "external_or_uncaptured_reference_person_trips_am": 13945.239855420927,
+    "generated_local_trip_opportunities_person_am": 5976.531366608969,
+    "intrazonal_excluded_person_am": 298.8265683304484,
+    "unreachable_excluded_person_am": 0.0,
+    "interzonal_trip_opportunities_person_am": 5677.704798278519,
+    "drive_person_am": 1084.7868418275327,
+    "transit_person_am": 583.865891903623,
+    "walk_person_am": 4009.0520645473634,
+    "drive_pce_per_one_hour_am": 723.1912278850218,
+    "total_conservation_residual": 1.8189894035458565e-12,
+    "rate_sensitivity_local_generated_person_am": {
+      "low": 3984.3542444059794,
+      "base": 5976.531366608969,
+      "high": 7968.708488811959
+    },
+    "impedance_beta_sensitivity_per_min": {
+      "low": 0.025,
+      "base": 0.05,
+      "high": 0.08
+    },
+    "interpretation": "Engineering trip-opportunity scenario transferred from territory-wide mechanised TCS. Walk mode is a counterfactual choice; neither total nor shares are locally observed or calibrated."
+  },
+  "observation": {
+    "status": "DESCRIPTIVE_ONLY",
+    "atc_station_points_in_bbox": 81,
+    "atc_stations_with_2023_2024_aadt": 81,
+    "atc_station_point_link_relationship": "spatial candidate only; AADT is station aggregate, no directional link projection",
+    "detector_snapshot_lane_rows": 50,
+    "detector_snapshot_distinct_sites": 11,
+    "detector_mapped_distinct_sites": 10,
+    "detector_snapshot_time": "2026-09-26 10:24:00-10:24:30 local source time",
+    "historical_development_period": "2023 ATC station AADT, descriptive reference only",
+    "historical_held_out_period": "2024 ATC station AADT, descriptive reference only; no model calibration to 2023",
+    "traffic_validation_status": "NOT_AVAILABLE; internal capture scenario omits external flows; annual station AADT not equivalent to one-hour directed link PCE",
+    "sources": [
+      "https://data.gov.hk/en-data/dataset/hk-td-tis_7-traffic-flow-census",
+      "https://www.td.gov.hk/en/publications_and_press_releases/publications/free_publications/atc2024/index.html"
+    ]
+  },
+  "trajectory": {
+    "status": "PRIVATE_REFERENCE_TOPOLOGY_EVIDENCE_ONLY",
+    "method": "Viterbi candidate link-state sequence with emission distance/direction, directed official turn graph transition, bounded shortest route, explicit restart; fixed engineering penalties",
+    "input": "R1 private UrbanNav SPAN-CPT+IE reference positions (not raw GNSS)",
+    "point_count": 787,
+    "matched_points": 787,
+    "unmatched_points": 0,
+    "median_residual_m": 6.184,
+    "p95_residual_m": 13.121,
+    "r1_heuristic_median_residual_m": 5.472,
+    "r1_heuristic_p95_residual_m": 13.646,
+    "r1_heuristic_continuity_breaks": 11,
+    "viterbi_breaks_or_starts": 11,
+    "direction_adverse_points_with_gt2m_motion": 13,
+    "invalid_reconstructed_directed_transitions": 0,
+    "continuous_traversal_route_length_m": 3395.8800240662686,
+    "reference_time_span_s": 786.0,
+    "route_length_limit": "sum of directed traversals within matched segments; restarts excluded",
+    "point_level_derivative": "PRIVATE; not in public candidates",
+    "inference_limit": "One 2021 research-vehicle ground-truth trace; no representative speed, OD, mode share, or networkwide calibration claim"
+  }
+}

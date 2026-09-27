@@ -1,0 +1,27 @@
+{
+  "figure_id": "hk_cg_case_sequence",
+  "status": "ACCEPTED_CURRENT_CG",
+  "svg": "figures/hk_cg_case_sequence.svg",
+  "png": "figures/hk_cg_case_sequence.png",
+  "caption": "The R5 result reuses the accepted bounded city and finite graph, then completes current CG and independent pricing closure without rebuilding prior phases.",
+  "source_files": [
+    "cg_run/full_cg_v1_run_summary.json",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json"
+  ],
+  "input_sha256": {
+    "cg_run/full_cg_v1_run_summary.json": "337964dff3b97a04683d83335cd03514e09a16bfb23f8b99fa9f2dd63ae8500b",
+    "closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json": "f218e43364062326d38d898e30a6ee2eaa70580bf6d7b4ffdb5d4b423c05195c",
+    "case/ARC_FLOW_REFERENCE_SUMMARY.json": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4"
+  },
+  "numerical_ranges": {
+    "zones": 95,
+    "physical_links_city": 1239,
+    "dynamic_od": 10,
+    "dynamic_arcs": 24910,
+    "closure_demands_passed": 10
+  },
+  "scope_and_limitations": "Bounded Tsim Sha Tsui–Jordan finite technical scenario; engineering demand and capacities; no local empirical calibration.",
+  "render_mode": "saved-result rendering; no solver call",
+  "public_projection": "Path sequences, K=1 seed pool, final pool and duals are reserved for receiver review; plotted aggregates are unchanged."
+}

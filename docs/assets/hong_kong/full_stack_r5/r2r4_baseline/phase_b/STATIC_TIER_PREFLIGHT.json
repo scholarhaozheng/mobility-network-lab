@@ -1,0 +1,29 @@
+{
+  "policy": {
+    "maximum_positive_od": 10000,
+    "maximum_estimated_memory_bytes": 1000000000,
+    "maximum_solver_seconds_per_tier": 1800,
+    "selection": "descending base drive PCE, tie by source zone IDs; frozen before opening solver results",
+    "estimated_memory_formula": "(expanded arcs 3446 * 95 origins * 16 bytes) + (OD rows * 2048 bytes) + 100 MB overhead"
+  },
+  "tiers": [
+    {
+      "tier": "smoke",
+      "positive_od": 10,
+      "estimated_memory_bytes": 105258400,
+      "fits_declared_gate": true
+    },
+    {
+      "tier": "medium",
+      "positive_od": 1000,
+      "estimated_memory_bytes": 107285920,
+      "fits_declared_gate": true
+    },
+    {
+      "tier": "full",
+      "positive_od": 8930,
+      "estimated_memory_bytes": 123526560,
+      "fits_declared_gate": true
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "figure_id": "hk_full_stack_overview",
+  "caption": "Official-derived physical roads; line intensity is modeled static PCE, not observed traffic.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_full_stack_overview.svg",
+  "png": "figures/hk_full_stack_overview.png",
+  "source_files": [
+    "phase_a/instance/link.csv",
+    "phase_b/static_runs/full_algorithm_b/link_flow.csv"
+  ],
+  "input_sha256": {
+    "phase_a/instance/link.csv": "7158dfc3cc5342b59034b295636065c166f7ba92872713897ce8bc8946d77bf8",
+    "phase_b/static_runs/full_algorithm_b/link_flow.csv": "82996546d46e2edaa179658ab619cb1a48b983995c727c8740a1261465561842"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

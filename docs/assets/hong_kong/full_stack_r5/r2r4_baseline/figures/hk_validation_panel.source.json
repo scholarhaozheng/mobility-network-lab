@@ -1,0 +1,25 @@
+{
+  "figure_id": "hk_validation_panel",
+  "caption": "CG Phase I and ADMM local QP failed their frozen gates on this case.",
+  "status": "GATED_TRANSFER",
+  "svg": "figures/hk_validation_panel.svg",
+  "png": "figures/hk_validation_panel.png",
+  "source_files": [
+    "phase_a/PHASE_A_CHECKPOINT.json",
+    "phase_b/PHASE_B_CHECKPOINT.json",
+    "phase_c/ARC_FLOW_REFERENCE_INDEPENDENT_CHECK.json",
+    "phase_c/lagrangian_evaluation.json",
+    "phase_c/cg_run/full_cg_v1_run_summary.json",
+    "phase_c/admm_run/result.json"
+  ],
+  "input_sha256": {
+    "phase_a/PHASE_A_CHECKPOINT.json": "f166a87fce2ce1d11e43199a7dee4716331afdb16701fe925e87b1717090f69c",
+    "phase_b/PHASE_B_CHECKPOINT.json": "4e688046fd3c4b8edb0c27ce61066a14e378729b470b553cac9ae7947342de3a",
+    "phase_c/ARC_FLOW_REFERENCE_INDEPENDENT_CHECK.json": "b8f6873864f66a5cd7f6fddfb1e75e5ee1574636a25d29d94f16d8247a487835",
+    "phase_c/lagrangian_evaluation.json": "683af8833159628feca91ef1b0ab830a5c61f9984d71fae0cdb68bcd9a7b4892",
+    "phase_c/cg_run/full_cg_v1_run_summary.json": "13a9feec3c97fcb46af781a0320486b7beaa4dd6c96bcecf5b9e5bb259748d6f",
+    "phase_c/admm_run/result.json": "31a34a1ac9ce3741b19f66e92224054aef569b0169646216551edbc67a4b5500"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui–Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

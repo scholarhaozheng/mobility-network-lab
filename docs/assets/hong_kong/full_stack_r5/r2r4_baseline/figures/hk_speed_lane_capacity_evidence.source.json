@@ -1,0 +1,19 @@
+{
+  "figure_id": "hk_speed_lane_capacity_evidence",
+  "caption": "Posted limits are official; free-speed factor, lanes and capacity are engineering transfers.",
+  "status": "SAVED_RESULT",
+  "svg": "figures/hk_speed_lane_capacity_evidence.svg",
+  "png": "figures/hk_speed_lane_capacity_evidence.png",
+  "source_files": [
+    "phase_a/link_speed_evidence.csv",
+    "phase_a/link_lane_evidence.csv",
+    "phase_a/link_capacity_evidence.csv"
+  ],
+  "input_sha256": {
+    "phase_a/link_speed_evidence.csv": "dd530ce27d4f07a5fc23eb5b166d4cf9e6e937db569abee3ceeb33688a69960a",
+    "phase_a/link_lane_evidence.csv": "f5ae927e303eed036ae1c1e9f7b0725b88c9230da5be3972fa39f7243bcbf6c9",
+    "phase_a/link_capacity_evidence.csv": "ec1429df60a2b23645f24c025b479d77c28a4d442d57019f1289d62f32f63800"
+  },
+  "render_mode": "saved-result rendering; solver not rerun",
+  "scope": "bounded Tsim Sha Tsui\u2013Jordan technical scenario; proxy demand/capacity; no local calibration"
+}

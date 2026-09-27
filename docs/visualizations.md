@@ -1,8 +1,26 @@
 # Visual results: four stages, observations, static assignment and CG
 
-This gallery links saved-result figures for Boston and Sioux Falls and the bounded Hong Kong data pilot. It does not rerun optimization or invent observations. Common finite space–time CG figure families use the same terminology and reading order in both assignment cases; city-specific supplementary figures remain available and are not removed.
+This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The established Boston/Sioux case-parallel CG figure families retain their shared terminology and reading order; Hong Kong's separate R5 ten-demand case has its own current-CG and closure evidence.
 
-The additional [Sioux Lagrangian R2 and earlier ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. That R1 ADMM 250-OD view is drawn from final metrics only; no R1 iteration history was invented. The new R2_S lane below uses its own accepted saved histories. [Hong Kong's five official-derived data-layer SVGs](cases/hong-kong-gmns-pilot.md) have no assignment-flow interpretation.
+The additional [Sioux Lagrangian R2 and earlier ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. That R1 ADMM 250-OD view is drawn from final metrics only; no R1 iteration history was invented. The newer R2_S lane below uses its own accepted saved histories. [Hong Kong's five original R1 data-layer SVGs](cases/hong-kong-gmns-pilot.md) remain historical and have no assignment-flow interpretation; the later R2–R5 figures are separate saved computations.
+
+## Hong Kong bounded full-stack and current CG R5
+
+![Hong Kong assignment-ready physical network](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.png)
+
+*Turn-aware, official-derived bounded network; zone access and model attributes are explicit.* [GMNS/source contract](datasets/hong-kong-gmns.md) · [SVG and source sidecar](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.svg).
+
+![Hong Kong R5 Phase-I artificial flow falls to zero](assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png)
+
+*The unchanged ten-demand finite case clears Phase I in 12 rounds.* [Current CG case](cases/hong-kong-space-time.md) · [Source record](assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.source.json).
+
+![Hong Kong R5 independent pricing closure by demand](assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png)
+
+*The independent full-DAG certificate passes 10/10 demands at `1e-6`; this is not inferred from reference-objective agreement.* [Redacted certificate](assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json) · [Source record](assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.source.json).
+
+![Hong Kong R5 final physical-link movement flow](assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png)
+
+*The modeled finite-CG movement flow is projected onto original physical links, not observed traffic.* [Full case and remaining individual figures](cases/hong-kong-space-time.md) · [R5 figure manifest](assets/hong_kong/full_stack_r5/HONG_KONG_CG_R5_FIGURE_MANIFEST.csv). The separate Hong Kong ADMM R2 transfer remains gated before accepted outer iterations.
 
 ## ADMM R2 · finite space–time shared capacity
 

@@ -15,8 +15,9 @@ The frozen R2 numerical policy used solver gap `1e-8`, evaluator gap gate `1e-4`
 | [Classic Sioux Falls](../cases/sioux-algorithm-b.md) | Official TAPLab adapter parity and task-local R2 run | 4,231,335.287110682 vehicle-min | 4.49840770553e-9 | 76 / 528 |
 | [Boston B0 interface](../cases/boston-algorithm-b.md) | Task-local lossless adapter only | 707.057923071 vehicle-min | Checks passed in accepted private handoff | 5,091 / 26 |
 | [Boston B1 holdout](../cases/boston-algorithm-b.md) | Task-local lossless adapter only | 7,922.083942188114 PCE-min | −2.29512461878e-16 (floating-point zero) | 5,091 / 453 |
+| [Hong Kong bounded one-hour case](../cases/hong-kong-static-assignment.md) | Task-local lossless TAPLab-compatible adapter; no official parity claim | 1,676.01213133 (case Beckmann objective) | Independent turn/OD and FW-flow checks pass | 1,239 physical / 8,930 |
 
-Sioux's official TAPLab CLI and direct-callable results have **zero physical-link-flow difference** from accepted R2 and `taplab verify` certified the standard output. The Boston official converter was audited but **not used for solving**: its first-thru-node choice and four-decimal demand output violate the frozen problem contract. Its status is an input-conversion limitation, not a numerical Algorithm B result.
+Sioux's official TAPLab CLI and direct-callable results have **zero physical-link-flow difference** from accepted R2 and `taplab verify` certified the standard output. The Boston official converter was audited but **not used for solving**: its first-thru-node choice and four-decimal demand output violate the frozen problem contract. Hong Kong's accepted numerical transfer also uses a task-local lossless adapter; official TAPLab registered-adapter parity is not claimed for that case.
 
 ## Reading the four figure families
 

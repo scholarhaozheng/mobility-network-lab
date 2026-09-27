@@ -75,7 +75,8 @@ def rewrite_link(match: re.Match, source: Path, repo_url: str) -> str:
     resolved = (source.parent / filepart).resolve()
     try:
         inside = resolved.relative_to(DOCS)
-        target = str(Path(filepart).with_suffix('.html')).replace('\\', '/') if filepart.endswith('.md') else filepart
+        is_saved_bundle = resolved.is_relative_to(DOCS / 'assets' / 'hong_kong' / 'full_stack_r5')
+        target = str(Path(filepart).with_suffix('.html')).replace('\\', '/') if filepart.endswith('.md') and not is_saved_bundle else filepart
     except ValueError:
         if repo_url:
             try:
@@ -166,6 +167,11 @@ def main() -> int:
     (DOCS/'.nojekyll').write_text('', encoding='utf-8', newline='\n')
     for path in DOCS.rglob('*.md'):
         if path.name=='index.md':continue
+        # Saved public evidence bundles are immutable audit inputs, not site
+        # article sources. Generating sibling HTML would invalidate their
+        # exact-file manifests and blur historical status with current pages.
+        if path.is_relative_to(DOCS / 'assets' / 'hong_kong' / 'full_stack_r5'):
+            continue
         title=path.read_text(encoding='utf-8').splitlines()[0].lstrip('# ').strip()
         depth=len(path.relative_to(DOCS).parents)-1
         article=f'<main class="article"><p class="crumb">Documentation / {html.escape(title)}</p>{render_markdown(path,repo_url)}</main>'

@@ -42,14 +42,14 @@
 <td>Accepted B1 evaluation, aggregate physical-link flow and four SVGs; official TAPLab converter not used to solve Boston</td>
 </tr>
 <tr>
-<td><a href="cases/hong-kong-gmns-pilot.html">Hong Kong bounded GMNS/data pilot</a></td>
+<td><a href="cases/hong-kong.html">Hong Kong bounded full-stack case</a></td>
 <td>780 physical nodes, 1,239 directed links, 95 SSG fine/10 STPUG parent zones</td>
-<td>Official-derived network, 2021 census allocation, GTFS and detector relationships; deterministic seed</td>
-<td>Five SVGs, offline validation/trace; <strong>assignment_ready=false</strong>, no solver run</td>
+<td>Turn-aware network; four-stage engineering scenario; static FW/Algorithm B; finite LP, current CG and Lagrangian; ADMM remains gated</td>
+<td><a href="datasets/hong-kong-gmns.html">Source/rights register</a>, <a href="cases/hong-kong-four-stage.html">four-stage evidence</a>, <a href="cases/hong-kong-static-assignment.html">static checks</a>, <a href="cases/hong-kong-space-time.html">R5 CG figures and closure</a>. <a href="cases/hong-kong-gmns-pilot.html">Earlier R1 data pilot</a> retained separately</td>
 </tr>
 </tbody>
 </table>
-<p>The original network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. The bounded CG pilot is a <strong>separate demand/model instance</strong>, not a continuation of static FW or the semantic service-feedback panel.</p>
+<p>The original Boston network and activity-prior tracks remain bounded engineering examples. Their 50,000-trip total and behaviour parameters are assumptions. The newer feedback component uses transferred regional household rates and a conditional midday panel; it does not convert its generation total into assigned traffic. The short bus-position capture is not passenger OD, and no LODES employment association is included. Each bounded CG pilot is a <strong>separate demand/model instance</strong>, not a continuation of its city's static FW scenario.</p>
 <h2 id="road-benchmark-results">Road benchmark results</h2>
 <table>
 <thead>
@@ -93,12 +93,12 @@
 </tr>
 </tbody>
 </table>
-<p><a href="visualizations.html">Open the six-figure gallery</a>. These are benchmark experiments, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. The static and space–time objectives are not the same model.</p>
+<p><a href="visualizations.html">Open the figure gallery</a>. Sioux experiments are benchmarks, not newly collected city networks. Historical raw inputs are not bundled; consult each record for access and verification scope. Static and space–time objectives are not the same model.</p>
 <p>Accepted Sioux 200/250-OD <a href="methods/distributed-assignment.html">Lagrangian R2</a> and <a href="methods/admm-space-time.html">ADMM R2_S</a> results use selected-OD finite space–time shared-capacity instances; they are additional bounded algorithm evidence, not full-network or static UE results. Earlier ADMM R1 figures are retained separately.</p>
 <h2 id="runnable-reference-inputs">Runnable reference inputs</h2>
 <p><a href="examples.html">Two bundled synthetic examples</a> cover automatic routes and a zone-based capacity constraint. They support installation and regression checks without redistributing third-party road inputs. <a href="getting-started.html">Run the network workflow</a>.</p>
 <h2 id="common-interfaces-and-additional-cities">Common interfaces and additional cities</h2>
-<p><a href="add-a-network.html">Add a source-backed network</a> using the shared <a href="city-workflow.html">city workflow</a>. A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Central Boston instance demonstrates one bounded implementation; it is not a universal raw-city compiler. Future city collections remain in the <a href="roadmap.html">roadmap</a> until their data and computations actually exist.</p>
+<p><a href="add-a-network.html">Add a source-backed network</a> using the shared <a href="city-workflow.html">city workflow</a>. A complete contribution connects network, zones, OD and available observations through explicit identifiers and units. The Boston and Hong Kong cases demonstrate bounded implementations, not a universal raw-city compiler. Future city collections remain in the <a href="roadmap.html">roadmap</a> until their data and computations actually exist.</p>
 <h2 id="supporting-metadata-tools-and-evidence">Supporting metadata tools and evidence</h2>
 <p><a href="data-tools.html">Executable OMDV data tools</a> normalize local city/catalog records and perform exact city/country matching. Four authorized OMDV modules and two labelled fixtures are bundled; they are not a live downloader or GPS matcher.</p>
 <p>The separate <a href="open-data.html">open-data evidence guide</a> documents retained source-specific summaries for GHSL, GTFS, realtime, OSM, GBFS and interoperability. Raw feeds, endpoint lists, geometries and bulk archives are excluded. These evidence layers are not additive and do not imply bundled assignment-ready city models.</p>

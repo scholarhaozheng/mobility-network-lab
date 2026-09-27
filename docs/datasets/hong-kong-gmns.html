@@ -1,0 +1,42 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hong Kong · source-backed GMNS and evidence grades · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="hong-kong-source-backed-gmns-and-evidence-grades">Hong Kong · source-backed GMNS and evidence grades</h1>
+<p>The bounded Tsim Sha Tsui–Jordan graph is derived from <a href="https://data.gov.hk/en-data/dataset/hk-td-tis_15-road-network-v2">Transport Department Road Network v2</a>. Physical node/link IDs, directed movement, source turn rules and separate nonphysical centroid/access/turn classes are retained. The 95 fine SSG and 10 parent STPUG zones use <a href="https://portal.csdi.gov.hk/">2021 census geographies</a>. Assignment-ready compilation checks directed reachability, turns and grade separation; source intersection evidence is required for a mixed-elevation transition.</p>
+<p><img alt="Hong Kong saved turn and grade-separation audit" src="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_turn_and_grade_separation_audit.png"/></p>
+<p><em>Two source turn features were quarantined outside accepted directed transitions.</em> <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_turn_and_grade_separation_audit.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_turn_and_grade_separation_audit.source.json">Source record</a>.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Evidence layer</th>
+<th>Source and use</th>
+<th>Limit</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Roads, posted limits and turns</td>
+<td>Transport Department Road Network v2; source-derived physical links and legal movements</td>
+<td>Free speed, lanes and period capacity are engineering transfers</td>
+</tr>
+<tr>
+<td>Population and households</td>
+<td>2021 census SSG/STPUG geography and attributes</td>
+<td>Allocation assumes uniformity within source polygons; no fine-zone survey</td>
+</tr>
+<tr>
+<td>Building activity</td>
+<td>Official CSDI footprint, storeys and names</td>
+<td>Proxy attraction, not measured employment or GFA</td>
+</tr>
+<tr>
+<td>Transit and walk</td>
+<td><a href="https://data.gov.hk/en-data/dataset/hk-td-tis_11-pt-headway-en">Transport Department GTFS</a>, fares and official pedestrian links</td>
+<td>Conservative routing with labeled fallback; no observed mode share</td>
+</tr>
+<tr>
+<td>Road observations</td>
+<td><a href="https://data.gov.hk/en-data/dataset/hk-td-tis_7-traffic-flow-census">Annual Traffic Census</a>, detector snapshot and private UrbanNav reference</td>
+<td>Descriptive/topology context, not held-out traffic validation</td>
+</tr>
+</tbody>
+</table></div>
+<p>The <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/HONG_KONG_SOURCE_AND_RIGHTS_REGISTER.csv">exact source and rights register</a> records resource URLs, available SHA-256 hashes, evidence role and publication decisions. Raw provider archives and point-level UrbanNav material are excluded. <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/PHASE_A_CHECKPOINT.json">Phase A checkpoint</a> · <a href="../cases/hong-kong-gmns-pilot.html">R1 historical pilot</a> · <a href="../cases/hong-kong.html">Current case</a>.</p>
+</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

@@ -1,0 +1,45 @@
+{
+  "phase_a_status": "ACCEPTED",
+  "tiers": {
+    "smoke": {
+      "tier": "smoke",
+      "status": "ACCEPTED",
+      "positive_od": 475,
+      "total_vehicle_pce": 24.18057499260191,
+      "physical_links": 1239,
+      "expanded_links": 3446,
+      "fw_objective": 49.773032192620846,
+      "algorithm_b_objective": 49.7730321926209,
+      "objective_absolute_difference": 5.684341886080802e-14,
+      "fw_independent_relative_gap": -9.992959894368878e-16,
+      "algorithm_b_independent_relative_gap": 1.4275656991955525e-16,
+      "max_physical_link_flow_difference_pce": 6.217248937900877e-15,
+      "max_algorithm_b_physical_reconstruction_residual_pce": 1.7763568394002505e-15,
+      "max_od_residual_pce": 0.0,
+      "invalid_prohibited_turn_count": 0,
+      "nonadjacent_physical_path_transition_count": 0,
+      "algorithm_b_frozen_evaluator_status": "ACCEPTED",
+      "limits": "static scenario UE; proxy capacities and free speeds; not empirical validation"
+    },
+    "pilot": {
+      "tier": "pilot",
+      "status": "ACCEPTED",
+      "positive_od": 475,
+      "total_vehicle_pce": 604.5143748150477,
+      "physical_links": 1239,
+      "expanded_links": 3446,
+      "fw_objective": 1244.4504233175294,
+      "algorithm_b_objective": 1244.4504233175294,
+      "objective_absolute_difference": 0.0,
+      "fw_independent_relative_gap": 1.826369545759056e-15,
+      "algorithm_b_independent_relative_gap": 1.826369545759056e-15,
+      "max_physical_link_flow_difference_pce": 2.842170943040401e-14,
+      "max_algorithm_b_physical_reconstruction_residual_pce": 4.263256414560601e-14,
+      "max_od_residual_pce": 0.0,
+      "invalid_prohibited_turn_count": 0,
+      "nonadjacent_physical_path_transition_count": 0,
+      "algorithm_b_frozen_evaluator_status": "ACCEPTED",
+      "limits": "static scenario UE; proxy capacities and free speeds; not empirical validation"
+    }
+  }
+}
