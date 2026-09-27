@@ -34,14 +34,25 @@ class PresentationR3(unittest.TestCase):
     def test_sioux_new_phase_figures_are_linked(self):
         for n in ['sioux_space_time_construction.png','sioux_capacity_exchange.png','sioux_falls_200od_phase_i_academic.png','sioux_falls_250od_phase_i_academic.png']:
             self.assertIn(n,self.text)
-    def test_algorithm_b_source_figures_are_single_column(self):
+    def test_algorithm_b_flow_pair_and_other_source_figures(self):
         section=self.text.split('### Static user equilibrium / official `tap-b` Algorithm B',1)[1].split('## 02 / What each case demonstrates',1)[0]
         self.assertNotRegex(section,r'<img[^>]+algorithm_b_cross_city_overview.png')
-        for stem in ('sioux_convergence','boston_b1_convergence','sioux_fw_flow','boston_b1_fw_flow',
-                     'sioux_origin_flow','boston_b1_origin_flow','sioux_verification','boston_b1_verification'):
+        for stem in ('sioux_convergence','boston_b1_convergence','sioux_origin_flow',
+                     'boston_b1_origin_flow','sioux_verification','boston_b1_verification'):
             path=f'docs/assets/algorithm_b_r21/source_panels/{stem}.svg'
             self.assertRegex(section,rf'(?m)^!\[[^\]]+\]\({re.escape(path)}\)$')
+        flow=section.split('#### Physical-link flow against same-problem FW',1)[1].split('#### Selected-origin reconstructed flow',1)[0]
+        for stem in ('sioux','boston_b1'):
+            self.assertIn(f'docs/assets/algorithm_b_r21/presentation/{stem}_fw_flow_compact.svg',flow)
+            self.assertIn(f'docs/assets/algorithm_b_r21/source_panels/{stem}_fw_flow.svg',flow)
+        self.assertEqual(flow.count('<td width="50%">'),2)
         self.assertIn('docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.png',section)
+    def test_requested_cg_pairs_and_boston_construction_heading(self):
+        self.assertIn('#### Boston / From the physical network to time-indexed columns',self.text)
+        for heading in ('Phase I restores feasibility','Phase II improves the real-path objective',
+                        'Final physical-link movement flow and validation'):
+            section=self.text.split('### Sioux Falls / '+heading,1)[1].split('### Sioux Falls /',1)[0]
+            self.assertEqual(section.count('<td width="50%">'),2,heading)
     def test_case_sources_and_tool_entry(self):
         for p in ['docs/cases/sioux-space-time.md','docs/capabilities.md','tools/mcl_assignment.py','tools/mcl_native_l3.py','tools/build_case_presentation.py']:
             self.assertTrue((ROOT/p).is_file(),p)
