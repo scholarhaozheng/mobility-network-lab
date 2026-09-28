@@ -1,0 +1,1 @@
+Boston: six saved-data panels in a shared order. a/b: Boston 10-OD cutaway and B07 column · c/e: same 10-OD CG traces · d: round-1 B07/B09/B10 · f: 125-link projection. The full map and complete path remain in standalone figures; CG independent pricing closure is established · 10/10. No scientific solver was rerun.

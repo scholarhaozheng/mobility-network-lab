@@ -1,6 +1,16 @@
 # Visual results: four stages, observations, static assignment and CG
 
-This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The established Boston/Sioux case-parallel CG figure families retain their shared terminology and reading order; Hong Kong's separate R5 ten-demand case has its own current-CG and closure evidence.
+This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The new three-city representation-level series distinguishes network construction, one generated column, and final physical-link movement-flow back-projection. City scales and certificate statuses remain separate.
+
+## Three representation levels across three cities
+
+| Scientific object | Boston | Sioux Falls | Hong Kong |
+|---|---|---|---|
+| Physical network → finite time-expanded graph | [Network construction](cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph) | [Network construction](cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph) | [Network construction](cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph) |
+| One generated column as a time-indexed path | [B07 accepted column](cases/boston-space-time.md#a-generated-column-as-a-time-indexed-path) | [XS170 retained column](cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path) | [HK10 accepted R5 column](cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path) |
+| Time-expanded movement-arc flows → final physical-link movement flow | [Boston 125-link projection](cases/boston-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow) | [Sioux 64/69-link projections](cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow) | [Hong Kong 111-link projection](cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow) |
+
+Each linked case provides a same-size PNG/SVG, caption, exact input-hash sidecar and its complete original figure collection. The [finite statistics table](data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.md) keeps objectives on their own graphs; Hong Kong ADMM remains gated, and historical Sioux independent pricing closure is not established.
 
 The additional [Sioux Lagrangian R2 and earlier ADMM R1 paired figures](methods/distributed-assignment.md) document accepted **selected-OD finite space–time shared-capacity** evidence. That R1 ADMM 250-OD view is drawn from final metrics only; no R1 iteration history was invented. The newer R2_S lane below uses its own accepted saved histories. [Hong Kong's five original R1 data-layer SVGs](cases/hong-kong-gmns-pilot.md) remain historical and have no assignment-flow interpretation; the later R2–R5 figures are separate saved computations.
 
@@ -38,11 +48,11 @@ The overview uses display crops of the eight accepted R2 SVGs, ordered as conver
 
 The [four-stage walkthrough](datasets/boston-behavior-feedback.md) links actual data to each stage. [Generation](datasets/boston-behavior-feedback.md#step-1-trip-generation), [OD distribution](datasets/boston-behavior-feedback.md#step-2-trip-distribution), [mode response](datasets/boston-behavior-feedback.md#step-3-mode-choice) and [road assignment](datasets/boston-behavior-feedback.md#step-4-traffic-assignment) have separate result figures. The [GPS feedback](datasets/boston-behavior-feedback.md#gps-feedback) explains where observations enter; the [original five-map gallery](datasets/boston-central.md#boston-visual-gallery) remains available as spatial context and saved outputs.
 
-## Case-parallel finite space–time CG figure families
+## Retained Boston/Sioux finite CG figure families
 
 | Shared figure family | Boston | Sioux Falls |
 |---|---|---|
-| **From the physical network to time-indexed columns** | [Actual B07 physical-to-time cutaway](cases/boston-space-time.md#1-from-the-physical-network-to-time-indexed-columns) | [Actual XS170 local cutaway](cases/sioux-space-time.md#1-from-the-physical-network-to-time-indexed-columns) |
+| **Historical physical-to-time cutaway** | [Actual B07 construction and column](cases/boston-space-time.md#1-from-the-physical-network-to-time-indexed-columns) | [Actual XS170 local cutaway](cases/sioux-space-time.md#1-from-the-physical-network-to-time-indexed-columns) |
 | **Phase I restores feasibility** | [Total and B01–B10 artificial-flow clearance](cases/boston-space-time.md#2-phase-i-restores-feasibility) | [200/250-OD total and OD-level clearance](cases/sioux-space-time.md#2-phase-i-restores-feasibility) |
 | **A new path can help a different OD** | [B07/B09/B10 shared-capacity event](cases/boston-space-time.md#3-a-new-path-can-help-a-different-od) | [XS170/XS169 shared-capacity event](cases/sioux-space-time.md#3-a-new-path-can-help-a-different-od) |
 | **Phase II improves the real-path objective** | [Boston Phase-II objective and reference](cases/boston-space-time.md#4-phase-ii-improves-the-real-path-objective) | [200/250-OD Phase-II objectives and references](cases/sioux-space-time.md#4-phase-ii-improves-the-real-path-objective) |

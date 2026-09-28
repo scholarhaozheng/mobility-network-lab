@@ -144,6 +144,17 @@ def main() -> int:
     if presentation.returncode != 0:
         errors.extend(f"presentation: {item}" for item in presentation_result.get("errors", []))
     checks += int(presentation_result.get("checks", 0))
+    hk10 = subprocess.run(
+        [sys.executable, "-B", str(ROOT / "tools" / "visuals" / "check_hk10_approval.py")],
+        cwd=ROOT, capture_output=True, text=True, check=False,
+    )
+    try:
+        hk10_result = json.loads(hk10.stdout)
+    except json.JSONDecodeError:
+        hk10_result = {"status": "FAIL", "errors": [hk10.stdout, hk10.stderr]}
+    if hk10.returncode != 0:
+        errors.extend(f"HK10 exact disclosure: {item}" for item in hk10_result.get("errors", []))
+    checks += int(hk10_result.get("checks", 0))
     if "Repository candidate" in readme:
         errors.append("README still contains internal repository-candidate language")
     checks += 1

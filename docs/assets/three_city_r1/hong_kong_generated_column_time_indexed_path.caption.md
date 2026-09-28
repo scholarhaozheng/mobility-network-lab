@@ -1,0 +1,1 @@
+Hong Kong: one accepted generated column shown as physical-route order and time-indexed arc order; source/sink and any waiting/turn arcs retain their distinct types. ORACLE_R1_HK10_K1 has 0.835215083 PCE final flow. This is not a reference-LP path.

@@ -1,0 +1,43 @@
+{
+  "figure_id": "boston_finite_space_time_case_sequence",
+  "city": "Boston",
+  "representation_family": "D",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/boston/space_time_cg_r4/data/construction_path_arcs.csv": "6518c6cdf54a8a5ee13ca7edd655ac593245f875d4aceee3e699d2e6a858985c",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_od_change.csv": "da044f9cd879e1d016b65c690d7453995db15d36487a98fc5b5295c0fe33ebae",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_total.csv": "306a9e5e44e18af33848de8f6ae7c79ffcd5ba82a4b108310d2a4cd0f7a55830",
+    "docs/assets/boston/space_time_cg_r4/data/phase_ii_objective.csv": "898a23b0d9c6fa120f82d51aa3edb3f6887759d41f72ab775f9c29481f3728ee",
+    "docs/assets/three_city_r2/data/boston_construction_edges.csv": "951909c14873f1348c26d04cdd99ceeda1b91ddf33b4a4d3533e7bc87054348c"
+  },
+  "svg_sha256": "bd58ec4c660ef32ce66918df82d6aad18e9e3b2d4f2ddf5167459c86f7f008ba",
+  "png_sha256": "2e76e4ca443377e1f08e08f8be28b1d877f87becb093e89256a19b96027916b8",
+  "caption": "Boston: six saved-data panels in a shared order. a/b: Boston 10-OD cutaway and B07 column · c/e: same 10-OD CG traces · d: round-1 B07/B09/B10 · f: 125-link projection. The full map and complete path remain in standalone figures; CG independent pricing closure is established · 10/10. No scientific solver was rerun.",
+  "scientific_solver_rerun": false,
+  "panel_order": [
+    "a  Saved finite-graph arcs",
+    "b  One generated column",
+    "c  Phase-I artificial flow",
+    "d  Shared-capacity evidence",
+    "e  Phase-II objective / LP reference",
+    "f  Final physical projection"
+  ],
+  "nested_posters": false,
+  "time_unit": "3 s / model step",
+  "shared_capacity_status": "B07/B09/B10 recorded exchange",
+  "panel_instance_scope": "a/b: Boston 10-OD cutaway and B07 column · c/e: same 10-OD CG traces · d: round-1 B07/B09/B10 · f: 125-link projection.",
+  "capacity_bar_categories": [
+    "B07",
+    "B09",
+    "B10"
+  ],
+  "capacity_bar_changes": [
+    -0.36462212977800723,
+    -1.083333333333333,
+    1.0833333333333333
+  ],
+  "capacity_bar_unit": "model vehicles",
+  "disclosure_status": "ACCEPTED_PUBLIC"
+}

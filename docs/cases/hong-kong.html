@@ -1,5 +1,32 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hong Kong · bounded Tsim Sha Tsui–Jordan case · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="hong-kong-bounded-tsim-sha-tsuijordan-case">Hong Kong · bounded Tsim Sha Tsui–Jordan case</h1>
+<p>The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.</p>
+<h2 id="role-in-the-repository">Role in the repository</h2>
+<p>Bounded turn-aware GMNS/four-stage engineering case and a separate frozen ten-demand finite case.</p>
 <p>This is an <strong>accepted bounded technical case</strong>, not an empirically calibrated Hong Kong forecast. It extends the retained <a href="hong-kong-gmns-pilot.html">R1 GMNS/data pilot</a> without rewriting that historical checkpoint. The R2–R4 public bundle adds an assignment-ready, turn-aware network, a four-stage engineering scenario, static Frank–Wolfe and Algorithm B, and a preregistered finite space–time reference LP. R5 completes current two-phase column generation (CG) and independent pricing closure on the <strong>unchanged ten-demand finite case</strong>. Hong Kong ADMM remains gated.</p>
+<h2 id="scope-and-statistics">Scope and statistics</h2>
+<p>780 physical nodes, 1,239 directed physical links in the city-data case; finite R5 selects 100 nodes and 111 links.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Accepted bounded instance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>City physical network</td>
+<td>780 nodes; 1,239 directed links</td>
+</tr>
+<tr>
+<td>Static scenario</td>
+<td>8,930 OD pairs; 723.191 PCE in 1 h</td>
+</tr>
+<tr>
+<td>Finite CG case</td>
+<td>100 selected nodes; 111 links; 10 ODs</td>
+</tr>
+</tbody>
+</table></div>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -38,7 +65,28 @@
 </table></div>
 <p><img alt="Hong Kong bounded physical network with modeled static flow" src="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.png"/></p>
 <p><em>Official-derived physical roads and <strong>modeled</strong> one-hour static PCE, not an observed traffic map.</em> <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.svg">SVG</a> · <a href="../assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_full_stack_overview.source.json">Source record</a>.</p>
-<h2 id="read-the-evidence-in-model-order">Read the evidence in model order</h2>
+<h2 id="gmns-zones-and-source-evidence">GMNS, zones, and source evidence</h2>
+<p><a href="../datasets/hong-kong-gmns.html">GMNS, zones, turns and grade checks</a> retain physical and nonphysical identities.</p>
+<p><a href="../datasets/hong-kong-gmns.html">GMNS objects and source rights</a> distinguish roads, turn states, centroids and nonphysical connectors.</p>
+<h2 id="demand-transit-and-observations">Demand, transit, and observations</h2>
+<p><a href="hong-kong-four-stage.html">Four-stage scenario</a> uses building/activity and transit/pedestrian evidence with explicit assumptions; detector/UrbanNav records are not held-out validation.</p>
+<p><a href="hong-kong-four-stage.html">The four-stage engineering scenario</a> gives population/household/activity preparation, trip generation, distribution, mode-choice inputs and the evidence grade of 50 detector-lane snapshots. Private UrbanNav points are not distributed.</p>
+<h2 id="static-assignment">Static assignment</h2>
+<p><a href="hong-kong-static-assignment.html">Turn-aware static FW/Algorithm B</a> have separate static objectives; official TAPLab adapter parity is not claimed.</p>
+<p><a href="hong-kong-static-assignment.html">FW and task-local lossless Algorithm B evidence</a> use the declared turn-aware BPR/Beckmann problem; official registered-adapter parity is not claimed for Hong Kong.</p>
+<h2 id="finite-time-expanded-algorithms">Finite time-expanded algorithms</h2>
+<p><a href="hong-kong-space-time.html">Accepted R5 CG</a> has same-graph LP agreement and independent full-DAG pricing closure. Lagrangian recovery is separate; ADMM remains <strong>Gated</strong>.</p>
+<p><img alt="Hong Kong bounded finite space-time case sequence" src="../assets/three_city_r2/hong_kong_finite_space_time_case_sequence.png"/></p>
+<p><em>Current source-matched R2 layout; panel b contains the specifically approved model-generated HK10 excerpt, not an observed trajectory.</em> <a href="../assets/three_city_r2/hong_kong_finite_space_time_case_sequence.svg">SVG</a> · <a href="../assets/three_city_r2/hong_kong_finite_space_time_case_sequence.source.json">Source and exact input hashes</a> · <a href="../assets/three_city_r1/hong_kong_finite_space_time_case_sequence.png">Historical R1 layout</a> · <a href="../assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json">Exact disclosure scope</a>.</p>
+<p><a href="hong-kong-space-time.html">Representation-level figures and full finite case</a>.</p>
+<p><a href="hong-kong-space-time.html">The R5 finite CG case</a> has same-graph LP agreement and independent 10/10 pricing closure. Lagrangian has a separate feasible-primal/dual-bound certificate; ADMM remains gated.</p>
+<h2 id="independent-verification">Independent verification</h2>
+<p>Ten of ten CG demands pass independent pricing closure; no citywide DTA or empirical calibration is established.</p>
+<h2 id="city-specific-evidence-and-limits">City-specific evidence and limits</h2>
+<p>Original provider archives, full column pool, raw point evidence and dual arrays remain excluded from the public projection.</p>
+<p>The earlier R1 data checkpoint remains historical; R2–R4 legacy CG gate is superseded by R5, while Hong Kong ADMM remains gated.</p>
+<h2 id="reproduction">Reproduction</h2>
+<p>Use the <a href="../methods/hong-kong-evidence-contract.html">public evidence contract and verifier</a>.</p>
 <ol>
 <li><a href="../datasets/hong-kong-gmns.html">GMNS objects, source register and rights boundary</a> distinguish physical links, turn states, centroids, connectors and the two zone levels.</li>
 <li><a href="hong-kong-four-stage.html">Four-stage scenario</a> gives the population/household/activity preparation, transferred trip rates, distribution, mode costs and observation grades.</li>

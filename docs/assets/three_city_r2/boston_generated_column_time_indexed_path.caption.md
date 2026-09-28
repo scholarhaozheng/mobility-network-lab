@@ -1,0 +1,1 @@
+Boston: one accepted generated column (B07, PHASEI_R1_GEN_B07_001, 0.364622 model vehicles). One time index is 3 s / model step. physical arrival t19; sink t100 is bookkeeping. The ordered source table gives all arc IDs and link mappings.

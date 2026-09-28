@@ -1,0 +1,1 @@
+Sioux Falls: one accepted generated column (XS170, GEN_XS170_001, 500 model vehicles in recorded exchange). One time index is 1 model step (seconds not published). physical arrival t6; sink t32 is bookkeeping. The ordered source table gives all arc IDs and link mappings.

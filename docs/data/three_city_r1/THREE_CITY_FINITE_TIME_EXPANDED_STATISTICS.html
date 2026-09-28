@@ -1,0 +1,60 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>| city | physical_subnetwork_nodes_links | dynamic_od_demands | time_step_horizon | dynamic_nodes_arcs | reference_lp_objective_vehicle_min | cg_phase_i_zero_round | final_column_pool | lagrangian_status_gap | admm_status_residual_gate | independent_pricing_closure | | Mobility Computation Lab</title><link rel="stylesheet" href="../../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../../city-workflow.html">City workflow</a><a href="../../datasets.html">Networks</a><a href="../../visualizations.html">Visual results</a><a href="../../open-data-explorer.html">City evidence</a><a href="../../open-data.html">Open data</a><a href="../../methods.html">Methods</a><a href="../../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / | city | physical_subnetwork_nodes_links | dynamic_od_demands | time_step_horizon | dynamic_nodes_arcs | reference_lp_objective_vehicle_min | cg_phase_i_zero_round | final_column_pool | lagrangian_status_gap | admm_status_residual_gate | independent_pricing_closure |</p><table>
+<thead>
+<tr>
+<th>city</th>
+<th>physical_subnetwork_nodes_links</th>
+<th>dynamic_od_demands</th>
+<th>time_step_horizon</th>
+<th>dynamic_nodes_arcs</th>
+<th>reference_lp_objective_vehicle_min</th>
+<th>cg_phase_i_zero_round</th>
+<th>final_column_pool</th>
+<th>lagrangian_status_gap</th>
+<th>admm_status_residual_gate</th>
+<th>independent_pricing_closure</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boston</td>
+<td>90 / 125</td>
+<td>10</td>
+<td>3 s / 100 steps</td>
+<td>9,110 / 22,217</td>
+<td>64.396861511530</td>
+<td>90</td>
+<td>167</td>
+<td>Gated; 1.1002% exceeds frozen 1% gate</td>
+<td>Verified bounded case; R2_S own-LP gap 6.68e−6</td>
+<td>Independent pricing closure established; 10/10</td>
+</tr>
+<tr>
+<td>Sioux Falls (200 / 250 OD)</td>
+<td>24 / 64 or 69</td>
+<td>200 / 250</td>
+<td>Not stated in released summary</td>
+<td>1,192 / 9,406; 1,292 / 11,254</td>
+<td>943,155.589771 / 1,521,090.83662</td>
+<td>51 / 62</td>
+<td>446 / 567</td>
+<td>Verified bounded case; 0.0746% / 0.3177% duality gaps</td>
+<td>Verified bounded case; R2_S own-LP gaps 6.30e−6 / 7.16e−6</td>
+<td>Not established</td>
+</tr>
+<tr>
+<td>Hong Kong</td>
+<td>100 / 111</td>
+<td>10</td>
+<td>30 s / 50 steps</td>
+<td>11,954 / 24,910</td>
+<td>75.036329857948</td>
+<td>12</td>
+<td>25</td>
+<td>Verified bounded case; 0.7444% duality gap</td>
+<td>Gated; first local conservation residual 0.082467622 PCE</td>
+<td>Independent pricing closure established; 10/10</td>
+</tr>
+</tbody>
+</table>
+<p>Each row is a different bounded finite graph. Sioux 200/250 values are paired in consistent order; its retained historical pricing closure is not established. Dynamic objectives are vehicle-minutes on separate graphs.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../../data-access.html">Data access</a> · <a href="../../citation.html">Cite</a> · <a href="../../roadmap.html">Roadmap</a></span></footer></div></body></html>

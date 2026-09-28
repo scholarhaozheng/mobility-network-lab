@@ -1,0 +1,1 @@
+Boston: one accepted generated column shown as physical-route order and time-indexed arc order; source/sink and any waiting/turn arcs retain their distinct types. PHASEI_R1_GEN_B07_001 has 0.364622 model vehicles. This is not a reference-LP path.

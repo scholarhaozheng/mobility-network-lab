@@ -103,6 +103,7 @@ def main() -> int:
         '<a id="boston-admm-readme"></a>', 1)[0]
     sioux_readme = readme.split("### Sioux Falls / Historical 200/250-OD finite space–time CG", 1)[1].split(
         '<a id="sioux-admm-readme"></a>', 1)[0]
+    legacy_expanded_home = "## 03 / Comparable statistics" not in readme
     for name, section, figures in (
         ("Boston", boston_readme, (
             "boston/space_time_cg_r4/boston_space_time_construction.png",
@@ -124,11 +125,20 @@ def main() -> int:
         )),
     ):
         for rel in figures:
-            require(re.search(rf'^!\[[^\]]+\]\(docs/assets/{re.escape(rel)}\)$', section, re.M) is not None,
-                    f"{name}: accepted figure not on its own README row: {rel}", errors)
+            if legacy_expanded_home:
+                require(re.search(rf'^!\[[^\]]+\]\(docs/assets/{re.escape(rel)}\)$', section, re.M) is not None,
+                        f"{name}: accepted figure not on its own README row: {rel}", errors)
+            else:
+                require(rel in section,
+                        f"{name}: accepted prior figure not retained in expandable evidence: {rel}", errors)
             checks += 1
-    require('class="figure-grid"' not in sioux_readme,
-            "Sioux README CG section still uses side-by-side figure grid", errors)
+    if legacy_expanded_home:
+        require('class="figure-grid"' not in sioux_readme,
+                "Sioux README CG section still uses side-by-side figure grid", errors)
+    else:
+        for city in ("boston", "sioux", "hong_kong"):
+            require(f"docs/assets/three_city_r1/{city}_finite_space_time_case_sequence.png" in readme,
+                    f"{city}: compact new case sequence missing from README", errors)
     checks += 1
     require(readme.index("### Boston / Population and Household Preparation")
             < readme.index("### Boston / Bounded finite space–time CG pilot")

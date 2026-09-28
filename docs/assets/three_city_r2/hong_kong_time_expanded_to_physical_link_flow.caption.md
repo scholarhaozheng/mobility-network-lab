@@ -1,0 +1,1 @@
+Hong Kong: saved final movement-arc flow aggregated by persistent physical-link ID. The same five audit fields are shown for all cities; unavailable released values are explicitly not reported. Accepted maps retain their original aspect ratios.

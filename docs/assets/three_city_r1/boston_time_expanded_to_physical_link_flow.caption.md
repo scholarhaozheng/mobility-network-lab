@@ -1,0 +1,1 @@
+Boston: accepted final movement-arc flow aggregated to persistent directed physical-link IDs. The figure shows modeled vehicle flow over the finite horizon; nonphysical connectors are excluded. Unpublished audit quantities are labeled as such, not set to zero.

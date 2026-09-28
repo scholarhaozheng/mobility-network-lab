@@ -1,0 +1,1 @@
+Hong Kong: same-format six-panel sequence separates graph construction, one actual generated column, Phase-I artificial flow, shared-capacity status, Phase-II reference-objective evidence, and final-flow back-projection with truthful closure status.

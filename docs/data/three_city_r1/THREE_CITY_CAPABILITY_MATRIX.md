@@ -1,0 +1,20 @@
+| capability | Boston | Sioux Falls | Hong Kong |
+|---|---|---|---|
+| GMNS physical network | Verified | Verified | Verified bounded case |
+| hierarchical zones / parent zones | Verified bounded case | Not part of this benchmark | Verified bounded case |
+| population / households / activity | Verified bounded case | Not part of this benchmark | Verified bounded case |
+| transit / pedestrian layer | Verified bounded case | Not part of this benchmark | Verified bounded case |
+| GPS / detector / trajectory evidence | Verified bounded case | Not part of this benchmark | Verified bounded case |
+| four-stage demand | Verified bounded case | Not part of this benchmark | Verified bounded case |
+| static Frank–Wolfe | Verified bounded case | Verified | Verified bounded case |
+| origin-based / Algorithm B | Verified bounded case | Verified | Verified bounded case |
+| full-path / compression evidence | Verified bounded case | Verified bounded case | Not demonstrated |
+| finite arc-flow LP | Verified bounded case | Verified bounded case | Verified bounded case |
+| column generation | Verified bounded case | Verified bounded case | Verified bounded case |
+| Lagrangian decomposition | Gated | Verified bounded case | Verified bounded case |
+| ADMM | Verified bounded case | Verified bounded case | Gated |
+| reference-objective agreement | Reference-objective agreement | Reference-objective agreement | Reference-objective agreement |
+| independent pricing closure | Independent pricing closure established | Not established | Independent pricing closure established |
+| clean-room / independent evaluator | Verified bounded case | Verified bounded case | Verified bounded case |
+
+Status labels describe only the executed scope linked by each city case; a gated or absent result is not upgraded for symmetry. ADMM in Hong Kong remains gated.

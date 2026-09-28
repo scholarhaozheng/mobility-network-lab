@@ -1,0 +1,1 @@
+Hong Kong: one accepted generated column (HK10, ORACLE_R1_HK10_K1, 0.835215 PCE). One time index is 30 s / model step. physical arrival t37; sink t50 is bookkeeping. The ordered source table gives all arc IDs and link mappings. This specifically approved Hong Kong excerpt is model-generated, not an observed trajectory.

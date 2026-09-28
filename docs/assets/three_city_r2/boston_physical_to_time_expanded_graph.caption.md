@@ -1,0 +1,1 @@
+Boston: a source-matched local subgraph of the accepted finite time-expanded graph. All displayed edges have literal arc IDs, endpoint states, types and time indices in the linked edge table. Schematic coordinates are not geographic; terminal sink time is bookkeeping, not physical waiting.

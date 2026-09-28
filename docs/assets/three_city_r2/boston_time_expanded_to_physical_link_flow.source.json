@@ -1,0 +1,23 @@
+{
+  "figure_id": "boston_time_expanded_to_physical_link_flow",
+  "city": "Boston",
+  "representation_family": "C",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png": "d61be20fe5894752e934d2d4a442f82581e91ebeaa0c3879a540579d3a8c7b3d"
+  },
+  "svg_sha256": "fa03475958110dd28928d3c9c49e977e06b9b8e02801776e07231255d0ebd701",
+  "png_sha256": "90f2efa8ea457c72eebcb8712e7d956cfcfbc74c2a643f8788d020252bd886fd",
+  "caption": "Boston: saved final movement-arc flow aggregated by persistent physical-link ID. The same five audit fields are shown for all cities; unavailable released values are explicitly not reported. Accepted maps retain their original aspect ratios.",
+  "scientific_solver_rerun": false,
+  "audit_fields": {
+    "Physical links": "125",
+    "Positive-flow links": "52",
+    "Mapping failures": "Not reported in public evidence",
+    "Reconstruction residual": "Not reported in public evidence",
+    "Flow units": "modeled vehicles over finite horizon"
+  },
+  "image_aspect_policy": "native; no anisotropic resampling"
+}
