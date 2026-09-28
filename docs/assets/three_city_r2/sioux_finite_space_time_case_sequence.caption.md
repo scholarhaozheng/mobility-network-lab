@@ -1,0 +1,1 @@
+Sioux Falls: six saved-data panels in a shared order. a/b: saved XS170 cutaway · c/e: 200-OD traces only · d: 200-OD recorded exchange (also documented for 250 OD) · f: 200/250 summary. The full map and complete path remain in standalone figures; CG independent pricing closure is not established · 200/250 od. No scientific solver was rerun.

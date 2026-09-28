@@ -1,0 +1,24 @@
+{
+  "figure_id": "sioux_time_expanded_to_physical_link_flow",
+  "city": "Sioux Falls",
+  "representation_family": "C",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png": "e42eb38bbe4f9e431915868c42a8d6ba04be17bf705e8be0e26b16270be9b196",
+    "docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png": "f70b40db425363a223c528d7f6cb092d79fb6e01b9c5c07d755d55c30a8e1938"
+  },
+  "svg_sha256": "59085b1dbd7245e4d9aee8bad70287adf2b4f05d349f419529d5e9d0caa83983",
+  "png_sha256": "ee17e0e29122087e1b06f64797d8dba7bf9f4ae9c08ac154b523713290ec991f",
+  "caption": "Sioux Falls: saved final movement-arc flow aggregated by persistent physical-link ID. The same five audit fields are shown for all cities; unavailable released values are explicitly not reported. Accepted maps retain their original aspect ratios. Sioux Falls uses the accepted deterministic schematic layout, not geographic coordinates.",
+  "scientific_solver_rerun": false,
+  "audit_fields": {
+    "Physical links": "64 / 69",
+    "Positive-flow links": "Not reported in public evidence",
+    "Mapping failures": "Not reported in public evidence",
+    "Reconstruction residual": "5.46e−12 / 1.09e−11 vehicles",
+    "Flow units": "modeled vehicles over each selected horizon"
+  },
+  "image_aspect_policy": "native; no anisotropic resampling"
+}

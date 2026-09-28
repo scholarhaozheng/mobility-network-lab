@@ -1,0 +1,1 @@
+Sioux Falls: a local, source-grounded physical-to-time construction slice. Full finite-graph size remains the case statistic; schematic coordinates are not geography. Movement, waiting and demand-specific connectors are distinct objects.

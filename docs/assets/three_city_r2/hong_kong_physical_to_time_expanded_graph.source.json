@@ -1,0 +1,32 @@
+{
+  "figure_id": "hong_kong_physical_to_time_expanded_graph",
+  "city": "Hong Kong",
+  "representation_family": "A",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/three_city_r2/data/hong_kong_construction_edges.csv": "e855c3df40d3d471284c571a1b44ef85471f08b5bc00ff66221037d00b5c77a2",
+    "docs/assets/three_city_r2/data/hong_kong_physical_to_routing_crosswalk.csv": "4c1b0e451db1e755201b1e219788ac5e8b47dd8b2e545256e28f4e1acde13353"
+  },
+  "svg_sha256": "120915fa258bace16c67e517ea06017bb78beda58cf4f37b094fe5f54cf2203d",
+  "png_sha256": "e8e216700c05afd8395486ef26344177bdec23493f6c9544aee815e13e5378ad",
+  "caption": "Hong Kong: a source-matched local subgraph of the accepted finite time-expanded graph. All displayed edges have literal arc IDs, endpoint states, types and time indices in the linked edge table. Schematic coordinates are not geographic; terminal sink time is bookkeeping, not physical waiting.",
+  "scientific_solver_rerun": false,
+  "plotted_arc_ids": [
+    "arc_308368_t0",
+    "arc_2000000055_t1",
+    "arc_667532_t1",
+    "wait_1000000076_t0",
+    "wait_1000000077_t1",
+    "wait_1000002421_t2"
+  ],
+  "source_edge_table": "docs/assets/three_city_r2/data/hong_kong_construction_edges.csv",
+  "time_layers": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "aspect_policy": "native geometry; schematic graph coordinates"
+}

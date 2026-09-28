@@ -1,0 +1,1 @@
+Sioux Falls: one accepted generated column shown as physical-route order and time-indexed arc order; source/sink and any waiting/turn arcs retain their distinct types. GEN_XS170_001 has 500 vehicles in saved reallocation event. This is not a reference-LP path.

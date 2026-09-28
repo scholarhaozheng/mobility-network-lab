@@ -1,0 +1,1 @@
+Sioux Falls: saved final movement-arc flow aggregated by persistent physical-link ID. The same five audit fields are shown for all cities; unavailable released values are explicitly not reported. Accepted maps retain their original aspect ratios. Sioux Falls uses the accepted deterministic schematic layout, not geographic coordinates.

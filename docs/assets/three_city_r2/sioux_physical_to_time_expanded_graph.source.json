@@ -1,0 +1,33 @@
+{
+  "figure_id": "sioux_physical_to_time_expanded_graph",
+  "city": "Sioux Falls",
+  "representation_family": "A",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/three_city_r2/data/sioux_construction_edges.csv": "d9d273941bb147071a2a17edacaabc9f186d9a7d15f88301cc7a95eae76eecfd"
+  },
+  "svg_sha256": "f995a5b5db6731efde9f594189829df7f421e777048fee5e2ac7cef877f621f8",
+  "png_sha256": "f7803335400d53c6007894be510a32c73f53fc97ca860b857be47da9c87829eb",
+  "caption": "Sioux Falls: a source-matched local subgraph of the accepted finite time-expanded graph. All displayed edges have literal arc IDs, endpoint states, types and time indices in the linked edge table. Schematic coordinates are not geographic; terminal sink time is bookkeeping, not physical waiting.",
+  "scientific_solver_rerun": false,
+  "plotted_arc_ids": [
+    "xs_link19_t0",
+    "xs_link15_t2",
+    "wait_8_t0",
+    "xs_link19_t1",
+    "wait_6_t2",
+    "wait_5_t5"
+  ],
+  "source_edge_table": "docs/assets/three_city_r2/data/sioux_construction_edges.csv",
+  "time_layers": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    6
+  ],
+  "aspect_policy": "native geometry; schematic graph coordinates"
+}

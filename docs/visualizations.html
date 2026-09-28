@@ -1,5 +1,37 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>Visual results: four stages, observations, static assignment and CG | Mobility Computation Lab</title><link rel="stylesheet" href="assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="city-workflow.html">City workflow</a><a href="datasets.html">Networks</a><a href="visualizations.html">Visual results</a><a href="open-data-explorer.html">City evidence</a><a href="open-data.html">Open data</a><a href="methods.html">Methods</a><a href="getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / Visual results: four stages, observations, static assignment and CG</p><h1 id="visual-results-four-stages-observations-static-assignment-and-cg">Visual results: four stages, observations, static assignment and CG</h1>
-<p>This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The established Boston/Sioux case-parallel CG figure families retain their shared terminology and reading order; Hong Kong's separate R5 ten-demand case has its own current-CG and closure evidence.</p>
+<p>This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The new three-city representation-level series distinguishes network construction, one generated column, and final physical-link movement-flow back-projection. City scales and certificate statuses remain separate.</p>
+<h2 id="three-representation-levels-across-three-cities">Three representation levels across three cities</h2>
+<table>
+<thead>
+<tr>
+<th>Scientific object</th>
+<th>Boston</th>
+<th>Sioux Falls</th>
+<th>Hong Kong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical network → finite time-expanded graph</td>
+<td><a href="cases/boston-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph">Network construction</a></td>
+<td><a href="cases/sioux-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph">Network construction</a></td>
+<td><a href="cases/hong-kong-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph">Network construction</a></td>
+</tr>
+<tr>
+<td>One generated column as a time-indexed path</td>
+<td><a href="cases/boston-space-time.html#a-generated-column-as-a-time-indexed-path">B07 accepted column</a></td>
+<td><a href="cases/sioux-space-time.html#a-generated-column-as-a-time-indexed-path">XS170 retained column</a></td>
+<td><a href="cases/hong-kong-space-time.html#a-generated-column-as-a-time-indexed-path">HK10 accepted R5 column</a></td>
+</tr>
+<tr>
+<td>Time-expanded movement-arc flows → final physical-link movement flow</td>
+<td><a href="cases/boston-space-time.html#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Boston 125-link projection</a></td>
+<td><a href="cases/sioux-space-time.html#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Sioux 64/69-link projections</a></td>
+<td><a href="cases/hong-kong-space-time.html#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Hong Kong 111-link projection</a></td>
+</tr>
+</tbody>
+</table>
+<p>Each linked case provides a same-size PNG/SVG, caption, exact input-hash sidecar and its complete original figure collection. The <a href="data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.html">finite statistics table</a> keeps objectives on their own graphs; Hong Kong ADMM remains gated, and historical Sioux independent pricing closure is not established.</p>
 <p>The additional <a href="methods/distributed-assignment.html">Sioux Lagrangian R2 and earlier ADMM R1 paired figures</a> document accepted <strong>selected-OD finite space–time shared-capacity</strong> evidence. That R1 ADMM 250-OD view is drawn from final metrics only; no R1 iteration history was invented. The newer R2_S lane below uses its own accepted saved histories. <a href="cases/hong-kong-gmns-pilot.html">Hong Kong's five original R1 data-layer SVGs</a> remain historical and have no assignment-flow interpretation; the later R2–R5 figures are separate saved computations.</p>
 <h2 id="hong-kong-bounded-full-stack-and-current-cg-r5">Hong Kong bounded full-stack and current CG R5</h2>
 <p><img src="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.png" alt="Hong Kong assignment-ready physical network" /></p>
@@ -18,7 +50,7 @@
 <p>The overview uses display crops of the eight accepted R2 SVGs, ordered as convergence, same-problem FW physical-link comparison, selected-origin flow reconstructed from exported OD paths, and independent verification. The complete panels and explanatory captions remain on the <a href="cases/sioux-algorithm-b.html">Sioux Falls</a> and <a href="cases/boston-algorithm-b.html">Boston</a> case pages. Boston's one-point convergence is the saved trace, not an invented sequence; its selected-origin bars are not native Bush internal state or observed traffic. <a href="assets/algorithm_b_r21/algorithm_b_cross_city_overview.svg">Editable overview</a> · <a href="assets/algorithm_b_r21/FIGURE_CONTRACT.html">Crop and source-hash contract</a> · <a href="integrations/taplab-tapb.html">Adapter status</a>.</p>
 <h2 id="central-boston-demand-observations-and-static-assignment">Central Boston: demand, observations and static assignment</h2>
 <p>The <a href="datasets/boston-behavior-feedback.html">four-stage walkthrough</a> links actual data to each stage. <a href="datasets/boston-behavior-feedback.html#step-1-trip-generation">Generation</a>, <a href="datasets/boston-behavior-feedback.html#step-2-trip-distribution">OD distribution</a>, <a href="datasets/boston-behavior-feedback.html#step-3-mode-choice">mode response</a> and <a href="datasets/boston-behavior-feedback.html#step-4-traffic-assignment">road assignment</a> have separate result figures. The <a href="datasets/boston-behavior-feedback.html#gps-feedback">GPS feedback</a> explains where observations enter; the <a href="datasets/boston-central.html#boston-visual-gallery">original five-map gallery</a> remains available as spatial context and saved outputs.</p>
-<h2 id="case-parallel-finite-spacetime-cg-figure-families">Case-parallel finite space–time CG figure families</h2>
+<h2 id="retained-bostonsioux-finite-cg-figure-families">Retained Boston/Sioux finite CG figure families</h2>
 <table>
 <thead>
 <tr>
@@ -29,8 +61,8 @@
 </thead>
 <tbody>
 <tr>
-<td><strong>From the physical network to time-indexed columns</strong></td>
-<td><a href="cases/boston-space-time.html#1-from-the-physical-network-to-time-indexed-columns">Actual B07 physical-to-time cutaway</a></td>
+<td><strong>Historical physical-to-time cutaway</strong></td>
+<td><a href="cases/boston-space-time.html#1-from-the-physical-network-to-time-indexed-columns">Actual B07 construction and column</a></td>
 <td><a href="cases/sioux-space-time.html#1-from-the-physical-network-to-time-indexed-columns">Actual XS170 local cutaway</a></td>
 </tr>
 <tr>

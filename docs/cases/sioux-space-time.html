@@ -1,7 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sioux Falls · historical selected-OD finite space–time CG benchmarks · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="sioux-falls-historical-selected-od-finite-spacetime-cg-benchmarks">Sioux Falls · historical selected-OD finite space–time CG benchmarks</h1>
+<p>These sections follow one common representation and evidence order. Original saved scientific paragraphs, tables and figures are retained directly in their matching sections.</p>
+<h2 id="case-role-scope-and-model-statistics">Case role, scope, and model statistics</h2>
+<p>Two retained historical selected-OD finite cases: 24 nodes and 64/69 selected physical links, 200/250 demands, 1,192/1,292 dynamic nodes and 9,406/11,254 arcs. Not a full 528-OD finite run. <a href="../data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.html">Cross-city finite statistics</a>.</p>
+<p>The current R2 six-panel view appears below. <a href="../assets/three_city_r1/sioux_finite_space_time_case_sequence.png">Historical R1 layout</a> · <a href="../assets/three_city_r1/sioux_finite_space_time_case_sequence.source.json">R1 source record</a>.</p>
 <p>This page retains two historical Sioux Falls selected-OD benchmarks: <strong>200 OD pairs</strong> and <strong>250 OD pairs</strong>. They solve fixed-cost, hard-capacity flow problems on finite time-expanded graphs. For the same scientific figure families on <strong>one separate, bounded Boston pilot</strong>, see <a href="boston-space-time.html">Boston finite space–time CG</a>. Boston's R4 independent pricing-closure certificate does <strong>not</strong> establish independent pricing closure for the Sioux Falls 200/250-OD runs.</p>
 <p><strong>Case coverage:</strong> physical-to-time representation, arc-flow LP references on the same selected-OD finite time-expanded graphs, Phase-I artificial-flow clearance, Phase-II real-path objective improvement, final physical-link movement flow, and saved record-level capacity evidence. These are historical benchmark experiments, not modern city demand/GPS inference.</p>
-<h2 id="case-scope">Case scope</h2>
 <div class="table-scroll"><table>
 <thead>
 <tr>
@@ -61,13 +64,23 @@
 <p>The 200-OD selection is contained in the 250-OD selection, with matching OD IDs, origins, destinations and demand volumes for the shared records. There is one retained run at each size, and the runtime/candidate caps differ. The observations below are descriptive, not a statistical scaling estimate.</p>
 <p><img alt="Sioux Falls' six-panel saved-result case sequence matching Boston's panel order; separate 200- and 250-OD evidence and independent pricing closure explicitly not established" src="../assets/presentation_r5/sioux_cg_case_sequence.png"/></p>
 <p><em>Figure — saved Sioux Falls CG evidence.</em> Panels (a–e) show the recorded time-indexed construction, paired Phase-I traces, XS170/XS169 capacity exchange, paired Phase-II traces and paired physical-link movement flows. Panel (f) records that independent pricing closure is <strong>not established</strong> for either historical run; reference-objective agreement is a separate result. Complete uncropped sources appear below. No optimizer, pricing routine, demand model or map-matching routine was rerun. <a href="../assets/presentation_r5/sioux_cg_case_sequence.svg">SVG</a> · <a href="../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json">Exact source hashes and display crops</a>.</p>
+<p><img alt="sioux saved finite-case sequence, separately plotted panels" src="../assets/three_city_r2/sioux_finite_space_time_case_sequence.png"/></p>
+<p><em>Source-matched R2 reconstruction from saved records.</em> <a href="../assets/three_city_r2/sioux_finite_space_time_case_sequence.svg">SVG</a> · <a href="../assets/three_city_r2/sioux_finite_space_time_case_sequence.source.json">Exact figure sources</a> · <a href="../assets/three_city_r2/sioux_finite_space_time_case_sequence.caption.html">Full caption</a>.</p>
 <p><a id="construction-cutaway"></a></p>
-<h2 id="1-from-the-physical-network-to-time-indexed-columns">1. From the physical network to time-indexed columns</h2>
+<h2 id="from-the-physical-network-to-the-finite-time-expanded-graph">From the physical network to the finite time-expanded graph</h2>
+<p><img alt="sioux saved physical and dynamic arc construction" src="../assets/three_city_r2/sioux_physical_to_time_expanded_graph.png"/></p>
+<p><em>Source-matched R2 reconstruction from saved records.</em> <a href="../assets/three_city_r2/sioux_physical_to_time_expanded_graph.svg">SVG</a> · <a href="../assets/three_city_r2/sioux_physical_to_time_expanded_graph.source.json">Exact figure sources</a> · <a href="../assets/three_city_r2/sioux_physical_to_time_expanded_graph.caption.html">Full caption</a>.</p>
 <p>Panel (a) above uses <strong>schematic display coordinates</strong> but actual node and time identities. It shows nodes 8, 6, 5, 9 and 4 over time indices 0–6; the recorded network extends beyond this slice. The highlighted column is <code>source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6</code>: physical nodes <code>8 → 6 → 5</code> at times <code>0 → 2 → 6</code>. Pale movement lines and waiting lines come from the saved local allowed-arc records. No new shortest path or optimizer was run. Source/sink connectors and most of the horizon are omitted from the cutaway. The <a href="../assets/presentation_r3/sioux_space_time_construction.png">complete annotated construction figure</a> remains available as source detail.</p>
 <p><a href="../methods/space-time-cg.html">Generic construction and pricing explanation</a> · <a href="../assets/presentation_r3/FIGURE_PROVENANCE.json">Figure provenance</a>.</p>
+<h2 id="a-generated-column-as-a-time-indexed-path">A generated column as a time-indexed path</h2>
+<p><img alt="sioux accepted generated column and ordered dynamic arcs" src="../assets/three_city_r2/sioux_generated_column_time_indexed_path.png"/></p>
+<p><em>Source-matched R2 reconstruction from saved records.</em> <a href="../assets/three_city_r2/sioux_generated_column_time_indexed_path.svg">SVG</a> · <a href="../assets/three_city_r2/sioux_generated_column_time_indexed_path.source.json">Exact figure sources</a> · <a href="../assets/three_city_r2/sioux_generated_column_time_indexed_path.caption.html">Full caption</a>.</p>
+<p><a href="../assets/three_city_r1/sioux_generated_column_time_indexed_path.png">Historical R1 generated-column layout</a> · <a href="../assets/three_city_r1/sioux_generated_column_time_indexed_path.source.json">R1 source record</a>. The R2 figure above is the current view of the same column.</p>
+<p>The retained <code>XS170</code> generated column follows physical nodes <code>8 → 6 → 5</code> at time indices <code>0 → 2 → 6</code> through recorded movement arcs and demand-specific connectors. The display uses schematic coordinates and only the saved local cutaway. <a href="../assets/presentation_r3/sioux_space_time_construction.png">Full prior construction figure</a>.</p>
 <p><a id="paired-phase-i-figures"></a>
 <a id="recorded-results-what-the-two-saved-runs-show"></a></p>
-<h2 id="2-phase-i-restores-feasibility">2. Phase I restores feasibility</h2>
+<h2 id="phase-i-restores-feasibility">Phase I restores feasibility</h2>
+<p>Artificial flow reaches zero in round 51 (200 OD) and round 62 (250 OD); the original separate traces and OD-level clearance tables are retained below.</p>
 <div class="table-scroll"><table class="figure-grid"><tr><th>200 OD · artificial flow clears in round 51</th><th>250 OD · artificial flow clears in round 62</th></tr><tr><td width="50%"><img alt="200-OD recorded Phase-I artificial-flow clearance" src="../assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png" width="100%"/></td><td width="50%"><img alt="250-OD recorded Phase-I artificial-flow clearance" src="../assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png" width="100%"/></td></tr></table></div>
 <div class="table-scroll"><table>
 <thead>
@@ -175,7 +188,7 @@
 <img alt="Supplied OD-level Phase-I clearance" src="../assets/sioux/phase_i_r1/od_level_phase_i_clearance.png"/></p>
 <p>Artificial flow is an algorithmic feasibility device. It is not an observed queue, discarded real demand or measured unserved passengers.</p>
 <p><a id="clearance-events-and-selected-columns"></a></p>
-<h2 id="3-a-new-path-can-help-a-different-od">3. A new path can help a different OD</h2>
+<h2 id="shared-capacity-couples-different-od-demands">Shared capacity couples different OD demands</h2>
 <p>The generated candidate is the column added before re-solving that round. OD artificial-flow changes are observed after re-solving; the table does not prove that the selected column alone caused the changes.</p>
 <div class="table-scroll"><table>
 <thead>
@@ -273,7 +286,8 @@
 </tbody>
 </table></div>
 <p>The recorded primal flows support a 500-unit exchange on a binding arc: XS170 leaves the shared delayed route and XS169 takes its place. The raw capacity dual stays approximately −1; its sign follows the solver's reported convention. This is a mechanism in these recorded restricted-master solutions, not evidence that one path is uniquely necessary.</p>
-<h2 id="4-phase-ii-improves-the-real-path-objective">4. Phase II improves the real-path objective</h2>
+<h2 id="phase-ii-improves-the-real-path-objective">Phase II improves the real-path objective</h2>
+<p>Both retained Phase-II traces improve their real-path objectives and agree with their own selected-graph LP references: 943,155.589771 and 1,521,090.83662 vehicle-minutes. The two values are different problems, not a speedup comparison.</p>
 <div class="table-scroll"><table class="figure-grid"><tr><th>200 OD · Phase-II objective</th><th>250 OD · Phase-II objective</th></tr><tr><td width="50%"><img alt="200-OD saved Phase-II solved-pool objective trace" src="../assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="100%"/></td><td width="50%"><img alt="250-OD saved Phase-II solved-pool objective trace" src="../assets/benchmarks/sioux_250od_phase2_objective_trace.png" width="100%"/></td></tr></table></div>
 <div class="table-scroll"><table>
 <thead>
@@ -307,7 +321,11 @@
 </table></div>
 <p>Each trace is compared with the arc-flow LP on its own selected-OD finite time-expanded graph. Different OD selections define different optimization instances; the difference between their objective values is not an algorithmic improvement measure.</p>
 <p><a id="final-validation"></a></p>
-<h2 id="5-final-physical-link-movement-flow-and-validation">5. Final physical-link movement flow and validation</h2>
+<h2 id="from-time-expanded-flows-back-to-final-physical-link-movement-flow">From time-expanded flows back to final physical-link movement flow</h2>
+<p><img alt="sioux movement-only physical-link flow audit" src="../assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.png"/></p>
+<p><em>Source-matched R2 reconstruction from saved records.</em> <a href="../assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.svg">SVG</a> · <a href="../assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.source.json">Exact figure sources</a> · <a href="../assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.caption.html">Full caption</a>.</p>
+<p><a href="../assets/three_city_r1/sioux_time_expanded_to_physical_link_flow.png">Historical R1 physical-link aggregation layout</a> · <a href="../assets/three_city_r1/sioux_time_expanded_to_physical_link_flow.source.json">R1 source record</a>. The R2 figure above is the current view of the same projection.</p>
+<p>Both 200- and 250-OD final physical-link movement-flow maps remain below. They aggregate modeled movement arcs over the selected horizon; neither is observed traffic or static volume/capacity.</p>
 <div class="table-scroll"><table class="figure-grid"><tr><th>200 OD · final physical-link movement flow</th><th>250 OD · final physical-link movement flow</th></tr><tr><td width="50%"><a href="../datasets/sioux-200od.html"><img alt="200-OD final physical-link movement-flow view" src="../assets/benchmarks/sioux_200od_final_physical_link_flow.png" width="100%"/></a></td><td width="50%"><a href="../datasets/sioux-250od.html"><img alt="250-OD final physical-link movement-flow view" src="../assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="100%"/></a></td></tr></table></div>
 <div class="table-scroll"><table>
 <thead>
@@ -338,7 +356,11 @@
 </table></div>
 <p>Line width encodes final movement flow aggregated over the modeled horizon. These are schematic physical-link views, not observed traffic, static V/C or a full 528-OD assignment. Opposite directions can overlap in the existing rendering.</p>
 <p>Both runs report reference-objective agreement on their own selected-OD finite time-expanded graphs, zero final demand residual and zero capacity violations. Their original run summaries set <code>optimality_claimed</code> and <code>full_cg_global_convergence_claimed</code> to false. The defensible statement is objective-level reference agreement on the retained selected-OD benchmarks, not a global convergence or unique flow-pattern claim.</p>
-<h2 id="6-independent-pricing-closure">6. Independent pricing closure</h2>
+<h2 id="reference-objective-agreement">Reference-objective agreement</h2>
+<p>Reference-objective agreement is recorded for each run on its own selected-OD finite time-expanded graph, with zero final demand residual and zero capacity violations. This alone is not a full convergence certificate.</p>
+<p><a id="6-independent-pricing-closure"></a></p>
+<h2 id="independent-pricing-closure">Independent pricing closure</h2>
+<p><strong>Not established</strong> for the retained 200- and 250-OD runs. No independent complete-DAG pricing certificate comparable to Boston R4 or Hong Kong R5 was retained.</p>
 <p><strong>Status: not established for the retained 200-OD and 250-OD runs.</strong> Their saved results are feasible and have reference-objective agreement, but the retained historical records do not supply a completed independent full-DAG pricing-closure certificate comparable to Boston R4. Boston's certificate must not be transferred to these cases.</p>
 <p>A future closure continuation should begin from the existing final column pools rather than rerunning Phase I from scratch. Until that work is completed, the public status remains:</p>
 <pre><code class="language-text">reference_objective_agreement = true
@@ -346,7 +368,8 @@ independent_pricing_closure_established = false
 </code></pre>
 <p><a id="limits-and-next-experiment"></a>
 <a id="reproduction-and-source-boundaries"></a></p>
-<h2 id="7-reproduction-and-limits">7. Reproduction and limits</h2>
+<h2 id="reproduction-evidence-boundary-and-limits">Reproduction, evidence boundary, and limits</h2>
+<p>Retained historical run limits and runtime/candidate caps differ. No scientific solver or pricing routine was executed to create these pages; original tables, figures and commands remain below.</p>
 <ul>
 <li>There is one retained run at each of 200 and 250 OD pairs; no sampling uncertainty or significance test can be estimated from these two traces alone.</li>
 <li>The Phase-I round caps differ (120 versus 160); Phase-II per-round candidate caps also differ (600 versus 750). Runtime differences therefore remain descriptive.</li>

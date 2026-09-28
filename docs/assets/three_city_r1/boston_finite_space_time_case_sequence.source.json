@@ -1,0 +1,30 @@
+{
+  "figure_id": "boston_finite_space_time_case_sequence",
+  "scientific_status": "saved-result rendering; no solver call",
+  "city": "Boston",
+  "representation_family": "D",
+  "input_sha256": {
+    "docs/assets/boston/space_time_cg_r4/boston_phase_i_artificial_flow.png": "ca2312775b0dc607b706b190307f68cdb04d5b0be98100a35387a9d726d061cb",
+    "docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png": "f2b66bbc079c280864bb7a382daa4f14c73874a64e4dc40d385581766592dea3",
+    "docs/assets/boston/space_time_cg_r4/boston_shared_capacity_event.png": "1e8c66f40ed3639524ad1a2a5d2e1dd88a407ef05800f1de99744e216e9f1a45",
+    "docs/assets/three_city_r1/boston_generated_column_time_indexed_path.png": "5d5acc95dc24d42bdf37a5347584ee89d946a8ce0f744f7a892f631413ad224d",
+    "docs/assets/three_city_r1/boston_physical_to_time_expanded_graph.png": "580fbc3a849c79fa3ebc4dd67c4609559fdc3b6c16a18a4cfd14ec1639cac637",
+    "docs/assets/three_city_r1/boston_time_expanded_to_physical_link_flow.png": "306e1672ec75f7907e4e45f9ba44c22154de655d5b8f271feab539000cd2ce6a"
+  },
+  "renderer_version": "three-city-parallel-r1",
+  "renderer_sha256": "13b77c4aa55bc3cb5c52f4506c1182ba8e81df0162f5cec76a60aa1907b2a5ab",
+  "svg_sha256": "e8e2b8344b15c9f0e64a0ba40c54ab02c165476a32cc71028cc868c8273ffae3",
+  "png_sha256": "37418146b070926d2d12eea6ced119d13ef79606f90216c595530b54ae6d567c",
+  "caption": "Boston: same-format six-panel sequence separates graph construction, one actual generated column, Phase-I artificial flow, shared-capacity status, Phase-II reference-objective evidence, and final-flow back-projection with truthful closure status.",
+  "scientific_solver_rerun": false,
+  "panel_order": [
+    "a  Physical network \u2192 finite graph",
+    "b  One generated column",
+    "c  Phase-I feasibility restoration",
+    "d  Shared-capacity coupling",
+    "e  Phase-II objective / reference",
+    "f  Back-projection and closure"
+  ],
+  "independent_pricing_status": "Independent pricing closure established \u00b7 10/10 demands",
+  "shared_capacity_status": "Saved event"
+}

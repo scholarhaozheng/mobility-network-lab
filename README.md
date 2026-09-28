@@ -11,7 +11,17 @@ The reusable objects come first; cities are instances. Networks, zones and expli
 <p align="center"><a href="#framework">Framework</a> · <a href="#cg-experiments">Executed CG experiments</a> · <a href="#admm-r2">ADMM R2</a> · <a href="#distributed-assignment">Distributed assignment</a> · <a href="#algorithm-b">Algorithm B</a> · <a href="#coverage">Case coverage</a> · <a href="#boston">Case 01 · Boston</a> · <a href="#sioux-falls">Case 02 · Sioux Falls</a> · <a href="#hong-kong">Case 03 · Hong Kong</a> · <a href="#run-your-input">Run new inputs</a> · <a href="#mobility-data-support">Open data & tools</a></p>
 
 <a id="framework"></a>
-## 01 / The shared framework
+## 01 / Shared computational architecture
+
+`network + declared demand → [static BPR/Beckmann: FW / Algorithm B / finite-path / L3]`
+
+`network + selected finite demand + time horizon → [fixed-cost hard-capacity arc-flow LP / CG / Lagrangian / ADMM]`
+
+Population, household, activity, transit and observation preparation may inform a declared demand branch; a supplied vehicle OD can bypass preparation. The static result is **not** a prerequisite for time expansion, and their objectives are not compared numerically.
+
+The **physical network** contains directed physical links. A **finite time-expanded graph** copies its states in time and adds movement, waiting, source and sink arcs. A **generated column** is one feasible source-to-sink time-indexed path. Final time-expanded movement-arc flow is aggregated back to **final physical-link movement flow**. Static BPR/Beckmann and finite fixed-cost hard-capacity problems have different objectives and units.
+
+The same vocabulary and figure order are used below, while each city's scale, evidence and gates remain distinct. [CG method](docs/methods/space-time-cg.md) · [Data contract](docs/data-contract.md) · [Figure source table](docs/data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.csv).
 
 ### GMNS is the common object contract
 
@@ -64,172 +74,36 @@ A physical node is replicated as `(node, time)`. A movement connects departure t
 
 [Construction and master/pricing guide](docs/methods/space-time-cg.md). The established Boston/Sioux parallel figures retain their shared vocabulary and reading order; [Hong Kong's separate bounded 10-OD R5 case](docs/cases/hong-kong-space-time.md) now adds its own accepted current-CG and closure evidence. Boston and Hong Kong each have independent pricing closure; neither certificate is imputed to Sioux Falls.
 
-<a id="cg-evidence"></a>
-### Case-parallel finite space–time CG evidence
+<a id="coverage"></a>
+## 02 / Cross-city coverage matrix
 
-The two cases keep their own scale and unique supplementary evidence, but every shared CG stage uses the same term and section order.
+| Capability | Boston | Sioux Falls | Hong Kong |
+|---|---|---|---|
+| GMNS physical network | [Verified](docs/cases/boston.md) | [Verified](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| hierarchical zones / parent zones | [Verified bounded case](docs/cases/boston.md) | [Not part of this benchmark](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| population / households / activity | [Verified bounded case](docs/cases/boston.md) | [Not part of this benchmark](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| transit / pedestrian layer | [Verified bounded case](docs/cases/boston.md) | [Not part of this benchmark](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| GPS / detector / trajectory evidence | [Verified bounded case](docs/cases/boston.md) | [Not part of this benchmark](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| four-stage demand | [Verified bounded case](docs/cases/boston.md) | [Not part of this benchmark](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
+| static Frank–Wolfe | [Verified bounded case](docs/cases/boston-assignment.md) | [Verified](docs/datasets/sioux-static-fw.md) | [Verified bounded case](docs/cases/hong-kong-static-assignment.md) |
+| origin-based / Algorithm B | [Verified bounded case](docs/cases/boston-algorithm-b.md) | [Verified](docs/cases/sioux-algorithm-b.md) | [Verified bounded case](docs/cases/hong-kong-static-assignment.md) |
+| full-path / Diagnostic L3 numerical evidence | [Verified bounded case](docs/cases/boston.md) | [Verified bounded case](docs/cases/sioux-falls.md) | [Not demonstrated](docs/cases/hong-kong.md) |
+| finite arc-flow LP | [Verified bounded case](docs/cases/boston-space-time.md) | [Verified bounded case](docs/cases/sioux-space-time.md) | [Verified bounded case](docs/cases/hong-kong-space-time.md) |
+| column generation | [Verified bounded case](docs/cases/boston-space-time.md) | [Verified bounded case](docs/cases/sioux-space-time.md) | [Verified bounded case](docs/cases/hong-kong-space-time.md) |
+| Lagrangian decomposition | [Gated](docs/methods/distributed-assignment.md) | [Verified bounded case](docs/methods/distributed-assignment.md) | [Verified bounded case](docs/cases/hong-kong-space-time.md) |
+| ADMM | [Verified bounded case](docs/cases/boston-admm.md) | [Verified bounded case](docs/cases/sioux-admm.md) | [Gated](docs/cases/hong-kong-space-time.md) |
+| CG reference-objective agreement | [Reference-objective agreement](docs/cases/boston-space-time.md) | [Reference-objective agreement](docs/cases/sioux-space-time.md) | [Reference-objective agreement](docs/cases/hong-kong-space-time.md) |
+| CG independent pricing closure | [Independent pricing closure established](docs/cases/boston-space-time.md) | [Not established](docs/cases/sioux-space-time.md) | [Independent pricing closure established](docs/cases/hong-kong-space-time.md) |
+| clean-room / independent evaluator | [Verified bounded case](docs/cases/boston.md) | [Verified bounded case](docs/cases/sioux-falls.md) | [Verified bounded case](docs/cases/hong-kong.md) |
 
-| Shared evidence stage | Boston | Sioux Falls |
-|---|---|---|
-| **From the physical network to time-indexed columns** | Actual B07 physical-to-time cutaway on one bounded real-city pilot | Actual XS170 local cutaway on the historical selected-OD benchmarks |
-| **Phase I restores feasibility** | Total and B01–B10 artificial-flow clearance; zero at round 90 | 200/250-OD artificial-flow clearance; zero at rounds 51/62 |
-| **A new path can help a different OD** | Saved B07/B09/B10 shared-capacity reallocation | Saved XS170/XS169 shared-capacity reallocation |
-| **Phase II improves the real-path objective** | Objective reaches the arc-flow LP on the same finite time-expanded graph | Each benchmark reaches the arc-flow LP on its own selected-OD finite time-expanded graph |
-| **Final physical-link movement flow and validation** | 125-link pilot view plus conservation/capacity/objective audit | 200/250-OD physical-link views plus conservation/capacity/objective audit |
-| **Independent pricing closure** | Established for 10/10 demands at `1e-6` | Not established for the retained historical runs |
-
-[Open the Boston CG evidence](docs/cases/boston-space-time.md) · [Open the Sioux Falls CG evidence](docs/cases/sioux-space-time.md) · [Compare the figure families](docs/visualizations.md).
+*Status refers to each linked bounded or historical case, not a universal method guarantee. Sioux Falls has no demographic/transit/GPS city-data build; Hong Kong ADMM remains gated.* [Source record](docs/data/three_city_r1/THREE_CITY_CAPABILITY_MATRIX.source.json).
 
 <a id="admm-r2"></a>
-### Finite space–time ADMM R2 · saved-result verification
+![Accepted finite ADMM R2 saved-result overview](docs/assets/admm_r2/figures/admm_results_overview.png)
 
-<p align="center"><a href="docs/methods/admm-space-time.md"><img src="docs/assets/admm_r2/figures/admm_results_overview.png" width="100%" alt="Accepted ADMM R2 results for selected Sioux Falls 200/250 OD and bounded Boston 10 OD, each independently checked against its own finite-graph LP."></a></p>
+*Selected Sioux 200/250 OD and Boston ten-OD finite LP comparisons; Hong Kong ADMM is gated.* [Method-specific figures and gates](docs/methods/admm-space-time.md).
 
-| Bounded case | Accepted iterations | Relative objective gap to same-graph arc-flow LP | Independent gates |
-|---|---:|---:|---|
-| Sioux Falls 200 OD | 85 | 6.30e-6 | Pass |
-| Sioux Falls 250 OD | 101 | 7.16e-6 | Pass |
-| Boston 10 OD | 253 | 6.68e-6 | Pass |
-
-The R2_S scaling and input-derived fixed-rho rule were selected on authored fixtures and Sioux, then frozen before Boston. The independent evaluator made **zero optimizer calls**; the original ADMM solver did use local QP optimization. These are finite time-expanded shared-capacity LP instances, not static Beckmann UE. Sioux cases are selected subsets, and Boston is a 90-node/125-link holdout, not citywide. Objective closeness does not establish identical link, path or time flows. [Complete convergence, conservation and physical-flow figures below](#admm-r2-figures) · [Method and gates](docs/methods/admm-space-time.md) · [Sioux case](docs/cases/sioux-admm.md) · [Boston case and 125-row derived table](docs/cases/boston-admm.md) · [Editable overview](docs/assets/admm_r2/figures/admm_results_overview.svg).
-
-<a id="cg-experiments"></a>
-## Executed finite space–time CG experiments
-
-The repository contains **three distinct executed CG case families**. Boston is one bounded real-city pilot on an accepted GMNS subnetwork; Sioux Falls contains two historical selected-OD benchmark instances; Hong Kong R5 is a separately frozen ten-demand Tsim Sha Tsui–Jordan finite case. They share a method family, not a graph, demand, objective value or universal certificate.
-
-<p align="center"><a href="docs/methods/space-time-cg.md"><img src="docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.png" width="100%" alt="Six-stage comparison of executed finite space–time CG evidence: one bounded Boston pilot and two historical Sioux Falls selected-OD runs. Both have saved Phase-I, Phase-II, final-flow and reference evidence; independent pricing closure is established only for Boston."></a></p>
-
-| Executed evidence | Boston | Sioux Falls | Hong Kong |
-|---|---|---|---|
-| **Instance** | 90 physical nodes, 125 links, 10 ODs, 3-second steps, 100-step horizon | Historical 200/250-OD selected subsets | 111 selected physical links, 10 ODs, 30-second steps, 50-step horizon; 24,910 dynamic arcs |
-| **Phase I** | Artificial flow **20.5536128974 → 0** in round **90** | Artificial flow reaches zero in rounds **51 / 62** | Artificial flow **4.3502187198 → 0** in **12** rounds |
-| **Phase II** | **64.39686151152954** vehicle-min; own-LP agreement | **943,155.589771 / 1,521,090.836620**; each own-LP agreement | **75.03632985794835** vehicle-min; own-LP agreement after three added columns |
-| **Pricing certificate** | Independent full-DAG closure **10/10** at `1e-6` | **Not established** for retained historical runs | Independent full-DAG closure **10/10** at `1e-6` |
-| **Open the evidence** | [Boston case](docs/cases/boston-space-time.md) | [Sioux case](docs/cases/sioux-space-time.md) | [Hong Kong R5 case](docs/cases/hong-kong-space-time.md) |
-
-*The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 figures appear [below on this homepage](#hong-kong-cg-r5) and in its case page. None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.* [Boston/Sioux overview SVG](docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](docs/assets/presentation_r4/cg_experiments_overview.png).
-
-<a id="admm-r2-figures"></a>
-## Executed finite space–time ADMM R2 figure families
-
-The figures below show the accepted convergence and original-unit feasibility traces, commodity conservation where an individual heatmap was released, and final physical-link movement flow against the same-graph LP with its signed difference. They use the frozen R2_S policy; no solver or figure was rerun for this README. [Method and independent gates](docs/methods/admm-space-time.md).
-
-#### Sioux Falls · 200 selected ODs
-
-![Sioux 200-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Sioux_200OD.png)
-
-*Convergence and feasibility on the 200-OD selected finite graph.* [SVG](docs/assets/admm_r2/figures/convergence_Sioux_200OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Sioux_200OD.source.json).
-
-![Sioux 200-OD commodity-level original-unit conservation heatmap](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.png)
-
-*Commodity-level local balance across the saved iterations; the frozen `1e-5` gate is marked.* [SVG](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.svg) · [Source and limits](docs/assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.source.json).
-
-![Sioux 200-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.png)
-
-![Sioux 200-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_sioux_200_minus_lp.png)
-
-*Final movement flow and signed difference. Sioux topology uses a deterministic schematic layout, not geographic coordinates.* [Flow SVG](docs/assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_sioux_200_minus_lp.svg) · [Full case](docs/cases/sioux-admm.md).
-
-#### Sioux Falls · 250 selected ODs
-
-![Sioux 250-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Sioux_250OD.png)
-
-*The right-hand panel contains the accepted original-unit local balance and capacity traces. A separate 250-OD commodity heatmap was not released; none is implied here.* [SVG](docs/assets/admm_r2/figures/convergence_Sioux_250OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Sioux_250OD.source.json).
-
-![Sioux 250-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png)
-
-![Sioux 250-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_sioux_250_minus_lp.png)
-
-*Final movement flow and signed difference on the 250-OD selected graph; the schematic layout is not a geographic map.* [Flow SVG](docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_sioux_250_minus_lp.svg) · [Full case](docs/cases/sioux-admm.md).
-
-#### Boston · bounded 10-OD holdout
-
-![Boston 10-OD ADMM R2 residual convergence, original-unit local balance and capacity, objective and fixed rho](docs/assets/admm_r2/figures/convergence_Boston_10OD.png)
-
-*Convergence and feasibility under the Sioux-selected policy frozen before Boston.* [SVG](docs/assets/admm_r2/figures/convergence_Boston_10OD.svg) · [Source record](docs/assets/admm_r2/figures/convergence_Boston_10OD.source.json).
-
-![Boston 10-OD commodity-level original-unit conservation heatmap](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.png)
-
-*All ten saved commodity balance traces, with the frozen `1e-5` gate marked.* [SVG](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.svg) · [Source and limits](docs/assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.source.json).
-
-![Boston 10-OD final physical-link movement flows for ADMM and the same-graph LP on one shared scale](docs/assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.png)
-
-![Boston 10-OD signed physical-link ADMM-minus-LP movement-flow difference](docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.png)
-
-*The absolute panels share a scale; the signed map retains the actual ±`4.24e-4`-vehicle maximum rather than enlarging it. Maps use already-public GMNS Plus geometry and IDs under Apache-2.0 attribution.* [Flow SVG](docs/assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.svg) · [Difference SVG](docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.svg) · [125-row derived table](docs/assets/admm_r2/data/boston_10od_physical_link_admm_lp_comparison.csv) · [Full case and rights limits](docs/cases/boston-admm.md).
-
-<a id="distributed-assignment"></a>
-## Static and distributed assignment results
-
-### Distributed assignment algorithms / bounded accepted results
-
-The Sioux 200/250-OD **finite time-expanded shared-capacity** instances also have accepted, method-specific saved results. These are not static user equilibrium or full 528-OD network solutions. Their mathematical contract is separate from static FW; no cross-contract objective comparison is implied.
-
-| Method | Accepted Sioux 200 OD | Accepted Sioux 250 OD | Necessary distinction |
-|---|---|---|---|
-| **Lagrangian R2** | Dual lower bound **942,452.403471**; separately recovered feasible primal **943,155.589771** vehicle-min; **0.0746%** certified gap | Dual **1,516,258.347432**; feasible primal **1,521,090.836620** vehicle-min; **0.3177%** gap, below frozen 1% gate | Capacity-price dual generates paths; a separate restricted-path LP recovers the primal. Both primals match their own same-graph arc-flow LP objectives. |
-| **ADMM R2_S** | Objective **943,161.533307** vehicle-min; **6.30e-6** relative gap to own LP | Objective **1,521,101.731718** vehicle-min; **7.16e-6** relative gap to own LP | Frozen Sioux-selected policy also passes a separate bounded Boston 10-OD holdout; independent conservation/capacity/KKT/projection checks pass. [Full cross-city ADMM evidence](docs/methods/admm-space-time.md). |
-
-<table><tr><td width="50%"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/sioux/distributed_r1/Sioux_200OD_P07.svg" width="100%" alt="Sioux 200-OD Lagrangian saved lower-bound and feasible-recovery evidence"></a></td><td width="50%"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/sioux/distributed_r1/Sioux_250OD_P07.svg" width="100%" alt="Sioux 250-OD Lagrangian saved lower-bound and feasible-recovery evidence"></a></td></tr></table>
-
-*Saved Lagrangian R2 histories, in matching 200/250-OD layouts. The lower and upper bounds are different mathematical outputs; a dual lower bound alone is not a feasible assignment.*
-
-<table><tr><td width="50%"><a href="docs/methods/distributed-assignment.md#admm-localconsensus-shared-capacity-decomposition"><img src="docs/assets/sioux/distributed_r1/sioux_200od_objective_difference.svg" width="100%" alt="200-OD ADMM result is 0.000434 percent above its own LP objective"></a></td><td width="50%"><a href="docs/methods/distributed-assignment.md#admm-localconsensus-shared-capacity-decomposition"><img src="docs/assets/sioux/distributed_r1/sioux_250od_objective_difference.svg" width="100%" alt="250-OD ADMM result is 0.000607 percent above its own LP objective"></a></td></tr></table>
-
-*Earlier R1 paired scalar figures are retained as historical evidence; they are not the new R2_S histories. The R1 250-OD iteration history was not supplied, so none was created.* [R1 source and limits](docs/methods/distributed-assignment.md) · [R2 matched figures](docs/cases/sioux-admm.md).
-
-The table describes accepted Sioux selected-OD results; [Hong Kong has a separate accepted bounded Lagrangian recovery and 0.7444% certificate](docs/cases/hong-kong-space-time.md). Boston's Lagrangian transfer remains gated by the frozen 1% duality-gap criterion. ADMM R2_S passes a separate bounded Boston 10-OD holdout, while Hong Kong's frozen ADMM R2 transfer remains gated. None changes previously accepted Boston FW or CG results.
-
-<a id="algorithm-b"></a>
-### Static user equilibrium / official `tap-b` Algorithm B
-
-The official `spartalab/tap-b` Algorithm B executable was evaluated on frozen static BPR/Beckmann instances. **Sioux Falls** also passed parity through the pinned official TAPLab registered `tapb` CLI adapter and direct callable; **Boston B0/B1** passed through a *task-local TAPLab-compatible lossless adapter*. The stock official TAPLab converter was stopped **before** a Boston solve because it changed first-thru-node semantics and rounded OD demand. This is not an official TAPLab Boston parity result.
-
-Six accepted R2 source figures remain one per row; the physical-link pair below is re-rendered side by side from frozen source points. Sioux Falls and Boston B1 are different static demand instances; these figures do not establish a cross-city speed comparison. The earlier [two-column overview PNG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.png) and [editable SVG](docs/assets/algorithm_b_r21/algorithm_b_cross_city_overview.svg) remain available, with [source hashes](docs/assets/algorithm_b_r21/SOURCE_SVG_SHA256.csv).
-
-#### Solver convergence
-
-![Sioux Falls Algorithm B saved convergence trace](docs/assets/algorithm_b_r21/source_panels/sioux_convergence.svg)
-
-*Sioux Falls · classic 528-OD static instance.*
-
-![Boston B1 Algorithm B saved single-iteration convergence trace](docs/assets/algorithm_b_r21/source_panels/boston_b1_convergence.svg)
-
-*Boston B1 · one reported iteration on a conditional low-congestion holdout, not a general one-iteration rate.*
-
-#### Physical-link flow against same-problem FW
-
-<table class="figure-grid"><tr><td width="50%"><img src="docs/assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.svg" width="100%" alt="Sioux Falls Algorithm B against same-problem FW, compact physical-link scatter"><small>Sioux Falls · 76 physical links; saved static comparison, not empirical traffic validation.</small></td><td width="50%"><img src="docs/assets/algorithm_b_r21/presentation/boston_b1_fw_flow_compact.svg" width="100%" alt="Boston B1 Algorithm B against same-problem FW, compact physical-link scatter"><small>Boston B1 · 5,091 physical links; near-equality on a light modeled cohort is not a speed or superiority claim.</small></td></tr></table>
-
-*Each point is a saved physical link; the diagonal is equal flow. Both axes use log₁₀(1 + flow), in vehicles for Sioux Falls and PCE for Boston B1. The Sioux axis is labeled and zoomed to its occupied range; the cases do not share a numeric axis. Saved physical-link RMSE: 63.4701 vehicles (Sioux Falls) and 5.11551e-15 PCE (Boston B1). The compact figures only reframe the frozen points; [original Sioux Falls SVG](docs/assets/algorithm_b_r21/source_panels/sioux_fw_flow.svg) and [original Boston B1 SVG](docs/assets/algorithm_b_r21/source_panels/boston_b1_fw_flow.svg) retain the full source annotations.*
-
-#### Selected-origin reconstructed flow
-
-![Sioux Falls selected-origin Algorithm B flow reconstructed from exported OD paths](docs/assets/algorithm_b_r21/source_panels/sioux_origin_flow.svg)
-
-![Boston B1 selected-origin Algorithm B flow reconstructed from exported OD paths](docs/assets/algorithm_b_r21/source_panels/boston_b1_origin_flow.svg)
-
-*Both selected-origin views reconstruct exported path flow; neither displays native Policy Bush internal state.*
-
-#### Independent verification
-
-![Sioux Falls Algorithm B independent static UE verification](docs/assets/algorithm_b_r21/source_panels/sioux_verification.svg)
-
-![Boston B1 Algorithm B independent static UE verification](docs/assets/algorithm_b_r21/source_panels/boston_b1_verification.svg)
-
-*The official TAPLab registered-adapter parity passed for Sioux Falls only. Boston B1 passed through the task-local lossless TAPLab-compatible adapter; the stock Boston converter was contract-blocked before solving. [Method and exact limits](docs/methods/origin-based-algorithm-b.md) · [Case-specific figures and evaluation](docs/cases/sioux-algorithm-b.md) · [Boston B1 case](docs/cases/boston-algorithm-b.md).*
-
-| Frozen case | Numerical result | Independent check | Adapter status |
-|---|---|---|---|
-| [Classic Sioux Falls](docs/cases/sioux-algorithm-b.md) | 24 nodes, 76 links, 528 positive ODs; Beckmann **4,231,335.287110682 vehicle-min** | Relative gap **4.4984e-9**; used-arc slack **8.20e-5 min** | Official TAPLab CLI and direct callable match accepted physical-link flows exactly; `taplab verify` certified |
-| [Central Boston B0](docs/cases/boston-algorithm-b.md) | 26 physical-node ODs, 203.660478635 modeled vehicles; accepted interface control | Objective **707.057923071 vehicle-min**; task-local checks passed | Task-local lossless adapter; official converter contract blocked before solve |
-| [Central Boston B1](docs/cases/boston-algorithm-b.md) | 453 physical-node ODs, **1,936.23847491 PCE** in a two-hour conditional HBW-midday cohort; Beckmann **7,922.083942188 PCE-min** | Independent relative gap approximately zero; physical-link flow agrees with same-problem FW | Task-local lossless adapter; official converter contract blocked before solve |
-
-The B0 interface result has no public aggregate flow/figure in this release. Boston B1 is neither observed traffic nor citywide/empirical validation. The official solver's internal Policy Bush merge, backward-label and restriction-update state was **not exported**; selected-origin displays reconstruct flow from exported OD paths. [Method and limits](docs/methods/origin-based-algorithm-b.md) · [TAPLab adapter audit](docs/integrations/taplab-tapb.md).
-
-<a id="coverage"></a>
-## 02 / What each case demonstrates
+### Capability scope and method-specific boundaries
 
 The entries distinguish **available code**, **executed case evidence**, and **the scale at which a method was actually accepted**. A missing result is not a claim that the method can never run on that city. A tiny generic fixture does not certify a large Boston solve.
 
@@ -251,8 +125,71 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 
 [Capability definitions and evidence pointers](docs/capabilities.md). The earlier [Hong Kong R1 data pilot](docs/cases/hong-kong-gmns-pilot.md) remains a historical checkpoint; the current [R2–R5 bounded technical case](docs/cases/hong-kong.md) has accepted static and CG evidence under its explicit engineering assumptions.
 
+## 03 / Comparable statistics
+
+These are *instance-level* descriptions, not a cross-city objective leaderboard. The stable machine-readable CSV retains schema fields; the tables here present metric rows for reading.
+
+### A. City-data and GMNS statistics
+
+| Metric | Boston · city-data case | Sioux Falls · benchmark | Hong Kong · bounded city case |
+|---|---|---|---|
+| Directed physical roads | 2852 nodes / 5091 links | 24 nodes / 76 links | 780 nodes / 1239 links |
+| Fine / parent zones | 177 / 9 | Not part of this benchmark / Not part of this benchmark | 95 / 10 |
+| Centroids / nonphysical access | 177 / 354 | Not part of this benchmark / Not part of this benchmark | 95 / 190 |
+| Transit service layer | 3,553 referenced stops / 112 routes (dated GTFS slice) | Not part of this benchmark | 183 stops / 294 routes (pilot service layer) |
+| Observation evidence | 581 GPS path-link associations; 56 planned-shape links | Not part of this benchmark | 50 detector lane snapshot records; UrbanNav point data private |
+| Evidence grade | Verified bounded case; not a calibrated citywide forecast | Verified static topology; historical selected-OD finite cases are separate | Verified bounded case; activity and demand use graded assumptions |
+
+Observation counts have different meanings and are not pooled. Sioux is a supplied-demand benchmark, not a demographic or GPS build.
+
+[Machine-readable CSV](docs/data/three_city_r1/THREE_CITY_GMNS_STATISTICS.csv) · [Readable-table source record](docs/data/three_city_r2/GMNS_READABLE.source.json).
+
+
+### B. Static-assignment statistics
+
+| Metric | Boston B1 · conditional 2 h | Sioux Falls · classic 528 OD | Hong Kong · bounded 1 h |
+|---|---|---|---|
+| Physical-node / positive OD pairs | 453 | 528 | 8930 |
+| Assigned demand and period | 1936.238475 PCE / 2 h | 360600 vehicles | 723.191228 PCE / 1 h |
+| Mathematical problem | static BPR / Beckmann | static BPR / Beckmann | turn-aware static BPR / Beckmann |
+| FW evidence | Verified bounded case | Verified historical run; input-identity caveat | Verified bounded case |
+| Algorithm B route | Verified bounded case; task-local TAPLab-compatible lossless adapter | Verified; official TAPLab registered-adapter parity | Verified bounded case; task-local lossless adapter |
+| Objective and independent gap | Beckmann 7922.083942188 PCE-min; independent relative gap -2.3e-16 | Beckmann 4231335.287110682 vehicle-min; independent relative gap 4.5e-09 | Beckmann 1676.012131329 PCE-min; independent relative gap 4.21e-15 |
+| Path-to-link reconstruction | Verified; max path/link mismatch 5.68e-14 PCE | Verified; max path/link mismatch 5.46e-11 vehicles | Verified; max path/link mismatch 1.42e-13 PCE |
+
+Boston B1 is a matched-method holdout, not Boston's largest accepted FW tier. Objectives and demands are not comparable across cities or with finite fixed-cost models.
+
+[Machine-readable CSV](docs/data/three_city_r1/THREE_CITY_STATIC_ASSIGNMENT_STATISTICS.csv) · [Readable-table source record](docs/data/three_city_r2/STATIC_READABLE.source.json).
+
+
+### C. Finite time-expanded statistics
+
+| Metric | Boston · 10 OD | Sioux · 200 OD | Sioux · 250 OD | Hong Kong · 10 OD |
+|---|---|---|---|---|
+| Selected physical subnetwork | 90 nodes / 125 links | 24 nodes / 64 links | 24 nodes / 69 links | 100 nodes / 111 links |
+| Selected OD demands | 10 | 200 | 250 | 10 |
+| One model time step | 3 s | seconds not reported | seconds not reported | 30 s |
+| Number of model steps | 100 | not reported in public summary | not reported in public summary | 50 |
+| Elapsed model horizon | 300 s | not derivable from released summary | not derivable from released summary | 1,500 s |
+| Dynamic graph | 9,110 nodes / 22,217 arcs | 1,192 nodes / 9,406 arcs | 1,292 nodes / 11,254 arcs | 11,954 nodes / 24,910 arcs |
+| Same-graph reference LP objective | 64.396861511530 | 943,155.589771 | 1,521,090.83662 | 75.036329857948 |
+| CG Phase-I zero round | 90 | 51 | 62 | 12 |
+| Final CG column pool | 167 | 446 | 567 | 25 |
+| CG independent full-DAG pricing | Independent pricing closure established; 10/10 | Not established | Not established | Independent pricing closure established; 10/10 |
+| Lagrangian status / gap | Gated; 1.1002% exceeds frozen 1% gate | Accepted; 0.0746% duality gap | Accepted; 0.3177% duality gap | Verified bounded case; 0.7444% duality gap |
+| ADMM status / own-LP difference | Verified bounded case; R2_S own-LP gap 6.68e−6 | Accepted R2_S; 6.30e−6 | Accepted R2_S; 7.16e−6 | Gated; first local conservation residual 0.082467622 PCE |
+
+Fixed-cost, hard-capacity finite problems; each column is a separate graph. Objective values are vehicle-minutes, but no cross-city ranking is implied. CG pricing closure does not transfer to Lagrangian or ADMM.
+
+[Machine-readable CSV](docs/data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.csv) · [Readable-table source record](docs/data/three_city_r2/FINITE_READABLE.source.json).
+
+
 <a id="boston"></a>
-## 03 / Case study — Boston
+## 04 / Case study — Boston
+
+### Role in the repository
+
+Real-city GMNS/four-stage/GPS and scalable static assignment case, with separate bounded finite algorithms.
 
 **What this case demonstrates.** Real-city GMNS object relationships; household/activity-based generation; modeled OD distribution; limited mode-choice branches; exploratory GPS/service linkage; new-input static computation; and FW at increasing demand coverage. It also retains a small **FW / full-path / native L3** control, an accepted **task-local-adapter Algorithm B B0/B1** static branch, and separate bounded finite space–time **CG and ADMM R2_S** pilots. **Not demonstrated here:** citywide CG/ADMM, full-city empirically calibrated demand, or independent AM accuracy.
 
@@ -271,10 +208,22 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 <p align="center"><img src="docs/assets/boston/visual_release_r1/mcl_boston_hero.png" width="100%" alt="Dark navy Mobility Computation Lab cover with real Central Boston street and zone geometry on the right."></p>
 <p align="center"><small>Central Boston road geometry: GMNS Plus 21_Boston (Apache-2.0), commit 116447ab641cca1ed34797d019c8e704063393c3; H3 zones and cover composition: Mobility Computation Lab. Geography only—not measured or modeled traffic.</small></p>
 
+### Scope and statistics
 
+2,852 physical nodes, 5,091 directed physical links; 177 H3 r9 zones and nine r7 parents. Its finite CG/ADMM holdout is a different 90-node/125-link, 10-OD instance.
+
+| Metric | Accepted scope |
+|---|---|
+| City physical network | 2,852 nodes; 5,091 directed links |
+| Static B1 comparison | 453 physical-node ODs; 1,936.238475 PCE / 2 h |
+| Finite CG/ADMM holdout | 90 nodes; 125 links; 10 ODs |
+
+### GMNS, zones, and source evidence
+
+[GMNS exchange and source-ID tracing](docs/datasets/boston-gmns-exchange.md) preserve centroids, 354 nonphysical access arcs and physical link identity.
 
 <a id="gmns-in-action"></a>
-### Boston / GMNS in Action
+#### Boston / GMNS in Action
 
 **One network reference for zones, demand, observations, and results.** The actual Boston exchange keeps H3 zone 35, its centroid, nonphysical access connector and physical road node distinct. A documented crosswalk maps zone identities to road access; zonal S1 demand remains modeled panel vehicle trips. A separate saved GPS path occurrence can reference a physical link and its saved S1 road result without claiming it is the same OD or observed journey.
 
@@ -284,7 +233,7 @@ The entries distinguish **available code**, **executed case evidence**, and **th
 
 From the repository root, inspect the generic relationships with `python -B tools/gmns/boston_exchange.py trace --exchange examples/boston/gmns_exchange_r1/data`; the [exact figure segment query](docs/datasets/boston-gmns-exchange.md#reproduce-the-relationships) is separate. GMNS is the data/exchange contract, not the matching algorithm or evidence of improved prediction. The pinned GMNS Plus Level 2 reader accepted S1/S2 node/link/demand; a separate zone-schema check and the declared `mcl_solver_*` fields support the existing solver round-trip.
 
-### City network workflow
+#### City network workflow
 
 The common foundation is a real city network: **2,852 physical nodes, 5,091 directed links, 177 H3 r9 zones and nine r7 parents**. Zone-access mappings attach demand to roads; ordered link membership defines a corridor; transit and GPS records retain their own identities and connect to the same network. Model access lines are not automatically verified physical routes.
 
@@ -298,7 +247,11 @@ The [versioned Boston exchange](examples/boston/gmns_exchange_r1/README.md) now 
 
 *This is the spatial foundation, not one of the four demand-model stages. Parcel outlines provide geographic context, not building footprints. [Sources, units and original map gallery](docs/datasets/boston-visual-sources.md).*
 
-### Boston / Population and Household Preparation
+### Demand, transit, and observations
+
+[ACS household/population allocation](docs/datasets/boston-population-households.md), MassGIS activity priors, MBTA service and exploratory GPS linkage have separate evidence grades.
+
+#### Boston / Population and Household Preparation
 
 The **U.S. Census Bureau's ACS 2024 five-year (2020–2024)** block-group estimates were accessed through the **Census Reporter `acs2024_5yr` mirror** for Massachusetts Suffolk `025`, Middlesex `017` and Norfolk `021`; recorded source boundaries came from its `tiger2024` GeoJSON. The fixed core intersects **174 source block groups**. Those statistical polygons do not coincide with the **177 clipped H3 r9 model zones**. In EPSG:32619, each source estimate is assigned by `area(source ∩ clipped zone) / area(full source polygon)`; the outside-core share remains a spatial remainder, **not** an observed external-trip matrix. The allocation assumes uniform persons/households within each source polygon.
 
@@ -312,7 +265,7 @@ The **U.S. Census Bureau's ACS 2024 five-year (2020–2024)** block-group estima
 
 The [ACS source statistics](examples/boston/population_r1/data/acs_block_group_stats.csv), [source-to-H3 contributions](examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv), [H3 attributes](examples/boston/population_r1/data/population_or_household_by_zone.csv), [outside-core ledger](examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv) and [generation rows](examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv) are directly openable. [Source versions, provider/download links, exact fields, assumptions and no-solver reproduction command →](docs/datasets/boston-population-households.md). Source margins of error were retained; the H3 estimates do not have a validated propagated MOE. All 177 saved zones have source coverage; in general, missing is not zero.
 
-### Boston / The retained semantic four-stage chain
+#### Boston / The retained semantic four-stage chain
 
 **This retained branch is a fixed-panel service-feedback example. The expanded computation follows in the next section.** The numbered sections below describe the saved Boston implementation—not four generic software components.
 
@@ -343,7 +296,7 @@ The [ACS source statistics](examples/boston/population_r1/data/acs_block_group_s
 [**Read the four stages with their inputs, operations and outputs →**](docs/datasets/boston-behavior-feedback.md) · [Download the display data and check the source mapping](docs/datasets/boston-four-step-sources.md)
 
 <a id="how-gps-changes-the-result"></a>
-### Boston / How GPS changes the result
+#### Boston / How GPS changes the result
 
 **GPS is not an unused map layer, and it is not a fifth stage.** MBTA vehicle positions are matched to the network and related to transit service intervals. In this example, a saved interval observation changes the transit service input; stages 03 and 04 then recompute the dependent response. GPS does **not** determine the regional trip total or the gravity-model OD in this release.
 
@@ -378,7 +331,21 @@ Across the **whole eligible panel**, S1/S2 vehicle inputs are **202.078384 / 202
 
 *The projection map illustrates a different recorded segment; it is not presented as the same event as this feedback trace. The released calculation is a bounded technical example: no independently validated AM forecast, complete TDM23 reproduction or full-city multimodal assignment is claimed. [Scope and assumptions](docs/datasets/boston-behavior-feedback.md#scope-and-assumptions).*
 
-### Boston / Scalable assignment is now the primary road-flow result
+### Static assignment
+
+[FW scale tiers](docs/BOSTON_SCALE_RESULTS.md), the [controlled FW/full-path/L3 comparison](docs/cases/boston-assignment.md), and [task-local Algorithm B B0/B1](docs/cases/boston-algorithm-b.md) solve declared static instances.
+
+#### Accepted Boston FW scale ladder — source OD ≠ physical-node OD
+
+| Selected source-zone OD | Loaded physical-node OD after choice | Modeled road PCE | FW Beckmann objective (PCE-min) | Execution status |
+|---:|---:|---:|---:|---|
+| 500 | 453 | 1,936.238 | 7,922.083942 | Accepted; same B1 static comparison instance |
+| 2,000 | 1,684 | 5,815.569 | 24,238.470872 | Accepted FW; full-path/L3 resource-gated |
+| All 30,790 interzonal source OD | 17,522 | 16,259.122 | 73,552.277556 | Accepted FW; full-path/L3 resource-gated |
+
+The numbers count different objects: selected H3 source-zone OD before choice, then eligible physical-node vehicle OD after choice. The 30,790 label is **not** 30,790 loaded physical-node OD or citywide observed traffic. [Exact selection, units, checks and resource gates](docs/BOSTON_SCALE_RESULTS.md).
+
+#### Boston / Scalable assignment is now the primary road-flow result
 
 The same 5,091-link clipped network is now evaluated on progressively larger source-zone demand sets using the **new-input generic FW entry**, not a renamed copy of the 26-OD solution. Planned-service costs were computed for new OD records, and the fixed conditional four-mode specification uses their absolute attributes. Unknown four-mode input remains unknown.
 
@@ -404,7 +371,7 @@ A separate **new-input two-OD fixture** actually ran finite full path and native
 
 
 <a id="boston-case--saved-assignment-methods"></a>
-### Boston / Small controlled assignment-method comparison
+#### Boston / Small controlled assignment-method comparison
 
 The real-city [Boston case](docs/cases/boston.md) includes **both** the GMNS/four-stage/GPS workflow above **and** executed static assignment methods. The earlier semantic S1/S2 service-feedback example used about **202.078384 / 202.070733** modeled vehicle trips. A separate conditional absolute-attribute choice sensitivity evaluates DA/S2/S3/TW for sufficient-vehicle households: 87 of 108 fixed OD-time objects had known four-mode inputs, 21 remained unknown, and only 78 common objects were road-loaded. Its [saved probabilities and specification](examples/boston/conditional_choice_r1/README.md) are a reduced transfer sensitivity, not calibrated all-mode TDM23 or an independent AM validation.
 
@@ -436,14 +403,47 @@ python -B tools/mcl_results.py verify-saved --run boston-abs-planned-l3-rank26-o
 
 These commands inspect saved points; they do not solve, build paths, refit demand or match new GPS data.
 
+<a id="algorithm-b"></a>
+#### Boston B1 · official tap-b executable via task-local lossless adapter
 
-### Boston / Bounded finite space–time CG pilot
+![Boston B1 Algorithm B convergence](docs/assets/algorithm_b_r21/source_panels/boston_b1_convergence.svg)
+
+![Boston B1 physical-link flow against same-problem FW](docs/assets/algorithm_b_r21/presentation/boston_b1_fw_flow_compact.svg)
+
+![Boston B1 selected-origin reconstructed flow](docs/assets/algorithm_b_r21/source_panels/boston_b1_origin_flow.svg)
+
+![Boston B1 independent static verification](docs/assets/algorithm_b_r21/source_panels/boston_b1_verification.svg)
+
+The stock TAPLab Boston converter was blocked before solving; this is **task-local TAPLab-compatible lossless adapter** evidence, not official registered-adapter parity. [Exact result and limitations](docs/cases/boston-algorithm-b.md).
+
+### Finite time-expanded algorithms
+
+[Accepted bounded CG](docs/cases/boston-space-time.md) reaches its same-graph LP objective; [ADMM R2_S](docs/cases/boston-admm.md) passes its separate 10-OD holdout. Lagrangian remains gated at the frozen gap criterion. [Full representation-level figures and ordered evidence](docs/cases/boston-space-time.md).
+
+<p align="center"><a href="docs/cases/boston-space-time.md"><img src="docs/assets/three_city_r2/boston_finite_space_time_case_sequence.png" width="100%" alt="Boston bounded finite CG sequence: saved graph arcs, generated column, Phase I, shared-capacity change, Phase II and final projection."></a></p>
+
+[Historical R1 six-panel layout](docs/assets/three_city_r1/boston_finite_space_time_case_sequence.png) remains available; the R2 image above is the current view.
+
+![Boston saved physical-to-finite graph construction](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.svg) · [Source](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.source.json).
+
+![Boston accepted B07 generated column with ordered dynamic arcs](docs/assets/three_city_r2/boston_generated_column_time_indexed_path.png)
+
+*One positive-flow time-indexed path; the terminal t19→H100 connector is bookkeeping, not physical waiting.* [SVG](docs/assets/three_city_r2/boston_generated_column_time_indexed_path.svg) · [Source](docs/assets/three_city_r2/boston_generated_column_time_indexed_path.source.json).
+
+![Boston movement-only physical-link projection](docs/assets/three_city_r2/boston_time_expanded_to_physical_link_flow.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/boston_time_expanded_to_physical_link_flow.svg) · [Source](docs/assets/three_city_r2/boston_time_expanded_to_physical_link_flow.source.json).
+
+#### Boston / Bounded finite space–time CG pilot
 
 This is **one** accepted 90-physical-node, 125-directed-link, 10-OD finite time-expanded instance (3-second steps; 100-step horizon), not the 5,091-link static Boston assignment or a second Boston scale. The fixed-cost hard-capacity objective is distinct from FW/Beckmann.
 
 The six accepted evidence stages are displayed below. Final physical-link flow and independent pricing closure share one row; the preceding stages remain full width. The former [six-panel PNG](docs/assets/presentation_r5/boston_cg_case_sequence.png), [editable SVG](docs/assets/presentation_r5/boston_cg_case_sequence.svg), and [source hashes/display crops](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) remain available; no scientific model was rerun.
 
-#### Boston / From the physical network to time-indexed columns
+<a id="boston--from-the-physical-network-to-time-indexed-columns"></a>
+#### Boston / A generated column as a time-indexed path
 
 ![Recorded Boston B07 physical path and time-indexed column](docs/assets/boston/space_time_cg_r4/boston_space_time_construction.png)
 
@@ -477,7 +477,7 @@ The six accepted evidence stages are displayed below. Final physical-link flow a
 
 | Shared CG stage | Boston result |
 |---|---|
-| **From the physical network to time-indexed columns** | Actual B07 column on the accepted 90-node/125-link pilot |
+| **A generated column as a time-indexed path** | Actual B07 column on the accepted 90-node/125-link pilot |
 | **Phase I restores feasibility** | Artificial flow **20.5536128974 → 0** in round **90** |
 | **A new path can help a different OD** | Recorded B07/B09/B10 shared-capacity reallocation |
 | **Phase II improves the real-path objective** | **64.39686151152952** after 15 rounds; reference-objective agreement on the same finite time-expanded graph |
@@ -487,7 +487,7 @@ The six accepted evidence stages are displayed below. Final physical-link flow a
 The [detailed Boston CG page](docs/cases/boston-space-time.md) retains the full figure family, exact plot inputs, editable SVGs and hashed provenance. The 15 R4 certificate columns have zero final flow; they complete the dual/pricing certificate rather than create additional physical traffic. Final physical-link movement flows remain unchanged from R3 within numerical precision. The second-machine receiver check remains pending. These are saved-result visualizations only; no model was rerun for this public update.
 
 <a id="boston-admm-readme"></a>
-### Boston / Bounded finite space–time ADMM R2_S
+#### Boston / Bounded finite space–time ADMM R2_S
 
 This is the accepted **10-OD holdout on the 90-node/125-link finite graph**, evaluated with the R2_S policy frozen before Boston. It is not the static Boston assignment, measured traffic, or a citywide ADMM run. The same four evidence stages appear in the Sioux Falls section below; each ADMM run is compared only with its **own same-graph arc-flow LP**. [Full Boston ADMM case and independent checks](docs/cases/boston-admm.md).
 
@@ -509,13 +509,53 @@ This is the accepted **10-OD holdout on the 90-node/125-link finite graph**, eva
 
 *These are accepted saved-result figures, not newly solved flows. The signed map retains its actual ±`4.24e-4`-vehicle maximum. [Editable figures, source records and the 125-link derived table](docs/cases/boston-admm.md) document the bounded scope and GMNS Plus attribution.*
 
+### Independent verification
+
+CG independent full-DAG pricing closure passes 10/10 demands; static and finite original-space checks remain separate.
+
+### City-specific evidence and limits
+
+No citywide calibrated CG/ADMM or independent AM validation is claimed. All earlier maps, GMNS records, GPS evidence and figures are retained below.
+
+### Reproduction
+
+[Use saved result checks and case entry points](docs/cases/boston.md#experiments--reproduction).
+
 <a id="sioux-falls"></a>
-## 04 / Case study — Sioux Falls
+## 05 / Case study — Sioux Falls
+
+### Role in the repository
+
+Classical supplied-vehicle-OD road benchmark and historical selected-OD finite algorithm case, not a new demographic or GPS city-data model.
 
 **What this case demonstrates.** A classic supplied-demand benchmark with static FW, accepted official TAPLab/`tap-b` Algorithm B parity and native L3 research, plus distinct 200/250-OD finite space–time **CG and ADMM R2_S** results. **Not modeled here:** real-city trip generation, destination/mode estimation or GPS service feedback. The benchmark does not become a modern city dataset because it shares the framework.
 
+### Scope and statistics
+
+24-node/76-link static topology with 528 positive OD records; distinct finite selected subgraphs have 64/69 links and 200/250 OD demands.
+
+| Metric | Accepted scope |
+|---|---|
+| Static benchmark | 24 nodes; 76 links; 528 supplied OD records |
+| Historical finite 200-OD case | 24 nodes; 64 selected links; 200 ODs |
+| Historical finite 250-OD case | 24 nodes; 69 selected links; 250 ODs |
+
+### GMNS, zones, and source evidence
+
+[Frozen static topology and source identity](examples/sioux-falls/native_l3_r1/README.md) remain separate from the selected finite subgraphs.
+
+### Demand, transit, and observations
+
+Population, household, transit and GPS preparation are **Not part of this benchmark**; vehicle OD is supplied.
+
+No population, household, activity, transit or GPS preparation was executed for this supplied-demand benchmark.
+
+### Static assignment
+
+Historical FW, numerical native L3 candidates and [official TAPLab registered-adapter Algorithm B parity](docs/cases/sioux-algorithm-b.md) are distinct static results.
+
 <a id="sioux-falls-benchmark-series"></a>
-### Sioux Falls / Static methods and retained numerical candidates
+#### Sioux Falls / Static methods and retained numerical candidates
 
 The [Sioux Falls case](docs/cases/sioux-falls.md) also has actual static assignment work. Its historical [FW result](docs/datasets/sioux-static-fw.md) has Beckmann F **4,236,715.140437842**, but the retained runtime OD identity is insufficient to declare it a same-input reference for the native profile. The corrected [native Diagnostic L3 implementation](algorithms/path_compression/diagnostic_l3/README.md) has accepted **outer-04** points on the frozen 76-link, 528-positive-OD, 2,218-path static instance (rank 50; 585 reduced path coordinates; 661 total native variables):
 
@@ -528,7 +568,39 @@ Both pass recorded numerical feasibility, but neither has a full-network UE cert
 
 The separate [official TAPLab-adapter Algorithm B classic result](docs/cases/sioux-algorithm-b.md) has Beckmann **4,231,335.287110682 vehicle-min**, independent relative gap **4.4984e-9**, exact physical-link-flow parity through the registered CLI/direct callable, and a certified `taplab verify` output. It is the static 528-OD case, not either selected-OD space–time CG experiment.
 
-### Sioux Falls / Historical 200/250-OD finite space–time CG
+#### Sioux Falls · official TAPLab registered-adapter parity for tap-b Algorithm B
+
+![Sioux Falls Algorithm B convergence](docs/assets/algorithm_b_r21/source_panels/sioux_convergence.svg)
+
+![Sioux Falls physical-link flow against same-problem FW](docs/assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.svg)
+
+![Sioux Falls selected-origin reconstructed flow](docs/assets/algorithm_b_r21/source_panels/sioux_origin_flow.svg)
+
+![Sioux Falls independent static verification](docs/assets/algorithm_b_r21/source_panels/sioux_verification.svg)
+
+Saved Beckmann objective 4,231,335.287110682 vehicle-min; independent relative gap 4.4984e-9. The registered CLI and direct callable have exact accepted physical-link-flow parity. [Exact static case](docs/cases/sioux-algorithm-b.md).
+
+### Finite time-expanded algorithms
+
+Historical [200/250-OD CG](docs/cases/sioux-space-time.md), accepted [Lagrangian R2](docs/methods/distributed-assignment.md) and [ADMM R2_S](docs/cases/sioux-admm.md) use selected finite graphs. [Full representation-level figures and ordered evidence](docs/cases/sioux-space-time.md).
+
+<p align="center"><a href="docs/cases/sioux-space-time.md"><img src="docs/assets/three_city_r2/sioux_finite_space_time_case_sequence.png" width="100%" alt="Sioux Falls finite CG sequence: saved graph arcs and column, 200-OD Phase-I/II traces, recorded shared-capacity change and 200/250-OD final summary."></a></p>
+
+[Historical R1 six-panel layout](docs/assets/three_city_r1/sioux_finite_space_time_case_sequence.png) remains available; the R2 image above is the current view.
+
+![Sioux saved physical-to-finite graph construction](docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.svg) · [Source](docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.source.json).
+
+![Sioux Falls accepted XS170 generated column with ordered dynamic arcs](docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.png)
+
+*One saved selected-OD path; the model-step duration in seconds is not published.* [SVG](docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.svg) · [Source](docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.source.json).
+
+![Sioux movement-only physical-link projection](docs/assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.svg) · [Source](docs/assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.source.json).
+
+#### Sioux Falls / Historical 200/250-OD finite space–time CG
 
 The figures below are **historical finite time-expanded CG**, not native-L3 runs or present-day city observations. Explore the actual saved results before running an example. The 200- and 250-OD views represent **different selected-OD benchmark instances**, not a comparison of algorithms on the same demand.
 
@@ -544,7 +616,8 @@ The accepted construction, Phase-I, capacity, Phase-II and final-flow figures ap
 
 Historical road records include checked results and approved figures, **not redistributed raw inputs**. Self-contained [synthetic reference inputs](docs/examples.md) are bundled separately for installation and regression testing. Static FW and space–time CG solve different model formulations; their objective values are not directly comparable.
 
-### Sioux Falls / From the physical network to time-indexed columns
+<a id="sioux-falls--from-the-physical-network-to-time-indexed-columns"></a>
+#### Sioux Falls / From the physical network to the finite time-expanded graph
 
 **The CG examples solve a finite space–time linear flow model with fixed arc costs and explicit capacities.** They are not the same objective as static BPR/Beckmann FW or native L3. Source and sink connectors attach each demand to the time network, movement arcs advance to arrival times, and waiting arcs permit modeled delay.
 
@@ -552,7 +625,7 @@ Historical road records include checked results and approved figures, **not redi
 
 **This is an explanatory local cutaway—not a plot of every node and arc.** Positions are schematic; selected IDs and times come from saved records. The highlighted column is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink_XS170_5_t6`, corresponding to physical nodes `8 → 6 → 5` at times `0 → 2 → 6`. The rest of the horizon and demand-specific connectors are not drawn. [Construction fields and mappings](docs/cases/sioux-space-time.md).
 
-### Sioux Falls / Phase I restores feasibility
+#### Sioux Falls / Phase I restores feasibility
 
 <table class="figure-grid"><tr><td width="50%"><img src="docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png" width="100%" alt="Sioux Falls 200-OD saved Phase-I artificial-flow trace"><small>200 OD · artificial flow clears in round 51.</small></td><td width="50%"><img src="docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png" width="100%" alt="Sioux Falls 250-OD saved Phase-I artificial-flow trace"><small>250 OD · artificial flow clears in round 62.</small></td></tr></table>
 
@@ -569,7 +642,7 @@ Historical road records include checked results and approved figures, **not redi
 
 The 200-OD selection is contained in the 250-OD selection. There is one recorded run per size, with different iteration/candidate caps. These are **descriptive historical runs**, not repeated runtime trials, a scaling law or a global pricing-closure certificate. The original run summaries explicitly leave `optimality_claimed` and `full_cg_global_convergence_claimed` false.
 
-### Sioux Falls / A new path can help a different OD
+#### Sioux Falls / A new path can help a different OD
 
 At round 34 (200 OD) and round 39 (250 OD), pricing selected a new path for **XS170**, but **XS169** lost 500 units of artificial flow after restricted-master reoptimization. XS170's 500 real units moved away from `xs_link21_t1`; XS169's real flow on that binding shared arc grew from 150.193 to 650.193. The total arc load stayed at its 5,050.193 capacity.
 
@@ -578,24 +651,24 @@ At round 34 (200 OD) and round 39 (250 OD), pricing selected a new path for **XS
 *This recorded coupled-master mechanism does not prove that one path was uniquely necessary.* The raw capacity dual stays approximately −1 under the saved solver convention. [Editable SVG](docs/assets/presentation_r5/sioux_shared_capacity_canonical.svg) · [OD-level supplementary figure](docs/assets/sioux/phase_i_r1/od_level_phase_i_clearance.png) · [Earlier accepted capacity diagram](docs/assets/presentation_r3/sioux_capacity_exchange.png) · [Saved plot input and hashes](docs/assets/presentation_r5/SIOUX_CAPACITY_CANONICAL_SOURCES.json) · [Saved trace CSVs](docs/assets/sioux/phase_i_r1/data/200_phase_i_trace.csv) · [Full Sioux CG explanation](docs/cases/sioux-space-time.md).
 
 
-### Sioux Falls / Phase II improves the real-path objective
+#### Sioux Falls / Phase II improves the real-path objective
 
 <table class="figure-grid"><tr><td width="50%"><img src="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="100%" alt="Sioux Falls 200-OD saved Phase-II objective against its arc-flow LP"><small>200 OD · objective on its own selected-OD finite graph.</small></td><td width="50%"><img src="docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png" width="100%" alt="Sioux Falls 250-OD saved Phase-II objective against its arc-flow LP"><small>250 OD · objective on its own selected-OD finite graph.</small></td></tr></table>
 
 Each objective is compared with the arc-flow LP on the **same selected-OD finite time-expanded graph**. The two benchmark objective values must not be compared as if they were alternative algorithms on one demand set.
 
-### Sioux Falls / Final physical-link movement flow and validation
+#### Sioux Falls / Final physical-link movement flow and validation
 
 <table class="figure-grid"><tr><td width="50%"><img src="docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png" width="100%" alt="Sioux Falls 200-OD final time-aggregated physical-link movement flow"><small>200 OD · 24 nodes, 64 selected links and 446 final columns. <a href="docs/datasets/sioux-200od.md">Open results</a>.</small></td><td width="50%"><img src="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png" width="100%" alt="Sioux Falls 250-OD final time-aggregated physical-link movement flow"><small>250 OD · 24 nodes, 69 selected links and 567 final columns. <a href="docs/datasets/sioux-250od.md">Open results</a>.</small></td></tr></table>
 
 The two saved views aggregate final time-indexed movement flow back to physical links. Both retained runs have zero final demand residual and zero capacity violations, and both have reference-objective agreement. Map line width represents final movement flow accumulated over the modeled time horizon. These are schematic benchmark views, not observed traffic, static V/C or a full 528-OD assignment. Opposite directions can overlap in the rendering; use the data cards for numerical interpretation.
 
-### Sioux Falls / Independent pricing closure
+#### Sioux Falls / Independent pricing closure
 
 **Not established for the retained 200-OD and 250-OD runs.** Reference-objective agreement remains valid, but Boston's independent pricing-closure certificate is not transferred to Sioux Falls. [Exact status and reproduction limits](docs/cases/sioux-space-time.md#6-independent-pricing-closure).
 
 <a id="sioux-admm-readme"></a>
-### Sioux Falls / Selected-OD finite space–time ADMM R2_S
+#### Sioux Falls / Selected-OD finite space–time ADMM R2_S
 
 The accepted **200-OD and 250-OD selected subsets are different finite graphs and demand sets**. The Sioux-selected R2_S policy passed independent conservation, capacity, KKT and physical-flow projection checks in 85 and 101 iterations, with own-LP relative objective gaps of 6.30e-6 and 7.16e-6. The four evidence stages below match the Boston ADMM section above; the two Sioux results are not one same-demand algorithm race. [Full Sioux ADMM case and independent checks](docs/cases/sioux-admm.md).
 
@@ -625,20 +698,100 @@ The accepted **200-OD and 250-OD selected subsets are different finite graphs an
 
 *These are accepted saved-result figures. Physical-link views use a deterministic schematic layout, not geographic coordinates or observed traffic. [Editable figures and source records](docs/cases/sioux-admm.md) retain the distinct 200/250-OD scopes.*
 
+<a id="distributed-assignment"></a>
+### Distributed assignment algorithms / bounded accepted results
+
+The Sioux 200/250-OD **finite time-expanded shared-capacity** instances also have accepted, method-specific saved results. These are not static user equilibrium or full 528-OD network solutions. Their mathematical contract is separate from static FW; no cross-contract objective comparison is implied.
+
+| Method | Accepted Sioux 200 OD | Accepted Sioux 250 OD | Necessary distinction |
+|---|---|---|---|
+| **Lagrangian R2** | Dual lower bound **942,452.403471**; separately recovered feasible primal **943,155.589771** vehicle-min; **0.0746%** certified gap | Dual **1,516,258.347432**; feasible primal **1,521,090.836620** vehicle-min; **0.3177%** gap, below frozen 1% gate | Capacity-price dual generates paths; a separate restricted-path LP recovers the primal. Both primals match their own same-graph arc-flow LP objectives. |
+| **ADMM R2_S** | Objective **943,161.533307** vehicle-min; **6.30e-6** relative gap to own LP | Objective **1,521,101.731718** vehicle-min; **7.16e-6** relative gap to own LP | Frozen Sioux-selected policy also passes a separate bounded Boston 10-OD holdout; independent conservation/capacity/KKT/projection checks pass. [Full cross-city ADMM evidence](docs/methods/admm-space-time.md). |
+
+<table><tr><td width="50%"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/sioux/distributed_r1/Sioux_200OD_P07.svg" width="100%" alt="Sioux 200-OD Lagrangian saved lower-bound and feasible-recovery evidence"></a></td><td width="50%"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/sioux/distributed_r1/Sioux_250OD_P07.svg" width="100%" alt="Sioux 250-OD Lagrangian saved lower-bound and feasible-recovery evidence"></a></td></tr></table>
+
+*Saved Lagrangian R2 histories, in matching 200/250-OD layouts. The lower and upper bounds are different mathematical outputs; a dual lower bound alone is not a feasible assignment.*
+
+<table><tr><td width="50%"><a href="docs/methods/distributed-assignment.md#admm-localconsensus-shared-capacity-decomposition"><img src="docs/assets/sioux/distributed_r1/sioux_200od_objective_difference.svg" width="100%" alt="200-OD ADMM result is 0.000434 percent above its own LP objective"></a></td><td width="50%"><a href="docs/methods/distributed-assignment.md#admm-localconsensus-shared-capacity-decomposition"><img src="docs/assets/sioux/distributed_r1/sioux_250od_objective_difference.svg" width="100%" alt="250-OD ADMM result is 0.000607 percent above its own LP objective"></a></td></tr></table>
+
+*Earlier R1 paired scalar figures are retained as historical evidence; they are not the new R2_S histories. The R1 250-OD iteration history was not supplied, so none was created.* [R1 source and limits](docs/methods/distributed-assignment.md) · [R2 matched figures](docs/cases/sioux-admm.md).
+
+The table describes accepted Sioux selected-OD results; [Hong Kong has a separate accepted bounded Lagrangian recovery and 0.7444% certificate](docs/cases/hong-kong-space-time.md). Boston's Lagrangian transfer remains gated by the frozen 1% duality-gap criterion. ADMM R2_S passes a separate bounded Boston 10-OD holdout, while Hong Kong's frozen ADMM R2 transfer remains gated. None changes previously accepted Boston FW or CG results.
+
+### Independent verification
+
+Both CG runs agree with their own arc-flow LP objectives; independent full-DAG pricing closure is **Not established** for either retained run.
+
+### City-specific evidence and limits
+
+The XS170/XS169 capacity mechanism and both scales remain visible; no full 528-OD finite assignment or current traffic validation is claimed.
+
+### Reproduction
+
+[Inspect saved benchmark inputs and checks](docs/cases/sioux-falls.md#experiments--reproduction).
 
 <a id="hong-kong"></a>
-## 05 / Case study — Hong Kong bounded full-stack technical case
+## 06 / Case study — Hong Kong
 
-**What this case demonstrates.** The Tsim Sha Tsui–Jordan source-backed graph has **780 physical nodes, 1,239 directed links, 95 SSG fine zones and 10 STPUG parents**. Its retained R1 pilot has 95 centroids, 190 nonphysical connectors, 183 GTFS stops, 294 route IDs, 50 detector lane observations and a 2021 census allocation of **90,677.156 persons / 36,228.315 households**. R2–R4 then adds turn-aware assignment readiness, an 8,930-directed-OD four-stage engineering scenario, and accepted static FW/Algorithm B on a **modeled 723.191 PCE one-hour load**. [Current case and evidence order](docs/cases/hong-kong.md) · [Source/GMNS contract](docs/datasets/hong-kong-gmns.md) · [Four stages](docs/cases/hong-kong-four-stage.md) · [Static assignment](docs/cases/hong-kong-static-assignment.md).
+### Role in the repository
+
+Bounded turn-aware real-city engineering case with source-qualified four-stage/static and a frozen 10-OD finite case.
+
+### Scope and statistics
+
+780 physical nodes, 1,239 directed physical links, 95 SSG fine zones and ten STPUG parents. The finite case selects 100 physical nodes and 111 links.
+
+| Metric | Accepted bounded instance |
+|---|---|
+| City network | 780 physical nodes; 1,239 directed links |
+| Static scenario | 8,930 OD pairs; 723.191 PCE / 1 h |
+| Finite R5 case | 100 selected nodes; 111 links; 10 ODs |
+
+### GMNS, zones, and source evidence
+
+[GMNS network, zone hierarchy, turn and grade checks](docs/datasets/hong-kong-gmns.md) preserve physical and nonphysical identities.
+
+### Demand, transit, and observations
+
+[Building/activity proxies and four-stage scenario](docs/cases/hong-kong-four-stage.md) use graded assumptions; detector and private UrbanNav evidence are not held-out validation.
+
+### Static assignment
+
+[Turn-aware FW and task-local Algorithm B](docs/cases/hong-kong-static-assignment.md) agree on the same static scenario; official TAPLab adapter parity is not claimed.
+
+### Finite time-expanded algorithms
+
+The specifically approved HK10 / `ORACLE_R1_HK10_K1` example is a **model-generated path**, verified against the frozen R5 final pool and positive-flow solution. Approval covers its 77-arc excerpt and matching figures/captions/provenance only; it does not cover the full pool, dual/state arrays or raw observations. [Exact disclosure scope and file hashes](docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json).
+
+[Accepted R5 CG](docs/cases/hong-kong-space-time.md) matches its same-graph arc-flow LP, with separately recovered Lagrangian feasibility. Frozen ADMM R2 remains **Gated**. [Full representation-level figures and ordered evidence](docs/cases/hong-kong-space-time.md).
+
+<p align="center"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.png" width="100%" alt="Hong Kong bounded finite CG sequence: saved graph arcs, approved model-generated HK10 column, Phase I, no accepted shared-capacity event, Phase II and final projection."></a></p>
+
+[Historical R1 six-panel layout](docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.png) remains available alongside the current R2 image above.
+
+![Hong Kong saved physical-to-finite graph construction](docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.svg) · [Source](docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.source.json).
+
+The following approved, model-generated HK10 excerpt was verified against the frozen R5 final pool and **0.8352150831808043 PCE** positive flow. It is not an UrbanNav/GPS observation or approval for any other path data.
+
+![Hong Kong approved model-generated HK10 column with ordered dynamic arcs](docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png)
+
+*One model-generated path, not UrbanNav/GPS observation; original physical roads and turn-expanded routing states are distinct.* [SVG](docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.svg) · [Source](docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.source.json).
+
+![Hong Kong movement-only physical-link projection](docs/assets/three_city_r2/hong_kong_time_expanded_to_physical_link_flow.png)
+
+*Saved-record R2 view.* [SVG](docs/assets/three_city_r2/hong_kong_time_expanded_to_physical_link_flow.svg) · [Source](docs/assets/three_city_r2/hong_kong_time_expanded_to_physical_link_flow.source.json).
 
 The frozen 10-OD finite case has **11,954 dynamic nodes and 24,910 arcs**. Current CG R5 clears Phase I artificial flow **4.3502187198 → 0 in 12 rounds**, then reaches **75.03632985794835 vehicle-minutes**, agreeing with its same-graph arc-flow LP. An independent full-DAG check establishes **pricing closure for 10/10 demands at 1e-6**. Separate Lagrangian feasible-primal recovery has a **0.7444%** certified gap. Hong Kong ADMM R2 remains **gated before accepted outer iterations** and has no accepted objective. [Full finite case, individual scientific figures and redacted closure evidence](docs/cases/hong-kong-space-time.md).
 
 <a id="hong-kong-cg-r5"></a>
-### Hong Kong / Bounded finite space–time CG R5
+#### Hong Kong / Bounded finite space–time CG R5
 
 These are the accepted saved results for the **same unchanged 10-OD finite graph**. Phase-I total/by-demand evidence and Phase-II/independent-closure evidence form two paired rows; the construction, final flow and separate LP/Lagrangian comparison remain full width. The comparison is supporting context, not an additional CG run. The case page retains the full records, editable SVGs and reproduction limits.
 
-#### From physical links to time-indexed movement
+<a id="from-physical-links-to-time-indexed-movement"></a>
+#### Hong Kong / From the physical network to the finite time-expanded graph
 
 ![Hong Kong source-grounded local physical-link to time-indexed-arc cutaway](docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png)
 
@@ -672,18 +825,55 @@ These are the accepted saved results for the **same unchanged 10-OD finite graph
 
 *The LP, current CG and separately recovered Lagrangian feasible primal agree at the reference objective. This does not establish identical link, path or time flows; ADMM has no accepted objective in this comparison.* [SVG](docs/assets/hong_kong/full_stack_r5/figures/hk_same_graph_method_comparison.svg) · [Lagrangian evaluation](docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_evaluation.json).
 
-### Retained R1 data checkpoint
+### Independent verification
+
+CG Phase I reaches zero in 12 rounds, and independent full-DAG pricing closure passes 10/10 demands. The single newly displayed generated column is a bounded derived disclosure, not a full pool release.
+
+### City-specific evidence and limits
+
+Neither citywide DTA nor empirical calibration is established; original provider archives, raw point-level observations, full pool and duals stay excluded.
+
+#### Retained R1 data checkpoint
 
 <p align="center"><a href="docs/cases/hong-kong-gmns-pilot.md"><img src="docs/assets/hong_kong/gmns_pilot_r1/02_roads_zones.svg" width="100%" alt="Historical Hong Kong R1 bounded pilot roads and zones before assignment readiness"></a></p>
 
 *This earlier source-backed road/zone view is not assignment flow.* Its saved `assignment_ready=false` gate describes **R1 only**, not the later accepted R2–R5 case. Centroid access remains nonphysical. Its deterministic demand seed was not observed OD, and private UrbanNav point-level derivatives were not published. [R1 case and five original views](docs/cases/hong-kong-gmns-pilot.md) · [R1 instance](examples/hong-kong/gmns_pilot_r1/README.md) · [Current evidence/rights contract](docs/methods/hong-kong-evidence-contract.md).
 
+### Reproduction
+
+[Run public saved-result checks](docs/methods/hong-kong-evidence-contract.md).
+
+## 07 / Methods, reproduction, evidence, and limits
+
+[Methods](docs/methods.md) · [Visual evidence](docs/visualizations.md) · [Run your own GMNS](docs/RUN_YOUR_OWN_GMNS.md) · [Licenses and source policies](docs/integrations.md).
+
+<a id="cg-experiments"></a>
+### Executed finite space–time CG experiments
+
+The repository contains **three distinct executed CG case families**. Boston is one bounded real-city pilot on an accepted GMNS subnetwork; Sioux Falls contains two historical selected-OD benchmark instances; Hong Kong R5 is a separately frozen ten-demand Tsim Sha Tsui–Jordan finite case. They share a method family, not a graph, demand, objective value or universal certificate.
+
+<p align="center"><a href="docs/methods/space-time-cg.md"><img src="docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.png" width="100%" alt="Six-stage comparison of executed finite space–time CG evidence: one bounded Boston pilot and two historical Sioux Falls selected-OD runs. Both have saved Phase-I, Phase-II, final-flow and reference evidence; independent pricing closure is established only for Boston."></a></p>
+
+| Executed evidence | Boston | Sioux Falls | Hong Kong |
+|---|---|---|---|
+| **Instance** | 90 physical nodes, 125 links, 10 ODs, 3-second steps, 100-step horizon | Historical 200/250-OD selected subsets | 111 selected physical links, 10 ODs, 30-second steps, 50-step horizon; 24,910 dynamic arcs |
+| **Phase I** | Artificial flow **20.5536128974 → 0** in round **90** | Artificial flow reaches zero in rounds **51 / 62** | Artificial flow **4.3502187198 → 0** in **12** rounds |
+| **Phase II** | **64.39686151152954** vehicle-min; own-LP agreement | **943,155.589771 / 1,521,090.836620**; each own-LP agreement | **75.03632985794835** vehicle-min; own-LP agreement after three added columns |
+| **Pricing certificate** | Independent full-DAG closure **10/10** at `1e-6` | **Not established** for retained historical runs | Independent full-DAG closure **10/10** at `1e-6` |
+| **Open the evidence** | [Boston case](docs/cases/boston-space-time.md) | [Sioux case](docs/cases/sioux-space-time.md) | [Hong Kong R5 case](docs/cases/hong-kong-space-time.md) |
+
+*The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 figures appear [above on this homepage](#hong-kong-cg-r5) and in its case page. None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.* [Boston/Sioux overview SVG](docs/assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Source hashes](docs/assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](docs/assets/presentation_r4/cg_experiments_overview.png).
+
+
+
 <a id="run-your-input"></a>
-## 06 / Run new inputs, or inspect saved results
+### Run new inputs, or inspect saved results
 
 **These are two different operations.** The new generic preparation/solve entry computes a fresh result from supplied inputs. The saved-result entries below inspect frozen experiments. A documentation build never silently invokes a solver.
 
-### New vehicle OD → preparation → FW → verification → map
+For repeatable presentation-only builds and source-hash boundaries, see the [three-city saved-data build contract](docs/assets/three_city_r2/BUILD_AND_SOURCE_CONTRACT.md). The older one-off R1 composition helpers are not required.
+
+#### New vehicle OD → preparation → FW → verification → map
 
 ```bash
 python -B tools/mcl_assignment.py prepare --input examples/scalable_vehicle_fixture/network --demand examples/scalable_vehicle_fixture/vehicle.csv --config examples/scalable_vehicle_fixture/config.json --output "my results/instance"
@@ -698,11 +888,11 @@ A second entry accepts person OD, supported absolute skims, the fixed conditiona
 
 
 <a id="mobility-data-support"></a>
-## Mobility data support
+### Mobility data support
 
 Supporting mobility data remain distinct from runnable city models and from both the historical Hong Kong R1 data pilot and the later bounded R2–R5 technical case.
 
-### Open mobility evidence
+#### Open mobility evidence
 
 **Explore the data behind a city model, then prepare the records you need.** Selected Open Mobility Data Visibility (OMDV) results now include a downloadable, non-geometric 11,422-city evidence table and actual source-record → content-SHA → city relationships. The executable tools query those records, organize local catalogs and inspect a user-supplied GTFS ZIP.
 
@@ -725,7 +915,7 @@ Supporting mobility data remain distinct from runnable city models and from both
 
 These evidence layers are not additive. Each value is tied to its own unit, source frame and retained research snapshot. They do not measure live service coverage or the number of runnable city models. The public release includes a **selected result projection**, provenance and executable tools—not raw feeds, provider URLs, geometry or live endpoint checks. [Browse/download 11,422 city rows](docs/open-data-explorer.md) · [Sources and reproduction scope](docs/open-data-sources.md) · [Trace each metric](docs/omdv-provenance.md)
 
-### Executable data tools: query evidence and prepare your own records
+#### Executable data tools: query evidence and prepare your own records
 
 The authorized OMDV workflow normalizes a user-supplied feed catalog and city table, performs exact city/country **named-entity matching**, and writes standardized records, unmatched/ambiguous statuses and quality checks.
 
@@ -740,7 +930,7 @@ python -B tools/mcl_data.py process-gtfs --zip path/to/feed.zip --output results
 
 [**Browse city evidence**](docs/open-data-explorer.md) · [**Use the data tools**](docs/data-tools.md) · [**Explore all six evidence layers**](docs/open-data.md) · [**Connect data to the city workflow**](docs/city-workflow.md)
 
-## Quick start
+#### Quick start
 
 Use a compatible Python environment and install the network-workflow dependencies. The source has been exercised with Python 3.12 and 3.13; see the [tested profiles and installation guide](docs/getting-started.md).
 
@@ -766,7 +956,7 @@ python -B examples/boston/run_saved_example.py --data-dir "examples/boston/behav
 
 The command rebuilds a query database from the released CSVs and exports five saved-result queries; it does not acquire sources, fit parameters, run FW/CG or validate predictions. The [saved-result guide](examples/boston/SAVED_EXAMPLE.md) also explains how to point `--data-dir` at `public_component` after extracting the separate full data asset. The trusted code stays beside the wrapper in this checkout.
 
-## Use your own network
+#### Use your own network
 
 Declare node/link/demand fields, units and zone-access rules in `case.json`, then use the same numerical entry point:
 
@@ -782,13 +972,13 @@ The current CG profile uses one-minute steps, positive integer travel times, a c
 
 The allowed network is independent of the initial route pool. Every column in the last successfully solved pool is exported, including zero-flow columns. Reference agreement and independently established pricing closure are distinct statements.
 
-## Tools, methods and extensions
+#### Tools, methods and extensions
 
 [GMNS](https://github.com/zephyr-data-specs/GMNS) supplies the common network vocabulary. [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset), [OSM2GMNS](https://github.com/asu-trans-ai-lab/OSM2GMNS), [grid2demand](https://github.com/asu-trans-ai-lab/grid2demand) and [TAPLab](https://github.com/asu-trans-ai-lab/TAPLab) are upstream data/tools with their own implementations and licenses. A reference link is not evidence of a bundled executable integration.
 
 The computational release includes **space–time CG**, **static Frank–Wolfe**, the solved **finite-path Boston reference**, corrected **native Diagnostic L3**, accepted **official `tap-b` Algorithm B** case evidence, bounded **Sioux Lagrangian R2**, and cross-city bounded **ADMM R2_S** source/evidence. [The method table](docs/methods.md) states their distinct objectives, instances and accuracy scopes; `python -B tools/mcl_results.py list` and `verify-saved --run <run-id>` inspect previously released points without solving. Generalized raw-city automation, broader GPS traces and map matching, coupled primal–dual work and native internal Policy Bush state inspection remain research extensions. [City workflow](docs/city-workflow.md) · [Algorithm B method](docs/methods/origin-based-algorithm-b.md) · [ADMM R2](docs/methods/admm-space-time.md) · [Roadmap](docs/roadmap.md)
 
-## Project layout
+#### Project layout
 
 ```text
 app/src/gmns_dynamic/   Existing network input and space–time CG engine
@@ -812,7 +1002,7 @@ docs/                  City workflow, visual results and project website
 tools/                 User commands, documentation build and checks
 ```
 
-## Contributing, citation and licenses
+#### Contributing, citation and licenses
 
 Contribute a traceable city/network instance, a focused adapter, a verification improvement or a documented method. Keep observed, estimated and synthetic inputs distinct. [Contribution guide](CONTRIBUTING.md) · [Add a network](docs/add-a-network.md) · [Citation](docs/citation.md)
 

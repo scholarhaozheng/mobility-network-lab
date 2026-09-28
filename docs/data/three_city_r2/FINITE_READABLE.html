@@ -1,0 +1,100 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>| Metric | Boston · 10 OD | Sioux · 200 OD | Sioux · 250 OD | Hong Kong · 10 OD | | Mobility Computation Lab</title><link rel="stylesheet" href="../../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../../city-workflow.html">City workflow</a><a href="../../datasets.html">Networks</a><a href="../../visualizations.html">Visual results</a><a href="../../open-data-explorer.html">City evidence</a><a href="../../open-data.html">Open data</a><a href="../../methods.html">Methods</a><a href="../../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / | Metric | Boston · 10 OD | Sioux · 200 OD | Sioux · 250 OD | Hong Kong · 10 OD |</p><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Boston · 10 OD</th>
+<th>Sioux · 200 OD</th>
+<th>Sioux · 250 OD</th>
+<th>Hong Kong · 10 OD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selected physical subnetwork</td>
+<td>90 nodes / 125 links</td>
+<td>24 nodes / 64 links</td>
+<td>24 nodes / 69 links</td>
+<td>100 nodes / 111 links</td>
+</tr>
+<tr>
+<td>Selected OD demands</td>
+<td>10</td>
+<td>200</td>
+<td>250</td>
+<td>10</td>
+</tr>
+<tr>
+<td>One model time step</td>
+<td>3 s</td>
+<td>seconds not reported</td>
+<td>seconds not reported</td>
+<td>30 s</td>
+</tr>
+<tr>
+<td>Number of model steps</td>
+<td>100</td>
+<td>not reported in public summary</td>
+<td>not reported in public summary</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Elapsed model horizon</td>
+<td>300 s</td>
+<td>not derivable from released summary</td>
+<td>not derivable from released summary</td>
+<td>1,500 s</td>
+</tr>
+<tr>
+<td>Dynamic graph</td>
+<td>9,110 nodes / 22,217 arcs</td>
+<td>1,192 nodes / 9,406 arcs</td>
+<td>1,292 nodes / 11,254 arcs</td>
+<td>11,954 nodes / 24,910 arcs</td>
+</tr>
+<tr>
+<td>Same-graph reference LP objective</td>
+<td>64.396861511530</td>
+<td>943,155.589771</td>
+<td>1,521,090.83662</td>
+<td>75.036329857948</td>
+</tr>
+<tr>
+<td>CG Phase-I zero round</td>
+<td>90</td>
+<td>51</td>
+<td>62</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Final CG column pool</td>
+<td>167</td>
+<td>446</td>
+<td>567</td>
+<td>25</td>
+</tr>
+<tr>
+<td>CG independent full-DAG pricing</td>
+<td>Independent pricing closure established; 10/10</td>
+<td>Not established</td>
+<td>Not established</td>
+<td>Independent pricing closure established; 10/10</td>
+</tr>
+<tr>
+<td>Lagrangian status / gap</td>
+<td>Gated; 1.1002% exceeds frozen 1% gate</td>
+<td>Accepted; 0.0746% duality gap</td>
+<td>Accepted; 0.3177% duality gap</td>
+<td>Verified bounded case; 0.7444% duality gap</td>
+</tr>
+<tr>
+<td>ADMM status / own-LP difference</td>
+<td>Verified bounded case; R2_S own-LP gap 6.68e−6</td>
+<td>Accepted R2_S; 6.30e−6</td>
+<td>Accepted R2_S; 7.16e−6</td>
+<td>Gated; first local conservation residual 0.082467622 PCE</td>
+</tr>
+</tbody>
+</table>
+<p>Fixed-cost, hard-capacity finite problems; each column is a separate graph. Objective values are vehicle-minutes, but no cross-city ranking is implied. CG pricing closure does not transfer to Lagrangian or ADMM.</p>
+<p><a href="../three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.csv">Machine-readable CSV</a> · <a href="FINITE_READABLE.source.json">Readable-table source record</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../../data-access.html">Data access</a> · <a href="../../citation.html">Cite</a> · <a href="../../roadmap.html">Roadmap</a></span></footer></div></body></html>

@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation."><meta name="project-site-target" content="https://scholarhaozheng.github.io/mobility-network-lab/"><meta name="project-site-status" content="configured-target-not-deployment-confirmation"><title>| Metric | Boston B1 · conditional 2 h | Sioux Falls · classic 528 OD | Hong Kong · bounded 1 h | | Mobility Computation Lab</title><link rel="stylesheet" href="../../assets/site.css"></head><body><header class="wrap"><nav class="nav"><a class="brand" href="../../index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="../../city-workflow.html">City workflow</a><a href="../../datasets.html">Networks</a><a href="../../visualizations.html">Visual results</a><a href="../../open-data-explorer.html">City evidence</a><a href="../../open-data.html">Open data</a><a href="../../methods.html">Methods</a><a href="../../getting-started.html">Documentation</a><a href="https://github.com/scholarhaozheng/mobility-network-lab">GitHub ↗</a></div></nav></header><main class="article"><p class="crumb">Documentation / | Metric | Boston B1 · conditional 2 h | Sioux Falls · classic 528 OD | Hong Kong · bounded 1 h |</p><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Boston B1 · conditional 2 h</th>
+<th>Sioux Falls · classic 528 OD</th>
+<th>Hong Kong · bounded 1 h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical-node / positive OD pairs</td>
+<td>453</td>
+<td>528</td>
+<td>8930</td>
+</tr>
+<tr>
+<td>Assigned demand and period</td>
+<td>1936.238475 PCE / 2 h</td>
+<td>360600 vehicles</td>
+<td>723.191228 PCE / 1 h</td>
+</tr>
+<tr>
+<td>Mathematical problem</td>
+<td>static BPR / Beckmann</td>
+<td>static BPR / Beckmann</td>
+<td>turn-aware static BPR / Beckmann</td>
+</tr>
+<tr>
+<td>FW evidence</td>
+<td>Verified bounded case</td>
+<td>Verified historical run; input-identity caveat</td>
+<td>Verified bounded case</td>
+</tr>
+<tr>
+<td>Algorithm B route</td>
+<td>Verified bounded case; task-local TAPLab-compatible lossless adapter</td>
+<td>Verified; official TAPLab registered-adapter parity</td>
+<td>Verified bounded case; task-local lossless adapter</td>
+</tr>
+<tr>
+<td>Objective and independent gap</td>
+<td>Beckmann 7922.083942188 PCE-min; independent relative gap -2.3e-16</td>
+<td>Beckmann 4231335.287110682 vehicle-min; independent relative gap 4.5e-09</td>
+<td>Beckmann 1676.012131329 PCE-min; independent relative gap 4.21e-15</td>
+</tr>
+<tr>
+<td>Path-to-link reconstruction</td>
+<td>Verified; max path/link mismatch 5.68e-14 PCE</td>
+<td>Verified; max path/link mismatch 5.46e-11 vehicles</td>
+<td>Verified; max path/link mismatch 1.42e-13 PCE</td>
+</tr>
+</tbody>
+</table>
+<p>Boston B1 is a matched-method holdout, not Boston's largest accepted FW tier. Objectives and demands are not comparable across cities or with finite fixed-cost models.</p>
+<p><a href="../three_city_r1/THREE_CITY_STATIC_ASSIGNMENT_STATISTICS.csv">Machine-readable CSV</a> · <a href="STATIC_READABLE.source.json">Readable-table source record</a>.</p>
+</main><div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="../../data-access.html">Data access</a> · <a href="../../citation.html">Cite</a> · <a href="../../roadmap.html">Roadmap</a></span></footer></div></body></html>

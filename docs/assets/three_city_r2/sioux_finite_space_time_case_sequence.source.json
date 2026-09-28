@@ -1,0 +1,40 @@
+{
+  "figure_id": "sioux_finite_space_time_case_sequence",
+  "city": "Sioux Falls",
+  "representation_family": "D",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/presentation_r5/data/sioux_shared_capacity_saved.csv": "4622b8efbc53e38ef0a0ba77eaa7200ca709aa2e128d1a8e886fdbb06d1fcdae",
+    "docs/assets/sioux/phase_i_r1/data/200_phase_i_trace.csv": "a20adcf3370fc732540d33aab551b9617d533b0024fc0fa2bffba9bd1be0745a",
+    "docs/assets/sioux/phase_i_r1/data/200_phase_ii_trace.csv": "df4a6f15e7b6010a8956f0787f5f0607f527f596f6cfe23ec22170953206b380",
+    "docs/assets/three_city_r2/data/sioux_construction_edges.csv": "d9d273941bb147071a2a17edacaabc9f186d9a7d15f88301cc7a95eae76eecfd"
+  },
+  "svg_sha256": "2dea6b603f1026f810e6f3924d485a377fd76121bf67ecdb8fd029cc6a79f9f1",
+  "png_sha256": "d568d55cb220e9ced3fa13c036b5c7f613997d8cc861ba3751a482211fc7bd25",
+  "caption": "Sioux Falls: six saved-data panels in a shared order. a/b: saved XS170 cutaway · c/e: 200-OD traces only · d: 200-OD recorded exchange (also documented for 250 OD) · f: 200/250 summary. The full map and complete path remain in standalone figures; CG independent pricing closure is not established · 200/250 od. No scientific solver was rerun.",
+  "scientific_solver_rerun": false,
+  "panel_order": [
+    "a  Saved finite-graph arcs",
+    "b  One generated column",
+    "c  Phase-I artificial flow",
+    "d  Shared-capacity evidence",
+    "e  Phase-II objective / LP reference",
+    "f  Final physical projection"
+  ],
+  "nested_posters": false,
+  "time_unit": "1 model step (seconds not published)",
+  "shared_capacity_status": "XS170/XS169 recorded 500-vehicle exchange",
+  "panel_instance_scope": "a/b: saved XS170 cutaway · c/e: 200-OD traces only · d: 200-OD recorded exchange (also documented for 250 OD) · f: 200/250 summary.",
+  "capacity_bar_categories": [
+    "XS170",
+    "XS169"
+  ],
+  "capacity_bar_changes": [
+    -500.0,
+    500.0
+  ],
+  "capacity_bar_unit": "model vehicles",
+  "disclosure_status": "ACCEPTED_PUBLIC"
+}

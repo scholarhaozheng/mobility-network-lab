@@ -1,8 +1,12 @@
 # Sioux Falls case · static assignment and historical space–time CG
 
-Sioux Falls is a classical benchmark entry in the same network-computation framework, **not** a new present-day real-city GPS/four-stage dataset. Its static native Diagnostic L3 instance has 24 nodes, 76 directed links, 528 positive OD records, 2,218 paths and rank 50. The historical 200OD and 250OD time-expanded CG cases are separate selected-link/horizon instances. [Return to the project homepage](../index.md).
+The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.
 
-## What this case demonstrates
+## Role in the repository
+
+Classical supplied-vehicle-OD static benchmark and historical 200/250-OD finite benchmarks, not a population/GPS case.
+
+Sioux Falls is a classical benchmark entry in the same network-computation framework, **not** a new present-day real-city GPS/four-stage dataset. Its static native Diagnostic L3 instance has 24 nodes, 76 directed links, 528 positive OD records, 2,218 paths and rank 50. The historical 200OD and 250OD time-expanded CG cases are separate selected-link/horizon instances. [Return to the project homepage](../index.md).
 
 Supplied classic benchmark inputs, historical FW, executed native L3 profiles and finite space–time CG with Phase-I/II evidence. It does **not** execute modern city generation/distribution/mode choice or GPS feedback.
 
@@ -10,23 +14,43 @@ Supplied classic benchmark inputs, historical FW, executed native L3 profiles an
 
 ![Source-grounded Sioux Falls time expansion and CG mechanism](../assets/presentation_r3/sioux_space_time_construction.png)
 
-## Instance & GMNS Structure
+## Scope and statistics
+
+Static: 24 nodes, 76 links, 528 positive OD records. Selected finite runs: 24 nodes, 64/69 links and 200/250 demands.
+
+| Metric | Accepted instance |
+|---|---|
+| Static benchmark | 24 nodes; 76 directed links; 528 OD records |
+| Finite historical 200-OD case | 24 nodes; 64 selected links; 200 ODs |
+| Finite historical 250-OD case | 24 nodes; 69 selected links; 250 ODs |
+
+## GMNS, zones, and source evidence
+
+[Frozen benchmark/source identity](../../examples/sioux-falls/native_l3_r1/README.md) and selected finite subgraphs have distinct scopes.
 
 The classic 76-link topology and OD table are [frozen with the native representation](../../examples/sioux-falls/native_l3_r1/README.md). Their IDs and path/OD/link records are explicit; no Boston H3 zones, GTFS, GPS traces or present-day physical street tiles are imputed to this benchmark. The two CG diagrams below are schematic flows of their different selected-link instances.
 
-## Trip Generation
+## Demand, transit, and observations
+
+Population, households, transit and GPS are **Not part of this benchmark**; vehicle OD is supplied.
+
+### Stage 01 · Trip generation — not estimated
 
 OD demand is **provided exogenously** for the classic benchmark. Trip-production rates were not estimated in this case.
 
-## Trip Distribution
+### Stage 02 · Trip distribution — supplied OD
 
 The static 528-record OD table is a supplied input, not a gravity/IPF result. Historical 200OD and 250OD CG instances select different demand subsets and links.
 
-## Mode Choice
+### Stage 03 · Mode choice — not estimated
 
 No traveller mode-choice model was estimated for the classic Sioux assignment benchmark. Its fixed vehicle demand should not be confused with Boston's conditional DA/S2/S3/TW study.
 
-## Traffic Assignment
+No real-city GPS/GTFS observations or Boston-style service-feedback workflow are included in the classic Sioux instance. The benchmark is algorithmic, not an observed urban traffic panel.
+
+## Static assignment
+
+[Historical FW and official TAPLab registered-adapter Algorithm B](sioux-algorithm-b.md) are static; native L3 has its own numerical evidence.
 
 The [historical static FW result](../datasets/sioux-static-fw.md) is actually executed: saved approximate Beckmann objective **4,236,715.140437842**, 24 nodes, 76 links, 528 OD records and a reported 0.236154949% fixed-flow gap under its own denominator. Its runtime OD-file hash and path disaggregation were not retained; therefore it is **not** asserted to be an exact matching reference for the native frozen input.
 
@@ -39,11 +63,25 @@ The corrected [native Diagnostic L3 method](../../algorithms/path_compression/di
 
 Both have zero negative path-flow mass and passed recorded original-space numerical tests. Their nonzero full-network gaps remain visible; a passing numerical-feasibility gate is not an equilibrium or empirical-validation certificate. Gamma=0.01 adds a reference-centred term, so the two F values are not a shared-objective leaderboard. The source and effective zero-link-bound adapter are released, but native portability has not been retested in this publication task.
 
+
+
+The separate [official `tap-b` Algorithm B classic static result](sioux-algorithm-b.md) passes independent UE checks on 24 nodes, 76 links and 528 positive ODs. The pinned official TAPLab registered adapter and direct callable reproduce its accepted physical-link flows exactly; `taplab verify` certified the standard output. This is a **static** BPR/Beckmann result, not a finite space–time CG or distributed-capacity result.
+
+## Finite time-expanded algorithms
+
+[CG](sioux-space-time.md), [Lagrangian](../methods/distributed-assignment.md) and [ADMM](sioux-admm.md) address bounded finite instances.
+
+![Sioux Falls bounded finite space-time case sequence](../assets/three_city_r2/sioux_finite_space_time_case_sequence.png)
+
+*Current source-matched R2 layout; 200-OD plotted traces and 250-OD evidence remain distinct.* [SVG](../assets/three_city_r2/sioux_finite_space_time_case_sequence.svg) · [Source and exact input hashes](../assets/three_city_r2/sioux_finite_space_time_case_sequence.source.json) · [Historical R1 layout](../assets/three_city_r1/sioux_finite_space_time_case_sequence.png).
+
+[Representation-level figures and full finite case](sioux-space-time.md).
+
 The historical **finite space–time CG** results solve a different fixed-cost, hard-capacity linear formulation with a reference LP. They belong inside this case, not in the static native comparison:
 
 The same bounded 200/250-OD selected-instance family now has separate accepted [Lagrangian R2 evidence](../methods/distributed-assignment.md) and [ADMM R2_S evidence](sioux-admm.md). Lagrangian R2 certifies 0.0746% / 0.3177% duality gaps after **separate** feasible restricted-path recovery. ADMM R2_S passes independent conservation/capacity/KKT/projection gates at 85 / 101 iterations, with own-LP relative objective differences 6.30e-6 / 7.16e-6. Earlier ADMM R1 figures remain available as historical records. These do not replace CG's certificate status or establish a full 528-OD result.
 
-The separate [official `tap-b` Algorithm B classic static result](sioux-algorithm-b.md) passes independent UE checks on 24 nodes, 76 links and 528 positive ODs. The pinned official TAPLab registered adapter and direct callable reproduce its accepted physical-link flows exactly; `taplab verify` certified the standard output. This is a **static** BPR/Beckmann result, not a finite space–time CG or distributed-capacity result.
+
 
 | Historical CG experiment | Selected links | OD pairs | Final columns | Objective | Evidence |
 |---|---:|---:|---:|---:|---|
@@ -54,11 +92,18 @@ The separate [official `tap-b` Algorithm B classic static result](sioux-algorith
 
 ![Historical Sioux Falls 250OD schematic physical-link movement flow](../assets/benchmarks/sioux_250od_final_physical_link_flow.png)
 
-## Observations & Feedback
+## Independent verification
 
-No real-city GPS/GTFS observations or Boston-style service-feedback workflow are included in the classic Sioux instance. The benchmark is algorithmic, not an observed urban traffic panel.
+Both historical CG runs show reference-objective agreement with their own arc-flow LP; independent full-DAG pricing closure is **Not established**.
 
-## Experiments & Reproduction
+## City-specific evidence and limits
+
+The XS170/XS169 shared-capacity event and both selected-OD scales remain in the complete evidence below.
+
+<a id="experiments--reproduction"></a>
+## Reproduction
+
+Inspect the retained [experiments and reproduction](#experiments--reproduction) section below.
 
 ```bash
 python -B tools/mcl_results.py list --case sioux-falls

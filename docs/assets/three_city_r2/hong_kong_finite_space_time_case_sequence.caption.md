@@ -1,0 +1,1 @@
+Hong Kong: six saved-data panels in a shared order. a/b: HK10 cutaway and model-generated column · c/e: unchanged 10-OD R5 CG · d: no accepted event · f: 111-link projection. The full map and complete path remain in standalone figures; CG independent pricing closure is established · 10/10. No scientific solver was rerun.

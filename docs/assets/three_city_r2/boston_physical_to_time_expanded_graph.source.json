@@ -1,0 +1,41 @@
+{
+  "figure_id": "boston_physical_to_time_expanded_graph",
+  "city": "Boston",
+  "representation_family": "A",
+  "scientific_status": "saved-result rendering; no solver call",
+  "renderer_version": "three-city-parallel-r2",
+  "renderer_sha256": "c075d6bf3af7dd2db04397ce958f3cc302897a187ef81d9c57caa2668fc11d7f",
+  "input_sha256": {
+    "docs/assets/three_city_r2/data/boston_construction_edges.csv": "951909c14873f1348c26d04cdd99ceeda1b91ddf33b4a4d3533e7bc87054348c"
+  },
+  "svg_sha256": "2c2f16b8043db51c4f7b30bf249f07b1d70ee28559696b708ec9aa69159fc175",
+  "png_sha256": "f041a0519dfed5de5a792d7aeaa31d4d551e406e0bb61c2f428e465218aa5134",
+  "caption": "Boston: a source-matched local subgraph of the accepted finite time-expanded graph. All displayed edges have literal arc IDs, endpoint states, types and time indices in the linked edge table. Schematic coordinates are not geographic; terminal sink time is bookkeeping, not physical waiting.",
+  "scientific_solver_rerun": false,
+  "plotted_arc_ids": [
+    "explicit_link_18007_t0",
+    "explicit_link_18005_t2",
+    "explicit_link_17811_t5",
+    "wait_1005_t9",
+    "explicit_link_17946_t10",
+    "explicit_link_17947_t13",
+    "explicit_link_15592_t16",
+    "wait_2032_t0",
+    "explicit_link_18007_t1",
+    "wait_1002_t2"
+  ],
+  "source_edge_table": "docs/assets/three_city_r2/data/boston_construction_edges.csv",
+  "time_layers": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    9,
+    10,
+    13,
+    16,
+    19
+  ],
+  "aspect_policy": "native geometry; schematic graph coordinates"
+}
