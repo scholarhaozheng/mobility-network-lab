@@ -32,7 +32,7 @@ python -B examples/boston/behavior_feedback_r1_semantic_fix_r1/query_behavior_fe
 python -B examples/boston/behavior_feedback_r1_semantic_fix_r1/query_behavior_feedback.py parameters
 ```
 
-The builder reads `data/public_table_manifest.csv`, verifies the CSV hashes and row counts, and creates `boston_central_public.sqlite` beside the scripts. A prebuilt database is not required. It creates indexes and views and checks SQLite integrity.
+The builder reads `data/public_table_manifest.csv`, checks declared row counts, and creates `boston_central_public.sqlite` beside the scripts. CSV SHA-256 checks are performed by `validate_public.py` or the `run_saved_example.py` wrapper. A prebuilt database is not required. The builder creates indexes and views and checks SQLite integrity.
 
 With a standalone copy of this component, open its directory and run the same script names without the repository-relative prefix.
 

@@ -28,6 +28,7 @@ python tools/mnl.py run --input app/cases/capacity_zone_probe/input --config app
 python tools/mnl.py verify --run results/capacity-demo
 </code></pre>
 <p>Open <code>results/capacity-demo/report.html</code>. The result JSON and complete path-flow tables are next to it. <code>validate</code> checks input schema, attributes and identifiers; it is not a proof of feasibility. <code>verify</code> reads existing results without running an optimizer.</p>
+<p><strong>Version scope.</strong> <code>tools/mnl.py</code> uses the retained 0.3.0-rc5 generic engine. Later accepted Boston and Hong Kong CG results use separately versioned case implementations and saved-result checks; this command is not automatically a reproduction entry for those later runs. See the <a href="methods/space-time-cg.html">finite CG method</a>, <a href="cases/boston-space-time.html">Boston case</a>, and <a href="cases/hong-kong-space-time.html">Hong Kong case</a>.</p>
 <h2 id="supply-an-initial-route-pool">Supply an initial route pool</h2>
 <pre><code class="language-bash">python tools/mnl.py run --input app/cases/capacity_zone_probe/input --config app/cases/capacity_zone_probe/case.json --seed-mode supplied --seeds results/capacity-demo/seeds/static_seed_candidates.csv --output results/capacity-supplied
 python tools/mnl.py verify --run results/capacity-supplied
