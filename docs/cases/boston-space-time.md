@@ -36,6 +36,12 @@ This page reports **one accepted bounded Boston pilot**, not a citywide assignme
 <a id="network-and-construction-physical-geography-versus-time-states"></a>
 ## From the physical network to the finite time-expanded graph
 
+**The CG example solves a finite space–time linear flow model with fixed arc costs and explicit capacities.** This is distinct from static BPR/Beckmann assignment. The layered view combines saved node-time states, a recorded B07 column excerpt, and a separately recorded restricted-master capacity exchange.
+
+<p align="center"><img src="../assets/cg_layered_companions_r1/boston_layered_space_time_construction.png" width="100%" alt="Boston layered finite time-expanded graph: saved B07 prefix, real waiting arc, and restricted-master/pricing workflow."></p>
+
+*Source-grounded local excerpt; one time step is 3 seconds. The full B07 path arrives at t19; its sink at t100 is bookkeeping, not physical waiting.* [Editable SVG](../assets/cg_layered_companions_r1/boston_layered_space_time_construction.svg) · [Source record](../assets/cg_layered_companions_r1/boston_layered_space_time_construction.source.json) · [Displayed arcs](../assets/cg_layered_companions_r1/boston_display_edges.csv).
+
 ![boston saved physical and dynamic arc construction](../assets/three_city_r2/boston_physical_to_time_expanded_graph.png)
 
 *Source-matched R2 reconstruction from saved records.* [SVG](../assets/three_city_r2/boston_physical_to_time_expanded_graph.svg) · [Exact figure sources](../assets/three_city_r2/boston_physical_to_time_expanded_graph.source.json) · [Full caption](../assets/three_city_r2/boston_physical_to_time_expanded_graph.caption.md).

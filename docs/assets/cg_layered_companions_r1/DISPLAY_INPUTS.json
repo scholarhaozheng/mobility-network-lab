@@ -1,0 +1,170 @@
+{
+  "schema": "cg-layered-companion-display-v1",
+  "scientific_solver_calls": 0,
+  "layout_reference": "render_presentation_r3.py / original Sioux Falls layered cutaway",
+  "input_hashes": {
+    "docs/assets/boston/space_time_cg_r4/data/construction_path_arcs.csv": "6518c6cdf54a8a5ee13ca7edd655ac593245f875d4aceee3e699d2e6a858985c",
+    "docs/assets/boston/space_time_cg_r4/data/construction_path.json": "32badca8cb1cbd813bbaefd8d8143d6b378a245e7a70505b2884bfb012d7f468",
+    "docs/assets/three_city_r2/data/boston_construction_edges.csv": "951909c14873f1348c26d04cdd99ceeda1b91ddf33b4a4d3533e7bc87054348c",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_od_change.csv": "da044f9cd879e1d016b65c690d7453995db15d36487a98fc5b5295c0fe33ebae",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_capacity_exchange.csv": "89d1b7091e05e178c96db0536b6590a4a7586a594f0b57fa652bccf2058dd637",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.csv": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.source.json": "b238c0fe96c2e3ab20bf1e48ab4ed939877100fe91f2f466d5c0a4e5112b734a",
+    "docs/assets/three_city_r2/data/hong_kong_physical_to_routing_crosswalk.csv": "4c1b0e451db1e755201b1e219788ac5e8b47dd8b2e545256e28f4e1acde13353"
+  },
+  "graph_membership_check": {
+    "boston_dynamic_arc_sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "hong_kong_dynamic_arc_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+  },
+  "boston": {
+    "column_id": "PHASEI_R1_GEN_B07_001",
+    "demand_id": "B07",
+    "full_path_arc_count": 9,
+    "final_flow": "0.36462212977800723",
+    "step_seconds": 3,
+    "display_time_indices": [
+      0,
+      1,
+      2,
+      3,
+      5,
+      9,
+      10
+    ],
+    "arrival_time_index": 19,
+    "sink_time_index": 100,
+    "base_nodes": [
+      "2032",
+      "1002",
+      "1004",
+      "1005"
+    ],
+    "artificial_flow_round1_changes": {
+      "B07": -0.36462212977800723,
+      "B09": -1.083333333333333,
+      "B10": 1.0833333333333333
+    },
+    "base_xy": {
+      "2032": [
+        0,
+        1
+      ],
+      "1002": [
+        1,
+        0
+      ],
+      "1004": [
+        2,
+        1
+      ],
+      "1005": [
+        3,
+        0
+      ]
+    }
+  },
+  "hong_kong": {
+    "column_id": "ORACLE_R1_HK10_K1",
+    "demand_id": "HK10",
+    "full_path_arc_count": 77,
+    "final_flow": 0.8352150831808043,
+    "step_seconds": 30,
+    "display_time_indices": [
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30
+    ],
+    "arrival_time_index": 37,
+    "sink_time_index": 50,
+    "base_nodes": [
+      "1000000394",
+      "1000000395",
+      "1000000076",
+      "1000000077",
+      "1000002420",
+      "1000002421",
+      "1000000086",
+      "1000000087"
+    ],
+    "full_path_arc_type_counts": {
+      "movement": 37,
+      "sink_connector": 1,
+      "source_connector": 1,
+      "turn_connector": 36,
+      "zone_connector": 2
+    },
+    "physical_to_routing": [
+      {
+        "physical_link_id": "308368",
+        "original_from_node_id": "10468",
+        "original_to_node_id": "10513",
+        "routing_entry_node_id": "1000000076",
+        "routing_exit_node_id": "1000000077",
+        "source_physical_link_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6"
+      },
+      {
+        "physical_link_id": "667532",
+        "original_from_node_id": "10513",
+        "original_to_node_id": "10526",
+        "routing_entry_node_id": "1000002420",
+        "routing_exit_node_id": "1000002421",
+        "source_physical_link_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6"
+      }
+    ],
+    "state_aliases": {
+      "1000000394": "P−",
+      "1000000395": "P+",
+      "1000000076": "A−",
+      "1000000077": "A+",
+      "1000002420": "B−",
+      "1000002421": "B+",
+      "1000000086": "N−",
+      "1000000087": "N+"
+    },
+    "base_xy": {
+      "1000000394": [
+        0,
+        1.7
+      ],
+      "1000000395": [
+        0.45,
+        1.4
+      ],
+      "1000000076": [
+        0.8,
+        1.15
+      ],
+      "1000000077": [
+        1.35,
+        0.7
+      ],
+      "1000002420": [
+        1.65,
+        1.0
+      ],
+      "1000002421": [
+        2.2,
+        0.4
+      ],
+      "1000000086": [
+        2.5,
+        0.8
+      ],
+      "1000000087": [
+        3.0,
+        0.1
+      ]
+    },
+    "disclosure": "Derived rendering of the already-approved HK10 excerpt; no new generated path, full pool, observations or solver arrays."
+  },
+  "approval_basis": {
+    "record": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "approval_record_snapshot_sha256": "0213fb253f83fef10691ae757664f94fc63fd1a593e2cc31e41817db39ef0a25",
+    "scientific_input": false,
+    "scope": "Previously approved exact HK10 path and corresponding derived figures; this rendering adds no path or observation."
+  }
+}
