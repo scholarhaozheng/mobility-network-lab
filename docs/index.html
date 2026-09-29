@@ -1431,6 +1431,7 @@ python tools/mnl.py verify --run results/capacity-demo
 python tools/mnl.py run --input /path/to/network/input --config /path/to/network/case.json --seed-mode auto --seed-k 5 --output results/network-run
 python tools/mnl.py verify --run results/network-run
 </code></pre>
+<p><strong>Version scope.</strong> <code>tools/mnl.py</code> uses the retained 0.3.0-rc5 generic engine. Later accepted Boston and Hong Kong CG experiments use separately versioned case implementations and saved-result checks; this quick start does not automatically reproduce those later runs unchanged. See the <a href="methods/space-time-cg.html">finite CG method</a>, <a href="cases/boston-space-time.html">Boston case</a>, and <a href="cases/hong-kong-space-time.html">Hong Kong case</a>.</p>
 <p>The current CG profile uses one-minute steps, positive integer travel times, a common departure time, fixed costs, continuous path flows and shared hard arc capacities. <a href="data-contract.html">Read the exact contract</a> before adapting a dataset; this is not a general static user-equilibrium or unrestricted city-scale DTA interface.</p>
 <p><strong>Network + demand → route initialization → explicit space–time network → reference LP + Phase-I/II → final pool, flows and duals → independent checks.</strong></p>
 <p>The allowed network is independent of the initial route pool. Every column in the last successfully solved pool is exported, including zero-flow columns. Reference agreement and independently established pricing closure are distinct statements.</p>

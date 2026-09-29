@@ -47,6 +47,8 @@ python tools/mnl.py verify --run results/capacity-demo
 
 Open `results/capacity-demo/report.html`. The result JSON and complete path-flow tables are next to it. `validate` checks input schema, attributes and identifiers; it is not a proof of feasibility. `verify` reads existing results without running an optimizer.
 
+**Version scope.** `tools/mnl.py` uses the retained 0.3.0-rc5 generic engine. Later accepted Boston and Hong Kong CG results use separately versioned case implementations and saved-result checks; this command is not automatically a reproduction entry for those later runs. See the [finite CG method](methods/space-time-cg.md), [Boston case](cases/boston-space-time.md), and [Hong Kong case](cases/hong-kong-space-time.md).
+
 ## Supply an initial route pool
 
 ```bash

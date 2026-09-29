@@ -980,6 +980,8 @@ python tools/mnl.py run --input /path/to/network/input --config /path/to/network
 python tools/mnl.py verify --run results/network-run
 ```
 
+**Version scope.** `tools/mnl.py` uses the retained 0.3.0-rc5 generic engine. Later accepted Boston and Hong Kong CG experiments use separately versioned case implementations and saved-result checks; this quick start does not automatically reproduce those later runs unchanged. See the [finite CG method](docs/methods/space-time-cg.md), [Boston case](docs/cases/boston-space-time.md), and [Hong Kong case](docs/cases/hong-kong-space-time.md).
+
 The current CG profile uses one-minute steps, positive integer travel times, a common departure time, fixed costs, continuous path flows and shared hard arc capacities. [Read the exact contract](docs/data-contract.md) before adapting a dataset; this is not a general static user-equilibrium or unrestricted city-scale DTA interface.
 
 **Network + demand → route initialization → explicit space–time network → reference LP + Phase-I/II → final pool, flows and duals → independent checks.**
