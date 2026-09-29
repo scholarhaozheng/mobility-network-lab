@@ -28,6 +28,12 @@ Panel b contains the specifically approved, model-generated HK10 path excerpt. T
 
 ## From the physical network to the finite time-expanded graph
 
+**The CG example solves a finite space–time linear flow model with fixed arc costs and explicit capacities.** This is distinct from static BPR/Beckmann assignment. The layered view uses the approved HK10 model-generated column excerpt, separating physical roads from road-entry/exit routing states and zero-time turn connectors.
+
+<p align="center"><img src="../assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png" width="100%" alt="Hong Kong layered finite time-expanded graph: actual HK10 Austin Road excerpt at t26 to t28, zero-time turn, and CG workflow."></p>
+
+*Source-grounded local excerpt; one time step is 30 seconds. Highlighted movements are arc_308368_t26 and arc_667532_t27, joined by the saved zero-time turn. The full path arrives at t37; its sink at t50 is bookkeeping. This is a model-generated path, not an observed trajectory.* [Editable SVG](../assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.svg) · [Source record](../assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json) · [Displayed arcs](../assets/cg_layered_companions_r1/hong_kong_display_edges.csv) · [Exact HK10 derived disclosure record](../assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json).
+
 ![hong_kong saved physical and dynamic arc construction](../assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.png)
 
 *Source-matched R2 reconstruction from saved records.* [SVG](../assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.svg) · [Exact figure sources](../assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.source.json) · [Full caption](../assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.caption.md).

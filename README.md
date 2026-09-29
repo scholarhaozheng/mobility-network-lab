@@ -424,6 +424,14 @@ The stock TAPLab Boston converter was blocked before solving; this is **task-loc
 
 [Historical R1 six-panel layout](docs/assets/three_city_r1/boston_finite_space_time_case_sequence.png) remains available; the R2 image above is the current view.
 
+#### Boston / From the physical network to the finite time-expanded graph
+
+**The CG example solves a finite space–time linear flow model with fixed arc costs and explicit capacities.** This is distinct from static BPR/Beckmann assignment. The layered view below combines saved node-time states, a recorded B07 column excerpt, and a separately recorded restricted-master capacity exchange.
+
+<p align="center"><img src="docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.png" width="100%" alt="Boston layered finite time-expanded graph: the saved B07 prefix, a real waiting arc, and restricted-master/pricing workflow."></p>
+
+*Source-grounded local excerpt; one time step is 3 seconds. The full B07 path arrives at t19; its sink at t100 is bookkeeping, not physical waiting.* [Editable SVG](docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.svg) · [Source record](docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.source.json) · [Displayed arcs](docs/assets/cg_layered_companions_r1/boston_display_edges.csv).
+
 ![Boston saved physical-to-finite graph construction](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.png)
 
 *Saved-record R2 view.* [SVG](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.svg) · [Source](docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.source.json).
@@ -792,6 +800,12 @@ These are the accepted saved results for the **same unchanged 10-OD finite graph
 
 <a id="from-physical-links-to-time-indexed-movement"></a>
 #### Hong Kong / From the physical network to the finite time-expanded graph
+
+**The CG example solves a finite space–time linear flow model with fixed arc costs and explicit capacities.** This is distinct from static BPR/Beckmann assignment. The layered view below uses the approved HK10 generated-column excerpt, separating physical roads from road-entry/exit routing states and zero-time turn connectors.
+
+<p align="center"><img src="docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png" width="100%" alt="Hong Kong layered finite time-expanded graph: the actual HK10 Austin Road excerpt at t26 to t28, zero-time turn, and CG workflow."></p>
+
+*Source-grounded local excerpt; one time step is 30 seconds. Highlighted movements are arc_308368_t26 and arc_667532_t27, joined by the saved zero-time turn. The full path arrives at t37; its sink at t50 is bookkeeping. This is a model-generated path, not an observed trajectory.* [Editable SVG](docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.svg) · [Source record](docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json) · [Displayed arcs](docs/assets/cg_layered_companions_r1/hong_kong_display_edges.csv) · [Exact HK10 derived disclosure record](docs/assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json).
 
 ![Hong Kong source-grounded local physical-link to time-indexed-arc cutaway](docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png)
 

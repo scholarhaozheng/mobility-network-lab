@@ -1,0 +1,52 @@
+{
+  "figure_id": "boston_layered_space_time_construction",
+  "city": "Boston",
+  "generated_column_id": "PHASEI_R1_GEN_B07_001",
+  "demand_id": "B07",
+  "displayed_arc_ids": [
+    "explicit_link_18007_t0",
+    "explicit_link_18005_t2",
+    "explicit_link_17811_t5",
+    "wait_1005_t9",
+    "wait_2032_t0",
+    "explicit_link_18007_t1",
+    "wait_1002_t2"
+  ],
+  "displayed_node_time_count": 28,
+  "time_indices": [
+    0,
+    1,
+    2,
+    3,
+    5,
+    9,
+    10
+  ],
+  "step_seconds": 3,
+  "full_physical_arrival_time": 19,
+  "terminal_bookkeeping_time": 100,
+  "scientific_solver_calls": 0,
+  "renderer": "render_cg_layered_companions.py",
+  "renderer_sha256": "4a2cf4a35e7893162bf1f815caa4a15f9b9df4bc221c1d25750c4cc21772e4f3",
+  "display_inputs_sha256": "a07346dcce8a0520e91db80cede0e86576d32f7d8d631c2aece4eae6b0d61bba",
+  "display_edges_sha256": "dc474a0f625cf920f4f218e46a90f30cd3e36709bc94de7f5679528db8a06e20",
+  "display_states_sha256": "2c9226af5cb221dcd7575e4336252c33092e555512eeffea54f8bb1086dfbb01",
+  "source_input_hashes": {
+    "docs/assets/boston/space_time_cg_r4/data/construction_path_arcs.csv": "6518c6cdf54a8a5ee13ca7edd655ac593245f875d4aceee3e699d2e6a858985c",
+    "docs/assets/boston/space_time_cg_r4/data/construction_path.json": "32badca8cb1cbd813bbaefd8d8143d6b378a245e7a70505b2884bfb012d7f468",
+    "docs/assets/three_city_r2/data/boston_construction_edges.csv": "951909c14873f1348c26d04cdd99ceeda1b91ddf33b4a4d3533e7bc87054348c",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_od_change.csv": "da044f9cd879e1d016b65c690d7453995db15d36487a98fc5b5295c0fe33ebae",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_capacity_exchange.csv": "89d1b7091e05e178c96db0536b6590a4a7586a594f0b57fa652bccf2058dd637",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.csv": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.source.json": "b238c0fe96c2e3ab20bf1e48ab4ed939877100fe91f2f466d5c0a4e5112b734a",
+    "docs/assets/three_city_r2/data/hong_kong_physical_to_routing_crosswalk.csv": "4c1b0e451db1e755201b1e219788ac5e8b47dd8b2e545256e28f4e1acde13353"
+  },
+  "frozen_graph_membership_source": {
+    "boston_dynamic_arc_sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "hong_kong_dynamic_arc_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+  },
+  "svg_sha256": "ea57fbda54e5a2040b59ad38f2327037a22f54e214f583c49bd6e1b4e2aacef0",
+  "png_sha256": "741ed5d863a6bc560e5cae6a38cab7afe1ae77aec822ba36506cb46ed804ce80",
+  "rendering": "Deterministic vector text/geometry from saved display tables; not image-generation output.",
+  "caption": "Boston: a source-grounded layered local cutaway from the accepted B07 generated column. One time step is 3 seconds. The displayed excerpt is not the complete path: physical arrival is t19, while the terminal connector ends at t100 for bookkeeping. Only schematic display coordinates are chosen by the renderer; arc identities, endpoint states and times are taken from the saved records. The selected t9–t10 waiting arc is an actual saved B07 arc. No scientific model was rerun. This is a model-generated path, not an observed trajectory."
+}

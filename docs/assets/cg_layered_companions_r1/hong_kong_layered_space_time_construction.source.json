@@ -1,0 +1,52 @@
+{
+  "figure_id": "hong_kong_layered_space_time_construction",
+  "city": "Hong Kong",
+  "generated_column_id": "ORACLE_R1_HK10_K1",
+  "demand_id": "HK10",
+  "displayed_arc_ids": [
+    "arc_308611_t25",
+    "arc_2000000320_t26",
+    "arc_308368_t26",
+    "arc_2000000055_t27",
+    "arc_667532_t27",
+    "arc_2000001856_t28",
+    "arc_308376_t28"
+  ],
+  "displayed_node_time_count": 56,
+  "time_indices": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "step_seconds": 30,
+  "full_physical_arrival_time": 37,
+  "terminal_bookkeeping_time": 50,
+  "scientific_solver_calls": 0,
+  "renderer": "render_cg_layered_companions.py",
+  "renderer_sha256": "4a2cf4a35e7893162bf1f815caa4a15f9b9df4bc221c1d25750c4cc21772e4f3",
+  "display_inputs_sha256": "a07346dcce8a0520e91db80cede0e86576d32f7d8d631c2aece4eae6b0d61bba",
+  "display_edges_sha256": "16f3600b3aebcd039bb6242ff30672856a68bf5721dbed6fc3d6654601e096ee",
+  "display_states_sha256": "2172a162acb6d96fa3bf5fd3e2e4b817765f16a278642e3b50e3b93f357e95e0",
+  "source_input_hashes": {
+    "docs/assets/boston/space_time_cg_r4/data/construction_path_arcs.csv": "6518c6cdf54a8a5ee13ca7edd655ac593245f875d4aceee3e699d2e6a858985c",
+    "docs/assets/boston/space_time_cg_r4/data/construction_path.json": "32badca8cb1cbd813bbaefd8d8143d6b378a245e7a70505b2884bfb012d7f468",
+    "docs/assets/three_city_r2/data/boston_construction_edges.csv": "951909c14873f1348c26d04cdd99ceeda1b91ddf33b4a4d3533e7bc87054348c",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_od_change.csv": "da044f9cd879e1d016b65c690d7453995db15d36487a98fc5b5295c0fe33ebae",
+    "docs/assets/boston/space_time_cg_r4/data/phase_i_round1_capacity_exchange.csv": "89d1b7091e05e178c96db0536b6590a4a7586a594f0b57fa652bccf2058dd637",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.csv": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9",
+    "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.source.json": "b238c0fe96c2e3ab20bf1e48ab4ed939877100fe91f2f466d5c0a4e5112b734a",
+    "docs/assets/three_city_r2/data/hong_kong_physical_to_routing_crosswalk.csv": "4c1b0e451db1e755201b1e219788ac5e8b47dd8b2e545256e28f4e1acde13353"
+  },
+  "frozen_graph_membership_source": {
+    "boston_dynamic_arc_sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "hong_kong_dynamic_arc_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+  },
+  "svg_sha256": "7585b367350cb0f3063b5e5b651882dd5501709d03df4b3204e4f51b7cedf0f9",
+  "png_sha256": "b388ec4a49ab20b1e0fddc6bde31d8c1b756fdcca1d21bc329fddc71e1398721",
+  "rendering": "Deterministic vector text/geometry from saved display tables; not image-generation output.",
+  "caption": "Hong Kong: a source-grounded layered local cutaway from the accepted HK10 generated column. One time step is 30 seconds. The displayed excerpt is not the complete path: physical arrival is t37, while the terminal connector ends at t50 for bookkeeping. Only schematic display coordinates are chosen by the renderer; arc identities, endpoint states and times are taken from the saved records. Entry/exit routing states and zero-time turns are distinguished from original physical roads. No waiting arc is present in the full HK10 column. No scientific model was rerun. This is a model-generated path, not an observed trajectory."
+}

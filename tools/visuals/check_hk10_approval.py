@@ -59,6 +59,45 @@ check("not blanket authorization" in approved["shared_dependency_rule"].lower(),
       "shared dependency rule over-authorizes unrelated data")
 check(approved["scientific_solver_rerun"] is False, "approval record claims a model rerun")
 
+extension_path = ROOT / "docs/assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json"
+extension = json.loads(extension_path.read_text(encoding="utf-8"))
+check(extension["status"] == "APPROVED_SAME_EXACT_HK10_EXCERPT", "HK10 derivative status differs")
+check(extension["parent_approval"] == {
+    "path": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "sha256": sha(ASSET / "HK10_DISCLOSURE_APPROVAL_CURRENT.json")},
+    "HK10 derivative parent approval hash differs")
+check(extension["approved_identity"] == {
+    "demand_id": "HK10", "column_id": "ORACLE_R1_HK10_K1", "ordered_arc_count": 77,
+    "excerpt_csv_sha256": identity["excerpt_csv_sha256"]},
+    "HK10 derivative identity differs")
+prefix = "docs/assets/cg_layered_companions_r1/"
+expected_derivatives = {
+    prefix + "hong_kong_display_edges.csv", prefix + "hong_kong_display_states.csv",
+    *(prefix + "hong_kong_layered_space_time_construction." + suffix for suffix in
+      ("caption.html", "caption.md", "png", "source.json", "svg"))}
+expected_shared = {prefix + "DISPLAY_INPUTS.json", "tools/visuals/render_cg_layered_companions.py"}
+derived = extension["derived_asset_paths_sha256"]
+dependencies = extension["shared_dependency_paths_sha256"]
+check(set(derived) == expected_derivatives, "HK10 derivative exact asset set differs")
+check(set(dependencies) == expected_shared, "HK10 derivative shared dependency set differs")
+for rel, digest in {**derived, **dependencies}.items():
+    target = ROOT / rel
+    check(target.is_file() and sha(target) == digest, f"HK10 derivative missing or hash changed: {rel}")
+    check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
+          f"private scope entered HK10 derivative extension: {rel}")
+expected_pages = {"README.md", "docs/index.md", "docs/index.html",
+                  "docs/cases/hong-kong-space-time.md", "docs/cases/hong-kong-space-time.html"}
+check(set(extension["page_dependencies_recorded_in_parent_approval"]) == expected_pages,
+      "HK10 derivative page dependency set differs")
+check(expected_pages <= set(shared), "HK10 derivative pages are not recorded in parent approval")
+for rel in expected_pages:
+    content = (ROOT / rel).read_text(encoding="utf-8")
+    check("hong_kong_layered_space_time_construction.png" in content,
+          f"HK10 derived figure not embedded in approved page: {rel}")
+check("not authorize unrelated data" in extension["shared_dependency_rule"].lower(),
+      "HK10 derivative shared dependency rule over-authorizes data")
+check(extension["scientific_solver_rerun"] is False, "HK10 derivative record claims model rerun")
+
 current = ["README.md", "docs/index.md", "docs/index.html", "docs/cases/hong-kong.md",
            "docs/cases/hong-kong.html", "docs/cases/hong-kong-space-time.md",
            "docs/cases/hong-kong-space-time.html"]

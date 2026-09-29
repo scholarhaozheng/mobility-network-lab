@@ -1,0 +1,43 @@
+{
+  "record_type": "exact-hk10-derived-figure-approval-extension",
+  "status": "APPROVED_SAME_EXACT_HK10_EXCERPT",
+  "approval_scope": "The user's existing approval of the exact model-generated HK10 / ORACLE_R1_HK10_K1 77-arc excerpt includes these source-grounded derivative figure files. This is not a new path or an enlargement of the approved source-data scope.",
+  "parent_approval": {
+    "path": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "sha256": "c0971d9d9e8c9a4b33432b262443e0965cd38245590bfd3d170d80b356bc2226"
+  },
+  "approved_identity": {
+    "demand_id": "HK10",
+    "column_id": "ORACLE_R1_HK10_K1",
+    "ordered_arc_count": 77,
+    "excerpt_csv_sha256": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9"
+  },
+  "derived_asset_paths_sha256": {
+    "docs/assets/cg_layered_companions_r1/hong_kong_display_edges.csv": "16f3600b3aebcd039bb6242ff30672856a68bf5721dbed6fc3d6654601e096ee",
+    "docs/assets/cg_layered_companions_r1/hong_kong_display_states.csv": "2172a162acb6d96fa3bf5fd3e2e4b817765f16a278642e3b50e3b93f357e95e0",
+    "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.html": "04e5043fa9605d0313f2a0dd37e0a7731cf18981a0c640e82767deec526905bb",
+    "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.md": "d71e579fb73948cdcb097ca5e1bb508012bbb1115845cf1d4723b81381063009",
+    "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png": "b388ec4a49ab20b1e0fddc6bde31d8c1b756fdcca1d21bc329fddc71e1398721",
+    "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json": "424ef55867b47487f752cd97a72b30963e641cd5587b0620b3a1ffc0ddf77944",
+    "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.svg": "7585b367350cb0f3063b5e5b651882dd5501709d03df4b3204e4f51b7cedf0f9"
+  },
+  "shared_dependency_paths_sha256": {
+    "docs/assets/cg_layered_companions_r1/DISPLAY_INPUTS.json": "a07346dcce8a0520e91db80cede0e86576d32f7d8d631c2aece4eae6b0d61bba",
+    "tools/visuals/render_cg_layered_companions.py": "4a2cf4a35e7893162bf1f815caa4a15f9b9df4bc221c1d25750c4cc21772e4f3"
+  },
+  "page_dependencies_recorded_in_parent_approval": [
+    "README.md",
+    "docs/index.md",
+    "docs/index.html",
+    "docs/cases/hong-kong-space-time.md",
+    "docs/cases/hong-kong-space-time.html"
+  ],
+  "shared_dependency_rule": "A shared renderer, display-input file or page is included only to reproduce and embed this exact HK10 derivative; it does not authorize unrelated data, other generated columns or future additions.",
+  "expressly_not_approved": [
+    "full generated path pools",
+    "dual or solver-state arrays",
+    "raw GPS/UrbanNav observations",
+    "additional provider files"
+  ],
+  "scientific_solver_rerun": false
+}
