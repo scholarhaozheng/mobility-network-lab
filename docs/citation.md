@@ -4,6 +4,8 @@ When using the software, identify **Mobility Computation Lab**, the exact reposi
 
 Repository: [github.com/scholarhaozheng/mobility-network-lab](https://github.com/scholarhaozheng/mobility-network-lab)
 
+Citation metadata: [CITATION.cff](../CITATION.cff).
+
 For historical result records, state whether final flows were directly exported or recovered from saved identities. Do not imply that the current release regenerated those historical experiments.
 
 For the historical Hong Kong R1 pilot, cite the exact repository revision and the Hong Kong SAR Government source [attribution](../examples/hong-kong/gmns_pilot_r1/ATTRIBUTION.md); R1 itself is not an assignment result. For the later [bounded R2–R5 case](cases/hong-kong.md), cite the [source and rights register](assets/hong_kong/full_stack_r5/r2r4_baseline/HONG_KONG_SOURCE_AND_RIGHTS_REGISTER.csv), the selected finite-case identity and the [R5 independent closure certificate](assets/hong_kong/full_stack_r5/closure/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json). Its ADMM transfer remains gated. For Sioux Lagrangian R2, cite the selected-OD instance and separate feasible-recovery record; its Boston transfer is gated. For ADMM R2_S, cite the frozen policy and the specific selected Sioux or bounded Boston finite-graph instance, plus its [method and saved evidence](methods/admm-space-time.md); do not cite a full-network or empirical city validation. Earlier ADMM R1 figures remain a distinct version. Boston ADMM maps use previously public GMNS Plus `21_Boston` identifiers/geometry under Apache-2.0; the project-authored 125-row derived comparison table is released under explicit user approval.
