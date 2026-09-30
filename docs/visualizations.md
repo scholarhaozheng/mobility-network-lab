@@ -1,5 +1,11 @@
 # Visual results: four stages, observations, static assignment and CG
 
+## Retained original visual cover
+
+![Earlier Boston public visual cover](assets/boston/visual_release_r1/mcl_boston_hero.png)
+
+The earlier cover remains in this gallery after the landing page adopts the complete project map. Its source-qualified Boston figure families and all numerical case plots remain below.
+
 This gallery links accepted saved-result figures for Boston, Sioux Falls and the bounded Hong Kong full-stack technical case. It does not rerun optimization or invent observations. The new three-city representation-level series distinguishes network construction, one generated column, and final physical-link movement-flow back-projection. City scales and certificate statuses remain separate.
 
 ## Three representation levels across three cities
@@ -136,3 +142,130 @@ Artificial flow is an algorithmic feasibility device, not an observed queue or d
 The [200-OD record](datasets/sioux-200od.md) and [250-OD record](datasets/sioux-250od.md) explain saved versus uniquely reconstructed final path flows, objective checks and remaining certificate boundaries. Full raw inputs and reconstruction evidence are not redistributed here. The [static FW record](datasets/sioux-static-fw.md) is a separate static model, not another point on these CG curves.
 
 [Network catalog](datasets.md) · [Outputs and verification](outputs.md) · [City workflow](city-workflow.md)
+
+<!-- retained-figure-formats:start -->
+## Retained alternate formats and historical figures
+
+The case and method pages above display the current scientific panels. The
+following original files are retained at their source paths, including vector
+counterparts and historical layouts that are not current inline panels. These
+links do not imply a new run, a new case scale, or an accepted result.
+
+### Admm R2
+
+- [admm_boston_10od_final_physical_link_flow.svg](assets/admm_r2/figures/admm_boston_10od_final_physical_link_flow.svg)
+- [admm_boston_10od_local_conservation_heatmap.svg](assets/admm_r2/figures/admm_boston_10od_local_conservation_heatmap.svg)
+- [admm_boston_10od_minus_lp.svg](assets/admm_r2/figures/admm_boston_10od_minus_lp.svg)
+- [admm_results_overview.svg](assets/admm_r2/figures/admm_results_overview.svg)
+- [admm_sioux_200_final_physical_link_flow.svg](assets/admm_r2/figures/admm_sioux_200_final_physical_link_flow.svg)
+- [admm_sioux_200_local_conservation_heatmap.svg](assets/admm_r2/figures/admm_sioux_200_local_conservation_heatmap.svg)
+- [admm_sioux_200_minus_lp.svg](assets/admm_r2/figures/admm_sioux_200_minus_lp.svg)
+- [admm_sioux_250_final_physical_link_flow.svg](assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.svg)
+- [admm_sioux_250_minus_lp.svg](assets/admm_r2/figures/admm_sioux_250_minus_lp.svg)
+- [convergence_C1.png](assets/admm_r2/figures/convergence_C1.png)
+- [convergence_C1.svg](assets/admm_r2/figures/convergence_C1.svg)
+- [physical_flow_Boston_10OD.png](assets/admm_r2/figures/physical_flow_Boston_10OD.png)
+- [physical_flow_Sioux_200OD.png](assets/admm_r2/figures/physical_flow_Sioux_200OD.png)
+- [physical_flow_Sioux_250OD.png](assets/admm_r2/figures/physical_flow_Sioux_250OD.png)
+
+### Algorithm B R21
+
+- [boston_b1_fw_flow_compact.png](assets/algorithm_b_r21/presentation/boston_b1_fw_flow_compact.png)
+- [sioux_fw_flow_compact.png](assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.png)
+
+### Boston
+
+- [boston_abs_planned_fw_flow.svg](assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.svg)
+- [boston_abs_planned_l3_rank26_flow.svg](assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.svg)
+- [boston_abs_planned_l3_rank26_minus_fw.svg](assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_minus_fw.svg)
+- [boston_abs_planned_l3_rank52_flow.svg](assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_flow.svg)
+- [boston_abs_planned_l3_rank52_minus_fw.svg](assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_minus_fw.svg)
+- [step1_generation.svg](assets/boston/four_step_results_r1/step1_generation.svg)
+- [step2_distribution.svg](assets/boston/four_step_results_r1/step2_distribution.svg)
+- [step3_mode_response.svg](assets/boston/four_step_results_r1/step3_mode_response.svg)
+- [gmns_connected_layers.svg](assets/boston/gmns_in_action_r1/gmns_connected_layers.svg)
+- [gps_to_gmns_evidence.svg](assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.svg)
+- [endpoint_2000_coverage.png](assets/boston/scalable_tool_r1/endpoint_2000_coverage.png)
+- [endpoint_2000_coverage.svg](assets/boston/scalable_tool_r1/endpoint_2000_coverage.svg)
+- [endpoint_500_coverage.svg](assets/boston/scalable_tool_r1/endpoint_500_coverage.svg)
+- [endpoint_all_coverage.svg](assets/boston/scalable_tool_r1/endpoint_all_coverage.svg)
+- [fw_2000_flow.svg](assets/boston/scalable_tool_r1/fw_2000_flow.svg)
+- [fw_500_flow.svg](assets/boston/scalable_tool_r1/fw_500_flow.svg)
+- [fw_all_flow.svg](assets/boston/scalable_tool_r1/fw_all_flow.svg)
+- [source_zone_2000_coverage.png](assets/boston/scalable_tool_r1/source_zone_2000_coverage.png)
+- [source_zone_2000_coverage.svg](assets/boston/scalable_tool_r1/source_zone_2000_coverage.svg)
+- [source_zone_500_coverage.svg](assets/boston/scalable_tool_r1/source_zone_500_coverage.svg)
+- [source_zone_all_coverage.svg](assets/boston/scalable_tool_r1/source_zone_all_coverage.svg)
+- [mcl_boston_hero.svg](assets/boston/visual_release_r1/mcl_boston_hero.svg)
+- [mcl_social_preview.png](assets/boston/visual_release_r1/mcl_social_preview.png)
+
+### Hero.Png
+
+- [hero.png](assets/hero.png)
+
+### Hero.Svg
+
+- [hero.svg](assets/hero.svg)
+
+### Hong Kong
+
+- [hk_cg_case_sequence.png](assets/hong_kong/full_stack_r5/figures/hk_cg_case_sequence.png)
+- [hk_cg_case_sequence.svg](assets/hong_kong/full_stack_r5/figures/hk_cg_case_sequence.svg)
+- [hk_validation_panel.png](assets/hong_kong/full_stack_r5/figures/hk_validation_panel.png)
+- [hk_validation_panel.svg](assets/hong_kong/full_stack_r5/figures/hk_validation_panel.svg)
+- [hk_admm_residuals_and_feasibility.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_admm_residuals_and_feasibility.svg)
+- [hk_cg_phase_i_phase_ii.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_cg_phase_i_phase_ii.png)
+- [hk_cg_phase_i_phase_ii.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_cg_phase_i_phase_ii.svg)
+- [hk_detector_and_trajectory_evidence.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.png)
+- [hk_detector_and_trajectory_evidence.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.svg)
+- [hk_four_stage_pipeline.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_four_stage_pipeline.png)
+- [hk_four_stage_pipeline.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_four_stage_pipeline.svg)
+- [hk_lagrangian_dual_primal_gap.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png)
+- [hk_lagrangian_dual_primal_gap.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.svg)
+- [hk_physical_to_time_expanded.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_physical_to_time_expanded.svg)
+- [hk_same_graph_method_comparison.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_same_graph_method_comparison.png)
+- [hk_same_graph_method_comparison.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_same_graph_method_comparison.svg)
+- [hk_spacetime_final_physical_flow.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_spacetime_final_physical_flow.png)
+- [hk_spacetime_final_physical_flow.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_spacetime_final_physical_flow.svg)
+- [hk_speed_lane_capacity_evidence.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_speed_lane_capacity_evidence.png)
+- [hk_speed_lane_capacity_evidence.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_speed_lane_capacity_evidence.svg)
+- [hk_validation_panel.png](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_validation_panel.png)
+- [hk_validation_panel.svg](assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_validation_panel.svg)
+
+### Presentation R3
+
+- [framework_overview.svg](assets/presentation_r3/framework_overview.svg)
+- [sioux_capacity_exchange.svg](assets/presentation_r3/sioux_capacity_exchange.svg)
+- [sioux_phase_i_pair.png](assets/presentation_r3/sioux_phase_i_pair.png)
+- [sioux_space_time_construction.svg](assets/presentation_r3/sioux_space_time_construction.svg)
+
+### Sioux
+
+- [admm_sioux_200.png](assets/sioux/distributed_r1/admm_sioux_200.png)
+- [sioux_200od_objective_difference.png](assets/sioux/distributed_r1/sioux_200od_objective_difference.png)
+- [Sioux_200OD_P07.png](assets/sioux/distributed_r1/Sioux_200OD_P07.png)
+- [sioux_250od_objective_difference.png](assets/sioux/distributed_r1/sioux_250od_objective_difference.png)
+- [Sioux_250OD_P07.png](assets/sioux/distributed_r1/Sioux_250OD_P07.png)
+- [od_level_phase_i_clearance.svg](assets/sioux/phase_i_r1/od_level_phase_i_clearance.svg)
+- [sioux_falls_200od_phase_i_academic.svg](assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.svg)
+- [sioux_falls_250od_phase_i_academic.svg](assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.svg)
+
+### Three City R1
+
+- [boston_finite_space_time_case_sequence.svg](assets/three_city_r1/boston_finite_space_time_case_sequence.svg)
+- [boston_generated_column_time_indexed_path.svg](assets/three_city_r1/boston_generated_column_time_indexed_path.svg)
+- [boston_physical_to_time_expanded_graph.png](assets/three_city_r1/boston_physical_to_time_expanded_graph.png)
+- [boston_physical_to_time_expanded_graph.svg](assets/three_city_r1/boston_physical_to_time_expanded_graph.svg)
+- [boston_time_expanded_to_physical_link_flow.svg](assets/three_city_r1/boston_time_expanded_to_physical_link_flow.svg)
+- [hong_kong_finite_space_time_case_sequence.svg](assets/three_city_r1/hong_kong_finite_space_time_case_sequence.svg)
+- [hong_kong_generated_column_time_indexed_path.svg](assets/three_city_r1/hong_kong_generated_column_time_indexed_path.svg)
+- [hong_kong_physical_to_time_expanded_graph.png](assets/three_city_r1/hong_kong_physical_to_time_expanded_graph.png)
+- [hong_kong_physical_to_time_expanded_graph.svg](assets/three_city_r1/hong_kong_physical_to_time_expanded_graph.svg)
+- [hong_kong_time_expanded_to_physical_link_flow.svg](assets/three_city_r1/hong_kong_time_expanded_to_physical_link_flow.svg)
+- [sioux_finite_space_time_case_sequence.svg](assets/three_city_r1/sioux_finite_space_time_case_sequence.svg)
+- [sioux_generated_column_time_indexed_path.svg](assets/three_city_r1/sioux_generated_column_time_indexed_path.svg)
+- [sioux_physical_to_time_expanded_graph.png](assets/three_city_r1/sioux_physical_to_time_expanded_graph.png)
+- [sioux_physical_to_time_expanded_graph.svg](assets/three_city_r1/sioux_physical_to_time_expanded_graph.svg)
+- [sioux_time_expanded_to_physical_link_flow.svg](assets/three_city_r1/sioux_time_expanded_to_physical_link_flow.svg)
+
+<!-- retained-figure-formats:end -->

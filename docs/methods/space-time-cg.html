@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Finite space–time construction and column generation · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="finite-spacetime-construction-and-column-generation">Finite space–time construction and column generation</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Finite space–time construction and column generation · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Project map</a><a href="../contributions.html">Contributions</a><a href="../capabilities.html">Coverage</a><a href="../cases/boston.html">Boston</a><a href="../cases/sioux-falls.html">Sioux Falls</a><a href="../cases/hong-kong.html">Hong Kong</a><a href="../methods.html">Methods</a><a href="../full-walkthrough.html">Full walkthrough</a><a href="../getting-started.html">Getting started</a><a href="../open-data.html">Open data</a></div></nav><main class="mcl-page"><h1 id="finite-spacetime-construction-and-column-generation">Finite space–time construction and column generation</h1>
 <p>This page explains the implemented <strong>fixed-cost, hard-capacity finite space–time model branch</strong>. It is not a dynamic traffic simulation, a spillback model, or a complete dynamic user-equilibrium model. Static Frank–Wolfe and Diagnostic L3 solve a separate BPR/Beckmann problem.</p>
 <h2 id="canonical-terms-used-in-this-repository">Canonical terms used in this repository</h2>
 <ul>
@@ -46,6 +46,55 @@
 <li><a href="../cases/sioux-space-time.html">Sioux Falls historical selected-OD benchmarks</a>: 200-OD and 250-OD finite time-expanded instances; Phase I and Phase II completed; reference-objective agreement established; independent pricing closure not established.</li>
 <li><a href="../cases/hong-kong-space-time.html">Hong Kong bounded R5 case</a>: unchanged 10-OD, 30-second, 50-step graph; Phase I artificial flow cleared in 12 rounds, Phase II reached the same-graph arc-flow LP objective, and independent full-DAG pricing closure passed 10/10 demands. Its separately frozen ADMM transfer remains gated.</li>
 </ul>
-<p>The <a href="../../app/src/gmns_dynamic/run_full_cg_v1.py">current CG orchestration source</a> remains available for inspecting the implementation; its external-network and conversion modules govern which graph is actually built. The case pages distinguish inspecting saved results from running that source on new inputs.</p>
+<p>The <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/run_full_cg_v1.py">current CG orchestration source</a> remains available for inspecting the implementation; its external-network and conversion modules govern which graph is actually built. The case pages distinguish inspecting saved results from running that source on new inputs.</p>
 <p>These case results do not establish citywide dynamic assignment, unique path-flow patterns, general convergence at arbitrary scale, or comparability with static BPR/Beckmann objectives.</p>
+<!-- layered-r2-cross-case-cg:start -->
+<p><a id="cg-experiments"></a></p>
+<h3 id="executed-finite-spacetime-cg-experiments">Executed finite space–time CG experiments</h3>
+<p>The repository contains <strong>three distinct executed CG case families</strong>. Boston is one bounded real-city pilot on an accepted GMNS subnetwork; Sioux Falls contains two historical selected-OD benchmark instances; Hong Kong R5 is a separately frozen ten-demand Tsim Sha Tsui–Jordan finite case. They share a method family, not a graph, demand, objective value or universal certificate.</p>
+<p align="center"><a href="../methods/space-time-cg.html"><img alt="Six-stage comparison of executed finite space–time CG evidence: one bounded Boston pilot and two historical Sioux Falls selected-OD runs. Both have saved Phase-I, Phase-II, final-flow and reference evidence; independent pricing closure is established only for Boston." src="../assets/presentation_r5/boston_sioux_cg_parallel_overview.png" width="100%"/></a></p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Executed evidence</th>
+<th>Boston</th>
+<th>Sioux Falls</th>
+<th>Hong Kong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Instance</strong></td>
+<td>90 physical nodes, 125 links, 10 ODs, 3-second steps, 100-step horizon</td>
+<td>Historical 200/250-OD selected subsets</td>
+<td>111 selected physical links, 10 ODs, 30-second steps, 50-step horizon; 24,910 dynamic arcs</td>
+</tr>
+<tr>
+<td><strong>Phase I</strong></td>
+<td>Artificial flow <strong>20.5536128974 → 0</strong> in round <strong>90</strong></td>
+<td>Artificial flow reaches zero in rounds <strong>51 / 62</strong></td>
+<td>Artificial flow <strong>4.3502187198 → 0</strong> in <strong>12</strong> rounds</td>
+</tr>
+<tr>
+<td><strong>Phase II</strong></td>
+<td><strong>64.39686151152954</strong> vehicle-min; own-LP agreement</td>
+<td><strong>943,155.589771 / 1,521,090.836620</strong>; each own-LP agreement</td>
+<td><strong>75.03632985794835</strong> vehicle-min; own-LP agreement after three added columns</td>
+</tr>
+<tr>
+<td><strong>Pricing certificate</strong></td>
+<td>Independent full-DAG closure <strong>10/10</strong> at <code>1e-6</code></td>
+<td><strong>Not established</strong> for retained historical runs</td>
+<td>Independent full-DAG closure <strong>10/10</strong> at <code>1e-6</code></td>
+</tr>
+<tr>
+<td><strong>Open the evidence</strong></td>
+<td><a href="../cases/boston-space-time.html">Boston case</a></td>
+<td><a href="../cases/sioux-space-time.html">Sioux case</a></td>
+<td><a href="../cases/hong-kong-space-time.html">Hong Kong R5 case</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 figures appear <a href="../cases/hong-kong-space-time.html">on its current case page</a>. None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.</em> <a href="../assets/presentation_r5/boston_sioux_cg_parallel_overview.svg">Boston/Sioux overview SVG</a> · <a href="../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json">Source hashes</a> · <a href="../assets/presentation_r4/cg_experiments_overview.png">Earlier saved overview</a>.</p>
+<!-- layered-r2-cross-case-cg:end -->
 </main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

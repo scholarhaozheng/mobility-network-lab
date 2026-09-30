@@ -166,10 +166,13 @@ def main() -> int:
         "mobile breakpoint": "@media(max-width:800px)" in css,
         "single-column mobile grids": ".stripin,.cards,.tiles,.split{grid-template-columns:1fr}" in css,
         "responsive benchmark images": ".benchmark-feature img{display:block;width:100%;height:auto}" in css,
-        "supporting data section": "Supporting mobility data" in homepage,
-        "data-tools section": "Executable data tools" in homepage,
+        "supporting data entry": 'id="mobility-data-support"' in homepage and 'open-data-explorer.html' in homepage,
+        "data-tools detail": (ROOT / "docs" / "data-tools.html").is_file(),
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
         "data-tools navigation": 'href="data-tools.html"' in homepage,
+        "layered contributions": 'id="what-this-project-adds"' in homepage and 'href="contributions.html"' in homepage,
+        "complete structure map": 'project_structure.svg' in homepage and 'href="architecture.html"' in homepage,
+        "complete walkthrough": 'href="full-walkthrough.html"' in homepage,
     }
     for label, passed in render_contract.items():
         if not passed:

@@ -34,6 +34,7 @@ This page reports **one accepted bounded Boston pilot**, not a citywide assignme
 *Source-matched R2 reconstruction from saved records.* [SVG](../assets/three_city_r2/boston_finite_space_time_case_sequence.svg) · [Exact figure sources](../assets/three_city_r2/boston_finite_space_time_case_sequence.source.json) · [Full caption](../assets/three_city_r2/boston_finite_space_time_case_sequence.caption.md).
 
 <a id="network-and-construction-physical-geography-versus-time-states"></a>
+<a id="1-from-the-physical-network-to-time-indexed-columns"></a>
 ## From the physical network to the finite time-expanded graph
 
 **The CG example solves a finite space–time linear flow model with fixed arc costs and explicit capacities.** This is distinct from static BPR/Beckmann assignment. The layered view combines saved node-time states, a recorded B07 column excerpt, and a separately recorded restricted-master capacity exchange.
@@ -64,6 +65,7 @@ This page reports **one accepted bounded Boston pilot**, not a citywide assignme
 Positive-flow final column `PHASEI_R1_GEN_B07_001` traverses physical links `18007 → 18005 → 17811`, waits at node 1005 from t9 to t10, and then uses `17946 → 17947 → 15592`. Its source/sink arcs and complete ordered IDs are in the [public construction record](../assets/boston/space_time_cg_r4/data/construction_path.json).
 
 <a id="phase-i-total-feasibility-and-od-level-coupling"></a>
+<a id="2-phase-i-restores-feasibility"></a>
 ## Phase I restores feasibility
 
 Artificial flow reaches zero at round 90. [Total trace](../assets/boston/space_time_cg_r4/boston_phase_i_artificial_flow.png) and [B01–B10 clearance](../assets/boston/space_time_cg_r4/boston_phase_i_od_clearance.png) remain below.
@@ -72,6 +74,7 @@ Artificial flow reaches zero at round 90. [Total trace](../assets/boston/space_t
 
 The [total-flow input](../assets/boston/space_time_cg_r4/data/phase_i_total.csv) starts at **20.55361289739253** and reaches zero in round **90**. The chart is stepwise, with no smoothing. The [per-demand input](../assets/boston/space_time_cg_r4/data/phase_i_by_demand.csv) retains all B01–B10 values for rounds 0–90. A single demand's artificial flow can rise even while total artificial flow falls; this is shared-master feasibility reallocation, not a time series of observed queues.
 
+<a id="3-a-new-path-can-help-a-different-od"></a>
 ## Shared capacity couples different OD demands
 
 <a href="../assets/boston/space_time_cg_r4/boston_shared_capacity_event.svg"><img src="../assets/boston/space_time_cg_r4/boston_shared_capacity_event.png" width="100%" alt="Phase-I round-one before/after LP optima: three saturated arcs change recorded user B10 to B09, B07's selected-column arc fills, and B07/B09/B10 artificial-flow changes are shown."></a>
@@ -80,6 +83,7 @@ Phase-I round 1 selects new B07 column `PHASEI_R1_GEN_B07_001`. Its dynamic arc 
 
 These saved before/after restricted-master optima show a cross-OD capacity reallocation. They **do not prove the selected B07 path was uniquely necessary** for the exchange.
 
+<a id="4-phase-ii-improves-the-real-path-objective"></a>
 ## Phase II improves the real-path objective
 
 The real-only objective falls from 64.82967648341466 to 64.39686151152952 vehicle-minutes after 15 rounds. [Saved trace](../assets/boston/space_time_cg_r4/boston_phase_ii_objective.png).
@@ -90,6 +94,7 @@ The [accepted R3 round log projection](../assets/boston/space_time_cg_r4/data/ph
 
 
 <a id="r4-independent-pricing-closure-and-final-validation"></a>
+<a id="5-final-physical-link-movement-flow-and-validation"></a>
 ## From time-expanded flows back to final physical-link movement flow
 
 ![boston movement-only physical-link flow audit](../assets/three_city_r2/boston_time_expanded_to_physical_link_flow.png)
@@ -108,6 +113,7 @@ Accepted final movement-arc flow maps to 125 physical-link IDs; 52 have positive
 
 CG 64.39686151152954 and same-graph arc-flow LP 64.3968615115296 vehicle-minutes agree within about 5.68×10⁻¹⁴. This is not a static Beckmann comparison. [Validation](../assets/boston/space_time_cg_r4/boston_cg_validation.png).
 
+<a id="6-independent-pricing-closure"></a>
 ## Independent pricing closure
 
 Independent full-DAG pricing closure passes 10/10 demands at `1e-6`; the final pool has 167 columns. Fifteen R4 certificate columns have zero final flow. [By-demand panel](../assets/boston/space_time_cg_r4/boston_pricing_closure_by_demand.png).

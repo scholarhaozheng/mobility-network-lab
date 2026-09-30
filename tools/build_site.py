@@ -14,6 +14,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 from markdown_it import MarkdownIt
+from visuals.render_project_structure_r2 import render as render_project_structure
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
@@ -162,6 +163,9 @@ def main() -> int:
     ):
         parser.error('Use a GitHub Pages project URL ending in a slash.')
     project.write_text(json.dumps(config,indent=2)+'\n', encoding='utf-8', newline='\n')
+    # The module model is the single source for the SVG/PNG and architecture
+    # source table. This presentation-only renderer makes no model calls.
+    render_project_structure()
     (DOCS/'assets').mkdir(parents=True,exist_ok=True)
     (DOCS/'assets/site.css').write_text(CSS, encoding='utf-8', newline='\n')
     (DOCS/'.nojekyll').write_text('', encoding='utf-8', newline='\n')

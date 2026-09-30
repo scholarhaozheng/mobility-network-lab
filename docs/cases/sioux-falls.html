@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sioux Falls case · static assignment and historical space–time CG · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="sioux-falls-case-static-assignment-and-historical-spacetime-cg">Sioux Falls case · static assignment and historical space–time CG</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sioux Falls case · static assignment and historical space–time CG · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Project map</a><a href="../contributions.html">Contributions</a><a href="../capabilities.html">Coverage</a><a href="../cases/boston.html">Boston</a><a href="../cases/sioux-falls.html">Sioux Falls</a><a href="../cases/hong-kong.html">Hong Kong</a><a href="../methods.html">Methods</a><a href="../full-walkthrough.html">Full walkthrough</a><a href="../getting-started.html">Getting started</a><a href="../open-data.html">Open data</a></div></nav><main class="mcl-page"><h1 id="sioux-falls-case-static-assignment-and-historical-spacetime-cg">Sioux Falls case · static assignment and historical space–time CG</h1>
 <p>The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.</p>
 <h2 id="role-in-the-repository">Role in the repository</h2>
 <p>Classical supplied-vehicle-OD static benchmark and historical 200/250-OD finite benchmarks, not a population/GPS case.</p>
@@ -59,7 +59,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../../examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json">A_REG001 · outer 04</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json">A_REG001 · outer 04</a></td>
 <td style="text-align:right">0.01</td>
 <td style="text-align:right">4,325,864.946597109</td>
 <td style="text-align:right">5.548833712509804e-7</td>
@@ -67,7 +67,7 @@
 <td>Regularized diagnostic, numerically accepted</td>
 </tr>
 <tr>
-<td><a href="../../examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json">B_BECKMANN · outer 04</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json">B_BECKMANN · outer 04</a></td>
 <td style="text-align:right">0</td>
 <td style="text-align:right">4,289,674.484214505</td>
 <td style="text-align:right">6.957361051718181e-7</td>
@@ -128,6 +128,6 @@
 python -B tools/mcl_results.py verify-saved --run sioux-native-l3-a-reg001-outer04
 python -B tools/mcl_results.py verify-saved --run sioux-native-l3-b-beckmann-outer04
 </code></pre>
-<p>The saved inspector reconstructs path-to-OD/link flows and the original Beckmann component without solving. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/README.md">Selected frozen data and checks</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">optional native staging instructions</a> are separate from the historical <a href="../../app/src/gmns_dynamic/run_full_cg_v1.py">CG implementation</a>. No new Sioux run was made for this publication.</p>
+<p>The saved inspector reconstructs path-to-OD/link flows and the original Beckmann component without solving. <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/sioux-falls/native_l3_r1/README.md">Selected frozen data and checks</a> and <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">optional native staging instructions</a> are separate from the historical <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/run_full_cg_v1.py">CG implementation</a>. No new Sioux run was made for this publication.</p>
 <p><a href="sioux-admm.html">ADMM R2_S matched Sioux figure families</a> are saved-result visualizations of a separate finite shared-capacity method; no solver was rerun for their publication.</p>
 </main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

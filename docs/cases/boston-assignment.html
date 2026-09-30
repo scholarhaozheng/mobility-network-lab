@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boston · same-instance static assignment methods · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Shared framework</a><a href="../index.html#cg-experiments">CG experiments</a><a href="../index.html#admm-r2">ADMM R2</a><a href="../index.html#coverage">Case coverage</a><a href="../index.html#boston">Boston</a><a href="../index.html#sioux-falls">Sioux Falls</a><a href="../index.html#hong-kong">Hong Kong</a><a href="../index.html#run-your-input">Use the tool</a><a href="../index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="boston-same-instance-static-assignment-methods">Boston · same-instance static assignment methods</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Boston · same-instance static assignment methods · Mobility Computation Lab</title><link rel="stylesheet" href="../assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="../index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="../index.html#framework">Project map</a><a href="../contributions.html">Contributions</a><a href="../capabilities.html">Coverage</a><a href="../cases/boston.html">Boston</a><a href="../cases/sioux-falls.html">Sioux Falls</a><a href="../cases/hong-kong.html">Hong Kong</a><a href="../methods.html">Methods</a><a href="../full-walkthrough.html">Full walkthrough</a><a href="../getting-started.html">Getting started</a><a href="../open-data.html">Open data</a></div></nav><main class="mcl-page"><h1 id="boston-same-instance-static-assignment-methods">Boston · same-instance static assignment methods</h1>
 <p>The frozen <strong>ABS_PLANNED</strong> conditional panel is one 5,091-physical-link, 26-endpoint-OD, 203.6604786350987-modelled-vehicle-trip Beckmann/BPR instance with a 130-path finite pool. FW, the uncompressed SLSQP path reference, and the two accepted native Diagnostic L3 representations use those identical link/demand/pool bytes. This algorithm comparison is <strong>not</strong> the earlier semantic S1/S2 service-feedback comparison (about 202.078384/202.070733 vehicle trips) and is not measured congestion.</p>
 <p><a href="boston.html">Boston case</a> · <a href="../datasets/boston-behavior-feedback.html">Four-stage and GPS example</a> · <a href="boston-space-time.html">Separate bounded space–time CG pilot</a> · <a href="../datasets/boston-gmns-exchange.html">GMNS exchange and ID relationships</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/assignment_methods_r1/README.md">Saved files</a></p>
 <h2 id="primary-scale-result-versus-controlled-method-comparison">Primary scale result versus controlled method comparison</h2>
@@ -21,7 +21,7 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="../../examples/boston/assignment_methods_r1/reference/fw_solution.csv">FW · ABS_PLANNED</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/assignment_methods_r1/reference/fw_solution.csv">FW · ABS_PLANNED</a></td>
 <td style="text-align:right">network assignment</td>
 <td style="text-align:right">707.0579230712884</td>
 <td style="text-align:right">no public path decomposition</td>
@@ -29,7 +29,7 @@
 <td style="text-align:right">approximately zero</td>
 </tr>
 <tr>
-<td><a href="../../examples/boston/assignment_methods_r1/reference/full_path_flow.csv">Full path · SLSQP</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/assignment_methods_r1/reference/full_path_flow.csv">Full path · SLSQP</a></td>
 <td style="text-align:right">130 nonnegative paths</td>
 <td style="text-align:right">707.0579230712882</td>
 <td style="text-align:right">0</td>
@@ -37,7 +37,7 @@
 <td style="text-align:right">1.1254939019453976e-15</td>
 </tr>
 <tr>
-<td><a href="../../examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json">Native L3 · rank 26 · outer 02</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json">Native L3 · rank 26 · outer 02</a></td>
 <td style="text-align:right">52 reduced path coordinates + 5,091 explicit links = 5,143 native variables</td>
 <td style="text-align:right">707.0578811137339</td>
 <td style="text-align:right">8.255328278750085e-7</td>
@@ -45,7 +45,7 @@
 <td style="text-align:right">−5.933966773022305e-8</td>
 </tr>
 <tr>
-<td><a href="../../examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json">Native L3 · rank 52 · outer 02</a></td>
+<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json">Native L3 · rank 52 · outer 02</a></td>
 <td style="text-align:right">78 reduced path coordinates + 5,091 explicit links = 5,169 native variables</td>
 <td style="text-align:right">707.0578811562873</td>
 <td style="text-align:right">8.254705861077127e-7</td>
@@ -59,11 +59,11 @@
 <p>The three absolute maps share one EPSG:4326 source geometry, local map projection, extent, background, PowerNorm colour scale and line-width rule. Modelled vehicle trips are the unit. Directed links are drawn with a <strong>3 m right-of-travel display offset</strong> so reciprocal arcs can be distinguished; source WKT and all numerical joins remain unaltered. Gray shows all 5,091 physical road links, including zero-flow links. Coloured absolute flow is drawn only above <strong>1e-6</strong> trips; omitted coloured-row counts are in the figure manifest, while every link stays in the full-precision CSV. A common scale means the three maps can legitimately look visually indistinguishable.</p>
 <h2 id="signed-native-minus-fw-differences">Signed native-minus-FW differences</h2>
 <p>Both maps use the same zero-centred symmetric scale. The maximum absolute link differences are <strong>5.888579437396402e-6</strong> (rank 26) and <strong>5.88828736169944e-6</strong> (rank 52) modelled vehicle trips. Full-path versus FW differs by at most <strong>1.4210854715202004e-14</strong>. The difference figures show micro-scale numerical variation; they are not service changes, observed traffic, or a congestion benefit. Values with <code>|Δ| ≤ 1e-12</code> are omitted from the coloured overlay but remain in the full-precision table.</p>
-<p><a href="../assets/boston/assignment_methods_r1/boston_abs_planned_assignment_links.csv">All 5,091 linked rows with original WKT and full-precision FW/full/rank values</a> · <a href="../assets/boston/assignment_methods_r1/BOSTON_ASSIGNMENT_FIGURE_SOURCES.json">Figure member hashes, fields, extents, scale and credits</a> · <a href="../../tools/visuals/render_boston_assignment.py">No-solve renderer</a></p>
-<p>GMNS physical <code>link_id</code> and the <a href="../../examples/boston/gmns_exchange_r1/data/id_crosswalk.csv">documented exchange crosswalk</a> let method outputs attach to the <strong>same</strong> road geometry. For example, the plotting table's physical link <strong>4624</strong> has <code>from_node_id=192</code>, <code>to_node_id=193</code>, source <code>link_id=4624</code> and a saved FW flow of zero; that source key remains distinct from any exported numeric link ID. The old route-60 GMNS/GPS figure and its S1 value are a different evidence object, not a measurement of these ABS_PLANNED outputs.</p>
+<p><a href="../assets/boston/assignment_methods_r1/boston_abs_planned_assignment_links.csv">All 5,091 linked rows with original WKT and full-precision FW/full/rank values</a> · <a href="../assets/boston/assignment_methods_r1/BOSTON_ASSIGNMENT_FIGURE_SOURCES.json">Figure member hashes, fields, extents, scale and credits</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/visuals/render_boston_assignment.py">No-solve renderer</a></p>
+<p>GMNS physical <code>link_id</code> and the <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/data/id_crosswalk.csv">documented exchange crosswalk</a> let method outputs attach to the <strong>same</strong> road geometry. For example, the plotting table's physical link <strong>4624</strong> has <code>from_node_id=192</code>, <code>to_node_id=193</code>, source <code>link_id=4624</code> and a saved FW flow of zero; that source key remains distinct from any exported numeric link ID. The old route-60 GMNS/GPS figure and its S1 value are a different evidence object, not a measurement of these ABS_PLANNED outputs.</p>
 <h2 id="sources-and-read-only-checks">Sources and read-only checks</h2>
 <ul>
-<li><a href="../../algorithms/static_fw/tap_frank_wolfe.py">Static FW implementation</a>, source SHA-256 <code>1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149</code>; original frozen link/demand hashes <code>a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479</code> and <code>00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49</code>.</li>
+<li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/static_fw/tap_frank_wolfe.py">Static FW implementation</a>, source SHA-256 <code>1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149</code>; original frozen link/demand hashes <code>a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479</code> and <code>00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49</code>.</li>
 <li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/finite_path_reference/README.md">Actual finite-path SLSQP source and config</a>; its 130-path solution and 5,091-link reconstruction are directly released.</li>
 <li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/algorithms/path_compression/diagnostic_l3/README.md">Corrected native L3 builder and Boston adapter</a>; gamma=0, linkwise beta-aware BPR and zero explicit-link lower bound. Only the accepted outer-02 rank-26/rank-52 records are selected.</li>
 </ul>

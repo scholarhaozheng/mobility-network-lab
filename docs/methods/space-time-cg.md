@@ -71,3 +71,22 @@ Boston R4 and Hong Kong R5 each establish closure for 10/10 demands at `1e-6` on
 The [current CG orchestration source](../../app/src/gmns_dynamic/run_full_cg_v1.py) remains available for inspecting the implementation; its external-network and conversion modules govern which graph is actually built. The case pages distinguish inspecting saved results from running that source on new inputs.
 
 These case results do not establish citywide dynamic assignment, unique path-flow patterns, general convergence at arbitrary scale, or comparability with static BPR/Beckmann objectives.
+
+<!-- layered-r2-cross-case-cg:start -->
+<a id="cg-experiments"></a>
+### Executed finite space–time CG experiments
+
+The repository contains **three distinct executed CG case families**. Boston is one bounded real-city pilot on an accepted GMNS subnetwork; Sioux Falls contains two historical selected-OD benchmark instances; Hong Kong R5 is a separately frozen ten-demand Tsim Sha Tsui–Jordan finite case. They share a method family, not a graph, demand, objective value or universal certificate.
+
+<p align="center"><a href="../methods/space-time-cg.md"><img src="../assets/presentation_r5/boston_sioux_cg_parallel_overview.png" width="100%" alt="Six-stage comparison of executed finite space–time CG evidence: one bounded Boston pilot and two historical Sioux Falls selected-OD runs. Both have saved Phase-I, Phase-II, final-flow and reference evidence; independent pricing closure is established only for Boston."></a></p>
+
+| Executed evidence | Boston | Sioux Falls | Hong Kong |
+|---|---|---|---|
+| **Instance** | 90 physical nodes, 125 links, 10 ODs, 3-second steps, 100-step horizon | Historical 200/250-OD selected subsets | 111 selected physical links, 10 ODs, 30-second steps, 50-step horizon; 24,910 dynamic arcs |
+| **Phase I** | Artificial flow **20.5536128974 → 0** in round **90** | Artificial flow reaches zero in rounds **51 / 62** | Artificial flow **4.3502187198 → 0** in **12** rounds |
+| **Phase II** | **64.39686151152954** vehicle-min; own-LP agreement | **943,155.589771 / 1,521,090.836620**; each own-LP agreement | **75.03632985794835** vehicle-min; own-LP agreement after three added columns |
+| **Pricing certificate** | Independent full-DAG closure **10/10** at `1e-6` | **Not established** for retained historical runs | Independent full-DAG closure **10/10** at `1e-6` |
+| **Open the evidence** | [Boston case](../cases/boston-space-time.md) | [Sioux case](../cases/sioux-space-time.md) | [Hong Kong R5 case](../cases/hong-kong-space-time.md) |
+
+*The Boston/Sioux image is an earlier two-city saved overview, retained without being relabeled as a three-city figure. Hong Kong's separate R5 figures appear [on its current case page](../cases/hong-kong-space-time.md). None is a citywide CG or a calibrated forecast. Fixed-cost hard-capacity CG objectives are not numerically comparable with static BPR/Beckmann FW.* [Boston/Sioux overview SVG](../assets/presentation_r5/boston_sioux_cg_parallel_overview.svg) · [Source hashes](../assets/presentation_r5/CG_CASE_SEQUENCE_SOURCES.json) · [Earlier saved overview](../assets/presentation_r4/cg_experiments_overview.png).
+<!-- layered-r2-cross-case-cg:end -->
