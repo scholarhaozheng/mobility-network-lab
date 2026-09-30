@@ -122,12 +122,31 @@ def main() -> int:
     ):
         check(rel in readme, f"Landing project map/city full-figure link missing: {rel}")
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
-    check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 30,
+    check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 28,
           "R3 atlas must use GitHub-native horizontal image rows")
-    check(atlas.count('width="165" height="99"') == 89,
+    check(atlas.count('width="165" height="99"') == 86,
           "Atlas must use uniform smaller 5:3 previews with source-preserving contain")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
+    coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    check(coverage.count('class="home-coverage"') == 18 and
+          'E / Reusable outputs and tools' not in coverage and
+          not re.search(r'row_19_(?:boston|sioux_falls|hong_kong)\.png', coverage),
+          "Tools must be a navigation entry, not a standalone coverage table or image")
+    check(coverage.count('<td width="33%"><small><small><a href=') == 54,
+          "Three-city coverage links must use the compact GitHub-native text size")
+    for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
+                       ("Hong Kong", "hong-kong")):
+        case = f"docs/cases/{slug}.md#reproduction"
+        check(f'<a id="{slug}-tools"></a>' in atlas and
+              f'<a href="{case}">Tools and reproducibility</a>' in atlas and
+              f'<section class="atlas-stage" id="{slug}-tools">' not in atlas,
+              f"{city} tools navigation or historical anchor is missing")
+    check('<small><strong>' in atlas and '<br><small><small>' in atlas,
+          "Atlas caption title/scope font hierarchy is missing")
+    for city in ("boston", "sioux_falls", "hong_kong"):
+        check((ROOT / f"docs/assets/homepage_evidence_r2/row_19_{city}.png").is_file(),
+              f"Original {city} tools preview was deleted rather than removed from home")
     stage_tables = re.findall(
         r'<table class="atlas-stage-table" data-columns="(\d)" width="(\d+)%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
         atlas, re.S)

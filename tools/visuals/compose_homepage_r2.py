@@ -22,7 +22,6 @@ ROW_GROUPS=[
  ("C / Four-stage travel-demand workflow",("06","07","08","09")),
  ("D1 / Static assignment · BPR/Beckmann",("10","11","12","13")),
  ("D2 / Finite time-expanded · fixed cost, hard capacity",("14","15","16","17","18")),
- ("E / Reusable outputs and tools",("19",)),
 ]
 STAGES=[
  ("sources","Sources and GMNS"),("population","Population, households and activity"),
@@ -31,7 +30,7 @@ STAGES=[
  ("static","Static assignment methods"),("finite","Finite time-expanded computation"),
  ("tools","Tools and reproducibility"),
 ]
-STAGE_ROWS={"sources":("01","02"),"population":("03",),"transit":("04","05"),"generation":("06",),"distribution":("07",),"mode":("08",),"static":("10","11","12","13"),"finite":("14","15","16","17","18"),"tools":("19",)}
+STAGE_ROWS={"sources":("01","02"),"population":("03",),"transit":("04","05"),"generation":("06",),"distribution":("07",),"mode":("08",),"static":("10","11","12","13"),"finite":("14","15","16","17","18")}
 COVER={
  "Boston":"docs/assets/boston/visual_release_r1/mcl_boston_hero.png",
  "Sioux Falls":"docs/assets/homepage_evidence_r1/sioux_falls_case_cover.png",
@@ -137,7 +136,7 @@ def component_table(matrix, rid):
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(r["preview_path"])+
                '">Full preview</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
-        out.append('<td><small>'+links+'</small></td>')
+        out.append('<td width="33%"><small><small>'+links+'</small></small></td>')
     out+=['</tr></tbody></table>']
     return '\n'.join(out)
 
@@ -175,9 +174,9 @@ def stage_table(cards):
             '" width="165" height="99" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
             '"></a></td>' for c in group)+'</tr>')
         out.append('<tr class="atlas-caption-row">'+''.join(
-            '<td width="'+cell_width+'"><strong>'+esc(c["label"])+ '</strong><br><small>'+
+            '<td width="'+cell_width+'"><small><strong>'+esc(c["label"])+ '</strong></small><br><small><small>'+
             esc(c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"])+
-            '</small></td>' for c in group)+'</tr>')
+            '</small></small></td>' for c in group)+'</tr>')
         out.append('<tr class="atlas-links-row">'+''.join(
             '<td width="'+cell_width+'"><small><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
             '">Figure</a></small></td>' for c in group)+'</tr></tbody></table>')
@@ -199,7 +198,10 @@ def section04(matrix):
            '<a href="'+esc(CASE_PAGE[city])+'"><img class="atlas-cover" src="'+esc(COVER[city])+'" width="780" alt="'+esc(city)+' canonical case cover"></a>',
            '<table class="atlas-quick-facts" width="100%"><colgroup>'+('<col width="25%">'*4)+'</colgroup><thead><tr>'+''.join('<th width="25%">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
            '<tbody><tr>'+''.join('<td width="25%">'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
-           '<p class="atlas-nav">'+' · '.join('<a href="#'+slug+'-'+sid+'">'+esc(name)+'</a>' for sid,name in STAGES)+'</p>']
+           '<a id="'+slug+'-tools"></a>',
+           '<p class="atlas-nav">'+' · '.join(
+               '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
+               for sid,name in STAGES)+'</p>']
         if city=="Sioux Falls":
             compact=(
               ("population","Population, households and activity","Not part of the supplied benchmark"),
@@ -215,6 +217,7 @@ def section04(matrix):
                            '</td><td width="33%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
             out += ['</tbody></table>']
         for stage,name in STAGES:
+            if stage=="tools":continue
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
             if city=="Hong Kong" and stage=="finite":out.append('<a id="hong-kong-cg-r5"></a>')
             out.append('<section class="atlas-stage" id="'+slug+'-'+stage+'"><h4>'+name+'</h4>')
