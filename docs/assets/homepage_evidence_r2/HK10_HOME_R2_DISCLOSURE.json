@@ -1,0 +1,41 @@
+{
+  "record_type": "same-exact-HK10-model-generated-presentation-derivative",
+  "status": "APPROVED_SAME_EXACT_HK10_EXCERPT",
+  "approval_boundary": "Only the previously approved HK10 / ORACLE_R1_HK10_K1 77-arc model-generated excerpt and exact derived presentation; no additional path, pool, state or observation.",
+  "parent_approval": {
+    "path": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "sha256": "862562abf851e495ad517f870ee99bb94d3d520985bc9a8ead1315b054001f85"
+  },
+  "approved_identity": {
+    "demand_id": "HK10",
+    "column_id": "ORACLE_R1_HK10_K1",
+    "ordered_arc_count": 77,
+    "excerpt_csv_sha256": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9"
+  },
+  "source_arc_table": {
+    "path": "docs/assets/three_city_r2/data/hong_kong_construction_edges.csv",
+    "sha256": "e855c3df40d3d471284c571a1b44ef85471f08b5bc00ff66221037d00b5c77a2"
+  },
+  "accepted_full_figure": {
+    "path": "docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.png",
+    "sha256": "e8e216700c05afd8395486ef26344177bdec23493f6c9544aee815e13e5378ad"
+  },
+  "derived_asset_paths_sha256": {
+    "docs/assets/homepage_evidence_r2/row_14_hong_kong.png": "5801e361844c1cd5aa1efc587609f287cf632e33e174a540d09103f745cfa379",
+    "docs/assets/homepage_evidence_r2/row_14_hong_kong.source.json": "290ac12a0644e9935119dd9b1c6ac6a8dbed9c0bdbf6219062a79c0a58fc2d75"
+  },
+  "shared_page_dependencies_sha256": {
+    "README.md": "d8b5ef1fd9c590890888a9835d52d4298b6f8304aff27d3bb94c476fc57c2cad",
+    "docs/index.md": "eb15e92c4e1fb811f774ac7c51c264738e0245d0bb623c056b0c1db615cde0c5",
+    "docs/index.html": "cde55749ef3411d32d82d31012ca8029566fff74227a62530ca39c1110636bee"
+  },
+  "shared_dependency_rule": "Shared pages and builders also contain unrelated city/method content; this record is not blanket authorization for unrelated data.",
+  "expressly_not_approved": [
+    "full generated path pools",
+    "dual or solver-state arrays",
+    "raw GPS/UrbanNav observations",
+    "additional provider files"
+  ],
+  "scientific_solver_rerun": false,
+  "publication_performed_for_this_candidate": false
+}
