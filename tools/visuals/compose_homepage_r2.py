@@ -166,7 +166,8 @@ def stage_table(cards):
     out=[]
     for start in range(0,len(cards),4):
         group=cards[start:start+4]
-        out.append('<table class="atlas-stage-table"><colgroup>'+('<col width="'+str(round(100/len(group)))+'%">'*len(group))+'</colgroup><tbody>')
+        columns=''.join('<col width="'+str(round(100/len(group)))+'%">' for _ in group)
+        out.append('<table class="atlas-stage-table"><colgroup>'+columns+'</colgroup><tbody>')
         out.append('<tr class="atlas-image-row">'+''.join(
             '<td align="center"><a href="'+esc(c["target_link"])+'"><img src="'+esc(c["preview_path"])+
             '" width="210" height="126" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
@@ -185,7 +186,10 @@ def section04(matrix):
        'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size. Covers are navigation assets, not scientific validation.','']
     assets=[]
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}
-    for item in EXTRAS:extra_by[(item[0],item[1])].append(item)
+    for item in EXTRAS:
+        # Keep the historical source figures, but do not repeat comparisons or
+        # multiple FW scales in the homepage's one-card-per-method static row.
+        if item[1]!="static":extra_by[(item[0],item[1])].append(item)
     for city in CITIES:
         slug=SLUG[city]
         out += ['<a id="'+slug+'"></a>','<article class="case-atlas" data-city="'+slug+'">','<h3>'+city+'</h3>',
@@ -218,7 +222,21 @@ def section04(matrix):
                 if r["status"] in {"outside benchmark","not demonstrated"}:continue
                 target=r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
                 label=r["row_title"].replace('01 / ','').replace('02 / ','').replace('03 / ','').replace('04 / ','')
-                asset=card(city,stage,label,r["preview_path"],target,label,r["result_scope"],"R2 row preview")
+                if stage=="static" and city=="Sioux Falls" and rid=="10":
+                    asset=card(city,stage,label,
+                        "docs/assets/homepage_alignment_r3/sioux_historical_fw_summary.png",
+                        "docs/datasets/sioux-static-fw.md",label,
+                        "528-OD historical approximate result; saved objective and gap", "saved-result summary")
+                elif stage=="static" and city=="Boston" and rid=="13":
+                    asset=card(city,stage,label,
+                        "docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png",
+                        target,label,"ABS_PLANNED 26-OD; rank-26 diagnostic")
+                elif stage=="static" and city=="Sioux Falls" and rid=="13":
+                    asset=card(city,stage,label,
+                        "docs/assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png",
+                        target,label,"rank-50 diagnostic; not UE")
+                else:
+                    asset=card(city,stage,label,r["preview_path"],target,label,r["result_scope"],"R2 row preview")
                 cards.append(asset);assets.append(asset)
             for item in extra_by[(city,stage)]:
                 asset=card(*item)

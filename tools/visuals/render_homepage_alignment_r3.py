@@ -5,6 +5,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import re
 from pathlib import Path
 
 import matplotlib
@@ -111,6 +112,46 @@ def render_sioux_l3_rank50() -> str:
     return dest.relative_to(ROOT).as_posix()
 
 
+def render_sioux_fw_summary() -> str:
+    """Typeset retained FW diagnostics; no standalone FW link vector is public."""
+    source = "docs/datasets/sioux-static-fw.md"
+    saved = (ROOT / source).read_text(encoding="utf-8")
+    def metric(label: str) -> str:
+        match = re.search(r"^\| " + re.escape(label) + r" \| ([^|]+) \|$", saved, re.M)
+        if not match:
+            raise AssertionError(f"Saved Sioux FW metric missing: {label}")
+        return match.group(1).strip()
+    objective = metric("Recomputed Beckmann objective")
+    gap = metric("Fixed-flow gap / Beckmann objective")
+    od = metric("OD records")
+    iterations = metric("Saved iterations")
+    assert metric("Physical nodes / directed links") == "24 / 76"
+    fig = plt.figure(figsize=(6, 3.6), dpi=100, facecolor="white")
+    ax = fig.add_axes((0, 0, 1, 1))
+    ax.set_axis_off()
+    ink, teal, muted = "#17364a", "#087f8c", "#526779"
+    ax.text(.07, .85, "Historical Frank–Wolfe", color=ink, fontsize=13, weight="bold")
+    ax.text(.07, .76, "Sioux Falls · static BPR/Beckmann", color=muted, fontsize=8)
+    ax.plot([.07, .93], [.70, .70], color="#d6e1e7", lw=1, transform=ax.transAxes)
+    ax.set_xlim(0, 1)
+    ax.set_ylim(0, 1)
+    ax.text(.07, .57, objective, color=teal, fontsize=19, weight="bold")
+    ax.text(.07, .49, "Recomputed Beckmann objective", color=muted, fontsize=8)
+    ax.text(.07, .34, gap, color=ink, fontsize=16, weight="bold")
+    ax.text(.07, .26, "Fixed-flow gap / objective", color=muted, fontsize=8)
+    ax.text(.61, .34, od, color=ink, fontsize=16, weight="bold")
+    ax.text(.61, .26, "Provided OD records", color=muted, fontsize=8)
+    ax.text(.07, .11, f"24 nodes · 76 directed links · {iterations} saved iterations", color=muted, fontsize=7)
+    ax.text(.07, .055, "Approximate result; standalone FW link vector is not published.", color=muted, fontsize=7)
+    dest = OUT / "sioux_historical_fw_summary.png"
+    fig.savefig(dest, dpi=100, facecolor="white", metadata={"Software": "MCL presentation"})
+    plt.close(fig)
+    _save_sidecar(dest, source, "Typeset exact saved FW metrics; no solver rerun or inferred link-flow map",
+                  city="Sioux Falls", method="Frank–Wolfe", instance="historical 528-OD static benchmark",
+                  metric_labels=["Recomputed Beckmann objective", "Fixed-flow gap / Beckmann objective", "OD records", "Saved iterations"])
+    return dest.relative_to(ROOT).as_posix()
+
+
 def render_compact(source: str) -> str:
     dest = ROOT / compact_path(source)
     original = ROOT / source
@@ -143,6 +184,7 @@ def render() -> None:
     ATLAS.mkdir(parents=True, exist_ok=True)
     gmns = render_sioux_gmns()
     rank50 = render_sioux_l3_rank50()
+    render_sioux_fw_summary()
     matrix_path = R2_OUT / "ROW_TEMPLATE_MATRIX.csv"
     with matrix_path.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
@@ -158,6 +200,7 @@ def render() -> None:
     from visuals.compose_homepage_r2 import EXTRAS
     paths = {item[3] for item in EXTRAS}
     paths.add(rank50)
+    paths.add("docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png")
     for source in sorted(paths): render_compact(source)
     print(f"R3 presentation derivatives: Sioux GMNS/L3 and {len(paths)} compact atlas previews")
 
