@@ -59,6 +59,10 @@ record = {
                           "excerpt_csv_sha256": sha(excerpt)},
     "approved_payload_paths_sha256": {rel: sha(ROOT / rel) for rel in payload},
     "shared_dependency_paths_sha256": {rel: sha(ROOT / rel) for rel in shared},
+    "current_presentation_dependencies_sha256": {
+        rel: sha(ROOT / rel) for rel in
+        ("docs/full-walkthrough.md", "docs/full-walkthrough.html")
+    },
     "shared_dependency_rule": "The exact HK10 disclosure embedded in these pages/scripts is approved. Inclusion of a shared file is not blanket authorization for unrelated data, other generated columns, or future additions.",
     "expressly_not_approved": ["full generated path pools", "dual or solver-state arrays",
                                 "raw GPS/UrbanNav observations", "additional provider files"],

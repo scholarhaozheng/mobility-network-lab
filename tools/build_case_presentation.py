@@ -46,38 +46,36 @@ def main(argv=None):
     @media(max-width:760px){.mcl-page table.home-coverage{min-width:0;display:block;border:0}.mcl-page table.home-coverage thead{display:none}.mcl-page table.home-coverage tbody,.mcl-page table.home-coverage tr{display:block}.mcl-page table.home-coverage tr{border:1px solid #d6e1e7;border-radius:8px;margin:0 0 14px;overflow:hidden}.mcl-page table.home-coverage tr>th:first-child{display:block;width:100%;background:#142d43;color:white}.mcl-page table.home-coverage td{display:block;width:100%;border:0;border-top:1px solid #d6e1e7}.mcl-page table.home-coverage td+td{border-left:0}.home-city-label{display:block;font-weight:800;color:#142e43;margin-bottom:3px}.case-parity-grid,.case-specific-strip{grid-template-columns:1fr}.case-parity-card>p{min-height:0}.case-slot{min-height:0}}
     '''
     CSS += '''
-    .mcl-page table.home-coverage td img{width:230px;max-width:100%;height:auto;aspect-ratio:5/3;object-fit:contain}
-    .case-atlas{border:1px solid #d6e1e7;border-radius:13px;padding:24px;margin:36px 0 52px;background:#fff}
+    .mcl-page table.home-coverage td img{width:230px;max-width:100%;height:auto;object-fit:contain}
+    .case-atlas{border:1px solid #d6e1e7;border-radius:13px;padding:24px;margin:36px -24px 52px;background:#fff}
     .case-atlas>h3{margin-top:0}.case-atlas .atlas-cover{display:block;width:min(100%,780px);height:auto;margin:18px 0;border:1px solid #d6e1e7;border-radius:8px;object-fit:contain}
     .atlas-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;margin:18px 0}.atlas-facts div{padding:9px 12px;background:#f1f6f8;border-left:3px solid #087f8c}.atlas-facts dt{font-weight:750;font-size:12px;color:#17364a}.atlas-facts dd{margin:3px 0 0;font-size:12px;color:#53697a}
     .atlas-nav{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}.atlas-nav a{border:1px solid #bcd5dc;border-radius:999px;padding:5px 10px;font-size:11px;background:#f6fafb}
     .atlas-stage{border-top:1px solid #d6e1e7;padding:19px 0 13px;scroll-margin-top:85px}.atlas-stage h4{margin:0 0 14px}
     .atlas-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:13px}.atlas-card{min-width:0;margin:0;padding:9px;border:1px solid #d6e1e7;border-radius:8px;background:#fff}.atlas-card img{display:block;width:100%;height:155px;object-fit:contain;background:#fff}.atlas-card figcaption{margin-top:8px;font-size:11px;line-height:1.45;color:#53697a}.atlas-card figcaption strong{font-size:12px;color:#17364a}
     .atlas-scope{padding:13px;background:#f2f6f8;border-left:3px solid #9db4bf}
-    @media(max-width:760px){.case-atlas{padding:15px;margin:25px 0}.atlas-facts{grid-template-columns:1fr}.atlas-gallery{grid-template-columns:1fr}.atlas-card img{height:auto;max-height:210px}.mcl-page table.home-coverage td img{width:230px}}
+    @media(max-width:760px){.case-atlas{padding:15px;margin:25px -15px}.atlas-facts{grid-template-columns:1fr}.atlas-gallery{grid-template-columns:1fr}.atlas-card img{height:auto;max-height:210px}.mcl-page table.home-coverage td img{width:230px}}
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
     '''
     CSS += '''
-    /* Coverage keeps its three-city grid; each atlas card keeps one slot width. */
+    /* Every home table fills its content width; atlas rows share four quarter-width slots. */
     .mcl-page table.home-coverage,.mcl-page table.atlas-stage-table,.mcl-page table.atlas-quick-facts,.mcl-page table.atlas-benchmark-scope{table-layout:fixed}
+    .mcl-page table.home-coverage,.mcl-page table.atlas-stage-table,.mcl-page table.atlas-quick-facts,.mcl-page table.atlas-benchmark-scope{width:100%}
     .mcl-page table.home-coverage th:first-child{width:auto}
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
-    .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:132px;object-fit:contain}
+    .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:auto;object-fit:contain}
+    .mcl-page table.home-coverage .coverage-scope sub,.mcl-page table.home-coverage .coverage-caption sub{font-size:11px;vertical-align:baseline}
     .mcl-page table.home-coverage .coverage-links td{white-space:nowrap;overflow-wrap:normal}
     .mcl-page table.home-coverage .coverage-links sub{font-size:9.5px;vertical-align:baseline}
-    .mcl-page table.atlas-stage-table[data-columns="1"]{width:25%}
-    .mcl-page table.atlas-stage-table[data-columns="2"]{width:50%}
-    .mcl-page table.atlas-stage-table[data-columns="3"]{width:75%}
-    .mcl-page table.atlas-stage-table[data-columns="4"]{width:100%}
-    .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:165px;height:99px;max-width:100%;object-fit:contain}
+    .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:165px;height:auto;max-width:100%;object-fit:contain}
     .mcl-page table.atlas-stage-table td{overflow-wrap:anywhere;line-height:1.35;padding:9px 10px}
     .mcl-page table.atlas-stage-table .atlas-caption-row td{font-size:11px}
-    .mcl-page table.atlas-stage-table .atlas-caption-row td>small{font-size:11px}
-    .mcl-page table.atlas-stage-table .atlas-caption-row td>small>small{font-size:9px;color:#53697a}
-    .mcl-page table.atlas-stage-table .atlas-links-row td,.mcl-page table.atlas-stage-table .atlas-links-row small{font-size:10px}
-    .mcl-page table.atlas-quick-facts td{font-size:12px}
-    .mcl-page table.atlas-benchmark-scope td{font-size:12px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row strong{font-size:11px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row sub{font-size:9px;color:#53697a;vertical-align:baseline}
+    .mcl-page table.atlas-stage-table .atlas-links-row sub{font-size:10px;vertical-align:baseline}
+    .mcl-page table.atlas-stage-table .atlas-empty{background:#fff}
+    .mcl-page table.atlas-quick-facts td sub,.mcl-page table.atlas-benchmark-scope td sub{font-size:11px;vertical-align:baseline}
     .mcl-page .atlas-nav{font-size:12px;line-height:2}
     @media(max-width:760px){
       .mcl-page table.home-coverage{display:table;min-width:720px;border:1px solid #d6e1e7}
@@ -87,10 +85,7 @@ def main(argv=None):
       .mcl-page table.home-coverage tr>th:first-child{display:table-cell;width:auto}
       .mcl-page table.home-coverage td{display:table-cell;width:33.333%;border-top:1px solid #d6e1e7}
       .mcl-page table.home-coverage td+td{border-left:1px solid #d6e1e7}
-      .mcl-page table.atlas-stage-table[data-columns="1"]{min-width:170px}
-      .mcl-page table.atlas-stage-table[data-columns="2"]{min-width:340px}
-      .mcl-page table.atlas-stage-table[data-columns="3"]{min-width:510px}
-      .mcl-page table.atlas-stage-table[data-columns="4"]{min-width:680px}
+      .mcl-page table.atlas-stage-table{min-width:680px}
       .mcl-page table.atlas-quick-facts{min-width:660px}
       .mcl-page table.atlas-benchmark-scope{min-width:520px}
     }
