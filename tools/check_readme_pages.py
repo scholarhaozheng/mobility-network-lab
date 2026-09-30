@@ -124,8 +124,24 @@ def main() -> int:
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 30,
           "R3 atlas must use GitHub-native horizontal image rows")
-    check(atlas.count('width="210" height="126"') == 89,
-          "Atlas must use uniform 5:3 compact previews with source-preserving contain")
+    check(atlas.count('width="165" height="99"') == 89,
+          "Atlas must use uniform smaller 5:3 previews with source-preserving contain")
+    check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
+          "Atlas caption/link rows did not collapse to compact notes and short links")
+    stage_tables = re.findall(
+        r'<table class="atlas-stage-table" data-columns="(\d)" width="(\d+)%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
+        atlas, re.S)
+    check(len(stage_tables) == atlas.count('class="atlas-stage-table"'),
+          "Atlas stage table markup or column count attribute malformed")
+    for slots_text, width_text, cols, body in stage_tables:
+        slots = int(slots_text)
+        col_widths = re.findall(r'<col width="(\d+)%">', cols)
+        rows = re.findall(r'<tr class="([^"]+)">(.*?)</tr>', body, re.S)
+        check(int(width_text) == 25 * slots and len(col_widths) == slots and
+              len(set(col_widths)) == 1 and len(rows) == 3 and
+              [name for name, _ in rows] == ["atlas-image-row", "atlas-caption-row", "atlas-links-row"] and
+              all(row.count('<td') == slots for _, row in rows),
+              "Atlas table columns, proportional width, or merged caption row inconsistent")
     for text, surface in ((readme, "README"), (home, "Pages homepage")):
         groups = re.findall(r"<colgroup>(.*?)</colgroup>", text, re.S)
         check(bool(groups) and all(re.fullmatch(r'(?:<col width="(?:25|33|50|100)%"\s*/?>){1,4}',

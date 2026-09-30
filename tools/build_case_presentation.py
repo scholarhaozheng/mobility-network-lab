@@ -58,17 +58,21 @@ def main(argv=None):
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
     '''
     CSS += '''
-    /* R3 tables preserve the same image/title/scope/link columns as the README. */
-    .mcl-page table.home-coverage,.mcl-page table.atlas-stage-table{table-layout:fixed}
+    /* Coverage keeps its three-city grid; each atlas card keeps one slot width. */
+    .mcl-page table.home-coverage,.mcl-page table.atlas-stage-table,.mcl-page table.atlas-quick-facts,.mcl-page table.atlas-benchmark-scope{table-layout:fixed}
     .mcl-page table.home-coverage th:first-child{width:auto}
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
     .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:132px;object-fit:contain}
-    .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:210px;height:126px;object-fit:contain}
-    .mcl-page table.atlas-stage-table td{overflow-wrap:anywhere;line-height:1.45}
-    .mcl-page table.atlas-stage-table .atlas-title-row td{font-size:12px}
-    .mcl-page table.atlas-stage-table .atlas-scope-row td{font-size:11px;color:#53697a}
-    .mcl-page table.atlas-stage-table .atlas-links-row td{font-size:11px}
+    .mcl-page table.atlas-stage-table[data-columns="1"]{width:25%}
+    .mcl-page table.atlas-stage-table[data-columns="2"]{width:50%}
+    .mcl-page table.atlas-stage-table[data-columns="3"]{width:75%}
+    .mcl-page table.atlas-stage-table[data-columns="4"]{width:100%}
+    .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:165px;height:99px;max-width:100%;object-fit:contain}
+    .mcl-page table.atlas-stage-table td{overflow-wrap:anywhere;line-height:1.35;padding:9px 10px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row td{font-size:12px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row small{font-size:10.5px;color:#53697a}
+    .mcl-page table.atlas-stage-table .atlas-links-row td,.mcl-page table.atlas-stage-table .atlas-links-row small{font-size:10px}
     .mcl-page table.atlas-quick-facts td{font-size:12px}
     .mcl-page table.atlas-benchmark-scope td{font-size:12px}
     .mcl-page .atlas-nav{font-size:12px;line-height:2}
@@ -80,7 +84,10 @@ def main(argv=None):
       .mcl-page table.home-coverage tr>th:first-child{display:table-cell;width:auto}
       .mcl-page table.home-coverage td{display:table-cell;width:33.333%;border-top:1px solid #d6e1e7}
       .mcl-page table.home-coverage td+td{border-left:1px solid #d6e1e7}
-      .mcl-page table.atlas-stage-table{min-width:720px}
+      .mcl-page table.atlas-stage-table[data-columns="1"]{min-width:170px}
+      .mcl-page table.atlas-stage-table[data-columns="2"]{min-width:340px}
+      .mcl-page table.atlas-stage-table[data-columns="3"]{min-width:510px}
+      .mcl-page table.atlas-stage-table[data-columns="4"]{min-width:680px}
       .mcl-page table.atlas-quick-facts{min-width:660px}
       .mcl-page table.atlas-benchmark-scope{min-width:520px}
     }
