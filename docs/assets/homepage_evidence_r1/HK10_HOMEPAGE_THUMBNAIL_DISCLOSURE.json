@@ -1,0 +1,36 @@
+{
+  "record_type": "exact-hk10-approved-homepage-thumbnail-derivative",
+  "status": "APPROVED_SAME_EXACT_HK10_EXCERPT",
+  "approval_source": "User-approved exact HK10 / ORACLE_R1_HK10_K1 77-arc model-generated path; no new path or data-source scope.",
+  "approved_identity": {
+    "demand_id": "HK10",
+    "column_id": "ORACLE_R1_HK10_K1",
+    "ordered_arc_count": 77,
+    "excerpt_csv_sha256": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9"
+  },
+  "parent_approval": {
+    "path": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "sha256": "24150dcad6e0b972f13efc58444a2309a7983ec7768a25974ababfe00fed6bfa"
+  },
+  "source_figure": {
+    "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png",
+    "sha256": "d6ebe2f06a1c8bb1c075c21d7a971e74a92ebd531e7889325d8c1d862b4318fd"
+  },
+  "derived_asset_paths_sha256": {
+    "docs/assets/homepage_evidence_r1/hong_kong_hong_kong_generated_column_time_indexed_path_4905a3fe.png": "43b345216f15ca5342a3945a2c879b6c5334490410f659f221c26abc9b7640ec"
+  },
+  "shared_dependency_paths_sha256": {
+    "tools/visuals/render_homepage_evidence_r1.py": "8530a2633069d6ab2b4222f0d956a41ff14e145f4b583cb28ca2fa9dc63ba1d9",
+    "tools/visuals/homepage_evidence_r1_map.csv": "b80d893d65456097b4fd1ae358877ae6893e24ee545444d3e64e5d7e18f2c681",
+    "docs/assets/homepage_evidence_r1/THUMBNAIL_SOURCE_MANIFEST.json": "24865cc4c2387c3609e32bdf595317301424177ef58176c5f3d547f6df8273c5"
+  },
+  "shared_dependency_rule": "These shared files contain other city/method presentation too; exact HK10 approval is not blanket authorization for unrelated data.",
+  "expressly_not_approved": [
+    "full generated path pools",
+    "dual or solver-state arrays",
+    "raw GPS/UrbanNav observations",
+    "additional provider files"
+  ],
+  "scientific_solver_rerun": false,
+  "publication_performed_for_this_candidate": false
+}

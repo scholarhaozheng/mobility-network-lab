@@ -2,6 +2,12 @@
 
 The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.
 
+<!-- CASE COVER R1 START -->
+![Boston case cover](../assets/boston/visual_release_r1/mcl_boston_hero.png)
+
+*Case-entry cover; saved results, scope and sources are detailed below.*
+<!-- CASE COVER R1 END -->
+
 ## Role in the repository
 
 Real-city GMNS, activity, four-stage and GPS evidence; scalable static assignment; a distinct bounded finite-algorithm holdout.

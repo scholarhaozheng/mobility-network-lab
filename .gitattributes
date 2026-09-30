@@ -61,3 +61,8 @@
 /docs/full-walkthrough.* -text
 /docs/assets/project_structure_r2/** -text -diff
 /tools/visuals/render_project_structure_r2.py -text
+
+# Homepage R1 thumbnails, covers and their source sidecars carry exact-byte hashes.
+/docs/assets/homepage_evidence_r1/** -text -diff
+/tools/visuals/homepage_evidence_r1_map.csv -text
+/tools/visuals/render_homepage_evidence_r1.py -text
