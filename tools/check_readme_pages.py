@@ -120,9 +120,12 @@ def main() -> int:
         "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
         "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
     ):
-        check(rel in images(readme), f"Landing project map/city preview missing: {rel}")
-    check("height=" not in readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")],
-          "City preview height is forced instead of retaining native aspect ratio")
+        check(rel in readme, f"Landing project map/city full-figure link missing: {rel}")
+    atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
+    check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 30,
+          "R3 atlas must use GitHub-native horizontal image rows")
+    check(atlas.count('width="210" height="126"') == 101,
+          "R3 atlas must use uniform 5:3 compact previews with source-preserving contain")
     check("model-generated" in readme.lower(), "Approved HK10 path must be labeled model-generated")
     check("77-arc" in walk and "model-generated" in walk.lower(),
           "Full walkthrough lost the bounded HK10 disclosure")

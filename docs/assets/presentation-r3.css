@@ -34,3 +34,30 @@
     @media(max-width:760px){.case-atlas{padding:15px;margin:25px 0}.atlas-facts{grid-template-columns:1fr}.atlas-gallery{grid-template-columns:1fr}.atlas-card img{height:auto;max-height:210px}.mcl-page table.home-coverage td img{width:230px}}
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
 
+    /* R3 tables preserve the same image/title/scope/link columns as the README. */
+    .mcl-page table.home-coverage,.mcl-page table.atlas-stage-table{table-layout:fixed}
+    .mcl-page table.home-coverage th:first-child{width:auto}
+    .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
+    .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
+    .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:132px;object-fit:contain}
+    .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:210px;height:126px;object-fit:contain}
+    .mcl-page table.atlas-stage-table td{overflow-wrap:anywhere;line-height:1.45}
+    .mcl-page table.atlas-stage-table .atlas-title-row td{font-size:12px}
+    .mcl-page table.atlas-stage-table .atlas-scope-row td{font-size:11px;color:#53697a}
+    .mcl-page table.atlas-stage-table .atlas-links-row td{font-size:11px}
+    .mcl-page table.atlas-quick-facts td{font-size:12px}
+    .mcl-page table.atlas-benchmark-scope td{font-size:12px}
+    .mcl-page .atlas-nav{font-size:12px;line-height:2}
+    @media(max-width:760px){
+      .mcl-page table.home-coverage{display:table;min-width:720px;border:1px solid #d6e1e7}
+      .mcl-page table.home-coverage thead{display:table-header-group}
+      .mcl-page table.home-coverage tbody{display:table-row-group}
+      .mcl-page table.home-coverage tr{display:table-row;border:0}
+      .mcl-page table.home-coverage tr>th:first-child{display:table-cell;width:auto}
+      .mcl-page table.home-coverage td{display:table-cell;width:33.333%;border-top:1px solid #d6e1e7}
+      .mcl-page table.home-coverage td+td{border-left:1px solid #d6e1e7}
+      .mcl-page table.atlas-stage-table{min-width:720px}
+      .mcl-page table.atlas-quick-facts{min-width:660px}
+      .mcl-page table.atlas-benchmark-scope{min-width:520px}
+    }
+

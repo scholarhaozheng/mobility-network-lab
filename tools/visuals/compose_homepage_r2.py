@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Maintain the R2 evidence rows and stage-based case atlas in README.
+"""Maintain the R3 GitHub-native evidence rows and stage-based case atlas.
 
 Uses only the source-matched R2 row matrix and pre-existing public case art.
 The complete site builder subsequently derives docs/index.md and index.html.
@@ -8,7 +8,7 @@ from __future__ import annotations
 
 import csv
 import html
-import json
+import hashlib
 from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
@@ -62,7 +62,7 @@ EXTRAS=[
  ("Boston","static","FW 2,000-OD tier","docs/assets/boston/scalable_tool_r1/fw_2000_flow.png","docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison","FW","2,000-OD tier"),
  ("Boston","static","FW expanded tier","docs/assets/boston/scalable_tool_r1/fw_all_flow.png","docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison","FW","17,522 loaded ODs"),
  ("Boston","static","Task-local Algorithm B B1","docs/assets/algorithm_b_r21/source_panels/boston_b1_fw_flow.svg","docs/cases/boston-algorithm-b.md#4-physical-link-comparison-with-same-problem-fw","Algorithm B","B1 453-OD; accepted"),
- ("Boston","static","Finite-path 130-path control","docs/assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.png","docs/cases/boston-assignment.md#same-instance-saved-result","Finite-path","ABS_PLANNED 26-OD"),
+ ("Boston","static","FW anchor for the 130-path control","docs/assets/boston/assignment_methods_r1/boston_abs_planned_fw_flow.png","docs/cases/boston-assignment.md#same-instance-saved-result","FW comparison anchor","ABS_PLANNED 26-OD; not the finite-path solution"),
  ("Boston","static","Native L3 rank 26 difference","docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_minus_fw.png","docs/cases/boston-assignment.md#signed-native-minus-fw-differences","L3","rank 26; numerical candidate"),
  ("Boston","static","Native L3 rank 52 difference","docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank52_minus_fw.png","docs/cases/boston-assignment.md#signed-native-minus-fw-differences","L3","rank 52; numerical candidate"),
  ("Boston","finite","Case-sequence overview","docs/assets/presentation_r5/boston_cg_case_sequence.png","docs/cases/boston-space-time.md#case-role-scope-and-model-statistics","CG","10-OD"),
@@ -78,14 +78,14 @@ EXTRAS=[
  ("Sioux Falls","sources","Classic network topology","docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png","docs/cases/sioux-falls.md#gmns-zones-and-source-evidence","Network","24-node / 76-link"),
  ("Sioux Falls","static","Historical FW vs Algorithm B","docs/assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.png","docs/cases/sioux-algorithm-b.md#4-physical-link-comparison-with-same-problem-fw","FW / Algorithm B","528-OD; separate objectives"),
  ("Sioux Falls","static","Official Algorithm B accepted flow","docs/assets/algorithm_b_r21/source_panels/sioux_origin_flow.svg","docs/cases/sioux-algorithm-b.md#5-selected-origin-reconstructed-flow","Algorithm B","official adapter"),
- ("Sioux Falls","static","Native L3 rank-50 control","docs/assets/homepage_evidence_r2/row_13_sioux_falls.png","docs/cases/sioux-falls.md#static-assignment","L3","rank 50; not UE"),
+ ("Sioux Falls","static","Native L3 rank-50 saved link flows","docs/assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png","docs/cases/sioux-falls.md#static-assignment","L3","rank 50; diagnostic, not UE"),
  ("Sioux Falls","finite","200/250-OD case overview","docs/assets/presentation_r5/sioux_cg_case_sequence.png","docs/cases/sioux-space-time.md#case-role-scope-and-model-statistics","CG","historical selected ODs"),
  ("Sioux Falls","finite","Physical to time-expanded graph","docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.png","docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph","CG construction","selected graph"),
  ("Sioux Falls","finite","Generated time-indexed column","docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.png","docs/cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path","CG column","selected graph"),
  ("Sioux Falls","finite","Phase I 200 OD","docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png","docs/cases/sioux-space-time.md#200-od-pairs","CG Phase I","200-OD"),
  ("Sioux Falls","finite","Phase I 250 OD","docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png","docs/cases/sioux-space-time.md#250-od-pairs","CG Phase I","250-OD"),
  ("Sioux Falls","finite","Shared-capacity reallocation","docs/assets/presentation_r5/sioux_shared_capacity_canonical.png","docs/cases/sioux-space-time.md#recorded-shared-capacity-reallocation-event","CG capacity","200-OD example"),
- ("Sioux Falls","finite","Phase II / own-LP objective","docs/assets/homepage_evidence_r2/row_16_sioux_falls.png","docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective","CG Phase II","200-OD preview; 250 linked"),
+ ("Sioux Falls","finite","Phase II / own-LP objective","docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png","docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective","CG Phase II","selected 200-OD trace; 250-OD linked"),
  ("Sioux Falls","finite","Final movement flow 200 OD","docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png","docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow","CG flow","200-OD"),
  ("Sioux Falls","finite","Final movement flow 250 OD","docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png","docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow","CG flow","250-OD"),
  ("Sioux Falls","finite","Lagrangian accepted recovery","docs/assets/sioux/distributed_r1/Sioux_200OD_P07.png","docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery","Lagrangian","selected 200/250-OD"),
@@ -116,26 +116,38 @@ def load_matrix():
     if len(rows)!=57:raise AssertionError(len(rows))
     return {(r["row_id"],r["city"]):r for r in rows}
 
-def row_cell(r):
-    link=r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
-    source=r["data_or_figure_source"]
-    image_alt=esc(f'{r["city"]} {r["row_title"]}; {r["status"]} preview')
-    source_link=f' · <a href="{esc(source)}">Source record</a>' if source else ''
-    return (f'<td><span class="home-city-label">{esc(r["city"])}</span>'
-        f'<span class="evidence-status">{esc(r["status"])}</span><br>{esc(r["result_scope"])}'
-        f'<div class="evidence-thumbs"><a href="{esc(link)}"><img src="{esc(r["preview_path"])}" width="230" height="138" alt="{image_alt}"></a></div>'
-        f'<small>{esc(r["graphic_type"])} · <a href="{esc(r["preview_path"])}">Full preview</a>'
-        f'{source_link} · <a href="{esc(link)}">Detailed evidence</a></small></td>')
+def row_target(r):
+    return r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
+
+def component_table(matrix, rid):
+    title=matrix[(rid,"Boston")]["row_title"]
+    rows=[matrix[(rid,city)] for city in CITIES]
+    out=['<table class="home-coverage" data-component="'+rid+'">',
+         '<thead><tr><th colspan="3" scope="colgroup">'+esc(title)+'</th></tr>',
+         '<tr>'+''.join('<th scope="col" width="33%">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
+         '<tr class="coverage-scope">'+''.join('<td valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
+         '<tr class="coverage-preview">'+''.join(
+             '<td align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
+             '" width="220" height="132" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
+             for r in rows)+'</tr>',
+         '<tr class="coverage-caption">'+''.join('<td><small>'+esc(r["graphic_type"])+'</small></td>' for r in rows)+'</tr>',
+         '<tr class="coverage-links">']
+    for r in rows:
+        source=r["data_or_figure_source"]
+        links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(r["preview_path"])+
+               '">Full preview</a>')
+        if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
+        out.append('<td><small>'+links+'</small></td>')
+    out+=['</tr></tbody></table>']
+    return '\n'.join(out)
 
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
       'Each row uses one evidence graphic type and one 600 × 360 source canvas across the three cities. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
     for group,ids in ROW_GROUPS:
-        out += ['### '+group,'','<table class="home-coverage"><thead><tr><th>Component / output</th><th>Boston</th><th>Sioux Falls</th><th>Hong Kong</th></tr></thead><tbody>']
+        out += ['### '+group,'']
         for rid in ids:
-            title=matrix[(rid,"Boston")]["row_title"]
-            out.append('<tr><th scope="row">'+esc(title)+'</th>'+''.join(row_cell(matrix[(rid,c)]) for c in CITIES)+'</tr>')
-        out += ['</tbody></table>','']
+            out += [component_table(matrix,rid),'']
     out += ['<a id="cg-experiments"></a><a id="admm-r2"></a><a id="algorithm-b"></a><a id="distributed-assignment"></a>',
       'The [cross-case CG evidence](docs/methods/space-time-cg.md#cg-experiments), [ADMM](docs/methods/admm-space-time.md), [official tap-b Algorithm B method](docs/methods/origin-based-algorithm-b.md) and [adapter distinction](docs/integrations/taplab-tapb.md), and [Lagrangian records](docs/methods/distributed-assignment.md) retain their full figure families. Boston and Hong Kong have independent 10/10 pricing closure on **different** ten-demand graphs; this is not imputed to the historical Sioux runs.','']
     return '\n'.join(out)
@@ -145,10 +157,28 @@ def card(city,stage,label,img,target,method,instance,kind="original"):
     if not p.is_file():raise FileNotFoundError(img)
     page=target.split('#',1)[0]
     if not (ROOT/page).is_file():raise FileNotFoundError(page)
-    row={"city":city,"stage":stage,"asset_path":img,"asset_hash":__import__('hashlib').sha256(p.read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
-    caption=esc(method+" · "+instance)
-    markup='<figure class="atlas-card"><a href="'+esc(target)+'"><img src="'+esc(img)+'" width="280" alt="'+esc(city+" "+label+"; "+instance)+'"></a><figcaption><strong>'+esc(label)+'</strong><br>'+caption+'<br><a href="'+esc(target)+'">Evidence</a> · <a href="'+esc(img)+'">Full figure</a></figcaption></figure>'
-    return markup,row
+    preview=("docs/assets/homepage_alignment_r3/atlas/"+hashlib.sha256(img.encode("utf-8")).hexdigest()[:16]+".png") if kind=="original" else img
+    if not (ROOT/preview).is_file():raise FileNotFoundError(preview)
+    row={"city":city,"stage":stage,"asset_path":img,"asset_hash":hashlib.sha256(p.read_bytes()).hexdigest(),"preview_path":preview,"preview_hash":hashlib.sha256((ROOT/preview).read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
+    return row
+
+def stage_table(cards):
+    out=[]
+    for start in range(0,len(cards),4):
+        group=cards[start:start+4]
+        out.append('<table class="atlas-stage-table"><colgroup>'+('<col width="'+str(round(100/len(group)))+'%">'*len(group))+'</colgroup><tbody>')
+        out.append('<tr class="atlas-image-row">'+''.join(
+            '<td align="center"><a href="'+esc(c["target_link"])+'"><img src="'+esc(c["preview_path"])+
+            '" width="210" height="126" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
+            '"></a></td>' for c in group)+'</tr>')
+        out.append('<tr class="atlas-title-row">'+''.join('<td><strong>'+esc(c["label"])+
+                   '</strong></td>' for c in group)+'</tr>')
+        out.append('<tr class="atlas-scope-row">'+''.join('<td>'+esc(c["method"]+' · '+c["instance"])+
+                   '</td>' for c in group)+'</tr>')
+        out.append('<tr class="atlas-links-row">'+''.join(
+            '<td><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
+            '">Full figure</a></td>' for c in group)+'</tr></tbody></table>')
+    return '\n'.join(out)
 
 def section04(matrix):
     out=['## 04 / Explore the three cases','',
@@ -161,11 +191,25 @@ def section04(matrix):
         out += ['<a id="'+slug+'"></a>','<article class="case-atlas" data-city="'+slug+'">','<h3>'+city+'</h3>',
            '<p>'+esc(ROLE[city])+' <a href="'+esc(CASE_PAGE[city])+'">Open complete case →</a></p>',
            '<a href="'+esc(CASE_PAGE[city])+'"><img class="atlas-cover" src="'+esc(COVER[city])+'" width="780" alt="'+esc(city)+' canonical case cover"></a>',
-           '<dl class="atlas-facts">']
-        for label,value in zip(("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"),FACTS[city]):
-            out.append('<div><dt>'+label+'</dt><dd>'+esc(value)+'</dd></div>')
-        out += ['</dl>','<nav class="atlas-nav" aria-label="'+esc(city)+' stages">'+" ".join('<a href="#'+slug+'-'+sid+'">'+esc(name)+'</a>' for sid,name in STAGES)+'</nav>']
+           '<table class="atlas-quick-facts"><thead><tr>'+''.join('<th width="25%">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
+           '<tbody><tr>'+''.join('<td>'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
+           '<p class="atlas-nav">'+' · '.join('<a href="#'+slug+'-'+sid+'">'+esc(name)+'</a>' for sid,name in STAGES)+'</p>']
+        if city=="Sioux Falls":
+            compact=(
+              ("population","Population, households and activity","Not part of the supplied benchmark"),
+              ("transit","Transit and observations","Not part of the supplied benchmark"),
+              ("generation","Trip generation","Supplied OD enters downstream methods directly"),
+              ("distribution","Trip distribution","Supplied OD enters downstream methods directly"),
+              ("mode","Mode choice","Vehicle OD is supplied; no mode-choice run"),
+            )
+            out += ['<h4>City-data and four-stage scope</h4>',
+                    '<table class="atlas-benchmark-scope"><thead><tr><th>Stage</th><th>Scope in Sioux Falls benchmark</th><th>Relevant next entry</th></tr></thead><tbody>']
+            for sid,label,scope in compact:
+                out.append('<tr><td><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td>'+esc(scope)+
+                           '</td><td><a href="#'+slug+'-static">Static assignment</a></td></tr>')
+            out += ['</tbody></table>']
         for stage,name in STAGES:
+            if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
             if city=="Hong Kong" and stage=="finite":out.append('<a id="hong-kong-cg-r5"></a>')
             out.append('<section class="atlas-stage" id="'+slug+'-'+stage+'"><h4>'+name+'</h4>')
             cards=[]
@@ -174,14 +218,14 @@ def section04(matrix):
                 if r["status"] in {"outside benchmark","not demonstrated"}:continue
                 target=r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
                 label=r["row_title"].replace('01 / ','').replace('02 / ','').replace('03 / ','').replace('04 / ','')
-                html_card,asset=card(city,stage,label,r["preview_path"],target,label,r["status"],"R2 row preview")
-                cards.append(html_card);assets.append(asset)
+                asset=card(city,stage,label,r["preview_path"],target,label,r["result_scope"],"R2 row preview")
+                cards.append(asset);assets.append(asset)
             for item in extra_by[(city,stage)]:
-                html_card,asset=card(*item)
-                cards.append(html_card);assets.append(asset)
+                asset=card(*item)
+                cards.append(asset);assets.append(asset)
             if not cards:
                 out.append('<p class="atlas-scope">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</p>')
-            else:out.append('<div class="atlas-gallery">'+'\n'.join(cards)+'</div>')
+            else:out.append(stage_table(cards))
             out.append('</section>')
         out += ['</article>','']
     out += ['[All retained scientific figure families](docs/visualizations.md) · [Full technical walkthrough](docs/full-walkthrough.md).','']
