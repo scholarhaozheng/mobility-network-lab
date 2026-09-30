@@ -64,14 +64,17 @@ def main(argv=None):
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
     .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:132px;object-fit:contain}
+    .mcl-page table.home-coverage .coverage-links td{white-space:nowrap;overflow-wrap:normal}
+    .mcl-page table.home-coverage .coverage-links small{font-size:10px}
     .mcl-page table.atlas-stage-table[data-columns="1"]{width:25%}
     .mcl-page table.atlas-stage-table[data-columns="2"]{width:50%}
     .mcl-page table.atlas-stage-table[data-columns="3"]{width:75%}
     .mcl-page table.atlas-stage-table[data-columns="4"]{width:100%}
     .mcl-page table.atlas-stage-table .atlas-image-row img{display:inline-block;width:165px;height:99px;max-width:100%;object-fit:contain}
     .mcl-page table.atlas-stage-table td{overflow-wrap:anywhere;line-height:1.35;padding:9px 10px}
-    .mcl-page table.atlas-stage-table .atlas-caption-row td{font-size:12px}
-    .mcl-page table.atlas-stage-table .atlas-caption-row small{font-size:10.5px;color:#53697a}
+    .mcl-page table.atlas-stage-table .atlas-caption-row td{font-size:11px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row td>small{font-size:11px}
+    .mcl-page table.atlas-stage-table .atlas-caption-row td>small>small{font-size:9px;color:#53697a}
     .mcl-page table.atlas-stage-table .atlas-links-row td,.mcl-page table.atlas-stage-table .atlas-links-row small{font-size:10px}
     .mcl-page table.atlas-quick-facts td{font-size:12px}
     .mcl-page table.atlas-benchmark-scope td{font-size:12px}
