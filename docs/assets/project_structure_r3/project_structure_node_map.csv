@@ -1,0 +1,19 @@
+node_id,title,group,source_ref,target,scope
+roads,"Roads, boundaries, zones",sources,spatial_inputs,docs/data-contract.md,source-dependent
+people,People and activity,sources,population_inputs,docs/datasets/boston-population-households.md,"Boston/Hong Kong, distinct sources"
+transit,Transit and walking,sources,transit_inputs,docs/city-workflow.md,case-specific
+observations,Observation records,sources,observation_inputs,docs/datasets/boston-behavior-feedback.md,different uses and access rights
+gmns,GMNS representation,preparation,gmns,docs/data-contract.md,portable contract plus documented extensions
+city_demand,Demand stages 01–03,preparation,population_preparation,docs/city-workflow.md,bounded Boston/Hong Kong; not Sioux
+declared_od,Already-declared OD,preparation,declared_od,docs/cases/sioux-falls.md,finite cases have separate selected OD/time
+association,Observation association,preparation,observation_association,docs/city-workflow.md,case-specific evidence role
+static,04 / Static road assignment,static,static_branch,docs/methods.md,mode-specific or supplied OD; case/method acceptance varies
+finite,Finite time-expanded optimization,finite,finite_branch,docs/methods/space-time-cg.md,not a downstream Frank–Wolfe step
+outputs,Saved outputs and independent checks,outputs,results,docs/capabilities.md,not one universal empirical-validation certificate
+boston,Boston,cases,boston,docs/cases/boston.md,city data and distinct computational scales
+sioux,Sioux Falls,cases,sioux,docs/cases/sioux-falls.md,not a city demographic compiler
+hong_kong,Hong Kong,cases,hong_kong,docs/cases/hong-kong.md,not all methods have accepted results
+data_tools,Data and GMNS tools,entry,data_support,docs/data-tools.md,source/query support
+generic_engine,Generic RC5 engine,entry,generic_engine,docs/getting-started.md,distinct from later case adapters
+method_code,Versioned method code,entry,method_code,docs/source-layout.md,case-specific versions
+reproduce,Examples and checks,entry,verification_code,docs/getting-started.md,builds do not run solvers

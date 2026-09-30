@@ -118,7 +118,7 @@ def main() -> int:
 
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     required_readme = [
-        "City networks, travel demand and reproducible network computation.",
+        "An open research and learning environment for city networks, travel demand, and reproducible network computation.",
         "docs/city-workflow.md",
         "GPS traces and map matching",
         "Policy Bush",
