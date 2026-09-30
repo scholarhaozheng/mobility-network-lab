@@ -14,7 +14,7 @@ from pathlib import Path
 import re
 from urllib.parse import urlsplit
 from markdown_it import MarkdownIt
-from visuals.render_project_structure_r2 import render as render_project_structure
+from visuals.render_project_structure_r3 import render as render_project_structure
 
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"

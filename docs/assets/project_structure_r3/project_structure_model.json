@@ -1,0 +1,34 @@
+{
+  "record_type": "selective-cross-city-project-module-map",
+  "version": "r3",
+  "canvas": {"width": 1800, "height": 1450},
+  "title": "Mobility Computation Lab",
+  "subtitle": "Source layers, model preparation, two separate computation contracts, and documented case evidence",
+  "relationship_rule": "Rows group supported public modules; vertical order is not one executable or a required dependency chain.",
+  "source_ledger": "docs/assets/project_structure_r2/project_structure_model.json",
+  "nodes": [
+    {"id": "roads", "source_ref": "spatial_inputs", "group": "sources", "rect": [40, 175, 400, 96], "title": "Roads, boundaries, zones", "lines": ["Network geography records"], "target": "docs/data-contract.md", "scope": "source-dependent"},
+    {"id": "people", "source_ref": "population_inputs", "group": "sources", "rect": [480, 175, 400, 96], "title": "People and activity", "lines": ["Households, population, proxies"], "target": "docs/datasets/boston-population-households.md", "scope": "Boston/Hong Kong, distinct sources"},
+    {"id": "transit", "source_ref": "transit_inputs", "group": "sources", "rect": [920, 175, 400, 96], "title": "Transit and walking", "lines": ["GTFS, fares, service and access"], "target": "docs/city-workflow.md", "scope": "case-specific"},
+    {"id": "observations", "source_ref": "observation_inputs", "group": "sources", "rect": [1360, 175, 400, 96], "title": "Observation records", "lines": ["GPS, trajectories, detectors"], "target": "docs/datasets/boston-behavior-feedback.md", "scope": "different uses and access rights"},
+
+    {"id": "gmns", "source_ref": "gmns", "group": "preparation", "rect": [40, 350, 400, 166], "title": "GMNS representation", "lines": ["Directed roads, zones, centroids", "Physical links vs access connectors", "IDs, units, turns where supported"], "target": "docs/data-contract.md", "scope": "portable contract plus documented extensions"},
+    {"id": "city_demand", "source_ref": "population_preparation", "group": "preparation", "rect": [480, 350, 400, 166], "title": "Demand stages 01–03", "lines": ["Population/activity preparation", "Generation → distribution → choice", "Mode-specific demand output"], "target": "docs/city-workflow.md", "scope": "bounded Boston/Hong Kong; not Sioux"},
+    {"id": "declared_od", "source_ref": "declared_od", "group": "preparation", "rect": [920, 350, 400, 166], "title": "Already-declared OD", "lines": ["Supplied vehicle demand can enter", "static assignment directly", "No demographic compiler required"], "target": "docs/cases/sioux-falls.md", "scope": "finite cases have separate selected OD/time"},
+    {"id": "association", "source_ref": "observation_association", "group": "preparation", "rect": [1360, 350, 400, 166], "title": "Observation association", "lines": ["Match/associate links and service", "Optional input or diagnostics", "Not automatic OD or calibration"], "target": "docs/city-workflow.md", "scope": "case-specific evidence role"},
+
+    {"id": "static", "source_ref": "static_branch", "group": "static", "rect": [40, 630, 840, 214], "title": "04 / Static road assignment", "lines": ["BPR / Beckmann; period-specific vehicle OD", "Frank–Wolfe · official tap-b Algorithm B; adapters vary", "Finite-path reference · native L3 diagnostics", "Physical-link flows and original-space checks"], "target": "docs/methods.md", "scope": "mode-specific or supplied OD; case/method acceptance varies"},
+    {"id": "finite", "source_ref": "finite_branch", "group": "finite", "rect": [920, 630, 840, 214], "title": "Finite time-expanded optimization", "lines": ["Separately selected graph, OD, time and capacities", "Fixed arc costs · shared hard capacity", "Arc-flow LP · two-phase CG · Lagrangian · ADMM", "Movement-flow reconstruction and feasibility checks"], "target": "docs/methods/space-time-cg.md", "scope": "not a downstream Frank–Wolfe step"},
+
+    {"id": "outputs", "source_ref": "results", "group": "outputs", "rect": [40, 925, 1720, 104], "title": "Saved outputs and independent checks", "lines": ["Zonal / mode demand · generated columns · physical-link flows · CSV / SQLite · figures", "Units, conservation, objective / gap and provenance checks are specific to each instance."], "target": "docs/capabilities.md", "scope": "not one universal empirical-validation certificate"},
+
+    {"id": "boston", "source_ref": "boston", "group": "cases", "rect": [40, 1100, 550, 98], "title": "Boston", "lines": ["City demand and static tiers; bounded finite cases"], "target": "docs/cases/boston.md", "scope": "city data and distinct computational scales"},
+    {"id": "sioux", "source_ref": "sioux", "group": "cases", "rect": [625, 1100, 550, 98], "title": "Sioux Falls", "lines": ["Supplied-OD benchmark; selected-OD finite cases"], "target": "docs/cases/sioux-falls.md", "scope": "not a city demographic compiler"},
+    {"id": "hong_kong", "source_ref": "hong_kong", "group": "cases", "rect": [1210, 1100, 550, 98], "title": "Hong Kong", "lines": ["Bounded turn-aware scenario; separate finite case"], "target": "docs/cases/hong-kong.md", "scope": "not all methods have accepted results"},
+
+    {"id": "data_tools", "source_ref": "data_support", "group": "entry", "rect": [40, 1275, 400, 90], "title": "Data and GMNS tools", "lines": ["Catalog · exports · queries"], "target": "docs/data-tools.md", "scope": "source/query support"},
+    {"id": "generic_engine", "source_ref": "generic_engine", "group": "entry", "rect": [480, 1275, 400, 90], "title": "Generic RC5 engine", "lines": ["0.3.0-rc5 scope only"], "target": "docs/getting-started.md", "scope": "distinct from later case adapters"},
+    {"id": "method_code", "source_ref": "method_code", "group": "entry", "rect": [920, 1275, 400, 90], "title": "Versioned method code", "lines": ["Algorithms · case adapters"], "target": "docs/source-layout.md", "scope": "case-specific versions"},
+    {"id": "reproduce", "source_ref": "verification_code", "group": "entry", "rect": [1360, 1275, 400, 90], "title": "Examples and checks", "lines": ["Saved results · validation"], "target": "docs/getting-started.md", "scope": "builds do not run solvers"}
+  ]
+}

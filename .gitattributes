@@ -62,6 +62,13 @@
 /docs/assets/project_structure_r2/** -text -diff
 /tools/visuals/render_project_structure_r2.py -text
 
+# R3 clickable project map and rebuilt presentation assets carry exact-byte
+# source/output hashes; Windows checkout must not rewrite their newlines.
+/docs/assets/project_structure_r3/** -text -diff
+/tools/visuals/render_project_structure_r3.py -text
+/docs/architecture.html -text
+/docs/assets/presentation-r3.css -text
+
 # Homepage R1 thumbnails, covers and their source sidecars carry exact-byte hashes.
 /docs/assets/homepage_evidence_r1/** -text -diff
 /docs/assets/homepage_evidence_r2/** -text -diff

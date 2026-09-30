@@ -14,6 +14,19 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 MATRIX=ROOT/"docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv"
 README=ROOT/"README.md"
+HERO="""# Mobility Computation Lab
+
+**An open research and learning environment for city networks, travel demand, and reproducible network computation.**
+
+I am [Hao Zheng](https://scholarhaozheng.github.io/), a recent M.S. graduate from Tsinghua University working on transportation network modeling and optimization. I developed Mobility Computation Lab through research collaboration with Professor Xuesong Zhou.
+
+The repository uses the [General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS) as its portable network and data contract. Selected static traffic-assignment experiments build on [TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab) and the official [tap-b Algorithm B](https://github.com/spartalab/tap-b), with upstream software, methods, and datasets attributed explicitly.
+
+My work in this repository is to assemble and adapt the Boston, Sioux Falls, and Hong Kong cases; connect city data and four-stage demand models to documented network computations; implement and evaluate project-specific adapters, workflows, and experiments; and make each result traceable to its actual instance, units, assumptions, and evidence.
+
+[My contributions and upstream foundations](docs/contributions.md) · [Full technical walkthrough](docs/full-walkthrough.md) · [Start with a saved example](docs/getting-started.md) · [Source and citation](docs/citation.md)
+
+"""
 CITIES=("Boston","Sioux Falls","Hong Kong")
 SLUG={"Boston":"boston","Sioux Falls":"sioux-falls","Hong Kong":"hong-kong"}
 ROW_GROUPS=[
@@ -136,7 +149,7 @@ def component_table(matrix, rid):
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(r["preview_path"])+
                '">Full preview</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
-        out.append('<td width="33%"><small><small>'+links+'</small></small></td>')
+        out.append('<td width="33%"><small><small><small>'+links+'</small></small></small></td>')
     out+=['</tr></tbody></table>']
     return '\n'.join(out)
 
@@ -257,14 +270,16 @@ def section04(matrix):
 def update_readme():
     matrix=load_matrix()
     text=README.read_text(encoding='utf-8')
+    if not text.startswith("# Mobility Computation Lab\n") or text.count('<a id="what-this-project-adds"></a>')!=1:
+        raise AssertionError('homepage hero boundary')
+    text=HERO+text[text.index('<a id="what-this-project-adds"></a>'):]
     start=text.index('<a id="coverage"></a>')
     end=text.index('<a id="run-your-input"></a>',start)
     atlas,assets=section04(matrix)
     body=section03(matrix)+atlas
     new=text[:start]+body+'\n'+text[end:]
-    old='Project author: [Hao Zheng](CITATION.cff)'
-    new=new.replace(old,'Project author: [Hao Zheng](https://scholarhaozheng.github.io/)')
-    if old in new or new.count('Project author: [Hao Zheng](https://scholarhaozheng.github.io/)')!=1:raise AssertionError('author link')
+    if new.count('[Hao Zheng](https://scholarhaozheng.github.io/)')!=1 or 'Project author:' in new[:new.index('<a id="what-this-project-adds"></a>')]:
+        raise AssertionError('author introduction')
     README.write_text(new,encoding='utf-8',newline='\n')
     return assets
 

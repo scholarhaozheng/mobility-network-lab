@@ -9,6 +9,7 @@ are not required to crowd the landing page.
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 from pathlib import Path
 import re
@@ -80,6 +81,18 @@ def main() -> int:
     ]
     places = [readme.find(heading) for heading in headings]
     check(all(p >= 0 for p in places) and places == sorted(places), "README six-block research-entry order changed")
+    hero = readme[:readme.find('<a id="what-this-project-adds"></a>')]
+    for needle in (
+        "**An open research and learning environment for city networks, travel demand, and reproducible network computation.**",
+        "[Hao Zheng](https://scholarhaozheng.github.io/)",
+        "[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)",
+        "[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)",
+        "official [tap-b Algorithm B](https://github.com/spartalab/tap-b)",
+        "Selected static traffic-assignment experiments build on",
+    ):
+        check(needle in hero, f"Approved author/upstream introduction missing: {needle}")
+    check("Project author: Hao Zheng. This open-source research environment connects" not in hero,
+          "Superseded institutional hero returned")
     for phrase in (
         "City-to-model representations",
         "Computational implementations and diagnostics",
@@ -104,9 +117,32 @@ def main() -> int:
     for stem in ("boston", "sioux-falls", "hong-kong", "cg-experiments", "framework", "coverage"):
         check(f'id="{stem}"' in readme and f'id="{stem}"' in home,
               f"Legacy primary fragment missing: {stem}")
-    check("project_structure.svg" in readme and "project_structure.svg" in home and
-          "project_structure_model.json" in architecture,
-          "Complete structure map or model source is not visible")
+    check("project_structure_r3/project_structure.svg" in readme and
+          "project_structure_r3/project_structure.svg" in home and
+          "project_structure_r3/project_structure_model.json" in architecture,
+          "Current clickable structure map or model source is not visible")
+    structure_svg = (DOCS / "assets/project_structure_r3/project_structure.svg").read_text(encoding="utf-8")
+    check(structure_svg.count("xlink:href=") >= 18 and
+          "../../cases/boston.html" in structure_svg and
+          "../../cases/sioux-falls.html" in structure_svg and
+          "../../cases/hong-kong.html" in structure_svg and
+          "Generic RC5 engine" in structure_svg,
+          "R3 project-map cards are not linked to the three case routes")
+    svg_root = DOCS / "assets/project_structure_r3"
+    for href in set(re.findall(r'<a xlink:href="([^"]+)"', structure_svg)):
+        check((svg_root / href).resolve().is_file(), f"Broken clickable project-map target: {href}")
+    structure_record = json.loads(
+        (DOCS / "assets/project_structure_r3/project_structure.source.json").read_text(encoding="utf-8")
+    )
+    for rel, expected in {
+        "docs/assets/project_structure_r3/project_structure_model.json": structure_record["model_sha256"],
+        "docs/assets/project_structure_r2/project_structure_model.json": structure_record["source_ledger_sha256"],
+        "tools/visuals/render_project_structure_r3.py": structure_record["renderer_sha256"],
+        **structure_record["outputs_sha256"],
+    }.items():
+        path = ROOT / rel
+        check(path.is_file() and hashlib.sha256(path.read_bytes()).hexdigest() == expected,
+              f"Project-map source/output hash mismatch: {rel}")
     for phrase in (
         "GMNS", "Population", "household", "01 trip generation", "02 trip distribution",
         "03 mode choice", "04 traffic assignment", "GPS traces and map matching",
@@ -115,7 +151,7 @@ def main() -> int:
         check(phrase.lower() in (readme + architecture).lower(), f"Project workflow layer missing: {phrase}")
 
     for rel in (
-        "docs/assets/project_structure_r2/project_structure.svg",
+        "docs/assets/project_structure_r3/project_structure.svg",
         "docs/assets/boston/visual_release_r1/boston_network_zones.png",
         "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
         "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
@@ -133,7 +169,7 @@ def main() -> int:
           'E / Reusable outputs and tools' not in coverage and
           not re.search(r'row_19_(?:boston|sioux_falls|hong_kong)\.png', coverage),
           "Tools must be a navigation entry, not a standalone coverage table or image")
-    check(coverage.count('<td width="33%"><small><small><a href=') == 54,
+    check(coverage.count('<td width="33%"><small><small><small><a href=') == 54,
           "Three-city coverage links must use the compact GitHub-native text size")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):

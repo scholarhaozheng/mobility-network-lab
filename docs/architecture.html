@@ -1,9 +1,10 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Architecture · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Project map</a><a href="contributions.html">Contributions</a><a href="capabilities.html">Coverage</a><a href="cases/boston.html">Boston</a><a href="cases/sioux-falls.html">Sioux Falls</a><a href="cases/hong-kong.html">Hong Kong</a><a href="methods.html">Methods</a><a href="full-walkthrough.html">Full walkthrough</a><a href="getting-started.html">Getting started</a><a href="open-data.html">Open data</a></div></nav><main class="mcl-page"><h1 id="architecture">Architecture</h1>
 <h2 id="city-modelling-is-the-organizing-workflow">City modelling is the organizing workflow</h2>
 <p>Mobility Computation Lab centres on <strong>networks, zones, demand, evidence and network computation</strong>. Data catalogs support this workflow; they do not replace a city model. The <a href="city-workflow.html">city workflow</a> distinguishes currently executable components from extensions.</p>
-<p><img alt="Complete project structure from public module records" src="assets/project_structure_r2/project_structure.svg"/></p>
-<p><em>Four source groups, GMNS representation, demand and observation preparation, two mathematical branches, outputs, three cases and reusable software/documentation entry points.</em> <a href="assets/project_structure_r2/project_structure.svg">Full-size SVG</a> · <a href="assets/project_structure_r2/project_structure.png">PNG</a> · <a href="assets/project_structure_r2/project_structure_model.json">Model and typed edges</a> · <a href="assets/project_structure_r2/project_structure.source.json">Source and renderer hashes</a>.</p>
-<p>The figure is a <strong>conceptual module map</strong>, not a claim that one executable runs every stage. The solid paths mark supported preparation, computation or analytical output; dotted paths are optional/case-specific, and dashed paths identify case instances or navigation. Its observation branch represents QC and matching/association with physical links or service records—not an automatic <code>GPS → observed OD → calibrated model</code> route. The declared-OD entry bypasses demographic preparation and stages 01–03. Stage 04 is the documented static road-assignment route; bounded finite time expansion is a separately prepared optimization instance. The <a href="capabilities.html">capability table</a> gives exact city and method scope.</p>
+<p><img alt="Selective project module map from public source records" src="assets/project_structure_r3/project_structure.svg"/></p>
+<p><em>Four source groups, model preparation, two independent mathematical contracts, outputs, three case instances and reusable software/documentation entry points.</em> <a href="assets/project_structure_r3/project_structure.svg">Clickable SVG</a> · <a href="assets/project_structure_r3/project_structure.png">PNG</a> · <a href="assets/project_structure_r3/project_structure_model.json">Module model</a> · <a href="assets/project_structure_r3/project_structure.source.json">Source and renderer hashes</a>.</p>
+<p>The figure is a <strong>selective module map</strong>, not a claim that one executable runs every row. It does not make the cases downstream of the outputs. Its observation card represents QC and matching/association with physical links or service records—not an automatic <code>GPS → observed OD → calibrated model</code> route. City demand stages 01–03 and already-declared vehicle OD are distinct entries to static stage 04; bounded finite time expansion has its own selected graph, OD, time and capacity contract. Static BPR/Beckmann and finite fixed-cost hard-capacity optimization are not sequential solver steps. The <a href="capabilities.html">capability table</a> gives exact city and method scope.</p>
+<p>The <a href="assets/project_structure_r2/project_structure.svg">earlier R2 diagram</a> remains available as a historical presentation, but the selective R3 map above is the current architecture view.</p>
 <h3 id="retained-earlier-framework-illustration">Retained earlier framework illustration</h3>
 <p><img alt="Earlier city-neutral GMNS, demand, observation and computation framework illustration" src="assets/presentation_r3/framework_overview.png"/></p>
 <p>This earlier conceptual illustration remains available as a distinct historical presentation; it is not a substitute for the complete, source-grounded module map above.</p>
@@ -30,7 +31,7 @@
 <h2 id="maintain-the-working-implementation">Maintain the working implementation</h2>
 <p>The existing numerical and data-tool source layouts remain unchanged. The GitHub README and Pages homepage are different presentations of the same project; both must preserve the city-network focus and lead to real tools and figures. <code>tools/build_site.py</code> is the Pages generator, not a replacement for root <code>README.md</code>.</p>
 <h2 id="source-grounded-module-index">Source-grounded module index</h2>
-<p>The linked table is generated from the same <a href="assets/project_structure_r2/project_structure_model.json">module model</a> as the SVG/PNG. It includes every drawn module, its actual public source/data entry, the documentation route, and the scope qualifier. A source path is evidence of an implementation or data record, not proof that every city uses it.</p>
+<p>The linked table is generated from the <a href="assets/project_structure_r3/project_structure_model.json">R3 module model</a> and its referenced <a href="assets/project_structure_r2/project_structure_model.json">source ledger</a>. It includes every drawn module, its actual public source/data entry, the documentation route, and the scope qualifier. A source path is evidence of an implementation or data record, not proof that every city uses it.</p>
 <!-- project-structure-node-map:start -->
 <div class="table-scroll"><table>
 <thead>
@@ -42,114 +43,94 @@
 </thead>
 <tbody>
 <tr>
-<td><code>spatial_inputs</code> · Roads · boundaries · zones</td>
+<td><code>roads</code> · Roads, boundaries, zones</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/catalog"><code>catalog/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/boston"><code>examples/boston/</code></a></td>
-<td><a href="data-contract.html">data contract</a>, <a href="datasets/boston-gmns-exchange.html">boston gmns exchange</a>. source-dependent; not every city uses the same layers</td>
+<td><a href="data-contract.html">Open evidence</a>. source-dependent</td>
 </tr>
 <tr>
-<td><code>population_inputs</code> · Population · households · activity</td>
+<td><code>people</code> · People and activity</td>
 <td><a href="datasets/boston-population-households.html"><code>docs/datasets/boston-population-households.md</code></a>, <a href="datasets/hong-kong-gmns.html"><code>docs/datasets/hong-kong-gmns.md</code></a></td>
-<td><a href="city-workflow.html">city workflow</a>. Boston and Hong Kong have distinct bounded preparations; not Sioux Falls</td>
+<td><a href="datasets/boston-population-households.html">Open evidence</a>. Boston/Hong Kong, distinct sources</td>
 </tr>
 <tr>
-<td><code>transit_inputs</code> · GTFS · fares · walking access</td>
+<td><code>transit</code> · Transit and walking</td>
 <td><a href="datasets/boston-four-step-sources.html"><code>docs/datasets/boston-four-step-sources.md</code></a>, <a href="cases/hong-kong-four-stage.html"><code>docs/cases/hong-kong-four-stage.md</code></a></td>
-<td><a href="city-workflow.html">city workflow</a>. case-specific service snapshots and engineering assumptions</td>
+<td><a href="city-workflow.html">Open evidence</a>. case-specific</td>
 </tr>
 <tr>
-<td><code>observation_inputs</code> · GPS · detectors · trajectories</td>
+<td><code>observations</code> · Observation records</td>
 <td><a href="datasets/boston-behavior-feedback.html"><code>docs/datasets/boston-behavior-feedback.md</code></a>, <a href="methods/hong-kong-evidence-contract.html"><code>docs/methods/hong-kong-evidence-contract.md</code></a></td>
-<td><a href="city-workflow.html">city workflow</a>. observations differ by city and access rights</td>
+<td><a href="datasets/boston-behavior-feedback.html">Open evidence</a>. different uses and access rights</td>
 </tr>
 <tr>
-<td><code>gmns</code> · GMNS and representation layer</td>
+<td><code>gmns</code> · GMNS representation</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/schemas"><code>schemas/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/external_network_input.py"><code>app/src/gmns_dynamic/external_network_input.py</code></a>, <a href="datasets/boston-gmns-exchange.html"><code>docs/datasets/boston-gmns-exchange.md</code></a></td>
-<td><a href="data-contract.html">data contract</a>, <a href="city-workflow.html">city workflow</a>, <a href="datasets/hong-kong-gmns.html">hong kong gmns</a>. core GMNS vocabulary plus documented project extensions; transit and observations are not all core GMNS</td>
+<td><a href="data-contract.html">Open evidence</a>. portable contract plus documented extensions</td>
 </tr>
 <tr>
-<td><code>population_preparation</code> · Population / household / activity preparation</td>
+<td><code>city_demand</code> · Demand stages 01–03</td>
 <td><a href="datasets/boston-population-households.html"><code>docs/datasets/boston-population-households.md</code></a>, <a href="cases/hong-kong-four-stage.html"><code>docs/cases/hong-kong-four-stage.md</code></a></td>
-<td><a href="city-workflow.html">city workflow</a>, <a href="architecture.html">architecture</a>. case-specific, not a universal city compiler</td>
+<td><a href="city-workflow.html">Open evidence</a>. bounded Boston/Hong Kong; not Sioux</td>
 </tr>
 <tr>
-<td><code>four_stage</code> · Four-stage demand and static assignment route</td>
-<td><a href="city-workflow.html"><code>docs/city-workflow.md</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/mode_choice_conditional"><code>algorithms/mode_choice_conditional/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/static_fw"><code>algorithms/static_fw/</code></a></td>
-<td><a href="cases/boston.html">boston</a>, <a href="cases/hong-kong-four-stage.html">hong kong four stage</a>. Boston limited and Hong Kong engineering-scenario branches; Sioux benchmark bypasses stages 01–03</td>
-</tr>
-<tr>
-<td><code>observation_association</code> · Observation QC and matching / association</td>
-<td><a href="datasets/boston-behavior-feedback.html"><code>docs/datasets/boston-behavior-feedback.md</code></a>, <a href="datasets/boston-gmns-exchange.html"><code>docs/datasets/boston-gmns-exchange.md</code></a>, <a href="methods/hong-kong-evidence-contract.html"><code>docs/methods/hong-kong-evidence-contract.md</code></a></td>
-<td><a href="city-workflow.html">city workflow</a>. exploratory feedback is optional and case-specific</td>
-</tr>
-<tr>
-<td><code>declared_od</code> · Already-declared OD inputs</td>
+<td><code>declared_od</code> · Already-declared OD</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/scalable_vehicle_fixture"><code>examples/scalable_vehicle_fixture/</code></a>, <a href="RUN_YOUR_OWN_GMNS.html"><code>docs/RUN_YOUR_OWN_GMNS.md</code></a></td>
-<td><a href="cases/sioux-falls.html">sioux falls</a>. supported direct-vehicle static entry; finite cases have separate demand preparation</td>
+<td><a href="cases/sioux-falls.html">Open evidence</a>. finite cases have separate selected OD/time</td>
 </tr>
 <tr>
-<td><code>common_contract</code> · Network + demand preparation</td>
-<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/schemas"><code>schemas/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/mcl_assignment.py"><code>tools/mcl_assignment.py</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/explicit_network_workflow.py"><code>app/src/gmns_dynamic/explicit_network_workflow.py</code></a></td>
-<td><a href="data-contract.html">data contract</a>, <a href="methods.html">methods</a>. common concepts, not one universal runner</td>
+<td><code>association</code> · Observation association</td>
+<td><a href="datasets/boston-behavior-feedback.html"><code>docs/datasets/boston-behavior-feedback.md</code></a>, <a href="datasets/boston-gmns-exchange.html"><code>docs/datasets/boston-gmns-exchange.md</code></a>, <a href="methods/hong-kong-evidence-contract.html"><code>docs/methods/hong-kong-evidence-contract.md</code></a></td>
+<td><a href="city-workflow.html">Open evidence</a>. case-specific evidence role</td>
 </tr>
 <tr>
-<td><code>static_branch</code> · Static traffic assignment</td>
+<td><code>static</code> · 04 / Static road assignment</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/static_fw"><code>algorithms/static_fw/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/origin_based_algorithm_b"><code>algorithms/origin_based_algorithm_b/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/finite_path_reference"><code>algorithms/finite_path_reference/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/path_compression/diagnostic_l3"><code>algorithms/path_compression/diagnostic_l3/</code></a></td>
-<td><a href="methods.html">methods</a>, <a href="methods/origin-based-algorithm-b.html">origin based algorithm b</a>, <a href="cases/boston-assignment.html">boston assignment</a>. method/city adapter and numerical acceptance vary by case</td>
+<td><a href="methods.html">Open evidence</a>. mode-specific or supplied OD; case/method acceptance varies</td>
 </tr>
 <tr>
-<td><code>finite_branch</code> · Finite time-expanded optimization</td>
+<td><code>finite</code> · Finite time-expanded optimization</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/app/src/gmns_dynamic/run_full_cg_v1.py"><code>app/src/gmns_dynamic/run_full_cg_v1.py</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/distributed_assignment/lagrangian_r2"><code>algorithms/distributed_assignment/lagrangian_r2/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms/admm_r2"><code>algorithms/admm_r2/</code></a>, <a href="assets/hong_kong/full_stack_r5/"><code>docs/assets/hong_kong/full_stack_r5/</code></a></td>
-<td><a href="methods/space-time-cg.html">space time cg</a>, <a href="methods/distributed-assignment.html">distributed assignment</a>, <a href="methods/admm-space-time.html">admm space time</a>. separately versioned bounded case instances; not automatic calibrated DTA</td>
+<td><a href="methods/space-time-cg.html">Open evidence</a>. not a downstream Frank–Wolfe step</td>
 </tr>
 <tr>
-<td><code>results</code> · Outputs, analysis and independent checks</td>
+<td><code>outputs</code> · Saved outputs and independent checks</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/launcher"><code>launcher/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/mcl_results.py"><code>tools/mcl_results.py</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/run_saved_example.py"><code>examples/boston/run_saved_example.py</code></a>, <a href="visualizations.html"><code>docs/visualizations.md</code></a></td>
-<td><a href="capabilities.html">capabilities</a>, <a href="visualizations.html">visualizations</a>, <a href="getting-started.html">getting started</a>. checks have method-specific meanings, not one universal optimality certificate</td>
+<td><a href="capabilities.html">Open evidence</a>. not one universal empirical-validation certificate</td>
 </tr>
 <tr>
 <td><code>boston</code> · Boston</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/boston"><code>examples/boston/</code></a>, <a href="cases/boston.html"><code>docs/cases/boston.md</code></a></td>
-<td><a href="cases/boston-assignment.html">boston assignment</a>, <a href="cases/boston-space-time.html">boston space time</a>. real-city sources with distinct static and ten-demand finite cases</td>
+<td><a href="cases/boston.html">Open evidence</a>. city data and distinct computational scales</td>
 </tr>
 <tr>
 <td><code>sioux</code> · Sioux Falls</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/sioux-falls"><code>examples/sioux-falls/</code></a>, <a href="cases/sioux-falls.html"><code>docs/cases/sioux-falls.md</code></a></td>
-<td><a href="cases/sioux-space-time.html">sioux space time</a>, <a href="cases/sioux-admm.html">sioux admm</a>. supplied benchmark OD, not a demographic city compiler</td>
+<td><a href="cases/sioux-falls.html">Open evidence</a>. not a city demographic compiler</td>
 </tr>
 <tr>
 <td><code>hong_kong</code> · Hong Kong</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/hong-kong"><code>examples/hong-kong/</code></a>, <a href="assets/hong_kong/full_stack_r5/"><code>docs/assets/hong_kong/full_stack_r5/</code></a></td>
-<td><a href="cases/hong-kong.html">hong kong</a>, <a href="cases/hong-kong-space-time.html">hong kong space time</a>. not all methods have accepted city results</td>
+<td><a href="cases/hong-kong.html">Open evidence</a>. not all methods have accepted results</td>
 </tr>
 <tr>
-<td><code>data_support</code> · Open-data support</td>
+<td><code>data_tools</code> · Data and GMNS tools</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/src/mobilitylab/data"><code>src/mobilitylab/data/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/catalog"><code>catalog/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/mcl_data.py"><code>tools/mcl_data.py</code></a></td>
-<td><a href="open-data.html">open data</a>, <a href="open-data-explorer.html">open data explorer</a>, <a href="data-tools.html">data tools</a>. source evidence, not citywide model inputs</td>
+<td><a href="data-tools.html">Open evidence</a>. source/query support</td>
 </tr>
 <tr>
-<td><code>generic_engine</code> · Retained generic engine</td>
+<td><code>generic_engine</code> · Generic RC5 engine</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/app/src/gmns_dynamic"><code>app/src/gmns_dynamic/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/tools/mnl.py"><code>tools/mnl.py</code></a></td>
-<td><a href="getting-started.html">getting started</a>, <a href="source-layout.html">source layout</a>. 0.3.0-rc5 generic engine only</td>
+<td><a href="getting-started.html">Open evidence</a>. distinct from later case adapters</td>
 </tr>
 <tr>
-<td><code>method_code</code> · Method implementations</td>
+<td><code>method_code</code> · Versioned method code</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/algorithms"><code>algorithms/</code></a>, <a href="assets/hong_kong/full_stack_r5/"><code>docs/assets/hong_kong/full_stack_r5/</code></a></td>
-<td><a href="methods.html">methods</a>, <a href="source-layout.html">source layout</a>. versioned method/case routes, not one CLI</td>
+<td><a href="source-layout.html">Open evidence</a>. case-specific versions</td>
 </tr>
 <tr>
-<td><code>case_code</code> · Cases and examples</td>
-<td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples"><code>examples/</code></a>, <a href="cases/"><code>docs/cases/</code></a></td>
-<td><a href="capabilities.html">capabilities</a>, <a href="full-walkthrough.html">full walkthrough</a>. three distinct city roles</td>
-</tr>
-<tr>
-<td><code>verification_code</code> · Verification and presentation</td>
+<td><code>reproduce</code> · Examples and checks</td>
 <td><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/tools"><code>tools/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/tests"><code>tests/</code></a>, <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/launcher"><code>launcher/</code></a></td>
-<td><a href="visualizations.html">visualizations</a>, <a href="getting-started.html">getting started</a>. documentation builds never run scientific solvers</td>
-</tr>
-<tr>
-<td><code>public_navigation</code> · Public navigation</td>
-<td><a href="methods.html"><code>docs/methods.md</code></a>, <a href="capabilities.html"><code>docs/capabilities.md</code></a>, <a href="contributions.html"><code>docs/contributions.md</code></a>, <a href="full-walkthrough.html"><code>docs/full-walkthrough.md</code></a>, <a href="getting-started.html"><code>docs/getting-started.md</code></a></td>
-<td><a href="architecture.html">architecture</a>, <a href="source-layout.html">source layout</a>. navigation is not executable model flow</td>
+<td><a href="getting-started.html">Open evidence</a>. builds do not run solvers</td>
 </tr>
 </tbody>
 </table></div>
