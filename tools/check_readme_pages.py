@@ -140,8 +140,18 @@ def main() -> int:
         check(int(width_text) == 25 * slots and len(col_widths) == slots and
               len(set(col_widths)) == 1 and len(rows) == 3 and
               [name for name, _ in rows] == ["atlas-image-row", "atlas-caption-row", "atlas-links-row"] and
-              all(row.count('<td') == slots for _, row in rows),
+              all(row.count('<td') == slots and
+                  re.findall(r'<td width="([^"]+)"', row) == [str(round(100 / slots)) + "%"] * slots
+                  for _, row in rows),
               "Atlas table columns, proportional width, or merged caption row inconsistent")
+    quick_facts = re.findall(r'<table class="atlas-quick-facts".*?</table>', atlas, re.S)
+    benchmark_scope = re.findall(r'<table class="atlas-benchmark-scope".*?</table>', atlas, re.S)
+    check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["25%"] * 4
+                                        for table in quick_facts),
+          "Three-city quick-facts columns are not uniformly quarter-width")
+    check(len(benchmark_scope) == 1 and
+          set(re.findall(r'<td width="([^"]+)"', benchmark_scope[0])) == {"33%"},
+          "Sioux benchmark-scope columns are not equal-width")
     for text, surface in ((readme, "README"), (home, "Pages homepage")):
         groups = re.findall(r"<colgroup>(.*?)</colgroup>", text, re.S)
         check(bool(groups) and all(re.fullmatch(r'(?:<col width="(?:25|33|50|100)%"\s*/?>){1,4}',
