@@ -167,18 +167,19 @@ def stage_table(cards):
     for start in range(0,len(cards),4):
         group=cards[start:start+4]
         slots=len(group)
-        columns=''.join('<col width="'+str(round(100/slots))+'%">' for _ in group)
+        cell_width=str(round(100/slots))+'%'
+        columns=''.join('<col width="'+cell_width+'">' for _ in group)
         out.append('<table class="atlas-stage-table" data-columns="'+str(slots)+'" width="'+str(25*slots)+'%"><colgroup>'+columns+'</colgroup><tbody>')
         out.append('<tr class="atlas-image-row">'+''.join(
-            '<td align="center"><a href="'+esc(c["target_link"])+'"><img src="'+esc(c["preview_path"])+
+            '<td width="'+cell_width+'" align="center"><a href="'+esc(c["target_link"])+'"><img src="'+esc(c["preview_path"])+
             '" width="165" height="99" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
             '"></a></td>' for c in group)+'</tr>')
         out.append('<tr class="atlas-caption-row">'+''.join(
-            '<td><strong>'+esc(c["label"])+ '</strong><br><small>'+
+            '<td width="'+cell_width+'"><strong>'+esc(c["label"])+ '</strong><br><small>'+
             esc(c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"])+
             '</small></td>' for c in group)+'</tr>')
         out.append('<tr class="atlas-links-row">'+''.join(
-            '<td><small><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
+            '<td width="'+cell_width+'"><small><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
             '">Figure</a></small></td>' for c in group)+'</tr></tbody></table>')
     return '\n'.join(out)
 
@@ -197,7 +198,7 @@ def section04(matrix):
            '<p>'+esc(ROLE[city])+' <a href="'+esc(CASE_PAGE[city])+'">Open complete case →</a></p>',
            '<a href="'+esc(CASE_PAGE[city])+'"><img class="atlas-cover" src="'+esc(COVER[city])+'" width="780" alt="'+esc(city)+' canonical case cover"></a>',
            '<table class="atlas-quick-facts" width="100%"><colgroup>'+('<col width="25%">'*4)+'</colgroup><thead><tr>'+''.join('<th width="25%">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
-           '<tbody><tr>'+''.join('<td>'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
+           '<tbody><tr>'+''.join('<td width="25%">'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
            '<p class="atlas-nav">'+' · '.join('<a href="#'+slug+'-'+sid+'">'+esc(name)+'</a>' for sid,name in STAGES)+'</p>']
         if city=="Sioux Falls":
             compact=(
@@ -210,8 +211,8 @@ def section04(matrix):
             out += ['<h4>City-data and four-stage scope</h4>',
                     '<table class="atlas-benchmark-scope" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup><thead><tr><th width="33%">Stage</th><th width="33%">Scope in Sioux Falls benchmark</th><th width="33%">Relevant next entry</th></tr></thead><tbody>']
             for sid,label,scope in compact:
-                out.append('<tr><td><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td>'+esc(scope)+
-                           '</td><td><a href="#'+slug+'-static">Static assignment</a></td></tr>')
+                out.append('<tr><td width="33%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="33%">'+esc(scope)+
+                           '</td><td width="33%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
             out += ['</tbody></table>']
         for stage,name in STAGES:
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
