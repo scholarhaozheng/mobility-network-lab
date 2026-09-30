@@ -179,17 +179,17 @@ def card(city,stage,label,img,target,method,instance,kind="original"):
     row={"city":city,"stage":stage,"asset_path":img,"asset_hash":hashlib.sha256(p.read_bytes()).hexdigest(),"preview_path":preview,"preview_hash":hashlib.sha256((ROOT/preview).read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
     return row
 
-def stage_table(cards):
+def stage_rows(cards, stage_id):
     columns=min(4,len(cards))
-    cell_width={1:'100%',2:'50%',3:'33%',4:'25%'}[columns]
-    out=['<table class="atlas-stage-table" data-columns="'+str(columns)+'" data-items="'+str(len(cards))+
-         '" width="100%"><colgroup>'+('<col width="'+cell_width+'">')*columns+'</colgroup><tbody>']
+    cell_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
+    colspan=12//columns
+    out=[]
     for start in range(0,len(cards),columns):
         group=cards[start:start+columns]
-        out.append('<tr class="atlas-card-row">')
+        out.append('<tr class="atlas-card-row" data-stage="'+stage_id+'">')
         for c in group:
             note=c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"]
-            out.append('<td width="'+cell_width+'" class="atlas-card-cell"><a href="'+esc(c["target_link"])+
+            out.append('<td colspan="'+str(colspan)+'" width="'+cell_width+'" class="atlas-card-cell"><a href="'+esc(c["target_link"])+
                 '"><img src="'+esc(c["preview_path"])+'" width="165" alt="'+
                 esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
                 '"></a><br><strong>'+esc(c["label"])+
@@ -197,10 +197,7 @@ def stage_table(cards):
                 '</sub><br><sub class="atlas-links"><a href="'+esc(c["target_link"])+
                 '">Evidence</a> · <a href="'+esc(c["asset_path"])+
                 '">Figure</a></sub></td>')
-        out.extend('<td width="'+cell_width+'" class="atlas-empty"></td>'
-                   for _ in range(columns-len(group)))
         out.append('</tr>')
-    out.append('</tbody></table>')
     return '\n'.join(out)
 
 def section04(matrix):
@@ -222,7 +219,8 @@ def section04(matrix):
            '<a id="'+slug+'-tools"></a>',
            '<p class="atlas-nav">'+' · '.join(
                '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
-               for sid,name in STAGES)+'</p>']
+               for sid,name in STAGES)+'</p>',
+           '<table class="atlas-city-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="8.333%">'*12)+'</colgroup><tbody>']
         if city=="Sioux Falls":
             compact=(
               ("population","Population, households and activity","Not part of the supplied benchmark"),
@@ -231,17 +229,14 @@ def section04(matrix):
               ("distribution","Trip distribution","Supplied OD enters downstream methods directly"),
               ("mode","Mode choice","Vehicle OD is supplied; no mode-choice run"),
             )
-            out += ['<h4>City-data and four-stage scope</h4>',
-                    '<table class="atlas-benchmark-scope" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup><thead><tr><th width="33%">Stage</th><th width="33%">Scope in Sioux Falls benchmark</th><th width="33%">Relevant next entry</th></tr></thead><tbody>']
+            out += ['<tr class="atlas-benchmark-heading"><th colspan="12"><h4>City-data and four-stage scope</h4></th></tr>',
+                    '<tr class="atlas-benchmark-header"><th colspan="4" width="33.333%">Stage</th><th colspan="4" width="33.333%">Scope in Sioux Falls benchmark</th><th colspan="4" width="33.333%">Relevant next entry</th></tr>']
             for sid,label,scope in compact:
-                out.append('<tr><td width="33%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="33%">'+esc(scope)+
-                           '</td><td width="33%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
-            out += ['</tbody></table>']
+                out.append('<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td colspan="4" width="33.333%">'+esc(scope)+
+                           '</td><td colspan="4" width="33.333%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
         for stage,name in STAGES:
             if stage=="tools":continue
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
-            if city=="Hong Kong" and stage=="finite":out.append('<a id="hong-kong-cg-r5"></a>')
-            out.append('<section class="atlas-stage" id="'+slug+'-'+stage+'"><h4>'+name+'</h4>')
             cards=[]
             for rid in STAGE_ROWS[stage]:
                 r=matrix[(rid,city)]
@@ -267,11 +262,13 @@ def section04(matrix):
             for item in extra_by[(city,stage)]:
                 asset=card(*item)
                 cards.append(asset);assets.append(asset)
+            stage_id=slug+'-'+stage
+            extra_anchor='<a id="hong-kong-cg-r5"></a>' if city=="Hong Kong" and stage=="finite" else ''
+            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(min(4,len(cards)))+'" data-items="'+str(len(cards))+'"><th colspan="12"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
             if not cards:
-                out.append('<p class="atlas-scope">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</p>')
-            else:out.append(stage_table(cards))
-            out.append('</section>')
-        out += ['</article>','']
+                out.append('<tr class="atlas-scope-row"><td colspan="12">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</td></tr>')
+            else:out.append(stage_rows(cards,stage_id))
+        out += ['</tbody></table>','</article>','']
     out += ['[All retained scientific figure families](docs/visualizations.md) · [Full technical walkthrough](docs/full-walkthrough.md).','']
     return '\n'.join(out),assets
 
