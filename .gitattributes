@@ -56,3 +56,8 @@
 # The version-pinned Boston saved-result component hashes the original bytes.
 /examples/boston/behavior_feedback_r1_semantic_fix_r1/*.py -text
 /examples/boston/behavior_feedback_r1_semantic_fix_r1/data/*.csv -text
+
+# R2 layered entry hashes the exact complete walkthrough and project-map bytes.
+/docs/full-walkthrough.* -text
+/docs/assets/project_structure_r2/** -text -diff
+/tools/visuals/render_project_structure_r2.py -text

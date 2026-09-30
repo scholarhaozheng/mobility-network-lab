@@ -14,6 +14,12 @@ The Boston ADMM R2 run used the already-selected, frozen **R2_S** source, input-
 
 All declared independent gates passed. The independent evaluator made **zero optimizer calls**. The policy was frozen after Sioux development, and no Boston retuning or scientific rerun contributed to these figures.
 
+### Original saved convergence view
+
+![Boston 10-OD ADMM convergence from the accepted saved trace](../assets/admm_r2/figures/convergence_Boston_10OD.png)
+
+This original convergence figure remains inline alongside the later case-sequence layout; it is the same bounded ten-demand run, not an additional Boston scale. [Editable SVG](../assets/admm_r2/figures/convergence_Boston_10OD.svg).
+
 ![Boston six-panel accepted sequence](../assets/admm_r2/figures/admm_boston_10od_case_sequence.png)
 
 [Editable six-panel SVG](../assets/admm_r2/figures/admm_boston_10od_case_sequence.svg) · [original accepted convergence SVG](../assets/admm_r2/figures/convergence_Boston_10OD.svg) · [original accepted physical scatter SVG](../assets/admm_r2/figures/physical_flow_Boston_10OD.svg)

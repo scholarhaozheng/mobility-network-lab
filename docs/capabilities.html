@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capability coverage and evidence scope · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Shared framework</a><a href="index.html#cg-experiments">CG experiments</a><a href="index.html#admm-r2">ADMM R2</a><a href="index.html#coverage">Case coverage</a><a href="index.html#boston">Boston</a><a href="index.html#sioux-falls">Sioux Falls</a><a href="index.html#hong-kong">Hong Kong</a><a href="index.html#run-your-input">Use the tool</a><a href="index.html#mobility-data-support">Open data</a></div></nav><main class="mcl-page"><h1 id="capability-coverage-and-evidence-scope">Capability coverage and evidence scope</h1>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Capability coverage and evidence scope · Mobility Computation Lab</title><link rel="stylesheet" href="assets/presentation-r3.css"></head><body><header><div class="mast"><a class="brand" href="index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="index.html#framework">Project map</a><a href="contributions.html">Contributions</a><a href="capabilities.html">Coverage</a><a href="cases/boston.html">Boston</a><a href="cases/sioux-falls.html">Sioux Falls</a><a href="cases/hong-kong.html">Hong Kong</a><a href="methods.html">Methods</a><a href="full-walkthrough.html">Full walkthrough</a><a href="getting-started.html">Getting started</a><a href="open-data.html">Open data</a></div></nav><main class="mcl-page"><h1 id="capability-coverage-and-evidence-scope">Capability coverage and evidence scope</h1>
 <p>Each cell names <strong>executed saved evidence</strong> at its actual scale, not universal software capability or empirical validation. A supplied vehicle OD can enter static assignment without a demographic or four-stage build. Static BPR/Beckmann and finite fixed-cost hard-capacity objectives belong to different model branches.</p>
 <div class="table-scroll"><table>
 <thead>
@@ -81,4 +81,425 @@
 <h2 id="reading-the-matrix">Reading the matrix</h2>
 <p>The Boston all-tier FW, 26-OD compression control, B1 Algorithm B holdout and 10-OD finite space–time CG/ADMM experiments are different branches or instances. Sioux static and time-expanded objectives differ. Hong Kong's current full-stack case supersedes only the old <a href="cases/hong-kong-gmns-pilot.html">R1 pre-assignment pilot gate</a>; the R1 files remain as historical source/data evidence. Hong Kong's accepted CG R5 result does <strong>not</strong> accept its separate gated ADMM R2 transfer.</p>
 <p><a href="cases/boston.html">Boston</a> · <a href="cases/sioux-falls.html">Sioux Falls</a> · <a href="cases/hong-kong.html">Hong Kong current case</a> · <a href="methods/hong-kong-evidence-contract.html">Hong Kong evidence contract</a> · <a href="methods/admm-space-time.html">ADMM R2</a> · <a href="integrations/taplab-tapb.html">Algorithm B adapter distinction</a> · <a href="RUN_YOUR_OWN_GMNS.html">Generic input commands</a>.</p>
+<!-- layered-r2-coverage:start -->
+<h2 id="detailed-coverage-and-comparable-statistics-from-the-post-correction-release">Detailed coverage and comparable statistics from the post-correction release</h2>
+<p>The following source-aligned tables retain the two distinct old coverage views and all three metric-row tables. The first matrix is a navigational status view; the second records bounded method-specific scope. They supplement, rather than replace, the compact landing table above.</p>
+<h2 id="02-cross-city-coverage-matrix">02 / Cross-city coverage matrix</h2>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Capability</th>
+<th>Boston</th>
+<th>Sioux Falls</th>
+<th>Hong Kong</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMNS physical network</td>
+<td><a href="cases/boston.html">Verified</a></td>
+<td><a href="cases/sioux-falls.html">Verified</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>hierarchical zones / parent zones</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Not part of this benchmark</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>population / households / activity</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Not part of this benchmark</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>transit / pedestrian layer</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Not part of this benchmark</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>GPS / detector / trajectory evidence</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Not part of this benchmark</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>four-stage demand</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Not part of this benchmark</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>static Frank–Wolfe</td>
+<td><a href="cases/boston-assignment.html">Verified bounded case</a></td>
+<td><a href="datasets/sioux-static-fw.html">Verified</a></td>
+<td><a href="cases/hong-kong-static-assignment.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>origin-based / Algorithm B</td>
+<td><a href="cases/boston-algorithm-b.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-algorithm-b.html">Verified</a></td>
+<td><a href="cases/hong-kong-static-assignment.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>full-path / Diagnostic L3 numerical evidence</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong.html">Not demonstrated</a></td>
+</tr>
+<tr>
+<td>finite arc-flow LP</td>
+<td><a href="cases/boston-space-time.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-space-time.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong-space-time.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>column generation</td>
+<td><a href="cases/boston-space-time.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-space-time.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong-space-time.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>Lagrangian decomposition</td>
+<td><a href="methods/distributed-assignment.html">Gated</a></td>
+<td><a href="methods/distributed-assignment.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong-space-time.html">Verified bounded case</a></td>
+</tr>
+<tr>
+<td>ADMM</td>
+<td><a href="cases/boston-admm.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-admm.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong-space-time.html">Gated</a></td>
+</tr>
+<tr>
+<td>CG reference-objective agreement</td>
+<td><a href="cases/boston-space-time.html">Reference-objective agreement</a></td>
+<td><a href="cases/sioux-space-time.html">Reference-objective agreement</a></td>
+<td><a href="cases/hong-kong-space-time.html">Reference-objective agreement</a></td>
+</tr>
+<tr>
+<td>CG independent pricing closure</td>
+<td><a href="cases/boston-space-time.html">Independent pricing closure established</a></td>
+<td><a href="cases/sioux-space-time.html">Not established</a></td>
+<td><a href="cases/hong-kong-space-time.html">Independent pricing closure established</a></td>
+</tr>
+<tr>
+<td>clean-room / independent evaluator</td>
+<td><a href="cases/boston.html">Verified bounded case</a></td>
+<td><a href="cases/sioux-falls.html">Verified bounded case</a></td>
+<td><a href="cases/hong-kong.html">Verified bounded case</a></td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Status refers to each linked bounded or historical case, not a universal method guarantee. Sioux Falls has no demographic/transit/GPS city-data build; Hong Kong ADMM remains gated.</em> <a href="data/three_city_r1/THREE_CITY_CAPABILITY_MATRIX.source.json">Source record</a>.</p>
+<p><a id="admm-r2"></a>
+<img alt="Accepted finite ADMM R2 saved-result overview" src="assets/admm_r2/figures/admm_results_overview.png"/></p>
+<p><em>Selected Sioux 200/250 OD and Boston ten-OD finite LP comparisons; Hong Kong ADMM is gated.</em> <a href="methods/admm-space-time.html">Method-specific figures and gates</a>.</p>
+<h3 id="capability-scope-and-method-specific-boundaries">Capability scope and method-specific boundaries</h3>
+<p>The entries distinguish <strong>available code</strong>, <strong>executed case evidence</strong>, and <strong>the scale at which a method was actually accepted</strong>. A missing result is not a claim that the method can never run on that city. A tiny generic fixture does not certify a large Boston solve.</p>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Capability / evidence</th>
+<th>Boston</th>
+<th>Sioux Falls</th>
+<th>Hong Kong bounded case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>GMNS network, zones and access</td>
+<td><strong>Demonstrated:</strong> H3 hierarchy, centroid/access and source-ID round-trip</td>
+<td><strong>Benchmark network:</strong> supplied topology and demand; not a present-day H3 city dataset</td>
+<td><strong>Demonstrated, bounded:</strong> 780 physical nodes, 1,239 links, 95 SSG/10 STPUG zones and 190 nonphysical connectors</td>
+</tr>
+<tr>
+<td>Population, households and activity preparation</td>
+<td><strong>Demonstrated, limited:</strong> source-backed ACS block-group → H3 aggregate allocation; separate MassGIS attraction proxy</td>
+<td><strong>Not estimated:</strong> classic benchmark supplies vehicle OD without a demographic build</td>
+<td><strong>Demonstrated, limited:</strong> 2021 census SSG area allocation; building activity proxy separate from households</td>
+</tr>
+<tr>
+<td>Trip generation / distribution</td>
+<td><strong>Demonstrated, limited:</strong> transferred household rates, activity prior, gravity/IPF and PA-to-OD</td>
+<td><strong>Not estimated:</strong> given benchmark OD</td>
+<td><strong>Engineering scenario:</strong> transferred TCS rates, local-capture sensitivity and gravity/IPF over 8,930 directed interzonal ODs</td>
+</tr>
+<tr>
+<td>Mode choice</td>
+<td><strong>Demonstrated, conditional:</strong> regional-share feedback and absolute DA/S2/S3/TW research branch</td>
+<td><strong>Not modeled:</strong> fixed vehicle demand</td>
+<td><strong>Engineering scenario:</strong> GTFS/fare/walk generalized costs and sensitivity logit, not locally calibrated</td>
+</tr>
+<tr>
+<td>GPS / service evidence</td>
+<td><strong>Demonstrated, exploratory:</strong> network linkage and default-off interval feedback; no independent AM validation</td>
+<td><strong>Not included</strong> in the classic benchmark</td>
+<td><strong>Linked layers:</strong> 183 GTFS stops, 294 routes and 50 detector lane observations; UrbanNav points private</td>
+</tr>
+<tr>
+<td>Static Frank–Wolfe</td>
+<td><strong>Demonstrated:</strong> small controls and three expanded tiers, up to 17,522 loaded node ODs</td>
+<td><strong>Demonstrated:</strong> historical static benchmark; input-identity caveat retained</td>
+<td><strong>Accepted turn-aware one-hour scenario:</strong> 723.191 PCE modeled load</td>
+</tr>
+<tr>
+<td>Finite full-path reference</td>
+<td><strong>Solved:</strong> 26-OD / 130-path control; <strong>resource-gated</strong> at expanded tiers</td>
+<td>No equivalent solved full-path reference claimed by these supplied records</td>
+<td><strong>Not demonstrated</strong> for static assignment</td>
+</tr>
+<tr>
+<td>Native Diagnostic L3 / compression</td>
+<td><strong>Accepted numerical controls:</strong> ranks 26/52; not solved at expanded tiers</td>
+<td><strong>Executed numerical candidates:</strong> rank 50; full-network gaps 8.17% / 4.38%, not exact UE</td>
+<td><strong>Not demonstrated</strong></td>
+</tr>
+<tr>
+<td>Space–time CG</td>
+<td><strong>Accepted bounded pilot:</strong> 90 nodes / 125 links / 10 ODs; same-graph LP match and independent 10/10 pricing closure</td>
+<td><strong>Historical 200 / 250 OD:</strong> feasible and own-LP matched; independent pricing closure not established</td>
+<td><strong>Accepted R5 bounded 10-OD case:</strong> same-graph LP match, Phase I zero in 12 rounds, independent 10/10 pricing closure</td>
+</tr>
+<tr>
+<td>Lagrangian capacity pricing</td>
+<td><strong>Gated transfer:</strong> feasible recovery but 1.1002% gap missed frozen 1% gate</td>
+<td><strong>Accepted R2:</strong> 200/250 OD separately feasible; duality gaps 0.0746% / 0.3177%</td>
+<td><strong>Accepted bounded transfer:</strong> separate feasible recovery and 0.7444% certified gap</td>
+</tr>
+<tr>
+<td>ADMM shared-capacity decomposition</td>
+<td><strong>Accepted R2_S bounded holdout:</strong> 10 ODs, 253 iterations, 6.68e-6 own-LP relative gap</td>
+<td><strong>Accepted R2_S selected subsets:</strong> 200/250 OD, 85/101 iterations, 6.30e-6 / 7.16e-6 own-LP gaps</td>
+<td><strong>Gated R2 transfer:</strong> first local conservation test failed; no accepted objective</td>
+</tr>
+<tr>
+<td>Official <code>tap-b</code> Algorithm B static UE</td>
+<td><strong>Accepted B0/B1 through task-local lossless adapter; official converter blocked before solve</strong></td>
+<td><strong>Accepted classic benchmark; official TAPLab adapter parity and verification pass</strong></td>
+<td><strong>Accepted static result through task-local lossless TAPLab-compatible adapter</strong></td>
+</tr>
+<tr>
+<td>Saved checks and visualization</td>
+<td>GMNS tracing, static original-space checks, full bounded CG figure family</td>
+<td>Static/CG records plus accepted bounded Lagrangian/ADMM views</td>
+<td>Source/rights register, full-stack static/four-stage figures and R5 CG traces, closure and physical-flow projection</td>
+</tr>
+</tbody>
+</table></div>
+<p><a href="capabilities.html">Capability definitions and evidence pointers</a>. The earlier <a href="cases/hong-kong-gmns-pilot.html">Hong Kong R1 data pilot</a> remains a historical checkpoint; the current <a href="cases/hong-kong.html">R2–R5 bounded technical case</a> has accepted static and CG evidence under its explicit engineering assumptions.</p>
+<p><a id="comparable-statistics"></a></p>
+<h2 id="03-comparable-statistics">03 / Comparable statistics</h2>
+<p>These are <em>instance-level</em> descriptions, not a cross-city objective leaderboard. The stable machine-readable CSV retains schema fields; the tables here present metric rows for reading.</p>
+<h3 id="a-city-data-and-gmns-statistics">A. City-data and GMNS statistics</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Boston · city-data case</th>
+<th>Sioux Falls · benchmark</th>
+<th>Hong Kong · bounded city case</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Directed physical roads</td>
+<td>2852 nodes / 5091 links</td>
+<td>24 nodes / 76 links</td>
+<td>780 nodes / 1239 links</td>
+</tr>
+<tr>
+<td>Fine / parent zones</td>
+<td>177 / 9</td>
+<td>Not part of this benchmark / Not part of this benchmark</td>
+<td>95 / 10</td>
+</tr>
+<tr>
+<td>Centroids / nonphysical access</td>
+<td>177 / 354</td>
+<td>Not part of this benchmark / Not part of this benchmark</td>
+<td>95 / 190</td>
+</tr>
+<tr>
+<td>Transit service layer</td>
+<td>3,553 referenced stops / 112 routes (dated GTFS slice)</td>
+<td>Not part of this benchmark</td>
+<td>183 stops / 294 routes (pilot service layer)</td>
+</tr>
+<tr>
+<td>Observation evidence</td>
+<td>581 GPS path-link associations; 56 planned-shape links</td>
+<td>Not part of this benchmark</td>
+<td>50 detector lane snapshot records; UrbanNav point data private</td>
+</tr>
+<tr>
+<td>Evidence grade</td>
+<td>Verified bounded case; not a calibrated citywide forecast</td>
+<td>Verified static topology; historical selected-OD finite cases are separate</td>
+<td>Verified bounded case; activity and demand use graded assumptions</td>
+</tr>
+</tbody>
+</table></div>
+<p>Observation counts have different meanings and are not pooled. Sioux is a supplied-demand benchmark, not a demographic or GPS build.</p>
+<p><a href="data/three_city_r1/THREE_CITY_GMNS_STATISTICS.csv">Machine-readable CSV</a> · <a href="data/three_city_r2/GMNS_READABLE.source.json">Readable-table source record</a>.</p>
+<h3 id="b-static-assignment-statistics">B. Static-assignment statistics</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Boston B1 · conditional 2 h</th>
+<th>Sioux Falls · classic 528 OD</th>
+<th>Hong Kong · bounded 1 h</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Physical-node / positive OD pairs</td>
+<td>453</td>
+<td>528</td>
+<td>8930</td>
+</tr>
+<tr>
+<td>Assigned demand and period</td>
+<td>1936.238475 PCE / 2 h</td>
+<td>360600 vehicles</td>
+<td>723.191228 PCE / 1 h</td>
+</tr>
+<tr>
+<td>Mathematical problem</td>
+<td>static BPR / Beckmann</td>
+<td>static BPR / Beckmann</td>
+<td>turn-aware static BPR / Beckmann</td>
+</tr>
+<tr>
+<td>FW evidence</td>
+<td>Verified bounded case</td>
+<td>Verified historical run; input-identity caveat</td>
+<td>Verified bounded case</td>
+</tr>
+<tr>
+<td>Algorithm B route</td>
+<td>Verified bounded case; task-local TAPLab-compatible lossless adapter</td>
+<td>Verified; official TAPLab registered-adapter parity</td>
+<td>Verified bounded case; task-local lossless adapter</td>
+</tr>
+<tr>
+<td>Objective and independent gap</td>
+<td>Beckmann 7922.083942188 PCE-min; independent relative gap -2.3e-16</td>
+<td>Beckmann 4231335.287110682 vehicle-min; independent relative gap 4.5e-09</td>
+<td>Beckmann 1676.012131329 PCE-min; independent relative gap 4.21e-15</td>
+</tr>
+<tr>
+<td>Path-to-link reconstruction</td>
+<td>Verified; max path/link mismatch 5.68e-14 PCE</td>
+<td>Verified; max path/link mismatch 5.46e-11 vehicles</td>
+<td>Verified; max path/link mismatch 1.42e-13 PCE</td>
+</tr>
+</tbody>
+</table></div>
+<p>Boston B1 is a matched-method holdout, not Boston's largest accepted FW tier. Objectives and demands are not comparable across cities or with finite fixed-cost models.</p>
+<p><a href="data/three_city_r1/THREE_CITY_STATIC_ASSIGNMENT_STATISTICS.csv">Machine-readable CSV</a> · <a href="data/three_city_r2/STATIC_READABLE.source.json">Readable-table source record</a>.</p>
+<h3 id="c-finite-time-expanded-statistics">C. Finite time-expanded statistics</h3>
+<div class="table-scroll"><table>
+<thead>
+<tr>
+<th>Metric</th>
+<th>Boston · 10 OD</th>
+<th>Sioux · 200 OD</th>
+<th>Sioux · 250 OD</th>
+<th>Hong Kong · 10 OD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Selected physical subnetwork</td>
+<td>90 nodes / 125 links</td>
+<td>24 nodes / 64 links</td>
+<td>24 nodes / 69 links</td>
+<td>100 nodes / 111 links</td>
+</tr>
+<tr>
+<td>Selected OD demands</td>
+<td>10</td>
+<td>200</td>
+<td>250</td>
+<td>10</td>
+</tr>
+<tr>
+<td>One model time step</td>
+<td>3 s</td>
+<td>seconds not reported</td>
+<td>seconds not reported</td>
+<td>30 s</td>
+</tr>
+<tr>
+<td>Number of model steps</td>
+<td>100</td>
+<td>not reported in public summary</td>
+<td>not reported in public summary</td>
+<td>50</td>
+</tr>
+<tr>
+<td>Elapsed model horizon</td>
+<td>300 s</td>
+<td>not derivable from released summary</td>
+<td>not derivable from released summary</td>
+<td>1,500 s</td>
+</tr>
+<tr>
+<td>Dynamic graph</td>
+<td>9,110 nodes / 22,217 arcs</td>
+<td>1,192 nodes / 9,406 arcs</td>
+<td>1,292 nodes / 11,254 arcs</td>
+<td>11,954 nodes / 24,910 arcs</td>
+</tr>
+<tr>
+<td>Same-graph reference LP objective</td>
+<td>64.396861511530</td>
+<td>943,155.589771</td>
+<td>1,521,090.83662</td>
+<td>75.036329857948</td>
+</tr>
+<tr>
+<td>CG Phase-I zero round</td>
+<td>90</td>
+<td>51</td>
+<td>62</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Final CG column pool</td>
+<td>167</td>
+<td>446</td>
+<td>567</td>
+<td>25</td>
+</tr>
+<tr>
+<td>CG independent full-DAG pricing</td>
+<td>Independent pricing closure established; 10/10</td>
+<td>Not established</td>
+<td>Not established</td>
+<td>Independent pricing closure established; 10/10</td>
+</tr>
+<tr>
+<td>Lagrangian status / gap</td>
+<td>Gated; 1.1002% exceeds frozen 1% gate</td>
+<td>Accepted; 0.0746% duality gap</td>
+<td>Accepted; 0.3177% duality gap</td>
+<td>Verified bounded case; 0.7444% duality gap</td>
+</tr>
+<tr>
+<td>ADMM status / own-LP difference</td>
+<td>Verified bounded case; R2_S own-LP gap 6.68e−6</td>
+<td>Accepted R2_S; 6.30e−6</td>
+<td>Accepted R2_S; 7.16e−6</td>
+<td>Gated; first local conservation residual 0.082467622 PCE</td>
+</tr>
+</tbody>
+</table></div>
+<p>Fixed-cost, hard-capacity finite problems; each column is a separate graph. Objective values are vehicle-minutes, but no cross-city ranking is implied. CG pricing closure does not transfer to Lagrangian or ADMM.</p>
+<p><a href="data/three_city_r1/THREE_CITY_FINITE_TIME_EXPANDED_STATISTICS.csv">Machine-readable CSV</a> · <a href="data/three_city_r2/FINITE_READABLE.source.json">Readable-table source record</a>.</p>
+<!-- layered-r2-coverage:end -->
 </main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>

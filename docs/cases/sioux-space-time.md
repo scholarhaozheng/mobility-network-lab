@@ -36,6 +36,7 @@ The 200-OD selection is contained in the 250-OD selection, with matching OD IDs,
 *Source-matched R2 reconstruction from saved records.* [SVG](../assets/three_city_r2/sioux_finite_space_time_case_sequence.svg) · [Exact figure sources](../assets/three_city_r2/sioux_finite_space_time_case_sequence.source.json) · [Full caption](../assets/three_city_r2/sioux_finite_space_time_case_sequence.caption.md).
 
 <a id="construction-cutaway"></a>
+<a id="1-from-the-physical-network-to-time-indexed-columns"></a>
 ## From the physical network to the finite time-expanded graph
 
 ![sioux saved physical and dynamic arc construction](../assets/three_city_r2/sioux_physical_to_time_expanded_graph.png)
@@ -61,6 +62,7 @@ The retained `XS170` generated column follows physical nodes `8 → 6 → 5` at 
 <a id="recorded-results-what-the-two-saved-runs-show"></a>
 
 
+<a id="2-phase-i-restores-feasibility"></a>
 ## Phase I restores feasibility
 
 Artificial flow reaches zero in round 51 (200 OD) and round 62 (250 OD); the original separate traces and OD-level clearance tables are retained below.
@@ -105,6 +107,7 @@ Artificial flow is an algorithmic feasibility device. It is not an observed queu
 <a id="clearance-events-and-selected-columns"></a>
 
 
+<a id="3-a-new-path-can-help-a-different-od"></a>
 ## Shared capacity couples different OD demands
 
 The generated candidate is the column added before re-solving that round. OD artificial-flow changes are observed after re-solving; the table does not prove that the selected column alone caused the changes.
@@ -137,6 +140,7 @@ The added XS170 path is `source_XS170 → xs_link19_t0 → xs_link15_t2 → sink
 
 The recorded primal flows support a 500-unit exchange on a binding arc: XS170 leaves the shared delayed route and XS169 takes its place. The raw capacity dual stays approximately −1; its sign follows the solver's reported convention. This is a mechanism in these recorded restricted-master solutions, not evidence that one path is uniquely necessary.
 
+<a id="4-phase-ii-improves-the-real-path-objective"></a>
 ## Phase II improves the real-path objective
 
 Both retained Phase-II traces improve their real-path objectives and agree with their own selected-graph LP references: 943,155.589771 and 1,521,090.83662 vehicle-minutes. The two values are different problems, not a speedup comparison.
@@ -152,6 +156,7 @@ Each trace is compared with the arc-flow LP on its own selected-OD finite time-e
 
 
 <a id="final-validation"></a>
+<a id="5-final-physical-link-movement-flow-and-validation"></a>
 ## From time-expanded flows back to final physical-link movement flow
 
 ![sioux movement-only physical-link flow audit](../assets/three_city_r2/sioux_time_expanded_to_physical_link_flow.png)

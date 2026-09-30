@@ -58,6 +58,15 @@ for rel, digest in {**payload, **shared}.items():
 check("not blanket authorization" in approved["shared_dependency_rule"].lower(),
       "shared dependency rule over-authorizes unrelated data")
 check(approved["scientific_solver_rerun"] is False, "approval record claims a model rerun")
+presentation = approved.get("current_presentation_dependencies_sha256", {})
+expected_presentation = {"docs/full-walkthrough.md", "docs/full-walkthrough.html"}
+check(set(presentation) == expected_presentation,
+      "layered presentation dependency set differs from the exact added walkthrough pages")
+for rel, digest in presentation.items():
+    check((ROOT / rel).is_file() and sha(ROOT / rel) == digest,
+          f"new exact-HK10 presentation page missing or hash changed: {rel}")
+    check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
+          f"private scope entered presentation dependency: {rel}")
 
 extension_path = ROOT / "docs/assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json"
 extension = json.loads(extension_path.read_text(encoding="utf-8"))
@@ -86,10 +95,12 @@ for rel, digest in {**derived, **dependencies}.items():
     check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
           f"private scope entered HK10 derivative extension: {rel}")
 expected_pages = {"README.md", "docs/index.md", "docs/index.html",
-                  "docs/cases/hong-kong-space-time.md", "docs/cases/hong-kong-space-time.html"}
+                  "docs/cases/hong-kong-space-time.md", "docs/cases/hong-kong-space-time.html",
+                  *expected_presentation}
 check(set(extension["page_dependencies_recorded_in_parent_approval"]) == expected_pages,
       "HK10 derivative page dependency set differs")
-check(expected_pages <= set(shared), "HK10 derivative pages are not recorded in parent approval")
+check(expected_pages <= set(shared) | set(presentation),
+      "HK10 derivative pages are not recorded in the exact approval/presentation dependencies")
 for rel in expected_pages:
     content = (ROOT / rel).read_text(encoding="utf-8")
     check("hong_kong_layered_space_time_construction.png" in content,
@@ -98,7 +109,7 @@ check("not authorize unrelated data" in extension["shared_dependency_rule"].lowe
       "HK10 derivative shared dependency rule over-authorizes data")
 check(extension["scientific_solver_rerun"] is False, "HK10 derivative record claims model rerun")
 
-current = ["README.md", "docs/index.md", "docs/index.html", "docs/cases/hong-kong.md",
+current = ["README.md", "docs/index.md", "docs/index.html", *sorted(expected_presentation), "docs/cases/hong-kong.md",
            "docs/cases/hong-kong.html", "docs/cases/hong-kong-space-time.md",
            "docs/cases/hong-kong-space-time.html"]
 for family in ("generated_column_time_indexed_path", "finite_space_time_case_sequence"):
@@ -112,17 +123,18 @@ for rel in current:
         check("model-generated" in content.lower(), f"model-generated scope absent: {rel}")
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
-cg = readme.find('<a id="cg-experiments"></a>')
-stats = readme.find("## 03 / Comparable statistics")
-methods = readme.find("## 07 / Methods, reproduction, evidence, and limits")
-run = readme.find('<a id="run-your-input"></a>')
-check(0 <= stats < methods < cg < run, "CG block remains between coverage and statistics or is misplaced")
-check(readme.count("### Executed finite space–time CG experiments") == 1,
-      "executed CG block duplicated or removed")
-block = readme[cg:run]
+walkthrough = (ROOT / "docs/full-walkthrough.md").read_text(encoding="utf-8")
+cg_method = (ROOT / "docs/methods/space-time-cg.md").read_text(encoding="utf-8")
+check('<a id="cg-experiments"></a>' in readme and
+      "docs/methods/space-time-cg.md#cg-experiments" in readme,
+      "shortened homepage lost the cross-case CG compatibility pointer")
+check(cg_method.count("### Executed finite space–time CG experiments") == 1 and
+      walkthrough.count("### Executed finite space–time CG experiments") == 1,
+      "executed CG block is not preserved in the canonical method and complete walkthrough")
 for needle in ("boston_sioux_cg_parallel_overview.png", "| Executed evidence | Boston | Sioux Falls | Hong Kong |",
                "| **Phase I** |", "| **Phase II** |", "| **Pricing certificate** |"):
-    check(needle in block, f"moved CG block lost accepted content: {needle}")
+    check(needle in cg_method and needle in walkthrough,
+          f"moved CG block lost accepted canonical/walkthrough content: {needle}")
 check('id="cg-experiments"' in (ROOT / "docs/index.html").read_text(encoding="utf-8"),
       "generated homepage lost cg-experiments fragment")
 

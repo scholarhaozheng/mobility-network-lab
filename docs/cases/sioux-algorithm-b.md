@@ -18,6 +18,10 @@ The official `spartalab/tap-b` Algorithm B executable at commit `040135a20c771fb
 
 ![Saved Sioux Falls Algorithm B versus FW physical-link comparison](../assets/algorithm_b_r21/source_panels/sioux_fw_flow.svg)
 
+![Original compact Sioux Falls Algorithm B versus FW physical-link comparison](../assets/algorithm_b_r21/presentation/sioux_fw_flow_compact.svg)
+
+The compact presentation is a retained alternate layout of this same static benchmark comparison.
+
 The accepted R2 Algorithm B Beckmann objective is **4,231,335.287110682 vehicle-minutes**, compared with **4,236,715.14044 vehicle-minutes** for the retained historical FW result. The saved physical-link flow RMSE is **63.4701149406 vehicles**. This is a same-static-problem numerical comparison, not a runtime speedup or empirical validation. [Aggregate Algorithm B link flows](../../algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv).
 
 ## 5. Selected-origin reconstructed flow

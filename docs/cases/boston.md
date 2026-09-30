@@ -64,6 +64,10 @@ The GMNS route-60 figure shows the same saved 12 source positions before and aft
 
 ## Static assignment
 
+![Central Boston expanded static-assignment endpoint coverage](../assets/boston/scalable_tool_r1/endpoint_all_coverage.png)
+
+*Retained expanded-tier endpoint coverage view; the bounded 26-OD method-control and 10-OD finite-network figures below refer to different instances.* [Scale and input scope](../BOSTON_SCALE_RESULTS.md).
+
 [Static FW/full-path/L3](boston-assignment.md) and [task-local TAPLab-compatible Algorithm B](boston-algorithm-b.md) use their declared static instances.
 
 The semantic S1/S2 panel uses the existing static FW solver at about **202.078384 / 202.070733** vehicle trips; its saved maps and service-response interpretation stay [here](../datasets/boston-behavior-feedback.md#step-4-traffic-assignment). The separate conditional ABS branch has saved FW values **707.0579230712884** (planned, 203.6604786350987 trips) and **707.043586277782** (exploratory observed-service input, 203.6573680559407 trips) vehicle-minutes. These are scenario-specific model outputs, not causal GPS measurements.

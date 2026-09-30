@@ -1,0 +1,204 @@
+{
+  "title": "Mobility Computation Lab — Complete project structure",
+  "subtitle": "Data and models · computational methods · reusable tools · three city cases",
+  "kind": "conceptual module map of documented public components; not a universal executable pipeline",
+  "canvas": {"width": 1950, "height": 1370},
+  "source_tree_commit": "c51c7dfe25559ef5fb464f2b9eeea2872d945d29",
+  "nodes": [
+    {
+      "id": "spatial_inputs", "label": "Roads · boundaries · zones", "group": "public_inputs", "role": "source group",
+      "description": "Published spatial inputs are prepared with source and geometry scope retained.",
+      "source_paths": ["catalog/", "examples/boston/"], "documentation_links": ["docs/data-contract.md", "docs/datasets/boston-gmns-exchange.md"],
+      "scope": "source-dependent; not every city uses the same layers", "rect": [40, 150, 350, 105],
+      "display_lines": ["Roads + zones", "spatial source records"]
+    },
+    {
+      "id": "population_inputs", "label": "Population · households · activity", "group": "public_inputs", "role": "source group",
+      "description": "Statistical geography, household fields, buildings or land-use activity attributes/proxies.",
+      "source_paths": ["docs/datasets/boston-population-households.md", "docs/datasets/hong-kong-gmns.md"],
+      "documentation_links": ["docs/city-workflow.md"], "scope": "Boston and Hong Kong have distinct bounded preparations; not Sioux Falls",
+      "rect": [410, 150, 350, 105], "display_lines": ["People + activity", "households / buildings"]
+    },
+    {
+      "id": "transit_inputs", "label": "GTFS · fares · walking access", "group": "public_inputs", "role": "source group",
+      "description": "Service, fare and access evidence supplies supported cost or choice attributes where documented.",
+      "source_paths": ["docs/datasets/boston-four-step-sources.md", "docs/cases/hong-kong-four-stage.md"],
+      "documentation_links": ["docs/city-workflow.md"], "scope": "case-specific service snapshots and engineering assumptions",
+      "rect": [780, 150, 350, 105], "display_lines": ["Transit + access", "GTFS / fares / walking"]
+    },
+    {
+      "id": "observation_inputs", "label": "GPS · detectors · trajectories", "group": "public_inputs", "role": "source group",
+      "description": "Observation and service records require QC and explicit network association; they are not automatically OD or calibration data.",
+      "source_paths": ["docs/datasets/boston-behavior-feedback.md", "docs/methods/hong-kong-evidence-contract.md"],
+      "documentation_links": ["docs/city-workflow.md"], "scope": "observations differ by city and access rights",
+      "rect": [1150, 150, 350, 105], "display_lines": ["Observations", "GPS / detectors / traces"]
+    },
+    {
+      "id": "gmns", "label": "GMNS and representation layer", "group": "representation", "role": "model contract",
+      "description": "Directed physical nodes/links, fine/parent zones, centroids and nonphysical access, source IDs, units, crosswalks and provenance; turn-aware routing states are case-specific mappings.",
+      "source_paths": ["schemas/", "app/src/gmns_dynamic/external_network_input.py", "docs/datasets/boston-gmns-exchange.md"],
+      "documentation_links": ["docs/data-contract.md", "docs/city-workflow.md", "docs/datasets/hong-kong-gmns.md"],
+      "scope": "core GMNS vocabulary plus documented project extensions; transit and observations are not all core GMNS",
+      "rect": [40, 290, 1460, 140],
+      "display_lines": ["GMNS representation", "Directed nodes + physical links  ·  fine + parent zones", "Centroids + nonphysical access  ·  IDs + units + provenance", "Turn-aware routing mappings where supported"]
+    },
+    {
+      "id": "population_preparation", "label": "Population / household / activity preparation", "group": "demand", "role": "upstream preparation",
+      "description": "Versioned source geography and fields are allocated to zonal population, household and separate activity attributes before optional demand modeling.",
+      "source_paths": ["docs/datasets/boston-population-households.md", "docs/cases/hong-kong-four-stage.md"],
+      "documentation_links": ["docs/city-workflow.md", "docs/architecture.md"], "scope": "case-specific, not a universal city compiler",
+      "rect": [40, 470, 450, 210],
+      "display_lines": ["Population / households", "+ activity preparation", "source geography → zones", "versions · units · coverage"]
+    },
+    {
+      "id": "four_stage", "label": "Four-stage demand and static assignment route", "group": "demand", "role": "documented stage chain",
+      "description": "Stage 01 productions/attractions; 02 directed person OD; 03 mode demand and declared vehicle/PCE demand; 04 static road assignment under a declared period and objective.",
+      "source_paths": ["docs/city-workflow.md", "algorithms/mode_choice_conditional/", "algorithms/static_fw/"],
+      "documentation_links": ["docs/cases/boston.md", "docs/cases/hong-kong-four-stage.md"],
+      "scope": "Boston limited and Hong Kong engineering-scenario branches; Sioux benchmark bypasses stages 01–03",
+      "rect": [520, 470, 620, 210],
+      "display_lines": ["FOUR-STAGE DEMAND", "01  Generation → P/A", "02  Distribution → person OD", "03  Choice → mode / PCE", "04  Static traffic assignment"]
+    },
+    {
+      "id": "observation_association", "label": "Observation QC and matching / association", "group": "observation", "role": "qualified evidence branch",
+      "description": "Positions/timestamps and service records can be linked to physical roads or service and supply supported travel-cost/parameter inputs or result queries, but do not imply observed OD.",
+      "source_paths": ["docs/datasets/boston-behavior-feedback.md", "docs/datasets/boston-gmns-exchange.md", "docs/methods/hong-kong-evidence-contract.md"],
+      "documentation_links": ["docs/city-workflow.md"], "scope": "exploratory feedback is optional and case-specific",
+      "rect": [1170, 470, 330, 210],
+      "display_lines": ["Observation QC", "matching / association", "link / service ties", "cost / result queries"]
+    },
+    {
+      "id": "declared_od", "label": "Already-declared OD inputs", "group": "demand", "role": "independent entry",
+      "description": "Supplied vehicle OD bypasses population preparation and stages 01–03.",
+      "source_paths": ["examples/scalable_vehicle_fixture/", "docs/RUN_YOUR_OWN_GMNS.md"],
+      "documentation_links": ["docs/cases/sioux-falls.md"], "scope": "supported direct-vehicle static entry; finite cases have separate demand preparation",
+      "rect": [40, 705, 450, 90], "display_lines": ["Already-declared OD", "bypasses stages 01–03"]
+    },
+    {
+      "id": "common_contract", "label": "Network + demand preparation", "group": "computation", "role": "branch interface",
+      "description": "Explicit network, demand, time/period, units, access and cost contracts feed separate static and finite mathematical instances.",
+      "source_paths": ["schemas/", "tools/mcl_assignment.py", "app/src/gmns_dynamic/explicit_network_workflow.py"],
+      "documentation_links": ["docs/data-contract.md", "docs/methods.md"], "scope": "common concepts, not one universal runner",
+      "rect": [520, 705, 620, 90], "display_lines": ["Network + demand contract", "period · units · access · costs"]
+    },
+    {
+      "id": "static_branch", "label": "Static traffic assignment", "group": "computation", "role": "mathematical branch",
+      "description": "Fixed-demand BPR/Beckmann branch: FW, origin-based Algorithm B, finite-path controls and native Diagnostic L3/compression with original-space reconstruction.",
+      "source_paths": ["algorithms/static_fw/", "algorithms/origin_based_algorithm_b/", "algorithms/finite_path_reference/", "algorithms/path_compression/diagnostic_l3/"],
+      "documentation_links": ["docs/methods.md", "docs/methods/origin-based-algorithm-b.md", "docs/cases/boston-assignment.md"],
+      "scope": "method/city adapter and numerical acceptance vary by case",
+      "rect": [40, 815, 710, 225],
+      "display_lines": ["STATIC · BPR / Beckmann", "Frank–Wolfe · Algorithm B", "Finite path · native L3", "path / origin / link forms", "original-space flow + gap checks"]
+    },
+    {
+      "id": "finite_branch", "label": "Finite time-expanded optimization", "group": "computation", "role": "mathematical branch",
+      "description": "Case-specific bounded time-indexed demand and graph; movement, waiting, source/sink and applicable turn/zone connectors; fixed arc costs with shared hard capacities; arc-flow LP, two-phase CG, Lagrangian and ADMM.",
+      "source_paths": ["app/src/gmns_dynamic/run_full_cg_v1.py", "algorithms/distributed_assignment/lagrangian_r2/", "algorithms/admm_r2/", "docs/assets/hong_kong/full_stack_r5/"],
+      "documentation_links": ["docs/methods/space-time-cg.md", "docs/methods/distributed-assignment.md", "docs/methods/admm-space-time.md"],
+      "scope": "separately versioned bounded case instances; not automatic calibrated DTA",
+      "rect": [790, 815, 710, 225],
+      "display_lines": ["FINITE · fixed cost + capacity", "Time graph: move / wait / connect", "Arc-flow LP · two-phase CG", "Lagrangian prices + recovery", "ADMM local QPs + consensus"]
+    },
+    {
+      "id": "results", "label": "Outputs, analysis and independent checks", "group": "outputs", "role": "back-projection and inspection",
+      "description": "Zonal/model demand; generated columns and physical-link movement/assignment flows; original-space reconstruction; saved SQLite/CSV queries; convergence/geographic views; model-specific independent evaluators and reproduction records.",
+      "source_paths": ["launcher/", "tools/mcl_results.py", "examples/boston/run_saved_example.py", "docs/visualizations.md"],
+      "documentation_links": ["docs/capabilities.md", "docs/visualizations.md", "docs/getting-started.md"],
+      "scope": "checks have method-specific meanings, not one universal optimality certificate",
+      "rect": [40, 1070, 1460, 115],
+      "display_lines": ["OUTPUTS + INDEPENDENT CHECKS", "Zonal demand · path columns · physical-link flow · reconstruction", "CSV / SQLite · convergence / maps · model-specific evaluators"]
+    },
+    {
+      "id": "boston", "label": "Boston", "group": "city_cases", "role": "case instance",
+      "description": "City-data/demand workflow, scalable static assignment and bounded finite-network studies.",
+      "source_paths": ["examples/boston/", "docs/cases/boston.md"], "documentation_links": ["docs/cases/boston-assignment.md", "docs/cases/boston-space-time.md"],
+      "scope": "real-city sources with distinct static and ten-demand finite cases", "rect": [40, 1205, 460, 115],
+      "display_lines": ["BOSTON", "City demand + scalable static", "bounded finite studies"]
+    },
+    {
+      "id": "sioux", "label": "Sioux Falls", "group": "city_cases", "role": "case instance",
+      "description": "Controlled static benchmark and selected-OD finite-network experiments.",
+      "source_paths": ["examples/sioux-falls/", "docs/cases/sioux-falls.md"], "documentation_links": ["docs/cases/sioux-space-time.md", "docs/cases/sioux-admm.md"],
+      "scope": "supplied benchmark OD, not a demographic city compiler", "rect": [520, 1205, 460, 115],
+      "display_lines": ["SIOUX FALLS", "Controlled static benchmark", "selected-OD finite studies"]
+    },
+    {
+      "id": "hong_kong", "label": "Hong Kong", "group": "city_cases", "role": "case instance",
+      "description": "Turn-aware bounded real-city engineering scenario with separate static and finite computational evidence.",
+      "source_paths": ["examples/hong-kong/", "docs/assets/hong_kong/full_stack_r5/"],
+      "documentation_links": ["docs/cases/hong-kong.md", "docs/cases/hong-kong-space-time.md"],
+      "scope": "not all methods have accepted city results", "rect": [1000, 1205, 500, 115],
+      "display_lines": ["HONG KONG", "Turn-aware city scenario", "bounded computation"]
+    },
+    {
+      "id": "data_support", "label": "Open-data support", "group": "software_rail", "role": "support lane",
+      "description": "Catalog/explorer and user-supplied data-processing tools; catalog records are not automatically ingested model inputs.",
+      "source_paths": ["src/mobilitylab/data/", "catalog/", "tools/mcl_data.py"],
+      "documentation_links": ["docs/open-data.md", "docs/open-data-explorer.md", "docs/data-tools.md"],
+      "scope": "source evidence, not citywide model inputs", "rect": [1540, 150, 370, 165],
+      "display_lines": ["OPEN-DATA SUPPORT", "catalog + explorer", "source / GTFS queries"]
+    },
+    {
+      "id": "generic_engine", "label": "Retained generic engine", "group": "software_rail", "role": "code entry",
+      "description": "The generic 0.3.0-rc5 network runner is distinct from later separately versioned case implementations.",
+      "source_paths": ["app/src/gmns_dynamic/", "tools/mnl.py"],
+      "documentation_links": ["docs/getting-started.md", "docs/source-layout.md"],
+      "scope": "0.3.0-rc5 generic engine only", "rect": [1540, 335, 370, 165],
+      "display_lines": ["GENERIC ENGINE", "gmns_dynamic/ · mnl.py", "0.3.0-rc5 scope"]
+    },
+    {
+      "id": "method_code", "label": "Method implementations", "group": "software_rail", "role": "code entry",
+      "description": "Static and distributed method source lives under algorithms; some accepted case-specific sources remain in versioned evidence bundles.",
+      "source_paths": ["algorithms/", "docs/assets/hong_kong/full_stack_r5/"],
+      "documentation_links": ["docs/methods.md", "docs/source-layout.md"],
+      "scope": "versioned method/case routes, not one CLI", "rect": [1540, 520, 370, 165],
+      "display_lines": ["METHOD SOURCE", "algorithms/ + versioned", "case code / adapters"]
+    },
+    {
+      "id": "case_code", "label": "Cases and examples", "group": "software_rail", "role": "code and documentation entry",
+      "description": "Examples, case pages and versioned evidence record runnable and inspectable scopes.",
+      "source_paths": ["examples/", "docs/cases/"], "documentation_links": ["docs/capabilities.md", "docs/full-walkthrough.md"],
+      "scope": "three distinct city roles", "rect": [1540, 705, 370, 165],
+      "display_lines": ["CASES + EXAMPLES", "examples/ · docs/cases/", "saved instance scopes"]
+    },
+    {
+      "id": "verification_code", "label": "Verification and presentation", "group": "software_rail", "role": "tool entry",
+      "description": "Repository tests, saved-result checks, launcher and deterministic page/figure builders.",
+      "source_paths": ["tools/", "tests/", "launcher/"],
+      "documentation_links": ["docs/visualizations.md", "docs/getting-started.md"],
+      "scope": "documentation builds never run scientific solvers", "rect": [1540, 890, 370, 165],
+      "display_lines": ["VERIFY + PRESENT", "tools/ · tests/ · launcher/", "saved checks + site build"]
+    },
+    {
+      "id": "public_navigation", "label": "Public navigation", "group": "software_rail", "role": "documentation entry",
+      "description": "Methods, capability tables, contributions, complete walkthrough and getting-started guide are direct public reading routes.",
+      "source_paths": ["docs/methods.md", "docs/capabilities.md", "docs/contributions.md", "docs/full-walkthrough.md", "docs/getting-started.md"],
+      "documentation_links": ["docs/architecture.md", "docs/source-layout.md"],
+      "scope": "navigation is not executable model flow", "rect": [1540, 1075, 370, 245],
+      "display_lines": ["READ + REUSE", "methods · capabilities", "contributions · walkthrough", "getting started · source layout"]
+    }
+  ],
+  "edges": [
+    {"from": "spatial_inputs", "to": "gmns", "type": "preparation", "show": true, "route": [[215, 255], [215, 290]]},
+    {"from": "population_inputs", "to": "population_preparation", "type": "preparation", "show": false},
+    {"from": "transit_inputs", "to": "four_stage", "type": "optional_case_specific", "show": false},
+    {"from": "observation_inputs", "to": "observation_association", "type": "preparation", "show": false},
+    {"from": "gmns", "to": "four_stage", "type": "preparation", "show": true, "route": [[830, 430], [830, 470]]},
+    {"from": "gmns", "to": "observation_association", "type": "optional_case_specific", "show": true, "route": [[1335, 430], [1335, 470]]},
+    {"from": "population_preparation", "to": "four_stage", "type": "preparation", "show": true, "route": [[490, 575], [520, 575]]},
+    {"from": "observation_association", "to": "four_stage", "type": "optional_case_specific", "show": true, "route": [[1170, 580], [1140, 580]]},
+    {"from": "four_stage", "to": "common_contract", "type": "preparation", "show": true, "route": [[830, 680], [830, 705]]},
+    {"from": "declared_od", "to": "common_contract", "type": "preparation", "show": true, "route": [[490, 742], [520, 742]]},
+    {"from": "common_contract", "to": "static_branch", "type": "computation", "show": true, "route": [[670, 780], [395, 815]]},
+    {"from": "common_contract", "to": "finite_branch", "type": "computation", "show": true, "route": [[990, 780], [1145, 815]]},
+    {"from": "four_stage", "to": "static_branch", "type": "computation", "show": false},
+    {"from": "static_branch", "to": "results", "type": "analytical_output", "show": true, "route": [[395, 1040], [395, 1070]]},
+    {"from": "finite_branch", "to": "results", "type": "analytical_output", "show": true, "route": [[1145, 1040], [1145, 1070]]},
+    {"from": "observation_association", "to": "results", "type": "optional_case_specific", "show": false},
+    {"from": "results", "to": "boston", "type": "case_instance", "show": true, "route": [[270, 1175], [270, 1205]]},
+    {"from": "results", "to": "sioux", "type": "case_instance", "show": true, "route": [[750, 1175], [750, 1205]]},
+    {"from": "results", "to": "hong_kong", "type": "case_instance", "show": true, "route": [[1250, 1175], [1250, 1205]]},
+    {"from": "results", "to": "public_navigation", "type": "navigation", "show": false},
+    {"from": "data_support", "to": "spatial_inputs", "type": "optional_case_specific", "show": false}
+  ]
+}

@@ -18,6 +18,10 @@ The accepted **B1** low-congestion holdout reached the frozen criterion in one r
 
 ![Saved Boston B1 Algorithm B versus same-problem FW physical-link comparison](../assets/algorithm_b_r21/source_panels/boston_b1_fw_flow.svg)
 
+![Original compact Boston B1 Algorithm B versus FW physical-link comparison](../assets/algorithm_b_r21/presentation/boston_b1_fw_flow_compact.svg)
+
+The compact presentation is a retained alternate layout of the same B1 saved comparison, not a second experiment.
+
 B1's independently recomputed Beckmann objective is **7,922.083942188114 PCE-minutes**; same-problem FW is **7,922.08394219 PCE-minutes**, with physical-link flow RMSE approximately `5.1e-15` PCE. This is an agreement check on a light, conditional cohort, **not** a superiority or speedup claim. [Full aggregate B1 physical-link flow](../../algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv). B0's accepted objective is **707.057923071 vehicle-minutes**; detailed B0 flow is outside the public candidate set and is not plotted here.
 
 ## 5. Selected-origin reconstructed flow

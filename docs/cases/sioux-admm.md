@@ -15,6 +15,14 @@ The independent evaluator passed conservation, capacity, KKT, projection, object
 
 The two composites use the same 2×3 order: residuals, original-unit local balance/capacity, objective distance to the same-graph LP, fixed rho/status, physical-link ADMM-versus-LP scatter and an independent-check card.
 
+### Original saved convergence views
+
+![Sioux Falls 200-OD ADMM convergence from the accepted saved trace](../assets/admm_r2/figures/convergence_Sioux_200OD.png)
+
+![Sioux Falls 250-OD ADMM convergence from the accepted saved trace](../assets/admm_r2/figures/convergence_Sioux_250OD.png)
+
+These original 200- and 250-OD traces remain distinct from the newer matched composite layout. [Editable 200-OD SVG](../assets/admm_r2/figures/convergence_Sioux_200OD.svg) · [250-OD SVG](../assets/admm_r2/figures/convergence_Sioux_250OD.svg).
+
 ![Sioux 200 OD six-panel accepted sequence](../assets/admm_r2/figures/admm_sioux_200_case_sequence.png)
 
 [200-OD SVG](../assets/admm_r2/figures/admm_sioux_200_case_sequence.svg) · [original accepted convergence SVG](../assets/admm_r2/figures/convergence_Sioux_200OD.svg) · [original accepted physical-flow scatter SVG](../assets/admm_r2/figures/physical_flow_Sioux_200OD.svg)

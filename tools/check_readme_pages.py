@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Check README and generated Pages links/images as separate publication surfaces."""
+"""Check the layered README, complete walkthrough and generated Pages links.
+
+The root is a research entry. Scientific figures and numerical details are
+required on canonical case/method pages and in the complete walkthrough; they
+are not required to crowd the landing page.
+"""
 
 from __future__ import annotations
 
@@ -9,254 +14,210 @@ from pathlib import Path
 import re
 from urllib.parse import unquote
 
+
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ROOT / "docs"
 
 
-def _local_target(source: Path, raw: str) -> Path | None:
-    value = html.unescape(raw)
-    if value.startswith(("http:", "https:", "mailto:", "#", "data:")):
-        return None
-    filepart = unquote(value.split("#", 1)[0])
-    if not filepart:
-        return None
-    return (source.parent / filepart).resolve()
+def refs(text: str) -> list[str]:
+    return re.findall(r"\]\(([^)]+)\)", text) + re.findall(r"(?:href|src)=[\"']([^\"']+)", text)
 
 
-def presentation_errors(readme: str, home: str, detail: str) -> list[str]:
-    """Check explicit four-stage navigation, result figures and GPS entry points."""
-    if '<a id="framework"></a>' in readme:
-        errors: list[str] = []
-        for label, anchor, image in (
-            ('Trip generation', 'step-1-trip-generation', 'step1_generation.png'),
-            ('Trip distribution', 'step-2-trip-distribution', 'step2_distribution.png'),
-            ('Mode choice', 'step-3-mode-choice', 'step3_mode_response.png'),
-            ('Traffic assignment', 'step-4-traffic-assignment', 'boston_panel_flow_s1.png'),
-        ):
-            if label.lower() not in readme.lower() or 'boston-behavior-feedback.md#' + anchor not in readme:
-                errors.append(f'README must name and link the actual stage: {label}')
-            if label.lower() not in home.lower() or image not in home:
-                errors.append(f'Homepage is missing its actual stage/result: {label}')
-            if f'id="{anchor}"' not in detail:
-                errors.append(f'Boston detail anchor missing: {anchor}')
-        for anchor, label in (
-            ('gmns-in-action', 'GMNS in Action'),
-            ('how-gps-changes-the-result', 'GPS'),
-        ):
-            if f'<a id="{anchor}"></a>' not in readme or f'id="{anchor}"' not in home:
-                errors.append(f'{label} must be visible on both primary surfaces')
-        for text, surface in ((readme, 'README'), (home, 'homepage')):
-            framework = text.find('id="framework"')
-            gmns = text.find('GMNS is the common object contract')
-            stages = text.find('id="four-step-workflow"')
-            boston = text.find('id="boston"')
-            open_data = text.find('Mobility data support')
-            if not (0 <= framework < gmns < stages < boston < open_data):
-                errors.append(f'{surface}: framework, GMNS, stages, Boston and Open order changed')
-            for stem in ('gmns_connected_layers', 'gps_to_gmns_evidence',
-                         'step1_generation', 'step2_distribution', 'step3_mode_response'):
-                if stem + '.png' not in text:
-                    errors.append(f'{surface}: saved evidence missing: {stem}')
-            for key in ('panel_od_019', '29.052', '27.486', '4.0990%', '4.2246%', 'Srestore'):
-                if key not in text:
-                    errors.append(f'{surface}: GPS-to-response evidence missing: {key}')
-        return errors
-    errors: list[str] = []
-    stages = (
-        ("Trip generation", "step-1-trip-generation", "stage-1"),
-        ("Trip distribution", "step-2-trip-distribution", "stage-2"),
-        ("Mode choice", "step-3-mode-choice", "stage-3"),
-        ("Traffic assignment", "step-4-traffic-assignment", "stage-4"),
+def images(text: str) -> list[str]:
+    return re.findall(r"!\[[^\]]*\]\(([^)]+)\)", text) + re.findall(
+        r"<img\b[^>]*\bsrc=[\"']([^\"']+)", text
     )
-    for label, anchor, home_id in stages:
-        if label.lower() not in readme.lower() or ("boston-behavior-feedback.md#" + anchor) not in readme:
-            errors.append(f"README must name and link the actual stage: {label}")
-        if f'id="{home_id}"' not in home or label.lower() not in home.lower():
-            errors.append(f"Homepage is missing its actual stage card: {label}")
-        if f'id="{anchor}"' not in detail:
-            errors.append(f"Boston detail anchor missing: {anchor}")
-    if "## How GPS changes the result" not in readme or 'id="gps-feedback"' not in home:
-        errors.append("GPS must have a primary, visible explanatory section")
-    if "## GMNS in Action" not in readme or 'id="gmns-in-action"' not in home:
-        errors.append("GMNS in Action must be visible on README and homepage")
-    if not (0 <= readme.find("## GMNS in Action") < readme.find("## Four-step workflow")):
-        errors.append("GMNS data foundation must precede the four model stages in README")
-    if not (0 <= home.find('id="gmns-in-action"') < home.find('id="four-step-workflow"')):
-        errors.append("GMNS data foundation must precede the four model stages on homepage")
-    for stem in ("gmns_connected_layers", "gps_to_gmns_evidence"):
-        if stem + ".png" not in readme or stem + ".png" not in home:
-            errors.append(f"Real-data GMNS figure missing on a primary surface: {stem}")
-    for key in ("panel_od_019", "29.052", "27.486", "4.0990%", "4.2246%", "Srestore"):
-        if key not in readme or key not in home:
-            errors.append(f"Saved GPS-to-response evidence not exposed on both primary surfaces: {key}")
-    for stem in ("step1_generation", "step2_distribution", "step3_mode_response"):
-        if stem + ".png" not in readme or stem + ".png" not in home:
-            errors.append(f"A saved stage result figure is not visible: {stem}")
-    if not (0 <= readme.find("## Four-step workflow") < readme.find("## Mobility data support")):
-        errors.append("Four-stage explanation must precede the supporting Open section")
-    if not (0 <= home.find('id="four-step-workflow"') < home.find("Supporting mobility data")):
-        errors.append("Homepage four-stage explanation must precede supporting Open data")
-    return errors
+
+
+def target(source: Path, raw: str) -> tuple[Path | None, str]:
+    value = html.unescape(raw)
+    if value.startswith(("http:", "https:", "mailto:", "data:")):
+        return None, ""
+    filepart, _, fragment = value.partition("#")
+    if not filepart:
+        return source, unquote(fragment)
+    return (source.parent / unquote(filepart)).resolve(), unquote(fragment)
+
+
+def fragment_exists(path: Path, fragment: str) -> bool:
+    if not fragment:
+        return True
+    if path.suffix.lower() == ".md" and path.is_relative_to(DOCS):
+        path = path.with_suffix(".html")
+    if not path.is_file() or path.suffix.lower() not in {".html", ".md"}:
+        return False
+    return fragment in set(re.findall(r'\bid=["\']([^"\']+)', path.read_text(encoding="utf-8")))
 
 
 def main() -> int:
     errors: list[str] = []
     checks = 0
 
-    readme = ROOT / "README.md"
-    readme_text = readme.read_text(encoding="utf-8")
-    # GitHub READMEs support both Markdown images and limited HTML. Check both.
-    readme_links = re.findall(r"\]\(([^)]+)\)", readme_text) + re.findall(
-        r"(?:href|src)=[\"']([^\"']+)", readme_text
-    )
-    readme_images = re.findall(r"!\[[^\]]*\]\(([^)]+)\)", readme_text) + re.findall(
-        r"<img\b[^>]*\bsrc=[\"']([^\"']+)", readme_text
-    )
-    expected_image = "docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png"
-    # Protect the new cover, Boston overview and retained benchmark access.
-    required_images = {
-        "docs/assets/boston/visual_release_r1/mcl_boston_hero.png",
-        "docs/assets/boston/visual_release_r1/boston_network_zones.png",
-        expected_image,
-        "docs/assets/boston/four_step_results_r1/step1_generation.png",
-        "docs/assets/boston/four_step_results_r1/step2_distribution.png",
-        "docs/assets/boston/four_step_results_r1/step3_mode_response.png",
-        "docs/assets/boston/gmns_in_action_r1/gmns_connected_layers.png",
-        "docs/assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png",
-        "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
-        "docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png",
-        "docs/assets/benchmarks/sioux_250od_phase2_objective_trace.png",
-    }
-    for required in sorted(required_images):
-        if required not in readme_images:
-            errors.append(f"README required visual missing: {required}")
+    def check(ok: bool, message: str) -> None:
+        nonlocal checks
         checks += 1
-    if not (DOCS / "assets/hero.png").is_file():
-        errors.append("Retained previous hero asset is missing")
-    checks += 1
-    for raw in readme_images:
-        target = _local_target(readme, raw)
-        if target is None or not target.is_file():
-            errors.append(f"Unresolved/nonlocal README image: {raw}")
-        elif target.suffix.lower() == ".png" and not target.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"):
-            errors.append(f"Invalid PNG signature: {raw}")
-        checks += 1
-    for required in ("docs/city-workflow.md", "docs/visualizations.md", "docs/data-tools.md"):
-        if required not in readme_links:
-            errors.append(f"README required workflow link missing: {required}")
-        checks += 1
-    if not (0 <= readme_text.find("## City network workflow") < readme_text.find("## Mobility data support")):
-        errors.append("README must present the city/network workflow before optional metadata support")
-    checks += 1
-    gallery = (DOCS / "visualizations.md").read_text(encoding="utf-8")
-    for od in ("200", "250"):
-        for suffix in ("final_physical_link_flow", "phase1_artificial_flow", "phase2_objective_trace"):
-            asset = f"assets/benchmarks/sioux_{od}od_{suffix}.png"
-            if asset not in gallery or not (DOCS / asset).is_file():
-                errors.append(f"Gallery missing retained benchmark visual: {asset}")
-            checks += 1
-    for raw in readme_links:
-        target = _local_target(readme, raw)
-        if target is not None and not target.exists():
-            errors.append(f"Broken README link: {raw}")
-        checks += 1
+        if not ok:
+            errors.append(message)
 
-    pages = sorted(DOCS.rglob("*.html"))
-    page_image_refs = 0
-    page_local_refs = 0
-    for page in pages:
-        text = page.read_text(encoding="utf-8")
-        refs = re.findall(r"(?:href|src)=[\"']([^\"']+)", text)
-        page_image_refs += len(re.findall(r"<img\b[^>]*\bsrc=[\"'][^\"']+", text))
-        for raw in refs:
-            target = _local_target(page, raw)
-            if target is not None:
-                page_local_refs += 1
-                if not target.exists():
-                    errors.append(
-                        f"Broken Pages link: {page.relative_to(ROOT).as_posix()} -> {raw}"
-                    )
-            checks += 1
+    readme_path = ROOT / "README.md"
+    readme = readme_path.read_text(encoding="utf-8")
+    home_path = DOCS / "index.html"
+    home = home_path.read_text(encoding="utf-8")
+    walk_path = DOCS / "full-walkthrough.md"
+    walk = walk_path.read_text(encoding="utf-8")
+    architecture = (DOCS / "architecture.md").read_text(encoding="utf-8")
+    contribution = (DOCS / "contributions.md").read_text(encoding="utf-8")
+    capabilities = (DOCS / "capabilities.md").read_text(encoding="utf-8")
+    cg = (DOCS / "methods/space-time-cg.md").read_text(encoding="utf-8")
 
-    homepage = (DOCS / "index.html").read_text(encoding="utf-8")
-    for label, present in {
-        "Boston-backed site cover": 'src="assets/boston/visual_release_r1/mcl_boston_hero.png"' in homepage,
-        "Boston network feature": 'src="assets/boston/visual_release_r1/boston_network_zones.png"' in homepage,
-        "retained Boston map gallery link": 'href="datasets/boston-central.html#boston-visual-gallery"' in homepage,
-        "data-tools navigation": 'href="data-tools.html"' in homepage,
-        "data-tools command": "mcl_data.py catalog-city-match" in homepage,
-        "approved benchmark image": expected_image.removeprefix("docs/") in homepage,
-        "city workflow navigation": 'href="city-workflow.html"' in homepage,
-        "visual gallery navigation": 'href="visualizations.html"' in homepage,
-        "network command": "tools/mnl.py run" in homepage,
-        "framework-first homepage": 0 <= homepage.find('id="framework"') < homepage.find('id="coverage"') < homepage.find('id="boston"') < homepage.find('id="sioux-falls"') < homepage.find("Mobility data support"),
-        "GMNS in Action section": 'id="gmns-in-action"' in homepage,
-        "GMNS relationship figure": 'src="assets/boston/gmns_in_action_r1/gmns_connected_layers.png"' in homepage,
-        "GPS relationship figure": 'src="assets/boston/gmns_in_action_r1/gps_to_gmns_evidence.png"' in homepage,
-    }.items():
-        if not present:
-            errors.append(f"Homepage contract failed: {label}")
-        checks += 1
-
-    boston_gallery = (DOCS / "datasets/boston-central.html").read_text(encoding="utf-8")
-    for stem in ("boston_network_zones", "boston_activity_prior", "boston_gps_projection", "boston_panel_flow_s1", "boston_panel_flow_delta"):
-        asset = f"../assets/boston/visual_release_r1/{stem}.png"
-        if asset not in boston_gallery or not (DOCS / "assets/boston/visual_release_r1" / f"{stem}.png").is_file():
-            errors.append(f"Boston gallery missing image: {asset}")
-        checks += 1
-
-    # Protect the supporting evidence overview as well as the city-first presentation.
-    evidence = json.loads((ROOT / "catalog/open-data-evidence.json").read_text(encoding="utf-8"))
-    layers = {layer["id"]: layer for layer in evidence["layers"]}
-    metric_ids = {
-        "global_city_frame": "ghsl_urban_centres",
-        "gtfs_static": "cities_with_inside_polygon_stop_evidence",
-        "gtfs_realtime": "endpoint_representatives",
-        "osm_map_features": "sample_extracts",
-        "gbfs_shared_mobility": "system_rows",
-        "model_interoperability": "crosswalk_entries",
-    }
-    for layer_id, metric_id in metric_ids.items():
-        metric = next(m for m in layers[layer_id]["metrics"] if m["id"] == metric_id)
-        expected_value = f"{metric['value']:,}"
-        for label, surface in (("README", readme_text), ("Pages homepage", homepage)):
-            pattern = rf'<(?:td|article)\b[^>]*data-evidence-layer="{re.escape(layer_id)}"[^>]*>(.*?)</(?:td|article)>'
-            match = re.search(pattern, surface, re.S)
-            if not match or expected_value not in match.group(1):
-                errors.append(f"{label}: evidence card missing/stale for {layer_id}")
-            checks += 1
-    if not (0 <= readme_text.find('id="framework"') < readme_text.find('id="coverage"') < readme_text.find('id="boston"') < readme_text.find('id="sioux-falls"') < readme_text.find("## Mobility data support")):
-        errors.append("Data overview must follow framework and both case introductions")
-    checks += 1
-
-    detail = (DOCS / "datasets/boston-behavior-feedback.html").read_text(encoding="utf-8")
-    errors.extend(presentation_errors(readme_text, homepage, detail))
-    checks += 1
-    gmns_detail = (DOCS / "datasets/boston-gmns-exchange.html").read_text(encoding="utf-8")
-    for required in (
-        'id="one-network-multiple-connected-data-layers"',
-        'id="from-gps-coordinates-to-gmns-linked-evidence"',
-        'id="reproduce-the-relationships"',
-        "trace_gmns_figure.py",
-        "Separate objects, explicit relationships",
-        "Shared network reference",
+    headings = [
+        "## 01 / What this project adds",
+        "## 02 / Complete project structure",
+        "## 03 / Case coverage and selected evidence",
+        "## 04 / Explore the three cases",
+        "## 05 / Run and inspect",
+        "## 06 / Attribution, scope and further reading",
+    ]
+    places = [readme.find(heading) for heading in headings]
+    check(all(p >= 0 for p in places) and places == sorted(places), "README six-block research-entry order changed")
+    for phrase in (
+        "City-to-model representations",
+        "Computational implementations and diagnostics",
+        "Reusable cross-city computational tools",
     ):
-        if required not in gmns_detail:
-            errors.append(f"GMNS detail missing required relationship evidence: {required}")
-        checks += 1
+        check(phrase in readme and phrase in contribution, f"Approved contribution missing: {phrase}")
+        check(phrase in home, f"Homepage contribution missing: {phrase}")
+    check("Controlled cross-instance evidence" not in readme + contribution,
+          "Rejected failure/gate contribution has returned")
+    check("TAPLite" not in readme + contribution, "Algorithm B is misnamed TAPLite")
+    check(readme.find("Reusable cross-city computational tools") < readme.find("project_structure.svg"),
+          "Contributions are not visible before the first large figure")
 
-    result = {
+    for rel in (
+        "docs/contributions.md", "docs/architecture.md", "docs/full-walkthrough.md",
+        "docs/capabilities.md", "docs/getting-started.md", "docs/cases/boston.md",
+        "docs/cases/sioux-falls.md", "docs/cases/hong-kong.md",
+        "docs/methods/space-time-cg.md", "docs/methods/admm-space-time.md",
+        "docs/methods/origin-based-algorithm-b.md", "docs/methods/distributed-assignment.md",
+    ):
+        check(rel in readme, f"Direct primary navigation missing: {rel}")
+    for stem in ("boston", "sioux-falls", "hong-kong", "cg-experiments", "framework", "coverage"):
+        check(f'id="{stem}"' in readme and f'id="{stem}"' in home,
+              f"Legacy primary fragment missing: {stem}")
+    check("project_structure.svg" in readme and "project_structure.svg" in home and
+          "project_structure_model.json" in architecture,
+          "Complete structure map or model source is not visible")
+    for phrase in (
+        "GMNS", "Population", "household", "01 trip generation", "02 trip distribution",
+        "03 mode choice", "04 traffic assignment", "GPS traces and map matching",
+        "Static", "finite", "Already-declared OD",
+    ):
+        check(phrase.lower() in (readme + architecture).lower(), f"Project workflow layer missing: {phrase}")
+
+    for rel in (
+        "docs/assets/project_structure_r2/project_structure.svg",
+        "docs/assets/boston/visual_release_r1/boston_network_zones.png",
+        "docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png",
+        "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
+    ):
+        check(rel in images(readme), f"Landing project map/city preview missing: {rel}")
+    check("height=" not in readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")],
+          "City preview height is forced instead of retaining native aspect ratio")
+    check("model-generated" in readme.lower(), "Approved HK10 path must be labeled model-generated")
+    check("77-arc" in walk and "model-generated" in walk.lower(),
+          "Full walkthrough lost the bounded HK10 disclosure")
+
+    for table in ("### A. City-data and GMNS statistics", "### B. Static-assignment statistics",
+                  "### C. Finite time-expanded statistics"):
+        check(table in capabilities and table in walk, f"Original statistics table not retained: {table}")
+    for needle in ("| **Phase I** |", "| **Phase II** |", "| **Pricing certificate** |",
+                   "boston_sioux_cg_parallel_overview.png"):
+        check(needle in cg and needle in walk, f"Cross-case CG detail or walkthrough lost: {needle}")
+    check("<a id=\"cg-experiments\"></a>" in cg,
+          "Cross-case CG canonical section lost its compatibility anchor")
+
+    for rel, expected in (
+        ("docs/cases/boston-admm.md", "convergence_Boston_10OD.png"),
+        ("docs/cases/sioux-admm.md", "convergence_Sioux_200OD.png"),
+        ("docs/cases/sioux-admm.md", "convergence_Sioux_250OD.png"),
+        ("docs/cases/boston-algorithm-b.md", "boston_b1_fw_flow_compact.svg"),
+        ("docs/cases/sioux-algorithm-b.md", "sioux_fw_flow_compact.svg"),
+        ("docs/cases/boston.md", "endpoint_all_coverage.png"),
+        ("docs/architecture.md", "framework_overview.png"),
+        ("docs/visualizations.md", "mcl_boston_hero.png"),
+    ):
+        check(expected in (ROOT / rel).read_text(encoding="utf-8"),
+              f"Homepage-only original figure not restored to detail: {rel} -> {expected}")
+
+    walkthrough_images = images(walk)
+    check(len(walkthrough_images) >= 74,
+          f"Full technical walkthrough lost old inline images: {len(walkthrough_images)} < 74")
+    detail_targets: set[Path] = set()
+    for page in DOCS.rglob("*.md"):
+        if page in {DOCS / "index.md", walk_path} or page.is_relative_to(DOCS / "assets"):
+            continue
+        for raw in images(page.read_text(encoding="utf-8")):
+            path, _ = target(page, raw)
+            if path:
+                detail_targets.add(path)
+    for raw in walkthrough_images:
+        path, _ = target(walk_path, raw)
+        check(path is not None and path.is_file(), f"Walkthrough image target missing: {raw}")
+        if path:
+            check(path in detail_targets, f"Old inline figure lacks canonical detailed display: {raw}")
+
+    # Check root and all generated HTML file targets. New/changed surfaces also
+    # check fragment IDs, including backward-compatible external bookmarks.
+    changed_html = {
+        "index.html", "full-walkthrough.html", "architecture.html", "contributions.html",
+        "capabilities.html", "visualizations.html", "methods/space-time-cg.html",
+        "cases/boston.html", "cases/boston-admm.html", "cases/sioux-admm.html",
+        "cases/boston-algorithm-b.html", "cases/sioux-algorithm-b.html",
+    }
+    for raw in refs(readme):
+        path, fragment = target(readme_path, raw)
+        if path == readme_path and fragment:
+            check(fragment_exists(home_path, fragment), f"Broken README fragment: {raw}")
+        elif path is not None:
+            check(path.exists(), f"Broken README link: {raw}")
+            if fragment:
+                check(fragment_exists(path, fragment), f"Broken README target fragment: {raw}")
+    for page in sorted(DOCS.rglob("*.html")):
+        rel = page.relative_to(DOCS).as_posix()
+        text = page.read_text(encoding="utf-8")
+        for raw in re.findall(r"(?:href|src)=[\"']([^\"']+)", text):
+            path, fragment = target(page, raw)
+            if path is None:
+                continue
+            check(path.exists(), f"Broken Pages link: {rel} -> {raw}")
+            if fragment and rel in changed_html:
+                check(fragment_exists(path, fragment), f"Broken Pages fragment: {rel} -> {raw}")
+    for raw in images(readme):
+        path, _ = target(readme_path, raw)
+        check(path is not None and path.is_file(), f"Broken landing image: {raw}")
+        if path and path.suffix.lower() == ".png" and path.is_file():
+            check(path.read_bytes().startswith(b"\x89PNG\r\n\x1a\n"), f"Invalid PNG: {raw}")
+
+    for metric in ("11,422", "2,959", "2,465", "1,516", "13 standards"):
+        check(metric in walk, f"Complete old open-data evidence lost: {metric}")
+    check("These evidence layers are not additive" in readme and
+          "open-data-explorer.md" in readme and "data-tools.md" in readme,
+          "Open-data support is no longer visible from the entry")
+    check("0.3.0-rc5" in readme and "separately versioned" in readme and
+          "0.3.0-rc5" in (DOCS / "getting-started.md").read_text(encoding="utf-8"),
+          "F04 generic-versus-later-case version scope was lost")
+
+    output = {
         "status": "PASS" if not errors else "FAIL",
         "checks": checks,
         "errors": errors,
-        "readme_image_count": len(readme_images),
-        "readme_images": readme_images,
-        "pages_html_files": len(pages),
-        "pages_local_refs_checked": page_local_refs,
-        "pages_image_refs": page_image_refs,
+        "readme_image_count": len(images(readme)),
+        "walkthrough_image_count": len(walkthrough_images),
+        "pages_html_files": len(list(DOCS.rglob("*.html"))),
+        "hierarchy_aware": True,
         "visual_qa_performed": False,
     }
-    print(json.dumps(result, indent=2))
+    print(json.dumps(output, indent=2))
     return 0 if not errors else 1
 
 
