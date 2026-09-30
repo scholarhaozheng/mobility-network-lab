@@ -134,15 +134,15 @@ def row_target(r):
 def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
-    out=['<table class="home-coverage" data-component="'+rid+'">',
+    out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
          '<thead><tr><th colspan="3" scope="colgroup">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="33%">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
-         '<tr class="coverage-scope">'+''.join('<td valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
+         '<tr class="coverage-scope">'+''.join('<td valign="top"><sub>'+esc(r["result_scope"])+'</sub></td>' for r in rows)+'</tr>',
          '<tr class="coverage-preview">'+''.join(
              '<td align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
-             '" width="220" height="132" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
+             '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
              for r in rows)+'</tr>',
-         '<tr class="coverage-caption">'+''.join('<td><small>'+esc(r["graphic_type"])+'</small></td>' for r in rows)+'</tr>',
+         '<tr class="coverage-caption">'+''.join('<td><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)+'</tr>',
          '<tr class="coverage-links">']
     for r in rows:
         source=r["data_or_figure_source"]
@@ -172,6 +172,9 @@ def card(city,stage,label,img,target,method,instance,kind="original"):
     page=target.split('#',1)[0]
     if not (ROOT/page).is_file():raise FileNotFoundError(page)
     preview=("docs/assets/homepage_alignment_r3/atlas/"+hashlib.sha256(img.encode("utf-8")).hexdigest()[:16]+".png") if kind=="original" else img
+    # The classic Sioux source is already a lightweight, legible figure. Show
+    # its native aspect ratio rather than the padded 5:3 atlas derivative.
+    if img=="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png":preview=img
     if not (ROOT/preview).is_file():raise FileNotFoundError(preview)
     row={"city":city,"stage":stage,"asset_path":img,"asset_hash":hashlib.sha256(p.read_bytes()).hexdigest(),"preview_path":preview,"preview_hash":hashlib.sha256((ROOT/preview).read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
     return row
@@ -181,20 +184,21 @@ def stage_table(cards):
     for start in range(0,len(cards),4):
         group=cards[start:start+4]
         slots=len(group)
-        cell_width=str(round(100/slots))+'%'
-        columns=''.join('<col width="'+cell_width+'">' for _ in group)
-        out.append('<table class="atlas-stage-table" data-columns="'+str(slots)+'" width="'+str(25*slots)+'%"><colgroup>'+columns+'</colgroup><tbody>')
+        cell_width='25%'
+        columns='<col width="25%">'*4
+        empty='<td width="25%" class="atlas-empty"></td>'*(4-slots)
+        out.append('<table class="atlas-stage-table" data-columns="4" data-filled="'+str(slots)+'" width="100%"><colgroup>'+columns+'</colgroup><tbody>')
         out.append('<tr class="atlas-image-row">'+''.join(
             '<td width="'+cell_width+'" align="center"><a href="'+esc(c["target_link"])+'"><img src="'+esc(c["preview_path"])+
-            '" width="165" height="99" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
-            '"></a></td>' for c in group)+'</tr>')
+            '" width="165" alt="'+esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
+            '"></a></td>' for c in group)+empty+'</tr>')
         out.append('<tr class="atlas-caption-row">'+''.join(
-            '<td width="'+cell_width+'"><small><strong>'+esc(c["label"])+ '</strong></small><br><small><small>'+
+            '<td width="'+cell_width+'"><strong>'+esc(c["label"])+ '</strong><br><sub>'+
             esc(c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"])+
-            '</small></small></td>' for c in group)+'</tr>')
+            '</sub></td>' for c in group)+empty+'</tr>')
         out.append('<tr class="atlas-links-row">'+''.join(
-            '<td width="'+cell_width+'"><small><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
-            '">Figure</a></small></td>' for c in group)+'</tr></tbody></table>')
+            '<td width="'+cell_width+'"><sub><a href="'+esc(c["target_link"])+'">Evidence</a> · <a href="'+esc(c["asset_path"])+
+            '">Figure</a></sub></td>' for c in group)+empty+'</tr></tbody></table>')
     return '\n'.join(out)
 
 def section04(matrix):
@@ -212,7 +216,7 @@ def section04(matrix):
            '<p>'+esc(ROLE[city])+' <a href="'+esc(CASE_PAGE[city])+'">Open complete case →</a></p>',
            '<a href="'+esc(CASE_PAGE[city])+'"><img class="atlas-cover" src="'+esc(COVER[city])+'" width="780" alt="'+esc(city)+' canonical case cover"></a>',
            '<table class="atlas-quick-facts" width="100%"><colgroup>'+('<col width="25%">'*4)+'</colgroup><thead><tr>'+''.join('<th width="25%">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
-           '<tbody><tr>'+''.join('<td width="25%">'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
+           '<tbody><tr>'+''.join('<td width="25%"><sub>'+esc(value)+'</sub></td>' for value in FACTS[city])+'</tr></tbody></table>',
            '<a id="'+slug+'-tools"></a>',
            '<p class="atlas-nav">'+' · '.join(
                '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
@@ -228,8 +232,8 @@ def section04(matrix):
             out += ['<h4>City-data and four-stage scope</h4>',
                     '<table class="atlas-benchmark-scope" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup><thead><tr><th width="33%">Stage</th><th width="33%">Scope in Sioux Falls benchmark</th><th width="33%">Relevant next entry</th></tr></thead><tbody>']
             for sid,label,scope in compact:
-                out.append('<tr><td width="33%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="33%">'+esc(scope)+
-                           '</td><td width="33%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
+                out.append('<tr><td width="33%"><a id="'+slug+'-'+sid+'"></a><sub>'+esc(label)+'</sub></td><td width="33%"><sub>'+esc(scope)+
+                           '</sub></td><td width="33%"><sub><a href="#'+slug+'-static">Static assignment</a></sub></td></tr>')
             out += ['</tbody></table>']
         for stage,name in STAGES:
             if stage=="tools":continue
