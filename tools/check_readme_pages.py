@@ -124,8 +124,21 @@ def main() -> int:
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 30,
           "R3 atlas must use GitHub-native horizontal image rows")
-    check(atlas.count('width="210" height="126"') == 101,
-          "R3 atlas must use uniform 5:3 compact previews with source-preserving contain")
+    check(atlas.count('width="210" height="126"') == 89,
+          "Atlas must use uniform 5:3 compact previews with source-preserving contain")
+    for text, surface in ((readme, "README"), (home, "Pages homepage")):
+        groups = re.findall(r"<colgroup>(.*?)</colgroup>", text, re.S)
+        check(bool(groups) and all(re.fullmatch(r'(?:<col width="(?:25|33|50|100)%"\s*/?>){1,4}',
+                                                  group) for group in groups),
+              f"Malformed atlas colgroup or visible percent residue in {surface}")
+        for city, count in (("boston", 4), ("sioux-falls", 4), ("hong-kong", 2)):
+            match = re.search(r'<section class="atlas-stage" id="'+city+r'-static">(.*?)</section>', text, re.S)
+            check(match is not None and match.group(1).count('<img ') == count,
+                  f"{surface} {city} static section must show one preview per executed method")
+            if match:
+                check(not any(old in match.group(1) for old in
+                              ("sioux_fw_flow_compact", "hk_algorithm_b_vs_fw", "minus_fw")),
+                      f"Comparison-only figure returned to {surface} {city} static atlas")
     check("model-generated" in readme.lower(), "Approved HK10 path must be labeled model-generated")
     check("77-arc" in walk and "model-generated" in walk.lower(),
           "Full walkthrough lost the bounded HK10 disclosure")
