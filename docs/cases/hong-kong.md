@@ -2,6 +2,12 @@
 
 The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.
 
+<!-- CASE COVER R1 START -->
+![Hong Kong case cover](../assets/homepage_evidence_r1/hong_kong_case_cover.png)
+
+*Case-entry cover; saved results, scope and sources are detailed below.*
+<!-- CASE COVER R1 END -->
+
 ## Role in the repository
 
 Bounded turn-aware GMNS/four-stage engineering case and a separate frozen ten-demand finite case.

@@ -2,6 +2,12 @@
 
 The common nine-module order exposes the original case evidence directly. Model branches, instance sizes and evidence grades remain distinct.
 
+<!-- CASE COVER R1 START -->
+![Sioux Falls case cover](../assets/homepage_evidence_r1/sioux_falls_case_cover.png)
+
+*Case-entry cover; saved results, scope and sources are detailed below.*
+<!-- CASE COVER R1 END -->
+
 ## Role in the repository
 
 Classical supplied-vehicle-OD static benchmark and historical 200/250-OD finite benchmarks, not a population/GPS case.
