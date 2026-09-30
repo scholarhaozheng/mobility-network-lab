@@ -149,7 +149,9 @@ def component_table(matrix, rid):
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(r["preview_path"])+
                '">Full preview</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
-        out.append('<td width="33%"><small><small><small>'+links+'</small></small></small></td>')
+        # GitHub strips <small> from README tables, but supports <sub>.
+        # Keep the original link names and use a native footnote-size row.
+        out.append('<td width="33%"><sub>'+links+'</sub></td>')
     out+=['</tr></tbody></table>']
     return '\n'.join(out)
 

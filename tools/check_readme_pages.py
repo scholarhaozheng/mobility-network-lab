@@ -169,7 +169,7 @@ def main() -> int:
           'E / Reusable outputs and tools' not in coverage and
           not re.search(r'row_19_(?:boston|sioux_falls|hong_kong)\.png', coverage),
           "Tools must be a navigation entry, not a standalone coverage table or image")
-    check(coverage.count('<td width="33%"><small><small><small><a href=') == 54,
+    check(coverage.count('<td width="33%"><sub><a href=') == 54,
           "Three-city coverage links must use the compact GitHub-native text size")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
