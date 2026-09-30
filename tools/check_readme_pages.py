@@ -158,8 +158,8 @@ def main() -> int:
     ):
         check(rel in readme, f"Landing project map/city full-figure link missing: {rel}")
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
-    check("atlas-gallery" not in atlas and atlas.count('class="atlas-image-row"') >= 28,
-          "R3 atlas must use GitHub-native horizontal image rows")
+    check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
+          "Atlas must retain 86 city-owned cards in native table cells")
     check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+height="\d+"', atlas),
           "Atlas must use width-limited previews without forced image heights")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
@@ -183,6 +183,10 @@ def main() -> int:
           "Coverage previews must not force an image height")
     check(coverage.count('<td width="33%"><sub><a href=') == 54,
           "Three-city coverage links must use the compact GitHub-native text size")
+    check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
+          coverage.count('<tr class="coverage-caption">') == 18 and
+          coverage.count('<td><small>') == 54,
+          "Cells containing only plain coverage text must retain their prior size")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"
@@ -190,7 +194,9 @@ def main() -> int:
               f'<a href="{case}">Tools and reproducibility</a>' in atlas and
               f'<section class="atlas-stage" id="{slug}-tools">' not in atlas,
               f"{city} tools navigation or historical anchor is missing")
-    check('<strong>' in atlas and '</strong><br><sub>' in atlas,
+    check('<strong>' in atlas and '</strong><br><sub class="atlas-meta">' in atlas and
+          '<td width="25%"><sub>' not in atlas and
+          '<td width="33%"><sub>' not in atlas,
           "Atlas caption title/scope font hierarchy is missing")
     check('<img src="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png" width="165"' in atlas,
           "Sioux classic topology must use the original aspect-ratio-preserving image")
@@ -198,23 +204,25 @@ def main() -> int:
         check((ROOT / f"docs/assets/homepage_evidence_r2/row_19_{city}.png").is_file(),
               f"Original {city} tools preview was deleted rather than removed from home")
     stage_tables = re.findall(
-        r'<table class="atlas-stage-table" data-columns="(\d)" data-filled="(\d)" width="(\d+)%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
+        r'<table class="atlas-stage-table" data-columns="(\d)" data-items="(\d+)" width="(\d+)%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
         atlas, re.S)
-    check(len(stage_tables) == atlas.count('class="atlas-stage-table"'),
-          "Atlas stage table markup or column count attribute malformed")
-    for slots_text, filled_text, width_text, cols, body in stage_tables:
-        slots, filled = int(slots_text), int(filled_text)
+    check(len(stage_tables) == 19 == atlas.count('class="atlas-stage-table"'),
+          "Each city-stage group must have exactly one atlas table")
+    for slots_text, items_text, width_text, cols, body in stage_tables:
+        slots, items = int(slots_text), int(items_text)
+        cell_width = {1: "100%", 2: "50%", 3: "33%", 4: "25%"}.get(slots)
         col_widths = re.findall(r'<col width="(\d+)%">', cols)
         rows = re.findall(r'<tr class="([^"]+)">(.*?)</tr>', body, re.S)
-        check(slots == 4 and 1 <= filled <= 4 and int(width_text) == 100 and
-              col_widths == ["25"] * 4 and len(rows) == 3 and
-              [name for name, _ in rows] == ["atlas-image-row", "atlas-caption-row", "atlas-links-row"] and
-              all(row.count('<td') == 4 and
-                  re.findall(r'<td width="([^"]+)"', row) == ["25%"] * 4 and
-                  row.count('class="atlas-empty"') == 4-filled
-                  for _, row in rows) and
-              rows[0][1].count('<img ') == filled,
-              "Atlas table must use a full-width four-column grid with quarter-width filled and empty slots")
+        check(cell_width is not None and slots == min(4, items) and int(width_text) == 100 and
+              col_widths == [cell_width[:-1]] * slots and
+              len(rows) == (items + slots - 1) // slots and
+              all(name == "atlas-card-row" and row.count('<td') == slots and
+                  re.findall(r'<td width="([^"]+)"', row) == [cell_width] * slots
+                  for name, row in rows) and
+              sum(row.count('class="atlas-card-cell"') for _, row in rows) == items and
+              all('class="atlas-empty"' not in row for _, row in rows[:-1]) and
+              rows[-1][1].count('class="atlas-empty"') == (-items) % slots,
+              "Stage cards must fill one full-width table, with padding only in its last row")
     quick_facts = re.findall(r'<table class="atlas-quick-facts".*?</table>', atlas, re.S)
     benchmark_scope = re.findall(r'<table class="atlas-benchmark-scope".*?</table>', atlas, re.S)
     check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["25%"] * 4
