@@ -103,16 +103,20 @@ def main() -> int:
           "Contributions page restored removed sentence or lost its citation link")
     hero = readme[:readme.find('<a id="what-this-project-adds"></a>')]
     for needle in (
-        "**An open research and learning environment for city networks, travel demand, and reproducible network computation.**",
+        "**Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.**",
         "[Hao Zheng](https://scholarhaozheng.github.io/)",
+        "a recent M.S. graduate from Tsinghua University, under the guidance of Professor Xuesong Zhou",
+        "Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases",
         "[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)",
         "[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)",
         "official [tap-b Algorithm B](https://github.com/spartalab/tap-b)",
         "Selected static traffic-assignment experiments build on",
     ):
         check(needle in hero, f"Approved author/upstream introduction missing: {needle}")
-    check("Project author: Hao Zheng. This open-source research environment connects" not in hero,
-          "Superseded institutional hero returned")
+    check("Project author: Hao Zheng. This open-source research environment connects" not in hero and
+          "I am Hao Zheng" not in hero and "I am [Hao Zheng]" not in hero and
+          "My work in this repository" not in hero,
+          "Superseded author-first hero returned")
     for phrase in (
         "City-to-model representations",
         "Computational implementations and diagnostics",
