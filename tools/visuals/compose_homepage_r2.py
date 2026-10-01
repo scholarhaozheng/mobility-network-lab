@@ -152,17 +152,17 @@ def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
     out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
-         '<thead><tr><th colspan="3" scope="colgroup">'+esc(title)+'</th></tr>',
-         '<tr>'+''.join('<th scope="col" width="33%">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
-         '<tr class="coverage-scope">'+''.join('<td valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
+         '<thead><tr><th colspan="3" scope="colgroup" width="780">'+esc(title)+'</th></tr>',
+         '<tr>'+''.join('<th scope="col" width="260">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
+         '<tr class="coverage-scope">'+''.join('<td width="260" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
          '<tr class="coverage-preview">'+''.join(
-             '<td align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
+             '<td width="260" align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
              '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
              for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
              '<td colspan="3"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
              if len({r["graphic_type"] for r in rows}) == 1 else
-             ''.join('<td><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
+             ''.join('<td width="260"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
          )+'</tr>',
          '<tr class="coverage-links">']
     for r in rows:
@@ -172,7 +172,7 @@ def component_table(matrix, rid):
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.
-        out.append('<td width="33%"><sub>'+links+'</sub></td>')
+        out.append('<td width="260"><sub>'+links+'</sub></td>')
     out+=['</tr></tbody></table>']
     return '\n'.join(out)
 
@@ -233,9 +233,13 @@ DEPTH_MEANING={
     "D":"Coordination and verification",
 }
 
+# GitHub renders README tables at max-content width and strips colgroup.
+# Primer's border-box cells make each group below 780px wide.
+NATIVE_CELL_WIDTH={1:'780',2:'390',3:'260',4:'195'}
+
 def stage_rows(cards, stage_id):
     columns=min(4,len(cards))
-    cell_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
+    cell_width=NATIVE_CELL_WIDTH[columns]
     out=[]
     for start in range(0,len(cards),columns):
         group=cards[start:start+columns]
@@ -293,8 +297,8 @@ def section04(matrix):
         out += ['<a id="'+slug+'"></a>','<article class="case-atlas" data-city="'+slug+'">','<h3>'+city+'</h3>',
            '<p>'+esc(ROLE[city])+' <a href="'+esc(CASE_PAGE[city])+'">Open complete case →</a></p>',
            '<a href="'+esc(CASE_PAGE[city])+'"><img class="atlas-cover" src="'+esc(COVER[city])+'" width="780" alt="'+esc(city)+' canonical case cover"></a>',
-           '<table class="atlas-quick-facts" width="100%"><colgroup>'+('<col width="25%">'*4)+'</colgroup><thead><tr>'+''.join('<th width="25%">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
-           '<tbody><tr>'+''.join('<td width="25%">'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
+           '<table class="atlas-quick-facts" width="100%"><colgroup>'+('<col width="25%">'*4)+'</colgroup><thead><tr>'+''.join('<th width="195">'+label+'</th>' for label in ("City/model foundation","Static assignment","Finite time-expanded","Observation/data scope"))+'</tr></thead>',
+           '<tbody><tr>'+''.join('<td width="195">'+esc(value)+'</td>' for value in FACTS[city])+'</tr></tbody></table>',
            '<a id="'+slug+'-tools"></a>',
            '<p class="atlas-nav">'+' · '.join(
                '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
@@ -308,11 +312,11 @@ def section04(matrix):
               ("mode","Mode choice","Vehicle OD is supplied; no mode-choice run"),
             )
             out += ['<table class="atlas-city-table atlas-benchmark-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup><tbody>',
-                    '<tr class="atlas-benchmark-heading"><th colspan="3"><h4>City-data and four-stage scope</h4></th></tr>',
-                    '<tr class="atlas-benchmark-header"><th width="33.333%">Stage</th><th width="33.333%">Scope in Sioux Falls benchmark</th><th width="33.333%">Relevant next entry</th></tr>']
+                    '<tr class="atlas-benchmark-heading"><th colspan="3" width="780"><h4>City-data and four-stage scope</h4></th></tr>',
+                    '<tr class="atlas-benchmark-header"><th width="260">Stage</th><th width="260">Scope in Sioux Falls benchmark</th><th width="260">Relevant next entry</th></tr>']
             for sid,label,scope in compact:
-                out.append('<tr class="atlas-benchmark-row"><td width="33.333%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="33.333%">'+esc(scope)+
-                           '</td><td width="33.333%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
+                out.append('<tr class="atlas-benchmark-row"><td width="260"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="260">'+esc(scope)+
+                           '</td><td width="260"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
             out.append('</tbody></table>')
         for stage,name in STAGES:
             if stage=="tools":continue
@@ -345,9 +349,9 @@ def section04(matrix):
             stage_id=slug+'-'+stage
             extra_anchor='<a id="hong-kong-cg-r5"></a>' if city=="Hong Kong" and stage=="finite" else ''
             columns=max(1,min(4,len(cards)))
-            cell_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
-            out.append('<table class="atlas-city-table" data-city="'+slug+'" data-stage="'+stage_id+'" width="100%"><colgroup>'+(('<col width="'+cell_width+'">')*columns)+'</colgroup><tbody>')
-            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(columns)+'" data-items="'+str(len(cards))+'"><th colspan="'+str(columns)+'"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
+            col_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
+            out.append('<table class="atlas-city-table" data-city="'+slug+'" data-stage="'+stage_id+'" width="100%"><colgroup>'+(('<col width="'+col_width+'">')*columns)+'</colgroup><tbody>')
+            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(columns)+'" data-items="'+str(len(cards))+'"><th colspan="'+str(columns)+'" width="780"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
             if not cards:
                 out.append('<tr class="atlas-scope-row"><td colspan="'+str(columns)+'">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</td></tr>')
             else:out.append(stage_rows(cards,stage_id))
