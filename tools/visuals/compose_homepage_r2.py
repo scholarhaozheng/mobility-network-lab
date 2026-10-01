@@ -46,6 +46,18 @@ The horizontal axis compares how the documented framework is instantiated in Bos
 """
 CITIES=("Boston","Sioux Falls","Hong Kong")
 SLUG={"Boston":"boston","Sioux Falls":"sioux-falls","Hong Kong":"hong-kong"}
+DISPLAY_SCOPE_REVISIONS={
+    "24-node, 76-link supplied directed benchmark; schematic topology, no city zone hierarchy.":
+        "24-node, 76-link supplied directed benchmark.",
+    "Transferred rate and declared capture sensitivity, not local calibration.":
+        "Transferred rate and declared capture sensitivity.",
+    "Supplied OD is input, not a modeled distribution stage.":
+        "Supplied OD is input.",
+    "Modeled one-hour static PCE road flow, not measured traffic.":
+        "Modeled one-hour static PCE road flow.",
+    "Rank-50 classic static benchmark candidates, not an empirical speedup.":
+        "Rank-50 classic static benchmark candidates.",
+}
 ROW_GROUPS=[
  ("I / City data and model foundations","a--city-data-and-model-foundations",("01","02","03")),
  ("II / Transit and observation evidence","b--transit-and-observation-evidence",("04","05")),
@@ -143,6 +155,9 @@ def esc(s):return html.escape(str(s),quote=True)
 def load_matrix():
     with MATRIX.open(newline="",encoding="utf-8") as f:rows=list(csv.DictReader(f))
     if len(rows)!=57:raise AssertionError(len(rows))
+    # Homepage-only copy edits; retain the accepted matrix and sidecars as provenance.
+    for r in rows:
+        r["result_scope"]=DISPLAY_SCOPE_REVISIONS.get(r["result_scope"],r["result_scope"])
     return {(r["row_id"],r["city"]):r for r in rows}
 
 def row_target(r):
@@ -160,9 +175,9 @@ def component_table(matrix, rid):
              '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
              for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
-             '<td colspan="3"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
+             '<td colspan="3" align="center"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
              if len({r["graphic_type"] for r in rows}) == 1 else
-             ''.join('<td width="266"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
+             ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
          )+'</tr>',
          '<tr class="coverage-links">']
     for r in rows:
@@ -280,13 +295,13 @@ def stage_rows(cards, stage_id):
 
 def section04(matrix):
     out=['## 04 / Explore the three cases','',
-       'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size. Covers are navigation assets, not scientific validation.','',
+       'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size.','',
        '<a id="computational-depth-legend"></a>',
        '**A — Native assignment**  ',
        '**B — Decomposition and distributed computation**  ',
        '**C — Spatial hierarchy and representation**  ',
        '**D — Coordination and verification**','',
-       'A–D are reading labels for computational depth, not a mandatory solver sequence. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components. Agentic execution remains a learning and research direction, not a completed autonomous module.','']
+       'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','']
     assets=[]
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}
     for item in EXTRAS:
