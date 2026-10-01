@@ -58,23 +58,29 @@ def main(argv=None):
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
     '''
     CSS += '''
-    /* One twelve-track table per city keeps two-, three-, and four-card rows aligned. */
+    /* Each stage uses the existing twelve-track grid; partial rows keep empty equal-width slots. */
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{table-layout:fixed}
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{width:100%}
     .mcl-page table.home-coverage th:first-child{width:auto}
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
     .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:auto;object-fit:contain}
+    .mcl-page table.home-coverage .coverage-caption td{text-align:center;padding:5px 10px}
+    .mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;color:#6b7d87;vertical-align:baseline}
     .mcl-page table.home-coverage .coverage-links td{white-space:nowrap;overflow-wrap:normal}
     .mcl-page table.home-coverage .coverage-links sub{font-size:9.5px;vertical-align:baseline}
-    .mcl-page table.atlas-city-table .atlas-card-cell img{display:inline-block;width:165px;height:auto;max-width:100%;object-fit:contain}
+    .mcl-page table.atlas-city-table{margin:15px 0 19px}
     .mcl-page table.atlas-city-table td{overflow-wrap:anywhere;line-height:1.35;padding:9px 10px}
-    .mcl-page table.atlas-city-table .atlas-card-cell{font-size:11px}
-    .mcl-page table.atlas-city-table .atlas-card-cell strong{font-size:11px}
-    .mcl-page table.atlas-city-table .atlas-depth-badge{display:inline-block;margin:5px 0 2px;padding:1px 5px;border:1px solid #8db7be;border-radius:4px;background:#edf7f7;color:#155d68;font-size:10px;line-height:1.3}
-    .mcl-page table.atlas-city-table .atlas-depth-stage{color:#155d68;font-size:11px;vertical-align:baseline}
+    .mcl-page table.atlas-city-table .atlas-title-cell{background:#f7fafb;color:#17364a;overflow-wrap:anywhere;padding:8px 10px 6px;font-size:11px;vertical-align:top}
+    .mcl-page table.atlas-city-table .atlas-title-cell strong{color:#17364a;font-size:11px}
+    .mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#000;background:#f3f5f6;border:1px solid #e2e6e9;border-radius:3px;padding:0 3px;font-size:9px;font-weight:500;white-space:nowrap;vertical-align:baseline}
+    .mcl-page table.atlas-city-table .atlas-card-preview-row td{background:#fff;text-align:center;padding:8px 10px 4px}
+    .mcl-page table.atlas-city-table .atlas-card-cell img{display:inline-block;width:165px;height:auto;max-width:100%;object-fit:contain}
+    .mcl-page table.atlas-city-table .atlas-card-meta-row td{background:#fff;padding:4px 10px 3px}
+    .mcl-page table.atlas-city-table .atlas-card-links-row td{background:#fff;padding:3px 10px 9px}
     .mcl-page table.atlas-city-table .atlas-meta{font-size:9px;color:#53697a;vertical-align:baseline}
     .mcl-page table.atlas-city-table .atlas-links{font-size:10px;vertical-align:baseline}
+    .mcl-page table.atlas-city-table .atlas-empty{background:#fafbfc!important}
     .mcl-page table.atlas-city-table .atlas-stage-heading th,.mcl-page table.atlas-city-table .atlas-benchmark-heading th{background:#f1f6f8;color:#17364a;padding:13px 10px;text-align:left}
     .mcl-page table.atlas-city-table .atlas-stage-heading h4,.mcl-page table.atlas-city-table .atlas-benchmark-heading h4{margin:0;font-size:17px}
     .mcl-page table.atlas-quick-facts td,.mcl-page table.atlas-city-table .atlas-benchmark-row td{font-size:12px}

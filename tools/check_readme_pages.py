@@ -68,6 +68,7 @@ def main() -> int:
     walk = walk_path.read_text(encoding="utf-8")
     architecture = (DOCS / "architecture.md").read_text(encoding="utf-8")
     contribution = (DOCS / "contributions.md").read_text(encoding="utf-8")
+    contribution_html = (DOCS / "contributions.html").read_text(encoding="utf-8")
     capabilities = (DOCS / "capabilities.md").read_text(encoding="utf-8")
     cg = (DOCS / "methods/space-time-cg.md").read_text(encoding="utf-8")
 
@@ -81,6 +82,11 @@ def main() -> int:
     ]
     places = [readme.find(heading) for heading in headings]
     check(all(p >= 0 for p in places) and places == sorted(places), "README six-block research-entry order changed")
+    removed_claim = ("It does not claim sole authorship of every component, new general convergence theorems, "
+                     "empirical citywide calibration, or uniform method success in all three cities.")
+    check(removed_claim not in contribution and removed_claim not in contribution_html and
+          "Cite the repository and original sources" in contribution,
+          "Contributions page restored removed sentence or lost its citation link")
     hero = readme[:readme.find('<a id="what-this-project-adds"></a>')]
     for needle in (
         "**An open research and learning environment for city networks, travel demand, and reproducible network computation.**",
@@ -185,13 +191,14 @@ def main() -> int:
               ('C','Spatial hierarchy and representation'), ('D','Coordination and verification'))),
           "The single A–D legend or its bounded agentic qualification is missing")
     check(atlas.count('class="atlas-depth-badge"') >= 50 and
-          atlas.count('class="atlas-depth-stage">A · Native assignment') == 3 and
+          'class="atlas-depth-stage"' not in atlas and
           all('['+mark+']' in atlas for mark in ('A','B','C','D','B · D','B · C','C · D')),
           "City atlas A–D badges are incomplete")
-    badge_cells = re.findall(r'<td [^>]*class="atlas-card-cell">(.*?)</td>', atlas, re.S)
-    check(all(re.search(r'</a><br><b class="atlas-depth-badge">\[[ABCD](?: · [CD])?\]</b><br><strong>', cell)
-              for cell in badge_cells if 'class="atlas-depth-badge"' in cell),
-          "A–D badge text must be visibly separated from the existing card title in GitHub-native HTML")
+    title_cells = re.findall(r'<th [^>]*class="atlas-title-cell"[^>]*>(.*?)</th>', atlas, re.S)
+    check(len(title_cells) == 86 and
+          all(re.search(r'</strong> <small class="atlas-depth-badge">\[[ABCD](?: · [CD])?\]</small>$', cell)
+              for cell in title_cells if 'class="atlas-depth-badge"' in cell),
+          "A–D labels must be small and inline after their existing card titles")
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
           "Atlas must retain 86 city-owned cards in native table cells")
     check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+height="\d+"', atlas),
@@ -199,10 +206,12 @@ def main() -> int:
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
     home_tables = re.findall(r'<table\b[^>]*>', coverage + atlas)
-    check(len(home_tables) == 18 + 3 + 3 and
+    check(len(home_tables) == 18 + 3 + 19 + 1 and
           all('width="100%"' in opening for opening in home_tables),
           "Every Section 03/04 table must have the same full-width outer boundary")
     home_css = (ROOT / "docs/assets/presentation-r3.css").read_text(encoding="utf-8")
+    check('.mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#000;' in home_css,
+          "A–D atlas labels must use black text on the built website")
     check('padding:24px;margin:36px -24px 52px' in home_css and
           'padding:15px;margin:25px -15px' in home_css and
           '.mcl-page table.atlas-city-table{min-width:680px}' in home_css,
@@ -216,10 +225,12 @@ def main() -> int:
           "Coverage previews must not force an image height")
     check(coverage.count('<td width="33%"><sub><a href=') == 54,
           "Three-city coverage links must use the compact GitHub-native text size")
+    captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
-          coverage.count('<tr class="coverage-caption">') == 18 and
-          coverage.count('<td><small>') == 54,
-          "Cells containing only plain coverage text must retain their prior size")
+          len(captions) == 18 and
+          all(re.fullmatch(r'<td colspan="3"><sub>[^<]+</sub></td>', caption) for caption in captions) and
+          '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
+          "Identical three-city graphic-type labels must form one small shared caption row")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"
@@ -227,47 +238,48 @@ def main() -> int:
               f'<a href="{case}">Tools and reproducibility</a>' in atlas and
               f'<section class="atlas-stage" id="{slug}-tools">' not in atlas,
               f"{city} tools navigation or historical anchor is missing")
-    check('<strong>' in atlas and '</strong><br><sub class="atlas-meta">' in atlas and
+    check('<strong>' in atlas and atlas.count('<small class="atlas-meta">') == 86 and
+          atlas.count('<small class="atlas-links">') == 86 and
           '<td width="25%"><sub>' not in atlas and
           '<td width="33%"><sub>' not in atlas,
-          "Atlas caption title/scope font hierarchy is missing")
+          "Atlas title, image, scope and link rows are incomplete")
     check('<img src="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png" width="165"' in atlas,
           "Sioux classic topology must use the original aspect-ratio-preserving image")
     for city in ("boston", "sioux_falls", "hong_kong"):
         check((ROOT / f"docs/assets/homepage_evidence_r2/row_19_{city}.png").is_file(),
               f"Original {city} tools preview was deleted rather than removed from home")
     city_tables = re.findall(
-        r'<table class="atlas-city-table" data-city="([^"]+)" width="100%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
+        r'<table class="atlas-city-table" data-city="([^"]+)" data-stage="([^"]+)" width="100%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
         atlas, re.S)
-    check(len(city_tables) == 3 and {city for city, _, _ in city_tables} ==
+    check(len(city_tables) == 19 and {city for city, _, _, _ in city_tables} ==
           {"boston", "sioux-falls", "hong-kong"} and
-          all(cols == '<col width="8.333%">' * 12 for _, cols, _ in city_tables),
-          "Each city must use one shared twelve-track atlas table")
-    stage_count = 0
-    for city, _, body in city_tables:
-        stages = list(re.finditer(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', body))
-        stage_count += len(stages)
-        for index, heading in enumerate(stages):
-            stage_id, slots_text, items_text = heading.groups()
-            slots, items = int(slots_text), int(items_text)
-            cell_width = {1: "100%", 2: "50%", 3: "33.333%", 4: "25%"}.get(slots)
-            part = body[heading.end():stages[index+1].start() if index+1 < len(stages) else len(body)]
-            rows = re.findall(r'<tr class="atlas-card-row" data-stage="([^"]+)">(.*?)</tr>', part, re.S)
-            expected_counts = [min(slots, items - start) for start in range(0, items, slots)] if slots else []
-            check(stage_id.startswith(city+'-') and slots == min(4, items) and
-                  cell_width is not None and len(rows) == len(expected_counts) and
-                  all(row_stage == stage_id and row.count('class="atlas-card-cell"') == expected and
-                      re.findall(r'<td colspan="(\d+)" width="([^"]+)" class="atlas-card-cell">', row) ==
-                      [(str(12//slots), cell_width)] * expected
-                      for (row_stage, row), expected in zip(rows, expected_counts)) and
-                  'class="atlas-empty"' not in part,
-                  "City stage cards must share the twelve-track grid without blank card cells: " + stage_id)
-    check(stage_count == 19, "All nineteen city-stage headings must remain in the shared atlas tables")
+          all(cols == '<col width="8.333%">' * 12 for _, _, cols, _ in city_tables),
+          "Each of the nineteen city-stage groups needs its own full-width twelve-track table")
+    for city, stage_id, _, body in city_tables:
+        heading = re.search(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', body)
+        if not heading:
+            check(False, "Missing stage heading: " + stage_id)
+            continue
+        slots, items = int(heading.group(2)), int(heading.group(3))
+        cell_width = {1: "100%", 2: "50%", 3: "33.333%", 4: "25%"}.get(slots)
+        expected_counts = [min(slots, items - start) for start in range(0, items, slots)] if slots else []
+        rows = re.findall(r'<tr class="atlas-card-(title|preview|meta|links)-row" data-stage="([^"]+)">(.*?)</tr>', body, re.S)
+        check(stage_id.startswith(city+'-') and heading.group(1) == stage_id and
+              slots == min(4, items) and cell_width is not None and
+              [(kind, row_stage) for kind, row_stage, _ in rows] ==
+              [(kind, stage_id) for _ in expected_counts for kind in ("title", "preview", "meta", "links")] and
+              all(row.count('class="atlas-'+("card-cell" if kind == "preview" else kind+"-cell")+'"') == expected and
+                  row.count('class="atlas-empty"') == slots-expected and
+                  re.findall(r'<(?:th|td) colspan="(\d+)" width="([^"]+)" class="atlas-[^"]+"', row) ==
+                  [(str(12//slots), cell_width)] * slots
+                  for (kind, _, row), expected in zip(rows, [n for n in expected_counts for _ in range(4)])),
+              "City stage rows must preserve column count, equal width and padded empty slots: " + stage_id)
     quick_facts = re.findall(r'<table class="atlas-quick-facts".*?</table>', atlas, re.S)
     check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["25%"] * 4
                                         for table in quick_facts),
           "Three-city quick-facts columns are not uniformly quarter-width")
-    sioux_body = next((body for city, _, body in city_tables if city == "sioux-falls"), "")
+    benchmark = re.search(r'<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup>.*?</colgroup><tbody>(.*?)</tbody></table>', atlas, re.S)
+    sioux_body = benchmark.group(1) if benchmark else ""
     check(sioux_body.count('class="atlas-benchmark-row"') == 5 and
           sioux_body.count('<td colspan="4" width="33.333%">') == 15,
           "Sioux benchmark-scope columns are not equal-width")
