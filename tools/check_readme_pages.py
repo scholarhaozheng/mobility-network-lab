@@ -150,7 +150,16 @@ def main() -> int:
           "R3 project-map cards are not linked to the three case routes")
     svg_root = DOCS / "assets/project_structure_r3"
     for href in set(re.findall(r'<a xlink:href="([^"]+)"', structure_svg)):
-        check((svg_root / href).resolve().is_file(), f"Broken clickable project-map target: {href}")
+        path, fragment = target(svg_root / 'project_structure.svg', href)
+        check(path is not None and path.is_file() and fragment_exists(path, fragment),
+              f"Broken clickable project-map target or fragment: {href}")
+    for letter, label in (
+        ('A', 'Native assignment'), ('B', 'Decomposition / distributed'),
+        ('C', 'Spatial hierarchy / representation'), ('D', 'Coordination / verification'),
+    ):
+        check(f'>{letter}</text>' in structure_svg and f'>{label}</text>' in structure_svg and
+              structure_svg.count('xlink:href="../../index.html#two-axes"') >= 8,
+              f'Missing linked A–D reading lens: {letter}')
     structure_record = json.loads(
         (DOCS / "assets/project_structure_r3/project_structure.source.json").read_text(encoding="utf-8")
     )

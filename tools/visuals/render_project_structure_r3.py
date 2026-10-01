@@ -85,8 +85,9 @@ def render() -> dict:
         raise ValueError("Architecture index markers are missing or duplicated")
     before, tail = article.split(start, 1)
     _, after = tail.split(end, 1)
-    ARCHITECTURE.write_text(before + start + "\n" + node_table(nodes, references) + end + after,
-                            encoding="utf-8", newline="\n")
+    updated_article = before + start + "\n" + node_table(nodes, references) + end + after
+    if updated_article != article:
+        ARCHITECTURE.write_text(updated_article, encoding="utf-8", newline="\n")
 
     with (ASSETS / "project_structure_node_map.csv").open("w", encoding="utf-8", newline="") as handle:
         writer = csv.DictWriter(handle, fieldnames=["node_id", "title", "group", "source_ref", "target", "scope"])
@@ -128,6 +129,24 @@ def render() -> dict:
     ax.text(40, 98, model["subtitle"], va="top", fontsize=18, color="#526b7b")
     for x, y, label in sections:
         ax.text(x, y, label, va="bottom", fontsize=15, fontweight="bold", color="#087e83")
+
+    # A–D are compact reading lenses for the assignment branch, not new
+    # modules or a sequence. Keep them in the existing gap above section 03.
+    lens_target = "../../index.html#two-axes"
+    lenses = [
+        (56, 84, "A", "Native assignment"),
+        (424, 452, "B", "Decomposition / distributed"),
+        (921, 949, "C", "Spatial hierarchy / representation"),
+        (1424, 1452, "D", "Coordination / verification"),
+    ]
+    for letter_x, label_x, letter, label in lenses:
+        for x, value, size, weight, color in (
+            (letter_x, letter, 16, "bold", "#087e83"),
+            (label_x, label, 14, "normal", "#526b7b"),
+        ):
+            item = ax.text(x, 566, value, va="baseline", fontsize=size,
+                           fontweight=weight, color=color)
+            item.set_url(lens_target)
 
     for node in nodes:
         x, y, w, h = node["rect"]
