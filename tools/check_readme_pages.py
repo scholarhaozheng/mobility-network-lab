@@ -8,6 +8,7 @@ are not required to crowd the landing page.
 
 from __future__ import annotations
 
+import csv
 import html
 import hashlib
 import json
@@ -186,6 +187,54 @@ def main() -> int:
           len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
           "The two-axis explanation must appear exactly once before Section 03")
     coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    row15_readme = coverage.split('data-component="15"', 1)[1].split('</table>', 1)[0]
+    row15_home = home.split('data-component="15"', 1)[1].split('</table>', 1)[0]
+    with (DOCS / 'assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv').open(
+        newline='', encoding='utf-8'
+    ) as stream:
+        row15_sources = list(csv.DictReader(stream))
+    with (DOCS / 'assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv').open(
+        newline='', encoding='utf-8'
+    ) as stream:
+        row15_matrix = {r['city']: r for r in csv.DictReader(stream) if r['row_id'] == '15'}
+    check(len(row15_sources) == 3 and set(row15_matrix) == {'Boston', 'Sioux Falls', 'Hong Kong'},
+          'Arc-flow LP reference must have three source-qualified city cells')
+    check(row15_readme.count('height="160"') == 3 and row15_readme.count('width="220"') == 3 and
+          'data-component="15"' in home and
+          'table.home-coverage[data-component="15"] .coverage-preview img' in
+          (DOCS / 'assets/presentation-r3.css').read_text(encoding='utf-8'),
+          'Arc-flow LP reference image-area geometry must be equal and contained')
+    for record in row15_sources:
+        city = record['city']
+        row = row15_matrix.get(city, {})
+        figure = record['original_figure']
+        source = record['source_record']
+        figure_path, source_path = ROOT / figure, ROOT / source
+        source_bytes = source_path.read_bytes() if source_path.is_file() else b''
+        if record['source_hash_convention'] == 'LF-normalized':
+            source_bytes = source_bytes.replace(b'\r\n', b'\n')
+        check(figure_path.is_file() and
+              hashlib.sha256(figure_path.read_bytes()).hexdigest() == record['original_sha256'] and
+              source_path.is_file() and
+              record['source_hash_convention'] in {'LF-normalized', 'exact-bytes'} and
+              hashlib.sha256(source_bytes).hexdigest() == record['source_sha256'],
+              f'Arc-flow LP original figure or source hash mismatch: {city}')
+        check(row.get('original_figure') == figure and
+              row.get('data_or_figure_source') == source and
+              row.get('target_page') == record['target_page'] and
+              row.get('target_anchor') == record['target_anchor'] and
+              'reused_existing_figure=true' in row.get('notes', '') and
+              'newly_generated_scientific_figure=false' in row.get('notes', '') and
+              record['reused_existing_figure'] == 'true' and
+              record['newly_generated_scientific_figure'] == 'false',
+              f'Arc-flow LP matrix/reuse contract mismatch: {city}')
+        check(figure in row15_readme and figure.removeprefix('docs/') in row15_home and
+              record['caption'] in row15_readme and record['caption'] in row15_home and
+              record['target_page'] + '#' + record['target_anchor'] in row15_readme and
+              fragment_exists(ROOT / record['target_page'], record['target_anchor']),
+              f'Arc-flow LP figure, caption, or detailed anchor missing: {city}')
+    check(all(f'row_15_{slug}.png' in atlas for slug in ('boston', 'sioux_falls', 'hong_kong')),
+          'Section 04 row-15 historical atlas cards must remain unchanged')
     for removed in (
         "not an automatic observed-OD or calibrated-demand pipeline",
         "schematic topology, no city zone hierarchy",
@@ -276,9 +325,11 @@ def main() -> int:
     captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
-          all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption) for caption in captions) and
+          all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption)
+              for index, caption in enumerate(captions) if index != 14) and
+          captions[14].count('<td width="266" align="center"><sub>') == 3 and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
-          "Identical three-city graphic-type labels must form one small shared caption row")
+          "Shared row captions must remain compact; row 15 has three scope-specific captions")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"

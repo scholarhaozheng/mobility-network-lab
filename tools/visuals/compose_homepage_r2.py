@@ -13,6 +13,7 @@ from pathlib import Path
 
 ROOT=Path(__file__).resolve().parents[2]
 MATRIX=ROOT/"docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv"
+ROW15_MAPPING=ROOT/"docs/assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv"
 README=ROOT/"README.md"
 HERO="""# Mobility Computation Lab
 
@@ -163,18 +164,50 @@ def load_matrix():
 def row_target(r):
     return r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
 
+def row15_reuse(rows):
+    with ROW15_MAPPING.open(newline="",encoding="utf-8") as f:
+        reuse={r["city"]:r for r in csv.DictReader(f)}
+    if set(reuse)!=set(CITIES):raise AssertionError("row-15 city mapping")
+    for row in rows:
+        record=reuse[row["city"]]
+        for field,expected in (("original_figure",record["original_figure"]),
+                               ("data_or_figure_source",record["source_record"]),
+                               ("source_hash",record["source_sha256"]),
+                               ("target_page",record["target_page"]),
+                               ("target_anchor",record["target_anchor"])):
+            if row[field]!=expected:raise AssertionError((row["city"],field))
+        if (record["reused_existing_figure"],record["newly_generated_scientific_figure"])!=("true","false"):
+            raise AssertionError("row-15 reuse contract")
+        path=ROOT/record["original_figure"]
+        if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest()!=record["original_sha256"]:
+            raise AssertionError((row["city"],"original figure hash"))
+        source_path=ROOT/record["source_record"]
+        source_bytes=source_path.read_bytes()
+        if record["source_hash_convention"]=="LF-normalized":
+            source_bytes=source_bytes.replace(b"\r\n",b"\n")
+        elif record["source_hash_convention"]!="exact-bytes":
+            raise AssertionError((row["city"],"unknown source hash convention"))
+        if hashlib.sha256(source_bytes).hexdigest()!=record["source_sha256"]:
+            raise AssertionError((row["city"],"source hash"))
+        if (record["display_width_px"],record["image_area_height_px"])!=("220","160"):
+            raise AssertionError("row-15 image geometry")
+    return reuse
+
 def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
+    reused=row15_reuse(rows) if rid=="15" else None
     out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
          '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
          '<tr class="coverage-scope">'+''.join('<td width="266" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
          '<tr class="coverage-preview">'+''.join(
-             '<td width="266" align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
-             '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
+             '<td width="266"'+(' height="160" valign="middle"' if reused else '')+' align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
+             '" width="220" alt="'+esc(r["city"]+' Phase-II / CG-RMP objective versus arc-flow LP reference' if reused else r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
              for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
+             ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"])+'</sub></td>' for r in rows)
+             if reused else
              '<td colspan="3" align="center"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
              if len({r["graphic_type"] for r in rows}) == 1 else
              ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
@@ -182,8 +215,8 @@ def component_table(matrix, rid):
          '<tr class="coverage-links">']
     for r in rows:
         source=r["data_or_figure_source"]
-        links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(r["preview_path"])+
-               '">Full preview</a>')
+        links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
+               '">'+('Full figure' if reused else 'Full preview')+'</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.
@@ -193,7 +226,7 @@ def component_table(matrix, rid):
 
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
-      'Each row uses one evidence graphic type and one 600 × 360 source canvas across the three cities. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
+      'Shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities; the Arc-flow LP reference row instead reuses three accepted full figures in equal-height cells. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
     for group,old_anchor,ids in ROW_GROUPS:
         new_anchor='section03-'+group.split(' / ',1)[0].lower()
         out += ['<a id="'+old_anchor+'"></a><a id="'+new_anchor+'"></a>','### '+group,'']

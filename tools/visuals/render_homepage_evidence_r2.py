@@ -27,6 +27,7 @@ from shapely.geometry import shape
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs/assets/homepage_evidence_r2"
+ROW15_MAPPING = OUT / "ROW15_REUSE_SOURCE_MAPPING.csv"
 R1_MAP = ROOT / "tools/visuals/homepage_evidence_r1_map.csv"
 CITIES = ("Boston", "Sioux Falls", "Hong Kong")
 SLUG = {"Boston": "boston", "Sioux Falls": "sioux_falls", "Hong Kong": "hong_kong"}
@@ -49,7 +50,7 @@ ROW_SPECS = [
     ("12", "Finite-path reference", "finite_path", "finite-path reconstruction panel"),
     ("13", "Native Diagnostic L3 / compression", "l3_difference", "L3 reconstruction/difference panel"),
     ("14", "Network construction and generated columns", "layered_graph", "layered physical-to-time graph preview"),
-    ("15", "Arc-flow LP reference", "lp_reference", "same-graph LP reference result panel"),
+    ("15", "Arc-flow LP reference", "lp_reference", "Phase-II / CG-RMP objective versus arc-flow LP reference"),
     ("16", "Two-phase column generation", "cg_triptych", "Phase I / Phase II / final-check triptych"),
     ("17", "Lagrangian", "lagrangian_summary", "dual/primal/gap summary"),
     ("18", "ADMM", "admm_summary", "residual/objective/flow summary"),
@@ -413,6 +414,9 @@ def render_summary(fig,row_id,city):
 
 def render():
     OUT.mkdir(parents=True,exist_ok=True)
+    with ROW15_MAPPING.open(newline="",encoding="utf-8") as f:
+        row15_reuse={r["city"]:r for r in csv.DictReader(f)}
+    if set(row15_reuse)!=set(CITIES):raise AssertionError("row-15 source mapping")
     r1={(r["subitem"],r["city"]):r for r in records("tools/visuals/homepage_evidence_r1_map.csv")}
     matrix=[]
     for row_id,title,template,graphic in ROW_SPECS:
@@ -436,7 +440,23 @@ def render():
             if city=="Sioux Falls" and row_id in {"01","02","09","11"}:note += "; deterministic source-topology layout, not geographic coordinates"
             if row_id=="10" and city=="Sioux Falls":note="exact FW per-link vector not shipped; neutral preview preserves accepted comparison link"
             if row_id=="10" and city=="Hong Kong":note="accepted saved FW map image; numerical flow vector not shipped"
-            row={"row_id":row_id,"row_title":title,"template_id":template,"graphic_type":graphic,"canvas_width":600,"canvas_height":360,"plot_bbox":str(PLOT_BBOX),"legend_contract":"fixed below/inside plot; local numeric scale","city":city,"data_or_figure_source":source,"source_hash":sha(ROOT/source) if source else "","result_scope":old["result_summary"],"target_page":target.split("#")[0],"target_anchor":target.split("#",1)[1] if "#" in target else "","status":status,"notes":note,"preview_path":rel,"preview_hash":sha(dest),"original_figure":old["source_figure_or_data"]}
+            original_figure=old["source_figure_or_data"]
+            source_hash_value=sha(ROOT/source) if source else ""
+            if row_id=="15":
+                reuse=row15_reuse[city]
+                original_figure=reuse["original_figure"]
+                if sha(ROOT/original_figure)!=reuse["original_sha256"]:
+                    raise AssertionError((city,"row-15 original figure hash"))
+                source_bytes=(ROOT/source).read_bytes()
+                if reuse["source_hash_convention"]=="LF-normalized":
+                    source_bytes=source_bytes.replace(b"\r\n",b"\n")
+                elif reuse["source_hash_convention"]!="exact-bytes":
+                    raise AssertionError((city,"unknown source hash convention"))
+                source_hash_value=hashlib.sha256(source_bytes).hexdigest()
+                if source_hash_value!=reuse["source_sha256"]:
+                    raise AssertionError((city,"row-15 source hash"))
+                note="reused_existing_figure=true; newly_generated_scientific_figure=false; source_hash="+reuse["source_hash_convention"]+"; Section 03 uses original_figure; legacy row preview retained for Section 04"
+            row={"row_id":row_id,"row_title":title,"template_id":template,"graphic_type":graphic,"canvas_width":600,"canvas_height":360,"plot_bbox":str(PLOT_BBOX),"legend_contract":"fixed below/inside plot; local numeric scale","city":city,"data_or_figure_source":source,"source_hash":source_hash_value,"result_scope":old["result_summary"],"target_page":target.split("#")[0],"target_anchor":target.split("#",1)[1] if "#" in target else "","status":status,"notes":note,"preview_path":rel,"preview_hash":sha(dest),"original_figure":original_figure}
             matrix.append(row)
             side={"preview_path":rel,"preview_hash":row["preview_hash"],"template_id":template,"city":city,"stage":title,"method":title if row_id in {"10","11","12","13","15","16","17","18"} else "","instance":old["result_summary"],"source_asset_or_data":source,"source_hash":row["source_hash"],"transform":"deterministic, source-qualified row-specific plot or neutral status","crop":"none","scale_behavior":"contain/equal physical geometry; local numeric scales","units":"as labelled in preview and detailed source","legend":row["legend_contract"],"target_page":row["target_page"],"target_anchor":row["target_anchor"]}
             dest.with_suffix(".source.json").write_text(json.dumps(side,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
