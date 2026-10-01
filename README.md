@@ -317,252 +317,252 @@ A–D are reading labels for computational depth, not a mandatory solver sequenc
 <tbody><tr><td width="25%">2,852 physical nodes; 5,091 directed links; 177 H3 fine zones</td><td width="25%">B1: 453 ODs / 1,936.238475 PCE in 2 h; expanded FW and 26-OD controls are distinct</td><td width="25%">90 nodes; 125 links; 10 ODs</td><td width="25%">MBTA inputs and exploratory GPS matching; no held-out citywide calibration</td></tr></tbody></table>
 <a id="boston-tools"></a>
 <p class="atlas-nav"><a href="#boston-sources">Sources and GMNS</a> · <a href="#boston-population">Population, households and activity</a> · <a href="#boston-transit">Transit and observations</a> · <a href="#boston-generation">Trip generation</a> · <a href="#boston-distribution">Trip distribution</a> · <a href="#boston-mode">Mode choice</a> · <a href="#boston-static">Static assignment methods</a> · <a href="#boston-finite">Finite time-expanded computation</a> · <a href="docs/cases/boston.md#reproduction">Tools and reproducibility</a></p>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-sources" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-sources" data-columns="3" data-items="3"><th colspan="12"><a id="boston-sources"></a><h4>Sources and GMNS</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-sources" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-sources" data-columns="3" data-items="3"><th colspan="3"><a id="boston-sources"></a><h4>Sources and GMNS</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-sources">
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Special zones and access</strong> <small class="atlas-depth-badge">[C]</small></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Special zones and access</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-sources">
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_boston.png" width="165" alt="Boston Source data and preparation; GMNS Plus, ACS/GTFS and registered source preparation."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_02_boston.png" width="165" alt="Boston GMNS network, zones and access; 5,091 physical links; 177 H3 fine zones, nine parents; connectors separate."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/atlas/73ea76029e5ee546.png" width="165" alt="Boston Special zones and access; Central Boston"></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_boston.png" width="165" alt="Boston Source data and preparation; GMNS Plus, ACS/GTFS and registered source preparation."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_02_boston.png" width="165" alt="Boston GMNS network, zones and access; 5,091 physical links; 177 H3 fine zones, nine parents; connectors separate."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/atlas/73ea76029e5ee546.png" width="165" alt="Boston Special zones and access; Central Boston"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-sources">
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS Plus, ACS/GTFS and registered source preparation.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">5,091 physical links; 177 H3 fine zones, nine parents; connectors separate.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS · Central Boston</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS Plus, ACS/GTFS and registered source preparation.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">5,091 physical links; 177 H3 fine zones, nine parents; connectors separate.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS · Central Boston</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-sources">
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_boston.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_02_boston.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/boston/visual_release_r1/boston_network_zones.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_boston.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_02_boston.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/boston/visual_release_r1/boston_network_zones.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-population" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-population" data-columns="2" data-items="2"><th colspan="12"><a id="boston-population"></a><h4>Population, households and activity</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-population" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-population" data-columns="2" data-items="2"><th colspan="2"><a id="boston-population"></a><h4>Population, households and activity</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-population">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Population, households and activity</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>ACS/H3 allocation</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Population, households and activity</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>ACS/H3 allocation</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-population">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/datasets/boston-population-households.md"><img src="docs/assets/homepage_evidence_r2/row_03_boston.png" width="165" alt="Boston Population, households and activity; ACS 2024 five-year block groups allocated to 177 clipped H3 zones."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/datasets/boston-population-households.md"><img src="docs/assets/homepage_alignment_r3/atlas/a87b907338e03be6.png" width="165" alt="Boston ACS/H3 allocation; ACS 2024 five-year"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/datasets/boston-population-households.md"><img src="docs/assets/homepage_evidence_r2/row_03_boston.png" width="165" alt="Boston Population, households and activity; ACS 2024 five-year block groups allocated to 177 clipped H3 zones."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/datasets/boston-population-households.md"><img src="docs/assets/homepage_alignment_r3/atlas/a87b907338e03be6.png" width="165" alt="Boston ACS/H3 allocation; ACS 2024 five-year"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-population">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">ACS 2024 five-year block groups allocated to 177 clipped H3 zones.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Population · ACS 2024 five-year</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">ACS 2024 five-year block groups allocated to 177 clipped H3 zones.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Population · ACS 2024 five-year</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-population">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-population-households.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_03_boston.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-population-households.md">Evidence</a> · <a href="docs/assets/boston/population_r1/population_allocation.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-population-households.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_03_boston.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-population-households.md">Evidence</a> · <a href="docs/assets/boston/population_r1/population_allocation.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-transit" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-transit" data-columns="3" data-items="3"><th colspan="12"><a id="boston-transit"></a><h4>Transit and observations</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-transit" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-transit" data-columns="3" data-items="3"><th colspan="3"><a id="boston-transit"></a><h4>Transit and observations</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-transit">
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Transit and pedestrian inputs</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS, trajectory and detector evidence</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS-to-GMNS association</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Transit and pedestrian inputs</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS, trajectory and detector evidence</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS-to-GMNS association</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-transit">
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_04_boston.png" width="165" alt="Boston Transit and pedestrian inputs; MBTA service and pedestrian access support the bounded demand/feedback example."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/datasets/boston-behavior-feedback.md"><img src="docs/assets/homepage_evidence_r2/row_05_boston.png" width="165" alt="Boston GPS, trajectory and detector evidence; Exploratory map matching and service feedback; not held-out calibration."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/datasets/boston-behavior-feedback.md"><img src="docs/assets/homepage_alignment_r3/atlas/a7f050b34234228c.png" width="165" alt="Boston GPS-to-GMNS association; exploratory"></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_04_boston.png" width="165" alt="Boston Transit and pedestrian inputs; MBTA service and pedestrian access support the bounded demand/feedback example."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/datasets/boston-behavior-feedback.md"><img src="docs/assets/homepage_evidence_r2/row_05_boston.png" width="165" alt="Boston GPS, trajectory and detector evidence; Exploratory map matching and service feedback; not held-out calibration."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/datasets/boston-behavior-feedback.md"><img src="docs/assets/homepage_alignment_r3/atlas/a7f050b34234228c.png" width="165" alt="Boston GPS-to-GMNS association; exploratory"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-transit">
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">MBTA service and pedestrian access support the bounded demand/feedback example.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Exploratory map matching and service feedback; not held-out calibration.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GPS linkage · exploratory</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">MBTA service and pedestrian access support the bounded demand/feedback example.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Exploratory map matching and service feedback; not held-out calibration.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GPS linkage · exploratory</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-transit">
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_04_boston.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-behavior-feedback.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_05_boston.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-behavior-feedback.md">Evidence</a> · <a href="docs/assets/boston/visual_release_r1/boston_gps_projection.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_04_boston.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-behavior-feedback.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_05_boston.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/boston-behavior-feedback.md">Evidence</a> · <a href="docs/assets/boston/visual_release_r1/boston_gps_projection.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-generation" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-generation" data-columns="2" data-items="2"><th colspan="12"><a id="boston-generation"></a><h4>Trip generation</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-generation" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-generation" data-columns="2" data-items="2"><th colspan="2"><a id="boston-generation"></a><h4>Trip generation</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-generation">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Trip generation — productions / attractions</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Generation by purpose</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Trip generation — productions / attractions</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Generation by purpose</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-generation">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_06_boston.png" width="165" alt="Boston Trip generation — productions / attractions; Purpose-level productions and attractions in the bounded Boston example."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-01-trip-generation"><img src="docs/assets/homepage_alignment_r3/atlas/bef793e599fa45ef.png" width="165" alt="Boston Generation by purpose; bounded example"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_06_boston.png" width="165" alt="Boston Trip generation — productions / attractions; Purpose-level productions and attractions in the bounded Boston example."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-01-trip-generation"><img src="docs/assets/homepage_alignment_r3/atlas/bef793e599fa45ef.png" width="165" alt="Boston Generation by purpose; bounded example"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-generation">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Purpose-level productions and attractions in the bounded Boston example.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip generation · bounded example</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Purpose-level productions and attractions in the bounded Boston example.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip generation · bounded example</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-generation">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_06_boston.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-01-trip-generation">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step1_generation.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_06_boston.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-01-trip-generation">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step1_generation.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-distribution" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-distribution" data-columns="2" data-items="2"><th colspan="12"><a id="boston-distribution"></a><h4>Trip distribution</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-distribution" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-distribution" data-columns="2" data-items="2"><th colspan="2"><a id="boston-distribution"></a><h4>Trip distribution</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-distribution">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Trip distribution — zonal OD demand</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>HBW OD distribution</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Trip distribution — zonal OD demand</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>HBW OD distribution</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-distribution">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_07_boston.png" width="165" alt="Boston Trip distribution — zonal OD demand; Zonal OD construction for the bounded semantic scenario."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-02-trip-distribution"><img src="docs/assets/homepage_alignment_r3/atlas/358e434cd5f0ea45.png" width="165" alt="Boston HBW OD distribution; bounded example"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_07_boston.png" width="165" alt="Boston Trip distribution — zonal OD demand; Zonal OD construction for the bounded semantic scenario."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-02-trip-distribution"><img src="docs/assets/homepage_alignment_r3/atlas/358e434cd5f0ea45.png" width="165" alt="Boston HBW OD distribution; bounded example"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-distribution">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Zonal OD construction for the bounded semantic scenario.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip distribution · bounded example</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Zonal OD construction for the bounded semantic scenario.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip distribution · bounded example</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-distribution">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_07_boston.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-02-trip-distribution">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step2_distribution.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_07_boston.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-02-trip-distribution">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step2_distribution.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-mode" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-mode" data-columns="2" data-items="2"><th colspan="12"><a id="boston-mode"></a><h4>Mode choice</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-mode" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-mode" data-columns="2" data-items="2"><th colspan="2"><a id="boston-mode"></a><h4>Mode choice</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-mode">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Mode choice — mode-specific demand</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Service-response mode choice</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Mode choice — mode-specific demand</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Service-response mode choice</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-mode">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_08_boston.png" width="165" alt="Boston Mode choice — mode-specific demand; S1/S2 service response and conditional absolute choice remain separate."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-03-mode-choice"><img src="docs/assets/homepage_alignment_r3/atlas/6f800d130e06d3b7.png" width="165" alt="Boston Service-response mode choice; S1/S2 sensitivity"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#demand-transit-and-observations"><img src="docs/assets/homepage_evidence_r2/row_08_boston.png" width="165" alt="Boston Mode choice — mode-specific demand; S1/S2 service response and conditional absolute choice remain separate."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/boston.md#stage-03-mode-choice"><img src="docs/assets/homepage_alignment_r3/atlas/6f800d130e06d3b7.png" width="165" alt="Boston Service-response mode choice; S1/S2 sensitivity"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-mode">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">S1/S2 service response and conditional absolute choice remain separate.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Mode choice · S1/S2 sensitivity</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">S1/S2 service response and conditional absolute choice remain separate.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Mode choice · S1/S2 sensitivity</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-mode">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_08_boston.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-03-mode-choice">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step3_mode_response.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_08_boston.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#stage-03-mode-choice">Evidence</a> · <a href="docs/assets/boston/four_step_results_r1/step3_mode_response.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-static" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-static" data-columns="4" data-items="4"><th colspan="12"><a id="boston-static"></a><h4>Static assignment methods</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-static" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-static" data-columns="4" data-items="4"><th colspan="4"><a id="boston-static"></a><h4>Static assignment methods</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-static">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Finite-path reference</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Native Diagnostic L3 / compression</strong> <small class="atlas-depth-badge">[A]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Finite-path reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Native Diagnostic L3 / compression</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-static">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison"><img src="docs/assets/homepage_evidence_r2/row_10_boston.png" width="165" alt="Boston Frank–Wolfe; Expanded Boston FW, up to 17,522 loaded node ODs; separate from 26-OD controls."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-algorithm-b.md"><img src="docs/assets/homepage_evidence_r2/row_11_boston.png" width="165" alt="Boston Official tap-b Algorithm B; B0/B1 numerical transfer via task-local lossless TAPLab-compatible adapter."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#same-instance-saved-result"><img src="docs/assets/homepage_evidence_r2/row_12_boston.png" width="165" alt="Boston Finite-path reference; 26 OD, 130-path uncompressed SLSQP reference on ABS_PLANNED."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#controlled-comparison-board"><img src="docs/assets/homepage_alignment_r3/atlas/2489f0a1fc2b4f41.png" width="165" alt="Boston Native Diagnostic L3 / compression; ABS_PLANNED 26-OD; rank-26 diagnostic"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison"><img src="docs/assets/homepage_evidence_r2/row_10_boston.png" width="165" alt="Boston Frank–Wolfe; Expanded Boston FW, up to 17,522 loaded node ODs; separate from 26-OD controls."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-algorithm-b.md"><img src="docs/assets/homepage_evidence_r2/row_11_boston.png" width="165" alt="Boston Official tap-b Algorithm B; B0/B1 numerical transfer via task-local lossless TAPLab-compatible adapter."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#same-instance-saved-result"><img src="docs/assets/homepage_evidence_r2/row_12_boston.png" width="165" alt="Boston Finite-path reference; 26 OD, 130-path uncompressed SLSQP reference on ABS_PLANNED."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-assignment.md#controlled-comparison-board"><img src="docs/assets/homepage_alignment_r3/atlas/2489f0a1fc2b4f41.png" width="165" alt="Boston Native Diagnostic L3 / compression; ABS_PLANNED 26-OD; rank-26 diagnostic"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-static">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Expanded Boston FW, up to 17,522 loaded node ODs; separate from 26-OD controls.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">B0/B1 numerical transfer via task-local lossless TAPLab-compatible adapter.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">26 OD, 130-path uncompressed SLSQP reference on ABS_PLANNED.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">ABS_PLANNED 26-OD; rank-26 diagnostic</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Expanded Boston FW, up to 17,522 loaded node ODs; separate from 26-OD controls.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">B0/B1 numerical transfer via task-local lossless TAPLab-compatible adapter.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">26 OD, 130-path uncompressed SLSQP reference on ABS_PLANNED.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">ABS_PLANNED 26-OD; rank-26 diagnostic</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-static">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_10_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-algorithm-b.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#same-instance-saved-result">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_12_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#controlled-comparison-board">Evidence</a> · <a href="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#primary-scale-result-versus-controlled-method-comparison">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_10_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-algorithm-b.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#same-instance-saved-result">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_12_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-assignment.md#controlled-comparison-board">Evidence</a> · <a href="docs/assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="boston" data-stage="boston-finite" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="boston-finite" data-columns="4" data-items="15"><th colspan="12"><a id="boston-finite"></a><h4>Finite time-expanded computation</h4></th></tr>
+<table class="atlas-city-table" data-city="boston" data-stage="boston-finite" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="boston-finite" data-columns="4" data-items="15"><th colspan="4"><a id="boston-finite"></a><h4>Finite time-expanded computation</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <small class="atlas-depth-badge">[B · C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <small class="atlas-depth-badge">[D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <small class="atlas-depth-badge">[B · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_boston.png" width="165" alt="Boston Network construction and generated columns; 90-node/125-link/10-OD finite graph; saved time-indexed column."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_boston.png" width="165" alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_boston.png" width="165" alt="Boston Two-phase column generation; Phase I/II and independent 10/10 pricing closure."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston.md#finite-time-expanded-algorithms"><img src="docs/assets/homepage_evidence_r2/row_17_boston.png" width="165" alt="Boston Lagrangian; Feasible primal, but frozen 1% gap gate missed (1.1002%)."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_boston.png" width="165" alt="Boston Network construction and generated columns; 90-node/125-link/10-OD finite graph; saved time-indexed column."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_boston.png" width="165" alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_boston.png" width="165" alt="Boston Two-phase column generation; Phase I/II and independent 10/10 pricing closure."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston.md#finite-time-expanded-algorithms"><img src="docs/assets/homepage_evidence_r2/row_17_boston.png" width="165" alt="Boston Lagrangian; Feasible primal, but frozen 1% gap gate missed (1.1002%)."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">90-node/125-link/10-OD finite graph; saved time-indexed column.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for the bounded ten-OD fixed-cost instance.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Phase I/II and independent 10/10 pricing closure.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Feasible primal, but frozen 1% gap gate missed (1.1002%).</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">90-node/125-link/10-OD finite graph; saved time-indexed column.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for the bounded ten-OD fixed-cost instance.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Phase I/II and independent 10/10 pricing closure.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Feasible primal, but frozen 1% gap gate missed (1.1002%).</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#finite-time-expanded-algorithms">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#finite-time-expanded-algorithms">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_boston.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Case-sequence overview</strong></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-expanded graph</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Generated time-indexed column</strong> <small class="atlas-depth-badge">[B · C]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Case-sequence overview</strong></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-expanded graph</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Generated time-indexed column</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston.png" width="165" alt="Boston ADMM; Ten-OD original-space checks; own-LP gap 6.68e-6."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/9f7a0736878a6e61.png" width="165" alt="Boston Case-sequence overview; 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/4568e2414df6075b.png" width="165" alt="Boston Physical to time-expanded graph; 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/71322763a5d99274.png" width="165" alt="Boston Generated time-indexed column; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston.png" width="165" alt="Boston ADMM; Ten-OD original-space checks; own-LP gap 6.68e-6."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/9f7a0736878a6e61.png" width="165" alt="Boston Case-sequence overview; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/4568e2414df6075b.png" width="165" alt="Boston Physical to time-expanded graph; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/71322763a5d99274.png" width="165" alt="Boston Generated time-indexed column; 10-OD"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Ten-OD original-space checks; own-LP gap 6.68e-6.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Ten-OD original-space checks; own-LP gap 6.68e-6.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · 10-OD</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/presentation_r5/boston_cg_case_sequence.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/boston_generated_column_time_indexed_path.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/presentation_r5/boston_cg_case_sequence.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/boston_generated_column_time_indexed_path.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase I artificial-flow clearance</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Shared-capacity event</strong> <small class="atlas-depth-badge">[D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase II objective</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Final physical-link movement flow</strong> <small class="atlas-depth-badge">[C · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase I artificial-flow clearance</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Shared-capacity event</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase II objective</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Final physical-link movement flow</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation; D — Coordination and verification" aria-label="C — Spatial hierarchy and representation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/C_D.svg" width="30" height="11" alt="[C · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_alignment_r3/atlas/cbc998205f5501fa.png" width="165" alt="Boston Phase I artificial-flow clearance; 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#shared-capacity-couples-different-od-demands"><img src="docs/assets/homepage_alignment_r3/atlas/df7ddb48f162ed87.png" width="165" alt="Boston Shared-capacity event; 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/e547c6ed35c8a9ad.png" width="165" alt="Boston Phase II objective; 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/3dfb0df13584df11.png" width="165" alt="Boston Final physical-link movement flow; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_alignment_r3/atlas/cbc998205f5501fa.png" width="165" alt="Boston Phase I artificial-flow clearance; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#shared-capacity-couples-different-od-demands"><img src="docs/assets/homepage_alignment_r3/atlas/df7ddb48f162ed87.png" width="165" alt="Boston Shared-capacity event; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/e547c6ed35c8a9ad.png" width="165" alt="Boston Phase II objective; 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/3dfb0df13584df11.png" width="165" alt="Boston Final physical-link movement flow; 10-OD"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG capacity · 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG capacity · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 10-OD</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_i_artificial_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#shared-capacity-couples-different-od-demands">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_shared_capacity_event.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_i_artificial_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#shared-capacity-couples-different-od-demands">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_shared_capacity_event.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Independent pricing closure</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM convergence</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM physical flow and LP difference</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Independent pricing closure</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM convergence</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM physical flow and LP difference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#independent-pricing-closure"><img src="docs/assets/homepage_alignment_r3/atlas/3125d4e541bc11c8.png" width="165" alt="Boston Independent pricing closure; 10/10"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md#original-saved-convergence-view"><img src="docs/assets/homepage_alignment_r3/atlas/9e36b1a0ddeb4ffd.png" width="165" alt="Boston ADMM convergence; R2_S 10-OD accepted"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md#physical-link-movement-flow-and-lp-comparison"><img src="docs/assets/homepage_alignment_r3/atlas/3e2e7b0f6ea74a8f.png" width="165" alt="Boston ADMM physical flow and LP difference; R2_S 10-OD accepted"></a></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#independent-pricing-closure"><img src="docs/assets/homepage_alignment_r3/atlas/3125d4e541bc11c8.png" width="165" alt="Boston Independent pricing closure; 10/10"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md#original-saved-convergence-view"><img src="docs/assets/homepage_alignment_r3/atlas/9e36b1a0ddeb4ffd.png" width="165" alt="Boston ADMM convergence; R2_S 10-OD accepted"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/boston-admm.md#physical-link-movement-flow-and-lp-comparison"><img src="docs/assets/homepage_alignment_r3/atlas/3e2e7b0f6ea74a8f.png" width="165" alt="Boston ADMM physical flow and LP difference; R2_S 10-OD accepted"></a></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG pricing · 10/10</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 10-OD accepted</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 10-OD accepted</small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG pricing · 10/10</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 10-OD accepted</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 10-OD accepted</small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#independent-pricing-closure">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_pricing_closure_by_demand.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md#original-saved-convergence-view">Evidence</a> · <a href="docs/assets/admm_r2/figures/convergence_Boston_10OD.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md#physical-link-movement-flow-and-lp-comparison">Evidence</a> · <a href="docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#independent-pricing-closure">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_pricing_closure_by_demand.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md#original-saved-convergence-view">Evidence</a> · <a href="docs/assets/admm_r2/figures/convergence_Boston_10OD.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md#physical-link-movement-flow-and-lp-comparison">Evidence</a> · <a href="docs/assets/admm_r2/figures/admm_boston_10od_minus_lp.png">Figure</a></small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 </tbody></table>
 </article>
@@ -576,186 +576,186 @@ A–D are reading labels for computational depth, not a mandatory solver sequenc
 <tbody><tr><td width="25%">24 nodes; 76 directed links; supplied benchmark OD</td><td width="25%">528 positive OD records; official Algorithm B, historical FW and native controls</td><td width="25%">24 nodes; 64/69 selected links; 200/250 ODs</td><td width="25%">No modern city population, GTFS, GPS or detector stage</td></tr></tbody></table>
 <a id="sioux-falls-tools"></a>
 <p class="atlas-nav"><a href="#sioux-falls-sources">Sources and GMNS</a> · <a href="#sioux-falls-population">Population, households and activity</a> · <a href="#sioux-falls-transit">Transit and observations</a> · <a href="#sioux-falls-generation">Trip generation</a> · <a href="#sioux-falls-distribution">Trip distribution</a> · <a href="#sioux-falls-mode">Mode choice</a> · <a href="#sioux-falls-static">Static assignment methods</a> · <a href="#sioux-falls-finite">Finite time-expanded computation</a> · <a href="docs/cases/sioux-falls.md#reproduction">Tools and reproducibility</a></p>
-<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-benchmark-heading"><th colspan="12"><h4>City-data and four-stage scope</h4></th></tr>
-<tr class="atlas-benchmark-header"><th colspan="4" width="33.333%">Stage</th><th colspan="4" width="33.333%">Scope in Sioux Falls benchmark</th><th colspan="4" width="33.333%">Relevant next entry</th></tr>
-<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="sioux-falls-population"></a>Population, households and activity</td><td colspan="4" width="33.333%">Not part of the supplied benchmark</td><td colspan="4" width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
-<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="sioux-falls-transit"></a>Transit and observations</td><td colspan="4" width="33.333%">Not part of the supplied benchmark</td><td colspan="4" width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
-<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="sioux-falls-generation"></a>Trip generation</td><td colspan="4" width="33.333%">Supplied OD enters downstream methods directly</td><td colspan="4" width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
-<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="sioux-falls-distribution"></a>Trip distribution</td><td colspan="4" width="33.333%">Supplied OD enters downstream methods directly</td><td colspan="4" width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
-<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="sioux-falls-mode"></a>Mode choice</td><td colspan="4" width="33.333%">Vehicle OD is supplied; no mode-choice run</td><td colspan="4" width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
+<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-benchmark-heading"><th colspan="3"><h4>City-data and four-stage scope</h4></th></tr>
+<tr class="atlas-benchmark-header"><th width="33.333%">Stage</th><th width="33.333%">Scope in Sioux Falls benchmark</th><th width="33.333%">Relevant next entry</th></tr>
+<tr class="atlas-benchmark-row"><td width="33.333%"><a id="sioux-falls-population"></a>Population, households and activity</td><td width="33.333%">Not part of the supplied benchmark</td><td width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
+<tr class="atlas-benchmark-row"><td width="33.333%"><a id="sioux-falls-transit"></a>Transit and observations</td><td width="33.333%">Not part of the supplied benchmark</td><td width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
+<tr class="atlas-benchmark-row"><td width="33.333%"><a id="sioux-falls-generation"></a>Trip generation</td><td width="33.333%">Supplied OD enters downstream methods directly</td><td width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
+<tr class="atlas-benchmark-row"><td width="33.333%"><a id="sioux-falls-distribution"></a>Trip distribution</td><td width="33.333%">Supplied OD enters downstream methods directly</td><td width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
+<tr class="atlas-benchmark-row"><td width="33.333%"><a id="sioux-falls-mode"></a>Mode choice</td><td width="33.333%">Vehicle OD is supplied; no mode-choice run</td><td width="33.333%"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-sources" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="sioux-falls-sources" data-columns="3" data-items="3"><th colspan="12"><a id="sioux-falls-sources"></a><h4>Sources and GMNS</h4></th></tr>
+<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-sources" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="sioux-falls-sources" data-columns="3" data-items="3"><th colspan="3"><a id="sioux-falls-sources"></a><h4>Sources and GMNS</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-sources">
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Classic network topology</strong> <small class="atlas-depth-badge">[C]</small></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Classic network topology</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-sources">
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_sioux_falls.png" width="165" alt="Sioux Falls Source data and preparation; Frozen classic 24-node/76-link source graph and supplied vehicle OD."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/sioux_gmns_directed_objects.png" width="165" alt="Sioux Falls GMNS network, zones and access; 24-node, 76-link supplied directed benchmark; schematic topology, no city zone hierarchy."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png" width="165" alt="Sioux Falls Classic network topology; 24-node / 76-link"></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_sioux_falls.png" width="165" alt="Sioux Falls Source data and preparation; Frozen classic 24-node/76-link source graph and supplied vehicle OD."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/sioux_gmns_directed_objects.png" width="165" alt="Sioux Falls GMNS network, zones and access; 24-node, 76-link supplied directed benchmark; schematic topology, no city zone hierarchy."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png" width="165" alt="Sioux Falls Classic network topology; 24-node / 76-link"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-sources">
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Frozen classic 24-node/76-link source graph and supplied vehicle OD.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">24-node, 76-link supplied directed benchmark; schematic topology, no city zone hierarchy.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Network · 24-node / 76-link</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Frozen classic 24-node/76-link source graph and supplied vehicle OD.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">24-node, 76-link supplied directed benchmark; schematic topology, no city zone hierarchy.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Network · 24-node / 76-link</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-sources">
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_sioux_falls.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_gmns_directed_objects.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_sioux_falls.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_gmns_directed_objects.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-static" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="sioux-falls-static" data-columns="4" data-items="4"><th colspan="12"><a id="sioux-falls-static"></a><h4>Static assignment methods</h4></th></tr>
+<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-static" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="sioux-falls-static" data-columns="4" data-items="4"><th colspan="4"><a id="sioux-falls-static"></a><h4>Static assignment methods</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-static">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Finite-path reference</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Native Diagnostic L3 / compression</strong> <small class="atlas-depth-badge">[A]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Finite-path reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Native Diagnostic L3 / compression</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-static">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/datasets/sioux-static-fw.md"><img src="docs/assets/homepage_alignment_r3/sioux_historical_fw_summary.png" width="165" alt="Sioux Falls Frank–Wolfe; 528-OD historical approximate result; saved objective and gap"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-algorithm-b.md"><img src="docs/assets/homepage_evidence_r2/row_11_sioux_falls.png" width="165" alt="Sioux Falls Official tap-b Algorithm B; Official TAPLab registered-adapter parity passes on Sioux Falls."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#static-assignment"><img src="docs/assets/homepage_evidence_r2/row_12_sioux_falls.png" width="165" alt="Sioux Falls Finite-path reference; Frozen 2,218-path static representation; numerical profile is not city demand."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#static-assignment"><img src="docs/assets/homepage_alignment_r3/atlas/fe9d93daa9e07b5f.png" width="165" alt="Sioux Falls Native Diagnostic L3 / compression; rank-50 diagnostic; not UE"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/datasets/sioux-static-fw.md"><img src="docs/assets/homepage_alignment_r3/sioux_historical_fw_summary.png" width="165" alt="Sioux Falls Frank–Wolfe; 528-OD historical approximate result; saved objective and gap"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-algorithm-b.md"><img src="docs/assets/homepage_evidence_r2/row_11_sioux_falls.png" width="165" alt="Sioux Falls Official tap-b Algorithm B; Official TAPLab registered-adapter parity passes on Sioux Falls."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#static-assignment"><img src="docs/assets/homepage_evidence_r2/row_12_sioux_falls.png" width="165" alt="Sioux Falls Finite-path reference; Frozen 2,218-path static representation; numerical profile is not city demand."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-falls.md#static-assignment"><img src="docs/assets/homepage_alignment_r3/atlas/fe9d93daa9e07b5f.png" width="165" alt="Sioux Falls Native Diagnostic L3 / compression; rank-50 diagnostic; not UE"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-static">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">528-OD historical approximate result; saved objective and gap</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Official TAPLab registered-adapter parity passes on Sioux Falls.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Frozen 2,218-path static representation; numerical profile is not city demand.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">rank-50 diagnostic; not UE</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">528-OD historical approximate result; saved objective and gap</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Official TAPLab registered-adapter parity passes on Sioux Falls.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Frozen 2,218-path static representation; numerical profile is not city demand.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">rank-50 diagnostic; not UE</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-static">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/sioux-static-fw.md">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_historical_fw_summary.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-algorithm-b.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#static-assignment">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_12_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#static-assignment">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/sioux-static-fw.md">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_historical_fw_summary.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-algorithm-b.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#static-assignment">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_12_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-falls.md#static-assignment">Evidence</a> · <a href="docs/assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-finite" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="sioux-falls-finite" data-columns="4" data-items="17"><th colspan="12"><a id="sioux-falls-finite"></a><h4>Finite time-expanded computation</h4></th></tr>
+<table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-finite" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="sioux-falls-finite" data-columns="4" data-items="17"><th colspan="4"><a id="sioux-falls-finite"></a><h4>Finite time-expanded computation</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <small class="atlas-depth-badge">[B · C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <small class="atlas-depth-badge">[D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <small class="atlas-depth-badge">[B · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png" width="165" alt="Sioux Falls Network construction and generated columns; Selected 200/250-OD finite graphs; saved time-indexed columns."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png" width="165" alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png" width="165" alt="Sioux Falls Two-phase column generation; 200/250-OD own-LP agreement; independent full-DAG closure not established."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png" width="165" alt="Sioux Falls Lagrangian; Selected 200/250-OD feasible recovery and certified bounded gaps."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png" width="165" alt="Sioux Falls Network construction and generated columns; Selected 200/250-OD finite graphs; saved time-indexed columns."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png" width="165" alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png" width="165" alt="Sioux Falls Two-phase column generation; 200/250-OD own-LP agreement; independent full-DAG closure not established."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png" width="165" alt="Sioux Falls Lagrangian; Selected 200/250-OD feasible recovery and certified bounded gaps."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD finite graphs; saved time-indexed columns.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own selected-graph LP references for historical 200/250 ODs.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">200/250-OD own-LP agreement; independent full-DAG closure not established.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD feasible recovery and certified bounded gaps.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD finite graphs; saved time-indexed columns.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own selected-graph LP references for historical 200/250 ODs.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">200/250-OD own-LP agreement; independent full-DAG closure not established.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD feasible recovery and certified bounded gaps.</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>200/250-OD case overview</strong></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-expanded graph</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Generated time-indexed column</strong> <small class="atlas-depth-badge">[B · C]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>200/250-OD case overview</strong></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-expanded graph</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Generated time-indexed column</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png" width="165" alt="Sioux Falls ADMM; Selected 200/250-OD original-space checks; not the full static 528 ODs."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/b9e513bf9cf32455.png" width="165" alt="Sioux Falls 200/250-OD case overview; historical selected ODs"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/79d5964430eb3a38.png" width="165" alt="Sioux Falls Physical to time-expanded graph; selected graph"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/ea3b96b7ea8e84f8.png" width="165" alt="Sioux Falls Generated time-indexed column; selected graph"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png" width="165" alt="Sioux Falls ADMM; Selected 200/250-OD original-space checks; not the full static 528 ODs."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/b9e513bf9cf32455.png" width="165" alt="Sioux Falls 200/250-OD case overview; historical selected ODs"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/79d5964430eb3a38.png" width="165" alt="Sioux Falls Physical to time-expanded graph; selected graph"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/ea3b96b7ea8e84f8.png" width="165" alt="Sioux Falls Generated time-indexed column; selected graph"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD original-space checks; not the full static 528 ODs.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · historical selected ODs</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · selected graph</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · selected graph</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Selected 200/250-OD original-space checks; not the full static 528 ODs.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · historical selected ODs</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · selected graph</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · selected graph</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/presentation_r5/sioux_cg_case_sequence.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/presentation_r5/sioux_cg_case_sequence.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase I 200 OD</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase I 250 OD</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Shared-capacity reallocation</strong> <small class="atlas-depth-badge">[D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase II / own-LP objective</strong> <small class="atlas-depth-badge">[B]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase I 200 OD</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase I 250 OD</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Shared-capacity reallocation</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase II / own-LP objective</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#200-od-pairs"><img src="docs/assets/homepage_alignment_r3/atlas/a59787ff558f1373.png" width="165" alt="Sioux Falls Phase I 200 OD; 200-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#250-od-pairs"><img src="docs/assets/homepage_alignment_r3/atlas/a3973d068bf85b51.png" width="165" alt="Sioux Falls Phase I 250 OD; 250-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#recorded-shared-capacity-reallocation-event"><img src="docs/assets/homepage_alignment_r3/atlas/4cc7346c71734b22.png" width="165" alt="Sioux Falls Shared-capacity reallocation; 200-OD example"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/807154afd4e9a84b.png" width="165" alt="Sioux Falls Phase II / own-LP objective; selected 200-OD trace; 250-OD linked"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#200-od-pairs"><img src="docs/assets/homepage_alignment_r3/atlas/a59787ff558f1373.png" width="165" alt="Sioux Falls Phase I 200 OD; 200-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#250-od-pairs"><img src="docs/assets/homepage_alignment_r3/atlas/a3973d068bf85b51.png" width="165" alt="Sioux Falls Phase I 250 OD; 250-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#recorded-shared-capacity-reallocation-event"><img src="docs/assets/homepage_alignment_r3/atlas/4cc7346c71734b22.png" width="165" alt="Sioux Falls Shared-capacity reallocation; 200-OD example"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/807154afd4e9a84b.png" width="165" alt="Sioux Falls Phase II / own-LP objective; selected 200-OD trace; 250-OD linked"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 200-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 250-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG capacity · 200-OD example</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · selected 200-OD trace; 250-OD linked</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 200-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · 250-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG capacity · 200-OD example</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · selected 200-OD trace; 250-OD linked</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#200-od-pairs">Evidence</a> · <a href="docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#250-od-pairs">Evidence</a> · <a href="docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#recorded-shared-capacity-reallocation-event">Evidence</a> · <a href="docs/assets/presentation_r5/sioux_shared_capacity_canonical.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#200-od-pairs">Evidence</a> · <a href="docs/assets/sioux/phase_i_r1/sioux_falls_200od_phase_i_academic.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#250-od-pairs">Evidence</a> · <a href="docs/assets/sioux/phase_i_r1/sioux_falls_250od_phase_i_academic.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#recorded-shared-capacity-reallocation-event">Evidence</a> · <a href="docs/assets/presentation_r5/sioux_shared_capacity_canonical.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Final movement flow 200 OD</strong> <small class="atlas-depth-badge">[C · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Final movement flow 250 OD</strong> <small class="atlas-depth-badge">[C · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian accepted recovery</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM 200-OD convergence</strong> <small class="atlas-depth-badge">[B · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Final movement flow 200 OD</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation; D — Coordination and verification" aria-label="C — Spatial hierarchy and representation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/C_D.svg" width="30" height="11" alt="[C · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Final movement flow 250 OD</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation; D — Coordination and verification" aria-label="C — Spatial hierarchy and representation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/C_D.svg" width="30" height="11" alt="[C · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian accepted recovery</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM 200-OD convergence</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/fa1b66a0bbb4ba25.png" width="165" alt="Sioux Falls Final movement flow 200 OD; 200-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/a6bcb6654fc7d12e.png" width="165" alt="Sioux Falls Final movement flow 250 OD; 250-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/homepage_alignment_r3/atlas/9482d5e5f7dbef1a.png" width="165" alt="Sioux Falls Lagrangian accepted recovery; selected 200/250-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md#original-saved-convergence-views"><img src="docs/assets/homepage_alignment_r3/atlas/ffa5649006a7c8f0.png" width="165" alt="Sioux Falls ADMM 200-OD convergence; R2_S 200-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/fa1b66a0bbb4ba25.png" width="165" alt="Sioux Falls Final movement flow 200 OD; 200-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/a6bcb6654fc7d12e.png" width="165" alt="Sioux Falls Final movement flow 250 OD; 250-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery"><img src="docs/assets/homepage_alignment_r3/atlas/9482d5e5f7dbef1a.png" width="165" alt="Sioux Falls Lagrangian accepted recovery; selected 200/250-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md#original-saved-convergence-views"><img src="docs/assets/homepage_alignment_r3/atlas/ffa5649006a7c8f0.png" width="165" alt="Sioux Falls ADMM 200-OD convergence; R2_S 200-OD"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 200-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 250-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">selected 200/250-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 200-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 200-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · 250-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">selected 200/250-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 200-OD</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery">Evidence</a> · <a href="docs/assets/sioux/distributed_r1/Sioux_200OD_P07.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md#original-saved-convergence-views">Evidence</a> · <a href="docs/assets/admm_r2/figures/convergence_Sioux_200OD.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/benchmarks/sioux_250od_final_physical_link_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md#lagrangian-capacity-pricing-with-separate-primal-recovery">Evidence</a> · <a href="docs/assets/sioux/distributed_r1/Sioux_200OD_P07.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md#original-saved-convergence-views">Evidence</a> · <a href="docs/assets/admm_r2/figures/convergence_Sioux_200OD.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM 250-OD physical flow</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM 250-OD physical flow</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md#physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/44dfb81dbd684abe.png" width="165" alt="Sioux Falls ADMM 250-OD physical flow; R2_S 250-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md#physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/44dfb81dbd684abe.png" width="165" alt="Sioux Falls ADMM 250-OD physical flow; R2_S 250-OD"></a></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 250-OD</small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">R2_S 250-OD</small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md#physical-link-movement-flow">Evidence</a> · <a href="docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md#physical-link-movement-flow">Evidence</a> · <a href="docs/assets/admm_r2/figures/admm_sioux_250_final_physical_link_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 </tbody></table>
 </article>
@@ -769,240 +769,240 @@ A–D are reading labels for computational depth, not a mandatory solver sequenc
 <tbody><tr><td width="25%">780 physical nodes; 1,239 directed links; 95 fine zones</td><td width="25%">8,930 OD pairs; 723.191 modeled PCE in 1 h</td><td width="25%">100 selected nodes; 111 links; 10 ODs; approved HK10 generated column</td><td width="25%">Detector/trajectory association is contextual; modeled flow is not observed traffic</td></tr></tbody></table>
 <a id="hong-kong-tools"></a>
 <p class="atlas-nav"><a href="#hong-kong-sources">Sources and GMNS</a> · <a href="#hong-kong-population">Population, households and activity</a> · <a href="#hong-kong-transit">Transit and observations</a> · <a href="#hong-kong-generation">Trip generation</a> · <a href="#hong-kong-distribution">Trip distribution</a> · <a href="#hong-kong-mode">Mode choice</a> · <a href="#hong-kong-static">Static assignment methods</a> · <a href="#hong-kong-finite">Finite time-expanded computation</a> · <a href="docs/cases/hong-kong.md#reproduction">Tools and reproducibility</a></p>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-sources" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-sources" data-columns="3" data-items="3"><th colspan="12"><a id="hong-kong-sources"></a><h4>Sources and GMNS</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-sources" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-sources" data-columns="3" data-items="3"><th colspan="3"><a id="hong-kong-sources"></a><h4>Sources and GMNS</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-sources">
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Roads, zones and turns</strong> <small class="atlas-depth-badge">[C]</small></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Source data and preparation</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GMNS network, zones and access</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Roads, zones and turns</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-sources">
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_hong_kong.png" width="165" alt="Hong Kong Source data and preparation; Official-derived bounded network and source layers."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/datasets/hong-kong-gmns.md"><img src="docs/assets/homepage_evidence_r2/row_02_hong_kong.png" width="165" alt="Hong Kong GMNS network, zones and access; 780 physical nodes, 1,239 links; 95 fine zones, ten parents and turn-aware access."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/atlas/13b79b36f2cb5f12.png" width="165" alt="Hong Kong Roads, zones and turns; 780 nodes / 1,239 links"></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_evidence_r2/row_01_hong_kong.png" width="165" alt="Hong Kong Source data and preparation; Official-derived bounded network and source layers."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/datasets/hong-kong-gmns.md"><img src="docs/assets/homepage_evidence_r2/row_02_hong_kong.png" width="165" alt="Hong Kong GMNS network, zones and access; 780 physical nodes, 1,239 links; 95 fine zones, ten parents and turn-aware access."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence"><img src="docs/assets/homepage_alignment_r3/atlas/13b79b36f2cb5f12.png" width="165" alt="Hong Kong Roads, zones and turns; 780 nodes / 1,239 links"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-sources">
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Official-derived bounded network and source layers.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">780 physical nodes, 1,239 links; 95 fine zones, ten parents and turn-aware access.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS · 780 nodes / 1,239 links</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Official-derived bounded network and source layers.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">780 physical nodes, 1,239 links; 95 fine zones, ten parents and turn-aware access.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GMNS · 780 nodes / 1,239 links</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-sources">
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_hong_kong.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/hong-kong-gmns.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_02_hong_kong.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_01_hong_kong.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/datasets/hong-kong-gmns.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_02_hong_kong.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#gmns-zones-and-source-evidence">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-population" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-population" data-columns="2" data-items="2"><th colspan="12"><a id="hong-kong-population"></a><h4>Population, households and activity</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-population" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-population" data-columns="2" data-items="2"><th colspan="2"><a id="hong-kong-population"></a><h4>Population, households and activity</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-population">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Population, households and activity</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>2021 census allocation and activity proxy</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Population, households and activity</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>2021 census allocation and activity proxy</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-population">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_03_hong_kong.png" width="165" alt="Hong Kong Population, households and activity; 2021 census households/population and explicitly modeled building activity proxies."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/d8a68483b09b1465.png" width="165" alt="Hong Kong 2021 census allocation and activity proxy; not observed employment"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_03_hong_kong.png" width="165" alt="Hong Kong Population, households and activity; 2021 census households/population and explicitly modeled building activity proxies."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/d8a68483b09b1465.png" width="165" alt="Hong Kong 2021 census allocation and activity proxy; not observed employment"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-population">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">2021 census households/population and explicitly modeled building activity proxies.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Population/proxy · not observed employment</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">2021 census households/population and explicitly modeled building activity proxies.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Population/proxy · not observed employment</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-population">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_03_hong_kong.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_population_households_activity.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_03_hong_kong.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_population_households_activity.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-transit" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-transit" data-columns="3" data-items="3"><th colspan="12"><a id="hong-kong-transit"></a><h4>Transit and observations</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-transit" width="100%"><colgroup><col width="33.333%"><col width="33.333%"><col width="33.333%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-transit" data-columns="3" data-items="3"><th colspan="3"><a id="hong-kong-transit"></a><h4>Transit and observations</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-transit">
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Transit and pedestrian inputs</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS, trajectory and detector evidence</strong></th>
-<th colspan="4" width="33.333%" class="atlas-title-cell" scope="col"><strong>Detector/trajectory association</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Transit and pedestrian inputs</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>GPS, trajectory and detector evidence</strong></th>
+<th width="33.333%" class="atlas-title-cell" scope="col"><strong>Detector/trajectory association</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-transit">
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_04_hong_kong.png" width="165" alt="Hong Kong Transit and pedestrian inputs; GTFS same-trip rides, fares, headways and pedestrian access enter generalized costs."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_05_hong_kong.png" width="165" alt="Hong Kong GPS, trajectory and detector evidence; Detector and private trajectory association; no held-out validation claim."></a></td>
-<td colspan="4" width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#demand-transit-and-observations"><img src="docs/assets/homepage_alignment_r3/atlas/eaed4d335b8ed5b4.png" width="165" alt="Hong Kong Detector/trajectory association; not held-out validation"></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_04_hong_kong.png" width="165" alt="Hong Kong Transit and pedestrian inputs; GTFS same-trip rides, fares, headways and pedestrian access enter generalized costs."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_05_hong_kong.png" width="165" alt="Hong Kong GPS, trajectory and detector evidence; Detector and private trajectory association; no held-out validation claim."></a></td>
+<td width="33.333%" class="atlas-card-cell"><a href="docs/cases/hong-kong.md#demand-transit-and-observations"><img src="docs/assets/homepage_alignment_r3/atlas/eaed4d335b8ed5b4.png" width="165" alt="Hong Kong Detector/trajectory association; not held-out validation"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-transit">
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GTFS same-trip rides, fares, headways and pedestrian access enter generalized costs.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Detector and private trajectory association; no held-out validation claim.</small></td>
-<td colspan="4" width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Observation linkage · not held-out validation</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">GTFS same-trip rides, fares, headways and pedestrian access enter generalized costs.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Detector and private trajectory association; no held-out validation claim.</small></td>
+<td width="33.333%" class="atlas-meta-cell"><small class="atlas-meta">Observation linkage · not held-out validation</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-transit">
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_04_hong_kong.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_05_hong_kong.png">Figure</a></small></td>
-<td colspan="4" width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_04_hong_kong.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_05_hong_kong.png">Figure</a></small></td>
+<td width="33.333%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong.md#demand-transit-and-observations">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-generation" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-generation" data-columns="2" data-items="2"><th colspan="12"><a id="hong-kong-generation"></a><h4>Trip generation</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-generation" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-generation" data-columns="2" data-items="2"><th colspan="2"><a id="hong-kong-generation"></a><h4>Trip generation</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-generation">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Trip generation — productions / attractions</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Production/attraction scenario</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Trip generation — productions / attractions</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Production/attraction scenario</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-generation">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_06_hong_kong.png" width="165" alt="Hong Kong Trip generation — productions / attractions; Transferred rate and declared capture sensitivity, not local calibration."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/af1e6d0ace57fb5b.png" width="165" alt="Hong Kong Production/attraction scenario; engineering scenario"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_06_hong_kong.png" width="165" alt="Hong Kong Trip generation — productions / attractions; Transferred rate and declared capture sensitivity, not local calibration."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/af1e6d0ace57fb5b.png" width="165" alt="Hong Kong Production/attraction scenario; engineering scenario"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-generation">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Transferred rate and declared capture sensitivity, not local calibration.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip generation · engineering scenario</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Transferred rate and declared capture sensitivity, not local calibration.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Trip generation · engineering scenario</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-generation">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_06_hong_kong.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_trip_generation_distribution.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_06_hong_kong.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_trip_generation_distribution.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-distribution" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-distribution" data-columns="1" data-items="1"><th colspan="12"><a id="hong-kong-distribution"></a><h4>Trip distribution</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-distribution" width="100%"><colgroup><col width="100%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-distribution" data-columns="1" data-items="1"><th colspan="1"><a id="hong-kong-distribution"></a><h4>Trip distribution</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-distribution">
-<th colspan="12" width="100%" class="atlas-title-cell" scope="col"><strong>Trip distribution — zonal OD demand</strong></th>
+<th width="100%" class="atlas-title-cell" scope="col"><strong>Trip distribution — zonal OD demand</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-distribution">
-<td colspan="12" width="100%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_07_hong_kong.png" width="165" alt="Hong Kong Trip distribution — zonal OD demand; Turn-aware gravity/IPF balances 8,930 reachable directed OD pairs."></a></td>
+<td width="100%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_07_hong_kong.png" width="165" alt="Hong Kong Trip distribution — zonal OD demand; Turn-aware gravity/IPF balances 8,930 reachable directed OD pairs."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-distribution">
-<td colspan="12" width="100%" class="atlas-meta-cell"><small class="atlas-meta">Turn-aware gravity/IPF balances 8,930 reachable directed OD pairs.</small></td>
+<td width="100%" class="atlas-meta-cell"><small class="atlas-meta">Turn-aware gravity/IPF balances 8,930 reachable directed OD pairs.</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-distribution">
-<td colspan="12" width="100%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_07_hong_kong.png">Figure</a></small></td>
+<td width="100%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_07_hong_kong.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-mode" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-mode" data-columns="2" data-items="2"><th colspan="12"><a id="hong-kong-mode"></a><h4>Mode choice</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-mode" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-mode" data-columns="2" data-items="2"><th colspan="2"><a id="hong-kong-mode"></a><h4>Mode choice</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-mode">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Mode choice — mode-specific demand</strong></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Mode costs and shares</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Mode choice — mode-specific demand</strong></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Mode costs and shares</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-mode">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_08_hong_kong.png" width="165" alt="Hong Kong Mode choice — mode-specific demand; GTFS/pedestrian generalized cost and declared sensitivity logit."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/d1f475316636d5f6.png" width="165" alt="Hong Kong Mode costs and shares; one-hour AM"></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_evidence_r2/row_08_hong_kong.png" width="165" alt="Hong Kong Mode choice — mode-specific demand; GTFS/pedestrian generalized cost and declared sensitivity logit."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-four-stage.md"><img src="docs/assets/homepage_alignment_r3/atlas/d1f475316636d5f6.png" width="165" alt="Hong Kong Mode costs and shares; one-hour AM"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-mode">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">GTFS/pedestrian generalized cost and declared sensitivity logit.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Mode choice · one-hour AM</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">GTFS/pedestrian generalized cost and declared sensitivity logit.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Mode choice · one-hour AM</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-mode">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_08_hong_kong.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_mode_choice_costs_and_shares.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_08_hong_kong.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-four-stage.md">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_mode_choice_costs_and_shares.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-static" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-static" data-columns="2" data-items="2"><th colspan="12"><a id="hong-kong-static"></a><h4>Static assignment methods</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-static" width="100%"><colgroup><col width="50%"><col width="50%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-static" data-columns="2" data-items="2"><th colspan="2"><a id="hong-kong-static"></a><h4>Static assignment methods</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-static">
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <small class="atlas-depth-badge">[A]</small></th>
-<th colspan="6" width="50%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <small class="atlas-depth-badge">[A]</small></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Frank–Wolfe</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
+<th width="50%" class="atlas-title-cell" scope="col"><strong>Official tap-b Algorithm B</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment" aria-label="A — Native assignment"><img src="docs/assets/atlas_depth_badges/A.svg" width="13" height="11" alt="[A]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-static">
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-static-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_10_hong_kong.png" width="165" alt="Hong Kong Frank–Wolfe; Turn-aware one-hour 723.191 PCE static engineering scenario."></a></td>
-<td colspan="6" width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-static-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_11_hong_kong.png" width="165" alt="Hong Kong Official tap-b Algorithm B; Accepted task-local lossless adapter; not official-adapter parity."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-static-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_10_hong_kong.png" width="165" alt="Hong Kong Frank–Wolfe; Turn-aware one-hour 723.191 PCE static engineering scenario."></a></td>
+<td width="50%" class="atlas-card-cell"><a href="docs/cases/hong-kong-static-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_11_hong_kong.png" width="165" alt="Hong Kong Official tap-b Algorithm B; Accepted task-local lossless adapter; not official-adapter parity."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-static">
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Turn-aware one-hour 723.191 PCE static engineering scenario.</small></td>
-<td colspan="6" width="50%" class="atlas-meta-cell"><small class="atlas-meta">Accepted task-local lossless adapter; not official-adapter parity.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Turn-aware one-hour 723.191 PCE static engineering scenario.</small></td>
+<td width="50%" class="atlas-meta-cell"><small class="atlas-meta">Accepted task-local lossless adapter; not official-adapter parity.</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-static">
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-static-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_10_hong_kong.png">Figure</a></small></td>
-<td colspan="6" width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-static-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_hong_kong.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-static-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_10_hong_kong.png">Figure</a></small></td>
+<td width="50%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-static-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_11_hong_kong.png">Figure</a></small></td>
 </tr>
 </tbody></table>
-<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-finite" width="100%"><colgroup><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"><col width="8.333%"></colgroup><tbody>
-<tr class="atlas-stage-heading" data-stage="hong-kong-finite" data-columns="4" data-items="14"><th colspan="12"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a><h4>Finite time-expanded computation</h4></th></tr>
+<table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-finite" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-finite" data-columns="4" data-items="14"><th colspan="4"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a><h4>Finite time-expanded computation</h4></th></tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <small class="atlas-depth-badge">[B · C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <small class="atlas-depth-badge">[D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <small class="atlas-depth-badge">[B · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Network construction and generated columns</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_evidence_r2/row_14_hong_kong.png" width="165" alt="Hong Kong Network construction and generated columns; Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_hong_kong.png" width="165" alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_hong_kong.png" width="165" alt="Hong Kong Two-phase column generation; Phase I/II, same-graph LP agreement and independent 10/10 closure."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_17_hong_kong.png" width="165" alt="Hong Kong Lagrangian; Ten-OD feasible recovery with 0.7444% certified gap."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_evidence_r2/row_14_hong_kong.png" width="165" alt="Hong Kong Network construction and generated columns; Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_hong_kong.png" width="165" alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_hong_kong.png" width="165" alt="Hong Kong Two-phase column generation; Phase I/II, same-graph LP agreement and independent 10/10 closure."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_17_hong_kong.png" width="165" alt="Hong Kong Lagrangian; Ten-OD feasible recovery with 0.7444% certified gap."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for R5 ten-OD finite case.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Phase I/II, same-graph LP agreement and independent 10/10 closure.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Ten-OD feasible recovery with 0.7444% certified gap.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for R5 ten-OD finite case.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Phase I/II, same-graph LP agreement and independent 10/10 closure.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Ten-OD feasible recovery with 0.7444% certified gap.</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_hong_kong.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_hong_kong.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_hong_kong.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_hong_kong.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_hong_kong.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_hong_kong.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_hong_kong.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_hong_kong.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Bounded case overview</strong></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-indexed movement</strong> <small class="atlas-depth-badge">[C]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Approved HK10 77-arc column</strong> <small class="atlas-depth-badge">[B · C]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Bounded case overview</strong></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Physical to time-indexed movement</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation" aria-label="C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/C.svg" width="13" height="11" alt="[C]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Approved HK10 77-arc column</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img src="docs/assets/atlas_depth_badges/B_C.svg" width="30" height="11" alt="[B · C]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_18_hong_kong.png" width="165" alt="Hong Kong ADMM; Frozen transfer diagnostic; no accepted Hong Kong ADMM objective."></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/023f4bb9ff5ac36d.png" width="165" alt="Hong Kong Bounded case overview; R5 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/ce55713cf8e04485.png" width="165" alt="Hong Kong Physical to time-indexed movement; R5 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/4905a3fe38528595.png" width="165" alt="Hong Kong Approved HK10 77-arc column; model-generated; approved exact excerpt"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_18_hong_kong.png" width="165" alt="Hong Kong ADMM; Frozen transfer diagnostic; no accepted Hong Kong ADMM objective."></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#case-role-scope-and-model-statistics"><img src="docs/assets/homepage_alignment_r3/atlas/023f4bb9ff5ac36d.png" width="165" alt="Hong Kong Bounded case overview; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_alignment_r3/atlas/ce55713cf8e04485.png" width="165" alt="Hong Kong Physical to time-indexed movement; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_alignment_r3/atlas/4905a3fe38528595.png" width="165" alt="Hong Kong Approved HK10 77-arc column; model-generated; approved exact excerpt"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">Frozen transfer diagnostic; no accepted Hong Kong ADMM objective.</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · R5 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · R5 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · model-generated; approved exact excerpt</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">Frozen transfer diagnostic; no accepted Hong Kong ADMM objective.</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG construction · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG column · model-generated; approved exact excerpt</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_hong_kong.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_case_sequence.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_hong_kong.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#case-role-scope-and-model-statistics">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_case_sequence.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase I artificial flow</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Phase II objective</strong> <small class="atlas-depth-badge">[B]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Final physical-link movement flow</strong> <small class="atlas-depth-badge">[C · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Independent 10/10 pricing closure</strong> <small class="atlas-depth-badge">[B · D]</small></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase I artificial flow</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Phase II objective</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Final physical-link movement flow</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation; D — Coordination and verification" aria-label="C — Spatial hierarchy and representation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/C_D.svg" width="30" height="11" alt="[C · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Independent 10/10 pricing closure</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_alignment_r3/atlas/01e5656230199c15.png" width="165" alt="Hong Kong Phase I artificial flow; R5 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/12f837a75001d797.png" width="165" alt="Hong Kong Phase II objective; R5 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/216dd0198df05e66.png" width="165" alt="Hong Kong Final physical-link movement flow; R5 10-OD"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure"><img src="docs/assets/homepage_alignment_r3/atlas/7881658da0b27d96.png" width="165" alt="Hong Kong Independent 10/10 pricing closure; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_alignment_r3/atlas/01e5656230199c15.png" width="165" alt="Hong Kong Phase I artificial flow; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-ii-improves-the-real-path-objective"><img src="docs/assets/homepage_alignment_r3/atlas/12f837a75001d797.png" width="165" alt="Hong Kong Phase II objective; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow"><img src="docs/assets/homepage_alignment_r3/atlas/216dd0198df05e66.png" width="165" alt="Hong Kong Final physical-link movement flow; R5 10-OD"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure"><img src="docs/assets/homepage_alignment_r3/atlas/7881658da0b27d96.png" width="165" alt="Hong Kong Independent 10/10 pricing closure; R5 10-OD"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · R5 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · R5 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · R5 10-OD</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG pricing · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase I · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG Phase II · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG flow · R5 10-OD</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">CG pricing · R5 10-OD</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_i_artificial_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-ii-improves-the-real-path-objective">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian certified gap</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-title-cell" scope="col"><strong>ADMM gated diagnostic</strong> <small class="atlas-depth-badge">[B · D]</small></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
-<th colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>Lagrangian certified gap</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-title-cell" scope="col"><strong>ADMM gated diagnostic</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
+<th width="25%" class="atlas-empty" aria-hidden="true"></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_alignment_r3/atlas/9cff0feccba4d498.png" width="165" alt="Hong Kong Lagrangian certified gap; bounded accepted 0.7444%"></a></td>
-<td colspan="3" width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_alignment_r3/atlas/878fedb5b5438773.png" width="165" alt="Hong Kong ADMM gated diagnostic; gated; no accepted objective"></a></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_alignment_r3/atlas/9cff0feccba4d498.png" width="165" alt="Hong Kong Lagrangian certified gap; bounded accepted 0.7444%"></a></td>
+<td width="25%" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_alignment_r3/atlas/878fedb5b5438773.png" width="165" alt="Hong Kong ADMM gated diagnostic; gated; no accepted objective"></a></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">bounded accepted 0.7444%</small></td>
-<td colspan="3" width="25%" class="atlas-meta-cell"><small class="atlas-meta">gated; no accepted objective</small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">bounded accepted 0.7444%</small></td>
+<td width="25%" class="atlas-meta-cell"><small class="atlas-meta">gated; no accepted objective</small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_admm_residuals_and_feasibility.png">Figure</a></small></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
-<td colspan="3" width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png">Figure</a></small></td>
+<td width="25%" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_admm_residuals_and_feasibility.png">Figure</a></small></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
+<td width="25%" class="atlas-empty" aria-hidden="true"></td>
 </tr>
 </tbody></table>
 </article>
