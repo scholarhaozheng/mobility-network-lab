@@ -158,13 +158,46 @@ def main() -> int:
     ):
         check(rel in readme, f"Landing project map/city full-figure link missing: {rel}")
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
+    axes = readme[readme.find("## 02A / Two axes"):readme.find('<a id="coverage"></a>')]
+    check(readme.count('## 02A / Two axes of Mobility Computation Lab') == 1 and
+          home.count('Two axes of Mobility Computation Lab') == 1 and
+          len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
+          "The two-axis explanation must appear exactly once before Section 03")
+    coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    roman_groups = (
+        ("I / City data and model foundations", "a--city-data-and-model-foundations"),
+        ("II / Transit and observation evidence", "b--transit-and-observation-evidence"),
+        ("III / Four-stage travel-demand workflow", "c--four-stage-travel-demand-workflow"),
+        ("IV / Static assignment · BPR/Beckmann", "d1--static-assignment--bprbeckmann"),
+        ("V / Finite time-expanded · fixed cost, hard capacity", "d2--finite-time-expanded--fixed-cost-hard-capacity"),
+        ("VI / Reusable outputs and tools", "e--reusable-outputs-and-tools"),
+    )
+    check(all(coverage.count('### '+heading) == 1 and
+              coverage.count('<a id="'+anchor+'"></a>') == 1 and
+              coverage.count('<a id="section03-'+heading.split(' / ',1)[0].lower()+'"></a>') == 1
+              for heading, anchor in roman_groups) and
+          not re.search(r'^### (?:A|B|C|D1|D2|E) /', coverage, re.M),
+          "Section 03 must have I–VI headings and exact old-fragment compatibility anchors")
+    check(atlas.count('id="computational-depth-legend"') == 1 and
+          atlas.count('Agentic execution remains a learning and research direction') == 1 and
+          all(atlas.count('**'+letter+' — '+title+'**') == 1 for letter, title in (
+              ('A','Native assignment'), ('B','Decomposition and distributed computation'),
+              ('C','Spatial hierarchy and representation'), ('D','Coordination and verification'))),
+          "The single A–D legend or its bounded agentic qualification is missing")
+    check(atlas.count('class="atlas-depth-badge"') >= 50 and
+          atlas.count('class="atlas-depth-stage">A · Native assignment') == 3 and
+          all('['+mark+']' in atlas for mark in ('A','B','C','D','B · D','B · C','C · D')),
+          "City atlas A–D badges are incomplete")
+    badge_cells = re.findall(r'<td [^>]*class="atlas-card-cell">(.*?)</td>', atlas, re.S)
+    check(all(re.search(r'</a><br><b class="atlas-depth-badge">\[[ABCD](?: · [CD])?\]</b><br><strong>', cell)
+              for cell in badge_cells if 'class="atlas-depth-badge"' in cell),
+          "A–D badge text must be visibly separated from the existing card title in GitHub-native HTML")
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
           "Atlas must retain 86 city-owned cards in native table cells")
     check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+height="\d+"', atlas),
           "Atlas must use width-limited previews without forced image heights")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
-    coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
     home_tables = re.findall(r'<table\b[^>]*>', coverage + atlas)
     check(len(home_tables) == 18 + 3 + 3 and
           all('width="100%"' in opening for opening in home_tables),
@@ -176,7 +209,7 @@ def main() -> int:
           "Site case-atlas padding must not inset Section 04 table edges from Section 03")
     check(coverage.count('class="home-coverage"') == 18 and
           coverage.count('width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>') == 18 and
-          'E / Reusable outputs and tools' not in coverage and
+          '### VI / Reusable outputs and tools' in coverage and
           not re.search(r'row_19_(?:boston|sioux_falls|hong_kong)\.png', coverage),
           "Coverage tables must be full width; tools remain navigation only")
     check(not re.search(r'<img[^>]+height="\d+"', coverage),
