@@ -1,0 +1,40 @@
+# Hong Kong saved-position projection: narrow publication record
+
+This record applies only to `hong_kong_reference_projection.png`, its SVG,
+source sidecar, and the corresponding README/case-page embeds. It does not
+change the disclosure decisions for original provider files, the complete
+reference-position table, the complete saved-match table, or any other
+UrbanNav-derived asset.
+
+The PolyU IPNL [UrbanNav resource page](https://www.polyu.edu.hk/aae/ipn-lab/us/en/resources/urbannav-dataset/)
+labels the UrbanNav **dataset** MIT. The same provider's
+[dataset repository](https://github.com/IPNL-POLYU/UrbanNavDataset/blob/master/README.md#urbannav-hk-medium-urban-1)
+lists `UrbanNav_TST_GT_raw.txt` as the ground-truth download for
+UrbanNav-HK-Medium-Urban-1. The exact-file license wording is not reproduced
+in that repository's License section. The project owner authorized publication
+of this particular 12-point derived figure on 2026-10-02, relying on the
+provider's dataset-level MIT designation and the exact-file dataset link.
+This is a documented source-scope interpretation, not a claim that the project
+owns or relicenses the provider's data. The historical R1 private handoff and
+its rights review remain unchanged as records of that earlier decision.
+
+The image shows 12 deterministic samples from the longest uninterrupted
+segment of the frozen saved Viterbi match. Its location marks and lateral
+offsets are derived from the provider's SPAN-CPT+IE reference positions and
+the already-saved matched-link IDs and along-link distances. No matcher,
+scientific solver, or observation acquisition was run to prepare the figure.
+The public road geometry is the bounded official-derived Hong Kong GMNS
+instance. Source identities, figure hashes and the selection rule are in
+`hong_kong_reference_projection.source.json`.
+
+Only the rendered PNG/SVG and non-coordinate sidecar are distributed. The raw
+reference file, complete point and match CSVs, timestamps, provider archives,
+GNSS RINEX, ROS, LiDAR, camera data and private solver states are not bundled.
+The figure concerns one research vehicle; it is not observed OD, traffic
+calibration, a representative traffic sample, or lane-level validation.
+
+Attribution: PolyU Intelligent Positioning and Navigation Laboratory,
+UrbanNav-HK-Medium-Urban-1 ground-truth/reference positions; Hsu et al.,
+*Hong Kong UrbanNav: An Open-Source Multisensory Dataset for Benchmarking Urban
+Navigation Algorithms*, NAVIGATION 70(4), 2023,
+[doi:10.33012/navi.602](https://doi.org/10.33012/navi.602).

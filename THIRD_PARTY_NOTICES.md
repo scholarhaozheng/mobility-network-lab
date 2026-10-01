@@ -1,5 +1,15 @@
 # Third-party notices
 
+## UrbanNav reference-position figure
+
+The selected Hong Kong 12-point projection figure uses PolyU IPNL
+UrbanNav-HK-Medium-Urban-1 SPAN-CPT+IE ground-truth/reference positions.
+The provider's [UrbanNav resource page](https://www.polyu.edu.hk/aae/ipn-lab/us/en/resources/urbannav-dataset/)
+labels the dataset MIT, and its [repository](https://github.com/IPNL-POLYU/UrbanNavDataset/blob/master/README.md#urbannav-hk-medium-urban-1)
+links the exact ground-truth file. The [asset-specific publication record](docs/assets/hong_kong/visual_release_r1/PUBLICATION_SCOPE.txt)
+documents the narrow interpretation and attribution. Original provider files,
+full point tables and other point-level derivatives are not included.
+
 ## Open Mobility Data Visibility
 
 This project includes five selected original OMDV implementations and two

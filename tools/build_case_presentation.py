@@ -52,6 +52,8 @@ def main(argv=None):
     '''
     CSS += '''
     .mcl-page table.home-coverage td img{width:230px;max-width:100%;height:auto;object-fit:contain}
+    .mcl-page table.home-coverage[data-component="05"] .coverage-preview td.gps-evidence-pair{white-space:nowrap}
+    .mcl-page table.home-coverage[data-component="05"] .coverage-preview td.gps-evidence-pair img.gps-paired-preview{display:inline-block;width:170px;max-width:48%;height:auto;object-fit:contain;vertical-align:middle}
     .case-atlas{border:1px solid #d6e1e7;border-radius:13px;padding:24px;margin:36px -24px 52px;background:#fff}
     .case-atlas>h3{margin-top:0}.case-atlas .atlas-cover{display:block;width:min(100%,780px);height:auto;margin:18px 0;border:1px solid #d6e1e7;border-radius:8px;object-fit:contain}
     .atlas-facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px 22px;margin:18px 0}.atlas-facts div{padding:9px 12px;background:#f1f6f8;border-left:3px solid #087f8c}.atlas-facts dt{font-weight:750;font-size:12px;color:#17364a}.atlas-facts dd{margin:3px 0 0;font-size:12px;color:#53697a}

@@ -46,7 +46,11 @@ This is an **accepted bounded technical case**, not an empirically calibrated Ho
 
 [Four-stage scenario](hong-kong-four-stage.md) uses building/activity and transit/pedestrian evidence with explicit assumptions; detector/UrbanNav records are not held-out validation.
 
-[The four-stage engineering scenario](hong-kong-four-stage.md) gives population/household/activity preparation, trip generation, distribution, mode-choice inputs and the evidence grade of 50 detector-lane snapshots. Private UrbanNav points are not distributed.
+[The four-stage engineering scenario](hong-kong-four-stage.md) gives population/household/activity preparation, trip generation, distribution, mode-choice inputs and the evidence grade of 50 detector-lane snapshots. The original UrbanNav file and complete point tables are not distributed.
+
+![Hong Kong saved reference positions, projected points and matched road geometry](../assets/hong_kong/visual_release_r1/hong_kong_reference_projection.png)
+
+*Twelve saved SPAN-CPT+IE reference positions from one UrbanNav research vehicle, shown against frozen Viterbi matched links; no matching rerun, raw GNSS claim, traffic-demand inference or lane-level validation. The full point tables remain private.* [SVG](../assets/hong_kong/visual_release_r1/hong_kong_reference_projection.svg) · [Source hashes and selection rule](../assets/hong_kong/visual_release_r1/hong_kong_reference_projection.source.json) · [Publication scope](../assets/hong_kong/visual_release_r1/PUBLICATION_SCOPE.txt).
 
 ## Static assignment
 
