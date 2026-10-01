@@ -1,0 +1,49 @@
+{
+  "source_package": "corrected_R2",
+  "full_zip_sha256": "cfc550f87f0e40b30c8d17dd1b08e5a3122f165382a73974d9bafa81c6e58257",
+  "lite_zip_sha256": "34ce81aff1949e7186a4e329aae672596a25dd80662676b5223175c21619410c",
+  "authoritative_records_in_source_package": [
+    "HONG_KONG_STATIC_PATH_L3_RESULT_MATRIX.csv",
+    "CORRECTION_VALIDATION.json",
+    "PUBLIC_CLAIM_BOUNDARY.md",
+    "FIGURE_CAPTIONS.md",
+    "figures/FIGURE_SOURCE.json"
+  ],
+  "public_interpretation_label": "ACCEPTED_BOUNDED_LOW_CONGESTION_TRANSFER",
+  "instance": "frozen H1 static turn-aware BPR/Beckmann",
+  "od_count": 26,
+  "legal_path_count": 126,
+  "demand_pce_per_hour": 52.17845064587021,
+  "solver_link_count": 3446,
+  "physical_link_count": 1239,
+  "finite_path_full_graph_relative_gap": -5.834776163075239e-16,
+  "l3_rank26_full_graph_relative_gap": 2.3052422649623767e-11,
+  "l3_rank52_full_graph_relative_gap": 2.3052228157085008e-11,
+  "singleton_od": {
+    "origin_zone": 11,
+    "destination_zone": 12,
+    "legal_path_count": 1,
+    "edge_removal_reachability_revalidated": true
+  },
+  "zone_80_to_38_legal_path_count": 5,
+  "basis_operator": "minor-path by full 3,446-link turn-expanded solver-link incidence, not physical-link-only incidence",
+  "scope": {
+    "H0": "10 OD / 50 paths; interface smoke only",
+    "H1": "26 OD / 126 legal paths; accepted bounded low-congestion transfer",
+    "H2": "100 OD / 492 paths; path/resource preflight only; not solved",
+    "full_hong_kong": "8,930 OD; finite-path / L3 not demonstrated"
+  },
+  "interpretation_boundary": "H1 validates transfer and original-space reconstruction. It is not a nontrivial route-splitting compression stress test, a speedup claim, or a full Hong Kong finite-path/L3 result.",
+  "reused_existing_figure": true,
+  "newly_generated_scientific_figure": false,
+  "figure_sha256": {
+    "hong_kong_finite_flow_support.png": "ec41d66f84be1d05b4178fc0242c557190644ed3617a65fb14c1d414ca4282e6",
+    "hong_kong_finite_flow_support.svg": "a08b128488954fc59b3b62ed1e7c6fb395572b91dd0e8c00e66c72b229e15815",
+    "hong_kong_l3_rank26_reconstruction_difference.png": "cdbd3832b9eaef7ed5e68cb916f72775d6ff5262350175495b1f653e99bd7928",
+    "hong_kong_l3_rank26_reconstruction_difference.svg": "4de0f3011cdec072f03d2959c43f421b4333d1cbb2dd3d1825fdf6c1d0753c23",
+    "hong_kong_l3_rank52_reconstruction_difference.png": "2553cb96219c56a0e5fa5c56645ccfc860f8cfe522df4896491bcc5b1cd692f7",
+    "hong_kong_l3_rank52_reconstruction_difference.svg": "9d86ce0fb59821d3973d062b218de55886ec540e05bdc458ed7214cba78ee923",
+    "hong_kong_h1_objective_comparison.png": "e8beabaede0f7fe6d91cb632f7eba4b25aa61407f2a21b9078dbbb5482f32908",
+    "hong_kong_h1_objective_comparison.svg": "d17300c7f38bff6db2ce9a306b6ede1051309cd4bcc3c8f4b6500513f5c5d660"
+  }
+}

@@ -14,6 +14,7 @@ from pathlib import Path
 ROOT=Path(__file__).resolve().parents[2]
 MATRIX=ROOT/"docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv"
 ROW15_MAPPING=ROOT/"docs/assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv"
+HK_STATIC_R2_MAPPING=ROOT/"docs/assets/homepage_evidence_r2/ROW12_13_HK_REUSE_SOURCE_MAPPING.csv"
 README=ROOT/"README.md"
 HERO="""# Mobility Computation Lab
 
@@ -205,10 +206,47 @@ def row15_reuse(rows):
             raise AssertionError("row-15 image geometry")
     return reuse
 
+def hk_static_r2_reuse(rows, rid):
+    with HK_STATIC_R2_MAPPING.open(newline="",encoding="utf-8") as f:
+        records={r["row_id"]:r for r in csv.DictReader(f)}
+    if set(records)!={"12","13"}:
+        raise AssertionError("corrected R2 Hong Kong static mapping")
+    record=records[rid]
+    row=next(r for r in rows if r["city"]=="Hong Kong")
+    for field,expected in (("original_figure",record["original_figure"]),
+                           ("data_or_figure_source",record["source_record"]),
+                           ("source_hash",record["source_sha256"]),
+                           ("target_page",record["target_page"]),
+                           ("target_anchor",record["target_anchor"])):
+        if row[field]!=expected:
+            raise AssertionError((rid,field))
+    if (record["source_package"],record["reused_existing_figure"],
+        record["newly_generated_scientific_figure"])!=("corrected_R2","true","false"):
+        raise AssertionError("corrected R2 figure contract")
+    if not all(s in row["notes"] for s in
+               ("reused_existing_figure=true","newly_generated_scientific_figure=false",
+                "source_package=corrected_R2")):
+        raise AssertionError("corrected R2 matrix contract")
+    figure=ROOT/record["original_figure"]
+    source=ROOT/record["source_record"]
+    if not figure.is_file() or hashlib.sha256(figure.read_bytes()).hexdigest()!=record["original_sha256"]:
+        raise AssertionError((rid,"corrected R2 figure hash"))
+    source_bytes=source.read_bytes()
+    if record["source_hash_convention"]=="LF-normalized":
+        source_bytes=source_bytes.replace(b"\r\n",b"\n")
+    elif record["source_hash_convention"]!="exact-bytes":
+        raise AssertionError("source hash convention")
+    if hashlib.sha256(source_bytes).hexdigest()!=record["source_sha256"]:
+        raise AssertionError((rid,"corrected R2 source hash"))
+    return {"Hong Kong":record}
+
 def component_preview_cell(r, rid, reused):
-    primary = reused[r["city"]]["original_figure"] if reused else r["preview_path"]
+    reuse_record = reused.get(r["city"]) if reused else None
+    primary = reuse_record["original_figure"] if reuse_record else r["preview_path"]
     alt = (r["city"]+" Phase-II / CG-RMP objective versus arc-flow LP reference"
-           if reused else r["city"]+" "+r["row_title"]+" preview")
+           if rid=="15" else
+           "Hong Kong saved bounded H1 "+r["row_title"]+" figure"
+           if reuse_record else r["city"]+" "+r["row_title"]+" preview")
     paired = rid == "05" and r["city"] in GPS_PAIR_SECONDARY
     cell = ('<td width="266"'+(' height="160" valign="middle"' if reused else '')+
             (' class="gps-evidence-pair"' if paired else '')+
@@ -226,14 +264,15 @@ def component_preview_cell(r, rid, reused):
 def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
-    reused=row15_reuse(rows) if rid=="15" else None
+    reused=(row15_reuse(rows) if rid=="15" else
+            hk_static_r2_reuse(rows,rid) if rid in {"12","13"} else None)
     out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
          '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
          '<tr class="coverage-scope">'+''.join('<td width="266" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
          '<tr class="coverage-preview">'+''.join(component_preview_cell(r,rid,reused) for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
-             ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"])+'</sub></td>' for r in rows)
+             ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"] if r["city"] in reused else r["graphic_type"])+'</sub></td>' for r in rows)
              if reused else
              ''.join('<td width="266" align="center"><sub>'+esc({
                  "Boston":"Network association · saved point projection",
@@ -248,8 +287,9 @@ def component_table(matrix, rid):
          '<tr class="coverage-links">']
     for r in rows:
         source=r["data_or_figure_source"]
-        links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
-               '">'+('Full figure' if reused else 'Full preview')+'</a>')
+        reuse_record=reused.get(r["city"]) if reused else None
+        links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reuse_record["original_figure"] if reuse_record else r["preview_path"])+
+               '">'+('Full figure' if reuse_record else 'Full preview')+'</a>')
         if rid == "05" and r["city"] in GPS_PAIR_SECONDARY:
             figure,_,_,link_name=GPS_PAIR_SECONDARY[r["city"]]
             links += ' · <a href="'+esc(figure)+'">'+esc(link_name)+'</a>'
@@ -262,7 +302,7 @@ def component_table(matrix, rid):
 
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
-      'Shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities; the GPS row also pairs accepted city-specific figures, while the Arc-flow LP reference row reuses three accepted full figures in equal-height cells. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
+      'Most shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities. The GPS row pairs accepted city-specific figures; Hong Kong finite-path/L3 and the Arc-flow LP reference row reuse accepted full figures. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
     for group,old_anchor,ids in ROW_GROUPS:
         new_anchor='section03-'+group.split(' / ',1)[0].lower()
         out += ['<a id="'+old_anchor+'"></a><a id="'+new_anchor+'"></a>','### '+group,'']
@@ -413,6 +453,10 @@ def section04(matrix):
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
             cards=[]
             for rid in STAGE_ROWS[stage]:
+                # This bounded R2 intake changes only the two Section 03 cells;
+                # the existing Section 04 case atlas is intentionally unchanged.
+                if city=="Hong Kong" and stage=="static" and rid in {"12","13"}:
+                    continue
                 r=matrix[(rid,city)]
                 if r["status"] in {"outside benchmark","not demonstrated"}:continue
                 target=r["target_page"]+("#"+r["target_anchor"] if r["target_anchor"] else "")
