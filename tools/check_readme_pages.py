@@ -339,11 +339,39 @@ def main() -> int:
               f'Corrected R2 Hong Kong row {rid} source contract mismatch')
         readme_row = coverage.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
         html_row = home.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
-        check(figure in readme_row and figure.removeprefix('docs/') in html_row and
-              record['caption'] in readme_row and record['caption'] in html_row and
+        check('ACCEPTED_BOUNDED_LOW_CONGESTION_TRANSFER' in readme_row and
+              'ACCEPTED_BOUNDED_LOW_CONGESTION_TRANSFER' in html_row and
               record['target_page'] + '#' + record['target_anchor'] in readme_row and
               fragment_exists(ROOT / record['target_page'], record['target_anchor']),
-              f'Corrected R2 Hong Kong row {rid} image, caption, or case anchor missing')
+              f'Corrected R2 Hong Kong row {rid} scope or case anchor missing')
+    parity_path = DOCS / 'assets/static_path_parity_r1/FIGURE_PARITY_MAP.csv'
+    with parity_path.open(newline='', encoding='utf-8') as stream:
+        parity = list(csv.DictReader(stream))
+    check(len(parity) == 12 and
+          {(r['row_id'], r['city'], r['view']) for r in parity} ==
+          {(rid, city, view) for rid in ('12', '13')
+           for city in ('Boston', 'Sioux Falls', 'Hong Kong')
+           for view in ('distribution', 'network')},
+          'Static path/L3 parity must contain both figure types for every city and row')
+    for record in parity:
+        figure = ROOT / record['figure']
+        source = ROOT / record['source_record']
+        rid = record['row_id']
+        readme_row = coverage.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
+        html_row = home.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
+        check(figure.is_file() and source.is_file() and
+              hashlib.sha256(figure.read_bytes()).hexdigest() == record['sha256'] and
+              record['figure'] in readme_row and
+              record['figure'].removeprefix('docs/') in html_row and
+              record['original_preserved'] == 'yes',
+              f'Static path/L3 {rid} {record["city"]} {record["view"]} source or image mismatch')
+        if record['figure'].startswith('docs/assets/static_path_parity_r1/'):
+            sidecar = json.loads(source.read_text(encoding='utf-8'))
+            check(sidecar['output_sha256']['png'] == record['sha256'] and
+                  sidecar['renderer'] == 'tools/visuals/render_static_path_parity_r1.py',
+                  f'Static path/L3 derivative sidecar mismatch: {record["figure"]}')
+    check(not any(p.suffix.lower() in {'.npz', '.npy'} for p in parity_path.parent.iterdir()),
+          'Private Hong Kong pool or state array entered public figure directory')
     for name, expected_hash in hk_static_source['figure_sha256'].items():
         figure_path = DOCS / 'assets/hong_kong/static_path_l3_r2' / name
         check(figure_path.is_file() and
@@ -449,19 +477,25 @@ def main() -> int:
     check(coverage.count('<th scope="col" width="266">') == 54 and
           coverage.count('<th colspan="3" scope="colgroup" width="800">') == 18 and
           coverage.count('<td width="266" valign="top">') == 54 and
-          coverage.count('<td width="266" align="center">') == 55 and
+          coverage.count('<td width="266" align="center">') == 49 and
           coverage.count('<td width="266" class="gps-evidence-pair" align="center">') == 2 and
+          coverage.count('class="coverage-preview static-path-distribution"') == 2 and
+          coverage.count('class="coverage-preview static-path-network"') == 2 and
+          coverage.count('<td width="266" height="160" valign="middle" align="center">') >= 6 and
+          coverage.count('<td width="266" height="130" valign="middle" align="center">') == 6 and
           800 - 3 * 266 == 2,
           "Section 03 must reserve the same GitHub-native 800px outer width as Section 04")
     captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
           all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption)
-              for index, caption in enumerate(captions) if index not in (4, 11, 12, 14)) and
+              for index, caption in enumerate(captions) if index not in (4, 14)) and
           all(captions[index].count('<td width="266" align="center"><sub>') == 3
-              for index in (4, 11, 12, 14)) and
+              for index in (4, 14)) and
+          captions[11] == '<td colspan="3" align="center"><sub>finite-path reconstruction panel</sub></td>' and
+          captions[12] == '<td colspan="3" align="center"><sub>L3 reconstruction/difference panel</sub></td>' and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
-          "Shared row captions must remain compact; rows 05, 12, 13 and 15 have city-specific captions")
+          "Rows 12/13 need one shared caption; only GPS and LP rows retain city-specific captions")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"
