@@ -224,6 +224,10 @@ def main() -> int:
           all('width="100%"' in opening for opening in home_tables),
           "Every Section 03/04 table must have the same full-width outer boundary")
     home_css = (ROOT / "docs/assets/presentation-r3.css").read_text(encoding="utf-8")
+    check('.mcl-page th{background:var(--navy);color:#fff;' in home_css and
+          '.mcl-page table.atlas-city-table .atlas-stage-heading th{' not in home_css and
+          '.mcl-page table.atlas-city-table .atlas-benchmark-heading th{' not in home_css,
+          "Site Section 04 group headings must inherit the same th styling as Section 03")
     check('.mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#6a737b;' in home_css and
           '.mcl-page table.atlas-city-table .atlas-depth-badge img{display:inline-block;width:auto;height:11px;' in home_css and
           'assets/atlas-depth-tooltips.js' in home and
