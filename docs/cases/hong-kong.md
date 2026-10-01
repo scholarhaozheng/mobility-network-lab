@@ -29,6 +29,7 @@ This is an **accepted bounded technical case**, not an empirically calibrated Ho
 | City graph and hierarchy | 780 physical nodes, 1,239 directed physical links, 95 fine SSG zones, 10 STPUG parents | Source IDs, nonphysical access, turn and grade-separation checks retained |
 | Four-stage scenario | 8,930 reachable directed interzonal OD pairs; 723.191 PCE modeled one-hour road load | Transferred rates, proxy activity, sensitivity mode choice; not observed demand |
 | Static assignment | Turn-aware FW and official `tap-b` Algorithm B agree under the accepted task-local lossless TAPLab-compatible adapter | Stock official-adapter parity is **not** claimed for Hong Kong |
+| Bounded static finite-path / Native Diagnostic L3 | Corrected R2 H1: 26 selected ODs, 126 legal paths; finite-path and ranks 26/52 pass original-space and full-graph gap checks | **Accepted bounded low-congestion transfer** on H1; not the full 8,930-OD case or a compression stress test |
 | Finite space–time LP / CG | 10 ODs, 111 selected physical links, 11,954 dynamic nodes, 24,910 arcs; CG and LP agree at 75.036329857948 vehicle-minutes | Independent full-DAG pricing closure passes 10/10 demands at 1e-6 |
 | Lagrangian / ADMM | Feasible Lagrangian primal with 0.7444% certified gap; ADMM R2 gated before accepted outer iterations | No accepted Hong Kong ADMM objective |
 
@@ -57,6 +58,8 @@ This is an **accepted bounded technical case**, not an empirically calibrated Ho
 [Turn-aware static FW/Algorithm B](hong-kong-static-assignment.md) have separate static objectives; official TAPLab adapter parity is not claimed.
 
 [FW and task-local lossless Algorithm B evidence](hong-kong-static-assignment.md) use the declared turn-aware BPR/Beckmann problem; official registered-adapter parity is not claimed for Hong Kong.
+
+[Corrected R2 bounded H1 finite-path and Native Diagnostic L3 evidence](hong-kong-static-assignment.md#bounded-h1-finite-path-and-native-diagnostic-l3) uses the same frozen H1 static problem for its FW anchor, finite paths and rank-26/52 reconstruction. The accepted interpretation is low-congestion transfer, not a full Hong Kong path/L3 result.
 
 ## Finite time-expanded algorithms
 

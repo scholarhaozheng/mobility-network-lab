@@ -299,6 +299,70 @@ def main() -> int:
               figure.removeprefix('docs/') in home and
               (ROOT / f'docs/assets/homepage_evidence_r2/row_15_{old_slug}.png').is_file(),
               f'Section 04 must show the accepted LP reference figure while retaining the old preview: {record["city"]}')
+    hk_static_source = json.loads((DOCS / 'assets/hong_kong/static_path_l3_r2/RESULT_SOURCE.json').read_text(encoding='utf-8'))
+    with (DOCS / 'assets/homepage_evidence_r2/ROW12_13_HK_REUSE_SOURCE_MAPPING.csv').open(
+        newline='', encoding='utf-8'
+    ) as stream:
+        hk_static_rows = list(csv.DictReader(stream))
+    with (DOCS / 'assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv').open(
+        newline='', encoding='utf-8'
+    ) as stream:
+        hk_matrix = {r['row_id']: r for r in csv.DictReader(stream)
+                     if r['city'] == 'Hong Kong' and r['row_id'] in {'12', '13'}}
+    check(len(hk_static_rows) == 2 and set(hk_matrix) == {'12', '13'} and
+          hk_static_source['source_package'] == 'corrected_R2' and
+          hk_static_source['public_interpretation_label'] ==
+          'ACCEPTED_BOUNDED_LOW_CONGESTION_TRANSFER' and
+          hk_static_source['singleton_od']['origin_zone'] == 11 and
+          hk_static_source['singleton_od']['destination_zone'] == 12 and
+          hk_static_source['zone_80_to_38_legal_path_count'] == 5 and
+          hk_static_source['solver_link_count'] == 3446,
+          'Corrected R2 provenance, singleton OD, or basis operator is missing')
+    for record in hk_static_rows:
+        rid = record['row_id']
+        row = hk_matrix.get(rid, {})
+        figure = record['original_figure']
+        source = record['source_record']
+        figure_path, source_path = ROOT / figure, ROOT / source
+        source_bytes = source_path.read_bytes() if source_path.is_file() else b''
+        if record['source_hash_convention'] == 'LF-normalized':
+            source_bytes = source_bytes.replace(b'\r\n', b'\n')
+        check(figure_path.is_file() and source_path.is_file() and
+              hashlib.sha256(figure_path.read_bytes()).hexdigest() == record['original_sha256'] and
+              hashlib.sha256(source_bytes).hexdigest() == record['source_sha256'] and
+              row.get('original_figure') == figure and
+              row.get('data_or_figure_source') == source and
+              row.get('target_anchor') == record['target_anchor'] and
+              'source_package=corrected_R2' in row.get('notes', '') and
+              record['reused_existing_figure'] == 'true' and
+              record['newly_generated_scientific_figure'] == 'false',
+              f'Corrected R2 Hong Kong row {rid} source contract mismatch')
+        readme_row = coverage.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
+        html_row = home.split(f'data-component="{rid}"', 1)[1].split('</table>', 1)[0]
+        check(figure in readme_row and figure.removeprefix('docs/') in html_row and
+              record['caption'] in readme_row and record['caption'] in html_row and
+              record['target_page'] + '#' + record['target_anchor'] in readme_row and
+              fragment_exists(ROOT / record['target_page'], record['target_anchor']),
+              f'Corrected R2 Hong Kong row {rid} image, caption, or case anchor missing')
+    for name, expected_hash in hk_static_source['figure_sha256'].items():
+        figure_path = DOCS / 'assets/hong_kong/static_path_l3_r2' / name
+        check(figure_path.is_file() and
+              hashlib.sha256(figure_path.read_bytes()).hexdigest() == expected_hash,
+              f'Corrected R2 original figure bytes changed: {name}')
+    hk_static_page = (DOCS / 'cases/hong-kong-static-assignment.md').read_text(encoding='utf-8')
+    hk_static_atlas = atlas.split('data-stage="hong-kong-static"', 1)[1].split('</table>', 1)[0]
+    check(all(name in hk_static_page for name in (
+              'hong_kong_finite_flow_support.png',
+              'hong_kong_l3_rank26_reconstruction_difference.png',
+              'hong_kong_l3_rank52_reconstruction_difference.png',
+              'hong_kong_h1_objective_comparison.png')) and
+          'zone 11 → 12' in hk_static_page and '80 → 38 has five legal paths' in hk_static_page and
+          '3,446-link turn-expanded solver-link graph' in hk_static_page and
+          'low-congestion' in hk_static_page and
+          'Full Hong Kong | 8,930 positive ODs | Finite-path / L3 not demonstrated' in hk_static_page and
+          'Finite-path reference' not in hk_static_atlas and
+          'Native Diagnostic L3 / compression' not in hk_static_atlas,
+          'Corrected R2 Hong Kong case text or fixed Section 04 scope changed')
     for removed in (
         "not an automatic observed-OD or calibrated-demand pipeline",
         "schematic topology, no city zone hierarchy",
@@ -393,11 +457,11 @@ def main() -> int:
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
           all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption)
-              for index, caption in enumerate(captions) if index not in (4, 14)) and
-          captions[4].count('<td width="266" align="center"><sub>') == 3 and
-          captions[14].count('<td width="266" align="center"><sub>') == 3 and
+              for index, caption in enumerate(captions) if index not in (4, 11, 12, 14)) and
+          all(captions[index].count('<td width="266" align="center"><sub>') == 3
+              for index in (4, 11, 12, 14)) and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
-          "Shared row captions must remain compact; rows 05 and 15 have city-specific captions")
+          "Shared row captions must remain compact; rows 05, 12, 13 and 15 have city-specific captions")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"

@@ -56,6 +56,11 @@
 <td>Stock official-adapter parity is <strong>not</strong> claimed for Hong Kong</td>
 </tr>
 <tr>
+<td>Bounded static finite-path / Native Diagnostic L3</td>
+<td>Corrected R2 H1: 26 selected ODs, 126 legal paths; finite-path and ranks 26/52 pass original-space and full-graph gap checks</td>
+<td><strong>Accepted bounded low-congestion transfer</strong> on H1; not the full 8,930-OD case or a compression stress test</td>
+</tr>
+<tr>
 <td>Finite space–time LP / CG</td>
 <td>10 ODs, 111 selected physical links, 11,954 dynamic nodes, 24,910 arcs; CG and LP agree at 75.036329857948 vehicle-minutes</td>
 <td>Independent full-DAG pricing closure passes 10/10 demands at 1e-6</td>
@@ -80,6 +85,7 @@
 <h2 id="static-assignment">Static assignment</h2>
 <p><a href="hong-kong-static-assignment.html">Turn-aware static FW/Algorithm B</a> have separate static objectives; official TAPLab adapter parity is not claimed.</p>
 <p><a href="hong-kong-static-assignment.html">FW and task-local lossless Algorithm B evidence</a> use the declared turn-aware BPR/Beckmann problem; official registered-adapter parity is not claimed for Hong Kong.</p>
+<p><a href="hong-kong-static-assignment.html#bounded-h1-finite-path-and-native-diagnostic-l3">Corrected R2 bounded H1 finite-path and Native Diagnostic L3 evidence</a> uses the same frozen H1 static problem for its FW anchor, finite paths and rank-26/52 reconstruction. The accepted interpretation is low-congestion transfer, not a full Hong Kong path/L3 result.</p>
 <h2 id="finite-time-expanded-algorithms">Finite time-expanded algorithms</h2>
 <p><a href="hong-kong-space-time.html">Accepted R5 CG</a> has same-graph LP agreement and independent full-DAG pricing closure. Lagrangian recovery is separate; ADMM remains <strong>Gated</strong>.</p>
 <p><img alt="Hong Kong bounded finite space-time case sequence" src="../assets/three_city_r2/hong_kong_finite_space_time_case_sequence.png"/></p>
