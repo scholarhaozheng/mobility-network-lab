@@ -170,6 +170,19 @@ def main() -> int:
           len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
           "The two-axis explanation must appear exactly once before Section 03")
     coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    for removed in (
+        "not an automatic observed-OD or calibrated-demand pipeline",
+        "schematic topology, no city zone hierarchy",
+        "not local calibration",
+        "not a modeled distribution stage",
+        "not measured traffic",
+        "not an empirical speedup",
+        "Covers are navigation assets, not scientific validation",
+        "not a mandatory solver sequence",
+        "Agentic execution remains a learning and research direction",
+    ):
+        check(removed not in readme and removed not in home,
+              f"Removed homepage wording returned: {removed}")
     roman_groups = (
         ("I / City data and model foundations", "a--city-data-and-model-foundations"),
         ("II / Transit and observation evidence", "b--transit-and-observation-evidence"),
@@ -185,11 +198,12 @@ def main() -> int:
           not re.search(r'^### (?:A|B|C|D1|D2|E) /', coverage, re.M),
           "Section 03 must have I–VI headings and exact old-fragment compatibility anchors")
     check(atlas.count('id="computational-depth-legend"') == 1 and
-          atlas.count('Agentic execution remains a learning and research direction') == 1 and
+          atlas.count('A–D are reading labels for computational depth.') == 1 and
+          'Agentic execution remains a learning and research direction' not in atlas and
           all(atlas.count('**'+letter+' — '+title+'**') == 1 for letter, title in (
               ('A','Native assignment'), ('B','Decomposition and distributed computation'),
               ('C','Spatial hierarchy and representation'), ('D','Coordination and verification'))),
-          "The single A–D legend or its bounded agentic qualification is missing")
+          "The single A–D legend or its approved explanatory copy is missing")
     check(atlas.count('class="atlas-depth-badge"') >= 50 and
           'class="atlas-depth-stage"' not in atlas and
           all('['+mark+']' in atlas for mark in ('A','B','C','D','B · D','B · C','C · D')),
@@ -242,7 +256,7 @@ def main() -> int:
     captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
-          all(re.fullmatch(r'<td colspan="3"><sub>[^<]+</sub></td>', caption) for caption in captions) and
+          all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption) for caption in captions) and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
           "Identical three-city graphic-type labels must form one small shared caption row")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
