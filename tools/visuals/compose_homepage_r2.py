@@ -336,6 +336,7 @@ def section04(matrix):
        '**D — Coordination and verification**','',
        'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','']
     assets=[]
+    row15_figures=row15_reuse([matrix[("15",city)] for city in CITIES])
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}
     for item in EXTRAS:
         # Keep the historical source figures, but do not repeat comparisons or
@@ -389,6 +390,12 @@ def section04(matrix):
                     asset=card(city,stage,label,
                         "docs/assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png",
                         target,label,"rank-50 diagnostic; not UE")
+                elif stage=="finite" and rid=="15":
+                    # The accepted Phase-II figure displays its own LP reference;
+                    # keep the old row preview as a historical asset, not this card.
+                    asset=card(city,stage,label,
+                        row15_figures[city]["original_figure"],target,label,
+                        r["result_scope"],"reused saved figure")
                 else:
                     asset=card(city,stage,label,r["preview_path"],target,label,r["result_scope"],"R2 row preview")
                 cards.append(asset);assets.append(asset)
