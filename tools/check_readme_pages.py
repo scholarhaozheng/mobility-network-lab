@@ -196,12 +196,12 @@ def main() -> int:
           "City atlas A–D badges are incomplete")
     title_cells = re.findall(r'<th [^>]*class="atlas-title-cell"[^>]*>(.*?)</th>', atlas, re.S)
     check(len(title_cells) == 86 and
-          all(re.search(r'</strong> <small class="atlas-depth-badge">\[[ABCD](?: · [CD])?\]</small>$', cell)
+          all(re.search(r'</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="[^"]+" aria-label="[^"]+"><img src="docs/assets/atlas_depth_badges/[ABCD](?:_[CD])?\.svg" width="(?:13|30)" height="11" alt="\[[ABCD](?: · [CD])?\]"></a>$', cell)
               for cell in title_cells if 'class="atlas-depth-badge"' in cell),
-          "A–D labels must be small and inline after their existing card titles")
+          "A–D labels must be small linked gray assets inline after their existing card titles")
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
           "Atlas must retain 86 city-owned cards in native table cells")
-    check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+height="\d+"', atlas),
+    check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+width="165"[^>]+height="\d+"', atlas),
           "Atlas must use width-limited previews without forced image heights")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
@@ -210,8 +210,16 @@ def main() -> int:
           all('width="100%"' in opening for opening in home_tables),
           "Every Section 03/04 table must have the same full-width outer boundary")
     home_css = (ROOT / "docs/assets/presentation-r3.css").read_text(encoding="utf-8")
-    check('.mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#000;' in home_css,
-          "A–D atlas labels must use black text on the built website")
+    check('.mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#6a737b;' in home_css and
+          '.mcl-page table.atlas-city-table .atlas-depth-badge img{display:inline-block;width:auto;height:11px;' in home_css and
+          'assets/atlas-depth-tooltips.js' in home and
+          (ROOT / 'docs/assets/atlas-depth-tooltips.js').is_file(),
+          "A–D labels need muted small text and the website-only click explanation")
+    badge_dir = ROOT / 'docs/assets/atlas_depth_badges'
+    check(all((badge_dir / (name+'.svg')).is_file() and
+              'fill="#626b73"' in (badge_dir / (name+'.svg')).read_text(encoding='utf-8')
+              for name in ('A','B','C','D','B_C','B_D','C_D')),
+          "GitHub-native muted A–D label assets are missing or inconsistent")
     check('padding:24px;margin:36px -24px 52px' in home_css and
           'padding:15px;margin:25px -15px' in home_css and
           '.mcl-page table.atlas-city-table{min-width:680px}' in home_css,
@@ -252,10 +260,9 @@ def main() -> int:
         r'<table class="atlas-city-table" data-city="([^"]+)" data-stage="([^"]+)" width="100%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
         atlas, re.S)
     check(len(city_tables) == 19 and {city for city, _, _, _ in city_tables} ==
-          {"boston", "sioux-falls", "hong-kong"} and
-          all(cols == '<col width="8.333%">' * 12 for _, _, cols, _ in city_tables),
-          "Each of the nineteen city-stage groups needs its own full-width twelve-track table")
-    for city, stage_id, _, body in city_tables:
+          {"boston", "sioux-falls", "hong-kong"},
+          "Each of the nineteen city-stage groups needs its own full-width table")
+    for city, stage_id, cols, body in city_tables:
         heading = re.search(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', body)
         if not heading:
             check(False, "Missing stage heading: " + stage_id)
@@ -266,31 +273,34 @@ def main() -> int:
         rows = re.findall(r'<tr class="atlas-card-(title|preview|meta|links)-row" data-stage="([^"]+)">(.*?)</tr>', body, re.S)
         check(stage_id.startswith(city+'-') and heading.group(1) == stage_id and
               slots == min(4, items) and cell_width is not None and
+              cols == ('<col width="'+cell_width+'">') * slots and
+              '<th colspan="'+str(slots)+'">' in body and
               [(kind, row_stage) for kind, row_stage, _ in rows] ==
               [(kind, stage_id) for _ in expected_counts for kind in ("title", "preview", "meta", "links")] and
               all(row.count('class="atlas-'+("card-cell" if kind == "preview" else kind+"-cell")+'"') == expected and
                   row.count('class="atlas-empty"') == slots-expected and
-                  re.findall(r'<(?:th|td) colspan="(\d+)" width="([^"]+)" class="atlas-[^"]+"', row) ==
-                  [(str(12//slots), cell_width)] * slots
+                  re.findall(r'<(?:th|td) width="([^"]+)" class="atlas-[^"]+"', row) ==
+                  [cell_width] * slots
                   for (kind, _, row), expected in zip(rows, [n for n in expected_counts for _ in range(4)])),
-              "City stage rows must preserve column count, equal width and padded empty slots: " + stage_id)
+              "City stage rows need native equal-width columns and padded empty slots: " + stage_id)
     quick_facts = re.findall(r'<table class="atlas-quick-facts".*?</table>', atlas, re.S)
     check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["25%"] * 4
                                         for table in quick_facts),
           "Three-city quick-facts columns are not uniformly quarter-width")
     benchmark = re.search(r'<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup>.*?</colgroup><tbody>(.*?)</tbody></table>', atlas, re.S)
     sioux_body = benchmark.group(1) if benchmark else ""
-    check(sioux_body.count('class="atlas-benchmark-row"') == 5 and
-          sioux_body.count('<td colspan="4" width="33.333%">') == 15,
+    check(bool(benchmark) and sioux_body.count('class="atlas-benchmark-row"') == 5 and
+          sioux_body.count('<td width="33.333%">') == 15 and
+          '<colgroup>'+('<col width="33.333%">'*3)+'</colgroup>' in benchmark.group(0),
           "Sioux benchmark-scope columns are not equal-width")
     for text, surface in ((readme, "README"), (home, "Pages homepage")):
         groups = re.findall(r"<colgroup>(.*?)</colgroup>", text, re.S)
-        check(bool(groups) and all(re.fullmatch(r'(?:<col width="(?:8\.333|25|33|50|100)%"\s*/?>){1,12}',
+        check(bool(groups) and all(re.fullmatch(r'(?:<col width="(?:8\.333|25|33(?:\.333)?|50|100)%"\s*/?>){1,12}',
                                                   group) for group in groups),
               f"Malformed atlas colgroup or visible percent residue in {surface}")
         for city, count in (("boston", 4), ("sioux-falls", 4), ("hong-kong", 2)):
             match = re.search(r'<tr class="atlas-stage-heading"[^>]*data-stage="'+city+r'-static".*?(?=<tr class="atlas-stage-heading"|</tbody></table>)', text, re.S)
-            check(match is not None and match.group(0).count('<img ') == count,
+            check(match is not None and len(re.findall(r'<img\b[^>]*\bwidth="165"', match.group(0))) == count,
                   f"{surface} {city} static section must show one preview per executed method")
             if match:
                 check(not any(old in match.group(0) for old in

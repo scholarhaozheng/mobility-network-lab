@@ -58,7 +58,7 @@ def main(argv=None):
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
     '''
     CSS += '''
-    /* Each stage uses the existing twelve-track grid; partial rows keep empty equal-width slots. */
+    /* Native one-, two-, three-, or four-column stage tables survive GitHub's HTML sanitizer. */
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{table-layout:fixed}
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{width:100%}
     .mcl-page table.home-coverage th:first-child{width:auto}
@@ -73,7 +73,10 @@ def main(argv=None):
     .mcl-page table.atlas-city-table td{overflow-wrap:anywhere;line-height:1.35;padding:9px 10px}
     .mcl-page table.atlas-city-table .atlas-title-cell{background:#f7fafb;color:#17364a;overflow-wrap:anywhere;padding:8px 10px 6px;font-size:11px;vertical-align:top}
     .mcl-page table.atlas-city-table .atlas-title-cell strong{color:#17364a;font-size:11px}
-    .mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#000;background:#f3f5f6;border:1px solid #e2e6e9;border-radius:3px;padding:0 3px;font-size:9px;font-weight:500;white-space:nowrap;vertical-align:baseline}
+    .mcl-page table.atlas-city-table .atlas-depth-badge{display:inline;color:#6a737b;background:#f3f5f6;border:1px solid #e2e6e9;border-radius:3px;padding:0 3px;font-size:8px;font-weight:500;white-space:nowrap;vertical-align:baseline;text-decoration:none;cursor:pointer}
+    .mcl-page table.atlas-city-table .atlas-depth-badge img{display:inline-block;width:auto;height:11px;vertical-align:-1px}
+    .mcl-page table.atlas-city-table .atlas-depth-badge:hover,.mcl-page table.atlas-city-table .atlas-depth-badge:focus-visible{color:#4d5962;border-color:#aeb8bf;text-decoration:underline}
+    .atlas-depth-popover{position:fixed;z-index:50;max-width:min(310px,calc(100vw - 20px));padding:7px 10px;border:1px solid #b8c3ca;border-radius:6px;background:#f9fafb;box-shadow:0 5px 18px rgba(20,46,67,.13);color:#263744;font:11px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     .mcl-page table.atlas-city-table .atlas-card-preview-row td{background:#fff;text-align:center;padding:8px 10px 4px}
     .mcl-page table.atlas-city-table .atlas-card-cell img{display:inline-block;width:165px;height:auto;max-width:100%;object-fit:contain}
     .mcl-page table.atlas-city-table .atlas-card-meta-row td{background:#fff;padding:4px 10px 3px}
@@ -138,7 +141,9 @@ def main(argv=None):
     home=content(S/'README.md',True)
     # This is a deliberate source file: the existing complete site build can render it without a second narrative.
     (S/'docs/index.md').write_text('<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->\n'+home+'\n',encoding='utf-8')
-    (S/'docs/index.html').write_text(shell(home,'Framework and cases'),encoding='utf-8')
+    home_html=shell(home,'Framework and cases')
+    home_html=home_html.replace('</body></html>', '<script src="assets/atlas-depth-tooltips.js" defer></script></body></html>')
+    (S/'docs/index.html').write_text(home_html,encoding='utf-8')
     files=['docs/architecture.md','docs/contributions.md','docs/full-walkthrough.md','docs/visualizations.md','docs/capabilities.md','docs/cases/boston.md','docs/cases/boston-assignment.md','docs/cases/boston-space-time.md','docs/cases/boston-admm.md','docs/cases/boston-algorithm-b.md','docs/cases/sioux-falls.md','docs/cases/sioux-space-time.md','docs/cases/sioux-admm.md','docs/cases/sioux-algorithm-b.md','docs/cases/hong-kong.md','docs/cases/hong-kong-four-stage.md','docs/cases/hong-kong-static-assignment.md','docs/cases/hong-kong-space-time.md','docs/datasets/hong-kong-gmns.md','docs/methods/hong-kong-evidence-contract.md','docs/methods/space-time-cg.md','docs/methods/admm-space-time.md','docs/methods/origin-based-algorithm-b.md','docs/integrations/taplab-tapb.md','docs/RUN_YOUR_OWN_GMNS.md','docs/BOSTON_SCALE_RESULTS.md','docs/SCALABLE_TOOL_DATA_NOTICE.md','docs/datasets/boston-population-households.md','docs/datasets/boston-behavior-feedback.md','docs/datasets/boston-four-step-sources.md','docs/datasets/boston-visual-sources.md']
     for f in files:
      p=S/f; depth=len(p.relative_to(S/'docs').parts)-1
