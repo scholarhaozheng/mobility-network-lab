@@ -327,9 +327,9 @@ def section04(matrix):
               ("distribution","Trip distribution","Supplied OD enters downstream methods directly"),
               ("mode","Mode choice","Vehicle OD is supplied; no mode-choice run"),
             )
-            out += ['<table class="atlas-city-table atlas-benchmark-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup><tbody>',
-                    '<tr class="atlas-benchmark-heading"><th colspan="3" width="800"><h4>City-data and four-stage scope</h4></th></tr>',
-                    '<tr class="atlas-benchmark-header"><th width="266">Stage</th><th width="266">Scope in Sioux Falls benchmark</th><th width="266">Relevant next entry</th></tr>']
+            out += ['<table class="atlas-city-table atlas-benchmark-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup><thead>',
+                    '<tr class="atlas-benchmark-heading"><th colspan="3" scope="colgroup" width="800">City-data and four-stage scope</th></tr>',
+                    '<tr class="atlas-benchmark-header"><th width="266">Stage</th><th width="266">Scope in Sioux Falls benchmark</th><th width="266">Relevant next entry</th></tr></thead><tbody>']
             for sid,label,scope in compact:
                 out.append('<tr class="atlas-benchmark-row"><td width="266"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td width="266">'+esc(scope)+
                            '</td><td width="266"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
@@ -366,8 +366,8 @@ def section04(matrix):
             extra_anchor='<a id="hong-kong-cg-r5"></a>' if city=="Hong Kong" and stage=="finite" else ''
             columns=max(1,min(4,len(cards)))
             col_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
-            out.append('<table class="atlas-city-table" data-city="'+slug+'" data-stage="'+stage_id+'" width="100%"><colgroup>'+(('<col width="'+col_width+'">')*columns)+'</colgroup><tbody>')
-            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(columns)+'" data-items="'+str(len(cards))+'"><th colspan="'+str(columns)+'" width="800"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
+            out.append('<table class="atlas-city-table" data-city="'+slug+'" data-stage="'+stage_id+'" width="100%"><colgroup>'+(('<col width="'+col_width+'">')*columns)+'</colgroup><thead>')
+            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(columns)+'" data-items="'+str(len(cards))+'"><th colspan="'+str(columns)+'" scope="colgroup" width="800"><a id="'+stage_id+'"></a>'+extra_anchor+name+'</th></tr></thead><tbody>')
             if not cards:
                 out.append('<tr class="atlas-scope-row"><td colspan="'+str(columns)+'">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</td></tr>')
             else:out.append(stage_rows(cards,stage_id))

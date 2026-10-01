@@ -277,13 +277,13 @@ def main() -> int:
         check((ROOT / f"docs/assets/homepage_evidence_r2/row_19_{city}.png").is_file(),
               f"Original {city} tools preview was deleted rather than removed from home")
     city_tables = re.findall(
-        r'<table class="atlas-city-table" data-city="([^"]+)" data-stage="([^"]+)" width="100%"><colgroup>(.*?)</colgroup><tbody>(.*?)</tbody></table>',
+        r'<table class="atlas-city-table" data-city="([^"]+)" data-stage="([^"]+)" width="100%"><colgroup>(.*?)</colgroup><thead>(.*?)</thead><tbody>(.*?)</tbody></table>',
         atlas, re.S)
-    check(len(city_tables) == 19 and {city for city, _, _, _ in city_tables} ==
+    check(len(city_tables) == 19 and {city for city, _, _, _, _ in city_tables} ==
           {"boston", "sioux-falls", "hong-kong"},
           "Each of the nineteen city-stage groups needs its own full-width table")
-    for city, stage_id, cols, body in city_tables:
-        heading = re.search(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', body)
+    for city, stage_id, cols, head, body in city_tables:
+        heading = re.search(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', head)
         if not heading:
             check(False, "Missing stage heading: " + stage_id)
             continue
@@ -296,7 +296,8 @@ def main() -> int:
               slots == min(4, items) and cell_width is not None and
               0 <= 800 - slots * int(cell_width) <= 2 and
               cols == ('<col width="'+col_width+'">') * slots and
-              '<th colspan="'+str(slots)+'" width="800">' in body and
+              '<th colspan="'+str(slots)+'" scope="colgroup" width="800">' in head and
+              '<a id="'+stage_id+'"></a>' in head and '<h4>' not in head and
               [(kind, row_stage) for kind, row_stage, _ in rows] ==
               [(kind, stage_id) for _ in expected_counts for kind in ("title", "preview", "meta", "links")] and
               all(row.count('class="atlas-'+("card-cell" if kind == "preview" else kind+"-cell")+'"') == expected and
@@ -309,11 +310,11 @@ def main() -> int:
     check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["200"] * 4
                                         for table in quick_facts),
           "Three-city quick-facts columns are not uniformly quarter-width")
-    benchmark = re.search(r'<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup>.*?</colgroup><tbody>(.*?)</tbody></table>', atlas, re.S)
-    sioux_body = benchmark.group(1) if benchmark else ""
+    benchmark = re.search(r'<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup>.*?</colgroup><thead>(.*?)</thead><tbody>(.*?)</tbody></table>', atlas, re.S)
+    sioux_head, sioux_body = (benchmark.group(1), benchmark.group(2)) if benchmark else ("", "")
     check(bool(benchmark) and sioux_body.count('class="atlas-benchmark-row"') == 5 and
           sioux_body.count('<td width="266">') == 15 and
-          '<th colspan="3" width="800">' in sioux_body and
+          '<th colspan="3" scope="colgroup" width="800">City-data and four-stage scope</th>' in sioux_head and
           '<colgroup>'+('<col width="33.333%">'*3)+'</colgroup>' in benchmark.group(0),
           "Sioux benchmark-scope columns are not equal-width")
     for text, surface in ((readme, "README"), (home, "Pages homepage")):

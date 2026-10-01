@@ -86,7 +86,7 @@ def main(argv=None):
     .mcl-page table.atlas-city-table .atlas-links{font-size:10px;vertical-align:baseline}
     .mcl-page table.atlas-city-table .atlas-empty{background:#fafbfc!important}
     .mcl-page table.atlas-city-table .atlas-stage-heading th,.mcl-page table.atlas-city-table .atlas-benchmark-heading th{background:#f1f6f8;color:#17364a;padding:13px 10px;text-align:left}
-    .mcl-page table.atlas-city-table .atlas-stage-heading h4,.mcl-page table.atlas-city-table .atlas-benchmark-heading h4{margin:0;font-size:17px}
+    .mcl-page table.atlas-city-table .atlas-stage-heading th,.mcl-page table.atlas-city-table .atlas-benchmark-heading th{font-size:17px}
     .mcl-page table.atlas-quick-facts td,.mcl-page table.atlas-city-table .atlas-benchmark-row td{font-size:12px}
     .mcl-page .atlas-nav{font-size:12px;line-height:2}
     @media(max-width:760px){
