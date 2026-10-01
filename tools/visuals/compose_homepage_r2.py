@@ -80,6 +80,17 @@ COVER={
  "Hong Kong":"docs/assets/homepage_evidence_r1/hong_kong_case_cover.png",
 }
 BOSTON_GPS_PROJECTION="docs/assets/boston/visual_release_r1/boston_gps_projection.png"
+HK_REFERENCE_PROJECTION="docs/assets/hong_kong/visual_release_r1/hong_kong_reference_projection.png"
+GPS_PAIR_SECONDARY={
+ "Boston":(BOSTON_GPS_PROJECTION,
+           "docs/datasets/boston-central.md#one-saved-transit-position-projection",
+           "Twelve saved Boston vehicle positions, projected points and matched road geometry",
+           "Projection figure"),
+ "Hong Kong":(HK_REFERENCE_PROJECTION,
+              "docs/cases/hong-kong.md#demand-transit-and-observations",
+              "Twelve saved UrbanNav reference positions, their projected points and matched Hong Kong roads",
+              "Projection figure"),
+}
 CASE_PAGE={"Boston":"docs/cases/boston.md","Sioux Falls":"docs/cases/sioux-falls.md","Hong Kong":"docs/cases/hong-kong.md"}
 ROLE={
  "Boston":"City GMNS, population/demand, MBTA/GPS linkage and separate bounded static and finite computations.",
@@ -198,16 +209,18 @@ def component_preview_cell(r, rid, reused):
     primary = reused[r["city"]]["original_figure"] if reused else r["preview_path"]
     alt = (r["city"]+" Phase-II / CG-RMP objective versus arc-flow LP reference"
            if reused else r["city"]+" "+r["row_title"]+" preview")
+    paired = rid == "05" and r["city"] in GPS_PAIR_SECONDARY
     cell = ('<td width="266"'+(' height="160" valign="middle"' if reused else '')+
-            ' align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(primary)+
-            '" width="220" alt="'+esc(alt)+'"></a>')
-    if rid == "05" and r["city"] == "Boston":
-        projection_target = "docs/datasets/boston-central.md#one-saved-transit-position-projection"
-        if not (ROOT/BOSTON_GPS_PROJECTION).is_file():
-            raise FileNotFoundError(BOSTON_GPS_PROJECTION)
-        cell += ('<br><sub>Saved GPS point-to-road projection</sub><br><a href="'+
-                 esc(projection_target)+'"><img src="'+esc(BOSTON_GPS_PROJECTION)+
-                 '" width="220" alt="Twelve saved Boston vehicle positions, projected points and matched road geometry"></a>')
+            (' class="gps-evidence-pair"' if paired else '')+
+            ' align="center"><a href="'+esc(row_target(r))+'"><img'+
+            (' class="gps-paired-preview"' if paired else '')+' src="'+esc(primary)+
+            '" width="'+('118' if paired else '220')+'" alt="'+esc(alt)+'"></a>')
+    if paired:
+        figure,target,secondary_alt,_=GPS_PAIR_SECONDARY[r["city"]]
+        if not (ROOT/figure).is_file():
+            raise FileNotFoundError(figure)
+        cell += (' <a href="'+esc(target)+'"><img class="gps-paired-preview" src="'+
+                 esc(figure)+'" width="118" alt="'+esc(secondary_alt)+'"></a>')
     return cell+'</td>'
 
 def component_table(matrix, rid):
@@ -222,6 +235,12 @@ def component_table(matrix, rid):
          '<tr class="coverage-caption">'+(
              ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"])+'</sub></td>' for r in rows)
              if reused else
+             ''.join('<td width="266" align="center"><sub>'+esc({
+                 "Boston":"Network association · saved point projection",
+                 "Sioux Falls":"Outside the supplied observation benchmark",
+                 "Hong Kong":"Detector-link view · saved point projection",
+             }[r["city"]])+'</sub></td>' for r in rows)
+             if rid=="05" else
              '<td colspan="3" align="center"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
              if len({r["graphic_type"] for r in rows}) == 1 else
              ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
@@ -231,8 +250,9 @@ def component_table(matrix, rid):
         source=r["data_or_figure_source"]
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
                '">'+('Full figure' if reused else 'Full preview')+'</a>')
-        if rid == "05" and r["city"] == "Boston":
-            links += ' · <a href="'+esc(BOSTON_GPS_PROJECTION)+'">Projection figure</a>'
+        if rid == "05" and r["city"] in GPS_PAIR_SECONDARY:
+            figure,_,_,link_name=GPS_PAIR_SECONDARY[r["city"]]
+            links += ' · <a href="'+esc(figure)+'">'+esc(link_name)+'</a>'
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.
@@ -242,7 +262,7 @@ def component_table(matrix, rid):
 
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
-      'Shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities; the Arc-flow LP reference row instead reuses three accepted full figures in equal-height cells. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
+      'Shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities; the GPS row also pairs accepted city-specific figures, while the Arc-flow LP reference row reuses three accepted full figures in equal-height cells. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
     for group,old_anchor,ids in ROW_GROUPS:
         new_anchor='section03-'+group.split(' / ',1)[0].lower()
         out += ['<a id="'+old_anchor+'"></a><a id="'+new_anchor+'"></a>','### '+group,'']

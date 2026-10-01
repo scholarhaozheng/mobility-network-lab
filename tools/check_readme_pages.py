@@ -206,11 +206,26 @@ def main() -> int:
     gps_row_site = home.split('data-component="05"', 1)[1].split('</table>', 1)[0]
     projection = 'docs/assets/boston/visual_release_r1/boston_gps_projection.png'
     projection_target = 'docs/datasets/boston-central.md#one-saved-transit-position-projection'
+    hk_summary = 'docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.png'
+    hk_projection = 'docs/assets/hong_kong/visual_release_r1/hong_kong_reference_projection.png'
+    preview_row = gps_row.split('<tr class="coverage-preview">', 1)[1].split('</tr>', 1)[0]
+    preview_cells = re.findall(r'<td\b[^>]*>.*?</td>', preview_row, flags=re.DOTALL)
     check(gps_row.count('src="docs/assets/homepage_evidence_r2/row_05_boston.png"') == 1 and
           gps_row.count('src="'+projection+'"') == 1 and
           projection_target in gps_row and
           'src="assets/boston/visual_release_r1/boston_gps_projection.png"' in gps_row_site,
           'Boston GPS evidence cell must show the existing preview and saved point projection')
+    check(len(preview_cells) == 3 and
+          [cell.count('<img') for cell in preview_cells] == [2, 1, 2] and
+          all('class="gps-evidence-pair"' in preview_cells[index] and
+              preview_cells[index].count('class="gps-paired-preview"') == 2 and
+              preview_cells[index].count('width="118"') == 2 and
+              '<br' not in preview_cells[index] for index in (0, 2)) and
+          hk_projection in preview_cells[2] and
+          'src="assets/hong_kong/visual_release_r1/hong_kong_reference_projection.png"' in gps_row_site and
+          'table.home-coverage[data-component="05"] .coverage-preview td.gps-evidence-pair img.gps-paired-preview' in
+          (DOCS / 'assets/presentation-r3.css').read_text(encoding='utf-8'),
+          'Boston/Hong Kong observation cells must show two aspect-ratio-safe figures side by side')
     boston_transit = readme.split('data-stage="boston-transit" width="100%"', 1)[1].split('</table>', 1)[0]
     check('GPS point-to-road projection' in boston_transit and projection in boston_transit and
           projection_target in boston_transit and 'width="220"' in boston_transit,
@@ -219,6 +234,15 @@ def main() -> int:
           hashlib.sha256((ROOT / projection).read_bytes()).hexdigest() ==
           '58921c4b7f0accf505f8c096095e1976213461851906ed83509dbee86f1b8804',
           'Saved Boston GPS projection original bytes changed')
+    check((ROOT / hk_summary).is_file() and
+          hashlib.sha256((ROOT / hk_summary).read_bytes()).hexdigest() ==
+          '840906416d1c508f69802e80648a40ba3e0411f669ec4ebff87e01fc464f93c5',
+          'Saved Hong Kong observation summary original bytes changed')
+    check((ROOT / hk_projection).is_file() and
+          hashlib.sha256((ROOT / hk_projection).read_bytes()).hexdigest() ==
+          '7760d61ecc3a26f17305db633f6b6ad2e8edb71550eb1faa766badf59b54de08' and
+          (ROOT / 'docs/assets/hong_kong/visual_release_r1/hong_kong_reference_projection.source.json').is_file(),
+          'Hong Kong reference projection or its provenance changed')
     row15_readme = coverage.split('data-component="15"', 1)[1].split('</table>', 1)[0]
     row15_home = home.split('data-component="15"', 1)[1].split('</table>', 1)[0]
     with (DOCS / 'assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv').open(
@@ -361,17 +385,19 @@ def main() -> int:
     check(coverage.count('<th scope="col" width="266">') == 54 and
           coverage.count('<th colspan="3" scope="colgroup" width="800">') == 18 and
           coverage.count('<td width="266" valign="top">') == 54 and
-          coverage.count('<td width="266" align="center">') == 54 and
+          coverage.count('<td width="266" align="center">') == 55 and
+          coverage.count('<td width="266" class="gps-evidence-pair" align="center">') == 2 and
           800 - 3 * 266 == 2,
           "Section 03 must reserve the same GitHub-native 800px outer width as Section 04")
     captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
           all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption)
-              for index, caption in enumerate(captions) if index != 14) and
+              for index, caption in enumerate(captions) if index not in (4, 14)) and
+          captions[4].count('<td width="266" align="center"><sub>') == 3 and
           captions[14].count('<td width="266" align="center"><sub>') == 3 and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
-          "Shared row captions must remain compact; row 15 has three scope-specific captions")
+          "Shared row captions must remain compact; rows 05 and 15 have city-specific captions")
     for city, slug in (("Boston", "boston"), ("Sioux Falls", "sioux-falls"),
                        ("Hong Kong", "hong-kong")):
         case = f"docs/cases/{slug}.md#reproduction"
