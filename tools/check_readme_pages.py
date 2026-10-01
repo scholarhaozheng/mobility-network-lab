@@ -64,6 +64,19 @@ def main() -> int:
     readme = readme_path.read_text(encoding="utf-8")
     home_path = DOCS / "index.html"
     home = home_path.read_text(encoding="utf-8")
+    icon_path = DOCS / "assets/mcl-globe.svg"
+    icon = icon_path.read_text(encoding="utf-8") if icon_path.is_file() else ""
+    check('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"' in icon and
+          '<title id="title">Mobility Computation Lab globe</title>' in icon and
+          '<script' not in icon and 'http://' not in icon.replace('http://www.w3.org/2000/svg', ''),
+          "The selected self-contained globe favicon is missing or malformed")
+    for page in DOCS.rglob("*.html"):
+        if page.is_relative_to(DOCS / "assets"):
+            continue  # Immutable scientific caption pages are not site navigation.
+        prefix = "../" * (len(page.relative_to(DOCS).parts) - 1)
+        expected = f'<link rel="icon" type="image/svg+xml" href="{prefix}assets/mcl-globe.svg">'
+        check(expected in page.read_text(encoding="utf-8"),
+              f"Missing or broken globe favicon on website page: {page.relative_to(DOCS)}")
     walk_path = DOCS / "full-walkthrough.md"
     walk = walk_path.read_text(encoding="utf-8")
     architecture = (DOCS / "architecture.md").read_text(encoding="utf-8")

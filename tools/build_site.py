@@ -54,8 +54,10 @@ def shell(
     repo_url: str = "",
     site_url: str = "",
     article: bool = False,
+    favicon: bool = True,
 ) -> str:
     up = "../" * depth
+    icon_tag = f'<link rel="icon" type="image/svg+xml" href="{up}assets/mcl-globe.svg">' if favicon else ""
     source = f'<a href="{html.escape(repo_url)}">GitHub ↗</a>' if repo_url else ""
     site_target = (
         f'<meta name="project-site-target" content="{html.escape(site_url, quote=True)}">'
@@ -65,7 +67,7 @@ def shell(
     )
     nav = f'<header class="wrap"><nav class="nav"><a class="brand" href="{up}index.html"><span class="monogram">MCL</span>Mobility Computation Lab</a><div class="navlinks"><a href="{up}city-workflow.html">City workflow</a><a href="{up}datasets.html">Networks</a><a href="{up}visualizations.html">Visual results</a><a href="{up}open-data-explorer.html">City evidence</a><a href="{up}open-data.html">Open data</a><a href="{up}methods.html">Methods</a><a href="{up}getting-started.html">Documentation</a>{source}</div></nav></header>'
     foot = f'<div class="wrap"><footer class="footer"><span>Mobility Computation Lab · city networks, demand and reproducible computation</span><span><a href="{up}data-access.html">Data access</a> · <a href="{up}citation.html">Cite</a> · <a href="{up}roadmap.html">Roadmap</a></span></footer></div>'
-    return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation.">{site_target}<title>{html.escape(title)} | Mobility Computation Lab</title><link rel="stylesheet" href="{up}assets/site.css"></head><body>{nav}{body}{foot}</body></html>'
+    return f'<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="City networks, travel demand and reproducible network computation.">{site_target}<title>{html.escape(title)} | Mobility Computation Lab</title>{icon_tag}<link rel="stylesheet" href="{up}assets/site.css"></head><body>{nav}{body}{foot}</body></html>'
 
 
 def rewrite_link(match: re.Match, source: Path, repo_url: str) -> str:
@@ -187,6 +189,7 @@ def main() -> int:
                 repo_url=repo_url,
                 site_url=site_url,
                 article=True,
+                favicon=not path.is_relative_to(DOCS / 'assets'),
             ),
             encoding='utf-8',
             newline='\n',
