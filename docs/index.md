@@ -266,8 +266,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <tbody><tr><td width="200">2,852 physical nodes; 5,091 directed links; 177 H3 fine zones</td><td width="200">B1: 453 ODs / 1,936.238475 PCE in 2 h; expanded FW and 26-OD controls are distinct</td><td width="200">90 nodes; 125 links; 10 ODs</td><td width="200">MBTA inputs and exploratory GPS matching; no held-out citywide calibration</td></tr></tbody></table></div>
 <a id="boston-tools"></a>
 <p class="atlas-nav"><a href="#boston-sources">Sources and GMNS</a> · <a href="#boston-population">Population, households and activity</a> · <a href="#boston-transit">Transit and observations</a> · <a href="#boston-generation">Trip generation</a> · <a href="#boston-distribution">Trip distribution</a> · <a href="#boston-mode">Mode choice</a> · <a href="#boston-static">Static assignment methods</a> · <a href="#boston-finite">Finite time-expanded computation</a> · <a href="cases/boston.html#reproduction">Tools and reproducibility</a></p>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="boston-sources"><th colspan="3" width="800"><a id="boston-sources"></a><h4 id="sources-and-gmns">Sources and GMNS</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="boston-sources"><th colspan="3" scope="colgroup" width="800"><a id="boston-sources"></a>Sources and GMNS</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-sources">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Source data and preparation</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GMNS network, zones and access</strong> <a aria-label="C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation"><img alt="[C]" height="11" src="assets/atlas_depth_badges/C.svg" width="13"/></a></th>
@@ -289,8 +289,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="cases/boston.html#gmns-zones-and-source-evidence">Evidence</a> · <a href="assets/boston/visual_release_r1/boston_network_zones.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-population" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-population"><th colspan="2" width="800"><a id="boston-population"></a><h4 id="population-households-and-activity">Population, households and activity</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-population" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-population"><th colspan="2" scope="colgroup" width="800"><a id="boston-population"></a>Population, households and activity</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-population">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Population, households and activity</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>ACS/H3 allocation</strong></th>
@@ -308,8 +308,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="datasets/boston-population-households.html">Evidence</a> · <a href="assets/boston/population_r1/population_allocation.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-transit" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="boston-transit"><th colspan="3" width="800"><a id="boston-transit"></a><h4 id="transit-and-observations">Transit and observations</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-transit" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="boston-transit"><th colspan="3" scope="colgroup" width="800"><a id="boston-transit"></a>Transit and observations</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-transit">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Transit and pedestrian inputs</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GPS, trajectory and detector evidence</strong></th>
@@ -331,8 +331,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="datasets/boston-behavior-feedback.html">Evidence</a> · <a href="assets/boston/visual_release_r1/boston_gps_projection.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-generation" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-generation"><th colspan="2" width="800"><a id="boston-generation"></a><h4 id="trip-generation">Trip generation</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-generation" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-generation"><th colspan="2" scope="colgroup" width="800"><a id="boston-generation"></a>Trip generation</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-generation">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Trip generation — productions / attractions</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>Generation by purpose</strong></th>
@@ -350,8 +350,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/boston.html#stage-01-trip-generation">Evidence</a> · <a href="assets/boston/four_step_results_r1/step1_generation.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-distribution" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-distribution"><th colspan="2" width="800"><a id="boston-distribution"></a><h4 id="trip-distribution">Trip distribution</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-distribution" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-distribution"><th colspan="2" scope="colgroup" width="800"><a id="boston-distribution"></a>Trip distribution</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-distribution">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Trip distribution — zonal OD demand</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>HBW OD distribution</strong></th>
@@ -369,8 +369,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/boston.html#stage-02-trip-distribution">Evidence</a> · <a href="assets/boston/four_step_results_r1/step2_distribution.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-mode" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-mode"><th colspan="2" width="800"><a id="boston-mode"></a><h4 id="mode-choice">Mode choice</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-mode" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="boston-mode"><th colspan="2" scope="colgroup" width="800"><a id="boston-mode"></a>Mode choice</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-mode">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Mode choice — mode-specific demand</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>Service-response mode choice</strong></th>
@@ -388,8 +388,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/boston.html#stage-03-mode-choice">Evidence</a> · <a href="assets/boston/four_step_results_r1/step3_mode_response.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-static" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="4" data-items="4" data-stage="boston-static"><th colspan="4" width="800"><a id="boston-static"></a><h4 id="static-assignment-methods">Static assignment methods</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-static" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="4" data-items="4" data-stage="boston-static"><th colspan="4" scope="colgroup" width="800"><a id="boston-static"></a>Static assignment methods</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-static">
 <th class="atlas-title-cell" scope="col" width="200"><strong>Frank–Wolfe</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
 <th class="atlas-title-cell" scope="col" width="200"><strong>Official tap-b Algorithm B</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
@@ -415,8 +415,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston-assignment.html#controlled-comparison-board">Evidence</a> · <a href="assets/boston/assignment_methods_r1/boston_abs_planned_l3_rank26_flow.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="4" data-items="15" data-stage="boston-finite"><th colspan="4" width="800"><a id="boston-finite"></a><h4 id="finite-time-expanded-computation">Finite time-expanded computation</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="4" data-items="15" data-stage="boston-finite"><th colspan="4" scope="colgroup" width="800"><a id="boston-finite"></a>Finite time-expanded computation</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
 <th class="atlas-title-cell" scope="col" width="200"><strong>Network construction and generated columns</strong> <a aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img alt="[B · C]" height="11" src="assets/atlas_depth_badges/B_C.svg" width="30"/></a></th>
 <th class="atlas-title-cell" scope="col" width="200"><strong>Arc-flow LP reference</strong> <a aria-label="D — Coordination and verification" class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification"><img alt="[D]" height="11" src="assets/atlas_depth_badges/D.svg" width="13"/></a></th>
@@ -524,17 +524,17 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <tbody><tr><td width="200">24 nodes; 76 directed links; supplied benchmark OD</td><td width="200">528 positive OD records; official Algorithm B, historical FW and native controls</td><td width="200">24 nodes; 64/69 selected links; 200/250 ODs</td><td width="200">No modern city population, GTFS, GPS or detector stage</td></tr></tbody></table></div>
 <a id="sioux-falls-tools"></a>
 <p class="atlas-nav"><a href="#sioux-falls-sources">Sources and GMNS</a> · <a href="#sioux-falls-population">Population, households and activity</a> · <a href="#sioux-falls-transit">Transit and observations</a> · <a href="#sioux-falls-generation">Trip generation</a> · <a href="#sioux-falls-distribution">Trip distribution</a> · <a href="#sioux-falls-mode">Mode choice</a> · <a href="#sioux-falls-static">Static assignment methods</a> · <a href="#sioux-falls-finite">Finite time-expanded computation</a> · <a href="cases/sioux-falls.html#reproduction">Tools and reproducibility</a></p>
-<div class="table-scroll"><table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-benchmark-heading"><th colspan="3" width="800"><h4 id="city-data-and-four-stage-scope">City-data and four-stage scope</h4></th></tr>
-<tr class="atlas-benchmark-header"><th width="266">Stage</th><th width="266">Scope in Sioux Falls benchmark</th><th width="266">Relevant next entry</th></tr>
+<div class="table-scroll"><table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-benchmark-heading"><th colspan="3" scope="colgroup" width="800">City-data and four-stage scope</th></tr>
+<tr class="atlas-benchmark-header"><th width="266">Stage</th><th width="266">Scope in Sioux Falls benchmark</th><th width="266">Relevant next entry</th></tr></thead><tbody>
 <tr class="atlas-benchmark-row"><td width="266"><a id="sioux-falls-population"></a>Population, households and activity</td><td width="266">Not part of the supplied benchmark</td><td width="266"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 <tr class="atlas-benchmark-row"><td width="266"><a id="sioux-falls-transit"></a>Transit and observations</td><td width="266">Not part of the supplied benchmark</td><td width="266"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 <tr class="atlas-benchmark-row"><td width="266"><a id="sioux-falls-generation"></a>Trip generation</td><td width="266">Supplied OD enters downstream methods directly</td><td width="266"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 <tr class="atlas-benchmark-row"><td width="266"><a id="sioux-falls-distribution"></a>Trip distribution</td><td width="266">Supplied OD enters downstream methods directly</td><td width="266"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 <tr class="atlas-benchmark-row"><td width="266"><a id="sioux-falls-mode"></a>Mode choice</td><td width="266">Vehicle OD is supplied; no mode-choice run</td><td width="266"><a href="#sioux-falls-static">Static assignment</a></td></tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="sioux-falls-sources"><th colspan="3" width="800"><a id="sioux-falls-sources"></a><h4 id="sources-and-gmns-1">Sources and GMNS</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="sioux-falls-sources"><th colspan="3" scope="colgroup" width="800"><a id="sioux-falls-sources"></a>Sources and GMNS</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-sources">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Source data and preparation</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GMNS network, zones and access</strong> <a aria-label="C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation"><img alt="[C]" height="11" src="assets/atlas_depth_badges/C.svg" width="13"/></a></th>
@@ -556,8 +556,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="cases/sioux-falls.html#gmns-zones-and-source-evidence">Evidence</a> · <a href="assets/homepage_evidence_r1/sioux_falls_classic_topology.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-static" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="4" data-items="4" data-stage="sioux-falls-static"><th colspan="4" width="800"><a id="sioux-falls-static"></a><h4 id="static-assignment-methods-1">Static assignment methods</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-static" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="4" data-items="4" data-stage="sioux-falls-static"><th colspan="4" scope="colgroup" width="800"><a id="sioux-falls-static"></a>Static assignment methods</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-static">
 <th class="atlas-title-cell" scope="col" width="200"><strong>Frank–Wolfe</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
 <th class="atlas-title-cell" scope="col" width="200"><strong>Official tap-b Algorithm B</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
@@ -583,8 +583,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/sioux-falls.html#static-assignment">Evidence</a> · <a href="assets/homepage_alignment_r3/sioux_native_l3_rank50_link_flows.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="4" data-items="17" data-stage="sioux-falls-finite"><th colspan="4" width="800"><a id="sioux-falls-finite"></a><h4 id="finite-time-expanded-computation-1">Finite time-expanded computation</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="sioux-falls" data-stage="sioux-falls-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="4" data-items="17" data-stage="sioux-falls-finite"><th colspan="4" scope="colgroup" width="800"><a id="sioux-falls-finite"></a>Finite time-expanded computation</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
 <th class="atlas-title-cell" scope="col" width="200"><strong>Network construction and generated columns</strong> <a aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img alt="[B · C]" height="11" src="assets/atlas_depth_badges/B_C.svg" width="30"/></a></th>
 <th class="atlas-title-cell" scope="col" width="200"><strong>Arc-flow LP reference</strong> <a aria-label="D — Coordination and verification" class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification"><img alt="[D]" height="11" src="assets/atlas_depth_badges/D.svg" width="13"/></a></th>
@@ -716,8 +716,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <tbody><tr><td width="200">780 physical nodes; 1,239 directed links; 95 fine zones</td><td width="200">8,930 OD pairs; 723.191 modeled PCE in 1 h</td><td width="200">100 selected nodes; 111 links; 10 ODs; approved HK10 generated column</td><td width="200">Detector/trajectory association is contextual; modeled flow is not observed traffic</td></tr></tbody></table></div>
 <a id="hong-kong-tools"></a>
 <p class="atlas-nav"><a href="#hong-kong-sources">Sources and GMNS</a> · <a href="#hong-kong-population">Population, households and activity</a> · <a href="#hong-kong-transit">Transit and observations</a> · <a href="#hong-kong-generation">Trip generation</a> · <a href="#hong-kong-distribution">Trip distribution</a> · <a href="#hong-kong-mode">Mode choice</a> · <a href="#hong-kong-static">Static assignment methods</a> · <a href="#hong-kong-finite">Finite time-expanded computation</a> · <a href="cases/hong-kong.html#reproduction">Tools and reproducibility</a></p>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="hong-kong-sources"><th colspan="3" width="800"><a id="hong-kong-sources"></a><h4 id="sources-and-gmns-2">Sources and GMNS</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-sources" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="hong-kong-sources"><th colspan="3" scope="colgroup" width="800"><a id="hong-kong-sources"></a>Sources and GMNS</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-sources">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Source data and preparation</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GMNS network, zones and access</strong> <a aria-label="C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="C — Spatial hierarchy and representation"><img alt="[C]" height="11" src="assets/atlas_depth_badges/C.svg" width="13"/></a></th>
@@ -739,8 +739,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="cases/hong-kong.html#gmns-zones-and-source-evidence">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_assignment_ready_network.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-population" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-population"><th colspan="2" width="800"><a id="hong-kong-population"></a><h4 id="population-households-and-activity-1">Population, households and activity</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-population" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-population"><th colspan="2" scope="colgroup" width="800"><a id="hong-kong-population"></a>Population, households and activity</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-population">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Population, households and activity</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>2021 census allocation and activity proxy</strong></th>
@@ -758,8 +758,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/hong-kong-four-stage.html">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_population_households_activity.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-transit" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="hong-kong-transit"><th colspan="3" width="800"><a id="hong-kong-transit"></a><h4 id="transit-and-observations-1">Transit and observations</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-transit" width="100%"><colgroup><col width="33.333%"/><col width="33.333%"/><col width="33.333%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="3" data-items="3" data-stage="hong-kong-transit"><th colspan="3" scope="colgroup" width="800"><a id="hong-kong-transit"></a>Transit and observations</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-transit">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Transit and pedestrian inputs</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GPS, trajectory and detector evidence</strong></th>
@@ -781,8 +781,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="cases/hong-kong.html#demand-transit-and-observations">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_detector_and_trajectory_evidence.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-generation" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-generation"><th colspan="2" width="800"><a id="hong-kong-generation"></a><h4 id="trip-generation-1">Trip generation</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-generation" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-generation"><th colspan="2" scope="colgroup" width="800"><a id="hong-kong-generation"></a>Trip generation</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-generation">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Trip generation — productions / attractions</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>Production/attraction scenario</strong></th>
@@ -800,8 +800,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/hong-kong-four-stage.html">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_trip_generation_distribution.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-distribution" width="100%"><colgroup><col width="100%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="1" data-items="1" data-stage="hong-kong-distribution"><th colspan="1" width="800"><a id="hong-kong-distribution"></a><h4 id="trip-distribution-1">Trip distribution</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-distribution" width="100%"><colgroup><col width="100%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="1" data-items="1" data-stage="hong-kong-distribution"><th colspan="1" scope="colgroup" width="800"><a id="hong-kong-distribution"></a>Trip distribution</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-distribution">
 <th class="atlas-title-cell" scope="col" width="800"><strong>Trip distribution — zonal OD demand</strong></th>
 </tr>
@@ -815,8 +815,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="800"><small class="atlas-links"><a href="cases/hong-kong-four-stage.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_07_hong_kong.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-mode" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-mode"><th colspan="2" width="800"><a id="hong-kong-mode"></a><h4 id="mode-choice-1">Mode choice</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-mode" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-mode"><th colspan="2" scope="colgroup" width="800"><a id="hong-kong-mode"></a>Mode choice</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-mode">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Mode choice — mode-specific demand</strong></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>Mode costs and shares</strong></th>
@@ -834,8 +834,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/hong-kong-four-stage.html">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_mode_choice_costs_and_shares.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-static" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-static"><th colspan="2" width="800"><a id="hong-kong-static"></a><h4 id="static-assignment-methods-2">Static assignment methods</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-static" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="2" data-items="2" data-stage="hong-kong-static"><th colspan="2" scope="colgroup" width="800"><a id="hong-kong-static"></a>Static assignment methods</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-static">
 <th class="atlas-title-cell" scope="col" width="400"><strong>Frank–Wolfe</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
 <th class="atlas-title-cell" scope="col" width="400"><strong>Official tap-b Algorithm B</strong> <a aria-label="A — Native assignment" class="atlas-depth-badge" href="#computational-depth-legend" title="A — Native assignment"><img alt="[A]" height="11" src="assets/atlas_depth_badges/A.svg" width="13"/></a></th>
@@ -853,8 +853,8 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <td class="atlas-links-cell" width="400"><small class="atlas-links"><a href="cases/hong-kong-static-assignment.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_11_hong_kong.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
-<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><tbody>
-<tr class="atlas-stage-heading" data-columns="4" data-items="14" data-stage="hong-kong-finite"><th colspan="4" width="800"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a><h4 id="finite-time-expanded-computation-2">Finite time-expanded computation</h4></th></tr>
+<div class="table-scroll"><table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-finite" width="100%"><colgroup><col width="25%"/><col width="25%"/><col width="25%"/><col width="25%"/></colgroup><thead>
+<tr class="atlas-stage-heading" data-columns="4" data-items="14" data-stage="hong-kong-finite"><th colspan="4" scope="colgroup" width="800"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a>Finite time-expanded computation</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
 <th class="atlas-title-cell" scope="col" width="200"><strong>Network construction and generated columns</strong> <a aria-label="B — Decomposition and distributed computation; C — Spatial hierarchy and representation" class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; C — Spatial hierarchy and representation"><img alt="[B · C]" height="11" src="assets/atlas_depth_badges/B_C.svg" width="30"/></a></th>
 <th class="atlas-title-cell" scope="col" width="200"><strong>Arc-flow LP reference</strong> <a aria-label="D — Coordination and verification" class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification"><img alt="[D]" height="11" src="assets/atlas_depth_badges/D.svg" width="13"/></a></th>
