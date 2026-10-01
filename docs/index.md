@@ -1,7 +1,7 @@
 <!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->
 <h1 id="mobility-computation-lab">Mobility Computation Lab</h1>
 <p><strong>Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.</strong></p>
-<p>This open-source research and learning project is developed by <a href="https://scholarhaozheng.github.io/">Hao Zheng</a>, a recent M.S. graduate from Tsinghua University, under the guidance of Professor Xuesong Zhou. It brings together documented examples in Boston, Sioux Falls, and Hong Kong to study how city data, demand models, and network algorithms work together.</p>
+<p>This open-source research and learning project is developed by <a href="https://scholarhaozheng.github.io/">Hao Zheng</a>, a recent M.S. graduate from Tsinghua University, under the guidance of <strong>Professor Xuesong Zhou</strong>. It brings together documented examples in Boston, Sioux Falls, and Hong Kong to study how city data, demand models, and network algorithms work together.</p>
 <p>The repository uses the <a href="https://github.com/zephyr-data-specs/GMNS">General Modeling Network Specification (GMNS)</a> as its portable network and data contract. Selected static traffic-assignment experiments build on <a href="https://github.com/asu-trans-ai-lab/TAPLab">TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments</a> and the official <a href="https://github.com/spartalab/tap-b">tap-b Algorithm B</a>, with upstream software, methods, and datasets attributed explicitly.</p>
 <p>Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases; connecting city data and four-stage demand models to documented network computations; implementing and evaluating project-specific adapters, workflows, and experiments; and making each result traceable to its actual instance, units, assumptions, and evidence.</p>
 <p><a href="contributions.html">My contributions and upstream foundations</a> · <a href="full-walkthrough.html">Full technical walkthrough</a> · <a href="getting-started.html">Start with a saved example</a> · <a href="citation.html">Source and citation</a></p>
@@ -88,10 +88,10 @@ The horizontal axis compares how the documented framework is instantiated in Bos
 <thead><tr><th colspan="3" scope="colgroup" width="800">GPS, trajectory and detector evidence</th></tr>
 <tr><th scope="col" width="266">Boston</th><th scope="col" width="266">Sioux Falls</th><th scope="col" width="266">Hong Kong</th></tr></thead><tbody>
 <tr class="coverage-scope"><td valign="top" width="266">Exploratory map matching and service feedback; not held-out calibration.</td><td valign="top" width="266">No modern GPS or detector observations.</td><td valign="top" width="266">Detector and private trajectory association; no held-out validation claim.</td></tr>
-<tr class="coverage-preview"><td align="center" width="266"><a href="datasets/boston-behavior-feedback.html"><img alt="Boston GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_boston.png" width="220"/></a></td><td align="center" width="266"><a href="cases/sioux-falls.html#demand-transit-and-observations"><img alt="Sioux Falls GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_sioux_falls.png" width="220"/></a></td><td align="center" width="266"><a href="cases/hong-kong-four-stage.html"><img alt="Hong Kong GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_hong_kong.png" width="220"/></a></td></tr>
+<tr class="coverage-preview"><td align="center" width="266"><a href="datasets/boston-behavior-feedback.html"><img alt="Boston GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_boston.png" width="220"/></a><br/><sub>Saved GPS point-to-road projection</sub><br/><a href="datasets/boston-central.html#one-saved-transit-position-projection"><img alt="Twelve saved Boston vehicle positions, projected points and matched road geometry" src="assets/boston/visual_release_r1/boston_gps_projection.png" width="220"/></a></td><td align="center" width="266"><a href="cases/sioux-falls.html#demand-transit-and-observations"><img alt="Sioux Falls GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_sioux_falls.png" width="220"/></a></td><td align="center" width="266"><a href="cases/hong-kong-four-stage.html"><img alt="Hong Kong GPS, trajectory and detector evidence preview" src="assets/homepage_evidence_r2/row_05_hong_kong.png" width="220"/></a></td></tr>
 <tr class="coverage-caption"><td align="center" colspan="3"><sub>observation-to-network relation map</sub></td></tr>
 <tr class="coverage-links">
-<td width="266"><sub><a href="datasets/boston-behavior-feedback.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_05_boston.png">Full preview</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/figure_sample/gps_point_progress.csv">Source record</a></sub></td>
+<td width="266"><sub><a href="datasets/boston-behavior-feedback.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_05_boston.png">Full preview</a> · <a href="assets/boston/visual_release_r1/boston_gps_projection.png">Projection figure</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/boston/gmns_exchange_r1/figure_sample/gps_point_progress.csv">Source record</a></sub></td>
 <td width="266"><sub><a href="cases/sioux-falls.html#demand-transit-and-observations">Evidence</a> · <a href="assets/homepage_evidence_r2/row_05_sioux_falls.png">Full preview</a></sub></td>
 <td width="266"><sub><a href="cases/hong-kong-four-stage.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_05_hong_kong.png">Full preview</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/main/examples/hong-kong/gmns_pilot_r1/instance/detector_to_link.csv">Source record</a></sub></td>
 </tr></tbody></table></div>
@@ -252,10 +252,10 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <h2 id="04-explore-the-three-cases">04 / Explore the three cases</h2>
 <p>Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size.</p>
 <p><a id="computational-depth-legend"></a>
-<strong>A — Native assignment</strong><br/>
-<strong>B — Decomposition and distributed computation</strong><br/>
+<strong>A — Native assignment</strong><br>
+<strong>B — Decomposition and distributed computation</strong><br>
 <strong>C — Spatial hierarchy and representation</strong><br/>
-<strong>D — Coordination and verification</strong></p>
+<strong>D — Coordination and verification</strong></br></br></p>
 <p>A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.</p>
 <p><a id="boston"></a></p>
 <article class="case-atlas" data-city="boston">
@@ -313,22 +313,22 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 <tr class="atlas-card-title-row" data-stage="boston-transit">
 <th class="atlas-title-cell" scope="col" width="266"><strong>Transit and pedestrian inputs</strong></th>
 <th class="atlas-title-cell" scope="col" width="266"><strong>GPS, trajectory and detector evidence</strong></th>
-<th class="atlas-title-cell" scope="col" width="266"><strong>GPS-to-GMNS association</strong></th>
+<th class="atlas-title-cell" scope="col" width="266"><strong>GPS point-to-road projection</strong></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-transit">
 <td class="atlas-card-cell" width="266"><a href="cases/boston.html#demand-transit-and-observations"><img alt="Boston Transit and pedestrian inputs; MBTA service and pedestrian access support the bounded demand/feedback example." src="assets/homepage_evidence_r2/row_04_boston.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="266"><a href="datasets/boston-behavior-feedback.html"><img alt="Boston GPS, trajectory and detector evidence; Exploratory map matching and service feedback; not held-out calibration." src="assets/homepage_evidence_r2/row_05_boston.png" width="165"/></a></td>
-<td class="atlas-card-cell" width="266"><a href="datasets/boston-behavior-feedback.html"><img alt="Boston GPS-to-GMNS association; exploratory" src="assets/homepage_alignment_r3/atlas/a7f050b34234228c.png" width="165"/></a></td>
+<td class="atlas-card-cell" width="266"><a href="datasets/boston-central.html#one-saved-transit-position-projection"><img alt="Boston GPS point-to-road projection; 12 saved MBTA positions" class="gps-projection-preview" src="assets/boston/visual_release_r1/boston_gps_projection.png" width="220"/></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-transit">
 <td class="atlas-meta-cell" width="266"><small class="atlas-meta">MBTA service and pedestrian access support the bounded demand/feedback example.</small></td>
 <td class="atlas-meta-cell" width="266"><small class="atlas-meta">Exploratory map matching and service feedback; not held-out calibration.</small></td>
-<td class="atlas-meta-cell" width="266"><small class="atlas-meta">GPS linkage · exploratory</small></td>
+<td class="atlas-meta-cell" width="266"><small class="atlas-meta">GPS map matching · 12 saved MBTA positions</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-transit">
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="cases/boston.html#demand-transit-and-observations">Evidence</a> · <a href="assets/homepage_evidence_r2/row_04_boston.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="datasets/boston-behavior-feedback.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_05_boston.png">Figure</a></small></td>
-<td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="datasets/boston-behavior-feedback.html">Evidence</a> · <a href="assets/boston/visual_release_r1/boston_gps_projection.png">Figure</a></small></td>
+<td class="atlas-links-cell" width="266"><small class="atlas-links"><a href="datasets/boston-central.html#one-saved-transit-position-projection">Evidence</a> · <a href="assets/boston/visual_release_r1/boston_gps_projection.png">Figure</a></small></td>
 </tr>
 </tbody></table></div>
 <div class="table-scroll"><table class="atlas-city-table" data-city="boston" data-stage="boston-generation" width="100%"><colgroup><col width="50%"/><col width="50%"/></colgroup><thead>

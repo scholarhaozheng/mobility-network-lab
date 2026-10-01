@@ -19,7 +19,7 @@ HERO="""# Mobility Computation Lab
 
 **Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.**
 
-This open-source research and learning project is developed by [Hao Zheng](https://scholarhaozheng.github.io/), a recent M.S. graduate from Tsinghua University, under the guidance of Professor Xuesong Zhou. It brings together documented examples in Boston, Sioux Falls, and Hong Kong to study how city data, demand models, and network algorithms work together.
+This open-source research and learning project is developed by [Hao Zheng](https://scholarhaozheng.github.io/), a recent M.S. graduate from Tsinghua University, under the guidance of **Professor Xuesong Zhou**. It brings together documented examples in Boston, Sioux Falls, and Hong Kong to study how city data, demand models, and network algorithms work together.
 
 The repository uses the [General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS) as its portable network and data contract. Selected static traffic-assignment experiments build on [TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab) and the official [tap-b Algorithm B](https://github.com/spartalab/tap-b), with upstream software, methods, and datasets attributed explicitly.
 
@@ -79,6 +79,7 @@ COVER={
  "Sioux Falls":"docs/assets/homepage_evidence_r1/sioux_falls_case_cover.png",
  "Hong Kong":"docs/assets/homepage_evidence_r1/hong_kong_case_cover.png",
 }
+BOSTON_GPS_PROJECTION="docs/assets/boston/visual_release_r1/boston_gps_projection.png"
 CASE_PAGE={"Boston":"docs/cases/boston.md","Sioux Falls":"docs/cases/sioux-falls.md","Hong Kong":"docs/cases/hong-kong.md"}
 ROLE={
  "Boston":"City GMNS, population/demand, MBTA/GPS linkage and separate bounded static and finite computations.",
@@ -96,7 +97,7 @@ FACTS={
 EXTRAS=[
  ("Boston","sources","Special zones and access","docs/assets/boston/visual_release_r1/boston_network_zones.png","docs/cases/boston.md#gmns-zones-and-source-evidence","GMNS","Central Boston"),
  ("Boston","population","ACS/H3 allocation","docs/assets/boston/population_r1/population_allocation.png","docs/datasets/boston-population-households.md","Population","ACS 2024 five-year"),
- ("Boston","transit","GPS-to-GMNS association","docs/assets/boston/visual_release_r1/boston_gps_projection.png","docs/datasets/boston-behavior-feedback.md","GPS linkage","exploratory"),
+ ("Boston","transit","GPS point-to-road projection",BOSTON_GPS_PROJECTION,"docs/datasets/boston-central.md#one-saved-transit-position-projection","GPS map matching","12 saved MBTA positions"),
  ("Boston","generation","Generation by purpose","docs/assets/boston/four_step_results_r1/step1_generation.png","docs/cases/boston.md#stage-01-trip-generation","Trip generation","bounded example"),
  ("Boston","distribution","HBW OD distribution","docs/assets/boston/four_step_results_r1/step2_distribution.png","docs/cases/boston.md#stage-02-trip-distribution","Trip distribution","bounded example"),
  ("Boston","mode","Service-response mode choice","docs/assets/boston/four_step_results_r1/step3_mode_response.png","docs/cases/boston.md#stage-03-mode-choice","Mode choice","S1/S2 sensitivity"),
@@ -193,6 +194,22 @@ def row15_reuse(rows):
             raise AssertionError("row-15 image geometry")
     return reuse
 
+def component_preview_cell(r, rid, reused):
+    primary = reused[r["city"]]["original_figure"] if reused else r["preview_path"]
+    alt = (r["city"]+" Phase-II / CG-RMP objective versus arc-flow LP reference"
+           if reused else r["city"]+" "+r["row_title"]+" preview")
+    cell = ('<td width="266"'+(' height="160" valign="middle"' if reused else '')+
+            ' align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(primary)+
+            '" width="220" alt="'+esc(alt)+'"></a>')
+    if rid == "05" and r["city"] == "Boston":
+        projection_target = "docs/datasets/boston-central.md#one-saved-transit-position-projection"
+        if not (ROOT/BOSTON_GPS_PROJECTION).is_file():
+            raise FileNotFoundError(BOSTON_GPS_PROJECTION)
+        cell += ('<br><sub>Saved GPS point-to-road projection</sub><br><a href="'+
+                 esc(projection_target)+'"><img src="'+esc(BOSTON_GPS_PROJECTION)+
+                 '" width="220" alt="Twelve saved Boston vehicle positions, projected points and matched road geometry"></a>')
+    return cell+'</td>'
+
 def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
@@ -201,10 +218,7 @@ def component_table(matrix, rid):
          '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
          '<tr class="coverage-scope">'+''.join('<td width="266" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
-         '<tr class="coverage-preview">'+''.join(
-             '<td width="266"'+(' height="160" valign="middle"' if reused else '')+' align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
-             '" width="220" alt="'+esc(r["city"]+' Phase-II / CG-RMP objective versus arc-flow LP reference' if reused else r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
-             for r in rows)+'</tr>',
+         '<tr class="coverage-preview">'+''.join(component_preview_cell(r,rid,reused) for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
              ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"])+'</sub></td>' for r in rows)
              if reused else
@@ -217,6 +231,8 @@ def component_table(matrix, rid):
         source=r["data_or_figure_source"]
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reused[r["city"]]["original_figure"] if reused else r["preview_path"])+
                '">'+('Full figure' if reused else 'Full preview')+'</a>')
+        if rid == "05" and r["city"] == "Boston":
+            links += ' · <a href="'+esc(BOSTON_GPS_PROJECTION)+'">Projection figure</a>'
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.
@@ -247,6 +263,8 @@ def card(city,stage,label,img,target,method,instance,kind="original"):
     # The classic Sioux source is already a lightweight, legible figure. Show
     # its native aspect ratio rather than the padded 5:3 atlas derivative.
     if img=="docs/assets/homepage_evidence_r1/sioux_falls_classic_topology.png":preview=img
+    # Keep the saved GPS positions and road projections legible in the atlas.
+    if img==BOSTON_GPS_PROJECTION:preview=img
     if not (ROOT/preview).is_file():raise FileNotFoundError(preview)
     row={"city":city,"stage":stage,"asset_path":img,"asset_hash":hashlib.sha256(p.read_bytes()).hexdigest(),"preview_path":preview,"preview_hash":hashlib.sha256((ROOT/preview).read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
     return row
@@ -309,8 +327,10 @@ def stage_rows(cards, stage_id):
                     out.append(cell+' scope="col"><strong>'+esc(c["label"])+
                                '</strong>'+badge+'</th>')
                 elif part=='preview':
+                    gps_projection = c["asset_path"] == BOSTON_GPS_PROJECTION
                     out.append(cell+'><a href="'+esc(c["target_link"])+
-                               '"><img src="'+esc(c["preview_path"])+'" width="165" alt="'+
+                               '"><img'+(' class="gps-projection-preview"' if gps_projection else '')+
+                               ' src="'+esc(c["preview_path"])+'" width="'+('220' if gps_projection else '165')+'" alt="'+
                                esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
                                '"></a></td>')
                 elif part=='meta':
