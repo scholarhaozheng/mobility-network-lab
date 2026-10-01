@@ -231,8 +231,14 @@ def main() -> int:
           "Coverage tables must be full width; tools remain navigation only")
     check(not re.search(r'<img[^>]+height="\d+"', coverage),
           "Coverage previews must not force an image height")
-    check(coverage.count('<td width="33%"><sub><a href=') == 54,
+    check(coverage.count('<td width="260"><sub><a href=') == 54,
           "Three-city coverage links must use the compact GitHub-native text size")
+    check(coverage.count('<th scope="col" width="260">') == 54 and
+          coverage.count('<th colspan="3" scope="colgroup" width="780">') == 18 and
+          coverage.count('<td width="260" valign="top">') == 54 and
+          coverage.count('<td width="260" align="center">') == 54 and
+          3 * 260 == 780,
+          "Section 03 must reserve the same GitHub-native 780px outer width as Section 04")
     captions = re.findall(r'<tr class="coverage-caption">(.*?)</tr>', coverage, re.S)
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
@@ -268,13 +274,15 @@ def main() -> int:
             check(False, "Missing stage heading: " + stage_id)
             continue
         slots, items = int(heading.group(2)), int(heading.group(3))
-        cell_width = {1: "100%", 2: "50%", 3: "33.333%", 4: "25%"}.get(slots)
+        cell_width = {1: "780", 2: "390", 3: "260", 4: "195"}.get(slots)
+        col_width = {1: "100%", 2: "50%", 3: "33.333%", 4: "25%"}.get(slots)
         expected_counts = [min(slots, items - start) for start in range(0, items, slots)] if slots else []
         rows = re.findall(r'<tr class="atlas-card-(title|preview|meta|links)-row" data-stage="([^"]+)">(.*?)</tr>', body, re.S)
         check(stage_id.startswith(city+'-') and heading.group(1) == stage_id and
               slots == min(4, items) and cell_width is not None and
-              cols == ('<col width="'+cell_width+'">') * slots and
-              '<th colspan="'+str(slots)+'">' in body and
+              slots * int(cell_width) == 780 and
+              cols == ('<col width="'+col_width+'">') * slots and
+              '<th colspan="'+str(slots)+'" width="780">' in body and
               [(kind, row_stage) for kind, row_stage, _ in rows] ==
               [(kind, stage_id) for _ in expected_counts for kind in ("title", "preview", "meta", "links")] and
               all(row.count('class="atlas-'+("card-cell" if kind == "preview" else kind+"-cell")+'"') == expected and
@@ -282,15 +290,16 @@ def main() -> int:
                   re.findall(r'<(?:th|td) width="([^"]+)" class="atlas-[^"]+"', row) ==
                   [cell_width] * slots
                   for (kind, _, row), expected in zip(rows, [n for n in expected_counts for _ in range(4)])),
-              "City stage rows need native equal-width columns and padded empty slots: " + stage_id)
+              "City stage rows need the common GitHub-native right edge and padded empty slots: " + stage_id)
     quick_facts = re.findall(r'<table class="atlas-quick-facts".*?</table>', atlas, re.S)
-    check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["25%"] * 4
+    check(len(quick_facts) == 3 and all(re.findall(r'<td width="([^"]+)"', table) == ["195"] * 4
                                         for table in quick_facts),
           "Three-city quick-facts columns are not uniformly quarter-width")
     benchmark = re.search(r'<table class="atlas-city-table atlas-benchmark-table" data-city="sioux-falls" width="100%"><colgroup>.*?</colgroup><tbody>(.*?)</tbody></table>', atlas, re.S)
     sioux_body = benchmark.group(1) if benchmark else ""
     check(bool(benchmark) and sioux_body.count('class="atlas-benchmark-row"') == 5 and
-          sioux_body.count('<td width="33.333%">') == 15 and
+          sioux_body.count('<td width="260">') == 15 and
+          '<th colspan="3" width="780">' in sioux_body and
           '<colgroup>'+('<col width="33.333%">'*3)+'</colgroup>' in benchmark.group(0),
           "Sioux benchmark-scope columns are not equal-width")
     for text, surface in ((readme, "README"), (home, "Pages homepage")):

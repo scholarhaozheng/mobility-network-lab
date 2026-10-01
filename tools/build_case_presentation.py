@@ -58,9 +58,10 @@ def main(argv=None):
     @media(max-width:760px){.mcl-page .atlas-card img[src*="population_allocation"]{max-width:100%;width:100%}}
     '''
     CSS += '''
-    /* Native one-, two-, three-, or four-column stage tables survive GitHub's HTML sanitizer. */
+    /* GitHub needs numeric cell widths; the site keeps responsive percentage colgroups. */
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{table-layout:fixed}
     .mcl-page table.home-coverage,.mcl-page table.atlas-city-table,.mcl-page table.atlas-quick-facts{width:100%}
+    .mcl-page table.home-coverage th[width],.mcl-page table.home-coverage td[width],.mcl-page table.atlas-city-table th[width],.mcl-page table.atlas-city-table td[width],.mcl-page table.atlas-quick-facts th[width],.mcl-page table.atlas-quick-facts td[width]{width:auto}
     .mcl-page table.home-coverage th:first-child{width:auto}
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
