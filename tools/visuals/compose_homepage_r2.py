@@ -27,14 +27,31 @@ My work in this repository is to assemble and adapt the Boston, Sioux Falls, and
 [My contributions and upstream foundations](docs/contributions.md) · [Full technical walkthrough](docs/full-walkthrough.md) · [Start with a saved example](docs/getting-started.md) · [Source and citation](docs/citation.md)
 
 """
+TWO_AXES="""<a id="two-axes"></a>
+## 02A / Two axes of Mobility Computation Lab
+
+**Horizontal axis — documented city cases:**  
+Boston · Sioux Falls · Hong Kong
+
+**Vertical axis — computational depth within network assignment:**
+
+- **A · Native assignment** — Frank–Wolfe, official tap-b Algorithm B, finite-path controls, and native L3 reconstruction.
+- **B · Decomposition and distributed computation** — column generation, Lagrangian decomposition, and ADMM local or coupled computations.
+- **C · Spatial hierarchy and representation** — fine and parent zones, access relationships, turn/time states, and projection back to physical network objects.
+- **D · Coordination and verification** — shared capacities, residuals, pricing closure, independent evaluators, and declared result contracts.
+
+**How to read the two axes.**  
+The horizontal axis compares how the documented framework is instantiated in Boston, Sioux Falls, and Hong Kong. The vertical axis organizes increasing computational depth inside the network-assignment branch. A–D are not four mandatory execution steps. Source data, GMNS, population and activity preparation, transit and observations, and the four-stage demand workflow remain the common city-model foundation outside A–D.
+
+"""
 CITIES=("Boston","Sioux Falls","Hong Kong")
 SLUG={"Boston":"boston","Sioux Falls":"sioux-falls","Hong Kong":"hong-kong"}
 ROW_GROUPS=[
- ("A / City data and model foundations",("01","02","03")),
- ("B / Transit and observation evidence",("04","05")),
- ("C / Four-stage travel-demand workflow",("06","07","08","09")),
- ("D1 / Static assignment · BPR/Beckmann",("10","11","12","13")),
- ("D2 / Finite time-expanded · fixed cost, hard capacity",("14","15","16","17","18")),
+ ("I / City data and model foundations","a--city-data-and-model-foundations",("01","02","03")),
+ ("II / Transit and observation evidence","b--transit-and-observation-evidence",("04","05")),
+ ("III / Four-stage travel-demand workflow","c--four-stage-travel-demand-workflow",("06","07","08","09")),
+ ("IV / Static assignment · BPR/Beckmann","d1--static-assignment--bprbeckmann",("10","11","12","13")),
+ ("V / Finite time-expanded · fixed cost, hard capacity","d2--finite-time-expanded--fixed-cost-hard-capacity",("14","15","16","17","18")),
 ]
 STAGES=[
  ("sources","Sources and GMNS"),("population","Population, households and activity"),
@@ -158,10 +175,13 @@ def component_table(matrix, rid):
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
       'Each row uses one evidence graphic type and one 600 × 360 source canvas across the three cities. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
-    for group,ids in ROW_GROUPS:
-        out += ['### '+group,'']
+    for group,old_anchor,ids in ROW_GROUPS:
+        new_anchor='section03-'+group.split(' / ',1)[0].lower()
+        out += ['<a id="'+old_anchor+'"></a><a id="'+new_anchor+'"></a>','### '+group,'']
         for rid in ids:
             out += [component_table(matrix,rid),'']
+    out += ['<a id="e--reusable-outputs-and-tools"></a><a id="section03-vi"></a>','### VI / Reusable outputs and tools','',
+      'Reusable queries, exports, saved examples, and checks remain linked from the [Boston](docs/cases/boston.md#reproduction), [Sioux Falls](docs/cases/sioux-falls.md#reproduction), and [Hong Kong](docs/cases/hong-kong.md#reproduction) case entries and the [getting-started guide](docs/getting-started.md).','']
     out += ['<a id="cg-experiments"></a><a id="admm-r2"></a><a id="algorithm-b"></a><a id="distributed-assignment"></a>',
       'The [cross-case CG evidence](docs/methods/space-time-cg.md#cg-experiments), [ADMM](docs/methods/admm-space-time.md), [official tap-b Algorithm B method](docs/methods/origin-based-algorithm-b.md) and [adapter distinction](docs/integrations/taplab-tapb.md), and [Lagrangian records](docs/methods/distributed-assignment.md) retain their full figure families. Boston and Hong Kong have independent 10/10 pricing closure on **different** ten-demand graphs; this is not imputed to the historical Sioux runs.','']
     return '\n'.join(out)
@@ -179,6 +199,29 @@ def card(city,stage,label,img,target,method,instance,kind="original"):
     row={"city":city,"stage":stage,"asset_path":img,"asset_hash":hashlib.sha256(p.read_bytes()).hexdigest(),"preview_path":preview,"preview_hash":hashlib.sha256((ROOT/preview).read_bytes()).hexdigest(),"label":label,"method":method,"instance":instance,"target_link":target,"kind":kind}
     return row
 
+def depth_badge(c):
+    """Reading labels only; no card evidence, method, or result state changes."""
+    label=c["label"].lower()
+    if c["stage"]=="static":return "A"
+    if c["stage"]=="sources":
+        return "C" if c["label"] in {
+            "GMNS network, zones and access", "Special zones and access",
+            "Classic network topology", "Roads, zones and turns",
+        } else ""
+    if c["stage"]!="finite":return ""
+    if "case overview" in label or "case-sequence overview" in label:return ""
+    if "network construction and generated columns" in label:return "B · C"
+    if "arc-flow lp reference" in label:return "D"
+    if "two-phase column generation" in label:return "B"
+    if "lagrangian" in label or "admm" in label:return "B · D"
+    if "physical to time-expanded" in label or "physical to time-indexed" in label:return "C"
+    if "generated time-indexed column" in label or "approved hk10 77-arc column" in label:return "B · C"
+    if "phase i" in label or "phase ii" in label:return "B"
+    if "shared-capacity" in label:return "D"
+    if "final" in label and "flow" in label:return "C · D"
+    if "pricing closure" in label:return "B · D"
+    return ""
+
 def stage_rows(cards, stage_id):
     columns=min(4,len(cards))
     cell_width={1:'100%',2:'50%',3:'33.333%',4:'25%'}[columns]
@@ -189,10 +232,12 @@ def stage_rows(cards, stage_id):
         out.append('<tr class="atlas-card-row" data-stage="'+stage_id+'">')
         for c in group:
             note=c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"]
+            depth=depth_badge(c)
+            badge='<br><b class="atlas-depth-badge">['+esc(depth)+']</b>' if depth else ''
             out.append('<td colspan="'+str(colspan)+'" width="'+cell_width+'" class="atlas-card-cell"><a href="'+esc(c["target_link"])+
                 '"><img src="'+esc(c["preview_path"])+'" width="165" alt="'+
                 esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
-                '"></a><br><strong>'+esc(c["label"])+
+                '"></a>'+badge+'<br><strong>'+esc(c["label"])+
                 '</strong><br><sub class="atlas-meta">'+esc(note)+
                 '</sub><br><sub class="atlas-links"><a href="'+esc(c["target_link"])+
                 '">Evidence</a> · <a href="'+esc(c["asset_path"])+
@@ -202,7 +247,13 @@ def stage_rows(cards, stage_id):
 
 def section04(matrix):
     out=['## 04 / Explore the three cases','',
-       'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size. Covers are navigation assets, not scientific validation.','']
+       'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size. Covers are navigation assets, not scientific validation.','',
+       '<a id="computational-depth-legend"></a>',
+       '**A — Native assignment**  ',
+       '**B — Decomposition and distributed computation**  ',
+       '**C — Spatial hierarchy and representation**  ',
+       '**D — Coordination and verification**','',
+       'A–D are reading labels for computational depth, not a mandatory solver sequence. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components. Agentic execution remains a learning and research direction, not a completed autonomous module.','']
     assets=[]
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}
     for item in EXTRAS:
@@ -264,7 +315,8 @@ def section04(matrix):
                 cards.append(asset);assets.append(asset)
             stage_id=slug+'-'+stage
             extra_anchor='<a id="hong-kong-cg-r5"></a>' if city=="Hong Kong" and stage=="finite" else ''
-            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(min(4,len(cards)))+'" data-items="'+str(len(cards))+'"><th colspan="12"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
+            stage_depth='<br><sub class="atlas-depth-stage">A · Native assignment</sub>' if stage=="static" else ''
+            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(min(4,len(cards)))+'" data-items="'+str(len(cards))+'"><th colspan="12"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4>'+stage_depth+'</th></tr>')
             if not cards:
                 out.append('<tr class="atlas-scope-row"><td colspan="12">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</td></tr>')
             else:out.append(stage_rows(cards,stage_id))
@@ -278,11 +330,14 @@ def update_readme():
     if not text.startswith("# Mobility Computation Lab\n") or text.count('<a id="what-this-project-adds"></a>')!=1:
         raise AssertionError('homepage hero boundary')
     text=HERO+text[text.index('<a id="what-this-project-adds"></a>'):]
+    existing_axes=text.find('<a id="two-axes"></a>')
+    if existing_axes>=0:
+        text=text[:existing_axes]+text[text.index('<a id="coverage"></a>',existing_axes):]
     start=text.index('<a id="coverage"></a>')
     end=text.index('<a id="run-your-input"></a>',start)
     atlas,assets=section04(matrix)
     body=section03(matrix)+atlas
-    new=text[:start]+body+'\n'+text[end:]
+    new=text[:start]+TWO_AXES+body+'\n'+text[end:]
     if new.count('[Hao Zheng](https://scholarhaozheng.github.io/)')!=1 or 'Project author:' in new[:new.index('<a id="what-this-project-adds"></a>')]:
         raise AssertionError('author introduction')
     README.write_text(new,encoding='utf-8',newline='\n')
