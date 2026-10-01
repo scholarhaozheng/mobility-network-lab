@@ -20,8 +20,8 @@
 <p><a id="gmns-in-action"></a><a id="four-step-workflow"></a>
 GMNS keeps directed physical roads, hierarchical zones, centroids, nonphysical access and source IDs distinct. Population, household and activity preparation precedes <strong>01 trip generation → 02 trip distribution → 03 mode choice → 04 traffic assignment</strong> where those stages are supported; declared vehicle OD can instead enter assignment directly. GPS traces and map matching, service records and detector context require explicit quality and network-association rules. <a href="datasets/boston-gmns-exchange.html">GMNS exchange</a> · <a href="city-workflow.html">Four-stage city workflow</a> · <a href="datasets/boston-behavior-feedback.html">Observation example</a>.</p>
 <p>Static <strong>BPR/Beckmann</strong> assignment and finite <strong>fixed-cost, hard-capacity time-expanded</strong> optimization are separate mathematical branches. The latter is not an automatically calibrated dynamic version of the former. <a href="architecture.html">Architecture</a> · <a href="data-contract.html">Data contract</a>.</p>
-<p><a id="two-axes"></a></p>
-<h2 id="02a-two-axes-of-mobility-computation-lab">02A / Two axes of Mobility Computation Lab</h2>
+<p><a id="two-axes"></a><a id="02a-two-axes-of-mobility-computation-lab"></a></p>
+<h3 id="two-axes-of-mobility-computation-lab">Two axes of Mobility Computation Lab</h3>
 <p><strong>Horizontal axis — documented city cases:</strong><br/>
 Boston · Sioux Falls · Hong Kong</p>
 <p><strong>Vertical axis — computational depth within network assignment:</strong></p>
