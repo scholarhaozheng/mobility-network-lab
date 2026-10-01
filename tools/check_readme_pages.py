@@ -105,7 +105,7 @@ def main() -> int:
     for needle in (
         "**Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.**",
         "[Hao Zheng](https://scholarhaozheng.github.io/)",
-        "a recent M.S. graduate from Tsinghua University, under the guidance of **Professor Xuesong Zhou**",
+        "a recent M.S. graduate from Tsinghua University, under the guidance of **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)**",
         "Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases",
         "[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)",
         "[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)",
@@ -113,8 +113,8 @@ def main() -> int:
         "Selected static traffic-assignment experiments build on",
     ):
         check(needle in hero, f"Approved author/upstream introduction missing: {needle}")
-    check('<strong>Professor Xuesong Zhou</strong>' in home,
-          'Website hero must bold Professor Xuesong Zhou')
+    check('<strong><a href="https://search.asu.edu/profile/2182101">Professor Xuesong Zhou</a></strong>' in home,
+          'Website hero must link and bold Professor Xuesong Zhou')
     check("Project author: Hao Zheng. This open-source research environment connects" not in hero and
           "I am Hao Zheng" not in hero and "I am [Hao Zheng]" not in hero and
           "My work in this repository" not in hero,
