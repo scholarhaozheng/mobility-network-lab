@@ -105,7 +105,7 @@ def main() -> int:
     for needle in (
         "**Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.**",
         "[Hao Zheng](https://scholarhaozheng.github.io/)",
-        "a recent M.S. graduate from Tsinghua University, under the guidance of Professor Xuesong Zhou",
+        "a recent M.S. graduate from Tsinghua University, under the guidance of **Professor Xuesong Zhou**",
         "Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases",
         "[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)",
         "[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)",
@@ -113,6 +113,8 @@ def main() -> int:
         "Selected static traffic-assignment experiments build on",
     ):
         check(needle in hero, f"Approved author/upstream introduction missing: {needle}")
+    check('<strong>Professor Xuesong Zhou</strong>' in home,
+          'Website hero must bold Professor Xuesong Zhou')
     check("Project author: Hao Zheng. This open-source research environment connects" not in hero and
           "I am Hao Zheng" not in hero and "I am [Hao Zheng]" not in hero and
           "My work in this repository" not in hero,
@@ -200,6 +202,23 @@ def main() -> int:
           len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
           "The two-axis explanation must appear exactly once before Section 03")
     coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    gps_row = coverage.split('data-component="05"', 1)[1].split('</table>', 1)[0]
+    gps_row_site = home.split('data-component="05"', 1)[1].split('</table>', 1)[0]
+    projection = 'docs/assets/boston/visual_release_r1/boston_gps_projection.png'
+    projection_target = 'docs/datasets/boston-central.md#one-saved-transit-position-projection'
+    check(gps_row.count('src="docs/assets/homepage_evidence_r2/row_05_boston.png"') == 1 and
+          gps_row.count('src="'+projection+'"') == 1 and
+          projection_target in gps_row and
+          'src="assets/boston/visual_release_r1/boston_gps_projection.png"' in gps_row_site,
+          'Boston GPS evidence cell must show the existing preview and saved point projection')
+    boston_transit = readme.split('data-stage="boston-transit" width="100%"', 1)[1].split('</table>', 1)[0]
+    check('GPS point-to-road projection' in boston_transit and projection in boston_transit and
+          projection_target in boston_transit and 'width="220"' in boston_transit,
+          'Boston point projection must remain a distinct, legible Transit and observations card')
+    check((ROOT / projection).is_file() and
+          hashlib.sha256((ROOT / projection).read_bytes()).hexdigest() ==
+          '58921c4b7f0accf505f8c096095e1976213461851906ed83509dbee86f1b8804',
+          'Saved Boston GPS projection original bytes changed')
     row15_readme = coverage.split('data-component="15"', 1)[1].split('</table>', 1)[0]
     row15_home = home.split('data-component="15"', 1)[1].split('</table>', 1)[0]
     with (DOCS / 'assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv').open(
@@ -301,8 +320,10 @@ def main() -> int:
           "A–D labels must be small linked gray assets inline after their existing card titles")
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
           "Atlas must retain 86 city-owned cards in native table cells")
-    check(atlas.count('width="165" alt=') == 86 and not re.search(r'<img[^>]+width="165"[^>]+height="\d+"', atlas),
-          "Atlas must use width-limited previews without forced image heights")
+    check(atlas.count('width="165" alt=') == 85 and
+          atlas.count('width="220" alt="Boston GPS point-to-road projection') == 1 and
+          not re.search(r'<img[^>]+width="(?:165|220)"[^>]+height="\d+"', atlas),
+          "Atlas must retain aspect-ratio-safe previews, with only the GPS projection enlarged")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
     home_tables = re.findall(r'<table\b[^>]*>', coverage + atlas)
