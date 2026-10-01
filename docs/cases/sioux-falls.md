@@ -69,6 +69,8 @@ The corrected [native Diagnostic L3 method](../../algorithms/path_compression/di
 
 Both have zero negative path-flow mass and passed recorded original-space numerical tests. Their nonzero full-network gaps remain visible; a passing numerical-feasibility gate is not an equilibrium or empirical-validation certificate. Gamma=0.01 adds a reference-centred term, so the two F values are not a shared-objective leaderboard. The source and effective zero-link-bound adapter are released, but native portability has not been retested in this publication task.
 
+Complementary saved-result views: [B_BECKMANN link-flow distribution](../assets/homepage_evidence_r2/row_12_sioux_falls.png) and [network flow/support](../assets/static_path_parity_r1/sioux_falls_finite_network.png); [A_REG001 L3 distribution](../assets/homepage_evidence_r2/row_13_sioux_falls.png) and [network reconstruction residual](../assets/static_path_parity_r1/sioux_falls_l3_network.png). These are schematic topology views, not georeferenced city maps. The L3 difference is its own path-aggregate versus explicit-flow residual, not a FW comparison. [Figure source hashes](../assets/static_path_parity_r1/FIGURE_PARITY_MAP.csv).
+
 
 
 The separate [official `tap-b` Algorithm B classic static result](sioux-algorithm-b.md) passes independent UE checks on 24 nodes, 76 links and 528 positive ODs. The pinned official TAPLab registered adapter and direct callable reproduce its accepted physical-link flows exactly; `taplab verify` certified the standard output. This is a **static** BPR/Beckmann result, not a finite space–time CG or distributed-capacity result.

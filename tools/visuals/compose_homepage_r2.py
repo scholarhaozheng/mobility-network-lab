@@ -15,6 +15,7 @@ ROOT=Path(__file__).resolve().parents[2]
 MATRIX=ROOT/"docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv"
 ROW15_MAPPING=ROOT/"docs/assets/homepage_evidence_r2/ROW15_REUSE_SOURCE_MAPPING.csv"
 HK_STATIC_R2_MAPPING=ROOT/"docs/assets/homepage_evidence_r2/ROW12_13_HK_REUSE_SOURCE_MAPPING.csv"
+STATIC_PATH_PARITY=ROOT/"docs/assets/static_path_parity_r1/FIGURE_PARITY_MAP.csv"
 README=ROOT/"README.md"
 HERO="""# Mobility Computation Lab
 
@@ -172,6 +173,8 @@ def load_matrix():
     # Homepage-only copy edits; retain the accepted matrix and sidecars as provenance.
     for r in rows:
         r["result_scope"]=DISPLAY_SCOPE_REVISIONS.get(r["result_scope"],r["result_scope"])
+        if (r["row_id"],r["city"])==("12","Sioux Falls"):
+            r["result_scope"]="Frozen 2,218-path representation; B_BECKMANN native candidate, not full-network UE."
     return {(r["row_id"],r["city"]):r for r in rows}
 
 def row_target(r):
@@ -240,6 +243,20 @@ def hk_static_r2_reuse(rows, rid):
         raise AssertionError((rid,"corrected R2 source hash"))
     return {"Hong Kong":record}
 
+def static_path_parity(rid):
+    with STATIC_PATH_PARITY.open(newline="",encoding="utf-8") as f:
+        rows=[r for r in csv.DictReader(f) if r["row_id"]==rid]
+    lookup={(r["city"],r["view"]):r for r in rows}
+    if set(lookup)!={(city,view) for city in CITIES for view in ("distribution","network")}:
+        raise AssertionError((rid,"static path parity coverage"))
+    for r in rows:
+        for field in ("figure","source_record"):
+            if not (ROOT/r[field]).is_file():raise FileNotFoundError(r[field])
+        if hashlib.sha256((ROOT/r["figure"]).read_bytes()).hexdigest()!=r["sha256"]:
+            raise AssertionError((rid,r["city"],r["view"],"figure hash"))
+        if r["original_preserved"]!="yes":raise AssertionError("original figure preservation")
+    return lookup
+
 def component_preview_cell(r, rid, reused):
     reuse_record = reused.get(r["city"]) if reused else None
     primary = reuse_record["original_figure"] if reuse_record else r["preview_path"]
@@ -261,11 +278,39 @@ def component_preview_cell(r, rid, reused):
                  esc(figure)+'" width="118" alt="'+esc(secondary_alt)+'"></a>')
     return cell+'</td>'
 
+def static_path_table(rows, rid, title):
+    pair=static_path_parity(rid)
+    out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
+         '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
+         '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
+         '<tr class="coverage-scope">'+''.join('<td width="266" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>']
+    for view in ("distribution","network"):
+        out.append('<tr class="coverage-preview static-path-'+view+'">'+''.join(
+            '<td width="266" height="'+('160' if view=='distribution' else '130')+'" valign="middle" align="center">'
+            '<a href="'+esc(row_target(r))+'"><img src="'+esc(pair[(r["city"],view)]["figure"])+
+            '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' '+view+' view')+'"></a></td>'
+            for r in rows)+'</tr>')
+    out.append('<tr class="coverage-caption"><td colspan="3" align="center"><sub>'+esc(
+        "finite-path reconstruction panel" if rid=="12" else "L3 reconstruction/difference panel")+
+        '</sub></td></tr>')
+    out.append('<tr class="coverage-links">')
+    for r in rows:
+        city_pair={view:pair[(r["city"],view)] for view in ("distribution","network")}
+        out.append('<td width="266"><sub><a href="'+esc(row_target(r))+'">Evidence</a> · '+
+                   '<a href="'+esc(city_pair["distribution"]["figure"])+'">Distribution</a> · '+
+                   '<a href="'+esc(city_pair["network"]["figure"])+'">Network</a> · '+
+                   '<a href="'+esc(city_pair["network"]["source_record"])+
+                   '">Source</a></sub></td>')
+    out+=['</tr></tbody></table>']
+    return '\n'.join(out)
+
 def component_table(matrix, rid):
     title=matrix[(rid,"Boston")]["row_title"]
     rows=[matrix[(rid,city)] for city in CITIES]
     reused=(row15_reuse(rows) if rid=="15" else
             hk_static_r2_reuse(rows,rid) if rid in {"12","13"} else None)
+    if rid in {"12","13"}:
+        return static_path_table(rows,rid,title)
     out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
          '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
@@ -302,7 +347,7 @@ def component_table(matrix, rid):
 
 def section03(matrix):
     out=['<a id="coverage"></a>','## 03 / Case coverage and selected evidence','',
-      'Most shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities. The GPS row pairs accepted city-specific figures; Hong Kong finite-path/L3 and the Arc-flow LP reference row reuse accepted full figures. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
+      'Most shared row previews use one evidence graphic type and one 600 × 360 source canvas across the three cities. The GPS row pairs accepted city-specific figures; the static finite-path/L3 rows pair saved-result distributions with physical-network (Sioux: schematic topology) views. The Arc-flow LP reference row reuses accepted full figures. Local scales, instance scope and missing stages remain explicit; static BPR/Beckmann and fixed-cost hard-capacity computations are separate branches. [Complete statistics](docs/capabilities.md#comparable-statistics).','']
     for group,old_anchor,ids in ROW_GROUPS:
         new_anchor='section03-'+group.split(' / ',1)[0].lower()
         out += ['<a id="'+old_anchor+'"></a><a id="'+new_anchor+'"></a>','### '+group,'']

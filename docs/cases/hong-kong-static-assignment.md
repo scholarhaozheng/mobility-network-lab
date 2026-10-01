@@ -39,13 +39,21 @@ The corrected singleton OD is **zone 11 → 12**, with one 13-edge legal simple 
 
 The H1 instance is **low-congestion**: maximum physical v/c is 0.0425032874, and maximum BPR relative cost increase is about 4.8953×10⁻⁷. FW accepted its initial all-or-nothing flow at the declared tolerance with zero iterations; finite-path flow matches that H1 FW/f0 anchor at saved precision. Independent saved-result replay checked OD conservation, legal paths and turns, original-space reconstruction, physical-link projection, objective, and full-graph gaps. Thus the result validates bounded transfer and reconstruction, **not** a nontrivial route-splitting compression stress test, rank sensitivity, speedup, or full-city scalability. The accepted full Hong Kong FW/Algorithm B objective is a different 8,930-OD static instance and is not the H1 reference.
 
-![Hong Kong bounded H1 finite-path physical-link flow and support](../assets/hong_kong/static_path_l3_r2/hong_kong_finite_flow_support.png)
+![Hong Kong bounded H1 finite-path physical-link flow distribution and support](../assets/static_path_parity_r1/hong_kong_finite_distribution.png)
 
-*H1 26-OD / 126-path reconstructed physical-link flow and support. The low-congestion finite solution equals its H1 FW/f0 anchor at saved precision; modeled PCE, not observed traffic or a full-city result.* [SVG](../assets/hong_kong/static_path_l3_r2/hong_kong_finite_flow_support.svg).
+*Distribution and support of the accepted H1 finite-path physical-link vector.* [SVG](../assets/static_path_parity_r1/hong_kong_finite_distribution.svg) · [Source hashes](../assets/static_path_parity_r1/hong_kong_finite_distribution.source.json).
 
-![Hong Kong bounded H1 Native Diagnostic L3 rank-26 reconstruction difference](../assets/hong_kong/static_path_l3_r2/hong_kong_l3_rank26_reconstruction_difference.png)
+![Hong Kong bounded H1 finite-path physical-link flow and support](../assets/static_path_parity_r1/hong_kong_finite_network.png)
 
-*Rank-26 original-space reconstruction and physical-link difference on H1. The declared checks pass; minor-path flow totals 8.43×10⁻⁸ PCE. This low-congestion result is not a route-splitting compression stress test.* [SVG](../assets/hong_kong/static_path_l3_r2/hong_kong_l3_rank26_reconstruction_difference.svg).
+*H1 26-OD / 126-path reconstructed physical-link flow and support. The low-congestion finite solution equals its H1 FW/f0 anchor at saved precision; modeled PCE, not observed traffic or a full-city result.* [SVG](../assets/static_path_parity_r1/hong_kong_finite_network.svg) · [Original corrected-R2 figure](../assets/hong_kong/static_path_l3_r2/hong_kong_finite_flow_support.png).
+
+![Hong Kong bounded H1 Native Diagnostic L3 rank-26 flow distribution and difference](../assets/static_path_parity_r1/hong_kong_l3_distribution.png)
+
+*Distribution of saved H1 rank-26 physical-link flow and its difference from the same-instance FW anchor.* [SVG](../assets/static_path_parity_r1/hong_kong_l3_distribution.svg) · [Source hashes](../assets/static_path_parity_r1/hong_kong_l3_distribution.source.json).
+
+![Hong Kong bounded H1 Native Diagnostic L3 rank-26 reconstruction difference](../assets/static_path_parity_r1/hong_kong_l3_network.png)
+
+*Rank-26 original-space reconstruction and physical-link difference on H1. The declared checks pass; minor-path flow totals 8.43×10⁻⁸ PCE. This low-congestion result is not a route-splitting compression stress test.* [SVG](../assets/static_path_parity_r1/hong_kong_l3_network.svg) · [Original corrected-R2 figure](../assets/hong_kong/static_path_l3_r2/hong_kong_l3_rank26_reconstruction_difference.png).
 
 ![Hong Kong bounded H1 Native Diagnostic L3 rank-52 reconstruction difference](../assets/hong_kong/static_path_l3_r2/hong_kong_l3_rank52_reconstruction_difference.png)
 
