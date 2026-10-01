@@ -233,8 +233,16 @@ def main() -> int:
               record['target_page'] + '#' + record['target_anchor'] in row15_readme and
               fragment_exists(ROOT / record['target_page'], record['target_anchor']),
               f'Arc-flow LP figure, caption, or detailed anchor missing: {city}')
-    check(all(f'row_15_{slug}.png' in atlas for slug in ('boston', 'sioux_falls', 'hong_kong')),
-          'Section 04 row-15 historical atlas cards must remain unchanged')
+    for record in row15_sources:
+        city_slug = {'Boston': 'boston', 'Sioux Falls': 'sioux-falls',
+                     'Hong Kong': 'hong-kong'}[record['city']]
+        stage = atlas.split(f'data-stage="{city_slug}-finite"', 1)[1].split('</table>', 1)[0]
+        figure = record['original_figure']
+        old_slug = city_slug.replace('-', '_')
+        check(figure in stage and f'row_15_{old_slug}.png' not in stage and
+              figure.removeprefix('docs/') in home and
+              (ROOT / f'docs/assets/homepage_evidence_r2/row_15_{old_slug}.png').is_file(),
+              f'Section 04 must show the accepted LP reference figure while retaining the old preview: {record["city"]}')
     for removed in (
         "not an automatic observed-OD or calibrated-demand pipeline",
         "schematic topology, no city zone hierarchy",

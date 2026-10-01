@@ -425,7 +425,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
 <td class="atlas-card-cell" width="200"><a href="cases/boston-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph"><img alt="Boston Network construction and generated columns; 90-node/125-link/10-OD finite graph; saved time-indexed column." src="assets/homepage_evidence_r2/row_14_boston.png" width="165"/></a></td>
-<td class="atlas-card-cell" width="200"><a href="cases/boston-space-time.html#reference-objective-agreement"><img alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance." src="assets/homepage_evidence_r2/row_15_boston.png" width="165"/></a></td>
+<td class="atlas-card-cell" width="200"><a href="cases/boston-space-time.html#reference-objective-agreement"><img alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance." src="assets/boston/space_time_cg_r4/boston_phase_ii_objective.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="cases/boston-space-time.html#phase-i-restores-feasibility"><img alt="Boston Two-phase column generation; Phase I/II and independent 10/10 pricing closure." src="assets/homepage_evidence_r2/row_16_boston.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="cases/boston.html#finite-time-expanded-algorithms"><img alt="Boston Lagrangian; Feasible primal, but frozen 1% gap gate missed (1.1002%)." src="assets/homepage_evidence_r2/row_17_boston.png" width="165"/></a></td>
 </tr>
@@ -437,7 +437,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="assets/homepage_evidence_r2/row_14_boston.png">Figure</a></small></td>
-<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/homepage_evidence_r2/row_15_boston.png">Figure</a></small></td>
+<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/boston/space_time_cg_r4/boston_phase_ii_objective.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston-space-time.html#phase-i-restores-feasibility">Evidence</a> · <a href="assets/homepage_evidence_r2/row_16_boston.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/boston.html#finite-time-expanded-algorithms">Evidence</a> · <a href="assets/homepage_evidence_r2/row_17_boston.png">Figure</a></small></td>
 </tr>
@@ -593,7 +593,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
 <td class="atlas-card-cell" width="200"><a href="cases/sioux-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph"><img alt="Sioux Falls Network construction and generated columns; Selected 200/250-OD finite graphs; saved time-indexed columns." src="assets/homepage_evidence_r2/row_14_sioux_falls.png" width="165"/></a></td>
-<td class="atlas-card-cell" width="200"><a href="cases/sioux-space-time.html#reference-objective-agreement"><img alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs." src="assets/homepage_evidence_r2/row_15_sioux_falls.png" width="165"/></a></td>
+<td class="atlas-card-cell" width="200"><a href="cases/sioux-space-time.html#reference-objective-agreement"><img alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs." src="assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="cases/sioux-space-time.html#phase-i-restores-feasibility"><img alt="Sioux Falls Two-phase column generation; 200/250-OD own-LP agreement; independent full-DAG closure not established." src="assets/homepage_evidence_r2/row_16_sioux_falls.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="methods/distributed-assignment.html"><img alt="Sioux Falls Lagrangian; Selected 200/250-OD feasible recovery and certified bounded gaps." src="assets/homepage_evidence_r2/row_17_sioux_falls.png" width="165"/></a></td>
 </tr>
@@ -605,7 +605,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/sioux-space-time.html#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="assets/homepage_evidence_r2/row_14_sioux_falls.png">Figure</a></small></td>
-<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/sioux-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/homepage_evidence_r2/row_15_sioux_falls.png">Figure</a></small></td>
+<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/sioux-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/benchmarks/sioux_200od_phase2_objective_trace.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/sioux-space-time.html#phase-i-restores-feasibility">Evidence</a> · <a href="assets/homepage_evidence_r2/row_16_sioux_falls.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="methods/distributed-assignment.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_17_sioux_falls.png">Figure</a></small></td>
 </tr>
@@ -863,7 +863,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
 <td class="atlas-card-cell" width="200"><a href="cases/hong-kong-space-time.html#a-generated-column-as-a-time-indexed-path"><img alt="Hong Kong Network construction and generated columns; Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph." src="assets/homepage_evidence_r2/row_14_hong_kong.png" width="165"/></a></td>
-<td class="atlas-card-cell" width="200"><a href="cases/hong-kong-space-time.html#reference-objective-agreement"><img alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case." src="assets/homepage_evidence_r2/row_15_hong_kong.png" width="165"/></a></td>
+<td class="atlas-card-cell" width="200"><a href="cases/hong-kong-space-time.html#reference-objective-agreement"><img alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case." src="assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="cases/hong-kong-space-time.html#phase-i-restores-feasibility"><img alt="Hong Kong Two-phase column generation; Phase I/II, same-graph LP agreement and independent 10/10 closure." src="assets/homepage_evidence_r2/row_16_hong_kong.png" width="165"/></a></td>
 <td class="atlas-card-cell" width="200"><a href="cases/hong-kong-space-time.html"><img alt="Hong Kong Lagrangian; Ten-OD feasible recovery with 0.7444% certified gap." src="assets/homepage_evidence_r2/row_17_hong_kong.png" width="165"/></a></td>
 </tr>
@@ -875,7 +875,7 @@ The <a href="methods/space-time-cg.html#cg-experiments">cross-case CG evidence</
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/hong-kong-space-time.html#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="assets/homepage_evidence_r2/row_14_hong_kong.png">Figure</a></small></td>
-<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/hong-kong-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/homepage_evidence_r2/row_15_hong_kong.png">Figure</a></small></td>
+<td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/hong-kong-space-time.html#reference-objective-agreement">Evidence</a> · <a href="assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/hong-kong-space-time.html#phase-i-restores-feasibility">Evidence</a> · <a href="assets/homepage_evidence_r2/row_16_hong_kong.png">Figure</a></small></td>
 <td class="atlas-links-cell" width="200"><small class="atlas-links"><a href="cases/hong-kong-space-time.html">Evidence</a> · <a href="assets/homepage_evidence_r2/row_17_hong_kong.png">Figure</a></small></td>
 </tr>

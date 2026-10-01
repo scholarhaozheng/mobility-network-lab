@@ -476,7 +476,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-preview-row" data-stage="boston-finite">
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_boston.png" width="165" alt="Boston Network construction and generated columns; 90-node/125-link/10-OD finite graph; saved time-indexed column."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_boston.png" width="165" alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance."></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#reference-objective-agreement"><img src="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png" width="165" alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_boston.png" width="165" alt="Boston Two-phase column generation; Phase I/II and independent 10/10 pricing closure."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston.md#finite-time-expanded-algorithms"><img src="docs/assets/homepage_evidence_r2/row_17_boston.png" width="165" alt="Boston Lagrangian; Feasible primal, but frozen 1% gap gate missed (1.1002%)."></a></td>
 </tr>
@@ -488,7 +488,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-links-row" data-stage="boston-finite">
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_boston.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_boston.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_boston.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#finite-time-expanded-algorithms">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_boston.png">Figure</a></small></td>
 </tr>
@@ -645,7 +645,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-preview-row" data-stage="sioux-falls-finite">
 <td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph"><img src="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png" width="165" alt="Sioux Falls Network construction and generated columns; Selected 200/250-OD finite graphs; saved time-indexed columns."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png" width="165" alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs."></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement"><img src="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="165" alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png" width="165" alt="Sioux Falls Two-phase column generation; 200/250-OD own-LP agreement; independent full-DAG closure not established."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png" width="165" alt="Sioux Falls Lagrangian; Selected 200/250-OD feasible recovery and certified bounded gaps."></a></td>
 </tr>
@@ -657,7 +657,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-links-row" data-stage="sioux-falls-finite">
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_sioux_falls.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_sioux_falls.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_sioux_falls.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png">Figure</a></small></td>
 </tr>
@@ -916,7 +916,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path"><img src="docs/assets/homepage_evidence_r2/row_14_hong_kong.png" width="165" alt="Hong Kong Network construction and generated columns; Approved model-generated HK10 excerpt in the 100-node/111-link/10-OD graph."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_evidence_r2/row_15_hong_kong.png" width="165" alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case."></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png" width="165" alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_hong_kong.png" width="165" alt="Hong Kong Two-phase column generation; Phase I/II, same-graph LP agreement and independent 10/10 closure."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_17_hong_kong.png" width="165" alt="Hong Kong Lagrangian; Ten-OD feasible recovery with 0.7444% certified gap."></a></td>
 </tr>
@@ -928,7 +928,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_14_hong_kong.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_15_hong_kong.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_hong_kong.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_hong_kong.png">Figure</a></small></td>
 </tr>
