@@ -159,7 +159,11 @@ def component_table(matrix, rid):
              '<td align="center"><a href="'+esc(row_target(r))+'"><img src="'+esc(r["preview_path"])+
              '" width="220" alt="'+esc(r["city"]+' '+r["row_title"]+' preview')+'"></a></td>'
              for r in rows)+'</tr>',
-         '<tr class="coverage-caption">'+''.join('<td><small>'+esc(r["graphic_type"])+'</small></td>' for r in rows)+'</tr>',
+         '<tr class="coverage-caption">'+(
+             '<td colspan="3"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
+             if len({r["graphic_type"] for r in rows}) == 1 else
+             ''.join('<td><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
+         )+'</tr>',
          '<tr class="coverage-links">']
     for r in rows:
         source=r["data_or_figure_source"]
@@ -229,20 +233,33 @@ def stage_rows(cards, stage_id):
     out=[]
     for start in range(0,len(cards),columns):
         group=cards[start:start+columns]
-        out.append('<tr class="atlas-card-row" data-stage="'+stage_id+'">')
-        for c in group:
-            note=c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"]
-            depth=depth_badge(c)
-            badge='<br><b class="atlas-depth-badge">['+esc(depth)+']</b>' if depth else ''
-            out.append('<td colspan="'+str(colspan)+'" width="'+cell_width+'" class="atlas-card-cell"><a href="'+esc(c["target_link"])+
-                '"><img src="'+esc(c["preview_path"])+'" width="165" alt="'+
-                esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
-                '"></a>'+badge+'<br><strong>'+esc(c["label"])+
-                '</strong><br><sub class="atlas-meta">'+esc(note)+
-                '</sub><br><sub class="atlas-links"><a href="'+esc(c["target_link"])+
-                '">Evidence</a> · <a href="'+esc(c["asset_path"])+
-                '">Figure</a></sub></td>')
-        out.append('</tr>')
+        for part in ("title", "preview", "meta", "links"):
+            out.append('<tr class="atlas-card-'+part+'-row" data-stage="'+stage_id+'">')
+            tag='th' if part=='title' else 'td'
+            cell_class='atlas-card-cell' if part=='preview' else 'atlas-'+part+'-cell'
+            cell='<'+tag+' colspan="'+str(colspan)+'" width="'+cell_width+'" class="'+cell_class+'"'
+            for c in group:
+                if part=='title':
+                    depth=depth_badge(c)
+                    badge=' <small class="atlas-depth-badge">['+esc(depth)+']</small>' if depth else ''
+                    out.append(cell+' scope="col"><strong>'+esc(c["label"])+
+                               '</strong>'+badge+'</th>')
+                elif part=='preview':
+                    out.append(cell+'><a href="'+esc(c["target_link"])+
+                               '"><img src="'+esc(c["preview_path"])+'" width="165" alt="'+
+                               esc(c["city"]+' '+c["label"]+'; '+c["instance"])+
+                               '"></a></td>')
+                elif part=='meta':
+                    note=c["instance"] if c["method"] in c["label"] else c["method"]+' · '+c["instance"]
+                    out.append(cell+'><small class="atlas-meta">'+esc(note)+'</small></td>')
+                else:
+                    out.append(cell+'><small class="atlas-links"><a href="'+esc(c["target_link"])+
+                               '">Evidence</a> · <a href="'+esc(c["asset_path"])+
+                               '">Figure</a></small></td>')
+            for _ in range(columns-len(group)):
+                out.append('<'+tag+' colspan="'+str(colspan)+'" width="'+cell_width+
+                           '" class="atlas-empty" aria-hidden="true"></'+tag+'>')
+            out.append('</tr>')
     return '\n'.join(out)
 
 def section04(matrix):
@@ -270,8 +287,7 @@ def section04(matrix):
            '<a id="'+slug+'-tools"></a>',
            '<p class="atlas-nav">'+' · '.join(
                '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
-               for sid,name in STAGES)+'</p>',
-           '<table class="atlas-city-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="8.333%">'*12)+'</colgroup><tbody>']
+               for sid,name in STAGES)+'</p>']
         if city=="Sioux Falls":
             compact=(
               ("population","Population, households and activity","Not part of the supplied benchmark"),
@@ -280,11 +296,13 @@ def section04(matrix):
               ("distribution","Trip distribution","Supplied OD enters downstream methods directly"),
               ("mode","Mode choice","Vehicle OD is supplied; no mode-choice run"),
             )
-            out += ['<tr class="atlas-benchmark-heading"><th colspan="12"><h4>City-data and four-stage scope</h4></th></tr>',
+            out += ['<table class="atlas-city-table atlas-benchmark-table" data-city="'+slug+'" width="100%"><colgroup>'+('<col width="8.333%">'*12)+'</colgroup><tbody>',
+                    '<tr class="atlas-benchmark-heading"><th colspan="12"><h4>City-data and four-stage scope</h4></th></tr>',
                     '<tr class="atlas-benchmark-header"><th colspan="4" width="33.333%">Stage</th><th colspan="4" width="33.333%">Scope in Sioux Falls benchmark</th><th colspan="4" width="33.333%">Relevant next entry</th></tr>']
             for sid,label,scope in compact:
                 out.append('<tr class="atlas-benchmark-row"><td colspan="4" width="33.333%"><a id="'+slug+'-'+sid+'"></a>'+esc(label)+'</td><td colspan="4" width="33.333%">'+esc(scope)+
                            '</td><td colspan="4" width="33.333%"><a href="#'+slug+'-static">Static assignment</a></td></tr>')
+            out.append('</tbody></table>')
         for stage,name in STAGES:
             if stage=="tools":continue
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
@@ -315,12 +333,13 @@ def section04(matrix):
                 cards.append(asset);assets.append(asset)
             stage_id=slug+'-'+stage
             extra_anchor='<a id="hong-kong-cg-r5"></a>' if city=="Hong Kong" and stage=="finite" else ''
-            stage_depth='<br><sub class="atlas-depth-stage">A · Native assignment</sub>' if stage=="static" else ''
-            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(min(4,len(cards)))+'" data-items="'+str(len(cards))+'"><th colspan="12"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4>'+stage_depth+'</th></tr>')
+            out.append('<table class="atlas-city-table" data-city="'+slug+'" data-stage="'+stage_id+'" width="100%"><colgroup>'+('<col width="8.333%">'*12)+'</colgroup><tbody>')
+            out.append('<tr class="atlas-stage-heading" data-stage="'+stage_id+'" data-columns="'+str(min(4,len(cards)))+'" data-items="'+str(len(cards))+'"><th colspan="12"><a id="'+stage_id+'"></a>'+extra_anchor+'<h4>'+name+'</h4></th></tr>')
             if not cards:
                 out.append('<tr class="atlas-scope-row"><td colspan="12">'+("Outside the supplied Sioux Falls benchmark; no city-data stage was executed." if city=="Sioux Falls" else "No accepted result for this stage in the bounded case.")+'</td></tr>')
             else:out.append(stage_rows(cards,stage_id))
-        out += ['</tbody></table>','</article>','']
+            out.append('</tbody></table>')
+        out += ['</article>','']
     out += ['[All retained scientific figure families](docs/visualizations.md) · [Full technical walkthrough](docs/full-walkthrough.md).','']
     return '\n'.join(out),assets
 
