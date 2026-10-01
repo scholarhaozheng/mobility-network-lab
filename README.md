@@ -37,8 +37,8 @@ GMNS keeps directed physical roads, hierarchical zones, centroids, nonphysical a
 
 Static **BPR/Beckmann** assignment and finite **fixed-cost, hard-capacity time-expanded** optimization are separate mathematical branches. The latter is not an automatically calibrated dynamic version of the former. [Architecture](docs/architecture.md) · [Data contract](docs/data-contract.md).
 
-<a id="two-axes"></a>
-## 02A / Two axes of Mobility Computation Lab
+<a id="two-axes"></a><a id="02a-two-axes-of-mobility-computation-lab"></a>
+### Two axes of Mobility Computation Lab
 
 **Horizontal axis — documented city cases:**  
 Boston · Sioux Falls · Hong Kong

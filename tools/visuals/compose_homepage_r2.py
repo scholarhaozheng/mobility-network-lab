@@ -27,8 +27,8 @@ My work in this repository is to assemble and adapt the Boston, Sioux Falls, and
 [My contributions and upstream foundations](docs/contributions.md) · [Full technical walkthrough](docs/full-walkthrough.md) · [Start with a saved example](docs/getting-started.md) · [Source and citation](docs/citation.md)
 
 """
-TWO_AXES="""<a id="two-axes"></a>
-## 02A / Two axes of Mobility Computation Lab
+TWO_AXES="""<a id="two-axes"></a><a id="02a-two-axes-of-mobility-computation-lab"></a>
+### Two axes of Mobility Computation Lab
 
 **Horizontal axis — documented city cases:**  
 Boston · Sioux Falls · Hong Kong

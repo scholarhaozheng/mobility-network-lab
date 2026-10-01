@@ -177,9 +177,12 @@ def main() -> int:
     ):
         check(rel in readme, f"Landing project map/city full-figure link missing: {rel}")
     atlas = readme[readme.find("## 04 / Explore"):readme.find("## 05 / Run")]
-    axes = readme[readme.find("## 02A / Two axes"):readme.find('<a id="coverage"></a>')]
-    check(readme.count('## 02A / Two axes of Mobility Computation Lab') == 1 and
-          home.count('Two axes of Mobility Computation Lab') == 1 and
+    axes = readme[readme.find("### Two axes of Mobility Computation Lab"):readme.find('<a id="coverage"></a>')]
+    check(readme.count('### Two axes of Mobility Computation Lab') == 1 and
+          readme.count('<a id="two-axes"></a>') == 1 and
+          readme.count('<a id="02a-two-axes-of-mobility-computation-lab"></a>') == 1 and
+          home.count('<h3 id="two-axes-of-mobility-computation-lab">Two axes of Mobility Computation Lab</h3>') == 1 and
+          '<a id="two-axes"></a><a id="02a-two-axes-of-mobility-computation-lab"></a>' in home and
           len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
           "The two-axis explanation must appear exactly once before Section 03")
     coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
