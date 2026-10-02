@@ -512,7 +512,7 @@ def render(rows_to_update: set[str] | None = None):
             if row_id=="17" and city=="Sioux Falls":
                 note="public 200-OD best-dual/best-primal iteration trace; 200/250-OD certified gaps remain separate"
             if row_id=="17" and city=="Boston":
-                note="local review candidate; private-history-derived PNG release pending; raw Boston R2 history excluded; 1.1002% misses frozen 1% gate"
+                note="exact user-approved Boston R2 derived best-bound PNG; raw history excluded; 1.1002% misses frozen 1% gate"
             if row_id=="17" and city=="Hong Kong":
                 note="saved iteration on x axis; missing best-primal values remain unplotted"
             original_figure=old["source_figure_or_data"]
