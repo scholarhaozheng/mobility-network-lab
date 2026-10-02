@@ -96,6 +96,27 @@ GPS_PAIR_SECONDARY={
               "Projection figure"),
 }
 CASE_PAGE={"Boston":"docs/cases/boston.md","Sioux Falls":"docs/cases/sioux-falls.md","Hong Kong":"docs/cases/hong-kong.md"}
+FINITE_FIGURES={
+ "Boston":{
+  "construction":("docs/assets/three_city_r2/boston_physical_to_time_expanded_graph.png","Saved physical-to-finite-graph cutaway"),
+  "layered":("docs/assets/cg_layered_companions_r1/boston_layered_space_time_construction.png","B07 excerpt across selected time layers"),
+  "path":("docs/assets/boston/space_time_cg_r4/boston_space_time_construction.png","Recorded B07 time-indexed column"),
+  "flow":("docs/assets/boston/space_time_cg_r4/boston_cg_final_physical_link_flow.png","Bounded 10-OD final physical-link flow"),
+ },
+ "Sioux Falls":{
+  "construction":("docs/assets/three_city_r2/sioux_physical_to_time_expanded_graph.png","Selected finite-graph cutaway"),
+  "layered":("docs/assets/presentation_r3/sioux_space_time_construction.png","XS170 example across selected layers"),
+  "path":("docs/assets/three_city_r2/sioux_generated_column_time_indexed_path.png","Saved XS170 route and ordered arcs"),
+  "flow":("docs/assets/benchmarks/sioux_200od_final_physical_link_flow.png","200-OD example; 250-OD flow remains in case page"),
+ },
+ "Hong Kong":{
+  "construction":("docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.png","Turn-aware finite-graph cutaway"),
+  "layered":("docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png","Approved HK10 excerpt across selected layers"),
+  "path":("docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png","Permitted local chain; display-only, not an exported CG column"),
+  "flow":("docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png","R5 bounded 10-OD final physical-link flow"),
+ },
+}
+FINITE_SLUG={"Boston":"boston","Sioux Falls":"sioux_falls","Hong Kong":"hong_kong"}
 ROLE={
  "Boston":"City GMNS, population/demand, MBTA/GPS linkage and separate bounded static and finite computations.",
  "Sioux Falls":"Supplied-OD controlled static benchmark and separate historical selected-OD finite cases; not a four-stage city compiler.",
@@ -262,14 +283,18 @@ def static_path_parity(rid):
 def component_preview_cell(r, rid, reused):
     reuse_record = reused.get(r["city"]) if reused else None
     primary = reuse_record["original_figure"] if reuse_record else r["preview_path"]
-    alt = (r["city"]+" Phase-II / CG-RMP objective versus arc-flow LP reference"
+    alt = (r["city"]+" saved physical-to-finite-graph construction preview"
+           if rid=="14" else
+           r["city"]+" Phase-I artificial-flow and Phase-II objective traces"
+           if rid=="16" else
+           r["city"]+" Phase-II / CG-RMP objective versus arc-flow LP reference"
            if rid=="15" else
            "Hong Kong saved bounded H1 "+r["row_title"]+" figure"
            if reuse_record else r["city"]+" "+r["row_title"]+" preview")
     paired = rid == "05" and r["city"] in GPS_PAIR_SECONDARY
     cell = ('<td width="266"'+(' height="160" valign="middle"' if reused else '')+
             (' class="gps-evidence-pair"' if paired else '')+
-            ' align="center"><a href="'+esc(row_target(r))+'"><img'+
+            ' align="center"><a href="'+esc(FINITE_FIGURES[r["city"]]["construction"][0] if rid=="14" else row_target(r))+'"><img'+
             (' class="gps-paired-preview"' if paired else '')+' src="'+esc(primary)+
             '" width="'+('118' if paired else '220')+'" alt="'+esc(alt)+'"></a>')
     if paired:
@@ -279,6 +304,19 @@ def component_preview_cell(r, rid, reused):
         cell += (' <a href="'+esc(target)+'"><img class="gps-paired-preview" src="'+
                  esc(figure)+'" width="118" alt="'+esc(secondary_alt)+'"></a>')
     return cell+'</td>'
+
+def finite_preview_row(kind, row_class):
+    cells=[]
+    for city in CITIES:
+        original,scope=FINITE_FIGURES[city][kind]
+        if not (ROOT/original).is_file():raise FileNotFoundError(original)
+        preview=(original if kind=="flow" else
+                 'docs/assets/homepage_finite_atlas_r1/'+FINITE_SLUG[city]+'_'+kind+'.png')
+        if not (ROOT/preview).is_file():raise FileNotFoundError(preview)
+        cells.append('<td width="266" align="center"><a href="'+esc(original)+'"><img src="'+
+                     esc(preview)+'" width="220" alt="'+esc(city+' '+scope+ '; open complete source figure')+
+                     '"></a></td>')
+    return '<tr class="'+row_class+'">'+''.join(cells)+'</tr>'
 
 def static_path_table(rows, rid, title):
     pair=static_path_parity(rid)
@@ -332,6 +370,26 @@ def component_table(matrix, rid):
              ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
          )+'</tr>',
          '<tr class="coverage-links">']
+    if rid=="14":
+        out.insert(5,finite_preview_row("layered","coverage-layered-preview"))
+        out[6]=('<tr class="coverage-caption"><td colspan="3" align="center"><sub>'
+                'First row: saved physical-to-time construction views. Second row: selected-layer network excerpts. '
+                'Time expansion is a finite-model representation also used by same-graph LP and applicable decomposition checks.'
+                '</sub></td></tr>')
+    if rid=="16":
+        out.insert(5,finite_preview_row("flow","coverage-final-flow-preview"))
+        out.insert(6,finite_preview_row("path","coverage-path-preview"))
+        captions={
+          "Boston":"Top: Phase I/II traces; middle: 52/125 positive physical links and same-graph LP objective difference 5.7×10⁻¹⁴; bottom: saved B07 column.",
+          "Sioux Falls":"Top and middle: 200-OD example and its final flow; 250-OD results remain in the case page. No independent full-DAG pricing closure is claimed. Bottom: saved XS170 route/arc record.",
+          "Hong Kong":"Top: R5 Phase I/II traces; middle: 69/111 positive physical links and same-graph LP agreement with independent 10/10 pricing closure. Bottom: local HK10 display cutaway, not the exported column.",
+        }
+        out[7]='<tr class="coverage-caption">'+''.join('<td width="266" align="center"><sub>'+esc(captions[c])+'</sub></td>' for c in CITIES)+'</tr>'
+    if rid=="17":
+        captions={"Boston":"Gated 1.1002% result; public aggregate only. Full holdout iteration history remains private.",
+                  "Sioux Falls":"Left: saved 200-OD best bounds by iteration; right: accepted 200-OD 0.0746% and 250-OD 0.3177% gaps.",
+                  "Hong Kong":"Saved ten-OD best bounds by recorded iteration; missing primal points are not interpolated; accepted 0.7444% gap."}
+        out[5]='<tr class="coverage-caption">'+''.join('<td width="266" align="center"><sub>'+esc(captions[c])+'</sub></td>' for c in CITIES)+'</tr>'
     for r in rows:
         source=r["data_or_figure_source"]
         reuse_record=reused.get(r["city"]) if reused else None
@@ -340,6 +398,12 @@ def component_table(matrix, rid):
         if rid == "05" and r["city"] in GPS_PAIR_SECONDARY:
             figure,_,_,link_name=GPS_PAIR_SECONDARY[r["city"]]
             links += ' · <a href="'+esc(figure)+'">'+esc(link_name)+'</a>'
+        if rid=="14":
+            links += (' · <a href="'+esc(FINITE_FIGURES[r["city"]]["construction"][0])+'">Construction</a>'
+                      ' · <a href="'+esc(FINITE_FIGURES[r["city"]]["layered"][0])+'">Layered figure</a>')
+        if rid=="16":
+            links += (' · <a href="'+esc(FINITE_FIGURES[r["city"]]["flow"][0])+'">Final flow</a>'
+                      ' · <a href="'+esc(FINITE_FIGURES[r["city"]]["path"][0])+'">Local path</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.
@@ -453,6 +517,32 @@ def stage_rows(cards, stage_id):
             out.append('</tr>')
     return '\n'.join(out)
 
+def finite_atlas_gallery():
+    """Three city rows × three distinct representation/path views."""
+    headings=("Finite-network construction","Selected time layers","Local path / cutaway")
+    out=['<h4>Finite-network representation and local path atlas</h4>',
+         '<table class="finite-network-gallery" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup>',
+         '<thead><tr>'+''.join('<th width="266" scope="col">'+h+'</th>' for h in headings)+'</tr></thead><tbody>']
+    for city in CITIES:
+        cells=[]
+        for kind in ("construction","layered","path"):
+            original,scope=FINITE_FIGURES[city][kind]
+            preview='docs/assets/homepage_finite_atlas_r1/'+FINITE_SLUG[city]+'_'+kind+'.png'
+            if not (ROOT/original).is_file() or not (ROOT/preview).is_file():
+                raise FileNotFoundError((original,preview))
+            cells.append('<td width="266" align="center" valign="top"><a href="'+esc(original)+
+                         '"><img src="'+esc(preview)+'" width="220" alt="'+esc(city+' '+scope)+
+                         '"></a><br><strong>'+esc(city)+'</strong><br><sub>'+esc(scope)+
+                         ' · <a href="'+esc(original)+'">Original</a></sub></td>')
+        out.append('<tr data-city="'+esc(FINITE_SLUG[city])+'">'+''.join(cells)+'</tr>')
+    out += ['</tbody></table>',
+            '<p class="finite-network-note">Finite time expansion is a model representation, not a CG-only step; '
+            'the same selected graph may also support its arc-flow LP reference and applicable Lagrangian/ADMM checks. '
+            'Boston B07 and Sioux XS170 are saved generated-column examples. The Hong Kong thumbnail is a source-qualified '
+            'local HK10 display cutaway, not the full exported column; its <a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">approved 77-arc column</a> remains in the detailed case. '
+            'The city instances, Sioux 200/250-OD runs, and pricing-closure statuses are distinct.</p>','']
+    return '\n'.join(out)
+
 def section04(matrix):
     out=['## 04 / Explore the three cases','',
        'Each city has a complete stage atlas. The same stage order is used throughout; different data, static and finite instance scales are never combined into a single case size.','',
@@ -461,7 +551,8 @@ def section04(matrix):
        '**B — Decomposition and distributed computation**  ',
        '**C — Spatial hierarchy and representation**  ',
        '**D — Coordination and verification**','',
-       'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','']
+       'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','',
+       finite_atlas_gallery()]
     assets=[]
     row15_figures=row15_reuse([matrix[("15",city)] for city in CITIES])
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}

@@ -202,6 +202,55 @@ def main() -> int:
           len(axes) > 200 and 'A–D are not four mandatory execution steps' in axes,
           "The two-axis explanation must appear exactly once before Section 03")
     coverage = readme[readme.find("## 03 / Case coverage"):readme.find("## 04 / Explore")]
+    finite_gallery_sources = {
+        "boston": (
+            "three_city_r2/boston_physical_to_time_expanded_graph.png",
+            "cg_layered_companions_r1/boston_layered_space_time_construction.png",
+            "boston/space_time_cg_r4/boston_space_time_construction.png"),
+        "sioux_falls": (
+            "three_city_r2/sioux_physical_to_time_expanded_graph.png",
+            "presentation_r3/sioux_space_time_construction.png",
+            "three_city_r2/sioux_generated_column_time_indexed_path.png"),
+        "hong_kong": (
+            "three_city_r2/hong_kong_physical_to_time_expanded_graph.png",
+            "cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
+            "hong_kong/presentation_r6/hk_physical_to_time_cutaway.png"),
+    }
+    for page_text, prefix in ((readme, "docs/"),
+                              ((DOCS / "index.md").read_text(encoding="utf-8"), ""),
+                              (home, "")):
+        gallery = page_text.split('<table class="finite-network-gallery"', 1)[1].split('</table>', 1)[0]
+        check(gallery.count('<tr data-city=') == 3 and gallery.count('<img ') == 9,
+              "Finite-network gallery must have exactly three city rows and nine previews")
+        for city, originals in finite_gallery_sources.items():
+            for kind, source in zip(("construction", "layered", "path"), originals):
+                original = prefix + "assets/" + source
+                preview = prefix + f"assets/homepage_finite_atlas_r1/{city}_{kind}.png"
+                check(re.search(r'<a href="' + re.escape(original) +
+                                r'"><img\b[^>]*src="' + re.escape(preview) + r'"', gallery) is not None,
+                      f"Finite-network thumbnail must click its own full source: {city}/{kind}")
+    for city, originals in finite_gallery_sources.items():
+        for kind, source in zip(("construction", "layered", "path"), originals):
+            preview = ROOT / f"docs/assets/homepage_finite_atlas_r1/{city}_{kind}.png"
+            sidecar = json.loads(preview.with_suffix(".source.json").read_text(encoding="utf-8"))
+            original = ROOT / "docs/assets" / source
+            check(sidecar["source_figure"] == original.relative_to(ROOT).as_posix() and
+                  sidecar["source_sha256"] == hashlib.sha256(original.read_bytes()).hexdigest() and
+                  sidecar["preview_sha256"] == hashlib.sha256(preview.read_bytes()).hexdigest() and
+                  sidecar["scientific_solver_rerun"] is False,
+                  f"Finite-network preview source/byte contract differs: {city}/{kind}")
+    row14 = coverage.split('data-component="14"', 1)[1].split('</table>', 1)[0]
+    row16 = coverage.split('data-component="16"', 1)[1].split('</table>', 1)[0]
+    check(row14.count('class="coverage-preview"') == 1 and
+          row14.count('class="coverage-layered-preview"') == 1 and
+          all(f'row_14_{city}.png' in row14 for city in finite_gallery_sources),
+          "Network-construction row lost its legacy first row or new layered second row")
+    check(row16.count('class="coverage-preview"') == 1 and
+          row16.count('class="coverage-final-flow-preview"') == 1 and
+          row16.count('class="coverage-path-preview"') == 1 and
+          all(f'row_16_{city}_r3.png' in row16 for city in finite_gallery_sources) and
+          'No independent full-DAG pricing closure is claimed' in row16,
+          "CG row lost a trace, final-flow, local-path or Sioux scope statement")
     gps_row = coverage.split('data-component="05"', 1)[1].split('</table>', 1)[0]
     gps_row_site = home.split('data-component="05"', 1)[1].split('</table>', 1)[0]
     projection = 'docs/assets/boston/visual_release_r1/boston_gps_projection.png'
@@ -443,7 +492,7 @@ def main() -> int:
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
     home_tables = re.findall(r'<table\b[^>]*>', coverage + atlas)
-    check(len(home_tables) == 18 + 3 + 19 + 1 and
+    check(len(home_tables) == 18 + 3 + 19 + 1 + 1 and
           all('width="100%"' in opening for opening in home_tables),
           "Every Section 03/04 table must have the same full-width outer boundary")
     home_css = (ROOT / "docs/assets/presentation-r3.css").read_text(encoding="utf-8")
@@ -477,7 +526,7 @@ def main() -> int:
     check(coverage.count('<th scope="col" width="266">') == 54 and
           coverage.count('<th colspan="3" scope="colgroup" width="800">') == 18 and
           coverage.count('<td width="266" valign="top">') == 54 and
-          coverage.count('<td width="266" align="center">') == 49 and
+          coverage.count('<td width="266" align="center">') == 64 and
           coverage.count('<td width="266" class="gps-evidence-pair" align="center">') == 2 and
           coverage.count('class="coverage-preview static-path-distribution"') == 2 and
           coverage.count('class="coverage-preview static-path-network"') == 2 and
@@ -489,9 +538,9 @@ def main() -> int:
     check('<tr class="coverage-scope"><td valign="top"><sub>' not in coverage and
           len(captions) == 18 and
           all(re.fullmatch(r'<td colspan="3" align="center"><sub>[^<]+</sub></td>', caption)
-              for index, caption in enumerate(captions) if index not in (4, 14)) and
+              for index, caption in enumerate(captions) if index not in (4, 14, 15, 16)) and
           all(captions[index].count('<td width="266" align="center"><sub>') == 3
-              for index in (4, 14)) and
+              for index in (4, 14, 15, 16)) and
           captions[11] == '<td colspan="3" align="center"><sub>finite-path reconstruction panel</sub></td>' and
           captions[12] == '<td colspan="3" align="center"><sub>L3 reconstruction/difference panel</sub></td>' and
           '.mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;' in home_css,
