@@ -386,7 +386,7 @@ def component_table(matrix, rid):
         }
         out[7]='<tr class="coverage-caption">'+''.join('<td width="266" align="center"><sub>'+esc(captions[c])+'</sub></td>' for c in CITIES)+'</tr>'
     if rid=="17":
-        captions={"Boston":"Gated 1.1002% result; public aggregate only. Full holdout iteration history remains private.",
+        captions={"Boston":"Saved Boston R2 10-OD best bounds by recorded iteration; missing primal points are not interpolated. Feasible primal, but 1.1002% misses the frozen 1% gate. The source history CSV remains private.",
                   "Sioux Falls":"Left: saved 200-OD best bounds by iteration; right: accepted 200-OD 0.0746% and 250-OD 0.3177% gaps.",
                   "Hong Kong":"Saved ten-OD best bounds by recorded iteration; missing primal points are not interpolated; accepted 0.7444% gap."}
         out[5]='<tr class="coverage-caption">'+''.join('<td width="266" align="center"><sub>'+esc(captions[c])+'</sub></td>' for c in CITIES)+'</tr>'
