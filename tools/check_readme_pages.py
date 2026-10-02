@@ -219,15 +219,22 @@ def main() -> int:
     for page_text, prefix in ((readme, "docs/"),
                               ((DOCS / "index.md").read_text(encoding="utf-8"), ""),
                               (home, "")):
-        gallery = page_text.split('<table class="finite-network-gallery"', 1)[1].split('</table>', 1)[0]
-        check(gallery.count('<tr data-city=') == 3 and gallery.count('<img ') == 9,
-              "Finite-network gallery must have exactly three city rows and nine previews")
+        check('finite-network-gallery' not in page_text and
+              'Finite-network representation and local path atlas</h4>' not in page_text,
+              "The standalone finite-network gallery must be removed")
         for city, originals in finite_gallery_sources.items():
+            slug = {"boston":"boston", "sioux_falls":"sioux-falls", "hong_kong":"hong-kong"}[city]
+            table = page_text.split('data-stage="'+slug+'-representation" width="100%">', 1)[1].split('</table>', 1)[0]
+            check(table.count('class="atlas-card-cell"') == 3 and
+                  table.count('class="atlas-finite-preview"') == 3 and
+                  table.count('width="220"') == 3 and
+                  'Time-expanded network and path examples' in table,
+                  f"{city} must own a three-column, 220px representation table")
             for kind, source in zip(("construction", "layered", "path"), originals):
                 original = prefix + "assets/" + source
                 preview = prefix + f"assets/homepage_finite_atlas_r1/{city}_{kind}.png"
                 check(re.search(r'<a href="' + re.escape(original) +
-                                r'"><img\b[^>]*src="' + re.escape(preview) + r'"', gallery) is not None,
+                                r'"><img\b[^>]*src="' + re.escape(preview) + r'"', table) is not None,
                       f"Finite-network thumbnail must click its own full source: {city}/{kind}")
     for city, originals in finite_gallery_sources.items():
         for kind, source in zip(("construction", "layered", "path"), originals):
@@ -474,7 +481,7 @@ def main() -> int:
               ('A','Native assignment'), ('B','Decomposition and distributed computation'),
               ('C','Spatial hierarchy and representation'), ('D','Coordination and verification'))),
           "The single A–D legend or its approved explanatory copy is missing")
-    check(atlas.count('class="atlas-depth-badge"') >= 50 and
+    check(atlas.count('class="atlas-depth-badge"') >= 45 and
           'class="atlas-depth-stage"' not in atlas and
           all('['+mark+']' in atlas for mark in ('A','B','C','D','B · D','B · C','C · D')),
           "City atlas A–D badges are incomplete")
@@ -484,15 +491,15 @@ def main() -> int:
               for cell in title_cells if 'class="atlas-depth-badge"' in cell),
           "A–D labels must be small linked gray assets inline after their existing card titles")
     check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
-          "Atlas must retain 86 city-owned cards in native table cells")
-    check(atlas.count('width="165" alt=') == 85 and
+          "Atlas must retain 77 optimization/data cards plus nine moved representation previews")
+    check(atlas.count('width="165" alt=') == 76 and
           atlas.count('width="220" alt="Boston GPS point-to-road projection') == 1 and
           not re.search(r'<img[^>]+width="(?:165|220)"[^>]+height="\d+"', atlas),
-          "Atlas must retain aspect-ratio-safe previews, with only the GPS projection enlarged")
+          "Atlas cards and moved previews must retain their aspect-ratio-safe widths")
     check('class="atlas-scope-row"' not in atlas and 'Full figure</a>' not in atlas,
           "Atlas caption/link rows did not collapse to compact notes and short links")
     home_tables = re.findall(r'<table\b[^>]*>', coverage + atlas)
-    check(len(home_tables) == 18 + 3 + 19 + 1 + 1 and
+    check(len(home_tables) == 18 + 3 + 19 + 3 + 1 and
           all('width="100%"' in opening for opening in home_tables),
           "Every Section 03/04 table must have the same full-width outer boundary")
     home_css = (ROOT / "docs/assets/presentation-r3.css").read_text(encoding="utf-8")
@@ -568,6 +575,23 @@ def main() -> int:
     check(len(city_tables) == 19 and {city for city, _, _, _, _ in city_tables} ==
           {"boston", "sioux-falls", "hong-kong"},
           "Each of the nineteen city-stage groups needs its own full-width table")
+    for slug in ("boston", "sioux-falls", "hong-kong"):
+        city_body = atlas.split('<article class="case-atlas" data-city="'+slug+'">', 1)[1].split('</article>', 1)[0]
+        static_at = city_body.index('data-stage="'+slug+'-static" width="100%"')
+        representation_at = city_body.index('data-stage="'+slug+'-representation" width="100%"')
+        finite_at = city_body.index('data-stage="'+slug+'-finite" width="100%"')
+        check(static_at < representation_at < finite_at and
+              city_body.count('class="atlas-branch-transition"') == 1 and
+              'Optimization on the time-expanded network' in city_body and
+              '<a id="'+slug+'-finite"></a>' in city_body,
+              f"{slug} representation/optimization ordering or old anchor is broken")
+        optimization = city_body[finite_at:]
+        check('Network construction and generated columns</strong>' not in optimization and
+              'Physical to time-expanded graph</strong>' not in optimization and
+              'Physical to time-indexed movement</strong>' not in optimization and
+              'Generated time-indexed column</strong>' not in optimization and
+              'Approved HK10 77-arc column</strong>' not in optimization,
+              f"{slug} optimization table repeats representation-only cards")
     for city, stage_id, cols, head, body in city_tables:
         heading = re.search(r'<tr class="atlas-stage-heading" data-stage="([^"]+)" data-columns="(\d)" data-items="(\d+)">', head)
         if not heading:

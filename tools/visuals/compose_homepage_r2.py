@@ -74,7 +74,7 @@ STAGES=[
  ("sources","Sources and GMNS"),("population","Population, households and activity"),
  ("transit","Transit and observations"),("generation","Trip generation"),
  ("distribution","Trip distribution"),("mode","Mode choice"),
- ("static","Static assignment methods"),("finite","Finite time-expanded computation"),
+ ("static","Static assignment methods"),("finite","Optimization on the time-expanded network"),
  ("tools","Tools and reproducibility"),
 ]
 STAGE_ROWS={"sources":("01","02"),"population":("03",),"transit":("04","05"),"generation":("06",),"distribution":("07",),"mode":("08",),"static":("10","11","12","13"),"finite":("14","15","16","17","18")}
@@ -526,30 +526,52 @@ def stage_rows(cards, stage_id):
             out.append('</tr>')
     return '\n'.join(out)
 
-def finite_atlas_gallery():
-    """Three city rows × three distinct representation/path views."""
-    headings=("Finite-network construction","Selected time layers","Local path / cutaway")
-    out=['<h4>Finite-network representation and local path atlas</h4>',
-         '<table class="finite-network-gallery" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup>',
-         '<thead><tr>'+''.join('<th width="266" scope="col">'+h+'</th>' for h in headings)+'</tr></thead><tbody>']
-    for city in CITIES:
-        cells=[]
-        for kind in ("construction","layered","path"):
-            original,scope=FINITE_FIGURES[city][kind]
-            preview='docs/assets/homepage_finite_atlas_r1/'+FINITE_SLUG[city]+'_'+kind+'.png'
-            if not (ROOT/original).is_file() or not (ROOT/preview).is_file():
-                raise FileNotFoundError((original,preview))
-            cells.append('<td width="266" align="center" valign="top"><a href="'+esc(original)+
-                         '"><img src="'+esc(preview)+'" width="220" alt="'+esc(city+' '+scope)+
-                         '"></a><br><strong>'+esc(city)+'</strong><br><sub>'+esc(scope)+
-                         ' · <a href="'+esc(original)+'">Original</a></sub></td>')
-        out.append('<tr data-city="'+esc(FINITE_SLUG[city])+'">'+''.join(cells)+'</tr>')
-    out += ['</tbody></table>',
-            '<p class="finite-network-note">Finite time expansion is a model representation, not a CG-only step; '
-            'the same selected graph may also support its arc-flow LP reference and applicable Lagrangian/ADMM checks. '
-            'Boston B07 and Sioux XS170 are saved generated-column examples. The Hong Kong thumbnail is a source-qualified '
-            'local HK10 display cutaway, not the full exported column; its <a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">approved 77-arc column</a> remains in the detailed case. '
-            'The city instances, Sioux 200/250-OD runs, and pricing-closure statuses are distinct.</p>','']
+def city_finite_representation_table(city):
+    """A city's existing three saved previews, now owned by its case atlas."""
+    slug=SLUG[city]
+    page={"Boston":"boston", "Sioux Falls":"sioux", "Hong Kong":"hong-kong"}[city]
+    detailed='docs/cases/'+page+'-space-time.md'
+    headings=("Physical network to finite graph","Selected time layers","Local path / cutaway")
+    scopes={
+        "Boston":("Bounded 10-OD graph cutaway.","B07 excerpt across selected time layers.",
+                  "Saved B07 time-indexed column; <a href=\"docs/assets/three_city_r2/boston_generated_column_time_indexed_path.png\">another retained column view</a>."),
+        "Sioux Falls":("Selected finite graph for the historical cases.","XS170 selected-layer example.",
+                       "Saved XS170 route and ordered arcs; the 200/250-OD runs are distinct."),
+        "Hong Kong":("Turn-aware bounded 10-OD graph cutaway.","Approved HK10 excerpt across selected layers.",
+                     "Local HK10 display cutaway, not the full exported CG column; <a href=\"docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png\">approved 77-arc column figure</a>."),
+    }[city]
+    targets=(detailed+'#from-the-physical-network-to-the-finite-time-expanded-graph',
+             detailed+'#from-the-physical-network-to-the-finite-time-expanded-graph',
+             detailed+'#a-generated-column-as-a-time-indexed-path')
+    out=['<table class="atlas-city-table atlas-finite-representation" data-city="'+slug+'" data-stage="'+slug+'-representation" width="100%"><colgroup>'+('<col width="33.333%">'*3)+'</colgroup><thead>',
+         '<tr class="atlas-stage-heading" data-stage="'+slug+'-representation" data-columns="3" data-items="3"><th colspan="3" scope="colgroup" width="800"><a id="'+slug+'-representation"></a>Time-expanded network and path examples</th></tr></thead><tbody>',
+         '<tr class="atlas-card-title-row" data-stage="'+slug+'-representation">'+''.join(
+             '<th width="266" class="atlas-title-cell" scope="col"><strong>'+esc(h)+'</strong> '+
+             '<a class="atlas-depth-badge" href="#computational-depth-legend" title="'+
+             esc('B — Decomposition and distributed computation; C — Spatial hierarchy and representation'
+                 if i==2 and city!="Hong Kong" else 'C — Spatial hierarchy and representation')+'" aria-label="'+
+             esc('B — Decomposition and distributed computation; C — Spatial hierarchy and representation'
+                 if i==2 and city!="Hong Kong" else 'C — Spatial hierarchy and representation')+'"><img src="docs/assets/atlas_depth_badges/'+
+             ('B_C.svg" width="30" height="11" alt="[B · C]' if i==2 and city!="Hong Kong" else
+              'C.svg" width="13" height="11" alt="[C]')+'"></a></th>'
+             for i,h in enumerate(headings))+'</tr>']
+    image_cells=[]
+    for kind in ("construction","layered","path"):
+        original,scope=FINITE_FIGURES[city][kind]
+        preview='docs/assets/homepage_finite_atlas_r1/'+FINITE_SLUG[city]+'_'+kind+'.png'
+        if not (ROOT/original).is_file() or not (ROOT/preview).is_file():
+            raise FileNotFoundError((original,preview))
+        image_cells.append('<td width="266" height="140" class="atlas-card-cell" align="center" valign="middle"><a href="'+
+                           esc(original)+'"><img class="atlas-finite-preview" src="'+esc(preview)+
+                           '" width="220" alt="'+esc(city+' '+scope)+'"></a></td>')
+    out.append('<tr class="atlas-card-preview-row" data-stage="'+slug+'-representation">'+''.join(image_cells)+'</tr>')
+    out.append('<tr class="atlas-card-meta-row" data-stage="'+slug+'-representation">'+''.join(
+        '<td width="266" class="atlas-meta-cell"><small class="atlas-meta">'+scope+'</small></td>' for scope in scopes)+'</tr>')
+    out.append('<tr class="atlas-card-links-row" data-stage="'+slug+'-representation">'+''.join(
+        '<td width="266" class="atlas-links-cell"><small class="atlas-links"><a href="'+esc(targets[i])+
+        '">Evidence</a> · <a href="'+esc(FINITE_FIGURES[city][kind][0])+'">Figure</a></small></td>'
+        for i,kind in enumerate(("construction","layered","path")))+'</tr>')
+    out.append('</tbody></table>')
     return '\n'.join(out)
 
 def section04(matrix):
@@ -560,14 +582,18 @@ def section04(matrix):
        '**B — Decomposition and distributed computation**  ',
        '**C — Spatial hierarchy and representation**  ',
        '**D — Coordination and verification**','',
-       'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','',
-       finite_atlas_gallery()]
+       'A–D are reading labels for computational depth. City-data and four-stage-demand evidence remain outside A–D. The current repository demonstrates coordination and verification components.','']
     assets=[]
     row15_figures=row15_reuse([matrix[("15",city)] for city in CITIES])
     extra_by={(c,s):[] for c in CITIES for s,_ in STAGES}
     for item in EXTRAS:
         # Keep the historical source figures, but do not repeat comparisons or
         # multiple FW scales in the homepage's one-card-per-method static row.
+        if item[1]=="finite" and item[2] in {
+            "Physical to time-expanded graph", "Physical to time-indexed movement",
+            "Generated time-indexed column", "Approved HK10 77-arc column",
+        }:
+            continue  # The city representation table carries these links and scopes.
         if item[1]!="static":extra_by[(item[0],item[1])].append(item)
     for city in CITIES:
         slug=SLUG[city]
@@ -579,7 +605,10 @@ def section04(matrix):
            '<a id="'+slug+'-tools"></a>',
            '<p class="atlas-nav">'+' · '.join(
                '<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
-               for sid,name in STAGES)+'</p>']
+               for sid,name in STAGES[:7])+
+               ' · <a href="#'+slug+'-representation">Time-expanded network and path examples</a> · '+
+               ' · '.join('<a href="'+esc(CASE_PAGE[city]+'#reproduction' if sid=="tools" else '#'+slug+'-'+sid)+'">'+esc(name)+'</a>'
+                        for sid,name in STAGES[7:])+'</p>']
         if city=="Sioux Falls":
             compact=(
               ("population","Population, households and activity","Not part of the supplied benchmark"),
@@ -598,8 +627,14 @@ def section04(matrix):
         for stage,name in STAGES:
             if stage=="tools":continue
             if city=="Sioux Falls" and stage in {"population","transit","generation","distribution","mode"}:continue
+            if stage=="finite":
+                out += ['<p class="atlas-branch-transition">Static BPR/Beckmann assignment and the fixed-cost, hard-capacity time-expanded optimization below are independent mathematical branches. The next table shows the latter\'s graph representation, which also supports its arc-flow LP and applicable decomposition methods; example paths or generated columns are recorded outputs, not universal advance inputs.</p>',
+                        '<a id="finite-network-representation-and-local-path-atlas"></a>' if city=="Boston" else '',
+                        city_finite_representation_table(city)]
             cards=[]
             for rid in STAGE_ROWS[stage]:
+                if stage=="finite" and rid=="14":
+                    continue  # The moved three-view representation table replaces this repeated card.
                 # This bounded R2 intake changes only the two Section 03 cells;
                 # the existing Section 04 case atlas is intentionally unchanged.
                 if city=="Hong Kong" and stage=="static" and rid in {"12","13"}:

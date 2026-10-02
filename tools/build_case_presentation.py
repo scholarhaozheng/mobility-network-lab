@@ -82,12 +82,7 @@ def main(argv=None):
     .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:auto;object-fit:contain}
     .mcl-page table.home-coverage .coverage-layered-preview td,.mcl-page table.home-coverage .coverage-final-flow-preview td,.mcl-page table.home-coverage .coverage-path-preview td{height:178px;vertical-align:middle;text-align:center}
     .mcl-page table.home-coverage .coverage-layered-preview img,.mcl-page table.home-coverage .coverage-final-flow-preview img,.mcl-page table.home-coverage .coverage-path-preview img{display:inline-block;width:220px;max-width:100%;height:165px;object-fit:contain}
-    .mcl-page table.finite-network-gallery{table-layout:fixed;width:100%}
-    .mcl-page table.finite-network-gallery th,.mcl-page table.finite-network-gallery td{width:33.333%}
-    .mcl-page table.finite-network-gallery td{text-align:center;line-height:1.4}
-    .mcl-page table.finite-network-gallery img{display:inline-block;width:220px;max-width:100%;height:140px;object-fit:contain}
-    .mcl-page table.finite-network-gallery sub{font-size:10px;vertical-align:baseline;color:#53697a}
-    .mcl-page .finite-network-note{font-size:12px;line-height:1.55;color:#53697a}
+    .mcl-page .atlas-branch-transition{font-size:12px;line-height:1.55;color:#53697a;margin:16px 0 8px}
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview td{height:160px;vertical-align:middle}
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview img{width:220px;max-width:100%;height:auto;max-height:150px;object-fit:contain}
     .mcl-page table.home-coverage .coverage-caption td{text-align:center;padding:5px 10px}
@@ -104,6 +99,8 @@ def main(argv=None):
     .atlas-depth-popover{position:fixed;z-index:50;max-width:min(310px,calc(100vw - 20px));padding:7px 10px;border:1px solid #b8c3ca;border-radius:6px;background:#f9fafb;box-shadow:0 5px 18px rgba(20,46,67,.13);color:#263744;font:11px/1.45 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
     .mcl-page table.atlas-city-table .atlas-card-preview-row td{background:#fff;text-align:center;padding:8px 10px 4px}
     .mcl-page table.atlas-city-table .atlas-card-cell img{display:inline-block;width:165px;height:auto;max-width:100%;object-fit:contain}
+    .mcl-page table.atlas-city-table.atlas-finite-representation .atlas-card-preview-row td{height:140px;vertical-align:middle;text-align:center}
+    .mcl-page table.atlas-city-table.atlas-finite-representation .atlas-card-cell img.atlas-finite-preview{display:inline-block;width:220px;max-width:100%;height:140px;object-fit:contain}
     .mcl-page table.atlas-city-table .atlas-card-cell img.gps-projection-preview{width:220px}
     .mcl-page table.atlas-city-table .atlas-card-meta-row td{background:#fff;padding:4px 10px 3px}
     .mcl-page table.atlas-city-table .atlas-card-links-row td{background:#fff;padding:3px 10px 9px}
@@ -121,7 +118,6 @@ def main(argv=None):
       .mcl-page table.home-coverage tr>th:first-child{display:table-cell;width:auto}
       .mcl-page table.home-coverage td{display:table-cell;width:33.333%;border-top:1px solid #d6e1e7}
       .mcl-page table.home-coverage td+td{border-left:1px solid #d6e1e7}
-      .mcl-page table.finite-network-gallery{min-width:750px}
       .mcl-page table.atlas-city-table{min-width:680px}
       .mcl-page table.atlas-quick-facts{min-width:660px}
     }
