@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Traffic Assignment Lab</title>
+<style>
+:root{
+  --bg:#fcfcfb; --panel:#ffffff; --panel2:#f4f3ef; --ink:#0b0b0b; --ink2:#52514e; --ink3:#8a8985;
+  --line:#e2e1dc; --grid:#ecebe6; --shadow:0 1px 2px rgba(0,0,0,.05);
+  --c1:#2a78d6; --c2:#eb6834; --c3:#1baf7a; --c4:#eda100; --c5:#e87ba4; --c6:#4a3aa7; --c7:#e34948;
+  --navy:#1f4e79; --slate:#4d5b6a; --teal:#1f7a74;
+  --xfill:rgba(74,58,167,.07); --yfill:rgba(27,175,122,.08); --tint:rgba(42,120,214,.08);
+  --ok:#1baf7a; --warn:#eda100; --bad:#e34948;
+  --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --serif:Georgia,"Times New Roman",Times,serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#1a1a19; --panel:#232322; --panel2:#2b2b29; --ink:#ffffff; --ink2:#c3c2b7; --ink3:#8f8e86;
+    --line:#3a3a37; --grid:#2e2e2b; --shadow:none;
+    --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#9085e9; --c7:#e66767;
+    --navy:#8fb3d9; --slate:#a9b3bd; --teal:#5fb3ad;
+    --xfill:rgba(144,133,233,.12); --yfill:rgba(25,158,112,.14); --tint:rgba(57,135,229,.14);
+    --ok:#199e70; --warn:#c98500; --bad:#e66767;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#1a1a19; --panel:#232322; --panel2:#2b2b29; --ink:#ffffff; --ink2:#c3c2b7; --ink3:#8f8e86;
+  --line:#3a3a37; --grid:#2e2e2b; --shadow:none;
+  --c1:#3987e5; --c2:#d95926; --c3:#199e70; --c4:#c98500; --c5:#d55181; --c6:#9085e9; --c7:#e66767;
+  --navy:#8fb3d9; --slate:#a9b3bd; --teal:#5fb3ad;
+  --xfill:rgba(144,133,233,.12); --yfill:rgba(25,158,112,.14); --tint:rgba(57,135,229,.14);
+  --ok:#199e70; --warn:#c98500; --bad:#e66767;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--c1)}
+.m{font-family:var(--serif);font-style:italic}
+.mr{font-family:var(--serif)}
+sub,sup{font-size:.72em;line-height:0}
+code,.mono{font-family:var(--mono);font-size:.88em}
+h1{font-size:26px;line-height:1.2;margin:0 0 6px;font-weight:650;letter-spacing:-.01em}
+h2{font-size:20px;margin:0;font-weight:650}
+h3{font-size:15px;margin:0 0 4px;font-weight:650}
+p{margin:0 0 8px}
+.top{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line)}
+.top .in{max-width:1180px;margin:0 auto;padding:10px 16px;display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.brand{font-weight:650;font-size:14px;color:var(--ink2);white-space:nowrap}
+.brand b{color:var(--ink)}
+nav.tabs{display:flex;gap:6px;flex-wrap:wrap}
+nav.tabs a{text-decoration:none;color:var(--ink2);font-size:13px;font-weight:600;padding:5px 10px;border-radius:999px;border:1px solid var(--line);background:var(--panel)}
+nav.tabs a.on{color:#fff;background:var(--navy);border-color:var(--navy)}
+:root[data-theme="dark"] nav.tabs a.on, :root:not([data-theme="light"]) nav.tabs a.on{color:var(--bg)}
+@media (prefers-color-scheme: light){ :root:not([data-theme="dark"]) nav.tabs a.on{color:#fff} }
+.theme{margin-left:auto;background:none;border:1px solid var(--line);color:var(--ink2);border-radius:8px;padding:4px 9px;font-size:12px;cursor:pointer}
+main{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+.lead{color:var(--ink2);font-size:15px;max-width:820px}
+section.group{margin-top:34px;padding-top:6px;scroll-margin-top:64px}
+section{scroll-margin-top:64px}
+.ghead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:6px}
+.gtag{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.gtag b{color:var(--ink)}
+.gsay{color:var(--ink2);max-width:860px;margin-bottom:14px}
+.defline{display:grid;grid-template-columns:110px 1fr;gap:4px 12px;font-size:13.5px;background:var(--panel2);border-radius:10px;padding:10px 14px;margin-bottom:16px}
+.defline dt{color:var(--ink3);font-weight:600}
+.defline dd{margin:0;color:var(--ink)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px 12px;margin:0 0 16px;box-shadow:var(--shadow)}
+.card .q{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap;margin-bottom:8px}
+.card .q .id{font-family:var(--mono);font-size:11.5px;color:var(--ink3);border:1px solid var(--line);border-radius:6px;padding:1px 6px}
+.card .q h3{font-size:16px}
+.card .q .sub{color:var(--ink2);font-size:13.5px;flex-basis:100%}
+.three{display:grid;grid-template-columns:230px minmax(0,1fr) 250px;gap:16px;align-items:start}
+.two{display:grid;grid-template-columns:minmax(0,1fr) 260px;gap:16px;align-items:start}
+@media (max-width:900px){.three{grid-template-columns:1fr}.two{grid-template-columns:1fr}.defline{grid-template-columns:1fr}}
+.ctrl{display:flex;flex-direction:column;gap:9px}
+.ctrl .readout{grid-template-columns:repeat(2,minmax(0,1fr))}
+@media (max-width:900px){.ctrl .readout{grid-template-columns:repeat(auto-fit,minmax(112px,1fr))}}
+.ctrl label{font-size:12.5px;color:var(--ink2);display:block}
+.ctrl label b{color:var(--ink);font-weight:600}
+.ctrl label .val{float:right;font-family:var(--mono);color:var(--ink)}
+input[type=range]{width:100%;accent-color:var(--navy);margin:2px 0 0}
+select,button.btn{font:inherit;font-size:13px;border:1px solid var(--line);background:var(--panel);color:var(--ink);border-radius:8px;padding:5px 9px}
+button.btn{cursor:pointer;font-weight:600}
+button.btn:hover{border-color:var(--ink3)}
+button.btn.primary{background:var(--navy);color:#fff;border-color:var(--navy)}
+button.btn.ghost{background:transparent}
+.btnrow{display:flex;gap:6px;flex-wrap:wrap}
+.chk{display:flex;gap:8px;align-items:center;font-size:13px;cursor:pointer}
+.chk input{accent-color:var(--navy)}
+.read{font-size:13.5px;color:var(--ink2)}
+.read h4{margin:0 0 4px;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);font-weight:700}
+.read b{color:var(--ink);font-weight:600}
+.read .say{border-left:3px solid var(--navy);padding:4px 10px;margin-top:8px;color:var(--ink);font-family:var(--serif);font-style:italic}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(112px,1fr));gap:8px;margin:8px 0}
+.stat{background:var(--panel2);border-radius:10px;padding:8px 10px}
+.stat .k{font-size:11.5px;color:var(--ink3);font-weight:600;letter-spacing:.02em}
+.stat .v{font-family:var(--mono);font-size:16px;color:var(--ink);margin-top:1px}
+.stat .v small{font-size:11px;color:var(--ink3)}
+.stat.c1 .v{color:var(--c1)}.stat.c2 .v{color:var(--c2)}.stat.c3 .v{color:var(--teal)}.stat.c6 .v{color:var(--c6)}.stat.c7 .v{color:var(--c7)}
+.viz{position:relative;min-width:0}
+.viz svg{width:100%;height:auto;display:block}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:6px 9px;font-size:12px;box-shadow:0 2px 8px rgba(0,0,0,.12);white-space:nowrap;display:none;z-index:5;color:var(--ink)}
+.tip .t{color:var(--ink3);font-weight:600;margin-bottom:2px}
+.tip .r{display:flex;gap:6px;align-items:center}
+.tip .sw{width:8px;height:8px;border-radius:2px;display:inline-block}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--ink2);margin:4px 0 0}
+.legend span{display:inline-flex;gap:6px;align-items:center}
+.legend i{width:14px;height:0;border-top:2px solid;display:inline-block}
+.legend i.dash{border-top-style:dashed}
+table.t{border-collapse:collapse;width:100%;font-size:12.5px;margin-top:6px}
+table.t th{font-weight:600;color:var(--ink3);text-align:right;padding:3px 6px;border-bottom:1px solid var(--line);font-size:11.5px;letter-spacing:.02em}
+table.t td{text-align:right;padding:3px 6px;font-family:var(--mono);border-bottom:1px solid var(--grid);color:var(--ink)}
+table.t th:first-child,table.t td:first-child{text-align:left}
+table.t tr.cur td{background:var(--tint)}
+table.t td.ok{color:var(--teal)}table.t td.bad{color:var(--bad)}
+.mx{display:inline-grid;gap:2px 10px;font-family:var(--serif);font-size:14px;padding:2px 8px;border-left:1.5px solid var(--ink);border-right:1.5px solid var(--ink);border-radius:5px;vertical-align:middle;margin:2px 2px}
+.mx span{text-align:center;min-width:1.6em}
+.mx .hi{color:var(--c1);font-weight:700}
+.mx .hi2{color:var(--c2);font-weight:700}
+.eqrow{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-family:var(--serif);font-size:15px;margin:6px 0}
+.lamp{display:inline-flex;gap:6px;align-items:center;font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;border:1px solid var(--line)}
+.lamp i{width:9px;height:9px;border-radius:50%;display:inline-block;background:var(--ink3)}
+.lamp.ok i{background:var(--ok)}.lamp.bad i{background:var(--bad)}.lamp.warn i{background:var(--warn)}
+.lamps{display:flex;gap:6px;flex-wrap:wrap;margin:8px 0}
+.verdict{border-radius:10px;padding:8px 12px;font-size:13.5px;margin-top:8px;border:1px solid var(--line)}
+.verdict.ok{border-color:var(--ok);background:rgba(27,175,122,.08)}
+.verdict.bad{border-color:var(--bad);background:rgba(227,73,72,.08)}
+.verdict.warn{border-color:var(--warn);background:rgba(237,161,0,.10)}
+.msg{font-family:var(--mono);font-size:12px;background:var(--panel2);border-radius:8px;padding:8px 10px;white-space:pre-wrap;color:var(--ink);line-height:1.45;max-height:210px;overflow:auto}
+.strip{margin:2px 0 8px;border:1px dashed var(--line);border-radius:12px;padding:10px 14px;background:transparent}
+.strip .h{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3);margin-bottom:6px}
+.strip .h b{color:var(--ink)}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:8px 10px}
+.tile .id{font-family:var(--mono);font-size:10.5px;color:var(--ink3)}
+.tile .v{font-family:var(--mono);font-size:17px;margin:1px 0;color:var(--ink)}
+.tile .k{font-size:12px;color:var(--ink2);line-height:1.3}
+.gridcards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:10px;margin:14px 0 6px}
+.gcard{border:1px solid var(--line);border-radius:12px;padding:10px 12px;background:var(--panel);text-decoration:none;color:inherit;display:block}
+.gcard:hover{border-color:var(--ink3)}
+.gcard .l{font-size:11.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink3)}
+.gcard .n{font-weight:650;margin:2px 0 4px}
+.gcard .d{font-size:13px;color:var(--ink2)}
+.gcard .do{font-size:12.5px;color:var(--ink);margin-top:6px}
+.gcard .do b{color:var(--navy)}
+.foot{margin-top:40px;border-top:1px solid var(--line);padding-top:14px;font-size:12.5px;color:var(--ink2)}
+.foot .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+.note{font-size:12.5px;color:var(--ink3);margin-top:6px}
+.pill{display:inline-block;font-size:11px;font-weight:700;padding:1px 7px;border-radius:999px;background:var(--panel2);color:var(--ink2);margin-left:6px;vertical-align:middle}
+.hl{background:var(--tint);border-radius:4px;padding:0 3px}
+.steps{display:flex;gap:4px;align-items:center;flex-wrap:wrap;font-size:12.5px;color:var(--ink2)}
+.steps span{padding:2px 8px;border-radius:999px;border:1px solid var(--line)}
+.steps span.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.steps span.done{border-color:var(--ok);color:var(--ok)}
+</style>
+</head>
+<body>
+<header class="top"><div class="in">
+  <div class="brand"><b>Traffic Assignment Lab</b> · 1 network, 4 groups</div>
+  <nav class="tabs" id="tabs">
+    <a href="#net">Network</a><a href="#A">A · Assignment</a><a href="#B">B · Decomposition</a><a href="#C">C · Hierarchy</a><a href="#D">D · Coordination</a>
+  </nav>
+  <button class="theme" id="themeBtn" type="button">Theme</button>
+</div></header>
+<main>
+
+<section id="net">
+  <h1>Hierarchical traffic assignment, by hand</h1>
+  <p class="lead">Ten units of flow leave Washington DC (6) and Baltimore (4), cross into the New York region through 2 ports, and reach Boston. Every slider below moves that flow; every number is recomputed from the network's 4 access costs and 2 corridor laws. Groups A to D are 4 questions asked of the same 10 units. A is the problem; B, C and D are 3 ways of computing, representing and deciding it, and the point of this page is to let you feel the difference in each, not to prove it.</p>
+  <div class="card">
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Interface flow <span class="m">z</span> = flow through port B</b><span class="val" id="net_zv">3.75</span><input type="range" id="net_z" min="0" max="10" step="0.025" value="3.75"></label>
+        <div class="btnrow"><button class="btn" data-setz="3.75" data-target="net_z">z = 3.75 (equilibrium)</button><button class="btn" data-setz="3.125" data-target="net_z">z = 3.125 (optimum)</button></div>
+        <div class="readout" id="net_stats"></div>
+      </div>
+      <div class="viz" id="net_svg"></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p>Access costs are fixed: DC pays 4 to reach port A and 5 to reach port B; Baltimore pays 3 and 4. Both origins see the same 1-hour difference, so both prefer the same port, and 1 scalar <span class="m">z</span> carries the whole interface.</p>
+        <p>Corridor A: <span class="mr">4 + 0.2·(10 − <i>z</i>)</span>. Corridor B: <span class="mr">2 + 0.6·<i>z</i></span>. Link width is flow; the label is the time on it.</p>
+        <p class="say">One network, 4 questions: what is the answer (A), who computes it (B), at which level (C), who may commit it (D).</p>
+      </div>
+    </div>
+  </div>
+  <div class="gridcards">
+    <a class="gcard" href="#A"><div class="l">Group A</div><div class="n">Native assignment</div><div class="d">Find the flow at which no used route can improve, and the flow that minimizes total time.</div><div class="do"><b>You will</b> drag the flow until the 2 route costs meet, then let 3 algorithms find the same point.</div></a>
+    <a class="gcard" href="#B"><div class="l">Group B</div><div class="n">Decomposed and distributed computation</div><div class="d">Cut the map into regions that compute on their own block and exchange only interface quantities.</div><div class="do"><b>You will</b> count messages, eliminate an interior by hand, and watch 2 regions reach consensus.</div></a>
+    <a class="gcard" href="#C"><div class="l">Group C</div><div class="n">Spatial hierarchy and representation</div><div class="d">Ask which coarse quantities the fine ones determine, and which answers a coarse state cannot give.</div><div class="do"><b>You will</b> merge the 2 ports, verify a commuting square, and place sensors to see the rank.</div></a>
+    <a class="gcard" href="#D"><div class="l">Group D</div><div class="n">Coordination and agentic execution</div><div class="d">Put a cap on the port, price it, verify a plan against 3 certificates, and run the loop.</div><div class="do"><b>You will</b> derate the cap, watch a stale plan be refused, and read an agent's response contract.</div></a>
+  </div>
+</section>
+
+<!-- ============================ GROUP A ============================ -->
+<section class="group" id="A">
+  <div class="ghead"><span class="gtag">Group <b>A</b></span><h2>Native traffic assignment</h2></div>
+  <p class="gsay">Data: the network, the demands 6 and 4, the cost laws. Unknown: the path flows. Problem: user equilibrium, where every used path of an OD pair has the least time; and system optimum, where the total time is least. Returns: the flows, the costs, and a certificate.</p>
+  <dl class="defline"><dt>Assumes</dt><dd>static; fixed demand; continuous flow; separable, nondecreasing cost laws; no capacity.</dd><dt>Prior knowledge</dt><dd>shortest paths; a convex function has 1 minimum; a matrix relation has 4 roles (forward map, solve, feasible set, optimization).</dd></dl>
+
+  <div class="card">
+    <div class="q"><span class="id">A1</span><h3>Move the flow until the 2 route costs meet</h3><span class="sub">The potential <span class="m">Φ</span>(<span class="m">z</span>) = 86 − 3<span class="m">z</span> + 0.4<span class="m">z</span>² has its minimum where DC is indifferent between the ports; the total time <span class="m">C</span>(<span class="m">z</span>) = 96 − 5<span class="m">z</span> + 0.8<span class="m">z</span>² has its minimum 0.625 units to the left.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Flow through port B, <span class="m">z</span></b><span class="val" id="a1_zv">2.00</span><input type="range" id="a1_z" min="0" max="10" step="0.025" value="2"></label>
+        <div class="btnrow"><button class="btn" data-setz="3.75" data-target="a1_z">Equilibrium</button><button class="btn" data-setz="3.125" data-target="a1_z">System optimum</button></div>
+        <div class="readout" id="a1_stats"></div>
+      </div>
+      <div class="viz">
+        <div id="a1_chart1"></div>
+        <div id="a1_chart2" style="margin-top:8px"></div>
+      </div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="a1_read"></p>
+        <p>At <span class="m">z</span> = 3.75 the costs tie at 9.25 for DC and 8.25 for Baltimore, and the gap <span class="m">g</span>(<span class="m">z</span>) = 0.8<span class="m">z</span> − 3 is 0. The optimum <span class="m">z</span> = 3.125 costs 88.19 in total against 88.5, and the marginal charges that make travellers choose it are 1.375 on A and 1.875 on B: a difference of 0.5, exactly what it takes to move 0.625 units.</p>
+        <p class="say">Loading adds, the split rule decides, the label prices; equilibrium is where no used path can improve.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">A2</span><h3>Let an algorithm find the same point</h3><span class="sub">Gradient steps on <span class="m">Φ</span>, 1 Newton step, or the method of successive averages; the gap <span class="m">G</span>(<span class="m">z</span>) = <span class="m">g</span>(<span class="m">z</span>)·(<span class="m">z</span> − <span class="m">y</span>) is the certificate each one carries.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Method</b><select id="a2_method"><option value="grad">Gradient, step 0.5</option><option value="newton">Newton</option><option value="msa">Successive averages (MSA)</option></select></label>
+        <label><b>Start <span class="m">z</span>₀</b><span class="val" id="a2_z0v">2.00</span><input type="range" id="a2_z0" min="0" max="10" step="0.25" value="2"></label>
+        <div class="btnrow"><button class="btn primary" id="a2_step">Step</button><button class="btn" id="a2_run">Run 8</button><button class="btn ghost" id="a2_reset">Reset</button></div>
+        <div id="a2_table"></div>
+      </div>
+      <div class="viz"><div id="a2_chart"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="a2_read"></p>
+        <p class="say">A solver is judged by its certificate, not by its last iterate: the gap says how far the current flow is from an answer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip" id="chiA"></div>
+</section>
+
+<!-- ============================ GROUP B ============================ -->
+<section class="group" id="B">
+  <div class="ghead"><span class="gtag">Group <b>B</b></span><h2>Decomposed and distributed computation</h2></div>
+  <p class="gsay">Data: Group A's problem and a partition of the network into regions by ownership. State: the block form <span class="m">x</span> = [<span class="m">x</span><sub>X</sub>; <span class="m">z</span>; <span class="m">x</span><sub>Y</sub>] with the interior states owned by the regions and the interface <span class="m">z</span> carrying the coupling. Problem: compute A's answer with each region computing only on its own block and exchanging only interface quantities. Returns: the same flows, plus the counts a distributed run is judged by: messages, scalars, sweeps.</p>
+  <dl class="defline"><dt>Assumes</dt><dd>for 1 exchange to suffice, every route crosses the cut once; for the Schur complement to be the curvature of the regional response, the interior optimum is unique and interior.</dd><dt>Prior knowledge</dt><dd>block elimination; Newton's method; preconditioned iterations and coarse spaces; convex duality (from HPC and optimization, not from traffic).</dd></dl>
+
+  <div class="card">
+    <div class="q"><span class="id">B1</span><h3>Cut the map: what stays inside, what crosses</h3><span class="sub">Region X owns DC, Baltimore, the 4 access links and both demands. Region Y owns the ports, the corridors and Boston. One scalar crosses.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label class="chk"><input type="checkbox" id="b1_regions" checked> show the 2 regions and the cut</label>
+        <label class="chk"><input type="checkbox" id="b1_blocks" checked> show the block state</label>
+        <label><b>Interface flow <span class="m">z</span></b><span class="val" id="b1_zv">3.75</span><input type="range" id="b1_z" min="0" max="10" step="0.025" value="3.75"></label>
+        <div class="readout" id="b1_stats"></div>
+      </div>
+      <div class="viz" id="b1_svg"></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <div id="b1_blocktext"></div>
+        <p>Region X can evaluate its own part of the objective, <span class="m">F</span><sub>X</sub>(<span class="m">z</span>) = 36 + <span class="m">z</span>, without asking Y anything: the access cost is 36 whichever way the flow splits, plus 1 per unit sent to port B. Region Y owns the curvature: <span class="m">F</span><sub>Y</sub>(<span class="m">z</span>) = 50 − 4<span class="m">z</span> + 0.4<span class="m">z</span>². Their sum is <span class="m">Φ</span>.</p>
+        <p class="say">The interior stays local; the interface carries the coupling.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">B2</span><h3>Forward or backward? Count what crosses the cut</h3><span class="sub">A second destination U behind port B (B→U costs 3; A cannot reach U). Region Y's remaining cost <span class="m">J</span><sub>Y</sub>(<span class="m">p</span>, <span class="m">s</span>) is the cost-to-go from port <span class="m">p</span> to destination <span class="m">s</span>. Labels compose in (min, +): <span class="m">ℓ</span>(<span class="m">o</span>, <span class="m">s</span>) = min<sub><span class="m">p</span></sub> { <span class="m">d</span><sub>X</sub>(<span class="m">o</span>, <span class="m">p</span>) + <span class="m">J</span><sub>Y</sub>(<span class="m">p</span>, <span class="m">s</span>) }.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Protocol</b><select id="b2_proto"><option value="fwd">Forward: X asks per origin</option><option value="bwd">Backward: Y publishes J_Y once</option></select></label>
+        <label><b>Origins in region X</b><span class="val" id="b2_nv">2</span><input type="range" id="b2_n" min="2" max="1000" step="1" value="2"></label>
+        <div class="btnrow"><button class="btn primary" id="b2_play">Send the messages</button></div>
+        <div class="readout" id="b2_stats"></div>
+      </div>
+      <div class="viz"><div id="b2_svg"></div><div id="b2_table"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="b2_read"></p>
+        <p><span class="m">J</span><sub>Y</sub> is 2 by 2 with 1 entry ∞: it is the only thing DC and Baltimore need to know about New York and Boston. The 444 interior nodes hidden behind Chicago's 23 ports are the same idea at scale.</p>
+        <p class="say">Forward asks a question per origin; backward publishes the remaining cost once. The answer is identical; the traffic across the cut is not.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">B3</span><h3>Open corridor A: the interior responds, the boundary sees only <span class="m">S</span></h3><span class="sub">Inside region Y, corridor A is now 2 parallel roads, each 4 + 0.4·flow, with <span class="m">w</span> on the first. <span class="m">Ψ</span>(<span class="m">w</span>, <span class="m">z</span>) = 76 − <span class="m">z</span> + 0.2[<span class="m">w</span>² + (10 − <span class="m">z</span> − <span class="m">w</span>)²] + 0.3<span class="m">z</span>². Newton solves ∇²<span class="m">Ψ</span> Δ = −∇<span class="m">Ψ</span>; eliminating <span class="m">w</span> leaves the Schur complement <span class="m">S</span> = <span class="m">Ψ</span><sub>zz</sub> − <span class="m">Ψ</span><sub>zw</sub> <span class="m">Ψ</span><sub>ww</sub><sup>−1</sup> <span class="m">Ψ</span><sub>wz</sub>.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Interior flow <span class="m">w</span> (road 1 of corridor A)</b><span class="val" id="b3_wv">4.00</span><input type="range" id="b3_w" min="0" max="10" step="0.125" value="4"></label>
+        <label><b>Interface flow <span class="m">z</span></b><span class="val" id="b3_zv">2.00</span><input type="range" id="b3_z" min="0" max="10" step="0.125" value="2"></label>
+        <label><b>How to take the Newton step</b><select id="b3_mode"><option value="full">Full 2×2 Newton system</option><option value="schur">Schur: eliminate w, solve S Δz = b̂, recover Δw</option><option value="frozen">Frozen interior (only z moves)</option></select></label>
+        <div class="btnrow"><button class="btn" data-setwz="4,2">(4, 2)</button><button class="btn" data-setwz="3,2">(3, 2) unbalanced</button><button class="btn primary" id="b3_take">Take the step</button></div>
+        <div class="readout" id="b3_stats"></div>
+      </div>
+      <div class="viz"><div id="b3_chart"></div><div id="b3_math" class="read" style="margin-top:8px"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="b3_read"></p>
+        <p>The Hessian is [[0.8, 0.4], [0.4, 1.0]] everywhere, because <span class="m">Ψ</span> is quadratic. <span class="m">S</span> = 1.0 − 0.4·0.4/0.8 = 0.8, and 0.8 is also <span class="m">Φ</span>″: the Schur complement is the curvature of the reduced problem, what the boundary sees after the interior has answered. Freezing the interior uses 1.0 instead and lands short.</p>
+        <p class="say">The Schur complement is what the boundary sees after the interior is eliminated.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">B4</span><h3>Consensus on the interface: 2 copies of <span class="m">z</span> and a price</h3><span class="sub">min <span class="m">F</span><sub>X</sub>(<span class="m">z</span><sub>X</sub>) + <span class="m">F</span><sub>Y</sub>(<span class="m">z</span><sub>Y</sub>) subject to <span class="m">z</span><sub>X</sub> = <span class="m">z</span><sub>Y</sub>. ADMM: X minimizes with a penalty, Y minimizes with a penalty, the scaled price <span class="m">u</span> ← <span class="m">u</span> + <span class="m">z</span><sub>X</sub> − <span class="m">z</span><sub>Y</sub>. Newton (B3) and ADMM are 2 methods, not a sequence.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Penalty <span class="m">ρ</span></b><span class="val" id="b4_rhov">1.00</span><input type="range" id="b4_rho" min="0.25" max="4" step="0.25" value="1"></label>
+        <label><b>Region X's marginal access cost <span class="m">F</span><sub>X</sub>′</b><select id="b4_slope"><option value="1">1 (the network: F_X = 36 + z)</option><option value="2">2 (exercise: F_X = 36 + 2z)</option></select></label>
+        <div class="btnrow"><button class="btn primary" id="b4_step">Round</button><button class="btn" id="b4_run">Run 12</button><button class="btn ghost" id="b4_reset">Reset</button></div>
+        <div id="b4_table"></div>
+      </div>
+      <div class="viz"><div id="b4_chart"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="b4_read"></p>
+        <p class="say">Two regions never see each other's objective; they see a copy of the interface and a price, and the price converges to the marginal cost that region X would have told a central solver.</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip" id="chiB"></div>
+</section>
+
+<!-- ============================ GROUP C ============================ -->
+<section class="group" id="C">
+  <div class="ghead"><span class="gtag">Group <b>C</b></span><h2>Spatial hierarchy and representation</h2></div>
+  <p class="gsay">Data: a fine level and a coarse level; the spatial lineage <span class="m">H</span> recording which cell each object belongs to; the typed maps <span class="m">M</span><sub>N</sub>, <span class="m">M</span><sub>L</sub>, <span class="m">M</span><sub>P</sub>, <span class="m">M</span><sub>OD</sub> carrying node balances, link flows, path flows and OD pairs between levels. Problem: state which coarse quantities the fine ones determine (the commuting test), which answers the coarse state cannot give (hidden spread; rank of an observation map), and when a unit must be refined.</p>
+  <dl class="defline"><dt>Assumes</dt><dd><span class="m">H</span> is membership only; connectivity comes from the network, never from the cells; commuting is a structural statement and never a behavioral one.</dd><dt>Prior knowledge</dt><dd>a graph and its quotient; a tree of cells (S2: each cell has 1 parent and 4 children); observability and rank.</dd></dl>
+
+  <div class="card">
+    <div class="q"><span class="id">C1</span><h3>Two graphs, two kinds of map</h3><span class="sub">The cell tree carries lineage: <span class="m">H</span> says which cell holds a node, nothing more. The transportation graph carries flow: the maps <span class="m">M</span> aggregate it, and they must respect components, because a cell can hold 2 pieces of road that never touch.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label class="chk"><input type="checkbox" id="c1_comp"> component-aware quotient (1 vertex per road piece)</label>
+        <div class="readout" id="c1_stats"></div>
+      </div>
+      <div class="viz" id="c1_svg"></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="c1_read"></p>
+        <p class="say">Lineage composes across levels, <span class="m">H</span><sup>0←2</sup> = <span class="m">H</span><sup>0←1</sup><span class="m">H</span><sup>1←2</sup>, and never decides connectivity. The maps decide flow, and they follow the road.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">C2</span><h3>Merge the 2 ports into 1 and see what the coarse state cannot say</h3><span class="sub">With 1 port N, the coarse model sees only the corridor pair as 1 corridor with an equal-time split, <span class="m">x</span><sub>B</sub> = 2.5 + 0.25<span class="m">x</span>, and 1 access cost per origin.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label class="chk"><input type="checkbox" id="c2_merge"> merge ports A and B into N</label>
+        <div class="readout" id="c2_stats"></div>
+      </div>
+      <div class="viz" id="c2_svg"></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <div id="c2_read"></div>
+        <p class="say">Commuting certifies the map; it does not certify the answer.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">C3</span><h3>The commuting square, checked by multiplication</h3><span class="sub">Loading square: <span class="m">M</span><sub>L</sub> <span class="m">A</span><sub>L,P</sub> = <span class="m">A</span><sup>c</sup> <span class="m">M</span><sub>P</sub>. Conservation square: <span class="m">D</span><sup>c</sup> <span class="m">M</span><sub>P</sub> = <span class="m">M</span><sub>OD</sub> <span class="m">D</span><sub>OD,P</sub>. The residual is a matrix; 0 means the coarse operators are the aggregated fine ones.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Coarse link map <span class="m">M</span><sub>L</sub></b><select id="c3_ml"><option value="both">counts both corridors (correct)</option><option value="a">counts corridor A only</option><option value="access">counts the 4 access links</option></select></label>
+        <div class="readout" id="c3_stats"></div>
+      </div>
+      <div class="viz"><div id="c3_math" class="read"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="c3_read"></p>
+        <p class="say">A commuting square is a structural identity: it holds for every flow or for none, and it says nothing about which flow is right.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">C4</span><h3>Place the sensors and read the rank</h3><span class="sub">Observation <span class="m">y</span> = <span class="m">Π</span> <span class="m">f</span><sub>P</sub> on the 4 path flows (DC→A, DC→B, R→A, R→B). Rank says how many directions of the flow the sensors can see; the null space is what they cannot.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label class="chk"><input type="checkbox" class="c4s" value="screen"> screen line across the cut (counts everything)</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="cA" checked> corridor A count</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="cB" checked> corridor B count</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="DA"> access link DC→A</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="DB"> access link DC→B</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="RA"> access link R→A</label>
+        <label class="chk"><input type="checkbox" class="c4s" value="RB"> access link R→B</label>
+        <div class="readout" id="c4_stats"></div>
+      </div>
+      <div class="viz"><div id="c4_svg"></div><div id="c4_math" class="read"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="c4_read"></p>
+        <p class="say">One sensor adds at most 1 to the rank, and sometimes 0: corridor A's count is already the sum of DC→A and R→A.</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip" id="chiC"></div>
+</section>
+
+<!-- ============================ GROUP D ============================ -->
+<section class="group" id="D">
+  <div class="ghead"><span class="gtag">Group <b>D</b></span><h2>Coordination and agentic execution</h2></div>
+  <p class="gsay">Data: agents, each owning a plan solved at a state version; a shared-resource limit (here a cap on port B); a verifier <span class="m">r</span>(<span class="m">x</span>) = [<span class="m">D f</span> − <span class="m">q</span>; <span class="m">f</span><sub>L</sub> − <span class="m">A f</span>; max(0, <span class="m">z</span> − Cap<sub>B</sub>)]; a live version; a declared world model. Problem: from plans that are each valid and jointly violate the limit, produce a plan that is feasible, best, and committed only at the live version; expose every number through a call whose response carries class, residual, validity and version.</p>
+  <dl class="defline"><dt>Assumes</dt><dd>costs frozen within a round; the executed state is a solver iterate and its excess over a cap is a rate, not a queue; a learning model may propose and never verifies or commits.</dd><dt>Prior knowledge</dt><dd>a Lagrange multiplier as a price; dual ascent and primal recovery; compare-and-commit, fail-closed design.</dd></dl>
+
+  <div class="card">
+    <div class="q"><span class="id">D1</span><h3>Cap port B and price it</h3><span class="sub">The multiplier is the cost difference at the cap, <span class="m">μ</span>* = <span class="m">C</span><sub>A</sub>(Cap<sub>B</sub>) − <span class="m">C</span><sub>B</sub>(Cap<sub>B</sub>); with the price added to B, nobody wants to move. The split at the tie must be declared: the price does not declare it.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Cap on port B, Cap<sub>B</sub></b><span class="val" id="d1_capv">3.00</span><input type="range" id="d1_cap" min="1" max="5" step="0.1" value="3"></label>
+        <div class="readout" id="d1_stats"></div>
+      </div>
+      <div class="viz"><div id="d1_chart"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="d1_read"></p>
+        <p class="say">A cap moves the answer; a price makes travellers accept it; a declared split makes it a plan.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">D2</span><h3>Verify, then commit: 3 certificates, not 1</h3><span class="sub">A plan is committed only if it is feasible (<span class="m">r</span> = 0), best (the duality gap is closed), and solved at the live state version. Derate the cap and watch a plan that was valid become both stale and infeasible.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <div class="btnrow"><button class="btn" id="d2_derate">Derate the cap × 0.8 (version +1)</button><button class="btn primary" id="d2_resolve">Re-solve at the live version</button><button class="btn ghost" id="d2_reset">Reset</button></div>
+        <div class="readout" id="d2_stats"></div>
+      </div>
+      <div class="viz"><div id="d2_svg"></div><div id="d2_verify"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="d2_read"></p>
+        <p class="say">Feasibility, optimality and the live version are 3 different certificates.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">D3</span><h3>Run the loop: Observe, Solve, Coordinate, Verify, Commit</h3><span class="sub">From the equilibrium 3.75 toward a cap of 3 by successive averages, <span class="m">z</span><sub>k+1</sub> = <span class="m">z</span><sub>k</sub> + (Cap<sub>B</sub> − <span class="m">z</span><sub>k</sub>)/(<span class="m">k</span> + 1). The executed state is a solver iterate; its excess over the cap is an excess arrival rate, not a queue.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <div class="btnrow"><button class="btn primary" id="d3_step">Next round</button><button class="btn" id="d3_run">Run 8</button><button class="btn ghost" id="d3_reset">Reset</button></div>
+        <div class="steps" id="d3_steps"></div>
+        <div id="d3_table"></div>
+      </div>
+      <div class="viz"><div id="d3_chart"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="d3_read"></p>
+        <p class="say">Compare an iterate to the cap and call the difference what it is: a rate the plan has not yet removed. A queue would need a time axis this model does not have.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="q"><span class="id">D4</span><h3>Ask the agent: a request and its contract</h3><span class="sub">Every number leaves the system through a call whose response carries its value, its class (structural identity; exact reduction under assumptions; behavioral approximation), its residual, its validity and its version.</span></div>
+    <div class="three">
+      <div class="ctrl">
+        <label><b>Request</b><select id="d4_req"><option value="routeDT">route: DC → Boston (cost)</option><option value="routeRU">route: Baltimore → U (cost)</option><option value="flowB">flow on port B under Cap 3</option><option value="commute">commuting residual of the port merge</option><option value="predict">learned estimate of tomorrow's z</option></select></label>
+        <label><b>State version in the request</b><span class="val" id="d4_verv">8</span><input type="range" id="d4_ver" min="5" max="9" step="1" value="8"></label>
+        <div class="note">Live version is 8 after the derating in D2. A request at an older version gets its answer marked stale.</div>
+      </div>
+      <div class="viz"><div class="msg" id="d4_msg"></div></div>
+      <div class="read">
+        <h4>Read it as</h4>
+        <p id="d4_read"></p>
+        <p class="say">A learning model may propose; it never verifies and never commits. The verifier and the version are the 2 gates it cannot bypass.</p>
+      </div>
+    </div>
+  </div>
+  <div class="strip" id="chiD"></div>
+</section>
+
+<footer class="foot">
+  <div class="cols">
+    <div><b>Notation, 1 symbol 1 meaning.</b> <span class="m">z</span> the interface flow (port B); <span class="m">w</span> an interior flow; <span class="m">Φ</span> the potential, <span class="m">C</span> the total time; ∇²<span class="m">Ψ</span> the Hessian and <span class="m">S</span> the Schur complement, never <span class="m">H</span>; <span class="m">H</span> the spatial lineage; <span class="m">M</span> the typed maps; <span class="m">Π</span> the observation map; <span class="m">J</span><sub>Y</sub> the remaining cost (cost-to-go); Cap<sub>B</sub>, <span class="m">μ</span>, <span class="m">ρ</span>, <span class="m">u</span> the capacity and its prices; <span class="m">r</span> the residual; excess arrival rate <span class="m">z</span><sub>k</sub> − Cap<sub>B</sub>.</div>
+    <div><b>Sources.</b> The network, its numbers and the 4 group definitions follow the guide <i>Hierarchical Traffic Assignment: From One Network to Chicago Sketch</i> (Zhou, 2026, v2.1) and the HTC learning notes. Every Chicago figure on this page is read from <code>results_spine.json</code> and <code>results_v09.json</code> of the Assignment Spine experiments (chicago_spine_v03.py, Chicago Sketch, 933 nodes, 2,950 links, 93,135 zone pairs); the experiment ids CHI-A to CHI-F4 are the guide's inventory.</div>
+    <div><b>How to use it in class.</b> One station is 1 mathematical action. Move the control first, read the numbers second, read the sentence in italics last; then say the sentence without the page. The 4 sentences at the end of the groups are the 4 things a student must be able to say.</div>
+  </div>
+    <div><b>Collaboration.</b> This interactive learning demo was developed collaboratively by Professor Xuesong Zhou and Hao Zheng. Under Professor Zhou's guidance, Hao Zheng contributed to the web implementation and continues to maintain it as part of their collaboration on a teaching and learning guide for high-performance computing (HPC) in traffic assignment.</div>
+    <div><b>Latest revision.</b> The latest revision enables exact selection of the system-optimal value z = 3.125, aligns the teaching network with the Baltimore-based guide, updates the reference to version 2.1, and clarifies several algorithm explanations.</div>
+</footer>
+</main>
+<script>
+const CHI = {"A": {"pairs": 93135, "paths": 184270, "gap": 0.00027681075251721407, "tt_ue": 306493.5049142337, "beckmann": 279263.1339092875, "tt_so": 301043.21395915456, "so_saving_pct": 1.7782729055234925, "tt_one_pass": 1870836.6082019666, "one_pass_ratio": 6.104000829399253}, "B": {"origins": 386, "frozen_excess_pct": 1.1422928455328467, "improved_pct": 43.10182823699965, "policy_iters": [3, 5.0, 9], "schur": {"unknowns": 933, "interface": 24, "interiors": [450, 459], "couplings": 17, "bhat": 38.03378126591909, "recovery": 7.105427357601002e-15}, "sweeps": [{"units": 2, "rounds": [3, 5.0, 9], "exchanged": 72.52849740932642, "err": 8.007816632016329e-12}, {"units": 4, "rounds": [5, 7.0, 11], "exchanged": 206.09067357512953, "err": 9.990230864787009e-12}, {"units": 16, "rounds": [8, 10.0, 15], "exchanged": 658.8730569948186, "err": 1.3983481039758772e-11}], "messages": 4, "scalars": 158534, "bytes": 1268272, "speedup_bound": 1.893189417265985, "KY": {"rows": 194, "cols": 23, "entries": 4462, "hidden": 444, "labels": 37248, "err": 8.526512829121202e-14, "forward_in": 4416, "forward_back": 37248, "origins_x": 192}, "KY_flow": {"free": 43.28256612801524, "ue": 47.79540673923131, "ue12": 50.32248255624735, "chg1_pct": 10.426462696016243, "chg2_pct": 5.287277563728247, "over10_pct": 12.259076647243388}}, "C": {"levels": [{"corridors": 2, "signatures": 11, "reentry": 4285, "collapsed": 59741, "invisible_pct": 40.26943135602804, "spread_mean": 4.828487303526892, "spread_max": 28.39, "residual": 0.0}, {"corridors": 10, "signatures": 201, "reentry": 12618, "collapsed": 44927, "invisible_pct": 36.51708619964249, "spread_mean": 4.209658557215038, "spread_max": 27.290000000000006, "residual": 0.0}, {"corridors": 66, "signatures": 3928, "reentry": 17158, "collapsed": 29841, "invisible_pct": 28.99368457017481, "spread_mean": 3.647316443818906, "spread_max": 26.759999999999934, "residual": 0.0}, {"corridors": 144, "signatures": 13351, "reentry": 20268, "collapsed": 20387, "invisible_pct": 23.2641746048224, "spread_mean": 2.87579339775347, "spread_max": 21.230000000000004, "residual": 0.0}], "pairs_with_choice": 64126, "refine": {"coarse": 0.2616492473766364, "trip_ends": 0.0942143815184919, "oracle": 0.08427756561192665, "e_perf": 0.1094504099364281, "intra_share_pct": 52.849792051349944, "vertices": 65, "corridors": 160}, "quotient": {"partition_type": "coordinate-bisection superzones", "cells": 16, "vertices": 65, "multi": 15, "corridors": 160, "reentry": 11156, "residual_inc": 0.0, "residual_load": 0.0, "s2_level10_cells": 262}, "cut": {"links_2": 56, "inside_2_pct": 86.2837822576414, "links_16": 438, "inside_16_pct": 52.849792051349944}, "sensors": 62, "obs": [{"res": "4", "unknowns": 12, "rank": 12, "null": 0, "err": 0.02440978822749113, "held_out": 0.02069931814627242, "projected": 0.02440978822749113}, {"res": "16", "unknowns": 240, "rank": 62, "null": 178, "err": 0.14055618452846483, "held_out": 0.11078024334395721, "projected": 0.0355330994522642}, {"res": "32", "unknowns": 954, "rank": 62, "null": 892, "err": 0.13861158369764495, "held_out": 0.11232470885481617, "projected": 0.05603588205351231}]}, "D": {"route": {"o": 1, "dests": [200, 300], "labels": [58.64317385977548, 74.34938891407525], "version": 7, "residual": 1.0000036354540498e-09, "cls": "exact reduction under assumptions (fixed costs, no through traffic at centroids)", "validity": "labels valid while t_UE is the current time field", "prov": "chicago_spine_v03.route_call", "hops": [20, 25]}, "single": {"link": [574, 568], "aon": 13263.050000000054, "cap": 11936.745000000048, "mu": 0.06034625097527169, "below": 12467.56000000004, "above": 11619.090000000037, "weight": 0.6256143411080999, "ties": 16, "increase_pct": 0.00024368992752599183, "violation_local": 1326.3050000000057, "lp_agrees": true, "lp_mu": 0.06034625092543422}, "ten": {"links": 10, "rounds": 300, "first_within_1pct": 186, "lp_cost_veh_h": 306427.2391355366, "lp_cost_veh_min": 18385634.348132197, "above_unconstrained_veh_h": 18.57491903981815, "gap_pct": 5.577631526201733e-07, "split_pairs": 10, "paths": 93145, "solve_s": 0.8432059288024902, "avg_violation": 32.85389999998915, "avg_below_pct": 0.0002198605716588032, "mu_max_diff": 0.011275875678344788, "mu_max": 1.0332407758506577}, "residuals": {"local": {"Df_minus_q_max_abs": 0.0, "v_minus_Bf_max_abs": 0.0, "capacity_violation_max": 1326.3050000000057}, "coord": {"Df_minus_q_max_abs": 1.1368683772161603e-13, "v_minus_Bf_max_abs": 0.0, "capacity_violation_max": 0.0}}, "trace": [{"event": "plan solved at version 7", "cap": 11936.745000000048, "v_a": 11936.745000000044, "verify": "capacity ok", "commit": "pending"}, {"event": "feeder-style derating: Cap x 0.8, version 8", "cap": 9549.396000000039, "v_a": 11936.745000000044, "verify": "capacity violated by 2387", "commit": "rejected: stale version and infeasible"}, {"event": "re-solved at version 8", "cap": 9549.396000000039, "v_a": 9549.396000000039, "mu": 0.42830186598621367, "verify": "capacity ok", "commit": "committed at version 8"}], "cap_derated": 9549.396000000039, "loop": [{"round": 1, "mu": 0.42830186598621367, "arrivals": 11423.11021823771, "discharge": 9549.396000000039, "excess": 1873.714218237672, "violation": 0.0}, {"round": 2, "mu": 6.192962551485834, "arrivals": 10798.538812158487, "discharge": 9549.396000000039, "excess": 1249.1428121584486, "violation": 1.8189894035458565e-12}, {"round": 3, "mu": 1.7806362799092312, "arrivals": 10486.253109118876, "discharge": 9549.396000000039, "excess": 936.8571091188369, "violation": 0.0}, {"round": 4, "mu": 5.864323521936967, "arrivals": 10298.881687295108, "discharge": 9549.396000000039, "excess": 749.4856872950695, "violation": 1.8189894035458565e-12}, {"round": 5, "mu": 3.2151687223631598, "arrivals": 10173.967406079264, "discharge": 9549.396000000039, "excess": 624.5714060792252, "violation": 1.8189894035458565e-12}, {"round": 6, "mu": 3.8004144387105043, "arrivals": 10084.742919496517, "discharge": 9549.396000000039, "excess": 535.3469194964782, "violation": 0.0}], "execution_model": "the committed plan holds the cap in every round; the executed state is a solver iterate; excess arrival rate = arrivals minus discharge; no queue inventory is modeled"}, "runtime_s": 108.69651389122009};
+
+(function(){
+'use strict';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const fmt=(v,d=2)=>{if(!Number.isFinite(v))return '∞';if(Math.abs(v)<0.5*Math.pow(10,-d))v=0;return v.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d});};
+const fmt0=v=>fmt(v,0);
+const sci=v=>{ if(v===0) return '0'; const e=Math.floor(Math.log10(Math.abs(v))); const m=v/Math.pow(10,e); return m.toFixed(1)+'e'+e; };
+const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+
+/* ---------- the network model: 2 origins, 2 ports, 1 destination ---------- */
+const M={
+  qD:6, qR:4, acc:{DA:4,DB:5,RA:3,RB:4},
+  tA:x=>4+0.2*x, tB:x=>2+0.6*x,
+  CA:z=>10-0.2*z, CB:z=>7+0.6*z, g:z=>0.8*z-3,
+  Phi:z=>86-3*z+0.4*z*z, C:z=>96-5*z+0.8*z*z,
+  FX:z=>36+z, FY:z=>50-4*z+0.4*z*z,
+  zUE:3.75, zSO:3.125,
+  split:z=>({DA:6-0.6*z, DB:0.6*z, RA:4-0.4*z, RB:0.4*z}),
+  Psi:(w,z)=>76-z+0.2*(w*w+(10-z-w)*(10-z-w))+0.3*z*z,
+  gradPsi:(w,z)=>[0.8*w-4+0.4*z, -1-0.4*(10-z-w)+0.6*z],
+  HPsi:[[0.8,0.4],[0.4,1.0]]
+};
+window.LAB={M,fmt,fmt0,sci,$,$$};
+
+/* ---------- SVG chart with one axis pair, hover crosshair and tooltip ---------- */
+function chart(container,cfg){
+  const W=cfg.width||560, H=cfg.height||230, m={l:46,r:16,t:cfg.ylabel?26:14,b:36};
+  const xd=cfg.xdom, yd=cfg.ydom;
+  const X=v=>m.l+(v-xd[0])/(xd[1]-xd[0])*(W-m.l-m.r);
+  const Y=v=>H-m.b-(v-yd[0])/(yd[1]-yd[0])*(H-m.t-m.b);
+  const ticks=(d,n)=>{const span=d[1]-d[0],raw=span/n,p=Math.pow(10,Math.floor(Math.log10(raw)));const c=[1,2,2.5,5,10].map(k=>k*p);const st=c.find(k=>k>=raw)||c[4];const o=[];for(let v=Math.ceil(d[0]/st-1e-9)*st;v<=d[1]+1e-9;v+=st)o.push(+v.toFixed(10));return o;};
+  const xt=cfg.xticks||ticks(xd,6), yt=cfg.yticks||ticks(yd,5);
+  const id='cp'+Math.random().toString(36).slice(2,8);
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.aria||'chart')}"><defs><clipPath id="${id}"><rect x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.t-m.b}"/></clipPath><marker id="${id}ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--ink)"/></marker></defs>`;
+  yt.forEach(v=>{s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(v)}" y2="${Y(v)}" style="stroke:var(--grid);stroke-width:1"/>`;s+=`<text x="${m.l-6}" y="${Y(v)+4}" text-anchor="end" style="font-size:10.5px;fill:var(--ink3)">${fmt(v,cfg.ydec??1)}</text>`;});
+  xt.forEach(v=>{s+=`<text x="${X(v)}" y="${H-m.b+14}" text-anchor="middle" style="font-size:10.5px;fill:var(--ink3)">${fmt(v,cfg.xdec??0)}</text>`;});
+  s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(yd[0])}" y2="${Y(yd[0])}" style="stroke:var(--line);stroke-width:1"/>`;
+  if(cfg.xlabel) s+=`<text x="${(m.l+W-m.r)/2}" y="${H-6}" text-anchor="middle" style="font-size:11px;fill:var(--ink2)">${cfg.xlabel}</text>`;
+  if(cfg.ylabel) s+=`<text x="${m.l}" y="12" style="font-size:11px;fill:var(--ink2)">${cfg.ylabel}</text>`;
+  s+=`<g clip-path="url(#${id})">`;
+  (cfg.hlines||[]).forEach(h=>{s+=`<line x1="${m.l}" x2="${W-m.r}" y1="${Y(h.y)}" y2="${Y(h.y)}" style="stroke:${h.color||'var(--ink3)'};stroke-width:1.2;stroke-dasharray:${h.dash||'4 3'}"/>`;if(h.label)s+=`<text x="${W-m.r-3}" y="${Y(h.y)-4}" text-anchor="end" style="font-size:10.5px;fill:${h.color||'var(--ink2)'}">${h.label}</text>`;});
+  (cfg.vlines||[]).forEach(v=>{s+=`<line y1="${m.t}" y2="${H-m.b}" x1="${X(v.x)}" x2="${X(v.x)}" style="stroke:${v.color||'var(--ink3)'};stroke-width:1.2;stroke-dasharray:${v.dash||'4 3'}"/>`;if(v.label)s+=`<text x="${X(v.x)+4}" y="${m.t+(v.ly??22)}" style="font-size:10.5px;fill:${v.color||'var(--ink2)'}">${v.label}</text>`;});
+  (cfg.series||[]).forEach(se=>{let d='',pen=false;se.pts.forEach(p=>{if(!Number.isFinite(p[0])||!Number.isFinite(p[1])){pen=false;return;}d+=(pen?'L':'M')+X(p[0]).toFixed(1)+','+Y(p[1]).toFixed(1);pen=true;});s+=`<path d="${d}" style="fill:none;stroke:${se.color};stroke-width:${se.width||2};stroke-dasharray:${se.dash||'none'};stroke-linejoin:round;stroke-linecap:round"/>`;if(se.dots){se.pts.forEach(p=>{if(Number.isFinite(p[1]))s+=`<circle cx="${X(p[0])}" cy="${Y(p[1])}" r="3.5" style="fill:${se.color};stroke:var(--panel);stroke-width:1.5"/>`;});}});
+  if(cfg.extra) s+=cfg.extra(X,Y,id+'ar');
+  (cfg.points||[]).forEach(p=>{s+=`<circle cx="${X(p.x)}" cy="${Y(p.y)}" r="${p.r||5}" style="fill:${p.color};stroke:var(--panel);stroke-width:2"/>`;if(p.label)s+=`<text x="${X(p.x)+(p.dx??8)}" y="${Y(p.y)+(p.dy??4)}" style="font-size:11px;font-weight:600;fill:var(--ink)">${p.label}</text>`;});
+  s+=`</g>`;
+  s+=`<g class="hov" style="display:none"><line class="cx" y1="${m.t}" y2="${H-m.b}" style="stroke:var(--ink3);stroke-width:1;stroke-dasharray:2 2"/></g>`;
+  s+=`<rect class="hit" x="${m.l}" y="${m.t}" width="${W-m.l-m.r}" height="${H-m.t-m.b}" style="fill:transparent"/></svg><div class="tip"></div>`;
+  container.innerHTML=s;
+  if(cfg.legend&&cfg.legend.length>1){const lg=document.createElement('div');lg.className='legend';lg.innerHTML=cfg.legend.map(l=>`<span><i class="${l.dash?'dash':''}" style="border-color:${l.color}"></i>${l.name}</span>`).join('');container.appendChild(lg);}
+  if(cfg.tooltip){
+    const svg=container.querySelector('svg'), hit=svg.querySelector('.hit'), hov=svg.querySelector('.hov'), cx=svg.querySelector('.cx'), tip=container.querySelector('.tip');
+    const move=ev=>{const r=svg.getBoundingClientRect();const pt=(ev.touches?ev.touches[0]:ev);const px=(pt.clientX-r.left)/r.width*W;const xv=clamp(xd[0]+(px-m.l)/(W-m.l-m.r)*(xd[1]-xd[0]),xd[0],xd[1]);const t=cfg.tooltip(xv);if(!t){hov.style.display='none';tip.style.display='none';return;}const xs=X(t.x??xv);cx.setAttribute('x1',xs);cx.setAttribute('x2',xs);hov.style.display='';tip.style.display='block';tip.innerHTML=`<div class="t">${t.title}</div>`+t.rows.map(rw=>`<div class="r"><span class="sw" style="background:${rw.color||'transparent'}"></span>${rw.name}: <b>${rw.value}</b></div>`).join('');const left=xs/W*r.width;tip.style.left=(left+12+tip.offsetWidth>r.width?left-tip.offsetWidth-12:left+12)+'px';tip.style.top=(m.t/H*r.height+6)+'px';};
+    hit.addEventListener('mousemove',move);hit.addEventListener('touchmove',move,{passive:true});
+    hit.addEventListener('mouseleave',()=>{hov.style.display='none';tip.style.display='none';});
+  }
+  return {X,Y};
+}
+window.LAB.chart=chart;
+
+/* ---------- the network picture ---------- */
+const NP={D:[70,72],R:[70,188],A:[262,72],B:[262,188],T:[462,130],U:[462,228],N:[262,130]};
+function network(container,o){
+  o=o||{};const z=o.z??M.zUE;const sp=o.flows||M.split(z);const xA=10-z,xB=z;
+  const merged=!!o.merged; const W=530,H=o.dest2?262:242;
+  const wid=f=>1.6+f*1.15;
+  let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="the DC to Boston network"><defs><marker id="nar" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="9" markerHeight="9" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--ink3)"/></marker></defs>`;
+  if(o.regions){
+    s+=`<rect x="20" y="26" width="150" height="${H-40}" rx="12" style="fill:var(--xfill);stroke:var(--c6);stroke-width:1;stroke-dasharray:3 3"/><text x="30" y="42" style="font-size:11px;font-weight:700;fill:var(--c6)">Region X</text>`;
+    s+=`<rect x="205" y="26" width="305" height="${H-40}" rx="12" style="fill:var(--yfill);stroke:var(--c3);stroke-width:1;stroke-dasharray:3 3"/><text x="215" y="42" style="font-size:11px;font-weight:700;fill:var(--c3)">Region Y</text>`;
+    s+=`<line x1="187" x2="187" y1="14" y2="${H-8}" style="stroke:var(--ink);stroke-width:1.2;stroke-dasharray:6 4"/><text x="187" y="11" text-anchor="middle" style="font-size:10.5px;fill:var(--ink2)">the cut</text>`;
+  }
+  const link=(a,b,f,color,label,side,t)=>{const [x1,y1]=a,[x2,y2]=b;const dx=x2-x1,dy=y2-y1,L=Math.hypot(dx,dy);const ux=dx/L,uy=dy/L;const r1=16,r2=17;const sx=x1+ux*r1,sy=y1+uy*r1,ex=x2-ux*r2,ey=y2-uy*r2;t=t??0.5;const mx=sx+(ex-sx)*t,my=sy+(ey-sy)*t;const nx=-uy*(side||12),ny=ux*(side||12);s+=`<line x1="${sx}" y1="${sy}" x2="${ex}" y2="${ey}" style="stroke:${color};stroke-width:${o.fixed?2:wid(f)};stroke-linecap:round;opacity:.9" marker-end="url(#nar)"/>`;if(label)s+=`<text x="${mx+nx}" y="${my+ny+4}" text-anchor="middle" style="font-size:10.5px;fill:var(--ink2);paint-order:stroke;stroke:var(--panel);stroke-width:3px">${label}</text>`;};
+  const acc='var(--slate)';
+  if(!merged){
+    const fx=o.fixed;const lab=(c,f)=>fx?`${c}`:`${c} · ${fmt(f,o.dec??2)}`;
+    link(NP.D,NP.A,sp.DA,acc,lab(4,sp.DA),-12);
+    link(NP.D,NP.B,sp.DB,acc,lab(5,sp.DB),14,0.27);
+    link(NP.R,NP.A,sp.RA,acc,lab(3,sp.RA),-14,0.27);
+    link(NP.R,NP.B,sp.RB,acc,lab(4,sp.RB),12);
+    link(NP.A,NP.T,xA,'var(--c1)',fx?'4':`t<tspan font-size="8">A</tspan> = ${fmt(M.tA(xA))} · flow ${fmt(xA)}`,-13);
+    link(NP.B,NP.T,xB,'var(--c2)',fx?'2':`t<tspan font-size="8">B</tspan> = ${fmt(M.tB(xB))} · flow ${fmt(xB)}`,15,o.cap!=null?0.36:0.5);
+    if(o.dest2) link(NP.B,NP.U,0.8,'var(--c2)','3',14);
+    if(o.cap!=null){const [bx,by]=NP.B,[tx,ty]=NP.T;const ux=(tx-bx),uy=(ty-by),L=Math.hypot(ux,uy);const px=bx+ux*0.74,py=by+uy*0.74;const nx=-uy/L,ny=ux/L;s+=`<line x1="${px+nx*14}" y1="${py+ny*14}" x2="${px-nx*14}" y2="${py-ny*14}" style="stroke:var(--c7);stroke-width:4;stroke-linecap:round"/><text x="${px+24}" y="${py+32}" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:var(--c7)">Cap<tspan font-size="8">B</tspan> = ${fmt(o.cap,2)}</text>`;if(z>o.cap+1e-9)s+=`<text x="${px+24}" y="${py+44}" text-anchor="middle" style="font-size:10.5px;font-weight:700;fill:var(--c7)">excess ${fmt(z-o.cap,3)}</text>`;}
+  }else{
+    const cs=o.coarse||{DA:6,RA:4};
+    link(NP.D,NP.N,cs.DA,acc,`4 · ${fmt(cs.DA)}`,-14);
+    link(NP.R,NP.N,cs.RA,acc,`3 · ${fmt(cs.RA)}`,14);
+    link(NP.N,NP.T,10,'var(--c6)',`t<tspan font-size="8">N</tspan> = ${fmt(o.coarseT??5)} · flow 10`,-14);
+  }
+  const node=(p,name,fill,sub)=>{const [x,y]=p;s+=`<circle cx="${x}" cy="${y}" r="15" style="fill:${fill};stroke:var(--panel);stroke-width:2"/><text x="${x}" y="${y+4.5}" text-anchor="middle" style="font-size:13px;font-weight:700;fill:#fff">${name}</text>`;if(sub)s+=`<text x="${x}" y="${y+30}" text-anchor="middle" style="font-size:10.5px;fill:var(--ink2)">${sub}</text>`;};
+  node(NP.D,'D','var(--navy)',o.hideDemand?'Washington DC':'DC · 6 units');node(NP.R,'R','var(--navy)',o.hideDemand?'Baltimore':'Baltimore · 4 units');
+  if(!merged){node(NP.A,'A','var(--c1)','port A');node(NP.B,'B','var(--c2)','port B');}else{node(NP.N,'N','var(--c6)','merged port');}
+  node(NP.T,'T','var(--teal)','Boston');if(o.dest2)node(NP.U,'U','var(--teal)','2nd destination');
+  if(o.overlay) s+=o.overlay();
+  s+='</svg>';container.innerHTML=s;
+}
+window.LAB.network=network;
+
+/* ---------- small helpers for stat tiles and matrices ---------- */
+function stats(el,items){el.innerHTML=items.map(i=>`<div class="stat ${i.c||''}"><div class="k">${i.k}</div><div class="v">${i.v}${i.u?` <small>${i.u}</small>`:''}</div></div>`).join('');}
+function matrix(rows,opts){opts=opts||{};const cols=rows[0].length;return `<span class="mx" style="grid-template-columns:repeat(${cols},auto)">${rows.map((r,i)=>r.map((v,j)=>`<span class="${opts.hi&&opts.hi(i,j)?'hi':''}${opts.hi2&&opts.hi2(i,j)?' hi2':''}">${v===Infinity?'∞':(typeof v==='number'?fmt(v,opts.dec??0):v)}</span>`).join('')).join('')}</span>`;}
+function rank(rows){const A=rows.map(r=>r.slice());let rk=0;const n=A[0]?A[0].length:0;for(let c=0;c<n&&rk<A.length;c++){let p=rk;for(let i=rk;i<A.length;i++)if(Math.abs(A[i][c])>Math.abs(A[p][c]))p=i;if(Math.abs(A[p][c])<1e-9)continue;[A[rk],A[p]]=[A[p],A[rk]];for(let i=0;i<A.length;i++){if(i===rk)continue;const f=A[i][c]/A[rk][c];for(let j=c;j<n;j++)A[i][j]-=f*A[rk][j];}rk++;}return rk;}
+function nullspace(rows,n){/* returns a basis of {f: rows f = 0} for small n */const A=rows.map(r=>r.slice());const piv=[];let rk=0;for(let c=0;c<n&&rk<A.length;c++){let p=rk;for(let i=rk;i<A.length;i++)if(Math.abs(A[i][c])>Math.abs(A[p][c]))p=i;if(Math.abs(A[p][c])<1e-9)continue;[A[rk],A[p]]=[A[p],A[rk]];const d=A[rk][c];for(let j=0;j<n;j++)A[rk][j]/=d;for(let i=0;i<A.length;i++){if(i===rk)continue;const f=A[i][c];for(let j=0;j<n;j++)A[i][j]-=f*A[rk][j];}piv.push(c);rk++;}const free=[];for(let c=0;c<n;c++)if(!piv.includes(c))free.push(c);return free.map(fc=>{const v=new Array(n).fill(0);v[fc]=1;piv.forEach((pc,i)=>{v[pc]=-A[i][fc];});return v;});}
+Object.assign(window.LAB,{stats,matrix,rank,nullspace,esc,clamp});
+
+/* ---------- theme and navigation ---------- */
+const root=document.documentElement;
+try{const t=localStorage.getItem('lab-theme');if(t)root.setAttribute('data-theme',t);}catch(e){}
+$('#themeBtn').addEventListener('click',()=>{const cur=root.getAttribute('data-theme');const next=cur==='dark'?'light':cur==='light'?'':'dark';if(next)root.setAttribute('data-theme',next);else root.removeAttribute('data-theme');try{if(next)localStorage.setItem('lab-theme',next);else localStorage.removeItem('lab-theme');}catch(e){}});
+const tabs=$$('#tabs a');
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){tabs.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+e.target.id));}});},{rootMargin:'-20% 0px -70% 0px'});
+$$('section[id]').forEach(sec=>io.observe(sec));
+$$('button[data-setz]').forEach(b=>b.addEventListener('click',()=>{const t=$('#'+b.dataset.target);t.value=b.dataset.setz;t.dispatchEvent(new Event('input'));}));
+})();
+
+(function(){
+'use strict';
+const {M,fmt,fmt0,sci,$,$$,chart,network,stats,matrix,rank,nullspace,esc,clamp}=window.LAB;
+const range=(a,b,n)=>Array.from({length:n+1},(_,i)=>a+(b-a)*i/n);
+const fmtz=v=>Number(v).toLocaleString('en-US',{minimumFractionDigits:0,maximumFractionDigits:3});
+const bind=(id,fn)=>{const el=$('#'+id);el.addEventListener('input',fn);el.addEventListener('change',fn);return el;};
+
+/* ================= opening network ================= */
+{
+  const el=bind('net_z',draw);
+  function draw(){const z=+el.value;$('#net_zv').textContent=fmtz(z);network($('#net_svg'),{z});
+    stats($('#net_stats'),[{k:'DC via A',v:fmt(M.CA(z)),c:'c1'},{k:'DC via B',v:fmt(M.CB(z)),c:'c2'},{k:'gap g(z) = C_B − C_A',v:fmt(M.g(z))},{k:'total time C(z)',v:fmt(M.C(z))}]);}
+  draw();
+}
+
+/* ================= A1 ================= */
+{
+  const el=bind('a1_z',draw);
+  function draw(){const z=+el.value;$('#a1_zv').textContent=fmtz(z);
+    const xs=range(0,10,100);
+    chart($('#a1_chart1'),{height:210,xdom:[0,10],ydom:[6,14],xlabel:'flow through port B, z',ylabel:'route cost for DC (hours)',aria:'route costs against z',
+      series:[{color:'var(--c1)',pts:xs.map(x=>[x,M.CA(x)])},{color:'var(--c2)',pts:xs.map(x=>[x,M.CB(x)])}],
+      legend:[{name:'DC via port A: 10 − 0.2z',color:'var(--c1)'},{name:'DC via port B: 7 + 0.6z',color:'var(--c2)'}],
+      vlines:[{x:M.zUE,label:'z = 3.75, tie at 9.25',color:'var(--ink3)'}],
+      points:[{x:z,y:M.CA(z),color:'var(--c1)'},{x:z,y:M.CB(z),color:'var(--c2)'}],
+      extra:(X,Y)=>`<line x1="${X(z)}" x2="${X(z)}" y1="${Y(M.CA(z))}" y2="${Y(M.CB(z))}" style="stroke:var(--ink);stroke-width:1.5"/><text x="${X(z)+7}" y="${Y((M.CA(z)+M.CB(z))/2)+4}" style="font-size:11px;fill:var(--ink)">gap ${fmt(M.g(z))}</text>`,
+      tooltip:x=>({x,title:'z = '+fmt(x),rows:[{name:'via A',value:fmt(M.CA(x)),color:'var(--c1)'},{name:'via B',value:fmt(M.CB(x)),color:'var(--c2)'},{name:'gap',value:fmt(M.g(x))}]})});
+    chart($('#a1_chart2'),{height:200,xdom:[0,10],ydom:[76,116],xlabel:'flow through port B, z',ylabel:'hours',aria:'potential and total time against z',
+      series:[{color:'var(--c6)',pts:xs.map(x=>[x,M.Phi(x)])},{color:'var(--c4)',pts:xs.map(x=>[x,M.C(x)])}],
+      legend:[{name:'potential Φ(z): minimum at 3.75',color:'var(--c6)'},{name:'total time C(z): minimum at 3.125',color:'var(--c4)'}],
+      vlines:[{x:M.zUE,color:'var(--c6)'},{x:M.zSO,color:'var(--c4)'}],
+      points:[{x:z,y:M.Phi(z),color:'var(--c6)'},{x:z,y:M.C(z),color:'var(--c4)',label:'C = '+fmt(M.C(z))}],
+      tooltip:x=>({x,title:'z = '+fmt(x),rows:[{name:'Φ',value:fmt(M.Phi(x)),color:'var(--c6)'},{name:'C',value:fmt(M.C(x)),color:'var(--c4)'}]})});
+    const g=M.g(z);
+    stats($('#a1_stats'),[{k:'DC via A',v:fmt(M.CA(z)),c:'c1'},{k:'DC via B',v:fmt(M.CB(z)),c:'c2'},{k:'Baltimore via A / B',v:fmt(M.CA(z)-1)+' / '+fmt(M.CB(z)-1)},{k:'gap g(z)',v:fmt(g)},{k:'Φ(z)',v:fmt(M.Phi(z)),c:'c6'},{k:'C(z)',v:fmt(M.C(z))}]);
+    let txt;
+    if(Math.abs(g)<1e-9) txt=`At z = 3.75 nobody can improve: DC pays 9.25 either way, Baltimore 8.25. This is the user equilibrium, the minimum of Φ, and the total time is 88.5.`;
+    else if(Math.abs(z-M.zSO)<1e-9) txt=`At z = 3.125 total time is 88.19, the least possible: this is the system optimum. It is not the user equilibrium—port B is still cheaper by 0.50 hours, so voluntary route choice alone would move flow back toward B. The marginal charges shown above are what make travellers accept this system-optimal split.`;
+    else if(g<0) txt=`At z = ${fmt(z)} port B is cheaper by ${fmt(-g)} hours for both origins. Any traveller on A would switch, so this is not a user equilibrium; the flow moves to the right (Φ falls by ${fmt(M.Phi(z)-M.Phi(M.zUE))} on the way to 3.75).`;
+    else txt=`At z = ${fmt(z)} port A is cheaper by ${fmt(g)} hours. Travellers on B would switch, so this is not a user equilibrium; the flow moves to the left.`;
+    $('#a1_read').textContent=txt;}
+  draw();
+}
+
+/* ================= A2 ================= */
+{
+  let rows=[];const meth=bind('a2_method',reset),z0=bind('a2_z0',reset);
+  function y_of(z){return M.g(z)<0?10:0;}
+  function step(){const k=rows.length;const z=k?rows[k-1].znext:+z0.value;const m=meth.value;const g=M.g(z),y=y_of(z);let zn;
+    if(m==='grad')zn=z-0.5*g;else if(m==='newton')zn=z-g/0.8;else zn=z+(y-z)/(k+2);
+    zn=clamp(zn,0,10);rows.push({k,z,g,gap:Math.abs(g*(z-y)),znext:zn});draw();}
+  function reset(){rows=[];$('#a2_z0v').textContent=fmt(+z0.value);draw();}
+  function draw(){const m=meth.value;const pts=rows.map(r=>[r.k,r.z]);if(rows.length)pts.push([rows.length,rows[rows.length-1].znext]);
+    chart($('#a2_chart'),{height:230,xdom:[0,Math.max(8,rows.length)],ydom:[0,10],xlabel:'iteration k',ylabel:'z_k',aria:'iterates against k',
+      series:[{color:'var(--c1)',pts,dots:true}],hlines:[{y:M.zUE,label:'z = 3.75',color:'var(--ink3)'}],
+      tooltip:x=>{const k=Math.round(x);const r=rows[k];if(!r&&k===rows.length&&rows.length)return {x:k,title:'k = '+k,rows:[{name:'z',value:fmt(rows[k-1].znext,4),color:'var(--c1)'}]};if(!r)return null;return {x:k,title:'k = '+k,rows:[{name:'z_k',value:fmt(r.z,4),color:'var(--c1)'},{name:'g(z_k)',value:fmt(r.g,4)},{name:'gap G',value:fmt(r.gap,3)}]};}});
+    $('#a2_table').innerHTML=rows.length?`<table class="t"><tr><th>k</th><th>z_k</th><th>g(z_k)</th><th>gap G</th></tr>${rows.map(r=>`<tr><td>${r.k}</td><td>${fmt(r.z,3)}</td><td>${fmt(r.g,3)}</td><td>${fmt(r.gap,2)}</td></tr>`).join('')}</table>`:'<div class="note">Press Step. The table shows each iterate, its gap g and the certificate G = g·(z − y), where y is the all-or-nothing answer at the current costs.</div>';
+    const n=rows.length;let t;const zNext=n?rows[n-1].znext:null;const gNext=n?M.g(zNext):null;const yNext=n?y_of(zNext):null;const gapNext=n?Math.abs(gNext*(zNext-yNext)):null;
+    if(m==='grad')t=`Gradient descent on Φ with step 0.5: z ← z − 0.5·g(z). Because g is linear with slope 0.8, every step closes 40 % of the remaining distance: from 2 the iterates are 2.7, 3.12, 3.372, and the gap shrinks by the same factor. ${n?`After ${n} step${n>1?'s':''}: z = ${fmt(zNext,4)}, still ${fmt(Math.abs(zNext-M.zUE),4)} from 3.75.`:''}`;
+    else if(m==='newton')t=`Newton uses the slope of g: Δz = −g/g′ = −g/0.8. Because g is exactly linear on this network, 1 step lands on 3.75 from any start (from 2, Δz = 1.75). On Chicago g is not linear, and Newton is the inner step of a loop, not the loop.`;
+    else t=`Successive averages: at the current costs every traveller takes the cheaper port (y = 10 if B is cheaper, 0 if A is). The table labels the starting state as k = 0, so its zero-based update is z_(k+1) = z_k + (y − z_k)/(k+2). This is the same sequence as the guide's 1/(k+1) convention when the starting state is numbered k = 1. From 2 the iterates are 2, 6, 4, 3, 4.4, 3.67, and the gap G, 11.2, 10.8, 0.8, 4.2, 2.29, 0.42, is not monotone either: it is the certificate, not the step. ${n?`After ${n} update${n>1?'s':''}: z = ${fmt(zNext,4)}, and the gap evaluated at this new state is ${fmt(gapNext,3)}.`:''}`;
+    $('#a2_read').textContent=t;}
+  $('#a2_step').addEventListener('click',step);$('#a2_run').addEventListener('click',()=>{for(let i=0;i<8;i++)step();});$('#a2_reset').addEventListener('click',reset);
+  reset();
+}
+
+/* ================= B1 ================= */
+{
+  const el=bind('b1_z',draw);bind('b1_regions',draw);bind('b1_blocks',draw);
+  function draw(){const z=+el.value;$('#b1_zv').textContent=fmtz(z);const sp=M.split(z);
+    network($('#b1_svg'),{z,regions:$('#b1_regions').checked});
+    stats($('#b1_stats'),[{k:'F_X(z) = 36 + z',v:fmt(M.FX(z)),c:'c6'},{k:'F_Y(z) = 50 − 4z + 0.4z²',v:fmt(M.FY(z)),c:'c3'},{k:'Φ = F_X + F_Y',v:fmt(M.FX(z)+M.FY(z))},{k:'scalars crossing the cut',v:'1'}]);
+    $('#b1_blocktext').innerHTML=$('#b1_blocks').checked?`<p>Block state <span class="m">x</span> = [<span class="m">x</span><sub>X</sub>; <span class="m">z</span>; <span class="m">x</span><sub>Y</sub>]:</p><table class="t"><tr><th>block</th><th>owner</th><th>holds</th><th>now</th></tr><tr><td>x_X</td><td>X</td><td>4 access flows</td><td>${fmt(sp.DA)}, ${fmt(sp.DB)}, ${fmt(sp.RA)}, ${fmt(sp.RB)}</td></tr><tr><td>z</td><td>shared</td><td>flow into port B</td><td>${fmt(z)}</td></tr><tr><td>x_Y</td><td>Y</td><td>2 corridor flows</td><td>${fmt(10-z)}, ${fmt(z)}</td></tr></table><p class="note">The access split shown is the proportional one; the equilibrium does not decide it (C4 says why), and it does not change F_X.</p>`:'';}
+  draw();
+}
+
+/* ================= B2 ================= */
+{
+  const dX={D:{A:4,B:5},R:{A:3,B:4}},JY={A:{T:4,U:Infinity},B:{T:2,U:3}};
+  const proto=bind('b2_proto',draw),nEl=bind('b2_n',draw);let anim=null;
+  function labels(){const out={};['D','R'].forEach(o=>{out[o]={};['T','U'].forEach(s=>{const cands=['A','B'].map(p=>({p,v:dX[o][p]+JY[p][s]}));const best=cands.reduce((a,b)=>b.v<a.v?b:a);out[o][s]={v:best.v,p:best.p,cands};});});return out;}
+  function draw(){const n=+nEl.value;$('#b2_nv').textContent=n;const fwd=proto.value==='fwd';const L=labels();
+    const fin=2*n,fback=2*n; // forward: each origin sends 2 port labels; Y returns 2 destination labels per origin
+    network($('#b2_svg'),{z:0,dest2:true,regions:true,hideDemand:true,fixed:true,flows:{DA:0,DB:0,RA:0,RB:0},dec:0,overlay:()=>`<g id="b2_dots"></g><text x="22" y="258" style="font-size:11px;font-weight:600;fill:var(--ink)">${fwd?`${fmt0(fin)} numbers cross → then ${fmt0(fback)} come back`:`4 numbers cross, once`}</text>`});
+    stats($('#b2_stats'),[{k:'forward: scalars X→Y',v:fmt0(fin),c:fwd?'c1':''},{k:'forward: scalars Y→X',v:fmt0(fback),c:fwd?'c1':''},{k:'backward: scalars Y→X',v:'4',c:fwd?'':'c3'},{k:'labels identical?',v:'yes'}]);
+    $('#b2_table').innerHTML=`<table class="t"><tr><th>origin → destination</th><th>via A: d_X + J_Y</th><th>via B: d_X + J_Y</th><th>label ℓ</th></tr>${['D','R'].map(o=>['T','U'].map(s=>{const l=L[o][s];return `<tr><td>${o==='D'?'DC':'Baltimore'} → ${s==='T'?'Boston':'U'}</td><td class="${l.p==='A'?'ok':''}">${dX[o].A} + ${JY.A[s]===Infinity?'∞':JY.A[s]} = ${fmt(dX[o].A+JY.A[s],0)}</td><td class="${l.p==='B'?'ok':''}">${dX[o].B} + ${JY.B[s]} = ${fmt(dX[o].B+JY.B[s],0)}</td><td><b>${fmt(l.v,0)}</b> via ${l.p}</td></tr>`;}).join('')).join('')}</table><div class="note" style="margin-top:6px">J<sub>Y</sub> = ${matrix([[4,Infinity],[2,3]])} (rows: port A, port B; columns: Boston, U). d<sub>X</sub> = ${matrix([[4,5],[3,4]])} (rows: DC, Baltimore; columns: port A, port B).</div>`;
+    $('#b2_read').innerHTML=fwd?`<b>Forward.</b> Each origin in X sends its 2 port labels across the cut, and Y sends back 2 finished labels per origin: ${fmt0(fin)} + ${fmt0(fback)} scalars for ${n} origins. The count grows with the number of origins, and Y must answer every one of them.`:`<b>Backward.</b> Y computes its remaining cost once, 2 ports by 2 destinations, and publishes those 4 numbers. X finishes every label locally by (min, +): 4 numbers for ${n} origins or for 1,000,000. Nothing else ever crosses.`;}
+  function play(){if(anim)cancelAnimationFrame(anim);const g=$('#b2_dots');if(!g)return;const fwd=proto.value==='fwd';const n=+nEl.value;const count=fwd?Math.min(12,2*n):4;const back=fwd?Math.min(12,2*n):0;const t0=performance.now();const dur=1400;
+    const frame=t=>{const u=(t-t0)/dur;let s='';for(let i=0;i<count;i++){const ph=clamp(u*1.6-i*0.06,0,1);const y=50+i*14;const x=fwd?120+ph*130:380-ph*260;if(ph>0&&ph<1)s+=`<circle cx="${x}" cy="${y}" r="4" style="fill:${fwd?'var(--c1)':'var(--c3)'}"/>`;}
+      if(fwd)for(let i=0;i<back;i++){const ph=clamp(u*1.6-1-i*0.06,0,1);const y=50+i*14;const x=250-ph*130;if(ph>0&&ph<1)s+=`<circle cx="${x}" cy="${y}" r="4" style="fill:var(--c6)"/>`;}
+      g.innerHTML=s;if(u<1.8)anim=requestAnimationFrame(frame);else g.innerHTML='';};anim=requestAnimationFrame(frame);}
+  $('#b2_play').addEventListener('click',play);draw();
+}
+
+/* ================= B3 ================= */
+{
+  const wEl=bind('b3_w',draw),zEl=bind('b3_z',draw),mode=bind('b3_mode',draw);
+  $$('button[data-setwz]').forEach(b=>b.addEventListener('click',()=>{const [w,z]=b.dataset.setwz.split(',');wEl.value=w;zEl.value=z;draw();}));
+  const H=M.HPsi,S=H[1][1]-H[1][0]*H[0][1]/H[0][0];
+  function newton(w,z,m){const [gw,gz]=M.gradPsi(w,z);let dw,dz,bhat=null;
+    if(m==='frozen'){dw=0;dz=-gz/H[1][1];}
+    else{bhat=-gz-(H[1][0]/H[0][0])*(-gw);dz=bhat/S;dw=(-gw-H[0][1]*dz)/H[0][0];}
+    return {gw,gz,dw,dz,bhat};}
+  function draw(){let w=+wEl.value,z=+zEl.value;if(w>10-z){w=10-z;wEl.value=w;}$('#b3_wv').textContent=fmt(w,3);$('#b3_zv').textContent=fmt(z,3);const m=mode.value;const N=newton(w,z,m);
+    const wS=3.125,zS=3.75,Ps=M.Psi(wS,zS);const a=Math.sqrt(0.8),b=0.4/a,c=Math.sqrt(1-b*b);
+    const ell=lvl=>{const r=Math.sqrt(2*lvl);const pts=[];for(let k=0;k<=72;k++){const th=k/72*2*Math.PI;const v1=r*Math.cos(th),v2=r*Math.sin(th);pts.push([wS+v1/a-b*v2/(a*c),zS+v2/c]);}return pts;};
+    const wst=z=>(10-z)/2;
+    chart($('#b3_chart'),{height:300,xdom:[0,10],ydom:[0,10],xlabel:'interior flow w (road 1 of corridor A)',ylabel:'interface flow z',ydec:0,aria:'contours of Psi in the w z plane',
+      series:[...[0.25,1,2.25,4,6.25,9,12.25].map(l=>({color:'var(--grid)',width:1.2,pts:ell(l)})),{color:'var(--c3)',dash:'5 3',pts:range(0,10,2).map(zz=>[wst(zz),zz])},{color:'var(--ink3)',dash:'2 3',width:1,pts:[[10,0],[0,10]]}],
+      legend:[{name:'level sets of Ψ',color:'var(--ink3)'},{name:'interior response w*(z) = (10 − z)/2',color:'var(--c3)',dash:true},{name:'w = 10 − z (road 2 empty)',color:'var(--ink3)',dash:true}],
+      points:[{x:wS,y:zS,color:'var(--c6)',r:4,label:'minimum (3.125, 3.75)'},{x:w,y:z,color:'var(--c2)',label:`(${fmt(w,3)}, ${fmt(z,3)})`,dy:-8}],
+      extra:(X,Y,ar)=>{const x2=X(w+N.dw),y2=Y(z+N.dz);return `<line x1="${X(w)}" y1="${Y(z)}" x2="${x2}" y2="${y2}" style="stroke:var(--ink);stroke-width:2" marker-end="url(#${ar})"/><circle cx="${x2}" cy="${y2}" r="4" style="fill:none;stroke:var(--ink);stroke-width:1.5"/>`;},
+      tooltip:x=>({x,title:'w = '+fmt(x,2)+' at z = '+fmt(z,2),rows:[{name:'Ψ(w, z)',value:fmt(M.Psi(x,z),3)},{name:'w*(z) for this z',value:fmt((10-z)/2,3),color:'var(--c3)'}]})});
+    stats($('#b3_stats'),[{k:'Ψ(w, z)',v:fmt(M.Psi(w,z),3)},{k:'∂Ψ/∂w',v:fmt(N.gw,3)},{k:'∂Ψ/∂z',v:fmt(N.gz,3)},{k:'Δz',v:fmt(N.dz,3),c:'c2'},{k:'Δw',v:fmt(N.dw,3),c:'c1'},{k:'S (Schur)',v:fmt(S,2),c:'c6'}]);
+    const lands=Math.abs(w+N.dw-wS)<1e-6&&Math.abs(z+N.dz-zS)<1e-6;
+    $('#b3_math').innerHTML=m==='full'?`<p><b>Full system.</b> ${matrix([[0.8,0.4],[0.4,1.0]],{dec:1})} ${matrix([['Δw'],['Δz']])} = −${matrix([[N.gw],[N.gz]],{dec:3})} ⇒ Δw = ${fmt(N.dw,3)}, Δz = ${fmt(N.dz,3)}. Both unknowns solved together; the interior and the interface in 1 solve.</p>`:
+      m==='schur'?`<p><b>Eliminate w.</b> From row 1, Δw = (−∂Ψ/∂w − 0.4Δz)/0.8. Substitute into row 2: (1.0 − 0.4·0.4/0.8) Δz = −∂Ψ/∂z − (0.4/0.8)(−∂Ψ/∂w), that is <span class="m">S</span> Δz = b̂ with S = ${fmt(S,2)} and b̂ = ${fmt(N.bhat,3)} ⇒ Δz = ${fmt(N.dz,3)}. Recover Δw = ${fmt(N.dw,3)}. The boundary solve is 1 by 1; the interior is recovered afterwards, exactly.</p>`:
+      `<p><b>Frozen interior.</b> Only row 2 with Δw = 0: 1.0·Δz = −∂Ψ/∂z ⇒ Δz = ${fmt(N.dz,3)}. The step uses the curvature 1.0 instead of 0.8, because it does not let the interior answer, and lands at z = ${fmt(z+N.dz,3)} instead of 3.75.</p>`;
+    $('#b3_read').innerHTML=lands?`From (${fmt(w,3)}, ${fmt(z,3)}) this step lands exactly on the minimum (3.125, 3.75), because Ψ is quadratic and the step is a true Newton step. ${m==='schur'?'The Schur route gives the same Δz = '+fmt(N.dz,3)+' as the full solve: elimination is exact, not an approximation.':'The full solve and the Schur route give the same numbers; the difference is who solves what.'}`:
+      m==='frozen'?`From (${fmt(w,3)}, ${fmt(z,3)}) the frozen step reaches z = ${fmt(z+N.dz,3)}, short of 3.75 by ${fmt(M.zUE-z-N.dz,3)}, and w does not move at all. A boundary that ignores the interior's response converges, but only after many steps: it is the Jacobi picture, not the Schur picture.`:
+      `From (${fmt(w,3)}, ${fmt(z,3)}) the step goes to (${fmt(w+N.dw,3)}, ${fmt(z+N.dz,3)}), which is the minimum: the point was not on the valley line w*(z) but the step still lands, because the full Hessian knows the coupling 0.4. At (3, 2) the interior is unbalanced by 0.8, and the Schur right-hand side b̂ = 1.4 folds that imbalance into the boundary equation.`;}
+  $('#b3_take').addEventListener('click',()=>{const w=+wEl.value,z=+zEl.value;const N=newton(w,z,mode.value);wEl.value=clamp(w+N.dw,0,10);zEl.value=clamp(z+N.dz,0,10);draw();});
+  draw();
+}
+
+/* ================= B4 ================= */
+{
+  let rows=[];const rho=bind('b4_rho',reset),slope=bind('b4_slope',reset);
+  function step(){const r=+rho.value,s=+slope.value;const k=rows.length;const prev=k?rows[k-1]:{zy:2,u:0};
+    const zx=clamp(prev.zy-prev.u-s/r,0,10);const zy=clamp((4+r*(zx+prev.u))/(0.8+r),0,10);const u=prev.u+zx-zy;rows.push({k:k+1,zx,zy,u,lam:r*u});draw();}
+  function reset(){rows=[];$('#b4_rhov').textContent=fmt(+rho.value);draw();}
+  function draw(){const s=+slope.value,r=+rho.value;const zlim=(4-s)/0.8;
+    chart($('#b4_chart'),{height:230,xdom:[0,Math.max(8,rows.length)],ydom:[0,6],xlabel:'ADMM round',ylabel:'copies of the interface flow',aria:'ADMM iterates',
+      series:[{color:'var(--c6)',pts:rows.map(q=>[q.k,q.zx]),dots:true},{color:'var(--c3)',pts:rows.map(q=>[q.k,q.zy]),dots:true}],
+      legend:[{name:'z_X (region X’s copy)',color:'var(--c6)'},{name:'z_Y (region Y’s copy)',color:'var(--c3)'}],
+      hlines:[{y:zlim,label:'z = '+fmt(zlim,3),color:'var(--ink3)'}],
+      tooltip:x=>{const k=Math.round(x);const q=rows[k-1];if(!q)return null;return {x:k,title:'round '+k,rows:[{name:'z_X',value:fmt(q.zx,4),color:'var(--c6)'},{name:'z_Y',value:fmt(q.zy,4),color:'var(--c3)'},{name:'u',value:fmt(q.u,4)},{name:'λ = ρu',value:fmt(q.lam,4)}]};}});
+    $('#b4_table').innerHTML=rows.length?`<table class="t"><tr><th>k</th><th>z_X</th><th>z_Y</th><th>u</th><th>λ = ρu</th></tr>${rows.map(q=>`<tr><td>${q.k}</td><td>${fmt(q.zx,4)}</td><td>${fmt(q.zy,4)}</td><td>${fmt(q.u,4)}</td><td>${fmt(q.lam,4)}</td></tr>`).join('')}</table>`:'<div class="note">Press Round. Start: z_Y = 2, u = 0. X and Y minimize over 0 ≤ z_X,z_Y ≤ 10. X solves min F_X(z_X) + (ρ/2)(z_X − z_Y + u)², Y solves min F_Y(z_Y) + (ρ/2)(z_X − z_Y + u)², then u ← u + z_X − z_Y.</div>';
+    const n=rows.length;const last=rows[n-1];
+    $('#b4_read').innerHTML=`With ρ = ${fmt(r)} and F<sub>X</sub>′ = ${s}: region X's update is z<sub>X</sub> = Π<sub>[0,10]</sub>(z<sub>Y</sub> − u − ${s}/ρ), and region Y's is z<sub>Y</sub> = Π<sub>[0,10]</sub>((4 + ρ(z<sub>X</sub> + u))/(0.8 + ρ)). The copies converge to ${fmt(zlim,3)}${s===1?', the equilibrium of A1':', the exercise answer: a marginal access cost of 2 moves the equilibrium from 3.75 to 2.5'}, and the price λ = ρu converges to −F<sub>X</sub>′ = −${s}. ${n?`After ${n} round${n>1?'s':''}: z<sub>X</sub> = ${fmt(last.zx,4)}, z<sub>Y</sub> = ${fmt(last.zy,4)}, λ = ${fmt(last.lam,4)}; the copies still differ by ${fmt(Math.abs(last.zx-last.zy),4)}.`:''}${r===1&&s===1?' At ρ = 1 the first rows are 1.0000 / 2.7778 / −1.7778 and 3.5556 / 3.2099 / −1.4321, the rows of the guide.':''}`;}
+  $('#b4_step').addEventListener('click',step);$('#b4_run').addEventListener('click',()=>{for(let i=0;i<12;i++)step();});$('#b4_reset').addEventListener('click',reset);
+  reset();
+}
+window.LAB.range=range;window.LAB.bind=bind;
+})();
+
+(function(){
+'use strict';
+const {M,fmt,fmt0,sci,$,$$,chart,network,stats,matrix,rank,nullspace,esc,clamp,range,bind}=window.LAB;
+
+/* ================= C1: two graphs ================= */
+{
+  const comp=bind('c1_comp',draw);
+  function draw(){const ca=comp.checked;const W=640,H=262;
+    let s=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="cell tree and quotient graph">`;
+    const box=(x,y,w,h,t,fill,st)=>`<rect x="${x}" y="${y}" width="${w}" height="${h}" rx="8" style="fill:${fill};stroke:${st};stroke-width:1.2"/><text x="${x+w/2}" y="${y+h/2+4}" text-anchor="middle" style="font-size:11px;font-weight:600;fill:var(--ink)">${t}</text>`;
+    const arrow=(x1,y1,x2,y2)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:var(--ink3);stroke-width:1.2" marker-end="url(#c1ar)"/>`;
+    const tx=(x,y,t,st)=>`<text x="${x}" y="${y}" style="font-size:10.5px;fill:var(--ink2);${st||''}">${t}</text>`;
+    s+=`<defs><marker id="c1ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" markerUnits="userSpaceOnUse" orient="auto"><path d="M0,0 L10,5 L0,10 z" style="fill:var(--ink3)"/></marker></defs>`;
+    /* left: the cell tree, x in 0..300 */
+    s+=`<text x="10" y="16" style="font-size:11px;font-weight:700;letter-spacing:.06em;fill:var(--ink3)">CELL TREE · LINEAGE H (membership only)</text>`;
+    s+=box(95,30,120,26,'level 0: the corridor','var(--panel2)','var(--line)');
+    s+=box(30,90,100,26,'cell X, level 1','var(--xfill)','var(--c6)')+box(180,90,100,26,'cell Y, level 1','var(--yfill)','var(--c3)');
+    s+=arrow(80,90,140,56)+arrow(230,90,170,56);
+    s+=box(18,152,46,24,'D','var(--panel)','var(--navy)')+box(96,152,46,24,'R','var(--panel)','var(--navy)');
+    s+=box(168,152,36,24,'A','var(--panel)','var(--c1)')+box(212,152,36,24,'B','var(--panel)','var(--c2)')+box(256,152,36,24,'T','var(--panel)','var(--teal)');
+    s+=arrow(41,152,70,116)+arrow(119,152,90,116)+arrow(186,152,220,116)+arrow(230,152,230,116)+arrow(274,152,240,116);
+    s+=tx(10,204,'H<tspan font-size="8" dy="-4">1←2</tspan><tspan dy="4"> = [D, R → X;  A, B, T → Y].</tspan>');
+    s+=tx(10,220,'It says where each node is; it never says connected.');
+    s+=tx(10,236,'Inside X, D and R share no road: cell X holds 2 pieces.','fill:var(--c7)');
+    s+=`<line x1="308" y1="10" x2="308" y2="${H-8}" style="stroke:var(--line);stroke-width:1"/>`;
+    /* right: the quotient graph, x in 320..640 */
+    s+=`<text x="322" y="16" style="font-size:11px;font-weight:700;letter-spacing:.06em;fill:var(--ink3)">QUOTIENT GRAPH · THE MAPS M (follow the road)</text>`;
+    const node=(x,y,t,fill,r)=>`<circle cx="${x}" cy="${y}" r="${r||14}" style="fill:${fill};stroke:var(--panel);stroke-width:2"/><text x="${x}" y="${y+4}" text-anchor="middle" style="font-size:11px;font-weight:700;fill:#fff">${t}</text>`;
+    const edge=(x1,y1,x2,y2,lab,w)=>`<line x1="${x1}" y1="${y1}" x2="${x2}" y2="${y2}" style="stroke:var(--slate);stroke-width:${w||3};stroke-linecap:round;opacity:.85"/>${lab?`<text x="${(x1+x2)/2}" y="${(y1+y2)/2-8}" text-anchor="middle" style="font-size:10px;fill:var(--ink2);paint-order:stroke;stroke:var(--panel);stroke-width:3px">${lab}</text>`:''}`;
+    if(!ca){s+=edge(400,100,560,100,'1 coarse corridor, flow 10',6)+node(400,100,'X','var(--c6)',18)+node(560,100,'Y','var(--c3)',18);
+      s+=tx(322,170,'2 vertices. The vertex X says D and R are 1 place,')+tx(322,186,'so it invents a road between them,','fill:var(--c7)')+tx(322,202,'and conserves flow at a node that does not exist.','fill:var(--c7)');}
+    else{s+=edge(400,62,560,100,'DC: 6',4)+edge(400,138,560,100,'Baltimore: 4',3)+node(400,62,'X₁','var(--c6)',16)+node(400,138,'X₂','var(--c6)',16)+node(560,100,'Y','var(--c3)',18);
+      s+=tx(322,170,'3 vertices, 1 per road piece. No invented road;')+tx(322,186,'the 2 access-cost pairs stay distinguishable.')+tx(322,202,'Conservation commutes: M<tspan font-size="8">N</tspan> N<tspan font-size="8">fine</tspan> = N<tspan font-size="8">coarse</tspan> M<tspan font-size="8">L</tspan>.');}
+    s+=tx(322,236,`M<tspan font-size="8">N</tspan> is ${ca?'3':'2'} by 5 · M<tspan font-size="8">L</tspan> is ${ca?'2':'1'} by 6 · M<tspan font-size="8">OD</tspan> is ${ca?'2':'1'} by 2`,'fill:var(--ink3)');
+    s+='</svg>';$('#c1_svg').innerHTML=s;
+    stats($('#c1_stats'),[{k:'cells at level 1',v:'2'},{k:'road pieces inside X',v:'2'},{k:'coarse vertices',v:ca?'3':'2',c:ca?'c3':'c7'},{k:'invented roads',v:ca?'0':'1',c:ca?'c3':'c7'}]);
+    $('#c1_read').innerHTML=ca?`With 1 vertex per piece, the quotient conserves flow where the fine graph does: M<sub>N</sub> N<sup>fine</sup> = N<sup>coarse</sup> M<sub>L</sub> holds with residual 0. On Chicago, ${CHI.C.quotient.cells} coordinate-bisection superzones give ${CHI.C.quotient.vertices} component-aware vertices because ${CHI.C.quotient.multi} superzones hold more than 1 road piece. The separate S2 level-10 registry has ${CHI.C.quotient.s2_level10_cells} occupied cells; the two partitions are not mixed.`:`One vertex per cell is the naive quotient. It merges DC and Baltimore into 1 place although no road joins them, so it conserves flow at a node that does not exist. The lineage H is correct; the map M built from it alone is not.`;}
+  draw();
+}
+
+/* ================= C2: merge the ports ================= */
+{
+  const mg=bind('c2_merge',draw);
+  function draw(){const merged=mg.checked;
+    if(!merged){network($('#c2_svg'),{z:M.zUE});
+      stats($('#c2_stats'),[{k:'ports',v:'2'},{k:'DC / Baltimore cost',v:'9.25 / 8.25'},{k:'total time',v:fmt(M.C(M.zUE))},{k:'system optimum',v:fmt(M.C(M.zSO))}]);
+      $('#c2_read').innerHTML=`<p>The fine network: flow 6.25 on A and 3.75 on B, DC at 9.25 whichever port, total 88.5. Tick the box to see what the merged model says instead.</p>`;}
+    else{const xB=2.5+0.25*10,xA=10-xB,tN=M.tA(xA);const coarseD=4+tN,coarseR=3+tN,total=36+10*tN;
+      network($('#c2_svg'),{merged:true,coarse:{DA:6,RA:4},coarseT:tN});
+      stats($('#c2_stats'),[{k:'ports',v:'1 (N)'},{k:'coarse split A / B',v:`${fmt(xA,1)} / ${fmt(xB,1)}`},{k:'coarse DC / Baltimore cost',v:`${fmt(coarseD)} / ${fmt(coarseR)}`,c:'c6'},{k:'coarse total',v:fmt(total),c:'c7'},{k:'true costs at that split',v:`${fmt(M.CA(xB))} / ${fmt(M.CB(xB))}`},{k:'hidden spread',v:fmt(M.CB(xB)-M.CA(xB)),c:'c7'}]);
+      $('#c2_read').innerHTML=`<p><b>What the merged model claims.</b> One corridor N→T carrying 10 with an equal-time split 5 / 5 at time ${fmt(tN)}; DC pays the cheaper access 4, so 9; Baltimore 8; total ${fmt(total)}.</p><div class="verdict bad"><b>${fmt(total)} is below the system optimum 88.19.</b> No feasible flow has a total time that low, so this is not an approximate answer; it is a number the coarse state cannot mean. Two things were hidden inside N: the 1-hour access difference between the ports, and the corridor spread ${fmt(M.CB(xB)-M.CA(xB))} at the split 5 / 5 (A costs ${fmt(M.CA(xB))}, B costs ${fmt(M.CB(xB))}). A hidden spread above 0 is the refinement signal: split N back into A and B.</div>`;}}
+  draw();
+}
+
+/* ================= C3: commuting square ================= */
+{
+  const sel=bind('c3_ml',draw);
+  const A=[[1,0,0,0],[0,1,0,0],[0,0,1,0],[0,0,0,1],[1,0,1,0],[0,1,0,1]];const MP=[[1,1,1,1]],Ac=[[1]];
+  const D=[[1,1,0,0],[0,0,1,1]],MOD=[[1,1]],Dc=[[1]];
+  const mul=(P,Q)=>P.map(r=>Q[0].map((_,j)=>r.reduce((a,v,k)=>a+v*Q[k][j],0)));
+  function draw(){const ML={both:[[0,0,0,0,1,1]],a:[[0,0,0,0,1,0]],access:[[1,1,1,1,0,0]]}[sel.value];
+    const L=mul(ML,A),R=mul(Ac,MP);const res=L.map((r,i)=>r.map((v,j)=>v-R[i][j]));const ok=res.flat().every(v=>Math.abs(v)<1e-12);
+    const L2=mul(Dc,MP),R2=mul(MOD,D);const res2=L2.map((r,i)=>r.map((v,j)=>v-R2[i][j]));
+    $('#c3_math').innerHTML=`<p><b>Loading square.</b> M<sub>L</sub> A<sub>L,P</sub> = ${matrix(ML)} ${matrix(A)} = ${matrix(L)} ; A<sup>c</sup> M<sub>P</sub> = ${matrix(Ac)} ${matrix(MP)} = ${matrix(R)} ; residual Δ<sub>A</sub> = ${matrix(res)}</p><p class="note">Links in order DC→A, DC→B, R→A, R→B, corridor A, corridor B; paths in order DC via A, DC via B, R via A, R via B.</p><p><b>Conservation square.</b> D<sup>c</sup> M<sub>P</sub> = ${matrix(L2)} ; M<sub>OD</sub> D<sub>OD,P</sub> = ${matrix(MOD)} ${matrix(D)} = ${matrix(R2)} ; residual ${matrix(res2)}</p>`;
+    stats($('#c3_stats'),[{k:'loading residual',v:ok?'0':fmt(Math.max(...res.flat().map(Math.abs)),0),c:ok?'c3':'c7'},{k:'conservation residual',v:'0',c:'c3'}]);
+    $('#c3_read').innerHTML=sel.value==='both'?`Both squares commute with residual 0: the coarse corridor carries exactly what the 2 fine corridors carry, for every path flow. This is the structural half of Group C, and it is what C2 also had: the merged model commuted and still gave 86.`:
+      sel.value==='a'?`Counting only corridor A, the residual is [0 1 0 1]: the 2 paths through port B are loaded on the fine level and lost on the coarse one. The square fails, and it fails for every flow, not for a particular one; a commuting test never needs the answer to run.`:
+      `Counting the 4 access links instead of the corridors also commutes: every path uses exactly 1 access link, as it uses exactly 1 corridor. The test cannot tell which links were counted, only that each path was counted once. That is why commuting certifies the map and never the answer.`;}
+  draw();
+}
+
+/* ================= C4: sensors ================= */
+{
+  const ROWS={screen:[1,1,1,1],cA:[1,0,1,0],cB:[0,1,0,1],DA:[1,0,0,0],DB:[0,1,0,0],RA:[0,0,1,0],RB:[0,0,0,1]};
+  const NAME={screen:'screen line',cA:'corridor A',cB:'corridor B',DA:'DC→A',DB:'DC→B',RA:'R→A',RB:'R→B'};
+  const D=[[1,1,0,0],[0,0,1,1]];const boxes=$$('.c4s');boxes.forEach(b=>b.addEventListener('change',draw));
+  function draw(){const sel=boxes.filter(b=>b.checked).map(b=>b.value);const Pi=sel.map(k=>ROWS[k]);const rk=Pi.length?rank(Pi):0;const ns=Pi.length?nullspace(Pi,4):nullspace([[0,0,0,0]],4);
+    const qDet=Pi.length?rank(Pi.concat(D))===rk:false;const f=[3.75,2.25,2.5,1.5];
+    let alt=null;if(ns.length){const v=ns[0];let t=Infinity;v.forEach((c,i)=>{if(c<0)t=Math.min(t,f[i]/(-c));});if(!Number.isFinite(t))t=1;t=Math.min(t,1.5);alt=f.map((x,i)=>x+t*v[i]);}
+    const z=M.zUE;network($('#c4_svg'),{z,overlay:()=>{let s='';const mark=(x,y,lab)=>`<rect x="${x-7}" y="${y-7}" width="14" height="14" rx="3" style="fill:var(--c4);stroke:var(--panel);stroke-width:1.5"/><text x="${x}" y="${y+3.5}" text-anchor="middle" style="font-size:8.5px;font-weight:700;fill:#000">S</text>`;
+      const pos={DA:[128,72],DB:[118,101],RA:[118,159],RB:[128,188],cA:[402,113],cB:[402,147]};
+      sel.forEach(k=>{if(k==='screen'){s+=`<line x1="187" y1="30" x2="187" y2="230" style="stroke:var(--c4);stroke-width:3;stroke-dasharray:6 3"/>`+mark(187,20,'S');}else{const [x,y]=pos[k];s+=mark(x,y);}});return s;}});
+    stats($('#c4_stats'),[{k:'sensors',v:Pi.length},{k:'rank Π',v:rk,c:rk===4?'c3':'c6'},{k:'null space dim',v:4-rk,c:4-rk?'c7':'c3'},{k:'OD demands q determined?',v:qDet?'yes':'no',c:qDet?'c3':'c7'},{k:'path flows determined?',v:rk===4?'yes':'no',c:rk===4?'c3':'c7'}]);
+    $('#c4_math').innerHTML=Pi.length?`<p>Π = ${matrix(Pi)} (rows: ${sel.map(k=>NAME[k]).join(', ')}; columns: DC via A, DC via B, R via A, R via B). ${alt?`Two flows with the same readings: f = (${f.map(v=>fmt(v)).join(', ')}) and f′ = (${alt.map(v=>fmt(v)).join(', ')}); Π f = Π f′ = (${Pi.map(r=>fmt(r.reduce((a,c,i)=>a+c*f[i],0))).join(', ')}).`:'Every path flow is pinned: Π f determines f.'}</p>`:'<p class="note">No sensor: rank 0.</p>';
+    const has=k=>sel.includes(k);let t;
+    if(!Pi.length)t='Tick sensors. The rank counts independent directions; 4 pins the 4 path flows.';
+    else if(has('cA')&&has('cB')&&has('DA')&&has('RA')&&rk===3)t='Corridor counts plus DC→A plus R→A: rank 3, not 4. R→A is corridor A minus DC→A, so the fourth sensor adds nothing; the direction (0, 1, 0, −1), moving flow between DC→B and R→B, stays invisible.';
+    else if(rk===4)t='Rank 4: the path flows are pinned, and with them both OD demands. On this network that takes 4 independent sensors, for example the 4 access links, or the 2 corridor counts plus DC→A plus DC→B.';
+    else if(has('cA')&&has('cB')&&sel.length===2)t='The 2 corridor counts see the interface z and the flow on A, and nothing about who is on them: rank 2, null space of dimension 2. (6, 0, 2, 2) and (4, 2, 4, 0) read the same. The OD demands are not determined either: from the counts you learn only that 10 units crossed.';
+    else if(has('screen')&&sel.length===1)t='One screen line across the cut counts 10 whatever the split: rank 1. It sees the total, not the interface flow z, and not a single demand.';
+    else t=`Rank ${rk} from ${Pi.length} sensor${Pi.length>1?'s':''}: ${4-rk} direction${4-rk>1?'s':''} of the flow ${4-rk>1?'are':'is'} invisible${qDet?', yet the 2 OD demands happen to be determined':', and the OD demands are not determined'}. Adding a sensor adds at most 1 to the rank.`;
+    $('#c4_read').textContent=t;}
+  draw();
+}
+
+/* ================= D1: cap and price ================= */
+{
+  const el=bind('d1_cap',draw);
+  function draw(){const cap=+el.value;$('#d1_capv').textContent=fmt(cap);const active=cap<M.zUE;const mu=active?M.CA(cap)-M.CB(cap):0;const z=active?cap:M.zUE;const xs=range(0,10,100);
+    chart($('#d1_chart'),{height:240,xdom:[0,10],ydom:[6,14],xlabel:'flow through port B, z',ylabel:'route cost for DC (hours)',aria:'capped equilibrium',
+      series:[{color:'var(--c1)',pts:xs.map(x=>[x,M.CA(x)])},{color:'var(--c2)',pts:xs.map(x=>[x,M.CB(x)])},{color:'var(--c2)',dash:'6 4',pts:xs.map(x=>[x,M.CB(x)+mu])}],
+      legend:[{name:'via A',color:'var(--c1)'},{name:'via B',color:'var(--c2)'},{name:'via B plus the price μ*',color:'var(--c2)',dash:true}],
+      vlines:[{x:cap,label:'Cap_B = '+fmt(cap),color:'var(--c7)'},{x:M.zUE,color:'var(--ink3)',label:active?'':'z = 3.75'}],
+      points:[{x:z,y:M.CA(z),color:'var(--c1)'},{x:z,y:M.CB(z)+mu,color:'var(--c2)',label:'tie at '+fmt(M.CA(z)),dy:-9}],
+      extra:(X,Y)=>active?`<line x1="${X(cap)}" x2="${X(cap)}" y1="${Y(M.CB(cap))}" y2="${Y(M.CB(cap)+mu)}" style="stroke:var(--c6);stroke-width:3"/><text x="${X(cap)-6}" y="${Y(M.CB(cap))+4}" text-anchor="end" style="font-size:11px;font-weight:600;fill:var(--c6)">μ* = ${fmt(mu)}</text>`:'',
+      tooltip:x=>({x,title:'z = '+fmt(x),rows:[{name:'via A',value:fmt(M.CA(x)),color:'var(--c1)'},{name:'via B',value:fmt(M.CB(x)),color:'var(--c2)'},{name:'via B + μ*',value:fmt(M.CB(x)+mu),color:'var(--c2)'}]})});
+    stats($('#d1_stats'),[{k:'price μ*',v:fmt(mu),c:'c6'},{k:'flow on B',v:fmt(z)},{k:'DC tie / Baltimore tie',v:`${fmt(M.CA(z))} / ${fmt(M.CA(z)-1)}`},{k:'total time C',v:fmt(M.C(z))},{k:'L(μ*) = Φ(Cap)',v:active?fmt(M.Phi(cap)):'—'},{k:'excess if uncapped',v:active?fmt(M.zUE-cap):'0'}]);
+    $('#d1_read').innerHTML=active?`With Cap<sub>B</sub> = ${fmt(cap)}, the equilibrium 3.75 is not allowed. The price that makes ${fmt(cap)} an equilibrium is the cost difference there: μ* = C<sub>A</sub>(${fmt(cap)}) − C<sub>B</sub>(${fmt(cap)}) = ${fmt(M.CA(cap))} − ${fmt(M.CB(cap))} = ${fmt(mu)}. Charged on B, both ports cost ${fmt(M.CA(cap))} for DC and ${fmt(M.CA(cap)-1)} for Baltimore, so nobody moves. The total time rises to ${fmt(M.C(cap))}${cap<M.zSO?', past the optimum, because the cap is tighter than the optimum itself':cap<M.zUE?', below 88.5: this cap happens to help, since it pushes toward the optimum 3.125':''}. Everyone on B is indifferent at the tie, so the price says how much flow B carries and not who: the split is a separate declaration.`:`With Cap<sub>B</sub> = ${fmt(cap)} ≥ 3.75 the cap is slack: μ* = 0, the equilibrium is unchanged, and the price is a certificate that nothing needed to move.`;}
+  draw();
+}
+
+/* ================= D2: verify then commit ================= */
+{
+  let st;const CAP0=3;
+  function reset(){st={live:7,cap:CAP0,plan:{z:3,ver:7,mu:0.6},log:[]};st.log.push(`plan solved at version 7: z = 3.000 on a cap of 3.000, μ = 0.600`);draw();}
+  function verify(){const p=st.plan;const r=[0,0,Math.max(0,p.z-st.cap)];const feas=r.every(v=>v<1e-12);const mu=M.CA(st.cap)-M.CB(st.cap);const gap=feas?Math.abs(p.mu-mu):null;const opt=feas&&gap<1e-9;const ver=p.ver===st.live;return {r,feas,opt,ver,gap,commit:feas&&opt&&ver};}
+  function draw(){const v=verify();const p=st.plan;network($('#d2_svg'),{z:p.z,cap:st.cap});
+    stats($('#d2_stats'),[{k:'live version',v:st.live},{k:'plan version',v:p.ver,c:v.ver?'c3':'c7'},{k:'cap',v:fmt(st.cap,3)},{k:'plan flow z',v:fmt(p.z,3)},{k:'plan price μ',v:fmt(p.mu,3),c:'c6'},{k:'violation',v:fmt(v.r[2],3),c:v.r[2]>0?'c7':'c3'}]);
+    $('#d2_verify').innerHTML=`<div class="lamps"><span class="lamp ${v.feas?'ok':'bad'}"><i></i>feasible: r = [${v.r.map(x=>fmt(x,3)).join('; ')}]</span><span class="lamp ${v.opt?'ok':v.feas?'bad':'warn'}"><i></i>best: ${v.feas?'gap '+fmt(v.gap,3):'not evaluated (infeasible)'}</span><span class="lamp ${v.ver?'ok':'bad'}"><i></i>version ${p.ver} ${v.ver?'=':'≠'} live ${st.live}</span></div><div class="verdict ${v.commit?'ok':'bad'}"><b>${v.commit?'Committed at version '+st.live+'.':'Rejected: '+[!v.feas?'infeasible':'',!v.ver?'stale version':''].filter(Boolean).join(' and ')+'.'}</b> ${v.commit?'All 3 certificates hold: the verifier is 0, the price closes the gap, and the plan was solved on the state it will act on.':'A plan that fails any certificate is not committed, whatever the others say. Nothing is executed and nothing is averaged: the old committed plan stands until a new one passes.'}</div><div class="msg" style="margin-top:8px">${st.log.map(esc).join('\n')}</div>`;
+    $('#d2_read').innerHTML=st.live===7?`The plan z = 3 was solved at version 7 against a cap of 3, with price 0.6: feasible, best and current, so it is committed. Now derate the cap, as a feeder derates a charger, and see which certificates fail.`:v.commit?`Re-solved on the live state: the cap is now ${fmt(st.cap,3)}, the plan moves to ${fmt(p.z,3)} with the price ${fmt(p.mu,3)} = C<sub>A</sub>(${fmt(st.cap,1)}) − C<sub>B</sub>(${fmt(st.cap,1)}), and all 3 certificates hold at version 8. On Chicago the same sequence is CHI-D4: cap 11,937 derated to ${fmt0(CHI.D.cap_derated)}, the stale plan rejected by ${fmt0(CHI.D.trace[1].verify.replace(/\D/g,''))} veh/h, the re-solved plan committed with μ = ${fmt(CHI.D.trace[2].mu,3)} min.`:`The cap fell to ${fmt(st.cap,3)} and the version moved to 8. The committed plan still says z = 3: it now violates the cap by ${fmt(v.r[2],3)}, and it was solved at version 7, so it is refused twice over. Averaging it with anything would not help; only a plan solved at the live version can be committed.`;}
+  $('#d2_derate').addEventListener('click',()=>{if(st.live>7)return;st.cap=+(CAP0*0.8).toFixed(6);st.live=8;st.log.push(`derating: Cap × 0.8 = ${fmt(st.cap,3)}, version 8`);st.log.push(`verify plan(version 7): capacity violated by ${fmt(st.plan.z-st.cap,3)}; version 7 ≠ 8`);st.log.push(`commit: rejected (stale version and infeasible)`);draw();});
+  $('#d2_resolve').addEventListener('click',()=>{const mu=M.CA(st.cap)-M.CB(st.cap);st.plan={z:st.cap,ver:st.live,mu};st.log.push(`re-solve at version ${st.live}: z = ${fmt(st.cap,3)}, μ = ${fmt(mu,3)}`);st.log.push(`verify: r = 0, gap 0, version ${st.live} = live`);st.log.push(`commit: committed at version ${st.live}`);draw();});
+  $('#d2_reset').addEventListener('click',reset);reset();
+}
+
+/* ================= D3: the loop ================= */
+{
+  let rows=[];const CAP=3;const STAGES=['Observe','Solve','Coordinate','Verify','Commit'];let stage=-1,timer=null;
+  function step(){const k=rows.length;const z=k?rows[k-1].znext:M.zUE;const zn=z+(CAP-z)/(k+2);rows.push({k:k+1,z,excess:z-CAP,price:0.8*(M.zUE-z),znext:zn});stage=0;animate();draw();}
+  function animate(){if(timer)clearInterval(timer);timer=setInterval(()=>{stage++;if(stage>=STAGES.length){clearInterval(timer);timer=null;stage=-1;}drawSteps();},220);}
+  function drawSteps(){$('#d3_steps').innerHTML=STAGES.map((s,i)=>`<span class="${i===stage?'on':stage<0&&rows.length?'done':''}">${s}</span>`).join('<span style="border:none;padding:0">→</span>');}
+  function reset(){rows=[];stage=-1;draw();}
+  function draw(){drawSteps();const pts=rows.map(r=>[r.k,r.z]);if(rows.length)pts.push([rows.length+1,rows[rows.length-1].znext]);
+    chart($('#d3_chart'),{height:230,xdom:[1,Math.max(8,rows.length+1)],ydom:[2.8,3.9],ydec:2,xlabel:'round k',ylabel:'executed flow on B, z_k',aria:'loop iterates against the cap',
+      series:[{color:'var(--c2)',pts,dots:true}],hlines:[{y:CAP,label:'Cap_B = 3: discharge',color:'var(--c7)'},{y:M.zUE,label:'uncapped equilibrium 3.75',color:'var(--ink3)'}],
+      extra:(X,Y)=>rows.map(r=>`<rect x="${X(r.k)-4}" y="${Y(r.z)}" width="8" height="${Y(CAP)-Y(r.z)}" style="fill:var(--c7);opacity:.28"/>`).join(''),
+      tooltip:x=>{const k=Math.round(x);const r=rows[k-1];if(!r)return null;return {x:k,title:'round '+k,rows:[{name:'executed z_k',value:fmt(r.z,4),color:'var(--c2)'},{name:'excess arrival rate z_k − 3',value:fmt(r.excess,4),color:'var(--c7)'},{name:'price 0.8·(3.75 − z_k)',value:fmt(r.price,3),color:'var(--c6)'}]};}});
+    $('#d3_table').innerHTML=rows.length?`<table class="t"><tr><th>k</th><th>z_k</th><th>excess rate</th><th>price</th></tr>${rows.map(r=>`<tr><td>${r.k}</td><td>${fmt(r.z,4)}</td><td class="${r.excess>1e-9?'bad':'ok'}">${fmt(r.excess,4)}</td><td>${fmt(r.price,3)}</td></tr>`).join('')}</table>`:'<div class="note">Press Next round. Round 1 observes the uncapped equilibrium 3.75, solves against the cap 3, and moves 1/2 of the way; round k moves 1/(k+1).</div>';
+    const n=rows.length;$('#d3_read').innerHTML=n?`After ${n} round${n>1?'s':''} the executed flow is ${fmt(rows[n-1].z,4)}: ${fmt(rows[n-1].excess,4)} above the discharge the cap allows, at a price of ${fmt(rows[n-1].price,3)} that is still short of μ* = 0.6. The excess is the arrival rate the plan has not yet removed, ${fmt(rows[n-1].excess,4)} units per hour more than the port passes; it is not a queue length, because this static model has no time axis to accumulate one. The iterates 3.75, 3.375, 3.25, 3.1875, 3.15, 3.125 converge to 3, and the price to 0.6, at the rate of successive averages.`:`The loop compares a solver iterate with the committed cap in every round. Watch 2 numbers: the iterate falls toward 3, and the price rises toward 0.6, and the difference between the 2 lines is the excess arrival rate, shaded.`;}
+  $('#d3_step').addEventListener('click',step);$('#d3_run').addEventListener('click',()=>{for(let i=0;i<8;i++)step();});$('#d3_reset').addEventListener('click',reset);reset();
+}
+
+/* ================= D4: the call ================= */
+{
+  const req=bind('d4_req',draw),ver=bind('d4_ver',draw);const LIVE=8,cap=2.4,z=2.4,mu=M.CA(cap)-M.CB(cap);
+  function draw(){const v=+ver.value;$('#d4_verv').textContent=v;const k=req.value;let R;
+    const base={state_version:v,live_version:LIVE,validity:v===LIVE?'valid at the live version':v<LIVE?'STALE: request version '+v+' < live '+LIVE+'; answer served read-only and cannot be committed':'UNKNOWN version '+v+' > live '+LIVE+': rejected'};
+    if(k==='routeDT')R={operation:'route',origin:'DC',destination:'Boston',value:fmt(M.CA(z))+' h via port A (port B ties with the price '+fmt(mu)+')',class:'exact reduction under assumptions (costs frozen at the committed plan z = '+fmt(z)+')',residual:'Bellman residual 0',provenance:'lab.route(D, T)'};
+    else if(k==='routeRU')R={operation:'route',origin:'Baltimore',destination:'U',value:'7 h via port B (4 + 3; port A cannot reach U)',class:'exact reduction under assumptions (fixed costs; J_Y of station B2)',residual:'Bellman residual 0',provenance:'lab.route(R, U)'};
+    else if(k==='flowB')R={operation:'flow',link:'port B',value:fmt(z)+' units/h on a cap of '+fmt(cap),class:'committed plan (a solver iterate that passed the verifier)',residual:'r = [0; 0; 0], gap 0, price μ = '+fmt(mu),provenance:'lab.plan(version 8)'};
+    else if(k==='commute')R={operation:'commuting residual',square:'loading, ports merged into N',value:'0',class:'structural identity (holds for every flow)',residual:'Δ_A = [0 0 0 0]',provenance:'lab.commute(M_L, A_LP, A_c, M_P)',note:'a residual of 0 says nothing about the 86 that the merged model computed (station C2)'};
+    else R={operation:'predict',target:'z tomorrow',value:'about 2.6 units/h (a learned estimate)',class:'behavioral approximation',residual:'not verifiable until observed',authority:'propose only: never verified, never committed',provenance:'lab.learned_model(v3)'};
+    const o=Object.assign({},R,base);if(v>LIVE){o.value='(withheld)';}
+    $('#d4_msg').textContent='request  {'+`operation: ${o.operation}, state_version: ${v}, authority: ${k==='predict'?'propose':'read'}`+'}\n\nresponse {\n'+Object.entries(o).filter(([kk])=>!['operation'].includes(kk)).map(([kk,vv])=>`  ${kk}: ${vv}`).join('\n')+'\n}';
+    $('#d4_read').innerHTML=v>LIVE?`A version the system has never reached is not served: the response is withheld, because there is no state for it to be true of.`:v<LIVE?`The request names version ${v} while the live state is ${LIVE}. The answer is still computed and marked stale: a reader may look, a committer may not act on it. That is the fail-closed rule of D2 applied to a query.`:
+      k==='predict'?`A learned estimate answers with the class <b>behavioral approximation</b> and an authority of <b>propose</b>: it can suggest a z, and the loop of D3 will observe, solve and verify before anything moves. The 3 classes are the honesty of the contract: a structural identity (C3's residual 0), an exact reduction under assumptions (the labels of B2, the Schur step of B3), and a behavioral approximation (any prediction).`:
+      k==='commute'?`The commuting residual is a structural identity: its class says it holds for every flow, and the note says what it does not say. A contract that returns 0 without its class invites the mistake of C2.`:
+      `A route answer carries its class (an exact reduction: the costs were frozen at the committed plan), its residual (the Bellman check is 0), its validity and its version. On Chicago, CHI-D1 returns the same fields: labels ${fmt(CHI.D.route.labels[0],1)} and ${fmt(CHI.D.route.labels[1],1)} min from zone ${CHI.D.route.o} at version ${CHI.D.route.version}, residual ${sci(CHI.D.route.residual)}.`;}
+  draw();
+}
+})();
+
+(function(){
+'use strict';
+const {fmt,fmt0,sci,$}=window.LAB;const C=CHI;
+const strip=(el,title,tiles,foot)=>{el.innerHTML=`<div class="h">The same group on <b>Chicago Sketch</b> · ${title}</div><div class="tiles">${tiles.map(t=>`<div class="tile"><div class="id">${t.id}</div><div class="v">${t.v}</div><div class="k">${t.k}</div></div>`).join('')}</div>${foot?`<div class="note">${foot}</div>`:''}`;};
+strip($('#chiA'),'933 nodes, 2,950 links, '+fmt0(C.A.pairs)+' zone pairs',[
+  {id:'CHI-A',v:fmt0(C.A.paths),k:'candidate paths, 3 rounds of shortest paths'},
+  {id:'CHI-A',v:sci(C.A.gap),k:'relative gap of the reference equilibrium: the certificate of A2'},
+  {id:'CHI-A',v:fmt0(C.A.tt_ue)+' veh-h',k:'total time at equilibrium'},
+  {id:'CHI-A',v:fmt0(C.A.tt_so)+' veh-h',k:'total time at the system optimum, '+fmt(C.A.so_saving_pct,1)+' % less: the 88.5 against 88.19 of A1'},
+  {id:'CHI-B5',v:fmt(C.A.one_pass_ratio,1)+' ×',k:'total time after 1 fixed-cost loading pass, relative to equilibrium: loading without feedback is not an answer'}],
+  'Every number here is read from results_spine.json; the ids are the experiment inventory of the guide.');
+strip($('#chiB'),'2 regions by coordinate bisection, '+fmt0(C.C.cut.links_2)+' crossing links',[
+  {id:'CHI-B2',v:C.B.schur.interface+' of '+fmt0(C.B.schur.unknowns),k:'interface unknowns in the tree system of origin 1; interiors '+C.B.schur.interiors.join(' and ')+'; the Schur complement has '+C.B.schur.couplings+' couplings and recovers the interior to '+sci(C.B.schur.recovery)},
+  {id:'CHI-B4',v:C.B.sweeps.map(s=>s.rounds[1]).join(' / '),k:'median label sweeps for 2 / 4 / 16 regions, exchanging '+C.B.sweeps.map(s=>fmt0(s.exchanged)).join(' / ')+' boundary labels; error against the global run below 1e-10'},
+  {id:'CHI-B5',v:C.B.messages+' messages',k:fmt0(C.B.scalars)+' scalars ('+fmt(C.B.bytes/1e6,2)+' MB) per decomposed iteration; identical iterates to the central run'},
+  {id:'CHI-C1',v:C.B.KY.rows+' × '+C.B.KY.cols,k:'the remaining cost K_Y of region Y: '+fmt0(C.B.KY.entries)+' numbers hide '+C.B.KY.hidden+' interior nodes; '+fmt0(C.B.KY.labels)+' labels checked, error '+sci(C.B.KY.err)+'. Forward would send '+fmt0(C.B.KY.forward_in)+' in and '+fmt0(C.B.KY.forward_back)+' back (B2)'},
+  {id:'CHI-C4',v:fmt(C.B.KY_flow.free,1)+' → '+fmt(C.B.KY_flow.ue,1)+' → '+fmt(C.B.KY_flow.ue12,1)+' min',k:'mean of K_Y at free flow, at equilibrium, at 1.2 × demand: the remaining cost depends on the flow it is asked under (B3’s w*(z) at scale)'}]);
+strip($('#chiC'),'coordinate-bisection partitions, quotient structure, and '+C.C.sensors+' sensors',[
+  {id:'CHI-F2',v:C.C.quotient.cells+' superzones → '+C.C.quotient.vertices+' vertices',k:C.C.quotient.multi+' superzones hold more than 1 road piece (C1); '+C.C.quotient.corridors+' corridors; '+fmt0(C.C.quotient.reentry)+' paths re-enter a corridor; both squares commute with residual 0 (C3)'},
+  {id:'CHI-C3',v:fmt(C.C.levels[0].invisible_pct,1)+' % → '+fmt(C.C.levels[3].invisible_pct,1)+' %',k:'demand whose route choice is invisible at the coarse level, from 2 to '+C.C.levels[3].corridors+' corridors; hidden cost spread '+fmt(C.C.levels[0].spread_mean,1)+' → '+fmt(C.C.levels[3].spread_mean,1)+' min (C2’s spread of 1.0, at scale)'},
+  {id:'CHI-C5',v:fmt(C.C.refine.coarse,3)+' → '+fmt(C.C.refine.trip_ends,3),k:'assignment error of the coarse solution before and after refining by trip ends (oracle '+fmt(C.C.refine.oracle,3)+')'},
+  {id:'CHI-F4',v:C.C.obs.map(o=>o.rank).join(' / '),k:'rank of the observation map with '+C.C.sensors+' sensors for '+C.C.obs.map(o=>fmt0(o.unknowns)).join(' / ')+' unknown OD pairs at 3 resolutions (C4); errors '+C.C.obs.map(o=>fmt(o.err,3)).join(' / ')}]);
+const stale=C.D.trace[1];
+strip($('#chiD'),'a cap on link '+C.D.single.link.join('→')+' and on '+C.D.ten.links+' links',[
+  {id:'CHI-D2',v:'μ* = '+fmt(C.D.single.mu,3)+' min',k:'price on 1 link capped at '+fmt0(C.D.single.cap)+' (uncapped '+fmt0(C.D.single.aon)+'); '+C.D.single.ties+' paths tie, split weight '+fmt(C.D.single.weight,2)+'; cost +'+fmt(C.D.single.increase_pct,4)+' %; an exact LP reproduces the split'},
+  {id:'CHI-D2',v:fmt0(C.D.ten.lp_cost_veh_h)+' veh-h',k:C.D.ten.links+'-link optimum by LP: '+fmt(C.D.ten.above_unconstrained_veh_h,1)+' veh-h above unconstrained, '+sci(C.D.ten.gap_pct)+' % from the dual bound; duals within '+fmt(C.D.ten.mu_max_diff,3)+' min of the subgradient prices. The averaged subgradient plan was still '+fmt0(C.D.ten.avg_violation)+' veh/h over the cap: not a plan (D2)'},
+  {id:'CHI-D4',v:'rejected by '+fmt0(+stale.verify.replace(/\D/g,''))+' veh/h',k:'derating the cap to '+fmt0(C.D.cap_derated)+' at version 8 fails the version-7 plan on both certificates; re-solved μ = '+fmt(C.D.trace[2].mu,3)+' min, committed (D2)'},
+  {id:'CHI-D5',v:fmt0(C.D.loop[0].excess)+' → '+fmt0(C.D.loop[C.D.loop.length-1].excess)+' veh/h',k:'excess arrival rate over '+C.D.loop.length+' rounds of the loop, discharge '+fmt0(C.D.loop[0].discharge)+' veh/h (D3)'},
+  {id:'CHI-D1',v:fmt(C.D.route.labels[0],1)+' / '+fmt(C.D.route.labels[1],1)+' min',k:'a route call from zone '+C.D.route.o+' at version '+C.D.route.version+' returns its labels with class, residual '+sci(C.D.route.residual)+', validity and provenance (D4)'}],
+  'Runtime of the whole spine script, including 2 exact LPs: '+fmt0(C.runtime_s)+' s on 1 process.');
+})();
+</script>
+</body>
+</html>
