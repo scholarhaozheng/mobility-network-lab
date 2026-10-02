@@ -8,10 +8,12 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import html
 import io
 import json
 import math
 import re
+import shutil
 from collections import defaultdict
 from pathlib import Path
 
@@ -22,12 +24,13 @@ from matplotlib.collections import LineCollection
 from matplotlib.colors import Normalize
 from matplotlib.patches import Polygon as PatchPolygon
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 from shapely import wkt
 from shapely.geometry import shape
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "docs/assets/homepage_evidence_r2"
+APPROVED_BOSTON_LAGRANGIAN = OUT / "BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json"
 ROW15_MAPPING = OUT / "ROW15_REUSE_SOURCE_MAPPING.csv"
 R1_MAP = ROOT / "tools/visuals/homepage_evidence_r1_map.csv"
 CITIES = ("Boston", "Sioux Falls", "Hong Kong")
@@ -89,7 +92,7 @@ SOURCE_OVERRIDE = {
     "14": {"Boston": "docs/assets/three_city_r2/data/boston_construction_edges.csv", "Sioux Falls": "docs/assets/three_city_r2/data/sioux_construction_edges.csv", "Hong Kong": "docs/assets/three_city_r2/data/hong_kong_construction_edges.csv"},
     "15": {"Boston": B_CG+"validation_summary.json", "Sioux Falls": S_CG+"200_phase_ii_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_ii_objective_trace.csv"},
     "16": {"Boston": B_CG+"phase_i_total.csv", "Sioux Falls": S_CG+"200_phase_i_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_i_artificial_flow_trace.csv"},
-    "17": {"Boston": "docs/cases/boston.md", "Sioux Falls": "algorithms/distributed_assignment/lagrangian_r2/figure_data/Sioux_200OD_P07_history.csv", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/history.csv"},
+    "17": {"Boston": "docs/assets/homepage_evidence_r2/BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json", "Sioux Falls": "algorithms/distributed_assignment/lagrangian_r2/figure_data/Sioux_200OD_P07_history.csv", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/history.csv"},
     "18": {"Boston": "docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png", "Sioux Falls": "docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/admm_run/result.json"},
     "19": {"Boston": "examples/boston/SAVED_EXAMPLE.md", "Sioux Falls": "examples/sioux-falls/native_l3_r1/README.md", "Hong Kong": "docs/cases/hong-kong.md"},
 }
@@ -108,6 +111,17 @@ SIOUX_250_HISTORY = "algorithms/distributed_assignment/lagrangian_r2/figure_data
 
 def sha(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+def check_approved_boston_lagrangian(dest: Path) -> dict:
+    """Keep the approved derivative stable without shipping the private history."""
+    record=json.loads(APPROVED_BOSTON_LAGRANGIAN.read_text(encoding="utf-8"))
+    if record.get("scope")!="one Boston R2 10-OD row-17 derived PNG only":
+        raise AssertionError("Boston row-17 release scope changed")
+    if record.get("raw_history_csv_published") is not False:
+        raise AssertionError("Private Boston history must not be published")
+    if sha(dest)!=record["derived_png_sha256"]:
+        raise AssertionError("Approved Boston row-17 PNG hash changed")
+    return record
 
 def records(rel: str) -> list[dict]:
     with (ROOT/rel).open(newline="", encoding="utf-8-sig") as f:
@@ -407,7 +421,16 @@ def render_summary(fig,row_id,city,private_boston_history=None):
             axs[0].ticklabel_format(axis="y",style="sci",scilimits=(0,0))
         if city=="Sioux Falls":labels=["200 OD","250 OD","Gate"];values=[0.0746,0.3177,1.0]
         else:labels=["Saved gap","Gate"];values=[gap,1.0]
-        axs[1].barh(labels,values,color=[TEAL]*(len(values)-1)+[ORANGE]);axs[1].set_xlim(0,1.25);axs[1].tick_params(labelsize=7)
+        axs[1].barh(range(len(values)),values,color=[TEAL]*(len(values)-1)+[ORANGE])
+        axs[1].set_yticks([])
+        axs[1].set_xlim(0,1.25)
+        axs[1].set_xticks([0,.5,1.0]);axs[1].tick_params(axis="x",labelsize=7)
+        for i,(label,value) in enumerate(zip(labels,values)):
+            label_text=f"{label}  {value:.4f}%" if label!="Gate" else "Gate  1.0000%"
+            if value<.35:
+                axs[1].text(value+.025,i,label_text,va="center",fontsize=6.2,color=NAVY)
+            else:
+                axs[1].text(.035,i,label_text,va="center",fontsize=6.2,color="white",weight="bold")
         axs[0].set_title("Saved best bounds" if rs is not None else "Dual / primal evidence",fontsize=8);axs[1].set_title("Certified gap (%)",fontsize=8)
         fig.text(.5,.13,status,ha="center",fontsize=7.5,color=NAVY)
         return
@@ -462,14 +485,17 @@ def render(rows_to_update: set[str] | None = None):
             if source and not (ROOT/source).is_file():raise FileNotFoundError(source)
             display_scope=("200-OD example; 250-OD results in the case page; no full-DAG closure"
                            if row_id=="16" and city=="Sioux Falls" else old["result_summary"])
-            fig=fig_axes(title,city,display_scope)
-            if status in {"outside benchmark","not demonstrated"} or not source:
-                neutral(fig,"Not part of this case",old["result_summary"])
-            else:render_data_panel(fig,row_id,city)
             suffix="_r3" if row_id=="16" else ""
             rel=f"docs/assets/homepage_evidence_r2/row_{row_id}_{SLUG[city]}{suffix}.png";dest=ROOT/rel
-            fig.savefig(dest,dpi=100,facecolor="white",metadata={"Software":"MCL homepage evidence R2"})
-            plt.close(fig)
+            if row_id=="17" and city=="Boston":
+                check_approved_boston_lagrangian(dest)
+            else:
+                fig=fig_axes(title,city,display_scope)
+                if status in {"outside benchmark","not demonstrated"} or not source:
+                    neutral(fig,"Not part of this case",old["result_summary"])
+                else:render_data_panel(fig,row_id,city)
+                fig.savefig(dest,dpi=100,facecolor="white",metadata={"Software":"MCL homepage evidence R2"})
+                plt.close(fig)
             with Image.open(dest) as im:
                 if im.size!=CANVAS:raise AssertionError((rel,im.size))
             target=old["evidence_page"]
@@ -484,7 +510,7 @@ def render(rows_to_update: set[str] | None = None):
             if row_id=="17" and city=="Sioux Falls":
                 note="public 200-OD best-dual/best-primal iteration trace; 200/250-OD certified gaps remain separate"
             if row_id=="17" and city=="Boston":
-                note="public status-only preview; private Boston holdout history excluded from public assets pending specific release approval"
+                note="user-approved derived best-bound PNG only; raw Boston R2 history excluded; 1.1002% misses frozen 1% gate"
             if row_id=="17" and city=="Hong Kong":
                 note="saved iteration on x axis; missing best-primal values remain unplotted"
             original_figure=old["source_figure_or_data"]
@@ -508,6 +534,8 @@ def render(rows_to_update: set[str] | None = None):
                 row["result_scope"]="200-OD plotted example; 250-OD results remain on the case page; independent full-DAG closure not established."
             if row_id=="17" and city=="Sioux Falls":
                 row["result_scope"]="Public 200-OD best-bound iteration trace; both 200/250-OD accepted certified gaps appear beside it."
+            if row_id=="17" and city=="Boston":
+                row["result_scope"]="Saved Boston R2 10-OD best-bound iteration trace; feasible primal, 1.1002% gap misses the frozen 1% gate."
             matrix.append(row)
             side={"preview_path":rel,"preview_hash":row["preview_hash"],"template_id":template,"city":city,"stage":title,"method":title if row_id in {"10","11","12","13","15","16","17","18"} else "","instance":old["result_summary"],"source_asset_or_data":source,"source_hash":row["source_hash"],"transform":"deterministic, source-qualified row-specific plot or neutral status","crop":"none","scale_behavior":"contain/equal physical geometry; local numeric scales","units":"as labelled in preview and detailed source","legend":row["legend_contract"],"target_page":row["target_page"],"target_anchor":row["target_anchor"]}
             if row_id=="16":
@@ -519,7 +547,11 @@ def render(rows_to_update: set[str] | None = None):
                 side["source_assets_sha256"]={p:sha(ROOT/p) for p in (source,SIOUX_250_HISTORY)}
                 side["plotted_instance"]="200 OD only; 250 OD appears in gap bars and detailed saved figure"
             if row_id=="17" and city=="Boston":
-                side["public_disclosure"]="Status and certified aggregate only; private holdout history is not included."
+                approval=check_approved_boston_lagrangian(dest)
+                side["public_disclosure"]="Exact user-approved derived PNG only; private history CSV is not included."
+                side["approval_record"]=APPROVED_BOSTON_LAGRANGIAN.relative_to(ROOT).as_posix()
+                side["private_source_sha256"]=approval["private_history_sha256"]
+                side["plot_contract"]="Recorded iterations 1–300; empty best_primal values remain unplotted; frozen 1% gap gate missed."
             if row_id=="17" and city=="Hong Kong":
                 side["plot_contract"]="Recorded iteration values; empty best_primal values remain NaN."
             dest.with_suffix(".source.json").write_text(json.dumps(side,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
@@ -575,7 +607,83 @@ def render_private_boston_review(history_path: Path, output_path: Path) -> None:
         "public_release_approval":"not established",
         "result_status":"FEASIBLE_PRIMAL_GAP_GATE_NOT_MET",
         "missing_best_primal_interpolation":False,
+        "recorded_iterations":len(rows),
+        "first_iteration":rows[0]["iteration"],
+        "last_iteration":rows[-1]["iteration"],
+        "missing_best_primal_count":sum(not r.get("best_primal") for r in rows),
     },indent=2)+"\n",encoding="utf-8",newline="\n")
+    render_private_row17_review_bundle(output_path)
+
+
+def render_private_row17_review_bundle(boston_preview: Path) -> None:
+    """Make a three-city row-17 review page; keep every derivative outside Git."""
+    review_dir=boston_preview.parent.resolve()
+    if review_dir.is_relative_to(ROOT.resolve()):
+        raise ValueError("The private three-city review must stay outside the publishing checkout")
+    public_previews={
+        "Sioux Falls":OUT/"row_17_sioux_falls.png",
+        "Hong Kong":OUT/"row_17_hong_kong.png",
+    }
+    assets={"Boston":boston_preview}
+    for city,public_path in public_previews.items():
+        dest=review_dir/public_path.name
+        shutil.copy2(public_path,dest)
+        assets[city]=dest
+    canvas=Image.new("RGB",(1800,395),"white")
+    draw=ImageDraw.Draw(canvas)
+    font=ImageFont.truetype("arial.ttf",18)
+    for index,city in enumerate(CITIES):
+        with Image.open(assets[city]) as picture:
+            if picture.size!=CANVAS:raise AssertionError((city,picture.size))
+            canvas.paste(picture.convert("RGB"),(600*index,30))
+        draw.text((600*index+20,5),city,fill=NAVY,font=font)
+        if index:draw.line((600*index,0,600*index,390),fill="#dce6eb",width=2)
+    contact=review_dir/"LAGRANGIAN_ROW17_THREE_CITY_REVIEW.png"
+    canvas.save(contact)
+    scope={
+        "Boston":"Feasible primal; certified gap 1.1002%, above the frozen 1% gate. Local review only; saved history is not cleared for public release.",
+        "Sioux Falls":"Saved 200-OD bounds; accepted gaps: 200 OD 0.0746%, 250 OD 0.3177%. The 250-OD objective trace is not placed on the 200-OD axis.",
+        "Hong Kong":"Saved ten-OD bounds; accepted certified gap 0.7444%. Empty best-primal entries remain unplotted.",
+    }
+    columns="\n".join(
+        f'<td><h2>{html.escape(city)}</h2><img src="{html.escape(assets[city].name)}" '
+        f'width="600" height="360" alt="{html.escape(city)} saved Lagrangian row-17 evidence">'
+        f'<p>{html.escape(scope[city])}</p></td>' for city in CITIES
+    )
+    page=("<!doctype html><html lang=\"en\"><meta charset=\"utf-8\"><title>Local row-17 Lagrangian review</title>"
+          "<style>body{font:15px/1.5 Arial,sans-serif;color:#17364a;margin:24px}"
+          "table{border-collapse:collapse;max-width:100%;display:block;overflow-x:auto}td{vertical-align:top;border:1px solid #dce6eb;padding:10px;width:600px}"
+          "img{max-width:100%;height:auto}h2{font-size:17px;margin:0 0 6px}p{margin:8px 0}</style>"
+          "<h1>Section 03 / Lagrangian — local three-city review</h1>"
+          "<p>This page is a review-only representation of the homepage row. It is not a published README or GitHub Pages asset.</p>"
+          f"<table><tr>{columns}</tr></table>"
+          "<p>The public Boston tile remains status-only until this specific derived history plot is authorized for release. "
+          "The source CSV and complete iteration values are not bundled here.</p></html>\n")
+    (review_dir/"LAGRANGIAN_ROW17_LOCAL_REVIEW.html").write_text(page,encoding="utf-8",newline="\n")
+    # A complete local copy keeps Section 03 and the three case-atlas cards in
+    # their real homepage positions.  The base points only to the existing
+    # checked-out site; the Boston derivative itself stays in this review dir.
+    site=(ROOT/"docs/index.html").read_text(encoding="utf-8")
+    public_boston="assets/homepage_evidence_r2/row_17_boston.png"
+    if site.count(public_boston)!=4:
+        raise AssertionError("Unexpected Boston row-17 homepage references")
+    site=site.replace("<head>",f'<head><base href="{(ROOT/"docs").as_uri()}/">',1)
+    site=site.replace(public_boston,boston_preview.resolve().as_uri())
+    (review_dir/"HOMEPAGE_ROW17_LOCAL_REVIEW.html").write_text(site,encoding="utf-8",newline="\n")
+    with (OUT/"ROW_TEMPLATE_MATRIX.csv").open(newline="",encoding="utf-8") as f:
+        current=[r for r in csv.DictReader(f) if r["row_id"]=="17"]
+    if len(current)!=3:raise AssertionError("Missing row-17 matrix records")
+    for r in current:
+        city=r["city"]
+        r["preview_path"]=assets[city].name
+        r["preview_hash"]=sha(assets[city])
+        if city=="Boston":
+            r["data_or_figure_source"]="private Boston R2 receiver-review history (not copied)"
+            r["source_hash"]=json.loads(boston_preview.with_suffix(".source.json").read_text(encoding="utf-8"))["source_sha256"]
+            r["notes"]="PRIVATE_LOCAL_REVIEW_ONLY; 300 saved iterations; no interpolation; 1.1002% exceeds 1% gate"
+    with (review_dir/"ROW_TEMPLATE_MATRIX_ROW17_REVIEW.csv").open("w",newline="",encoding="utf-8") as f:
+        writer=csv.DictWriter(f,fieldnames=list(current[0]),lineterminator="\n")
+        writer.writeheader();writer.writerows(current)
 
 
 if __name__=="__main__":
