@@ -25,9 +25,9 @@ def main(argv=None):
         # The frozen R2 matrix includes accepted later reuse/disclosure edits.
         # Refresh only the two preview families changed by this presentation.
         render_homepage_evidence(rows_to_update={"16", "17"})
-        # The accepted Hong Kong ADMM R3 overview is a verbatim saved figure.
-        # Only its row-18/city contract changes; Boston and Sioux stay untouched.
-        render_homepage_evidence(rows_to_update={"18"}, cities_to_update={"Hong Kong"})
+        # All three ADMM row-18 previews use one compact panel geometry.
+        # Their accepted source curves, markers, and scientific files stay unchanged.
+        render_homepage_evidence(rows_to_update={"18"})
         render_homepage_alignment()
     elif not (S/'docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv').is_file():
         raise FileNotFoundError('Saved row matrix required for presentation-only rebuild')
@@ -86,6 +86,7 @@ def main(argv=None):
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview td{height:160px;vertical-align:middle}
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview img{width:220px;max-width:100%;height:auto;max-height:150px;object-fit:contain}
     .mcl-page table.home-coverage .coverage-caption td{text-align:center;padding:5px 10px}
+    .mcl-page table.home-coverage[data-component="18"] .coverage-caption td{padding-top:2px}
     .mcl-page table.home-coverage .coverage-caption sub{font-size:10.5px;color:#6b7d87;vertical-align:baseline}
     .mcl-page table.home-coverage .coverage-links td{white-space:nowrap;overflow-wrap:normal}
     .mcl-page table.home-coverage .coverage-links sub{font-size:9.5px;vertical-align:baseline}

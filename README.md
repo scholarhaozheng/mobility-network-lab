@@ -288,12 +288,12 @@ Most shared row previews use one evidence graphic type and one 600 × 360 source
 <thead><tr><th colspan="3" scope="colgroup" width="800">ADMM</th></tr>
 <tr><th scope="col" width="266">Boston</th><th scope="col" width="266">Sioux Falls</th><th scope="col" width="266">Hong Kong</th></tr></thead><tbody>
 <tr class="coverage-scope"><td width="266" valign="top">Ten-OD original-space checks; own-LP gap 6.68e-6.</td><td width="266" valign="top">Selected 200/250-OD original-space checks; not the full static 528 ODs.</td><td width="266" valign="top"><strong>Accepted bounded ADMM R3 transfer</strong><br>Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶<br><sub>Finite 30-s × 50-step shared-capacity case with modeled OD demand; not full-territory assignment or empirical traffic validation.</sub></td></tr>
-<tr class="coverage-preview"><td width="266" align="center"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston.png" width="220" alt="Boston ADMM preview"></a></td><td width="266" align="center"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png" width="220" alt="Sioux Falls ADMM preview"></a></td><td width="266" align="center"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png" width="220" alt="Hong Kong bounded ADMM R3 transfer overview with frozen policy, fresh 4-OD result, and independent closure checks."></a></td></tr>
-<tr class="coverage-caption"><td colspan="3" align="center"><sub>residual/objective/flow summary</sub></td></tr>
+<tr class="coverage-preview"><td width="266" align="center"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston_r4.png" width="220" alt="Boston ADMM preview"></a></td><td width="266" align="center"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls_r4.png" width="220" alt="Sioux Falls ADMM preview"></a></td><td width="266" align="center"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.png" width="220" alt="Hong Kong accepted bounded ADMM R3 four-OD residual, objective versus LP, and physical-flow preview; historical ten-OD R2 remains gated."></a></td></tr>
+<tr class="coverage-caption"><td colspan="3" align="center"><sub>Residuals · log10 absolute objective error against each case’s own LP · original physical-link flow (LP x-axis; ADMM y-axis).</sub></td></tr>
 <tr class="coverage-links">
-<td width="266"><sub><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston.png">Full preview</a> · <a href="docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png">Source record</a></sub></td>
-<td width="266"><sub><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png">Full preview</a> · <a href="docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png">Source record</a></sub></td>
-<td width="266"><sub><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png">Full preview</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.source.json">Source record</a></sub></td>
+<td width="266"><sub><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston_r4.png">Full preview</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston_r4.source.json">Source record</a></sub></td>
+<td width="266"><sub><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls_r4.png">Full preview</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls_r4.source.json">Source record</a></sub></td>
+<td width="266"><sub><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.png">Full preview</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.svg">Full three-panel figure</a> · <a href="docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.source.json">Source record</a></sub></td>
 </tr></tbody></table>
 
 <a id="e--reusable-outputs-and-tools"></a><a id="section03-vi"></a>
@@ -494,7 +494,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#reference-objective-agreement"><img src="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png" width="165" alt="Boston Arc-flow LP reference; Own-graph LP reference for the bounded ten-OD fixed-cost instance."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_boston_r3.png" width="165" alt="Boston Two-phase column generation; Phase I/II and independent 10/10 pricing closure."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/boston.md#finite-time-expanded-algorithms"><img src="docs/assets/homepage_evidence_r2/row_17_boston.png" width="165" alt="Boston Lagrangian; Saved Boston R2 10-OD best-bound iteration trace; feasible primal, 1.1002% gap misses the frozen 1% gate."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston.png" width="165" alt="Boston ADMM; Ten-OD original-space checks; own-LP gap 6.68e-6."></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/boston-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_boston_r4.png" width="165" alt="Boston ADMM; Ten-OD original-space checks; own-LP gap 6.68e-6."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="boston-finite">
 <td width="200" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for the bounded ten-OD fixed-cost instance.</small></td>
@@ -506,7 +506,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/boston/space_time_cg_r4/boston_phase_ii_objective.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_boston_r3.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston.md#finite-time-expanded-algorithms">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_boston.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/boston-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_boston_r4.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="boston-finite">
 <th width="200" class="atlas-title-cell" scope="col"><strong>Case-sequence overview</strong></th>
@@ -648,7 +648,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement"><img src="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png" width="165" alt="Sioux Falls Arc-flow LP reference; Own selected-graph LP references for historical 200/250 ODs."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_sioux_falls_r3.png" width="165" alt="Sioux Falls Two-phase column generation; 200-OD plotted example; 250-OD results remain on the case page; independent full-DAG closure not established."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/methods/distributed-assignment.md"><img src="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png" width="165" alt="Sioux Falls Lagrangian; Public 200-OD best-bound iteration trace; both 200/250-OD accepted certified gaps appear beside it."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png" width="165" alt="Sioux Falls ADMM; Selected 200/250-OD original-space checks; not the full static 528 ODs."></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/sioux-admm.md"><img src="docs/assets/homepage_evidence_r2/row_18_sioux_falls_r4.png" width="165" alt="Sioux Falls ADMM; Selected 200/250-OD original-space checks; not the full static 528 ODs."></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="sioux-falls-finite">
 <td width="200" class="atlas-meta-cell"><small class="atlas-meta">Own selected-graph LP references for historical 200/250 ODs.</small></td>
@@ -660,7 +660,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/benchmarks/sioux_200od_phase2_objective_trace.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_sioux_falls_r3.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/methods/distributed-assignment.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_sioux_falls.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/sioux-admm.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_sioux_falls_r4.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="sioux-falls-finite">
 <th width="200" class="atlas-title-cell" scope="col"><strong>200/250-OD case overview</strong></th>
@@ -893,7 +893,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <tr class="atlas-card-links-row" data-stage="hong-kong-representation"><td width="266" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/three_city_r2/hong_kong_physical_to_time_expanded_graph.png">Figure</a></small></td><td width="266" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#from-the-physical-network-to-the-finite-time-expanded-graph">Evidence</a> · <a href="docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png">Figure</a></small></td><td width="266" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#a-generated-column-as-a-time-indexed-path">Evidence</a> · <a href="docs/assets/hong_kong/presentation_r6/hk_physical_to_time_cutaway.png">Figure</a></small></td></tr>
 </tbody></table>
 <table class="atlas-city-table" data-city="hong-kong" data-stage="hong-kong-finite" width="100%"><colgroup><col width="25%"><col width="25%"><col width="25%"><col width="25%"></colgroup><thead>
-<tr class="atlas-stage-heading" data-stage="hong-kong-finite" data-columns="4" data-items="11"><th colspan="4" scope="colgroup" width="800"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a>Optimization on the time-expanded network</th></tr></thead><tbody>
+<tr class="atlas-stage-heading" data-stage="hong-kong-finite" data-columns="4" data-items="12"><th colspan="4" scope="colgroup" width="800"><a id="hong-kong-finite"></a><a id="hong-kong-cg-r5"></a>Optimization on the time-expanded network</th></tr></thead><tbody>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
 <th width="200" class="atlas-title-cell" scope="col"><strong>Arc-flow LP reference</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="D — Coordination and verification" aria-label="D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/D.svg" width="13" height="11" alt="[D]"></a></th>
 <th width="200" class="atlas-title-cell" scope="col"><strong>Two-phase column generation</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation" aria-label="B — Decomposition and distributed computation"><img src="docs/assets/atlas_depth_badges/B.svg" width="13" height="11" alt="[B]"></a></th>
@@ -904,7 +904,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png" width="165" alt="Hong Kong Arc-flow LP reference; Own-graph LP reference for R5 ten-OD finite case."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility"><img src="docs/assets/homepage_evidence_r2/row_16_hong_kong_r3.png" width="165" alt="Hong Kong Two-phase column generation; Phase I/II, same-graph LP agreement and independent 10/10 closure."></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md"><img src="docs/assets/homepage_evidence_r2/row_17_hong_kong.png" width="165" alt="Hong Kong Lagrangian; Ten-OD feasible recovery with 0.7444% certified gap."></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png" width="165" alt="Hong Kong ADMM; Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶"></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.png" width="165" alt="Hong Kong ADMM; Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-meta-cell"><small class="atlas-meta">Own-graph LP reference for R5 ten-OD finite case.</small></td>
@@ -916,7 +916,7 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#phase-i-restores-feasibility">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_16_hong_kong_r3.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_17_hong_kong.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.png">Figure</a></small></td>
 </tr>
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
 <th width="200" class="atlas-title-cell" scope="col"><strong>Bounded case overview</strong></th>
@@ -945,26 +945,26 @@ A–D are reading labels for computational depth. City-data and four-stage-deman
 <tr class="atlas-card-title-row" data-stage="hong-kong-finite">
 <th width="200" class="atlas-title-cell" scope="col"><strong>Independent 10/10 pricing closure</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 <th width="200" class="atlas-title-cell" scope="col"><strong>Lagrangian certified gap</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
-<th width="200" class="atlas-title-cell" scope="col"><strong>Accepted bounded ADMM R3 transfer</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
-<th width="200" class="atlas-empty" aria-hidden="true"></th>
+<th width="200" class="atlas-title-cell" scope="col"><strong>ADMM R3 convergence</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
+<th width="200" class="atlas-title-cell" scope="col"><strong>ADMM R3 physical flow vs LP</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="B — Decomposition and distributed computation; D — Coordination and verification" aria-label="B — Decomposition and distributed computation; D — Coordination and verification"><img src="docs/assets/atlas_depth_badges/B_D.svg" width="30" height="11" alt="[B · D]"></a></th>
 </tr>
 <tr class="atlas-card-preview-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure"><img src="docs/assets/homepage_alignment_r3/atlas/7881658da0b27d96.png" width="165" alt="Hong Kong Independent 10/10 pricing closure; R5 10-OD"></a></td>
 <td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement"><img src="docs/assets/homepage_alignment_r3/atlas/9cff0feccba4d498.png" width="165" alt="Hong Kong Lagrangian certified gap; bounded accepted 0.7444%"></a></td>
-<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/homepage_alignment_r3/atlas/9d956007c477ad77.png" width="165" alt="Hong Kong Accepted bounded ADMM R3 transfer; fresh preregistered 4-OD · 165 iterations; separate from gated 10-OD R2"></a></td>
-<td width="200" class="atlas-empty" aria-hidden="true"></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/homepage_alignment_r3/atlas/75cc6578c3f945dc.png" width="165" alt="Hong Kong ADMM R3 convergence; accepted fresh 4-OD · 165 iterations; separate from gated 10-OD R2"></a></td>
+<td width="200" class="atlas-card-cell"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"><img src="docs/assets/homepage_alignment_r3/atlas/2b89a96b57b388e8.png" width="165" alt="Hong Kong ADMM R3 physical flow vs LP; accepted fresh 4-OD · 58 positive physical links"></a></td>
 </tr>
 <tr class="atlas-card-meta-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-meta-cell"><small class="atlas-meta">CG pricing · R5 10-OD</small></td>
 <td width="200" class="atlas-meta-cell"><small class="atlas-meta">bounded accepted 0.7444%</small></td>
-<td width="200" class="atlas-meta-cell"><small class="atlas-meta">fresh preregistered 4-OD · 165 iterations; separate from gated 10-OD R2</small></td>
-<td width="200" class="atlas-empty" aria-hidden="true"></td>
+<td width="200" class="atlas-meta-cell"><small class="atlas-meta">accepted fresh 4-OD · 165 iterations; separate from gated 10-OD R2</small></td>
+<td width="200" class="atlas-meta-cell"><small class="atlas-meta">accepted fresh 4-OD · 58 positive physical links</small></td>
 </tr>
 <tr class="atlas-card-links-row" data-stage="hong-kong-finite">
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#independent-pricing-closure">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png">Figure</a></small></td>
 <td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#reference-objective-agreement">Evidence</a> · <a href="docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png">Figure</a></small></td>
-<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png">Figure</a></small></td>
-<td width="200" class="atlas-empty" aria-hidden="true"></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png">Figure</a></small></td>
+<td width="200" class="atlas-links-cell"><small class="atlas-links"><a href="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer">Evidence</a> · <a href="docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png">Figure</a></small></td>
 </tr>
 </tbody></table>
 </article>
