@@ -115,6 +115,8 @@ def sha(path: Path) -> str:
 def check_approved_boston_lagrangian(dest: Path) -> dict:
     """Keep the approved derivative stable without shipping the private history."""
     record=json.loads(APPROVED_BOSTON_LAGRANGIAN.read_text(encoding="utf-8"))
+    if record.get("publication_status")!="APPROVED_EXACT_DERIVATIVE":
+        raise PermissionError("Boston R2 row-17 derivative requires explicit public-release approval")
     if record.get("scope")!="one Boston R2 10-OD row-17 derived PNG only":
         raise AssertionError("Boston row-17 release scope changed")
     if record.get("raw_history_csv_published") is not False:
@@ -510,7 +512,7 @@ def render(rows_to_update: set[str] | None = None):
             if row_id=="17" and city=="Sioux Falls":
                 note="public 200-OD best-dual/best-primal iteration trace; 200/250-OD certified gaps remain separate"
             if row_id=="17" and city=="Boston":
-                note="user-approved derived best-bound PNG only; raw Boston R2 history excluded; 1.1002% misses frozen 1% gate"
+                note="local review candidate; private-history-derived PNG release pending; raw Boston R2 history excluded; 1.1002% misses frozen 1% gate"
             if row_id=="17" and city=="Hong Kong":
                 note="saved iteration on x axis; missing best-primal values remain unplotted"
             original_figure=old["source_figure_or_data"]
@@ -548,7 +550,7 @@ def render(rows_to_update: set[str] | None = None):
                 side["plotted_instance"]="200 OD only; 250 OD appears in gap bars and detailed saved figure"
             if row_id=="17" and city=="Boston":
                 approval=check_approved_boston_lagrangian(dest)
-                side["public_disclosure"]="Exact user-approved derived PNG only; private history CSV is not included."
+                side["public_disclosure"]="Exact approved derivative only; private history CSV is not included."
                 side["approval_record"]=APPROVED_BOSTON_LAGRANGIAN.relative_to(ROOT).as_posix()
                 side["private_source_sha256"]=approval["private_history_sha256"]
                 side["plot_contract"]="Recorded iterations 1–300; empty best_primal values remain unplotted; frozen 1% gap gate missed."

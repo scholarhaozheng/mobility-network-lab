@@ -155,6 +155,18 @@ def main() -> int:
     if hk10.returncode != 0:
         errors.extend(f"HK10 exact disclosure: {item}" for item in hk10_result.get("errors", []))
     checks += int(hk10_result.get("checks", 0))
+    boston_row17_record = ROOT / "docs/assets/homepage_evidence_r2/BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json"
+    if boston_row17_record.is_file():
+        boston_disclosure = json.loads(boston_row17_record.read_text(encoding="utf-8"))
+        boston_row17_png = ROOT / "docs/assets/homepage_evidence_r2/row_17_boston.png"
+        if boston_disclosure.get("publication_status") != "APPROVED_EXACT_DERIVATIVE":
+            errors.append("Boston row-17 private-history-derived PNG lacks explicit public-release approval")
+        if (not boston_row17_png.is_file() or
+                hashlib.sha256(boston_row17_png.read_bytes()).hexdigest() != boston_disclosure.get("derived_png_sha256")):
+            errors.append("Boston row-17 derived PNG differs from the reviewed exact artifact")
+        if boston_disclosure.get("raw_history_csv_published") is not False:
+            errors.append("Boston row-17 raw history must remain outside the public tree")
+        checks += 3
     if "Repository candidate" in readme:
         errors.append("README still contains internal repository-candidate language")
     checks += 1
