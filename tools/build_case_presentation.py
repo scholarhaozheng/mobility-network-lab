@@ -25,6 +25,9 @@ def main(argv=None):
         # The frozen R2 matrix includes accepted later reuse/disclosure edits.
         # Refresh only the two preview families changed by this presentation.
         render_homepage_evidence(rows_to_update={"16", "17"})
+        # The accepted Hong Kong ADMM R3 overview is a verbatim saved figure.
+        # Only its row-18/city contract changes; Boston and Sioux stay untouched.
+        render_homepage_evidence(rows_to_update={"18"}, cities_to_update={"Hong Kong"})
         render_homepage_alignment()
     elif not (S/'docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv').is_file():
         raise FileNotFoundError('Saved row matrix required for presentation-only rebuild')
@@ -122,6 +125,11 @@ def main(argv=None):
       .mcl-page table.atlas-city-table{min-width:680px}
       .mcl-page table.atlas-quick-facts{min-width:660px}
     }
+    .mcl-page .admm-r3-figure-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;margin:24px 0}
+    .mcl-page .admm-r3-figure-grid figure{min-width:0;margin:0;padding:12px;border:1px solid var(--line);border-radius:8px}
+    .mcl-page .admm-r3-figure-grid img{display:block;width:100%;height:auto;object-fit:contain}
+    .mcl-page .admm-r3-figure-grid figcaption{font-size:12px;line-height:1.5;color:var(--muted);margin-top:8px}
+    @media(max-width:760px){.mcl-page .admm-r3-figure-grid{grid-template-columns:minmax(0,1fr);gap:18px}}
     '''
     CSS='\n'.join(line.rstrip() for line in CSS.splitlines())+'\n'
     (S/'docs/assets/presentation-r3.css').write_text(CSS,encoding='utf-8')

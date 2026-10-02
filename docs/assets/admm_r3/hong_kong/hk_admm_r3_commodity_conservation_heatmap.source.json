@@ -1,0 +1,25 @@
+{
+  "figure": "hk_admm_r3_commodity_conservation_heatmap",
+  "status": "ACCEPTED_FRESH_SAVED_RESULT",
+  "renderer": "render_saved_figures.py",
+  "method": "deterministic plotting from saved independently verified results; optimizer_calls=0",
+  "caption": "Original-unit final commodity-by-node conservation residuals for the 35 worst nodes.",
+  "limitations": "Bounded 4-OD modeled demand; no full-territory or empirical validation claim.",
+  "svg_sha256": "b061cf4dfc79515956e8b9f82d853dabb53b307a9ff3047fde7324c3be6f65e3",
+  "png_sha256": "47d399d5ff4b08695c2dcb5b8ec2de40650a9526408d5b15e9e385af66d2e252",
+  "restricted_inputs": [
+    {
+      "restricted_source_id": "restricted://hong-kong-admm-r3/saved-state",
+      "source_sha256": "e7b969cc5738aa8019e76db565b14ae7211f5362fd9f74bbd75cbd00857ad798",
+      "distribution": "not included in this public asset set"
+    },
+    {
+      "restricted_source_id": "inputs/fresh_hk_holdout/dynamic_arc.csv",
+      "source_sha256": "f775c6e29c0cd592e88e328055afa13cd7e50bbcc079cfb3d47cebef5361c79a",
+      "distribution": "not included in this public asset set"
+    }
+  ],
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "source_path_policy": "stable logical identifiers and hashes only; no local absolute paths",
+  "source_note": "Hashed source artifacts are retained privately and were used to render this accepted saved-result figure; they are not distributed here."
+}

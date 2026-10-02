@@ -93,7 +93,7 @@ SOURCE_OVERRIDE = {
     "15": {"Boston": B_CG+"validation_summary.json", "Sioux Falls": S_CG+"200_phase_ii_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_ii_objective_trace.csv"},
     "16": {"Boston": B_CG+"phase_i_total.csv", "Sioux Falls": S_CG+"200_phase_i_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_i_artificial_flow_trace.csv"},
     "17": {"Boston": "docs/assets/homepage_evidence_r2/BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json", "Sioux Falls": "algorithms/distributed_assignment/lagrangian_r2/figure_data/Sioux_200OD_P07_history.csv", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/history.csv"},
-    "18": {"Boston": "docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png", "Sioux Falls": "docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/admm_run/result.json"},
+    "18": {"Boston": "docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png", "Sioux Falls": "docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png", "Hong Kong": "docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.source.json"},
     "19": {"Boston": "examples/boston/SAVED_EXAMPLE.md", "Sioux Falls": "examples/sioux-falls/native_l3_r1/README.md", "Hong Kong": "docs/cases/hong-kong.md"},
 }
 
@@ -462,7 +462,9 @@ def render_summary(fig,row_id,city,private_boston_history=None):
         ax.set_xticks([]);ax.set_yticks([])
         return
 
-def render(rows_to_update: set[str] | None = None):
+def render(rows_to_update: set[str] | None = None, cities_to_update: set[str] | None = None):
+    if cities_to_update is not None and rows_to_update is None:
+        raise ValueError("City selection requires a row selection")
     OUT.mkdir(parents=True,exist_ok=True)
     existing={}
     if rows_to_update is not None:
@@ -481,6 +483,9 @@ def render(rows_to_update: set[str] | None = None):
             matrix.extend(existing[(row_id,city)] for city in CITIES)
             continue
         for city in CITIES:
+            if cities_to_update is not None and city not in cities_to_update:
+                matrix.append(existing[(row_id,city)])
+                continue
             old=r1[(title,city)]
             source=SOURCE_OVERRIDE.get(row_id,{}).get(city,old["source_figure_or_data"])
             status=old["scope / status"]
@@ -489,7 +494,12 @@ def render(rows_to_update: set[str] | None = None):
                            if row_id=="16" and city=="Sioux Falls" else old["result_summary"])
             suffix="_r3" if row_id=="16" else ""
             rel=f"docs/assets/homepage_evidence_r2/row_{row_id}_{SLUG[city]}{suffix}.png";dest=ROOT/rel
-            if row_id=="17" and city=="Boston":
+            if row_id=="18" and city=="Hong Kong":
+                # Reuse the accepted R3 overview verbatim; the old ten-OD R2 gate
+                # remains historical evidence on its separate graph.
+                rel="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png"
+                dest=ROOT/rel
+            elif row_id=="17" and city=="Boston":
                 check_approved_boston_lagrangian(dest)
             else:
                 fig=fig_axes(title,city,display_scope)
@@ -499,7 +509,8 @@ def render(rows_to_update: set[str] | None = None):
                 fig.savefig(dest,dpi=100,facecolor="white",metadata={"Software":"MCL homepage evidence R2"})
                 plt.close(fig)
             with Image.open(dest) as im:
-                if im.size!=CANVAS:raise AssertionError((rel,im.size))
+                if im.size!=((1400,680) if row_id=="18" and city=="Hong Kong" else CANVAS):
+                    raise AssertionError((rel,im.size))
             target=old["evidence_page"]
             note="same renderer; absent stages use neutral status tile"
             if row_id=="09" and city in {"Sioux Falls","Hong Kong"}:note="primary static output is accepted Algorithm B modeled flow; not FW"
@@ -515,6 +526,10 @@ def render(rows_to_update: set[str] | None = None):
                 note="exact user-approved Boston R2 derived best-bound PNG; raw history excluded; 1.1002% misses frozen 1% gate"
             if row_id=="17" and city=="Hong Kong":
                 note="saved iteration on x axis; missing best-primal values remain unplotted"
+            if row_id=="18" and city=="Hong Kong":
+                target="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"
+                status="ACCEPTED_BOUNDED_HONG_KONG_ADMM_TRANSFER"
+                note="reused_existing_figure=true; newly_generated_scientific_figure=false; corrected R3 public handoff; separate fresh four-OD graph, not historical ten-OD R2"
             original_figure=old["source_figure_or_data"]
             source_hash_value=sha(ROOT/source) if source else ""
             if row_id=="15":
@@ -532,6 +547,10 @@ def render(rows_to_update: set[str] | None = None):
                     raise AssertionError((city,"row-15 source hash"))
                 note="reused_existing_figure=true; newly_generated_scientific_figure=false; source_hash="+reuse["source_hash_convention"]+"; Section 03 uses original_figure; legacy row preview retained for Section 04"
             row={"row_id":row_id,"row_title":title,"template_id":template,"graphic_type":graphic,"canvas_width":600,"canvas_height":360,"plot_bbox":str(PLOT_BBOX),"legend_contract":"fixed below/inside plot; local numeric scale","city":city,"data_or_figure_source":source,"source_hash":source_hash_value,"result_scope":old["result_summary"],"target_page":target.split("#")[0],"target_anchor":target.split("#",1)[1] if "#" in target else "","status":status,"notes":note,"preview_path":rel,"preview_hash":sha(dest),"original_figure":original_figure}
+            if row_id=="18" and city=="Hong Kong":
+                row.update(graphic_type="accepted bounded four-OD ADMM R3 overview",canvas_width=1400,canvas_height=680,
+                           result_scope="Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶",
+                           original_figure=rel)
             if row_id=="16" and city=="Sioux Falls":
                 row["result_scope"]="200-OD plotted example; 250-OD results remain on the case page; independent full-DAG closure not established."
             if row_id=="17" and city=="Sioux Falls":
@@ -556,7 +575,14 @@ def render(rows_to_update: set[str] | None = None):
                 side["plot_contract"]="Recorded iterations 1–300; empty best_primal values remain unplotted; frozen 1% gap gate missed."
             if row_id=="17" and city=="Hong Kong":
                 side["plot_contract"]="Recorded iteration values; empty best_primal values remain NaN."
-            dest.with_suffix(".source.json").write_text(json.dumps(side,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
+            if row_id=="18" and city=="Hong Kong":
+                side.update(instance=row["result_scope"],transform="verbatim accepted R3 public overview; no scientific rerender",
+                            public_source_record=source,source_package_sha256="7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+                            reused_existing_figure=True,newly_generated_scientific_figure=False)
+                sidecar=OUT/"row_18_hong_kong.source.json"
+            else:
+                sidecar=dest.with_suffix(".source.json")
+            sidecar.write_text(json.dumps(side,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
     fields=list(matrix[0]);with_path=OUT/"ROW_TEMPLATE_MATRIX.csv"
     if rows_to_update is None:
         with with_path.open("w",newline="",encoding="utf-8") as f:
@@ -566,7 +592,7 @@ def render(rows_to_update: set[str] | None = None):
         # original quoting and newline convention (some source hashes use LF rules).
         prior_lines=with_path.read_bytes().splitlines(keepends=True)
         if len(prior_lines)!=58:raise AssertionError("Expected 57 matrix records plus header")
-        changed={(r["row_id"],r["city"]):r for r in matrix if r["row_id"] in rows_to_update}
+        changed={(r["row_id"],r["city"]):r for r in matrix if r["row_id"] in rows_to_update and (cities_to_update is None or r["city"] in cities_to_update)}
         retained=[prior_lines[0]]
         seen=set()
         for raw in prior_lines[1:]:
