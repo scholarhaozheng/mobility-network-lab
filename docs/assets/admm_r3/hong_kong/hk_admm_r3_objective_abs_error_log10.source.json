@@ -1,0 +1,38 @@
+{
+  "figure": "hk_admm_r3_objective_abs_error_log10",
+  "status": "DERIVED_FROM_ACCEPTED_FRESH_SAVED_RESULT",
+  "renderer": "tools/visuals/render_hk_admm_objective_log_error.py",
+  "quantity": "log10(abs(saved ADMM objective - same-graph arc-flow LP objective))",
+  "units_before_log": "vehicle-minutes",
+  "outer_iterations": 165,
+  "iteration_range": [
+    1,
+    165
+  ],
+  "lp_reference_objective_vehicle_minutes": 32.98334567386431,
+  "final_absolute_error_vehicle_minutes": 0.00022518139236638035,
+  "final_log10_absolute_error": -3.6474674998175103,
+  "zero_difference_count": 0,
+  "zero_policy": "No recorded difference is zero; no epsilon floor, interpolation or smoothing was used.",
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "restricted_inputs": [
+    {
+      "restricted_source_id": "fresh_admm_run/history.csv",
+      "source_sha256": "2e951aeb2640bb45c04b47b843a7296e1f026a0b48eb37ece68b3b9801074ec9",
+      "distribution": "not included"
+    },
+    {
+      "restricted_source_id": "fresh_lp_reference/ARC_FLOW_REFERENCE_SUMMARY.json",
+      "source_sha256": "e46cee03f7ed7758c74f5489d2a48dd0a1eb0afcf0258fd71bbd65763854fbd7",
+      "distribution": "not included"
+    }
+  ],
+  "preserved_raw_objective_figure": {
+    "path": "docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_vs_lp.png",
+    "sha256": "30a2cfafad83db7531380833d75285ae2b671e2bb0e783f1dc2f01216f337f62"
+  },
+  "png_sha256": "e566dcbc5a08f38c7a39e68342be5a9688df41d8c252bf086fa3df8824b26616",
+  "svg_sha256": "7a3fd08485b05051976fbcbca81e81a0194c5b3d04a1af2b1b2839c2f41fd1dd",
+  "scientific_solver_rerun": false,
+  "claim_boundary": "Accepted bounded four-OD graph only; numerical comparison to its own LP, not full-territory or empirical validation."
+}

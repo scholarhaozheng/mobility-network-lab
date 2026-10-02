@@ -1,0 +1,66 @@
+{
+  "preview_path": "docs/assets/homepage_evidence_r2/row_18_hong_kong_r4.png",
+  "preview_hash": "fb50294832abbb79bb320e56b90dd4336ef8af7ea394110d7917390c8b5f9914",
+  "template_id": "admm_summary",
+  "city": "Hong Kong",
+  "stage": "ADMM",
+  "method": "ADMM",
+  "instance": "Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶",
+  "source_asset_or_data": "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.source.json",
+  "source_hash": "65b6c33562070e0cef11ca1b04b78fcd93d77de45932b0ed442be30c8625de24",
+  "transform": "equal-height three-panel display derivatives of accepted public ADMM figures; no solver or numerical rerun",
+  "crop": "recorded panel boxes; Hong Kong physical-flow markers are read from the public SVG instead of the PNG crop",
+  "scale_behavior": "contain/equal physical geometry; local numeric scales",
+  "units": "as labelled in preview and detailed source",
+  "legend": "three matched panel titles; instance-specific status and scope below",
+  "target_page": "docs/cases/hong-kong-space-time.md",
+  "target_anchor": "admm-r3-bounded-four-od-transfer",
+  "source_assets_sha256": {
+    "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png": "73a98cfc80a9165028d0aed232bcbc4570416e0abc5106bbd397d32d3ec0e2fb",
+    "docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_abs_error_log10.png": "e566dcbc5a08f38c7a39e68342be5a9688df41d8c252bf086fa3df8824b26616",
+    "docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png": "2e47c074096473bebe3bc871a8633a231d908ef7f54a3c15ae0e5a95ff783441"
+  },
+  "source_crop_boxes": {
+    "Residuals: docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png": [
+      105,
+      145,
+      1410,
+      735
+    ],
+    "Objective error (log10): docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_abs_error_log10.png": [
+      110,
+      140,
+      1320,
+      670
+    ],
+    "Physical flow: docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png": [
+      105,
+      145,
+      955,
+      840
+    ]
+  },
+  "display_panel_pixels": [
+    170,
+    100
+  ],
+  "canvas_pixels": [
+    600,
+    260
+  ],
+  "aspect_ratio_preserved": true,
+  "reused_existing_source_figures": true,
+  "newly_generated_scientific_figure": false,
+  "public_source_record": "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.source.json",
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "original_composite_figure": "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.png",
+  "full_triptych_figure": "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.png",
+  "physical_comparison_source_sha256": "7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a",
+  "physical_comparison_object": "111 original physical_link_id rows; same-graph LP flow on x and ADMM flow on y, in PCE",
+  "public_vector_marker_source": "docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.svg",
+  "public_vector_marker_sha256": "7877e015b6ff4f70662af54bb72c36feaa3d4eda7fe67af0cac080f2e0890410",
+  "physical_marker_count": 111,
+  "distinct_marker_positions": 5,
+  "physical_display_transform": "larger markers at unchanged positions from accepted public SVG; no jitter or raw private flow vector",
+  "physical_flow_note": "Scatter markers overlap near the x=y reference; 58 positive physical links in the accepted source."
+}

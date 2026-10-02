@@ -15,6 +15,7 @@ import json
 from pathlib import Path
 import re
 from urllib.parse import unquote
+from PIL import Image
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -258,6 +259,74 @@ def main() -> int:
           all(f'row_16_{city}_r3.png' in row16 for city in finite_gallery_sources) and
           'No independent full-DAG pricing closure is claimed' in row16,
           "CG row lost a trace, final-flow, local-path or Sioux scope statement")
+    admm_row = coverage.split('data-component="18"', 1)[1].split('</table>', 1)[0]
+    admm_sources = {
+        'boston': ('docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png',),
+        'sioux_falls': ('docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png',),
+        'hong_kong': (
+            'docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png',
+            'docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_abs_error_log10.png',
+            'docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png',
+        ),
+    }
+    admm_valid = admm_row.count('class="coverage-preview"') == 1 and 'hk_admm_r3_public_overview.png' not in admm_row
+    for city, source_paths in admm_sources.items():
+        preview_name = f'row_18_{city}_r4.png'
+        preview = ROOT / 'docs/assets/homepage_evidence_r2' / preview_name
+        sidecar = preview.with_suffix('.source.json')
+        record = json.loads(sidecar.read_text(encoding='utf-8')) if sidecar.is_file() else {}
+        dimensions = Image.open(preview).size if preview.is_file() else None
+        admm_valid = admm_valid and (
+            preview_name in admm_row and sidecar.name in admm_row and
+            preview_name in readme and preview_name in home and
+            dimensions == (600, 260) and
+            record.get('preview_hash') == hashlib.sha256(preview.read_bytes()).hexdigest() and
+            record.get('newly_generated_scientific_figure') is False and
+            record.get('display_panel_pixels') == [170, 100] and
+            record.get('canvas_pixels') == [600, 260] and
+            record.get('aspect_ratio_preserved') is True and
+            record.get('source_assets_sha256') == {
+                path: hashlib.sha256((ROOT / path).read_bytes()).hexdigest() for path in source_paths
+            } and (city != 'hong_kong' or (
+                record.get('physical_marker_count') == 111 and
+                record.get('distinct_marker_positions') == 5 and
+                record.get('physical_comparison_source_sha256') == '7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a' and
+                record.get('physical_comparison_object') == '111 original physical_link_id rows; same-graph LP flow on x and ADMM flow on y, in PCE' and
+                record.get('public_vector_marker_sha256') == hashlib.sha256((ROOT / record['public_vector_marker_source']).read_bytes()).hexdigest()
+            ))
+        )
+    check(admm_valid, 'All three ADMM homepage previews must use matched compact panels and accepted sources')
+    hk_log_base = ROOT / 'docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_abs_error_log10'
+    hk_log_record = json.loads(hk_log_base.with_suffix('.source.json').read_text(encoding='utf-8')) if hk_log_base.with_suffix('.source.json').is_file() else {}
+    hk_case_md = (DOCS / 'cases/hong-kong-space-time.md').read_text(encoding='utf-8')
+    hk_case_html = (DOCS / 'cases/hong-kong-space-time.html').read_text(encoding='utf-8')
+    check(all((hk_log_base.with_suffix(ext)).is_file() for ext in ('.png', '.svg', '.source.json')) and
+          hk_log_record.get('outer_iterations') == 165 and
+          hk_log_record.get('zero_difference_count') == 0 and
+          hk_log_record.get('scientific_solver_rerun') is False and
+          abs(hk_log_record.get('final_log10_absolute_error', 0) - (-3.6474674998175103)) < 1e-9 and
+          hk_log_record.get('png_sha256') == hashlib.sha256(hk_log_base.with_suffix('.png').read_bytes()).hexdigest() and
+          hk_log_record.get('svg_sha256') == hashlib.sha256(hk_log_base.with_suffix('.svg').read_bytes()).hexdigest() and
+          all('hk_admm_r3_objective_abs_error_log10'+ext in hk_case_md and
+              'hk_admm_r3_objective_abs_error_log10'+ext in hk_case_html for ext in ('.png', '.svg', '.source.json')) and
+          'hk_admm_r3_objective_vs_lp.png' in hk_case_md,
+          'Hong Kong ADMM log10 absolute objective-error derivative, source hashes, and preserved raw view are required')
+    hk_composite_base = ROOT / 'docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych'
+    hk_composite_record = json.loads(hk_composite_base.with_suffix('.source.json').read_text(encoding='utf-8')) if hk_composite_base.with_suffix('.source.json').is_file() else {}
+    check(all(hk_composite_base.with_suffix(ext).is_file() for ext in ('.png', '.svg', '.source.json', '.caption.md')) and
+          hk_composite_record.get('physical_link_count') == 111 and
+          hk_composite_record.get('positive_support_lp') == 58 and
+          hk_composite_record.get('positive_support_admm') == 58 and
+          hk_composite_record.get('panel_contract', {}).get('C') == 'all 111 original physical links: LP physical-link flow on x, ADMM physical-link flow on y, PCE; identity line' and
+          hk_composite_record.get('restricted_inputs', [{}])[-1].get('source_sha256') == '7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a' and
+          hk_composite_record.get('scientific_solver_rerun') is False and
+          hk_composite_record.get('png_sha256') == hashlib.sha256(hk_composite_base.with_suffix('.png').read_bytes()).hexdigest() and
+          hk_composite_record.get('svg_sha256') == hashlib.sha256(hk_composite_base.with_suffix('.svg').read_bytes()).hexdigest() and
+          all('hk_admm_r3_residual_objective_physical_flow_triptych'+ext in hk_case_md and
+              'hk_admm_r3_residual_objective_physical_flow_triptych'+ext in hk_case_html for ext in ('.png', '.svg', '.source.json')) and
+          'hk_admm_r3_residual_objective_physical_flow_triptych.svg' in admm_row and
+          'hk_admm_r3_residual_objective_physical_flow_triptych.svg' in home,
+          'Hong Kong ADMM matched triptych must preserve original physical-link LP-x/ADMM-y evidence and public links')
     gps_row = coverage.split('data-component="05"', 1)[1].split('</table>', 1)[0]
     gps_row_site = home.split('data-component="05"', 1)[1].split('</table>', 1)[0]
     projection = 'docs/assets/boston/visual_release_r1/boston_gps_projection.png'
@@ -485,14 +554,20 @@ def main() -> int:
           'class="atlas-depth-stage"' not in atlas and
           all('['+mark+']' in atlas for mark in ('A','B','C','D','B · D','B · C','C · D')),
           "City atlas A–D badges are incomplete")
+    check('hk_admm_r3_public_overview.png' not in atlas and
+          'hk_admm_r3_residual_convergence.png' in atlas and
+          'hk_admm_r3_admm_vs_lp_physical_flow.png' in atlas and
+          'hk_admm_r3_public_overview.png' in
+          (DOCS / 'cases/hong-kong-space-time.md').read_text(encoding='utf-8'),
+          "Hong Kong case atlas needs comparable ADMM plots while its overview stays in the detailed page")
     title_cells = re.findall(r'<th [^>]*class="atlas-title-cell"[^>]*>(.*?)</th>', atlas, re.S)
-    check(len(title_cells) == 86 and
+    check(len(title_cells) == 87 and
           all(re.search(r'</strong> <a class="atlas-depth-badge" href="#computational-depth-legend" title="[^"]+" aria-label="[^"]+"><img src="docs/assets/atlas_depth_badges/[ABCD](?:_[CD])?\.svg" width="(?:13|30)" height="11" alt="\[[ABCD](?: · [CD])?\]"></a>$', cell)
               for cell in title_cells if 'class="atlas-depth-badge"' in cell),
           "A–D labels must be small linked gray assets inline after their existing card titles")
-    check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 86,
-          "Atlas must retain 77 optimization/data cards plus nine moved representation previews")
-    check(atlas.count('width="165" alt=') == 76 and
+    check("atlas-gallery" not in atlas and atlas.count('class="atlas-card-cell"') == 87,
+          "Atlas must retain 78 optimization/data cards plus nine moved representation previews")
+    check(atlas.count('width="165" alt=') == 77 and
           atlas.count('width="220" alt="Boston GPS point-to-road projection') == 1 and
           not re.search(r'<img[^>]+width="(?:165|220)"[^>]+height="\d+"', atlas),
           "Atlas cards and moved previews must retain their aspect-ratio-safe widths")
@@ -559,8 +634,8 @@ def main() -> int:
               f'<a href="{case}">Tools and reproducibility</a>' in atlas and
               f'<section class="atlas-stage" id="{slug}-tools">' not in atlas,
               f"{city} tools navigation or historical anchor is missing")
-    check('<strong>' in atlas and atlas.count('<small class="atlas-meta">') == 86 and
-          atlas.count('<small class="atlas-links">') == 86 and
+    check('<strong>' in atlas and atlas.count('<small class="atlas-meta">') == 87 and
+          atlas.count('<small class="atlas-links">') == 87 and
           '<td width="25%"><sub>' not in atlas and
           '<td width="33%"><sub>' not in atlas,
           "Atlas title, image, scope and link rows are incomplete")

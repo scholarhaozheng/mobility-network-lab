@@ -14,6 +14,7 @@ import json
 import math
 import re
 import shutil
+import xml.etree.ElementTree as ET
 from collections import defaultdict
 from pathlib import Path
 
@@ -24,7 +25,7 @@ from matplotlib.collections import LineCollection
 from matplotlib.colors import Normalize
 from matplotlib.patches import Polygon as PatchPolygon
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont
+from PIL import Image, ImageDraw, ImageFont, ImageOps
 from shapely import wkt
 from shapely.geometry import shape
 
@@ -37,6 +38,8 @@ CITIES = ("Boston", "Sioux Falls", "Hong Kong")
 SLUG = {"Boston": "boston", "Sioux Falls": "sioux_falls", "Hong Kong": "hong_kong"}
 NAVY, TEAL, LIGHT, ORANGE = "#17364a", "#087f8c", "#dce6eb", "#d99243"
 CANVAS = (600, 360)
+ADMM_CANVAS = (600, 260)
+ADMM_PANEL_PIXELS = (170, 100)
 PLOT_BBOX = (0.10, 0.16, 0.80, 0.68)
 
 ROW_SPECS = [
@@ -93,9 +96,21 @@ SOURCE_OVERRIDE = {
     "15": {"Boston": B_CG+"validation_summary.json", "Sioux Falls": S_CG+"200_phase_ii_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_ii_objective_trace.csv"},
     "16": {"Boston": B_CG+"phase_i_total.csv", "Sioux Falls": S_CG+"200_phase_i_trace.csv", "Hong Kong": HK_CG+"full_cg_v1_phase_i_artificial_flow_trace.csv"},
     "17": {"Boston": "docs/assets/homepage_evidence_r2/BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json", "Sioux Falls": "algorithms/distributed_assignment/lagrangian_r2/figure_data/Sioux_200OD_P07_history.csv", "Hong Kong": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/history.csv"},
-    "18": {"Boston": "docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png", "Sioux Falls": "docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png", "Hong Kong": "docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.source.json"},
+    "18": {"Boston": "docs/assets/admm_r2/figures/admm_boston_10od_case_sequence.png", "Sioux Falls": "docs/assets/admm_r2/figures/admm_sioux_200_case_sequence.png", "Hong Kong": "docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.source.json"},
     "19": {"Boston": "examples/boston/SAVED_EXAMPLE.md", "Sioux Falls": "examples/sioux-falls/native_l3_r1/README.md", "Hong Kong": "docs/cases/hong-kong.md"},
 }
+
+# Presentation-only crops of three accepted public R3 figures. The complete
+# figures and their source sidecars remain the scientific evidence.
+HK_ADMM_R3_PANELS = (
+    ("docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png", (105, 145, 1410, 735), "Residuals"),
+    ("docs/assets/admm_r3/hong_kong/hk_admm_r3_objective_abs_error_log10.png", (110, 140, 1320, 670), "Objective error (log10)"),
+    ("docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png", (105, 145, 955, 840), "Physical flow"),
+)
+HK_ADMM_R3_SCATTER_SVG = "docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.svg"
+EXPECTED_HK_ADMM_PHYSICAL_SHA256 = "7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a"
+ADMM_R2_CROPS = ((75, 150, 510, 350), (1095, 150, 1535, 350), (580, 455, 1025, 670))
+ADMM_PANEL_TITLES = ("Residuals", "Objective error (log10)", "Physical flow")
 
 CG_TRACES = {
     "Boston": ((B_CG+"phase_i_total.csv", "artificial_flow"), (B_CG+"phase_ii_objective.csv", "objective")),
@@ -137,6 +152,41 @@ def fig_axes(title: str, city: str, scope: str):
     fig.text(.93,.94,city_label,fontsize=8.5,color=TEAL,ha="right",family="DejaVu Sans")
     fig.text(.07,.055,scope,fontsize=7.4,color="#53697a",family="DejaVu Sans")
     return fig
+
+def admm_fig_axes(title: str, city: str, scope: str):
+    """One compact, source-preserving three-panel layout for all ADMM cases."""
+    fig = plt.figure(figsize=(6, 2.6), dpi=100, facecolor="white")
+    fig.text(.055, .92, title, fontsize=12, weight="bold", color=NAVY, family="DejaVu Sans")
+    fig.text(.945, .92, city, fontsize=8.5, color=TEAL, ha="right", family="DejaVu Sans")
+    fig.text(.055, .12, scope, fontsize=7.4, color="#53697a", family="DejaVu Sans")
+    return fig
+
+def hk_public_scatter_markers():
+    """Read the marker positions already disclosed in the accepted public SVG."""
+    svg=ET.parse(ROOT/HK_ADMM_R3_SCATTER_SVG).getroot()
+    circles=svg.findall("{http://www.w3.org/2000/svg}circle")
+    positions=[(float(c.attrib["cx"]),float(c.attrib["cy"])) for c in circles]
+    if len(positions)!=111 or len(set(positions))!=5:
+        raise AssertionError("Accepted Hong Kong ADMM public scatter marker contract changed")
+    # Bounds and tick extent are read from the same accepted SVG. No jitter,
+    # interpolation, extra points, or restricted flow vectors are used.
+    return [((cx-145.0)*8.5/780.0,(805.0-cy)*8.5/650.0) for cx,cy in positions]
+
+def draw_hk_public_scatter(ax):
+    markers=hk_public_scatter_markers()
+    ax.set_facecolor("#f6f9fb")
+    ax.plot([0,8.5],[0,8.5],color="#9fb2be",lw=.7,ls="--",zorder=1)
+    ax.scatter([x for x,_ in markers],[y for _,y in markers],s=23,c=TEAL,
+               edgecolors="white",linewidths=.25,zorder=3)
+    ax.set_xlim(0,8.5);ax.set_ylim(0,8.5)
+    ax.set_xticks([0,4.25,8.5]);ax.set_yticks([0,4.25,8.5])
+    ax.tick_params(labelsize=5,length=1,pad=1)
+    ax.set_xlabel("LP flow (PCE)",fontsize=5,labelpad=0)
+    # The full linked figure retains both axis labels. The 170-pixel preview
+    # omits the vertical label so it cannot collide with the objective panel.
+    ax.grid(color=LIGHT,lw=.45,zorder=0)
+    for spine in ("top","right"):ax.spines[spine].set_visible(False)
+    for spine in ("left","bottom"):ax.spines[spine].set_color("#91a7b3")
 
 def neutral(fig, status: str, detail: str):
     ax=fig.add_axes(PLOT_BBOX);ax.set_facecolor("#f4f7f8")
@@ -437,21 +487,25 @@ def render_summary(fig,row_id,city,private_boston_history=None):
         fig.text(.5,.13,status,ha="center",fontsize=7.5,color=NAVY)
         return
     if template=="admm_summary":
-        axs=panel_axes(fig,3)
-        status={"Boston":"R2_S accepted; 10 OD","Sioux Falls":"R2_S accepted; 200-OD example","Hong Kong":"Gated diagnostic; no accepted objective"}[city]
-        if city!="Hong Kong":
-            source=Image.open(ROOT/SOURCE_OVERRIDE[row_id][city]).convert("RGB")
-            crops=((75,150,510,350),(1095,150,1535,350),(580,455,1025,670))
-            for ax,box,title in zip(axs,crops,("Residuals","Objective / LP","Physical flow")):
-                ax.imshow(source.crop(box));ax.set_title(title,fontsize=8);ax.axis("off")
-        else:
-            result=json.loads((ROOT/SOURCE_OVERRIDE[row_id][city]).read_text(encoding="utf-8"))
-            for ax,title in zip(axs,("Residuals","Objective / LP","Physical flow")):
-                ax.set_title(title,fontsize=8);ax.set_xticks([]);ax.set_yticks([])
-            axs[0].barh(["Local balance","Gate"],[0.082467622,0.0],color=[ORANGE,TEAL]);axs[0].tick_params(labelsize=6)
-            axs[1].text(.5,.5,"Not accepted\nfor this transfer",ha="center",va="center",fontsize=8,color=NAVY,transform=axs[1].transAxes)
-            axs[2].text(.5,.5,"No accepted\nphysical flow",ha="center",va="center",fontsize=8,color=NAVY,transform=axs[2].transAxes)
-        fig.text(.5,.12,status,ha="center",fontsize=8,color=NAVY)
+        status={"Boston":"R2_S accepted; 10 OD","Sioux Falls":"R2_S accepted; 200-OD example","Hong Kong":"R3 accepted; fresh 4-OD · 58 positive links"}[city]
+        panels=(HK_ADMM_R3_PANELS if city=="Hong Kong" else
+                tuple((SOURCE_OVERRIDE[row_id][city],box,title) for box,title in zip(ADMM_R2_CROPS,ADMM_PANEL_TITLES)))
+        panel_w,panel_h=ADMM_PANEL_PIXELS
+        gap=.02;left=.055;right=.055
+        width=(1-left-right-gap*2)/3
+        for i,(source_path,box,title) in enumerate(panels):
+            x=left+i*(width+gap)
+            fig.text(x+width/2,.77,title,ha="center",fontsize=8,color=NAVY)
+            ax=fig.add_axes((x,.35,width,panel_h/ADMM_CANVAS[1]))
+            if city=="Hong Kong" and i==2:
+                draw_hk_public_scatter(ax)
+            else:
+                with Image.open(ROOT/source_path) as source:
+                    contained=ImageOps.contain(source.convert("RGB").crop(box),ADMM_PANEL_PIXELS,Image.Resampling.LANCZOS)
+                panel=Image.new("RGB",ADMM_PANEL_PIXELS,"white")
+                panel.paste(contained,((panel_w-contained.width)//2,(panel_h-contained.height)//2))
+                ax.imshow(panel);ax.axis("off")
+        fig.text(.5,.25,status,ha="center",fontsize=8,color=NAVY)
         return
     if template=="tool_card":
         ax=fig.add_axes((.09,.2,.82,.59));ax.set_facecolor("#f2f7f8")
@@ -491,25 +545,25 @@ def render(rows_to_update: set[str] | None = None, cities_to_update: set[str] | 
             status=old["scope / status"]
             if source and not (ROOT/source).is_file():raise FileNotFoundError(source)
             display_scope=("200-OD example; 250-OD results in the case page; no full-DAG closure"
-                           if row_id=="16" and city=="Sioux Falls" else old["result_summary"])
-            suffix="_r3" if row_id=="16" else ""
+                           if row_id=="16" and city=="Sioux Falls" else
+                           "Accepted bounded R3 on fresh 4-OD graph; separate from gated 10-OD R2"
+                           if row_id=="18" and city=="Hong Kong" else old["result_summary"])
+            suffix="_r4" if row_id=="18" else "_r3" if row_id=="16" else ""
             rel=f"docs/assets/homepage_evidence_r2/row_{row_id}_{SLUG[city]}{suffix}.png";dest=ROOT/rel
-            if row_id=="18" and city=="Hong Kong":
-                # Reuse the accepted R3 overview verbatim; the old ten-OD R2 gate
-                # remains historical evidence on its separate graph.
-                rel="docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png"
-                dest=ROOT/rel
-            elif row_id=="17" and city=="Boston":
+            if row_id=="17" and city=="Boston":
                 check_approved_boston_lagrangian(dest)
             else:
-                fig=fig_axes(title,city,display_scope)
+                if row_id=="18" and city=="Hong Kong":
+                    status="ACCEPTED_BOUNDED_HONG_KONG_ADMM_TRANSFER"
+                fig=(admm_fig_axes(title,city,display_scope) if row_id=="18" else
+                     fig_axes(title,city,display_scope))
                 if status in {"outside benchmark","not demonstrated"} or not source:
                     neutral(fig,"Not part of this case",old["result_summary"])
                 else:render_data_panel(fig,row_id,city)
                 fig.savefig(dest,dpi=100,facecolor="white",metadata={"Software":"MCL homepage evidence R2"})
                 plt.close(fig)
             with Image.open(dest) as im:
-                if im.size!=((1400,680) if row_id=="18" and city=="Hong Kong" else CANVAS):
+                if im.size!=(ADMM_CANVAS if row_id=="18" else CANVAS):
                     raise AssertionError((rel,im.size))
             target=old["evidence_page"]
             note="same renderer; absent stages use neutral status tile"
@@ -529,7 +583,8 @@ def render(rows_to_update: set[str] | None = None, cities_to_update: set[str] | 
             if row_id=="18" and city=="Hong Kong":
                 target="docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer"
                 status="ACCEPTED_BOUNDED_HONG_KONG_ADMM_TRANSFER"
-                note="reused_existing_figure=true; newly_generated_scientific_figure=false; corrected R3 public handoff; separate fresh four-OD graph, not historical ten-OD R2"
+            if row_id=="18":
+                note="compact equal-height display crops of accepted public ADMM figures; original plots and objective shapes unchanged; newly_generated_scientific_figure=false"
             original_figure=old["source_figure_or_data"]
             source_hash_value=sha(ROOT/source) if source else ""
             if row_id=="15":
@@ -547,10 +602,13 @@ def render(rows_to_update: set[str] | None = None, cities_to_update: set[str] | 
                     raise AssertionError((city,"row-15 source hash"))
                 note="reused_existing_figure=true; newly_generated_scientific_figure=false; source_hash="+reuse["source_hash_convention"]+"; Section 03 uses original_figure; legacy row preview retained for Section 04"
             row={"row_id":row_id,"row_title":title,"template_id":template,"graphic_type":graphic,"canvas_width":600,"canvas_height":360,"plot_bbox":str(PLOT_BBOX),"legend_contract":"fixed below/inside plot; local numeric scale","city":city,"data_or_figure_source":source,"source_hash":source_hash_value,"result_scope":old["result_summary"],"target_page":target.split("#")[0],"target_anchor":target.split("#",1)[1] if "#" in target else "","status":status,"notes":note,"preview_path":rel,"preview_hash":sha(dest),"original_figure":original_figure}
+            if row_id=="18":
+                row.update(canvas_height=ADMM_CANVAS[1],plot_bbox=str((.055,.35,.89,100/ADMM_CANVAS[1])),
+                           legend_contract="three matched panel titles; instance-specific status and scope below")
             if row_id=="18" and city=="Hong Kong":
-                row.update(graphic_type="accepted bounded four-OD ADMM R3 overview",canvas_width=1400,canvas_height=680,
+                row.update(graphic_type="residual/objective/flow summary",
                            result_scope="Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶",
-                           original_figure=rel)
+                           original_figure="docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.png")
             if row_id=="16" and city=="Sioux Falls":
                 row["result_scope"]="200-OD plotted example; 250-OD results remain on the case page; independent full-DAG closure not established."
             if row_id=="17" and city=="Sioux Falls":
@@ -575,13 +633,29 @@ def render(rows_to_update: set[str] | None = None, cities_to_update: set[str] | 
                 side["plot_contract"]="Recorded iterations 1–300; empty best_primal values remain unplotted; frozen 1% gap gate missed."
             if row_id=="17" and city=="Hong Kong":
                 side["plot_contract"]="Recorded iteration values; empty best_primal values remain NaN."
-            if row_id=="18" and city=="Hong Kong":
-                side.update(instance=row["result_scope"],transform="verbatim accepted R3 public overview; no scientific rerender",
-                            public_source_record=source,source_package_sha256="7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
-                            reused_existing_figure=True,newly_generated_scientific_figure=False)
-                sidecar=OUT/"row_18_hong_kong.source.json"
-            else:
-                sidecar=dest.with_suffix(".source.json")
+            if row_id=="18":
+                panels=(HK_ADMM_R3_PANELS if city=="Hong Kong" else
+                        tuple((source,box,title) for box,title in zip(ADMM_R2_CROPS,ADMM_PANEL_TITLES)))
+                side.update(transform="equal-height three-panel display derivatives of accepted public ADMM figures; no solver or numerical rerun",
+                            crop="recorded panel boxes; Hong Kong physical-flow markers are read from the public SVG instead of the PNG crop",
+                            source_assets_sha256={path:sha(ROOT/path) for path,_,_ in panels},
+                            source_crop_boxes={f"{title}: {path}":list(box) for path,box,title in panels},
+                            display_panel_pixels=list(ADMM_PANEL_PIXELS),canvas_pixels=list(ADMM_CANVAS),
+                            aspect_ratio_preserved=True,reused_existing_source_figures=True,
+                            newly_generated_scientific_figure=False)
+                if city=="Hong Kong":
+                    side.update(instance=row["result_scope"],public_source_record=source,
+                                source_package_sha256="7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+                                original_composite_figure=row["original_figure"],
+                                full_triptych_figure="docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_objective_physical_flow_triptych.png",
+                                physical_comparison_source_sha256=EXPECTED_HK_ADMM_PHYSICAL_SHA256,
+                                physical_comparison_object="111 original physical_link_id rows; same-graph LP flow on x and ADMM flow on y, in PCE",
+                                public_vector_marker_source=HK_ADMM_R3_SCATTER_SVG,
+                                public_vector_marker_sha256=sha(ROOT/HK_ADMM_R3_SCATTER_SVG),
+                                physical_marker_count=111,distinct_marker_positions=5,
+                                physical_display_transform="larger markers at unchanged positions from accepted public SVG; no jitter or raw private flow vector",
+                                physical_flow_note="Scatter markers overlap near the x=y reference; 58 positive physical links in the accepted source.")
+            sidecar=dest.with_suffix(".source.json")
             sidecar.write_text(json.dumps(side,indent=2,ensure_ascii=False)+"\n",encoding="utf-8",newline="\n")
     fields=list(matrix[0]);with_path=OUT/"ROW_TEMPLATE_MATRIX.csv"
     if rows_to_update is None:

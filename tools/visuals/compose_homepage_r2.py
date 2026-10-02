@@ -185,7 +185,8 @@ EXTRAS=[
  ("Hong Kong","finite","Final physical-link movement flow","docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png","docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow","CG flow","R5 10-OD"),
  ("Hong Kong","finite","Independent 10/10 pricing closure","docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png","docs/cases/hong-kong-space-time.md#independent-pricing-closure","CG pricing","R5 10-OD"),
  ("Hong Kong","finite","Lagrangian certified gap","docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png","docs/cases/hong-kong-space-time.md#reference-objective-agreement","Lagrangian","bounded accepted 0.7444%"),
- ("Hong Kong","finite","Accepted bounded ADMM R3 transfer","docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png","docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer","ADMM","fresh preregistered 4-OD · 165 iterations; separate from gated 10-OD R2"),
+ ("Hong Kong","finite","ADMM R3 convergence","docs/assets/admm_r3/hong_kong/hk_admm_r3_residual_convergence.png","docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer","ADMM","accepted fresh 4-OD · 165 iterations; separate from gated 10-OD R2"),
+ ("Hong Kong","finite","ADMM R3 physical flow vs LP","docs/assets/admm_r3/hong_kong/hk_admm_r3_admm_vs_lp_physical_flow.png","docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer","ADMM","accepted fresh 4-OD · 58 positive physical links"),
 ]
 
 def esc(s):return html.escape(str(s),quote=True)
@@ -283,7 +284,7 @@ def static_path_parity(rid):
 def component_preview_cell(r, rid, reused):
     reuse_record = reused.get(r["city"]) if reused else None
     primary = reuse_record["original_figure"] if reuse_record else r["preview_path"]
-    alt = ("Hong Kong bounded ADMM R3 transfer overview with frozen policy, fresh 4-OD result, and independent closure checks."
+    alt = ("Hong Kong accepted bounded ADMM R3 four-OD residual, objective versus LP, and physical-flow preview; historical ten-OD R2 remains gated."
            if rid=="18" and r["city"]=="Hong Kong" else
            r["city"]+" saved physical-to-finite-graph construction preview"
            if rid=="14" else
@@ -374,8 +375,10 @@ def component_table(matrix, rid):
                  "Hong Kong":"Detector-link view · saved point projection",
              }[r["city"]])+'</sub></td>' for r in rows)
              if rid=="05" else
+             '<td colspan="3" align="center"><sub>Residuals · log10 absolute objective error against each case’s own LP · original physical-link flow (LP x-axis; ADMM y-axis).</sub></td>'
+             if rid=="18" else
              '<td colspan="3" align="center"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
-             if rid=="18" or len({r["graphic_type"] for r in rows}) == 1 else
+             if len({r["graphic_type"] for r in rows}) == 1 else
              ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
          )+'</tr>',
          '<tr class="coverage-links">']
@@ -401,6 +404,8 @@ def component_table(matrix, rid):
         out[5]='<tr class="coverage-caption">'+''.join('<td width="266" align="center"><sub>'+esc(captions[c])+'</sub></td>' for c in CITIES)+'</tr>'
     for r in rows:
         source=r["data_or_figure_source"]
+        if rid=="18":
+            source=r["preview_path"].removesuffix(".png")+".source.json"
         reuse_record=reused.get(r["city"]) if reused else None
         links=('<a href="'+esc(row_target(r))+'">Evidence</a> · <a href="'+esc(reuse_record["original_figure"] if reuse_record else r["preview_path"])+
                '">'+('Full figure' if reuse_record else 'Full preview')+'</a>')
@@ -413,6 +418,9 @@ def component_table(matrix, rid):
         if rid=="16":
             links += (' · <a href="'+esc(FINITE_FIGURES[r["city"]]["flow"][0])+'">Final flow</a>'
                       ' · <a href="'+esc(FINITE_FIGURES[r["city"]]["path"][0])+'">Local path</a>')
+        if rid=="18" and r["city"]=="Hong Kong":
+            links += (' · <a href="docs/assets/admm_r3/hong_kong/'
+                      'hk_admm_r3_residual_objective_physical_flow_triptych.svg">Full three-panel figure</a>')
         if source:links+=' · <a href="'+esc(source)+'">Source record</a>'
         # GitHub strips <small> from README tables, but supports <sub>.
         # Keep the original link names and use a native footnote-size row.

@@ -1,0 +1,39 @@
+{
+  "figure": "hk_admm_r3_residual_objective_physical_flow_triptych",
+  "status": "DERIVED_FROM_ACCEPTED_FRESH_SAVED_RESULT",
+  "renderer": "tools/visuals/render_hk_admm_objective_log_error.py",
+  "panel_contract": {
+    "A": "recorded-iteration log10 primal and dual residuals with their saved thresholds",
+    "B": "recorded-iteration log10 absolute ADMM objective difference against this graph's LP objective",
+    "C": "all 111 original physical links: LP physical-link flow on x, ADMM physical-link flow on y, PCE; identity line"
+  },
+  "physical_link_count": 111,
+  "positive_support_lp": 58,
+  "positive_support_admm": 58,
+  "physical_flow_rmse_pce": 1.2935472922076921e-08,
+  "physical_flow_max_abs_difference_pce": 6.371185934384016e-08,
+  "zero_objective_difference_count": 0,
+  "smoothing_or_jitter": false,
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "restricted_inputs": [
+    {
+      "restricted_source_id": "fresh_admm_run/history.csv",
+      "source_sha256": "2e951aeb2640bb45c04b47b843a7296e1f026a0b48eb37ece68b3b9801074ec9",
+      "distribution": "not included"
+    },
+    {
+      "restricted_source_id": "fresh_lp_reference/ARC_FLOW_REFERENCE_SUMMARY.json",
+      "source_sha256": "e46cee03f7ed7758c74f5489d2a48dd0a1eb0afcf0258fd71bbd65763854fbd7",
+      "distribution": "not included"
+    },
+    {
+      "restricted_source_id": "HK_ADMM_R3_PHYSICAL_FLOW_COMPARISON.csv",
+      "source_sha256": "7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a",
+      "distribution": "not included"
+    }
+  ],
+  "png_sha256": "bc04feb29f102ba11dbb90ff090cdb381a2c4333f0e890e5b9647440d3d4f869",
+  "svg_sha256": "aae1faa2742de936730a63149860ddb2190bb20c92c7cd35320f9f34fe286aa2",
+  "scientific_solver_rerun": false,
+  "claim_boundary": "Accepted bounded four-OD graph only; no full-territory or observed-traffic validation."
+}
