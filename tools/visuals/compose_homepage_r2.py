@@ -185,7 +185,7 @@ EXTRAS=[
  ("Hong Kong","finite","Final physical-link movement flow","docs/assets/hong_kong/full_stack_r5/figures/hk_cg_final_physical_link_movement_flow.png","docs/cases/hong-kong-space-time.md#from-time-expanded-flows-back-to-final-physical-link-movement-flow","CG flow","R5 10-OD"),
  ("Hong Kong","finite","Independent 10/10 pricing closure","docs/assets/hong_kong/full_stack_r5/figures/hk_cg_pricing_closure.png","docs/cases/hong-kong-space-time.md#independent-pricing-closure","CG pricing","R5 10-OD"),
  ("Hong Kong","finite","Lagrangian certified gap","docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_lagrangian_dual_primal_gap.png","docs/cases/hong-kong-space-time.md#reference-objective-agreement","Lagrangian","bounded accepted 0.7444%"),
- ("Hong Kong","finite","ADMM gated diagnostic","docs/assets/hong_kong/full_stack_r5/r2r4_baseline/figures/hk_admm_residuals_and_feasibility.png","docs/cases/hong-kong-space-time.md#reference-objective-agreement","ADMM","gated; no accepted objective"),
+ ("Hong Kong","finite","Accepted bounded ADMM R3 transfer","docs/assets/admm_r3/hong_kong/hk_admm_r3_public_overview.png","docs/cases/hong-kong-space-time.md#admm-r3-bounded-four-od-transfer","ADMM","fresh preregistered 4-OD · 165 iterations; separate from gated 10-OD R2"),
 ]
 
 def esc(s):return html.escape(str(s),quote=True)
@@ -283,7 +283,9 @@ def static_path_parity(rid):
 def component_preview_cell(r, rid, reused):
     reuse_record = reused.get(r["city"]) if reused else None
     primary = reuse_record["original_figure"] if reuse_record else r["preview_path"]
-    alt = (r["city"]+" saved physical-to-finite-graph construction preview"
+    alt = ("Hong Kong bounded ADMM R3 transfer overview with frozen policy, fresh 4-OD result, and independent closure checks."
+           if rid=="18" and r["city"]=="Hong Kong" else
+           r["city"]+" saved physical-to-finite-graph construction preview"
            if rid=="14" else
            r["city"]+" Phase-I artificial-flow and Phase-II objective traces"
            if rid=="16" else
@@ -351,10 +353,17 @@ def component_table(matrix, rid):
             hk_static_r2_reuse(rows,rid) if rid in {"12","13"} else None)
     if rid in {"12","13"}:
         return static_path_table(rows,rid,title)
+    def scope_cell(r):
+        if rid=="18" and r["city"]=="Hong Kong":
+            return ('<td width="266" valign="top"><strong>Accepted bounded ADMM R3 transfer</strong><br>'+
+                    esc(r["result_scope"])+
+                    '<br><sub>Finite 30-s × 50-step shared-capacity case with modeled OD demand; '
+                    'not full-territory assignment or empirical traffic validation.</sub></td>')
+        return '<td width="266" valign="top">'+esc(r["result_scope"])+'</td>'
     out=['<table class="home-coverage" data-component="'+rid+'" width="100%"><colgroup>'+('<col width="33%">'*3)+'</colgroup>',
          '<thead><tr><th colspan="3" scope="colgroup" width="800">'+esc(title)+'</th></tr>',
          '<tr>'+''.join('<th scope="col" width="266">'+esc(city)+'</th>' for city in CITIES)+'</tr></thead><tbody>',
-         '<tr class="coverage-scope">'+''.join('<td width="266" valign="top">'+esc(r["result_scope"])+'</td>' for r in rows)+'</tr>',
+         '<tr class="coverage-scope">'+''.join(scope_cell(r) for r in rows)+'</tr>',
          '<tr class="coverage-preview">'+''.join(component_preview_cell(r,rid,reused) for r in rows)+'</tr>',
          '<tr class="coverage-caption">'+(
              ''.join('<td width="266" align="center"><sub>'+esc(reused[r["city"]]["caption"] if r["city"] in reused else r["graphic_type"])+'</sub></td>' for r in rows)
@@ -366,7 +375,7 @@ def component_table(matrix, rid):
              }[r["city"]])+'</sub></td>' for r in rows)
              if rid=="05" else
              '<td colspan="3" align="center"><sub>'+esc(rows[0]["graphic_type"])+'</sub></td>'
-             if len({r["graphic_type"] for r in rows}) == 1 else
+             if rid=="18" or len({r["graphic_type"] for r in rows}) == 1 else
              ''.join('<td width="266" align="center"><sub>'+esc(r["graphic_type"])+'</sub></td>' for r in rows)
          )+'</tr>',
          '<tr class="coverage-links">']

@@ -1,0 +1,25 @@
+{
+  "figure": "hk_admm_r3_residual_convergence",
+  "status": "ACCEPTED_FRESH_SAVED_RESULT",
+  "renderer": "render_saved_figures.py",
+  "method": "deterministic plotting from saved independently verified results; optimizer_calls=0",
+  "caption": "Original-unit local conservation, primal, dual, and capacity residuals with declared gates and accepted stopping iteration.",
+  "limitations": "Bounded 4-OD modeled demand; no full-territory or empirical validation claim.",
+  "svg_sha256": "1bd9d55dfa16cf8aad1b0a0be1e0ed5cfc521b10fd9c497344f1b6515109c9aa",
+  "png_sha256": "73a98cfc80a9165028d0aed232bcbc4570416e0abc5106bbd397d32d3ec0e2fb",
+  "restricted_inputs": [
+    {
+      "restricted_source_id": "fresh_admm_run/history.csv",
+      "source_sha256": "2e951aeb2640bb45c04b47b843a7296e1f026a0b48eb37ece68b3b9801074ec9",
+      "distribution": "not included in this public asset set"
+    },
+    {
+      "restricted_source_id": "ADMM_R3_FROZEN_POLICY.json",
+      "source_sha256": "eb57438e3c8a19dd377153863e1353d4126eff449e9ee0cee13d90d86414a654",
+      "distribution": "not included in this public asset set"
+    }
+  ],
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "source_path_policy": "stable logical identifiers and hashes only; no local absolute paths",
+  "source_note": "Hashed source artifacts are retained privately and were used to render this accepted saved-result figure; they are not distributed here."
+}

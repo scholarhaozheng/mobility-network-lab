@@ -1,0 +1,25 @@
+{
+  "figure": "hk_admm_r3_admm_vs_lp_physical_flow",
+  "status": "ACCEPTED_FRESH_SAVED_RESULT",
+  "renderer": "render_saved_figures.py",
+  "method": "deterministic plotting from saved independently verified results; optimizer_calls=0",
+  "caption": "Aggregated physical-link ADMM versus LP flow, with identity line, RMSE, maximum difference, and support identity.",
+  "limitations": "Bounded 4-OD modeled demand; no full-territory or empirical validation claim.",
+  "svg_sha256": "7877e015b6ff4f70662af54bb72c36feaa3d4eda7fe67af0cac080f2e0890410",
+  "png_sha256": "2e47c074096473bebe3bc871a8633a231d908ef7f54a3c15ae0e5a95ff783441",
+  "restricted_inputs": [
+    {
+      "restricted_source_id": "HK_ADMM_R3_PHYSICAL_FLOW_COMPARISON.csv",
+      "source_sha256": "7542d56e58db8e1f17e7839eecb678497dc66c1c106a4a8a73234090c0c26f3a",
+      "distribution": "not included in this public asset set"
+    },
+    {
+      "restricted_source_id": "HK_ADMM_R3_INDEPENDENT_CHECK.json",
+      "source_sha256": "a7808e72c18565f3717321214d49c7536c8163594dd059c284dd6263357ea398",
+      "distribution": "not included in this public asset set"
+    }
+  ],
+  "source_package_sha256": "7686cc138a4feb76316d2a63626b4634fd9e361120048792bd8afbcf973b7573",
+  "source_path_policy": "stable logical identifiers and hashes only; no local absolute paths",
+  "source_note": "Hashed source artifacts are retained privately and were used to render this accepted saved-result figure; they are not distributed here."
+}
