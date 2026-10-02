@@ -18,13 +18,17 @@ def main(argv=None):
     S=Path(__file__).resolve().parents[1]
     # Preserve R1/R2 assets; R3 adds source-qualified compact presentation views.
     from visuals.render_homepage_evidence_r2 import render as render_homepage_evidence
+    from visuals.render_finite_atlas_previews_r1 import render as render_finite_atlas_previews
     from visuals.render_homepage_alignment_r3 import render as render_homepage_alignment
     from visuals.compose_homepage_r2 import update_readme
     if not args.reuse_saved_previews:
-        render_homepage_evidence()
+        # The frozen R2 matrix includes accepted later reuse/disclosure edits.
+        # Refresh only the two preview families changed by this presentation.
+        render_homepage_evidence(rows_to_update={"16", "17"})
         render_homepage_alignment()
     elif not (S/'docs/assets/homepage_evidence_r2/ROW_TEMPLATE_MATRIX.csv').is_file():
         raise FileNotFoundError('Saved row matrix required for presentation-only rebuild')
+    render_finite_atlas_previews()
     update_readme()
     CSS='''
     :root{--ink:#142e43;--muted:#587080;--teal:#087f8c;--line:#d6e1e7;--soft:#f1f6f8;--navy:#142d43;--mint:#58c7b4}*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:84px}body{margin:0;background:#fff;color:var(--ink);font:16px/1.72 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:var(--teal);text-decoration:none}a:hover{text-decoration:underline}header{border-bottom:1px solid var(--line);background:#fff}.mast{max-width:1260px;margin:auto;padding:22px 34px;display:flex;align-items:center;justify-content:space-between;gap:25px}.brand{font-weight:800;letter-spacing:-.02em;font-size:22px;color:var(--ink)}.brand small{display:block;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:500}.nav{position:sticky;top:0;z-index:8;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line)}.nav div{max-width:1260px;padding:12px 34px;margin:auto;display:flex;gap:25px;overflow-x:auto;white-space:nowrap;font-size:13px;font-weight:650}.mcl-page{max-width:1250px;margin:auto;padding:35px 34px 80px}.mcl-page>p:first-child{margin:0 0 25px}.mcl-page h1{font-size:44px;letter-spacing:-.05em;line-height:1.18;margin:28px 0 22px}.mcl-page h2{font-size:35px;letter-spacing:-.035em;line-height:1.25;margin:75px -22px 28px;padding:25px 22px;border-top:3px solid var(--teal);background:var(--soft)}.mcl-page h3{font-size:25px;line-height:1.35;letter-spacing:-.02em;margin-top:39px;margin-bottom:17px}.mcl-page h4{font-size:19px;margin-top:28px}.mcl-page p{margin:15px 0;color:#324e61}.mcl-page strong{color:var(--ink)}.mcl-page img{max-width:100%;height:auto;vertical-align:middle}.mcl-page p[align="center"]{margin:27px 0}.mcl-page p[align="center"] img{border:1px solid var(--line);border-radius:10px}.mcl-page table{border-collapse:separate;border-spacing:0;width:100%;margin:25px 0 29px;border:1px solid var(--line);border-radius:9px;overflow:hidden;font-size:14px}.mcl-page th{background:var(--navy);color:#fff;text-align:left;line-height:1.4;font-weight:650;padding:15px}.mcl-page th strong{color:white}.mcl-page td{padding:14px 15px;vertical-align:top;border-top:1px solid var(--line)}.mcl-page td+td,.mcl-page th+th{border-left:1px solid var(--line)}.mcl-page tr:nth-child(2n+1) td{background:#f8fafb}.mcl-page table.figure-grid td,.mcl-page table:has(img) td{padding:12px}.mcl-page table img{display:block;width:100%;height:auto}.mcl-page .table-scroll{overflow-x:auto}.mcl-page pre{background:#152d41;color:#e2edf4;padding:23px 25px;border-radius:10px;overflow:auto;font-size:13px;line-height:1.65;margin:22px 0}.mcl-page pre code{background:none;color:inherit;word-break:normal}.mcl-page code{font-family:Consolas,monospace;font-size:.88em;padding:2px 4px;background:#eef4f7;color:#2f576f;overflow-wrap:anywhere}.mcl-page small{font-size:12px;color:var(--muted)}.mcl-page blockquote{border-left:4px solid var(--teal);padding:2px 22px;margin:25px 0;background:var(--soft)}.mcl-page ul{padding-left:24px}.mcl-page li{margin-bottom:7px}.mcl-page a[id]{display:block;scroll-margin-top:80px}.mcl-page hr{border:0;border-top:1px solid var(--line);margin:40px 0}.mcl-page .section-label{font-size:12px;text-transform:uppercase;letter-spacing:.14em;color:var(--teal)}footer{max-width:1250px;margin:auto;padding:25px 34px 50px;font-size:12px;color:var(--muted);border-top:1px solid var(--line)}@media(max-width:760px){.mcl-page p:has(img[src*="population_allocation"]){overflow-x:auto}.mcl-page img[src*="population_allocation"]{max-width:none;width:900px}.mast{padding:17px 20px}.brand{font-size:18px}.mast>a{font-size:13px}.nav div{padding:10px 18px;gap:20px}.mcl-page{padding:22px 18px 50px}.mcl-page h1{font-size:34px}.mcl-page h2{font-size:28px;margin:50px -7px 25px;padding:20px 9px}.mcl-page h3{font-size:23px}.mcl-page p{font-size:15px}.mcl-page table{font-size:12px;min-width:560px}.mcl-page table:has(img){min-width:520px}.mcl-page th,.mcl-page td{padding:10px}.mcl-page .table-scroll{margin:0 -2px}.mcl-page pre{padding:18px;font-size:12px}.mcl-page p[align="center"] img{border-radius:5px}footer{padding:22px 20px}}
@@ -73,6 +77,14 @@ def main(argv=None):
     .mcl-page table.home-coverage thead tr:nth-child(2) th{width:33.333%}
     .mcl-page table.home-coverage td{width:33.333%;overflow-wrap:anywhere}
     .mcl-page table.home-coverage .coverage-preview img{display:inline-block;width:220px;height:auto;object-fit:contain}
+    .mcl-page table.home-coverage .coverage-layered-preview td,.mcl-page table.home-coverage .coverage-final-flow-preview td,.mcl-page table.home-coverage .coverage-path-preview td{height:178px;vertical-align:middle;text-align:center}
+    .mcl-page table.home-coverage .coverage-layered-preview img,.mcl-page table.home-coverage .coverage-final-flow-preview img,.mcl-page table.home-coverage .coverage-path-preview img{display:inline-block;width:220px;max-width:100%;height:165px;object-fit:contain}
+    .mcl-page table.finite-network-gallery{table-layout:fixed;width:100%}
+    .mcl-page table.finite-network-gallery th,.mcl-page table.finite-network-gallery td{width:33.333%}
+    .mcl-page table.finite-network-gallery td{text-align:center;line-height:1.4}
+    .mcl-page table.finite-network-gallery img{display:inline-block;width:220px;max-width:100%;height:140px;object-fit:contain}
+    .mcl-page table.finite-network-gallery sub{font-size:10px;vertical-align:baseline;color:#53697a}
+    .mcl-page .finite-network-note{font-size:12px;line-height:1.55;color:#53697a}
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview td{height:160px;vertical-align:middle}
     .mcl-page table.home-coverage[data-component="15"] .coverage-preview img{width:220px;max-width:100%;height:auto;max-height:150px;object-fit:contain}
     .mcl-page table.home-coverage .coverage-caption td{text-align:center;padding:5px 10px}
@@ -106,6 +118,7 @@ def main(argv=None):
       .mcl-page table.home-coverage tr>th:first-child{display:table-cell;width:auto}
       .mcl-page table.home-coverage td{display:table-cell;width:33.333%;border-top:1px solid #d6e1e7}
       .mcl-page table.home-coverage td+td{border-left:1px solid #d6e1e7}
+      .mcl-page table.finite-network-gallery{min-width:750px}
       .mcl-page table.atlas-city-table{min-width:680px}
       .mcl-page table.atlas-quick-facts{min-width:660px}
     }

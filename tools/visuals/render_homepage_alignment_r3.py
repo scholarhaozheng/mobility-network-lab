@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import io
 import json
 import re
 from pathlib import Path
@@ -189,14 +190,36 @@ def render() -> None:
     with matrix_path.open(newline="", encoding="utf-8") as f:
         rows = list(csv.DictReader(f))
     assert len(rows) == 57
+    replacement = None
     for row in rows:
         if row["row_id"] == "02" and row["city"] == "Sioux Falls":
+            original = row.copy()
             row["preview_path"] = gmns
             row["preview_hash"] = sha(ROOT / gmns)
             row["notes"] = "Directed link IDs and one supplied OD pair; schematic, no city zone hierarchy"
-    with matrix_path.open("w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=list(rows[0]))
-        writer.writeheader(); writer.writerows(rows)
+            if row != original:
+                replacement = row
+    if replacement is not None:
+        # The matrix also carries later accepted HK and LP reuse records. Rewrite
+        # only this renderer's Sioux mapping; preserve every other row verbatim.
+        lines = matrix_path.read_bytes().splitlines(keepends=True)
+        if len(lines) != 58:
+            raise AssertionError("Expected 57 matrix records plus header")
+        header = next(csv.reader([lines[0].decode("utf-8")]))
+        city_index = header.index("city")
+        matched = 0
+        for index, raw in enumerate(lines[1:], start=1):
+            values = next(csv.reader([raw.decode("utf-8")]))
+            if values[0] != "02" or values[city_index] != "Sioux Falls":
+                continue
+            newline = "\r\n" if raw.endswith(b"\r\n") else "\n"
+            out = io.StringIO(newline="")
+            csv.DictWriter(out, fieldnames=header, lineterminator=newline).writerow(replacement)
+            lines[index] = out.getvalue().encode("utf-8")
+            matched += 1
+        if matched != 1:
+            raise AssertionError("Sioux GMNS mapping must occur exactly once")
+        matrix_path.write_bytes(b"".join(lines))
     from visuals.compose_homepage_r2 import EXTRAS
     paths = {item[3] for item in EXTRAS}
     paths.add(rank50)
