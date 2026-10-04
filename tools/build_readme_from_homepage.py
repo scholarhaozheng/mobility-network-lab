@@ -151,9 +151,40 @@ class Exporter:
                     if 'atlas-gallery' in child.get('class',[]):out.append(self.gallery(child,scale+' ODs'))
                     else:out.append(self.render(child))
         return ''.join(out)
+    def framework(self,node):
+        """Keep the opening's linked diagram readable without website CSS."""
+        def link(element,label):
+            return '<a href="'+esc(url(element['href']))+'">'+esc(label)+'</a>'
+        def item(element,number=None):
+            title=element.find('strong').get_text(' ',strip=True)
+            if number:title=number+' / '+title
+            return '<strong>'+link(element,title)+'</strong><br/>'+esc(element.find('small').get_text(' ',strip=True))
+        foundation=node.select_one('.scope-flow-foundation')
+        out=['<table width="100%">',
+             '<tr><th colspan="3" align="left">'+esc(node.select_one('.scope-flow-kicker').get_text(' ',strip=True))+'</th></tr>',
+             '<tr><td colspan="3">'+item(foundation)+'</td></tr>',
+             '<tr><td colspan="3"><strong>'+esc(node.select_one('.scope-flow-label').get_text(' ',strip=True))+'</strong></td></tr>']
+        out.append('<tr>'+''.join('<td width="33%" valign="top">'+item(a,a.find('b').get_text(strip=True))+'</td>' for a in node.select('.scope-flow-demand a'))+'</tr>')
+        assignment=node.select_one('.scope-flow-assignment-head')
+        heading=assignment.find('h3')
+        out.append('<tr><th colspan="3" align="left">'+anchor(heading.get('id')).strip()+link(assignment,assignment.find('b').get_text(strip=True)+' / '+heading.get_text(' ',strip=True))+'</th></tr>')
+        contracts=[]
+        for a in node.select('.scope-flow-contracts > a'):
+            contracts.append('<td width="50%" valign="top">'+esc(a.select_one('.scope-flow-mini').get_text(' ',strip=True))+'<br/>'+item(a)+'</td>')
+        out.append('<tr><td colspan="3"><table width="100%"><tr>'+''.join(contracts)+'</tr></table></td></tr>')
+        depth=node.select_one('.scope-flow-depth-title')
+        out.append('<tr><td colspan="3"><strong>'+esc(depth.find('span').get_text(' ',strip=True))+'</strong><br/>'+esc(depth.find('small').get_text(' ',strip=True))+'</td></tr>')
+        layers=node.select('.scope-flow-depth > a')
+        rows=['<tr>'+''.join('<td width="50%" valign="top">'+item(a,a.find('b').get_text(strip=True))+'</td>' for a in layers[i:i+2])+'</tr>' for i in range(0,len(layers),2)]
+        out.append('<tr><td colspan="3"><table width="100%">'+''.join(rows)+'</table></td></tr>')
+        more=node.select_one('.scope-flow-more')
+        out.append('<tr><td colspan="3">'+link(more,more.get_text(' ',strip=True))+'</td></tr>')
+        return '\n'.join(out+['</table>'])+'\n\n'
+
     def render(self,node):
         if isinstance(node,NavigableString):return ''
         cls=node.get('class',[])
+        if 'scope-flow' in cls:return self.framework(node)
         if node.name in ('script','button') or node.get('id') in ('atlas-view-controls','atlas-compact-panel'):return ''
         if 'atlas-stage-prose' in cls or 'atlas-evidence-note' in cls:return str(clean(node))+'\n\n'
         if 'case-atlas' in cls:return ''.join(self.render(c) for c in node.children)
@@ -186,7 +217,14 @@ def main():
     js=(ROOT/'docs/assets/reproduction/entries.js').read_text(encoding='utf8')
     labels=json.loads(re.search(r'labels=(\{.*?\});for',js).group(1))
     exporter=Exporter(soup,labels);parts=[]
+    children=[]
     for child in soup.select_one('main').children:
+        if isinstance(child,Tag) and 'homepage-opening' in child.get('class',[]):
+            children.extend(child.select_one('.opening-head').children)
+            children.extend(child.select_one('.opening-prose').children)
+            children.append(child.select_one('.scope-flow'))
+        else:children.append(child)
+    for child in children:
         parts.append(exporter.render(child))
         if isinstance(child,Tag) and child.name=='h1':
             parts.append('**Project website: ['+SITE+']('+SITE+')**\n\n')

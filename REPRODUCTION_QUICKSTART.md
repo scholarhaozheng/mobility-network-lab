@@ -1,8 +1,8 @@
-# Reproduction guide · 20261004-r18.1
+# Reproduction guide · 20261005-r19
 
 **Start here:** [Reproduction guide](https://scholarhaozheng.github.io/mobility-network-lab/reproduction.html) · [Experiment catalog](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html) · [Static experiment catalog](https://scholarhaozheng.github.io/mobility-network-lab/reproduction/experiment-catalog.html).
 
-This checkout contains registered computational source, packaged frozen inputs, configuration and verification receipts. Python packages and compiled solver binaries are installed separately. The documentation release is **r18**; computational recipe and source links remain pinned to [`reproduction-2026-10-04-r14`](https://github.com/scholarhaozheng/mobility-network-lab/tree/reproduction-2026-10-04-r14). A documentation update does not mean that every computation was rerun.
+This checkout contains registered computational source, packaged frozen inputs, configuration and verification receipts. Python packages and compiled solver binaries are installed separately. The documentation release is **r19**; computational recipe and source links remain pinned to [`reproduction-2026-10-04-r14`](https://github.com/scholarhaozheng/mobility-network-lab/tree/reproduction-2026-10-04-r14). A documentation update does not mean that every computation was rerun.
 
 ## 1. Download and extract
 
@@ -76,4 +76,4 @@ The established command adapters remain available for scripts and historical rec
 
 See [experiments/README.md](experiments/README.md) for the complete interface. Supplemental instructions: [Boston](docs/reproduction/recovered-boston.md), [Sioux Falls](docs/reproduction/recovered-sioux.md), [Hong Kong](docs/reproduction/recovered-hong-kong.md), and [city query](docs/reproduction/recovered-shared.md). `experiments/reproduction-status.json` records resolved status; recipe manifests and receipts retain exact source/input identities.
 
-For the full website and project, clone `https://github.com/scholarhaozheng/mobility-network-lab.git`, check out `reproduction-2026-10-04-r18.1`, and record `git rev-parse HEAD`. The compact computation checkout intentionally omits most website assets. Numerical recipes retain their r14 immutable source links and hashes.
+For the full website and project, clone `https://github.com/scholarhaozheng/mobility-network-lab.git`, check out `reproduction-2026-10-05-r19`, and record `git rev-parse HEAD`. The compact computation checkout intentionally omits most website assets. Numerical recipes retain their r14 immutable source links and hashes.

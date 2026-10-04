@@ -22,6 +22,18 @@ Project-specific work includes assembling and adapting the Boston, Sioux Falls, 
 
 <a id="what-this-project-adds"></a>
 
+<table width="100%">
+<tr><th colspan="3" align="left">FROM CITY INPUTS TO COMPUTATION</th></tr>
+<tr><td colspan="3"><strong><a href="#four-step-workflow">City-model foundations</a></strong><br/>GMNS · population &amp; activity · services · observations</td></tr>
+<tr><td colspan="3"><strong>FOUR-STAGE DEMAND WORKFLOW</strong></td></tr>
+<tr><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-06">01 / Trip generation</a></strong><br/>Productions &amp; attractions</td><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-07">02 / Trip distribution</a></strong><br/>Origin–destination demand</td><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-08">03 / Mode choice</a></strong><br/>Demand by travel mode</td></tr>
+<tr><th colspan="3" align="left"><a id="scope-flow-assignment-title"></a><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-09">04 / Traffic assignment</a></th></tr>
+<tr><td colspan="3"><table width="100%"><tr><td width="50%" valign="top">STATIC ROAD NETWORK<br/><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#src-docs-methods-document-static-frankwolfe-reference-implementation">BPR / Beckmann</a></strong><br/>Flow-dependent costs</td><td width="50%" valign="top">FINITE TIME-EXPANDED NETWORK<br/><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#src-docs-methods-space-time-cg-document">Fixed costs · hard capacities</a></strong><br/>A separate optimization contract</td></tr></table></td></tr>
+<tr><td colspan="3"><strong>COMPUTATIONAL DEPTH WITHIN ASSIGNMENT</strong><br/>Dimensions, not sequential stages</td></tr>
+<tr><td colspan="3"><table width="100%"><tr><td width="50%" valign="top"><strong><a href="#assignment-layer-a">A / Native assignment</a></strong><br/>Reference solvers &amp; reconstruction</td><td width="50%" valign="top"><strong><a href="#assignment-layer-b">B / Decomposition</a></strong><br/>CG · Lagrangian · ADMM</td></tr><tr><td width="50%" valign="top"><strong><a href="#assignment-layer-c">C / Spatial representation</a></strong><br/>Hierarchy · access · turn/time states</td><td width="50%" valign="top"><strong><a href="#assignment-layer-d">D / Coordination &amp; checks</a></strong><br/>Capacities · residuals · closure</td></tr></table></td></tr>
+<tr><td colspan="3"><a href="#02-complete-project-structure">Explore the complete project structure ↗</a></td></tr>
+</table>
+
 <a id="01-what-this-project-adds"></a>
 
 ## 01 / What this project adds
