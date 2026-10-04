@@ -257,6 +257,7 @@ scheduleReadingCardAlignment();
  window.addEventListener('hashchange',restoreAtlasHash);
  window.addEventListener('load',()=>{if(!readingAnchorUserInterrupted)restoreAtlasHash();else schedule();});
  document.addEventListener('reading-card-rows-aligned',scheduleAnchorHold);
+ document.addEventListener('atlas-view-toolbar-resized',schedule);
  for(const img of document.querySelectorAll('.mcl-page img')){
   img.addEventListener('load',scheduleAnchorHold);
   img.addEventListener('error',scheduleAnchorHold);
@@ -277,8 +278,7 @@ scheduleReadingCardAlignment();
     static: [
       {id: 'fw', label: 'Frank–Wolfe'},
       {id: 'algorithm-b', label: 'Algorithm B'},
-      {id: 'finite-path', label: 'Finite-path reference'},
-      {id: 'native-l3', label: 'Native L3 reconstruction'}
+      {id: 'finite-path', label: 'Finite-path reference'}
     ],
     finite: [
       {id: 'cg', label: 'Column generation'},
@@ -620,7 +620,7 @@ const tabs=[...toolbar.querySelectorAll('[data-atlas-view]')];
 const names=Object.fromEntries(model.cities.map(c=>[c.id,c.name]));
 const originalNav=document.querySelector('body > .nav');
 const locationBar=document.querySelector('.reading-location-bar');
-const methods={static:['fw','algorithm-b','finite-path','native-l3'],finite:['cg','lagrangian','admm']};
+const methods={static:['fw','algorithm-b','finite-path'],finite:['cg','lagrangian','admm']};
 function normalized(next){
  const s={view:'full',city:'boston',stage:'sources',method:'fw',siouxOd:'200',...next};
  if(!['full','city','stage'].includes(s.view))s.view='full';
@@ -650,6 +650,54 @@ function saveUrl(hash){
  if(hash!==undefined)url.hash=hash;
  if(url.href!==location.href)history.pushState({atlasView:state.view},'',url);
 }
+// Preserve one set of tabs: only its presentation changes after the original row scrolls away.
+const viewPanel=document.createElement('div');viewPanel.className='atlas-view-panel';viewPanel.id='atlas-view-panel';
+viewPanel.append(...toolbar.childNodes);
+const viewTrigger=document.createElement('button');viewTrigger.type='button';viewTrigger.className='atlas-view-trigger';
+viewTrigger.setAttribute('aria-controls',viewPanel.id);viewTrigger.setAttribute('aria-expanded','false');
+toolbar.append(viewTrigger,viewPanel);
+const viewOrigin=document.createElement('span');viewOrigin.className='atlas-view-origin';viewOrigin.setAttribute('aria-hidden','true');
+const viewSpacer=document.createElement('div');viewSpacer.className='atlas-view-spacer';viewSpacer.setAttribute('aria-hidden','true');
+toolbar.before(viewOrigin);toolbar.after(viewSpacer);
+let viewDocked=false,viewExpandedHeight=0,viewMeasuredWidth=0,viewHovered=false,viewPinned=false,viewDismissed=false;
+function refreshViewDisclosure(){
+ const keyboardFocus=toolbar.contains(document.activeElement)&&document.activeElement.matches(':focus-visible');
+ const open=viewDocked&&!viewDismissed&&(viewHovered||viewPinned||keyboardFocus);
+ toolbar.classList.toggle('is-open',open);
+ viewTrigger.setAttribute('aria-expanded',String(open));
+ viewPanel.inert=viewDocked&&!open;
+ if(viewDocked&&!open)viewPanel.setAttribute('aria-hidden','true');else viewPanel.removeAttribute('aria-hidden');
+}
+function dockViewControls(top){
+ // Measure at full width before deciding to collapse; the spacer preserves the document's height.
+ const width=shell.clientWidth;
+ if(!viewDocked||width!==viewMeasuredWidth){
+  toolbar.classList.remove('is-docked');
+  viewExpandedHeight=toolbar.getBoundingClientRect().height;viewMeasuredWidth=width;
+  toolbar.classList.toggle('is-docked',viewDocked);
+ }
+ const naturalBottom=viewOrigin.getBoundingClientRect().top+(parseFloat(getComputedStyle(toolbar).marginTop)||0)+viewExpandedHeight;
+ const docked=naturalBottom<=top;
+ if(docked!==viewDocked){
+  viewDocked=docked;toolbar.classList.toggle('is-docked',docked);
+  viewPinned=false;viewDismissed=false;viewHovered=docked&&toolbar.matches(':hover');
+ }
+ viewSpacer.style.height=(viewDocked?Math.max(0,viewExpandedHeight-toolbar.getBoundingClientRect().height):0)+'px';
+ refreshViewDisclosure();
+}
+toolbar.addEventListener('pointerenter',event=>{if(event.pointerType==='touch')return;viewHovered=true;viewDismissed=false;refreshViewDisclosure();});
+toolbar.addEventListener('pointerleave',event=>{if(event.pointerType==='touch')return;viewHovered=false;viewPinned=false;refreshViewDisclosure();});
+toolbar.addEventListener('focusin',()=>{viewDismissed=false;refreshViewDisclosure();});
+toolbar.addEventListener('focusout',()=>requestAnimationFrame(refreshViewDisclosure));
+viewTrigger.addEventListener('click',()=>{viewPinned=!viewPinned;viewDismissed=!viewPinned;refreshViewDisclosure();});
+toolbar.addEventListener('keydown',event=>{
+ if(event.key!=='Escape'||!viewDocked)return;
+ event.preventDefault();viewTrigger.focus();viewPinned=false;viewHovered=false;viewDismissed=true;refreshViewDisclosure();
+});
+document.addEventListener('pointerdown',event=>{
+ if(!viewDocked||toolbar.contains(event.target))return;
+ viewPinned=false;viewHovered=false;viewDismissed=true;refreshViewDisclosure();
+});
 let layoutFrame=0;
 function updateToolbar(){
  layoutFrame=0;
@@ -658,7 +706,12 @@ function updateToolbar(){
  const v=(navHeight+locationHeight)+'px';
  if(shell.style.getPropertyValue('--atlas-view-top')!==v)shell.style.setProperty('--atlas-view-top',v);
  shell.style.setProperty('--atlas-global-nav-height',navHeight+'px');
- shell.style.setProperty('--atlas-viewbar-height',toolbar.getBoundingClientRect().height+'px');
+ dockViewControls(navHeight+locationHeight);
+ const height=toolbar.getBoundingClientRect().height+'px';
+ if(shell.style.getPropertyValue('--atlas-viewbar-height')!==height){
+  shell.style.setProperty('--atlas-viewbar-height',height);
+  document.dispatchEvent(new Event('atlas-view-toolbar-resized'));
+ }
 }
 function scheduleToolbar(){if(!layoutFrame)layoutFrame=requestAnimationFrame(updateToolbar);}
 function showControls(){requestAnimationFrame(()=>{updateToolbar();const navBottom=Math.max(0,originalNav?.getBoundingClientRect().bottom||0);window.scrollTo({top:Math.max(0,window.scrollY+shell.getBoundingClientRect().top-navBottom-8),behavior:'instant'});});}
@@ -682,6 +735,8 @@ function render(renderOptions){
   document.dispatchEvent(new CustomEvent('atlas-sioux-scale',{detail:{scale:state.siouxOd}}));
   if(typeof scheduleReadingCardAlignment==='function')scheduleReadingCardAlignment();
  }
+ viewTrigger.textContent='View: '+(isFull?'Full atlas':state.view==='city'?'By city':'By stage')+' ▾';
+ viewTrigger.setAttribute('aria-label','Choose atlas view. Current view: '+(isFull?'Full atlas':state.view==='city'?'By city':'By stage'));
  status.textContent=isFull?'All figures, in the existing reading order':state.view==='city'?'Selected figures · '+names[state.city]:'All stages · three cities side by side';
  scheduleToolbar();window.dispatchEvent(new Event('scroll'));
 }
@@ -787,7 +842,7 @@ window.addEventListener('popstate',()=>{state=fromUrl();render();restoreStagePos
 window.addEventListener('resize',scheduleToolbar,{passive:true});
 window.addEventListener('scroll',scheduleToolbar,{passive:true});
 if(locationBar)new MutationObserver(scheduleToolbar).observe(locationBar,{attributes:true,attributeFilter:['hidden']});
-if('ResizeObserver' in window){const ro=new ResizeObserver(scheduleToolbar);ro.observe(toolbar);if(originalNav)ro.observe(originalNav);}
+if('ResizeObserver' in window){const ro=new ResizeObserver(scheduleToolbar);ro.observe(toolbar);if(originalNav)ro.observe(originalNav);if(locationBar)ro.observe(locationBar);}
 render();
 if(state.view==='stage')restoreStagePosition();
 else if(state.view!=='full')showControls();

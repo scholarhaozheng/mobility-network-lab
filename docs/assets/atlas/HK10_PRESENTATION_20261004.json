@@ -29,17 +29,17 @@
     "docs/index.md": "8fd8b4b01c5f27ad0a77bea4568c6524f9dc4887508cca706388b0d63419c6a2"
   },
   "current_presentation_paths_sha256": {
-    "README.md": "18f673ed18f628c077defd339b5a0a97ea40fd72c6d2c25783ea1953d92b7b08",
+    "README.md": "914e12d0a6c7d8050775cae61dda5e9d108403e1b8f9fb50942516419f4d27ec",
     "docs/assets/atlas/construction/r07-hong-kong-layered-construction.source.json": "346fd1bd9171da4e9dcc55ce1b9e0ba488b042df0962c8061532facfe3d816e9",
     "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg": "b3cdda18b64a9bb615e83c9bb92fc558f111a9403bf637cb3b6b5fd4eed90370",
-    "docs/index.html": "a0c86ef44330c5a846fd4572a8a9f7094276d6855b82fc82a511f0e16708cdb4",
+    "docs/index.html": "4553fccb4ab6460d9415f21e63bffd45a9e9881624c0b3ddde12aaa7da100a18",
     "docs/index.md": "134bbb734fe2061924e38854d346f02c5c9a2cde67391e0cdd609d225d1d1c5a",
     "docs/volumes/01-overview.md": "d4e15bd7116721d2924f1916bcbde167afad91645fd830edb6414b7f95cd73e4",
-    "docs/volumes/02-boston.md": "23c422e1dd733f4de38d820e4b75be47a94f3c6d28c95dce47ab8cc7b1ff1474",
+    "docs/volumes/02-boston.md": "d7729cb3042fa9f058b45bd1e7709d90914b94db79f89f953f73f31f50376ef2",
     "docs/volumes/03-sioux-falls.md": "b40729884588cdde1c62b0bee8452e35cea8c2a306593a0646fff87811498bd5",
-    "docs/volumes/04-hong-kong.md": "1ffdf92f587817e170394b630a2151923ca8da479ad1a8a68b433010ff6c6166",
-    "docs/volumes/boston.html": "d19f4d53a6804d0a167442e8330a9cebb4ac2bfd4083846b444ca6df9c69f0c4",
-    "docs/volumes/hong-kong.html": "575c647d65e096d1855bd2ffc77b310d4c95225df39724e659a52428a01512cc",
+    "docs/volumes/04-hong-kong.md": "200ba9501087c49d9e54da899c7308c68cdd9bf872804b43f93edb81bff97e36",
+    "docs/volumes/boston.html": "e9863155d6e94da0c7b496329adbbe2abb0c918bd2650440e4b6daafaf0b2131",
+    "docs/volumes/hong-kong.html": "9b422a5e0c149723e66024cd5b131e24404ab89f33e17efe65fd4e69dd494144",
     "docs/volumes/overview.html": "b588cc14ee2ce5048bbb37d68fc29c091ce97bf668607d1e30503afbdd0c8c73",
     "docs/volumes/sioux-falls.html": "e04ae88a429e2124141467bc108c7c55692e5f8cedefb7d00b6d1bdb1ce97bae"
   },
@@ -63,6 +63,60 @@
       "sha256": "18f673ed18f628c077defd339b5a0a97ea40fd72c6d2c25783ea1953d92b7b08",
       "change": "Restore the complete static homepage presentation in README: current coverage table and atlas figures, both Sioux OD scales, source records and reproduction links. No scientific figure, disclosed path, input, solver or numerical result changed.",
       "authorization": "Maintainer explicitly requested a prominent website entry and the full current homepage content and table layout in README, with 200-OD and 250-OD results displayed separately."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "README.md",
+      "priorSha256": "18f673ed18f628c077defd339b5a0a97ea40fd72c6d2c25783ea1953d92b7b08",
+      "sha256": "914e12d0a6c7d8050775cae61dda5e9d108403e1b8f9fb50942516419f4d27ec",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "docs/index.html",
+      "priorSha256": "a0c86ef44330c5a846fd4572a8a9f7094276d6855b82fc82a511f0e16708cdb4",
+      "sha256": "4553fccb4ab6460d9415f21e63bffd45a9e9881624c0b3ddde12aaa7da100a18",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "docs/volumes/02-boston.md",
+      "priorSha256": "23c422e1dd733f4de38d820e4b75be47a94f3c6d28c95dce47ab8cc7b1ff1474",
+      "sha256": "d7729cb3042fa9f058b45bd1e7709d90914b94db79f89f953f73f31f50376ef2",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "docs/volumes/04-hong-kong.md",
+      "priorSha256": "1ffdf92f587817e170394b630a2151923ca8da479ad1a8a68b433010ff6c6166",
+      "sha256": "200ba9501087c49d9e54da899c7308c68cdd9bf872804b43f93edb81bff97e36",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "docs/volumes/boston.html",
+      "priorSha256": "d19f4d53a6804d0a167442e8330a9cebb4ac2bfd4083846b444ca6df9c69f0c4",
+      "sha256": "e9863155d6e94da0c7b496329adbbe2abb0c918bd2650440e4b6daafaf0b2131",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
+    },
+    {
+      "date": "2026-10-04",
+      "release": "20261004-r16",
+      "path": "docs/volumes/hong-kong.html",
+      "priorSha256": "575c647d65e096d1855bd2ffc77b310d4c95225df39724e659a52428a01512cc",
+      "sha256": "9b422a5e0c149723e66024cd5b131e24404ab89f33e17efe65fd4e69dd494144",
+      "change": "Homepage view selectors collapse after scrolling; remove the redundant Boston column note and keep Boston/Hong Kong L3 reference-comparison figures in their city volumes with explanatory links. README follows the homepage. No scientific figure, solver input or numerical result changed.",
+      "authorization": "Maintainer requested the collapsible view controls, removal of the redundant note, relocation of the L3 comparisons into city long documents, and README synchronization."
     }
   ]
 }

@@ -60,9 +60,13 @@ def main():
  check(matrix is not None and not matrix.find('img'),'Section 03 must be text-only')
  for row in matrix.select('tbody tr:not(.matrix-group)') if matrix else []:
   check(len(row.find_all(['th','td'],recursive=False))==4,'Coverage row must compare exactly three cities')
- cards=s.select('.atlas-card[data-figure]');check(len(cards)==82,'Approved homepage atlas must retain 82 cards')
+ cards=s.select('.atlas-card[data-figure]');check(len(cards)==80,'Homepage retains 80 cards after two L3 reference comparisons move to long volumes')
  check(not any(c['data-figure'].lower()=='g-f115' for c in cards),'Saved Sioux column belongs only in the long volume')
  volumes={city:BeautifulSoup(read(DOCS/f'volumes/{city}.html'),'html.parser') for city in ('overview','boston','sioux-falls','hong-kong')}
+ for city,cid,slug in [('boston','C-BOSTON-ABS-L3','c-boston-abs-l3'),('hong-kong','C-HK-L3-STATIC','c-hk-l3-static')]:
+  check(not any(c['data-figure']==cid for c in cards),'L3 reference comparison must remain in long volume: '+cid)
+  check(volumes[city].find(id='stage-13-native-l3--'+slug) is not None,'L3 figure lost from long volume: '+cid)
+  check(s.find('a',href='volumes/'+city+'.html#stage-13-native-l3--'+slug) is not None,'L3 long-volume entry missing: '+cid)
  for c in cards:
   image=c.find('img');anchor=c.select_one('a.atlas-image-link') or (image.find_parent('a') if image else None)
   check(bool(image and anchor),'Atlas card lacks linked image: '+c['data-figure'])
