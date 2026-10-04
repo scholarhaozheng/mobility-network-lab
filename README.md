@@ -4,7 +4,7 @@
 
 **Project website: [https://scholarhaozheng.github.io/mobility-network-lab/](https://scholarhaozheng.github.io/mobility-network-lab/)**
 
-[Overview](https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html) · [Boston](https://scholarhaozheng.github.io/mobility-network-lab/volumes/boston.html) · [Sioux Falls](https://scholarhaozheng.github.io/mobility-network-lab/volumes/sioux-falls.html) · [Hong Kong](https://scholarhaozheng.github.io/mobility-network-lab/volumes/hong-kong.html) · [Code, data and reproduction](https://scholarhaozheng.github.io/mobility-network-lab/reproduction.html)
+[Overview](https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html) · [Boston](https://scholarhaozheng.github.io/mobility-network-lab/volumes/boston.html) · [Sioux Falls](https://scholarhaozheng.github.io/mobility-network-lab/volumes/sioux-falls.html) · [Hong Kong](https://scholarhaozheng.github.io/mobility-network-lab/volumes/hong-kong.html) · [Reproduction guide](https://scholarhaozheng.github.io/mobility-network-lab/reproduction.html) · [Experiment catalog](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html)
 
 [01 Contributions](#01-what-this-project-adds) · [02 Project structure](#02-complete-project-structure) · [03 Coverage](#03-case-coverage-and-selected-evidence) · [04 City atlas](#04-explore-the-three-cases) · [05 Run and inspect](#05-run-and-inspect) · [06 Attribution](#06-attribution-scope-and-further-reading)
 
@@ -674,12 +674,18 @@ Convergence with objective error against the same-graph LP, commodity conservati
 
 Boston S1/S2 recipes rerun the assignment stage only. A saved-output check is not a new solver run, and prepared-input reruns do not certify a complete raw-source pipeline. The historical Sioux CG result does not gain an independent full-pricing-closure certificate from these documentation changes.
 
-The recovered city workflows include data acquisition, pinned source, environment instructions and separate computation and historical-inspection commands. Follow the scope and supported actions for each record.
+Choose an exact instance in the [Experiment catalog](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html), then follow its Download, Environment, Run and Verify steps. The page supplies the matching command and required environment. The [static catalog](https://scholarhaozheng.github.io/mobility-network-lab/reproduction/experiment-catalog.html) remains available without JavaScript. Historical inspection and fresh computation have separate status labels and receipts.
+
+<details><summary>Advanced: command-line registry reference</summary>
+
+The experiment page selects the matching command for you. To inspect the two preserved registries directly:
 
 ~~~bash
 python -B tools/mcl_reproduce.py list
 python -B tools/mcl_recovered.py list
 ~~~
+
+</details>
 
 [Download code and execution guide](https://scholarhaozheng.github.io/mobility-network-lab/reproduction.html) · [Run a verified computation](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html?ready=1) · [All experiments and current limits](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html)
 

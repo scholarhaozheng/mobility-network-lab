@@ -135,7 +135,8 @@ readme = (ROOT / "README.md").read_text(encoding="utf-8")
 walkthrough = (ROOT / "docs/full-walkthrough.md").read_text(encoding="utf-8")
 cg_method = (ROOT / "docs/methods/space-time-cg.md").read_text(encoding="utf-8")
 check('<a id="cg-experiments"></a>' in readme and
-      "docs/methods/space-time-cg.md#cg-experiments" in readme,
+      any(link in readme for link in ("docs/methods/space-time-cg.md#cg-experiments",
+                                     "https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#src-docs-methods-space-time-cg-document")),
       "shortened homepage lost the cross-case CG compatibility pointer")
 check(cg_method.count("### Executed finite space–time CG experiments") == 1 and
       walkthrough.count("### Executed finite space–time CG experiments") == 1,
