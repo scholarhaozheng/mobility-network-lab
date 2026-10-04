@@ -28,7 +28,7 @@ main{max-width:1180px;margin:auto;padding:32px 24px}h1{font-size:34px}h2{margin-
 <h1>Reproduction guide</h1>
 <p class="lead">Start with an exact experiment, then follow its data, environment, run and verification instructions. The <a href="reproduce.html">Experiment catalog</a> brings the original and subsequently integrated workflows into one place; each record selects the correct commands for you.</p>
 <div class="actions"><a href="downloads/computational-checkout.zip" download><strong>Download computational checkout</strong></a><a href="reproduce.html?ready=1"><strong>Choose an experiment with a verified run</strong></a></div>
-<p class="small">Website and documentation: <strong>20261004-r18.1</strong>. Computational recipes and scientific source links remain pinned to <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/reproduction-2026-10-04-r14">reproduction-2026-10-04-r14</a>. A documentation update does not imply that every computation was rerun.</p>
+<p class="small">Website and documentation: <strong>20261005-r19</strong>. Computational recipes and scientific source links remain pinned to <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/reproduction-2026-10-04-r14">reproduction-2026-10-04-r14</a>. A documentation update does not imply that every computation was rerun.</p>
 <ol class="steps" aria-label="Reproduction steps"><li><a href="#download">Download</a></li><li><a href="#choose">Choose an experiment</a></li><li><a href="#environment">Set up its environment</a></li><li><a href="#run">Run</a></li><li><a href="#verify">Verify the result</a></li></ol>
 <noscript><div class="notice"><strong>JavaScript is disabled.</strong> This guide, the download and the <a href="reproduction/experiment-catalog.html">static experiment catalog</a> remain available. Copy commands by selecting their text.</div></noscript>
 <h2 id="download">1. Download and extract</h2>
@@ -97,7 +97,7 @@ Set-Location .\mobility-reproduction</code></pre>
 <p>The compact ZIP is sufficient for registered computations. For the full website and project at this documentation release:</p>
 <pre><code>git clone -c core.autocrlf=false https://github.com/scholarhaozheng/mobility-network-lab.git
 cd mobility-network-lab
-git checkout reproduction-2026-10-04-r18.1
+git checkout reproduction-2026-10-05-r19
 git rev-parse HEAD</code></pre>
 <p>The two established adapters remain available for scripts and historical receipts: <code>tools/mcl_reproduce.py</code> for the original registered recipes and <code>tools/mcl_recovered.py</code> for supplemental workflows. Both support record description, run and verification where enabled. The latter also provides explicit historical inspection. Prefer the exact commands supplied by the catalog; no new unified solver command or broader scientific claim is introduced by this documentation release.</p>
 <p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r14/experiments/README.md">Detailed command reference</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r14/experiments/runtime-setup.json">Native runtime setup manifest</a> · <a href="reproduction/boston-native-environment.md">Native Boston installation guide</a></p>

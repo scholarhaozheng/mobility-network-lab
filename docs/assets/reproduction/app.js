@@ -17,7 +17,7 @@ const verified = e => e.reproductionStatus.verified === true;
 const recordLink = id => '#'+encodeURIComponent(id);
 const gitCommands = 'git clone -c core.autocrlf=false '+D.repository+'.git\ncd mobility-network-lab\ngit checkout reproduction-2026-10-04-r14\ngit rev-parse HEAD';
 document.getElementById('setup-command').textContent = gitCommands;
-document.getElementById('release-state').textContent = 'Website and documentation: r18.1 · Computational recipes and evidence: r14 · '+D.records.filter(verified).length+' verified-run records / '+D.records.length+' records';
+document.getElementById('release-state').textContent = 'Website and documentation: r19 · Computational recipes and evidence: r14 · '+D.records.filter(verified).length+' verified-run records / '+D.records.length+' records';
 if (figure && !D.figures[figure]) figure = null;
 if (params.get('pilots') === '1' || params.get('ready') === '1') document.getElementById('ready').checked = true;
 function context() {

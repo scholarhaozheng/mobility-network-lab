@@ -1,7 +1,7 @@
 {
   "schema": "mcl_public_computational_archive_v1",
-  "releaseId": "20261004-r18.1",
-  "sourceRevision": "reproduction-2026-10-04-r18.1",
+  "releaseId": "20261005-r19",
+  "sourceRevision": "reproduction-2026-10-05-r19",
   "documentationRefresh": {
     "documentationOnly": true,
     "computationalRecipeRelease": "reproduction-2026-10-04-r14",
@@ -12,11 +12,11 @@
     "uniqueLocalImages": 89,
     "allReadmeImagesIncluded": true,
     "exporter": "tools/build_readme_from_homepage.py",
-    "scope": "README and reproduction navigation are synchronized with the homepage. The reader catalog uses one evidence-backed status and a static fallback; all prior archive members and figure sources are retained. Computational recipes, pinned code, numeric receipts, and their r14 immutable links are unchanged."
+    "scope": "The homepage adopts the maintainer-selected fourth opening design with the four-stage demand workflow and A-D computational framework, removes the three requested introductory captions, and mirrors that framework in the static README. Existing introduction text, sections 01-06, figures and atlas navigation are retained. Computational recipes, pinned code, numeric receipts, and their r14 immutable links are unchanged."
   },
   "archive": "computational-checkout.zip",
-  "sha256": "dbfcc3a9c8575c5384f1a4310ebc9e1085660bc45c3db1163a093520ef121bda",
-  "bytes": 25651314,
+  "sha256": "c01c1ba6427a6bd7dd01f02e218c3bafd4e656030969f4ee01bbd86415db7042",
+  "bytes": 25655305,
   "files": [
     {
       "path": ".gitattributes",
@@ -45,8 +45,8 @@
     {
       "path": "README.md",
       "source": "README.md",
-      "sha256": "4c0aaaca10596578d01db4a3398d5fcb3b999888bd42c84e6bc77a9a28d14680",
-      "bytes": 265865
+      "sha256": "942342f7c8a53074e94acbb8da73ff5dff86a5c7535d313c6654bb93a0fe88e8",
+      "bytes": 268601
     },
     {
       "path": "REPRODUCTION_PACKAGE_MANIFEST.json",
@@ -57,8 +57,8 @@
     {
       "path": "REPRODUCTION_QUICKSTART.md",
       "source": "REPRODUCTION_QUICKSTART.md",
-      "sha256": "01a052e732ae584af205619c14b14c4fd81f90d2e526789a88be9675afc72740",
-      "bytes": 9224
+      "sha256": "ef149c38af87073d2664881837672c6c3584038f2b2533f9f397f51a1ecb2e38",
+      "bytes": 9220
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -2191,10 +2191,16 @@
       "bytes": 1211
     },
     {
+      "path": "docs/assets/reading/opening-framework.css",
+      "source": "docs/assets/reading/opening-framework.css",
+      "sha256": "db3c817c9a48c1b2d93f27c3a6bd67cadf57fa38bd01875e978e7967c74b7072",
+      "bytes": 7216
+    },
+    {
       "path": "docs/assets/reproduction/app.js",
       "source": "docs/assets/reproduction/app.js",
-      "sha256": "0f9d54c8fe11fce5e7c6a5a3cfda0cac0bf80652e6f04b9ab80490539f13fd42",
-      "bytes": 23238
+      "sha256": "3507952f085c563e688f6f555095c64fd694335e6e9e4fb1e7e9fb845569d2ff",
+      "bytes": 23236
     },
     {
       "path": "docs/assets/reproduction/build-report.json",
@@ -2505,20 +2511,20 @@
     {
       "path": "docs/index.html",
       "source": "docs/index.html",
-      "sha256": "9cf0efc7c4620fad112ade8f48d4f309cbb5b44a17dc4db2d000fd17a8820cac",
-      "bytes": 254670
+      "sha256": "95adec8cf0ec40c58668392f380908f79009ffb31f34ed44dcce0e5fbd41e441",
+      "bytes": 257990
     },
     {
       "path": "docs/reproduce.html",
       "source": "docs/reproduce.html",
-      "sha256": "90fb68b3fc67f33fe75457423fee1c4617f64bbe727c68252e4419c2a27ed2cc",
-      "bytes": 6427
+      "sha256": "14b6bdb684e82cf7a074d307e3e9a86b53f31cf142046b1a65b97bd0b70438e1",
+      "bytes": 6417
     },
     {
       "path": "docs/reproduction.html",
       "source": "docs/reproduction.html",
-      "sha256": "d79acf662554dc4a21877dbf4a5107979bf79e50db2ce083cc7aec71e512cfa7",
-      "bytes": 20125
+      "sha256": "93751bbf885bd93c78152509d5a1d891f26785781e41c611ac93d642f733edff",
+      "bytes": 20121
     },
     {
       "path": "docs/reproduction/boston-native-environment.md",
@@ -2553,8 +2559,8 @@
     {
       "path": "docs/reproduction/experiment-catalog.html",
       "source": "docs/reproduction/experiment-catalog.html",
-      "sha256": "d8c6c4c7a0f49d05c8bef512815f3ce06f5df58927c50b45105b015d1474b69a",
-      "bytes": 620341
+      "sha256": "2204ba9fb8881d971de6cd0b09e7451fbb497424de3fe16022ccfb49ff316c74",
+      "bytes": 620339
     },
     {
       "path": "docs/reproduction/public-controls-validation.json",
@@ -5637,8 +5643,8 @@
     {
       "path": "experiments/checkout-files.json",
       "source": "experiments/checkout-files.json",
-      "sha256": "8d3db03d275b5c437897253bb47812cf317e3f1307da2045f2e8a5bbeadd3b9c",
-      "bytes": 74471
+      "sha256": "c4d346433c9d943af394971e4b9b2fe2e1c6fc8aed958d102ef9a3980652409b",
+      "bytes": 74518
     },
     {
       "path": "experiments/environment-verification/boston-native-clean.json",
@@ -6117,8 +6123,8 @@
     {
       "path": "tools/build_computational_archive.py",
       "source": "tools/build_computational_archive.py",
-      "sha256": "54c18428ff338b5d8d7507a00399290f541d8e948572455ed9cb176755a7b9dd",
-      "bytes": 6349
+      "sha256": "59202bb8486d9c5e9ce049f89221cf48413083e3b7d3637711823779168ff908",
+      "bytes": 6459
     },
     {
       "path": "tools/build_open_mobility_exports.py",
@@ -6129,8 +6135,8 @@
     {
       "path": "tools/build_readme_from_homepage.py",
       "source": "tools/build_readme_from_homepage.py",
-      "sha256": "05077fb450946825483ce1b22e00b4db1015c1cc64116bb32a3f23eea5b54dd0",
-      "bytes": 14762
+      "sha256": "8da31bd4bffa942f8ab1511b6b3fc9f92382649ad711e102bc550108897dbb4c",
+      "bytes": 17685
     },
     {
       "path": "tools/build_recovered_docs.py",
@@ -6147,8 +6153,8 @@
     {
       "path": "tools/build_reproduction_fallback.py",
       "source": "tools/build_reproduction_fallback.py",
-      "sha256": "80230abc4cbd44726b7f38ae38eb41f58f4a2f3f897c1aa7e92cd66ba52d3c4a",
-      "bytes": 10461
+      "sha256": "1e14abfa0b0103d73e31c666d57b434bb0b132969cf02e9d4d8376f3d76d6356",
+      "bytes": 10459
     },
     {
       "path": "tools/build_site.py",
