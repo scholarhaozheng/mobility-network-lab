@@ -1,0 +1,226 @@
+{
+  "experiment_id": "public-control-finite-path",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.600330+00:00",
+  "seconds": 1.524699600005988,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "59634a0dd72dff92504559dbfa12bdcb58fa097b5e492bacb1eccf2d37f7a5b8",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "1.24.3",
+      "scipy": "1.10.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "tools/mcl_path_methods.py",
+      "role": "solver_code",
+      "expected_sha256": "725f523379b93bf34f2f05c5a02c0831a501ce7b749a0f98a53778a9ae53982a",
+      "actual_sha256": "725f523379b93bf34f2f05c5a02c0831a501ce7b749a0f98a53778a9ae53982a"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/config.json",
+      "role": "solver_input",
+      "expected_sha256": "7a8e992768028605859fc6d815368a730c6252e13bbcd7013eaa809571272abc",
+      "actual_sha256": "7a8e992768028605859fc6d815368a730c6252e13bbcd7013eaa809571272abc"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/network/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "e25f7866c2574c9e268e5aadf40be88e89226610c3bd23a31e7385ef2a277da9",
+      "actual_sha256": "e25f7866c2574c9e268e5aadf40be88e89226610c3bd23a31e7385ef2a277da9"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/person_like_zonal_vehicle.csv",
+      "role": "solver_input",
+      "expected_sha256": "7d87f753569affb6480804ad354341be4be8db15884377b391df95ef9b97dbe9",
+      "actual_sha256": "7d87f753569affb6480804ad354341be4be8db15884377b391df95ef9b97dbe9"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle.csv",
+      "role": "solver_input",
+      "expected_sha256": "de932ffe5b6a29392c19aa451c3f72e10ca5ed5631e6c2d2aa3369f642a116ef",
+      "actual_sha256": "de932ffe5b6a29392c19aa451c3f72e10ca5ed5631e6c2d2aa3369f642a116ef"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle_unreachable.csv",
+      "role": "solver_input",
+      "expected_sha256": "e4b0e8380a6f6524521da44dc75456d0152a97cba9aca835b3c879804072ffd4",
+      "actual_sha256": "e4b0e8380a6f6524521da44dc75456d0152a97cba9aca835b3c879804072ffd4"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zonal_config.json",
+      "role": "solver_input",
+      "expected_sha256": "605ebe32a0a6bf87905eff7099374d2251d94fc89820ae135b87b85a9a61fba4",
+      "actual_sha256": "605ebe32a0a6bf87905eff7099374d2251d94fc89820ae135b87b85a9a61fba4"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zone_access.csv",
+      "role": "solver_input",
+      "expected_sha256": "14c16484d1d61ea8ec00e7fcf6cca9a83ee78983f1706fe70143a52abb939f56",
+      "actual_sha256": "14c16484d1d61ea8ec00e7fcf6cca9a83ee78983f1706fe70143a52abb939f56"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "finite-path"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "finite-path"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.524309899949003,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "af408512b6b510a793339a8db71fa3f21cc39895cc7df36c2d7e5eb1b82052e1",
+    "solution/computed/pool/A_link_path.npz": "c88b9fb8d20dc83c7a37c84d179bf54bec6351363ca45d9ead12aacee49c08a6",
+    "solution/computed/pool/C_od_path.npz": "0c585c4454f4795f45a6b6a4abe9136f760298f509f95d770b14cf8f9de12c0e",
+    "solution/computed/pool/f0.csv": "21d3c1b5366e2ed4d66fbdfeb05501a2abf7668b88330169d3e0d52f0c102847",
+    "solution/computed/pool/paths.csv": "33aaa3224f5d1be9b8809d250de219791f02652f584b00d8a76c11160d438038",
+    "solution/computed/pool/pool.json": "a5bd582e79c00fe2fbfac78a519cce77a8f77b96bf950357529255408e3379bb",
+    "solution/computed/run.json": "bba08471858901fa874f0c4e5ab2845d86bbcc23826739d337d2c18eaa317c19",
+    "solution/computed/solution/link_flow.csv": "e466a2b1c44c7959669d4178fee1357986d69bea7356d9f890f9deeff8dd1c65",
+    "solution/computed/solution/path_flow.csv": "299dbef1d92c65cf030876f3205234c788f75a0df99a35253535c0a1b05a5550",
+    "solution/computed/solution/run.json": "76b7845f3411bc923f9ed92dba0091c128135bdedce2abb4bc272fff0d1963bf",
+    "solution/full-path-config.json": "4c7c5c2369280808a282eef0a74a210213abcfe636cd96b18ef97dc8525f8786",
+    "solution/prepare.log": "7da091045d2252c4678d849d6b512d95a48105b61b32f05c1fbbb6a566512aec",
+    "solution/prepared/demand.csv": "151b722e5687f92a353cf98430978afdbe7345c69c303882e8fa5a447f083c53",
+    "solution/prepared/demand_ledger.csv": "543cbdf64d32f66c226fd6578f9fb78d9027f7c6ccd5bf86aacef90597516e16",
+    "solution/prepared/link.csv": "9a61f23168a4a3497f96d2100d70c4935b99e58d64c7c0260df0be8928c10434",
+    "solution/prepared/manifest.json": "c11a7feb98485a30b6dd6075505cbd3fc8dedf6566eca3dddbcdebf121027ee8",
+    "solution/solve.log": "77f01c7ce4a34a1ab80f22d4711a010836eecdd644edf4e6a8c2eb0b57dc9c89",
+    "solve.log": "b6e47ee5b6e4393998ab876ca0c32a345d3993b7dc92362ba00a1a0c138606b4"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-finite-path",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_public_independent_verifier": true,
+      "package_fixture_identity": true,
+      "package_expected_objective": true,
+      "package_od_conservation": true,
+      "package_link_reconstruction": true,
+      "package_full_network_gap": true,
+      "package_generated_pool_size": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "instance_signature": "42a224351bf662cce1d40bdbe7e236864469f3b39f2060d271905fa0cfbd222c",
+      "method": "finite_full_path",
+      "min_path_flow_raw": 0.0,
+      "negative_path_count_raw": 0,
+      "negative_path_mass_raw": 0.0,
+      "min_link_flow_raw": 0.0,
+      "negative_link_count_raw": 0,
+      "max_od_residual": 0.0,
+      "od_residual_sum": 0.0,
+      "od_residual_l1": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "objective_checked": 38.0056431104,
+      "signed_full_gap": 0.0,
+      "full_relative_gap": 0.0,
+      "signed_pool_gap": 0.0,
+      "pool_relative_gap": 0.0,
+      "demand_total": 14.0,
+      "path_count": 4,
+      "node_od": 2,
+      "physical_links": 5,
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "verify_seconds": 0.22203699999954551,
+      "independent_package_checks": 7
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-finite-path",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.5052833999507129
+  },
+  "original_records_sha256": {
+    "run": "1b4597cb173cf45ae0f0c023c377f9a71f84bcf6d737fb4a64512af3ca0b3410",
+    "verification": "b285041e49a4ad32b7fd73e2f400ad525ed6dc971b95772e1fdd043502985483"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

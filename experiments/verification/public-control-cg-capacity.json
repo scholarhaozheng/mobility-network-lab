@@ -1,0 +1,411 @@
+{
+  "experiment_id": "public-control-cg-capacity",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.635238+00:00",
+  "seconds": 1.6574550999794155,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "9eaa34a536610896a95755db3bbd34eef2c1c9237e48eb29b92cd113230d8278",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "1.24.3",
+      "scipy": "1.10.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mnl.py",
+      "role": "solver_code",
+      "expected_sha256": "a4c69752da1af271e78ea59c99bb5d6b8546c4eaf02ee3ef5e52a9a1c84b1c80",
+      "actual_sha256": "a4c69752da1af271e78ea59c99bb5d6b8546c4eaf02ee3ef5e52a9a1c84b1c80"
+    },
+    {
+      "path": "launcher/verify_artifacts.py",
+      "role": "solver_code",
+      "expected_sha256": "2cfff768914cc43e0b226a8256118332754015b47bcec9f672be48252a1527c4",
+      "actual_sha256": "2cfff768914cc43e0b226a8256118332754015b47bcec9f672be48252a1527c4"
+    },
+    {
+      "path": "launcher/verify_external_run.py",
+      "role": "solver_code",
+      "expected_sha256": "b187972bab2d51bae020d740c0242d2aeb714a07e2281acfcbbe86268c220a8e",
+      "actual_sha256": "b187972bab2d51bae020d740c0242d2aeb714a07e2281acfcbbe86268c220a8e"
+    },
+    {
+      "path": "app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+      "role": "solver_code",
+      "expected_sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+      "actual_sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090"
+    },
+    {
+      "path": "app/src/gmns_dynamic/explicit_network_workflow.py",
+      "role": "solver_code",
+      "expected_sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b",
+      "actual_sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_network_input.py",
+      "role": "solver_code",
+      "expected_sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3",
+      "actual_sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_ingest.py",
+      "role": "solver_code",
+      "expected_sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+      "actual_sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+      "role": "solver_code",
+      "expected_sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+      "actual_sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+      "role": "solver_code",
+      "expected_sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+      "actual_sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+      "role": "solver_code",
+      "expected_sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+      "actual_sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+      "role": "solver_code",
+      "expected_sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+      "actual_sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+      "role": "solver_code",
+      "expected_sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+      "actual_sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+      "role": "solver_code",
+      "expected_sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+      "actual_sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+      "role": "solver_code",
+      "expected_sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+      "actual_sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+      "role": "solver_code",
+      "expected_sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+      "actual_sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+      "role": "solver_code",
+      "expected_sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+      "actual_sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+      "role": "solver_code",
+      "expected_sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+      "actual_sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+      "role": "solver_code",
+      "expected_sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+      "actual_sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+      "role": "solver_code",
+      "expected_sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b",
+      "actual_sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b"
+    },
+    {
+      "path": "app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+      "role": "solver_code",
+      "expected_sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+      "actual_sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_external_network_pipeline.py",
+      "role": "solver_code",
+      "expected_sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07",
+      "actual_sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_full_cg_v1.py",
+      "role": "solver_code",
+      "expected_sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae",
+      "actual_sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "12567c7dca542e3cdbcf08c5267cecc667fa19dbd9bc125e3dacbe9b04f530e4",
+      "actual_sha256": "12567c7dca542e3cdbcf08c5267cecc667fa19dbd9bc125e3dacbe9b04f530e4"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "4f41df792fb7e06514a655b499ea666808d18c031e3db98fcadcc40065f50566",
+      "actual_sha256": "4f41df792fb7e06514a655b499ea666808d18c031e3db98fcadcc40065f50566"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/node.csv",
+      "role": "solver_input",
+      "expected_sha256": "3bf6fc775ff0882ed52d05563c7e673061b8a7c9cc5d354a11ec7165f499774b",
+      "actual_sha256": "3bf6fc775ff0882ed52d05563c7e673061b8a7c9cc5d354a11ec7165f499774b"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/zone_access.csv",
+      "role": "solver_input",
+      "expected_sha256": "9ab83c058d8fac65aaac3406d7994c1a97a900c15b7a1a4ebc85df7fca315997",
+      "actual_sha256": "9ab83c058d8fac65aaac3406d7994c1a97a900c15b7a1a4ebc85df7fca315997"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/case.json",
+      "role": "solver_input",
+      "expected_sha256": "2909e6cde37666fcf28775ac7b11d3fb732a4f42f4d1455c707691d64a4ee070",
+      "actual_sha256": "2909e6cde37666fcf28775ac7b11d3fb732a4f42f4d1455c707691d64a4ee070"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "cg-capacity"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "cg-capacity"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.6570672999951057,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "e4cdca59baf3a49de735901b1e83e94e3517225904c1b38519ee3088a4a7a614",
+    "solution/computed/arc_lp_reference_summary.json": "1ab186109ee2df12bc50f79280b9ea86fd2216473e20b96ef2487395297067bf",
+    "solution/computed/dynamic_inputs/dynamic_arc.csv": "7a18d5f15da48a9c6cf8d35779d316c49c8acd88c84663056a7b4defb6a227c4",
+    "solution/computed/dynamic_inputs/dynamic_columns.csv": "f0fc02d96d50fdbf28da085c7abf926d6103270bcb8d3820ef75fc39b336ae29",
+    "solution/computed/dynamic_inputs/dynamic_demand.csv": "62100cc752b295ceff80ee610b55bd394a554a4699f010850460870254a3c2d0",
+    "solution/computed/dynamic_inputs/dynamic_node.csv": "fd1a0c580a73f9c5dfbaa83fb8968ad6ec032a2ed4a4f18f90ac42d7c993db3c",
+    "solution/computed/explicit_model_summary.json": "8d7b82fe921d4188365c8989e4c437ba849e0111b8712ee1db196f5d123791db",
+    "solution/computed/explicit_workflow_result.json": "108bab7a69956663869c9132291da4be53ed86d4018477799d250b6e138b5733",
+    "solution/computed/external_run_manifest.json": "a2619b7e213779cec3ae2729ec0d33166f42e395341f5261651473fcd2b67495",
+    "solution/computed/external_run_result.json": "cac047776e97697b6ba8e12713048cf95237cc082defb90028351f37feaa0357",
+    "solution/computed/full_cg_v1_manifest.json": "6b79b185fe51656956cb82f2d05742ec50a38274edf4c7b75978e232318e3fa7",
+    "solution/computed/full_cg_v1_run/full_cg_v1_final_capacity_audit.csv": "16fef7881403bf1c7772b92e14dcdf425a9d646e428151334b35eea9f4cae454",
+    "solution/computed/full_cg_v1_run/full_cg_v1_final_demand_residual_audit.csv": "35e792b28ab45fabd288910701b2d5612ca1401059690dfc6ea5de0a514faf8f",
+    "solution/computed/full_cg_v1_run/full_cg_v1_input_manifest_resolved.json": "96de273ba169e4ecd388c6a60e32f173b8aba02ae9c175177cf4907cd11472ce",
+    "solution/computed/full_cg_v1_run/full_cg_v1_mutation_audit.json": "63476fb9ed545fda55e1ec60560e9b91ca3697325049498ddab2639b0e0ce777",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_artificial_flow_trace.csv": "0a4cef62124c3e64c5053dbf16521cf2223d1e01cee677881bce15a318f6cef6",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_candidate_log.csv": "af0f3dcbe86e24e9c2719d67e8a48372ef4fad3227cadd3c9de75cf094b00b57",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_final_real_pool.csv": "450f8831f053b4d06a7a12b74a98ee0ca3c61306a3d3b5e8523aafa55ae2413d",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_selected_columns.csv": "587aaf34fabbf841a3dfa677e31238433f0ac10019546065c7a3c989e8b9a6d2",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_stop_certificate.json": "2f82e23f38d2526075ea88a810c2dd7b703109c12bd9675d1b9801bb2ddc5cf6",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_i_summary.json": "8e94ea61ee8f71c393da30409112a385ab3f029f400ec33cc114c883bebc66b7",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_candidate_log.csv": "7f11c0e7f241666567866445fbcccb61968de30cc5f0b5de1c238aec5d49e37f",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_duplicate_audit.csv": "71749ef3f8db75627b2b840ff80c022ef0e1b1f79065c5f2ec53fbefb5d831cf",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_dual_solution.json": "eac73759fc1fb5d786de760ae103adae5be93f1b91bcd618444b3982d6502d09",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_pool.csv": "450f8831f053b4d06a7a12b74a98ee0ca3c61306a3d3b5e8523aafa55ae2413d",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_pool_duplicate_audit.csv": "96f60bb6e7c5c69bc23cdbd569d5f0d2d571887a1fd8dc8e9fa66305fbcdede3",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_solution_by_column.csv": "37c7b0e7f3aef2d723aafffc0c6390784645f7234787389bb71bb0b7b73b436f",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_solution_metadata.json": "6c8fe6284123d867c5dee6bcb60860dbfccad408cf37ff2c9594833f15da049c",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_final_stationarity.csv": "98db6b6f28b2389a47e0ac1268a2a0655b0ed5cf4f94c08c66ccbec4448447b9",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_initial_capacity_audit.csv": "16fef7881403bf1c7772b92e14dcdf425a9d646e428151334b35eea9f4cae454",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_initial_demand_residual_audit.csv": "35e792b28ab45fabd288910701b2d5612ca1401059690dfc6ea5de0a514faf8f",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_initial_dual_solution.json": "f11e49251154ac6c473ee605f8e0715f3c964f1d0ece73563da5ad0512ceb7e8",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_initial_solution_by_column.csv": "ba779f2920758ebdb8e9ce36faa10c068ff3003153514b0cd35a4c1b2e911373",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_initialization_summary.json": "7d98d52122580421d34b0d98541a065bf9bd8ea38a28cb56a0e48d57140220f9",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_loop_summary.json": "76b6494dfa7202157e9eb7e3e812c4719a9c1557883c55e8427e27b63c336c64",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_objective_trace.csv": "ba375aa3b036a3048224d1fd07990f416c0b4ba1bcfa5c3004cb2c480566f8b0",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_round_log.csv": "0f01509a35b86f9f8d7807e81475217dbe8a979b4bab7304e3641f0466afdcbe",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_selected_columns.csv": "7c964c445002398e403482850ffb82d842e48eede144acffec10b122e21c402c",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_stop_certificate.json": "6b0fd560e5b01897e6b9534bf322a0b284ae5b1d5f24bbafa299fe5b8f6c000b",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_unsolved_trial_metadata.json": "768acb06aa28a052923e5e4ba464bca92db2383f8c6b578cd0cb73f96fb6d500",
+    "solution/computed/full_cg_v1_run/full_cg_v1_phase_ii_unsolved_trial_pool.csv": "7eb70257593da06f682a3ddda54a9d260d4fc514f645237f5ca74b08f8da61a6",
+    "solution/computed/full_cg_v1_run/full_cg_v1_protected_artifact_hash_after.json": "b0c7dc5b349f7deccce090a2d9104362693bde52948021e008cb3b1ed8c763ca",
+    "solution/computed/full_cg_v1_run/full_cg_v1_protected_artifact_hash_before.json": "128eb3574e33fbaaba8ceef3743f8bd3ca338b89d18f696b1dbef5b04282fe7f",
+    "solution/computed/full_cg_v1_run/full_cg_v1_reference_comparison.json": "b87a7233eca35a17065e7875f611612aab19526aeabc3457c4a8b857be73db46",
+    "solution/computed/full_cg_v1_run/full_cg_v1_run_report.md": "adbc371adb47fae4e4e085ea8455a46def5f96265935b7b7a4d096eae4e057f3",
+    "solution/computed/full_cg_v1_run/full_cg_v1_run_summary.json": "1bdff31b3dc30d900b23150130d6c9599f4f80bcdd7714c031ed2ddd72f068b6",
+    "solution/computed/full_cg_v1_run/full_cg_v1_safe_claims_and_forbidden_claims.md": "1b91c1989abff17f9cb712a89a2df41a4cad859ab5a71db9c3bf1fb2a5d2b211",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_initial_phase1_capacity_usage.csv": "0b84313f5e0ed2c386f4a17143f56dc487a121387b4342114b781f4f3d9c789f",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_initial_phase1_demand_balance.csv": "aced7508bcb138ffb0b645e2daa4a233ed8a627235f94c0f32d2ed7b5d8a8bd2",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_initial_phase1_dual_solution.json": "3623470f96a7a5a2dcd48f7d64f9a15debc81b68bb146389c8b259cf8beac7c4",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_initial_phase1_summary.json": "9ccb3e6c9b645c9ab79e84e726478b99b43998964fbe57573e07eb3e81510295",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_phase1_dual_solution.json": "3623470f96a7a5a2dcd48f7d64f9a15debc81b68bb146389c8b259cf8beac7c4",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_000_phase1_summary_for_oracle.json": "9ccb3e6c9b645c9ab79e84e726478b99b43998964fbe57573e07eb3e81510295",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_after_add_phase1_capacity_usage.csv": "095fd0753a646bc72586ed43be0c860073c45a1073af0e461e865b88e083a12a",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_after_add_phase1_demand_balance.csv": "f71b37fa73868e6f69de66a93c71313bd70598890cd2f4efea755f7eb07ed41b",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_after_add_phase1_dual_solution.json": "87eec038aebc29245246b31834910e0fa20fb825476174110db053082fbbed4d",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_after_add_phase1_summary.json": "c3034a55349ceabf57122720859317ca0687ee99950c877b9fa51bf24cc86392",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_current_pool.csv": "03a45b38aa7530d5f0120881f9408f75c697e5d202c52abae5e71c1525284b1f",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_candidate_scores.csv": "35cdad16b4d457157d8527c344d86776e5775070731a9c63ccd1729932849708",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_candidates.csv": "c92602908a3a8cdffa5cbded2772b798c48fe268528c44360389feb7b6f82117",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_cost_reconstruction_audit.csv": "ec7ae0bafad940c8888820b41f109f9bea0a56ead989e19743203bad7368572e",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_duplicate_audit.csv": "e289e7f2cd7b3243da8fdd8a6376dfad130b34827ac1418102141bbe7ca6a2dc",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_graph_audit.json": "5c008ffb66a287f67e0d237134eb2511aa2ed600ce7df7c6ec9a94c6c0fa8a46",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_oracle_path_validity_audit.csv": "789c682dfef3d8c9a5d93a5241e4d21a20579ae515da65cf192b226f0d8b5314",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_pricing_oracle_report.md": "464175d0e3e126562953d5fda011cce07023647c3973c823862befece00a9118",
+    "solution/computed/full_cg_v1_run/phase_i_work/round_001_oracle/phase_i_general_pricing_oracle_summary.json": "3e3fccb61221c40a2f733afa013af93ef7ba98d5cf83f0163e823c4c951f29bb",
+    "solution/computed/normalized_inputs/demand.csv": "2b737abc8d3fa447d521d132fbc10a435f1a68aa1e2e5f37d5ba9e86926dbe39",
+    "solution/computed/normalized_inputs/excluded_zero_demands.csv": "2688755d30dd146e56c7836d2be78eb2fb4c7b5816c3eb1d826816f05131a683",
+    "solution/computed/normalized_inputs/link.csv": "4746d262e86f9dfa6caf1237b153f5c6891e637afba2f96c69a852031570fd40",
+    "solution/computed/normalized_inputs/node.csv": "3bf6fc775ff0882ed52d05563c7e673061b8a7c9cc5d354a11ec7165f499774b",
+    "solution/computed/normalized_inputs/normalized_input.json": "b308a9326c5479ef5a5a42c15a14386eef499f6f8c13dc4d19044f5869366849",
+    "solution/computed/normalized_inputs/zone_access.csv": "9ab83c058d8fac65aaac3406d7994c1a97a900c15b7a1a4ebc85df7fca315997",
+    "solution/computed/offline_verification.json": "3274ed0e210aace26782c12b18896eaad03a6c2b987578fd4174f043e80c4162",
+    "solution/computed/report.html": "99cfaedbd0a554b62eb18748e02250eec9f3a90253063d5e170b1bd83bfa7af1",
+    "solution/computed/seeds/seed_report.csv": "1326397cd29848e502cd0b9565446f30c83b20ca444c66deaab158c9ddfd4cdb",
+    "solution/computed/seeds/seed_report.json": "8839c57c036b68a711f2316185ce0665cd8bed9bd53a7213c7334c2b557dff02",
+    "solution/computed/seeds/static_seed_candidates.csv": "2e67bd864b875d7328ac634f261914f2b7dff9b67b569397453fce1418c8d160",
+    "solution/computed/seeds/static_seed_candidates.json": "2e3ca7de4e632941ddb4ed2c5c25fb00f58137eaa7c7588e30c88779b18143a5",
+    "solution/solve.log": "296e333e17cf38991c261734c970c1767a2223f8cbc01d28aa9beb9ef70dbc0a",
+    "solve.log": "cc50600b0ed3e1f7f41f2ec4dace033ecd6877168c74ffc1a2bf578da4f08a98"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-cg-capacity",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_public_solver_free_verifier": true,
+      "package_expected_objective": true,
+      "package_same_graph_lp": true,
+      "package_primal_export": true,
+      "package_pricing_boundary_retained": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "case_id": "EXTERNAL",
+      "status": "PASS",
+      "blockers": [],
+      "objective": 27.0,
+      "expected_objective": 27.0,
+      "final_solution_row_count": 2,
+      "positive_flow_row_count": 2,
+      "zero_flow_row_count": 0,
+      "demand_dual_count": 1,
+      "capacity_dual_count": 20,
+      "lower_bound_marginal_count": 2,
+      "upper_bound_marginal_count": 2,
+      "model_signature": "1f96aad9621408b85a09dfc646e48cf88ac7081a149663c6c47660b873a9ad2d",
+      "pool_signature": "cda98ce7307614f792c8ab921a7b5c3bde5452255d1210ee9c19a0e1d1b4ff3f",
+      "solve_iteration": 0,
+      "phase_ii_round": 0,
+      "stop_reason": "objective_level_reference_match",
+      "phase_i_needed": true,
+      "phase_i_loop_ran": true,
+      "verification_scope": "external finite explicit-allowed-network run; solver-free",
+      "input_signature": "3c31dfa74a5bc6480af25508c983d0ecfe9cefcf0e8c1da68cbafed03d06a327",
+      "seed_pool_signature": "e0e5252fb245752bde75a8ec093c0e8eef1d261707b99b5fa1cfb8eea3af86f0",
+      "seed_mode": "auto",
+      "seed_count": 1,
+      "positive_demand_count": 1,
+      "dynamic_node_count": 14,
+      "dynamic_arc_count": 20,
+      "final_pool_count": 2,
+      "final_solution_count": 2,
+      "zero_flow_column_count": 0,
+      "recomputed_objective": 27.0,
+      "reference_objective": 27.0,
+      "reported_cg_objective": 27.0,
+      "reported_cg_objective_matches_recomputed": true,
+      "reported_cg_objective_matches_reference": true,
+      "recomputed_objective_matches_reference": true,
+      "reference_match": true,
+      "reference_match_basis": "reported_cg_objective_vs_same_model_reference_lp",
+      "objective_optimality_certificate_source": "reference_lp",
+      "final_rmp_primal_and_export_checks": true,
+      "independent_pricing_certificate_present": false,
+      "pricing_closure_claim": false,
+      "pricing_closure_proven": false,
+      "pricing_closure_reason": "not claimed: the independently recomputed objective matches the same-model reference LP, but no independent missing-column pricing certificate was completed",
+      "pricing_stop_reason": "objective_level_reference_match",
+      "duals_cover": "final successfully solved RMP rows and variable bounds; not a separate proof of complete path pricing",
+      "optimization_invocations_during_verify": 0,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation. CG uses the retained generic RC5 engine. The independently checked objective matches the same-graph LP; independent missing-column pricing closure is not claimed.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-cg-capacity",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.4328561000293121
+  },
+  "original_records_sha256": {
+    "run": "d2ba2f7ea771fe8a48197eb90d35c9d9570d4872c1892d885abf52895d814c4b",
+    "verification": "eec00a3ca4893fb320c962d8848e4bdd057550f13ae561177eb7ac25fe8c39e3"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

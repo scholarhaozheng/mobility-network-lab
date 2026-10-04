@@ -1,0 +1,294 @@
+{
+  "experiment_id": "public-control-gtfs-parser",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.638596+00:00",
+  "seconds": 1.1337731999810785,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "f003f5d22df754c0926a9cb66f66b1f25db924c830a9a222e10a94cf394c6022",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "pandas": "1.5.3"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mcl_data.py",
+      "role": "solver_code",
+      "expected_sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a",
+      "actual_sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a"
+    },
+    {
+      "path": "src/mobilitylab/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17",
+      "actual_sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17"
+    },
+    {
+      "path": "src/mobilitylab/data/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178",
+      "actual_sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178"
+    },
+    {
+      "path": "src/mobilitylab/data/catalog_city_workflow.py",
+      "role": "solver_code",
+      "expected_sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5",
+      "actual_sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5"
+    },
+    {
+      "path": "src/mobilitylab/data/evidence.py",
+      "role": "solver_code",
+      "expected_sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e",
+      "actual_sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e"
+    },
+    {
+      "path": "src/mobilitylab/data/open_mobility.py",
+      "role": "solver_code",
+      "expected_sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745",
+      "actual_sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745"
+    },
+    {
+      "path": "src/mobilitylab/omdv/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660",
+      "actual_sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23",
+      "actual_sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/city_matching.py",
+      "role": "solver_code",
+      "expected_sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4",
+      "actual_sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/external_city_universe.py",
+      "role": "solver_code",
+      "expected_sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea",
+      "actual_sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391",
+      "actual_sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/content_metrics.py",
+      "role": "solver_code",
+      "expected_sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9",
+      "actual_sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5",
+      "actual_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/catalog_summary.py",
+      "role": "solver_code",
+      "expected_sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57",
+      "actual_sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/mobility_database.py",
+      "role": "solver_code",
+      "expected_sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f",
+      "actual_sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f"
+    },
+    {
+      "path": "src/mobilitylab/validation/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a",
+      "actual_sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a"
+    },
+    {
+      "path": "experiments/public-controls/synthetic-gtfs-members.json",
+      "role": "solver_input",
+      "expected_sha256": "112c6baa6f1593949fdc14b464e4aab444d03d983804a40555e603c1b6777052",
+      "actual_sha256": "112c6baa6f1593949fdc14b464e4aab444d03d983804a40555e603c1b6777052"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "gtfs-parser"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "gtfs-parser"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.1332054999656975,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "ce2e4fda81d591101f53cb3196771bc0289af7c2d39ccfb67780054746d7cfac",
+    "solution/computed/member_presence.csv": "52d894df8df7c1b631ea53cb29a24493ffa4a2c80af30f9712635cbf32fcf9c6",
+    "solution/computed/metrics.json": "ee4e381c3e85b2ec6f13e694d438f461459bfa0c2321c40ff82ee759b7570563",
+    "solution/computed/report.json": "7bbe41253ef7d9e55d4280674064b2c884ad4506f312074b27f266573b94c109",
+    "solution/computed/warnings.csv": "e55a8905b91104b4417bda8850d1508ab4dc178c25e99251910af43a586c557e",
+    "solution/parser.log": "3e153669bba99b4eb68c02800b198e2c6f833867ebe9d5fa0083a852d556cc33",
+    "solution/synthetic-fixture.zip": "b7a7f009e8cd621a0d01c66d0bb06b4e6ab272d6c67651090d34698f1e112a7e",
+    "solve.log": "f37e7af03d9387d571f2ddc8523c3b372077d85ce6210804de349712f45f39e0"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-gtfs-parser",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_synthetic_input_identity": true,
+      "package_content_sha256": true,
+      "package_parsed": true,
+      "package_one_stop_time": true,
+      "package_valid_stop_references": true,
+      "package_no_network_or_extraction": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "content_sha256": "b7a7f009e8cd621a0d01c66d0bb06b4e6ab272d6c67651090d34698f1e112a7e",
+      "input_file_name": "synthetic-fixture.zip",
+      "input_size_bytes": 1016,
+      "parse_started_utc": "2026-10-04T11:35:04.622774Z",
+      "strict_count_effect": 0,
+      "adapter_source": "OMDV parse_v25a_3_gtfs_unique_content.py",
+      "member_count": 6,
+      "zip_valid": "yes",
+      "parse_status": "parsed",
+      "agency_presence": "provided",
+      "stops_presence": "provided",
+      "routes_presence": "provided",
+      "trips_presence": "provided",
+      "stop_times_presence": "provided",
+      "calendar_presence": "provided",
+      "calendar_dates_presence": "not_provided",
+      "shapes_presence": "not_provided",
+      "feed_info_presence": "not_provided",
+      "frequencies_presence": "not_provided",
+      "transfers_presence": "not_provided",
+      "agency_row_count": 1,
+      "stop_row_count": 1,
+      "unique_stop_id_count": 1,
+      "valid_coordinate_rows": 1,
+      "invalid_coordinate_rows": 0,
+      "valid_coordinate_proportion": 1.0,
+      "location_type_distribution": "{\"0\": 1}",
+      "parent_station_non_empty_count": 0,
+      "station_count": 0,
+      "platform_or_stop_count": 1,
+      "approximate_unique_coordinate_count": 1,
+      "stop_min_lat": 1.0,
+      "stop_max_lat": 1.0,
+      "stop_min_lon": 2.0,
+      "stop_max_lon": 2.0,
+      "route_count": 1,
+      "raw_route_type_distribution": "{\"3\": 1}",
+      "distinct_raw_route_type_count": 1,
+      "broad_mode_distribution": "{\"bus_or_coach\": 1}",
+      "distinct_broad_mode_count": 1,
+      "trip_count": 1,
+      "service_id_count": 1,
+      "shape_point_count": 0,
+      "unique_shape_id_count": 0,
+      "frequency_row_count": 0,
+      "transfer_row_count": 0,
+      "calendar_earliest_date": "20260101",
+      "calendar_latest_date": "20261231",
+      "calendar_dates_earliest_exception_date": "",
+      "calendar_dates_latest_exception_date": "",
+      "feed_info_start_date": "",
+      "feed_info_end_date": "",
+      "date_evidence_source": "calendar_or_calendar_dates",
+      "parse_error_message": "",
+      "stop_time_member_size": 82,
+      "stop_time_row_count": 1,
+      "unique_stop_ids_in_stop_times": 1,
+      "unique_trip_ids_in_stop_times": 1,
+      "invalid_stop_references": 0,
+      "invalid_trip_references": 0,
+      "stop_sequence_order_check_status": "not_evaluated_large_stream_memory_bounded",
+      "parse_finished_utc": "2026-10-04T11:35:04.640726Z",
+      "independent_package_checks": 6
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation. The fixture is recreated from the published parser test. The historical 5,010-byte Victoria feed is not redistributed or reproduced.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-gtfs-parser",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.1777005000039935
+  },
+  "original_records_sha256": {
+    "run": "6df39d7e35961ac8c9bd9533806ca5bf6cbe5b963862a2dfb2245f04b028d806",
+    "verification": "7d82398e774016efb01e617c904290ea4f62e6873a48ddef3261653cde8c9f81"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

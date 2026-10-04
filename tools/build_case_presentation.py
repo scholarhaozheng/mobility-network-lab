@@ -166,12 +166,15 @@ def main(argv=None):
      prefix='../'*depth
      page_class=' class="boston-admm-page"' if title.startswith('Boston ADMM R2') else ''
      return '<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>'+html.escape(title)+' · Mobility Computation Lab</title><link rel="icon" type="image/svg+xml" href="'+prefix+'assets/mcl-globe.svg"><link rel="stylesheet" href="'+prefix+'assets/presentation-r3.css"></head><body'+page_class+'><header><div class="mast"><a class="brand" href="'+prefix+'index.html">Mobility Computation Lab<small>GMNS · demand · observation · computation</small></a><a href="https://github.com/scholarhaozheng/mobility-network-lab">Source repository ↗</a></div></header><nav class="nav"><div><a href="'+prefix+'index.html#framework">Project map</a><a href="'+prefix+'contributions.html">Contributions</a><a href="'+prefix+'capabilities.html">Coverage</a><a href="'+prefix+'cases/boston.html">Boston</a><a href="'+prefix+'cases/sioux-falls.html">Sioux Falls</a><a href="'+prefix+'cases/hong-kong.html">Hong Kong</a><a href="'+prefix+'methods.html">Methods</a><a href="'+prefix+'full-walkthrough.html">Full walkthrough</a><a href="'+prefix+'getting-started.html">Getting started</a><a href="'+prefix+'open-data.html">Open data</a></div></nav><main class="mcl-page">'+body+'</main><footer>Source-qualified computational examples. Numerical approximation, evidence linkage and empirical validation are distinct. See each case for its exact scope, units and provenance.</footer></body></html>'
-    home=content(S/'README.md',True)
-    # This is a deliberate source file: the existing complete site build can render it without a second narrative.
-    (S/'docs/index.md').write_text('<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->\n'+home+'\n',encoding='utf-8')
-    home_html=shell(home,'Framework and cases')
-    home_html=home_html.replace('</body></html>', '<script src="assets/atlas-depth-tooltips.js" defer></script></body></html>')
-    (S/'docs/index.html').write_text(home_html,encoding='utf-8')
+    # The maintained interactive atlas and long volumes have canonical static sources.
+    # Rebuilding historical topic pages must not replace the approved atlas with README HTML.
+    if not (S/'docs/assets/reading/atlas-data.js').is_file():
+        home=content(S/'README.md',True)
+        # This is a deliberate source file: the existing complete site build can render it without a second narrative.
+        (S/'docs/index.md').write_text('<!-- Homepage content derived from the root README by tools/build_case_presentation.py. -->\n'+home+'\n',encoding='utf-8')
+        home_html=shell(home,'Framework and cases')
+        home_html=home_html.replace('</body></html>', '<script src="assets/atlas-depth-tooltips.js" defer></script></body></html>')
+        (S/'docs/index.html').write_text(home_html,encoding='utf-8')
     files=['docs/architecture.md','docs/contributions.md','docs/full-walkthrough.md','docs/visualizations.md','docs/capabilities.md','docs/cases/boston.md','docs/cases/boston-assignment.md','docs/cases/boston-space-time.md','docs/cases/boston-admm.md','docs/cases/boston-algorithm-b.md','docs/cases/sioux-falls.md','docs/cases/sioux-space-time.md','docs/cases/sioux-admm.md','docs/cases/sioux-algorithm-b.md','docs/cases/hong-kong.md','docs/cases/hong-kong-four-stage.md','docs/cases/hong-kong-static-assignment.md','docs/cases/hong-kong-space-time.md','docs/datasets/hong-kong-gmns.md','docs/methods/hong-kong-evidence-contract.md','docs/methods/space-time-cg.md','docs/methods/admm-space-time.md','docs/methods/origin-based-algorithm-b.md','docs/integrations/taplab-tapb.md','docs/RUN_YOUR_OWN_GMNS.md','docs/BOSTON_SCALE_RESULTS.md','docs/SCALABLE_TOOL_DATA_NOTICE.md','docs/datasets/boston-population-households.md','docs/datasets/boston-behavior-feedback.md','docs/datasets/boston-four-step-sources.md','docs/datasets/boston-visual-sources.md']
     for f in files:
      p=S/f; depth=len(p.relative_to(S/'docs').parts)-1

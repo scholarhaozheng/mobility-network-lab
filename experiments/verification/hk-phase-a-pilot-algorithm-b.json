@@ -1,0 +1,191 @@
+{
+  "experiment_id": "hk-phase-a-pilot-algorithm-b",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:50:26.716916+00:00",
+  "seconds": 1.2168437000364065,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "1e16a9f8c4054ae7d51c8e66841f4fc18ca5e9299a016207aef002c1e9a75caf",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+      "role": "solver_code",
+      "expected_sha256": "35b5487e4a2e00017c0cf6c2dd9056ccda8e9c1e4f5447bf8cb1dde640370f62",
+      "actual_sha256": "35b5487e4a2e00017c0cf6c2dd9056ccda8e9c1e4f5447bf8cb1dde640370f62"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+      "role": "solver_code",
+      "expected_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0",
+      "actual_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0"
+    },
+    {
+      "path": "tools/reproduction/build_tapb.py",
+      "role": "build_code",
+      "expected_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+      "actual_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/cases.json",
+      "role": "solver_config",
+      "expected_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de",
+      "actual_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "role": "solver_input",
+      "expected_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "actual_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/pilot_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc",
+      "actual_sha256": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf",
+      "actual_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5",
+      "actual_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd",
+      "actual_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+    "arguments": [
+      "--case",
+      "phase-a-pilot"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_algorithm_b.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--case",
+        "phase-a-pilot"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.2165731000131927,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "07161cf27292d847b2f0607363751f615d0729a5ef94df56fca0a27e38f83bbd",
+    "solution/computed/evaluation.json": "896897a9507f6656650b5470a357dba9536123939b69ac0088c2dcf74357c0be",
+    "solution/computed/full_log.txt": "7b3db97d2ec62dc060a91baebae90e65728f543aceb2553eb90023d5db1b8d90",
+    "solution/computed/history.csv": "90de893a3d4f6ecca70dc88889de3efc53050b89dc7b47ff3ffa86aa034abc85",
+    "solution/computed/input_lock.json": "f619bac346c64509b5cf23ed7c7daa0416fd1925ff02bbc052feb4697aba4852",
+    "solution/computed/link_flow.csv": "e85af587a0d356f749b0530ba8ffc686314887724b2a7d6170d0d6861536a08d",
+    "solution/computed/mapping.json": "7546f2d18753bc0b77ffa01a25107b906d0f711dd82cf229b8f721a24e4d8a45",
+    "solution/computed/net/r2_net.txt": "dd8585362c4f4f7ee016ad6bac5299db4fe22c56317e36590e11722cc457d576",
+    "solution/computed/net/r2_trips.txt": "39770a6a189b7795bd9564597f31bef12814e5db902f9fff5d6519804afdccaa",
+    "solution/computed/origin_arc_flow.csv": "43908730d0b0e2b1a9ad5c2cd7a664de6e77724557e6e6c0e246c18e7d98c36d",
+    "solution/computed/params.txt": "c3e19283f6f233fbe70562a3066d7009e4b26cdbdf14f801461a2a5b6384e12a",
+    "solution/computed/path_flow.csv": "391e228fc12d7cfae54dde74ce4d52598a89311b70765abf4d2ac9c404843a32",
+    "solution/computed/process.json": "5aa84b515211aa0211c790ca178187cdf3a587f9ff0a05917e578048c0b8d0f4",
+    "solution/computed/r2_flows.txt": "09754678bd2a367ebe4544e57734c9f92d76a7a4ecfa5112517912139fd98e70",
+    "solution/computed/r2_pathflows.txt": "865ffb3a0fe393957e56a78e0a76db7cd8e112f47c71ce54ad6e08254c9c7d11",
+    "solution/computed/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/computed/stdout.log": "7b3db97d2ec62dc060a91baebae90e65728f543aceb2553eb90023d5db1b8d90",
+    "solution/demand.csv": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc",
+    "solution/independent-verify.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/independent-verify.stdout.log": "b089a9475e87f29dd72b2949cd3ad8fe96f872acf7191a65a18b2b1d19a7cd81",
+    "solution/run.json": "ca24a317fc8f996cc56a27d51ab5e6ba9391ad5d5a32d45c9b4e436c41b1306e",
+    "solution/runtime-provenance.json": "2c2541c9cf3aefbf3836f0045bec026864d1edb7fa91837998d1df30fbcd10be",
+    "solution/solve.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/solve.stdout.log": "a01d1126c8e5f5fac94978eb3e1c0fad34a1650599aa39a89d18313218c9a7e7",
+    "solve.log": "e2f19793cc33242284441cec936af3b55831d9b8277e13d87c0266e3e9783461"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk-phase-a-pilot-algorithm-b",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_independent_path_origin_and_full_graph_gates": true,
+      "package_frozen_input_hashes": true,
+      "package_accepted_objective": true,
+      "package_accepted_od_count": true,
+      "package_accepted_demand": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 1244.4504233175294,
+      "relative_gap": 1.826369545759056e-15,
+      "positive_od": 475,
+      "total_demand": 604.5143748150477,
+      "max_od_residual": 0.0,
+      "max_origin_node_residual": 3.552713678800501e-15,
+      "max_link_mismatch": 7.105427357601002e-15,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "objective_absolute_max": 1e-07,
+      "independent_full_graph_and_origin_path_checks": true,
+      "total_demand_absolute_max": 1e-08
+    },
+    "claim_boundary": "Phase A population-proxy modeled demand; not the Phase B four-stage or H1 finite-path experiment.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk-phase-a-pilot-algorithm-b",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.0142173999920487
+  },
+  "original_records_sha256": {
+    "run": "b9098200309ecc199fc8c599885c12f5bfcea80fabe1be5039ee30d722b34592",
+    "verification": "19e9bc723b583923c10301cec34be90057e4364cfd6c6291dab70f3154b24736"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

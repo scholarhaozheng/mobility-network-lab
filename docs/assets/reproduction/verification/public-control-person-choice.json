@@ -1,0 +1,173 @@
+{
+  "experiment_id": "public-control-person-choice",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.585340+00:00",
+  "seconds": 0.27856329997302964,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "2c77db51685a593e87a694f76a17a8a9830cc197c9e677b69369c9b723140f5a",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mcl_person_choice.py",
+      "role": "solver_code",
+      "expected_sha256": "ffecb261bc96c881946950741b39de434f0f3db0333e8fcbaffecaa4c1e0e2b9",
+      "actual_sha256": "ffecb261bc96c881946950741b39de434f0f3db0333e8fcbaffecaa4c1e0e2b9"
+    },
+    {
+      "path": "tools/scalable/fixed_choice_source.py",
+      "role": "solver_code",
+      "expected_sha256": "6e257cdec9b224345cb1478fad85a81897399af29cb577e4e80ca87965d33f43",
+      "actual_sha256": "6e257cdec9b224345cb1478fad85a81897399af29cb577e4e80ca87965d33f43"
+    },
+    {
+      "path": "examples/scalable_person_fixture/choice_config.json",
+      "role": "solver_input",
+      "expected_sha256": "11833ea220d8bee8f413d3061eda617279e3a85bb0fc5ef45df1110b267a0590",
+      "actual_sha256": "11833ea220d8bee8f413d3061eda617279e3a85bb0fc5ef45df1110b267a0590"
+    },
+    {
+      "path": "examples/scalable_person_fixture/person.csv",
+      "role": "solver_input",
+      "expected_sha256": "5ea74e607cb7501aa2cd637c4afab5729f5eba61bdc0307c256bda11f5675898",
+      "actual_sha256": "5ea74e607cb7501aa2cd637c4afab5729f5eba61bdc0307c256bda11f5675898"
+    },
+    {
+      "path": "examples/scalable_person_fixture/skims.csv",
+      "role": "solver_input",
+      "expected_sha256": "9ba9c7c9fe92d53d2b868e592d4b60250b34b93433657f261c36e00bf0890f6e",
+      "actual_sha256": "9ba9c7c9fe92d53d2b868e592d4b60250b34b93433657f261c36e00bf0890f6e"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/choice_spec.json",
+      "role": "solver_input",
+      "expected_sha256": "022fc7715c6987ff90fde3d4852cb4888c00eada4181d6c3f3ef8be076cb648c",
+      "actual_sha256": "022fc7715c6987ff90fde3d4852cb4888c00eada4181d6c3f3ef8be076cb648c"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "person-choice"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "person-choice"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 0.2780730999656953,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "5c427408185a428682a9c09f0b72429ffca53ca6c95df04b9cff60db016bd62d",
+    "solution/choice.log": "de12cc02b4f65c505ede4936e4b349a4f47fa88d42d427988c8ecc90f4814c5f",
+    "solution/computed/choice_attributes.csv": "3beb45caf602a4a14f86283bff7c55d1178b1e12d45aba177b20ab5e81d2c9ba",
+    "solution/computed/choice_ledger.csv": "42b9f397af425270b6ad87c479f4a6bb5f5ef9524bf34e286afe78557de41604",
+    "solution/computed/person_to_vehicle.csv": "81602393389db21b0641f7dd918a6910e841a4797f37642461cae713f7dc253a",
+    "solution/computed/probabilities.csv": "f31930cd5b382d0dfaa80869e6a4d7f46a182b0c7edaa28bb9d2fbd0ffb475f1",
+    "solution/computed/summary.json": "9e6effeee789bed2f841a865246a2b1b4de3d00e6d4d30e7d9e9249a3c8c0eeb",
+    "solution/computed/vehicle_demand.csv": "ecc0e939ee3209af07a72a76f7f9c187bb9e36046c43ffe5bd1d0a04103ae435",
+    "solve.log": "04a8f07ae878522342d7a3a4506f7e0395c305509039fec8d75ba0b8055065df"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-person-choice",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_fixture_scope": true,
+      "package_probability_bounds": true,
+      "package_probability_sums": true,
+      "package_person_mass": true,
+      "package_occupancy_conversion": true,
+      "package_vehicle_conservation": true,
+      "package_expected_loaded_vehicles": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "probability_rows": 8,
+      "choice_groups": 2,
+      "max_probability_sum_error": 1.1102230246251565e-16,
+      "max_person_mass_error": 0.0,
+      "max_occupancy_conversion_error": 0.0,
+      "loaded_vehicle_trips": 11.153540248879068,
+      "evaluated_person_mass": 14.0,
+      "independent_package_checks": 7
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-person-choice",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.21318019996397197
+  },
+  "original_records_sha256": {
+    "run": "44756a0eb726376a5c92782c8d35b8af324a79942e92b192ed6c3be8ca4dcb44",
+    "verification": "f1b73a12615865ed6a354c4ea81b70c377ce4c4ee9ad5a8f85aa3896ea0a6367"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

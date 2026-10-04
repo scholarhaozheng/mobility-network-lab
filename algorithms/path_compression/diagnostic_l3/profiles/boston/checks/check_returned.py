@@ -183,7 +183,7 @@ def evaluate(rank, outer):
                    and counts.get("link_equalities") == 5091
                    and counts.get("minor_nonnegative_inequalities") == 104
                    and counts.get("total_active_constraints") == 5195)
-    source_pass = (native.get("source_sha256") == "0a054ab078d46a8b74fa257336a65275564c38cc3e60e5c4d8cb9c412a87a22a"
+    source_pass = (native.get("source_sha256") == "27644472699b1c93f9795b6a7940928c4935e43a2a062c96a6f7a682df8208b5"
                    and sha(ROOT / "source_snapshot" / "run_diagnostic_levels.py") == native.get("source_sha256"))
     native_optimal = native.get("solver_status") == "ok" and native.get("termination") == "optimal" and native.get("solution_loaded") is True
     criteria = {

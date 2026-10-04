@@ -1,0 +1,85 @@
+{
+  "schema": "hk_static_r2_cases_v1",
+  "cases": {
+    "phase-a-smoke": {
+      "phase": "a",
+      "tier": "smoke",
+      "demand_file": "examples/hong-kong/static_assignment_r2/smoke_demand.csv",
+      "reference": {
+        "objective": 49.7730321926209,
+        "positive_od": 475,
+        "total_demand": 24.18057499260191
+      },
+      "historical_output_sha256": {
+        "link": "dc4da9f3cf4a4948e237c8ca2e651a95d14b8dc5d2c7c35a0c6b7db45b1fa7f5",
+        "path": "9ae0083970cd595f56c9422f48a970ae01dc14c4a90977ca522e3dc3a4fe6a73"
+      },
+      "claim_boundary": "Phase A population-proxy modeled demand; not the Phase B four-stage or H1 finite-path experiment.",
+      "provenance": "Recovered phase_a/static_input/r1_smoke_demand.csv; exact frozen solver demands created by compile_phase_a.py."
+    },
+    "phase-a-pilot": {
+      "phase": "a",
+      "tier": "pilot",
+      "demand_file": "examples/hong-kong/static_assignment_r2/pilot_demand.csv",
+      "reference": {
+        "objective": 1244.4504233175294,
+        "positive_od": 475,
+        "total_demand": 604.5143748150477
+      },
+      "historical_output_sha256": {
+        "link": "e85af587a0d356f749b0530ba8ffc686314887724b2a7d6170d0d6861536a08d",
+        "path": "391e228fc12d7cfae54dde74ce4d52598a89311b70765abf4d2ac9c404843a32"
+      },
+      "claim_boundary": "Phase A population-proxy modeled demand; not the Phase B four-stage or H1 finite-path experiment.",
+      "provenance": "Recovered phase_a/static_input/r1_pilot_demand.csv; exact frozen solver demands created by compile_phase_a.py."
+    },
+    "phase-b-smoke": {
+      "phase": "b",
+      "tier": "smoke",
+      "demand_file": null,
+      "reference": {
+        "objective": 143.09433596371608,
+        "positive_od": 10,
+        "total_demand": 50.854571492000076
+      },
+      "historical_output_sha256": {
+        "link": "8e6f96d7ae684577255f7673b535b2714a6369d2b74b6042b2ed1498073865bc",
+        "path": "bc59aca7d57ad3d1c1fda53d3e9df7931654497771de74f69d2eb1ef215792d3"
+      },
+      "claim_boundary": "Phase B base four-stage one-hour modeled demand; not measured OD or H1 finite-path.",
+      "provenance": "Deterministic subset of public mode_demand_by_od.csv with turn-expanded endpoints from mode_costs_by_od.csv."
+    },
+    "phase-b-medium": {
+      "phase": "b",
+      "tier": "medium",
+      "demand_file": null,
+      "reference": {
+        "objective": 1180.1239893593931,
+        "positive_od": 1000,
+        "total_demand": 486.16552469770807
+      },
+      "historical_output_sha256": {
+        "link": "59732bf9eeaee7d5e021897513fadec50e69dbcc2e67c53e47705d63a8512fde",
+        "path": "9faa7dc22e098cff8256b83b5302b6e65b502cd268b94acc59b46afe0f920347"
+      },
+      "claim_boundary": "Phase B base four-stage one-hour modeled demand; not measured OD or H1 finite-path.",
+      "provenance": "Deterministic subset of public mode_demand_by_od.csv with turn-expanded endpoints from mode_costs_by_od.csv."
+    },
+    "phase-b-full": {
+      "phase": "b",
+      "tier": "full",
+      "demand_file": null,
+      "reference": {
+        "objective": 1676.0121313288516,
+        "positive_od": 8930,
+        "total_demand": 723.1912278850218
+      },
+      "historical_output_sha256": {
+        "link": "82996546d46e2edaa179658ab619cb1a48b983995c727c8740a1261465561842",
+        "path": "eb3701420c0bf9e68342d1ac1fb0bf0e366ca6f20dc343c30aa3442da3cfba1f"
+      },
+      "claim_boundary": "Phase B base four-stage one-hour modeled demand; not measured OD or H1 finite-path.",
+      "provenance": "Deterministic subset of public mode_demand_by_od.csv with turn-expanded endpoints from mode_costs_by_od.csv."
+    }
+  }
+}

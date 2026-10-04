@@ -1,0 +1,31 @@
+{
+  "schema": "boston_conditional_choice_inputs_v1",
+  "source_archive_sha256": "07c62436ebb59a8038e34d0db56a7800660b6b71e67bdbed58af97276bb0d33a",
+  "scope": "Selected frozen aggregate 36-OD panel and prepared skims. No raw observations or person/building records are included. Recomputes conditional choice only; does not regenerate skims from raw sources.",
+  "files": [
+    {
+      "name": "validation_panel.csv",
+      "repository_path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv",
+      "sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+      "bytes": 6521
+    },
+    {
+      "name": "od_mode_probabilities.csv",
+      "repository_path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv",
+      "sha256": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c",
+      "bytes": 2234104
+    },
+    {
+      "name": "person_to_vehicle_crosswalk.csv",
+      "repository_path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/person_to_vehicle_crosswalk.csv",
+      "sha256": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0",
+      "bytes": 3104805
+    },
+    {
+      "name": "mode_specific_od_costs.csv",
+      "repository_path": "examples/boston/conditional_choice_r1/inputs/mode_specific_od_costs.csv",
+      "sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+      "bytes": 586344
+    }
+  ]
+}

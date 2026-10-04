@@ -1,5 +1,13 @@
 # Data licenses and publication boundaries
 
+## Frozen Sioux finite-time inputs (2026-10-04)
+
+The four input CSVs in [`examples/sioux-falls/finite-time-r05/`](examples/sioux-falls/finite-time-r05/PROVENANCE.json) are included for academic reproduction of the declared 200-OD and 250-OD Lagrangian P07 and ADMM R2_S computations. They contain modeled arcs and selected benchmark demand, not observed person trajectories. SHA-256 hashes identify the exact frozen inputs. Reference metrics are checked after the fresh solve; saved solver state, a reference path pool and reference arc flows are not supplied to initialize it.
+
+The immediate provider is [GMNS Plus Dataset, `17_Sioux_Falls`](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset/tree/main/17_Sioux_Falls). Its repository publishes an [Apache-2.0 license](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset/blob/main/LICENSE), retained [locally](tools/gmns/vendor/GMNS_PLUS_LICENSE.txt), and credits the [TransportationNetworks/TNTP collection](https://github.com/bstabler/TransportationNetworks). TransportationNetworks specifies [academic-research use and source attribution](https://github.com/bstabler/TransportationNetworks#license). Both provider notices apply; this repository's MIT software license does not relicense benchmark data. Cite the Transportation Networks for Research Core Team and the GMNS Plus Dataset when using these derivatives. Provider terms were checked on October 4, 2026.
+
+The original GMNS provider revision has not been recovered. The published conversion code identifies the immediate provider, but this release has not reexecuted the raw-source-to-graph transformation. Reproducibility therefore begins at these hash-pinned modeled inputs. This is a source-version and reconstruction limitation, not a finding of personal data. It does not certify the historical Sioux CG pricing closure. The narrow addition supersedes earlier results-only statements only for these four tables; it does not release an upstream archive or unrelated local evidence.
+
 ## Static Algorithm B selected derived evidence
 
 The accepted classic Sioux and Central Boston B1 aggregate physical-link flows, evaluation JSONs and eight figures under [`algorithms/origin_based_algorithm_b/`](algorithms/origin_based_algorithm_b/README.md) are selected derived public candidates, not redistributed raw benchmark or Boston input tables. Boston geography traces to GMNS Plus `21_Boston`, Apache-2.0, commit `116447ab641cca1ed34797d019c8e704063393c3`. Its B1 demand is a modeled conditional HBW-midday cohort rather than observed citywide traffic. Native executables, upstream source trees, original demand tables, private logs and path-level run archives are excluded. The project MIT notice covers original adapter/evaluator code only; upstream TAPLab and tap-b retain their own MIT terms.
@@ -10,7 +18,7 @@ The compact official-derived pilot tables and figures under `examples/hong-kong/
 
 ## Distributed-method benchmark evidence
 
-The selected public Sioux Lagrangian R2, earlier ADMM R1, and cross-city ADMM R2_S source, authored fixtures, summaries and figures are bounded algorithmic evidence. The ADMM R2 Sioux maps are project-authored schematic derivatives of already-public topology; Sioux per-link numerical comparison CSVs are excluded. The 125-row Boston ADMM/LP physical-link comparison table and its derived figures are released under the user's explicit approval, joined only to previously public GMNS Plus `21_Boston` identifiers and geometry, with Apache-2.0 attribution retained. Private dynamic arcs, demand, raw reference flows, full state arrays, run logs and handoff archives are excluded. No historical Sioux raw input table or upstream provider archive is copied. Existing benchmark-data rights caveats below continue to apply. [ADMM R2 scope and provenance](docs/methods/admm-space-time.md).
+The selected public Sioux Lagrangian R2, earlier ADMM R1, and cross-city ADMM R2_S source, authored fixtures, summaries and figures are bounded algorithmic evidence. The ADMM R2 Sioux maps are project-authored schematic derivatives of already-public topology; Sioux per-link numerical comparison CSVs are excluded. The 125-row Boston ADMM/LP physical-link comparison table and its derived figures are released under the user's explicit approval, joined only to previously public GMNS Plus `21_Boston` identifiers and geometry, with Apache-2.0 attribution retained. Except for the four frozen Sioux input tables identified above, city dynamic arcs and demand remain excluded. Raw reference flows, full state arrays, private run logs and handoff archives are excluded. No upstream provider archive is copied. Existing benchmark-data rights caveats below continue to apply. [ADMM R2 scope and provenance](docs/methods/admm-space-time.md).
 
 ## Selected OMDV software and fixtures
 
@@ -77,7 +85,7 @@ They contain no observed trips, GPS traces, personal data, downloaded feed
 payloads, or city network extract. They are distributed as original software
 test materials under the root MIT License.
 
-## Results-only benchmark records
+## Historical results-only benchmark records
 
 The catalog contains documentation and summary metadata for three historical Sioux Falls experiments:
 
@@ -85,7 +93,7 @@ The catalog contains documentation and summary metadata for three historical Sio
 - `sioux-250od`
 - `sioux-static-fw`
 
-No historical road-network table, OD table, private reconstruction evidence or upstream dataset snapshot is included. These entries are results-only records and must not be used to infer a license for the absent source data. Obtain any source dataset independently and follow the provider's current license, citation and access terms.
+Those historical catalog entries remain results-only records. The 2026-10-04 addition above provides four separately identified modeled finite-time inputs and new execution receipts; it does not turn the historical static or CG records into fully reconstructed upstream pipelines. No original upstream dataset snapshot or private reconstruction archive is included. Follow the provider terms and the exact-input provenance notice when using the added finite-time tables.
 
 ## Derived benchmark figures
 
@@ -99,7 +107,7 @@ The upload excludes generated local runs, private evidence, raw external data, l
 
 - `results/` and `outputs/`
 - `external_data/`, `private_data/` and `private_audit/`
-- historical private Sioux Falls input tables or evidence volumes
+- unrelated Sioux Falls input tables or evidence volumes outside the four frozen finite-time CSVs identified above
 - teacher or course materials
 - GPS trajectories, observed OD data or transit feeds
 - downloaded third-party repositories, packages, binaries or portable runtimes
@@ -107,3 +115,4 @@ The upload excludes generated local runs, private evidence, raw external data, l
 ## Adding data later
 
 Every future dataset contribution must identify its provider, exact version or retrieval date, license or access terms, permitted redistribution scope, transformations and checksums. If redistribution rights are unknown, publish only a source link and reproducible acquisition instructions; do not copy the data into this repository.
+

@@ -1,0 +1,33 @@
+{
+  "task_id": "LAGRANGIAN_R2_SIOUX_DEVELOPMENT_BOSTON_TRANSFER",
+  "registered_before_r2_solves": true,
+  "mathematical_contract": "finite time-expanded shared-capacity multicommodity linear flow; relax shared arc capacities only",
+  "development_order": ["analytic", "C0", "C1", "Sioux_30OD", "Sioux_60OD", "Sioux_100OD", "Sioux_150OD", "Sioux_200OD", "Sioux_250OD"],
+  "holdout": "Boston_10OD; never inspect its R2 result before selection and policy freeze",
+  "common": {
+    "initial_multipliers": "all zero; no reference information",
+    "projection": "lambda_next[a] = max(0, lambda[a] + step_coefficient * (usage[a] - capacity[a]))",
+    "subgradient": "g[a] = usage[a] - capacity[a] on the full dynamic graph",
+    "projected_direction_norm": "q[a] = g[a] if lambda[a] > 0 or g[a] > 0; otherwise 0. Use ||q|| in every step denominator; the projected update still uses full g.",
+    "paths": "one commodity-specific DAG shortest path under cost+lambda per iteration; add unique complete paths in lexicographic arc-ID tie order; cap 100 paths per commodity",
+    "primal_recovery": "independent restricted path LP with original costs, demand equalities, shared capacities and nonnegative path flows at iteration 1, each multiple of 10, and the final iteration; record infeasibility separately",
+    "stop": "stop at 1% certified duality gap after independent feasible primal, or at iteration/wall budget; no reference objective used",
+    "feasibility": {"max_demand_balance_residual": 1e-6, "max_capacity_violation": 1e-6, "min_flow": -1e-8, "objective_relative_error": 1e-8, "dual_relative_error": 1e-8},
+    "gap": "max(0,(independent feasible primal objective - independently recomputed best dual)/max(1,abs(primal objective)))",
+    "tie_breaking": "stable input arc-ID lexicographic order; first shortest predecessor on ties within 1e-10; duplicate path identified by exact arc-ID sequence",
+    "max_paths_per_commodity": 100,
+    "max_iterations": 300,
+    "wall_seconds_per_case": 1800,
+    "global_heavy_seconds": 28800,
+    "storage_bytes": 16106127360
+  },
+  "variants": [
+    {"id": "N5", "rule": "normalized diminishing", "step_coefficient": "5/(sqrt(t)*max(||q||_2,1))", "constants": {"scale": 5.0}, "max_iterations": 300, "wall_seconds_per_case": 1800},
+    {"id": "N15", "rule": "normalized diminishing", "step_coefficient": "15/(sqrt(t)*max(||q||_2,1))", "constants": {"scale": 15.0}, "max_iterations": 300, "wall_seconds_per_case": 1800},
+    {"id": "P07", "rule": "Polyak using independently recovered feasible upper bound; normalized fallback before an upper bound exists", "step_coefficient": "if U finite and U>D: min(0.7*(U-D)/max(||q||_2^2,1), 15/max(||q||_2,1)); else 5/(sqrt(t)*max(||q||_2,1))", "constants": {"polyak_fraction": 0.7, "fallback_scale": 5.0, "coordinate_step_norm_cap": 15.0}, "max_iterations": 300, "wall_seconds_per_case": 1800},
+    {"id": "P15", "rule": "Polyak using independently recovered feasible upper bound; normalized fallback before an upper bound exists", "step_coefficient": "if U finite and U>D: min(1.5*(U-D)/max(||q||_2^2,1), 15/max(||q||_2,1)); else 5/(sqrt(t)*max(||q||_2,1))", "constants": {"polyak_fraction": 1.5, "fallback_scale": 5.0, "coordinate_step_norm_cap": 15.0}, "max_iterations": 300, "wall_seconds_per_case": 1800}
+  ],
+  "selection_rule": "Among variants independently passing all development gates, choose smallest Sioux_250OD certified gap; ties within 1e-9 choose lower Sioux_250OD wall time, then lexicographically smallest variant ID. Sioux_200OD must remain feasible, match the reference objective in final evaluation, and have gap <= R1 gap + 0.0001. If none passes, select none, report SIOUX_250_GATE_NOT_MET, and do not run Boston.",
+  "reference_policy": "No reference primal/dual/path/flow or objective in algorithm, pool, step, recovery, or stopping. Separate final evaluator may read objective only after run artifacts close.",
+  "no_new_variants_after_boston": true
+}

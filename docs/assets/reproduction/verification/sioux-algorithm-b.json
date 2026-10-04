@@ -1,0 +1,185 @@
+{
+  "experiment_id": "sioux-algorithm-b",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:58:43.695635+00:00",
+  "seconds": 0.38498859998071566,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "81f26d090e98bf0fe26c0db1a23b9a791659ddb6c3abb163ffea943155045107",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/sioux_tapb.py",
+      "role": "solver_code",
+      "expected_sha256": "23f77dde8f38f327538e7f4e1024e30acbbfd07107264bebe6dcd20032f7a790",
+      "actual_sha256": "23f77dde8f38f327538e7f4e1024e30acbbfd07107264bebe6dcd20032f7a790"
+    },
+    {
+      "path": "tools/reproduction/build_tapb.py",
+      "role": "solver_code",
+      "expected_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+      "actual_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf",
+      "actual_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd",
+      "actual_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5",
+      "actual_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+      "actual_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+      "actual_sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv",
+      "role": "reference_only",
+      "expected_sha256": "85f593b8b57d2d0f2c9fffe98bf44b7f14f496ac6c5c3550230b081d9f073972",
+      "actual_sha256": "85f593b8b57d2d0f2c9fffe98bf44b7f14f496ac6c5c3550230b081d9f073972"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/sioux_evaluation.json",
+      "role": "reference_only",
+      "expected_sha256": "60e825e01870cd671835fbd49cc071331780676fa9e1908729eff0d3e0e25904",
+      "actual_sha256": "60e825e01870cd671835fbd49cc071331780676fa9e1908729eff0d3e0e25904"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/sioux_tapb.py",
+    "arguments": []
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\sioux_tapb.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 0.3847093000076711,
+      "timeout_seconds": 1950,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "5053cffb812caa41aceb8a31658699b4c8c6b184878b288a8c9127cd5d203a94",
+    "solution/computed/evaluation.json": "56b210265938bda994d9ec53fa85d97aea40034da6e84b7cedd20bcd392fb4e5",
+    "solution/computed/full_log.txt": "922f364b853a8084d10fada04dce5f0b669d7d3af3f386bf5e27d3e04dda99ee",
+    "solution/computed/history.csv": "986321dcd98a9c962ece4f5a53aebe3aee1912deabe1ea10046a7087e8c5b4f2",
+    "solution/computed/input_lock.json": "2b720fce8aab9ed7874d28f5d1282c8ffdae43cdfb9251cabfda5dd557247068",
+    "solution/computed/link_flow.csv": "85f593b8b57d2d0f2c9fffe98bf44b7f14f496ac6c5c3550230b081d9f073972",
+    "solution/computed/mapping.json": "7a9e59a0bc06588790dfa5b5e5d1a7bccb26d1015bc65747c2e5ec36ae07eb09",
+    "solution/computed/net/r2_net.txt": "bf11c0a36b08b6f0a937e9d42f7d5a930349e2c55e254e32e5f4bdc3b09048c1",
+    "solution/computed/net/r2_trips.txt": "3c8c521a5134993cffc22254f2ca9eba521bddb64593df22264fe14808037a49",
+    "solution/computed/origin_arc_flow.csv": "4d86b395c020afa8f2934f297dcf5e707671c3de77b0c017d45cf979e77bad49",
+    "solution/computed/params.txt": "c3e19283f6f233fbe70562a3066d7009e4b26cdbdf14f801461a2a5b6384e12a",
+    "solution/computed/path_flow.csv": "5ea5e8d75f67b75c08c6bb7d4f6810e585309f1752a55bc55149501f8ada8192",
+    "solution/computed/process.json": "7767925586913527354f7100a90658dc968160b164842737dc3aae3880e5afac",
+    "solution/computed/r2_flows.txt": "22ab3fab7d0485dc326ad8d051c456c7ff473687aa45dccc6dd7184b143c4ea2",
+    "solution/computed/r2_pathflows.txt": "6f1d7db8663178d80c55a62cd3b0209bf64547a2c507efd4bd31e1516aeb75e6",
+    "solution/computed/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/computed/stdout.log": "922f364b853a8084d10fada04dce5f0b669d7d3af3f386bf5e27d3e04dda99ee",
+    "solution/runtime-provenance.json": "2c2541c9cf3aefbf3836f0045bec026864d1edb7fa91837998d1df30fbcd10be",
+    "solution/solve.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/solve.stdout.log": "edb7e26e10a4a35028b7787b3cc40680f8f393eb16eb6b246f781817f40d2c0c",
+    "solution/verify.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/verify.stdout.log": "17490c197a9d989a71ab752efdf350cf72bd68662f26c55922f46841c50f9f11",
+    "solve.log": "5e741a83256e44cbe946ae580bad11def054a6ced8c12fbab07efdbe45780a98"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "sioux-algorithm-b",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_independent_full_graph_gates": true,
+      "package_historical_objective": true,
+      "package_historical_flow": true,
+      "package_physical_od_count": true,
+      "package_total_demand": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 4231335.287110682,
+      "total_demand": 360600.0,
+      "positive_od": 528,
+      "relative_gap": 4.4984077055308746e-09,
+      "max_od_residual": 4.547473508864641e-13,
+      "max_origin_node_residual": 3.637978807091713e-12,
+      "max_link_mismatch": 5.4569682106375694e-11,
+      "historical_objective_delta": 0.0,
+      "historical_link_flow_delta": 0.0,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_objective_abs": 1e-06,
+      "historical_link_flow_abs": 1e-07
+    },
+    "claim_boundary": "Static Sioux Algorithm B only. Distinct from official TAPLab adapter parity, the historical 100-iteration FW run and finite-time experiments.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "sioux-algorithm-b",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.5305256000137888
+  },
+  "original_records_sha256": {
+    "run": "80035bcc7489984dc63aaacbc941debece575b0f6f364f258331f5816a42fe3e",
+    "verification": "c55a50d4e43e3702fee46af4deb68c959a667c0585ca45f8dba98f75e75d92bf"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

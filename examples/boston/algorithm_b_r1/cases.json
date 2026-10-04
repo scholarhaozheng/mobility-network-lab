@@ -1,0 +1,51 @@
+{
+  "schema": "boston_algorithm_b_cases_v1",
+  "cases": {
+    "boston-b0": {
+      "input_dir": "examples/boston/assignment_methods_r1/inputs_snapshot",
+      "input_sha256": {
+        "link": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+        "demand": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49"
+      },
+      "reference_flow": "examples/boston/algorithm_b_r1/reference/b0_link_flow.csv",
+      "reference": {
+        "objective": 707.0579230712883,
+        "total_demand": 203.6604786350987,
+        "positive_od": 26,
+        "path_count": 26
+      },
+      "historical_output_sha256": {
+        "link": "d733b875271f1b183f31102c305803f07f7993fc2458952e544c188f2e170cfb",
+        "path": "3dc5c058acb15a16e911e16d432821391994abb12bcf6fdc22e692a96e77650b"
+      },
+      "tolerances": {
+        "objective_abs": 0.000001,
+        "link_flow_abs": 1e-7
+      },
+      "claim_boundary": "26-OD original ABS_PLANNED static case; independent full-graph Algorithm B validation."
+    },
+    "boston-b1": {
+      "input_dir": "examples/boston/algorithm_b_r1/inputs/b1",
+      "input_sha256": {
+        "link": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+        "demand": "da10434d4a88110af3d9d89e8876f373a0bc47f1d310ff603fa4230b0023f03f"
+      },
+      "reference_flow": "algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv",
+      "reference": {
+        "objective": 7922.083942188114,
+        "total_demand": 1936.2384749100008,
+        "positive_od": 453,
+        "path_count": 453
+      },
+      "historical_output_sha256": {
+        "link": "1d66c1ad838c22fc3d1c17e6c94ff3c4c5ccaad9da375a702d8108c0852444bd",
+        "path": "153b0511a787405929058d05fbfe448e4d3052de29ba2d62b264c4b2e65b7b18"
+      },
+      "tolerances": {
+        "objective_abs": 0.000001,
+        "link_flow_abs": 1e-7
+      },
+      "claim_boundary": "500 selected source OD planned case aggregated to 453 positive physical endpoint pairs; independent full-graph Algorithm B validation."
+    }
+  }
+}

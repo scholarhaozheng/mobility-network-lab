@@ -1,0 +1,205 @@
+{
+  "experiment_id": "boston-conditional-choice-three-scenarios",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:42:23.647137+00:00",
+  "seconds": 0.6000112000037916,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "f156f9f4382a9215eb95dfe457a243177f37f503efeba52c44748e0cc80bf1c3",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/boston_choice.py",
+      "role": "solver_code",
+      "expected_sha256": "a7640198ae7af1d3e2b8900850a25d61d38fe0a3df67278e402cf92158ccd102",
+      "actual_sha256": "a7640198ae7af1d3e2b8900850a25d61d38fe0a3df67278e402cf92158ccd102"
+    },
+    {
+      "path": "algorithms/mode_choice_conditional/build_and_evaluate.py",
+      "role": "solver_code",
+      "expected_sha256": "f6ed09d064269b315d088db449b9c4145dd868a0f134214a105c34f2735a0772",
+      "actual_sha256": "f6ed09d064269b315d088db449b9c4145dd868a0f134214a105c34f2735a0772"
+    },
+    {
+      "path": "algorithms/mode_choice_conditional/choice_spec.json",
+      "role": "solver_config",
+      "expected_sha256": "92d34856cdbd1c4805520e8214ba93cab218350ce93c1bffe0165b3e0885b453",
+      "actual_sha256": "92d34856cdbd1c4805520e8214ba93cab218350ce93c1bffe0165b3e0885b453"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/inputs/INPUT_MANIFEST.json",
+      "role": "solver_config",
+      "expected_sha256": "b137e87fc34955d9d7cac661e2f75431f6a7d94db05eb22bccd6924f89e35dea",
+      "actual_sha256": "b137e87fc34955d9d7cac661e2f75431f6a7d94db05eb22bccd6924f89e35dea"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv",
+      "role": "solver_input",
+      "expected_sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+      "actual_sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv",
+      "role": "solver_input",
+      "expected_sha256": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c",
+      "actual_sha256": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/person_to_vehicle_crosswalk.csv",
+      "role": "solver_input",
+      "expected_sha256": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0",
+      "actual_sha256": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/inputs/mode_specific_od_costs.csv",
+      "role": "solver_input",
+      "expected_sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+      "actual_sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/od_baseline_probabilities.csv",
+      "role": "reference_only",
+      "expected_sha256": "0b2cf2cae12f2d0bd953e91096f7ebec392decc4ae4ebcec118f236b60d3652f",
+      "actual_sha256": "0b2cf2cae12f2d0bd953e91096f7ebec392decc4ae4ebcec118f236b60d3652f"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/reference/person_to_vehicle_ledger.csv",
+      "role": "reference_only",
+      "expected_sha256": "31111bbf220ebecf47f0e377a79d6d31f8dd33de794118de89fec00dedfd222e",
+      "actual_sha256": "31111bbf220ebecf47f0e377a79d6d31f8dd33de794118de89fec00dedfd222e"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/boston_choice.py",
+    "arguments": []
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\boston_choice.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 0.5996555000310764,
+      "timeout_seconds": 120,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "fcf70acd32aeef465099d66ecb2f57c5aa5286e329c6f6d82d580e6e6bf7e2c9",
+    "solution/choice-execution.json": "fbcc6951b4137b143dfdbcc479b5fbda683afe91b105c17cfa1b5cef62e4a854",
+    "solution/computed/evidence.json": "6a0e6e46a472daae34db7c5a593a591384784f92197b8ac787916ba5ef06f87e",
+    "solution/computed/exclusion_ledger.csv": "5b3551480bb6c8bad1067d373cba3a2215725eadbf113b3aa306709e0ea8d7fc",
+    "solution/computed/model_inputs/od_choice_attributes.csv": "48e27b1316f745c111539f92e7f053b9538a8f00914d1110371f08728bd37727",
+    "solution/computed/nest_components.csv": "fb0896fe78d7a2a57eab24d638ca1649c657a7f60d19655d761066d6f4f89b33",
+    "solution/computed/od_baseline_probabilities.csv": "0b2cf2cae12f2d0bd953e91096f7ebec392decc4ae4ebcec118f236b60d3652f",
+    "solution/computed/person_to_vehicle_ledger.csv": "31111bbf220ebecf47f0e377a79d6d31f8dd33de794118de89fec00dedfd222e",
+    "solution/computed/reference_pivot_comparison.csv": "2486b93b29fbc9020eeb9d592ba392ed4aab20ddacb969bfcfd620283e211e02",
+    "solution/computed/utility_components.csv": "64202e34c8864d3629d026851da3b569a749e5c8623efd52941f98500731fd9b",
+    "solution/inputs_snapshot/derived/mode_specific_od_costs.csv": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+    "solution/inputs_snapshot/derived/od_mode_probabilities.csv": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c",
+    "solution/inputs_snapshot/derived/person_to_vehicle_crosswalk.csv": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0",
+    "solution/inputs_snapshot/derived/validation_panel.csv": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+    "solution/solver.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/solver.stdout.log": "dd145a33d6a1328794183d888ea22bb060d0767434cd9a94203c2c68ce2a3286",
+    "solution/SOURCE_SNAPSHOT_MANIFEST.json": "b137e87fc34955d9d7cac661e2f75431f6a7d94db05eb22bccd6924f89e35dea",
+    "solve.log": "4da86c41d7e731fa3a5ecaf0a3b30e56436de674e0c4d1560544ef37106857fe"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-conditional-choice-three-scenarios",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_historical_probability_rows": true,
+      "package_historical_numeric_match": true,
+      "package_probability_bounds": true,
+      "package_probability_sums": true,
+      "package_mass_accounting": true,
+      "package_occupancy_conversion": true,
+      "package_historical_vehicle_ledger": true,
+      "package_restoration_exact": true,
+      "package_fixed_scope": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "probability_rows": 2088,
+      "max_historical_numeric_delta": 0.0,
+      "probability_sum_error": 3.3306690738754696e-16,
+      "person_mass_error": 0.0,
+      "occupancy_error": 5.551115123125783e-17,
+      "restoration_probability_difference": 0.0,
+      "primary_transit_person_mass": {
+        "ABS_PLANNED": 5.1995273835765214,
+        "ABS_OBS_EXPLORATORY": 5.203328404648172,
+        "ABS_RESTORE": 5.1995273835765214
+      },
+      "scenario_counts": {
+        "ABS_PLANNED": {
+          "evaluated": 87,
+          "unknown": 21
+        },
+        "ABS_OBS_EXPLORATORY": {
+          "evaluated": 87,
+          "unknown": 21
+        },
+        "ABS_RESTORE": {
+          "evaluated": 87,
+          "unknown": 21
+        }
+      },
+      "independent_package_checks": 9
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_numeric_abs": 1e-10
+    },
+    "claim_boundary": "Recomputes all three declared conditional scenarios from frozen 36-OD aggregate skims. It does not reconstruct raw-source skims, infer population composition, or calibrate the transferred choice model.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "boston-conditional-choice-three-scenarios",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.29794680001214147
+  },
+  "original_records_sha256": {
+    "run": "48ddfb6d195edddaadfe73000f76433c53a0cd224764ef95a0435a11f3006b23",
+    "verification": "6daca9291dc5552e053ea56d99b8d373f4864f4f4662b008a981f28e245ac637"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

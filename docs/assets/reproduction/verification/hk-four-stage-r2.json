@@ -1,0 +1,181 @@
+{
+  "experiment_id": "hk-four-stage-r2",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:40:50.437657+00:00",
+  "seconds": 2.60290920000989,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "05f1f10e06a932e6479d8ab32cf2292e1713c61e8d05b645eae8eb280beae4a9",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_four_stage.py",
+      "role": "solver_code",
+      "expected_sha256": "85b43e85e52eb60311b9946c725acaff24a8c219857cfc8e24385e0a19bd8d5a",
+      "actual_sha256": "85b43e85e52eb60311b9946c725acaff24a8c219857cfc8e24385e0a19bd8d5a"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/build_four_stage.py",
+      "role": "solver_code",
+      "expected_sha256": "5279d91085c9ec9c5c13b52ff777f15bcc8108260c8ec4d5d45f4fb130b2a8e2",
+      "actual_sha256": "5279d91085c9ec9c5c13b52ff777f15bcc8108260c8ec4d5d45f4fb130b2a8e2"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/zone_activity_r2.csv",
+      "role": "solver_input",
+      "expected_sha256": "5eef6a8a26b43cb83ff6d970b5adf666485ddfc8a2303583a4854277ceccb5b2",
+      "actual_sha256": "5eef6a8a26b43cb83ff6d970b5adf666485ddfc8a2303583a4854277ceccb5b2"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv",
+      "role": "solver_input",
+      "expected_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702",
+      "actual_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/production_attraction_r2.csv",
+      "role": "reference_only",
+      "expected_sha256": "77e7b0738423f2926ecdd7cb4e699ead0d03334d2834643af18a2a58998dd68e",
+      "actual_sha256": "77e7b0738423f2926ecdd7cb4e699ead0d03334d2834643af18a2a58998dd68e"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/od_person_distribution_r2.csv",
+      "role": "reference_only",
+      "expected_sha256": "2a279497efbaf9596dd7cb8eb77d1887f51b6f0889ed501b28930a22b2c7bc78",
+      "actual_sha256": "2a279497efbaf9596dd7cb8eb77d1887f51b6f0889ed501b28930a22b2c7bc78"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_probabilities_by_od.csv",
+      "role": "reference_only",
+      "expected_sha256": "217fb111ff698cff168bcb24f9ada18b2c613825466ac424407af2c32647466a",
+      "actual_sha256": "217fb111ff698cff168bcb24f9ada18b2c613825466ac424407af2c32647466a"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv",
+      "role": "reference_only",
+      "expected_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+      "actual_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/OD_LINEAGE.csv",
+      "role": "reference_only",
+      "expected_sha256": "e5a3e5f51cbf8b1bd7bce7bdd0a1c6f13c933b718873c3b952af4b3a743aa80c",
+      "actual_sha256": "e5a3e5f51cbf8b1bd7bce7bdd0a1c6f13c933b718873c3b952af4b3a743aa80c"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_four_stage.py",
+    "arguments": []
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_four_stage.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 2.6025267000077292,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "73029fc541cb49004e3d5fc82c9ad36d9a3515ccc45b70cbdc4cb72584acd9b1",
+    "solution/run.json": "8c7dd68eca1ada2eb2264de76334c558ff2a9034b45574d5356d1eb5e91db0aa",
+    "solution/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/stdout.log": "b54fde6a37fe9a95672d436e6368743494a7398d44f432cbf99a423193a57339",
+    "solution/work/build_four_stage.py": "5279d91085c9ec9c5c13b52ff777f15bcc8108260c8ec4d5d45f4fb130b2a8e2",
+    "solution/work/phase_b/DISTRIBUTION_BALANCE_REPORT.json": "72e5d5247e19b3ce2c660c0b9e0cdd3eb469a157f9236bc0753bae8a3353cc7f",
+    "solution/work/phase_b/MODE_CHOICE_SOURCE_AND_SENSITIVITY.md": "cd915b7fb6cfccd926e837d35f89d6cbe2934674a8ed06d36a3d2cf13ea2f63c",
+    "solution/work/phase_b/mode_costs_by_od.csv": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702",
+    "solution/work/phase_b/mode_demand_by_od.csv": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+    "solution/work/phase_b/mode_probabilities_by_od.csv": "217fb111ff698cff168bcb24f9ada18b2c613825466ac424407af2c32647466a",
+    "solution/work/phase_b/OD_LINEAGE.csv": "e5a3e5f51cbf8b1bd7bce7bdd0a1c6f13c933b718873c3b952af4b3a743aa80c",
+    "solution/work/phase_b/od_person_distribution_r2.csv": "2a279497efbaf9596dd7cb8eb77d1887f51b6f0889ed501b28930a22b2c7bc78",
+    "solution/work/phase_b/production_attraction_r2.csv": "77e7b0738423f2926ecdd7cb4e699ead0d03334d2834643af18a2a58998dd68e",
+    "solution/work/phase_b/static_input/four_stage_full_demand.csv": "0d94194f1ef62dc1024c5728b9188d8326a6171d573975b72ded6f536b059389",
+    "solution/work/phase_b/zone_activity_r2.csv": "5eef6a8a26b43cb83ff6d970b5adf666485ddfc8a2303583a4854277ceccb5b2",
+    "solve.log": "ce2b6aaf2b8bf216a8148d84e08108900228e694adbee49556b8ac0e4e3d7324"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk-four-stage-r2",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_immutable_inputs": true,
+      "package_accepted_table:production_attraction_r2.csv": true,
+      "package_accepted_table:od_person_distribution_r2.csv": true,
+      "package_accepted_table:mode_probabilities_by_od.csv": true,
+      "package_accepted_table:mode_demand_by_od.csv": true,
+      "package_accepted_table:OD_LINEAGE.csv": true,
+      "package_independent_ipf_margins": true,
+      "package_mode_probabilities_nonnegative_and_sum_one": true,
+      "package_independent_mode_and_occupancy_conservation": true,
+      "package_finite_nonnegative_output": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "zones": 95,
+      "directed_od_pairs": 8930,
+      "loaded_drive_pce": 723.1912278850218,
+      "max_ipf_margin_residual": 3.2128752991411602e-09,
+      "independent_package_checks": 10
+    },
+    "errors": [],
+    "tolerances": {
+      "reference_numeric_scaled_absolute_max": 1e-09,
+      "ipf_margin_absolute_max": 1e-07,
+      "mode_probability_absolute_max": 1e-12
+    },
+    "claim_boundary": "Generation totals include low/base/high capture; only base capture and base impedance run through IPF. Mode probabilities include low_drive/base/high_drive, with base mode demand. No raw acquisition or observed calibration claim.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk-four-stage-r2",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.1899366999859922
+  },
+  "original_records_sha256": {
+    "run": "f4cbd9b624ec52647806eca6adc9fae220090f259549e648aa84d6b0dfd61a75",
+    "verification": "d8a92ee4ed6bf13a4f3f57c4afa9a9179b99861b15d1f9e5e721130f231fa982"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

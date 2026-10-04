@@ -9,7 +9,9 @@ import json
 from pathlib import Path
 import re
 import sys
-from urllib.parse import unquote
+from urllib.parse import unquote, urlsplit
+
+from check_computational_archive import validate as validate_computational_archive
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
@@ -20,10 +22,13 @@ def main() -> int:
     parser.add_argument('--publication',action='store_true',help='Also require a confirmed repository URL and root license')
     args=parser.parse_args()
     errors=[];warnings=[];checks=0
+    archive_result=validate_computational_archive(ROOT)
+    errors.extend(archive_result["errors"]);checks+=archive_result["checks"]
+    allowed_archives=set(archive_result["allowed_archives"])
     paths=[p for p in ROOT.rglob('*') if p.is_file() and not any(x in p.relative_to(ROOT).parts for x in ('.git','.venv','results','outputs'))]
     for p in paths:
         relative=p.relative_to(ROOT).as_posix()
-        if p.suffix.lower() in ('.zip','.pyc','.exe','.dll','.7z') or '__pycache__' in p.parts:
+        if (p.suffix.lower() in ('.zip','.pyc','.exe','.dll','.7z') and relative not in allowed_archives) or '__pycache__' in p.parts:
             errors.append(f'Unexpected public payload: {relative}')
         if p.suffix=='.py':
             try:ast.parse(p.read_text(encoding='utf-8-sig'));checks+=1
@@ -32,6 +37,10 @@ def main() -> int:
             text=p.read_text(encoding='utf-8-sig')
             if p.name not in ('check_repository.py',) and any(x in text for x in ('/mnt/data/','C:\\Users\\','/home/','/Users/')):
                 errors.append(f'Private machine path in {relative}')
+        if relative.startswith('docs/assets/reproduction/') and p.suffix in ('.js','.json'):
+            if re.search(r'[\u4e00-\u9fff]', p.read_text(encoding='utf-8-sig')):
+                errors.append(f'Non-English reproduction data: {relative}')
+            checks+=1
         if p.suffix in ('.md','.html'):
             text=p.read_text(encoding='utf-8-sig')
             prose_text=re.sub(r'<script type="application/json"[^>]*>.*?</script>','',text,flags=re.DOTALL)
@@ -41,7 +50,7 @@ def main() -> int:
             for raw in refs:
                 raw=html.unescape(raw)
                 if raw.startswith(('http:','https:','mailto:','#','data:')):continue
-                target=unquote(raw.split('#',1)[0])
+                target=unquote(urlsplit(raw).path)
                 if not target:continue
                 resolved=(p.parent/target).resolve()
                 if not resolved.exists():errors.append(f'Broken local link: {relative} -> {raw}')

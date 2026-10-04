@@ -1,0 +1,168 @@
+{
+  "experiment_id": "hk-static-b-smoke-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:40:55.022276+00:00",
+  "seconds": 2.8874832000001334,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "c172d1fd723fa85d7a7fcf3fe85f944e74f5a0954de39e6b4a30d11f9fe5ff79",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "1.24.3",
+      "scipy": "1.10.1",
+      "pandas": "1.5.3"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+      "role": "solver_code",
+      "expected_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0",
+      "actual_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0"
+    },
+    {
+      "path": "algorithms/static_fw/tap_frank_wolfe.py",
+      "role": "solver_code",
+      "expected_sha256": "1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149",
+      "actual_sha256": "1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "role": "solver_input",
+      "expected_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "actual_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv",
+      "role": "solver_input",
+      "expected_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702",
+      "actual_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv",
+      "role": "solver_input",
+      "expected_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+      "actual_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/STATIC_ASSIGNMENT_COMPARISON.json",
+      "role": "reference_only",
+      "expected_sha256": "fbc0fd9376078ebba7b63b9fa980f23488c9766e531476100b28c27c7ea7b32f",
+      "actual_sha256": "fbc0fd9376078ebba7b63b9fa980f23488c9766e531476100b28c27c7ea7b32f"
+    },
+    {
+      "path": "requirements-reproduction-hk-fw.txt",
+      "role": "solver_config",
+      "expected_sha256": "b397f256a948ff049732f2f07e396718c76761fb406bf57f3f71da6d93524f89",
+      "actual_sha256": "b397f256a948ff049732f2f07e396718c76761fb406bf57f3f71da6d93524f89"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+    "arguments": [
+      "--tier",
+      "smoke"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_static_fw.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--tier",
+        "smoke"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 2.8866874999948777,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "47a30f3f0882f6aa010d63fc53f5f5a108ef1321d1d63c5536c9eb7a67db3c80",
+    "solution/demand.csv": "2e1f026eb08096342162d12733d073dcfb204159fe520979607fc34481d87551",
+    "solution/link.csv": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+    "solution/run.json": "46095e43744ac28c76c6b36212a7b980c3b895ab88bd52f0594345d2be433d8f",
+    "solution/smoke_fw_log.txt": "2762e50a9441c0aa60c6b76386b33e5b48d279a863cd0fc43996802ca0453c5e",
+    "solution/smoke_solution.csv": "eab271aa835e808fba4bfdfba58bc30f59005a38bd9ee8fa2b591dbf23f940c1",
+    "solution/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/stdout.log": "2762e50a9441c0aa60c6b76386b33e5b48d279a863cd0fc43996802ca0453c5e",
+    "solve.log": "97e7272674c2f31cbc3164f55722a0fb35e6a94fd50a5811cffb0f78077dd2a0"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk-static-b-smoke-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_complete_unique_link_identity": true,
+      "package_finite_nonnegative_flow": true,
+      "package_network_node_conservation": true,
+      "package_recomputed_bpr_cost": true,
+      "package_full_graph_shortest_path_gap": true,
+      "package_accepted_objective": true,
+      "package_accepted_demand_identity": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 143.09433596371608,
+      "relative_gap": 3.972443666478986e-16,
+      "od_count": 10,
+      "total_demand_pce": 50.854571492000076,
+      "max_node_balance": 3.552713678800501e-15,
+      "independent_package_checks": 7
+    },
+    "errors": [],
+    "tolerances": {
+      "objective_absolute_max": 1e-07,
+      "node_balance_absolute_max": 1e-07,
+      "nonnegative_flow_absolute_max": 1e-10,
+      "relative_gap_absolute_max": 0.0001
+    },
+    "claim_boundary": "Historical Phase B tier only; not H1 finite-path/L3, Phase A proxy demand, measured traffic, or dynamic time-expanded assignment.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk-static-b-smoke-fw",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.3520464000175707
+  },
+  "original_records_sha256": {
+    "run": "0537599087e0a60fdd9d18801fe7082492532139c39daefaccd421dbf77198dd",
+    "verification": "b6e8ee434ab3fb4c74a951b0ed76f0c3bd4ffdc5c80aeb79329614121039de82"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

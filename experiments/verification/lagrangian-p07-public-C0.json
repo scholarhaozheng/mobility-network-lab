@@ -1,0 +1,218 @@
+{
+  "experiment_id": "lagrangian-p07-public-C0",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:46:19.934717+00:00",
+  "seconds": 1.7339371999842115,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "7bec326c1a3668d8b6086330a1d01d1e2fcc567c9efaca63ef97e0c6e00a3c19",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/independent_lagrangian_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1b1448a1821a76ac02e235560668fcd7491032bd8949dea8be777d2e9827531c",
+      "actual_sha256": "1b1448a1821a76ac02e235560668fcd7491032bd8949dea8be777d2e9827531c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/lagrangian_dual_solver.py",
+      "role": "solver_code",
+      "expected_sha256": "77407375de011cdd917b2929cb579f5edbe0158de9eeb3f13dfb4417719dc512",
+      "actual_sha256": "77407375de011cdd917b2929cb579f5edbe0158de9eeb3f13dfb4417719dc512"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/path_pool_manager.py",
+      "role": "solver_code",
+      "expected_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c",
+      "actual_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/restricted_primal_recovery_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "84d6bec93641dabfd47656afaacdd711878aaca8877c88aa03a3118454e9f786",
+      "actual_sha256": "84d6bec93641dabfd47656afaacdd711878aaca8877c88aa03a3118454e9f786"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/space_time_capacity_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "actual_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_arc.csv",
+      "role": "solver_input",
+      "expected_sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c",
+      "actual_sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "actual_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/experiment_plan.json",
+      "role": "solver_config",
+      "expected_sha256": "33709ca3ed3ea0c6d958615032d35b42f29f94bf20f51c7e24f861cd659d541b",
+      "actual_sha256": "33709ca3ed3ea0c6d958615032d35b42f29f94bf20f51c7e24f861cd659d541b"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/reproduce.py",
+      "role": "solver_code",
+      "expected_sha256": "0f487a350ff5debc7a1263e4cdd54e9481c8f12eaef4a226a605aa55fe347db5",
+      "actual_sha256": "0f487a350ff5debc7a1263e4cdd54e9481c8f12eaef4a226a605aa55fe347db5"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/distributed_assignment/lagrangian_r2/reproduce.py",
+    "arguments": [
+      "--case",
+      "C0"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\distributed_assignment\\lagrangian_r2\\reproduce.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--case",
+        "C0"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.733678599994164,
+      "timeout_seconds": 60,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "a3ca4e78845cd3ba82e78a34d90376124a07dec06bc87a869d5c7553aa5e9b7b",
+    "solution/reproduction.json": "e1ed68407a0c6dfcc0db818594dcebf25007a6509a33d01fe4a2708a80e7ba0c",
+    "solution/solver.log": "7d0438a04d5120cb835d2580cdb2598c87935a2b8aef974da3026ac1423a8fa1",
+    "solution/state/best_multipliers.csv": "bcb262c29ab608094730709f47f81b9286ecea1a3ebb528554c159b62f07b4b9",
+    "solution/state/commodity_arc_flow.csv": "c296ed689b245470a90dfc8244aaa0ddf9173bd72a2b7cdef28964b8d66006ae",
+    "solution/state/history.csv": "63c3d60afff95e0e2400f9aa247c010e1e9fec8dbcbbcc2d5d2fb2c78793fdb3",
+    "solution/state/physical_link_flow.csv": "ae165a73eb8fb7c0566730f14f969598e6b89bb927acfc47523e6ebd6cb2dae2",
+    "solution/state/pool_paths.csv": "7cb55031e872396811e3f79b091bcb5502685b3063d04cb8c850128d3c5e03fa",
+    "solution/state/positive_paths.csv": "88ef8481484de29cdde5a18e3426eeba963c30a2f43b4f0be3462b5e47c6df69",
+    "solution/state/recovery_history.json": "9f37e9fa1b16a2ab8515fb21e8c2b67246cec7bbdf1d21ffc3a43a21b1d6633e",
+    "solution/state/result.json": "505c47ca50b729cb2ea0618718c1005f0a5bd6bd73dc74456fa03a2f44e2aa01",
+    "solve.log": "11fe12ef4da80ad1ee3daf81ec4f33cd1343bd84a61781f3ecd651dd349f8fe3"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "lagrangian-p07-public-C0",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_case_identity": true,
+      "package_source_and_input_hashes": true,
+      "package_output_hash:solver.log": true,
+      "package_output_hash:state/best_multipliers.csv": true,
+      "package_output_hash:state/commodity_arc_flow.csv": true,
+      "package_output_hash:state/history.csv": true,
+      "package_output_hash:state/physical_link_flow.csv": true,
+      "package_output_hash:state/pool_paths.csv": true,
+      "package_output_hash:state/positive_paths.csv": true,
+      "package_output_hash:state/recovery_history.json": true,
+      "package_output_hash:state/result.json": true,
+      "package_graph_signature": true,
+      "package_multiplier_ids": true,
+      "package_multipliers_finite_nonnegative": true,
+      "package_dual_recomputed": true,
+      "package_history_best": true,
+      "package_pool_duplicates": true,
+      "package_path_continuity": true,
+      "package_path_time_monotonicity": true,
+      "package_own_connector_only": true,
+      "package_path_pool_membership": true,
+      "package_positive_path_uniqueness": true,
+      "package_demand_balance": true,
+      "package_capacity": true,
+      "package_nonnegative_flow": true,
+      "package_commodity_arc_flow": true,
+      "package_physical_projection": true,
+      "package_primal_objective": true,
+      "package_known_fixture_optimum": true,
+      "package_one_percent_certificate": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "dual_recomputed": 4.0,
+      "dual_saved": 4.0,
+      "best_history_dual": 4.0,
+      "min_multiplier": 0.0,
+      "max_multiplier": 0.0,
+      "capacity_subgradient_norm": 7.54983443527075,
+      "max_priced_path_capacity_violation": 0.0,
+      "objective_recomputed": 4.0,
+      "max_balance_residual": 0.0,
+      "max_capacity_violation": 0.0,
+      "min_flow": 0.0,
+      "flow_reconstruction_error": 0.0,
+      "physical_projection_error": 0.0,
+      "duality_gap": 0.0,
+      "positive_paths": 2,
+      "physical_links": 1,
+      "independent_package_checks": 30
+    },
+    "errors": [],
+    "tolerances": {
+      "primal_objective": 4,
+      "objective_absolute_max": 1e-07,
+      "duality_gap_max": 0.01,
+      "max_flow_balance": 1e-06,
+      "max_capacity_violation": 1e-06
+    },
+    "claim_boundary": "This authored control is not a Sioux Falls or Boston city reproduction. Uses recovered original plan, not the earlier audit-only replacement policy.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "lagrangian-p07-public-C0",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.3216482999850996
+  },
+  "original_records_sha256": {
+    "run": "cb4acb7e18133de2510eae87f2522e930ff59f9f2af6e6dac45499cce1d08006",
+    "verification": "d0b07b370f247bb7e43464b4afe9c64dc91203040b78b8bc3c53479b8947b94f"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

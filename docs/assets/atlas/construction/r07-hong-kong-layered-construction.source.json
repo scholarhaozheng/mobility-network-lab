@@ -1,0 +1,144 @@
+{
+  "short_caption": "The HK10 excerpt connects road-entry/exit states across 30-second time steps. Two road movements are joined by a zero-time turn; the full saved column has no waiting arc.",
+  "id": "R07-HONG-KONG-LAYERED-CONSTRUCTION",
+  "title": "Finite time-expanded network construction",
+  "city": "hong-kong",
+  "svg": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg",
+  "width": 2450,
+  "height": 1498,
+  "dimensions": [
+    2450,
+    1498
+  ],
+  "caption": "Hong Kong: the selected t24–30 layers use 30 seconds per time step. The highlighted HK10 excerpt is A−@26 → A+@27 → B−@27 → B+@28: arc_308368_t26, zero-time turn arc_2000000055_t27, and arc_667532_t27. A−/A+ are road-entry/exit states 1000000076/1000000077; B−/B+ are 1000002420/1000002421. Pale arcs are adjacent portions of this same saved column, not alternative routes. The full 77-arc column has no waiting arc; physical arrival is t37, and t50 is a terminal bookkeeping state. Time planes are schematic display surfaces. Directed arcs and selected path states preserve the saved identities and endpoint times; this is a local construction view, not a full-horizon network or an observed trajectory. ",
+  "retained_explanation": "The restricted master enforces shared time-arc capacities. No separate cross-OD exchange is claimed for this excerpt. Physical road links 308368 and 667532 traverse original intersections 10468 → 10513 → 10526; a routing turn connector is not another physical road. The construction supports the same column-generation workflow: Phase I restricted master ↔ time-network pricing; add selected columns and re-solve; Phase II minimizes real path cost and compares with the same-instance arc-flow LP reference. The redraw makes no numerical optimization or new certificate claim.",
+  "scientific_limits": [
+    "Routing entry/exit states are not physical intersections.",
+    "Zero-time turns do not advance the time index.",
+    "No waiting arc is present anywhere in the full saved HK10 column.",
+    "Only the already published approved HK10 excerpt is redrawn."
+  ],
+  "sources": [
+    {
+      "repository_path": "docs/assets/cg_layered_companions_r1/DISPLAY_INPUTS.json",
+      "sha256": "a07346dcce8a0520e91db80cede0e86576d32f7d8d631c2aece4eae6b0d61bba"
+    },
+    {
+      "repository_path": "docs/assets/cg_layered_companions_r1/hong_kong_display_edges.csv",
+      "sha256": "16f3600b3aebcd039bb6242ff30672856a68bf5721dbed6fc3d6654601e096ee"
+    },
+    {
+      "repository_path": "docs/assets/cg_layered_companions_r1/hong_kong_display_states.csv",
+      "sha256": "2172a162acb6d96fa3bf5fd3e2e4b817765f16a278642e3b50e3b93f357e95e0"
+    },
+    {
+      "repository_path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json",
+      "sha256": "424ef55867b47487f752cd97a72b30963e641cd5587b0620b3a1ffc0ddf77944"
+    }
+  ],
+  "displayed_time_indices": [
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30
+  ],
+  "displayed_state_count": 56,
+  "displayed_arc_count": 7,
+  "selected_arc_ids": [
+    "arc_308368_t26",
+    "arc_2000000055_t27",
+    "arc_667532_t27"
+  ],
+  "selected_arc_records": [
+    {
+      "arc_id": "arc_308368_t26",
+      "arc_type": "movement",
+      "from_node_time_id": "n1000000076_t26",
+      "to_node_time_id": "n1000000077_t27",
+      "from_physical_node_id": "1000000076",
+      "to_physical_node_id": "1000000077",
+      "from_time": "26",
+      "to_time": "27",
+      "physical_link_id": "308368",
+      "role": "selected",
+      "approved_excerpt_ordinal": "55"
+    },
+    {
+      "arc_id": "arc_2000000055_t27",
+      "arc_type": "turn_connector",
+      "from_node_time_id": "n1000000077_t27",
+      "to_node_time_id": "n1000002420_t27",
+      "from_physical_node_id": "1000000077",
+      "to_physical_node_id": "1000002420",
+      "from_time": "27",
+      "to_time": "27",
+      "physical_link_id": "",
+      "role": "selected",
+      "approved_excerpt_ordinal": "56"
+    },
+    {
+      "arc_id": "arc_667532_t27",
+      "arc_type": "movement",
+      "from_node_time_id": "n1000002420_t27",
+      "to_node_time_id": "n1000002421_t28",
+      "from_physical_node_id": "1000002420",
+      "to_physical_node_id": "1000002421",
+      "from_time": "27",
+      "to_time": "28",
+      "physical_link_id": "667532",
+      "role": "selected",
+      "approved_excerpt_ordinal": "57"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "palette": "A/B blue-teal/navy",
+    "font": "DejaVu Serif",
+    "svg_font_embedding": {
+      "font_family": "DejaVu Serif",
+      "format": "embedded WOFF subsets",
+      "editable_text": true,
+      "fonts": [
+        400,
+        700
+      ],
+      "copyright_and_license_names_preserved": true
+    },
+    "artboard_inches": [
+      8.75,
+      5.35
+    ],
+    "aspect_ratio": 1.6355140186915889
+  },
+  "figure_contract": {
+    "claim": "Physical/routing states become exact time-indexed movement and wait/turn connections; the highlighted saved path respects that construction.",
+    "archetype": "schematic-led composite",
+    "panels": {
+      "a": "Source-grounded slanted time-layer graph with a highlighted saved column excerpt",
+      "b": "Concise movement and wait/turn key with scope and units"
+    },
+    "backend": "python",
+    "integrity": "All displayed endpoints, times and arc identities come from saved records. No altered numerical values. Display coordinates only are schematic.",
+    "export": "Editable embedded DejaVu Serif SVG plus 280 dpi PNG"
+  },
+  "optimizer_calls": 0,
+  "pre_export_outside_text": [],
+  "text_overlap_candidates": [],
+  "exports": {
+    "svg": "b3cdda18b64a9bb615e83c9bb92fc558f111a9403bf637cb3b6b5fd4eed90370",
+    "png": "12de24a08b3fbf09180ba5043c9144532253037430808f3bbfeacb60fb546f6a"
+  },
+  "generator": {
+    "sha256": "fe8ffba66649f13ae2448e9d410a1986a95059bf6c822b283fcaea3d07ad726f",
+    "review_source_path": "revisions/20261004-r07/figure-work/render_layered_construction.py"
+  },
+  "publication": {
+    "releaseId": "20261004-r12",
+    "scope": "Presentation redraw of the already published exact HK10 excerpt; no new input or generated-column disclosure.",
+    "historical_approval": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+    "numerical_solver_rerun": false
+  }
+}

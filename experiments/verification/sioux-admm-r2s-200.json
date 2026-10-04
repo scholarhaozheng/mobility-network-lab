@@ -1,0 +1,207 @@
+{
+  "experiment_id": "sioux-admm-r2s-200",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:18:14.344695+00:00",
+  "seconds": 27.41871609998634,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "0e2ed5651ba66ae1f64ed818d898137ac81716e26613c7d6fbc89d49c1f10e81",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/sioux_finite.py",
+      "role": "solver_code",
+      "expected_sha256": "339097326c2b03f4c0daf5ae714c554cb446ec18b1db7cfc679bccf56248802d",
+      "actual_sha256": "339097326c2b03f4c0daf5ae714c554cb446ec18b1db7cfc679bccf56248802d"
+    },
+    {
+      "path": "algorithms/admm_r2/admm_solver.py",
+      "role": "solver_code",
+      "expected_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+      "actual_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f"
+    },
+    {
+      "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "actual_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f"
+    },
+    {
+      "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+      "actual_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1"
+    },
+    {
+      "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "actual_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f"
+    },
+    {
+      "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+      "role": "solver_config",
+      "expected_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+      "actual_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+      "role": "solver_input",
+      "expected_sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+      "actual_sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+      "actual_sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/expected.json",
+      "role": "reference_only",
+      "expected_sha256": "23cefcf9608a15694f48f9272661314a7b2a26c1698e8cbd923ec236f4feb682",
+      "actual_sha256": "23cefcf9608a15694f48f9272661314a7b2a26c1698e8cbd923ec236f4feb682"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/sioux_finite.py",
+    "arguments": [
+      "--method",
+      "admm",
+      "--scale",
+      "200"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\sioux_finite.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--method",
+        "admm",
+        "--scale",
+        "200"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 27.418217899976298,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "0bba3c76dca8592b91c99781541d28c803e6193d8aa1e74e03ee9085429c9b86",
+    "solution/solver.log": "2acf1760ebe5252c48684fc894b75ae4e687d5048695ea25be3ee5857ee46f0d",
+    "solution/state/history.csv": "d8ef579e68f9b4c06392fd4b55701e374279209cce17c9e3605628f815033e72",
+    "solution/state/result.json": "d6c2eb1c120d26e26a9b5f5ebe41fb1d32efc8cb0187e62d6e9740987c9e0ed4",
+    "solution/state/state.npz": "cd50101f4b2aca7dec9a7471c68cef13da4eda84316b409763c22199b82310e4",
+    "solve.log": "cfd0a1bf5fac3d3a45a5871e9e345d0f9dfef815cfccd7711d3bc1a3e3cc72e3"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "sioux-admm-r2s-200",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_exact_arc_identity": true,
+      "package_exact_demand_identity": true,
+      "package_method_instance_identity": true,
+      "package_original_local_conservation": true,
+      "package_original_nonnegative": true,
+      "package_original_forbidden": true,
+      "package_original_primal": true,
+      "package_original_dual": true,
+      "package_original_capacity": true,
+      "package_original_consensus_capacity": true,
+      "package_original_projection": true,
+      "package_original_dual_update": true,
+      "package_original_objective_recompute": true,
+      "package_original_local_kkt": true,
+      "package_original_evaluator_pass": true,
+      "package_historical_objective": true,
+      "package_historical_iterations": true,
+      "package_arc_and_commodity_count": true,
+      "package_independent_solver_free": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "max_balance": 9.400810085935518e-08,
+      "max_kkt_active": 3.552713678800501e-15,
+      "max_kkt_inactive_negative": 3.552713678800501e-15,
+      "min_flow": 0.0,
+      "max_forbidden": 0.0,
+      "primal_residual": 1.5129868565498503,
+      "dual_residual": 0.009274990057590261,
+      "primal_threshold": 1.7246505654828772,
+      "dual_threshold": 0.014113129708865945,
+      "max_capacity_excess": 5.732977115258109e-08,
+      "max_z_capacity_excess": 0.0,
+      "max_projection_error": 2.8421709430404007e-13,
+      "max_dual_update_error": 5.684341886080802e-14,
+      "objective": 943161.5333074518,
+      "local_objective_sum": 943161.5333074518,
+      "saved_objective_error": 0.0,
+      "od_count": 200,
+      "arc_count": 9406,
+      "historical_objective_absolute_error": 0.0,
+      "independent_package_checks": 19
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_objective_absolute_max": 1e-07,
+      "historical_iterations_unchanged": true,
+      "unchanged_original_independent_gates": true
+    },
+    "claim_boundary": "Fresh computation from the exact frozen 200-OD modeled Sioux graph and demand using unchanged R2_S source and plan. Reference values are read only in post-run verification. This does not rerun raw-source conversion, certify historical CG pricing closure or establish static UE. Inputs are included in the local review bundle, not yet GitHub main.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "tools/mcl_reproduce.py",
+      "verify",
+      "sioux-admm-r2s-200",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.7075168999726884
+  },
+  "original_records_sha256": {
+    "run": "9db5e0b5c1893148940dd7737649fb7761ecce3882130ed75d41683aa09a86ec",
+    "verification": "350cbd24262b51ec968ded9c007098cb98391075f9a0738ffaf5a4bd213e3d7e"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

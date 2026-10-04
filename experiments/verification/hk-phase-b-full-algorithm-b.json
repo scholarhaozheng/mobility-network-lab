@@ -1,0 +1,197 @@
+{
+  "experiment_id": "hk-phase-b-full-algorithm-b",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:50:33.435613+00:00",
+  "seconds": 2.7753330999985337,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "1d8d82f10fa128296925ed27e23098dc0c22ec911a47dd00787f61b465885dc7",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+      "role": "solver_code",
+      "expected_sha256": "35b5487e4a2e00017c0cf6c2dd9056ccda8e9c1e4f5447bf8cb1dde640370f62",
+      "actual_sha256": "35b5487e4a2e00017c0cf6c2dd9056ccda8e9c1e4f5447bf8cb1dde640370f62"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+      "role": "solver_code",
+      "expected_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0",
+      "actual_sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0"
+    },
+    {
+      "path": "tools/reproduction/build_tapb.py",
+      "role": "build_code",
+      "expected_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+      "actual_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/cases.json",
+      "role": "solver_config",
+      "expected_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de",
+      "actual_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "role": "solver_input",
+      "expected_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "actual_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv",
+      "role": "solver_input",
+      "expected_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702",
+      "actual_sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv",
+      "role": "solver_input",
+      "expected_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+      "actual_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf",
+      "actual_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5",
+      "actual_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd",
+      "actual_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+    "arguments": [
+      "--case",
+      "phase-b-full"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_algorithm_b.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--case",
+        "phase-b-full"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 2.774976600019727,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "b570c35354f635ec6c1b66ebc85a6ec949f3a7ace1bc690df9b8004f8784b486",
+    "solution/computed/evaluation.json": "2a76fad3b76cfa829e6d3e98a2b8691585658ce81bff5217dbb26c60ac1940b3",
+    "solution/computed/full_log.txt": "ee5f6647b0c59dab7a9ed5f682e4e9db2edfebfb75a93949addf287baf848101",
+    "solution/computed/history.csv": "63074887716a7b8ab458330d3db72dd8b566ce4966c5f0508c403a9182290e9a",
+    "solution/computed/input_lock.json": "44c1a9100fc4795fdd18f6e61672135f93791a11bee0990afeee24c176065e30",
+    "solution/computed/link_flow.csv": "82996546d46e2edaa179658ab619cb1a48b983995c727c8740a1261465561842",
+    "solution/computed/mapping.json": "839f31b5f2c7be54314e7d0ec02077650bc3a9c9b704879fa2b0a1200dadcd30",
+    "solution/computed/net/r2_net.txt": "7099401a3cc63fac7e98f146023ced56cbaf480a4495a474400acd93088dfa89",
+    "solution/computed/net/r2_trips.txt": "6dd2b25f845189468da04e8ceae2908c734692780f9e74a167f3c2cc629182b7",
+    "solution/computed/origin_arc_flow.csv": "9650b918ad99e789985b3b3954bd8a535d8017ef9fa4207379d14d1285eec773",
+    "solution/computed/params.txt": "c3e19283f6f233fbe70562a3066d7009e4b26cdbdf14f801461a2a5b6384e12a",
+    "solution/computed/path_flow.csv": "eb3701420c0bf9e68342d1ac1fb0bf0e366ca6f20dc343c30aa3442da3cfba1f",
+    "solution/computed/process.json": "bea99f30404b850c2757f5920eafe8ce017786ff5f3ac915e000094dc7c6915e",
+    "solution/computed/r2_flows.txt": "8d30dd1af2119b5a68f58045f7ffa6dda69f7f9633a42857f3a9ee51591c9dba",
+    "solution/computed/r2_pathflows.txt": "28c382d5f4316a8977aa01e072ebca023a87d3a8ba2c69dc0e230c312d520ee1",
+    "solution/computed/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/computed/stdout.log": "ee5f6647b0c59dab7a9ed5f682e4e9db2edfebfb75a93949addf287baf848101",
+    "solution/demand.csv": "e50d61958bf65674dce701d1e9f68419ce8c71c67439bdbac15a83eb99e78d39",
+    "solution/independent-verify.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/independent-verify.stdout.log": "29753432fd27f7c0e06099100d2e5758626ce4de0150bfcfbb6393bf6713c36e",
+    "solution/run.json": "7b928ed66ad2a6ef5a08dfd9f7df300cfc06d75a57000435cc5b020cd5008c88",
+    "solution/runtime-provenance.json": "2c2541c9cf3aefbf3836f0045bec026864d1edb7fa91837998d1df30fbcd10be",
+    "solution/solve.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/solve.stdout.log": "4efc8712a60fcf8662ccd54fdfc02f28372d64f73f826e1e4e09aaa843b34b17",
+    "solve.log": "a937ca4892bc1a96e979d7653abe9529932afb6f3d2c0688254a1e727c7376d5"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk-phase-b-full-algorithm-b",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_independent_path_origin_and_full_graph_gates": true,
+      "package_frozen_input_hashes": true,
+      "package_accepted_objective": true,
+      "package_accepted_od_count": true,
+      "package_accepted_demand": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 1676.0121313288516,
+      "relative_gap": 4.205257275502759e-15,
+      "positive_od": 8930,
+      "total_demand": 723.1912278850218,
+      "max_od_residual": 0.0,
+      "max_origin_node_residual": 2.4868995751603507e-14,
+      "max_link_mismatch": 2.842170943040401e-14,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "objective_absolute_max": 1e-07,
+      "independent_full_graph_and_origin_path_checks": true,
+      "total_demand_absolute_max": 1e-08
+    },
+    "claim_boundary": "Phase B base four-stage one-hour modeled demand; not measured OD or H1 finite-path.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk-phase-b-full-algorithm-b",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.854025799955707
+  },
+  "original_records_sha256": {
+    "run": "76371b74ef0e2fe100eb8d967a21b229cb9aadaacdaa26529cd9f78f42b8ce1a",
+    "verification": "df4ce24c02ea0557ca82d0f996fcd7ede1911eff21b6c950c4ef67a0ec49e292"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

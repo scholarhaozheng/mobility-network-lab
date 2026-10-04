@@ -1,0 +1,251 @@
+{
+  "experiment_id": "public-control-catalog-match",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.635825+00:00",
+  "seconds": 1.4851874000160024,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "9c32abba9b918c297cac0b6f2890a30e6259cbdd4d8bd5139cbb2339a591fc79",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "pandas": "1.5.3"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mcl_data.py",
+      "role": "solver_code",
+      "expected_sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a",
+      "actual_sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a"
+    },
+    {
+      "path": "src/mobilitylab/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17",
+      "actual_sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17"
+    },
+    {
+      "path": "src/mobilitylab/data/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178",
+      "actual_sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178"
+    },
+    {
+      "path": "src/mobilitylab/data/catalog_city_workflow.py",
+      "role": "solver_code",
+      "expected_sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5",
+      "actual_sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5"
+    },
+    {
+      "path": "src/mobilitylab/data/evidence.py",
+      "role": "solver_code",
+      "expected_sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e",
+      "actual_sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e"
+    },
+    {
+      "path": "src/mobilitylab/data/open_mobility.py",
+      "role": "solver_code",
+      "expected_sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745",
+      "actual_sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745"
+    },
+    {
+      "path": "src/mobilitylab/omdv/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660",
+      "actual_sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23",
+      "actual_sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/city_matching.py",
+      "role": "solver_code",
+      "expected_sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4",
+      "actual_sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/external_city_universe.py",
+      "role": "solver_code",
+      "expected_sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea",
+      "actual_sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391",
+      "actual_sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/content_metrics.py",
+      "role": "solver_code",
+      "expected_sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9",
+      "actual_sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5",
+      "actual_sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/catalog_summary.py",
+      "role": "solver_code",
+      "expected_sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57",
+      "actual_sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/mobility_database.py",
+      "role": "solver_code",
+      "expected_sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f",
+      "actual_sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f"
+    },
+    {
+      "path": "src/mobilitylab/validation/__init__.py",
+      "role": "solver_code",
+      "expected_sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a",
+      "actual_sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a"
+    },
+    {
+      "path": "examples/data-tools/feeds_sample.csv",
+      "role": "solver_input",
+      "expected_sha256": "9249e2ed1fc2bb10fbd0255d112dec748dce41a4ef205ee6ecf96cc65a7661ce",
+      "actual_sha256": "9249e2ed1fc2bb10fbd0255d112dec748dce41a4ef205ee6ecf96cc65a7661ce"
+    },
+    {
+      "path": "examples/data-tools/external_city_universe_sample.csv",
+      "role": "solver_input",
+      "expected_sha256": "26eb65c01790375e232fed0d4f98e4fd7ee639a6069ca1636ab4730c1d415f5f",
+      "actual_sha256": "26eb65c01790375e232fed0d4f98e4fd7ee639a6069ca1636ab4730c1d415f5f"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "catalog-match"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "catalog-match"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.4847552999854088,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "2c6f9ba6738685ed6ab8bc7f33f451ae1e1e6747d246a1bec011404187eff81d",
+    "solution/catalog.log": "4534515518fdefbecc1e9ba81adb8cbd064ac393dc0932cfd69d5bdfbab83905",
+    "solution/computed/ambiguous_city_keys.csv": "2010e9ada033e2371e2d8dd35490673957d5cb7624bc1fe074c07392409d47da",
+    "solution/computed/city_feed_summary.csv": "27c53e1eb75bb9cb5593aa099218f1c548433490a68fcefb3644a093a1650259",
+    "solution/computed/feed_city_matches.csv": "39a9308d0c7a6371e8d370034af781536468ba1079cc989bed72c2d9256d0d91",
+    "solution/computed/normalized_catalog.csv": "e1ae7b4e3b864ebe5a512c158309e24ddb47dcabc3679b30cfc3def9ea12617d",
+    "solution/computed/normalized_catalog_summary.csv": "01bbd7328b0a1ea7a32ab4f6d5c2a066420f841c354f69fbe28d61ad451a696e",
+    "solution/computed/normalized_country_counts.csv": "9f0498bf31462bbab4e3455d677ada4ec7dce45c9d55d50a43934fd8879e951d",
+    "solution/computed/normalized_feed_type_counts.csv": "2ab8fc1f936c9b45ae4334932bb4daf9d551f2170fee186f14dcb0365a66faed",
+    "solution/computed/normalized_missingness_summary.csv": "6ffa014e30d4434350372db88412bfd0cba2965f62e30fb44f150a75ca88928d",
+    "solution/computed/quality_report.json": "2fceda4cb36fe8cb51d8c6301e2ab6dd2ee97eb2d1dba7855a8e16826a694387",
+    "solution/computed/source_catalog_schema_alias_mapping.csv": "a3fd29f5f85d25582f14f068f275324436a89ca4435a81bbb7bcf7ead8830d9c",
+    "solution/computed/source_catalog_schema_columns.csv": "6ffd418c17c9e7f81f04f83f9eb3279e9a2aced2a04274a906b71e27589ed3be",
+    "solution/computed/source_catalog_schema_feed_type_counts.csv": "1f28025c18b942ac78f946d7607bdedf38dd699699fb84d1e78cf59f94e631b8",
+    "solution/computed/source_catalog_schema_missingness.csv": "a67aa47d5093c8c7312c8502eadd0ecfd893156c252ddc9b5987b35d66d3e9b6",
+    "solution/computed/source_catalog_schema_summary.csv": "60e5b580e2b1951bed314d8b179ed04fc75130aeee58f9a77335b4bda181e005",
+    "solution/computed/standardized_cities.csv": "53e6bd6b67af9e7786dea2712d353bf6a678d791ad3972b086832b35bcfca34b",
+    "solve.log": "103e9143ba87ced59413bc8b237a819fbdaa6a233cbc6168d7da094f327ea6f2"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-catalog-match",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_all_rows_preserved": true,
+      "package_exact_fixture_matches": true,
+      "package_unmatched_preserved": true,
+      "package_input_hashes": true,
+      "package_output_checksums": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "catalog_rows": 5,
+      "matched_feed_records": 4,
+      "unmatched_records": 1,
+      "matched_city_ids": 2,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-catalog-match",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.18832379998639226
+  },
+  "original_records_sha256": {
+    "run": "cd580aac5a50d1eddbf62e3d8c266412d829166857dc102d99ca852b482943a0",
+    "verification": "d0be5620b17d25060d847f5263d7c516002ca72d379d31b69307302839e89e41"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

@@ -1,0 +1,226 @@
+{
+  "experiment_id": "sioux-lagrangian-p07-250",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:18:01.985191+00:00",
+  "seconds": 9.496337599994149,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "e619203ec31e2cde92c685e976d61ee09d0e9ecfaf671cad0d5f2ae5157f15b8",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/sioux_finite.py",
+      "role": "solver_code",
+      "expected_sha256": "339097326c2b03f4c0daf5ae714c554cb446ec18b1db7cfc679bccf56248802d",
+      "actual_sha256": "339097326c2b03f4c0daf5ae714c554cb446ec18b1db7cfc679bccf56248802d"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/independent_lagrangian_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1b1448a1821a76ac02e235560668fcd7491032bd8949dea8be777d2e9827531c",
+      "actual_sha256": "1b1448a1821a76ac02e235560668fcd7491032bd8949dea8be777d2e9827531c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/lagrangian_dual_solver.py",
+      "role": "solver_code",
+      "expected_sha256": "77407375de011cdd917b2929cb579f5edbe0158de9eeb3f13dfb4417719dc512",
+      "actual_sha256": "77407375de011cdd917b2929cb579f5edbe0158de9eeb3f13dfb4417719dc512"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/path_pool_manager.py",
+      "role": "solver_code",
+      "expected_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c",
+      "actual_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/restricted_primal_recovery_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "84d6bec93641dabfd47656afaacdd711878aaca8877c88aa03a3118454e9f786",
+      "actual_sha256": "84d6bec93641dabfd47656afaacdd711878aaca8877c88aa03a3118454e9f786"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/space_time_capacity_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "actual_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/experiment_plan.json",
+      "role": "solver_config",
+      "expected_sha256": "33709ca3ed3ea0c6d958615032d35b42f29f94bf20f51c7e24f861cd659d541b",
+      "actual_sha256": "33709ca3ed3ea0c6d958615032d35b42f29f94bf20f51c7e24f861cd659d541b"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+      "role": "solver_input",
+      "expected_sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+      "actual_sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+      "actual_sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/expected.json",
+      "role": "reference_only",
+      "expected_sha256": "4b375e85351e497843f743d70cfbf020a86c50e95016d12edbb4af397c820c26",
+      "actual_sha256": "4b375e85351e497843f743d70cfbf020a86c50e95016d12edbb4af397c820c26"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/sioux_finite.py",
+    "arguments": [
+      "--method",
+      "lagrangian",
+      "--scale",
+      "250"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\sioux_finite.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--method",
+        "lagrangian",
+        "--scale",
+        "250"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 9.496031799993943,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "ecde25a82aa33e92d4616604388e7857b4c7d9310b93d1b2273ebf1c47b31fdc",
+    "solution/solver.log": "92dedff3782f5e4a43216fff2db4a0d99b9d1f6a9566fb4a526e5cbd516c7d0e",
+    "solution/state/best_multipliers.csv": "3db4781ba867d03269fdf1f6012ea4ff976d4d1680d880abacd6484551d9ae54",
+    "solution/state/commodity_arc_flow.csv": "f4acba21187d717bb2c975eb4b45213c4e90b674e2bb41ae4702e9de3989dbaf",
+    "solution/state/history.csv": "2d088776bf9751a503c1fe366c8b7cd943f6e0d4e0389f707a083e13e4b4bbd7",
+    "solution/state/physical_link_flow.csv": "302fc5e21f2b648e1d5264061f315cc3796c35fb05449a3dcdaa83e2cf40cb7d",
+    "solution/state/pool_paths.csv": "6d2179622acffbf64f96d05adfbd99ede03f65c74dc75fda8764bd5fd83e51a1",
+    "solution/state/positive_paths.csv": "479019e62e0324c5e9b891df607f1891386cd2db66261db1dd53943a3fae1795",
+    "solution/state/recovery_history.json": "20cd0ae4317a28f84b5272479ee4739b59aa9a4f288aefb452f89b5cf78bd4ec",
+    "solution/state/result.json": "93c38ec32d5aaf05117eee851cb475c0b5c5173ca7c1122efb8ecd58df68e797",
+    "solve.log": "cef880a2a7f4a16e5a455d046a92b5dc07a102d18074777d6cf34912154097e2"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "sioux-lagrangian-p07-250",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_exact_arc_identity": true,
+      "package_exact_demand_identity": true,
+      "package_method_instance_identity": true,
+      "package_original_graph_signature": true,
+      "package_original_multiplier_ids": true,
+      "package_original_multipliers_finite_nonnegative": true,
+      "package_original_dual_recomputed": true,
+      "package_original_history_best": true,
+      "package_original_pool_duplicates": true,
+      "package_original_path_continuity": true,
+      "package_original_path_time_monotonicity": true,
+      "package_original_own_connector_only": true,
+      "package_original_path_pool_membership": true,
+      "package_original_positive_path_uniqueness": true,
+      "package_original_demand_balance": true,
+      "package_original_capacity": true,
+      "package_original_nonnegative_flow": true,
+      "package_original_commodity_arc_flow": true,
+      "package_original_physical_projection": true,
+      "package_original_primal_objective": true,
+      "package_one_percent_gap": true,
+      "package_historical_primal": true,
+      "package_historical_dual": true,
+      "package_historical_iterations": true,
+      "package_independent_solver_free": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "dual_recomputed": 1516258.3474322276,
+      "dual_saved": 1516258.3474322276,
+      "best_history_dual": 1516258.3474322276,
+      "min_multiplier": 0.0,
+      "max_multiplier": 2.2135550992096134,
+      "capacity_subgradient_norm": 14633969.663114246,
+      "max_priced_path_capacity_violation": 6245.082283,
+      "objective_recomputed": 1521090.8366200002,
+      "max_balance_residual": 0.0,
+      "max_capacity_violation": 0.0,
+      "min_flow": 0.0,
+      "flow_reconstruction_error": 0.0,
+      "physical_projection_error": 0.0,
+      "duality_gap": 0.003176989218152705,
+      "positive_paths": 255,
+      "physical_links": 69,
+      "od_count": 250,
+      "arc_count": 11254,
+      "historical_objective_absolute_error": 2.3283064365386963e-10,
+      "independent_package_checks": 25
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_objective_absolute_max": 1e-07,
+      "historical_iterations_unchanged": true,
+      "unchanged_original_independent_gates": true,
+      "one_percent_duality_gap": 0.01,
+      "historical_dual_absolute_max": 1e-07
+    },
+    "claim_boundary": "Fresh computation from the exact frozen 250-OD modeled Sioux graph and demand using unchanged P07 source and plan. Reference values are read only in post-run verification. This does not rerun raw-source conversion, certify historical CG pricing closure or establish static UE. Inputs are included in the local review bundle, not yet GitHub main.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "tools/mcl_reproduce.py",
+      "verify",
+      "sioux-lagrangian-p07-250",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.1945444999728352
+  },
+  "original_records_sha256": {
+    "run": "6dd7cc755d5f3bd2de4206eef7bf576fc549e524dd9352c2530da3b6c8a329f0",
+    "verification": "ae8ef00579567a19a8dde6e1d45931f5abec97f6064cc64fe6d3c9b84175d91e"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

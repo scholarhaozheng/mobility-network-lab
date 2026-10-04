@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "commands": [
+    "sioux-lagrangian-p07-200",
+    "sioux-lagrangian-p07-250",
+    "sioux-admm-r2s-200",
+    "sioux-admm-r2s-250"
+  ],
+  "freshRuns": 4,
+  "independentVerifications": 4,
+  "checks": [
+    {
+      "id": "sioux-lagrangian-p07-200",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 8.531,
+      "log": "sioux-validation-logs-r2/sioux-lagrangian-p07-200-run.log"
+    },
+    {
+      "id": "sioux-lagrangian-p07-200",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 1.172,
+      "log": "sioux-validation-logs-r2/sioux-lagrangian-p07-200-verify.log"
+    },
+    {
+      "id": "sioux-lagrangian-p07-250",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 11.0,
+      "log": "sioux-validation-logs-r2/sioux-lagrangian-p07-250-run.log"
+    },
+    {
+      "id": "sioux-lagrangian-p07-250",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 1.375,
+      "log": "sioux-validation-logs-r2/sioux-lagrangian-p07-250-verify.log"
+    },
+    {
+      "id": "sioux-admm-r2s-200",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 28.375,
+      "log": "sioux-validation-logs-r2/sioux-admm-r2s-200-run.log"
+    },
+    {
+      "id": "sioux-admm-r2s-200",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 0.891,
+      "log": "sioux-validation-logs-r2/sioux-admm-r2s-200-verify.log"
+    },
+    {
+      "id": "sioux-admm-r2s-250",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 42.422,
+      "log": "sioux-validation-logs-r2/sioux-admm-r2s-250-run.log"
+    },
+    {
+      "id": "sioux-admm-r2s-250",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 1.234,
+      "log": "sioux-validation-logs-r2/sioux-admm-r2s-250-verify.log"
+    }
+  ]
+}
