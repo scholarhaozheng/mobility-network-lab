@@ -139,6 +139,21 @@ html[data-atlas-view="city"] .reading-location-bar,html[data-atlas-view="stage"]
 #atlas-full-panel{display:flow-root}
 @media(max-width:760px){#atlas-view-controls{align-items:flex-start;flex-direction:column;gap:6px}.atlas-view-status{text-align:left}.atlas-view-tabs button{padding:9px 12px}}
 
+/* The view tabs remain in place until their original row has scrolled out of sight. */
+.atlas-view-origin{display:block;height:0;margin:0;padding:0}
+.atlas-view-spacer{height:0;pointer-events:none}
+.atlas-view-panel{display:contents}
+.atlas-view-trigger{display:none}
+#atlas-view-controls.is-docked{width:max-content;max-width:100%;padding:0;gap:0;border:0;background:transparent}
+#atlas-view-controls.is-docked .atlas-view-trigger{display:block;border:1px solid #c5d7dd;border-radius:4px;background:#fff;color:#17364a;padding:6px 11px;font:600 12px/1.5 "DejaVu Serif",Georgia,serif;cursor:pointer;white-space:nowrap}
+#atlas-view-controls.is-docked .atlas-view-trigger:hover{background:#f1f7f7}
+.atlas-view-trigger:focus-visible{outline:2px solid #087f8c;outline-offset:2px}
+#atlas-view-controls.is-docked .atlas-view-panel{position:absolute;top:100%;left:0;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px 14px;width:min(560px,calc(100vw - 40px));box-sizing:border-box;padding:10px;background:#fff;border:1px solid #d6e1e7;border-radius:4px;box-shadow:0 4px 14px #17364a12;visibility:hidden;pointer-events:none}
+#atlas-view-controls.is-docked.is-open .atlas-view-panel{visibility:visible;pointer-events:auto}
+#atlas-view-controls.is-docked .atlas-view-status{text-align:left;font-size:11px}
+@media(max-width:420px){#atlas-view-controls.is-docked .atlas-view-tabs{gap:1px}#atlas-view-controls.is-docked .atlas-view-tabs button{padding:8px;font-size:12px}}
+@media print{#atlas-view-controls.is-docked{position:static;width:auto}#atlas-view-controls.is-docked .atlas-view-trigger,.atlas-view-spacer{display:none}#atlas-view-controls.is-docked .atlas-view-panel{position:static;display:flex;visibility:visible;width:100%;border:0;box-shadow:none}}
+
 #atlas-view-shell .mcl-atlas-compact .av-stage-number{flex-basis:36px;white-space:nowrap}
 
 /* Compact views inherit the existing page theme. Figures remain unchanged. */
