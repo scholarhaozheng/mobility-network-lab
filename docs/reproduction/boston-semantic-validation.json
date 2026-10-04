@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "Prepared-input assignment stage only; not upstream semantic feedback/four-stage reconstruction.",
+  "commands": [
+    "boston-semantic-fix-s1-assignment",
+    "boston-semantic-fix-s2-assignment"
+  ],
+  "checks": [
+    {
+      "id": "boston-semantic-fix-s1-assignment",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 32.23399999999674,
+      "log": "boston-semantic-validation-logs/boston-semantic-fix-s1-assignment-run.log"
+    },
+    {
+      "id": "boston-semantic-fix-s1-assignment",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 0.5940000000409782,
+      "log": "boston-semantic-validation-logs/boston-semantic-fix-s1-assignment-verify.log"
+    },
+    {
+      "id": "boston-semantic-fix-s2-assignment",
+      "action": "run",
+      "returncode": 0,
+      "seconds": 32.82799999997951,
+      "log": "boston-semantic-validation-logs/boston-semantic-fix-s2-assignment-run.log"
+    },
+    {
+      "id": "boston-semantic-fix-s2-assignment",
+      "action": "verify",
+      "returncode": 0,
+      "seconds": 0.6099999999860302,
+      "log": "boston-semantic-validation-logs/boston-semantic-fix-s2-assignment-verify.log"
+    }
+  ]
+}

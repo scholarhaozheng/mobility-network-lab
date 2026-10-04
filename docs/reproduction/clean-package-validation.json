@@ -1,0 +1,86 @@
+{
+  "schema": "mcl_clean_review_package_check_r05",
+  "status": "PASS",
+  "scope": "Freshly extracted public computational baseline plus r05 overlay; actual computations use the previously validated Python 3.12 environment. This is not a new environment installation test.",
+  "freshRunCommands": [
+    "boston-conditional-choice-three-scenarios",
+    "sioux-public-528od-fw",
+    "hk10-frozen-arc-lp",
+    "hk-four-stage-r2",
+    "admm-r2s-public-C1"
+  ],
+  "freshRunCount": 5,
+  "independentVerifications": 5,
+  "integrityCommandCount": 28,
+  "tamperedOutputRejected": true,
+  "numericalImplementationChanged": false,
+  "packageSha256": "81b9d80786195488540317612262efd18a70c96e868f4153146a5c8c804ed0a5",
+  "checks": [
+    {
+      "check": "checkout-integrity",
+      "returncode": 0,
+      "seconds": 0.922,
+      "log": "validation-logs-r3/checkout-integrity.log"
+    },
+    {
+      "check": "boston-conditional-choice-three-scenarios-run",
+      "returncode": 0,
+      "seconds": 1.016,
+      "log": "validation-logs-r3/boston-conditional-choice-three-scenarios-run.log"
+    },
+    {
+      "check": "boston-conditional-choice-three-scenarios-verify",
+      "returncode": 0,
+      "seconds": 0.453,
+      "log": "validation-logs-r3/boston-conditional-choice-three-scenarios-verify.log"
+    },
+    {
+      "check": "sioux-public-528od-fw-run",
+      "returncode": 0,
+      "seconds": 71.453,
+      "log": "validation-logs-r3/sioux-public-528od-fw-run.log"
+    },
+    {
+      "check": "sioux-public-528od-fw-verify",
+      "returncode": 0,
+      "seconds": 0.328,
+      "log": "validation-logs-r3/sioux-public-528od-fw-verify.log"
+    },
+    {
+      "check": "hk10-frozen-arc-lp-run",
+      "returncode": 0,
+      "seconds": 6.906,
+      "log": "validation-logs-r3/hk10-frozen-arc-lp-run.log"
+    },
+    {
+      "check": "hk10-frozen-arc-lp-verify",
+      "returncode": 0,
+      "seconds": 0.422,
+      "log": "validation-logs-r3/hk10-frozen-arc-lp-verify.log"
+    },
+    {
+      "check": "hk-four-stage-r2-run",
+      "returncode": 0,
+      "seconds": 3.109,
+      "log": "validation-logs-r3/hk-four-stage-r2-run.log"
+    },
+    {
+      "check": "hk-four-stage-r2-verify",
+      "returncode": 0,
+      "seconds": 1.203,
+      "log": "validation-logs-r3/hk-four-stage-r2-verify.log"
+    },
+    {
+      "check": "admm-r2s-public-C1-run",
+      "returncode": 0,
+      "seconds": 1.687,
+      "log": "validation-logs-r3/admm-r2s-public-C1-run.log"
+    },
+    {
+      "check": "admm-r2s-public-C1-verify",
+      "returncode": 0,
+      "seconds": 0.391,
+      "log": "validation-logs-r3/admm-r2s-public-C1-verify.log"
+    }
+  ]
+}

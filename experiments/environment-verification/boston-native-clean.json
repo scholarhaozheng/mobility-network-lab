@@ -1,0 +1,79 @@
+{
+  "schema": "mcl_clean_environment_receipt_v1",
+  "experiment_id": "boston-native-l3-ranks26-52",
+  "status": "PASS",
+  "clean_environment_creation_verified": true,
+  "platform": "Windows x86-64",
+  "installed_conda_packages": 34,
+  "installed_hash_pinned_pip_wheels": 3,
+  "environment_checks": 42,
+  "environment": {
+    "python": "3.9.25",
+    "packages": {
+      "numpy": "2.0.2",
+      "scipy": "1.13.1",
+      "Pyomo": "6.9.5",
+      "ply": "3.11"
+    },
+    "numeric_imports": true,
+    "ipopt_version_output": "Ipopt 3.14.19 (Windows AMD64), ASL(20231111)"
+  },
+  "source_hashes": {
+    "conda_lock": "534826ea4f6c19c6ae2f8a093da3483fedcf6e665babd7815cdcd72340c1f0eb",
+    "pip_requirements": "69d32893b40e58737af06f5474bf0c8c951974230ec33f0b4a4d215c668c505e",
+    "environment_manifest_at_installation": "3e078df43b1864919c5b941a5bbc557f0ecb73cc1f82b340e3a8144e5024951a",
+    "current_environment_manifest": "120bb2f546dd8aaa31532cde417ceff2d11aba07219bd25294476453db5aa52a",
+    "environment_checker": "a688e8b5749f64fa5b2922d539080ae60d7e9136510eb713ec1621e81a85e52e"
+  },
+  "final_environment_check_sha256": "b8006e3b895cc11d80b03830938f32b4b653746bf2b525cb10cfde5199eb5aaf",
+  "numerical_run_sha256": "c77addc32fa9cf9760645dd73464094739121001e1a0fd38be26a011f7931e96",
+  "independent_verification_sha256": "2c16156e375ecc898a0d0112ec2a2e50c3862b9e19d9626cf37a6f9b4ae58c71",
+  "native_run_metrics": {
+    "26": {
+      "accepted_outer": 2,
+      "objective": 707.0578811137339,
+      "historical_objective_delta": 0,
+      "max_od_residual": 8.255328278750085e-7,
+      "max_link_residual": 4.263256414560601e-14,
+      "full_network_relative_gap": -5.933966789100792e-8
+    },
+    "52": {
+      "accepted_outer": 2,
+      "objective": 707.0578811562873,
+      "historical_objective_delta": 0,
+      "max_od_residual": 8.254705861077127e-7,
+      "max_link_residual": 4.263256414560601e-14,
+      "full_network_relative_gap": -5.927948531315915e-8
+    },
+    "independent_package_checks": 4
+  },
+  "validation_steps": [
+    {
+      "name": "conda-online",
+      "exit_code": 0,
+      "elapsed_seconds": 98.79758358001709
+    },
+    {
+      "name": "pip-install",
+      "exit_code": 0,
+      "elapsed_seconds": 58.11264491081238
+    },
+    {
+      "name": "canonical-environment-check",
+      "exit_code": 0,
+      "elapsed_seconds": 6.953086614608765
+    },
+    {
+      "name": "fresh-native-run",
+      "exit_code": 0,
+      "elapsed_seconds": 35.48582363128662
+    },
+    {
+      "name": "independent-native-verify",
+      "exit_code": 0,
+      "elapsed_seconds": 1.8192780017852783
+    }
+  ],
+  "cache_requirement": "A short writable package-cache path was needed to avoid Windows MAX_PATH during Conda extraction. No package versions or existing environments were changed.",
+  "scope": "Exact minimal native environment installed from the published lock/wheel hashes; both frozen Boston ranks computed and independently verified. This does not test other platforms or expanded-scale native instances."
+}

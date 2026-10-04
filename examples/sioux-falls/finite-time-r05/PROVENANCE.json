@@ -1,0 +1,65 @@
+{
+  "schema": "mcl_sioux_frozen_input_release_r12",
+  "purpose": "Reproduce the declared Sioux Falls 200-OD and 250-OD Lagrangian P07 and ADMM R2_S computations from frozen modeled inputs.",
+  "inputOrigin": "Frozen dynamic model outputs from the local GMNS_Plus_Dataset/17_Sioux_Falls benchmark conversion. The public conversion modules identify that immediate dataset. These are modeled node/arc/demand tables, not observed person trajectories.",
+  "sourceToGraphReexecuted": false,
+  "solverSources": "Unchanged public P07 Lagrangian and ADMM R2_S modules from baseline 6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b.",
+  "referencePolicy": "Only small final reference metrics are copied. No saved state, reference path pool or reference flow is supplied to the solve.",
+  "releaseStatus": "Included in the computational release authorized by the maintainer on 2026-10-04. The exact included files and hashes are recorded below; this is not authorization for unrelated local data.",
+  "instances": {
+    "200": {
+      "scale": 200,
+      "case": "Sioux_200OD",
+      "arc_count": 9406,
+      "arc_sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+      "demand_sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+      "lagrangian": {
+        "primal": 943155.5897709999,
+        "dual": 942452.4034709057,
+        "iterations": 10,
+        "gap": 0.0007455676536517777
+      },
+      "admm": {
+        "objective": 943161.5333074518,
+        "iterations": 85
+      },
+      "scope": "Reference values are used only after the fresh computation. No saved state or reference flow initializes the solver."
+    },
+    "250": {
+      "scale": 250,
+      "case": "Sioux_250OD",
+      "arc_count": 11254,
+      "arc_sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+      "demand_sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+      "lagrangian": {
+        "primal": 1521090.83662,
+        "dual": 1516258.3474322276,
+        "iterations": 10,
+        "gap": 0.0031769892181525527
+      },
+      "admm": {
+        "objective": 1521101.731718272,
+        "iterations": 101
+      },
+      "scope": "Reference values are used only after the fresh computation. No saved state or reference flow initializes the solver."
+    }
+  },
+  "immediateProvider": "GMNS_Plus_Dataset/17_Sioux_Falls",
+  "upstreamReference": "https://github.com/bstabler/TransportationNetworks/tree/master/SiouxFalls",
+  "upstreamLicenseReference": "https://github.com/bstabler/TransportationNetworks#license",
+  "upstreamTerms": "GMNS Plus publishes an Apache-2.0 repository license and credits TransportationNetworks/TNTP for its converted benchmarks. The TransportationNetworks README specifies academic-research use and source attribution. Both notices are retained; the root MIT software license does not relicense benchmark data.",
+  "publicRedistributionReview": "These four finite-graph input tables are released as attributed modeled benchmark derivatives for academic reproducibility. The exact upstream GMNS conversion revision has not been recovered: file identity is established by SHA-256 for this release, while provider-snapshot identity and source-to-graph reconstruction remain unverified. That provenance gap is not evidence that the modeled tables contain private or personal observations.",
+  "conversionCode": [
+    "app/src/gmns_dynamic/external_sioux_ingest.py",
+    "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py"
+  ],
+  "conversionReexecuted": false,
+  "immediateProviderUrl": "https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset/tree/main/17_Sioux_Falls",
+  "immediateProviderLicenseUrl": "https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset/blob/main/LICENSE",
+  "immediateProviderLicenseCopy": "tools/gmns/vendor/GMNS_PLUS_LICENSE.txt",
+  "immediateProviderRevision": null,
+  "termsCheckedOn": "2026-10-04",
+  "sourceCitation": "Transportation Networks for Research Core Team. Transportation Networks for Research. https://github.com/bstabler/TransportationNetworks. Accessed October 4, 2026. GMNS Plus Dataset, HanZhengIntelliTransport / ASU NSF POSE Team, 17_Sioux_Falls conversion.",
+  "transformationBoundary": "The retained conversion modules describe benchmark ingestion and static-to-time-expanded transformation. This release starts from the frozen dynamic_arc.csv and dynamic_demand.csv for each scale; these modules were not rerun to certify the original upstream snapshot or transformation settings.",
+  "excluded": "No person trajectories, provider source archive, full original static benchmark snapshot, saved solver state, reference path pool, or reference arc-flow array is included in this selected input release."
+}

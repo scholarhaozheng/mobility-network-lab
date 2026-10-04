@@ -1,0 +1,503 @@
+{
+  "schema": "mcl_native_environment_v1",
+  "platform": "win-64",
+  "status": "clean_install_and_run_verified",
+  "installationValidation": "The exact 34 Conda packages and 3 hash-pinned pip wheels were installed into a new Windows prefix. All 42 environment checks and a fresh rank-26/rank-52 native run with independent verification passed. See experiments/environment-verification/boston-native-clean.json.",
+  "roots": [
+    "python",
+    "numpy",
+    "ipopt"
+  ],
+  "condaPackageCount": 34,
+  "virtualDependencies": [
+    "__win"
+  ],
+  "condaPackages": [
+    {
+      "name": "ampl-asl",
+      "version": "1.0.0",
+      "build": "he0c23c2_2",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/ampl-asl-1.0.0-he0c23c2_2.conda",
+      "md5": "6cd7240c925d0ba5b9aee6ea1b566d87",
+      "sha256": "0969867af79bd415322d94845acff44a6cb5d7acb3db02a81b582a57c375de11",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30139"
+      ]
+    },
+    {
+      "name": "bzip2",
+      "version": "1.0.8",
+      "build": "h2bbff1b_6",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/bzip2-1.0.8-h2bbff1b_6.conda",
+      "md5": "33e784123d565c38e68945f07b461282",
+      "sha256": "4e30c9bfd4501555b0859c863e95ea044290babf3bf190b9d4fb38b06cf15c3c",
+      "depends": [
+        "vc >=14.1,<15.0a0",
+        "vs2015_runtime >=14.16.27012,<15.0a0"
+      ]
+    },
+    {
+      "name": "ca-certificates",
+      "version": "2026.1.4",
+      "build": "h4c7d964_0",
+      "url": "https://conda.anaconda.org/conda-forge/noarch/ca-certificates-2026.1.4-h4c7d964_0.conda",
+      "md5": "84d389c9eee640dda3d26fc5335c67d8",
+      "sha256": "4ddcb01be03f85d3db9d881407fb13a673372f1b9fac9c836ea441893390e049",
+      "depends": [
+        "__win"
+      ]
+    },
+    {
+      "name": "expat",
+      "version": "2.7.3",
+      "build": "h885b0b7_4",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/expat-2.7.3-h885b0b7_4.conda",
+      "md5": "9860724bbca7ed6d928ff3568eef857e",
+      "sha256": "5504a4d64e966723466517a487283d2946e4d75d15500763c679716f6de2f35a",
+      "depends": [
+        "libexpat 2.7.3 h885b0b7_4",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "ipopt",
+      "version": "3.14.19",
+      "build": "h75e447d_1",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/ipopt-3.14.19-h75e447d_1.conda",
+      "md5": "82a54b93381f739b6e0b2c3c4080c11e",
+      "sha256": "befa6b06463fa82f07ab2651cec506e47000b9ec2d795329e385b66d75cd88db",
+      "depends": [
+        "ampl-asl >=1.0.0,<1.0.1.0a0",
+        "libblas >=3.9.0,<4.0a0",
+        "liblapack >=3.9.0,<4.0a0",
+        "mumps-seq >=5.8.1,<5.8.2.0a0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30139"
+      ]
+    },
+    {
+      "name": "libblas",
+      "version": "3.11.0",
+      "build": "5_hf2e6a31_mkl",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/libblas-3.11.0-5_hf2e6a31_mkl.conda",
+      "md5": "f9decf88743af85c9c9e05556a4c47c0",
+      "sha256": "f0cb7b2697461a306341f7ff32d5b361bb84f3e94478464c1e27ee01fc8f276b",
+      "depends": [
+        "mkl >=2025.3.0,<2026.0a0"
+      ]
+    },
+    {
+      "name": "libcblas",
+      "version": "3.11.0",
+      "build": "5_h2a3cdd5_mkl",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/libcblas-3.11.0-5_h2a3cdd5_mkl.conda",
+      "md5": "b3fa8e8b55310ba8ef0060103afb02b5",
+      "sha256": "49dc59d8e58360920314b8d276dd80da7866a1484a9abae4ee2760bc68f3e68d",
+      "depends": [
+        "libblas 3.11.0 5_hf2e6a31_mkl"
+      ]
+    },
+    {
+      "name": "libexpat",
+      "version": "2.7.3",
+      "build": "h885b0b7_4",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libexpat-2.7.3-h885b0b7_4.conda",
+      "md5": "9532f38c808ab067b141f6770be871e9",
+      "sha256": "d79563f1b65bf07f48f0b9c09113d03db10498d2c49bd384891290386d164751",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "libffi",
+      "version": "3.4.4",
+      "build": "hd77b12b_1",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libffi-3.4.4-hd77b12b_1.conda",
+      "md5": "9807b377e11739ae3e920e10e607e460",
+      "sha256": "43a437fde4c064b2f1be2342a7bc6edccbc13da6a4fb8a44d87e4e6e34c54b63",
+      "depends": [
+        "vc >=14.1,<15.0a0",
+        "vs2015_runtime >=14.16.27012,<15.0a0"
+      ]
+    },
+    {
+      "name": "libhwloc",
+      "version": "2.12.1",
+      "build": "default_hfa10c62_1000",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libhwloc-2.12.1-default_hfa10c62_1000.conda",
+      "md5": "e215503517c8136c8d5972985b9825bb",
+      "sha256": "272cadc0575d3317a66fd9b08884415eabaf9952eef19f84070c9254fa2a5e73",
+      "depends": [
+        "libxml2 >=2.13.8,<2.14.0a0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "libiconv",
+      "version": "1.16",
+      "build": "h2bbff1b_3",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libiconv-1.16-h2bbff1b_3.conda",
+      "md5": "1564a57e99efb880d46002dc825d07c1",
+      "sha256": "5007a6224c5b80e68d01bb04628ecc6a1e2a64a634857ec89ddb1e1f7b3329e4",
+      "depends": [
+        "vc >=14.1,<15.0a0",
+        "vs2015_runtime >=14.16.27012,<15.0a0"
+      ]
+    },
+    {
+      "name": "liblapack",
+      "version": "3.11.0",
+      "build": "5_hf9ab0e9_mkl",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/liblapack-3.11.0-5_hf9ab0e9_mkl.conda",
+      "md5": "e62c42a4196dee97d20400612afcb2b1",
+      "sha256": "a2d33f5cc2b8a9042f2af6981c6733ab1a661463823eaa56595a9c58c0ab77e1",
+      "depends": [
+        "libblas 3.11.0 5_hf2e6a31_mkl"
+      ]
+    },
+    {
+      "name": "libxml2",
+      "version": "2.13.9",
+      "build": "h6201b9f_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libxml2-2.13.9-h6201b9f_0.conda",
+      "md5": "32feaa8872e9a7c839069a0c2a37df20",
+      "sha256": "7f90427c984b96deda664a993dcda120490c955c2298cdffc9860f20f7caf1e0",
+      "depends": [
+        "libiconv >=1.16,<2.0a0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133",
+        "zlib >=1.2.13,<2.0a0"
+      ]
+    },
+    {
+      "name": "libzlib",
+      "version": "1.3.1",
+      "build": "h02ab6af_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/libzlib-1.3.1-h02ab6af_0.conda",
+      "md5": "1e313539489432d5edd44efbec8a4d53",
+      "sha256": "0478d0e08e9737e6680343cd26380d8faf4f038bb59170818868cd2fb69e5481",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "llvm-openmp",
+      "version": "21.1.8",
+      "build": "h4fa8253_0",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/llvm-openmp-21.1.8-h4fa8253_0.conda",
+      "md5": "0d8b425ac862bcf17e4b28802c9351cb",
+      "sha256": "145c4370abe870f10987efa9fc15a8383f1dab09abbc9ad4ff15a55d45658f7b",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208"
+      ]
+    },
+    {
+      "name": "mkl",
+      "version": "2025.3.0",
+      "build": "hac47afa_455",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/mkl-2025.3.0-hac47afa_455.conda",
+      "md5": "fd05d1e894497b012d05a804232254ed",
+      "sha256": "b2b4c84b95210760e4d12319416c60ab66e03674ccdcbd14aeb59f82ebb1318d",
+      "depends": [
+        "llvm-openmp >=21.1.8",
+        "tbb >=2022.3.0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208"
+      ]
+    },
+    {
+      "name": "mumps-seq",
+      "version": "5.8.1",
+      "build": "hd297af6_4",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/mumps-seq-5.8.1-hd297af6_4.conda",
+      "md5": "69feddba6b736c7ef62f7384a0aeeadc",
+      "sha256": "963dd511d87c00b7ec0b386e227aa6233a1866f43b12547642dd21fdb2c9baeb",
+      "depends": [
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208",
+        "ucrt >=10.0.20348.0",
+        "llvm-openmp >=21.1.2",
+        "libblas >=3.9.0,<4.0a0",
+        "liblapack >=3.9.0,<4.0a0"
+      ]
+    },
+    {
+      "name": "numpy",
+      "version": "2.0.2",
+      "build": "py39h60232e0_1",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/numpy-2.0.2-py39h60232e0_1.conda",
+      "md5": "d8801e13476c0ae89e410307fbc5a612",
+      "sha256": "2c007a74ec5d1ee991e8960b527fab8e67dfc81a3676e41adf03acde75a6565b",
+      "depends": [
+        "libblas >=3.9.0,<4.0a0",
+        "libcblas >=3.9.0,<4.0a0",
+        "liblapack >=3.9.0,<4.0a0",
+        "python >=3.9,<3.10.0a0",
+        "python_abi 3.9.* *_cp39",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30139"
+      ]
+    },
+    {
+      "name": "openssl",
+      "version": "3.6.1",
+      "build": "hf411b9b_1",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/openssl-3.6.1-hf411b9b_1.conda",
+      "md5": "eb585509b815415bc964b2c7e11c7eb3",
+      "sha256": "53a5ad2e5553b8157a91bb8aa375f78c5958f77cb80e9d2ce59471ea8e5c0bd6",
+      "depends": [
+        "ca-certificates",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.3,<15",
+        "vc14_runtime >=14.44.35208"
+      ]
+    },
+    {
+      "name": "pip",
+      "version": "25.3",
+      "build": "pyhc872135_0",
+      "url": "https://repo.anaconda.com/pkgs/main/noarch/pip-25.3-pyhc872135_0.conda",
+      "md5": "f713912a259ec613b3832c3bc842e9d4",
+      "sha256": "7f202833777e8b2ab96c154db1fac0e82d0ee004f4ec9460ba99e1d3f64c7e6a",
+      "depends": [
+        "python >=3.9,<3.14.0a0",
+        "setuptools",
+        "wheel"
+      ]
+    },
+    {
+      "name": "python",
+      "version": "3.9.25",
+      "build": "h716150d_1",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/python-3.9.25-h716150d_1.conda",
+      "md5": "1c828d0b4079fd5e5d68b9215dafc9b4",
+      "sha256": "d46f0e951cd54d8b75dc6c38a9a635017485351cee0704054ab17c63d44ea894",
+      "depends": [
+        "bzip2 >=1.0.8,<2.0a0",
+        "expat >=2.7.1,<3.0a0",
+        "libffi >=3.4,<4.0a0",
+        "openssl >=3.0.18,<4.0a0",
+        "sqlite >=3.50.2,<4.0a0",
+        "tk >=8.6.15,<8.7.0a0",
+        "tzdata",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133",
+        "xz >=5.6.4,<6.0a0",
+        "zlib >=1.2.13,<2.0a0",
+        "pip"
+      ]
+    },
+    {
+      "name": "python_abi",
+      "version": "3.9",
+      "build": "2_cp39",
+      "url": "https://conda.anaconda.org/conda-forge/win-64/python_abi-3.9-2_cp39.tar.bz2",
+      "md5": "757068981fb2f97d0cadbba9ae6ae191",
+      "sha256": "c0aadb0df52257e5d31551711a04d97a201432e928d6b32518034cf6f1baa911",
+      "depends": [
+        "python 3.9.*"
+      ]
+    },
+    {
+      "name": "setuptools",
+      "version": "80.9.0",
+      "build": "py39haa95532_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/setuptools-80.9.0-py39haa95532_0.conda",
+      "md5": "b12c86cee19a0c2b4522614cd2fe0638",
+      "sha256": "c9d9505bc3a8627debb8012e6376a061c52a836509b93f032db32d37cfb89022",
+      "depends": [
+        "python >=3.9,<3.10.0a0"
+      ]
+    },
+    {
+      "name": "sqlite",
+      "version": "3.51.1",
+      "build": "hda9a48d_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/sqlite-3.51.1-hda9a48d_0.conda",
+      "md5": "c0533403bfb34954c346e36b36a2e8f7",
+      "sha256": "700e5848401b9bf2b32d3292ccd6af5706cd786a296a45660206f653a1d81ea7",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "tbb",
+      "version": "2022.3.0",
+      "build": "h90c84d6_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/tbb-2022.3.0-h90c84d6_0.conda",
+      "md5": "2bf446510a51e17350dcd40a99d1333f",
+      "sha256": "40cd6dad655407ba9fc1cf56e7504a5a5865427f703b0f7ebdf4718cf3975b66",
+      "depends": [
+        "libhwloc >=2.12.1,<2.12.2.0a0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    },
+    {
+      "name": "tk",
+      "version": "8.6.15",
+      "build": "hf199647_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/tk-8.6.15-hf199647_0.conda",
+      "md5": "ddff7b6a72958ef802f40a735e505474",
+      "sha256": "2f7e9d06b513bcabce6d9ae195e45ccf94fd249edfefc591a5430a9f6f92a7fa",
+      "depends": [
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133",
+        "zlib >=1.2.13,<2.0.0a0"
+      ]
+    },
+    {
+      "name": "tzdata",
+      "version": "2025b",
+      "build": "h04d1e81_0",
+      "url": "https://repo.anaconda.com/pkgs/main/noarch/tzdata-2025b-h04d1e81_0.conda",
+      "md5": "1d027393db3427ab22a02aa44a56f143",
+      "sha256": "3c9fefdfb2335e8641642e964cfaf20513d40ec709ab559b47b52d99b2e46fea",
+      "depends": []
+    },
+    {
+      "name": "ucrt",
+      "version": "10.0.22621.0",
+      "build": "haa95532_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/ucrt-10.0.22621.0-haa95532_0.conda",
+      "md5": "15e1b10231d7d236520501fcfb440f31",
+      "sha256": "9dfca4fb23f20e62a48b9c52e2fdf4d0d34bb31eb6a930c2195fcd10651b3cc3",
+      "depends": []
+    },
+    {
+      "name": "vc",
+      "version": "14.3",
+      "build": "h2df5915_10",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/vc-14.3-h2df5915_10.conda",
+      "md5": "064c529f6f598fb2225446f76687a170",
+      "sha256": "d427b27e553a5caa78284a995ff9c3720b0f213a0e650fe9d3b54b4b4a65f241",
+      "depends": [
+        "vc14_runtime >=14.42.34433"
+      ]
+    },
+    {
+      "name": "vc14_runtime",
+      "version": "14.44.35208",
+      "build": "h4927774_10",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/vc14_runtime-14.44.35208-h4927774_10.conda",
+      "md5": "13296ea2847729c01c316b089cb28337",
+      "sha256": "747f5d55439e327d3b035c0078be59991ffa5683542fbcecbcc6abcfff50588a",
+      "depends": [
+        "ucrt >=10.0.20348.0"
+      ]
+    },
+    {
+      "name": "vs2015_runtime",
+      "version": "14.44.35208",
+      "build": "ha6b5a95_10",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/vs2015_runtime-14.44.35208-ha6b5a95_10.conda",
+      "md5": "58665d8e606897afb52a202669673c40",
+      "sha256": "fa731e65f9c6b7b9559cb93653d067658594f39d2bc5c75cae85ac2385d79d06",
+      "depends": [
+        "vc14_runtime >=14.44.35208"
+      ]
+    },
+    {
+      "name": "wheel",
+      "version": "0.45.1",
+      "build": "py39haa95532_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/wheel-0.45.1-py39haa95532_0.conda",
+      "md5": "77878e5a74e2372b525e29dc623b55eb",
+      "sha256": "9f942101cc076c259ea20fb6f13a58823218e0389b060b766dc4cae37469ae92",
+      "depends": [
+        "python >=3.9,<3.10.0a0"
+      ]
+    },
+    {
+      "name": "xz",
+      "version": "5.6.4",
+      "build": "h4754444_1",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/xz-5.6.4-h4754444_1.conda",
+      "md5": "6036999a3a2c7a3e3739d6b9351fcb0b",
+      "sha256": "767a18adef86909bb374379add4784879d950a49ce2f7502444fd177b43fae33",
+      "depends": [
+        "vc >=14.2,<15.0a0",
+        "vs2015_runtime >=14.29.30133,<15.0a0"
+      ]
+    },
+    {
+      "name": "zlib",
+      "version": "1.3.1",
+      "build": "h02ab6af_0",
+      "url": "https://repo.anaconda.com/pkgs/main/win-64/zlib-1.3.1-h02ab6af_0.conda",
+      "md5": "4db9b3fbefe915ffb9eef8c812a98c6a",
+      "sha256": "116120d38011eea43cbeeb70e00b0eaa3b1c0a3f470df09aadb0d0b66aebbf60",
+      "depends": [
+        "libzlib 1.3.1 h02ab6af_0",
+        "ucrt >=10.0.20348.0",
+        "vc >=14.2,<15",
+        "vc14_runtime >=14.29.30133"
+      ]
+    }
+  ],
+  "pipWheels": [
+    {
+      "name": "Pyomo",
+      "version": "6.9.5",
+      "filename": "pyomo-6.9.5-cp39-cp39-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/28/2a/06eb389e9dac189a9c54563e5e26755eccff46dc83623680be70613ce8b4/pyomo-6.9.5-cp39-cp39-win_amd64.whl",
+      "sha256": "3f103e018e2c14d2ce74128d2e7e350e5555e51ee0be6c3e8f07e4c096c8f327",
+      "metadataUrl": "https://pypi.org/pypi/Pyomo/6.9.5/json"
+    },
+    {
+      "name": "scipy",
+      "version": "1.13.1",
+      "filename": "scipy-1.13.1-cp39-cp39-win_amd64.whl",
+      "url": "https://files.pythonhosted.org/packages/3e/77/dab54fe647a08ee4253963bcd8f9cf17509c8ca64d6335141422fe2e2114/scipy-1.13.1-cp39-cp39-win_amd64.whl",
+      "sha256": "392e4ec766654852c25ebad4f64e4e584cf19820b980bc04960bca0b0cd6eaa2",
+      "metadataUrl": "https://pypi.org/pypi/scipy/1.13.1/json"
+    },
+    {
+      "name": "ply",
+      "version": "3.11",
+      "filename": "ply-3.11-py2.py3-none-any.whl",
+      "url": "https://files.pythonhosted.org/packages/a3/58/35da89ee790598a0700ea49b2a66594140f44dec458c07e8e3d4979137fc/ply-3.11-py2.py3-none-any.whl",
+      "sha256": "096f9b8350b65ebd2fd1346b12452efe5b9607f7482813ffca50c22722a807ce",
+      "metadataUrl": "https://pypi.org/pypi/ply/3.11/json"
+    }
+  ],
+  "omittedInstalledPackages": {
+    "pandas": "Not imported by the frozen Boston native profile; its optional data-analysis dependencies are omitted.",
+    "psutil": "Not installed or imported; Windows process/memory sampling uses ctypes and PowerShell.",
+    "packaging": "Not required by the selected native execution imports."
+  },
+  "pythonVersion": "3.9.25",
+  "nativeExecutable": {
+    "relativePath": "Library/bin/ipopt.exe",
+    "version": "3.14.19",
+    "sha256": "281049ded043353bc395bc4585806a18a97b07038d01fa446c6aa33b0f31437c"
+  },
+  "sources": [
+    "https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-environments.html#building-identical-conda-environments",
+    "https://pip.pypa.io/en/stable/topics/secure-installs/"
+  ]
+}

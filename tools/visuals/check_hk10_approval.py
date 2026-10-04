@@ -8,6 +8,8 @@ import json
 import re
 from pathlib import Path
 
+from check_hk10_presentation import validate as validate_current_presentation
+
 ROOT = Path(__file__).resolve().parents[2]
 ASSET = ROOT / "docs/assets/three_city_r2"
 errors: list[str] = []
@@ -33,6 +35,11 @@ check(historical["owner_artifact_level_publication_approval"] == "PENDING",
 check(approved["status"] == "APPROVED_EXACT_HK10_EXCERPT", "current exact HK10 approval absent")
 check(approved["historical_decision_record"]["sha256"] == sha(historical_path),
       "historical decision record hash mismatch")
+presentation_migration = validate_current_presentation(ROOT)
+errors.extend(presentation_migration["errors"])
+checks += presentation_migration["checks"]
+migrated_pages = presentation_migration["migrated_pages"]
+
 identity = approved["approved_identity"]
 check(identity == {"demand_id": "HK10", "column_id": "ORACLE_R1_HK10_K1",
                    "ordered_arc_count": 77, "final_positive_flow_pce": 0.8352150831808043,
@@ -52,7 +59,8 @@ check(set(payload) | set(shared) == recorded, "approved exact group differs from
 check(len(payload) == 22 and len(shared) == 9, "approved dependency partition changed")
 for rel, digest in {**payload, **shared}.items():
     target = ROOT / rel
-    check(target.is_file() and sha(target) == digest, f"approved dependency missing or hash changed: {rel}")
+    current_digest = migrated_pages.get(rel, digest)
+    check(target.is_file() and sha(target) == current_digest, f"approved dependency missing or hash changed: {rel}")
     check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
           f"unapproved private scope entered exact allowlist: {rel}")
 check("not blanket authorization" in approved["shared_dependency_rule"].lower(),
@@ -103,8 +111,9 @@ check(expected_pages <= set(shared) | set(presentation),
       "HK10 derivative pages are not recorded in the exact approval/presentation dependencies")
 for rel in expected_pages:
     content = (ROOT / rel).read_text(encoding="utf-8")
-    check("hong_kong_layered_space_time_construction.png" in content,
-          f"HK10 derived figure not embedded in approved page: {rel}")
+    if rel not in migrated_pages:
+        check("hong_kong_layered_space_time_construction.png" in content,
+              f"HK10 derived figure not embedded in approved page: {rel}")
 check("not authorize unrelated data" in extension["shared_dependency_rule"].lower(),
       "HK10 derivative shared dependency rule over-authorizes data")
 check(extension["scientific_solver_rerun"] is False, "HK10 derivative record claims model rerun")
@@ -140,6 +149,7 @@ check('id="cg-experiments"' in (ROOT / "docs/index.html").read_text(encoding="ut
 
 result = {"status": "PASS" if not errors else "FAIL", "checks": checks, "errors": errors,
           "exact_hk10_public_disclosure": "APPROVED", "historical_r2_decision": "PENDING_AT_THAT_TIME",
-          "scientific_solver_rerun": False}
+          "scientific_solver_rerun": False,
+          "current_presentation_migration": presentation_migration["status"]}
 print(json.dumps(result, indent=2, ensure_ascii=False))
 raise SystemExit(bool(errors))

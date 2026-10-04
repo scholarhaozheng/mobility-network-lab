@@ -1,0 +1,58 @@
+{
+  "schema": "mcl_r05_cumulative_execution_evidence",
+  "status": "PASS",
+  "distinctCommandsExecutedThisDelivery": 18,
+  "existingCommandReruns": 5,
+  "newExactSiouxCommands": 4,
+  "newPreparedBostonCommands": 2,
+  "newPublicPreparedControlCommands": 7,
+  "groups": [
+    {
+      "report": "clean-package-validation.json",
+      "commands": [
+        "boston-conditional-choice-three-scenarios",
+        "sioux-public-528od-fw",
+        "hk10-frozen-arc-lp",
+        "hk-four-stage-r2",
+        "admm-r2s-public-C1"
+      ],
+      "scope": "Five existing recipes rerun from the earlier extracted baseline and r05 overlay; recorded archive hash belongs to that batch."
+    },
+    {
+      "report": "sioux-validation.json",
+      "commands": [
+        "sioux-lagrangian-p07-200",
+        "sioux-lagrangian-p07-250",
+        "sioux-admm-r2s-200",
+        "sioux-admm-r2s-250"
+      ],
+      "scope": "Four exact Sioux P07/R2_S instances, run and independently verified with final frozen wrapper/input hashes."
+    },
+    {
+      "report": "boston-semantic-validation.json",
+      "commands": [
+        "boston-semantic-fix-s1-assignment",
+        "boston-semantic-fix-s2-assignment"
+      ],
+      "scope": "Two assignment-only prepared-input replays; public Frank–Wolfe, not the historical upstream four-stage/service-feedback chain."
+    },
+    {
+      "report": "public-controls-validation.json",
+      "commands": [
+        "public-control-fw",
+        "public-control-finite-path",
+        "public-control-person-choice",
+        "public-control-cg-capacity",
+        "public-control-cg-auto",
+        "public-control-catalog-match",
+        "public-control-gtfs-parser"
+      ],
+      "scope": "Seven fixed public prepared-input controls; each fresh run has two subsequent independent verification calls."
+    }
+  ],
+  "environment": "Actual computations used already validated Windows Python 3.12 and Python 3.11.4 environments. No fresh installation is claimed for r05; the retained native L3 clean-install receipt is separately scoped.",
+  "archiveBoundary": "The batches ran in separately staged/extracted checkouts at their documented revisions. They are not presented as 18 executions from one identical ZIP hash. The final combined archive independently checks all 41 receipt identities and 200 pinned files.",
+  "otherArchivedCommands": 23,
+  "numericalImplementationsChanged": false,
+  "thresholdsRelaxed": false
+}

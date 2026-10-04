@@ -1,0 +1,189 @@
+{
+  "experiment_id": "boston-algorithm-b-b1",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:44:22.967175+00:00",
+  "seconds": 1.5701326000271365,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "2e3aa4a4002e513777dd4f7658049600c4df3ff7d712b10134df3b4568169fda",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/boston_tapb.py",
+      "role": "solver_code",
+      "expected_sha256": "e371075541ddafc5c4b9ef41b9388b330d5daec3c5b13dc7619aeae4e6fd6505",
+      "actual_sha256": "e371075541ddafc5c4b9ef41b9388b330d5daec3c5b13dc7619aeae4e6fd6505"
+    },
+    {
+      "path": "tools/reproduction/build_tapb.py",
+      "role": "solver_code",
+      "expected_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+      "actual_sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/cases.json",
+      "role": "solver_config",
+      "expected_sha256": "4e315b175dabaeb2bf97859410232e4f3df12d76eadcf4df9c188ec8a2db3fc1",
+      "actual_sha256": "4e315b175dabaeb2bf97859410232e4f3df12d76eadcf4df9c188ec8a2db3fc1"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf",
+      "actual_sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd",
+      "actual_sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5",
+      "actual_sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/inputs/b1/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+      "actual_sha256": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/inputs/b1/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "da10434d4a88110af3d9d89e8876f373a0bc47f1d310ff603fa4230b0023f03f",
+      "actual_sha256": "da10434d4a88110af3d9d89e8876f373a0bc47f1d310ff603fa4230b0023f03f"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv",
+      "role": "reference_only",
+      "expected_sha256": "1d66c1ad838c22fc3d1c17e6c94ff3c4c5ccaad9da375a702d8108c0852444bd",
+      "actual_sha256": "1d66c1ad838c22fc3d1c17e6c94ff3c4c5ccaad9da375a702d8108c0852444bd"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/boston_tapb.py",
+    "arguments": [
+      "--case",
+      "boston-b1"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\boston_tapb.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--case",
+        "boston-b1"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.569819699972868,
+      "timeout_seconds": 1950,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "4dac7af4dbc95ec8d7a906ce7df1727d52b105ea4d416eadaf6c607586727520",
+    "solution/computed/evaluation.json": "46841325891dce6fc65d4219a8d1a522eb15d15c0abe4b99429690b1522b04d0",
+    "solution/computed/full_log.txt": "b81311edeb4f413564723a463fde22d83de1dfb0ec6e17948142a7eeace257e1",
+    "solution/computed/history.csv": "f962d3ea5b7ee3b6f782ab9de5a70ec392858c8dd7a73b155a1244b67424e763",
+    "solution/computed/input_lock.json": "6d6630683c3d08d2e826ffe09cfe5f7d6588cc3ddca6b272b2f23b5a3318eb43",
+    "solution/computed/link_flow.csv": "1d66c1ad838c22fc3d1c17e6c94ff3c4c5ccaad9da375a702d8108c0852444bd",
+    "solution/computed/mapping.json": "abf5cd51e427b87bd0844de391240fca8ff7692d3138bdbf440c1e9da319ab72",
+    "solution/computed/net/r2_net.txt": "bc1f1bdddfe0cf441a3311ca4fca86faf802e2c4dd2f1a54e7f4d3f56b6b80a2",
+    "solution/computed/net/r2_trips.txt": "2106ddcb4756d6b51816fede0fc7aff94169d78001727930cf30b87f25f7df7f",
+    "solution/computed/origin_arc_flow.csv": "4226ccb0ae1c178680464187478c65ae27ce4c59204c4a9ea37fb361f4980332",
+    "solution/computed/params.txt": "c3e19283f6f233fbe70562a3066d7009e4b26cdbdf14f801461a2a5b6384e12a",
+    "solution/computed/path_flow.csv": "153b0511a787405929058d05fbfe448e4d3052de29ba2d62b264c4b2e65b7b18",
+    "solution/computed/process.json": "926fe55134ec72aa817399247e4ee85c868ae7e23ece27d587af3d601f8eaed4",
+    "solution/computed/r2_flows.txt": "a9f465efa1f6b34c9cc44cb5b6f2b09eb78ed30a6a78d26f0fcca3d05cab4cdd",
+    "solution/computed/r2_pathflows.txt": "19a7c82a004c2cb2f1ed290aac28267a653a7f7fd1fb26fe15926ee2f0506877",
+    "solution/computed/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/computed/stdout.log": "b81311edeb4f413564723a463fde22d83de1dfb0ec6e17948142a7eeace257e1",
+    "solution/runtime-provenance.json": "2c2541c9cf3aefbf3836f0045bec026864d1edb7fa91837998d1df30fbcd10be",
+    "solution/solve.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/solve.stdout.log": "83c8099056283195b15a67e47f6e1558cf1f9e3e62656c3efa9ef0aa39e01881",
+    "solution/verify.stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/verify.stdout.log": "be6ce6d84d0ba5ae24cb7360fa43dbd49b12bd920b4d985563d715cd840bd250",
+    "solve.log": "3f0fc356d44288e6b4ba0cc06f3ffc7370938f8c00cb27c73e6bd9c6211af819"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-algorithm-b-b1",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_independent_full_graph_gates": true,
+      "package_historical_objective": true,
+      "package_historical_flow": true,
+      "package_physical_od_count": true,
+      "package_total_demand": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 7922.083942188114,
+      "total_demand": 1936.2384749100008,
+      "positive_od": 453,
+      "relative_gap": -2.295124618778574e-16,
+      "max_od_residual": 0.0,
+      "max_origin_node_residual": 4.973799150320701e-14,
+      "max_link_mismatch": 5.684341886080802e-14,
+      "historical_objective_delta": 0.0,
+      "historical_link_flow_delta": 0.0,
+      "independent_package_checks": 5
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_numeric_abs": 1e-06
+    },
+    "claim_boundary": "500 selected source OD planned case aggregated to 453 positive physical endpoint pairs; independent full-graph Algorithm B validation.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "boston-algorithm-b-b1",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.2695269000250846
+  },
+  "original_records_sha256": {
+    "run": "6c9bdbadbf238cbaa3eafbe0368e5183c0a4f793a88082abc0125895a8f64007",
+    "verification": "e60e36e193e0f38778febef760e00f933adebd9c996c3fedd09dd90bdeb37069"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

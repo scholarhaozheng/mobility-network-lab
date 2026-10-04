@@ -1,0 +1,238 @@
+{
+  "experiment_id": "boston-abs-planned-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T01:58:40.880460+00:00",
+  "seconds": 32.91794899996603,
+  "cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+  "catalog_entry_sha256": "e12e5a6e9d1113a7c78cbeb31036562b9d93e70a006ebc21d413df975e487d33",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+      "actual_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49",
+      "actual_sha256": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/assignment_config.json",
+      "role": "solver_config",
+      "expected_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65",
+      "actual_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/fw_solution.csv",
+      "role": "reference_only",
+      "expected_sha256": "c284b9018aacb1ecceb793670682474087da099d8fa7d8fd9b4b0008c87ae4a2",
+      "actual_sha256": "c284b9018aacb1ecceb793670682474087da099d8fa7d8fd9b4b0008c87ae4a2"
+    }
+  ],
+  "configuration": {
+    "script": "tools/mcl_assignment.py",
+    "inputs": "examples/boston/assignment_methods_r1/inputs_snapshot",
+    "demand": "examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv",
+    "config_path": "examples/boston/scalable_tool_r1/assignment_config.json",
+    "reference": "examples/boston/assignment_methods_r1/reference/fw_solution.csv",
+    "scenario_id": "ABS_PLANNED",
+    "scenario_label": "Boston HBW midday conditional four-mode ABS_PLANNED",
+    "expected_demand_pce": 203.6604786350987
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "prepare",
+        "--input",
+        "${REPOSITORY}\\examples\\boston\\assignment_methods_r1\\inputs_snapshot",
+        "--demand",
+        "${REPOSITORY}\\examples\\boston\\assignment_methods_r1\\inputs_snapshot\\demand.csv",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\prepared"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "input_preparation",
+      "exit_code": 0,
+      "seconds": 0.229700599971693,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "log": "prepare.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "solve",
+        "--instance",
+        "${RUN_OUTPUT}\\prepared",
+        "--method",
+        "fw",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_solve",
+      "exit_code": 0,
+      "seconds": 32.68648919998668,
+      "timeout_seconds": 120,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "config.json": "3e9824655d75d4a9e102e8627fca80e78c4c4da7abefa370b42b9aeed112b60a",
+    "preflight.json": "fba1067be1c258f48c870d83b33510626cfc33f0af3cd7cc92f3f965974ded8c",
+    "prepare.log": "0f94963efe9624aa376dc984acec7887ead3362a4b8291e2a6074cd80d228ab3",
+    "prepared/demand.csv": "808faa18c9bad5452dfb553d49b6879b861798bca2b479100ae9e623fee173c4",
+    "prepared/demand_ledger.csv": "cc16d9ffb804e361c718be420c4cc8f1f4eb03bf2afef6975518f08a2e8f10ba",
+    "prepared/link.csv": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+    "prepared/manifest.json": "bc87ccdcd62fa496efeb3afc9e3ba4df79504f20272de98b68e7f01477d8c386",
+    "solution/history.csv": "6fe410e9420a9a2b9914b85d8277c346e49ca4ef2b36de1ae3dd8d5b798de257",
+    "solution/link_flow.csv": "e57362233bb9a3b906c5d2b27102acc32c3392105e4eeca868190f4f18795afe",
+    "solution/path_flow.csv": "3cb5826ae0f5360afa5163db8ba6845fde31fbd14820928aaae3c13ea96cf564",
+    "solution/run.json": "84cd448ebf6ecb6b6e8c596064a76ea6bd68e10ca81955151bab7373d1edc769",
+    "solve.log": "cc799953599f6e36d2d4daf9f463e797f1652d7a4c32971ddd66b118bb7a573f"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-abs-planned-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "public_independent_verifier": true,
+      "path_flow_nonnegative": true,
+      "link_flow_nonnegative": true,
+      "od_balance_absolute": true,
+      "od_balance_relative_l1": true,
+      "link_reconstruction": true,
+      "full_network_gap": true,
+      "objective_integral": true,
+      "reported_objective": true,
+      "original_reference_objective": true,
+      "original_reference_link_flows": true,
+      "case_dimensions": true,
+      "case_demand": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "instance_signature": "b21c4f48b07593cddc0f3e405871ccd8a81569f70b4e96c196c3703e0806dedd",
+      "od_pairs": 26,
+      "physical_links": 5091,
+      "demand_pce": 203.6604786350987,
+      "path_count": 26,
+      "min_path_flow_raw": 3.3208129545536664,
+      "negative_path_mass_raw": 0.0,
+      "min_link_flow_raw": 0.0,
+      "negative_link_count_raw": 0,
+      "negative_link_mass_raw": 0,
+      "max_od_residual": 0.0,
+      "od_residual_sum": 0.0,
+      "od_residual_l1": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "objective_checked": 707.0579230712882,
+      "objective_reported": 707.0579230712882,
+      "signed_gap_numerator": -1.1368683772161603e-13,
+      "gap_denominator": 707.0743454724815,
+      "full_network_relative_gap": -1.60784843135057e-16,
+      "positive_links_strict": 319,
+      "positive_links_display_1e_minus_6": 319,
+      "verify_seconds": 0.0906358000356704,
+      "scenario": "ABS_PLANNED",
+      "period_hours": 2,
+      "capacity_basis": "effective_period_pce",
+      "pce_factor": 1,
+      "flow_unit": "PCE per declared two-hour period",
+      "objective_independent_integral": 707.0579230712882,
+      "objective_original_reference": 707.0579230712882,
+      "reference_objective_absolute_error": 0.0,
+      "reference_max_link_flow_error": 1.4210854715202004e-14,
+      "reference_link_flow_l1_error": 1.1368683772161603e-13,
+      "solver_iterations": 0,
+      "reference_links": 5091
+    },
+    "errors": [],
+    "tolerances": {
+      "public_verifier": "tools/mcl_assignment.py::verify",
+      "max_od_error_abs": 1e-06,
+      "total_od_l1_rel": 1e-08,
+      "full_relative_gap_abs": 1e-05,
+      "negative_flow_abs": 1e-08,
+      "link_reconstruction_abs": 1e-07,
+      "objective_abs": 1e-07,
+      "reference_objective_abs": 1e-07,
+      "reference_link_flow_abs": 1e-07
+    },
+    "claim_boundary": "Calls unchanged public mcl_assignment FW on the exact frozen ABS_PLANNED physical demand. The original config is copied with scenario prose corrected only; all numerical fields and effective two-hour capacities are preserved. Verification reconstructs OD/path/link feasibility and full-network gap, then compares original saved physical-link flows and the independently recomputed Beckmann integral. These light cases satisfy the gate at initial AON (zero line-search iterations); this is a numerical result replay, not historical runtime replication, upstream mode-choice re-estimation, or a semantic-fix S1/S2 result.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "boston-abs-planned-fw",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.47999439999694005
+  },
+  "original_records_sha256": {
+    "run": "9e3920c0c079f5556373df9e103e262bfaecdf00b7a45775f6271928abfcdafe",
+    "verification": "034eb9bb6be5ef1d55c40eb9c788cd7a940db0bdba1291ce84380d3689c57329"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

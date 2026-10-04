@@ -1,0 +1,215 @@
+{
+  "experiment_id": "boston-abs-planned-130path-slsqp",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T01:57:17.595547+00:00",
+  "seconds": 1.6480239999946207,
+  "cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+  "catalog_entry_sha256": "109d37c96648df7b79058ae4f578fc9200e024c8b17fde7cb49d7b48f6e76ded",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/finite_path_reference/adapters/solve_full_path.py",
+      "role": "solver_code",
+      "expected_sha256": "dca72782b270cd3f31a419ad975cb464d0c5258459830af8cde9f244cdd09b81",
+      "actual_sha256": "dca72782b270cd3f31a419ad975cb464d0c5258459830af8cde9f244cdd09b81"
+    },
+    {
+      "path": "algorithms/finite_path_reference/adapters/common.py",
+      "role": "solver_code",
+      "expected_sha256": "51a5a41df7e79e0e11bf9bd8f3bb40934e8e273fb318fc074620aa8aa8a7bcb4",
+      "actual_sha256": "51a5a41df7e79e0e11bf9bd8f3bb40934e8e273fb318fc074620aa8aa8a7bcb4"
+    },
+    {
+      "path": "algorithms/finite_path_reference/config/experiment.json",
+      "role": "solver_config",
+      "expected_sha256": "2b955a3e40666288d050752875030eaee94bee244e96b717c7ad606e29168a98",
+      "actual_sha256": "2b955a3e40666288d050752875030eaee94bee244e96b717c7ad606e29168a98"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+      "actual_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49",
+      "actual_sha256": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/A_link_path.npz",
+      "role": "solver_input",
+      "expected_sha256": "bf07f042c38995a39a874624f5f9c4a1bad43ee43aae0dd07be28e0d93fb98cc",
+      "actual_sha256": "bf07f042c38995a39a874624f5f9c4a1bad43ee43aae0dd07be28e0d93fb98cc"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/C_od_path.npz",
+      "role": "solver_input",
+      "expected_sha256": "2d25c5b9d0b966bf6ffc470d1904ed179cbc3b8f237c9d6831df8c3e4fbaad81",
+      "actual_sha256": "2d25c5b9d0b966bf6ffc470d1904ed179cbc3b8f237c9d6831df8c3e4fbaad81"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_pool.csv",
+      "role": "solver_input",
+      "expected_sha256": "eb8d62e4d338e9bba1632f8013b8d9ee5b91eb4197ec67bdae823980ce806fad",
+      "actual_sha256": "eb8d62e4d338e9bba1632f8013b8d9ee5b91eb4197ec67bdae823980ce806fad"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/f0.csv",
+      "role": "solver_input",
+      "expected_sha256": "b00b8f9d23bc81957c0cce7d5565e17a89bf69883a31c9c1794767500b9df184",
+      "actual_sha256": "b00b8f9d23bc81957c0cce7d5565e17a89bf69883a31c9c1794767500b9df184"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/PATH_POOL_FREEZE.json",
+      "role": "input_provenance",
+      "expected_sha256": "40dbf75c942d3fc3b55f7c5eabb078754444ffcb61c26231c81f008f0e4b7267",
+      "actual_sha256": "40dbf75c942d3fc3b55f7c5eabb078754444ffcb61c26231c81f008f0e4b7267"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_link_membership.csv",
+      "role": "input_provenance",
+      "expected_sha256": "ed7bcd9193f2f5a63cdd5d0f23134fd6fd5fbd60536fdef92c4cd8e8427ca4ba",
+      "actual_sha256": "ed7bcd9193f2f5a63cdd5d0f23134fd6fd5fbd60536fdef92c4cd8e8427ca4ba"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/od_index.csv",
+      "role": "input_provenance",
+      "expected_sha256": "1fb6004d7ad14c68e50812798437cce29c6e7a7ca76c126959b1ce8045710918",
+      "actual_sha256": "1fb6004d7ad14c68e50812798437cce29c6e7a7ca76c126959b1ce8045710918"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/link_index.csv",
+      "role": "input_provenance",
+      "expected_sha256": "ead9c8faedeb2692e598d40df47d4f47d007d7dcaea4b4382573950c5f4f9fa0",
+      "actual_sha256": "ead9c8faedeb2692e598d40df47d4f47d007d7dcaea4b4382573950c5f4f9fa0"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/full_path_solver_result.json",
+      "role": "reference_only",
+      "expected_sha256": "502fda36dcbdedf0d4b50a7d0db3ca616d34dc76a3c71cb24c583b8d5a7c9573",
+      "actual_sha256": "502fda36dcbdedf0d4b50a7d0db3ca616d34dc76a3c71cb24c583b8d5a7c9573"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/finite_path_reference/adapters/solve_full_path.py",
+    "inputs": "examples/boston/assignment_methods_r1/inputs_snapshot",
+    "pool": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool",
+    "config": "algorithms/finite_path_reference/config/experiment.json",
+    "reference": "examples/boston/assignment_methods_r1/reference/full_path_solver_result.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\finite_path_reference\\adapters\\solve_full_path.py",
+        "--inputs",
+        "${REPOSITORY}\\examples\\boston\\assignment_methods_r1\\inputs_snapshot",
+        "--pool",
+        "${REPOSITORY}\\examples\\boston\\assignment_methods_r1\\inputs_snapshot\\path_pool",
+        "--config",
+        "${REPOSITORY}\\algorithms\\finite_path_reference\\config\\experiment.json",
+        "--out",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_solve",
+      "exit_code": 0,
+      "seconds": 1.6472819999908097,
+      "timeout_seconds": 120,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "e1d1e808150538aa530b75c6953839b6577ab45d57ea33e273a3970b1e15626c",
+    "solution/full_path_flow.csv": "b9dc6c71c2080203eda14cdd359cc724de3fd186cbb963d3ed13053783940fd4",
+    "solution/link_flow.csv": "edf3bc7136c8564b72a15158f503ebca860c1ef9464ecb129b6f4dbe8ee8e19a",
+    "solution/solver_log.txt": "a00d411c14509d80f46bd4a6f9eba9d151456f08ab6aded58477a6d6cfc0461d",
+    "solution/solver_result.json": "550395963fcd6c3464b17c6ee96c9b4b9ccf28bb77c80fca2690d70c42dffa6b",
+    "solve.log": "a00d411c14509d80f46bd4a6f9eba9d151456f08ab6aded58477a6d6cfc0461d"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-abs-planned-130path-slsqp",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "solver_success": true,
+      "nonnegative": true,
+      "od_balance": true,
+      "link_reconstruction": true,
+      "objective_recompute": true,
+      "objective_reference": true,
+      "pool_gap": true
+    },
+    "metrics": {
+      "objective_recomputed": 707.0579230712882,
+      "objective_reported": 707.0579230712882,
+      "objective_reference": 707.0579230712882,
+      "objective_reference_absolute_error": 0.0,
+      "max_od_residual": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "min_path_flow": 0.0,
+      "min_link_flow": 0.0,
+      "signed_pool_relative_gap": -1.60784843135057e-16,
+      "paths": 130,
+      "links": 5091,
+      "od_pairs": 26,
+      "solver_status": "success",
+      "solver_iterations": 1
+    },
+    "errors": [],
+    "tolerances": {
+      "negative_flow_abs": 1e-10,
+      "od_balance_abs": 1e-08,
+      "link_reconstruction_abs": 1e-08,
+      "objective_abs": 1e-07,
+      "reference_objective_abs": 1e-07,
+      "pool_relative_gap_abs": 1e-06
+    },
+    "claim_boundary": "Public SLSQP is called unchanged with frozen f0 (already optimal for this light case), maxiter500 and ftol1e-10. Independent checks cover this finite pool, not new path generation, native L3 or cold-start speed. The original saved objective is a comparison reference only.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "boston-abs-planned-130path-slsqp",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.005522400024347
+  },
+  "original_records_sha256": {
+    "run": "533761ad326383ef1bdef4c06e4a5169d36e2dca936e7ccf2b1a1732b7af9fcb",
+    "verification": "71cedc1d7949b7e25eb1a78aeafbe64c43f2226aa7a59aff1f14e30128b751ef"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

@@ -1,0 +1,235 @@
+{
+  "experiment_id": "hk10-lagrangian-r3-continuation",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:58:31.955914+00:00",
+  "seconds": 10.235516599961556,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "8792656488095aedc2294ca8c0752fcd3f3139f2a43820f932d0e8f14dc82a80",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_lagrangian_r3.py",
+      "role": "solver_code",
+      "expected_sha256": "d0a5968d976618b91da7caad456b42862612ea39f38562496fcd01553684bc88",
+      "actual_sha256": "d0a5968d976618b91da7caad456b42862612ea39f38562496fcd01553684bc88"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/independent_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "e244bb03b3348070ac542a56a3da1b59c5bc80446d7be16ffc9a7a813a88e440",
+      "actual_sha256": "e244bb03b3348070ac542a56a3da1b59c5bc80446d7be16ffc9a7a813a88e440"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/instance_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "c6b86fde9eff005514ca404eadede46c3ad65f20fd850430b8749834185bd12a",
+      "actual_sha256": "c6b86fde9eff005514ca404eadede46c3ad65f20fd850430b8749834185bd12a"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/lagrangian_dual_solver.py",
+      "role": "solver_code",
+      "expected_sha256": "3b55151b098802984d4e98ff923332d00aa6c839a5b7bd847ad2906b0155af76",
+      "actual_sha256": "3b55151b098802984d4e98ff923332d00aa6c839a5b7bd847ad2906b0155af76"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/path_pool_manager.py",
+      "role": "solver_code",
+      "expected_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c",
+      "actual_sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "4b2911db897c94dd13a75d010465fc575cafc74ffd697f0f1d13b39686b4733d",
+      "actual_sha256": "4b2911db897c94dd13a75d010465fc575cafc74ffd697f0f1d13b39686b4733d"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/restricted_primal_recovery.py",
+      "role": "solver_code",
+      "expected_sha256": "a50e37eb44d13c9a6ba2630d995b3028424db18ce0c5dea9abdfe4da24dd7c5a",
+      "actual_sha256": "a50e37eb44d13c9a6ba2630d995b3028424db18ce0c5dea9abdfe4da24dd7c5a"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/LAGRANGIAN_R3_EXPERIMENT_PLAN.json",
+      "role": "solver_config",
+      "expected_sha256": "2b5994ba582cf264f501b988fb4c4570af0f285cce488fc3eecacf0c16677888",
+      "actual_sha256": "2b5994ba582cf264f501b988fb4c4570af0f285cce488fc3eecacf0c16677888"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/case.json",
+      "role": "solver_input",
+      "expected_sha256": "61d2c3827333b61cbbb333b2a571f5d50fe9ffaf7468f333a892d6487fe1fe02",
+      "actual_sha256": "61d2c3827333b61cbbb333b2a571f5d50fe9ffaf7468f333a892d6487fe1fe02"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_arc.csv",
+      "role": "solver_input",
+      "expected_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+      "actual_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+      "actual_sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/selected_physical_links.csv",
+      "role": "solver_input",
+      "expected_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6",
+      "actual_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/ARC_FLOW_REFERENCE_SUMMARY.json",
+      "role": "reference_only",
+      "expected_sha256": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4",
+      "actual_sha256": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/result.json",
+      "role": "reference_only",
+      "expected_sha256": "7dab161f1ac4a623c9e5362c7077aa32b0e49fe6b1007d41e3f09f69dcd34a10",
+      "actual_sha256": "7dab161f1ac4a623c9e5362c7077aa32b0e49fe6b1007d41e3f09f69dcd34a10"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_lagrangian_r3.py",
+    "arguments": []
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_lagrangian_r3.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 10.235216000000946,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "f923aa2b94a74f19431ba917604300f70a3b9fa3e67b444c9bdf4c64954d86d5",
+    "solution/computed/best_multipliers.csv": "bcc3b84a80aa2c2bf864009f961fe9036ff47ef4291c3bd4ecf3be58c6f55372",
+    "solution/computed/commodity_arc_flow.csv": "b737620481dbc296e960a86f1f5127ddee49146cb0b9b71b457822a9ff20db00",
+    "solution/computed/history.csv": "26a59fb5cb7572bc7bdb3f1a6aa1624628afcbf646d92f019d1bbb6ba6757405",
+    "solution/computed/multiplier_snapshots.csv": "bb4e7c1ca6396fe7426e4c5cd7254eeb1614e27aedbcf608f9bcdd9d737fda55",
+    "solution/computed/physical_link_flow.csv": "fcfd1024f86a2326f8131f0db640c29a6d3f3f78402e35610d91bcebb357bb9a",
+    "solution/computed/pool_paths.csv": "34994bdcc08cc954bdf22c1e4ba248ec3fc9babd2478ca8443ccb7f2c749e7cc",
+    "solution/computed/positive_paths.csv": "43d5bee1e2700f202d1ecea6bc9fa5f63b37ee47ff564cabc6c7939148a0d394",
+    "solution/computed/recovery_history.json": "25c697cbfcb3d011f5d892bf37cb54345ab8fd920cccf54f7f18aaaaed17283f",
+    "solution/computed/result.json": "cacbd9fbd74b7e36ba108979544813ed3b79febc0592897f891c6fd8a234016d",
+    "solution/independent-evaluation.json": "723e4a05687bb41560cb0a01cda10a4bea5e2e1704f8a426428ae036ab9fc105",
+    "solution/recovery/commodity_arc_flow.csv": "32e3099500f5392156d8741a99692ffcbd69092cb6f40c10fad2177023ac92ad",
+    "solution/recovery/physical_link_flow.csv": "d27be07243ef4ed7498e94999aef4c13ee1ca18b2df4203b6053d5283bd259db",
+    "solution/recovery/positive_paths.csv": "cc103c4c249b8924cd44f8ba08b4532e9a006d486b9f6e3680e743ac9d7ead7b",
+    "solution/recovery/recovery_result.json": "c64e936edea8f8f89df0187b7e1a558e52cb5b020b357465f50c63a932e9c4e5",
+    "solution/run.json": "8d0aef78a73c42119f3ac943edb0221ac65c2bbabf41bd1ea8aac2c917bd816a",
+    "solve.log": "5b29f30347f42cb7b877d9f045c6810aa687b1fbd49c8d927817b040aeaad3e9"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk10-lagrangian-r3-continuation",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_graph_signature": true,
+      "package_case_manifest_signature": true,
+      "package_multiplier_ids": true,
+      "package_multipliers_finite_nonnegative": true,
+      "package_dual_recomputed": true,
+      "package_history_best": true,
+      "package_recovery_pool_signature": true,
+      "package_recovery_model_signature": true,
+      "package_recovery_feasible": true,
+      "package_pool_duplicates": true,
+      "package_path_continuity": true,
+      "package_path_time_monotonicity": true,
+      "package_own_connector_only": true,
+      "package_path_pool_membership": true,
+      "package_positive_path_uniqueness": true,
+      "package_demand_balance": true,
+      "package_capacity": true,
+      "package_nonnegative_flow": true,
+      "package_commodity_arc_flow": true,
+      "package_physical_projection": true,
+      "package_primal_objective": true,
+      "package_recovery_objective": true,
+      "package_dual_reference_bound": true,
+      "package_independent_evaluator": true,
+      "package_historical_primal": true,
+      "package_historical_dual": true,
+      "package_historical_iteration_count": true,
+      "package_certified_gap": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective_recomputed": 75.03632985794826,
+      "dual_recomputed": 74.47774508486323,
+      "duality_gap": 0.007444191022435275,
+      "max_balance_residual": 0.0,
+      "max_capacity_violation": 0.0,
+      "physical_projection_error": 3.552713678800501e-15,
+      "independent_package_checks": 28
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_demand_capacity_path_identity_and_projection": true,
+      "duality_gap_max": 0.01,
+      "historical_primal_absolute_max": 1e-07,
+      "historical_dual_absolute_max": 1e-07,
+      "historical_iterations": 25
+    },
+    "claim_boundary": "HK10 R3 fixed-cost finite-capacity Lagrangian experiment. Distinct from R2 P07, HK4 ADMM and static BPR/Beckmann. Starts from the publicly available frozen graph; raw-data-to-graph preparation is outside this command.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk10-lagrangian-r3-continuation",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 1.3992079000454396
+  },
+  "original_records_sha256": {
+    "run": "5340d039c7193bd908ce65195c76ecee211337f1799d2a379527263c0f4ed12b",
+    "verification": "d628886a5272935c99071dae7e68bacf3e4c246ee735717fa0642b16e37add86"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

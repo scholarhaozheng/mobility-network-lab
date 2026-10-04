@@ -1,0 +1,315 @@
+{
+  "schema": "mcl_publication_smoke_v1",
+  "releaseId": "20261004-r12",
+  "sourceRevision": "reproduction-2026-10-04-r12",
+  "scope": "Fresh rerun of the authored ADMM C1 control from the publication checkout using the existing standard Windows environment, followed by solver-free independent verification. This is not a city-scale test or a new clean-environment installation.",
+  "run": {
+    "schema": "mcl_reproduce_run_v1",
+    "experiment_id": "admm-r2s-public-C1",
+    "status": "FRESH_REPRODUCED",
+    "started_at": "2026-10-04T12:01:51.564822+00:00",
+    "command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "run",
+      "admm-r2s-public-C1",
+      "--output",
+      "${REPOSITORY}/.publication-validation/admm-public-smoke"
+    ],
+    "repository_root": "${REPOSITORY}",
+    "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+    "catalog_entry_sha256": "fed8427427c0bacc3dd0939860522a7d12ec01b90d0d7d734ea0eed77333be66",
+    "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "environment": {
+      "python": "3.12.14",
+      "executable": "${PYTHON}",
+      "platform": "Windows-10-10.0.19045-SP0",
+      "packages": {
+        "numpy": "2.5.3",
+        "scipy": "1.18.1"
+      },
+      "missing": []
+    },
+    "input_and_source_hashes": [
+      {
+        "path": "algorithms/admm_r2/admm_solver.py",
+        "role": "solver_code",
+        "expected_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+        "actual_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f"
+      },
+      {
+        "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+        "role": "solver_code",
+        "expected_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+        "actual_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f"
+      },
+      {
+        "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+        "role": "solver_code",
+        "expected_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+        "actual_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1"
+      },
+      {
+        "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+        "role": "solver_code",
+        "expected_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+        "actual_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f"
+      },
+      {
+        "path": "examples/admm-r2-fixtures/C1/dynamic_arc.csv",
+        "role": "solver_input",
+        "expected_sha256": "8cd1b6d7fff5b8cb259facc1025429419a87715e80ffadc7216f365fae92d5eb",
+        "actual_sha256": "8cd1b6d7fff5b8cb259facc1025429419a87715e80ffadc7216f365fae92d5eb"
+      },
+      {
+        "path": "examples/admm-r2-fixtures/C1/dynamic_demand.csv",
+        "role": "solver_input",
+        "expected_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+        "actual_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3"
+      },
+      {
+        "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+        "role": "solver_config",
+        "expected_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+        "actual_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+      }
+    ],
+    "configuration": {
+      "script": "algorithms/admm_r2/admm_solver.py",
+      "module_directory": "algorithms/admm_r2",
+      "arcs": "examples/admm-r2-fixtures/C1/dynamic_arc.csv",
+      "demands": "examples/admm-r2-fixtures/C1/dynamic_demand.csv",
+      "policy": "docs/assets/admm_r2/provenance/experiment_plan.json",
+      "variant": "R2_S",
+      "case": "C1"
+    },
+    "claim_boundary": "Runs the existing authored C1 control with unchanged accepted R2_S source and policy. This is not a city result. Independent checks recompute conservation, shared capacity, consensus and local KKT with no solver calls. The analytic objective is 2 units on the capacity-2 cost-1 route plus 2 units on the cost-3 route = 8.",
+    "executed_runs": [
+      {
+        "command": [
+          "${PYTHON}",
+          "-B",
+          "-X",
+          "utf8",
+          "${REPOSITORY}\\algorithms\\admm_r2\\admm_solver.py",
+          "--arc",
+          "${REPOSITORY}\\examples\\admm-r2-fixtures\\C1\\dynamic_arc.csv",
+          "--demand",
+          "${REPOSITORY}\\examples\\admm-r2-fixtures\\C1\\dynamic_demand.csv",
+          "--policy",
+          "${REPOSITORY}\\docs\\assets\\admm_r2\\provenance\\experiment_plan.json",
+          "--variant",
+          "R2_S",
+          "--case",
+          "C1",
+          "--output",
+          "${REPOSITORY}\\.publication-validation\\admm-public-smoke\\solution"
+        ],
+        "cwd": "${REPOSITORY}",
+        "kind": "fresh_solve",
+        "exit_code": 0,
+        "seconds": 1.7549139999900945,
+        "timeout_seconds": 120,
+        "timed_out": false,
+        "log": "solve.log",
+        "environment_overrides": {
+          "PYTHONDONTWRITEBYTECODE": "1",
+          "PYTHONUTF8": "1",
+          "OMP_NUM_THREADS": "1",
+          "OPENBLAS_NUM_THREADS": "1",
+          "MKL_NUM_THREADS": "1"
+        }
+      }
+    ],
+    "seconds": 1.7556543999817222,
+    "artifacts": {
+      "preflight.json": "9d7f112c608043fbbb0f33a10dc3ae3890bc3671e864203e53a643ae840289d7",
+      "solution/history.csv": "124e8f3d5f24677dc735632ba91d3a538bb0f45d788c6cf1656ab8fb29bc12ad",
+      "solution/result.json": "67244556c9b61d12bd1959c050ff1dff9644c1ecf97b419e42a18f8e41fdd09d",
+      "solution/state.npz": "574c987c00878f0743e02173ff26c2008f87a73792c33d0440baf05a61ae7c8e",
+      "solve.log": "1af8520a5f4531b97cee90fcfe664678a21470976ef9e0067a466eba6e2f944d"
+    },
+    "verification_status": "PASS",
+    "metrics": {
+      "optimizer_calls": 0,
+      "local": [
+        {
+          "commodity": "K1",
+          "volume": 2,
+          "max_balance": 6.95058899324863e-10,
+          "max_balance_scaled_by_volume": 3.475294496624315e-10,
+          "worst_node": "n2_t1",
+          "source_error": -1.3556000766357101e-10,
+          "sink_error": 1.380497938185954e-10,
+          "minimum_flow": 0,
+          "max_forbidden": 0,
+          "linear_objective": 4.000000001246175,
+          "penalty": 2.0004018387870763,
+          "kkt_active_max": 1.1102230246251565e-16,
+          "kkt_inactive_negative_max": 0
+        },
+        {
+          "commodity": "K2",
+          "volume": 2,
+          "max_balance": 6.95058899324863e-10,
+          "max_balance_scaled_by_volume": 3.475294496624315e-10,
+          "worst_node": "n2_t1",
+          "source_error": -1.3556000766357101e-10,
+          "sink_error": 1.380497938185954e-10,
+          "minimum_flow": 0,
+          "max_forbidden": 0,
+          "linear_objective": 4.000000001246175,
+          "penalty": 2.0004018387870763,
+          "kkt_active_max": 1.1102230246251565e-16,
+          "kkt_inactive_negative_max": 0
+        }
+      ],
+      "max_balance": 6.95058899324863e-10,
+      "max_kkt_active": 1.1102230246251565e-16,
+      "max_kkt_inactive_negative": 0,
+      "min_flow": 0,
+      "max_forbidden": 0,
+      "primal_residual": 1.967803978736126e-10,
+      "dual_residual": 0.00016403901239796372,
+      "primal_threshold": 0.0004400000000143901,
+      "dual_threshold": 0.0003228711248650082,
+      "max_capacity_excess": 0,
+      "max_z_capacity_excess": 0,
+      "max_projection_error": 0,
+      "max_dual_update_error": 0,
+      "objective": 8.00000000249235,
+      "local_objective_sum": 8.00000000249235,
+      "physical_link_flow": {
+        "A": 1.9999999999372386,
+        "B": 2.0000000008517036
+      },
+      "saved_objective_error": 0,
+      "gates": {
+        "local_conservation": true,
+        "nonnegative": true,
+        "forbidden": true,
+        "primal": true,
+        "dual": true,
+        "capacity": true,
+        "consensus_capacity": true,
+        "projection": true,
+        "dual_update": true,
+        "objective_recompute": true,
+        "local_kkt": true
+      },
+      "status": "PASS",
+      "exact_control_objective": 8,
+      "exact_control_objective_absolute_error": 2.4923494379436306e-9
+    }
+  },
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "admm-r2s-public-C1",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "solver_success": true,
+      "control_identity": true,
+      "independent_public_evaluator": true,
+      "evaluator_solver_free": true,
+      "exact_control_objective": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "local": [
+        {
+          "commodity": "K1",
+          "volume": 2,
+          "max_balance": 6.95058899324863e-10,
+          "max_balance_scaled_by_volume": 3.475294496624315e-10,
+          "worst_node": "n2_t1",
+          "source_error": -1.3556000766357101e-10,
+          "sink_error": 1.380497938185954e-10,
+          "minimum_flow": 0,
+          "max_forbidden": 0,
+          "linear_objective": 4.000000001246175,
+          "penalty": 2.0004018387870763,
+          "kkt_active_max": 1.1102230246251565e-16,
+          "kkt_inactive_negative_max": 0
+        },
+        {
+          "commodity": "K2",
+          "volume": 2,
+          "max_balance": 6.95058899324863e-10,
+          "max_balance_scaled_by_volume": 3.475294496624315e-10,
+          "worst_node": "n2_t1",
+          "source_error": -1.3556000766357101e-10,
+          "sink_error": 1.380497938185954e-10,
+          "minimum_flow": 0,
+          "max_forbidden": 0,
+          "linear_objective": 4.000000001246175,
+          "penalty": 2.0004018387870763,
+          "kkt_active_max": 1.1102230246251565e-16,
+          "kkt_inactive_negative_max": 0
+        }
+      ],
+      "max_balance": 6.95058899324863e-10,
+      "max_kkt_active": 1.1102230246251565e-16,
+      "max_kkt_inactive_negative": 0,
+      "min_flow": 0,
+      "max_forbidden": 0,
+      "primal_residual": 1.967803978736126e-10,
+      "dual_residual": 0.00016403901239796372,
+      "primal_threshold": 0.0004400000000143901,
+      "dual_threshold": 0.0003228711248650082,
+      "max_capacity_excess": 0,
+      "max_z_capacity_excess": 0,
+      "max_projection_error": 0,
+      "max_dual_update_error": 0,
+      "objective": 8.00000000249235,
+      "local_objective_sum": 8.00000000249235,
+      "physical_link_flow": {
+        "A": 1.9999999999372386,
+        "B": 2.0000000008517036
+      },
+      "saved_objective_error": 0,
+      "gates": {
+        "local_conservation": true,
+        "nonnegative": true,
+        "forbidden": true,
+        "primal": true,
+        "dual": true,
+        "capacity": true,
+        "consensus_capacity": true,
+        "projection": true,
+        "dual_update": true,
+        "objective_recompute": true,
+        "local_kkt": true
+      },
+      "status": "PASS",
+      "exact_control_objective": 8,
+      "exact_control_objective_absolute_error": 2.4923494379436306e-9
+    },
+    "errors": [],
+    "tolerances": {
+      "expected_objective": 8,
+      "expected_objective_abs": 1e-7,
+      "expected_arc_count": 8,
+      "expected_commodity_count": 2,
+      "public_evaluator": "algorithms/admm_r2/independent_admm_evaluator.py::evaluate_files",
+      "numerical_gates": "Unchanged pinned experiment_plan.json gates, including local conservation, nonnegative flows, forbidden arcs, primal/dual, capacity, projection, dual update, objective and KKT."
+    },
+    "claim_boundary": "Runs the existing authored C1 control with unchanged accepted R2_S source and policy. This is not a city result. Independent checks recompute conservation, shared capacity, consensus and local KKT with no solver calls. The analytic objective is 2 units on the capacity-2 cost-1 route plus 2 units on the cost-3 route = 8.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "admm-r2s-public-C1",
+      "--run",
+      "${REPOSITORY}/.publication-validation/admm-public-smoke"
+    ],
+    "verification_seconds": 0.17581109999446198
+  }
+}

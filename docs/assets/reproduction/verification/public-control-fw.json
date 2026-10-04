@@ -1,0 +1,211 @@
+{
+  "experiment_id": "public-control-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:35:03.587857+00:00",
+  "seconds": 0.5629339999868535,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "0f04a8b6c5fc8f4f96011228215931c8f9f09e9dd602478e3b2f14885464737b",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "role": "solver_code",
+      "expected_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "actual_sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7"
+    },
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/config.json",
+      "role": "solver_input",
+      "expected_sha256": "7a8e992768028605859fc6d815368a730c6252e13bbcd7013eaa809571272abc",
+      "actual_sha256": "7a8e992768028605859fc6d815368a730c6252e13bbcd7013eaa809571272abc"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/network/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "e25f7866c2574c9e268e5aadf40be88e89226610c3bd23a31e7385ef2a277da9",
+      "actual_sha256": "e25f7866c2574c9e268e5aadf40be88e89226610c3bd23a31e7385ef2a277da9"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/person_like_zonal_vehicle.csv",
+      "role": "solver_input",
+      "expected_sha256": "7d87f753569affb6480804ad354341be4be8db15884377b391df95ef9b97dbe9",
+      "actual_sha256": "7d87f753569affb6480804ad354341be4be8db15884377b391df95ef9b97dbe9"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle.csv",
+      "role": "solver_input",
+      "expected_sha256": "de932ffe5b6a29392c19aa451c3f72e10ca5ed5631e6c2d2aa3369f642a116ef",
+      "actual_sha256": "de932ffe5b6a29392c19aa451c3f72e10ca5ed5631e6c2d2aa3369f642a116ef"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle_unreachable.csv",
+      "role": "solver_input",
+      "expected_sha256": "e4b0e8380a6f6524521da44dc75456d0152a97cba9aca835b3c879804072ffd4",
+      "actual_sha256": "e4b0e8380a6f6524521da44dc75456d0152a97cba9aca835b3c879804072ffd4"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zonal_config.json",
+      "role": "solver_input",
+      "expected_sha256": "605ebe32a0a6bf87905eff7099374d2251d94fc89820ae135b87b85a9a61fba4",
+      "actual_sha256": "605ebe32a0a6bf87905eff7099374d2251d94fc89820ae135b87b85a9a61fba4"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zone_access.csv",
+      "role": "solver_input",
+      "expected_sha256": "14c16484d1d61ea8ec00e7fcf6cca9a83ee78983f1706fe70143a52abb939f56",
+      "actual_sha256": "14c16484d1d61ea8ec00e7fcf6cca9a83ee78983f1706fe70143a52abb939f56"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "role": "environment",
+      "expected_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "actual_sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/public_controls.py",
+    "arguments": [
+      "--mode",
+      "fw"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\public_controls.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--mode",
+        "fw"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 0.5624724000226706,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "4dd05aaa1e56677fe71f88aa7530acfea9737db61eee62245299b852ba8e24c3",
+    "solution/computed/history.csv": "b35f6b9890725f2225ab125a791a7e7ce2c74ea9a6cb3b631451d4204c5078bb",
+    "solution/computed/link_flow.csv": "804775f7035d5bda7ced2d8bd04157d7b1034f9bf9234e06e3b1568717b53479",
+    "solution/computed/path_flow.csv": "bbe7f8d648d4f0f7aa7bbdfdb11a893574e5558c57f1c7f872cb514b459dd691",
+    "solution/computed/run.json": "10774c30862b461da995929d2e2dffb69955d4929c6a27a4e9cf194e814d52c8",
+    "solution/prepare.log": "3ea250c73ce1d47e9bc1ba94706c05c0d515f471a357bad40503f0dccc9c3a30",
+    "solution/prepared/demand.csv": "151b722e5687f92a353cf98430978afdbe7345c69c303882e8fa5a447f083c53",
+    "solution/prepared/demand_ledger.csv": "543cbdf64d32f66c226fd6578f9fb78d9027f7c6ccd5bf86aacef90597516e16",
+    "solution/prepared/link.csv": "9a61f23168a4a3497f96d2100d70c4935b99e58d64c7c0260df0be8928c10434",
+    "solution/prepared/manifest.json": "427d37e40614ba276d11611218741b6085067e4f9593766f753c3685244d0b0a",
+    "solution/solve.log": "6ff0d88d238101c49db8263347f7609cec59381605561b8e21e23e46987e744f",
+    "solve.log": "9471a1001061ae6bed20c886cbd06ac28debf277f4a714cba8aaebad2bd1b7cc"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "public-control-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_public_independent_verifier": true,
+      "package_fixture_identity": true,
+      "package_expected_objective": true,
+      "package_od_conservation": true,
+      "package_link_reconstruction": true,
+      "package_full_network_gap": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "instance_signature": "42a224351bf662cce1d40bdbe7e236864469f3b39f2060d271905fa0cfbd222c",
+      "od_pairs": 2,
+      "physical_links": 5,
+      "demand_pce": 14.0,
+      "path_count": 2,
+      "min_path_flow_raw": 4.0,
+      "negative_path_mass_raw": 0.0,
+      "min_link_flow_raw": 0.0,
+      "negative_link_count_raw": 0,
+      "negative_link_mass_raw": 0,
+      "max_od_residual": 0.0,
+      "od_residual_sum": 0.0,
+      "od_residual_l1": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "objective_checked": 38.0056431104,
+      "objective_reported": 38.0056431104,
+      "signed_gap_numerator": 0.0,
+      "gap_denominator": 38.028215552000006,
+      "full_network_relative_gap": 0.0,
+      "positive_links_strict": 2,
+      "positive_links_display_1e_minus_6": 2,
+      "verify_seconds": 0.003936000051908195,
+      "independent_package_checks": 6
+    },
+    "errors": [],
+    "tolerances": {
+      "independent_public_verifier_or_output_invariants": true,
+      "numerical_tolerances": "Static objective/gap/residual1e-8; choice mass1e-12 and loaded vehicles1e-10; CG objective1e-8; metadata identities exact."
+    },
+    "claim_boundary": "Bounded synthetic public fixture, not a city source-to-result pipeline or empirical validation.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "public-control-fw",
+      "--repo-root",
+      "${REPOSITORY}",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.3351768999709748
+  },
+  "original_records_sha256": {
+    "run": "97288f4f627aa67eccd90f3e959e73f02d5b0b7a64521bd648df5671485dcf0e",
+    "verification": "4e12415643257ac53fdb37638d3f6bc20b1cb94a9875f330ece32de3d3c862b8"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

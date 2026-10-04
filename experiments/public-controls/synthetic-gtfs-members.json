@@ -1,0 +1,8 @@
+{
+  "agency.txt": "agency_id,agency_name,agency_url,agency_timezone\nA,Example,https://example.com,UTC\n",
+  "stops.txt": "stop_id,stop_name,stop_lat,stop_lon\nS,Stop,1.0,2.0\n",
+  "routes.txt": "route_id,agency_id,route_type\nR,A,3\n",
+  "trips.txt": "route_id,service_id,trip_id\nR,WK,T\n",
+  "stop_times.txt": "trip_id,arrival_time,departure_time,stop_id,stop_sequence\nT,00:00:00,00:00:00,S,1\n",
+  "calendar.txt": "service_id,monday,tuesday,wednesday,thursday,friday,saturday,sunday,start_date,end_date\nWK,1,1,1,1,1,0,0,20260101,20261231\n"
+}

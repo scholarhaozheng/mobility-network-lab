@@ -1,0 +1,162 @@
+{
+  "experiment_id": "hk-static-a-pilot-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:50:41.503581+00:00",
+  "seconds": 1.9882606000173837,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "26f1e3d0f8a238702cd4033c770364003d8b252c89c7462a3da6d90b2e72f949",
+  "environment": {
+    "python": "3.11.4",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "1.24.3",
+      "scipy": "1.10.1",
+      "pandas": "1.5.3"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_a_fw.py",
+      "role": "solver_code",
+      "expected_sha256": "9a48cf53072108cc1cb9787ea541c9766e2a12dc4f4ccb1a139286c9d81d34e7",
+      "actual_sha256": "9a48cf53072108cc1cb9787ea541c9766e2a12dc4f4ccb1a139286c9d81d34e7"
+    },
+    {
+      "path": "algorithms/static_fw/tap_frank_wolfe.py",
+      "role": "solver_code",
+      "expected_sha256": "1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149",
+      "actual_sha256": "1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/cases.json",
+      "role": "solver_config",
+      "expected_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de",
+      "actual_sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/pilot_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc",
+      "actual_sha256": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "role": "solver_input",
+      "expected_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "actual_sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796"
+    },
+    {
+      "path": "requirements-reproduction-hk-fw.txt",
+      "role": "solver_config",
+      "expected_sha256": "b397f256a948ff049732f2f07e396718c76761fb406bf57f3f71da6d93524f89",
+      "actual_sha256": "b397f256a948ff049732f2f07e396718c76761fb406bf57f3f71da6d93524f89"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/hong_kong_reproduction/run_hk_static_a_fw.py",
+    "arguments": [
+      "--tier",
+      "pilot"
+    ]
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\hong_kong_reproduction\\run_hk_static_a_fw.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--tier",
+        "pilot"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 1.9879896999918856,
+      "timeout_seconds": 300,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "b619ca913d450ff6192d63bb37979a8cd805dedd710f5a61a30f44df4c0abb6f",
+    "solution/demand.csv": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc",
+    "solution/link.csv": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+    "solution/pilot_fw_log.txt": "cc3b17d17a4cdeb84216872acfc78770e426d11973f8d9968c9b708ec88b309b",
+    "solution/pilot_solution.csv": "de0fdb470c9ecd34895cfb916835c3032001b2fafcdb11ebe2cc3221b4dd2b74",
+    "solution/run.json": "47082188d9067a660d666a57d67ac8d0fdb9a067632b58ea82c8659a79361766",
+    "solution/stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "solution/stdout.log": "cc3b17d17a4cdeb84216872acfc78770e426d11973f8d9968c9b708ec88b309b",
+    "solve.log": "f77c93c844505aa59b074e20f1ffe58a5e2f1e033bb279db6e67ac942ac6a495"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "hk-static-a-pilot-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_complete_unique_link_identity": true,
+      "package_finite_nonnegative_flow": true,
+      "package_network_node_conservation": true,
+      "package_recomputed_bpr_cost": true,
+      "package_full_graph_shortest_path_gap": true,
+      "package_accepted_objective": true,
+      "package_accepted_demand_identity": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "objective": 1244.4504233175294,
+      "relative_gap": 1.2789707796149895e-15,
+      "od_count": 475,
+      "total_demand_pce": 604.5143748150472,
+      "max_node_balance": 5.684341886080802e-14,
+      "independent_package_checks": 7
+    },
+    "errors": [],
+    "tolerances": {
+      "objective_absolute_max": 1e-07,
+      "node_balance_absolute_max": 1e-07,
+      "nonnegative_flow_absolute_max": 1e-10,
+      "relative_gap_absolute_max": 0.0001
+    },
+    "claim_boundary": "Phase A population-proxy modeled demand; not the Phase B four-stage or H1 finite-path experiment.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "hk-static-a-pilot-fw",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.3960204999893904
+  },
+  "original_records_sha256": {
+    "run": "383678865f676f39e156ef7d4e35aadc4d2834323aa6b467aded23decf99a6bf",
+    "verification": "da3704bdafe40cb5589cd22999f40b87a685cb2822e2f2915a5ac7424d9c5f3f"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

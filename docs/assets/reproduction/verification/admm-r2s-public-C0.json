@@ -1,0 +1,231 @@
+{
+  "experiment_id": "admm-r2s-public-C0",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T02:34:55.652811+00:00",
+  "seconds": 6.8124933000071906,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "8f4c7f4348774b02ca8a5099ffa7a12898e96ea3112a406ce08a9a5ed35372b1",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.5.3",
+      "scipy": "1.18.1"
+    },
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "algorithms/admm_r2/admm_solver.py",
+      "role": "solver_code",
+      "expected_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+      "actual_sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f"
+    },
+    {
+      "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+      "role": "solver_code",
+      "expected_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "actual_sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f"
+    },
+    {
+      "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+      "role": "solver_code",
+      "expected_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+      "actual_sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1"
+    },
+    {
+      "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+      "role": "solver_code",
+      "expected_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "actual_sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C0/dynamic_arc.csv",
+      "role": "solver_input",
+      "expected_sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c",
+      "actual_sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C0/dynamic_demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "actual_sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3"
+    },
+    {
+      "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+      "role": "solver_config",
+      "expected_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+      "actual_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58"
+    }
+  ],
+  "configuration": {
+    "script": "algorithms/admm_r2/admm_solver.py",
+    "module_directory": "algorithms/admm_r2",
+    "arcs": "examples/admm-r2-fixtures/C0/dynamic_arc.csv",
+    "demands": "examples/admm-r2-fixtures/C0/dynamic_demand.csv",
+    "policy": "docs/assets/admm_r2/provenance/experiment_plan.json",
+    "variant": "R2_S",
+    "case": "C0"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\algorithms\\admm_r2\\admm_solver.py",
+        "--arc",
+        "${REPOSITORY}\\examples\\admm-r2-fixtures\\C0\\dynamic_arc.csv",
+        "--demand",
+        "${REPOSITORY}\\examples\\admm-r2-fixtures\\C0\\dynamic_demand.csv",
+        "--policy",
+        "${REPOSITORY}\\docs\\assets\\admm_r2\\provenance\\experiment_plan.json",
+        "--variant",
+        "R2_S",
+        "--case",
+        "C0",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_solve",
+      "exit_code": 0,
+      "seconds": 6.811717000033241,
+      "timeout_seconds": 120,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "07a53dd19ea33dc3b0390f701ac22aa6607c9b6bf2cec2f7e4ea338aa5e700ae",
+    "solution/history.csv": "b9f00cdb072c4b034841880c88edb4ba9fdb36ddae579b05daab392ee2215995",
+    "solution/result.json": "67e4b94f28910f0222dd751167e21bf88e3757b8dbf6665be45d5c34c6dba4e8",
+    "solution/state.npz": "b5b0ff085958ea689fc88b87826583b9dbaf2c8595016a6906aa06c83b1b6f3d",
+    "solve.log": "69c02d17797532d20d1a77dcba1f6af2a24c515fc84a0013b6336fbbdc28761c"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "admm-r2s-public-C0",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "solver_success": true,
+      "control_identity": true,
+      "independent_public_evaluator": true,
+      "evaluator_solver_free": true,
+      "exact_control_objective": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "local": [
+        {
+          "commodity": "K1",
+          "volume": 2.0,
+          "max_balance": 0.0,
+          "max_balance_scaled_by_volume": 0.0,
+          "worst_node": "n1_t0",
+          "source_error": 0.0,
+          "sink_error": 0.0,
+          "minimum_flow": 0.0,
+          "max_forbidden": 0.0,
+          "linear_objective": 2.0,
+          "penalty": 0.0,
+          "kkt_active_max": 0.0,
+          "kkt_inactive_negative_max": 0.0
+        },
+        {
+          "commodity": "K2",
+          "volume": 2.0,
+          "max_balance": 0.0,
+          "max_balance_scaled_by_volume": 0.0,
+          "worst_node": "n1_t0",
+          "source_error": 0.0,
+          "sink_error": 0.0,
+          "minimum_flow": 0.0,
+          "max_forbidden": 0.0,
+          "linear_objective": 2.0,
+          "penalty": 0.0,
+          "kkt_active_max": 0.0,
+          "kkt_inactive_negative_max": 0.0
+        }
+      ],
+      "max_balance": 0.0,
+      "max_kkt_active": 0.0,
+      "max_kkt_inactive_negative": 0.0,
+      "min_flow": 0.0,
+      "max_forbidden": 0.0,
+      "primal_residual": 0.0,
+      "dual_residual": 0.0,
+      "primal_threshold": 0.0005298979485566356,
+      "dual_threshold": 4e-05,
+      "max_capacity_excess": 0.0,
+      "max_z_capacity_excess": 0.0,
+      "max_projection_error": 0.0,
+      "max_dual_update_error": 0.0,
+      "objective": 4.0,
+      "local_objective_sum": 4.0,
+      "physical_link_flow": {
+        "A": 4.0,
+        "B": 0.0
+      },
+      "saved_objective_error": 0.0,
+      "gates": {
+        "local_conservation": true,
+        "nonnegative": true,
+        "forbidden": true,
+        "primal": true,
+        "dual": true,
+        "capacity": true,
+        "consensus_capacity": true,
+        "projection": true,
+        "dual_update": true,
+        "objective_recompute": true,
+        "local_kkt": true
+      },
+      "status": "PASS",
+      "exact_control_objective": 4,
+      "exact_control_objective_absolute_error": 0.0
+    },
+    "errors": [],
+    "tolerances": {
+      "expected_objective": 4,
+      "expected_objective_abs": 1e-07,
+      "expected_arc_count": 8,
+      "expected_commodity_count": 2,
+      "public_evaluator": "algorithms/admm_r2/independent_admm_evaluator.py::evaluate_files",
+      "numerical_gates": "Unchanged pinned experiment_plan.json gates, including local conservation, nonnegative flows, forbidden arcs, primal/dual, capacity, projection, dual update, objective and KKT."
+    },
+    "claim_boundary": "Runs the existing authored C0 control with unchanged accepted R2_S source and policy. This is not a city result. Independent checks recompute conservation, shared capacity, consensus and local KKT with no solver calls. The analytic objective is 4 units on the cost-1 route = 4.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "admm-r2s-public-C0",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.21697670000139624
+  },
+  "original_records_sha256": {
+    "run": "8b750e286f82b089b13fa379d3647a2a4fbeb17bc21ba6268faa447e374e1029",
+    "verification": "537663b116a58fcc24079655ece513483ffe91aa315029dbdc9226fe4d56f319"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

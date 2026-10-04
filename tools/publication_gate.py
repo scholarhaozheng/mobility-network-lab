@@ -13,11 +13,14 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
 from mobilitylab.data.evidence import load_evidence_catalog
+from check_computational_archive import validate as validate_computational_archive
 
 
 def main() -> int:
     errors: list[str] = []
     checks = 0
+    archive_result = validate_computational_archive(ROOT)
+    allowed_archives = set(archive_result["allowed_archives"])
 
     repository = subprocess.run(
         [sys.executable, "-B", str(ROOT / "tools" / "check_repository.py"), "--publication"],
@@ -48,7 +51,8 @@ def main() -> int:
         relative = path.relative_to(ROOT)
         if any(part.lower() in forbidden_parts for part in relative.parts):
             errors.append(f"Forbidden public path: {relative.as_posix()}")
-        if path.is_file() and path.suffix.lower() in {".zip", ".7z", ".pbf", ".gpkg"}:
+        if (path.is_file() and path.suffix.lower() in {".zip", ".7z", ".pbf", ".gpkg"}
+                and relative.as_posix() not in allowed_archives):
             errors.append(f"Forbidden public payload: {relative.as_posix()}")
         checks += 1
 
@@ -119,7 +123,7 @@ def main() -> int:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     required_readme = [
         "Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.",
-        "docs/city-workflow.md",
+        "docs/volumes/01-overview.md#src-docs-city-workflow-document",
         "GPS traces and map matching",
         "Policy Bush",
         "ADMM",
@@ -172,19 +176,21 @@ def main() -> int:
     checks += 1
 
     homepage = (ROOT / "docs" / "index.html").read_text(encoding="utf-8")
-    css = (ROOT / "docs" / "assets" / "site.css").read_text(encoding="utf-8")
+    css = (ROOT / "docs/assets/reading/atlas.css").read_text(encoding="utf-8")
     render_contract = {
-        "responsive viewport": 'name="viewport" content="width=device-width,initial-scale=1"' in homepage,
-        "mobile breakpoint": "@media(max-width:800px)" in css,
-        "single-column mobile grids": ".stripin,.cards,.tiles,.split{grid-template-columns:1fr}" in css,
-        "responsive benchmark images": ".benchmark-feature img{display:block;width:100%;height:auto}" in css,
-        "supporting data entry": 'id="mobility-data-support"' in homepage and 'open-data-explorer.html' in homepage,
-        "data-tools detail": (ROOT / "docs" / "data-tools.html").is_file(),
+        "responsive viewport": bool(re.search(r'<meta\b(?=[^>]*name="viewport")(?=[^>]*content="width=device-width,initial-scale=1")[^>]*>', homepage)),
+        "mobile breakpoint": "@media(max-width:760px)" in css,
+        "responsive atlas grids": "grid-template-columns" in css and "1fr" in css,
+        "responsive atlas images": ".atlas-image" in css and "height:auto" in css,
+        "supporting data entry": 'id="mobility-data-support"' in homepage and 'volumes/overview.html#src-docs-open-data-explorer-document' in homepage,
+        "data-tools detail": (ROOT / "docs/data-tools.html").is_file(),
         "data-tools command": "mcl_data.py catalog-city-match" in homepage,
-        "data-tools navigation": 'href="data-tools.html"' in homepage,
-        "layered contributions": 'id="what-this-project-adds"' in homepage and 'href="contributions.html"' in homepage,
-        "complete structure map": 'project_structure.svg' in homepage and 'href="architecture.html"' in homepage,
-        "complete walkthrough": 'href="full-walkthrough.html"' in homepage,
+        "data-tools navigation": 'volumes/overview.html#src-docs-data-tools-document' in homepage,
+        "layered contributions": 'id="what-this-project-adds"' in homepage and 'volumes/overview.html#src-docs-contributions-document' in homepage,
+        "complete structure map": 'assets/atlas/figures/g-f001.svg' in homepage and 'href="assets/atlas/project-map.svg"' in homepage,
+        "complete reading volumes": all(f'href="volumes/{city}.html"' in homepage for city in ("overview", "boston", "sioux-falls", "hong-kong")),
+        "computational entry": 'href="reproduction.html"' in homepage and (ROOT / "docs/reproduction.html").is_file(),
+        "approved serif font": '"DejaVu Serif"' in css and (ROOT / "docs/assets/fonts/LICENSE-DejaVu.txt").is_file(),
     }
     for label, passed in render_contract.items():
         if not passed:

@@ -1,0 +1,238 @@
+{
+  "experiment_id": "boston-abs-obs-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T01:59:15.111708+00:00",
+  "seconds": 33.9405077000265,
+  "cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+  "catalog_entry_sha256": "3e0e48302afc220db73230120bbc203b7fe76f54ceaecc8d5fcb859bad195471",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+      "actual_sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/demand_abs_obs_exploratory.csv",
+      "role": "solver_input",
+      "expected_sha256": "509e2e25967d9c8d50c06bb0e02d2fe17b7dedad9143d62e66c7bfe0534bb368",
+      "actual_sha256": "509e2e25967d9c8d50c06bb0e02d2fe17b7dedad9143d62e66c7bfe0534bb368"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/assignment_config.json",
+      "role": "solver_config",
+      "expected_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65",
+      "actual_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv",
+      "role": "reference_only",
+      "expected_sha256": "96511af1f0ad418269c8563106785a4612c7f15ca3f975eea152001a95edf625",
+      "actual_sha256": "96511af1f0ad418269c8563106785a4612c7f15ca3f975eea152001a95edf625"
+    }
+  ],
+  "configuration": {
+    "script": "tools/mcl_assignment.py",
+    "inputs": "examples/boston/assignment_methods_r1/inputs_snapshot",
+    "demand": "examples/boston/conditional_choice_r1/demand_abs_obs_exploratory.csv",
+    "config_path": "examples/boston/scalable_tool_r1/assignment_config.json",
+    "reference": "examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv",
+    "scenario_id": "ABS_OBS_EXPLORATORY",
+    "scenario_label": "Boston HBW midday conditional four-mode ABS_OBS_EXPLORATORY",
+    "expected_demand_pce": 203.6573680559407
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "prepare",
+        "--input",
+        "${REPOSITORY}\\examples\\boston\\assignment_methods_r1\\inputs_snapshot",
+        "--demand",
+        "${REPOSITORY}\\examples\\boston\\conditional_choice_r1\\demand_abs_obs_exploratory.csv",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\prepared"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "input_preparation",
+      "exit_code": 0,
+      "seconds": 0.26344650000100955,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "log": "prepare.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "solve",
+        "--instance",
+        "${RUN_OUTPUT}\\prepared",
+        "--method",
+        "fw",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_solve",
+      "exit_code": 0,
+      "seconds": 33.675372900033835,
+      "timeout_seconds": 120,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "config.json": "d59e7dae6c60830fab96814c62158c1c8f51504152efecd732ad97c529cc443b",
+    "preflight.json": "2c40f588652fac4bea6fe3fa71f8de888aff4ffb07bdf194516e85201941233d",
+    "prepare.log": "e62f2c9e6be346c9a8ed452b4fed92fff2ffd23c31158aaef0d33512366170dc",
+    "prepared/demand.csv": "f22daed6d9029358fe8f48914e26a719fb5b6a3b1754c0222e7424a329eaf79a",
+    "prepared/demand_ledger.csv": "f4b9eac6ae37abc63ca319f0218f88735e990952d360a9612040e2722b96c1c4",
+    "prepared/link.csv": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+    "prepared/manifest.json": "35f00944578d6ed58b9fbcb0815a1db8e46a02d13091d90a73426c6dd0c42bfb",
+    "solution/history.csv": "2db28567828a72bcf275b295b1d67db81f92cb0a63a6cdba4d68a34ef0261f0f",
+    "solution/link_flow.csv": "99132d744efa20adb407f6b6947a91c5bb3a1558002b172321f02291e514d3b6",
+    "solution/path_flow.csv": "888bfebb15304747e022d264381ec180f99aaa8bd8793dc46a2b34544e6ed064",
+    "solution/run.json": "e4c204287e5696211fd23b430d64206c9c3e9a81e9634abeffe19085a508db4a",
+    "solve.log": "cd9f284e1a22b66e11d0981cb28612e4ed26ea379d15557b8064b87b8ed5f5ee"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-abs-obs-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "public_independent_verifier": true,
+      "path_flow_nonnegative": true,
+      "link_flow_nonnegative": true,
+      "od_balance_absolute": true,
+      "od_balance_relative_l1": true,
+      "link_reconstruction": true,
+      "full_network_gap": true,
+      "objective_integral": true,
+      "reported_objective": true,
+      "original_reference_objective": true,
+      "original_reference_link_flows": true,
+      "case_dimensions": true,
+      "case_demand": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "instance_signature": "50b4ca23324df3a7be8f79049c1d9c713f4e2e6dd793f3f12c51bdc521628c73",
+      "od_pairs": 26,
+      "physical_links": 5091,
+      "demand_pce": 203.6573680559407,
+      "path_count": 26,
+      "min_path_flow_raw": 3.3208129545536664,
+      "negative_path_mass_raw": 0.0,
+      "min_link_flow_raw": 0.0,
+      "negative_link_count_raw": 0,
+      "negative_link_mass_raw": 0,
+      "max_od_residual": 0.0,
+      "od_residual_sum": 0.0,
+      "od_residual_l1": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "objective_checked": 707.0435862777821,
+      "objective_reported": 707.0435862777821,
+      "signed_gap_numerator": 0.0,
+      "gap_denominator": 707.0600084227685,
+      "full_network_relative_gap": 0.0,
+      "positive_links_strict": 319,
+      "positive_links_display_1e_minus_6": 319,
+      "verify_seconds": 0.08705209998879582,
+      "scenario": "ABS_OBS_EXPLORATORY",
+      "period_hours": 2,
+      "capacity_basis": "effective_period_pce",
+      "pce_factor": 1,
+      "flow_unit": "PCE per declared two-hour period",
+      "objective_independent_integral": 707.0435862777821,
+      "objective_original_reference": 707.0435862777821,
+      "reference_objective_absolute_error": 0.0,
+      "reference_max_link_flow_error": 1.4210854715202004e-14,
+      "reference_link_flow_l1_error": 1.1368683772161603e-13,
+      "solver_iterations": 0,
+      "reference_links": 5091
+    },
+    "errors": [],
+    "tolerances": {
+      "public_verifier": "tools/mcl_assignment.py::verify",
+      "max_od_error_abs": 1e-06,
+      "total_od_l1_rel": 1e-08,
+      "full_relative_gap_abs": 1e-05,
+      "negative_flow_abs": 1e-08,
+      "link_reconstruction_abs": 1e-07,
+      "objective_abs": 1e-07,
+      "reference_objective_abs": 1e-07,
+      "reference_link_flow_abs": 1e-07
+    },
+    "claim_boundary": "Calls unchanged public mcl_assignment FW on the exact frozen ABS_OBS_EXPLORATORY physical demand. The original config is copied with scenario prose corrected only; all numerical fields and effective two-hour capacities are preserved. Verification reconstructs OD/path/link feasibility and full-network gap, then compares original saved physical-link flows and the independently recomputed Beckmann integral. These light cases satisfy the gate at initial AON (zero line-search iterations); this is a numerical result replay, not historical runtime replication, upstream mode-choice re-estimation, or a semantic-fix S1/S2 result.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "boston-abs-obs-fw",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.4204501999774948
+  },
+  "original_records_sha256": {
+    "run": "cc9e8566dba7c4dabd90900f0c457bfaaad4088450eb2b82fa21480f360dd169",
+    "verification": "6172eae793f308e126ecd59afcae969f69366d7007d12c2492e6f4b537ba6712"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

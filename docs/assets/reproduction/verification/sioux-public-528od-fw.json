@@ -1,0 +1,208 @@
+{
+  "experiment_id": "sioux-public-528od-fw",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T01:57:21.225498+00:00",
+  "seconds": 70.98895080003422,
+  "cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+  "catalog_entry_sha256": "088c769c146ce9a6ee04120715de96057c5f283e017997088b836a3efa51ccf1",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+      "actual_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+      "role": "solver_input",
+      "expected_sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+      "actual_sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc"
+    }
+  ],
+  "configuration": {
+    "script": "tools/mcl_assignment.py",
+    "inputs": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls",
+    "demand": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+    "config": {
+      "scenario": "public-Sioux-frozen-528-OD-reproduction-entry",
+      "period": "abstract benchmark period; numeric source quantities preserved",
+      "demand_unit": "vehicle_trips_per_period",
+      "period_hours": 1,
+      "capacity_basis": "effective_period_pce",
+      "pce_factor": 1,
+      "unreachable_policy": "error",
+      "max_iterations": 25000,
+      "gap_tolerance": 1e-05,
+      "source_note": "New public-tool FW on frozen classic inputs; NOT a replay of the historical 100-iteration FW result."
+    }
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "prepare",
+        "--input",
+        "${REPOSITORY}\\examples\\sioux-falls\\native_l3_r1\\inputs_snapshot\\SiouxFalls",
+        "--demand",
+        "${REPOSITORY}\\examples\\sioux-falls\\native_l3_r1\\inputs_snapshot\\SiouxFalls\\demand.csv",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\prepared"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "input_preparation",
+      "exit_code": 0,
+      "seconds": 0.09938039997359738,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "log": "prepare.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    },
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\mcl_assignment.py",
+        "solve",
+        "--instance",
+        "${RUN_OUTPUT}\\prepared",
+        "--method",
+        "fw",
+        "--config",
+        "${RUN_OUTPUT}\\config.json",
+        "--output",
+        "${RUN_OUTPUT}\\solution"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_solve",
+      "exit_code": 0,
+      "seconds": 70.88810929999454,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "config.json": "50c06769dd066b8443ce219db97d3908e949c37dae184a8e9979f64d2cfb97da",
+    "preflight.json": "54a3c9f421c7e49578c1406d43394e10a811f59080a11d00d3cd2900698e3b03",
+    "prepare.log": "0bcceffd18582e5fa24aa4b8adf4c6ed1b1f78d40e1276104d821edeab281c13",
+    "prepared/demand.csv": "7df4f638ba52900a3f805b3a16ae15cda0852439cee44af9941f91456cd48909",
+    "prepared/demand_ledger.csv": "ca9cd9fe1eb47f3c590351ef1a52be7c1286758b5909d1ca01cbdc25c99783e2",
+    "prepared/link.csv": "c96bf0f66223008eebd1699b8c4f05447074828fa3a85a26e7a8de2593390b71",
+    "prepared/manifest.json": "7cb8b8345dada882f77d9a4a7d82bb3192300f5b2fe6749eea71a79120287e7f",
+    "solution/history.csv": "de9e3d848f2fdf312a5aaffa3b4253acebe44a687dd85c25521581e37f0b70c9",
+    "solution/link_flow.csv": "309ab83333b2a47e4fe35acf11739c6ea893c312a2e8e0ae67af4e2df18ab282",
+    "solution/path_flow.csv": "aacbbf04d956c9f11be568395d471d57120c5285ef06f65be078810c0bbfcf92",
+    "solution/run.json": "75286e407602106dccd2b451713cc5b52962afb1f12370895c12f93ae82805de",
+    "solve.log": "e115f56f817b6ebd39c73d8c40a232c0936337da1493756bb993b109912fc3ea"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "sioux-public-528od-fw",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "public_independent_verifier": true,
+      "path_flow_nonnegative": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "instance_signature": "e22c4d50c65dd51fbf1525045f86d2640c2f0b75ab259af4b523bd3070ba977d",
+      "od_pairs": 528,
+      "physical_links": 76,
+      "demand_pce": 360600.0,
+      "path_count": 1452,
+      "min_path_flow_raw": 0.0004682406343617117,
+      "negative_path_mass_raw": 0.0,
+      "min_link_flow_raw": 4494.667460686389,
+      "negative_link_count_raw": 0,
+      "negative_link_mass_raw": 0,
+      "max_od_residual": 1.9099388737231493e-11,
+      "od_residual_sum": -5.547917680814862e-11,
+      "od_residual_l1": 7.019878012215486e-10,
+      "max_link_reconstruction_error": 1.7826096154749393e-10,
+      "objective_checked": 4231384.3307753345,
+      "objective_reported": 4231384.3307753345,
+      "signed_gap_numerator": 74.41095893736929,
+      "gap_denominator": 7480170.594907954,
+      "full_network_relative_gap": 9.947762286066543e-06,
+      "positive_links_strict": 76,
+      "positive_links_display_1e_minus_6": 76,
+      "verify_seconds": 0.01670189999276772
+    },
+    "errors": [],
+    "tolerances": {
+      "public_verifier": "tools/mcl_assignment.py::verify",
+      "max_od_error_abs": 1e-06,
+      "max_od_error_rel": 1e-08,
+      "total_od_l1_rel": 1e-08,
+      "full_relative_gap_abs": 1e-05,
+      "negative_flow_abs": 1e-08,
+      "link_reconstruction_abs": 1e-07
+    },
+    "claim_boundary": "A new reproducible public FW solve on byte-pinned classic inputs. Never labelled the historical 100-iteration run: that historical runtime demand identity/output is unavailable. Acceptance uses the public verifier of this new path-flow output and a declared 1e-5 full-network gap; no requirement of identical route split or iteration count across environments.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "d5c56bdb40231ad6d8269faa37330940a841cfed6aff12095683c91bc8529a2e",
+    "verifier_command": [
+      "${PYTHON}",
+      "${REPOSITORY}/tools/mcl_reproduce.py",
+      "verify",
+      "sioux-public-528od-fw",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.23747430002549663
+  },
+  "original_records_sha256": {
+    "run": "2881d11d6f8033b64119e6af3fd68f54d262b9193d5541e9c6c5787f77eb896f",
+    "verification": "4ab703ae89a868b6620ef7c141afabb64796a15fff9934b4e3d930d39f2e9390"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}

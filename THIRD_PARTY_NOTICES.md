@@ -50,7 +50,7 @@ Each dependency remains governed by the terms supplied by its own maintainers an
 | Project | Relationship to Mobility Computation Lab |
 |---|---|
 | [GMNS](https://github.com/zephyr-data-specs/GMNS) | Referenced network vocabulary and specification; no GMNS repository source is copied here |
-| [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset) | Referenced external data ecosystem; no GMNS Plus source dataset is copied here |
+| [GMNS Plus Dataset](https://github.com/HanZhengIntelliTransport/GMNS_Plus_Dataset) | Provider of network derivatives; the selected frozen Sioux finite-time inputs retain its Apache-2.0 notice and upstream TNTP attribution. No provider archive is copied. See [data scope](DATA_LICENSES.md). |
 | [TAPLab](https://github.com/asu-trans-ai-lab/TAPLab) | Referenced external assignment and validation ecosystem; no TAPLab source or benchmark data is copied here |
 | [tap-b](https://github.com/spartalab/tap-b) | Official Algorithm B mathematical solver referenced at commit `040135a20c771fbb84766df6a97cff981fa5df4b`; MIT upstream source/binary is not copied here |
 | [OSM2GMNS](https://github.com/asu-trans-ai-lab/OSM2GMNS) | Referenced optional upstream preparation tool; no OSM2GMNS source is copied here |
@@ -61,7 +61,7 @@ Follow the license and attribution terms published by the exact upstream version
 
 The selected [Algorithm B task-local adapter, contract and evaluator](algorithms/origin_based_algorithm_b/README.md) are original MIT candidate code. The Sioux official TAPLab adapter audit used TAPLab commit `081e44a0dd451c549d6903933516bccb4166bbd0`. Boston's accepted numerical runs used the task-local lossless adapter, not TAPLab's stock converter. The upstream TAPLab/tap-b MIT notices are retained at their linked sources; this repository does not vendor those trees.
 
-The [ADMM R2_S public-safe source and authored fixtures](algorithms/admm_r2/README.md) are project material. Boston derived figures and the 125-row ADMM/LP comparison table use previously public GMNS Plus `21_Boston` geometry and identifiers, source commit `116447ab641cca1ed34797d019c8e704063393c3`, under Apache-2.0 attribution. The root MIT license does not relicense the underlying GMNS Plus dataset. Private city dynamic inputs and solver states are not bundled.
+The [ADMM R2_S public-safe source and authored fixtures](algorithms/admm_r2/README.md) are project material. Boston derived figures and the 125-row ADMM/LP comparison table use previously public GMNS Plus `21_Boston` geometry and identifiers, source commit `116447ab641cca1ed34797d019c8e704063393c3`, under Apache-2.0 attribution. The root MIT license does not relicense the underlying GMNS Plus dataset. The four frozen Sioux finite-time input CSVs are included under the [2026-10-04 data scope](DATA_LICENSES.md); unrelated city dynamic inputs and saved solver states remain excluded.
 
 ## Retained project source
 

@@ -1,0 +1,1214 @@
+{
+  "schema": "mcl_computational_publication_v1",
+  "releaseId": "20261004-r12",
+  "baseline": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "repository": "https://github.com/scholarhaozheng/mobility-network-lab",
+  "repositoryRef": "reproduction-2026-10-04-r12",
+  "refScope": "The release tag fixes this repository snapshot. The SHA-256 identities below additionally pin each computational file; record git rev-parse HEAD for the resolved commit.",
+  "verifiedCommands": 41,
+  "verifiedRecords": 46,
+  "recordCount": 108,
+  "files": [
+    {
+      "path": "algorithms/finite_path_reference/adapters/solve_full_path.py",
+      "sha256": "dca72782b270cd3f31a419ad975cb464d0c5258459830af8cde9f244cdd09b81",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/finite_path_reference/adapters/solve_full_path.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/finite_path_reference/adapters/solve_full_path.py"
+    },
+    {
+      "path": "algorithms/finite_path_reference/adapters/common.py",
+      "sha256": "51a5a41df7e79e0e11bf9bd8f3bb40934e8e273fb318fc074620aa8aa8a7bcb4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/finite_path_reference/adapters/common.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/finite_path_reference/adapters/common.py"
+    },
+    {
+      "path": "algorithms/finite_path_reference/config/experiment.json",
+      "sha256": "2b955a3e40666288d050752875030eaee94bee244e96b717c7ad606e29168a98",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/finite_path_reference/config/experiment.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/finite_path_reference/config/experiment.json"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+      "sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/link.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv",
+      "sha256": "00d8c615a03b77f3a28be674cbbed4ef435efd301732dcfd1765f88a74399b49",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/demand.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/A_link_path.npz",
+      "sha256": "bf07f042c38995a39a874624f5f9c4a1bad43ee43aae0dd07be28e0d93fb98cc",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/A_link_path.npz",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/A_link_path.npz"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/C_od_path.npz",
+      "sha256": "2d25c5b9d0b966bf6ffc470d1904ed179cbc3b8f237c9d6831df8c3e4fbaad81",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/C_od_path.npz",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/C_od_path.npz"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_pool.csv",
+      "sha256": "eb8d62e4d338e9bba1632f8013b8d9ee5b91eb4197ec67bdae823980ce806fad",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_pool.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_pool.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/f0.csv",
+      "sha256": "b00b8f9d23bc81957c0cce7d5565e17a89bf69883a31c9c1794767500b9df184",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/f0.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/f0.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/PATH_POOL_FREEZE.json",
+      "sha256": "40dbf75c942d3fc3b55f7c5eabb078754444ffcb61c26231c81f008f0e4b7267",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/PATH_POOL_FREEZE.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/PATH_POOL_FREEZE.json"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_link_membership.csv",
+      "sha256": "ed7bcd9193f2f5a63cdd5d0f23134fd6fd5fbd60536fdef92c4cd8e8427ca4ba",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_link_membership.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/path_link_membership.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/od_index.csv",
+      "sha256": "1fb6004d7ad14c68e50812798437cce29c6e7a7ca76c126959b1ce8045710918",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/od_index.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/od_index.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/link_index.csv",
+      "sha256": "ead9c8faedeb2692e598d40df47d4f47d007d7dcaea4b4382573950c5f4f9fa0",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/link_index.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/path_pool/link_index.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/full_path_solver_result.json",
+      "sha256": "502fda36dcbdedf0d4b50a7d0db3ca616d34dc76a3c71cb24c583b8d5a7c9573",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/full_path_solver_result.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/full_path_solver_result.json"
+    },
+    {
+      "path": "tools/mcl_assignment.py",
+      "sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/mcl_assignment.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/mcl_assignment.py"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+      "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv"
+    },
+    {
+      "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+      "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+      "sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_sioux_static_to_dynamic.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_sioux_ingest.py",
+      "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_sioux_ingest.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_sioux_ingest.py"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_arc.csv",
+      "sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_arc.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_demand.csv",
+      "sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/dynamic_demand.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/case.json",
+      "sha256": "61d2c3827333b61cbbb333b2a571f5d50fe9ffaf7468f333a892d6487fe1fe02",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/case.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/case.json"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/selected_physical_links.csv",
+      "sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/selected_physical_links.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case/selected_physical_links.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/ARC_FLOW_REFERENCE_SUMMARY.json",
+      "sha256": "39779126299bbb87e8ed014887d08704655f73ded8938333cd70e0c071e7abb4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/ARC_FLOW_REFERENCE_SUMMARY.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/ARC_FLOW_REFERENCE_SUMMARY.json"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/assignment_config.json",
+      "sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/scalable_tool_r1/assignment_config.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/scalable_tool_r1/assignment_config.json"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/fw_solution.csv",
+      "sha256": "c284b9018aacb1ecceb793670682474087da099d8fa7d8fd9b4b0008c87ae4a2",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/fw_solution.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/fw_solution.csv"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/demand_abs_obs_exploratory.csv",
+      "sha256": "509e2e25967d9c8d50c06bb0e02d2fe17b7dedad9143d62e66c7bfe0534bb368",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/demand_abs_obs_exploratory.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/demand_abs_obs_exploratory.csv"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv",
+      "sha256": "96511af1f0ad418269c8563106785a4612c7f15ca3f975eea152001a95edf625",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/fw_abs_obs_exploratory_solution.csv"
+    },
+    {
+      "path": "algorithms/admm_r2/admm_solver.py",
+      "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/admm_r2/admm_solver.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/admm_r2/admm_solver.py"
+    },
+    {
+      "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+      "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/admm_r2/space_time_capacity_problem_contract.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/admm_r2/space_time_capacity_problem_contract.py"
+    },
+    {
+      "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+      "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/admm_r2/local_subproblem_adapter.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/admm_r2/local_subproblem_adapter.py"
+    },
+    {
+      "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+      "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/admm_r2/independent_admm_evaluator.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/admm_r2/independent_admm_evaluator.py"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/analytic/dynamic_arc.csv",
+      "sha256": "6945817285ce37ddbe3c899aff993be2a1f911e924479341dbd58d6b2d198c5f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/analytic/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/analytic/dynamic_arc.csv"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/analytic/dynamic_demand.csv",
+      "sha256": "b88850d9715be71f7435c3ba6b9011afa7815477226c627759a1b2f45947376e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/analytic/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/analytic/dynamic_demand.csv"
+    },
+    {
+      "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+      "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/admm_r2/provenance/experiment_plan.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/admm_r2/provenance/experiment_plan.json"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C0/dynamic_arc.csv",
+      "sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C0/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C0/dynamic_arc.csv"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C0/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C0/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C0/dynamic_demand.csv"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C1/dynamic_arc.csv",
+      "sha256": "8cd1b6d7fff5b8cb259facc1025429419a87715e80ffadc7216f365fae92d5eb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C1/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C1/dynamic_arc.csv"
+    },
+    {
+      "path": "examples/admm-r2-fixtures/C1/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C1/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/admm-r2-fixtures/C1/dynamic_demand.csv"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_four_stage.py",
+      "sha256": "85b43e85e52eb60311b9946c725acaff24a8c219857cfc8e24385e0a19bd8d5a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_four_stage.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_four_stage.py"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/build_four_stage.py",
+      "sha256": "5279d91085c9ec9c5c13b52ff777f15bcc8108260c8ec4d5d45f4fb130b2a8e2",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/build_four_stage.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/build_four_stage.py"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/zone_activity_r2.csv",
+      "sha256": "5eef6a8a26b43cb83ff6d970b5adf666485ddfc8a2303583a4854277ceccb5b2",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/zone_activity_r2.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/zone_activity_r2.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv",
+      "sha256": "0d71144d9b39de96d5a5e7544c405630c80f982992b772a8a20bd37da1d71702",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_costs_by_od.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/production_attraction_r2.csv",
+      "sha256": "77e7b0738423f2926ecdd7cb4e699ead0d03334d2834643af18a2a58998dd68e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/production_attraction_r2.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/production_attraction_r2.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/od_person_distribution_r2.csv",
+      "sha256": "2a279497efbaf9596dd7cb8eb77d1887f51b6f0889ed501b28930a22b2c7bc78",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/od_person_distribution_r2.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/od_person_distribution_r2.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_probabilities_by_od.csv",
+      "sha256": "217fb111ff698cff168bcb24f9ada18b2c613825466ac424407af2c32647466a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_probabilities_by_od.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_probabilities_by_od.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv",
+      "sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/mode_demand_by_od.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/OD_LINEAGE.csv",
+      "sha256": "e5a3e5f51cbf8b1bd7bce7bdd0a1c6f13c933b718873c3b952af4b3a743aa80c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/OD_LINEAGE.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/OD_LINEAGE.csv"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+      "sha256": "81a83c80762e3e47e16a1a9ca8a9e41e22a2414de29315f6e56dd6dfd3e3f1d0",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_static_fw.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_static_fw.py"
+    },
+    {
+      "path": "algorithms/static_fw/tap_frank_wolfe.py",
+      "sha256": "1e46f39280f6bbcc1183ab78f6ae1007572c4997b4857ff4e041232676e88149",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/static_fw/tap_frank_wolfe.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/static_fw/tap_frank_wolfe.py"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/static_input/turn_expanded_links.csv"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/STATIC_ASSIGNMENT_COMPARISON.json",
+      "sha256": "fbc0fd9376078ebba7b63b9fa980f23488c9766e531476100b28c27c7ea7b32f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/STATIC_ASSIGNMENT_COMPARISON.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_b/STATIC_ASSIGNMENT_COMPARISON.json"
+    },
+    {
+      "path": "requirements-reproduction-hk-fw.txt",
+      "sha256": "b397f256a948ff049732f2f07e396718c76761fb406bf57f3f71da6d93524f89",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/requirements-reproduction-hk-fw.txt",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/requirements-reproduction-hk-fw.txt"
+    },
+    {
+      "path": "tools/reproduction/boston_choice.py",
+      "sha256": "a7640198ae7af1d3e2b8900850a25d61d38fe0a3df67278e402cf92158ccd102",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/boston_choice.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/boston_choice.py"
+    },
+    {
+      "path": "algorithms/mode_choice_conditional/build_and_evaluate.py",
+      "sha256": "f6ed09d064269b315d088db449b9c4145dd868a0f134214a105c34f2735a0772",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/mode_choice_conditional/build_and_evaluate.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/mode_choice_conditional/build_and_evaluate.py"
+    },
+    {
+      "path": "algorithms/mode_choice_conditional/choice_spec.json",
+      "sha256": "92d34856cdbd1c4805520e8214ba93cab218350ce93c1bffe0165b3e0885b453",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/mode_choice_conditional/choice_spec.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/mode_choice_conditional/choice_spec.json"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/inputs/INPUT_MANIFEST.json",
+      "sha256": "b137e87fc34955d9d7cac661e2f75431f6a7d94db05eb22bccd6924f89e35dea",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/inputs/INPUT_MANIFEST.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/inputs/INPUT_MANIFEST.json"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv",
+      "sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/validation_panel.csv"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv",
+      "sha256": "91453afdf3b3b473801be4f64fb3c3a20f83ad1debc01d6d5d01433ece11083c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/od_mode_probabilities.csv"
+    },
+    {
+      "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/person_to_vehicle_crosswalk.csv",
+      "sha256": "f61ff94fc502c5f3d01e9fdab77a9858ea30bb852d6ce3b9153674b204c832e0",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/person_to_vehicle_crosswalk.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/behavior_feedback_r1_semantic_fix_r1/data/person_to_vehicle_crosswalk.csv"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/inputs/mode_specific_od_costs.csv",
+      "sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/inputs/mode_specific_od_costs.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/inputs/mode_specific_od_costs.csv"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/od_baseline_probabilities.csv",
+      "sha256": "0b2cf2cae12f2d0bd953e91096f7ebec392decc4ae4ebcec118f236b60d3652f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/od_baseline_probabilities.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/od_baseline_probabilities.csv"
+    },
+    {
+      "path": "examples/boston/conditional_choice_r1/reference/person_to_vehicle_ledger.csv",
+      "sha256": "31111bbf220ebecf47f0e377a79d6d31f8dd33de794118de89fec00dedfd222e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/reference/person_to_vehicle_ledger.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/conditional_choice_r1/reference/person_to_vehicle_ledger.csv"
+    },
+    {
+      "path": "tools/reproduction/boston_tapb.py",
+      "sha256": "e371075541ddafc5c4b9ef41b9388b330d5daec3c5b13dc7619aeae4e6fd6505",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/boston_tapb.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/boston_tapb.py"
+    },
+    {
+      "path": "tools/reproduction/build_tapb.py",
+      "sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/build_tapb.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/build_tapb.py"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/cases.json",
+      "sha256": "4e315b175dabaeb2bf97859410232e4f3df12d76eadcf4df9c188ec8a2db3fc1",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/cases.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/cases.json"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "sha256": "5e15ba3f5e2ea99aa2d98c7e4d3d19bc306226916a03a19e7e101b99eb6925cf",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/taplab_bush_solver_adapter.py"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "sha256": "4ade28bf3eb7eac8eb44f194d2723dd194132399ec4262ed558e85086bfdb2cd",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/static_ue_problem_contract.py"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "sha256": "1e8c20a65eaa6cd98256b2f2f2bb9f5364eb42e6ef4526629d2f53988a59d0d5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/code/independent_static_ue_evaluator.py"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/reference/b0_link_flow.csv",
+      "sha256": "d733b875271f1b183f31102c305803f07f7993fc2458952e544c188f2e170cfb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/reference/b0_link_flow.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/reference/b0_link_flow.csv"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/inputs/b1/link.csv",
+      "sha256": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/inputs/b1/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/inputs/b1/link.csv"
+    },
+    {
+      "path": "examples/boston/algorithm_b_r1/inputs/b1/demand.csv",
+      "sha256": "da10434d4a88110af3d9d89e8876f373a0bc47f1d310ff603fa4230b0023f03f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/inputs/b1/demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/algorithm_b_r1/inputs/b1/demand.csv"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv",
+      "sha256": "1d66c1ad838c22fc3d1c17e6c94ff3c4c5ccaad9da375a702d8108c0852444bd",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/boston_b1_physical_link_flow.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/independent_lagrangian_evaluator.py",
+      "sha256": "1b1448a1821a76ac02e235560668fcd7491032bd8949dea8be777d2e9827531c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/independent_lagrangian_evaluator.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/independent_lagrangian_evaluator.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/lagrangian_dual_solver.py",
+      "sha256": "77407375de011cdd917b2929cb579f5edbe0158de9eeb3f13dfb4417719dc512",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/lagrangian_dual_solver.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/lagrangian_dual_solver.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/path_pool_manager.py",
+      "sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/path_pool_manager.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/path_pool_manager.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/restricted_primal_recovery_adapter.py",
+      "sha256": "84d6bec93641dabfd47656afaacdd711878aaca8877c88aa03a3118454e9f786",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/restricted_primal_recovery_adapter.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/restricted_primal_recovery_adapter.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/src/space_time_capacity_problem_contract.py",
+      "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/space_time_capacity_problem_contract.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/src/space_time_capacity_problem_contract.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_arc.csv",
+      "sha256": "79ca367d289fd2651778b8229b86cb507f6515acf73b0e52a57214320764d46a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_arc.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_demand.csv",
+      "sha256": "8d3a62a1f5ed8e09bfe35ff24a22dbadeec607fc9582f194c38ddf807bef34dc",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/analytic/dynamic_demand.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/experiment_plan.json",
+      "sha256": "33709ca3ed3ea0c6d958615032d35b42f29f94bf20f51c7e24f861cd659d541b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/experiment_plan.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/experiment_plan.json"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/reproduce.py",
+      "sha256": "0f487a350ff5debc7a1263e4cdd54e9481c8f12eaef4a226a605aa55fe347db5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/reproduce.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/reproduce.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_arc.csv",
+      "sha256": "e414112f0715e1fde8a1c806a3a1f1beb4c2cc576473a8bb3465fb3fe44b437c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_arc.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C0/dynamic_demand.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_arc.csv",
+      "sha256": "8cd1b6d7fff5b8cb259facc1025429419a87715e80ffadc7216f365fae92d5eb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_arc.csv"
+    },
+    {
+      "path": "algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_demand.csv",
+      "sha256": "4cd521bc2f2a6e46f325a45f429603760bc11461a77ac69a24c4d32b54eafcd3",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/lagrangian_r2/fixtures/C1/dynamic_demand.csv"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+      "sha256": "35b5487e4a2e00017c0cf6c2dd9056ccda8e9c1e4f5447bf8cb1dde640370f62",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_algorithm_b.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_algorithm_b.py"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/cases.json",
+      "sha256": "57edfed8cc2ccea977b9c60a6f18e3aa17cf8f7e9dd1538868ecf88f905373de",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/cases.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/cases.json"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/smoke_demand.csv",
+      "sha256": "9d47f0bd1c46c8c1f3229bfc8ed0f08b6006a18d49a72147912ffdd3944c8b8a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/smoke_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/smoke_demand.csv"
+    },
+    {
+      "path": "examples/hong-kong/static_assignment_r2/pilot_demand.csv",
+      "sha256": "bc6bcd04e2f1588e78dd7d583f9f79e992f3e5d418b08ac2663ca2e1921c24bc",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/pilot_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/hong-kong/static_assignment_r2/pilot_demand.csv"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_static_a_fw.py",
+      "sha256": "9a48cf53072108cc1cb9787ea541c9766e2a12dc4f4ccb1a139286c9d81d34e7",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_static_a_fw.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_static_a_fw.py"
+    },
+    {
+      "path": "tools/reproduction/boston_native.py",
+      "sha256": "87dfcec160e7ecfbaf5fc447370118f1c091e31ff894c4efcdd31d83bbe84ebe",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/boston_native.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/boston_native.py"
+    },
+    {
+      "path": "tools/prepare_native_run.py",
+      "sha256": "7359cf43649a43e788476cf665ad89bee1ce6875c3f808784ec9c7beb01d2f91",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/prepare_native_run.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/prepare_native_run.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/source/build_alm_model_levels.py",
+      "sha256": "27644472699b1c93f9795b6a7940928c4935e43a2a062c96a6f7a682df8208b5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/source/build_alm_model_levels.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/source/build_alm_model_levels.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/common.py",
+      "sha256": "661c9a428d3674596bde555b50d8a98f97ddb0052ab3a10a3a3b01f2a5f64832",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/common.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/common.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/controller.py",
+      "sha256": "b5215b4b101a4fa3a80585a8ad903a1a0afe2e29fba8f91e2c31897621dcfff1",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/controller.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/controller.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/run_inner.py",
+      "sha256": "ad2767fce4d4be72245a83d75441ba0194fd872b0a0bfe7d9f9d7516ea87d5ef",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/run_inner.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/adapters/run_inner.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/profiles/boston/checks/check_returned.py",
+      "sha256": "44a112f2d9d3de08036d86d4c692431604d9ee902a227696c233781d6fba0df7",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/checks/check_returned.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/checks/check_returned.py"
+    },
+    {
+      "path": "algorithms/path_compression/diagnostic_l3/profiles/boston/checks/preflight.py",
+      "sha256": "4a373056d5eb24d56191772ea1eda570ad2348c8b3ebd380d39b5774a066795b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/checks/preflight.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/path_compression/diagnostic_l3/profiles/boston/checks/preflight.py"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank26.npz",
+      "sha256": "bc94080abf00c995e8f6813a8a5980d9f6f7818c45e0726e054b4caaf2ed72b1",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank26.npz",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank26.npz"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank52.npz",
+      "sha256": "bea5150006f1c5baf8e3c54be7f3e4d2ba9e754bb99723ba0835cee4e92e71b9",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank52.npz",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/inputs_snapshot/bases/rank52.npz"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/full_path_flow.csv",
+      "sha256": "b9dc6c71c2080203eda14cdd359cc724de3fd186cbb963d3ed13053783940fd4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/full_path_flow.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/full_path_flow.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/reference/link_flow.csv",
+      "sha256": "edf3bc7136c8564b72a15158f503ebca860c1ef9464ecb129b6f4dbe8ee8e19a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/link_flow.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/reference/link_flow.csv"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json",
+      "sha256": "c4623d91efd9c637a408bb42bca9cf2615aa1fa16f2905219297d917c779032c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/runs/rank26/outer_02_check.json"
+    },
+    {
+      "path": "examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json",
+      "sha256": "5b4f8b879c7f52dc6a94c03abce915a78748bbd59dd5835c8561ac9a60d1ad1d",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/assignment_methods_r1/runs/rank52/outer_02_check.json"
+    },
+    {
+      "path": "environments/boston-native-win-64.lock",
+      "sha256": "534826ea4f6c19c6ae2f8a093da3483fedcf6e665babd7815cdcd72340c1f0eb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/environments/boston-native-win-64.lock",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/environments/boston-native-win-64.lock"
+    },
+    {
+      "path": "environments/boston-native-pip.txt",
+      "sha256": "69d32893b40e58737af06f5474bf0c8c951974230ec33f0b4a4d215c668c505e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/environments/boston-native-pip.txt",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/environments/boston-native-pip.txt"
+    },
+    {
+      "path": "environments/boston-native-manifest.json",
+      "sha256": "120bb2f546dd8aaa31532cde417ceff2d11aba07219bd25294476453db5aa52a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/environments/boston-native-manifest.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/environments/boston-native-manifest.json"
+    },
+    {
+      "path": "tools/reproduction/check_boston_native_environment.py",
+      "sha256": "a688e8b5749f64fa5b2922d539080ae60d7e9136510eb713ec1621e81a85e52e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/check_boston_native_environment.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/check_boston_native_environment.py"
+    },
+    {
+      "path": "docs/reproduction/boston-native-environment.md",
+      "sha256": "684e5c980e7d5dfa614bd05d330d2e9370509e025a65ea4d2e17475367cd3899",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/reproduction/boston-native-environment.md",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/reproduction/boston-native-environment.md"
+    },
+    {
+      "path": "experiments/environment-verification/boston-native-clean.json",
+      "sha256": "92583d2936265cbce34acfc9699e2ded094503e477fb23661bc04f9bacdcafe5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/experiments/environment-verification/boston-native-clean.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/experiments/environment-verification/boston-native-clean.json"
+    },
+    {
+      "path": "algorithms/hong_kong_reproduction/run_hk_lagrangian_r3.py",
+      "sha256": "d0a5968d976618b91da7caad456b42862612ea39f38562496fcd01553684bc88",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_lagrangian_r3.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/hong_kong_reproduction/run_hk_lagrangian_r3.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/independent_evaluator.py",
+      "sha256": "e244bb03b3348070ac542a56a3da1b59c5bc80446d7be16ffc9a7a813a88e440",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/independent_evaluator.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/independent_evaluator.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/instance_adapter.py",
+      "sha256": "c6b86fde9eff005514ca404eadede46c3ad65f20fd850430b8749834185bd12a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/instance_adapter.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/instance_adapter.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/lagrangian_dual_solver.py",
+      "sha256": "3b55151b098802984d4e98ff923332d00aa6c839a5b7bd847ad2906b0155af76",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/lagrangian_dual_solver.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/lagrangian_dual_solver.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/path_pool_manager.py",
+      "sha256": "fd1eb9ac8a1c2167105e7bcc0d066be0ab560d6320fdb3fcbb2ea5cf4c0f143c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/path_pool_manager.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/path_pool_manager.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/problem_contract.py",
+      "sha256": "4b2911db897c94dd13a75d010465fc575cafc74ffd697f0f1d13b39686b4733d",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/problem_contract.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/problem_contract.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/restricted_primal_recovery.py",
+      "sha256": "a50e37eb44d13c9a6ba2630d995b3028424db18ce0c5dea9abdfe4da24dd7c5a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/restricted_primal_recovery.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/restricted_primal_recovery.py"
+    },
+    {
+      "path": "algorithms/distributed_assignment/r3/LAGRANGIAN_R3_EXPERIMENT_PLAN.json",
+      "sha256": "2b5994ba582cf264f501b988fb4c4570af0f285cce488fc3eecacf0c16677888",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/LAGRANGIAN_R3_EXPERIMENT_PLAN.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/distributed_assignment/r3/LAGRANGIAN_R3_EXPERIMENT_PLAN.json"
+    },
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/result.json",
+      "sha256": "7dab161f1ac4a623c9e5362c7077aa32b0e49fe6b1007d41e3f09f69dcd34a10",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/result.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/result.json"
+    },
+    {
+      "path": "tools/reproduction/sioux_tapb.py",
+      "sha256": "23f77dde8f38f327538e7f4e1024e30acbbfd07107264bebe6dcd20032f7a790",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/sioux_tapb.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/sioux_tapb.py"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv",
+      "sha256": "85f593b8b57d2d0f2c9fffe98bf44b7f14f496ac6c5c3550230b081d9f073972",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv"
+    },
+    {
+      "path": "algorithms/origin_based_algorithm_b/accepted_results/sioux_evaluation.json",
+      "sha256": "60e825e01870cd671835fbd49cc071331780676fa9e1908729eff0d3e0e25904",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/sioux_evaluation.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/algorithms/origin_based_algorithm_b/accepted_results/sioux_evaluation.json"
+    },
+    {
+      "path": "tools/reproduction/sioux_finite.py",
+      "sha256": "339097326c2b03f4c0daf5ae714c554cb446ec18b1db7cfc679bccf56248802d",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/sioux_finite.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/sioux_finite.py"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+      "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+      "sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/200od/expected.json",
+      "sha256": "23cefcf9608a15694f48f9272661314a7b2a26c1698e8cbd923ec236f4feb682",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/expected.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/200od/expected.json"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+      "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+      "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv"
+    },
+    {
+      "path": "examples/sioux-falls/finite-time-r05/250od/expected.json",
+      "sha256": "4b375e85351e497843f743d70cfbf020a86c50e95016d12edbb4af397c820c26",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/expected.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/sioux-falls/finite-time-r05/250od/expected.json"
+    },
+    {
+      "path": "tools/reproduction/boston_semantic_assignment.py",
+      "sha256": "3121f91389d542e01551a2728d1fae5b5e3d6815374cc2bdf43a6e8e81d3605b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/boston_semantic_assignment.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/boston_semantic_assignment.py"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/link.csv",
+      "sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/link.csv"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/id_crosswalk.csv",
+      "sha256": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/id_crosswalk.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/id_crosswalk.csv"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/demand_S1.csv",
+      "sha256": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/demand_S1.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/demand_S1.csv"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv",
+      "sha256": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/demand_S2.csv",
+      "sha256": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/demand_S2.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/gmns_exchange_r1/data/demand_S2.csv"
+    },
+    {
+      "path": "tools/reproduction/public_controls.py",
+      "sha256": "f8d6a686a7913745bc3b2e47758513fa95c1321ed04d4eb3bfc53c7937f246b7",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/reproduction/public_controls.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/reproduction/public_controls.py"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/config.json",
+      "sha256": "7a8e992768028605859fc6d815368a730c6252e13bbcd7013eaa809571272abc",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/config.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/config.json"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/network/link.csv",
+      "sha256": "e25f7866c2574c9e268e5aadf40be88e89226610c3bd23a31e7385ef2a277da9",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/network/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/network/link.csv"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/person_like_zonal_vehicle.csv",
+      "sha256": "7d87f753569affb6480804ad354341be4be8db15884377b391df95ef9b97dbe9",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/person_like_zonal_vehicle.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/person_like_zonal_vehicle.csv"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle.csv",
+      "sha256": "de932ffe5b6a29392c19aa451c3f72e10ca5ed5631e6c2d2aa3369f642a116ef",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/vehicle.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/vehicle.csv"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/vehicle_unreachable.csv",
+      "sha256": "e4b0e8380a6f6524521da44dc75456d0152a97cba9aca835b3c879804072ffd4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/vehicle_unreachable.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/vehicle_unreachable.csv"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zonal_config.json",
+      "sha256": "605ebe32a0a6bf87905eff7099374d2251d94fc89820ae135b87b85a9a61fba4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/zonal_config.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/zonal_config.json"
+    },
+    {
+      "path": "examples/scalable_vehicle_fixture/zone_access.csv",
+      "sha256": "14c16484d1d61ea8ec00e7fcf6cca9a83ee78983f1706fe70143a52abb939f56",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/zone_access.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_vehicle_fixture/zone_access.csv"
+    },
+    {
+      "path": "requirements-reproduction-public-controls.txt",
+      "sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/requirements-reproduction-public-controls.txt",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/requirements-reproduction-public-controls.txt"
+    },
+    {
+      "path": "tools/mcl_path_methods.py",
+      "sha256": "725f523379b93bf34f2f05c5a02c0831a501ce7b749a0f98a53778a9ae53982a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/mcl_path_methods.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/mcl_path_methods.py"
+    },
+    {
+      "path": "tools/mcl_person_choice.py",
+      "sha256": "ffecb261bc96c881946950741b39de434f0f3db0333e8fcbaffecaa4c1e0e2b9",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/mcl_person_choice.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/mcl_person_choice.py"
+    },
+    {
+      "path": "tools/scalable/fixed_choice_source.py",
+      "sha256": "6e257cdec9b224345cb1478fad85a81897399af29cb577e4e80ca87965d33f43",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/scalable/fixed_choice_source.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/scalable/fixed_choice_source.py"
+    },
+    {
+      "path": "examples/scalable_person_fixture/choice_config.json",
+      "sha256": "11833ea220d8bee8f413d3061eda617279e3a85bb0fc5ef45df1110b267a0590",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_person_fixture/choice_config.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_person_fixture/choice_config.json"
+    },
+    {
+      "path": "examples/scalable_person_fixture/person.csv",
+      "sha256": "5ea74e607cb7501aa2cd637c4afab5729f5eba61bdc0307c256bda11f5675898",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_person_fixture/person.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_person_fixture/person.csv"
+    },
+    {
+      "path": "examples/scalable_person_fixture/skims.csv",
+      "sha256": "9ba9c7c9fe92d53d2b868e592d4b60250b34b93433657f261c36e00bf0890f6e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/scalable_person_fixture/skims.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/scalable_person_fixture/skims.csv"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/choice_spec.json",
+      "sha256": "022fc7715c6987ff90fde3d4852cb4888c00eada4181d6c3f3ef8be076cb648c",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/boston/scalable_tool_r1/choice_spec.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/boston/scalable_tool_r1/choice_spec.json"
+    },
+    {
+      "path": "tools/mnl.py",
+      "sha256": "a4c69752da1af271e78ea59c99bb5d6b8546c4eaf02ee3ef5e52a9a1c84b1c80",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/mnl.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/mnl.py"
+    },
+    {
+      "path": "launcher/verify_artifacts.py",
+      "sha256": "2cfff768914cc43e0b226a8256118332754015b47bcec9f672be48252a1527c4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/launcher/verify_artifacts.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/launcher/verify_artifacts.py"
+    },
+    {
+      "path": "launcher/verify_external_run.py",
+      "sha256": "b187972bab2d51bae020d740c0242d2aeb714a07e2281acfcbbe86268c220a8e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/launcher/verify_external_run.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/launcher/verify_external_run.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+      "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/explicit_network_workflow.py",
+      "sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/explicit_network_workflow.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/explicit_network_workflow.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/external_network_input.py",
+      "sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_network_input.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/external_network_input.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+      "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_artificial_dual_audit.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+      "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+      "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+      "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+      "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+      "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+      "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+      "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+      "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+      "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+      "sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/phase_i_general_pricing_oracle.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+      "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_external_network_pipeline.py",
+      "sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/run_external_network_pipeline.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/run_external_network_pipeline.py"
+    },
+    {
+      "path": "app/src/gmns_dynamic/run_full_cg_v1.py",
+      "sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/src/gmns_dynamic/run_full_cg_v1.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/src/gmns_dynamic/run_full_cg_v1.py"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/demand.csv",
+      "sha256": "12567c7dca542e3cdbcf08c5267cecc667fa19dbd9bc125e3dacbe9b04f530e4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/demand.csv"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/link.csv",
+      "sha256": "4f41df792fb7e06514a655b499ea666808d18c031e3db98fcadcc40065f50566",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/link.csv"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/node.csv",
+      "sha256": "3bf6fc775ff0882ed52d05563c7e673061b8a7c9cc5d354a11ec7165f499774b",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/node.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/node.csv"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/input/zone_access.csv",
+      "sha256": "9ab83c058d8fac65aaac3406d7994c1a97a900c15b7a1a4ebc85df7fca315997",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/zone_access.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/input/zone_access.csv"
+    },
+    {
+      "path": "app/cases/capacity_zone_probe/case.json",
+      "sha256": "2909e6cde37666fcf28775ac7b11d3fb732a4f42f4d1455c707691d64a4ee070",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/case.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/capacity_zone_probe/case.json"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/demand.csv",
+      "sha256": "65fe6bbe85ceb6e5593b5f9e90b16bbbbeb69b2cb3be732e47d0616169963d3f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/demand.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/demand.csv"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/link.csv",
+      "sha256": "95fed32aac9b4d95e47018de1bb215086b8437759ea7ba938adbc2cf4eac84ea",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/link.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/link.csv"
+    },
+    {
+      "path": "app/cases/external_auto_4node/input/node.csv",
+      "sha256": "b698e993e8bfa59a02a5257561ae3c386651fe187b0156016476fc9d621bd88d",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/node.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/external_auto_4node/input/node.csv"
+    },
+    {
+      "path": "app/cases/external_auto_4node/case.json",
+      "sha256": "69629746761706fbb1cc4e6a1ca66b65d3b7e46aa08b9465fe7ab58aa32dc211",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/app/cases/external_auto_4node/case.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/app/cases/external_auto_4node/case.json"
+    },
+    {
+      "path": "tools/mcl_data.py",
+      "sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/tools/mcl_data.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/tools/mcl_data.py"
+    },
+    {
+      "path": "src/mobilitylab/__init__.py",
+      "sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/data/__init__.py",
+      "sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/data/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/data/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/data/catalog_city_workflow.py",
+      "sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/data/catalog_city_workflow.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/data/catalog_city_workflow.py"
+    },
+    {
+      "path": "src/mobilitylab/data/evidence.py",
+      "sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/data/evidence.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/data/evidence.py"
+    },
+    {
+      "path": "src/mobilitylab/data/open_mobility.py",
+      "sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/data/open_mobility.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/data/open_mobility.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/__init__.py",
+      "sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/__init__.py",
+      "sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/city_matching.py",
+      "sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/city_matching.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/city_matching.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/geospatial/external_city_universe.py",
+      "sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/external_city_universe.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/geospatial/external_city_universe.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/__init__.py",
+      "sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/gtfs/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/gtfs/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/gtfs/content_metrics.py",
+      "sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/gtfs/content_metrics.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/gtfs/content_metrics.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/__init__.py",
+      "sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/__init__.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/catalog_summary.py",
+      "sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/catalog_summary.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/catalog_summary.py"
+    },
+    {
+      "path": "src/mobilitylab/omdv/ingest/mobility_database.py",
+      "sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/mobility_database.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/omdv/ingest/mobility_database.py"
+    },
+    {
+      "path": "src/mobilitylab/validation/__init__.py",
+      "sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/src/mobilitylab/validation/__init__.py",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/src/mobilitylab/validation/__init__.py"
+    },
+    {
+      "path": "examples/data-tools/feeds_sample.csv",
+      "sha256": "9249e2ed1fc2bb10fbd0255d112dec748dce41a4ef205ee6ecf96cc65a7661ce",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/data-tools/feeds_sample.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/data-tools/feeds_sample.csv"
+    },
+    {
+      "path": "examples/data-tools/external_city_universe_sample.csv",
+      "sha256": "26eb65c01790375e232fed0d4f98e4fd7ee639a6069ca1636ab4730c1d415f5f",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/examples/data-tools/external_city_universe_sample.csv",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/examples/data-tools/external_city_universe_sample.csv"
+    },
+    {
+      "path": "experiments/public-controls/synthetic-gtfs-members.json",
+      "sha256": "112c6baa6f1593949fdc14b464e4aab444d03d983804a40555e603c1b6777052",
+      "downloadUrl": "https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/reproduction-2026-10-04-r12/experiments/public-controls/synthetic-gtfs-members.json",
+      "browseUrl": "https://github.com/scholarhaozheng/mobility-network-lab/blob/reproduction-2026-10-04-r12/experiments/public-controls/synthetic-gtfs-members.json"
+    }
+  ],
+  "archiveManifest": "docs/downloads/computational-checkout.manifest.json"
+}

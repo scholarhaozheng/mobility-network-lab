@@ -1,0 +1,181 @@
+{
+  "experiment_id": "boston-semantic-fix-s2-assignment",
+  "baseline_commit": "6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b",
+  "started_at": "2026-10-04T11:31:43.482052+00:00",
+  "seconds": 32.193958699994255,
+  "cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+  "catalog_entry_sha256": "4f1ced2e9955257d58e47929c3e2a524051989a3c013ea27226343ad13731040",
+  "environment": {
+    "python": "3.12.14",
+    "executable": "${PYTHON}",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {},
+    "missing": []
+  },
+  "input_and_source_hashes": [
+    {
+      "path": "tools/reproduction/boston_semantic_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "3121f91389d542e01551a2728d1fae5b5e3d6815374cc2bdf43a6e8e81d3605b",
+      "actual_sha256": "3121f91389d542e01551a2728d1fae5b5e3d6815374cc2bdf43a6e8e81d3605b"
+    },
+    {
+      "path": "tools/mcl_assignment.py",
+      "role": "solver_code",
+      "expected_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6",
+      "actual_sha256": "eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6"
+    },
+    {
+      "path": "examples/boston/scalable_tool_r1/assignment_config.json",
+      "role": "solver_config",
+      "expected_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65",
+      "actual_sha256": "31e7d832143de9e073521c329b2445ab30ab24dd8326d05e627af7d5fa678b65"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/link.csv",
+      "role": "solver_input",
+      "expected_sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+      "actual_sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/id_crosswalk.csv",
+      "role": "solver_input",
+      "expected_sha256": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+      "actual_sha256": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/demand_S2.csv",
+      "role": "solver_input",
+      "expected_sha256": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c",
+      "actual_sha256": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c"
+    },
+    {
+      "path": "examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv",
+      "role": "reference_only",
+      "expected_sha256": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+      "actual_sha256": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8"
+    }
+  ],
+  "configuration": {
+    "script": "tools/reproduction/boston_semantic_assignment.py",
+    "arguments": [
+      "--scenario",
+      "S2"
+    ],
+    "verification_report": "verification.json"
+  },
+  "executed_runs": [
+    {
+      "command": [
+        "${PYTHON}",
+        "-B",
+        "-X",
+        "utf8",
+        "${REPOSITORY}\\tools\\reproduction\\boston_semantic_assignment.py",
+        "run",
+        "--repo-root",
+        "${REPOSITORY}",
+        "--output",
+        "${RUN_OUTPUT}\\solution",
+        "--scenario",
+        "S2"
+      ],
+      "cwd": "${REPOSITORY}",
+      "kind": "fresh_computation",
+      "exit_code": 0,
+      "seconds": 32.19358260004083,
+      "timeout_seconds": 180,
+      "timed_out": false,
+      "log": "solve.log",
+      "environment_overrides": {
+        "PYTHONDONTWRITEBYTECODE": "1",
+        "PYTHONUTF8": "1",
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "MKL_NUM_THREADS": "1"
+      }
+    }
+  ],
+  "artifacts": {
+    "preflight.json": "03be28ec3392a7ab54c0e65df9d9555172bec0b78d54680cc34aa191b7ec490e",
+    "solution/computed/history.csv": "e14007746891cd40adc1f81335fe84c777b7737707ca37f5deef35754d7ab077",
+    "solution/computed/link_flow.csv": "25cb9ab6c889499b0380c6e0344d3033467d813fde59196ea089f2dc460cf97e",
+    "solution/computed/path_flow.csv": "83dfa58ce69b4b23909ef7509547329428df339184ce83f12103907d09da86c4",
+    "solution/computed/run.json": "876b1c3edead87607d56be71bfe52a1493e08a30ccd6f4aefd97142825fc56d3",
+    "solution/inputs/config.json": "d7dfe9961ef6f3663ab4f2db0b94f919d87e0ee4e1637f9cd7840398c8acd79c",
+    "solution/inputs/demand.csv": "0b696146b053416ba024ee4b49cefac22c8f6296bf9e5f393b890d93779c81b6",
+    "solution/inputs/link.csv": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+    "solution/instance/demand.csv": "5b6c4ce68f4658b26820fbad541b1b3cf6b865218fc3c916286c99c28044a11f",
+    "solution/instance/demand_ledger.csv": "a3b4c60ab07f40dfcb5d97af512fd77d3ac2a78c96b0ca99db3732e749389de6",
+    "solution/instance/link.csv": "37b7ee7c21f735c80a43624116f12ae47906f3ddf800806a8353e781529cdce7",
+    "solution/instance/manifest.json": "751cad262998afff9cdad14bb3e9d9590372ce369358e8891febed88827ba208",
+    "solution/preparation.json": "fc9495b1d96cd919f8aa1fa4d93657549d2d6568971e3b12fa7bc4f5b2f940ec",
+    "solution/prepare.log": "815016b80408d9ab32b2e037135c6217d833897ab11b6b5943d5626e21898e83",
+    "solution/solve.log": "0d48828c1f1a492ecafb52bba3af567cf019f15cb06bf0c947a2d705019845ac",
+    "solve.log": "a638ca17abbcb72cf73e0d9561f75061fc8f3d3c751dded472a8f4f5c9c60cf3"
+  },
+  "schema": "mcl_public_run_receipt_v1",
+  "verification": {
+    "schema": "mcl_reproduce_verification_v1",
+    "experiment_id": "boston-semantic-fix-s2-assignment",
+    "status": "PASS",
+    "optimizer_calls": 0,
+    "checks": {
+      "run_identity": true,
+      "pinned_source_and_inputs": true,
+      "output_integrity": true,
+      "solver_command_exit": true,
+      "package_original_verifier_pass": true,
+      "package_scenario_identity": true,
+      "package_physical_links_5091": true,
+      "package_physical_od_26": true,
+      "package_od_balance": true,
+      "package_od_l1": true,
+      "package_nonnegative_path_flow": true,
+      "package_nonnegative_link_flow": true,
+      "package_link_reconstruction": true,
+      "package_full_network_gap": true,
+      "package_objective_recomputation": true,
+      "package_historical_physical_link_flows": true,
+      "package_success": true,
+      "package_solver_free": true
+    },
+    "metrics": {
+      "od_pairs": 26,
+      "physical_links": 5091,
+      "demand_pce": 202.07073267183475,
+      "objective_checked": 700.8147985137279,
+      "max_od_residual": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "full_network_relative_gap": 1.6221722660085615e-16,
+      "historical_max_link_flow_absolute_error": 2.842170943040401e-14,
+      "independent_package_checks": 12
+    },
+    "errors": [],
+    "tolerances": {
+      "historical_physical_link_flow_absolute_max": 1e-07,
+      "original_full_network_relative_gap": 1e-05,
+      "original_od_balance_abs": 1e-06,
+      "original_link_reconstruction_abs": 1e-07,
+      "objective_consistency_abs": 1e-07
+    },
+    "claim_boundary": "Prepared-input assignment stage only. The physical mcl_solver fields and public zone/access mapping are converted to a solver instance, then unmodified public mcl_assignment Frank\u2013Wolfe is run and independently checked against the published S2 link flows. The original tap_frank_wolfe implementation is not invoked. The upstream service-feedback/four-stage/GPS chain is not recomputed; this is distinct from conditional absolute choice.",
+    "verifier_version": "mcl_reproduce_verifier_v1.3",
+    "verifier_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "run_cli_sha256": "9b8d9230779114b99fee06dd4063d212d651d0f3c6ff3c9528d423c872aff30e",
+    "verifier_command": [
+      "${PYTHON}",
+      "tools/mcl_reproduce.py",
+      "verify",
+      "boston-semantic-fix-s2-assignment",
+      "--run",
+      "${RUN_OUTPUT}"
+    ],
+    "verification_seconds": 0.4235212999628857
+  },
+  "original_records_sha256": {
+    "run": "74e37851a2ec1fa012ac8abff6e6cf498d066830be167d506c3d043e41c59909",
+    "verification": "ad68369f825f6cd6dfb1d48f50acc4c885a043c501a0bc6f5904a4ca521b727d"
+  },
+  "path_note": "Machine-specific prefixes are replaced by named placeholders. Original source, input, output, wrapper and catalog hashes preserve identity."
+}
