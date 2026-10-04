@@ -124,7 +124,7 @@ def main():
   check(needle in read(ROOT/rel),'Historical canonical evidence missing: '+rel)
  # Validate every local file target; exact fragments on the maintained reading surfaces.
  pages=sorted(DOCS.rglob('*.html'))
- current={DOCS/'index.html',DOCS/'reproduce.html',DOCS/'reproduction.html',*(DOCS/'volumes').glob('*.html')}
+ current={DOCS/'index.html',DOCS/'reproduce.html',DOCS/'reproduction.html',DOCS/'reproduction/experiment-catalog.html',*(DOCS/'volumes').glob('*.html')}
  inventory=DOCS/'assets/reproduction/inventory.json';record_ids=set()
  if inventory.is_file():
   data=json.loads(read(inventory));records=data.get('experiments',data.get('records',[])) if isinstance(data,dict) else data

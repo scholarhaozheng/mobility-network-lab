@@ -32,12 +32,16 @@ ledger=convert(read(ROOT/'experiments/reproduction-status.json'))
 ledger.update(schema='mcl_reproduction_status_v1',releaseVersion=RELEASE,published=True,publicationRef=PUBLIC_REF,publicationRefKind='immutable release tag; numerical file hashes additionally pin content')
 for e in ledger['records']:
  e['portalUrl']='reproduce.html#'+e['id']
- if e.get('verifiedCommandId'):e['receiptUrl']='assets/reproduction/verification/'+e['verifiedCommandId']+'.json'
+ current=e.get('reproductionStatus')
+ if current:
+  # Reader status may refer to either catalog; preserve its validated receipt URL.
+  e['status']=current['key'];e['statusLabel']=current['label'];e['receiptUrl']=current['receiptUrl']
+ elif e.get('verifiedCommandId'):e['receiptUrl']='assets/reproduction/verification/'+e['verifiedCommandId']+'.json'
  if e.get('availability'):
-  e['availability']['registeredCommandPublished']=bool(e.get('verifiedCommandId'))
+  e['availability']['registeredCommandPublished']=current['runAvailable'] if current else bool(e.get('verifiedCommandId'))
   e['availability']['reviewOverlayReady']=False
   e['availability']['repositoryCheckoutReady']=True
-  e['availability']['dataAcquisition']='Download the computational checkout or clone the repository; exact registered inputs and source hashes are pinned in experiments/catalog.json. Original upstream acquisition is separate.'
+  e['availability']['dataAcquisition']=('Download the computational checkout, follow the selected recipe environment and declared input requirements, run its command, and verify its output. External inputs are identified per record.' if current else 'Download the computational checkout or clone the repository; exact registered inputs and source hashes are pinned in experiments/catalog.json. Original upstream acquisition is separate.')
  for f in e.get('data',[]):
   p=f.get('path')
   if p and (ROOT/p).is_file():
@@ -60,4 +64,4 @@ for manifest in sorted((ROOT/'experiments/recovered').glob('*.json')):
    if not target.is_relative_to(ROOT) or not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest()!=f['sha256']:raise ValueError('Recovered source/input hash mismatch: '+p)
    if p in files and files[p]['sha256']!=f['sha256']:raise ValueError('Conflicting file identities: '+p)
    files[p]={'path':p,'sha256':f['sha256'],'downloadUrl':RAW+p,'browseUrl':REPO+'/blob/'+PUBLIC_REF+'/'+p}
-write(ROOT/'experiments/publication.json',{'schema':'mcl_computational_publication_v1','releaseId':RELEASE,'baseline':cat['baseline_commit'],'repository':REPO,'repositoryRef':PUBLIC_REF,'refScope':'The release tag fixes this repository snapshot. Verify the SHA-256 identities below and record git rev-parse HEAD for the resolved commit.','verifiedCommands':len(cat['experiments']),'verifiedRecords':ledger['verifiedRecords'],'recordCount':ledger['recordCount'],'recoveredRecords':len(recovered_records),'recoveredRunnableRecords':sum('run' in r.get('supportedActions',[]) for r in recovered_records),'files':list(files.values()),'archiveManifest':'docs/downloads/computational-checkout.manifest.json'})
+write(ROOT/'experiments/publication.json',{'schema':'mcl_computational_publication_v1','releaseId':RELEASE,'baseline':cat['baseline_commit'],'repository':REPO,'repositoryRef':PUBLIC_REF,'refScope':'The release tag fixes this repository snapshot. Verify the SHA-256 identities below and record git rev-parse HEAD for the resolved commit.','verifiedCommands':len(cat['experiments']),'verifiedRecords':ledger.get('historicalAuditSummary',ledger)['verifiedRecords'],'readerVerifiedRecords':ledger['verifiedRecords'],'readerVerifiedCommands':ledger['verifiedCommands'],'recordCount':ledger['recordCount'],'recoveredRecords':len(recovered_records),'recoveredRunnableRecords':sum('run' in r.get('supportedActions',[]) for r in recovered_records),'files':list(files.values()),'archiveManifest':'docs/downloads/computational-checkout.manifest.json'})

@@ -1,6 +1,6 @@
 {
   "schema": "mcl_public_computational_archive_v1",
-  "releaseId": "20261004-r16",
+  "releaseId": "20261004-r18",
   "sourceRevision": "reproduction-2026-10-04-r16",
   "documentationRefresh": {
     "documentationOnly": true,
@@ -12,11 +12,11 @@
     "uniqueLocalImages": 89,
     "allReadmeImagesIncluded": true,
     "exporter": "tools/build_readme_from_homepage.py",
-    "scope": "README is synchronized with the homepage atlas. Native L3 reconstruction comparisons remain in the city long documents; all prior archive members and figure sources are retained. Computational recipes, pinned code, numeric receipts, and their r14 immutable links are unchanged."
+    "scope": "README and reproduction navigation are synchronized with the homepage. The reader catalog uses one evidence-backed status and a static fallback; all prior archive members and figure sources are retained. Computational recipes, pinned code, numeric receipts, and their r14 immutable links are unchanged."
   },
   "archive": "computational-checkout.zip",
-  "sha256": "1ecdd8526b0a6ba918db86f42e5ea4cf6c21124147278aaccb3e04a50b6e4aac",
-  "bytes": 25521589,
+  "sha256": "393c01decb559f6ae933178394225f33f376130afe9a4787389c41307df19819",
+  "bytes": 25651136,
   "files": [
     {
       "path": ".gitattributes",
@@ -45,8 +45,8 @@
     {
       "path": "README.md",
       "source": "README.md",
-      "sha256": "914e12d0a6c7d8050775cae61dda5e9d108403e1b8f9fb50942516419f4d27ec",
-      "bytes": 265310
+      "sha256": "4c0aaaca10596578d01db4a3398d5fcb3b999888bd42c84e6bc77a9a28d14680",
+      "bytes": 265865
     },
     {
       "path": "REPRODUCTION_PACKAGE_MANIFEST.json",
@@ -57,8 +57,8 @@
     {
       "path": "REPRODUCTION_QUICKSTART.md",
       "source": "REPRODUCTION_QUICKSTART.md",
-      "sha256": "615151fd01cb9fa4291fd3cb8857c3c9bd2213f9474a228facdd1ae940401b16",
-      "bytes": 5645
+      "sha256": "688cb46748d17e754a60e84d7f329c3bd2dc205b0530655c22fe8a29a5da262d",
+      "bytes": 9220
     },
     {
       "path": "THIRD_PARTY_NOTICES.md",
@@ -2193,8 +2193,8 @@
     {
       "path": "docs/assets/reproduction/app.js",
       "source": "docs/assets/reproduction/app.js",
-      "sha256": "0cafcf70b387a4f0696940bc3794f05c7af93c05421a8130f5d7d51e4069c648",
-      "bytes": 16788
+      "sha256": "1ebd12b0a6e837a33d6cb37850a2492fd477517690c469e5ad314e29ae471451",
+      "bytes": 23236
     },
     {
       "path": "docs/assets/reproduction/build-report.json",
@@ -2205,14 +2205,14 @@
     {
       "path": "docs/assets/reproduction/command-source.html",
       "source": "docs/assets/reproduction/command-source.html",
-      "sha256": "a4c8e93a595d8c7764611914e98e3807c35d334d1e16b019f0e1f41a3df3a976",
-      "bytes": 649733
+      "sha256": "cb4af8c042d7ba0c377996cc48205590db2a167f8e8c74754f20c6563f161363",
+      "bytes": 649730
     },
     {
       "path": "docs/assets/reproduction/data.js",
       "source": "docs/assets/reproduction/data.js",
-      "sha256": "be8391e71628e271082d8dfad5d639833aeae1b7ffa14ab30ad23661c0a2b8e7",
-      "bytes": 1922939
+      "sha256": "7997ad07cb55c1c6fc6ac34d66f974d0efb8f836fa509b32386595e00583af2f",
+      "bytes": 2034702
     },
     {
       "path": "docs/assets/reproduction/entries.js",
@@ -2235,14 +2235,14 @@
     {
       "path": "docs/assets/reproduction/reproduction-status.json",
       "source": "docs/assets/reproduction/reproduction-status.json",
-      "sha256": "b0ca32239b42895bca65ea8f865815280a506cae6df9f3f19b90bb61edffd35c",
-      "bytes": 721662
+      "sha256": "a3732acd1b40c805f72838e0802a2389d29eefb57396a96b154a131e2b8efc5a",
+      "bytes": 1014520
     },
     {
       "path": "docs/assets/reproduction/reproduction.css",
       "source": "docs/assets/reproduction/reproduction.css",
-      "sha256": "60724e43440dbf2bfadaba043a0bfef5eb46a79100baa661b89b3a5d43d35ca3",
-      "bytes": 4771
+      "sha256": "93f925ed303260143031dd321d33ec150ea71b3c65846ab878ff5429e293a88e",
+      "bytes": 5526
     },
     {
       "path": "docs/assets/reproduction/verification/admm-r2s-public-C0.json",
@@ -2505,14 +2505,20 @@
     {
       "path": "docs/index.html",
       "source": "docs/index.html",
-      "sha256": "4553fccb4ab6460d9415f21e63bffd45a9e9881624c0b3ddde12aaa7da100a18",
-      "bytes": 253801
+      "sha256": "9cf0efc7c4620fad112ade8f48d4f309cbb5b44a17dc4db2d000fd17a8820cac",
+      "bytes": 254670
     },
     {
       "path": "docs/reproduce.html",
       "source": "docs/reproduce.html",
-      "sha256": "059e802a94a0e2233747265e3d7836b86618f61429278150a3f4ccad9d110a9e",
-      "bytes": 3802
+      "sha256": "f76a8c8035505e95d24419119476f26300b48be5a112fc217ab5173e90e376c5",
+      "bytes": 6417
+    },
+    {
+      "path": "docs/reproduction.html",
+      "source": "docs/reproduction.html",
+      "sha256": "8e9111b3ee7bef888d42c9d5542f52b13bd8ca65e7493726708a89cd03ce8756",
+      "bytes": 20121
     },
     {
       "path": "docs/reproduction/boston-native-environment.md",
@@ -2543,6 +2549,12 @@
       "source": "docs/reproduction/execution-evidence-summary.json",
       "sha256": "5e1949a49c36c4799cc624406beda31fc60ced3f0a6d3b30105a50545fc2bd15",
       "bytes": 2431
+    },
+    {
+      "path": "docs/reproduction/experiment-catalog.html",
+      "source": "docs/reproduction/experiment-catalog.html",
+      "sha256": "9d01f4c61ca8a05dc25073acf3698054a40a80c48143adb65a36809c6d3fe45a",
+      "bytes": 620339
     },
     {
       "path": "docs/reproduction/public-controls-validation.json",
@@ -5625,8 +5637,8 @@
     {
       "path": "experiments/checkout-files.json",
       "source": "experiments/checkout-files.json",
-      "sha256": "86fa4e5b270163d91a02184fce6f8583945e2cc88dc436919c41e1638112c2f5",
-      "bytes": 74304
+      "sha256": "2d45c25a94084ab0f32c97d4d121834d6be98ff80941a0e2220be5a9a0755cad",
+      "bytes": 74469
     },
     {
       "path": "experiments/environment-verification/boston-native-clean.json",
@@ -5691,8 +5703,8 @@
     {
       "path": "experiments/reproduction-status.json",
       "source": "experiments/reproduction-status.json",
-      "sha256": "b0ca32239b42895bca65ea8f865815280a506cae6df9f3f19b90bb61edffd35c",
-      "bytes": 721662
+      "sha256": "a3732acd1b40c805f72838e0802a2389d29eefb57396a96b154a131e2b8efc5a",
+      "bytes": 1014520
     },
     {
       "path": "experiments/runtime-setup.json",
@@ -6105,8 +6117,8 @@
     {
       "path": "tools/build_computational_archive.py",
       "source": "tools/build_computational_archive.py",
-      "sha256": "fef96e4c1cb4c28bf659f25e7c910f7bf36c645662790465737fa634d78af54f",
-      "bytes": 6316
+      "sha256": "ae4fbcea35e2b52943fe5fd3fc187973d2b6b2df7a4ccb71b86dedb731e49286",
+      "bytes": 6341
     },
     {
       "path": "tools/build_open_mobility_exports.py",
@@ -6117,20 +6129,26 @@
     {
       "path": "tools/build_readme_from_homepage.py",
       "source": "tools/build_readme_from_homepage.py",
-      "sha256": "9fc677d3036e329711ba484e9277f0feb314bbddaab24a1280eb2215853572dc",
-      "bytes": 14313
+      "sha256": "05077fb450946825483ce1b22e00b4db1015c1cc64116bb32a3f23eea5b54dd0",
+      "bytes": 14762
     },
     {
       "path": "tools/build_recovered_docs.py",
       "source": "tools/build_recovered_docs.py",
-      "sha256": "cd3a62436a3224ff068a9f092e6f688225074eee032e8cebf9457c4e51ff27b0",
-      "bytes": 8068
+      "sha256": "8c237ccfe503972016add7345267eade09c08c10f6efe046231f80a265d9e623",
+      "bytes": 14714
     },
     {
       "path": "tools/build_reproduction_docs.py",
       "source": "tools/build_reproduction_docs.py",
-      "sha256": "bd0ee3eda485fbace88d321f211f3e5dcf804e96d750fcb3f9588fb3be6e30bb",
-      "bytes": 14838
+      "sha256": "5fbb2931b335a3935c33c70b7d8824657eb81709414ba4c3d8f4e2668e9bec0e",
+      "bytes": 19084
+    },
+    {
+      "path": "tools/build_reproduction_fallback.py",
+      "source": "tools/build_reproduction_fallback.py",
+      "sha256": "00b0ab40a5f3e1ccd433b449111122e4a214ac6c8a5d556e19a11325e486e414",
+      "bytes": 10459
     },
     {
       "path": "tools/build_site.py",
@@ -6147,8 +6165,14 @@
     {
       "path": "tools/check_readme_pages.py",
       "source": "tools/check_readme_pages.py",
-      "sha256": "d89fa579db2dd7b8845d36ed75d8a3d2c42efceb12fcd7b2e575f57262af2af6",
-      "bytes": 13029
+      "sha256": "2e4f7f8b1639e36e7596dcbf76f89c8a958c54bde1df98e504529702f605a9e7",
+      "bytes": 13073
+    },
+    {
+      "path": "tools/check_reproduction_status.py",
+      "source": "tools/check_reproduction_status.py",
+      "sha256": "43fe99f60ac1286440bd9e491b8837234f94a7c94e48e9b453bb9ffc2463552e",
+      "bytes": 5480
     },
     {
       "path": "tools/gmns/boston_exchange.py",
@@ -6267,8 +6291,8 @@
     {
       "path": "tools/prepare_reproduction_publication.py",
       "source": "tools/prepare_reproduction_publication.py",
-      "sha256": "7059034e888ace5d98bfda69875e8458e7461f459ca5de2a8a5790a54fa8cf94",
-      "bytes": 5702
+      "sha256": "5387b16de0e8c2061ef23ed929375dec6601284a24ea2cd4922f66092b26e61b",
+      "bytes": 6329
     },
     {
       "path": "tools/render_algorithm_b_overview.py",
@@ -6429,8 +6453,8 @@
     {
       "path": "tools/visuals/check_hk10_approval.py",
       "source": "tools/visuals/check_hk10_approval.py",
-      "sha256": "cf0442d4bf6bc53e192475275d925bd04f113c21adb08060697c21f32edbb194",
-      "bytes": 9172
+      "sha256": "902416742f9889db1b8cd7dfea7bac9c0945a6464a52982c758bce77d035d4b4",
+      "bytes": 9509
     },
     {
       "path": "tools/visuals/check_three_city_closeout.py",

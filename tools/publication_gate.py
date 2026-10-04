@@ -123,7 +123,7 @@ def main() -> int:
     readme = (ROOT / "README.md").read_text(encoding="utf-8")
     required_readme = [
         "Mobility Computation Lab connects city networks, travel demand, and reproducible network computation.",
-        "docs/volumes/01-overview.md#src-docs-city-workflow-document",
+        "https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#src-docs-city-workflow-document",
         "GPS traces and map matching",
         "Policy Bush",
         "ADMM",

@@ -190,14 +190,15 @@ def main():
         parts.append(exporter.render(child))
         if isinstance(child,Tag) and child.name=='h1':
             parts.append('**Project website: ['+SITE+']('+SITE+')**\n\n')
-            parts.append('[Overview]('+SITE+'volumes/overview.html) · [Boston]('+SITE+'volumes/boston.html) · [Sioux Falls]('+SITE+'volumes/sioux-falls.html) · [Hong Kong]('+SITE+'volumes/hong-kong.html) · [Code, data and reproduction]('+SITE+'reproduction.html)\n\n')
+            parts.append('[Overview]('+SITE+'volumes/overview.html) · [Boston]('+SITE+'volumes/boston.html) · [Sioux Falls]('+SITE+'volumes/sioux-falls.html) · [Hong Kong]('+SITE+'volumes/hong-kong.html) · [Reproduction guide]('+SITE+'reproduction.html) · [Experiment catalog]('+SITE+'reproduce.html)\n\n')
             parts.append('[01 Contributions](#01-what-this-project-adds) · [02 Project structure](#02-complete-project-structure) · [03 Coverage](#03-case-coverage-and-selected-evidence) · [04 City atlas](#04-explore-the-three-cases) · [05 Run and inspect](#05-run-and-inspect) · [06 Attribution](#06-attribution-scope-and-further-reading)\n\n')
         if isinstance(child,Tag) and child.get('id')=='04-explore-the-three-cases':
             parts.append('This README shows the complete static atlas in the same city, stage and method groups as the website. The [website atlas]('+SITE+'#04-explore-the-three-cases) also offers city and stage views. Both Sioux Falls OD scales are expanded here.\n\n')
         if isinstance(child,Tag) and child.get('id')=='05-run-and-inspect':
             parts.append('[Computational quickstart](REPRODUCTION_QUICKSTART.md) · [Experiment registry](experiments/README.md) · [Download the computational checkout]('+SITE+'downloads/computational-checkout.zip)\n\n')
             parts.append('Boston S1/S2 recipes rerun the assignment stage only. A saved-output check is not a new solver run, and prepared-input reruns do not certify a complete raw-source pipeline. The historical Sioux CG result does not gain an independent full-pricing-closure certificate from these documentation changes.\n\n')
-            parts.append('The recovered city workflows include data acquisition, pinned source, environment instructions and separate computation and historical-inspection commands. Follow the scope and supported actions for each record.\n\n~~~bash\npython -B tools/mcl_reproduce.py list\npython -B tools/mcl_recovered.py list\n~~~\n\n')
+            parts.append('Choose an exact instance in the [Experiment catalog]('+SITE+'reproduce.html), then follow its Download, Environment, Run and Verify steps. The page supplies the matching command and required environment. The [static catalog]('+SITE+'reproduction/experiment-catalog.html) remains available without JavaScript. Historical inspection and fresh computation have separate status labels and receipts.\n\n')
+            parts.append('<details><summary>Advanced: command-line registry reference</summary>\n\nThe experiment page selects the matching command for you. To inspect the two preserved registries directly:\n\n~~~bash\npython -B tools/mcl_reproduce.py list\npython -B tools/mcl_recovered.py list\n~~~\n\n</details>\n\n')
     output=''.join(parts).replace('\r\n','\n')
     expected=[c['data-figure'] for c in soup.select('#atlas-full-panel .atlas-card')]
     if len(exporter.card_ids)!=len(expected) or set(exporter.card_ids)!=set(expected):raise ValueError('Card loss or duplication during README export')

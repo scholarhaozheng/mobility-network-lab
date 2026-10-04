@@ -92,3 +92,7 @@
     .mcl-page .admm-r3-figure-grid figcaption{font-size:12px;line-height:1.5;color:var(--muted);margin-top:8px}
     @media(max-width:760px){.mcl-page .admm-r3-figure-grid{grid-template-columns:minmax(0,1fr);gap:18px}}
 
+
+/* Keyboard entry is visible only while focused; reading layout is unchanged. */
+.skip-link{position:fixed;top:8px;left:12px;z-index:10000;padding:10px 16px;background:#fff;color:#173f55;border:2px solid #173f55;border-radius:4px;transform:translateY(-160%)}
+.skip-link:focus{transform:translateY(0);outline:2px solid #bd702f;outline-offset:3px}

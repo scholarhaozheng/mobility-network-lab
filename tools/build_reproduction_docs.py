@@ -31,6 +31,83 @@ def file_url(item, published, repository, baseline):
         return 'assets/reproduction/command-source.html#file-'+hashlib.sha256(item['path'].encode()).hexdigest()[:16]
     return None
 
+
+STATUS_LABELS = {
+    'verified_run': 'Run and verification passed',
+    'runnable': 'Run available; not freshly verified',
+    'external_inputs': 'External inputs required',
+    'inspection_only': 'Historical evidence / inspection only',
+    'no_accepted_experiment': 'No accepted computational experiment',
+}
+
+
+def reproduction_status(record, recovered=None, fresh=None):
+    """Resolve one current reader status; historical evidence is never fresh by implication."""
+    recipe = record.get('recipe')
+    actions = recovered.get('supportedActions', []) if recovered else []
+    external = bool(recovered and recovered.get('state') == 'requires_external_input')
+    runnable = bool(recipe or 'run' in actions)
+    verified = bool(recipe and recipe.get('verified') or fresh)
+    historical = record.get('historicalAudit', {})
+    old_status = historical.get('auditStatus', record.get('auditStatus'))
+    no_accepted = (recovered and recovered.get('state') in ('scope_only', 'historical_failure')) or old_status in ('no_experiment', 'not_run', 'failure_boundary_reobserved')
+    if no_accepted:
+        key, verified = 'no_accepted_experiment', False
+    elif verified:
+        key = 'verified_run'
+    elif external:
+        key = 'external_inputs'
+    elif runnable:
+        key = 'runnable'
+    else:
+        key = 'inspection_only'
+    if fresh:
+        basis = fresh['basis']
+    elif recipe:
+        basis = 'prepared_input_replay_independently_verified' if old_status == 'prepared_input_reproduced' else 'fresh_computation_independently_verified'
+    elif recovered:
+        basis = recovered.get('evidenceBasis', 'historical_record')
+    else:
+        basis = old_status or 'historical_record'
+    return {
+        'key': key, 'label': STATUS_LABELS[key], 'verified': verified,
+        'runAvailable': runnable, 'evidenceBasis': basis,
+        'receiptUrl': recipe.get('receiptUrl') if recipe else record.get('recoveredRecipe', {}).get('receiptUrl'),
+        'scope': record.get('scope', ''), 'externalInputsRequired': external,
+        'commandId': recipe['id'] if recipe else recovered['id'] if recovered else None,
+        'commandFamily': 'registered' if recipe else 'recovered' if recovered else None,
+    }
+
+
+def set_reader_status(record, status):
+    # Keep original audit language available as history, not a competing current status.
+    record.setdefault('historicalAudit', {key: record[key] for key in ('auditStatus', 'auditLabel', 'entryLabel', 'missing') if key in record})
+    record['reproductionStatus'] = status
+    record['auditStatus'] = status['key']
+    record['auditLabel'] = status['label']
+    record['entryLabel'] = status['label']
+
+
+def status_summary(records):
+    counts, cities, commands = {}, {}, set()
+    for record in records:
+        status = record['reproductionStatus']
+        key = status['key']
+        counts[key] = counts.get(key, 0) + 1
+        city = cities.setdefault(record['city'], {'records': 0, 'verifiedRecords': 0, 'verifiedCommands': set()})
+        city['records'] += 1
+        if status['verified']:
+            city['verifiedRecords'] += 1
+            command = (status['commandFamily'], status['commandId'])
+            city['verifiedCommands'].add(command)
+            commands.add(command)
+    for city in cities.values():
+        city['verifiedCommands'] = len(city['verifiedCommands'])
+    return {'records': len(records), 'verifiedRecords': sum(r['reproductionStatus']['verified'] for r in records),
+            'verifiedCommands': len(commands), 'counts': counts, 'byCity': cities,
+            'scope': 'Recorded execution and independent verification apply only to each stated workflow and its declared inputs; they do not imply raw-source acquisition, a fresh solve in this website revision, or clean-environment certification.'}
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--published-revision',help='Public repository ref used for navigation; exact numerical identities remain pinned by file hashes')
@@ -110,6 +187,7 @@ def main():
         if args.published_revision and record.get('recipe'):
             record['recipe']['verificationSummary']=record['recipe']['verificationSummary'].replace('Inputs are included in the local review bundle, not yet GitHub main.','Inputs are included in this tagged repository release and its computational checkout.').replace('local review bundle','tagged computational checkout')
         record['recovery']=e.get('recovery')
+        set_reader_status(record, reproduction_status(record))
         data['records'].append(record)
     byid={e['id']:e for e in data['records']}
     for f in inv['figures']:
@@ -131,11 +209,13 @@ def main():
     for rel in source_files:
         p=ROOT/rel
         chunks.append('<details id="file-'+hashlib.sha256(rel.encode()).hexdigest()[:16]+'"><summary>'+html.escape(rel)+'</summary><p>SHA-256: <code>'+digest(p)+'</code></p><pre><code>'+html.escape(p.read_text(encoding='utf-8')).replace('[','&#91;').replace(']','&#93;')+'</code></pre></details>')
-    (DEST/'command-source.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Command source · Mobility Computation Lab</title><link rel="stylesheet" href="../presentation-r3.css"></head><body><main class="mcl-page"><p><a href="../../reproduce.html">Data and reproduction</a></p><h1>Unified command source</h1><p>These files wrap the existing computational implementations. Input and solver hashes are fixed in the catalog. Publication status is shown on the reproduction page.</p>'+''.join(chunks)+'</main></body></html>\n',encoding='utf-8')
+    (DEST/'command-source.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Command source · Mobility Computation Lab</title><link rel="stylesheet" href="../presentation-r3.css"></head><body><main class="mcl-page"><p><a href="../../reproduce.html">Experiment catalog</a></p><h1>Unified command source</h1><p>These files wrap the existing computational implementations. Input and solver hashes are fixed in the catalog. Publication status is shown on the reproduction page.</p>'+''.join(chunks)+'</main></body></html>\n',encoding='utf-8')
     write(DEST/'build-report.json',{'records':len(data['records']),'figures':len(data['figures']),'verifiedCommands':sorted({e['recipe']['id'] for e in data['records'] if e.get('recipe')}),'verifiedRecords':sum(bool(e.get('recipe')) for e in data['records']),'publishedRevision':args.published_revision,'files':{p:digest(ROOT/p) for p in source_files}})
     recovered_summary=None
     if (ROOT/'experiments/recovered').is_dir():
         recovered_build=subprocess.run([sys.executable,'-B',str(ROOT/'tools/build_recovered_docs.py'),'--release-ref',args.published_revision or 'reproduction-2026-10-04-r14'],cwd=ROOT,capture_output=True,text=True,check=True)
         recovered_summary=json.loads(recovered_build.stdout)
-    print(json.dumps({'records':len(data['records']),'verified':sum(bool(e.get('recipe')) for e in data['records']),'recovered':recovered_summary}))
+    final_data=json.loads((DEST/'data.js').read_text(encoding='utf-8').removeprefix('window.MCL_REPRODUCTION=').strip().removesuffix(';'))
+    subprocess.run([sys.executable,'-B',str(ROOT/'tools/build_reproduction_fallback.py')],cwd=ROOT,capture_output=True,text=True,check=True)
+    print(json.dumps({'records':len(data['records']),'originalCatalogVerifiedRecords':sum(bool(e.get('recipe')) for e in data['records']),'currentStatus':final_data.get('statusSummary',status_summary(data['records'])),'recovered':recovered_summary}))
 if __name__=='__main__': main()
