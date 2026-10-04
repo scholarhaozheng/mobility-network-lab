@@ -40,6 +40,16 @@ def validate(root: Path) -> dict:
         digest = hashlib.sha256(archive.read_bytes()).hexdigest()
         if digest != data.get("sha256") or archive.stat().st_size != data.get("bytes"):
             errors.append("Computational archive SHA-256 or byte count differs")
+        release_id = data.get("releaseId", "")
+        expected_revision = "reproduction-" + release_id[:4] + "-" + release_id[4:6] + "-" + release_id[6:]
+        if data.get("sourceRevision") != expected_revision:
+            errors.append("Computational archive source revision does not match its release ID")
+        download_index = root / "docs/downloads/downloads.json"
+        if download_index.is_file():
+            index = json.loads(download_index.read_text(encoding="utf-8"))
+            if index.get("releaseId") != release_id or index.get("sourceRevision") != expected_revision:
+                errors.append("Download index release identity differs from the archive manifest")
+        checks += 2
         declared = data.get("files", [])
         if not declared or len(declared) > 10000:
             errors.append("Computational archive member count is invalid")
