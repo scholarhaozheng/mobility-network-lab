@@ -1,0 +1,54 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-H1-FINITE",
+  "checkedDate": "2026-10-04",
+  "action": "run_and_verify",
+  "freshComputation": true,
+  "freshSolverRun": true,
+  "scope": "Finite-path SLSQP on frozen H1 26OD/126-path pool; low-congestion transfer, not full-city or rank-stress evidence.",
+  "verification": {
+    "record": "HK-H1-FINITE",
+    "success": true,
+    "checks": {
+      "independent_original_unit_gates": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "method": "finite",
+      "solver_success": true,
+      "instance_signature": "b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083",
+      "path_pool_sha256": "585a18a406044aa81641df43c08f490401e727b0b86c1c78a6ab5254390d241f",
+      "basis_sha256": null,
+      "path_error_count": 0,
+      "min_path_flow": 0,
+      "max_abs_od_residual": 0,
+      "relative_od_l1": 0,
+      "max_movement_link_reconstruction_error": 0,
+      "physical_link_count": 1239,
+      "max_physical_projection_residual": 0,
+      "beckmann_objective_recomputed": 146.13263456148755,
+      "objective_minus_fw": -5.684341886080802e-14,
+      "finite_pool_relative_gap": -1.9449253876917464e-16,
+      "full_graph_relative_gap": -5.834776163075239e-16,
+      "positive_physical_links_1e_minus_6": 300,
+      "positive_physical_link_ids_sha256": "e13fa584d9e292318117807025fb11e018bfe61162c0737683b5415dab9f5c71",
+      "saved_result_replay": true,
+      "gates": {
+        "max_od_error_abs": 0.000001,
+        "max_od_error_rel": 1e-8,
+        "total_od_l1_rel": 1e-8,
+        "full_relative_gap_abs": 0.00001,
+        "negative_flow_abs": 1e-8,
+        "link_reconstruction_abs": 1e-7
+      }
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "fresh_computation_independently_checked",
+    "fresh_solver_run": true,
+    "wall_seconds": 0.23225699999602512,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "A new output directory was populated by the recorded computation and then independently verified. Original external raw inputs, where required, were supplied locally and are not included in this repository."
+}

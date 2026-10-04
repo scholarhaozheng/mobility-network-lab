@@ -1,0 +1,80 @@
+{
+  "schema_version": "gmns_external_finite_network_v2_seconds",
+  "benchmark_id": "BOSTON_BOUNDED_12_30_BOS10_S3_R1",
+  "scope_label": "BOSTON_FIXED_COST_HARD_CAPACITY_SINGLE_COHORT_PILOT",
+  "files": {
+    "node": "node.csv",
+    "link": "link.csv",
+    "demand": "demand.csv"
+  },
+  "field_mapping": {
+    "node": {
+      "node_id": "node_id"
+    },
+    "link": {
+      "link_id": "link_id",
+      "from_node_id": "from_node_id",
+      "to_node_id": "to_node_id",
+      "travel_time": "travel_time",
+      "cost": "cost",
+      "capacity": "capacity"
+    },
+    "demand": {
+      "demand_id": "demand_id",
+      "origin": "origin",
+      "destination": "destination",
+      "departure_time": "departure_time",
+      "volume": "volume"
+    }
+  },
+  "demand_endpoint_type": "node",
+  "model": {
+    "time_step_minutes": 1,
+    "time_step_seconds": 3,
+    "departure_time": 0,
+    "horizon": 100,
+    "waiting_cost": 0.05,
+    "waiting_capacity": null
+  },
+  "seed": {
+    "default_k": 1,
+    "ranking_rule": "travel_time_then_link_id_sequence",
+    "simple_physical_paths_only": true
+  },
+  "cg": {
+    "max_phase_i_rounds": 20,
+    "max_phase_ii_rounds": 25,
+    "max_candidates_per_demand_per_round": 4,
+    "runtime_cap_seconds": 300,
+    "phase_ii_pricing_mode": "k_shortest",
+    "phase_ii_add_policy": "add_best_one_per_demand",
+    "k_shortest_k": 4,
+    "max_phase_ii_candidates_per_demand": 4,
+    "max_phase_ii_candidates_per_round": 40,
+    "strict_phase_ii_candidate_round_cap": false
+  },
+  "limits": {
+    "max_physical_nodes": 200,
+    "max_physical_links": 300,
+    "max_positive_demands": 30,
+    "max_dynamic_nodes": 15000,
+    "max_dynamic_arcs": 40000,
+    "max_reference_variables": 250000,
+    "max_seed_k": 5,
+    "max_seed_search_states_per_demand": 100000
+  },
+  "units": {
+    "travel_time": "positive integer time steps",
+    "time_step_seconds": 3,
+    "cost": "source free-flow minutes per PCE",
+    "capacity": "PCE per time-indexed movement arc",
+    "demand_volume": "PCE injected once at departure_time index 0",
+    "waiting_cost": "elapsed minutes per waiting step"
+  },
+  "unsupported_in_v2": [
+    "multiple departure times",
+    "zero-duration physical links",
+    "negative generalized costs",
+    "implicit unit conversion"
+  ]
+}

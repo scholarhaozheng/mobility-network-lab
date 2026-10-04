@@ -1,0 +1,149 @@
+{
+  "task_id": "MCL_HONG_KONG_STATIC_FINITE_PATH_L3_R1",
+  "frozen_before_hong_kong_solve": true,
+  "source_positive_od_sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+  "candidate_filter": "positive volume and directed reachable on accepted turn-expanded static graph",
+  "selection_rule": "Sort descending loaded_drive_pce_per_one_hour_am, then numeric origin zone ID, then numeric destination zone ID; greedily accept at most 2 ODs per origin and at most 3 per destination; stop at 26. Caps are predeclared to avoid the top-demand concentration in three destinations.",
+  "degeneracy_observed_before_freeze": {
+    "top26_uncapped_unique_destinations": 3,
+    "top26_uncapped_unique_origins": 18
+  },
+  "selected_od": [
+    {
+      "o_zone_id": "80",
+      "d_zone_id": "38",
+      "volume": 8.092937415248693
+    },
+    {
+      "o_zone_id": "91",
+      "d_zone_id": "11",
+      "volume": 6.755638842456695
+    },
+    {
+      "o_zone_id": "91",
+      "d_zone_id": "38",
+      "volume": 6.529784674598944
+    },
+    {
+      "o_zone_id": "94",
+      "d_zone_id": "38",
+      "volume": 5.983332946599755
+    },
+    {
+      "o_zone_id": "80",
+      "d_zone_id": "11",
+      "volume": 5.445268374368683
+    },
+    {
+      "o_zone_id": "92",
+      "d_zone_id": "11",
+      "volume": 3.589073695043949
+    },
+    {
+      "o_zone_id": "87",
+      "d_zone_id": "94",
+      "volume": 2.1880665215299815
+    },
+    {
+      "o_zone_id": "17",
+      "d_zone_id": "94",
+      "volume": 2.006996321143563
+    },
+    {
+      "o_zone_id": "86",
+      "d_zone_id": "94",
+      "volume": 1.8555226400551412
+    },
+    {
+      "o_zone_id": "87",
+      "d_zone_id": "34",
+      "volume": 1.0960666333585143
+    },
+    {
+      "o_zone_id": "92",
+      "d_zone_id": "34",
+      "volume": 1.093013337486559
+    },
+    {
+      "o_zone_id": "94",
+      "d_zone_id": "87",
+      "volume": 0.9827920325220121
+    },
+    {
+      "o_zone_id": "86",
+      "d_zone_id": "34",
+      "volume": 0.7610145486079105
+    },
+    {
+      "o_zone_id": "17",
+      "d_zone_id": "87",
+      "volume": 0.6554838071588327
+    },
+    {
+      "o_zone_id": "11",
+      "d_zone_id": "14",
+      "volume": 0.5784936465040601
+    },
+    {
+      "o_zone_id": "11",
+      "d_zone_id": "12",
+      "volume": 0.554446117319325
+    },
+    {
+      "o_zone_id": "59",
+      "d_zone_id": "14",
+      "volume": 0.5046726019044072
+    },
+    {
+      "o_zone_id": "59",
+      "d_zone_id": "12",
+      "volume": 0.4995987159745117
+    },
+    {
+      "o_zone_id": "61",
+      "d_zone_id": "14",
+      "volume": 0.4975292166836344
+    },
+    {
+      "o_zone_id": "57",
+      "d_zone_id": "12",
+      "volume": 0.47116644682586456
+    },
+    {
+      "o_zone_id": "58",
+      "d_zone_id": "87",
+      "volume": 0.4132960499320469
+    },
+    {
+      "o_zone_id": "34",
+      "d_zone_id": "17",
+      "volume": 0.34957684704948333
+    },
+    {
+      "o_zone_id": "61",
+      "d_zone_id": "17",
+      "volume": 0.32772185867156106
+    },
+    {
+      "o_zone_id": "57",
+      "d_zone_id": "17",
+      "volume": 0.32612707854031
+    },
+    {
+      "o_zone_id": "34",
+      "d_zone_id": "86",
+      "volume": 0.3160430326689567
+    },
+    {
+      "o_zone_id": "58",
+      "d_zone_id": "21",
+      "volume": 0.3047872436168121
+    }
+  ],
+  "unique_origins": 13,
+  "unique_destinations": 10,
+  "total_pce": 52.17845064587021,
+  "H0_rule": "Use the ten source physical-zone endpoint pairs and unchanged volume from phase_c/selected_od.csv; map zones to accepted static origin/destination states; no finite-time costs or capacities.",
+  "K": 5,
+  "max_paths_H1": 130
+}

@@ -1,0 +1,30 @@
+{
+  "status": "SOLVER_CONVERGED",
+  "failure": null,
+  "rho_initial": 0.02426135503218504,
+  "rho_final": 0.02426135503218504,
+  "attempted_iterations": 253,
+  "completed_iterations": 253,
+  "optimizer_calls": 2530,
+  "wall_seconds": 268.25238689995604,
+  "last": {
+    "iteration": 253,
+    "rho": 0.02426135503218504,
+    "objective": 64.39729165541078,
+    "primal_residual": 0.0008533170877440795,
+    "dual_residual": 0.0001524728228280812,
+    "primal_threshold": 0.007077450363528845,
+    "dual_threshold": 0.004797862452357815,
+    "capacity_residual": 9.243824914406673e-7,
+    "balance_residual": 7.620223980389792e-8,
+    "local_lbfgs_iterations": 278,
+    "local_newton_iterations": 5,
+    "max_local_correction_l2": 0,
+    "wall_seconds": 268.25237809994724
+  },
+  "method": "full_arc_consensus_admm_r2",
+  "variant": "R2_S",
+  "case": "Boston_10OD",
+  "arc_count": 22217,
+  "commodity_count": 10
+}

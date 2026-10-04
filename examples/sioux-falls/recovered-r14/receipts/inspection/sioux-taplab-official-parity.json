@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "record": "sioux-taplab-official-parity",
+  "evidence_basis": "saved_state_inspection",
+  "optimizer_calls": 0,
+  "verification_optimizer_calls": 0,
+  "checks": {
+    "complete_links": true,
+    "nonnegative": true,
+    "direct_adapter_flow_parity": true,
+    "objective_parity": true,
+    "aggregate_node_balance": true,
+    "static_relative_gap": true
+  },
+  "metrics": {
+    "objective": 4231335.287110682,
+    "max_link_flow_difference": 0,
+    "max_node_residual": 8.003553375601768e-11,
+    "relative_gap": 4.4984077055308746e-9,
+    "links": 76
+  },
+  "scope": "Official pinned TAPLab Algorithm B adapter compared with the accepted direct tap-b solution. Aggregate feasibility is checked; full per-OD path reconstruction is outside this adapter output.",
+  "source_input_hashes_verified": true
+}

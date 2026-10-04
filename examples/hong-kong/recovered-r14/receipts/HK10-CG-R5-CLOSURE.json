@@ -1,0 +1,53 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK10-CG-R5-CLOSURE",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Independent full-DAGpricing certificate of saved R5 pool/primal/dual state; no optimizer invocation. Use verify on a fresh HK10-CG-R5 output for new-run closure.",
+  "verification": {
+    "record": "HK10-CG-R5-CLOSURE",
+    "success": true,
+    "checks": {
+      "independent_full_pricing_closure": true,
+      "same_graph_lp_objective": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "status": "PASS",
+      "closure_pass": true,
+      "graph_signature": "94e460ea4a65ae6a524c866cf1fe112efc5d7493aad18570c337c2e4d3d3d960",
+      "demand_signature": "3d59cb7c125f0288220d8703762c5af71ec83db52623abf356b507420de32de6",
+      "pool_signature": "f54465dd09783f8c88bf3e607dd054967f0158fd9d9b9094bfeb67774b50e9d1",
+      "pool_path_identity_signature": "cf5b177c0544b43e7773d31d4dcdb5b67efc45b5263aed25c8dd2ee514b94f99",
+      "dual_signature": "bc7f73d25d92406e0d371d3764be6e83e7e8e14f97defd9a80eac8c45fdcf2f7",
+      "topological_order_signature": "7e7dd61b1b0108848d4f961b08fdbdf7957b557a823437a80e9b0cf524e6baa4",
+      "node_count": 11954,
+      "arc_count": 24910,
+      "arc_type_counts": {
+        "movement": 5550,
+        "turn_connector": 6324,
+        "zone_connector": 816,
+        "waiting": 11700,
+        "source_connector": 10,
+        "sink_connector": 510
+      },
+      "demand_count": 10,
+      "pool_count": 25,
+      "stationarity_max_abs": 4.440892098500626e-15,
+      "objective_recomputed": 75.03632985794835,
+      "max_demand_residual": 0,
+      "max_capacity_violation": 0,
+      "tolerance": 0.000001,
+      "optimization_invocations": 0
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "independent_saved_result_validation",
+    "fresh_solver_run": false,
+    "wall_seconds": 1.1089414000161923,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

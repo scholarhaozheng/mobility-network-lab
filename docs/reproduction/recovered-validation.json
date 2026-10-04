@@ -1,0 +1,474 @@
+{
+  "schema": "mcl_recovered_release_validation_v1",
+  "release": "20261004-r14",
+  "releaseRef": "reproduction-2026-10-04-r14",
+  "date": "2026-10-04",
+  "status": "PASS",
+  "scope": "Supplemental computation source, exact modeled inputs and independently checked historical evidence. Fresh execution and saved-result inspection are reported separately. Existing environments were used; no new clean environment installation is claimed.",
+  "coverage": {
+    "inventoryRecords": 108,
+    "previouslyVerifiedCommands": 41,
+    "previouslyCoveredRecords": 46,
+    "locatedRecordsIntegrated": 38,
+    "supplementalRecords": 44,
+    "runActions": 35,
+    "inspectActions": 44,
+    "states": {
+      "ready": 29,
+      "requires_external_input": 10,
+      "scope_only": 3,
+      "historical_failure": 2
+    }
+  },
+  "freshDistinctWorkflows": 21,
+  "freshExecutions": [
+    {
+      "id": "boston-gmns-exchange-r1",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_structural_validation",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-run.json"
+    },
+    {
+      "id": "boston-acs-population-allocation-r1",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_prepared_crosswalk_arithmetic",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-run.json"
+    },
+    {
+      "id": "boston-regional-trip-generation-r1",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_prepared_crosswalk_arithmetic",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-run.json"
+    },
+    {
+      "id": "boston-semantic-fix-srestore",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_prepared_feedback_choice_only",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-run.json"
+    },
+    {
+      "id": "boston-finite-construction",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_finite_graph_construction",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-construction-run.json"
+    },
+    {
+      "id": "boston-finite-arc-flow-lp",
+      "city": "boston",
+      "status": "PASS",
+      "basis": "fresh_finite_arc_lp",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-run.json"
+    },
+    {
+      "id": "HK-H1-FW",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-FW.json"
+    },
+    {
+      "id": "HK10-TIME-GRAPH",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-TIME-GRAPH.json"
+    },
+    {
+      "id": "HK-H1-FINITE",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-FINITE.json"
+    },
+    {
+      "id": "HK-BUILDING-ACTIVITY",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-BUILDING-ACTIVITY.json"
+    },
+    {
+      "id": "HK-OBSERVATIONS-ASSOCIATION",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-OBSERVATIONS-ASSOCIATION.json"
+    },
+    {
+      "id": "HK-GMNS-R2-ACCESS",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-GMNS-R2-ACCESS.json"
+    },
+    {
+      "id": "HK-URBANNAV-ASSOCIATION",
+      "city": "hong-kong",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-URBANNAV-ASSOCIATION.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-30",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-30.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-60",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-60.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-100",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-100.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-150",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-150.json"
+    },
+    {
+      "id": "sioux-admm-r1-200",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-200.json"
+    },
+    {
+      "id": "sioux-admm-r1-250",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-250.json"
+    },
+    {
+      "id": "sioux-taplab-official-parity",
+      "city": "sioux-falls",
+      "status": "PASS",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-taplab-official-parity.json"
+    },
+    {
+      "id": "TOOL-CITY-EVIDENCE-QUERY",
+      "city": "shared",
+      "status": "PASS",
+      "basis": "fresh_query_of_public_evidence_tables",
+      "receipt": "experiments/recovered/receipts/city-query.json"
+    }
+  ],
+  "inspectionRecords": [
+    {
+      "id": "boston-gmns-exchange-r1",
+      "state": "ready",
+      "basis": "fresh_structural_validation",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-run.json"
+    },
+    {
+      "id": "boston-massgis-activity-prior-r1",
+      "state": "requires_external_input",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-massgis-activity-prior-r1-inspect.json"
+    },
+    {
+      "id": "boston-acs-population-allocation-r1",
+      "state": "ready",
+      "basis": "fresh_prepared_crosswalk_arithmetic",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-run.json"
+    },
+    {
+      "id": "boston-regional-trip-generation-r1",
+      "state": "ready",
+      "basis": "fresh_prepared_crosswalk_arithmetic",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-run.json"
+    },
+    {
+      "id": "boston-transit-walk-semantic-preparation",
+      "state": "requires_external_input",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-transit-walk-semantic-preparation-inspect.json"
+    },
+    {
+      "id": "boston-gps-network-association",
+      "state": "requires_external_input",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-gps-network-association-inspect.json"
+    },
+    {
+      "id": "boston-semantic-fix-srestore",
+      "state": "ready",
+      "basis": "fresh_prepared_feedback_choice_only",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-run.json"
+    },
+    {
+      "id": "boston-finite-construction",
+      "state": "ready",
+      "basis": "fresh_finite_graph_construction",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-construction-run.json"
+    },
+    {
+      "id": "boston-finite-arc-flow-lp",
+      "state": "ready",
+      "basis": "fresh_finite_arc_lp",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-run.json"
+    },
+    {
+      "id": "boston-finite-cg-pilot-r2-r3",
+      "state": "ready",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-pilot-r2-r3-inspect.json"
+    },
+    {
+      "id": "boston-finite-cg-r4-pricing-closure",
+      "state": "ready",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-r4-pricing-closure-inspect.json"
+    },
+    {
+      "id": "boston-admm-r2-s",
+      "state": "ready",
+      "basis": "saved_run_inspected",
+      "receipt": "examples/boston/recovered-r14/receipts/boston-admm-r2-s-inspect.json"
+    },
+    {
+      "id": "HK-GMNS-R1",
+      "state": "requires_external_input",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-GMNS-R1.json"
+    },
+    {
+      "id": "HK-GMNS-R2-ACCESS",
+      "state": "requires_external_input",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-GMNS-R2-ACCESS.json"
+    },
+    {
+      "id": "HK-POPULATION-2021",
+      "state": "requires_external_input",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-POPULATION-2021.json"
+    },
+    {
+      "id": "HK-BUILDING-ACTIVITY",
+      "state": "requires_external_input",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-BUILDING-ACTIVITY.json"
+    },
+    {
+      "id": "HK-GTFS-WALK-R2",
+      "state": "requires_external_input",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-GTFS-WALK-R2.json"
+    },
+    {
+      "id": "HK-OBSERVATIONS-ASSOCIATION",
+      "state": "requires_external_input",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-OBSERVATIONS-ASSOCIATION.json"
+    },
+    {
+      "id": "HK-URBANNAV-ASSOCIATION",
+      "state": "requires_external_input",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-URBANNAV-ASSOCIATION.json"
+    },
+    {
+      "id": "HK-H1-FW",
+      "state": "ready",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-FW.json"
+    },
+    {
+      "id": "HK-H1-FINITE",
+      "state": "ready",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-FINITE.json"
+    },
+    {
+      "id": "HK-H1-L3-R26",
+      "state": "ready",
+      "basis": "independent_saved_result_validation",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-L3-R26.json"
+    },
+    {
+      "id": "HK-H1-L3-R52",
+      "state": "ready",
+      "basis": "independent_saved_result_validation",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-H1-L3-R52.json"
+    },
+    {
+      "id": "HK-PATH-L3-H0",
+      "state": "scope_only",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-PATH-L3-H0.json"
+    },
+    {
+      "id": "HK-PATH-L3-H2",
+      "state": "scope_only",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-PATH-L3-H2.json"
+    },
+    {
+      "id": "HK-PATH-L3-FULL",
+      "state": "scope_only",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK-PATH-L3-FULL.json"
+    },
+    {
+      "id": "HK10-TIME-GRAPH",
+      "state": "ready",
+      "basis": "fresh_computation_independently_checked",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-TIME-GRAPH.json"
+    },
+    {
+      "id": "HK10-CG-R2R4-HISTORICAL",
+      "state": "historical_failure",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-CG-R2R4-HISTORICAL.json"
+    },
+    {
+      "id": "HK10-CG-R5",
+      "state": "ready",
+      "basis": "independent_saved_result_validation",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-CG-R5.json"
+    },
+    {
+      "id": "HK10-CG-R5-CLOSURE",
+      "state": "ready",
+      "basis": "independent_saved_result_validation",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-CG-R5-CLOSURE.json"
+    },
+    {
+      "id": "HK10-ADMM-R2-GATED",
+      "state": "historical_failure",
+      "basis": "saved_output_integrity_only",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK10-ADMM-R2-GATED.json"
+    },
+    {
+      "id": "HK4-ADMM-R3",
+      "state": "ready",
+      "basis": "independent_saved_result_validation",
+      "receipt": "examples/hong-kong/recovered-r14/receipts/HK4-ADMM-R3.json"
+    },
+    {
+      "id": "TOOL-CITY-EVIDENCE-QUERY",
+      "state": "ready",
+      "basis": "Fresh query and independent CSV-row verification executed in this release.",
+      "receipt": "experiments/recovered/receipts/city-query.json"
+    },
+    {
+      "id": "sioux-taplab-official-parity",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-taplab-official-parity.json"
+    },
+    {
+      "id": "sioux-native-a-reg001-rank50",
+      "state": "ready",
+      "basis": "saved_state_inspection",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-a-reg001-rank50.json"
+    },
+    {
+      "id": "sioux-native-b-beckmann-rank50",
+      "state": "ready",
+      "basis": "saved_state_inspection",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-b-beckmann-rank50.json"
+    },
+    {
+      "id": "sioux-cg-200",
+      "state": "ready",
+      "basis": "saved_state_inspection",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-200.json"
+    },
+    {
+      "id": "sioux-admm-r1-200",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-200.json"
+    },
+    {
+      "id": "sioux-cg-250",
+      "state": "ready",
+      "basis": "saved_state_inspection",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-250.json"
+    },
+    {
+      "id": "sioux-admm-r1-250",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-250.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-30",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-30.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-60",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-60.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-100",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-100.json"
+    },
+    {
+      "id": "sioux-admm-r2s-development-150",
+      "state": "ready",
+      "basis": "fresh_computation",
+      "receipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-150.json"
+    }
+  ],
+  "negativeControls": {
+    "modifiedBostonPopulationRejected": true,
+    "modifiedH1PathFlowRejected": true,
+    "changed_source_rejected": true,
+    "path_escape_rejected": true,
+    "repository_output_rejected": true,
+    "occupied_output_preserved": true,
+    "unrelated_verify_writes_nothing": true,
+    "failed_execution_not_fresh": true,
+    "bostonFreshOutputLossAndAlteredCostRejected": true
+  },
+  "limits": [
+    "Large recovered CG and native-L3 solvers were not rerun in this release; their retained numerical states were independently checked.",
+    "Ten preparation records require original external provider snapshots; three Boston preparation records expose source-pipeline instructions and inspection commands, without a generic run action.",
+    "A current provider download may differ from the retained historical hash. Raw external provider archives are not redistributed here.",
+    "Seven audit records retain unresolved historical version/run identity. Historical acceptance failures and unperformed experiments retain their original scope.",
+    "Sioux historical CG inspection does not establish independent complete pricing closure."
+  ],
+  "archiveValidation": "docs/reproduction/publication-validation.json",
+  "bostonVerifierRepair": {
+    "status": "PASS",
+    "adapter": "tools/reproduction/recovered_boston.py",
+    "adapterSha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+    "changes": [
+      "Select verification inputs from the successful original record and evidence basis, never file existence.",
+      "Require record-specific fresh result files before verification, including all finite graph tables, Srestore tables, CG pool/dual/solution files and ADMM state/result/history.",
+      "Declare sourceAction and requiredOutputs in new run receipts.",
+      "Recompute finite LP objective from pinned dynamic arc costs and reject inconsistent reported unit_cost."
+    ],
+    "freshOutputsReverified": 6,
+    "historicalOutputsReverified": 12,
+    "negativeControlsRejected": 7,
+    "originalReceiptsPreserved": true,
+    "heavySolversRerun": false
+  }
+}

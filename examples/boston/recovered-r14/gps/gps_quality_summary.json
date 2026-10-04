@@ -1,0 +1,53 @@
+{
+  "run_id": "boston_quality_r1_20260922",
+  "config_signature_sha256": "a7b3e72a77bd7a27ee613d29a991c90e6aa33650860e173ec755fbb97651ab29",
+  "built_at_utc": "2026-09-22T02:19:43.540520+00:00",
+  "source": "existing saved MBTA V3 bus-position snapshots and existing 30-segment route results",
+  "no_rematching_performed": true,
+  "counts": {
+    "segments_total": 235,
+    "not_selected": 205,
+    "selected": 30,
+    "selected_route_failed": 2,
+    "selected_route_returned": 28,
+    "topology_valid": 28,
+    "spatial_pass": 10,
+    "temporal_pass": 22,
+    "observation_eligible": 9,
+    "quality_classes": {
+      "not_selected": 205,
+      "anomalous": 19,
+      "qualified": 9,
+      "route_failed": 2
+    },
+    "matched_points": 336,
+    "points_lateral_error_over_200m": 117,
+    "segments_with_lateral_error_over_200m": 18,
+    "segments_with_backtrack_over_1m": 10,
+    "segments_with_backtrack_over_20m": 3
+  },
+  "rules": {
+    "spatial_lateral_error_limit_m": 200,
+    "backtrack_tolerance_m": 20,
+    "backtrack_reporting_floor_m": 1,
+    "max_along_route_speed_mps": 55,
+    "max_sample_gap_seconds": 300,
+    "detour_ratio_limit": 5,
+    "detour_excess_distance_m": 1000,
+    "minimum_observation_duration_seconds": 30,
+    "minimum_window_progress_m": 30,
+    "spatial_rule_note": "The 200 m threshold preserves the original declared first-pass gate. Passing it is necessary but not sufficient.",
+    "backtrack_rule_note": "20 m is the existing HMM observation-noise sigma used as an engineering tolerance, not an MBTA accuracy guarantee. Sensitivity counts at 1, 5, 20 and 50 m are reported.",
+    "speed_rule_note": "55 m/s preserves the pre-match segmentation ceiling; along-route speed is now checked separately and cannot be hidden by small lateral error.",
+    "accuracy_limit": "MBTA V3 vehicle positions expose no per-point horizontal-accuracy field in these saved responses. No source-certified positional accuracy is claimed."
+  },
+  "raw_metadata": {
+    "raw_status_counts": {
+      "IN_TRANSIT_TO": 2262,
+      "STOPPED_AT": 2953
+    },
+    "raw_lookup_rows": 4652
+  },
+  "denominator_note": "205 not selected, 2 selected route failures, and 28 returned paths are distinct states; 207 is not reported as one failure count.",
+  "semantics": "route_returned and topology_valid do not imply observation_eligible; native fallback is evaluated by identical spatial and temporal rules."
+}

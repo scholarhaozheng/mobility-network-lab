@@ -1,0 +1,20 @@
+{
+  "run_id": "behavior_feedback_r1",
+  "enabled_by_default": false,
+  "qualified_segments_input": 9,
+  "usable_stop_pair_observations": 13,
+  "unique_service_intervals": 13,
+  "observed_local_hour_min": 12,
+  "observed_local_hour_max": 12,
+  "scenario_period": "07:00-09:00 local",
+  "scenario_period_overlap": false,
+  "interpretation": "Short midday observations are exploratory and non-independent; overlay is disabled unless explicitly enabled for a sensitivity run.",
+  "scope_rule": "Exact route_id + direction_id + ordered stop interval only; never generalized networkwide.",
+  "source_hashes": {
+    "database\\observations\\quality_runs\\boston_quality_r1_20260922\\gps_segment_quality.csv": "798815f6cd3c067af194b0e215e5d7c5e57b6322515fd5a403da6ca2e302cbe1",
+    "database\\observations\\quality_runs\\boston_quality_r1_20260922\\gps_point_progress.csv": "ec76e314bda73d09b474babcdaa7dc2cf5040dd9e830da8c4e57765bd84d61d3",
+    "database\\observations\\gps_segments.csv": "40d7d748199891fd43a059faa66b45a4fe551bc16103a2c3ba8bbd27b6646f7f",
+    "database\\transit\\trips.txt": "54a8ba1859bb9cd18e8f384ac06323d0e31821921429faff62d30b226162c612",
+    "database\\transit\\stop_times.txt": "768ced53dc80b0b3afafc1278585b8ed2b28f6c7fcbcb5ecc149fc7f4f065191"
+  }
+}

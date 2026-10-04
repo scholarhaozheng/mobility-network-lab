@@ -1,0 +1,37 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-GMNS-R2-ACCESS",
+  "checkedDate": "2026-10-04",
+  "action": "run_and_verify",
+  "freshComputation": true,
+  "freshSolverRun": false,
+  "scope": "Recompile the R2 turn-aware network, engineering speed/capacity assumptions, physical access and directed reachability from pinned R1objects and exact official speed snapshot.",
+  "verification": {
+    "record": "HK-GMNS-R2-ACCESS",
+    "success": true,
+    "checks": {
+      "table_00_matches": true,
+      "table_01_matches": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "hong_kong_full_stack_r2_r4/phase_a/static_input/turn_expanded_links.csv": {
+        "pass": true,
+        "rows": 3446,
+        "max_scaled_absolute_difference": 0
+      },
+      "hong_kong_full_stack_r2_r4/phase_a/turn_aware_movement_edges.csv": {
+        "pass": true,
+        "rows": 1896,
+        "max_scaled_absolute_difference": 0
+      }
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "fresh_computation_independently_checked",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.1036780999857001,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "A new output directory was populated by the recorded computation and then independently verified. Original external raw inputs, where required, were supplied locally and are not included in this repository."
+}

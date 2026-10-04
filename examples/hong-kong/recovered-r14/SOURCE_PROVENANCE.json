@@ -1,0 +1,28 @@
+{
+  "schema": "mcl_recovered_hong_kong_source_provenance_v1",
+  "date": "2026-10-04",
+  "files": [
+    {
+      "path": "examples/hong-kong/recovered-r14/cg/saved/full_cg_v1_phase_ii_final_pool.csv",
+      "sourceSha256": "2b80644f6a2890536f48bc46f1dbe2e322244a927eb556d088f7d244b6b21093",
+      "publishedSha256": "ca403bf02f9e7acb9eb1b2c77767167908e588433bbcc046d4400f5cbeff0392",
+      "transformation": "Replace the historical local workspace prefix in 12 candidate_source provenance cells with historical-workspace/. All numerical values, IDs, arc sequences and other CSV bytes are unchanged.",
+      "changedField": "candidate_source",
+      "changedDataRows": [
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "numericalChange": false
+    }
+  ]
+}

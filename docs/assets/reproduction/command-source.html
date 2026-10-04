@@ -591,7 +591,7 @@ if __name__ == &quot;__main__&quot;:
     except (ValueError, OSError, KeyError) as exc:
         print(json.dumps({&quot;status&quot;: &quot;ERROR&quot;, &quot;error&quot;: str(exc)}), file=sys.stderr)
         raise SystemExit(2)
-</code></pre></details><details id="file-fa08d631f8651f50"><summary>tools/mcl_reproduction_check.py</summary><p>SHA-256: <code>6ab4d369e83e5f0508ab82dc008580ecf4e53123c724e7254cfa00bebed5f666</code></p><pre><code>&quot;&quot;&quot;Check a reproduction checkout without downloading data or invoking an optimizer.&quot;&quot;&quot;
+</code></pre></details><details id="file-fa08d631f8651f50"><summary>tools/mcl_reproduction_check.py</summary><p>SHA-256: <code>22021e8f2ec4fea776b1f7dda99a4b37ab5bd3f2f87f4478ad214a62aa1b80f0</code></p><pre><code>&quot;&quot;&quot;Check a reproduction checkout without downloading data or invoking an optimizer.&quot;&quot;&quot;
 from __future__ import annotations
 import argparse, hashlib, importlib.metadata, json, platform, sys
 from pathlib import Path
@@ -639,10 +639,165 @@ def main():
         problems.extend(entry&#91;&#x27;id&#x27;&#93;+&#x27;: &#x27;+x for x in issues)
     mapped=set()
     for ids in cat&#91;&#x27;audit_entries&#x27;&#93;.values(): mapped.update(&#91;ids&#93; if isinstance(ids,str) else ids)
+    recovered_checks=&#91;&#93;; recovered_files={}
+    if not args.experiment and (root/&#x27;experiments/recovered&#x27;).is_dir():
+        from mcl_recovered import records as recovered_records, check as check_recovered
+        for entry in recovered_records(root).values():
+            result=check_recovered(root,entry)
+            recovered_checks.append({&#x27;id&#x27;:entry&#91;&#x27;id&#x27;&#93;,&#x27;status&#x27;:result&#91;&#x27;status&#x27;&#93;,&#x27;checked_files&#x27;:len(result&#91;&#x27;files&#x27;&#93;),&#x27;errors&#x27;:result&#91;&#x27;errors&#x27;&#93;})
+            for item in result&#91;&#x27;files&#x27;&#93;: recovered_files&#91;item&#91;&#x27;path&#x27;&#93;&#93;=item
+            problems.extend(entry&#91;&#x27;id&#x27;&#93;+&#x27;: &#x27;+issue for issue in result&#91;&#x27;errors&#x27;&#93;)
     report={&#x27;schema&#x27;:&#x27;mcl_reproduction_checkout_check_v1&#x27;,&#x27;status&#x27;:&#x27;PASS&#x27; if not problems else &#x27;FAIL&#x27;,&#x27;optimizer_calls&#x27;:0,&#x27;network_calls&#x27;:0,&#x27;fresh_computation_performed&#x27;:False,&#x27;scope&#x27;:&#x27;Pinned file and archived receipt integrity only. Execute run and verify to reproduce a result. Runtime binaries must be built or installed separately.&#x27;,&#x27;baseline&#x27;:cat&#91;&#x27;baseline_commit&#x27;&#93;,&#x27;commands_checked&#x27;:len(rows),&#x27;mapped_inventory_records&#x27;:len(mapped),&#x27;unique_files_checked&#x27;:len(files),&#x27;python&#x27;:platform.python_version(),&#x27;commands&#x27;:rows,&#x27;warnings&#x27;:warnings,&#x27;errors&#x27;:problems}
+    report.update(recovered_records_checked=len(recovered_checks), recovered_unique_files_checked=len(recovered_files), recovered_checks=recovered_checks)
     if args.report: args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(report,indent=2)+&#x27;\n&#x27;,encoding=&#x27;utf-8&#x27;)
     print(json.dumps(report,indent=2));return 0 if not problems else 2
 if __name__==&#x27;__main__&#x27;: raise SystemExit(main())
+</code></pre></details><details id="file-0784f4eb64903bbc"><summary>tools/mcl_recovered.py</summary><p>SHA-256: <code>04b6de7b46e44ab5fef4f772267f57a77288c4dd47a0078dd0ce2bda966424d3</code></p><pre><code>&quot;&quot;&quot;Portable entries for recovered experiments; historical inspection is not a fresh solve.&quot;&quot;&quot;
+from __future__ import annotations
+import argparse, hashlib, json, os, subprocess, sys, tempfile, time
+from pathlib import Path
+
+ROOT = Path(__file__).resolve().parents&#91;1&#93;
+ACTIONS = (&#x27;list&#x27;, &#x27;describe&#x27;, &#x27;check&#x27;, &#x27;run&#x27;, &#x27;inspect&#x27;, &#x27;verify&#x27;, &#x27;acquire&#x27;)
+
+def read(path):
+    return json.loads(Path(path).read_text(encoding=&#x27;utf-8-sig&#x27;))
+
+def sha(path):
+    h = hashlib.sha256()
+    with Path(path).open(&#x27;rb&#x27;) as f:
+        for part in iter(lambda: f.read(1024 * 1024), b&#x27;&#x27;): h.update(part)
+    return h.hexdigest()
+
+def rooted(root, relative):
+    rel = Path(relative)
+    path = (root / rel).resolve()
+    if rel.is_absolute() or &#x27;:&#x27; in str(relative) or not path.is_relative_to(root):
+        raise ValueError(&#x27;Repository-relative path required: &#x27; + str(relative))
+    return path
+
+def records(root):
+    result = {}
+    for manifest in sorted((root / &#x27;experiments/recovered&#x27;).glob(&#x27;*.json&#x27;)):
+        data = read(manifest)
+        for entry in data.get(&#x27;records&#x27;, &#91;&#93;):
+            if entry&#91;&#x27;id&#x27;&#93; in result: raise ValueError(&#x27;Duplicate recovered record: &#x27; + entry&#91;&#x27;id&#x27;&#93;)
+            item = dict(entry)
+            item&#91;&#x27;manifest&#x27;&#93; = manifest.relative_to(root).as_posix()
+            result&#91;item&#91;&#x27;id&#x27;&#93;&#93; = item
+    return result
+
+def check(root, entry):
+    checks, errors = &#91;&#93;, &#91;&#93;
+    for item in entry.get(&#x27;files&#x27;, &#91;&#93;):
+        path = rooted(root, item&#91;&#x27;path&#x27;&#93;)
+        actual = sha(path) if path.is_file() else None
+        ok = actual == item.get(&#x27;sha256&#x27;) and actual is not None
+        checks.append({&#x27;path&#x27;: item&#91;&#x27;path&#x27;&#93;, &#x27;sha256&#x27;: actual, &#x27;expected&#x27;: item.get(&#x27;sha256&#x27;), &#x27;matches&#x27;: ok})
+        if not ok: errors.append(&#x27;Missing or changed pinned file: &#x27; + item&#91;&#x27;path&#x27;&#93;)
+    entrypoint = entry.get(&#x27;entrypoint&#x27;)
+    if entrypoint and not any(f&#91;&#x27;path&#x27;&#93; == entrypoint for f in entry.get(&#x27;files&#x27;, &#91;&#93;)):
+        errors.append(&#x27;Entrypoint is not hash-pinned&#x27;)
+    return {&#x27;id&#x27;: entry&#91;&#x27;id&#x27;&#93;, &#x27;status&#x27;: &#x27;PASS&#x27; if not errors else &#x27;FAIL&#x27;, &#x27;files&#x27;: checks,
+            &#x27;errors&#x27;: errors, &#x27;state&#x27;: entry.get(&#x27;state&#x27;), &#x27;environment&#x27;: entry.get(&#x27;environment&#x27;, {}),
+            &#x27;external_inputs&#x27;: entry.get(&#x27;dataSources&#x27;, &#91;&#93;), &#x27;scope&#x27;: &#x27;Packaged file integrity only; no numerical computation.&#x27;}
+
+def invoke(root, entry, args):
+    if args.action not in entry.get(&#x27;supportedActions&#x27;, &#91;&#93;):
+        raise ValueError(&#x27;Action is not available for this record: &#x27; + args.action)
+    checked = check(root, entry)
+    if checked&#91;&#x27;errors&#x27;&#93;: raise ValueError(&#x27;; &#x27;.join(checked&#91;&#x27;errors&#x27;&#93;))
+    if not entry.get(&#x27;entrypoint&#x27;): raise ValueError(&#x27;No executable entrypoint for this scope record&#x27;)
+    script = rooted(root, entry&#91;&#x27;entrypoint&#x27;&#93;)
+    command = &#91;sys.executable, &#x27;-B&#x27;, str(script), args.action, &#x27;--repo-root&#x27;, str(root)&#93;
+    target = args.run if args.action == &#x27;verify&#x27; else args.output
+    if target is None: raise ValueError(&#x27;Supply --run for verify, or --output for other actions&#x27;)
+    target = target.resolve()
+    if target.is_relative_to(root):
+        raise ValueError(&#x27;Keep recovered outputs outside the repository; use ../results/RECORD_ID-action&#x27;)
+    if args.action == &#x27;verify&#x27;:
+        if not target.is_dir(): raise ValueError(&#x27;Run directory does not exist&#x27;)
+        identities = &#91;target / &#x27;entry-run.json&#x27;, target / &#x27;entry-inspect.json&#x27;&#93;
+        matched = &#91;&#93;
+        for identity in identities:
+            if identity.is_file():
+                saved = read(identity)
+                if saved.get(&#x27;id&#x27;) == entry&#91;&#x27;id&#x27;&#93; and saved.get(&#x27;exit_code&#x27;) == 0 and saved.get(&#x27;entrypoint_sha256&#x27;) == sha(script):
+                    matched.append(saved)
+        if not matched:
+            raise ValueError(&#x27;No matching successful run/inspect receipt for this record and adapter; use the same entry or the original adapter to verify direct runs&#x27;)
+        command += &#91;&#x27;--run&#x27;, str(target)&#93;
+    else:
+        if target.exists() and (not target.is_dir() or any(target.iterdir())):
+            raise ValueError(&#x27;Output must be a new or empty directory&#x27;)
+        command += &#91;&#x27;--output&#x27;, str(target)&#93;
+    command += entry.get(&#x27;arguments&#x27;, &#91;&#x27;--record&#x27;, entry&#91;&#x27;id&#x27;&#93;&#93;)
+    if args.input_root: command += &#91;&#x27;--input-root&#x27;, str(args.input_root.resolve())&#93;
+    if getattr(args, &#x27;ipopt&#x27;, None): command += &#91;&#x27;--ipopt&#x27;, str(args.ipopt.resolve())&#93;
+    env = os.environ.copy()
+    env.update(PYTHONDONTWRITEBYTECODE=&#x27;1&#x27;, PYTHONUTF8=&#x27;1&#x27;, OMP_NUM_THREADS=&#x27;1&#x27;, OPENBLAS_NUM_THREADS=&#x27;1&#x27;, MKL_NUM_THREADS=&#x27;1&#x27;)
+    start = time.perf_counter()
+    timed_out = False
+    with tempfile.TemporaryFile(mode=&#x27;w+b&#x27;) as log:
+        try:
+            process = subprocess.run(command, cwd=root, env=env, stdout=log, stderr=subprocess.STDOUT,
+                                     timeout=args.timeout or entry.get(&#x27;timeoutSeconds&#x27;, 900), shell=False,
+                                     creationflags=getattr(subprocess, &#x27;CREATE_NO_WINDOW&#x27;, 0))
+            code = process.returncode
+        except subprocess.TimeoutExpired:
+            code, timed_out = 124, True
+        log.seek(0)
+        output = log.read().decode(&#x27;utf-8&#x27;, errors=&#x27;replace&#x27;)
+    target.mkdir(parents=True, exist_ok=True)
+    receipt = {&#x27;schema&#x27;: &#x27;mcl_recovered_execution_v1&#x27;, &#x27;id&#x27;: entry&#91;&#x27;id&#x27;&#93;, &#x27;action&#x27;: args.action,
+               &#x27;exit_code&#x27;: code, &#x27;timed_out&#x27;: timed_out, &#x27;seconds&#x27;: time.perf_counter() - start,
+               &#x27;command&#x27;: command, &#x27;entrypoint_sha256&#x27;: sha(script), &#x27;manifest_sha256&#x27;: sha(root / entry&#91;&#x27;manifest&#x27;&#93;),
+               &#x27;front_end_sha256&#x27;: sha(Path(__file__)), &#x27;checked_files&#x27;: len(checked&#91;&#x27;files&#x27;&#93;),
+               &#x27;success&#x27;: code == 0,
+               &#x27;evidence_basis&#x27;: (&#x27;fresh_execution&#x27; if args.action == &#x27;run&#x27; else &#x27;saved_result_inspection&#x27; if args.action == &#x27;inspect&#x27; else args.action) if code == 0 else &#x27;failed_execution_attempt&#x27;,
+               &#x27;scope&#x27;: entry.get(&#x27;scope&#x27;, &#x27;&#x27;)}
+    (target / (&#x27;entry-&#x27; + args.action + &#x27;.log&#x27;)).write_text(output, encoding=&#x27;utf-8&#x27;)
+    (target / (&#x27;entry-&#x27; + args.action + &#x27;.json&#x27;)).write_text(json.dumps(receipt, indent=2) + &#x27;\n&#x27;, encoding=&#x27;utf-8&#x27;)
+    print(json.dumps(receipt, indent=2))
+    if code and output: print(output&#91;-8000:&#93;, file=sys.stderr)
+    return code
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(&#x27;action&#x27;, choices=ACTIONS)
+    parser.add_argument(&#x27;id&#x27;, nargs=&#x27;?&#x27;)
+    parser.add_argument(&#x27;--repo-root&#x27;, type=Path, default=ROOT)
+    parser.add_argument(&#x27;--output&#x27;, type=Path)
+    parser.add_argument(&#x27;--run&#x27;, type=Path)
+    parser.add_argument(&#x27;--input-root&#x27;, type=Path, help=&#x27;Local exact external input snapshot, where the selected adapter supports it&#x27;)
+    parser.add_argument(&#x27;--ipopt&#x27;, type=Path, help=&#x27;Installed IPOPT executable for supported native recipes&#x27;)
+    parser.add_argument(&#x27;--timeout&#x27;, type=int, help=&#x27;Optional maximum command time in seconds&#x27;)
+    parser.add_argument(&#x27;--city&#x27;)
+    args = parser.parse_args()
+    root = args.repo_root.resolve()
+    try:
+        entries = records(root)
+        if args.action == &#x27;list&#x27;:
+            print(json.dumps(&#91;{&#x27;id&#x27;: e&#91;&#x27;id&#x27;&#93;, &#x27;title&#x27;: e&#91;&#x27;title&#x27;&#93;, &#x27;city&#x27;: e.get(&#x27;city&#x27;), &#x27;state&#x27;: e.get(&#x27;state&#x27;),
+                               &#x27;actions&#x27;: e.get(&#x27;supportedActions&#x27;, &#91;&#93;), &#x27;evidenceBasis&#x27;: e.get(&#x27;evidenceBasis&#x27;)}
+                              for e in entries.values() if not args.city or e.get(&#x27;city&#x27;) == args.city&#93;, indent=2))
+            return 0
+        if args.action == &#x27;check&#x27; and not args.id:
+            reports = &#91;check(root, e) for e in entries.values()&#93;
+            print(json.dumps({&#x27;status&#x27;: &#x27;PASS&#x27; if all(r&#91;&#x27;status&#x27;&#93; == &#x27;PASS&#x27; for r in reports) else &#x27;FAIL&#x27;,
+                              &#x27;records&#x27;: len(reports), &#x27;checks&#x27;: reports}, indent=2))
+            return 0 if all(r&#91;&#x27;status&#x27;&#93; == &#x27;PASS&#x27; for r in reports) else 2
+        if args.id not in entries: raise ValueError(&#x27;Unknown recovered record; use list&#x27;)
+        entry = entries&#91;args.id&#93;
+        if args.action == &#x27;describe&#x27;: print(json.dumps(entry, indent=2)); return 0
+        if args.action == &#x27;check&#x27;:
+            report = check(root, entry); print(json.dumps(report, indent=2)); return 0 if report&#91;&#x27;status&#x27;&#93; == &#x27;PASS&#x27; else 2
+        return invoke(root, entry, args)
+    except (ValueError, OSError, KeyError) as exc:
+        print(json.dumps({&#x27;status&#x27;: &#x27;BLOCKED&#x27;, &#x27;error&#x27;: str(exc)}), file=sys.stderr)
+        return 2
+
+if __name__ == &#x27;__main__&#x27;: raise SystemExit(main())
 </code></pre></details><details id="file-51c2209e665138b0"><summary>experiments/catalog.json</summary><p>SHA-256: <code>c696fca78159de74301defeda63d363fffe36dc61e5de2ece02af0ffb831b7e1</code></p><pre><code>{
   &quot;schema&quot;: &quot;mcl_reproduce_catalog_v1&quot;,
   &quot;repository&quot;: &quot;https://github.com/scholarhaozheng/mobility-network-lab&quot;,
@@ -5357,13 +5512,13 @@ if __name__==&#x27;__main__&#x27;: raise SystemExit(main())
   },
   &quot;publication_manifest&quot;: &quot;experiments/publication.json&quot;
 }
-</code></pre></details><details id="file-cff4ee748140dfea"><summary>experiments/README.md</summary><p>SHA-256: <code>2e7b30ac5822dbcc75da48666d200496df55034d98b8c957082267fe633836e7</code></p><pre><code># Reproduce a documented experiment
+</code></pre></details><details id="file-cff4ee748140dfea"><summary>experiments/README.md</summary><p>SHA-256: <code>b70cb69454fee561d8346ab1750f92c42d573742b9ec1857051d7d042e8be076</code></p><pre><code># Reproduce a documented experiment
 
 This catalog connects the retained experiments to their exact computational source, frozen inputs, configuration and acceptance checks. The reader-facing inventory remains 108 records; a scope record, archived checkpoint or located source does not automatically become an executable recipe.
 
-This release includes the computational source, exact frozen inputs, registered commands and numerical receipts. The historical public baseline is `6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b`; new files are identified in `publication.json` by SHA-256. New computational entry URLs point to the immutable `reproduction-2026-10-04-r12` tag; the catalog hashes are the exact executable contract. Record `git rev-parse HEAD` when cloning. No private conversations or raw restricted city observations are included.
+This release includes the computational source, exact frozen inputs, registered commands and numerical receipts. The historical public baseline is `6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b`; new files are identified in `publication.json` by SHA-256. New computational entry URLs point to the immutable `reproduction-2026-10-04-r14` tag; the catalog hashes are the exact executable contract. Record `git rev-parse HEAD` when cloning. No private conversations or raw restricted city observations are included.
 
-This revision contains 41 verified commands covering 46 inventory records: 33 city records and 13 public tool/control records. These comprise 37 fresh-computation records and 9 explicitly bounded prepared-input replays. Every command has an actual execution receipt and separate verification. The remaining 62 inventory records retain their individual source-recovery status and outstanding requirements.
+This revision contains 41 verified commands covering 46 inventory records: 33 city records and 13 public tool/control records. These comprise 37 fresh-computation records and 9 explicitly bounded prepared-input replays. Every command has an actual execution receipt and separate verification. The other 62 inventory records have been traced to retained materials or explicit scope evidence. Their newly integrated commands and inspection results are tracked separately below.
 
 ## Download or clone
 
@@ -5374,7 +5529,7 @@ For the complete project, including documentation and figure assets:
 ~~~powershell
 git clone -c core.autocrlf=false https://github.com/scholarhaozheng/mobility-network-lab.git
 cd mobility-network-lab
-git checkout reproduction-2026-10-04-r12
+git checkout reproduction-2026-10-04-r14
 git rev-parse HEAD
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-tested.txt
@@ -5382,7 +5537,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -B tools/mcl_reproduce.py list
 ~~~
 
-The integrity command uses only the Python standard library. It checks all 200 pinned inputs, computational source/runtime files and 41 archived receipt identities without optimization or network access. Passing it confirms checkout integrity; a fresh run followed by verify is required to reproduce a numerical result. To check one environment use `python -B tools/mcl_reproduction_check.py --experiment EXPERIMENT_ID --environment`.
+The integrity command uses only the Python standard library. It checks the original 200 pinned inputs, computational source/runtime files and 41 archived receipt identities, plus every supplemental recovered-file pin, without optimization or network access. Passing it confirms checkout integrity; a fresh run followed by verify is required to reproduce a numerical result. To check one environment use `python -B tools/mcl_reproduction_check.py --experiment EXPERIMENT_ID --environment`.
 
 `reproduction-status.json` accounts for all 108 inventory records, including those without an executable recipe. No entry certifies an end-to-end rebuild from raw observations to every city figure.
 
@@ -5435,7 +5590,7 @@ The helper downloads the exact upstream source archive, verifies SHA-256 `5163b4
 - The recovered Hong Kong FW source reports its gap using the historical Beckmann-objective denominator. This convention is retained and should not be confused with a total-system-travel-time-normalized relative gap.
 - Historical static instances retain their own city, phase, scale, demand and reference. A new Sioux public FW solve is distinct from the historical 100-iteration result.
 - Lagrangian public controls now use the recovered original P07 plan. Controls are not substitutes for the historical city instances.
-- The broad historical city states remain outside this bundle. The exact Sioux 200/250-OD arc/demand inputs and four verified recipes are now included as described below. Other recovered city sources and saved-state checks retain their individual status; located code, a checked saved point and a fresh runnable recipe are different outcomes.
+- Selected historical city inputs and saved states are now included in the recovered recipes. The exact Sioux 200/250-OD arc/demand inputs and four verified recipes are now included as described below. Other recovered city sources and saved-state checks retain their individual status; located code, a checked saved point and a fresh runnable recipe are different outcomes.
 
 Numerical verification includes the relevant OD/path/link balances, nonnegative flows, capacity constraints, objectives, gap or pricing checks and original reference comparisons. Thresholds are fixed per experiment in `catalog.json`; scientific limitations stay visible even when a command passes. Reference-only files do not initialize the solve.
 
@@ -5453,7 +5608,7 @@ The Windows native environment has a separate exact Conda lock, hash-pinned PyPI
 
 ## Newly verified exact Sioux instances
 
-This repository includes the exact 200-OD and 250-OD arc/demand pairs and four registered P07 Lagrangian / R2_S ADMM recipes. All four were freshly solved with unchanged public source and policy; the original independent gates, historical objectives and iteration counts passed. No reference flow, reference path pool or saved state initializes these solves. Historical CG remains a separate pending recipe and does not acquire a full pricing-closure certificate through these results.
+This repository includes the exact 200-OD and 250-OD arc/demand pairs and four registered P07 Lagrangian / R2_S ADMM recipes. All four were freshly solved with unchanged public source and policy; the original independent gates, historical objectives and iteration counts passed. No reference flow, reference path pool or saved state initializes these solves. Historical CG has a separate recovered command and inspected evidence; it does not acquire a full pricing-closure certificate through these results.
 
 The prior public snapshot excluded the city inputs. The frozen derived inputs and original policy hashes are included in this release. The immediate GMNS provider revision remains unrecovered; this limits raw-source reconstruction, rather than the exact frozen-input solve. See examples/sioux-falls/finite-time-r05/PROVENANCE.json. The Transportation Networks benchmark reference states academic-research use and source attribution; these data are not relabeled under the code license.
 
@@ -5476,6 +5631,26 @@ py -3.11 -m venv .venv-public-controls
 ```
 
 The recipe freezes numpy 1.24.3, scipy 1.10.1 and pandas 1.5.3, and was exercised with Python 3.11.4. Existing validated environments were used; r05 does not claim a new clean environment installation.
+
+## Recovered city workflows
+
+`recovered/*.json` adds portable source, input/configuration hashes, provider acquisition information and per-record commands. Use `python -B tools/mcl_recovered.py list` and `describe RECORD_ID` to select an exact workflow. The existing `mcl_reproduce.py` catalog and its 41 archived receipts retain their original scientific meaning.
+
+- `check` checks packaged-file identity without computation or network access.
+- `inspect` verifies retained evidence. Its success is not a fresh-solver claim, and an expected historical failure remains a failure.
+- `run` executes the selected computation. Use its documented environment and a new output directory.
+- `verify` checks that result using the selected adapter. The recipe states whether this is structural validation, independent numerical verification, or both.
+
+```text
+python -B tools/mcl_recovered.py describe RECORD_ID
+python -B tools/mcl_recovered.py inspect RECORD_ID --output ../results/RECORD_ID-inspect
+python -B tools/mcl_recovered.py run RECORD_ID --output ../results/RECORD_ID-run
+python -B tools/mcl_recovered.py verify RECORD_ID --run ../results/RECORD_ID-run
+```
+
+Actions are enabled per record. An external-data workflow requires the documented exact input snapshot; follow `dataSources` and use `--input-root`. Expensive historical CG/native cases may have inspected saved states and a runnable command without a new full solve in this release. Original scientific gates and missing historical version identities remain visible. No private conversations or original restricted observations are included.
+
+Instructions: &#91;Boston&#93;(../docs/reproduction/recovered-boston.md) · &#91;Sioux Falls&#93;(../docs/reproduction/recovered-sioux.md) · &#91;Hong Kong&#93;(../docs/reproduction/recovered-hong-kong.md) · &#91;City query&#93;(../docs/reproduction/recovered-shared.md). The &#91;complete status ledger&#93;(reproduction-status.json) distinguishes these recovered workflows from fresh numerical reproduction.
 </code></pre></details><details id="file-d9cbb0c15366ee6c"><summary>algorithms/distributed_assignment/lagrangian_r2/reproduce.py</summary><p>SHA-256: <code>0f487a350ff5debc7a1263e4cdd54e9481c8f12eaef4a226a605aa55fe347db5</code></p><pre><code>&quot;&quot;&quot;Reproduce frozen P07 controls or run the same policy on supplied finite inputs.
 
 This adapter calls the existing public solver and independent evaluator. The

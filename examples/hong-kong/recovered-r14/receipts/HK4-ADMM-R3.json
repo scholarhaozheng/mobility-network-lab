@@ -1,0 +1,57 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK4-ADMM-R3",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Exact R3source and policy on separate4OD/24,598-arc graph; saved-state independent validation is distinct from fresh ADMM. Do not conflate with historical HK10R2failure.",
+  "verification": {
+    "record": "HK4-ADMM-R3",
+    "success": true,
+    "checks": {
+      "independent_original_unit_admm_gates": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "optimizer_calls": 0,
+      "max_balance": 2.500753781831122e-8,
+      "max_kkt_active": 4.440892098500626e-16,
+      "max_kkt_inactive_negative": 0,
+      "min_flow": 0,
+      "max_forbidden": 0,
+      "primal_residual": 0.002848612438462572,
+      "dual_residual": 0.0023563401757695636,
+      "primal_threshold": 0.008489148518508037,
+      "dual_threshold": 0.0031531019531220567,
+      "max_capacity_excess": 5.025538873937307e-10,
+      "max_z_capacity_excess": 0,
+      "max_projection_error": 0,
+      "max_dual_update_error": 0,
+      "objective": 32.98357085525667,
+      "local_objective_sum": 32.983570855256666,
+      "saved_objective_error": 0,
+      "gates": {
+        "local_conservation": true,
+        "nonnegative": true,
+        "forbidden": true,
+        "primal": true,
+        "dual": true,
+        "capacity": true,
+        "consensus_capacity": true,
+        "projection": true,
+        "dual_update": true,
+        "objective_recompute": true,
+        "local_kkt": true
+      },
+      "status": "PASS"
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "independent_saved_result_validation",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.6266740999999456,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

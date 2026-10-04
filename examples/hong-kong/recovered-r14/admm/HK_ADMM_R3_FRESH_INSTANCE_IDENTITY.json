@@ -1,0 +1,40 @@
+{
+  "status": "FROZEN_INPUT_INSTANCE",
+  "case_id": "HK_R3_FRESH_4OD_30S_50STEPS",
+  "model_signature": "00a15f86758a507d44945bc14323ac0b7cbc061962ee5e4ab5a9555565de6997",
+  "arc_sha256": "f775c6e29c0cd592e88e328055afa13cd7e50bbcc079cfb3d47cebef5361c79a",
+  "demand_sha256": "e737d870725e7eac9a9c978b0c77ccaec44cd7b71391b50cdc144a67ac44cfe4",
+  "physical_link_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6",
+  "selected_canonical_sha256": "2fc42ffc8919a0157b870eb5893140400e6f299d439702a15f39d798354586da",
+  "dynamic_nodes": 11942,
+  "dynamic_arcs": 24598,
+  "od_count": 4,
+  "demand_total_pce": 10.84561943484106,
+  "time_step_seconds": 30,
+  "horizon_steps": 50,
+  "cost_unit": "vehicle_minutes",
+  "capacity_unit": "PCE_per_30s_movement_departure",
+  "source_graph": "accepted Hong Kong R2-R4 corridor; unchanged movement/turn/zone/wait arc rows; only commodity connectors replaced",
+  "reachability": [
+    {
+      "demand_id": "R3H01",
+      "shortest_path_cost": 3.490588121000004,
+      "path_arc_count": 83
+    },
+    {
+      "demand_id": "R3H02",
+      "shortest_path_cost": 0.8245046969999997,
+      "path_arc_count": 31
+    },
+    {
+      "demand_id": "R3H03",
+      "shortest_path_cost": 0.7693487314999999,
+      "path_arc_count": 29
+    },
+    {
+      "demand_id": "R3H04",
+      "shortest_path_cost": 1.4393631354999998,
+      "path_arc_count": 39
+    }
+  ]
+}

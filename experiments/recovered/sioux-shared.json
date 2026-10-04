@@ -1,0 +1,2118 @@
+{
+  "schema": "mcl.recovered-experiments.v1",
+  "city": "sioux-falls",
+  "records": [
+    {
+      "id": "sioux-taplab-official-parity",
+      "title": "Registered TAPLab adapter versus direct Algorithm B parity",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-taplab-official-parity"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "tools/reproduction/build_tapb.py",
+          "sha256": "6a0ed089a6a3265d7d33f5f57471a7066679325620d153428c0c540d12a36239",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/settings.yml",
+          "sha256": "d76ab7ba27724759cfd02b30b9203dd7699c72a0e4e25277be8456374f12a3ad",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/node.csv",
+          "sha256": "72611c6d8e42194bfea98b923f4d496883509e01dedece47a7bffc628e66739e",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/manifest.yml",
+          "sha256": "7e4526c04c1bcb35b8c2eeb26e938cf405ccf30b404070d52cffdb6b9dfc66af",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/link_performance.csv",
+          "sha256": "9db7e5f81c8e0352f689ff2ae2cc3ca3e8526933eba25c0d85ac80ba186b75d2",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/expected.json",
+          "sha256": "77cac50ff7c9787cb0d2c2c772e027b7b004bfa35cfa67da34101be0c199d6dc",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/acquisition.json",
+          "sha256": "4118b7fcfde7019f96e3a5afa68611476c1152afce5c7132d07f028b8cf9195e",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "algorithms/origin_based_algorithm_b/accepted_results/sioux_physical_link_flow.csv",
+          "sha256": "85f593b8b57d2d0f2c9fffe98bf44b7f14f496ac6c5c3550230b081d9f073972",
+          "role": "reference_only"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "PyYAML"
+        ],
+        "freshRun": "Official TAPLab source archive pinned to081e44a0dd451c549d6903933516bccb4166bbd0; separately source-built tap-b040135a20c771fbb84766df6a97cff981fa5df4b.",
+        "runtimeVariables": [
+          "MCL_TAPB_RUNTIME",
+          "MCL_TAPLAB_ARCHIVE"
+        ],
+        "testedExecution": "Fresh official adapter invocation: Python 3.12.14, PyYAML 6.0.3; reused a previously verified source-built tap-b binary."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/taplab/node.csv",
+          "sha256": "72611c6d8e42194bfea98b923f4d496883509e01dedece47a7bffc628e66739e",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Official pinned TAPLab Algorithm B adapter compared with the accepted direct tap-b solution. Aggregate feasibility is checked; full per-OD path reconstruction is outside this adapter output.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-taplab-official-parity.json",
+      "remainingRequirements": [
+        "Fresh official-adapter run downloads the pinned TAPLab source or uses MCL_TAPLAB_ARCHIVE and needs the separately built tap-b runtime.",
+        "The direct tap-b recipe and the official TAPLab route remain separate records."
+      ],
+      "nextStep": "Fresh official-adapter run downloads the pinned TAPLab source or uses MCL_TAPLAB_ARCHIVE and needs the separately built tap-b runtime.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-taplab-official-parity",
+          "--output",
+          "../results/sioux-taplab-official-parity-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-taplab-official-parity",
+          "--output",
+          "../results/sioux-taplab-official-parity"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-taplab-official-parity",
+          "--run",
+          "../results/sioux-taplab-official-parity"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-taplab-official-parity.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-native-a-reg001-rank50",
+      "title": "Native A_REG001 rank-50 outer-04 saved candidate",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-native-a-reg001-rank50"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/solve_inner.py",
+          "sha256": "0dc0b1733ef4e383f195e2a6d4ffc6acd91b3cd4add1d37592e3c92ad4118785",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/controller.py",
+          "sha256": "382ce558617d87132f0856ede2a5f9adf4e9e673cd9bfac26fa72a11dd944eda",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/common.py",
+          "sha256": "153cf9a05c59b7c5de345029e4eebabf85795c4c0cf3c2cce339173ae683e14d",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/check_inner.py",
+          "sha256": "578b3d235d009af993403fd0b13f489145b22ef9e48c28694146c0698cfec135",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/source_arrays.npz",
+          "sha256": "41f6158bbda82ea91c2d8e154bab90f8dd7acbf6a60411c9c34913b603e92cf9",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.npz",
+          "sha256": "7fd98e23a2667cfa27faf831dc1216eb58dc3f59a7aef7492965efca037a21b9",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.json",
+          "sha256": "76a3b63868e4071287c202a23fbb857f3c7a17ea0057e97cb91813a01d0cfc83",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/columns.csv",
+          "sha256": "222b14bfd2731054e8ebade3dcd7583ba48c2439328e45ec0cf4ffd33e8cb2a7",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/B_path_by_link.npz",
+          "sha256": "88f2107ef0c9b818a8581c124d49c8cecf6693ff1281a073a91a0cabb1e2f379",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/A_od_by_path.npz",
+          "sha256": "fd76f772d743b46726b48cb0f51aaf1502e68bcfe5861ef64c6d266d65c7523e",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/source/build_alm_model_levels.py",
+          "sha256": "27644472699b1c93f9795b6a7940928c4935e43a2a062c96a6f7a682df8208b5",
+          "role": "code"
+        },
+        {
+          "path": "tools/prepare_native_run.py",
+          "sha256": "7359cf43649a43e788476cf665ad89bee1ce6875c3f808784ec9c7beb01d2f91",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_solution.npz",
+          "sha256": "799c8522a6ab9085854214a3154cc851ef7cc1020ccd20221c9206458bd0717d",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/runs/SiouxFalls/A_REG001/outer_04_check.json",
+          "sha256": "72168a7eec5089635405cfe3efc04a2b79d547641708d8c346ea8cb18e032e3c",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/A_REG001/outer_04_native.json",
+          "sha256": "901916bed7f0068b91003319bcd1499140f4fc547bef3775de2414452e5353ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/A_REG001/config.json",
+          "sha256": "7488fef1f753b3cd9cdd7b0aa2aef8b9593e51f50fbc0a6a0a1080bc81e1684c",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/environment.json",
+          "sha256": "8a5eaf608483b6c5cb1674562a289006ae661bce01c63f182a5208e3e9de5f97",
+          "role": "environment"
+        },
+        {
+          "path": "algorithms/recovered_sioux/native-additions.txt",
+          "sha256": "507e5cb774b0f36c4ac9ea3494553824e86ea1c747825a8272afe5f6323ee5e3",
+          "role": "environment"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy",
+          "pandas"
+        ],
+        "inspection": "Python with NumPy/SciPy/pandas; no IPOPT invocation.",
+        "freshRun": "Windows native child Python3.9.25,NumPy2.0.2,SciPy1.13.1,Pyomo6.9.5,pandas2.2.3; IPOPT3.14.19/MUMPS5.8.1. Use environments/boston-native-win-64.lock plus native-additions.txt.",
+        "runtimeVariables": [
+          "MCL_NATIVE_PYTHON",
+          "MCL_IPOPT"
+        ],
+        "newNativeEnvironmentCreationVerified": false,
+        "testedExecution": "Saved inspection: Python 3.11.4, NumPy 1.24.3, SciPy 1.10.1, pandas 1.5.3. Fresh native toolchain not installed or executed again in this delivery."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/source_arrays.npz",
+          "sha256": "41f6158bbda82ea91c2d8e154bab90f8dd7acbf6a60411c9c34913b603e92cf9",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.npz",
+          "sha256": "7fd98e23a2667cfa27faf831dc1216eb58dc3f59a7aef7492965efca037a21b9",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.json",
+          "sha256": "76a3b63868e4071287c202a23fbb857f3c7a17ea0057e97cb91813a01d0cfc83",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/columns.csv",
+          "sha256": "222b14bfd2731054e8ebade3dcd7583ba48c2439328e45ec0cf4ffd33e8cb2a7",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/B_path_by_link.npz",
+          "sha256": "88f2107ef0c9b818a8581c124d49c8cecf6693ff1281a073a91a0cabb1e2f379",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/A_od_by_path.npz",
+          "sha256": "fd76f772d743b46726b48cb0f51aaf1502e68bcfe5861ef64c6d266d65c7523e",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Rank-50 saved or freshly returned native iterate checked in original path/OD/link coordinates; numerical feasibility does not certify full-network user equilibrium.",
+      "evidenceBasis": "saved_state_inspection",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-a-reg001-rank50.json",
+      "remainingRequirements": [
+        "A fresh native solve requires the separately installed pinned Windows runtime and pandas2.2.3. A saved-state inspection does not require IPOPT.",
+        "Numerical feasibility does not certify exact full-network user equilibrium."
+      ],
+      "nextStep": "A fresh native solve requires the separately installed pinned Windows runtime and pandas2.2.3. A saved-state inspection does not require IPOPT.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-native-a-reg001-rank50",
+          "--output",
+          "../results/sioux-native-a-reg001-rank50-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-native-a-reg001-rank50",
+          "--output",
+          "../results/sioux-native-a-reg001-rank50"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-native-a-reg001-rank50",
+          "--run",
+          "../results/sioux-native-a-reg001-rank50"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": false,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-a-reg001-rank50.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 4200,
+      "supportedRuntimeArgs": [
+        "--ipopt"
+      ]
+    },
+    {
+      "id": "sioux-native-b-beckmann-rank50",
+      "title": "Native B_BECKMANN rank-50 outer-04 saved candidate",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-native-b-beckmann-rank50"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/check_inner.py",
+          "sha256": "578b3d235d009af993403fd0b13f489145b22ef9e48c28694146c0698cfec135",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/common.py",
+          "sha256": "153cf9a05c59b7c5de345029e4eebabf85795c4c0cf3c2cce339173ae683e14d",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/solve_inner.py",
+          "sha256": "0dc0b1733ef4e383f195e2a6d4ffc6acd91b3cd4add1d37592e3c92ad4118785",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/profiles/sioux/runner/controller.py",
+          "sha256": "382ce558617d87132f0856ede2a5f9adf4e9e673cd9bfac26fa72a11dd944eda",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/source_arrays.npz",
+          "sha256": "41f6158bbda82ea91c2d8e154bab90f8dd7acbf6a60411c9c34913b603e92cf9",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.npz",
+          "sha256": "7fd98e23a2667cfa27faf831dc1216eb58dc3f59a7aef7492965efca037a21b9",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.json",
+          "sha256": "76a3b63868e4071287c202a23fbb857f3c7a17ea0057e97cb91813a01d0cfc83",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/columns.csv",
+          "sha256": "222b14bfd2731054e8ebade3dcd7583ba48c2439328e45ec0cf4ffd33e8cb2a7",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/B_path_by_link.npz",
+          "sha256": "88f2107ef0c9b818a8581c124d49c8cecf6693ff1281a073a91a0cabb1e2f379",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/A_od_by_path.npz",
+          "sha256": "fd76f772d743b46726b48cb0f51aaf1502e68bcfe5861ef64c6d266d65c7523e",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "algorithms/path_compression/diagnostic_l3/source/build_alm_model_levels.py",
+          "sha256": "27644472699b1c93f9795b6a7940928c4935e43a2a062c96a6f7a682df8208b5",
+          "role": "code"
+        },
+        {
+          "path": "tools/prepare_native_run.py",
+          "sha256": "7359cf43649a43e788476cf665ad89bee1ce6875c3f808784ec9c7beb01d2f91",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_solution.npz",
+          "sha256": "098f61df7757099f44b5145b94e26d1112dbb9b7e6d7c406f256dd26aa76344b",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/runs/SiouxFalls/B_BECKMANN/outer_04_check.json",
+          "sha256": "06f69a873983d620ecbc3ea021f0f13d2656c15312f464a4571c8701753285b1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/B_BECKMANN/outer_04_native.json",
+          "sha256": "b568ab602521069db9701e9968d9efa3c912ef6dcb8071cf79b35b1a683b62ca",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/B_BECKMANN/config.json",
+          "sha256": "3f3e77efd9cf52e4185fc4e6c3585891b7cf8bb16fdb8b26392930fd6e5518ad",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/native/environment.json",
+          "sha256": "8a5eaf608483b6c5cb1674562a289006ae661bce01c63f182a5208e3e9de5f97",
+          "role": "environment"
+        },
+        {
+          "path": "algorithms/recovered_sioux/native-additions.txt",
+          "sha256": "507e5cb774b0f36c4ac9ea3494553824e86ea1c747825a8272afe5f6323ee5e3",
+          "role": "environment"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy",
+          "pandas"
+        ],
+        "inspection": "Python with NumPy/SciPy/pandas; no IPOPT invocation.",
+        "freshRun": "Windows native child Python3.9.25,NumPy2.0.2,SciPy1.13.1,Pyomo6.9.5,pandas2.2.3; IPOPT3.14.19/MUMPS5.8.1. Use environments/boston-native-win-64.lock plus native-additions.txt.",
+        "runtimeVariables": [
+          "MCL_NATIVE_PYTHON",
+          "MCL_IPOPT"
+        ],
+        "newNativeEnvironmentCreationVerified": false,
+        "testedExecution": "Saved inspection: Python 3.11.4, NumPy 1.24.3, SciPy 1.10.1, pandas 1.5.3. Fresh native toolchain not installed or executed again in this delivery."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/source_arrays.npz",
+          "sha256": "41f6158bbda82ea91c2d8e154bab90f8dd7acbf6a60411c9c34913b603e92cf9",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.npz",
+          "sha256": "7fd98e23a2667cfa27faf831dc1216eb58dc3f59a7aef7492965efca037a21b9",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/representation.json",
+          "sha256": "76a3b63868e4071287c202a23fbb857f3c7a17ea0057e97cb91813a01d0cfc83",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+          "sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/demand.csv",
+          "sha256": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/columns.csv",
+          "sha256": "222b14bfd2731054e8ebade3dcd7583ba48c2439328e45ec0cf4ffd33e8cb2a7",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/B_path_by_link.npz",
+          "sha256": "88f2107ef0c9b818a8581c124d49c8cecf6693ff1281a073a91a0cabb1e2f379",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/A_od_by_path.npz",
+          "sha256": "fd76f772d743b46726b48cb0f51aaf1502e68bcfe5861ef64c6d266d65c7523e",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Rank-50 saved or freshly returned native iterate checked in original path/OD/link coordinates; numerical feasibility does not certify full-network user equilibrium.",
+      "evidenceBasis": "saved_state_inspection",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-b-beckmann-rank50.json",
+      "remainingRequirements": [
+        "A fresh native solve requires the separately installed pinned Windows runtime and pandas2.2.3. A saved-state inspection does not require IPOPT.",
+        "Numerical feasibility does not certify exact full-network user equilibrium."
+      ],
+      "nextStep": "A fresh native solve requires the separately installed pinned Windows runtime and pandas2.2.3. A saved-state inspection does not require IPOPT.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-native-b-beckmann-rank50",
+          "--output",
+          "../results/sioux-native-b-beckmann-rank50-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-native-b-beckmann-rank50",
+          "--output",
+          "../results/sioux-native-b-beckmann-rank50"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-native-b-beckmann-rank50",
+          "--run",
+          "../results/sioux-native-b-beckmann-rank50"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": false,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-native-b-beckmann-rank50.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 4200,
+      "supportedRuntimeArgs": [
+        "--ipopt"
+      ]
+    },
+    {
+      "id": "sioux-cg-200",
+      "title": "Historical finite two-phase CG, 200 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-cg-200"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/run_full_cg_v1.py",
+          "sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/run_external_network_pipeline.py",
+          "sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+          "sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+          "sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_network_input.py",
+          "sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/explicit_network_workflow.py",
+          "sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/saved/full_cg_v1_run_summary.json",
+          "sha256": "4b7a221133fc6e64776c7f474d088a16546c40bb593f8d00176fa29fbb575b58",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/saved/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "8a684b00dfb327ab2e54a02c2da5d6d0ab3482fb82a0461013d10dee50bb73dc",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/saved/full_cg_v1_final_demand_residual_audit.csv",
+          "sha256": "afaba6cca35e60eeb9e0bc714b69e78daad9819396bb391c2f3873bfa8a8a466",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/saved/full_cg_v1_final_capacity_audit.csv",
+          "sha256": "7665fbc67befc17dd78fd50372a3741286ddfdea5d568597dc6bc7ba7913a440",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/frozen_manifest.json",
+          "sha256": "5b99a0d5b74f410de2687cb4dec6e93a952db4d1753b42e7ad011ccc124b8e5c",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/dynamic_node.csv",
+          "sha256": "728894bdc6682e39bfd5942d1c1ec0fe9b2ca5935713979811a7504847f39648",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/dynamic_columns.csv",
+          "sha256": "0644b01447add21ff5f0cd3765d6677f9ac9d2d5c400485e50d5c5776339f5cb",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+          "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+          "sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy",
+          "pandas"
+        ],
+        "freshRun": "Historical legacy driver environment should be matched; the provided fresh route has not been rerun in this delivery.",
+        "estimatedRuntimeSeconds": 1500,
+        "testedExecution": "Saved aggregate inspection passed; original legacy driver preflight passed input/configuration checks. Full CG optimization not executed again."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/dynamic_node.csv",
+          "sha256": "728894bdc6682e39bfd5942d1c1ec0fe9b2ca5935713979811a7504847f39648",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/200od/dynamic_columns.csv",
+          "sha256": "0644b01447add21ff5f0cd3765d6677f9ac9d2d5c400485e50d5c5776339f5cb",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+          "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+          "sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Historical bounded k-shortest CG. Aggregate arc-flow objective/capacity and demand tables are independently checked. No complete commodity-state or independent complete pricing-closure certificate is asserted.",
+      "evidenceBasis": "saved_state_inspection",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-200.json",
+      "remainingRequirements": [
+        "Historical exact initialization columns and resolved configuration are now included. Fresh historical driver execution has not been performed in this delivery.",
+        "The historical stop condition matched the LP objective; independent complete pricing closure is not established."
+      ],
+      "nextStep": "Historical exact initialization columns and resolved configuration are now included. Fresh historical driver execution has not been performed in this delivery.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-cg-200",
+          "--output",
+          "../results/sioux-cg-200-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-cg-200",
+          "--output",
+          "../results/sioux-cg-200"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-cg-200",
+          "--run",
+          "../results/sioux-cg-200"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": false,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-200.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 4200
+    },
+    {
+      "id": "sioux-admm-r1-200",
+      "title": "Earlier ADMM R1 historical 200-OD result",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r1-200"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/space_time_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/GATES.json",
+          "sha256": "4976fb8aea004c381aa46503d491cd08b02d64daa601599aa51ac86d8d040eb8",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/admm.py",
+          "sha256": "ec5e1fedebce08a5d827ecda78a79b4d628dc19cb3c2ad4aac9f79e125576d55",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/evaluate_admm.py",
+          "sha256": "018ed808663392946403a66d40cf36ba189990a09b126f137bd92e01f311a6b8",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/200od/saved/state.npz",
+          "sha256": "21948706d34e01d66457db02a82c3fef36d2a387c2a9700cc9b9bdb523b35774",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/200od/saved/result.json",
+          "sha256": "54b90edc1d0a00404d977da87d64bf0c39531f30154ae78a152b3d4dca8af519",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/200od/expected.json",
+          "sha256": "9bf3748e129767b7ccffdd96a2d244a9d41c16ba2f810fc2da0a92afe504dd5b",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+          "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+          "sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/GATES.json",
+          "sha256": "4976fb8aea004c381aa46503d491cd08b02d64daa601599aa51ac86d8d040eb8",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_arc.csv",
+          "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/200od/dynamic_demand.csv",
+          "sha256": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-200.json",
+      "remainingRequirements": [
+        "Exact arc/demand inputs are already publicly included; previous local-only input wording is obsolete. This is the older R1 feasibility-repair algorithm, distinct from R2_S."
+      ],
+      "nextStep": "Exact arc/demand inputs are already publicly included; previous local-only input wording is obsolete. This is the older R1 feasibility-repair algorithm, distinct from R2_S.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r1-200",
+          "--output",
+          "../results/sioux-admm-r1-200-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r1-200",
+          "--output",
+          "../results/sioux-admm-r1-200"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r1-200",
+          "--run",
+          "../results/sioux-admm-r1-200"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r1-200.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-cg-250",
+      "title": "Historical finite two-phase CG, 250 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-cg-250"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/run_full_cg_v1.py",
+          "sha256": "ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/run_external_network_pipeline.py",
+          "sha256": "9e5eb6c188f3064efdbb9020b45d5466c4bd3c73fcf872143b7269e9fc276c07",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase_i_general_pricing_oracle.py",
+          "sha256": "5cb0de93dbddf0190d8ca0e91ccb0ae3020260b1cb9dfdaaef4d19b18cf55f8b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_sioux_static_to_dynamic.py",
+          "sha256": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/external_network_input.py",
+          "sha256": "e48884856155b13aafa2c162a84946c59b168d32f428c762b18afaa86593e9e3",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/explicit_network_workflow.py",
+          "sha256": "82c0eedebbfd0476628e0b7bf8122541627580f058f7630632a52f210bd36c4b",
+          "role": "code"
+        },
+        {
+          "path": "app/src/gmns_dynamic/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/saved/full_cg_v1_run_summary.json",
+          "sha256": "e043ae37c55ba6245068b8fc19e865305a048bc23fc655ce8824253c094c568c",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/saved/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "bc363163681373bf49a84fad3d8f50aee6d00a3a1b9efdc079179bdf75745b28",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/saved/full_cg_v1_final_demand_residual_audit.csv",
+          "sha256": "8b2ca0a99bc657a02824d4f3cdd12ea1a182c6c700edb956e7cde6b703d3a9d8",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/saved/full_cg_v1_final_capacity_audit.csv",
+          "sha256": "6706db94ae84ed6acbd334a1bb5fbf8a1607e8056355d6f06a30413e6d02ade6",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/frozen_manifest.json",
+          "sha256": "53d70690a0bb8ae95f33304f16b387f2c1bfb67c77f7de555c9b461e8d975cc8",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/dynamic_node.csv",
+          "sha256": "65b3289d4aec8f34c23be1995f624c66959f08402e47d391f8a4c57725e9ec64",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/dynamic_columns.csv",
+          "sha256": "571f66213be51ec5eaedb9ef6be3ad3842edc6b8ab44d08a0bc1f46744c0a8b9",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+          "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+          "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy",
+          "pandas"
+        ],
+        "freshRun": "Historical legacy driver environment should be matched; the provided fresh route has not been rerun in this delivery.",
+        "estimatedRuntimeSeconds": 2700,
+        "testedExecution": "Saved aggregate inspection passed; original legacy driver preflight passed input/configuration checks. Full CG optimization not executed again."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/dynamic_node.csv",
+          "sha256": "65b3289d4aec8f34c23be1995f624c66959f08402e47d391f8a4c57725e9ec64",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/cg/250od/dynamic_columns.csv",
+          "sha256": "571f66213be51ec5eaedb9ef6be3ad3842edc6b8ab44d08a0bc1f46744c0a8b9",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+          "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+          "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Historical bounded k-shortest CG. Aggregate arc-flow objective/capacity and demand tables are independently checked. No complete commodity-state or independent complete pricing-closure certificate is asserted.",
+      "evidenceBasis": "saved_state_inspection",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-250.json",
+      "remainingRequirements": [
+        "Historical exact initialization columns and resolved configuration are now included. Fresh historical driver execution has not been performed in this delivery.",
+        "The historical stop condition matched the LP objective; independent complete pricing closure is not established."
+      ],
+      "nextStep": "Historical exact initialization columns and resolved configuration are now included. Fresh historical driver execution has not been performed in this delivery.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-cg-250",
+          "--output",
+          "../results/sioux-cg-250-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-cg-250",
+          "--output",
+          "../results/sioux-cg-250"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-cg-250",
+          "--run",
+          "../results/sioux-cg-250"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": false,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-cg-250.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 4200
+    },
+    {
+      "id": "sioux-admm-r1-250",
+      "title": "Earlier ADMM R1 historical 250-OD result",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r1-250"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/space_time_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/GATES.json",
+          "sha256": "4976fb8aea004c381aa46503d491cd08b02d64daa601599aa51ac86d8d040eb8",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/evaluate_admm.py",
+          "sha256": "018ed808663392946403a66d40cf36ba189990a09b126f137bd92e01f311a6b8",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/admm.py",
+          "sha256": "ec5e1fedebce08a5d827ecda78a79b4d628dc19cb3c2ad4aac9f79e125576d55",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/250od/saved/state.npz",
+          "sha256": "9bffa2ff0f0383f9300ebbb8ff81171828ca55ce3f33fd8feb3509373367f05e",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/250od/saved/result.json",
+          "sha256": "4fcd06333f7be33101cac0624c9d8b0c369f42405d4e343690405292df422d97",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r1/250od/expected.json",
+          "sha256": "986bd737c779225e37b402b45bf9e5a8c594fdeca2bf82b50a4eb78adb5520ab",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+          "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+          "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "algorithms/distributed_assignment/admm_r1/GATES.json",
+          "sha256": "4976fb8aea004c381aa46503d491cd08b02d64daa601599aa51ac86d8d040eb8",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_arc.csv",
+          "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/finite-time-r05/250od/dynamic_demand.csv",
+          "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r1-250.json",
+      "remainingRequirements": [
+        "Exact arc/demand inputs are already publicly included; previous local-only input wording is obsolete. This is the older R1 feasibility-repair algorithm, distinct from R2_S."
+      ],
+      "nextStep": "Exact arc/demand inputs are already publicly included; previous local-only input wording is obsolete. This is the older R1 feasibility-repair algorithm, distinct from R2_S.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r1-250",
+          "--output",
+          "../results/sioux-admm-r1-250-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r1-250",
+          "--output",
+          "../results/sioux-admm-r1-250"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r1-250",
+          "--run",
+          "../results/sioux-admm-r1-250"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r1-250.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-admm-r2s-development-30",
+      "title": "ADMM R2_S documented development ladder, 30 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r2s-development-30"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/README.md",
+          "sha256": "1c3e681f6013014201ea49588481e71d777b68779b6c6b3850515d59e6cafcdc",
+          "role": "documentation"
+        },
+        {
+          "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+          "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+          "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/admm_solver.py",
+          "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/saved/state.npz",
+          "sha256": "ea0ba70f98c77fa71143ffb7cf3260c29f2301ab01a180e400096e88ffcca298",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/saved/result.json",
+          "sha256": "5865599b610f13edd1096ca35ad89361f93e8dc08db8504e4e0ce9c0b2ed34a2",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/expected.json",
+          "sha256": "b3cc3515e337ac9dccc26d6c9259427af30e39623aaae333eaa29c2ec4a813dc",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/dynamic_demand.csv",
+          "sha256": "9c43c4b4f3e0361acec993cc5b799fe261bc755ed7865f5a784404a3800b77c3",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/dynamic_arc.csv",
+          "sha256": "e61b660e303961238d6613259c7067c5ba36ac420d1c030df8b3ad0b570013e8",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/dynamic_demand.csv",
+          "sha256": "9c43c4b4f3e0361acec993cc5b799fe261bc755ed7865f5a784404a3800b77c3",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/30od/dynamic_arc.csv",
+          "sha256": "e61b660e303961238d6613259c7067c5ba36ac420d1c030df8b3ad0b570013e8",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-30.json",
+      "remainingRequirements": [
+        "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed."
+      ],
+      "nextStep": "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r2s-development-30",
+          "--output",
+          "../results/sioux-admm-r2s-development-30-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r2s-development-30",
+          "--output",
+          "../results/sioux-admm-r2s-development-30"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r2s-development-30",
+          "--run",
+          "../results/sioux-admm-r2s-development-30"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r2s-development-30.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-admm-r2s-development-60",
+      "title": "ADMM R2_S documented development ladder, 60 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r2s-development-60"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/README.md",
+          "sha256": "1c3e681f6013014201ea49588481e71d777b68779b6c6b3850515d59e6cafcdc",
+          "role": "documentation"
+        },
+        {
+          "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+          "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+          "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/admm_solver.py",
+          "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/dynamic_demand.csv",
+          "sha256": "bb8f531f519ad474bd78eb2079b70745fb275d531b57aa069230fbcc2efe1b3b",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/expected.json",
+          "sha256": "0410749b62a96c3be8bedf7f4344dfac29ec372972715a996f8b5319fc932733",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/dynamic_arc.csv",
+          "sha256": "2980c27d8a84409bd8d1d00d82275fa70575f8f20ab1b25b61c9dcef8efd6b20",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/saved/state.npz",
+          "sha256": "6abdadf66c6bac887d365d240b337db71fb3342e59b5257983c5d9e39322cb3a",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/saved/result.json",
+          "sha256": "e508fa2174a8ba2e0a276fa53252412bf57a41a768a9f7f9832e99477bb34425",
+          "role": "saved_state"
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/dynamic_demand.csv",
+          "sha256": "bb8f531f519ad474bd78eb2079b70745fb275d531b57aa069230fbcc2efe1b3b",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/60od/dynamic_arc.csv",
+          "sha256": "2980c27d8a84409bd8d1d00d82275fa70575f8f20ab1b25b61c9dcef8efd6b20",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-60.json",
+      "remainingRequirements": [
+        "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed."
+      ],
+      "nextStep": "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r2s-development-60",
+          "--output",
+          "../results/sioux-admm-r2s-development-60-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r2s-development-60",
+          "--output",
+          "../results/sioux-admm-r2s-development-60"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r2s-development-60",
+          "--run",
+          "../results/sioux-admm-r2s-development-60"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r2s-development-60.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-admm-r2s-development-100",
+      "title": "ADMM R2_S documented development ladder, 100 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r2s-development-100"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/README.md",
+          "sha256": "1c3e681f6013014201ea49588481e71d777b68779b6c6b3850515d59e6cafcdc",
+          "role": "documentation"
+        },
+        {
+          "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+          "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+          "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/admm_solver.py",
+          "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/saved/state.npz",
+          "sha256": "885e145cad8962e0e3fdc446558803c6b198a30fdbcb21d83da2c42294e1bd11",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/saved/result.json",
+          "sha256": "a12b29918eb60df2724ecc54a8520da6870007ccc7c430febb416ba4ae93cd80",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/expected.json",
+          "sha256": "8698f0c8a8e32ee6d9674e00996155d2af5b0bad175b9297c31119f0cc6a89a5",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/dynamic_demand.csv",
+          "sha256": "eea870daa8141956adc501c28b754fc8f1725a0827b24f6bf876a48e7d8fedc5",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/dynamic_arc.csv",
+          "sha256": "e7fa93b4397ccaecdbc644fb7743e2921fd6f4762938fe76a19287d5e3bd3b3c",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/dynamic_demand.csv",
+          "sha256": "eea870daa8141956adc501c28b754fc8f1725a0827b24f6bf876a48e7d8fedc5",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/100od/dynamic_arc.csv",
+          "sha256": "e7fa93b4397ccaecdbc644fb7743e2921fd6f4762938fe76a19287d5e3bd3b3c",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-100.json",
+      "remainingRequirements": [
+        "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed."
+      ],
+      "nextStep": "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r2s-development-100",
+          "--output",
+          "../results/sioux-admm-r2s-development-100-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r2s-development-100",
+          "--output",
+          "../results/sioux-admm-r2s-development-100"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r2s-development-100",
+          "--run",
+          "../results/sioux-admm-r2s-development-100"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r2s-development-100.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    },
+    {
+      "id": "sioux-admm-r2s-development-150",
+      "title": "ADMM R2_S documented development ladder, 150 OD",
+      "city": "sioux-falls",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_sioux.py",
+      "arguments": [
+        "--record",
+        "sioux-admm-r2s-development-150"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_sioux.py",
+          "sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/README.md",
+          "sha256": "1c3e681f6013014201ea49588481e71d777b68779b6c6b3850515d59e6cafcdc",
+          "role": "documentation"
+        },
+        {
+          "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+          "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+          "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+          "role": "code"
+        },
+        {
+          "path": "algorithms/admm_r2/admm_solver.py",
+          "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+          "role": "code"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/dynamic_demand.csv",
+          "sha256": "8c268ed582b90700037f847a6c89bc262f7402a24f24b4e048427c870ff23d67",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/dynamic_arc.csv",
+          "sha256": "5c88eaa8609a5121ce0cc839773d08246512d1a5a8c180d0f378a53790662d38",
+          "role": "input_or_evidence"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/expected.json",
+          "sha256": "ee1f4880d7f8b14d323f4a4802d5406f2895937c447d41d27ec9905416d421f0",
+          "role": "configuration"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/saved/result.json",
+          "sha256": "dd57b5ff593c219e1b99249569365534d9df371965319c2eb75b1bb53147a18e",
+          "role": "saved_state"
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/saved/state.npz",
+          "sha256": "6fab9c9710fc9318186376e6ddbbe7aa3c8f1a36a48e2817d22df0ac587b59a0",
+          "role": "saved_state"
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence"
+        }
+      ],
+      "environment": {
+        "python_minimum": "3.10",
+        "packages": [
+          "numpy",
+          "scipy"
+        ],
+        "setup": "Use the repository numeric environment; native inspection additionally requires pandas.",
+        "testedExecution": "Fresh run: Python 3.12.14, NumPy 2.5.3, SciPy 1.18.1; existing installed environment, not a clean installation test."
+      },
+      "dataSources": [
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/dynamic_demand.csv",
+          "sha256": "8c268ed582b90700037f847a6c89bc262f7402a24f24b4e048427c870ff23d67",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "examples/sioux-falls/recovered-r14/admm-r2s/150od/dynamic_arc.csv",
+          "sha256": "5c88eaa8609a5121ce0cc839773d08246512d1a5a8c180d0f378a53790662d38",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        },
+        {
+          "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
+          "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+          "role": "input_or_evidence",
+          "url": null,
+          "mode": "repository_checkout",
+          "note": "Included in the repository; byte identity is pinned in this manifest."
+        }
+      ],
+      "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+      "evidenceBasis": "fresh_computation",
+      "evidenceReceipt": "examples/sioux-falls/recovered-r14/receipts/fresh/sioux-admm-r2s-development-150.json",
+      "remainingRequirements": [
+        "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed."
+      ],
+      "nextStep": "These are modeled finite benchmark inputs. No raw-source reconstruction or empirical demand validation is claimed.",
+      "commands": {
+        "inspect": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "sioux-admm-r2s-development-150",
+          "--output",
+          "../results/sioux-admm-r2s-development-150-inspection"
+        ],
+        "run": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "run",
+          "sioux-admm-r2s-development-150",
+          "--output",
+          "../results/sioux-admm-r2s-development-150"
+        ],
+        "verify": [
+          "python",
+          "-B",
+          "tools/mcl_recovered.py",
+          "verify",
+          "sioux-admm-r2s-development-150",
+          "--run",
+          "../results/sioux-admm-r2s-development-150"
+        ]
+      },
+      "readiness": {
+        "portableSavedInspection": true,
+        "freshRunRouteProvided": true,
+        "freshRunExecuted": true,
+        "savedInspectionPassed": true,
+        "independentVerificationPassed": true
+      },
+      "savedInspectionReceipt": "examples/sioux-falls/recovered-r14/receipts/inspection/sioux-admm-r2s-development-150.json",
+      "guide": "docs/reproduction/recovered-sioux.md",
+      "timeoutSeconds": 2400
+    }
+  ]
+}

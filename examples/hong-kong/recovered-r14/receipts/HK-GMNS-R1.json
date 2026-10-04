@@ -1,0 +1,28 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-GMNS-R1",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Build the bounded R1 GMNS objects from exact raw provider snapshots; engineering proxy demand is not observed traffic.",
+  "verification": {
+    "record": "HK-GMNS-R1",
+    "success": true,
+    "checks": {
+      "saved_evidence_files_present": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "saved_evidence_files": 1,
+      "numerical_recalculation": false
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "saved_output_integrity_only",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.19929379998939112,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

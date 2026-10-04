@@ -1,0 +1,81 @@
+{
+  "schema_version": "mcl_behavior_feedback_semantic_fix_1.0",
+  "run_id": "behavior_feedback_r1_semantic_fix_r1",
+  "base_city_config": "config/city_config.yaml",
+  "region": {
+    "zone_system": "H3 r9",
+    "zone_count": 177,
+    "core_bbox_wgs84": [
+      -71.105,
+      42.335,
+      -71.045,
+      42.37
+    ]
+  },
+  "demand": {
+    "statistics": "ACS 2024 5-year block groups",
+    "generation": "TDM23.2.0 effective mean daily productions per household Table 74",
+    "attraction": "MassGIS nonresidential building area proxy",
+    "distribution": "doubly constrained gravity; beta=.08/min inherited assumption",
+    "external_travel": "unknown_not_zero; spatial outside-share ledger only",
+    "pa_to_od": "Table 47 lower/current block on union(PA, transpose(PA)) support",
+    "impedance": "complete saved 177x177 GMNS free-flow skim; fallback only on actual missing result"
+  },
+  "pilot": {
+    "purpose": "HBW",
+    "service_date": "2026-09-21",
+    "period": "midday exploratory",
+    "departures": [
+      "12:30:00",
+      "12:40:00",
+      "12:50:00"
+    ],
+    "od_count": 36,
+    "departure_weight": "equal thirds engineering transfer"
+  },
+  "skims": {
+    "drive": "directed GMNS free flow; parking unknown",
+    "walk_bike": "OSM allowed-way shortest paths",
+    "transit": "bounded multi-state GTFS scheduled-service adapter; every available TW path has >=1 permitted ride",
+    "fare": "selected-itinerary GTFS Fares v2 adult CharlieCard; unsupported fare remains unknown",
+    "access_egress_snap": "zone_centroid_to_osm_snap_plus_osm_path_plus_gtfs_stop_to_osm_snap_for_both_WK_and_TW"
+  },
+  "choice": {
+    "model": "TDM23 regional-base-share HBW nested-pivot sensitivity",
+    "tree_preserved": true,
+    "official_nest_scales_available": false,
+    "mu_transit_grid": [
+      0.25,
+      0.5,
+      0.75,
+      1
+    ],
+    "fw_boundary_variant": 1,
+    "fare_price_conversion": {
+      "nominal_fare_year": 2026,
+      "coefficient_price_year": 2010,
+      "cpi_u_2010_annual": 218.056,
+      "cpi_u_2026_august": 334.98,
+      "factor_2026_to_2010": 0.6509522956594423,
+      "source_2010": "https://www.bls.gov/news.release/archives/cpi_01142011.pdf",
+      "source_2026": "https://www.bls.gov/news.release/archives/cpi_09112026.htm"
+    },
+    "rs_vehicle_branch": "occupied_passenger_trip_only_using_1_21_persons_per_vehicle_empty_repositioning_unknown_not_zero",
+    "ta_vehicle_branch": "not_loaded_auto_access_leg_not_implemented"
+  },
+  "feedback": {
+    "S1": "planned GTFS",
+    "S2": "exploratory exact route+direction+stop-pair GPS overlay",
+    "overlay_default": false,
+    "observation_period": "2026-09-21 midday",
+    "independent_validation": false,
+    "Srestore": "independent overlay-off GTFS skim, utility, probability, and demand recomputation",
+    "srestore_fw": "not rerun because demand/model/solver signatures match S1 within declared tolerance"
+  },
+  "assignment": {
+    "solver": "solve_fw_refined",
+    "runs": 2,
+    "scope": "panel only, no background",
+    "numeric_threads": 2
+  }
+}

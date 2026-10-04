@@ -1,0 +1,93 @@
+{
+  "success": true,
+  "record": "boston-finite-arc-flow-lp",
+  "evidenceBasis": "fresh_finite_arc_lp",
+  "optimizer_calls": 1,
+  "checks": {
+    "solver_optimal": true,
+    "objective": true,
+    "balance": true,
+    "capacity": true,
+    "recomputed_commodity_balance": true,
+    "recomputed_capacity": true,
+    "own_connectors_only": true,
+    "nonnegative_positive_flows": true
+  },
+  "metrics": {
+    "objective": 64.39686151152954,
+    "variables": 212990
+  },
+  "scope": "Only the declared Boston workflow; no claim of raw-source pipeline reconstruction from inspect or prepared-input replay.",
+  "date": "2026-10-04",
+  "environment": {
+    "python": "3.11.4",
+    "packages": {
+      "numpy": "1.24.3",
+      "scipy": "1.10.1",
+      "pandas": "1.5.3",
+      "networkx": "3.1",
+      "shapely": "2.1.2"
+    },
+    "setup": [
+      "python -m venv .venv",
+      "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+    ],
+    "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+  },
+  "independentReverification": {
+    "success": true,
+    "record": "boston-finite-arc-flow-lp",
+    "evidenceBasis": "saved_run_inspected",
+    "optimizer_calls": 0,
+    "checks": {
+      "solver_optimal": true,
+      "objective": true,
+      "balance": true,
+      "capacity": true,
+      "recomputed_commodity_balance": true,
+      "recomputed_capacity": true,
+      "own_connectors_only": true,
+      "nonnegative_positive_flows": true,
+      "record_identity": true,
+      "original_action_passed": true
+    },
+    "metrics": {
+      "objective": 64.39686151152954,
+      "variables": 212990
+    },
+    "scope": "Only the declared Boston workflow; no claim of raw-source pipeline reconstruction from inspect or prepared-input replay."
+  },
+  "verifierUpdate": {
+    "date": "2026-10-04",
+    "adapter": "tools/reproduction/recovered_boston.py",
+    "adapterSha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+    "reason": "Verification now selects fresh outputs or historical evidence from the original receipt, requires complete fresh outputs, and recomputes LP objective from the fixed graph costs. Original execution fields and earlier verification fields are retained unchanged.",
+    "originalExecutionRecordPreserved": true,
+    "result": {
+      "success": true,
+      "record": "boston-finite-arc-flow-lp",
+      "evidenceBasis": "fresh_result_verified",
+      "optimizer_calls": 0,
+      "checks": {
+        "solver_optimal": true,
+        "objective": true,
+        "balance": true,
+        "capacity": true,
+        "reported_unit_costs_match_fixed_graph": true,
+        "recomputed_commodity_balance": true,
+        "recomputed_capacity": true,
+        "own_connectors_only": true,
+        "nonnegative_positive_flows": true,
+        "record_identity": true,
+        "original_action_passed": true
+      },
+      "metrics": {
+        "objective": 64.39686151152954,
+        "variables": 212990
+      },
+      "scope": "Only the declared Boston workflow; no claim of raw-source pipeline reconstruction from inspect or prepared-input replay.",
+      "sourceAction": "run",
+      "sourceEvidenceBasis": "fresh_finite_arc_lp"
+    }
+  }
+}

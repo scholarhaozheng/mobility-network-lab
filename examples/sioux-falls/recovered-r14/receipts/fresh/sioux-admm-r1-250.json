@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "record": "sioux-admm-r1-250",
+  "evidence_basis": "fresh_computation",
+  "optimizer_calls": 0,
+  "verification_optimizer_calls": 0,
+  "checks": {
+    "independent_original_space_gates": true,
+    "method_instance_identity": true,
+    "saved_objective_recomputed": true,
+    "solver_free_verifier": true
+  },
+  "metrics": {
+    "optimizer_calls": 0,
+    "saved_solver_optimizer_calls": 23500,
+    "objective_recomputed": 1521100.0657879733,
+    "primal_residual": 1.4126776236383667,
+    "dual_residual": 0.007793941026638079,
+    "primal_threshold": 2.808142768760401,
+    "dual_threshold": 0.017488583040560463,
+    "max_balance_residual": 7.018556402726972e-9,
+    "max_capacity_residual": 4.547473508864641e-13,
+    "max_consensus_capacity_residual": 1.8189894035458565e-12,
+    "min_local_flow": 0,
+    "min_consensus_flow": 0,
+    "max_forbidden_connector_flow": 0,
+    "od_count": 250,
+    "objective_absolute_error": 4.190951585769653e-9,
+    "solver_optimizer_calls": 23500,
+    "iterations": 94
+  },
+  "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+  "source_input_hashes_verified": true,
+  "execution_adapter_sha256": "3ae41777b621853fa2108dc7de0fc4c32df940002a1f24bb5da2f63cd1552d28",
+  "verification_adapter_sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+  "adapter_change_note": "After these computations, the optional --ipopt argument was added and the GATES.json path casing was corrected for case-sensitive systems. Numerical implementations and configuration were unchanged. Direct adapter verification passed after the option change; R1 verification was repeated after the casing correction."
+}

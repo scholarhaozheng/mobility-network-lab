@@ -16,6 +16,8 @@ Project-specific work includes assembling and adapting the Boston, Sioux Falls, 
 
 **Run the computations:** [Code, data and environment guide](REPRODUCTION_QUICKSTART.md) · [Experiment registry](experiments/README.md) · [Online reproduction portal](https://scholarhaozheng.github.io/mobility-network-lab/reproduce.html)
 
+Recovered city workflows are now listed by `python -B tools/mcl_recovered.py list`. Each entry provides pinned code, input acquisition, environment instructions, computation and evidence-checking commands. The portal distinguishes fresh checks from inspected historical results; source recovery alone is not labelled numerical reproduction. See [the recovered workflows](experiments/README.md#recovered-city-workflows).
+
 <a id="what-this-project-adds"></a>
 ## 01 / What this project adds
 

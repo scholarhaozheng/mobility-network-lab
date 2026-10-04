@@ -1,0 +1,142 @@
+{
+  "schema": "mcl_recovered_recipes_v1",
+  "city": "shared",
+  "records": [
+    {
+      "id": "TOOL-CITY-EVIDENCE-QUERY",
+      "title": "Query the published city-evidence tables",
+      "city": "shared",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_query.py",
+      "arguments": [
+        "--record",
+        "TOOL-CITY-EVIDENCE-QUERY"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_query.py",
+          "role": "solver_code",
+          "sha256": "07628e033458952fcd4e41896d97a95b8bd8b46eacb2a850979a8108927e5bc8"
+        },
+        {
+          "path": "tools/mcl_data.py",
+          "role": "solver_code",
+          "sha256": "660cfbd3115891f6e9746e55548d9d679331e1aff8619a40c69d4638ba20803a"
+        },
+        {
+          "path": "src/mobilitylab/__init__.py",
+          "role": "solver_code",
+          "sha256": "466888c2391efb97b982fa6642cf79b6b593d96e1eeaa0f6ae5e28bc0a5d7d17"
+        },
+        {
+          "path": "src/mobilitylab/validation/__init__.py",
+          "role": "solver_code",
+          "sha256": "fe69f5fe4d6a69b0666cfdf24e045a0c6d6784ed3078ee95e4dfc41101420e3a"
+        },
+        {
+          "path": "src/mobilitylab/omdv/__init__.py",
+          "role": "solver_code",
+          "sha256": "ea2818181d80940674603205769bc30bdb7f2918e3fa29e7d00a80cbf707e660"
+        },
+        {
+          "path": "src/mobilitylab/omdv/ingest/__init__.py",
+          "role": "solver_code",
+          "sha256": "d091ef0648f3b0fcd0006d9ed9a26d04f740e20f8263205cd962a0470a48d8a5"
+        },
+        {
+          "path": "src/mobilitylab/omdv/ingest/mobility_database.py",
+          "role": "solver_code",
+          "sha256": "9c4ec93770f0ff6729c23f36bbd7dc430b92f5ca825bf1cb17fa3852d161f50f"
+        },
+        {
+          "path": "src/mobilitylab/omdv/ingest/catalog_summary.py",
+          "role": "solver_code",
+          "sha256": "38d1a9708021303c1abb90001f30601cd4499435ae77ffb7817daead68cadf57"
+        },
+        {
+          "path": "src/mobilitylab/omdv/gtfs/__init__.py",
+          "role": "solver_code",
+          "sha256": "5c886e5ab5acd60b31764e41cb258ccb97b008b75b082fe0af48a4c5eb649391"
+        },
+        {
+          "path": "src/mobilitylab/omdv/gtfs/content_metrics.py",
+          "role": "solver_code",
+          "sha256": "93de67dba41d6fd0c78d93fab4692a510e28cd4b9c1a449cb29981bd93996ee9"
+        },
+        {
+          "path": "src/mobilitylab/omdv/geospatial/__init__.py",
+          "role": "solver_code",
+          "sha256": "5394eb325aba5208704bcd9357708336c5babdbf522defc047f7312d10509a23"
+        },
+        {
+          "path": "src/mobilitylab/omdv/geospatial/external_city_universe.py",
+          "role": "solver_code",
+          "sha256": "b53bd4d9250cffbb75934619afd39328a5e1b691f3430347a5bef654cbc3f1ea"
+        },
+        {
+          "path": "src/mobilitylab/omdv/geospatial/city_matching.py",
+          "role": "solver_code",
+          "sha256": "5b901efbfd437ffcdd3565ecc10e4606d11741fb41ab38bbd74f14d8848cfeb4"
+        },
+        {
+          "path": "src/mobilitylab/data/__init__.py",
+          "role": "solver_code",
+          "sha256": "7404c66ae4a2223e657824bd222fa2af06d1639eb4671b317fa6020c1820d178"
+        },
+        {
+          "path": "src/mobilitylab/data/open_mobility.py",
+          "role": "solver_code",
+          "sha256": "2f00b0eb3eca870fd411f106893f69a6fd971b25e263dc3357841bfe338fb745"
+        },
+        {
+          "path": "src/mobilitylab/data/evidence.py",
+          "role": "solver_code",
+          "sha256": "c7cc38f3fc47b6165d3c041264d5e68f606d330164d52c63ee02076bc82d795e"
+        },
+        {
+          "path": "src/mobilitylab/data/catalog_city_workflow.py",
+          "role": "solver_code",
+          "sha256": "4dd6f450aadeee2d565caa182a3b901e2f1c28a39827a3965bda84950b921ee5"
+        },
+        {
+          "path": "requirements-reproduction-public-controls.txt",
+          "role": "environment",
+          "sha256": "cc4f2a5a371ed9936f82a937da18b4832f55905554fde8dca18d68d69d5181ec"
+        },
+        {
+          "path": "docs/data/open-mobility/city_evidence.csv",
+          "role": "solver_input",
+          "sha256": "248e55146085605ba0cdd1683161eca786b94f7d3bfd9ec77b3a17a6847c6d3d"
+        },
+        {
+          "path": "docs/data/open-mobility/source_content_city.csv",
+          "role": "solver_input",
+          "sha256": "0321d8fa818090d3043951f6b320c6c4739b5e32074834212c16e176dd1d3455"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": [
+          "numpy",
+          "pandas"
+        ],
+        "requirements": "requirements-reproduction-public-controls.txt",
+        "testedVersions": {
+          "numpy": "1.24.3",
+          "pandas": "1.5.3"
+        },
+        "setup": "python3.11 -m pip install -r requirements-reproduction-public-controls.txt"
+      },
+      "dataSources": [],
+      "scope": "A fresh query of the frozen public 11,422-city evidence table; global data acquisition and collection reconstruction are separate.",
+      "evidenceBasis": "Fresh query and independent CSV-row verification executed in this release.",
+      "evidenceReceipt": "experiments/recovered/receipts/city-query.json",
+      "nextStep": "Use run, then verify; no upstream download is required."
+    }
+  ]
+}

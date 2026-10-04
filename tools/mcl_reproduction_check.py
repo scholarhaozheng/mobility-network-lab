@@ -46,7 +46,16 @@ def main():
         problems.extend(entry['id']+': '+x for x in issues)
     mapped=set()
     for ids in cat['audit_entries'].values(): mapped.update([ids] if isinstance(ids,str) else ids)
+    recovered_checks=[]; recovered_files={}
+    if not args.experiment and (root/'experiments/recovered').is_dir():
+        from mcl_recovered import records as recovered_records, check as check_recovered
+        for entry in recovered_records(root).values():
+            result=check_recovered(root,entry)
+            recovered_checks.append({'id':entry['id'],'status':result['status'],'checked_files':len(result['files']),'errors':result['errors']})
+            for item in result['files']: recovered_files[item['path']]=item
+            problems.extend(entry['id']+': '+issue for issue in result['errors'])
     report={'schema':'mcl_reproduction_checkout_check_v1','status':'PASS' if not problems else 'FAIL','optimizer_calls':0,'network_calls':0,'fresh_computation_performed':False,'scope':'Pinned file and archived receipt integrity only. Execute run and verify to reproduce a result. Runtime binaries must be built or installed separately.','baseline':cat['baseline_commit'],'commands_checked':len(rows),'mapped_inventory_records':len(mapped),'unique_files_checked':len(files),'python':platform.python_version(),'commands':rows,'warnings':warnings,'errors':problems}
+    report.update(recovered_records_checked=len(recovered_checks), recovered_unique_files_checked=len(recovered_files), recovered_checks=recovered_checks)
     if args.report: args.report.parent.mkdir(parents=True,exist_ok=True);args.report.write_text(json.dumps(report,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(report,indent=2));return 0 if not problems else 2
 if __name__=='__main__': raise SystemExit(main())

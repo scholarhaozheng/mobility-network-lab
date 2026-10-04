@@ -1,0 +1,52 @@
+{
+  "frozen_before_hong_kong_solve": true,
+  "K": 5,
+  "H1_od": 26,
+  "H1_max_paths": 130,
+  "ranks": [
+    26,
+    52
+  ],
+  "SLSQP": {
+    "ftol": 1e-10,
+    "maxiter": 300,
+    "timeout_seconds": 900
+  },
+  "FW": {
+    "max_iterations": 300,
+    "gap_tolerance": 0.00001,
+    "timeout_seconds": 900
+  },
+  "pool_timeout_seconds": 600,
+  "basis_timeout_seconds": 300,
+  "IPOPT_MUMPS": {
+    "tol": 1e-8,
+    "constr_viol_tol": 1e-9,
+    "dual_inf_tol": 0.000001,
+    "compl_inf_tol": 1e-8,
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0,
+    "honor_original_bounds": "no",
+    "max_iter": 500,
+    "mu_strategy": "adaptive",
+    "linear_solver": "mumps",
+    "print_level": 5,
+    "inner_timeout_seconds": 600,
+    "total_timeout_seconds": 1800,
+    "max_outer": 8,
+    "rho_initial": 10,
+    "rho_multiplier": 2
+  },
+  "gamma": 0,
+  "memory_ceiling_bytes": 2147483648,
+  "gates": {
+    "max_od_error_abs": 0.000001,
+    "max_od_error_rel": 1e-8,
+    "total_od_l1_rel": 1e-8,
+    "full_relative_gap_abs": 0.00001,
+    "negative_flow_abs": 1e-8,
+    "link_reconstruction_abs": 1e-7
+  },
+  "acceptance": "Feasibility gates and full-graph shortest-path relative gap <=1e-5 plus solver success; restricted pool only if feasible and finite-pool gap <=1e-5; objective proximity alone is insufficient.",
+  "H2": "Only 100-OD feasibility preflight after H1 success; no larger solve without explicit time/memory gate."
+}

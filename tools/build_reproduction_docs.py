@@ -1,6 +1,6 @@
 """Build English reproduction metadata without running a solver or changing existing pages."""
 from pathlib import Path
-import argparse, hashlib, html, json, re
+import argparse, hashlib, html, json, re, subprocess, sys
 ROOT=Path(__file__).resolve().parents[1]
 DEST=ROOT/'docs/assets/reproduction'
 def read(p): return json.loads(p.read_text(encoding='utf-8-sig'))
@@ -47,7 +47,7 @@ def main():
             if audit_id in audit_to_entry: raise ValueError("Ambiguous primary command for "+audit_id)
             audit_to_entry[audit_id]=entries[command_id]
     states={'saved_validation_only':'Saved evidence checked','blocked':'Blocked by missing requirements','prepared_input_reproduced':'Prepared inputs reproduced','fresh_reproduced':'Fresh solve checked','not_run':'Not run','input_preparation_only':'Input preparation only','no_experiment':'No accepted computational experiment','failure_boundary_reobserved':'Failure boundary reobserved'}
-    data={'repository':repo,'baseline':baseline,'published':bool(args.published_revision),'publishedRevision':args.published_revision,'records':[],'figures':{},'releaseVersion':'20261004-r12','sourceIdentityManifest':'experiments/publication.json'}
+    data={'repository':repo,'baseline':baseline,'published':bool(args.published_revision),'publishedRevision':args.published_revision,'records':[],'figures':{},'releaseVersion':'20261004-r14','sourceIdentityManifest':'experiments/publication.json'}
     for e in inv['experiments']:
         ms=[]
         for ref in e['materialRefs']:
@@ -123,7 +123,7 @@ def main():
     if re.search(r'[\u3400-\u9fff]',rendered): raise ValueError('Non-English CJK text in reader data')
     (DEST/'data.js').write_text('window.MCL_REPRODUCTION='+rendered+';\n',encoding='utf-8')
     write(DEST/'inventory.json',inv)
-    source_files=['tools/mcl_reproduce.py','tools/mcl_reproduction_check.py','experiments/catalog.json','experiments/README.md']
+    source_files=['tools/mcl_reproduce.py','tools/mcl_reproduction_check.py','tools/mcl_recovered.py','experiments/catalog.json','experiments/README.md']
     source_files+=sorted({f['path'] for e in cat['experiments'] for f in e['files'] if not f.get('download_url') and f['role'] in ('solver_code','build_code','environment')})
     if runtime_setups:
         source_files+=['experiments/runtime-setup.json']+sorted({f['path'] for runtime in runtime_setups.values() for f in runtime['files']})
@@ -133,5 +133,9 @@ def main():
         chunks.append('<details id="file-'+hashlib.sha256(rel.encode()).hexdigest()[:16]+'"><summary>'+html.escape(rel)+'</summary><p>SHA-256: <code>'+digest(p)+'</code></p><pre><code>'+html.escape(p.read_text(encoding='utf-8')).replace('[','&#91;').replace(']','&#93;')+'</code></pre></details>')
     (DEST/'command-source.html').write_text('<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Command source · Mobility Computation Lab</title><link rel="stylesheet" href="../presentation-r3.css"></head><body><main class="mcl-page"><p><a href="../../reproduce.html">Data and reproduction</a></p><h1>Unified command source</h1><p>These files wrap the existing computational implementations. Input and solver hashes are fixed in the catalog. Publication status is shown on the reproduction page.</p>'+''.join(chunks)+'</main></body></html>\n',encoding='utf-8')
     write(DEST/'build-report.json',{'records':len(data['records']),'figures':len(data['figures']),'verifiedCommands':sorted({e['recipe']['id'] for e in data['records'] if e.get('recipe')}),'verifiedRecords':sum(bool(e.get('recipe')) for e in data['records']),'publishedRevision':args.published_revision,'files':{p:digest(ROOT/p) for p in source_files}})
-    print(json.dumps({'records':len(data['records']),'verified':sum(bool(e.get('recipe')) for e in data['records'])}))
+    recovered_summary=None
+    if (ROOT/'experiments/recovered').is_dir():
+        recovered_build=subprocess.run([sys.executable,'-B',str(ROOT/'tools/build_recovered_docs.py'),'--release-ref',args.published_revision or 'reproduction-2026-10-04-r14'],cwd=ROOT,capture_output=True,text=True,check=True)
+        recovered_summary=json.loads(recovered_build.stdout)
+    print(json.dumps({'records':len(data['records']),'verified':sum(bool(e.get('recipe')) for e in data['records']),'recovered':recovered_summary}))
 if __name__=='__main__': main()

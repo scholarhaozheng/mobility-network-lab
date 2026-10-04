@@ -1,0 +1,63 @@
+{
+  "run_id": "behavior_feedback_r1_semantic_fix_r1",
+  "model_id": "ctps_tdm23_2_0_regional_base_share_hbw_nested_pivot_sensitivity",
+  "tree": {
+    "Auto": [
+      "DA",
+      "S2",
+      "S3"
+    ],
+    "NonMotor": [
+      "WK",
+      "BK"
+    ],
+    "Transit": [
+      "TW",
+      "TA"
+    ],
+    "SchoolBus": [
+      "SB"
+    ],
+    "RideService": [
+      "RS"
+    ]
+  },
+  "mu_transit_grid": [
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "official_mu_transit_available": false,
+  "other_nest_mu": 1,
+  "fw_mu_transit_boundary": 1,
+  "probability_rows": 8424,
+  "eligible_od_departure_rows": 78,
+  "excluded_od_departure_rows": 30,
+  "excluded_person_trip_weight_not_zeroed": 78.07990694881393,
+  "max_probability_sum_error": 2.220446049250313e-16,
+  "s2_rows_with_nonzero_delta_utility": 6,
+  "s2_rows_with_nonzero_nominal_fare_delta": 0,
+  "s2_rows_time_only_due_unknown_fare": 0,
+  "cost_price_conversion": {
+    "nominal_fare_year": 2026,
+    "coefficient_price_year": 2010,
+    "cpi_u_2010_annual": 218.056,
+    "cpi_u_2026_august": 334.98,
+    "factor_2026_to_2010": 0.6509522956594423,
+    "source_2010": "https://www.bls.gov/news.release/archives/cpi_01142011.pdf",
+    "source_2026": "https://www.bls.gov/news.release/archives/cpi_09112026.htm"
+  },
+  "srestore_max_probability_error": 6.938893903907228e-18,
+  "srestore_max_person_demand_error": 2.7755575615628914e-17,
+  "srestore_negative_control": {
+    "control": "one_second_added_to_first_available_restore_transit_total_min_copy_only",
+    "detected_mismatch_rows": 1,
+    "detected": true,
+    "production_outputs_modified_by_control": false
+  },
+  "rs_vehicle_branch": "occupied_passenger_trip_only_using_1_21_persons_per_vehicle_empty_repositioning_unknown_not_zero",
+  "ta_vehicle_branch": "not_loaded_auto_access_leg_not_implemented",
+  "fw_interface_variant": "mu_transit_1.0_root_scale_boundary_diagnostic_not_empirical",
+  "interpretation": "Regional-base-share nested-pivot sensitivity. S1 does not use absolute local cost to predict shares; this is not a local calibration, a full TDM23 run, or empirical validation."
+}

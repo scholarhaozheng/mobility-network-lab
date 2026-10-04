@@ -1,0 +1,160 @@
+{
+  "schema_version": "mcl_city_config_1.0",
+  "city": {
+    "name": "Boston",
+    "country_iso2": "US",
+    "timezone": "America/New_York",
+    "omdv_city_id": "mdb-US-boston-56921741",
+    "ghsl_city_id": "ghsl_urban_centre:R2024A_V1_1:ID_UC_G0:8255",
+    "mbta_feed_id": "mdb-437",
+    "id_namespace_policy": "OMDV city, GHSL urban centre, MBTA feed, source TAZ, and H3 IDs remain distinct."
+  },
+  "study_area": {
+    "name": "Central Boston",
+    "core_bbox_wgs84": [
+      -71.105,
+      42.335,
+      -71.045,
+      42.37
+    ],
+    "analysis_buffer_m": 2500,
+    "analysis_crs": "EPSG:32619",
+    "selection_rule": "Physical link geometry intersects the metric-buffered analysis boundary; incident nodes and source connectors are retained with explicit type flags.",
+    "trip_scope": "Engineering internal-demand scenario with boundary/gateway status retained; not complete regional traffic."
+  },
+  "network": {
+    "network_id": "mcl_boston_central",
+    "network_version": "gmns_plus_21_boston_116447ab_analysis_v1",
+    "source_dir": "raw/gmns_plus_21_boston",
+    "source_commit": "116447ab641cca1ed34797d019c8e704063393c3",
+    "source_commit_date": "2025-05-02",
+    "source_crs": "EPSG:4326",
+    "centroid_connector_link_type": 0,
+    "physical_link_types": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "matcher_link_types": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "length_field_m": "length",
+    "vdf_length_field_mile": "vdf_length_mi",
+    "speed_field_kmh": "free_speed",
+    "vdf_speed_field_mph": "vdf_free_speed_mph",
+    "vdf_time_field_min": "vdf_fftt"
+  },
+  "zones": {
+    "system": "H3",
+    "fine_resolution": 9,
+    "parent_resolution": 7,
+    "boundary_rule": "Fine cells whose center lies in or on the core boundary; full cells and clipped geometries are both retained.",
+    "node_assignment_rule": "Physical-node point index at resolution 9; one preferred bidirectional access node per fine cell, otherwise nearest eligible core/analysis physical node with distance recorded.",
+    "source_taz_policy": "Preserve source TAZ/centroid identity independently from H3 zones."
+  },
+  "time": {
+    "analysis_period_id": "weekday_am_peak",
+    "local_start": "07:00:00",
+    "local_end": "09:00:00",
+    "period_duration_hours": 2,
+    "scenario_service_date": "2026-09-22",
+    "date_alignment_status": "Layer-specific dates must be reported; the scenario date does not make source network or GPS contemporaneous."
+  },
+  "gps": {
+    "source": "MBTA V3 real-time bus vehicle positions",
+    "source_url": "https://api-v3.mbta.com/vehicles?filter%5Broute_type%5D=3",
+    "source_mode": "bus",
+    "api_bbox_wgs84": [
+      -71.105,
+      42.335,
+      -71.045,
+      42.37
+    ],
+    "snapshot_count": 12,
+    "snapshot_interval_seconds": 15,
+    "snapshot_max_bytes": 10485760,
+    "max_total_points": 10000,
+    "request_retries": 2,
+    "gap_seconds": 300,
+    "max_speed_mps_flag": 55,
+    "duplicate_distance_m": 0.5,
+    "matcher_engine": "mapmatcher4gmns",
+    "matcher_search_radius_m": 40,
+    "fallback_policy": "No silent engine fallback; failures remain explicit.",
+    "osm_tracepoints_attempt_status": "api.openstreetmap.org and www.openstreetmap.org timed out on 2026-09-22; no OSM GPS content obtained"
+  },
+  "gtfs": {
+    "feed_id": "mdb-437",
+    "content_sha256": "94d12a7645402990f8e246759e5d97e5a65416baa3e201eacba132a1010c0c1e",
+    "local_zip": "raw/gtfs/mdb-437_20260918.zip",
+    "snapshot_retrieved_at_utc": "2026-09-21T16:39:43+00:00",
+    "feed_version": "Fall 2026, 2026-09-17T20:41:44+00:00, version D",
+    "feed_valid_from": "2026-09-10",
+    "feed_valid_to": "2026-12-12",
+    "source_url": "https://files.mobilitydatabase.org/mdb-437/latest.zip",
+    "upstream_publisher_url": "https://cdn.mbta.com/MBTA_GTFS.zip",
+    "previous_catalog_snapshot": {
+      "content_sha256": "48dc427161314d54c9eb10138bd630202dfc15f30d8923815dc7a0b86ffa7817",
+      "retrieved_at_utc": "2026-07-10T21:00:02+00:00",
+      "local_status": "manifest_record_present_but_zip_absent"
+    },
+    "municipality_metadata_note": "Mobility Database catalog records Arlington; do not equate feed ID with Boston or GHSL city IDs.",
+    "redistribution_status": "unclear_archive_separately",
+    "selection_rule": "Retain trips serving at least one stop in the analysis boundary and all referenced route/service/shape/stop-time rows."
+  },
+  "demand_scenario": {
+    "scenario_id": "engineering_activity_gravity_v1",
+    "status": "SCENARIO_NOT_CALIBRATED",
+    "daily_person_trip_total": 50000,
+    "generation_basis": "OSM building area and deduplicated POI category counts; fallback uses road-node accessibility and cell area with missingness flags.",
+    "generation_proxy_coefficients": {
+      "production_residential_area_m2": 1,
+      "production_nonresidential_area_m2": 0.15,
+      "production_poi_count": 75,
+      "attraction_residential_area_m2": 0.25,
+      "attraction_nonresidential_area_m2": 1,
+      "attraction_poi_count": 300
+    },
+    "distribution_model": "doubly_constrained_gravity",
+    "friction_function": "exp(-beta_minutes * free_flow_minutes)",
+    "beta_per_minute": 0.08,
+    "balance_tolerance": 1e-7,
+    "balance_max_iterations": 500,
+    "mode_shares": {
+      "drive": 0.55,
+      "transit": 0.25,
+      "walk": 0.15,
+      "bike": 0.05
+    },
+    "mode_share_method": "given_mode_share engineering scenario; not a calibrated logit model",
+    "am_peak_share_of_daily": 0.12,
+    "drive_persons_per_vehicle": 1.2,
+    "assigned_mode": "drive",
+    "unassigned_modes": [
+      "transit",
+      "walk",
+      "bike"
+    ]
+  },
+  "assignment": {
+    "solver": "github_upload/algorithms/static_fw/tap_frank_wolfe.py:solve_fw_refined",
+    "model": "static user equilibrium with BPR link cost",
+    "max_iterations": 200,
+    "wall_clock_limit_seconds": 300,
+    "capacity_scale": 1,
+    "single_pass_four_stage": true
+  },
+  "resources": {
+    "data_budget_bytes": 10737418240,
+    "disk_safety_margin_bytes": 2147483648,
+    "heavy_processes": 1,
+    "numeric_threads": 2,
+    "default_batch_timeout_seconds": 900
+  }
+}
