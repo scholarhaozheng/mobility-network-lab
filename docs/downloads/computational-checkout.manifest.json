@@ -1,16 +1,28 @@
 {
   "schema": "mcl_public_computational_archive_v1",
-  "releaseId": "20261004-r14",
-  "sourceRevision": "reproduction-2026-10-04-r14",
+  "releaseId": "20261004-r15",
+  "sourceRevision": "reproduction-2026-10-04-r15",
+  "documentationRefresh": {
+    "documentationOnly": true,
+    "computationalRecipeRelease": "reproduction-2026-10-04-r14",
+    "preservedComputationalCommands": 41,
+    "preservedRecoveredRecords": 44,
+    "readme": "README.md",
+    "imagePositions": 130,
+    "uniqueLocalImages": 91,
+    "allReadmeImagesIncluded": true,
+    "exporter": "tools/build_readme_from_homepage.py",
+    "scope": "README and its directly referenced figures are included for the restored static project overview. Computational recipes, pinned code, numeric receipts, and their r14 immutable links are unchanged."
+  },
   "archive": "computational-checkout.zip",
-  "sha256": "ff9c00db3a773b378381a7fe8c8fb9cdc934e1a8f6b87141111e6b82cc97f564",
-  "bytes": 18807645,
+  "sha256": "922d220d9f5aaf8177be1b59a3c56a223668a15ffa98be48dc32a78419ad4f4c",
+  "bytes": 25522752,
   "files": [
     {
       "path": ".gitattributes",
       "source": ".gitattributes",
-      "sha256": "bab9f79b94dc677e733d3774b2e6e41fb7c6786cd75b3fed8b4d7773c19867f2",
-      "bytes": 92226
+      "sha256": "54e63ef8f269060e84b1e6f478b9a987acb6db9ba77a6ac4d744da82572d959f",
+      "bytes": 97173
     },
     {
       "path": "CITATION.cff",
@@ -29,6 +41,12 @@
       "source": "LICENSE",
       "sha256": "73b85a0e722e744884ebc60b725e2b9857bf02aaa2586e199636645fce6927e6",
       "bytes": 1066
+    },
+    {
+      "path": "README.md",
+      "source": "README.md",
+      "sha256": "18f673ed18f628c077defd339b5a0a97ea40fd72c6d2c25783ea1953d92b7b08",
+      "bytes": 270297
     },
     {
       "path": "REPRODUCTION_PACKAGE_MANIFEST.json",
@@ -1363,6 +1381,552 @@
       "bytes": 4282
     },
     {
+      "path": "docs/assets/atlas/card-layout/c-boston-admm-flows.svg",
+      "source": "docs/assets/atlas/card-layout/c-boston-admm-flows.svg",
+      "sha256": "b5590b4b7ed146c9cdd132299c49fee4d73b9890dfc43a5d933bc3f55b9444cf",
+      "bytes": 303110
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-boston-endpoints.svg",
+      "source": "docs/assets/atlas/card-layout/c-boston-endpoints.svg",
+      "sha256": "075b410569aad801b0e4c43d21a801efd7b7363c5038a6ace5b629843a3d9093",
+      "bytes": 884802
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-boston-finite-static.svg",
+      "source": "docs/assets/atlas/card-layout/c-boston-finite-static.svg",
+      "sha256": "7ccee9fe9a4713ce744f53fac0089f263f7dd6c923d639100d050d02c66b6bf9",
+      "bytes": 892993
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-boston-fw-scales.svg",
+      "source": "docs/assets/atlas/card-layout/c-boston-fw-scales.svg",
+      "sha256": "f8b8a4f517b7ca961469af47ee88799adc96e7d1e0223ae92c8bde088239eb69",
+      "bytes": 3283201
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-hk-admm-flows.svg",
+      "source": "docs/assets/atlas/card-layout/c-hk-admm-flows.svg",
+      "sha256": "aea3dce16eaec45879fd6c236eb0747f1c23b5b8f26cb76b54bd58b3aa41fc8a",
+      "bytes": 343461
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-hk-endpoints.svg",
+      "source": "docs/assets/atlas/card-layout/c-hk-endpoints.svg",
+      "sha256": "6c696a217a915994120bbdc20854bc6492e9eef665e60971311360cf67a7527a",
+      "bytes": 687000
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/c-sioux-fw-static.svg",
+      "source": "docs/assets/atlas/card-layout/c-sioux-fw-static.svg",
+      "sha256": "240b379d37e35b5cdef554449b9aa4d092625f3c0049b4c42f2b4a77b508350c",
+      "bytes": 79006
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/g-f005.svg",
+      "source": "docs/assets/atlas/card-layout/g-f005.svg",
+      "sha256": "d24f5c12c114d40262bd5750bebfdda50a12a6e6027bddce8fc98edc690d4325",
+      "bytes": 50320
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/g-f060.svg",
+      "source": "docs/assets/atlas/card-layout/g-f060.svg",
+      "sha256": "998df5ecf568300216c0e8acbe8b680fb9bba76cfd559751c13eef5d52a6c135",
+      "bytes": 49397
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/g-f141.svg",
+      "source": "docs/assets/atlas/card-layout/g-f141.svg",
+      "sha256": "13a21256ac00e77d38bbe0f76ac3977e701ca22142a24e191f14664ef5cd3b8b",
+      "bytes": 1092745
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/g-f160.svg",
+      "source": "docs/assets/atlas/card-layout/g-f160.svg",
+      "sha256": "d3f4d6359e7670b586f08311c9aea35d5cc710b99ec1aa082057023864e91240",
+      "bytes": 98886
+    },
+    {
+      "path": "docs/assets/atlas/card-layout/g-f164.svg",
+      "source": "docs/assets/atlas/card-layout/g-f164.svg",
+      "sha256": "f294fa6963e14c1074b959562deb03f613154103a399024dd502847cd03f8bed",
+      "bytes": 113419
+    },
+    {
+      "path": "docs/assets/atlas/construction/r07-boston-layered-construction.svg",
+      "source": "docs/assets/atlas/construction/r07-boston-layered-construction.svg",
+      "sha256": "009b5d21b4f9a6b0f83e3a3bd95abc76f9980822831b55d9f548442104bfb691",
+      "bytes": 61516
+    },
+    {
+      "path": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg",
+      "source": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg",
+      "sha256": "b3cdda18b64a9bb615e83c9bb92fc558f111a9403bf637cb3b6b5fd4eed90370",
+      "bytes": 67875
+    },
+    {
+      "path": "docs/assets/atlas/construction/r07-sioux-layered-construction.svg",
+      "source": "docs/assets/atlas/construction/r07-sioux-layered-construction.svg",
+      "sha256": "1d37a2696da844519ea794cafe59456b83f59211b9a068e84bd56cf49204d297",
+      "bytes": 71019
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-abs-l3.svg",
+      "source": "docs/assets/atlas/figures/c-boston-abs-l3.svg",
+      "sha256": "29fb67f5735cf6bbe340dbc9021f986321562480f2c8ffee1c766ebb62aa74d0",
+      "bytes": 4403687
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-cg-closure.svg",
+      "source": "docs/assets/atlas/figures/c-boston-cg-closure.svg",
+      "sha256": "7cc2d0b07898ce5fd8ecfe70644d73f9100bafe4e765e2c0cb8aae505fd55b78",
+      "bytes": 69869
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-cg-phase1.svg",
+      "source": "docs/assets/atlas/figures/c-boston-cg-phase1.svg",
+      "sha256": "a0b58af3b8a8dcc74f77056c3afe1b0463a43be1de288fec35d0e6a7684cdbcf",
+      "bytes": 112277
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-gps-sample.svg",
+      "source": "docs/assets/atlas/figures/c-boston-gps-sample.svg",
+      "sha256": "2dd1b3dee2e261d5b7d6501ba8611400de4d44140a654e83b4133a04e62cc7ca",
+      "bytes": 612925
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-lagrangian-prices.svg",
+      "source": "docs/assets/atlas/figures/c-boston-lagrangian-prices.svg",
+      "sha256": "a8296981d35d55d08d90120090cac349c3394e84eec5eef5411bbec1fc585c17",
+      "bytes": 77952
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+      "source": "docs/assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+      "sha256": "e6cc0a4f7483ae620ca38bf2da877d54f147a605a37fa6e353f153916025af61",
+      "bytes": 50899
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-mode-response.svg",
+      "source": "docs/assets/atlas/figures/c-boston-mode-response.svg",
+      "sha256": "1a078f2a7cc764cf36f808029ba378697063857679c1f0f6112ea620c4db5b92",
+      "bytes": 57915
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-boston-source-margins.svg",
+      "source": "docs/assets/atlas/figures/c-boston-source-margins.svg",
+      "sha256": "c5a1c8134266d42a03dfd454adcc57c27857d5345c052a069c8efd4ed7c17cd1",
+      "bytes": 3392777
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-cg-phase1.svg",
+      "source": "docs/assets/atlas/figures/c-hk-cg-phase1.svg",
+      "sha256": "d48f7fccb8ef80828298ad634fca3c04742722f8095d5d5544fce08de008606b",
+      "bytes": 74936
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-finite-static.svg",
+      "source": "docs/assets/atlas/figures/c-hk-finite-static.svg",
+      "sha256": "ddc0158d8d1007da3fc937effc93eddd66c4c19fa7c96dcee4d8ea2dd7f4e408",
+      "bytes": 402016
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-l3-static.svg",
+      "source": "docs/assets/atlas/figures/c-hk-l3-static.svg",
+      "sha256": "01b78d68763e7c448d5d6bc3f85ee3161c1bbe111d0c90b105be51ba21cf247b",
+      "bytes": 1081042
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-lagrangian-bounds.svg",
+      "source": "docs/assets/atlas/figures/c-hk-lagrangian-bounds.svg",
+      "sha256": "d75b428d7f7f233af175630da08410ffc9cd4f4e1aa0cc8de1c60b0dfbf32549",
+      "bytes": 54303
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-lagrangian-prices.svg",
+      "source": "docs/assets/atlas/figures/c-hk-lagrangian-prices.svg",
+      "sha256": "29e5740ee2a1b18323496f1691a3e6aae32b3ffbe8522cad55d82bd697af4c34",
+      "bytes": 64470
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-lagrangian-recovery.svg",
+      "source": "docs/assets/atlas/figures/c-hk-lagrangian-recovery.svg",
+      "sha256": "536ad50dc1f8713021f66bdac2c095cbd84e6a5b8e6e910b3544015b73180087",
+      "bytes": 47869
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-hk-source-margins.svg",
+      "source": "docs/assets/atlas/figures/c-hk-source-margins.svg",
+      "sha256": "d459a2317e86ca682ef2df3c2730d4eef03a57a8a8c175dece737e6322348ebb",
+      "bytes": 2834491
+    },
+    {
+      "path": "docs/assets/atlas/figures/c-sioux-finite-static.svg",
+      "source": "docs/assets/atlas/figures/c-sioux-finite-static.svg",
+      "sha256": "b983cc14aeff70a00f46005bf522ec7857ad80e50fea2ee4e80005725b6038ab",
+      "bytes": 80057
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f001.svg",
+      "source": "docs/assets/atlas/figures/g-f001.svg",
+      "sha256": "4e3e10f7417f983c4a332b60d92a544d4b779dd0fe63d4a03bdaa899629b2e05",
+      "bytes": 83582
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f015.svg",
+      "source": "docs/assets/atlas/figures/g-f015.svg",
+      "sha256": "d812f4ecdffe1bb893c9232f4250a3a57356d9bd603c6d11532ffe3b682edc3e",
+      "bytes": 98268
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f022.svg",
+      "source": "docs/assets/atlas/figures/g-f022.svg",
+      "sha256": "d705a32bff20f0f92525c13af563f53c420bb07994e94afc2ad7db32ae63ecd5",
+      "bytes": 597076
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f024.svg",
+      "source": "docs/assets/atlas/figures/g-f024.svg",
+      "sha256": "f2fe88adc83a91e524bb10751414a67e1731f418f3baeb2f4318aaff40d97db3",
+      "bytes": 40255
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f031.svg",
+      "source": "docs/assets/atlas/figures/g-f031.svg",
+      "sha256": "92c805b2ab1d6ab07ace778e3a81a8c04b10c5be64a8597a48beee2a09bbc5e0",
+      "bytes": 39243
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f032.svg",
+      "source": "docs/assets/atlas/figures/g-f032.svg",
+      "sha256": "2c9a50c12be5ac8b38afe25defba5d7aa700168539143b2341be265d33408936",
+      "bytes": 43408
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f033.svg",
+      "source": "docs/assets/atlas/figures/g-f033.svg",
+      "sha256": "97bb80864a2e578d1cb7c27718bb8cb044c687e12d2c820f3135aaecc02157f3",
+      "bytes": 246393
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f037.svg",
+      "source": "docs/assets/atlas/figures/g-f037.svg",
+      "sha256": "cb5e9fe30b0e0b6950c117ccd8f2829585c59a83708947c51be0e977996d04b7",
+      "bytes": 1734559
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f051.svg",
+      "source": "docs/assets/atlas/figures/g-f051.svg",
+      "sha256": "8aed8ad66e9bef911a263599f6dafc71f034c12e877430da78842635fe5cb61c",
+      "bytes": 708442
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f052.svg",
+      "source": "docs/assets/atlas/figures/g-f052.svg",
+      "sha256": "ce2d25bac99abafe9b6953ee1fafa2af5ee24416d182b0820afe61486b13327e",
+      "bytes": 474651
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f061.svg",
+      "source": "docs/assets/atlas/figures/g-f061.svg",
+      "sha256": "710081f007c5776d5591399def39796e57294b0567cca3ed76edf998048f915f",
+      "bytes": 58854
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f063.svg",
+      "source": "docs/assets/atlas/figures/g-f063.svg",
+      "sha256": "4db1702bf5c5d7c2fe7573e19188b6eed79dba9bc41b260727de764805573da6",
+      "bytes": 54461
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f065.svg",
+      "source": "docs/assets/atlas/figures/g-f065.svg",
+      "sha256": "74845ccb6b5d6985d5cc8c13f1840704edaad16a52b4b4432f49b13c63245c73",
+      "bytes": 108945
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f069.svg",
+      "source": "docs/assets/atlas/figures/g-f069.svg",
+      "sha256": "e28c51f022195a85ab5d749c4a187a51a5f6d8b2578d325fce7eea810245abfd",
+      "bytes": 112271
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f072.svg",
+      "source": "docs/assets/atlas/figures/g-f072.svg",
+      "sha256": "36104e41ddcbc830a0c5e42c2a924b13237348c1bd988d8c863fc6d5ad5f4a78",
+      "bytes": 84081
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f079.svg",
+      "source": "docs/assets/atlas/figures/g-f079.svg",
+      "sha256": "57ddb86ab503b56ae756dd0625d73092bfe1d14cc703abb125ef9556a80b2864",
+      "bytes": 46247
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f085.svg",
+      "source": "docs/assets/atlas/figures/g-f085.svg",
+      "sha256": "9735a915c689e8a4c883ea47729358c2eeb33e3e0cc7993e9efe527eb9b9f183",
+      "bytes": 52239
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f092.svg",
+      "source": "docs/assets/atlas/figures/g-f092.svg",
+      "sha256": "0e5259a992164f86c229bbe811b2856f02b06d93778c38a7ff39086e75158bd1",
+      "bytes": 79449
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f093.svg",
+      "source": "docs/assets/atlas/figures/g-f093.svg",
+      "sha256": "9f61eb2e3e22d6d9f222eca0f48f97650b8383d7979f15617a49822815abf027",
+      "bytes": 45804
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f097.svg",
+      "source": "docs/assets/atlas/figures/g-f097.svg",
+      "sha256": "050bc24a49dd3ac14f45987c9a9bc4ae30d6b20d4ec30fc39678416aac4c167b",
+      "bytes": 110540
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f101.svg",
+      "source": "docs/assets/atlas/figures/g-f101.svg",
+      "sha256": "b3c59d5747e58ad794f48948e7abb456cf9ac7ec582406f13322e2ebd0fbc13c",
+      "bytes": 83298
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f114.svg",
+      "source": "docs/assets/atlas/figures/g-f114.svg",
+      "sha256": "aa064461315786b346b751562b92f705077646080117ae407157107e0e3acd65",
+      "bytes": 56677
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f133.svg",
+      "source": "docs/assets/atlas/figures/g-f133.svg",
+      "sha256": "4341577b245ffedd6d4e74809b49faa277576539068222bce5bf2bb7bd2c49e3",
+      "bytes": 3386195
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f134.svg",
+      "source": "docs/assets/atlas/figures/g-f134.svg",
+      "sha256": "247ade8da12f1ce04aa47eb018424b92380af2720fb4fe23246108206fe4c8a2",
+      "bytes": 1148172
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f135.svg",
+      "source": "docs/assets/atlas/figures/g-f135.svg",
+      "sha256": "e7434400fab44a060f2c10d531601215f8b62240cff9de9045e3aad0028ab450",
+      "bytes": 880488
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f136.svg",
+      "source": "docs/assets/atlas/figures/g-f136.svg",
+      "sha256": "c01c20efd119c0217dc3ce45db3fd9ae9394bcc42a88bb0c3d1ccb2c46156db6",
+      "bytes": 1660642
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f147.svg",
+      "source": "docs/assets/atlas/figures/g-f147.svg",
+      "sha256": "beb820fd1fffe216e76d7be07c3196b6aaf853df67c9aa954bc2d316cefb6600",
+      "bytes": 57969
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f151.svg",
+      "source": "docs/assets/atlas/figures/g-f151.svg",
+      "sha256": "65d6b5e45028fe413413899dfa68f62e3d01260be803b1f375505754320f9681",
+      "bytes": 85131
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f174.svg",
+      "source": "docs/assets/atlas/figures/g-f174.svg",
+      "sha256": "72c33841add94b6c48ff42fbf1b939014c940f60d6c6e87824e2c02d1b69e4ce",
+      "bytes": 1196993
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f175.svg",
+      "source": "docs/assets/atlas/figures/g-f175.svg",
+      "sha256": "3af403ff50b9985c99e0c01ea56d82b592d61de8d47c40523145443a19b4deb8",
+      "bytes": 338352
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f176.svg",
+      "source": "docs/assets/atlas/figures/g-f176.svg",
+      "sha256": "439899e91d87e35b04fc6ac770be81d04bab20740330d01e117c9a9f9cd9045a",
+      "bytes": 317732
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f177.svg",
+      "source": "docs/assets/atlas/figures/g-f177.svg",
+      "sha256": "20e1a59f70df06a1028a7fdeab4334c1fdfea62f8d85151449aaf6a2f84a6cfc",
+      "bytes": 807672
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f178.svg",
+      "source": "docs/assets/atlas/figures/g-f178.svg",
+      "sha256": "61df2185710914695dc7dfc2cbdc4708fc6cc5bbc5d3876683d17cee338c5c45",
+      "bytes": 89621
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f182.svg",
+      "source": "docs/assets/atlas/figures/g-f182.svg",
+      "sha256": "6686989053add4813f9f7b5266e9a20d3eb5348e2e7d860755969760e7729b1e",
+      "bytes": 474037
+    },
+    {
+      "path": "docs/assets/atlas/figures/g-f186.svg",
+      "source": "docs/assets/atlas/figures/g-f186.svg",
+      "sha256": "c7a8c7ab6011f6160bdcdb76d7bb9260b4dd81b9ebc0d183663c4755a84dd338",
+      "bytes": 37385
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-conservation.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-conservation.svg",
+      "sha256": "6faa2117e7ab3a8b7955931cb774e7c113e4917a652b219d1819e0773d4bed8f",
+      "bytes": 55802
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-convergence.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-convergence.svg",
+      "sha256": "aefcb2586e8faab6dae4e31f0cba5a18ce89485f43ad42105d21d18341c0c709",
+      "bytes": 92177
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-flows.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-admm-flows.svg",
+      "sha256": "47fa63e72cf0ce694b6b12437558e31a8fa0c4a40e2cbc3f11b933c6a051c3eb",
+      "bytes": 136544
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-exchange.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-exchange.svg",
+      "sha256": "0236e826d8636096770fbd4277ca53af9cf50303a2039a3fa78f275a3321f97d",
+      "bytes": 48251
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-flows.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-flows.svg",
+      "sha256": "182af3d2393e82852d3cb3f380ef93444c623d5d80cebab147dea5aa272f60db",
+      "bytes": 83710
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-phase1.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-cg-phase1.svg",
+      "sha256": "f61d08f91892f9892efd6adc9068ddbe4bd3dada56eee09bfa865a17535e85d7",
+      "bytes": 61198
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-bounds.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-bounds.svg",
+      "sha256": "01913670ac08d1672f79d12328e4bc084ea0a006945e6feb40b30e1e4379193d",
+      "bytes": 45653
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-prices.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-prices.svg",
+      "sha256": "5db26835566f2e2547f540364d37554bc68e8a9530bf4b17db530ce5aaae7b1c",
+      "bytes": 43990
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-recovery.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux200-lagrangian-recovery.svg",
+      "sha256": "f9a97ff39fb7ad96a405ae9d74fc0537325ebe365d9cbad674a2bc1809948c71",
+      "bytes": 44648
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-conservation.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-conservation.svg",
+      "sha256": "2876d5329d5b450e558e1d175af2ec02b965f236b762c5398e2b4c12b571938b",
+      "bytes": 61020
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-convergence.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-convergence.svg",
+      "sha256": "a8b13d27f7d28dd8f12dcaa955e124abf86a2a9956a6919680ec7a9610b4329e",
+      "bytes": 101096
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-flows.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-admm-flows.svg",
+      "sha256": "dc33f9a2f7aa1368292e81264e47a46e1eb8ceec5f1c3032a4139b5ec95665c2",
+      "bytes": 139511
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-exchange.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-exchange.svg",
+      "sha256": "9ea4b162433d83f0e16f33dac0aeded2c7a1978012a3ca2a6d54d2a5596b8802",
+      "bytes": 48251
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-flows.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-flows.svg",
+      "sha256": "994178109e8a944940c77a1c960d52f471e653f29807a6921dcd807bcf8f1a00",
+      "bytes": 85991
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-phase1.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-cg-phase1.svg",
+      "sha256": "e852259b15c8751c1c296c9a16c0a2fb498da5fb1583a8808c2fab23a977f2f2",
+      "bytes": 61539
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-bounds.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-bounds.svg",
+      "sha256": "c40dcec99bc0feb5337165b7cdcd4bd7a9d70ef4d533f22545af7f3dd742fdc1",
+      "bytes": 45860
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-prices.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-prices.svg",
+      "sha256": "02a4ba10f012a88c23956158c59968797d77ac177c41ebe5d95cff2821399743",
+      "bytes": 46829
+    },
+    {
+      "path": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-recovery.svg",
+      "source": "docs/assets/atlas/sioux-scale/r05-sioux250-lagrangian-recovery.svg",
+      "sha256": "3e7ce71f57b0aab0163b5333e31be7cb501f53572b82447524b5c9ff3097e134",
+      "bytes": 45444
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/A.svg",
+      "source": "docs/assets/atlas_depth_badges/A.svg",
+      "sha256": "41fc9ba98e81ec149d164d5974e948eb0c217879a47a6f8a2acc26a675691b74",
+      "bytes": 236
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/B.svg",
+      "source": "docs/assets/atlas_depth_badges/B.svg",
+      "sha256": "2efd513dc1e59b25cb0e1d4f14c706142a02bdda1c72e4776f3ac81bb79cfa0c",
+      "bytes": 236
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/B_C.svg",
+      "source": "docs/assets/atlas_depth_badges/B_C.svg",
+      "sha256": "bd77a4640e33da4ef83999485bbdbd7488b1ef6225475b8e791dbc2c39bf6348",
+      "bytes": 245
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/B_D.svg",
+      "source": "docs/assets/atlas_depth_badges/B_D.svg",
+      "sha256": "da734d8b783aba02473d182751b810443de04aa8995c638d904dbbb6e709fb6a",
+      "bytes": 245
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/C.svg",
+      "source": "docs/assets/atlas_depth_badges/C.svg",
+      "sha256": "75acb3ab4a495ed956d3aa0f26f2f3cafea4646bf0fa6a1a70b55c2ea6c9a1bf",
+      "bytes": 236
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/C_D.svg",
+      "source": "docs/assets/atlas_depth_badges/C_D.svg",
+      "sha256": "dfbb7b0b4dc593c6b0c9e77d85bd65119093e8327a286b05a2b301d4a686ab40",
+      "bytes": 245
+    },
+    {
+      "path": "docs/assets/atlas_depth_badges/D.svg",
+      "source": "docs/assets/atlas_depth_badges/D.svg",
+      "sha256": "39d52677c4030d40aa3604a43a0226413686d0fbe91dda32dbe69577bebdfcd3",
+      "bytes": 236
+    },
+    {
       "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/ASSIGNMENT_READY_GATE_R2.json",
       "source": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/ASSIGNMENT_READY_GATE_R2.json",
       "sha256": "117aade768d94b88b5fe95dac13eaf4d119b50f5f0108855221c223d2da074fb",
@@ -1937,6 +2501,12 @@
       "source": "docs/data/open-mobility/source_content_city.csv",
       "sha256": "0321d8fa818090d3043951f6b320c6c4739b5e32074834212c16e176dd1d3455",
       "bytes": 5784481
+    },
+    {
+      "path": "docs/index.html",
+      "source": "docs/index.html",
+      "sha256": "a0c86ef44330c5a846fd4572a8a9f7094276d6855b82fc82a511f0e16708cdb4",
+      "bytes": 257718
     },
     {
       "path": "docs/reproduce.html",
@@ -5055,8 +5625,8 @@
     {
       "path": "experiments/checkout-files.json",
       "source": "experiments/checkout-files.json",
-      "sha256": "72db3d49d1c1612903b61eef48da6c6d8e069008f2040dc5e74a225ccab39d2e",
-      "bytes": 69316
+      "sha256": "86fa4e5b270163d91a02184fce6f8583945e2cc88dc436919c41e1638112c2f5",
+      "bytes": 74304
     },
     {
       "path": "experiments/environment-verification/boston-native-clean.json",
@@ -5535,14 +6105,20 @@
     {
       "path": "tools/build_computational_archive.py",
       "source": "tools/build_computational_archive.py",
-      "sha256": "5073ecc7eef41be6e1fb73452051d1015e6231b5c83ed9a3eb62fe6f7ce68d42",
-      "bytes": 5070
+      "sha256": "7dd307066b36d41034efb37507550854d68c96a7454d84bf3b78372d3186044b",
+      "bytes": 6235
     },
     {
       "path": "tools/build_open_mobility_exports.py",
       "source": "tools/build_open_mobility_exports.py",
       "sha256": "65a4a974e95840043594d06c9ee36cefe20de043b3004d6c8ad1c4b170b1821c",
       "bytes": 32176
+    },
+    {
+      "path": "tools/build_readme_from_homepage.py",
+      "source": "tools/build_readme_from_homepage.py",
+      "sha256": "9fc677d3036e329711ba484e9277f0feb314bbddaab24a1280eb2215853572dc",
+      "bytes": 14313
     },
     {
       "path": "tools/build_recovered_docs.py",

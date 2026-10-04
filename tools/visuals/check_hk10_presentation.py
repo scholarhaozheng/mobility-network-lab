@@ -81,7 +81,7 @@ def validate(root: Path) -> dict:
         for relative in ("docs/index.html", "docs/volumes/hong-kong.html", "docs/volumes/04-hong-kong.md"):
             text = (root / relative).read_text(encoding="utf-8")
             check("r07-hong-kong-layered-construction.svg" in text, f"Current reading page lost the HK10 construction redraw: {relative}")
-        for relative, targets in (("README.md", ("docs/volumes/04-hong-kong.md", "docs/volumes/hong-kong.html")), ("docs/index.md", ("volumes/hong-kong.html",))):
+        for relative, targets in (("README.md", ("docs/volumes/04-hong-kong.md", "docs/volumes/hong-kong.html", "https://scholarhaozheng.github.io/mobility-network-lab/volumes/hong-kong.html")), ("docs/index.md", ("volumes/hong-kong.html",))):
             text = (root / relative).read_text(encoding="utf-8")
             check(any(target in text for target in targets), f"Current entry page lost the complete HK10 reading destination: {relative}")
         return {"status": "PASS" if not errors else "FAIL", "checks": checks, "errors": errors,
