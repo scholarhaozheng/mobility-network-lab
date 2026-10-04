@@ -1,0 +1,17 @@
+{
+  "python": "3.9.25 (main, Nov  3 2025, 22:44:01) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.19045-SP0",
+  "packages": {
+    "pyomo": "6.9.5",
+    "numpy": "2.0.2",
+    "scipy": "1.13.1",
+    "pandas": "2.2.3"
+  },
+  "ipopt_sha256": "281049ded043353bc395bc4585806a18a97b07038d01fa446c6aa33b0f31437c",
+  "ipopt_version": "Ipopt 3.14.19 (Windows AMD64), ASL(20231111)",
+  "mumps_confirmed_in_native_log": true,
+  "mumps_version": "5.8.1",
+  "no_ipopt_opt_file": true,
+  "installed_packages_changed": false,
+  "setup_note": "Use the published Boston native toolchain lock, add pandas==2.2.3, and set MCL_NATIVE_PYTHON and MCL_IPOPT. This documents the historical environment; no new exact-environment installation is claimed."
+}

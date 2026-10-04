@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "record": "sioux-admm-r1-250",
+  "evidence_basis": "saved_state_inspection",
+  "optimizer_calls": 0,
+  "verification_optimizer_calls": 0,
+  "checks": {
+    "independent_original_space_gates": true,
+    "method_instance_identity": true,
+    "saved_objective_recomputed": true,
+    "solver_free_verifier": true
+  },
+  "metrics": {
+    "optimizer_calls": 0,
+    "saved_solver_optimizer_calls": 23500,
+    "objective_recomputed": 1521100.0657879692,
+    "primal_residual": 1.4126776233254084,
+    "dual_residual": 0.007793941026506097,
+    "primal_threshold": 2.808142768760793,
+    "dual_threshold": 0.01748858304056054,
+    "max_balance_residual": 3.0576217113775783e-9,
+    "max_capacity_residual": 2.7540636438061483e-11,
+    "max_consensus_capacity_residual": 0,
+    "min_local_flow": 0,
+    "min_consensus_flow": 0,
+    "max_forbidden_connector_flow": 0,
+    "od_count": 250,
+    "objective_absolute_error": 0,
+    "solver_optimizer_calls": 23500,
+    "iterations": 94
+  },
+  "scope": "Exact modeled finite graph and demand; R1 and R2_S remain distinct algorithms. Raw-source construction is outside this replay.",
+  "source_input_hashes_verified": true
+}

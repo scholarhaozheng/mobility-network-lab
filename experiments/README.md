@@ -2,9 +2,9 @@
 
 This catalog connects the retained experiments to their exact computational source, frozen inputs, configuration and acceptance checks. The reader-facing inventory remains 108 records; a scope record, archived checkpoint or located source does not automatically become an executable recipe.
 
-This release includes the computational source, exact frozen inputs, registered commands and numerical receipts. The historical public baseline is `6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b`; new files are identified in `publication.json` by SHA-256. New computational entry URLs point to the immutable `reproduction-2026-10-04-r12` tag; the catalog hashes are the exact executable contract. Record `git rev-parse HEAD` when cloning. No private conversations or raw restricted city observations are included.
+This release includes the computational source, exact frozen inputs, registered commands and numerical receipts. The historical public baseline is `6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b`; new files are identified in `publication.json` by SHA-256. New computational entry URLs point to the immutable `reproduction-2026-10-04-r14` tag; the catalog hashes are the exact executable contract. Record `git rev-parse HEAD` when cloning. No private conversations or raw restricted city observations are included.
 
-This revision contains 41 verified commands covering 46 inventory records: 33 city records and 13 public tool/control records. These comprise 37 fresh-computation records and 9 explicitly bounded prepared-input replays. Every command has an actual execution receipt and separate verification. The remaining 62 inventory records retain their individual source-recovery status and outstanding requirements.
+This revision contains 41 verified commands covering 46 inventory records: 33 city records and 13 public tool/control records. These comprise 37 fresh-computation records and 9 explicitly bounded prepared-input replays. Every command has an actual execution receipt and separate verification. The other 62 inventory records have been traced to retained materials or explicit scope evidence. Their newly integrated commands and inspection results are tracked separately below.
 
 ## Download or clone
 
@@ -15,7 +15,7 @@ For the complete project, including documentation and figure assets:
 ~~~powershell
 git clone -c core.autocrlf=false https://github.com/scholarhaozheng/mobility-network-lab.git
 cd mobility-network-lab
-git checkout reproduction-2026-10-04-r12
+git checkout reproduction-2026-10-04-r14
 git rev-parse HEAD
 py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements-tested.txt
@@ -23,7 +23,7 @@ py -3.12 -m venv .venv
 .\.venv\Scripts\python.exe -B tools/mcl_reproduce.py list
 ~~~
 
-The integrity command uses only the Python standard library. It checks all 200 pinned inputs, computational source/runtime files and 41 archived receipt identities without optimization or network access. Passing it confirms checkout integrity; a fresh run followed by verify is required to reproduce a numerical result. To check one environment use `python -B tools/mcl_reproduction_check.py --experiment EXPERIMENT_ID --environment`.
+The integrity command uses only the Python standard library. It checks the original 200 pinned inputs, computational source/runtime files and 41 archived receipt identities, plus every supplemental recovered-file pin, without optimization or network access. Passing it confirms checkout integrity; a fresh run followed by verify is required to reproduce a numerical result. To check one environment use `python -B tools/mcl_reproduction_check.py --experiment EXPERIMENT_ID --environment`.
 
 `reproduction-status.json` accounts for all 108 inventory records, including those without an executable recipe. No entry certifies an end-to-end rebuild from raw observations to every city figure.
 
@@ -76,7 +76,7 @@ The helper downloads the exact upstream source archive, verifies SHA-256 `5163b4
 - The recovered Hong Kong FW source reports its gap using the historical Beckmann-objective denominator. This convention is retained and should not be confused with a total-system-travel-time-normalized relative gap.
 - Historical static instances retain their own city, phase, scale, demand and reference. A new Sioux public FW solve is distinct from the historical 100-iteration result.
 - Lagrangian public controls now use the recovered original P07 plan. Controls are not substitutes for the historical city instances.
-- The broad historical city states remain outside this bundle. The exact Sioux 200/250-OD arc/demand inputs and four verified recipes are now included as described below. Other recovered city sources and saved-state checks retain their individual status; located code, a checked saved point and a fresh runnable recipe are different outcomes.
+- Selected historical city inputs and saved states are now included in the recovered recipes. The exact Sioux 200/250-OD arc/demand inputs and four verified recipes are now included as described below. Other recovered city sources and saved-state checks retain their individual status; located code, a checked saved point and a fresh runnable recipe are different outcomes.
 
 Numerical verification includes the relevant OD/path/link balances, nonnegative flows, capacity constraints, objectives, gap or pricing checks and original reference comparisons. Thresholds are fixed per experiment in `catalog.json`; scientific limitations stay visible even when a command passes. Reference-only files do not initialize the solve.
 
@@ -94,7 +94,7 @@ The Windows native environment has a separate exact Conda lock, hash-pinned PyPI
 
 ## Newly verified exact Sioux instances
 
-This repository includes the exact 200-OD and 250-OD arc/demand pairs and four registered P07 Lagrangian / R2_S ADMM recipes. All four were freshly solved with unchanged public source and policy; the original independent gates, historical objectives and iteration counts passed. No reference flow, reference path pool or saved state initializes these solves. Historical CG remains a separate pending recipe and does not acquire a full pricing-closure certificate through these results.
+This repository includes the exact 200-OD and 250-OD arc/demand pairs and four registered P07 Lagrangian / R2_S ADMM recipes. All four were freshly solved with unchanged public source and policy; the original independent gates, historical objectives and iteration counts passed. No reference flow, reference path pool or saved state initializes these solves. Historical CG has a separate recovered command and inspected evidence; it does not acquire a full pricing-closure certificate through these results.
 
 The prior public snapshot excluded the city inputs. The frozen derived inputs and original policy hashes are included in this release. The immediate GMNS provider revision remains unrecovered; this limits raw-source reconstruction, rather than the exact frozen-input solve. See examples/sioux-falls/finite-time-r05/PROVENANCE.json. The Transportation Networks benchmark reference states academic-research use and source attribution; these data are not relabeled under the code license.
 
@@ -117,3 +117,23 @@ py -3.11 -m venv .venv-public-controls
 ```
 
 The recipe freezes numpy 1.24.3, scipy 1.10.1 and pandas 1.5.3, and was exercised with Python 3.11.4. Existing validated environments were used; r05 does not claim a new clean environment installation.
+
+## Recovered city workflows
+
+`recovered/*.json` adds portable source, input/configuration hashes, provider acquisition information and per-record commands. Use `python -B tools/mcl_recovered.py list` and `describe RECORD_ID` to select an exact workflow. The existing `mcl_reproduce.py` catalog and its 41 archived receipts retain their original scientific meaning.
+
+- `check` checks packaged-file identity without computation or network access.
+- `inspect` verifies retained evidence. Its success is not a fresh-solver claim, and an expected historical failure remains a failure.
+- `run` executes the selected computation. Use its documented environment and a new output directory.
+- `verify` checks that result using the selected adapter. The recipe states whether this is structural validation, independent numerical verification, or both.
+
+```text
+python -B tools/mcl_recovered.py describe RECORD_ID
+python -B tools/mcl_recovered.py inspect RECORD_ID --output ../results/RECORD_ID-inspect
+python -B tools/mcl_recovered.py run RECORD_ID --output ../results/RECORD_ID-run
+python -B tools/mcl_recovered.py verify RECORD_ID --run ../results/RECORD_ID-run
+```
+
+Actions are enabled per record. An external-data workflow requires the documented exact input snapshot; follow `dataSources` and use `--input-root`. Expensive historical CG/native cases may have inspected saved states and a runnable command without a new full solve in this release. Original scientific gates and missing historical version identities remain visible. No private conversations or original restricted observations are included.
+
+Instructions: [Boston](../docs/reproduction/recovered-boston.md) · [Sioux Falls](../docs/reproduction/recovered-sioux.md) · [Hong Kong](../docs/reproduction/recovered-hong-kong.md) · [City query](../docs/reproduction/recovered-shared.md). The [complete status ledger](reproduction-status.json) distinguishes these recovered workflows from fresh numerical reproduction.

@@ -1,0 +1,29 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-PATH-L3-FULL",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Finite-path / L3 not demonstrated. This records the experimental boundary and cannot count as an accepted optimization reproduction. H0/H2 contain saved interface/resource preflight records; the complete execution package is not public.",
+  "verification": {
+    "record": "HK-PATH-L3-FULL",
+    "success": true,
+    "checks": {
+      "saved_evidence_files_present": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "saved_evidence_files": 1,
+      "numerical_recalculation": false,
+      "expected_scientific_outcome": "NO_OPTIMIZATION_RESULT"
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "saved_output_integrity_only",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.005350299994461238,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

@@ -1,0 +1,37 @@
+{
+  "status": "PASS",
+  "official_adapter_source_sha256": "f89431551b5e4ef82206b38ccee799c3bdba8d28762a807b350836c82fe7d50e",
+  "official_cli_source_sha256": "23f554fd4e9562597a77d60dcb5cf2364174acde5606702e352da9eca966f545",
+  "executable_sha256": "c421c48200c033a8c37bf570ee7d1198bbb4689e2961dee61ae41f8d58f7ee1f",
+  "input_hashes": {
+    "link": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+    "demand": "603f785068e583a9afa645cae3693564b3f18e7d51453322bdeee1897746dcdc"
+  },
+  "physical_links": 76,
+  "positive_od": 528,
+  "total_demand": 360600.0,
+  "first_thru_node": 1,
+  "native_network_max_bpr_parameter_error": 0.0,
+  "native_od_matrix_exact": true,
+  "objective": 4231335.287110684,
+  "accepted_objective": 4231335.287110682,
+  "relative_objective_difference": 6.603040256245598e-16,
+  "tstt": 7480222.739137269,
+  "sptt": 7480222.705488173,
+  "relative_gap": 4.498408203549506e-09,
+  "accepted_relative_gap": 4.4984077055308746e-09,
+  "max_abs_physical_link_flow_difference": 0.0,
+  "rmse_physical_link_flow_difference": 0.0,
+  "flow_difference_tolerance": 0.0036060000000000003,
+  "min_physical_link_flow": 4494.65579402171,
+  "max_aggregate_node_conservation_residual": 8.003553375601768e-11,
+  "official_standard_files": [
+    "convergence.csv",
+    "link_performance.csv",
+    "report.md",
+    "summary.json",
+    "validation_report.json"
+  ],
+  "official_verify_certified": true,
+  "native_params": "<NETWORK FILE> sioux_r21_net.txt\n<TRIPS FILE> sioux_r21_trips.txt\n<FLOWS FILE> sioux_r21_flows.txt\n<CONVERGENCE GAP> 1e-08\n<MAX RUN TIME> 1800\n"
+}

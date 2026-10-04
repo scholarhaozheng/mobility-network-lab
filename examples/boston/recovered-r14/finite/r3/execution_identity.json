@@ -1,0 +1,64 @@
+{
+  "source_sha256_before": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+  "source_sha256_after": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+  "input_hashes_before": {
+    "dynamic_node.csv": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+    "dynamic_arc.csv": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "dynamic_demand.csv": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+    "dynamic_columns.csv": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0"
+  },
+  "input_hashes_after": {
+    "dynamic_node.csv": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+    "dynamic_arc.csv": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "dynamic_demand.csv": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+    "dynamic_columns.csv": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0"
+  },
+  "static_case_hashes_before": {
+    "case.json": "a86889fdd1a1ff7a7ebb3941a477334d10bbf5f5813fbdec9deeae442216d1ca",
+    "node.csv": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+    "link.csv": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+    "demand.csv": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca"
+  },
+  "static_case_hashes_after": {
+    "case.json": "a86889fdd1a1ff7a7ebb3941a477334d10bbf5f5813fbdec9deeae442216d1ca",
+    "node.csv": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+    "link.csv": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+    "demand.csv": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca"
+  },
+  "manifest_sha256": "6a368a64bbc19d80d6d26dc2f425488a612f5bfd2085e64ff9c6182bcc0fe191",
+  "elapsed_seconds": 1803.542,
+  "process_exit_code": 0,
+  "command": [
+    "historical-workspace/runtime/python.exe",
+    "historical-workspace/gmns_dynamic/run_full_cg_v1.py",
+    "--input-manifest",
+    "historical-workspace/phase_ii_degeneracy_completion_r3/BOSTON_FINAL_PREDECLARED_MANIFEST.json",
+    "--output-dir",
+    "historical-workspace/phase_ii_degeneracy_completion_r3/boston_exact_final",
+    "--benchmark-id",
+    "BOSTON_BOUNDED_12_30_BOS10_S3_R1",
+    "--max-phase-i-rounds",
+    "120",
+    "--max-phase-ii-rounds",
+    "25",
+    "--max-candidates-per-demand",
+    "4",
+    "--phase-ii-pricing-mode",
+    "k_shortest",
+    "--phase-ii-add-policy",
+    "add_best_one_per_demand",
+    "--k-shortest-k",
+    "4",
+    "--max-phase-ii-candidates-per-demand",
+    "4",
+    "--max-phase-ii-candidates-per-round",
+    "40",
+    "--runtime-cap-seconds",
+    "7200",
+    "--no-mutate-accepted-outputs",
+    "--reference-objective",
+    "64.3968615115296",
+    "--reference-summary",
+    "historical-workspace/boston_exact_rerun/arc_lp_reference_summary.json"
+  ]
+}

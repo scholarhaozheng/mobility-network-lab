@@ -1,0 +1,73 @@
+{
+  "accepted_static_contract": "docs/cases/hong-kong-static-assignment.md",
+  "accepted_graph_links": 3446,
+  "physical_links": 1239,
+  "allowed_movement_links": 1896,
+  "zone_origin_links": 151,
+  "zone_destination_links": 160,
+  "positive_static_od": 8930,
+  "full_static_demand_pce": 723.1912278850218,
+  "bpr_parameters": "source turn_expanded_links.csv unchanged; physical and nonphysical parameters preserved",
+  "input_files": {
+    "phase_a/static_input/turn_expanded_links.csv": {
+      "sha256": "374f64470b790c1533e94b1d607bd02f9fda2b7a4e2b1e56e59aa6fcb95dd796",
+      "bytes": 215715
+    },
+    "phase_a/static_input/expanded_network_crosswalk.csv": {
+      "sha256": "064af78267f69ae72e33331be1fe358ae5a3d62ecafdcafdae8f8b44a4f2cc0a",
+      "bytes": 168214
+    },
+    "phase_a/movement_quarantine.csv": {
+      "sha256": "dfcad61fc9489309c848a9ccf04cab4644c1d95160d9a0b6bf77552f6594cf47",
+      "bytes": 440
+    },
+    "phase_a/movement_resolved.csv": {
+      "sha256": "d4b4409c15d75a61baf6e8acca209891921f13bd30eaaf6040127f326d91c865",
+      "bytes": 62098
+    },
+    "phase_b/mode_demand_by_od.csv": {
+      "sha256": "a971ed27f69743f7f46a8e526e9f1e07416245dede0c1ad134f2532e6ec7201f",
+      "bytes": 1855028
+    },
+    "phase_c/selected_od.csv": {
+      "sha256": "8146ed4d1e1bccc464de9bbe50b7fe6e35fe6111994247160ae77105fd942e7f",
+      "bytes": 1211
+    },
+    "phase_b/STATIC_ASSIGNMENT_COMPARISON.json": {
+      "sha256": "fbc0fd9376078ebba7b63b9fa980f23488c9766e531476100b28c27c7ea7b32f",
+      "bytes": 2097
+    },
+    "phase_a/ASSIGNMENT_READY_GATE_R2.json": {
+      "sha256": "117aade768d94b88b5fe95dac13eaf4d119b50f5f0108855221c223d2da074fb",
+      "bytes": 955
+    },
+    "tools/mcl_assignment.py": {
+      "sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe",
+      "bytes": 39370
+    },
+    "tools/mcl_path_methods.py": {
+      "sha256": "725f523379b93bf34f2f05c5a02c0831a501ce7b749a0f98a53778a9ae53982a",
+      "bytes": 16094
+    },
+    "tools/mcl_native_l3.py": {
+      "sha256": "ad1e78619ad8858749abcd24398f903cace1442d1409ee501039dc7565ec7e80",
+      "bytes": 19514
+    },
+    "tools/scalable/diagnostic_l3_source.py": {
+      "sha256": "d727e1c551c4135c1d55f1eb3ac0d587c3912e16d22cb4dd2fa747786aacd457",
+      "bytes": 3452
+    },
+    "phase_a/instance/link.csv": {
+      "sha256": "7158dfc3cc5342b59034b295636065c166f7ba92872713897ce8bc8946d77bf8",
+      "bytes": 446944
+    }
+  },
+  "public_input_identity": "accepted repository-published engineering scenario; original physical link IDs retained",
+  "worktree_branch": "experiment/hong-kong-static-path-l3-r1",
+  "H0_instance_signature": "ac9fb288a7f6931aff3814a8129c8e07aece60fa170ef0f802c5e736fd6f9c5e",
+  "H1_instance_signature": "b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083",
+  "H2_preflight_instance_signature": "64ceb1b568b566578637b173381f848fc50687cbf36ea45ae013e38aa7b66778",
+  "source_git_commit": "5a66c79351fb681083e0da303df0717829baf02d",
+  "solver_graph_to_physical_projection": "expanded_network_crosswalk.csv; link_class=physical and original physical_link_id retained; nonphysical movements and zone connectors excluded from physical maps",
+  "executed_solver_source_snapshot": "SOURCE_SNAPSHOT/tools; exact pre-correction source bytes including historical metadata label"
+}

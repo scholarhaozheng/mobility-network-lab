@@ -1,0 +1,3649 @@
+{
+  "schema": "mcl_recovered_workflows_v1",
+  "city": "boston",
+  "date": "2026-10-04",
+  "records": [
+    {
+      "id": "boston-gmns-exchange-r1",
+      "title": "GMNS/H3 source model and exchange validation",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-gmns-exchange-r1"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "tools/gmns/boston_exchange.py",
+          "sha256": "cf4e40adf4bae79cb099787116e907a817989f51f34d3bd036011bc14283456c",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/zone.schema.json",
+          "sha256": "e38981246f9ae0642d352b1ce086941b967a833b2e6838d78ab1adafd0cdffbe",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/node.schema.json",
+          "sha256": "1bfa1f546a362fafcbd946df82916bc7c28d0f784b21b049a7ccc1d42db27774",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/link.schema.json",
+          "sha256": "7c5b58901cee56f91714da3d62b6a2ea47885fdd73a876c4514b183abfdb871c",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/GMNS_LICENSE.txt",
+          "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/datapackage.json",
+          "sha256": "d0cbee7781712ad41278419146829e95e2a43a97730a04f0194cb2350a49429a",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/config.schema.json",
+          "sha256": "8681e390a42c3ad0b67841ffbe19d9f98886798b1437d8d0a925f539514831dc",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand_S1.csv",
+          "sha256": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand.csv",
+          "sha256": "7d5c68f3a0722ec5bb836de89a41cdc69991dd5c83568a0951fafd264a25f5de",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/corridor_link.csv",
+          "sha256": "230d3e47b31bd4c27e8d4a6365ac05aaa15e4b6e777a2c6314b458b8a5b1b660",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/config.csv",
+          "sha256": "5c4e851dfeb51cc9a80f97496f568fc10c11ab23800a4dc24e7763d8cf63de69",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv",
+          "sha256": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/id_crosswalk.csv",
+          "sha256": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/gps_path_links.csv",
+          "sha256": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand_S2.csv",
+          "sha256": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/link.csv",
+          "sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/manifest.json",
+          "sha256": "30faa22a31a3557c768025febc4d42682ca15d1a952935c709362006f9f94395",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/node.csv",
+          "sha256": "2710634e01c8dc7f434026b1ee92ccab2f8e68709ab60669a770bed4618d280d",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/zone.csv",
+          "sha256": "f98660c9624520a7b06fed15ef3c5ba2901d8b1307685fc7af0e080e789a6104",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/transit_stop_route_relation.csv",
+          "sha256": "579056e011215983cdf6699b3b44ddc2a651656d7e85268efb99424a72a8fb3b",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/transit_shape_conflation.csv",
+          "sha256": "42cdb94b93b7f3f70c37d979e63b8f34cc6b56a3198c0b101def1d1b4d725c43",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/selected_demand_ledger.csv",
+          "sha256": "5056a9b6fdef8c4bcfd6d77d3b4827b727fd7540438bcc3f2997668338fea78f",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-run.json",
+          "sha256": "b5f300a4166efcee4ccf96a7c9146770d86c0d922d762af2433a6c8a1bd0c1d9",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-inspect.json",
+          "sha256": "f6a68a8a2ac9178f5fdd8b0647e2c54f26f8d1b6b126b6337cf053251c25f55e",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/zone.schema.json",
+          "sha256": "e38981246f9ae0642d352b1ce086941b967a833b2e6838d78ab1adafd0cdffbe",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/node.schema.json",
+          "sha256": "1bfa1f546a362fafcbd946df82916bc7c28d0f784b21b049a7ccc1d42db27774",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/link.schema.json",
+          "sha256": "7c5b58901cee56f91714da3d62b6a2ea47885fdd73a876c4514b183abfdb871c",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/GMNS_LICENSE.txt",
+          "sha256": "3ddf9be5c28fe27dad143a5dc76eea25222ad1dd68934a047064e56ed2fa40c5",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/datapackage.json",
+          "sha256": "d0cbee7781712ad41278419146829e95e2a43a97730a04f0194cb2350a49429a",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/schema/config.schema.json",
+          "sha256": "8681e390a42c3ad0b67841ffbe19d9f98886798b1437d8d0a925f539514831dc",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand_S1.csv",
+          "sha256": "6972fd2cdc007cba28ec51f6cb5007480ec8865a7688b2e5d6e6a5d60e5a1650",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand.csv",
+          "sha256": "7d5c68f3a0722ec5bb836de89a41cdc69991dd5c83568a0951fafd264a25f5de",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/corridor_link.csv",
+          "sha256": "230d3e47b31bd4c27e8d4a6365ac05aaa15e4b6e777a2c6314b458b8a5b1b660",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/config.csv",
+          "sha256": "5c4e851dfeb51cc9a80f97496f568fc10c11ab23800a4dc24e7763d8cf63de69",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/assignment_result_by_scenario.csv",
+          "sha256": "21b7005dcdace2120f67c022aa419e9e9335320b3a7883d03218af95d7b86cd8",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/id_crosswalk.csv",
+          "sha256": "95e8e3c9847ff511b2810e29097202f5ec6dc38c5bb057c92202f74a8ed7ec77",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/gps_path_links.csv",
+          "sha256": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/demand_S2.csv",
+          "sha256": "5633e4026aeeb1d70ba44408581fa27606e61256df717106f337c1dd71001e0c",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/link.csv",
+          "sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/manifest.json",
+          "sha256": "30faa22a31a3557c768025febc4d42682ca15d1a952935c709362006f9f94395",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/node.csv",
+          "sha256": "2710634e01c8dc7f434026b1ee92ccab2f8e68709ab60669a770bed4618d280d",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/zone.csv",
+          "sha256": "f98660c9624520a7b06fed15ef3c5ba2901d8b1307685fc7af0e080e789a6104",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/transit_stop_route_relation.csv",
+          "sha256": "579056e011215983cdf6699b3b44ddc2a651656d7e85268efb99424a72a8fb3b",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/transit_shape_conflation.csv",
+          "sha256": "42cdb94b93b7f3f70c37d979e63b8f34cc6b56a3198c0b101def1d1b4d725c43",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/selected_demand_ledger.csv",
+          "sha256": "5056a9b6fdef8c4bcfd6d77d3b4827b727fd7540438bcc3f2997668338fea78f",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Validate the released GMNS/H3 exchange schema, physical/access links and relation keys. This is fresh structural validation, not source acquisition or assignment.",
+      "evidenceBasis": "fresh_structural_validation",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-gmns-exchange-r1-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-gmns-exchange-r1",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-gmns-exchange-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-gmns-exchange-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-gmns-exchange-r1",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-massgis-activity-prior-r1",
+      "title": "MassGIS residential/nonresidential activity allocation",
+      "city": "boston",
+      "state": "requires_external_input",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-massgis-activity-prior-r1"
+      ],
+      "supportedActions": [
+        "inspect",
+        "verify"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/semantic_transit.py",
+          "sha256": "b796da871337fba15e5c3c0d42d5982f45d3a68b3faaa74770ab5831391ca860",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/run_mode_choice_feedback.py",
+          "sha256": "dc64903c11549ee7f4dde921e81dcf8165968a170d0d9f6f0a526aad2e8bbef2",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/correct_boston_quality.py",
+          "sha256": "7cbf48d957af9fe08df2c0b505f30b0c478c695750efb38b6b0ef6ac6065a20c",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/city_database.py",
+          "sha256": "7cf7de6d4a634e1b6ab4a81212218cd81f7c9518aba94d4c0fbfef57d9176de4",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_service_overlay.py",
+          "sha256": "71c4c6c3175ebd00038c7d1e1eadbd87c841f76c8d5aee61e207dec355d82576",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_regional_demand.py",
+          "sha256": "2721fea6edf8a0939811eed948a3822c1ce3fbd3c916939cc385fbcaec5c00ae",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_multimodal_panel.py",
+          "sha256": "f60f99e85c46428d91e6449b5c26584716a5cefe3a81034ba306b6ec9f3be97d",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_activity_demand_prior.py",
+          "sha256": "198f004e6ca92ff8a617691af3875b0eefe2aa3ee4eca0556c601acf0792333e",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/acquire_activity_sources.py",
+          "sha256": "492e135bacfc2fce5295d969d55f6cdac8743166279878ac5654ed68515e9818",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/zone_activity_r9.csv",
+          "sha256": "7323544210a02502ad6bddda5559abbcc187600472713138903ac6bdc9ec8fbb",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/zone_activity_r7_from_r9.csv",
+          "sha256": "0f9238edfc03e21cdb71994f39eb4ba1b411505ab9a5fc54981cbe39833e7fd0",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/scenario_manifest.json",
+          "sha256": "05a2c3dd19e8ed01af19449d0f63915db69cd468387dd081db52e91c55b0425a",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/productions_attractions.csv",
+          "sha256": "9b0892381af356a2ec64ad43d7593ca1779f41cb59b5f2d66087422a2c2f0f64",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/demand_prior_summary.json",
+          "sha256": "5aa88c6b87141df72464d16b4ab98fc20fe37ca98506584447c845e4a550c871",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/activity/assignment_od_crosswalk.csv",
+          "sha256": "31c8f0ae9a1e20acf4b4271fa77492cf58f6f0f68213b8d2526846ec8a8e5033",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-massgis-activity-prior-r1-inspect.json",
+          "sha256": "87847dc44eb5140350458c4ebf20d17c05f6f80e8f676df898fa3afaeb96b023",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "url": "https://services1.arcgis.com/hGdibHYSPO59RG1h/ArcGIS/rest/services/Massachusetts_Property_Tax_Parcels/FeatureServer/0",
+          "mode": "official_acquisition_required",
+          "path": "raw/activity/boston_activity_prior_r1_20260922/massgis_property_tax_parcels/massgis_parcel_assessment_slice.geojsonl.gz",
+          "sha256": "9b9e5d3a56ec77d3e93fd37e89430de4869655735f162a5a00a354a9d8059e6b",
+          "note": "Historical 2026-09-17 service snapshot; current endpoint may have changed. Individual assessment records are not bundled."
+        }
+      ],
+      "scope": "Verify released aggregate MassGIS area priors and the 50,000-trip preparation totals. Original parcel-source overlay requires separately acquired source records. No AM assignment was run for this prior.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-massgis-activity-prior-r1-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-massgis-activity-prior-r1-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-massgis-activity-prior-r1",
+      "remainingRequirements": [
+        "Full historical source reconstruction requires the exact externally acquired provider inputs and optional dependencies described in the guide; only released aggregate/evidence inspection is immediately available."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-massgis-activity-prior-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": null,
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-massgis-activity-prior-r1",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Follow the exact provider snapshot and source-root layout; inspect released aggregate evidence in the meantime."
+    },
+    {
+      "id": "boston-acs-population-allocation-r1",
+      "title": "ACS 2024 block-group to clipped H3 population/household allocation",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-acs-population-allocation-r1"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "tools/population/verify_saved_allocation.py",
+          "sha256": "7343a64c24cbabd49c9834d9f0f094f5abeee74a3fc57b9bc96338c01c8fac44",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/population_r1/data/population_or_household_by_zone.csv",
+          "sha256": "c517006f260f814ef0bce6526707f49c2288c38dcd52992b4d8b4ecd202314b4",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_stats.csv",
+          "sha256": "f03a6ee1f3a758e23c59cb6dc76d2d1c3c8970581907c5068b90629cf1cd4519",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv",
+          "sha256": "1ed825875b61fc061c88bb129a6b0ae0b85e2b2c4334c80c96e290b04d8996a6",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv",
+          "sha256": "a12a59f44473ca3ae846b8acf734f493b311667a0f0f3a7a050d8b2c578666e1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv",
+          "sha256": "c2572cfe9ed014bc171db274eb22da2c64ab4547905a3738e87084ff708fe37c",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-run.json",
+          "sha256": "3bc064b2a17b968400368787c74a780f58cb258cf45a72532a523445d5aaadcd",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-inspect.json",
+          "sha256": "97bdaa170bf54deabeb7873c087ae2193b378ec274c57bc34ce4fbada5d80d9f",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/population_or_household_by_zone.csv",
+          "sha256": "c517006f260f814ef0bce6526707f49c2288c38dcd52992b4d8b4ecd202314b4",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_stats.csv",
+          "sha256": "f03a6ee1f3a758e23c59cb6dc76d2d1c3c8970581907c5068b90629cf1cd4519",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv",
+          "sha256": "1ed825875b61fc061c88bb129a6b0ae0b85e2b2c4334c80c96e290b04d8996a6",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv",
+          "sha256": "a12a59f44473ca3ae846b8acf734f493b311667a0f0f3a7a050d8b2c578666e1",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv",
+          "sha256": "c2572cfe9ed014bc171db274eb22da2c64ab4547905a3738e87084ff708fe37c",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Recompute ACS area-weighted population and households from the frozen released block-group crosswalk; raw Census acquisition and geometry overlay are separate.",
+      "evidenceBasis": "fresh_prepared_crosswalk_arithmetic",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-acs-population-allocation-r1-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-acs-population-allocation-r1",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-acs-population-allocation-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-acs-population-allocation-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-acs-population-allocation-r1",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-regional-trip-generation-r1",
+      "title": "ACS household × transferred CTPS purpose rates",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-regional-trip-generation-r1"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "tools/population/verify_saved_allocation.py",
+          "sha256": "7343a64c24cbabd49c9834d9f0f094f5abeee74a3fc57b9bc96338c01c8fac44",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/population_r1/data/population_or_household_by_zone.csv",
+          "sha256": "c517006f260f814ef0bce6526707f49c2288c38dcd52992b4d8b4ecd202314b4",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_stats.csv",
+          "sha256": "f03a6ee1f3a758e23c59cb6dc76d2d1c3c8970581907c5068b90629cf1cd4519",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv",
+          "sha256": "1ed825875b61fc061c88bb129a6b0ae0b85e2b2c4334c80c96e290b04d8996a6",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv",
+          "sha256": "a12a59f44473ca3ae846b8acf734f493b311667a0f0f3a7a050d8b2c578666e1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv",
+          "sha256": "c2572cfe9ed014bc171db274eb22da2c64ab4547905a3738e87084ff708fe37c",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-run.json",
+          "sha256": "e390e672518936ebbee28e818be5003dba7b93ba20ffdaddcb9337cf1952dbd1",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-inspect.json",
+          "sha256": "97178fad64daa05b272d95d1618420451ba2f77056bf91fbbb9bc075c91abfe2",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/population_or_household_by_zone.csv",
+          "sha256": "c517006f260f814ef0bce6526707f49c2288c38dcd52992b4d8b4ecd202314b4",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_stats.csv",
+          "sha256": "f03a6ee1f3a758e23c59cb6dc76d2d1c3c8970581907c5068b90629cf1cd4519",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/population_r1/data/acs_block_group_h3_crosswalk.csv",
+          "sha256": "1ed825875b61fc061c88bb129a6b0ae0b85e2b2c4334c80c96e290b04d8996a6",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/trip_generation_by_purpose.csv",
+          "sha256": "a12a59f44473ca3ae846b8acf734f493b311667a0f0f3a7a050d8b2c578666e1",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/behavior_feedback_r1_semantic_fix_r1/data/external_flow_ledger.csv",
+          "sha256": "c2572cfe9ed014bc171db274eb22da2c64ab4547905a3738e87084ff708fe37c",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Recompute six transferred CTPS purpose rates times ACS area-weighted households; attraction calibration and downstream distribution are outside this command.",
+      "evidenceBasis": "fresh_prepared_crosswalk_arithmetic",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-regional-trip-generation-r1-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-regional-trip-generation-r1",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-regional-trip-generation-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-regional-trip-generation-r1",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-regional-trip-generation-r1",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-transit-walk-semantic-preparation",
+      "title": "Planned transit/walk network, availability, itinerary legs and fares",
+      "city": "boston",
+      "state": "requires_external_input",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-transit-walk-semantic-preparation"
+      ],
+      "supportedActions": [
+        "inspect",
+        "verify"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/semantic_transit.py",
+          "sha256": "b796da871337fba15e5c3c0d42d5982f45d3a68b3faaa74770ab5831391ca860",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/run_mode_choice_feedback.py",
+          "sha256": "dc64903c11549ee7f4dde921e81dcf8165968a170d0d9f6f0a526aad2e8bbef2",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/correct_boston_quality.py",
+          "sha256": "7cbf48d957af9fe08df2c0b505f30b0c478c695750efb38b6b0ef6ac6065a20c",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/city_database.py",
+          "sha256": "7cf7de6d4a634e1b6ab4a81212218cd81f7c9518aba94d4c0fbfef57d9176de4",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_service_overlay.py",
+          "sha256": "71c4c6c3175ebd00038c7d1e1eadbd87c841f76c8d5aee61e207dec355d82576",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_regional_demand.py",
+          "sha256": "2721fea6edf8a0939811eed948a3822c1ce3fbd3c916939cc385fbcaec5c00ae",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_multimodal_panel.py",
+          "sha256": "f60f99e85c46428d91e6449b5c26584716a5cefe3a81034ba306b6ec9f3be97d",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_activity_demand_prior.py",
+          "sha256": "198f004e6ca92ff8a617691af3875b0eefe2aa3ee4eca0556c601acf0792333e",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/acquire_activity_sources.py",
+          "sha256": "492e135bacfc2fce5295d969d55f6cdac8743166279878ac5654ed68515e9818",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/quality_correction_v1.json",
+          "sha256": "a68bbcf2936d0488bb05083858c92f17f7a07cf7bd0612b5221aa46911d33d22",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/ctps_tdm23_base_mode_share.csv",
+          "sha256": "5aa562caf8b8aceeef77c18eb708e4b0d521e6bbe0993dcf6edebb2d362f45e7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/multimodal_panel_summary.json",
+          "sha256": "525557d9f548661027c7a6a1309a498fc4a1b7c5d60f5bb338186e5de20e9b9c",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_specific_od_costs.csv",
+          "sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/city_config.json",
+          "sha256": "3a98a4dcb0d6c593de43b8e99167f1a779040dba2c571b85ba286f4c2e3b5488",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_choice_feedback_summary.json",
+          "sha256": "e63cf1890c73613941fc34c4e22d081150b20093a0a298fe9d144fdb7a0a81d8",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/behavior_feedback_config.json",
+          "sha256": "77e945cacf6c80c7ef2e21a8df9c2a465de46c06260230af2a4f6769e10ba398",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_negative_control.json",
+          "sha256": "734c2efdba5ad7fceeddb8ae9c1868cb1662559ffa3f38fac6a9737ca990a695",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_model_comparison.csv",
+          "sha256": "2fc695d3879e793f60386dfdf74d290d29c044b2e30ee71c6c7495bbc9f8623d",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/service_overlay_manifest.json",
+          "sha256": "099d584d87dcc2e709434432e09b8e396716f31defe8359f24893f3d901d1277",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/regional_demand_summary.json",
+          "sha256": "9d8c50ef975651e59331d7e4c97458a10a2b7343a59fd4fd3825a00ba3bc8b5e",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_person_demand_by_mode.csv",
+          "sha256": "6673aba5f48ec28eb5c55cd45edc6e862659fd9be491b52d267d81c34fc3cb64",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_od_mode_probabilities.csv",
+          "sha256": "dadf8989fe2466869057968eacc1b8b31ef8c83fb1bb3895764d57e304253aef",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_skim_comparison.csv",
+          "sha256": "644325d1d7b0c512020070e6062fb4a22cde7cea11875423bad2007fe006d070",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/validation_panel.csv",
+          "sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/zone_access.csv",
+          "sha256": "0b9a96eb48c7941623da7f4e09eccc37cb2744f46052802ff3bef2d2f4b502e2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-transit-walk-semantic-preparation-inspect.json",
+          "sha256": "417d141145195e4b4eb501a9720d5a32ec735a7b1ac3f44275cd08c6d956303f",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "url": "https://files.mobilitydatabase.org/mdb-437/latest.zip",
+          "publisherUrl": "https://cdn.mbta.com/MBTA_GTFS.zip",
+          "mode": "exact_historical_snapshot_required",
+          "path": "raw/gtfs/mdb-437_20260918.zip",
+          "sha256": "94d12a7645402990f8e246759e5d97e5a65416baa3e201eacba132a1010c0c1e",
+          "note": "Fall2026 versionD, retrieved2026-09-21. latest.zip is an acquisition route, not an immutable historical download."
+        },
+        {
+          "url": "https://www.openstreetmap.org/api/0.6/map?bbox=-71.125,42.315,-71.025,42.385",
+          "mode": "exact_historical_snapshot_required",
+          "path": "raw/osm/behavior_feedback_r1/central_boston_highways.osm",
+          "sha256": "5b59c0c4dd1afeac1b3193b239e5953c1315f0484952d136b70aeea48f6fbf4e",
+          "note": "Historical filtered highway extract; current OSM data will differ. Preserve OSM attribution and source license."
+        }
+      ],
+      "scope": "Inspect dated planned-service preparation and restored-skim evidence. Rebuilding skims needs the exact historical GTFS and OSM inputs; current feeds are not substitutes.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-transit-walk-semantic-preparation-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-transit-walk-semantic-preparation-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-transit-walk-semantic-preparation",
+      "remainingRequirements": [
+        "Full historical source reconstruction requires the exact externally acquired provider inputs and optional dependencies described in the guide; only released aggregate/evidence inspection is immediately available."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-transit-walk-semantic-preparation",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": null,
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-transit-walk-semantic-preparation",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Follow the exact provider snapshot and source-root layout; inspect released aggregate evidence in the meantime."
+    },
+    {
+      "id": "boston-gps-network-association",
+      "title": "GPS source positions, accepted association and route-60 sample",
+      "city": "boston",
+      "state": "requires_external_input",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-gps-network-association"
+      ],
+      "supportedActions": [
+        "inspect",
+        "verify"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/semantic_transit.py",
+          "sha256": "b796da871337fba15e5c3c0d42d5982f45d3a68b3faaa74770ab5831391ca860",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/run_mode_choice_feedback.py",
+          "sha256": "dc64903c11549ee7f4dde921e81dcf8165968a170d0d9f6f0a526aad2e8bbef2",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/correct_boston_quality.py",
+          "sha256": "7cbf48d957af9fe08df2c0b505f30b0c478c695750efb38b6b0ef6ac6065a20c",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/city_database.py",
+          "sha256": "7cf7de6d4a634e1b6ab4a81212218cd81f7c9518aba94d4c0fbfef57d9176de4",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_service_overlay.py",
+          "sha256": "71c4c6c3175ebd00038c7d1e1eadbd87c841f76c8d5aee61e207dec355d82576",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_regional_demand.py",
+          "sha256": "2721fea6edf8a0939811eed948a3822c1ce3fbd3c916939cc385fbcaec5c00ae",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_multimodal_panel.py",
+          "sha256": "f60f99e85c46428d91e6449b5c26584716a5cefe3a81034ba306b6ec9f3be97d",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_activity_demand_prior.py",
+          "sha256": "198f004e6ca92ff8a617691af3875b0eefe2aa3ee4eca0556c601acf0792333e",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/acquire_activity_sources.py",
+          "sha256": "492e135bacfc2fce5295d969d55f6cdac8743166279878ac5654ed68515e9818",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/gps/gps_quality_summary.json",
+          "sha256": "e1db2d23ee52c76841ac6c8f3ef7b14e480d0688f9c67d91f9dfe00327071aee",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/city_config.json",
+          "sha256": "3a98a4dcb0d6c593de43b8e99167f1a779040dba2c571b85ba286f4c2e3b5488",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/quality_correction_v1.json",
+          "sha256": "a68bbcf2936d0488bb05083858c92f17f7a07cf7bd0612b5221aa46911d33d22",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/gps_path_links.csv",
+          "sha256": "d98a96e1fe3994054d8d94fd03551aa767cc74dab824019d1817962ada925a30",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/gmns_exchange_r1/data/link.csv",
+          "sha256": "adf4aa6e067361625d2266455f9baa8dca27aab75763039dfc9ef10c42ad02b7",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-gps-network-association-inspect.json",
+          "sha256": "19db56dc18a3d3e43774a26c42103be9042ecafbf3d4302a81358705d537f028",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "url": "https://api-v3.mbta.com/vehicles?filter%5Broute_type%5D=3",
+          "mode": "official_acquisition_required",
+          "path": "raw/gps/mbta_vehicles_snapshot_*.json",
+          "sha256": null,
+          "note": "Twelve historical snapshots at15-second spacing. New live queries produce a different observation sample. Raw vehicle-position records are not published."
+        }
+      ],
+      "scope": "Verify published GPS-path to physical-link association and saved quality evidence. Raw vehicle positions are not distributed; fresh MBTA acquisition creates a new dated observation sample.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-gps-network-association-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-gps-network-association-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-gps-network-association",
+      "remainingRequirements": [
+        "Full historical source reconstruction requires the exact externally acquired provider inputs and optional dependencies described in the guide; only released aggregate/evidence inspection is immediately available."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-gps-network-association",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": null,
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-gps-network-association",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Follow the exact provider snapshot and source-root layout; inspect released aggregate evidence in the meantime."
+    },
+    {
+      "id": "boston-semantic-fix-srestore",
+      "title": "Semantic-fix Srestore service-feedback branch",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-semantic-fix-srestore"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/semantic_transit.py",
+          "sha256": "b796da871337fba15e5c3c0d42d5982f45d3a68b3faaa74770ab5831391ca860",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/run_mode_choice_feedback.py",
+          "sha256": "dc64903c11549ee7f4dde921e81dcf8165968a170d0d9f6f0a526aad2e8bbef2",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/correct_boston_quality.py",
+          "sha256": "7cbf48d957af9fe08df2c0b505f30b0c478c695750efb38b6b0ef6ac6065a20c",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/city_database.py",
+          "sha256": "7cf7de6d4a634e1b6ab4a81212218cd81f7c9518aba94d4c0fbfef57d9176de4",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_service_overlay.py",
+          "sha256": "71c4c6c3175ebd00038c7d1e1eadbd87c841f76c8d5aee61e207dec355d82576",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_regional_demand.py",
+          "sha256": "2721fea6edf8a0939811eed948a3822c1ce3fbd3c916939cc385fbcaec5c00ae",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_multimodal_panel.py",
+          "sha256": "f60f99e85c46428d91e6449b5c26584716a5cefe3a81034ba306b6ec9f3be97d",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/build_activity_demand_prior.py",
+          "sha256": "198f004e6ca92ff8a617691af3875b0eefe2aa3ee4eca0556c601acf0792333e",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/preparation/acquire_activity_sources.py",
+          "sha256": "492e135bacfc2fce5295d969d55f6cdac8743166279878ac5654ed68515e9818",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/quality_correction_v1.json",
+          "sha256": "a68bbcf2936d0488bb05083858c92f17f7a07cf7bd0612b5221aa46911d33d22",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/ctps_tdm23_base_mode_share.csv",
+          "sha256": "5aa562caf8b8aceeef77c18eb708e4b0d521e6bbe0993dcf6edebb2d362f45e7",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/multimodal_panel_summary.json",
+          "sha256": "525557d9f548661027c7a6a1309a498fc4a1b7c5d60f5bb338186e5de20e9b9c",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_specific_od_costs.csv",
+          "sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/city_config.json",
+          "sha256": "3a98a4dcb0d6c593de43b8e99167f1a779040dba2c571b85ba286f4c2e3b5488",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_choice_feedback_summary.json",
+          "sha256": "e63cf1890c73613941fc34c4e22d081150b20093a0a298fe9d144fdb7a0a81d8",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/behavior_feedback_config.json",
+          "sha256": "77e945cacf6c80c7ef2e21a8df9c2a465de46c06260230af2a4f6769e10ba398",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_negative_control.json",
+          "sha256": "734c2efdba5ad7fceeddb8ae9c1868cb1662559ffa3f38fac6a9737ca990a695",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_model_comparison.csv",
+          "sha256": "2fc695d3879e793f60386dfdf74d290d29c044b2e30ee71c6c7495bbc9f8623d",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/service_overlay_manifest.json",
+          "sha256": "099d584d87dcc2e709434432e09b8e396716f31defe8359f24893f3d901d1277",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/regional_demand_summary.json",
+          "sha256": "9d8c50ef975651e59331d7e4c97458a10a2b7343a59fd4fd3825a00ba3bc8b5e",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_person_demand_by_mode.csv",
+          "sha256": "6673aba5f48ec28eb5c55cd45edc6e862659fd9be491b52d267d81c34fc3cb64",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_od_mode_probabilities.csv",
+          "sha256": "dadf8989fe2466869057968eacc1b8b31ef8c83fb1bb3895764d57e304253aef",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_skim_comparison.csv",
+          "sha256": "644325d1d7b0c512020070e6062fb4a22cde7cea11875423bad2007fe006d070",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/validation_panel.csv",
+          "sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/zone_access.csv",
+          "sha256": "0b9a96eb48c7941623da7f4e09eccc37cb2744f46052802ff3bef2d2f4b502e2",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+          "sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-run.json",
+          "sha256": "c1f8cdd8f4a9dc8606f7dff5fd30ee4dff3561523e17244ad66023b42bb3189c",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-inspect.json",
+          "sha256": "671008193557966887bee92b525ed5c271aa0f9707bf702d25a6f5e092322554",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/quality_correction_v1.json",
+          "sha256": "a68bbcf2936d0488bb05083858c92f17f7a07cf7bd0612b5221aa46911d33d22",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/ctps_tdm23_base_mode_share.csv",
+          "sha256": "5aa562caf8b8aceeef77c18eb708e4b0d521e6bbe0993dcf6edebb2d362f45e7",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/multimodal_panel_summary.json",
+          "sha256": "525557d9f548661027c7a6a1309a498fc4a1b7c5d60f5bb338186e5de20e9b9c",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_specific_od_costs.csv",
+          "sha256": "f4a1fc5254e5742184cb703eef5ba941298ac22da1f547e51844ea5fb3562444",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/city_config.json",
+          "sha256": "3a98a4dcb0d6c593de43b8e99167f1a779040dba2c571b85ba286f4c2e3b5488",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/mode_choice_feedback_summary.json",
+          "sha256": "e63cf1890c73613941fc34c4e22d081150b20093a0a298fe9d144fdb7a0a81d8",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/behavior_feedback_config.json",
+          "sha256": "77e945cacf6c80c7ef2e21a8df9c2a465de46c06260230af2a4f6769e10ba398",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_negative_control.json",
+          "sha256": "734c2efdba5ad7fceeddb8ae9c1868cb1662559ffa3f38fac6a9737ca990a695",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_model_comparison.csv",
+          "sha256": "2fc695d3879e793f60386dfdf74d290d29c044b2e30ee71c6c7495bbc9f8623d",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/service_overlay_manifest.json",
+          "sha256": "099d584d87dcc2e709434432e09b8e396716f31defe8359f24893f3d901d1277",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/regional_demand_summary.json",
+          "sha256": "9d8c50ef975651e59331d7e4c97458a10a2b7343a59fd4fd3825a00ba3bc8b5e",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_person_demand_by_mode.csv",
+          "sha256": "6673aba5f48ec28eb5c55cd45edc6e862659fd9be491b52d267d81c34fc3cb64",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_od_mode_probabilities.csv",
+          "sha256": "dadf8989fe2466869057968eacc1b8b31ef8c83fb1bb3895764d57e304253aef",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/srestore_skim_comparison.csv",
+          "sha256": "644325d1d7b0c512020070e6062fb4a22cde7cea11875423bad2007fe006d070",
+          "role": "saved_result",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/validation_panel.csv",
+          "sha256": "bdd10fceb895c93078a859df0575eb80abbb0427e34dcbec4f006e8b9d076701",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/preparation/zone_access.csv",
+          "sha256": "0b9a96eb48c7941623da7f4e09eccc37cb2744f46052802ff3bef2d2f4b502e2",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/assignment_methods_r1/inputs_snapshot/link.csv",
+          "sha256": "a5a7bbf9e18ceadacbe29335e572d2ccbfa919b46960845efc3d79d876007479",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Recompute semantic-fixed nested-pivot restore choice from frozen prepared skims, base shares and panel. This does not regenerate raw GPS/GTFS skims or rerun Srestore FW.",
+      "evidenceBasis": "fresh_prepared_feedback_choice_only",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-semantic-fix-srestore-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-semantic-fix-srestore",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-semantic-fix-srestore",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-semantic-fix-srestore",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-semantic-fix-srestore",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-finite-construction",
+      "title": "Bounded finite time-expanded network and actual B07 column",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-finite-construction"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+          "sha256": "57e376e3387f46f68f329e8ea74510f4407172b559924d64c85cc9ce2c257731",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv",
+          "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_POOL.csv",
+          "sha256": "6b83d158176a6ae65fbc07633d59260bdfc7fa6c8c816e819b8b1f72b9df7bc2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_DUAL_SOLUTION.json",
+          "sha256": "184444e17f1d4a7a579c88d116270505c1f1ab0057295ef1c5afd9e8dc337ef1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/execution_identity.json",
+          "sha256": "d5d5eb629eff593b43d50d52b7df786c92c4b7cc99af5f6b488ac53a02421a04",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/predeclared_manifest.json",
+          "sha256": "e9065ee79bcd31d117bb17c65f35ccb970296e354e066addbea3510866181cad",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_run_summary.json",
+          "sha256": "d144d8f7a2b79260eb48cddf88c79d28c17574b8e20a0c8cbcb22054dd0764a7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_reference_comparison.json",
+          "sha256": "c3141dd569b25ae4f499161f82374e22911c6807aef6840059ddbd68285f4892",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_summary.json",
+          "sha256": "33a72758e8bcae110c03237dc481214c880570312c11719ba7a421f59170c23a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "f92affcef540a2abfbc626c544471960656f4263b8903fd4da5184967902d49a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "9ab8c5a92f853fc8e010786cbf84f62a610f660274da2e086f7d8ca4ed5a05ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_round_log.csv",
+          "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_stationarity.csv",
+          "sha256": "a9f0be36f4c3defff7b87f8f5fe2e47686ac1dde7d12a8a539aa89ac527959d9",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_metadata.json",
+          "sha256": "c6ed7a00a64cd40d1ecfc0d8f51f68b31f972ed090c92abecca016f83e470cf7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_by_column.csv",
+          "sha256": "5368dfff1182a9208d1c8b87c96240051cafb51bdb5940ce35e2f86838e04539",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_pool.csv",
+          "sha256": "7744f9043d8c9d244d342a42cf314b0af5ca58bb4747507c9198c80f2081c8a2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_dual_solution.json",
+          "sha256": "dd52ecdd898c61d82b8b4e4c53c18b0ef717545413ccef2e9a2a2388f5aa3a96",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-construction-run.json",
+          "sha256": "08268c6421c3b78cda02a324b81a5dcc2e07d0be17d1aa5917f6b04df05ed519",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-construction-inspect.json",
+          "sha256": "9d7c86e38614b966129cfa798ef06452729d051fdeab36e1c08c33007558d040",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Rebuild the 90-node/125-link, 10-OD bounded graph into 9,110 time-indexed nodes and 22,217 arcs at 3-second steps, using original construction functions.",
+      "evidenceBasis": "fresh_finite_graph_construction",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-finite-construction-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-finite-construction-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-finite-construction",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-finite-construction",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-finite-construction",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-finite-construction",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-finite-arc-flow-lp",
+      "title": "Same-graph finite arc-flow LP reference",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-finite-arc-flow-lp"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+          "sha256": "57e376e3387f46f68f329e8ea74510f4407172b559924d64c85cc9ce2c257731",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv",
+          "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_POOL.csv",
+          "sha256": "6b83d158176a6ae65fbc07633d59260bdfc7fa6c8c816e819b8b1f72b9df7bc2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_DUAL_SOLUTION.json",
+          "sha256": "184444e17f1d4a7a579c88d116270505c1f1ab0057295ef1c5afd9e8dc337ef1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/execution_identity.json",
+          "sha256": "d5d5eb629eff593b43d50d52b7df786c92c4b7cc99af5f6b488ac53a02421a04",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/predeclared_manifest.json",
+          "sha256": "e9065ee79bcd31d117bb17c65f35ccb970296e354e066addbea3510866181cad",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_run_summary.json",
+          "sha256": "d144d8f7a2b79260eb48cddf88c79d28c17574b8e20a0c8cbcb22054dd0764a7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_reference_comparison.json",
+          "sha256": "c3141dd569b25ae4f499161f82374e22911c6807aef6840059ddbd68285f4892",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_summary.json",
+          "sha256": "33a72758e8bcae110c03237dc481214c880570312c11719ba7a421f59170c23a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "f92affcef540a2abfbc626c544471960656f4263b8903fd4da5184967902d49a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "9ab8c5a92f853fc8e010786cbf84f62a610f660274da2e086f7d8ca4ed5a05ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_round_log.csv",
+          "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_stationarity.csv",
+          "sha256": "a9f0be36f4c3defff7b87f8f5fe2e47686ac1dde7d12a8a539aa89ac527959d9",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_metadata.json",
+          "sha256": "c6ed7a00a64cd40d1ecfc0d8f51f68b31f972ed090c92abecca016f83e470cf7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_by_column.csv",
+          "sha256": "5368dfff1182a9208d1c8b87c96240051cafb51bdb5940ce35e2f86838e04539",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_pool.csv",
+          "sha256": "7744f9043d8c9d244d342a42cf314b0af5ca58bb4747507c9198c80f2081c8a2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_dual_solution.json",
+          "sha256": "dd52ecdd898c61d82b8b4e4c53c18b0ef717545413ccef2e9a2a2388f5aa3a96",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-run.json",
+          "sha256": "e9b1b181b9a5170895dcd32a1813424eb291984376644255d3aa4ea85c087a52",
+          "role": "execution_receipt"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-inspect.json",
+          "sha256": "cfc3179e0c0cb0bc14afe772f049cf942ab789a0e6b8e0a65a94f6952529a2a2",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Solve the same frozen finite graph with 212,990 commodity-arc variables; independent flow balance, capacity and objective checks use the returned solution.",
+      "evidenceBasis": "fresh_finite_arc_lp",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-run.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-finite-arc-flow-lp-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-finite-arc-flow-lp",
+      "remainingRequirements": [
+        "The scoped command was run and its output verified; upstream source acquisition remains outside this prepared-data or bounded-model recipe."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-finite-arc-flow-lp",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-finite-arc-flow-lp",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-finite-arc-flow-lp",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-finite-cg-pilot-r2-r3",
+      "title": "Two-phase CG pilot, R2/R3 Phase I and Phase II",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-finite-cg-pilot-r2-r3"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+          "sha256": "57e376e3387f46f68f329e8ea74510f4407172b559924d64c85cc9ce2c257731",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv",
+          "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_POOL.csv",
+          "sha256": "6b83d158176a6ae65fbc07633d59260bdfc7fa6c8c816e819b8b1f72b9df7bc2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_DUAL_SOLUTION.json",
+          "sha256": "184444e17f1d4a7a579c88d116270505c1f1ab0057295ef1c5afd9e8dc337ef1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/execution_identity.json",
+          "sha256": "d5d5eb629eff593b43d50d52b7df786c92c4b7cc99af5f6b488ac53a02421a04",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/predeclared_manifest.json",
+          "sha256": "e9065ee79bcd31d117bb17c65f35ccb970296e354e066addbea3510866181cad",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_run_summary.json",
+          "sha256": "d144d8f7a2b79260eb48cddf88c79d28c17574b8e20a0c8cbcb22054dd0764a7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_reference_comparison.json",
+          "sha256": "c3141dd569b25ae4f499161f82374e22911c6807aef6840059ddbd68285f4892",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_summary.json",
+          "sha256": "33a72758e8bcae110c03237dc481214c880570312c11719ba7a421f59170c23a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "f92affcef540a2abfbc626c544471960656f4263b8903fd4da5184967902d49a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "9ab8c5a92f853fc8e010786cbf84f62a610f660274da2e086f7d8ca4ed5a05ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_round_log.csv",
+          "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_stationarity.csv",
+          "sha256": "a9f0be36f4c3defff7b87f8f5fe2e47686ac1dde7d12a8a539aa89ac527959d9",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_metadata.json",
+          "sha256": "c6ed7a00a64cd40d1ecfc0d8f51f68b31f972ed090c92abecca016f83e470cf7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_by_column.csv",
+          "sha256": "5368dfff1182a9208d1c8b87c96240051cafb51bdb5940ce35e2f86838e04539",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_pool.csv",
+          "sha256": "7744f9043d8c9d244d342a42cf314b0af5ca58bb4747507c9198c80f2081c8a2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_dual_solution.json",
+          "sha256": "dd52ecdd898c61d82b8b4e4c53c18b0ef717545413ccef2e9a2a2388f5aa3a96",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-cg-pilot-r2-r3-inspect.json",
+          "sha256": "c399005fd71e96baf27ef7a141810512a5bf068e9c9b5cf7aecf0e23a8b64847",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Run the exact recovered R3 two-phase CG engine on the frozen 10-OD graph. This delivery independently inspected the historical saved solution without rerunning the expensive solve. R3 alone does not establish independent full-DAG pricing closure.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-pilot-r2-r3-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-pilot-r2-r3-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-finite-cg-pilot-r2-r3",
+      "remainingRequirements": [
+        "A portable computation command and frozen inputs are now included; this delivery checked the retained numerical state rather than rerunning this solver."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-finite-cg-pilot-r2-r3",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-finite-cg-pilot-r2-r3",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-finite-cg-pilot-r2-r3",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-finite-cg-r4-pricing-closure",
+      "title": "R4 full-DAG pricing closure continuation on the same CG pilot",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-finite-cg-r4-pricing-closure"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+          "sha256": "57e376e3387f46f68f329e8ea74510f4407172b559924d64c85cc9ce2c257731",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv",
+          "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_POOL.csv",
+          "sha256": "6b83d158176a6ae65fbc07633d59260bdfc7fa6c8c816e819b8b1f72b9df7bc2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_DUAL_SOLUTION.json",
+          "sha256": "184444e17f1d4a7a579c88d116270505c1f1ab0057295ef1c5afd9e8dc337ef1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/execution_identity.json",
+          "sha256": "d5d5eb629eff593b43d50d52b7df786c92c4b7cc99af5f6b488ac53a02421a04",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/predeclared_manifest.json",
+          "sha256": "e9065ee79bcd31d117bb17c65f35ccb970296e354e066addbea3510866181cad",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_run_summary.json",
+          "sha256": "d144d8f7a2b79260eb48cddf88c79d28c17574b8e20a0c8cbcb22054dd0764a7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_reference_comparison.json",
+          "sha256": "c3141dd569b25ae4f499161f82374e22911c6807aef6840059ddbd68285f4892",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_summary.json",
+          "sha256": "33a72758e8bcae110c03237dc481214c880570312c11719ba7a421f59170c23a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "f92affcef540a2abfbc626c544471960656f4263b8903fd4da5184967902d49a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "9ab8c5a92f853fc8e010786cbf84f62a610f660274da2e086f7d8ca4ed5a05ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_round_log.csv",
+          "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_stationarity.csv",
+          "sha256": "a9f0be36f4c3defff7b87f8f5fe2e47686ac1dde7d12a8a539aa89ac527959d9",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_metadata.json",
+          "sha256": "c6ed7a00a64cd40d1ecfc0d8f51f68b31f972ed090c92abecca016f83e470cf7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_by_column.csv",
+          "sha256": "5368dfff1182a9208d1c8b87c96240051cafb51bdb5940ce35e2f86838e04539",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_pool.csv",
+          "sha256": "7744f9043d8c9d244d342a42cf314b0af5ca58bb4747507c9198c80f2081c8a2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_dual_solution.json",
+          "sha256": "dd52ecdd898c61d82b8b4e4c53c18b0ef717545413ccef2e9a2a2388f5aa3a96",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-finite-cg-r4-pricing-closure-inspect.json",
+          "sha256": "d034b4791f90536ee69e0830c259eef3eb617ae0014fa6099265b28146d24a77",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Run the recovered bounded continuation from the accepted R3 pool, or independently inspect the retained R4 full-DAG pricing closure. No full-city dynamic-assignment claim.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-r4-pricing-closure-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-finite-cg-r4-pricing-closure-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-finite-cg-r4-pricing-closure",
+      "remainingRequirements": [
+        "A portable computation command and frozen inputs are now included; this delivery checked the retained numerical state rather than rerunning this solver."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-finite-cg-r4-pricing-closure",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-finite-cg-r4-pricing-closure",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-finite-cg-r4-pricing-closure",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    },
+    {
+      "id": "boston-admm-r2-s",
+      "title": "ADMM R2_S frozen-policy Boston 10-OD holdout",
+      "city": "boston",
+      "state": "ready",
+      "entrypoint": "tools/reproduction/recovered_boston.py",
+      "arguments": [
+        "--record",
+        "boston-admm-r2-s"
+      ],
+      "supportedActions": [
+        "run",
+        "verify",
+        "inspect"
+      ],
+      "files": [
+        {
+          "path": "tools/reproduction/recovered_boston.py",
+          "sha256": "749d2024fd74f8f26b1535beef563108d73c7dbe06ab7cb292193307d0027fd0",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/INDEPENDENT_PRICING_CLOSURE_CERTIFICATE.json",
+          "sha256": "57e376e3387f46f68f329e8ea74510f4407172b559924d64c85cc9ce2c257731",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_SOLUTION_BY_COLUMN.csv",
+          "sha256": "a95bf0f4e83965fbf4003a1d3e46180d3ee3bf5bb6ef5d88c40fa86e4d339e81",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_POOL.csv",
+          "sha256": "6b83d158176a6ae65fbc07633d59260bdfc7fa6c8c816e819b8b1f72b9df7bc2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r4/FINAL_CLOSURE_DUAL_SOLUTION.json",
+          "sha256": "184444e17f1d4a7a579c88d116270505c1f1ab0057295ef1c5afd9e8dc337ef1",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/execution_identity.json",
+          "sha256": "d5d5eb629eff593b43d50d52b7df786c92c4b7cc99af5f6b488ac53a02421a04",
+          "role": "provenance"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/predeclared_manifest.json",
+          "sha256": "e9065ee79bcd31d117bb17c65f35ccb970296e354e066addbea3510866181cad",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_run_summary.json",
+          "sha256": "d144d8f7a2b79260eb48cddf88c79d28c17574b8e20a0c8cbcb22054dd0764a7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_reference_comparison.json",
+          "sha256": "c3141dd569b25ae4f499161f82374e22911c6807aef6840059ddbd68285f4892",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_summary.json",
+          "sha256": "33a72758e8bcae110c03237dc481214c880570312c11719ba7a421f59170c23a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "f92affcef540a2abfbc626c544471960656f4263b8903fd4da5184967902d49a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_stop_certificate.json",
+          "sha256": "9ab8c5a92f853fc8e010786cbf84f62a610f660274da2e086f7d8ca4ed5a05ff",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_round_log.csv",
+          "sha256": "932964bed166e76278523079ad951c811d44efc70970d8acba27798289a90df3",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_stationarity.csv",
+          "sha256": "a9f0be36f4c3defff7b87f8f5fe2e47686ac1dde7d12a8a539aa89ac527959d9",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_metadata.json",
+          "sha256": "c6ed7a00a64cd40d1ecfc0d8f51f68b31f972ed090c92abecca016f83e470cf7",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_solution_by_column.csv",
+          "sha256": "5368dfff1182a9208d1c8b87c96240051cafb51bdb5940ce35e2f86838e04539",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_pool.csv",
+          "sha256": "7744f9043d8c9d244d342a42cf314b0af5ca58bb4747507c9198c80f2081c8a2",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/r3/full_cg_v1_phase_ii_final_dual_solution.json",
+          "sha256": "dd52ecdd898c61d82b8b4e4c53c18b0ef717545413ccef2e9a2a2388f5aa3a96",
+          "role": "saved_result"
+        },
+        {
+          "path": "algorithms/admm_r2/space_time_capacity_problem_contract.py",
+          "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/admm_r2/local_subproblem_adapter.py",
+          "sha256": "ff6318b353a19e88ca89d51b7d10a70aefe7f63f2d2811cf0e5788986aaccad1",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/admm_r2/independent_admm_evaluator.py",
+          "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+          "role": "computational_code"
+        },
+        {
+          "path": "algorithms/admm_r2/admm_solver.py",
+          "sha256": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+          "role": "computational_code"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/transfer_evaluation.json",
+          "sha256": "a4ad4181175d0902ddc159a7419255a80ae6e1f1764c7b4976fd539063de13fa",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/state.npz",
+          "sha256": "2dd9b5f6b0284ff88382abaf3f685239ebb14b90a77d7da6aab014f958603789",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/result.json",
+          "sha256": "f7f857dc636c30437f5bcd1f4df0ff93697270be672da847dc9d419adac16f85",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/policy.json",
+          "sha256": "ee11de9cfb17f9fca40e8907ef479af09c4dc5e1c6048702b6f718d12fabeac7",
+          "role": "solver_config"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/history.csv",
+          "sha256": "0dd6730bca39257bbe11d5ec3a8c23931feacd85f92d860142e395ba94f2c180",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/admm/evaluation.json",
+          "sha256": "5dbf5d6ea1ea14a4c525193b75b7724c12c8d7ed5c5fe9570c741896ffb39f0a",
+          "role": "saved_result"
+        },
+        {
+          "path": "examples/boston/recovered-r14/receipts/boston-admm-r2-s-inspect.json",
+          "sha256": "6f89099f4f093a98212f1798eeacd4cb2c1b27308007274a60bd15d9b79d0f23",
+          "role": "execution_receipt"
+        }
+      ],
+      "environment": {
+        "python": "3.11.4",
+        "packages": {
+          "numpy": "1.24.3",
+          "scipy": "1.10.1",
+          "pandas": "1.5.3",
+          "networkx": "3.1",
+          "shapely": "2.1.2"
+        },
+        "setup": [
+          "python -m venv .venv",
+          "python -m pip install numpy==1.24.3 scipy==1.10.1 pandas==1.5.3 networkx==3.1 shapely==2.1.2"
+        ],
+        "note": "Fresh local checks used this existing environment; a new environment installation was not performed for this recovered delivery. Raw GIS/transit/GPS sources require the separately listed extra dependencies."
+      },
+      "dataSources": [
+        {
+          "path": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json",
+          "sha256": "385e5e1f0cdc9fa57757727952ccebe73f9df0b394d72d51af24fdad4ca1cc1e",
+          "role": "provenance",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/reference/arc_lp_reference_summary.json",
+          "sha256": "db6f25c2951b54de0c0b743ccb9b0c88670081361e8c953b96d5e62996970f4b",
+          "role": "reference_only",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/case.json",
+          "sha256": "6c2450af44b3c450a8951505ff4ecaed6a09f18f82d4e1a8a0d0057c9b60b9d4",
+          "role": "solver_config",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/static_seed_candidates.csv",
+          "sha256": "3fc18c1cfe437b2e8946dd163a8fcc85fdf8de3232b76df1a9a14683d17f51f8",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/node.csv",
+          "sha256": "55f1c6919d393b625cac9d760aafa489f2bccbca8665a77f45a46a22f59b13dd",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/link.csv",
+          "sha256": "c14defb712a444c33e4a1fff3ca1600524d18f8ddf1878246e8b5e7fdcfe8f90",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/case/demand.csv",
+          "sha256": "ac035685d4cfb645a3cacaf7a18906e1a1cf2846af21cab34ec01746381822ca",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_node.csv",
+          "sha256": "d9cbdf76447eb65a92c7652f8bb9eb7f10d7369356a1fcf8f53756c9f2ef5317",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_demand.csv",
+          "sha256": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_columns.csv",
+          "sha256": "21b2ce5f9a37d7c276927f087b2691f1c94259d8a684b6d9773bb4e86266c7f0",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        },
+        {
+          "path": "examples/boston/recovered-r14/finite/dynamic/dynamic_arc.csv",
+          "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+          "role": "solver_input",
+          "mode": "included_in_repository",
+          "url": null
+        }
+      ],
+      "scope": "Run frozen R2_S on the Boston 10-OD graph, or independently evaluate its retained full consensus state. This delivery inspected the saved state; no new ADMM solve is claimed.",
+      "evidenceBasis": "saved_run_inspected",
+      "evidenceReceipt": "examples/boston/recovered-r14/receipts/boston-admm-r2-s-inspect.json",
+      "inspectReceipt": "examples/boston/recovered-r14/receipts/boston-admm-r2-s-inspect.json",
+      "documentation": "docs/reproduction/recovered-boston.md#boston-admm-r2-s",
+      "remainingRequirements": [
+        "A portable computation command and frozen inputs are now included; this delivery checked the retained numerical state rather than rerunning this solver."
+      ],
+      "commands": {
+        "inspect": [
+          "python",
+          "tools/mcl_recovered.py",
+          "inspect",
+          "boston-admm-r2-s",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "run": [
+          "python",
+          "tools/mcl_recovered.py",
+          "run",
+          "boston-admm-r2-s",
+          "--output",
+          "RUN_DIRECTORY"
+        ],
+        "verify": [
+          "python",
+          "tools/mcl_recovered.py",
+          "verify",
+          "boston-admm-r2-s",
+          "--run",
+          "RUN_DIRECTORY"
+        ]
+      },
+      "nextStep": "Use run in a new output directory, then verify. Inspect only checks the retained result and never calls the optimizer."
+    }
+  ],
+  "scopeCorrections": [
+    {
+      "id": "boston-activity-informed-50000-am-r1",
+      "title": "Historical activity-informed 50,000 daily-trip prior and AM assignment-ready inputs",
+      "state": "scope_only",
+      "evidenceBasis": "saved_preparation_inspected",
+      "scope": "The historical manifest explicitly records assignment_run:false. The prior prepares50,000daily persontrips and2,723.9436152142944 network-input AMvehicle trips; it is not a completed AMtraffic assignment.",
+      "evidenceFiles": [
+        "examples/boston/recovered-r14/activity/scenario_manifest.json",
+        "examples/boston/recovered-r14/activity/demand_prior_summary.json"
+      ],
+      "relatedRecipe": "boston-massgis-activity-prior-r1",
+      "remainingRequirements": [
+        "No historical assignment solve exists for this prior. A newly requested assignment must be registered as a new experiment."
+      ]
+    }
+  ],
+  "sourceProvenance": "examples/boston/recovered-r14/SOURCE_PROVENANCE.json"
+}

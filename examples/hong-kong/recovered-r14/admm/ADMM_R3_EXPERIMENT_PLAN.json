@@ -1,0 +1,42 @@
+{
+  "task_id": "CROSS_CITY_SPACE_TIME_ADMM_R3_HONG_KONG_TRANSFER",
+  "status": "PRE_FRESH_DEVELOPMENT_PLAN",
+  "mathematical_problem": "finite time-expanded fixed-arc-cost shared-capacity linear assignment with commodity conservation and full-arc consensus ADMM",
+  "seen_development_cases": [
+    "analytic",
+    "C0",
+    "C1",
+    "Sioux_30OD",
+    "Sioux_60OD",
+    "Sioux_100OD",
+    "Sioux_150OD",
+    "Sioux_200OD",
+    "Sioux_250OD",
+    "Boston_10OD",
+    "HK_TST_JORDAN_10OD_30S_50STEPS_R2_R4"
+  ],
+  "generic_candidate": "Refresh L-BFGS dual curvature after active-set Newton whenever the original-unit local conservation target remains unmet; at most two further calls using the same R2 per-call limit. Retain the R2 nonnegative active-support correction and independent full-system checks.",
+  "frozen_input_rho_rule": "R2 input-derived median positive arc cost divided by median commodity demand, clipped to [1e-4,1]",
+  "equalities": "R2 all-node dual equality formulation; diagnose signed-incidence rank and redundant rows; verify complete original Bx=b independently; no row deletion is presently selected",
+  "scaling": "R2 demand normalization; report original-unit PCE and normalized residuals",
+  "feasible_initialization": "R2 input-cost shortest path, no LP solution warm start",
+  "feasibility_restoration": "R2 positive-support least-squares correction if nonnegative; log pre/post residual; never hide pre-restoration failure",
+  "local_balance_target_pce": 1e-7,
+  "original_unit_acceptance_gates": "inherit accepted ADMM_R2_FROZEN_POLICY.json unchanged",
+  "max_outer_iterations": 300,
+  "max_wall_seconds_per_case": 1800,
+  "max_total_heavy_seconds": 28800,
+  "max_new_data_gib": 15,
+  "max_heavy_processes": 1,
+  "regression_rule": "all ten previously accepted R2 cases must pass the independent R2 replay, R3 solver, independent R3 evaluator, and same-graph objective gates before source/policy freeze",
+  "fresh_holdout_rule_file": "HK_ADMM_R3_HOLDOUT_SELECTION_POLICY.json",
+  "fresh_transfer_rule": "after freeze, build the locked input graph, solve one same-graph arc-flow LP, then run one frozen R3 ADMM attempt; no retuning",
+  "negative_tests": [
+    "demand identity corruption",
+    "saved objective corruption",
+    "forbidden connector flow corruption",
+    "capacity corruption",
+    "manifest hash corruption"
+  ],
+  "claim_boundary": "bounded Hong Kong finite shared-capacity case only; not static UE, empirical validation, full 8930-OD assignment, or convergence theorem"
+}

@@ -3,11 +3,13 @@ from pathlib import Path
 import json,re,hashlib,subprocess,sys
 ROOT=Path(__file__).resolve().parents[1]
 REPO='https://github.com/scholarhaozheng/mobility-network-lab'
-PUBLIC_REF='reproduction-2026-10-04-r12'
+PUBLIC_REF='reproduction-2026-10-04-r14'
 RAW='https://raw.githubusercontent.com/scholarhaozheng/mobility-network-lab/'+PUBLIC_REF+'/'
-RELEASE='20261004-r12'
+RELEASE='20261004-r14'
 def read(p):return json.loads(p.read_text(encoding='utf-8-sig'))
-def write(p,o):p.write_text(json.dumps(o,indent=2,ensure_ascii=False)+'\n',encoding='utf-8')
+def write(p,o):
+ if p.is_file() and read(p)==o:return
+ p.write_bytes((json.dumps(o,indent=2,ensure_ascii=False)+'\n').encode('utf-8'))
 def convert(v):
  if isinstance(v,dict):return {k:convert(x) for k,x in v.items()}
  if isinstance(v,list):return [convert(x) for x in v]
@@ -49,4 +51,13 @@ rt=read(ROOT/'experiments/runtime-setup.json')
 for e in cat['experiments']:
  for f in e['files']+rt.get('entries',{}).get(e['id'],{}).get('files',[]):
   p=f['path'];files[p]={'path':p,'sha256':f['sha256'],'downloadUrl':RAW+p,'browseUrl':REPO+'/blob/'+PUBLIC_REF+'/'+p}
-write(ROOT/'experiments/publication.json',{'schema':'mcl_computational_publication_v1','releaseId':RELEASE,'baseline':cat['baseline_commit'],'repository':REPO,'repositoryRef':PUBLIC_REF,'refScope':'The release tag fixes this repository snapshot. Verify the SHA-256 identities below and record git rev-parse HEAD for the resolved commit.','verifiedCommands':len(cat['experiments']),'verifiedRecords':ledger['verifiedRecords'],'recordCount':ledger['recordCount'],'files':list(files.values()),'archiveManifest':'docs/downloads/computational-checkout.manifest.json'})
+recovered_records=[]
+for manifest in sorted((ROOT/'experiments/recovered').glob('*.json')):
+ for item in read(manifest).get('records',[]):
+  recovered_records.append(item)
+  for f in item.get('files',[]):
+   p=f['path'];target=(ROOT/p).resolve()
+   if not target.is_relative_to(ROOT) or not target.is_file() or hashlib.sha256(target.read_bytes()).hexdigest()!=f['sha256']:raise ValueError('Recovered source/input hash mismatch: '+p)
+   if p in files and files[p]['sha256']!=f['sha256']:raise ValueError('Conflicting file identities: '+p)
+   files[p]={'path':p,'sha256':f['sha256'],'downloadUrl':RAW+p,'browseUrl':REPO+'/blob/'+PUBLIC_REF+'/'+p}
+write(ROOT/'experiments/publication.json',{'schema':'mcl_computational_publication_v1','releaseId':RELEASE,'baseline':cat['baseline_commit'],'repository':REPO,'repositoryRef':PUBLIC_REF,'refScope':'The release tag fixes this repository snapshot. Verify the SHA-256 identities below and record git rev-parse HEAD for the resolved commit.','verifiedCommands':len(cat['experiments']),'verifiedRecords':ledger['verifiedRecords'],'recordCount':ledger['recordCount'],'recoveredRecords':len(recovered_records),'recoveredRunnableRecords':sum('run' in r.get('supportedActions',[]) for r in recovered_records),'files':list(files.values()),'archiveManifest':'docs/downloads/computational-checkout.manifest.json'})

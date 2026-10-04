@@ -69,6 +69,16 @@ class ComputationalArchiveTest(unittest.TestCase):
             with self.subTest(name=name):
                 self.assertFalse(archive_gate.safe_member(name))
 
+    def test_plain_yaml_configuration_passes(self):
+        for name in ("examples/model/config.yml", "examples/model/config.yaml"):
+            with self.subTest(name=name):
+                self.bundle(name=name, content=b"solver: highs\n")
+                self.assertEqual(archive_gate.validate(self.root)["status"], "PASS")
+
+    def test_yaml_does_not_bypass_private_path_restriction(self):
+        self.bundle(name="private_data/config.yaml", content=b"source: private\n")
+        self.assertEqual(archive_gate.validate(self.root)["status"], "FAIL")
+
     def test_missing_manifest_fails(self):
         self.bundle()
         (self.root / archive_gate.MANIFEST).unlink()

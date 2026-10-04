@@ -1,0 +1,28 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-POPULATION-2021",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Area allocation from the actual CSDI attributes and polygons; full R1builder is used, so its other pinned provider inputs are also required. Uniform area allocation is not a fine-zone survey.",
+  "verification": {
+    "record": "HK-POPULATION-2021",
+    "success": true,
+    "checks": {
+      "saved_evidence_files_present": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "saved_evidence_files": 2,
+      "numerical_recalculation": false
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "saved_output_integrity_only",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.18026400002418086,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

@@ -1,0 +1,12 @@
+{
+  "scenario": "Hong Kong accepted turn-aware BPR/Beckmann H0/H1 transfer",
+  "period": "generic_weekday_08_00_09_00",
+  "demand_unit": "pce_per_hour",
+  "period_hours": 1,
+  "capacity_basis": "effective_period_pce",
+  "pce_factor": 1,
+  "unreachable_policy": "error",
+  "link_file": "turn_expanded_links.csv",
+  "physical_only": false,
+  "source_note": "Unchanged accepted phase_a/static_input/turn_expanded_links.csv; OD volume from accepted phase_b/mode_demand_by_od.csv; direct static origin/destination states."
+}

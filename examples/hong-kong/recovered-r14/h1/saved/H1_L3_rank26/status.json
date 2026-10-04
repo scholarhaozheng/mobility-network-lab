@@ -1,0 +1,44 @@
+{
+  "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+  "attempted_outer": 3,
+  "history": [
+    {
+      "outer": 1,
+      "rho": 10,
+      "worker_exit_code": 0,
+      "native_record_present": true,
+      "native_termination": "optimal",
+      "check_status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED",
+      "max_abs_od_residual": 0.3883598094116719,
+      "full_relative_gap": -0.1465227685787498
+    },
+    {
+      "outer": 2,
+      "rho": 20,
+      "worker_exit_code": 0,
+      "native_record_present": true,
+      "native_termination": "optimal",
+      "check_status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED",
+      "max_abs_od_residual": 0.003208211947831774,
+      "full_relative_gap": -0.0000707991782477951
+    },
+    {
+      "outer": 3,
+      "rho": 40,
+      "worker_exit_code": 0,
+      "native_record_present": true,
+      "native_termination": "optimal",
+      "check_status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "max_abs_od_residual": 2.7106095146223197e-13,
+      "full_relative_gap": 2.3052422649623767e-11
+    }
+  ],
+  "rank": 26,
+  "path_count": 126,
+  "od_count": 26,
+  "link_count": 3446,
+  "estimated_bytes": 849256256,
+  "ceiling_bytes": 2147483648,
+  "total_seconds": 12.7657531,
+  "instance_signature": "b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083"
+}

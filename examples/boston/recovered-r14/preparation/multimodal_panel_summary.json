@@ -1,0 +1,99 @@
+{
+  "run_id": "behavior_feedback_r1_semantic_fix_r1",
+  "panel_od_count": 36,
+  "departure_count": 3,
+  "skim_rows": 1296,
+  "panel_hbw_midday_demand_share": 0.0145675025278701,
+  "panel_source": "historical-workspace/derived/validation_panel.csv",
+  "panel_object_and_weights_preserved": true,
+  "service_date": "2026-09-21",
+  "departures": [
+    "12:30:00",
+    "12:40:00",
+    "12:50:00"
+  ],
+  "active_service_ids": 34,
+  "active_trips": 12901,
+  "s1_connections": 37421,
+  "s2_connections": 37421,
+  "srestore_connections": 37421,
+  "snapped_gtfs_stops_within_250m": 891,
+  "fare_v2_files_in_source_zip": [
+    "fare_leg_join_rules.txt",
+    "fare_leg_rules.txt",
+    "fare_media.txt",
+    "fare_products.txt",
+    "fare_transfer_rules.txt"
+  ],
+  "transfer_policy": {
+    "transfer_rule_rows": 5707,
+    "transfer_type_counts": {
+      "0": 24,
+      "1": 72,
+      "2": 1153,
+      "3": 15,
+      "4": 4443
+    },
+    "trip_specific_transfer_rows": 4539,
+    "pathway_rows": 9263,
+    "pathway_edges_with_usable_time": 154,
+    "pathway_parent_pairs": 154,
+    "default_120s_parent_pairs": 1108,
+    "cross_stop_rules_without_physical_path_skipped": 0,
+    "min_walk_time_semantics": "MBTA_EXTENSION_PHYSICAL_WALK_SECONDS",
+    "min_transfer_time_semantics": "GTFS_STANDARD_TOTAL_CONNECTION_ALLOWANCE_NOT_ADDED_TO_WALK"
+  },
+  "fare_policy": {
+    "fare_medium": "charliecard",
+    "generic_network_leg_mappings": {
+      "local_bus": {
+        "leg_group_id": "leg_local_bus_smartcard",
+        "fare_product_id": "prod_local_bus_smartcard"
+      },
+      "m_rapid_transit": {
+        "leg_group_id": "leg_mattapan_rapid_transit_smartcard",
+        "fare_product_id": "prod_rapid_transit_smartcard"
+      },
+      "rapid_transit": {
+        "leg_group_id": "leg_rapid_transit_smartcard",
+        "fare_product_id": "prod_rapid_transit_smartcard"
+      },
+      "sl_rapid_transit": {
+        "leg_group_id": "leg_sl_rapid_transit_smartcard",
+        "fare_product_id": "prod_rapid_transit_smartcard"
+      }
+    },
+    "fare_transfer_rule_rows": 72
+  },
+  "available_transit_rows_by_scenario": {
+    "S1_planned_service": 87,
+    "S2_exploratory_gps_overlay": 87,
+    "Srestore_overlay_off_recomputed": 87
+  },
+  "available_transit_rows_without_ride": 0,
+  "srestore_skim_mismatch_rows": 0,
+  "srestore_negative_control": {
+    "control": "one_second_added_to_first_available_restore_transit_total_min_copy_only",
+    "detected_mismatch_rows": 1,
+    "detected": true,
+    "production_outputs_modified_by_control": false
+  },
+  "access_egress_snap_policy": "zone_centroid_to_osm_snap_plus_osm_path_plus_gtfs_stop_to_osm_snap_for_both_WK_and_TW",
+  "osm": {
+    "osm_nodes_in_bound": 114004,
+    "osm_highway_ways": 31432,
+    "walk_nodes": 103497,
+    "walk_edges": 247108,
+    "bike_nodes": 100289,
+    "bike_edges": 213005
+  },
+  "osm_source_sha256": "5b59c0c4dd1afeac1b3193b239e5953c1315f0484952d136b70aeea48f6fbf4e",
+  "gtfs_source_sha256": "94d12a7645402990f8e246759e5d97e5a65416baa3e201eacba132a1010c0c1e",
+  "limitations": [
+    "Panel is a predeclared bounded pilot, not representative of all Boston travel.",
+    "Drive is free-flow and excludes parking/terminal cost because those inputs are unavailable.",
+    "Transit is a bounded scheduled-service adapter, not a full general-purpose journey planner.",
+    "Fare uses selected-itinerary GTFS Fares v2 adult CharlieCard generic rules; unsupported fare legs remain unknown.",
+    "S2 overlay uses the same short midday GPS sample and is exploratory, not independently validated."
+  ]
+}

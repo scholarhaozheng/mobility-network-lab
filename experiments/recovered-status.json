@@ -1,0 +1,875 @@
+{
+  "schema": "mcl_recovery_status_v1",
+  "reviewDate": "2026-10-04",
+  "baseline": "135d263199d12c7df345ded0247e322f22f478d8",
+  "scope": "Materials recovery and integration are tracked separately from fresh numerical reproduction.",
+  "records": [
+    {
+      "id": "boston-gmns-exchange-r1",
+      "title": "GMNS/H3 source model and exchange validation",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Manifest pins GMNS standard4e51f4c and reader116447ab; 5091physical links,177fine zones; S1/S2 26OD roundtrip error1.776e-15.",
+        "Original source inputs and final exchange exist. Published exchange link.csv hash differs from historical final export; choose explicit expected schema/extensions before rerun."
+      ],
+      "remainingRequirements": [
+        "Portable wrapper and exact source/reader environment pins; distinguish exchange validation from original network acquisition."
+      ],
+      "nextStep": "Package standalone export→validate→roundtrip using retained source snapshot and expose expected version."
+    },
+    {
+      "id": "boston-massgis-activity-prior-r1",
+      "title": "MassGIS residential/nonresidential activity allocation",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Source date20260917 and run20260922 match scriptconstants/manifests; raw gzip exists; only aggregate metadata read, no parcel rows copied."
+      ],
+      "remainingRequirements": [
+        "Public acquisition or release route and geospatial environment; parameterize hard-coded paths; keep v1/v2 separate."
+      ],
+      "nextStep": "Package acquisition/build steps with source hash and aggregate output validation."
+    },
+    {
+      "id": "boston-legacy-network-proxy-am-r1",
+      "title": "Historical network-proxy AM baseline and stress",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Original baseline and corrected capacity-period inputs coexist. Quality correction summary retains legacy diagnostics plus two corrected runs; cannot use current S1/S2 inputs under this historical label.",
+        "Archived receiver ZIP contains city_database.py,run_corrected_assignment.py,configs,runmanifests,assignment summaries."
+      ],
+      "remainingRequirements": [
+        "Decide exact legacy versus corrected target covered by current record, pin its archived source+capacity convention and check full input hashes."
+      ],
+      "nextStep": "Split named baseline variants if necessary, then wrap exact archived command."
+    },
+    {
+      "id": "boston-activity-informed-50000-am-r1",
+      "title": "50,000-trip activity-informed demand preparation (assignment not run)",
+      "group": "preparation",
+      "label": "Input preparation or audit only",
+      "findings": [
+        "scenario_id activity_informed_massgis_assessment_50k_v1; daily50000, AMvehicle2750, assignment-input2723.9436.",
+        "Both scenario manifest and demand summary explicitly say traffic assignment not run / assignment_run:false; current inventory title AM assignment overstates saved scope."
+      ],
+      "remainingRequirements": [
+        "Correct inventory label to demand prior and assignment-ready AM inputs; a new assignment would be a new computation, not historical replay."
+      ],
+      "nextStep": "Enable preparation reproduction only; do not imply missing historical traffic-assignment result."
+    },
+    {
+      "id": "boston-acs-population-allocation-r1",
+      "title": "ACS 2024 block-group to clipped H3 population/household allocation",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "All6raw ACS/TIGER files currently match historical source_hashes; 174blockgroups,177H3, population171049.52015979076,households79537.49255074753.",
+        "Archived/public pipeline source hash676df25c... differs from current local2721fea6...; R1 distribution has6254fallbackpairs; semantic correction has0 and185754ODrows."
+      ],
+      "remainingRequirements": [
+        "Freeze correct historical pipeline and environment; prepare public source URLs/hashes; do not replace historical distribution with semantic-fixed branch."
+      ],
+      "nextStep": "Register separate raw/source-to-model recipe and validate population/household margins, productions and OD conservation."
+    },
+    {
+      "id": "boston-regional-trip-generation-r1",
+      "title": "ACS household × transferred CTPS purpose rates",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "All6raw ACS/TIGER files currently match historical source_hashes; 174blockgroups,177H3, population171049.52015979076,households79537.49255074753.",
+        "Archived/public pipeline source hash676df25c... differs from current local2721fea6...; R1 distribution has6254fallbackpairs; semantic correction has0 and185754ODrows."
+      ],
+      "remainingRequirements": [
+        "Freeze correct historical pipeline and environment; prepare public source URLs/hashes; do not replace historical distribution with semantic-fixed branch."
+      ],
+      "nextStep": "Register separate raw/source-to-model recipe and validate population/household margins, productions and OD conservation."
+    },
+    {
+      "id": "boston-regional-distribution-r1",
+      "title": "Gravity/IPF, directional and purpose/time conversion",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "All6raw ACS/TIGER files currently match historical source_hashes; 174blockgroups,177H3, population171049.52015979076,households79537.49255074753.",
+        "Archived/public pipeline source hash676df25c... differs from current local2721fea6...; R1 distribution has6254fallbackpairs; semantic correction has0 and185754ODrows."
+      ],
+      "remainingRequirements": [
+        "Freeze correct historical pipeline and environment; prepare public source URLs/hashes; do not replace historical distribution with semantic-fixed branch."
+      ],
+      "nextStep": "Register separate raw/source-to-model recipe and validate population/household margins, productions and OD conservation."
+    },
+    {
+      "id": "boston-transit-walk-semantic-preparation",
+      "title": "Planned transit/walk network, availability, itinerary legs and fares",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "MBTAzip SHA94d12a... and OSM SHA5b59c0... both match historical summary and scalable SOURCE_LOCK.",
+        "36OD,3departures,1296skimrows,87availabletransit rows/scenario; exact dated source files exist."
+      ],
+      "remainingRequirements": [
+        "Portable pipeline paths and dated GTFS/OSM access instructions; register prepared-overlay and raw-observation dependencies separately."
+      ],
+      "nextStep": "Package planned-service preparation first; freeze overlay inputs for bounded S2 branch."
+    },
+    {
+      "id": "boston-gps-network-association",
+      "title": "GPS source positions, accepted association and route-60 sample",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "city_database.py contains MBTA snapshot acquisition and mapmatching4gmns trace_to_evidence; quality correction consumes preserved30segment matchset."
+      ],
+      "remainingRequirements": [
+        "Pin mapmatching dependency and exact temporal snapshot access/release route; new realtime download cannot reproduce historical snapshot."
+      ],
+      "nextStep": "Offer retained safe association inputs/replay, with historical snapshot provenance and distinct fresh acquisition mode."
+    },
+    {
+      "id": "boston-behavior-feedback-historical-r1",
+      "title": "Historical pre-semantic-fix service feedback R1",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Historical config schema mcl_behavior_feedback_1.0 explicitly uses flatfare approximation; archived pipeline copies retained.",
+        "Latest local feedback code contains later fare/transfer/Srestore corrections; it is not exact pre-fixR1 source."
+      ],
+      "remainingRequirements": [
+        "Verify archived pipeline against R1 delivery hash and normalize runtime paths; historical deficiencies must remain documented."
+      ],
+      "nextStep": "Enable archived pre-fix branch as historical reproduction, separate from semantic-fixed and conditional-choice models."
+    },
+    {
+      "id": "boston-semantic-fix-srestore",
+      "title": "Semantic-fix Srestore service-feedback branch",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Semantic config explicitly defines Srestore as independent overlay-off recomputation. Saved max probabilityerror6.94e-18,persondemanderror2.78e-17; negative control detected.",
+        "Config explicitly says Srestore FW not rerun because demand/model/solver signatures matchS1; it is not another archived FWsolve."
+      ],
+      "remainingRequirements": [
+        "Pin exact source+prepared inputs and independent negative control; expose restoration scope without claim of new FW execution."
+      ],
+      "nextStep": "Package restore skim/utility/probability/demand recomputation and compare S1."
+    },
+    {
+      "id": "boston-expanded-fw-500",
+      "title": "Expanded 500 source-OD planned-service FW",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Exact normalized input tables, instance signature, objective, convergence and output hashes exist.",
+        "For2000/all, saved run pins mcl_assignment.py SHA728fbc02077e418acb99f9f0dcdb4e51ba0ab291a5ee843325cad46b1ed6074b; currentcode/hash eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6. None of53loose copies or public_candidates/tools/mcl_assignment.py inside BOSTON_SCALABLE_TOOL_HANDOFF.zip match expected.500run has no source hash.",
+        "Scope is sourceOD 500; physical endpoint aggregation is453,1684,17522 for500,2000,all respectively.",
+        "Parent audit additionally searched publication Git objects,225readableZIPs/12matchingbasename members and conversation-archive text: no728fbc source. Alternativeb66c... is CRLF bytes of currenteee073,not distinct source revision."
+      ],
+      "remainingRequirements": [
+        "Resolve historical source version or demonstrate current solver numerical equivalence without claiming byteidentical historical code; register portable recipe and data distribution."
+      ],
+      "nextStep": "Pin a solver revision and replay the retained 500 source-OD inputs against saved outputs. This run does not record a source hash, so do not claim byte-identical historical code."
+    },
+    {
+      "id": "boston-expanded-finite-path-500",
+      "title": "Expanded 500 finite-path resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-expanded-native-l3-500",
+      "title": "Expanded 500 native-l3 resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-expanded-fw-2000",
+      "title": "Expanded 2000 source-OD planned-service FW",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Exact normalized input tables, instance signature, objective, convergence and output hashes exist.",
+        "For2000/all, saved run pins mcl_assignment.py SHA728fbc02077e418acb99f9f0dcdb4e51ba0ab291a5ee843325cad46b1ed6074b; currentcode/hash eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6. None of53loose copies or public_candidates/tools/mcl_assignment.py inside BOSTON_SCALABLE_TOOL_HANDOFF.zip match expected.500run has no source hash.",
+        "Scope is sourceOD 2000; physical endpoint aggregation is453,1684,17522 for500,2000,all respectively.",
+        "Parent audit additionally searched publication Git objects,225readableZIPs/12matchingbasename members and conversation-archive text: no728fbc source. Alternativeb66c... is CRLF bytes of currenteee073,not distinct source revision."
+      ],
+      "remainingRequirements": [
+        "Resolve historical source version or demonstrate current solver numerical equivalence without claiming byteidentical historical code; register portable recipe and data distribution."
+      ],
+      "nextStep": "The recorded 728fbc source has not been found in loose files, checked ZIPs, or reachable publication Git objects. If it remains unavailable, use an explicitly versioned current solver and validate the new run against the retained outputs; do not label that source as byte-identical historical code."
+    },
+    {
+      "id": "boston-expanded-finite-path-2000",
+      "title": "Expanded 2000 finite-path resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-expanded-native-l3-2000",
+      "title": "Expanded 2000 native-l3 resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-expanded-fw-all",
+      "title": "Expanded all source-OD planned-service FW",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Exact normalized input tables, instance signature, objective, convergence and output hashes exist.",
+        "For2000/all, saved run pins mcl_assignment.py SHA728fbc02077e418acb99f9f0dcdb4e51ba0ab291a5ee843325cad46b1ed6074b; currentcode/hash eee0730e4d6521df5de208b62fe71899b78cb3d0d1573932960607df9dce51d6. None of53loose copies or public_candidates/tools/mcl_assignment.py inside BOSTON_SCALABLE_TOOL_HANDOFF.zip match expected.500run has no source hash.",
+        "Scope is sourceOD all; physical endpoint aggregation is453,1684,17522 for500,2000,all respectively.",
+        "Parent audit additionally searched publication Git objects,225readableZIPs/12matchingbasename members and conversation-archive text: no728fbc source. Alternativeb66c... is CRLF bytes of currenteee073,not distinct source revision."
+      ],
+      "remainingRequirements": [
+        "Resolve historical source version or demonstrate current solver numerical equivalence without claiming byteidentical historical code; register portable recipe and data distribution."
+      ],
+      "nextStep": "The recorded 728fbc source has not been found in loose files, checked ZIPs, or reachable publication Git objects. If it remains unavailable, use an explicitly versioned current solver and validate the new run against the retained outputs; do not label that source as byte-identical historical code."
+    },
+    {
+      "id": "boston-expanded-finite-path-all",
+      "title": "Expanded all finite-path resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-expanded-native-l3-all",
+      "title": "Expanded all native-l3 resource-gated attempt",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Code and staged instance exist; they do not establish an accepted solve.",
+        "500fullpath run explicitly RESOURCE_LIMIT:707637600-byte workspace exceeds307646464-byte ceiling.500native rank25/50 also RESOURCE_LIMIT:909785600-byte basis estimate exceeds measured ceilings.2000/all lack completed method solutions in this package."
+      ],
+      "remainingRequirements": [
+        "Retain not_run/attempt state. A successful larger run requires new resourcebudget/config and separate experiment identity."
+      ],
+      "nextStep": "Publish attempt/resource ledger and method availability; do not advertise result reproduction for an unperformed solve."
+    },
+    {
+      "id": "boston-finite-construction",
+      "title": "Bounded finite time-expanded network and actual B07 column",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Dynamic arcSHA66fbcd70... and demandSHA37ad4423... match R3 execution identity and later Lagrangian/ADMM frozen plans.",
+        "R3 exact run_full_cg_v1.py currently SHAffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90 matches execution_identity before/after.",
+        "R3 saved command,7200s-limited configuration,outputs and R4 independent fullDAGclosure certificate retained. Older boston_supplied_replay manifest statusFAIL is earlier solverattempt; its graph inputs remain identical to accepted laterR3."
+      ],
+      "remainingRequirements": [
+        "Public graph/demand route and portable exact R2/R3+R4 package, avoiding substitution of older genericRC5 code; independent verification plus actual new run receipt."
+      ],
+      "nextStep": "Package finite construction/LP/CG as separate commands sharing one exact graph; keep source/raw acquisition scope separate."
+    },
+    {
+      "id": "boston-finite-arc-flow-lp",
+      "title": "Same-graph finite arc-flow LP reference",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Dynamic arcSHA66fbcd70... and demandSHA37ad4423... match R3 execution identity and later Lagrangian/ADMM frozen plans.",
+        "R3 exact run_full_cg_v1.py currently SHAffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90 matches execution_identity before/after.",
+        "R3 saved command,7200s-limited configuration,outputs and R4 independent fullDAGclosure certificate retained. Older boston_supplied_replay manifest statusFAIL is earlier solverattempt; its graph inputs remain identical to accepted laterR3."
+      ],
+      "remainingRequirements": [
+        "Public graph/demand route and portable exact R2/R3+R4 package, avoiding substitution of older genericRC5 code; independent verification plus actual new run receipt."
+      ],
+      "nextStep": "Package finite construction/LP/CG as separate commands sharing one exact graph; keep source/raw acquisition scope separate."
+    },
+    {
+      "id": "boston-finite-cg-pilot-r2-r3",
+      "title": "Two-phase CG pilot, R2/R3 Phase I and Phase II",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Dynamic arcSHA66fbcd70... and demandSHA37ad4423... match R3 execution identity and later Lagrangian/ADMM frozen plans.",
+        "R3 exact run_full_cg_v1.py currently SHAffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90 matches execution_identity before/after.",
+        "R3 saved command,7200s-limited configuration,outputs and R4 independent fullDAGclosure certificate retained. Older boston_supplied_replay manifest statusFAIL is earlier solverattempt; its graph inputs remain identical to accepted laterR3."
+      ],
+      "remainingRequirements": [
+        "Public graph/demand route and portable exact R2/R3+R4 package, avoiding substitution of older genericRC5 code; independent verification plus actual new run receipt."
+      ],
+      "nextStep": "Package finite construction/LP/CG as separate commands sharing one exact graph; keep source/raw acquisition scope separate."
+    },
+    {
+      "id": "boston-finite-cg-r4-pricing-closure",
+      "title": "R4 full-DAG pricing closure continuation on the same CG pilot",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Dynamic arcSHA66fbcd70... and demandSHA37ad4423... match R3 execution identity and later Lagrangian/ADMM frozen plans.",
+        "R3 exact run_full_cg_v1.py currently SHAffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90 matches execution_identity before/after.",
+        "R3 saved command,7200s-limited configuration,outputs and R4 independent fullDAGclosure certificate retained. Older boston_supplied_replay manifest statusFAIL is earlier solverattempt; its graph inputs remain identical to accepted laterR3."
+      ],
+      "remainingRequirements": [
+        "Public graph/demand route and portable exact R2/R3+R4 package, avoiding substitution of older genericRC5 code; independent verification plus actual new run receipt."
+      ],
+      "nextStep": "Package finite construction/LP/CG as separate commands sharing one exact graph; keep source/raw acquisition scope separate."
+    },
+    {
+      "id": "boston-lagrangian-r2-transfer",
+      "title": "Lagrangian R2 10-OD frozen-policy transfer (failed acceptance gate)",
+      "group": "failed",
+      "label": "Historical acceptance failure",
+      "findings": [
+        "Full solver/evaluator source, frozenplan, exactgraph/demand and saved fullstate are retained locally. Prior independent saved-state evaluation optimizer_calls0; this audit does not rerun solver.",
+        "LagrangianP07 bestdual63.68839498281214,primal64.39686151152952, gap1.1001569% still fails1%acceptance. ADMMR2_S253iterations,objective64.39729165541078, savedindependentevaluationPASS."
+      ],
+      "remainingRequirements": [
+        "Portable runner and exact-input download route are absent from published registry. Prior artifact release exclusion is a packaging boundary, not physical file loss.",
+        "ForLagrangian retain failedacceptance label even if repeatable."
+      ],
+      "nextStep": "Register exact frozen policy and numericchecks; run fresh only after packaging provenance is pinned."
+    },
+    {
+      "id": "boston-admm-r2-s",
+      "title": "ADMM R2_S frozen-policy Boston 10-OD holdout",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Full solver/evaluator source, frozenplan, exactgraph/demand and saved fullstate are retained locally. Prior independent saved-state evaluation optimizer_calls0; this audit does not rerun solver.",
+        "LagrangianP07 bestdual63.68839498281214,primal64.39686151152952, gap1.1001569% still fails1%acceptance. ADMMR2_S253iterations,objective64.39729165541078, savedindependentevaluationPASS."
+      ],
+      "remainingRequirements": [
+        "Portable runner and exact-input download route are absent from published registry. Prior artifact release exclusion is a packaging boundary, not physical file loss.",
+        "ForLagrangian retain failedacceptance label even if repeatable."
+      ],
+      "nextStep": "Register exact frozen policy and numericchecks; run fresh only after packaging provenance is pinned."
+    },
+    {
+      "id": "boston-lodes-employment-association",
+      "title": "LODES residence–workplace employment association",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "2026-09-22 acquisition log lists officialLEHD requests forMA2023WAC/RAC/OD/xwalk and repeatedtimeouts.",
+        "Log states no LODESvalue used; MassGIS attractionprior is not LODESemploymentassociation."
+      ],
+      "remainingRequirements": [
+        "No historical accepted LODESresult exists to reproduce; acquiring source now and building association would be a new experiment."
+      ],
+      "nextStep": "Retain no_experiment; optionally design a separately dated official-source extension."
+    },
+    {
+      "id": "sioux-classic-input",
+      "title": "Classic static input and representation audit",
+      "group": "preparation",
+      "label": "Input preparation or audit only",
+      "findings": [
+        "Classic 24-node/76-link/528-OD inputs; link SHA 194ec70... and demand SHA 603f785... match the published frozen snapshot. Rank-50 representation is a separate input audit, not a numerical solve."
+      ],
+      "remainingRequirements": [
+        "Register a standalone input validation command if each preparation record needs a portal button; existing public FW preparation already consumes the same link/demand files."
+      ],
+      "nextStep": "Reuse frozen input hashes and prepare_native_run/mcl_assignment validation, retain input_preparation_only semantics."
+    },
+    {
+      "id": "sioux-historical-fw-100",
+      "title": "Historical approximate Frank-Wolfe, 100 saved iterations",
+      "group": "identity",
+      "label": "Historical version / run identity to resolve",
+      "findings": [
+        "Retained driver explicitly calls solve_fw_refined(data/SiouxFalls, run_name=siouxfalls, max_iter=100, cap_scale=1.0).",
+        "STATIC_UE_CONTRACT retains original result SHA 7a4021e3b8f2ed676fbe9196dcce74b8fa3297dbdfbdae1f1d38fb7c6fd6ce42; comparison recomputes objective 4236715.140437842 and TSTT 7479354.960859148.",
+        "The currently retained 528-OD input hashes are comparison inputs; they are not a saved runtime hash from the original 100-iteration solve. The fresh public 9703-iteration FW run is a separate experiment."
+      ],
+      "remainingRequirements": [
+        "Recover the original execution log/environment/runtime input identity or explicitly label a new run as reconstructed historical settings; do not claim historical byte replay from current demand alone."
+      ],
+      "nextStep": "Use the retained 100-iteration driver and candidate input for an explicitly bounded reconstruction, compare against the saved 76 link values; retain the runtime-identity limitation if no original log is recovered."
+    },
+    {
+      "id": "sioux-taplab-official-parity",
+      "title": "Registered TAPLab adapter versus direct Algorithm B parity",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Official adapter source hash f89431551b5e4ef82206b38ccee799c3bdba8d28762a807b350836c82fe7d50e and CLI hash 23f554fd4e9562597a77d60dcb5cf2364174acde5606702e352da9eca966f545 recorded in parity JSON.",
+        "Accepted executable SHA c421c48200c033a8c37bf570ee7d1198bbb4689e2961dee61ae41f8d58f7ee1f; 76 links,528 ODs,demand360600; exact link-flow parity; objective4231335.287110684, relative gap4.498408203549506e-9.",
+        "The public r12 direct tap-b build route now exists, but this record is the separate official TAPLab adapter route."
+      ],
+      "remainingRequirements": [
+        "Package pinned TAPLab runtime/dependencies and route the existing pinned tap-b build through its official adapter; run the native conversion, standard output and direct-solver parity gates."
+      ],
+      "nextStep": "Adapt the existing build recipe to TAPLab commit081e44a0dd451c549d6903933516bccb4166bbd0 and the retained sioux_r21 settings; do not merge this record into the direct adapter command."
+    },
+    {
+      "id": "sioux-native-a-reg001-rank50",
+      "title": "Native A_REG001 rank-50 outer-04 saved candidate",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Native source/model hash0a054ab... and controller04b4f553... match prior r04 recovery; frozen rank50,2218 paths,535 major,1683 minor,585 path coordinates.",
+        "Environment is explicitly retained: Python3.9.25,Pyomo6.9.5,numpy2.0.2,scipy1.13.1,pandas2.2.3; IPOPT3.14.19/MUMPS5.8.1, executableSHA281049ded043353bc395bc4585806a18a97b07038d01fa446c6aa33b0f31437c.",
+        "Published Boston native environment manifest uses the same Python/IPOPT hash, but the Sioux wrapper additionally imports pandas; the Boston pip manifest does not currently include pandas."
+      ],
+      "remainingRequirements": [
+        "Extend exact native environment with pandas2.2.3, create a portable Sioux profile fixture layout, rerun selected A/B controllers and independent original-space checker.",
+        "Saved native feasibility is not a full-network UE certificate; preserve A_REG001 gamma0.01 vs B_BECKMANN gamma0."
+      ],
+      "nextStep": "Reuse the recovered native toolchain identity, pin pandas, then register separate A_REG001 and B_BECKMANN rank50 run/verify commands."
+    },
+    {
+      "id": "sioux-native-b-beckmann-rank50",
+      "title": "Native B_BECKMANN rank-50 outer-04 saved candidate",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Native source/model hash0a054ab... and controller04b4f553... match prior r04 recovery; frozen rank50,2218 paths,535 major,1683 minor,585 path coordinates.",
+        "Environment is explicitly retained: Python3.9.25,Pyomo6.9.5,numpy2.0.2,scipy1.13.1,pandas2.2.3; IPOPT3.14.19/MUMPS5.8.1, executableSHA281049ded043353bc395bc4585806a18a97b07038d01fa446c6aa33b0f31437c.",
+        "Published Boston native environment manifest uses the same Python/IPOPT hash, but the Sioux wrapper additionally imports pandas; the Boston pip manifest does not currently include pandas."
+      ],
+      "remainingRequirements": [
+        "Extend exact native environment with pandas2.2.3, create a portable Sioux profile fixture layout, rerun selected A/B controllers and independent original-space checker.",
+        "Saved native feasibility is not a full-network UE certificate; preserve A_REG001 gamma0.01 vs B_BECKMANN gamma0."
+      ],
+      "nextStep": "Reuse the recovered native toolchain identity, pin pandas, then register separate A_REG001 and B_BECKMANN rank50 run/verify commands."
+    },
+    {
+      "id": "sioux-cg-200",
+      "title": "Historical finite two-phase CG, 200 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "The baseline RC5 driver hash is ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae; separate patched DAG/R3 drivers exist and must not silently replace the historical route. The frozen source dependency closure still needs a run-level fingerprint before a historical replay claim."
+      ],
+      "remainingRequirements": [
+        "Package the exact seed columns and resolved manifest, relocate file paths without changing parameters, pin original driver dependency closure and environment, then execute and compare historical objective/feasibility.",
+        "Independent complete pricing closure is not established by the historical objective-match stop condition; retain this limitation."
+      ],
+      "nextStep": "Integrate the recovered frozen_cases/200OD seed and resolved configuration into a bounded historical CG recipe; keep later DAG/R3 algorithm revisions separate."
+    },
+    {
+      "id": "sioux-admm-r1-200",
+      "title": "Earlier ADMM R1 historical 200-OD result",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "R1 source SHA ec5e1fedebce08a5d827ecda78a79b4d628dc19cb3c2ad4aac9f79e125576d55 matches prior recovery. This is the R1 feasibility_repair run, separate from R2_S support-fix.",
+        "Exact arc/demand bytes now exist in the r12 public finite-time-r05 input directory. The old remainingRequirements claiming those inputs are only local is stale."
+      ],
+      "remainingRequirements": [
+        "Register R1-specific GATES and solver wrapper and independently verify fresh output against the saved R1 state; do not use R2_S policy or results as substitutes."
+      ],
+      "nextStep": "Use the published exact finite inputs with the retained R1 admm.py and GATES.json; add separate R1 run/verify recipes."
+    },
+    {
+      "id": "sioux-cg-250",
+      "title": "Historical finite two-phase CG, 250 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "The baseline RC5 driver hash is ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae; separate patched DAG/R3 drivers exist and must not silently replace the historical route. The frozen source dependency closure still needs a run-level fingerprint before a historical replay claim."
+      ],
+      "remainingRequirements": [
+        "Package the exact seed columns and resolved manifest, relocate file paths without changing parameters, pin original driver dependency closure and environment, then execute and compare historical objective/feasibility.",
+        "Independent complete pricing closure is not established by the historical objective-match stop condition; retain this limitation."
+      ],
+      "nextStep": "Integrate the recovered frozen_cases/250OD seed and resolved configuration into a bounded historical CG recipe; keep later DAG/R3 algorithm revisions separate."
+    },
+    {
+      "id": "sioux-admm-r1-250",
+      "title": "Earlier ADMM R1 historical 250-OD result",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "R1 source SHA ec5e1fedebce08a5d827ecda78a79b4d628dc19cb3c2ad4aac9f79e125576d55 matches prior recovery. This is the R1 feasibility_repair run, separate from R2_S support-fix.",
+        "Exact arc/demand bytes now exist in the r12 public finite-time-r05 input directory. The old remainingRequirements claiming those inputs are only local is stale."
+      ],
+      "remainingRequirements": [
+        "Register R1-specific GATES and solver wrapper and independently verify fresh output against the saved R1 state; do not use R2_S policy or results as substitutes."
+      ],
+      "nextStep": "Use the published exact finite inputs with the retained R1 admm.py and GATES.json; add separate R1 run/verify recipes."
+    },
+    {
+      "id": "sioux-admm-r2s-development-30",
+      "title": "ADMM R2_S documented development ladder, 30 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "run_sioux_ladder.py explicitly enumerates 30/60/100/150/200/250, invokes admm_solver --variant R2_S with the frozen plan and independent evaluation; selected saved folder is R2_S_support_fix."
+      ],
+      "remainingRequirements": [
+        "Add exact 30/60/100/150 modeled Sioux fixtures to the computational checkout with the same documented upstream attribution as 200/250, parameterize existing R2_S wrapper for these sizes, then execute/check each.",
+        "Legacy private artifact directory naming is not evidence of an unresolved privacy restriction; release scope and data attribution should be reconciled explicitly."
+      ],
+      "nextStep": "Extend the published R2_S 200/250 recipe to the four retained development scales using their own pinned inputs and acceptance values."
+    },
+    {
+      "id": "sioux-admm-r2s-development-60",
+      "title": "ADMM R2_S documented development ladder, 60 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "run_sioux_ladder.py explicitly enumerates 30/60/100/150/200/250, invokes admm_solver --variant R2_S with the frozen plan and independent evaluation; selected saved folder is R2_S_support_fix."
+      ],
+      "remainingRequirements": [
+        "Add exact 30/60/100/150 modeled Sioux fixtures to the computational checkout with the same documented upstream attribution as 200/250, parameterize existing R2_S wrapper for these sizes, then execute/check each.",
+        "Legacy private artifact directory naming is not evidence of an unresolved privacy restriction; release scope and data attribution should be reconciled explicitly."
+      ],
+      "nextStep": "Extend the published R2_S 200/250 recipe to the four retained development scales using their own pinned inputs and acceptance values."
+    },
+    {
+      "id": "sioux-admm-r2s-development-100",
+      "title": "ADMM R2_S documented development ladder, 100 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "run_sioux_ladder.py explicitly enumerates 30/60/100/150/200/250, invokes admm_solver --variant R2_S with the frozen plan and independent evaluation; selected saved folder is R2_S_support_fix."
+      ],
+      "remainingRequirements": [
+        "Add exact 30/60/100/150 modeled Sioux fixtures to the computational checkout with the same documented upstream attribution as 200/250, parameterize existing R2_S wrapper for these sizes, then execute/check each.",
+        "Legacy private artifact directory naming is not evidence of an unresolved privacy restriction; release scope and data attribution should be reconciled explicitly."
+      ],
+      "nextStep": "Extend the published R2_S 200/250 recipe to the four retained development scales using their own pinned inputs and acceptance values."
+    },
+    {
+      "id": "sioux-admm-r2s-development-150",
+      "title": "ADMM R2_S documented development ladder, 150 OD",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "run_sioux_ladder.py explicitly enumerates 30/60/100/150/200/250, invokes admm_solver --variant R2_S with the frozen plan and independent evaluation; selected saved folder is R2_S_support_fix."
+      ],
+      "remainingRequirements": [
+        "Add exact 30/60/100/150 modeled Sioux fixtures to the computational checkout with the same documented upstream attribution as 200/250, parameterize existing R2_S wrapper for these sizes, then execute/check each.",
+        "Legacy private artifact directory naming is not evidence of an unresolved privacy restriction; release scope and data attribution should be reconciled explicitly."
+      ],
+      "nextStep": "Extend the published R2_S 200/250 recipe to the four retained development scales using their own pinned inputs and acceptance values."
+    },
+    {
+      "id": "sioux-upstream-model-stages-no-experiment",
+      "title": "No retained empirical demand/observation pipeline experiment",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "The inventory intentionally marks empirical population/GTFS/GPS/generation/distribution/mode choice as not run: Sioux uses a supplied classic vehicle OD benchmark. A missing empirical pipeline is not missing code for a performed experiment.",
+        "Search of retained source/runs identified static and finite optimization experiments and did not establish a Sioux empirical pipeline tied to these stages."
+      ],
+      "remainingRequirements": [],
+      "nextStep": "Keep as not applicable/no experiment; do not turn a context or coverage record into a claimed reproduced computation."
+    },
+    {
+      "id": "TOOL-CITY-EVIDENCE-QUERY",
+      "title": "Query the accepted 11,422-city evidence table",
+      "group": "available",
+      "label": "Existing command verified",
+      "findings": [
+        "The retained publication evidence reports11422 unique city rows and16705 source-content/city relationship rows. This command queries the accepted published table; rebuilding the historical global collection is a separate scope."
+      ],
+      "remainingRequirements": [
+        "Add a catalog entry and stable receipt for the existing query command. The global acquisition/rebuild pipeline must not be described as a prerequisite for this read-only query."
+      ],
+      "nextStep": "Register and expose the already functioning command: python -B tools/mcl_data.py query-city --name \"Hong Kong\" --country CHN --include-relations; validate matched_unique,1 match and fixed table hashes."
+    },
+    {
+      "id": "HK-GMNS-R1",
+      "title": "GMNS R1 physical network, zones and access relationships",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "All 16 raw snapshots match original acquisition hashes. build_pilot.py reads TST_Jordan extracts, census geometries, detector snapshots, GTFS and pedestrian JSON; saved network reports 780 physical nodes and 1,239 physical links."
+      ],
+      "remainingRequirements": [
+        "Assemble portable acquisition/build commands rather than relying on __file__-relative work directories.",
+        "Fresh rebuild of the exact raw snapshots and compare all output object IDs/tables with saved R1; current public validator checks saved outputs only."
+      ],
+      "nextStep": "Register a source-to-R1 build recipe, with upstream URLs plus exact SHA-256; preserve observed-versus-modeled distinctions."
+    },
+    {
+      "id": "HK-GMNS-R2-ACCESS",
+      "title": "R2 turn-aware network, road parameters and physical access",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "compile_phase_a.py lines 41,54,143,149 read the located exact extracts; gate records 1,239 physical links, 1,896 movement arcs, 95 zones, 8,930 directed pairs and zero unreachable pairs."
+      ],
+      "remainingRequirements": [
+        "Package exact R1 dependency plus R2 provider extracts; add portable compile CLI.",
+        "Freshly compile turn graph and independently re-route all 8,930 OD pairs; validator checkpoint alone is insufficient."
+      ],
+      "nextStep": "Run the bounded R2 builder from pinned snapshots in a fresh output directory, then compare turn movements, access, speed/capacity assumptions and reachability."
+    },
+    {
+      "id": "HK-POPULATION-2021",
+      "title": "Area allocation of 2021 population and households to 95 fine zones",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "The actual CSDI JSON inputs (not inspected-only census ZIPs) are present and match original hashes. Saved area allocation equals 90,677.15622225715 people and 36,228.31539105156 households over 95 fine zones."
+      ],
+      "remainingRequirements": [
+        "Expose area clipping/allocation as a portable preparation command; rerun exact CSDI features and compare zone totals."
+      ],
+      "nextStep": "Package the population-building code with a pinned CSDI snapshot acquisition route and validate against exact R1 accounting."
+    },
+    {
+      "id": "HK-BUILDING-ACTIVITY",
+      "title": "Activity proxy from building footprint area × storeys and name classification",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact 2,953-feature buildings JSON matches acquisition manifest. Saved audit: 2,919 allocated,34 unallocated,895 missing storeys; proxy area conservation residual 8.149072527885437e-10."
+      ],
+      "remainingRequirements": [
+        "Separate per-building intermediate output from public aggregate outputs in a CLI.",
+        "Freshly compute activity proxy from exact footprints/storeys/name-classification inputs; compare all aggregate totals."
+      ],
+      "nextStep": "Make the preparation computation reproducible from original provider download+hash while retaining aggregate public outputs; do not treat local private-labelled intermediate presence as missing code."
+    },
+    {
+      "id": "HK-GTFS-WALK-R2",
+      "title": "GTFS AM direct rides, fares, waiting and walking generalized costs",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "GTFS ZIP SHA matches 9dd277eae41df5ae5ab8ac998e38d09e8792b7506599028871ffed203f5e804b; all4 pedestrian snapshots also match. Saved generic Monday08–09 service has843 directed rideedges,2,745 direct pairs,135 AM routes."
+      ],
+      "remainingRequirements": [
+        "Wire extraction→walk routing→generalized mode costs as one dependency-ordered CLI.",
+        "Fresh rerun with exact GTFS/pedestrian snapshots; current live provider download might have changed."
+      ],
+      "nextStep": "Recover portable preparation entry and register exact acquisition snapshot checks before comparing prepared tables."
+    },
+    {
+      "id": "HK-OBSERVATIONS-ASSOCIATION",
+      "title": "Short detector snapshot and association with historical ATC stations",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Historical XML exists and matches acquisition hash96b0851f0f279535ab9e743272eaecbd7ba2a8c8ea670f7f808c6c34f95957f0; exact snapshot time2026-09-26 10:24:00–10:24:30. Saved ledger50lane rows/11sites/10mapped and81ATC stations."
+      ],
+      "remainingRequirements": [
+        "Create historical-snapshot data access route; current live detector endpoint cannot stand in for exact historical snapshot.",
+        "Freshly compute spatial association and compare descriptive ledger; not a traffic-calibration validation."
+      ],
+      "nextStep": "Register original snapshot checksum and reproducible association command, with descriptive-only claim boundary."
+    },
+    {
+      "id": "HK-URBANNAV-ASSOCIATION",
+      "title": "UrbanNav single research-vehicle trace projection and turn validity",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact source trace hash9d48bb497878aafbd17290789560394c72ecafec20c9e0eaff448418695d92bf matches acquisition manifest. Code implements Viterbi on turn-aware link-state graph; saved787/787 points, median6.184m,p9513.121m,0invalid directed transitions."
+      ],
+      "remainingRequirements": [
+        "Provide exact upstream file acquisition and confirm its applicable license before copying source/per-point data into a public package.",
+        "Package source with user-supplied input support and rerun R1projection→R2Viterbi; no population-representativeness claim."
+      ],
+      "nextStep": "The code and local data are recoverable now; publish a data-acquisition recipe with checksum and source-only CLI before any raw/per-point redistribution."
+    },
+    {
+      "id": "HK-H1-FW",
+      "title": "H1 · exact H1 FW anchor",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact H1signature b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083;26OD/3,446solver links/1,239physical links. FW uses exact H1 instance; 0iterations because initial all-or-nothing flow already meets1e-5 full-graph gap; objective146.1326345614876. r04 saved-state independent replay passed for finite/rank26/rank52 with optimizer_calls=0; not a fresh optimization."
+      ],
+      "remainingRequirements": [
+        "Register a command using executed SOURCE_SNAPSHOT and preserve corrected operator-label metadata separately.",
+        "Run in declared pinned environment (FW/native recorded Python3.9.25; native needs IPOPT/MUMPS), compare exact H1 gates rather than interpreting low-congestion agreement as scale/rank-stress evidence."
+      ],
+      "nextStep": "Prepare H1 commands for FW,finite,rank26,rank52 from public accepted graph/OD or pinned H1prepared input; run independent evaluator and attach receipts."
+    },
+    {
+      "id": "HK-H1-FINITE",
+      "title": "H1 · finite-path SLSQP",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact H1signature b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083;26OD/3,446solver links/1,239physical links. SLSQP K=5,126paths for26OD; oneiteration; exact finite objective146.1326345614876 and zero ODresidual. r04 saved-state independent replay passed for finite/rank26/rank52 with optimizer_calls=0; not a fresh optimization."
+      ],
+      "remainingRequirements": [
+        "Register a command using executed SOURCE_SNAPSHOT and preserve corrected operator-label metadata separately.",
+        "Run in declared pinned environment (FW/native recorded Python3.9.25; native needs IPOPT/MUMPS), compare exact H1 gates rather than interpreting low-congestion agreement as scale/rank-stress evidence."
+      ],
+      "nextStep": "Prepare H1 commands for FW,finite,rank26,rank52 from public accepted graph/OD or pinned H1prepared input; run independent evaluator and attach receipts."
+    },
+    {
+      "id": "HK-H1-L3-R26",
+      "title": "H1 · Native L3 rank 26",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact H1signature b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083;26OD/3,446solver links/1,239physical links. NativeL3 rank26,threeouters; objective146.13263456485635 and maxODresidual2.7106095146223197e-13. r04 saved-state independent replay passed for finite/rank26/rank52 with optimizer_calls=0; not a fresh optimization."
+      ],
+      "remainingRequirements": [
+        "Register a command using executed SOURCE_SNAPSHOT and preserve corrected operator-label metadata separately.",
+        "Run in declared pinned environment (FW/native recorded Python3.9.25; native needs IPOPT/MUMPS), compare exact H1 gates rather than interpreting low-congestion agreement as scale/rank-stress evidence."
+      ],
+      "nextStep": "Prepare H1 commands for FW,finite,rank26,rank52 from public accepted graph/OD or pinned H1prepared input; run independent evaluator and attach receipts."
+    },
+    {
+      "id": "HK-H1-L3-R52",
+      "title": "H1 · Native L3 rank 52",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "Exact H1signature b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083;26OD/3,446solver links/1,239physical links. NativeL3 rank52,threeouters; objective146.13263456485632 and maxODresidual2.7111646261346323e-13. r04 saved-state independent replay passed for finite/rank26/rank52 with optimizer_calls=0; not a fresh optimization."
+      ],
+      "remainingRequirements": [
+        "Register a command using executed SOURCE_SNAPSHOT and preserve corrected operator-label metadata separately.",
+        "Run in declared pinned environment (FW/native recorded Python3.9.25; native needs IPOPT/MUMPS), compare exact H1 gates rather than interpreting low-congestion agreement as scale/rank-stress evidence."
+      ],
+      "nextStep": "Prepare H1 commands for FW,finite,rank26,rank52 from public accepted graph/OD or pinned H1prepared input; run independent evaluator and attach receipts."
+    },
+    {
+      "id": "HK-PATH-L3-H0",
+      "title": "Static path/L3 H0 scope record",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "H0 interface smoke has10OD/50legal paths; recorded PASS_INTERFACE_ONLY, no optimizer was run."
+      ],
+      "remainingRequirements": [],
+      "nextStep": "Expose existing preparation/preflight command separately if useful, but do not count it as a successful optimization recipe."
+    },
+    {
+      "id": "HK-PATH-L3-H2",
+      "title": "Static path/L3 H2 scope record",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "H2 has100OD/492paths only; recorded PREFLIGHT_ONLY_NO_SOLVE; CORRECTION_VALIDATION reports H2_solve_artifacts=[]."
+      ],
+      "remainingRequirements": [],
+      "nextStep": "Expose existing preparation/preflight command separately if useful, but do not count it as a successful optimization recipe."
+    },
+    {
+      "id": "HK-PATH-L3-FULL",
+      "title": "Static path/L3 FULL scope record",
+      "group": "scope",
+      "label": "Not run / no historical experiment",
+      "findings": [
+        "Readiness explicitly says no full8,930-OD finite-path/L3 solve was attempted. No missing accepted full-city result exists to recover."
+      ],
+      "remainingRequirements": [],
+      "nextStep": "Keep as not-run scope boundary; a full-city solve would be a new experiment, not reproduction of an existing result."
+    },
+    {
+      "id": "HK10-TIME-GRAPH",
+      "title": "HK10 finite time-expanded graph and demand construction",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "select_spacetime_case.py explicitly uses accepted full AlgorithmB flows/pathflows to select corridor; build_spacetime.py reads selected graph/OD and case selection. Frozen result10OD/24,910arcs/30-second50-step; matches R5 frozen case hashes."
+      ],
+      "remainingRequirements": [
+        "Distinguish full corridor selection from graph compilation of preselected data.",
+        "Package actual AlgorithmB upstream result dependency or regenerate it; wire portable outputs and fresh graph hash comparison."
+      ],
+      "nextStep": "First offer exact selected-input→finite-graph constructor, then expose upstream static-result→corridor-selection chain."
+    },
+    {
+      "id": "HK10-CG-R2R4-HISTORICAL",
+      "title": "Historical HK10 CG R2–R4: Phase I blocked",
+      "group": "failed",
+      "label": "Historical acceptance failure",
+      "findings": [
+        "Original frozen CGsource ccdf385bfd93448fd92b60900dd9f07596de4d01a4e49be6fbc44f38259825ae present. Checkpoint:50,000state limit for9OD; PhaseI artificial4.350218719795723,PhaseII notentered."
+      ],
+      "remainingRequirements": [
+        "If a reproducible failure recipe is desired, retain original frozen source and acceptance failure status; do not substitute later accepted R5solver."
+      ],
+      "nextStep": "Register separately as historical expected-failure experiment after replaying its exact branch, not as an accepted R5result."
+    },
+    {
+      "id": "HK10-CG-R5",
+      "title": "HK10 R5 two-phase column generation",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "All6case hashes match freeze, including K1seed663f62669debfac29eb130194e4a4f5e9f2b0576c8c41aaeb3b053bec61a2481. Saved R5PASS:12PhaseI additions,3PhaseII additions,25finalcolumns,objective75.03632985794832; independent closure later recomputes75.03632985794835."
+      ],
+      "remainingRequirements": [
+        "Create portable manifest/CLI and freeze complete imported source dependencies.",
+        "Generate K1seed from input costs with recovered prepare_cg_seed.py; fresh CGsolve and then independent fullDAGclosure, comparing same-graph objective/feasibility."
+      ],
+      "nextStep": "Prioritize code-only integration plus seed generator using published fixed graph; fresh rerun creates output pool/duals without importing historical receiver state."
+    },
+    {
+      "id": "HK10-CG-R5-CLOSURE",
+      "title": "HK10 R5 independent full pricing closure",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "r04 independent saved-state replay success=true,optimizer_calls=0,10demands/25columns,objective75.03632985794835,zero demand and capacity errors; true independent pricing code present. This is validation, not a separate optimization algorithm."
+      ],
+      "remainingRequirements": [
+        "Wire independent closure against newly generated CGpool/duals and expose separate verify command."
+      ],
+      "nextStep": "Add closure as mandatory verify phase of R5 fresh-run recipe, preserving all pricing and signature checks."
+    },
+    {
+      "id": "HK10-ADMM-R2-GATED",
+      "title": "Historical HK10 ADMM R2_S failure boundary",
+      "group": "failed",
+      "label": "Historical acceptance failure",
+      "findings": [
+        "Historical firstQP fails conservation at outer0 with0.0824676217948368; previous fresh audit reobserved fail with0.09470163124516517,not equal numerical residual. Solver exit2 is NOT_CONVERGED, audit wrapper exit0 only means expected-failure verification."
+      ],
+      "remainingRequirements": [
+        "No missing source blocks execution. If public command added, encode expected failure and numerical residual mismatch explicitly, with original frozen R2solver/environment."
+      ],
+      "nextStep": "Offer a separately labelled expected-failure diagnostic command; do not count it as reproducing a successful ADMMresult or replace by HK4R3."
+    },
+    {
+      "id": "HK4-ADMM-R3",
+      "title": "Independent HK4 ADMM R3 accepted bounded transfer",
+      "group": "located",
+      "label": "Materials located; integration pending",
+      "findings": [
+        "All6R3source hashes+3fresh graph hashes match frozen policy/identity; model00a15f86758a507d44945bc14323ac0b7cbc061962ee5e4ab5a9555565de6997,4OD/24,598arcs. Saved independent replay success=true and objective32.98357085525667,165outers; numerical data and source located."
+      ],
+      "remainingRequirements": [
+        "Package correct R3 local-QPadapter and frozen policy; public R2solver alone cannot reproduce R3.",
+        "Generate fourODholdout from pinned accepted source graph/selection policy; fresh LP+ADMM and independent original-unit check."
+      ],
+      "nextStep": "Prioritize independent HK4R3 command with generated inputs/fresh outputs and exact R3source pins; retain separate graph identity from HK10failure."
+    }
+  ]
+}

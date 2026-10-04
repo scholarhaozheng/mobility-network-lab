@@ -1,4 +1,4 @@
-# Reproduction checkout · 20261004-r12
+# Reproduction checkout · 20261004-r14
 
 This is a computational checkout of Mobility Computation Lab. It contains the pinned public baseline plus reviewed code, frozen inputs and numerical receipts. It is included in the public repository release. It does not include a Python environment or compiled solver binaries.
 
@@ -32,8 +32,25 @@ The exact Sioux converted input snapshot is published as a frozen derived benchm
 
 On macOS/Linux use python3.12 -m venv .venv and .venv/bin/python. Those command forms are provided, but validation was on Windows; native L3 is Windows-specific.
 
-For the full website/project, clone https://github.com/scholarhaozheng/mobility-network-lab.git and record git rev-parse HEAD. This compact checkout intentionally omits most website assets. experiments/publication.json provides public source/data URLs plus immutable file hashes; the `reproduction-2026-10-04-r12` release tag fixes the repository snapshot.
+For the full website/project, clone https://github.com/scholarhaozheng/mobility-network-lab.git and record git rev-parse HEAD. This compact checkout intentionally omits most website assets. experiments/publication.json provides public source/data URLs plus immutable file hashes; the `reproduction-2026-10-04-r14` release tag fixes the repository snapshot.
 
 The 46 enabled records comprise 37 fresh-computation records and 9 prepared-input replays with limited scope. The two Boston semantic S1/S2 recipes rerun assignment only. Seven public synthetic controls use Python 3.11 and `requirements-reproduction-public-controls.txt` in `.venv-public-controls`; see experiments/README.md for exact commands. Do not use the standard Python 3.12 environment for those pinned controls.
 
 Execution evidence for this delivery is summarized in `docs/reproduction/execution-evidence-summary.json`: 18 distinct commands were run in four scoped batches, followed by independent verification. Existing environments were used. The final combined archive checks all 41 receipt identities and all 200 pinned files; it does not rerun every solver. Detailed portable run/verification receipts are in `experiments/verification/`. Batch reports may name local audit logs outside this compact package.
+
+## Recovered city workflows
+
+The additional recovered entries use a separate interface so that historical inspection does not change the meaning of the 41 previously verified recipes:
+
+```text
+python -B tools/mcl_recovered.py list
+python -B tools/mcl_recovered.py describe RECORD_ID
+python -B tools/mcl_recovered.py check RECORD_ID
+python -B tools/mcl_recovered.py inspect RECORD_ID --output ../results/RECORD_ID-inspect
+python -B tools/mcl_recovered.py run RECORD_ID --output ../results/RECORD_ID-run
+python -B tools/mcl_recovered.py verify RECORD_ID --run ../results/RECORD_ID-run
+```
+
+Use only the actions shown by `describe`, with its specified Python environment. `inspect` rechecks retained historical evidence. `run` performs the documented computation. Some preparation workflows require separately acquired source snapshots via `--input-root`; their exact provider URLs and hashes are listed in the recipe. A current upstream download may differ from the historical snapshot. A prepared-input replay does not certify the full acquisition pipeline.
+
+See the [Boston](docs/reproduction/recovered-boston.md), [Sioux Falls](docs/reproduction/recovered-sioux.md), [Hong Kong](docs/reproduction/recovered-hong-kong.md) and [city-query](docs/reproduction/recovered-shared.md) instructions. The online portal shows the executed checks and outstanding limitations for each record.

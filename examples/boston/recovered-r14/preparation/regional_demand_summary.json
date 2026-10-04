@@ -1,0 +1,30 @@
+{
+  "run_id": "behavior_feedback_r1",
+  "acs_release": "ACS 2024 5-year (2020-2024)",
+  "acs_intersecting_block_groups": 174,
+  "h3_fine_zones": 177,
+  "h3_zones_with_acs_coverage": 177,
+  "population_area_weighted_in_core": 171049.52015979076,
+  "households_area_weighted_in_core": 79537.49255074753,
+  "daily_person_trip_total_all_purposes": 816054.6735706696,
+  "purpose_daily_totals": {
+    "HBPB": 189299.23227077912,
+    "HBSC": 46927.12060494104,
+    "HBSR": 174187.10868613707,
+    "HBW": 151121.23584642028,
+    "NHBNW": 213955.85496151083,
+    "NHBW": 40564.121200881236
+  },
+  "impedance_pair_count": 31329,
+  "impedance_fallback_pair_count": 6254,
+  "impedance_fallback_method": "great_circle_distance_times_1.25_detour_at_25_mph; distribution-only proxy",
+  "source_hashes": {
+    "raw\\demographics\\acs2024_5yr_bg\\middlesex_017.json": "8719cedd9e37c0a2dd1ab23500aa0d28077719cd0302b1aef320887d60c14339",
+    "raw\\demographics\\acs2024_5yr_bg\\middlesex_017_tiger2024.geojson": "51397952e1fd5737cae292c2de722a05a185cf1c28d88dc1053ad1c3f3358635",
+    "raw\\demographics\\acs2024_5yr_bg\\norfolk_021.json": "2e1c8b9bf10c6b45baf4ae9772c578b3e25282e8a35a2ae72da15e592fba785e",
+    "raw\\demographics\\acs2024_5yr_bg\\norfolk_021_tiger2024.geojson": "201efb9b264bd4602ed8089e9aa469426a3eed7af58f40b083ad2df5fb61f40c",
+    "raw\\demographics\\acs2024_5yr_bg\\suffolk_025.json": "711a34c403c74943dcc3784c098085339230680233d731b7cd4783c93237fa24",
+    "raw\\demographics\\acs2024_5yr_bg\\suffolk_025_tiger2024.geojson": "c25bbd2167163cf2ccaf15470edc9ccc2684da86404cb2abff1e38359faa4d1c"
+  },
+  "interpretation": "ACS estimates are area-weighted to H3; TDM23 effective rates are transferred; attractions and OD distribution remain documented proxies."
+}

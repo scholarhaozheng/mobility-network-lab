@@ -1,0 +1,11 @@
+{
+  "run_id": "boston_activity_prior_r1_20260922",
+  "scenario_id": "activity_informed_massgis_assessment_50k_v1",
+  "created_at_utc": "2026-09-22T08:47:36.689625+00:00",
+  "old_scenario_preserved_at": "database/demand",
+  "new_scenario_directory": "database\\demand\\scenarios\\boston_activity_prior_r1_20260922",
+  "actual_activity_source": "massgis_property_tax_parcels_feature_service_20260917",
+  "spatial_allocation": "Exact parcel-polygon intersection with existing clipped r9 H3 zones in EPSG:32619; outside weight retained; r7 sums derived only from r9.",
+  "assumption_status": "50,000 daily trips, beta, mode shares, AM share, and occupancy remain explicit uncalibrated assumptions.",
+  "execution_scope": "Demand prior and assignment-ready input only; traffic assignment not run; GPS not touched."
+}

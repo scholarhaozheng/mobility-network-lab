@@ -1,0 +1,37 @@
+{
+  "run_id": "boston_activity_prior_r1_20260922",
+  "scenario_id": "activity_informed_massgis_assessment_50k_v1",
+  "built_at_utc": "2026-09-22T08:47:34.557208+00:00",
+  "actual_activity_source": "massgis_property_tax_parcels_feature_service_20260917",
+  "production_prior": "official MassGIS RES_AREA for assessment records classified residential",
+  "attraction_prior": "official MassGIS BLD_AREA for records classified commercial, industrial, institutional, or mixed",
+  "not_network_proxy_fields": [
+    "production_prior_raw_official_res_area_sqft",
+    "attraction_prior_raw_official_nonres_bld_area_sqft"
+  ],
+  "preserved_assumptions": {
+    "daily_person_trip_total": 50000,
+    "beta_per_minute": 0.08,
+    "mode_shares": {
+      "drive": 0.55,
+      "transit": 0.25,
+      "walk": 0.15,
+      "bike": 0.05
+    },
+    "am_peak_share_of_daily": 0.12,
+    "drive_persons_per_vehicle": 1.2
+  },
+  "daily_productions": 49999.999999999985,
+  "daily_attractions": 50000,
+  "distributed_person_trips": 50000,
+  "gravity_balance_iterations": 3,
+  "gravity_relative_max_margin_error": 7.166320340729728e-8,
+  "am_peak_all_mode_person_trips": 5999.999999999981,
+  "am_peak_drive_person_trips": 3299.9999999999895,
+  "am_peak_drive_vehicle_trips": 2749.9999999999914,
+  "assignment_input_vehicle_trips": 2723.9436152142944,
+  "unassigned_same_access_or_intrazonal_vehicle_trips": 26.056384785697198,
+  "assignment_run": false,
+  "gps_gamma_fit": false,
+  "interpretation": "Activity-informed prior and isolated scenario comparison; not calibrated or validated travel demand."
+}

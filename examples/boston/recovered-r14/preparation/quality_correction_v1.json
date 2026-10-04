@@ -1,0 +1,44 @@
+{
+  "schema_version": "mcl_boston_quality_correction_1.0",
+  "run_id": "boston_quality_r1_20260922",
+  "selected": true,
+  "gps_quality": {
+    "spatial_lateral_error_limit_m": 200,
+    "backtrack_tolerance_m": 20,
+    "backtrack_reporting_floor_m": 1,
+    "max_along_route_speed_mps": 55,
+    "max_sample_gap_seconds": 300,
+    "detour_ratio_limit": 5,
+    "detour_excess_distance_m": 1000,
+    "minimum_observation_duration_seconds": 30,
+    "minimum_window_progress_m": 30,
+    "spatial_rule_note": "The 200 m threshold preserves the original declared first-pass gate. Passing it is necessary but not sufficient.",
+    "backtrack_rule_note": "20 m is the existing HMM observation-noise sigma used as an engineering tolerance, not an MBTA accuracy guarantee. Sensitivity counts at 1, 5, 20 and 50 m are reported.",
+    "speed_rule_note": "55 m/s preserves the pre-match segmentation ceiling; along-route speed is now checked separately and cannot be hidden by small lateral error.",
+    "accuracy_limit": "MBTA V3 vehicle positions expose no per-point horizontal-accuracy field in these saved responses. No source-certified positional accuracy is claimed."
+  },
+  "observation_window": {
+    "baseline_method": "first link remaining fraction plus complete intermediate occurrences plus final link traversed fraction",
+    "same_occurrence_method": "signed difference between final and first fractions on the same directed occurrence; negative progress is ineligible",
+    "link_time_allocation": "proportional to WKT along-link fraction; a model assumption, not per-link observation",
+    "calibration_split_policy": "reuse the previously published observation-to-split mapping; do not reassign holdout groups",
+    "calibration_status_policy": "corrected-data development diagnostic only because the old holdout has already been inspected"
+  },
+  "capacity_adapter": {
+    "source_capacity_unit": "passenger_car_equivalents_per_hour_per_lane",
+    "source_capacity_basis": "GMNS link.schema.json capacity definition; source snapshot supplies no local config override",
+    "lane_basis": "multiply source per-lane capacity by lanes exactly once",
+    "demand_period_hours": 2,
+    "capacity_period_hours": 2,
+    "peak_load_factor_field": "vdf_plf",
+    "peak_load_factor_status": "source value retained as an engineering period factor; all physical links equal 1.0; not independently calibrated",
+    "effective_capacity_formula": "capacity_source_pce_per_hour_per_lane * lanes * capacity_period_hours * vdf_plf",
+    "vehicle_pce_assumption": 1,
+    "stress_divisor": 1.2
+  },
+  "zone_access_review": {
+    "review_threshold_m": 500,
+    "high_priority_threshold_m": 1000,
+    "physical_access_claim": "not_verified_without_pedestrian_network_and_barrier_or_land_water_layer"
+  }
+}

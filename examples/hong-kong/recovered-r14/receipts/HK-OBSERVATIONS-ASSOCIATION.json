@@ -1,0 +1,37 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-OBSERVATIONS-ASSOCIATION",
+  "checkedDate": "2026-10-04",
+  "action": "run_and_verify",
+  "freshComputation": true,
+  "freshSolverRun": false,
+  "scope": "Rebuild descriptive ATC association using the exact station snapshot and original PDF text extraction, plus published prepared detector observations. This command does not rebuild detector CSVfromrawXML or calibrate traffic.",
+  "verification": {
+    "record": "HK-OBSERVATIONS-ASSOCIATION",
+    "success": true,
+    "checks": {
+      "table_00_matches": true,
+      "table_01_matches": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "hong_kong_full_stack_r2_r4/phase_b/ATC_PILOT_STATION_CONTEXT.csv": {
+        "pass": true,
+        "rows": 81,
+        "max_scaled_absolute_difference": 0
+      },
+      "hong_kong_full_stack_r2_r4/phase_b/DETECTOR_SNAPSHOT_RELATIONSHIP.csv": {
+        "pass": true,
+        "rows": 50,
+        "max_scaled_absolute_difference": 0
+      }
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "fresh_computation_independently_checked",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.07395220000762492,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "A new output directory was populated by the recorded computation and then independently verified. Original external raw inputs, where required, were supplied locally and are not included in this repository."
+}

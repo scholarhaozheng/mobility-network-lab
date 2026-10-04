@@ -1,0 +1,29 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK10-ADMM-R2-GATED",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "The public code and inputs are executable, and a fresh calculation and independent replay were performed. The first local-QP conservation gate failed, with outer=0. The saved residual is 0.0824676217948368; the fresh residual is 0.09470163124516517, a difference of 0.012234009450328376. The scientific failure boundary agrees, but the numerical values differ. Exit 2 is the original solver status NOT_CONVERGED. Exit 0 from the audit replay wrapper confirms the expected FAIL; it does not mean the gate passed.",
+  "verification": {
+    "record": "HK10-ADMM-R2-GATED",
+    "success": true,
+    "checks": {
+      "saved_evidence_files_present": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "saved_evidence_files": 2,
+      "numerical_recalculation": false,
+      "expected_scientific_outcome": "FAILURE_RETAINED"
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "saved_output_integrity_only",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.005570800043642521,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

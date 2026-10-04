@@ -1,0 +1,30 @@
+{
+  "status": "SOLVER_CONVERGED",
+  "failure": null,
+  "rho_initial": 0.01,
+  "rho_final": 0.01,
+  "attempted_iterations": 1,
+  "completed_iterations": 1,
+  "optimizer_calls": 100,
+  "wall_seconds": 2.7082121999701485,
+  "last": {
+    "iteration": 1,
+    "rho": 0.01,
+    "objective": 489499.99999966245,
+    "primal_residual": 6.131942385187061e-08,
+    "dual_residual": 2.387574750985824e-09,
+    "primal_threshold": 1.0612054014635153,
+    "dual_threshold": 0.007640026178026942,
+    "capacity_residual": 3.890954758389853e-08,
+    "balance_residual": 9.511689214036778e-08,
+    "local_lbfgs_iterations": 9515,
+    "local_newton_iterations": 86,
+    "max_local_correction_l2": 1.3114472313318193e-05,
+    "wall_seconds": 2.708202599955257
+  },
+  "method": "full_arc_consensus_admm_r2",
+  "variant": "R2_S",
+  "case": "Sioux_100OD",
+  "arc_count": 5837,
+  "commodity_count": 100
+}

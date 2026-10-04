@@ -1,0 +1,27 @@
+{
+  "city": "SiouxFalls",
+  "config": "A_REG001",
+  "gamma": 0.01,
+  "level": 3,
+  "link_lower_bound": 0,
+  "initial_rho": 10.0,
+  "initial_lambda": "all zeros",
+  "max_outer": 8,
+  "ipopt_options": {
+    "tol": 1e-08,
+    "constr_viol_tol": 1e-09,
+    "dual_inf_tol": 1e-06,
+    "compl_inf_tol": 1e-08,
+    "acceptable_iter": 0,
+    "bound_relax_factor": 0,
+    "honor_original_bounds": "no",
+    "max_iter": 500,
+    "mu_strategy": "adaptive",
+    "linear_solver": "mumps",
+    "print_level": 5
+  },
+  "source_reference_initialization_each_outer": true,
+  "original_space_od_tolerance": "1e-6 + 1e-8*max(1,abs(q)) per OD",
+  "path_and_bounds_abs_tolerance": 1e-08,
+  "link_abs_tolerance": "1e-6 + 1e-8*max(1,abs(reconstructed_link_flow))"
+}

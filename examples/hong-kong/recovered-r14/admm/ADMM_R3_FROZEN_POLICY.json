@@ -1,0 +1,174 @@
+{
+  "task_id": "CROSS_CITY_SPACE_TIME_ADMM_R3_HONG_KONG_TRANSFER",
+  "freeze_stage": "AFTER_ALL_R2_REGRESSIONS_BEFORE_FRESH_HK_LP_AND_ADMM",
+  "selected_variant": "R3_GENERIC_DUAL_RESTART",
+  "selection_reason": "first preregistered variant passes analytic, C0, C1 and every Sioux 30-250 mandatory gate",
+  "plan_sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
+  "source_sha256": {
+    "admm_solver.py": "5c7fd066ccdb8b660f345e00b412cdb520b6e940287746d8bfb21b1b189d047f",
+    "local_subproblem_adapter.py": "8b356835e3374d3fdb099113484bd60bcd407186f9ed98ee87460ea38a0ed941",
+    "space_time_capacity_problem_contract.py": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+    "independent_admm_evaluator.py": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+    "external_sioux_static_to_dynamic.py": "21029b585239d32814c7e78dbd592213b4326cc5255539fdd2ad506c473a3bbb",
+    "external_sioux_ingest.py": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1"
+  },
+  "splitting": {
+    "local_variables": "x[k,a]>=0 on allowed commodity arcs; B*x[k]=b[k] in vehicles",
+    "consensus_variables": "z[k,a]>=0 on allowed arcs; sum_k z[k,a]<=capacity[a]",
+    "equality": "x=z",
+    "scaled_dual": "w[k,a]=unscaled_multiplier[k,a]/rho",
+    "augmented_lagrangian": "sum_k c^T x[k]+rho/2*||x-z+w||_2^2-rho/2*||w||_2^2, with local conservation and consensus capacity indicators",
+    "local_subproblem": "min c^T x[k]+rho/2*||x[k]-(z[k]-w[k])||_2^2, x>=0, Bx=b, forbidden x=0",
+    "projection": "z=EuclideanProjection_{z>=0,sum_k z<=u,forbidden=0}(x+w), independently for each arc",
+    "dual_update": "w=w+x-z; on rho change w=(old_rho/new_rho)*w",
+    "primal_residual": "||x-z||_2 in vehicles",
+    "dual_residual": "rho*||z-z_previous||_2 in cost per vehicle",
+    "stopping": "R1 absolute/relative primal and dual thresholds plus original-unit local conservation, capacity, projection, nonnegative, KKT and objective gates"
+  },
+  "scaling": {
+    "row": "for commodity demand d>0, divide each incidence equality and its right-hand side by d: B*(x/d)=b/d; right-hand side source +1, sink -1",
+    "variable": "y=x/d and qbar=(z-w)/d; solve 0.5*||y||^2 + (c/(rho*d))^T y over By=b/d,y>=0",
+    "potential": "h=p/(rho*d); dual objective 0.5*||y||^2+(b/d)^T h up to a constant; y=max(0,qbar-c/(rho*d)-B^T h)",
+    "inverse": "x=d*y; p=rho*d*h; all public residuals, objective and gates recomputed from x,z,w in original units",
+    "rho_initial": "clip(median strictly positive finite arc cost / median commodity volume, 0.0001, 1.0); deterministic from input only"
+  },
+  "rho_rule": "fixed rho_initial",
+  "local_solver": {
+    "algorithm": "L-BFGS-B on scaled dual, then damped active-set semismooth Newton and nonnegative active-support least-squares correction if needed",
+    "lbfgs_max_iterations": 1200,
+    "lbfgs_gradient_tolerance_scaled": 1e-10,
+    "lbfgs_function_tolerance": 0,
+    "max_line_search_steps": 50,
+    "newton_max_iterations": 100,
+    "local_original_balance_target": 1e-7,
+    "warm_start": "input-cost shortest-path node potentials initially; carry physical-unit potentials between iterations and convert using current rho*d; no reference data",
+    "failure_rule": "stop the case if original-unit conservation exceeds 1e-5; independent KKT gate on final state",
+    "dual_restart_limit": 2
+  },
+  "gates": {
+    "absolute_residual": 0.00001,
+    "relative_residual": 0.0001,
+    "max_balance_residual": 0.00001,
+    "max_capacity_residual": 0.00001,
+    "max_kkt_residual": 0.001,
+    "max_projection_residual": 1e-7,
+    "max_dual_update_residual": 1e-7,
+    "objective_recompute_relative": 1e-7,
+    "c1_objective_absolute_gap_to_lp": 0.001,
+    "sioux_reference_relative_gap_max": 0.0001,
+    "sioux_regression_objective_ceiling": "accepted R1 objective + 1e-5*abs(same-graph LP objective)",
+    "boston_reference_relative_gap_max": 0.001,
+    "physical_link_back_projection_max": 0.000001
+  },
+  "limits": {
+    "max_outer_iterations": 300,
+    "wall_seconds_per_case": 1800,
+    "max_total_heavy_seconds": 28800,
+    "max_new_data_gib": 15,
+    "max_heavy_processes": 1
+  },
+  "accepted_development_runs": {
+    "analytic": {
+      "result_sha256": "579657d189dcf3f0072ff164b65f57a25a7c78bcbc2da1b92370f4f67ffb4196",
+      "state_sha256": "828ea26fb57b264ba1bff9b15fc4519d0006f245776d7ecbba0ff7c5b0c0d940",
+      "evaluation_sha256": "25c97506778592f48a645da8095f8d13b69268531a41b9304df65244bb6ea687",
+      "iterations": 1,
+      "objective": 2,
+      "max_balance": 0,
+      "primal": 0,
+      "dual": 0
+    },
+    "C0": {
+      "result_sha256": "49875e105f2505659b68481c13ce60eb5ba2c3e727918f2e969126bcc4e2f81a",
+      "state_sha256": "b5b0ff085958ea689fc88b87826583b9dbaf2c8595016a6906aa06c83b1b6f3d",
+      "evaluation_sha256": "67c1d4eb705fe560e9b3be78b5a74575b28fbea5fbac728579c32e227968b81b",
+      "iterations": 1,
+      "objective": 4,
+      "max_balance": 0,
+      "primal": 0,
+      "dual": 0
+    },
+    "C1": {
+      "result_sha256": "08efaf20258402d1c88d8fa2b7687b48d4382a89dc5688bca540a24df8fc143a",
+      "state_sha256": "574c987c00878f0743e02173ff26c2008f87a73792c33d0440baf05a61ae7c8e",
+      "evaluation_sha256": "88575a96bb02cfe0ff75997373f6877c25bee7476557f290638bd8952375cc54",
+      "iterations": 65,
+      "objective": 8.00000000249235,
+      "max_balance": 6.95058899324863e-10,
+      "primal": 1.967803978736126e-10,
+      "dual": 0.00016403901239796372
+    },
+    "Sioux_30OD": {
+      "result_sha256": "5865599b610f13edd1096ca35ad89361f93e8dc08db8504e4e0ce9c0b2ed34a2",
+      "state_sha256": "ea0ba70f98c77fa71143ffb7cf3260c29f2301ab01a180e400096e88ffcca298",
+      "evaluation_sha256": "93526fd37016307711d1c521c009ba22b547a73d89d72026608828c2b3a438df",
+      "iterations": 1,
+      "objective": 227900.00000003868,
+      "max_balance": 9.392050515089068e-8,
+      "primal": 6.449600573641763e-9,
+      "dual": 1.193626457482882e-9
+    },
+    "Sioux_60OD": {
+      "result_sha256": "e508fa2174a8ba2e0a276fa53252412bf57a41a768a9f7f9832e99477bb34425",
+      "state_sha256": "6abdadf66c6bac887d365d240b337db71fb3342e59b5257983c5d9e39322cb3a",
+      "evaluation_sha256": "dec5e3b03a095c454b2e1a9991b9bc59aaa8a9f3bfa00649cffda60edda0a7bf",
+      "iterations": 1,
+      "objective": 347999.99999981176,
+      "max_balance": 7.306664429052034e-8,
+      "primal": 7.120152634192799e-8,
+      "dual": 9.033074651441926e-10
+    },
+    "Sioux_100OD": {
+      "result_sha256": "a12b29918eb60df2724ecc54a8520da6870007ccc7c430febb416ba4ae93cd80",
+      "state_sha256": "885e145cad8962e0e3fdc446558803c6b198a30fdbcb21d83da2c42294e1bd11",
+      "evaluation_sha256": "cb0e073dbd6c208618ad13fdfb848f6e5d3f58c978ef67552b3a2cd324951884",
+      "iterations": 1,
+      "objective": 489499.99999966245,
+      "max_balance": 9.51168885876541e-8,
+      "primal": 6.131942385187061e-8,
+      "dual": 2.387574750985824e-9
+    },
+    "Sioux_150OD": {
+      "result_sha256": "dd57b5ff593c219e1b99249569365534d9df371965319c2eb75b1bb53147a18e",
+      "state_sha256": "6fab9c9710fc9318186376e6ddbbe7aa3c8f1a36a48e2817d22df0ac587b59a0",
+      "evaluation_sha256": "2bfc1056fc68cf2a40db181d0eacc4ea52ddf8a5cf8e950e5931ce27f73f443f",
+      "iterations": 1,
+      "objective": 626000.0000005926,
+      "max_balance": 8.522334837834933e-8,
+      "primal": 5.378627728779937e-8,
+      "dual": 3.300251166475396e-9
+    },
+    "Sioux_200OD": {
+      "result_sha256": "5001fef17bc65fa43bd3a18d22e39a8231a256dad1773dff53bc8b16376dac84",
+      "state_sha256": "cd50101f4b2aca7dec9a7471c68cef13da4eda84316b409763c22199b82310e4",
+      "evaluation_sha256": "48d7064d640b90ad10e230a29133fb9d5f59bc9b9040c62c1c62967d62b70379",
+      "iterations": 85,
+      "objective": 943161.5333074518,
+      "max_balance": 9.400810085935518e-8,
+      "primal": 1.5129868565498503,
+      "dual": 0.009274990057590261
+    },
+    "Sioux_250OD": {
+      "result_sha256": "0e2739f303ee4c486a2393cd3e16eb3807e571465bf637f9404a38eca8a68358",
+      "state_sha256": "f79bb096111a0c8788a141271c9bc2c27b8c28239ccaed26614c363d7046e6a8",
+      "evaluation_sha256": "f75b86f0db76bc09c3df4ead81ee0e01ef85dd261fd5892be2b3731ef8b3c1ad",
+      "iterations": 101,
+      "objective": 1521101.731718272,
+      "max_balance": 9.628729458199814e-8,
+      "primal": 1.6937575360097892,
+      "dual": 0.015131732845053546
+    }
+  },
+  "r1_handoff_sha256": "ca7d2c064da813be65588feccc75c41234868f75d77ca7bd9159e3c583d5452e",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.3",
+    "scipy": "1.18.1",
+    "executable": "historical-location-omitted"
+  },
+  "policy_lock": "No numerical, algorithmic, cohort, graph, demand, cost, capacity, or stopping changes after this file and before the one fresh transfer.",
+  "source_manifest_sha256": "5c2665319685d039e200e0b9c3b3c75fd497d4e959c6742688dc170b857e4bb5",
+  "selection_policy_sha256": "583ef580b483b296d4c81893c79740360b936528a6e13754b343dcb65b5fb873",
+  "experiment_plan_sha256": "3d9e33c6cfc106f8f449458f88b8f24a02b873813f4f1d97e25e48ae0d45a698",
+  "inherited_r2_policy_sha256": "feef61475c88b7da7570e40d2a3a43f96803a08d059f656f764ea401f379928f"
+}

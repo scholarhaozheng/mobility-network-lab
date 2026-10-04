@@ -1,0 +1,54 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-H1-L3-R52",
+  "checkedDate": "2026-10-04",
+  "action": "inspect",
+  "freshComputation": false,
+  "freshSolverRun": false,
+  "scope": "Native Diagnostic L3 rank52 on H1 26OD/126paths, frozen basis and numerical policy; saved independent validation does not imply a fresh IPOPTsolve.",
+  "verification": {
+    "record": "HK-H1-L3-R52",
+    "success": true,
+    "checks": {
+      "independent_original_unit_gates": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "method": "52",
+      "solver_success": true,
+      "instance_signature": "b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083",
+      "path_pool_sha256": "585a18a406044aa81641df43c08f490401e727b0b86c1c78a6ab5254390d241f",
+      "basis_sha256": "51829f57d291597dbbc5b19ccd13d0547204eb8193c1f04ab184eceb93362d8f",
+      "path_error_count": 0,
+      "min_path_flow": 2.4752291626103658e-11,
+      "max_abs_od_residual": 2.7111646261346323e-13,
+      "relative_od_l1": 7.574762988824735e-15,
+      "max_movement_link_reconstruction_error": 1.0658141036401503e-14,
+      "physical_link_count": 1239,
+      "max_physical_projection_residual": 3.552713678800501e-15,
+      "beckmann_objective_recomputed": 146.13263456485632,
+      "objective_minus_fw": 3.3687115319480654e-9,
+      "finite_pool_relative_gap": 2.3052617142162536e-11,
+      "full_graph_relative_gap": 2.3052228157085008e-11,
+      "positive_physical_links_1e_minus_6": 300,
+      "positive_physical_link_ids_sha256": "e13fa584d9e292318117807025fb11e018bfe61162c0737683b5415dab9f5c71",
+      "saved_result_replay": true,
+      "gates": {
+        "max_od_error_abs": 0.000001,
+        "max_od_error_rel": 1e-8,
+        "total_od_l1_rel": 1e-8,
+        "full_relative_gap_abs": 0.00001,
+        "negative_flow_abs": 1e-8,
+        "link_reconstruction_abs": 1e-7
+      }
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "independent_saved_result_validation",
+    "fresh_solver_run": false,
+    "wall_seconds": 0.3922799999709241,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "Existing numerical results were independently re-evaluated when an independent validator exists; other records received source and saved-output integrity checks. No fresh optimizer run is claimed."
+}

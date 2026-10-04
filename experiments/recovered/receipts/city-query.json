@@ -1,0 +1,44 @@
+{
+  "schema": "mcl_recovered_evidence_v1",
+  "id": "TOOL-CITY-EVIDENCE-QUERY",
+  "evidenceBasis": "fresh_query",
+  "date": "2026-10-04",
+  "command": [
+    "python",
+    "-B",
+    "tools/mcl_recovered.py",
+    "run",
+    "TOOL-CITY-EVIDENCE-QUERY",
+    "--output",
+    "../results/city-query"
+  ],
+  "exitCode": 0,
+  "seconds": 1.596747699950356,
+  "entrypointSHA256": "07628e033458952fcd4e41896d97a95b8bd8b46eacb2a850979a8108927e5bc8",
+  "environment": {
+    "python": "3.11.4",
+    "numpy": "1.24.3",
+    "pandas": "1.5.3"
+  },
+  "verification": {
+    "success": true,
+    "optimizer_calls": 0,
+    "checks": {
+      "query_identity": true,
+      "unique_match": true,
+      "exact_city_row": true,
+      "exact_relations": true,
+      "relation_counts": true,
+      "not_truncated": true
+    },
+    "metrics": {
+      "city_rows": 11422,
+      "relation_rows": 16705,
+      "matching_cities": 1,
+      "matching_relations": 2
+    },
+    "scope": "Queries existing public evidence tables. Does not reacquire GTFS or rebuild the global collection."
+  },
+  "commandNote": "Portable command equivalent to the final executed command; local installation/output paths are normalized. This run used the current front end.",
+  "frontEndSHA256": "04b6de7b46e44ab5fef4f772267f57a77288c4dd47a0078dd0ce2bda966424d3"
+}

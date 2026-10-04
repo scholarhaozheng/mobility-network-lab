@@ -1,0 +1,31 @@
+{
+  "success": true,
+  "record": "sioux-cg-250",
+  "evidence_basis": "saved_state_inspection",
+  "optimizer_calls": 0,
+  "verification_optimizer_calls": 0,
+  "checks": {
+    "saved_run_pass": true,
+    "complete_arc_ids": true,
+    "complete_demand_ids": true,
+    "nonnegative_arc_flow": true,
+    "capacity_feasible": true,
+    "demand_table_consistent": true,
+    "saved_objective_recomputed": true,
+    "historical_objective": true,
+    "phase_i_artificial_cleared": true
+  },
+  "metrics": {
+    "objective": 1521090.83662,
+    "historical_objective_absolute_error": 0,
+    "max_capacity_excess": 0,
+    "max_demand_residual": 0,
+    "od_count": 250,
+    "initial_columns": 250
+  },
+  "scope": "Historical bounded k-shortest CG. Aggregate arc-flow objective/capacity and demand tables are independently checked. No complete commodity-state or independent complete pricing-closure certificate is asserted.",
+  "source_input_hashes_verified": true,
+  "execution_adapter_sha256": "3ae41777b621853fa2108dc7de0fc4c32df940002a1f24bb5da2f63cd1552d28",
+  "verification_adapter_sha256": "f98a23fc6970fee71291d9c662c5b7825c3ae112f37199136220c802dc9fbc32",
+  "adapter_change_note": "After these computations, the optional --ipopt argument was added and the GATES.json path casing was corrected for case-sensitive systems. Numerical implementations and configuration were unchanged. Direct adapter verification passed after the option change; R1 verification was repeated after the casing correction."
+}

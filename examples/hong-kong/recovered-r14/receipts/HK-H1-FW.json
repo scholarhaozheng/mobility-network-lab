@@ -1,0 +1,57 @@
+{
+  "schema": "mcl_recovered_hk_evidence_v1",
+  "record": "HK-H1-FW",
+  "checkedDate": "2026-10-04",
+  "action": "run_and_verify",
+  "freshComputation": true,
+  "freshSolverRun": true,
+  "scope": "Fresh or saved independent check on exact H1 static26OD/3,446solverlink low-congestion engineering transfer. FW needs0iterations because its initial all-or-nothing state meets the gate.",
+  "verification": {
+    "record": "HK-H1-FW",
+    "success": true,
+    "checks": {
+      "independent_fw_verification": true,
+      "pinned_source_input_files": true
+    },
+    "metrics": {
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE",
+      "gates": {
+        "max_od_error_abs": 0.000001,
+        "max_od_error_rel": 1e-8,
+        "total_od_l1_rel": 1e-8,
+        "full_relative_gap_abs": 0.00001,
+        "negative_flow_abs": 1e-8,
+        "link_reconstruction_abs": 1e-7
+      },
+      "instance_signature": "b6fe630180edd82dcf124d139271709d240d1eadbaeb76a7be19c40cdba1c083",
+      "od_pairs": 26,
+      "physical_links": 3446,
+      "demand_pce": 52.17845064587021,
+      "path_count": 26,
+      "min_path_flow_raw": 0.3047872436168121,
+      "negative_path_mass_raw": 0,
+      "min_link_flow_raw": 0,
+      "negative_link_count_raw": 0,
+      "negative_link_mass_raw": 0,
+      "max_od_residual": 0,
+      "od_residual_sum": 0,
+      "od_residual_l1": 0,
+      "max_link_reconstruction_error": 0,
+      "objective_checked": 146.13263456148755,
+      "objective_reported": 146.13263456148755,
+      "signed_gap_numerator": -8.526512829121202e-14,
+      "gap_denominator": 146.13264658000648,
+      "full_network_relative_gap": -5.834776163075239e-16,
+      "positive_links_strict": 636,
+      "positive_links_display_1e_minus_6": 636,
+      "verify_seconds": 0.05676330003188923
+    },
+    "optimizer_calls": 0,
+    "evidence_basis": "fresh_computation_independently_checked",
+    "fresh_solver_run": true,
+    "wall_seconds": 0.11111609998624772,
+    "note": "optimizer_calls counts this verifier only; run commands, if any, are recorded separately in execution.json"
+  },
+  "inspectionAlsoPerformed": true,
+  "note": "A new output directory was populated by the recorded computation and then independently verified. Original external raw inputs, where required, were supplied locally and are not included in this repository."
+}

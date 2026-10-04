@@ -1,0 +1,62 @@
+{
+  "status": "FROZEN_INPUT_ONLY_BEFORE_ANY_FRESH_LP_OR_ADMM_SOLVE",
+  "demand_source_absolute_path": "historical-location-omitted",
+  "demand_source_sha256": "0d94194f1ef62dc1024c5728b9188d8326a6171d573975b72ded6f536b059389",
+  "old_dynamic_arc_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+  "old_diagnostic_exclusion": "exclude every physical OD/departure identity in old_hk10/dynamic_demand.csv",
+  "eligibility": "positive declared four-stage drive demand, endpoints present on accepted corridor, exact DAG reachability from departure step 0 to destination by step 50",
+  "ordering": [
+    "descending_declared_demand",
+    "origin_id_ascending",
+    "destination_id_ascending",
+    "departure_step_ascending"
+  ],
+  "selection_stages": [
+    {
+      "origin_cap": 2,
+      "destination_cap": 2,
+      "count": 3
+    },
+    {
+      "origin_cap": 2,
+      "destination_cap": 3,
+      "count": 4
+    },
+    {
+      "origin_cap": 3,
+      "destination_cap": 3,
+      "count": 4
+    }
+  ],
+  "final_rule": "After prescribed 2/2, 2/3, and 3/3 cap passes, choose the final pass even if fewer than ten; no cap waiver or invented departure demand. This corridor offers only two destination nodes and just one fresh record for destination 4100000038.",
+  "selected_count": 4,
+  "selected": [
+    {
+      "origin": "4000000080",
+      "destination": "4100000038",
+      "departure_step": 0,
+      "declared_demand": 8.092937415248693
+    },
+    {
+      "origin": "4000000059",
+      "destination": "4100000094",
+      "departure_step": 0,
+      "declared_demand": 0.9413647301665762
+    },
+    {
+      "origin": "4000000061",
+      "destination": "4100000094",
+      "departure_step": 0,
+      "declared_demand": 0.9137174919540563
+    },
+    {
+      "origin": "4000000057",
+      "destination": "4100000094",
+      "departure_step": 0,
+      "declared_demand": 0.8975997974717337
+    }
+  ],
+  "selected_canonical_sha256": "2fc42ffc8919a0157b870eb5893140400e6f299d439702a15f39d798354586da",
+  "selected_total_declared_pce": 10.84561943484106,
+  "not_empirical_od": "four-stage modeled demand; no GPS/OD calibration or empirical validation claim"
+}
