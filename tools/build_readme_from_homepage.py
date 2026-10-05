@@ -158,7 +158,8 @@ class Exporter:
         def item(element,number=None):
             title=element.find('strong').get_text(' ',strip=True)
             if number:title=number+' / '+title
-            return '<strong>'+link(element,title)+'</strong><br/>'+esc(element.find('small').get_text(' ',strip=True))
+            detail=element.find('small')
+            return '<strong>'+link(element,title)+'</strong>'+('<br/>'+esc(detail.get_text(' ',strip=True)) if detail else '')
         foundation=node.select_one('.scope-flow-foundation')
         out=['<table width="100%">',
              '<tr><th colspan="3" align="left">'+esc(node.select_one('.scope-flow-kicker').get_text(' ',strip=True))+'</th></tr>',
@@ -172,8 +173,6 @@ class Exporter:
         for a in node.select('.scope-flow-contracts > a'):
             contracts.append('<td width="50%" valign="top">'+esc(a.select_one('.scope-flow-mini').get_text(' ',strip=True))+'<br/>'+item(a)+'</td>')
         out.append('<tr><td colspan="3"><table width="100%"><tr>'+''.join(contracts)+'</tr></table></td></tr>')
-        depth=node.select_one('.scope-flow-depth-title')
-        out.append('<tr><td colspan="3"><strong>'+esc(depth.find('span').get_text(' ',strip=True))+'</strong><br/>'+esc(depth.find('small').get_text(' ',strip=True))+'</td></tr>')
         layers=node.select('.scope-flow-depth > a')
         rows=['<tr>'+''.join('<td width="50%" valign="top">'+item(a,a.find('b').get_text(strip=True))+'</td>' for a in layers[i:i+2])+'</tr>' for i in range(0,len(layers),2)]
         out.append('<tr><td colspan="3"><table width="100%">'+''.join(rows)+'</table></td></tr>')
@@ -234,7 +233,7 @@ def main():
             parts.append('This README shows the complete static atlas in the same city, stage and method groups as the website. The [website atlas]('+SITE+'#04-explore-the-three-cases) also offers city and stage views. Both Sioux Falls OD scales are expanded here.\n\n')
         if isinstance(child,Tag) and child.get('id')=='05-run-and-inspect':
             parts.append('[Computational quickstart](REPRODUCTION_QUICKSTART.md) · [Experiment registry](experiments/README.md) · [Download the computational checkout]('+SITE+'downloads/computational-checkout.zip)\n\n')
-            parts.append('Boston S1/S2 recipes rerun the assignment stage only. A saved-output check is not a new solver run, and prepared-input reruns do not certify a complete raw-source pipeline. The historical Sioux CG result does not gain an independent full-pricing-closure certificate from these documentation changes.\n\n')
+            parts.append('Boston S1/S2 recipes rerun the assignment stage only. Saved-output checks verify released files; prepared-input reruns cover their declared stages. Independent full-DAG pricing closure remains open for the historical Sioux CG result.\n\n')
             parts.append('Choose an exact instance in the [Experiment catalog]('+SITE+'reproduce.html), then follow its Download, Environment, Run and Verify steps. The page supplies the matching command and required environment. The [static catalog]('+SITE+'reproduction/experiment-catalog.html) remains available without JavaScript. Historical inspection and fresh computation have separate status labels and receipts.\n\n')
             parts.append('<details><summary>Advanced: command-line registry reference</summary>\n\nThe experiment page selects the matching command for you. To inspect the two preserved registries directly:\n\n~~~bash\npython -B tools/mcl_reproduce.py list\npython -B tools/mcl_recovered.py list\n~~~\n\n</details>\n\n')
     output=''.join(parts).replace('\r\n','\n')

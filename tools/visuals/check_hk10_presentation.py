@@ -9,6 +9,7 @@ from pathlib import Path
 import subprocess
 
 RECORD = "docs/assets/atlas/HK10_PRESENTATION_20261004.json"
+EDITORIAL = "docs/assets/atlas/HK10_EDITORIAL_20261005.json"
 HISTORICAL = "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json"
 SOURCE = "docs/assets/atlas/construction/r07-hong-kong-layered-construction.source.json"
 SVG = "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg"
@@ -55,6 +56,18 @@ def validate(root: Path) -> dict:
                 check(result.returncode == 0 and hashlib.sha256(result.stdout).hexdigest() == historical_hashes.get(relative), f"Historical page does not match the retained Git baseline: {relative}")
         current = record.get("current_presentation_paths_sha256", {})
         check(set(current) == MIGRATED_PAGES | READING_PAGES | {SOURCE, SVG}, "Current HK10 presentation file scope differs")
+        if (root / EDITORIAL).is_file():
+            editorial = json.loads((root / EDITORIAL).read_text(encoding="utf-8"))
+            check(editorial.get("schema") == "mcl_hk10_editorial_presentation_v1", "Unknown HK10 editorial revision schema")
+            check(editorial.get("base_record") == {"path": RECORD, "sha256": sha(root / RECORD)}, "HK10 editorial revision lost its approved presentation baseline")
+            check(editorial.get("authorization") == {"type": "current_maintainer_editorial_instruction", "date": "2026-10-05", "scope": "Homepage and README copyedit"}, "HK10 editorial instruction differs")
+            check(editorial.get("historical_approval_rewritten") is False, "HK10 editorial revision rewrites historical approval")
+            check(editorial.get("scientific_solver_rerun") is False and editorial.get("new_scientific_payload_disclosure") is False, "HK10 editorial revision expands scientific scope")
+            revised = editorial.get("current_presentation_paths_sha256", {})
+            check(set(revised) == set(current), "HK10 editorial revision changes presentation file scope")
+            check(all(revised.get(path) == current.get(path) for path in (SOURCE, SVG)), "HK10 editorial revision changes scientific figure identity")
+            check(set(editorial.get("changed_pages", [])) == {path for path in READING_PAGES | MIGRATED_PAGES if revised.get(path) != current.get(path)}, "HK10 editorial changed-page list differs")
+            current = revised
         for relative, digest in current.items():
             check((root / relative).is_file() and sha(root / relative) == digest, f"Current HK10 presentation hash differs: {relative}")
         source = json.loads((root / SOURCE).read_text(encoding="utf-8"))
