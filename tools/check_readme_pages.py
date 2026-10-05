@@ -46,7 +46,7 @@ def main():
   check(phrase in home and phrase in readme and phrase in read(DOCS/'contributions.md'),'Contribution missing: '+phrase)
  check('TAPLite' not in readme+home,'Algorithm B incorrectly named TAPLite')
  check('Controlled cross-instance evidence' not in readme+read(DOCS/'contributions.md'),'Rejected contribution wording returned')
- check('model-generated' in readme and 'calibrated citywide forecast' in readme,'Bounded evidence scope missing')
+ check('modeled scenario' in readme and 'calibrated citywide forecast' in readme,'Bounded evidence scope missing')
  check('These evidence layers are not additive' in readme and '0.3.0-rc5' in readme and 'separately versioned' in readme,'Open-data/generic-engine version scope missing')
  for ref in ('REPRODUCTION_QUICKSTART.md','experiments/README.md','tools/mcl_reproduce.py','reproduce.html','reproduction.html'):
   check(ref in readme,'README code/data/run/verification entry missing: '+ref)
