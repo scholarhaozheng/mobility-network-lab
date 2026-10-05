@@ -99,12 +99,22 @@ scheduleReadingCardAlignment();
  choose(desiredScale());
 })();
 
-// Section 04 location aid: existing city/stage anchors remain the navigation source.
+// Reading location, chapter progress, and the existing Section 04 city/stage navigation.
 (function initReadingLocationBar(){
  const section=document.getElementById('04-explore-the-three-cases');
  const globalNav=document.querySelector('body > .nav');
+ const page=document.querySelector('.mcl-page');
  const atlasElements=[...document.querySelectorAll('.case-atlas[data-city]')];
- if(!section||!globalNav||!atlasElements.length)return;
+ if(!section||!globalNav||!page||!atlasElements.length)return;
+ const chapters=[
+  {id:'mobility-computation-lab',number:'00',name:'Introduction'},
+  {id:'01-what-this-project-adds',number:'01',name:'Project contributions'},
+  {id:'02-complete-project-structure',number:'02',name:'Project structure'},
+  {id:'03-case-coverage-and-selected-evidence',number:'03',name:'Coverage & statistics'},
+  {id:'04-explore-the-three-cases',number:'04',name:'Evidence atlas'},
+  {id:'05-run-and-inspect',number:'05',name:'Run & inspect'},
+  {id:'06-attribution-scope-and-further-reading',number:'06',name:'Sources & reading'}
+ ].map(chapter=>({...chapter,element:document.getElementById(chapter.id)})).filter(chapter=>chapter.element);
  const cities=atlasElements.map(element=>({
   key:element.dataset.city,
   label:element.querySelector(':scope > h3')?.textContent.trim()||element.dataset.city,
@@ -117,42 +127,98 @@ scheduleReadingCardAlignment();
    target:document.getElementById(stage.dataset.stage)||stage
   }))
  }));
- let end=section.nextElementSibling;
- while(end&&end.tagName!=='H2')end=end.nextElementSibling;
- const bar=document.createElement('nav');
- bar.className='reading-location-bar';bar.hidden=true;
- bar.setAttribute('aria-label','Section 04 city and stage navigation');
+ const bar=document.createElement('nav');bar.className='reading-location-bar';bar.hidden=false;
+ bar.setAttribute('aria-label','Reading location and chapter navigation');
  const inner=document.createElement('div');inner.className='reading-location-inner';
- const breadcrumb=document.createElement('div');breadcrumb.className='reading-location-breadcrumb';
- breadcrumb.setAttribute('aria-label','Current location');
+ const breadcrumb=document.createElement('div');breadcrumb.className='reading-location-breadcrumb';breadcrumb.setAttribute('aria-label','Current location');
  const sectionLink=document.createElement('a');sectionLink.href='#'+section.id;sectionLink.textContent='04';
  const citySeparator=document.createElement('span');citySeparator.textContent='›';citySeparator.setAttribute('aria-hidden','true');
  const cityLink=document.createElement('a');cityLink.textContent='Overview';cityLink.href='#'+section.id;
  const stageSeparator=document.createElement('span');stageSeparator.textContent='›';stageSeparator.setAttribute('aria-hidden','true');
  const currentStage=document.createElement('span');currentStage.className='reading-location-current-stage';currentStage.setAttribute('aria-current','location');
  breadcrumb.append(sectionLink,citySeparator,cityLink,stageSeparator,currentStage);
- const controls=document.createElement('div');controls.className='reading-location-controls';
+ const controls=document.createElement('div');controls.className='reading-location-controls';controls.hidden=true;
  function selectControl(labelText){
-  const label=document.createElement('label');
-  const text=document.createElement('span');text.textContent=labelText;
-  const select=document.createElement('select');select.className='reading-location-select';
-  label.append(text,select);controls.append(label);return select;
+  const label=document.createElement('label');const text=document.createElement('span');text.textContent=labelText;
+  const select=document.createElement('select');select.className='reading-location-select';label.append(text,select);controls.append(label);return select;
  }
- const citySelect=selectControl('City');
- const stageSelect=selectControl('Stage');
- const cityPlaceholder=new Option('Choose city','');cityPlaceholder.disabled=true;
- citySelect.append(cityPlaceholder);
+ const citySelect=selectControl('City');const stageSelect=selectControl('Stage');
+ const cityPlaceholder=new Option('Choose city','');cityPlaceholder.disabled=true;citySelect.append(cityPlaceholder);
  for(const city of cities)citySelect.append(new Option(city.label,city.key));
- inner.append(breadcrumb,controls);bar.append(inner);document.body.append(bar);
+ const detailsWrap=document.createElement('div');detailsWrap.className='reading-details-wrap';
+ const detailsTrigger=document.createElement('button');detailsTrigger.type='button';detailsTrigger.className='reading-details-trigger';detailsTrigger.textContent='Reading details';
+ detailsTrigger.setAttribute('aria-expanded','false');detailsTrigger.setAttribute('aria-controls','reading-details-panel');
+ const detailsPanel=document.createElement('section');detailsPanel.id='reading-details-panel';detailsPanel.className='reading-details-panel';detailsPanel.hidden=true;
+ detailsPanel.setAttribute('aria-labelledby','reading-details-heading');
+ const detailsHeading=document.createElement('h2');detailsHeading.id='reading-details-heading';detailsHeading.className='reading-details-heading';
+ const detailsProgress=document.createElement('div');detailsProgress.className='reading-details-progress';
+ function progressItem(label,key){
+  const item=document.createElement('div');item.className='reading-progress-item';
+  const labelRow=document.createElement('div');labelRow.className='reading-progress-label';
+  const text=document.createElement('span');text.textContent=label;const value=document.createElement('span');value.setAttribute('data-progress-'+key,'');value.textContent='0%';
+  const track=document.createElement('div');track.className='reading-progress-track';track.setAttribute('role','progressbar');track.setAttribute('aria-label',label);track.setAttribute('aria-valuemin','0');track.setAttribute('aria-valuemax','100');
+  const fill=document.createElement('span');fill.setAttribute('data-progress-'+key+'-fill','');track.append(fill);labelRow.append(text,value);item.append(labelRow,track);detailsProgress.append(item);
+  return {value,track,fill};
+ }
+ const pageProgress=progressItem('Page position','page');const sectionProgress=progressItem('Within this section','section');
+ const chapterList=document.createElement('ol');chapterList.className='reading-chapter-list';
+ const chapterButtons=chapters.map(chapter=>{
+  const item=document.createElement('li');const button=document.createElement('button');button.type='button';button.dataset.readingJump=chapter.id;
+  const number=document.createElement('span');number.className='reading-chapter-number';number.textContent=chapter.number;
+  const title=document.createElement('span');title.className='reading-chapter-title';title.textContent=chapter.name;
+  button.append(number,title);item.append(button);chapterList.append(item);return button;
+ });
+ detailsPanel.append(detailsHeading,detailsProgress,chapterList);detailsWrap.append(detailsTrigger,detailsPanel);
+ const progressLine=document.createElement('div');progressLine.className='reading-progress-line';progressLine.setAttribute('aria-hidden','true');
+ const progressLineFill=document.createElement('span');progressLineFill.setAttribute('data-progress-line-fill','');progressLine.append(progressLineFill);
+ inner.append(breadcrumb,controls,detailsWrap);bar.append(inner,progressLine);document.body.append(bar);
  document.documentElement.dataset.readingLocationReady='true';
- let selectedCity='',selectedStage='',frame=0;
- let lastOffset='';
- let heldTarget=null,anchorFrame=0;
- function applyOffset(){
+ let selectedCity='',selectedStage='',frame=0,lastOffset='';
+ let heldTarget=null,anchorFrame=0,currentChapter=chapters[0],chapterBarHeight=0,chapterAtlasBarHeight=0,chapterBarWidth=0;
+ let detailsHovered=false,detailsPinned=false,detailsKeyboard=false,detailsDismissed=false,keyboardInput=false,closeTimer=0;
+ function refreshDetails(){
+  const open=!detailsDismissed&&(detailsHovered||detailsPinned||detailsKeyboard);
+  if(detailsPanel.hidden===open)detailsPanel.hidden=!open;
+  detailsTrigger.setAttribute('aria-expanded',String(open));bar.dataset.detailsOpen=String(open);
+ }
+ function closeDetails(restoreFocus=false){
+  clearTimeout(closeTimer);detailsHovered=false;detailsPinned=false;detailsKeyboard=false;detailsDismissed=true;
+  refreshDetails();if(restoreFocus)detailsTrigger.focus({preventScroll:true});
+ }
+ function enterDetails(){clearTimeout(closeTimer);detailsHovered=true;detailsDismissed=false;refreshDetails();}
+ function leaveDetails(){clearTimeout(closeTimer);closeTimer=setTimeout(()=>{detailsHovered=false;refreshDetails();},150);}
+ detailsWrap.addEventListener('pointerenter',event=>{if(event.pointerType!=='touch')enterDetails();});
+ detailsWrap.addEventListener('pointerleave',event=>{if(event.pointerType!=='touch')leaveDetails();});
+ controls.addEventListener('pointerdown',()=>closeDetails());
+ detailsTrigger.addEventListener('click',()=>{clearTimeout(closeTimer);detailsPinned=!detailsPinned;detailsDismissed=!detailsPinned;detailsHovered=false;detailsKeyboard=false;refreshDetails();});
+ detailsWrap.addEventListener('focusin',event=>{
+  if(keyboardInput||event.target.matches(':focus-visible')){detailsKeyboard=true;detailsDismissed=false;refreshDetails();}
+ });
+ detailsWrap.addEventListener('focusout',event=>{
+  if(event.relatedTarget instanceof Node&&detailsWrap.contains(event.relatedTarget))return;
+  requestAnimationFrame(()=>{
+   if(!detailsWrap.contains(document.activeElement)){detailsKeyboard=false;detailsPinned=false;refreshDetails();}
+  });
+ });
+ detailsTrigger.addEventListener('keydown',event=>{
+  if(event.key==='ArrowDown'){event.preventDefault();detailsKeyboard=true;detailsDismissed=false;refreshDetails();chapterButtons[0]?.focus({preventScroll:true});}
+ });
+ document.addEventListener('keydown',event=>{
+  keyboardInput=true;
+  if(event.key==='Escape'&&!detailsPanel.hidden){event.preventDefault();closeDetails(false);detailsTrigger.focus({preventScroll:true});detailsDismissed=true;detailsKeyboard=false;refreshDetails();}
+ },true);
+ document.addEventListener('pointerdown',event=>{
+  keyboardInput=false;
+  if(!detailsWrap.contains(event.target))closeDetails();
+ },true);
+ function applyOffset(target){
   const top=Math.max(0,globalNav.getBoundingClientRect().bottom);
-  const topValue=top+'px';
-  if(bar.style.top!==topValue)bar.style.top=topValue;
-  const offset=bar.hidden?'84px':Math.ceil(top+bar.getBoundingClientRect().height+(document.getElementById('atlas-view-controls')?.getBoundingClientRect().height||0)+12)+'px';
+  const topValue=top+'px';if(bar.style.top!==topValue)bar.style.top=topValue;
+  const panelHeight=Math.max(160,innerHeight-bar.getBoundingClientRect().bottom-26)+'px';
+  if(bar.style.getPropertyValue('--reading-panel-max-height')!==panelHeight)bar.style.setProperty('--reading-panel-max-height',panelHeight);
+  const inAtlas=target?belongsToAtlas(target)&&target!==section:currentChapter?.number==='04';
+  const toolbarHeight=inAtlas?(document.getElementById('atlas-view-controls')?.getBoundingClientRect().height||0):0;
+  const offset=Math.ceil(top+bar.getBoundingClientRect().height+toolbarHeight+12)+'px';
   if(offset!==lastOffset){document.documentElement.style.setProperty('--reading-navigation-offset',offset);lastOffset=offset;}
   return top;
  }
@@ -161,113 +227,130 @@ scheduleReadingCardAlignment();
   if(key!==selectedCity||!stageSelect.options.length){
    stageSelect.replaceChildren(new Option(city?'City overview':'Choose a city',''));
    for(const item of city?.stages||[])stageSelect.append(new Option(item.label,item.key));
-   stageSelect.disabled=!city;
-   selectedCity=key;
+   stageSelect.disabled=!city;selectedCity=key;
   }
-  selectedStage=stage?.key||'';
-  citySelect.value=key;stageSelect.value=selectedStage;
+  selectedStage=stage?.key||'';citySelect.value=key;stageSelect.value=selectedStage;
   cityLink.textContent=city?.label||'Overview';cityLink.href='#'+(city?.target.id||section.id);
-  cityLink.toggleAttribute('aria-current',!stage);
-  if(!stage)cityLink.setAttribute('aria-current','location');
-  stageSeparator.hidden=!stage;currentStage.hidden=!stage;
-  currentStage.textContent=stage?.label||'';
-  currentStage.title=stage?.label||'';
+  cityLink.toggleAttribute('aria-current',!stage);if(!stage)cityLink.setAttribute('aria-current','location');
+  stageSeparator.hidden=!stage;currentStage.hidden=!stage;currentStage.textContent=stage?.label||'';currentStage.title=stage?.label||'';
+ }
+ function genericLocation(chapter,view){
+  cityLink.textContent=chapter.name;cityLink.href='#'+chapter.id;cityLink.setAttribute('aria-current','location');
+  let detail='';
+  if(chapter.number==='04'&&view!=='full'){
+   const selectedControl=view==='city'
+    ? document.querySelector('#atlas-compact-panel .av-city-picker button[aria-pressed="true"]')
+    : document.querySelector('#atlas-compact-panel [data-av-control="stage"] option:checked');
+   const selected=selectedControl?.textContent.trim();
+   detail=(view==='city'?'By city':'By stage')+(selected?' · '+selected:'');
+  }
+  stageSeparator.hidden=!detail;currentStage.hidden=!detail;currentStage.textContent=detail;currentStage.title=detail;
+ }
+ function updateProgress(top){
+  const clamp=value=>Math.min(100,Math.max(0,value));
+  const pageRect=page.getBoundingClientRect();const readingTop=top+bar.getBoundingClientRect().height;
+  const pageStart=Math.max(0,pageRect.top+scrollY-readingTop);
+  const pageEnd=Math.max(pageStart+1,pageRect.bottom+scrollY-innerHeight);
+  const total=clamp((scrollY-pageStart)/(pageEnd-pageStart)*100);
+  const index=chapters.indexOf(currentChapter);
+  const start=currentChapter.element.getBoundingClientRect().top+scrollY;
+  const finish=chapters[index+1]?.element.getBoundingClientRect().top+scrollY||pageRect.bottom+scrollY;
+  const within=clamp((scrollY+readingTop-start)/Math.max(1,finish-start)*100);
+  for(const [progress,value] of [[pageProgress,total],[sectionProgress,within]]){
+   const rounded=Math.round(value);progress.value.textContent=rounded+'%';progress.fill.style.width=value+'%';progress.track.setAttribute('aria-valuenow',String(rounded));
+  }
+  progressLineFill.style.width=total+'%';
  }
  function update(){
-  frame=0;
-  if(document.documentElement.dataset.atlasView!=="full"){bar.hidden=true;stopAnchorHold();return;}
+  frame=0;bar.hidden=false;
   const top=Math.max(0,globalNav.getBoundingClientRect().bottom);
-  const visible=section.getBoundingClientRect().top<=top+8&&(!end||end.getBoundingClientRect().top>top+8);
-  bar.hidden=!visible;
-  applyOffset();
-  if(!visible)return;
-  const line=top+bar.getBoundingClientRect().height+(document.getElementById('atlas-view-controls')?.getBoundingClientRect().height||0)+20;
-  let city=null,stage=null;
-  for(const item of cities){if(item.target.getBoundingClientRect().top<=line)city=item;else break;}
-  for(const item of city?.stages||[]){if(item.element.getBoundingClientRect().top<=line)stage=item;else break;}
-  setLocation(city,stage);
+  const view=document.documentElement.dataset.atlasView||'full';
+  // Measure both layouts so chapter thresholds do not depend on the visible controls.
+  const barWidth=bar.getBoundingClientRect().width;
+  if(controls.hidden||barWidth!==chapterBarWidth||!chapterBarHeight){
+   const wasHidden=controls.hidden;controls.hidden=true;
+   chapterBarHeight=bar.getBoundingClientRect().height;
+   controls.hidden=false;chapterAtlasBarHeight=bar.getBoundingClientRect().height;
+   chapterBarWidth=barWidth;controls.hidden=wasHidden;
+  }
+  currentChapter=chapters[0];
+  for(const chapter of chapters){
+   const height=chapter.number==='04'&&view==='full'?chapterAtlasBarHeight:chapterBarHeight;
+   if(chapter.element.getClientRects().length&&chapter.element.getBoundingClientRect().top<=top+height+16)currentChapter=chapter;
+  }
+  const inFullAtlas=currentChapter.number==='04'&&view==='full';
+  controls.hidden=!inFullAtlas;bar.dataset.chapter=currentChapter.number;
+  sectionLink.textContent=currentChapter.number;sectionLink.href='#'+currentChapter.id;sectionLink.setAttribute('aria-label',currentChapter.number+' '+currentChapter.name);
+  if(inFullAtlas){
+   const line=top+bar.getBoundingClientRect().height+(document.getElementById('atlas-view-controls')?.getBoundingClientRect().height||0)+20;
+   let city=null,stage=null;
+   for(const item of cities){if(item.target.getBoundingClientRect().top<=line)city=item;else break;}
+   for(const item of city?.stages||[]){if(item.element.getBoundingClientRect().top<=line)stage=item;else break;}
+   setLocation(city,stage);
+  }else genericLocation(currentChapter,view);
+  applyOffset();detailsHeading.textContent=currentChapter.number+' / '+currentChapter.name;
+  chapterButtons.forEach(button=>{if(button.dataset.readingJump===currentChapter.id)button.setAttribute('aria-current','location');else button.removeAttribute('aria-current');});
+  updateProgress(top);
  }
  function schedule(){if(!frame)frame=requestAnimationFrame(update);}
- function belongsToAtlas(target){
-  if(target===section||target.closest('.case-atlas'))return true;
-  return cities.some(city=>target===city.target);
- }
+ function belongsToAtlas(target){return target===section||!!target.closest('.case-atlas')||cities.some(city=>target===city.target);}
+ function isChapter(target){return chapters.some(chapter=>chapter.element===target);}
  function positionTarget(target){
-  // The Section 04 heading sits above the atlas strip's active range.
-  bar.hidden=target===section;applyOffset();
+  bar.hidden=false;controls.hidden=!(belongsToAtlas(target)&&(document.documentElement.dataset.atlasView||'full')==='full');applyOffset(target);
   const offset=parseFloat(document.documentElement.style.getPropertyValue('--reading-navigation-offset'))||84;
   const drift=target.getBoundingClientRect().top-offset;
   if(Math.abs(drift)>.5)window.scrollTo({top:Math.max(0,window.scrollY+drift),behavior:'instant'});
  }
- function stopAnchorHold(){
-  heldTarget=null;readingAnchorUserInterrupted=true;
-  if(anchorFrame){cancelAnimationFrame(anchorFrame);anchorFrame=0;}
- }
+ function stopAnchorHold(){heldTarget=null;readingAnchorUserInterrupted=true;if(anchorFrame){cancelAnimationFrame(anchorFrame);anchorFrame=0;}}
  function scheduleAnchorHold(){
-  schedule();
-  if(!heldTarget||anchorFrame)return;
-  anchorFrame=requestAnimationFrame(()=>{
-   anchorFrame=0;
-   if(!heldTarget?.isConnected)return;
-   positionTarget(heldTarget);update();
-  });
+  schedule();if(!heldTarget||anchorFrame)return;
+  anchorFrame=requestAnimationFrame(()=>{anchorFrame=0;if(!heldTarget?.isConnected)return;positionTarget(heldTarget);update();});
  }
  function jump(target,writeHistory=true){
-  if(!target)return;
-  // Replace any pending hold when a new explicit destination is selected.
-  if(anchorFrame){cancelAnimationFrame(anchorFrame);anchorFrame=0;}
-  heldTarget=target;readingAnchorUserInterrupted=false;
-  positionTarget(target);
-  if(writeHistory&&target.id){
-   const url=new URL(location.href);url.hash=target.id;
-   if(url.href!==location.href)history.pushState(null,'',url);
-  }
+  if(!target)return;if(anchorFrame){cancelAnimationFrame(anchorFrame);anchorFrame=0;}
+  heldTarget=target;readingAnchorUserInterrupted=false;positionTarget(target);
+  if(writeHistory&&target.id){const url=new URL(location.href);url.hash=target.id;if(url.href!==location.href)history.pushState(null,'',url);}
   update();scheduleAnchorHold();
  }
- citySelect.addEventListener('change',()=>{
-  const city=cities.find(item=>item.key===citySelect.value);
-  if(city){setLocation(city,null);jump(city.target);}
- });
- stageSelect.addEventListener('change',()=>{
-  const city=cities.find(item=>item.key===citySelect.value);
-  if(city)jump(city.stages.find(item=>item.key===stageSelect.value)?.target||city.target);
- });
+ chapterButtons.forEach(button=>button.addEventListener('click',()=>{closeDetails();detailsTrigger.focus({preventScroll:true});detailsDismissed=true;detailsKeyboard=false;refreshDetails();jump(document.getElementById(button.dataset.readingJump));}));
+ citySelect.addEventListener('change',()=>{const city=cities.find(item=>item.key===citySelect.value);if(city){setLocation(city,null);jump(city.target);}});
+ stageSelect.addEventListener('change',()=>{const city=cities.find(item=>item.key===citySelect.value);if(city)jump(city.stages.find(item=>item.key===stageSelect.value)?.target||city.target);});
  document.addEventListener('click',event=>{
   if(event.defaultPrevented||event.button!==0||event.metaKey||event.ctrlKey||event.altKey||event.shiftKey)return;
-  const link=event.target.closest('a[href^="#"]');
-  if(!link||link.target||link.hasAttribute('download'))return;
+  const link=event.target.closest('a[href^="#"]');if(!link||link.target||link.hasAttribute('download'))return;
   let id;try{id=decodeURIComponent(link.hash.slice(1));}catch{return;}
-  const target=document.getElementById(id);
-  if(!target||!belongsToAtlas(target))return;
+  const target=document.getElementById(id);if(!target||(!belongsToAtlas(target)&&!isChapter(target)))return;
+  if(belongsToAtlas(target)&&!isChapter(target)&&(document.documentElement.dataset.atlasView||'full')!=='full')return;
   event.preventDefault();jump(target);
  });
  function restoreAtlasHash(){
-  if(document.documentElement.dataset.atlasView!=="full"){stopAnchorHold();schedule();return;}
   let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}
   const target=document.getElementById(id);
-  if(target&&belongsToAtlas(target))jump(target,false);else{stopAnchorHold();schedule();}
+  if(target&&(isChapter(target)||(belongsToAtlas(target)&&(document.documentElement.dataset.atlasView||'full')==='full')))jump(target,false);
+  else{stopAnchorHold();schedule();}
  }
- // User intent ends holding immediately; normal scroll events only update the breadcrumb.
- for(const type of ['wheel','touchstart','pointerdown'])window.addEventListener(type,stopAnchorHold,{passive:true,capture:true});
- window.addEventListener('keydown',event=>{
-  if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','PageUp','PageDown','Home','End',' ','Tab'].includes(event.key))stopAnchorHold();
- },{capture:true});
- window.addEventListener('scroll',schedule,{passive:true});
- window.addEventListener('resize',scheduleAnchorHold,{passive:true});
- window.addEventListener('hashchange',restoreAtlasHash);
+ let stageCorrectionSequence=0;
+ document.addEventListener('change',event=>{
+  const select=event.target;
+  if(!(select instanceof HTMLSelectElement)||!select.matches('#atlas-compact-panel .av-stage-jumpbar [data-av-control="stage"]')||document.documentElement.dataset.atlasView!=='stage')return;
+  const key=select.value;const sequence=++stageCorrectionSequence;
+  requestAnimationFrame(()=>requestAnimationFrame(()=>requestAnimationFrame(()=>{
+   if(sequence!==stageCorrectionSequence||document.documentElement.dataset.atlasView!=='stage'||!select.isConnected)return;
+   const target=document.getElementById('atlas-compare-'+key);const toolbar=document.getElementById('atlas-view-controls');const jumpbar=document.querySelector('#atlas-compact-panel .av-stage-jumpbar');
+   if(!target?.getClientRects().length||!toolbar||!jumpbar)return;
+   const offset=Math.max(0,globalNav.getBoundingClientRect().bottom)+bar.getBoundingClientRect().height+toolbar.getBoundingClientRect().height+jumpbar.getBoundingClientRect().height+18;
+   const drift=target.getBoundingClientRect().top-offset;if(Math.abs(drift)>.5)window.scrollBy({top:drift,behavior:'instant'});schedule();
+  })));
+ });
+ for(const type of ['wheel','touchstart','pointerdown'])window.addEventListener(type,()=>{stopAnchorHold();stageCorrectionSequence++;},{passive:true,capture:true});
+ window.addEventListener('keydown',event=>{stageCorrectionSequence++;if(['ArrowUp','ArrowDown','ArrowLeft','ArrowRight','PageUp','PageDown','Home','End',' ','Tab'].includes(event.key))stopAnchorHold();},{capture:true});
+ window.addEventListener('scroll',schedule,{passive:true});window.addEventListener('resize',scheduleAnchorHold,{passive:true});window.addEventListener('hashchange',restoreAtlasHash);
  window.addEventListener('load',()=>{if(!readingAnchorUserInterrupted)restoreAtlasHash();else schedule();});
- document.addEventListener('reading-card-rows-aligned',scheduleAnchorHold);
- document.addEventListener('atlas-view-toolbar-resized',schedule);
- for(const img of document.querySelectorAll('.mcl-page img')){
-  img.addEventListener('load',scheduleAnchorHold);
-  img.addEventListener('error',scheduleAnchorHold);
- }
+ document.addEventListener('reading-card-rows-aligned',scheduleAnchorHold);document.addEventListener('atlas-view-toolbar-resized',schedule);
+ new MutationObserver(schedule).observe(document.documentElement,{attributes:true,attributeFilter:['data-atlas-view']});
+ for(const img of document.querySelectorAll('.mcl-page img')){img.addEventListener('load',scheduleAnchorHold);img.addEventListener('error',scheduleAnchorHold);}
  if(document.fonts)document.fonts.ready.then(scheduleAnchorHold);
- if('ResizeObserver' in window){
-  const observer=new ResizeObserver(scheduleAnchorHold);
-  observer.observe(globalNav);observer.observe(bar);
-  const page=document.querySelector('.mcl-page');if(page)observer.observe(page);
- }
+ if('ResizeObserver' in window){const observer=new ResizeObserver(scheduleAnchorHold);observer.observe(globalNav);observer.observe(bar);observer.observe(page);}
  setLocation(null,null);schedule();
 })();
 
@@ -702,7 +785,7 @@ let layoutFrame=0;
 function updateToolbar(){
  layoutFrame=0;
  const navHeight=Math.max(0,originalNav?.getBoundingClientRect().bottom||0);
- const locationHeight=state.view==='full'&&locationBar&&!locationBar.hidden?locationBar.getBoundingClientRect().height:0;
+ const locationHeight=locationBar&&!locationBar.hidden?locationBar.getBoundingClientRect().height:0;
  const v=(navHeight+locationHeight)+'px';
  if(shell.style.getPropertyValue('--atlas-view-top')!==v)shell.style.setProperty('--atlas-view-top',v);
  shell.style.setProperty('--atlas-global-nav-height',navHeight+'px');
@@ -798,7 +881,7 @@ let stagePositionFrame=0,pendingStageJump=null;
 function stageScrollOffset(){
  const globalBottom=Math.max(0,originalNav?.getBoundingClientRect().bottom||0);
  const jumpbar=compact.querySelector('.av-stage-jumpbar');
- return globalBottom+toolbar.getBoundingClientRect().height+(jumpbar?.getBoundingClientRect().height||0)+18;
+ return globalBottom+(locationBar&&!locationBar.hidden?locationBar.getBoundingClientRect().height:0)+toolbar.getBoundingClientRect().height+(jumpbar?.getBoundingClientRect().height||0)+18;
 }
 function jumpStage(key,writeHistory=true){
  if(state.view!=='stage'||!model.stageOrder.includes(key))return;
