@@ -9,7 +9,7 @@ The repository uses the [General Modeling Network Specification (GMNS)](https://
 
 Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases; connecting city data and four-stage demand models to documented network computations; implementing and evaluating project-specific adapters, workflows, and experiments; and making each result traceable to its actual instance, units, assumptions, and evidence.
 
-**Learning companion.** This site includes the [Traffic Assignment Lab](traffic-assignment-lab.html), an interactive demo of assignment, decomposition, spatial hierarchy, and coordinated computation on one teaching network. The demo was developed collaboratively by **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)** and Hao Zheng, with Hao Zheng working under Professor Zhou's guidance and maintaining the web version.
+This site includes the [Traffic Assignment Lab](traffic-assignment-lab.html), an interactive demo of assignment, decomposition, spatial hierarchy, and coordinated computation on one teaching network. The demo was developed collaboratively by **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)** and Hao Zheng, with Hao Zheng working under Professor Zhou's guidance and maintaining the web version.
 
 [My contributions and upstream foundations](volumes/01-overview.md#src-docs-contributions-document) · [Full technical walkthrough](volumes/01-overview.md) · [Start with a saved example](volumes/01-overview.md#src-docs-getting-started-document) · [Source and citation](volumes/01-overview.md#src-docs-citation-document)
 
