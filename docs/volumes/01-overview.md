@@ -37,7 +37,7 @@ Project-specific work includes assembling and adapting the Boston, Sioux Falls, 
 
 <span class="anchor-alias" id="block-5"></span>
 
-**Learning companion.** To make these computational ideas easier to explore, the site includes the [Traffic Assignment Lab](https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/traffic-assignment-lab.html), an interactive demo of assignment, decomposition, spatial hierarchy, and coordinated computation on one teaching network. The demo was developed collaboratively by **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)** and Hao Zheng, with Hao Zheng working under Professor Zhou's guidance and maintaining the web version.
+**Learning companion.** This site includes the [Traffic Assignment Lab](https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/traffic-assignment-lab.html), an interactive demo of assignment, decomposition, spatial hierarchy, and coordinated computation on one teaching network. The demo was developed collaboratively by **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)** and Hao Zheng, with Hao Zheng working under Professor Zhou's guidance and maintaining the web version.
 
 <span class="anchor-alias" id="block-6"></span>
 
@@ -99,7 +99,7 @@ The project packages shared data interfaces, case configurations, and analysis t
 
 <span class="anchor-alias" id="coverage-row-00"></span>
 
-<figure class="canonical-figure" data-figure="G-F001" id="stage-00-framework--g-f001"><a href="../assets/atlas/project-map.svg"><img alt="City evidence and independent computation" height="976.072" loading="lazy" src="../assets/atlas/project-map.svg" style="aspect-ratio:884.88/976.072" width="884.88"/></a><figcaption><strong>City evidence and independent computation.</strong> The approved project architecture retains source evidence, model preparation, the four travel-demand stages, saved outputs, city cases and code/documentation entry points. The four stages are 01 Trip generation, 02 Trip distribution, 03 Mode choice and 04 Traffic assignment. Inside stage 04, four assignment layers are shown without sequence arrows: A Native assignment; B Decomposition / distributed; C Spatial hierarchy / representation; D Coordination / verification. These are internal layers of traffic assignment, not four additional travel-demand stages. Static BPR/Beckmann assignment and finite fixed-cost, hard-capacity optimization are parallel independent mathematical contracts, not a sequential solver chain. The finite contract specifies its own selected graph, OD, time and capacities. Population, household and activity preparation is upstream, and declared vehicle OD may enter static assignment directly without asserting that stages 01–03 were run. Observation association does not automatically recover OD or establish calibration. Cases are evidence instances, and generic RC5 scope remains distinct from versioned case adapters and independent validators. All fourteen original documentation targets are retained in the editable SVG, on card backgrounds and their labels.</figcaption><div class="figure-links"><a href="../assets/atlas/project-map.svg">SVG</a><a href="../assets/atlas/figures/g-f001.png">PNG</a><a href="../assets/atlas/figures/g-f001.pdf">PDF</a></div><details class="figure-sources"><summary>Source records</summary><ul><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/assets/project_structure_r3/project_structure_model.json">docs/assets/project_structure_r3/project_structure_model.json</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/architecture.md">docs/architecture.md</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/tools/visuals/render_presentation_r3.py">tools/visuals/render_presentation_r3.py</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/tools/visuals/render_project_structure_r3.py">tools/visuals/render_project_structure_r3.py</a></li><li><a href="../assets/atlas/project-map.svg">docs/assets/project_structure_r3/project_structure.svg</a></li></ul></details></figure>
+<figure class="canonical-figure" data-figure="G-F001" id="stage-00-framework--g-f001"><a href="../assets/atlas/project-map.svg"><img alt="Complete project structure" height="976.072" loading="lazy" src="../assets/atlas/project-map.svg" style="aspect-ratio:884.88/976.072" width="884.88"/></a><figcaption><strong>Complete project structure.</strong> The approved project architecture retains source evidence, model preparation, the four travel-demand stages, saved outputs, city cases and code/documentation entry points. The four stages are 01 Trip generation, 02 Trip distribution, 03 Mode choice and 04 Traffic assignment. Inside stage 04, four assignment layers are shown without sequence arrows: A Native assignment; B Decomposition / distributed; C Spatial hierarchy / representation; D Coordination / verification. These are internal layers of traffic assignment, not four additional travel-demand stages. Static BPR/Beckmann assignment and finite fixed-cost, hard-capacity optimization are parallel independent mathematical contracts, not a sequential solver chain. The finite contract specifies its own selected graph, OD, time and capacities. Population, household and activity preparation is upstream, and declared vehicle OD may enter static assignment directly without asserting that stages 01–03 were run. Observation association does not automatically recover OD or establish calibration. Cases are evidence instances, and generic RC5 scope remains distinct from versioned case adapters and independent validators. All fourteen original documentation targets are retained in the editable SVG, on card backgrounds and their labels.</figcaption><div class="figure-links"><a href="../assets/atlas/project-map.svg">SVG</a><a href="../assets/atlas/figures/g-f001.png">PNG</a><a href="../assets/atlas/figures/g-f001.pdf">PDF</a></div><details class="figure-sources"><summary>Source records</summary><ul><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/assets/project_structure_r3/project_structure_model.json">docs/assets/project_structure_r3/project_structure_model.json</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/docs/architecture.md">docs/architecture.md</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/tools/visuals/render_presentation_r3.py">tools/visuals/render_presentation_r3.py</a></li><li><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/6ce18b8bea5bf3b9b7caa6ee4c0ff4e701a34a8b/tools/visuals/render_project_structure_r3.py">tools/visuals/render_project_structure_r3.py</a></li><li><a href="../assets/atlas/project-map.svg">docs/assets/project_structure_r3/project_structure.svg</a></li></ul></details></figure>
 
 <span class="anchor-alias" id="block-18"></span>
 
@@ -389,7 +389,7 @@ Mobility Computation Lab centres on **networks, zones, demand, evidence and netw
 
 <span class="anchor-alias" id="block-39"></span>
 
-[See City evidence and independent computation](#stage-00-framework--g-f001)
+[See Complete project structure](#stage-00-framework--g-f001)
 
 <span class="anchor-alias" id="block-40"></span>
 
@@ -412,7 +412,7 @@ The earlier R2 and R3 module-map sources remain provenance records. The unified 
 <span class="anchor-alias" id="block-44"></span>
 
 <span class="anchor-alias" id="fig-0002"></span>
-[See City evidence and independent computation](#stage-00-framework--g-f001)
+[See Complete project structure](#stage-00-framework--g-f001)
 
 <span class="anchor-alias" id="block-45"></span>
 
@@ -6755,7 +6755,7 @@ The project map is a conceptual view of documented public modules. Four-stage de
 <p><a href="#src-readme-document">Current research entry</a> · <a href="#src-docs-architecture-document">Architecture</a> · <a href="#src-docs-capabilities-document">Case coverage</a></p>
 <p><span class="anchor-alias" id="block-1855"></span></p>
 <p align="center">
-<a class="figure-reference" href="#stage-00-framework--g-f001">See City evidence and independent computation</a>
+<a class="figure-reference" href="#stage-00-framework--g-f001">See Complete project structure</a>
 </p>
 <p><span class="anchor-alias" id="block-1856"></span></p>
 <p><span class="anchor-alias" id="src-docs-full-walkthrough-part-0-document-mobility-computation-lab"></span></p>
@@ -7055,7 +7055,7 @@ tools/                 User commands, documentation build and checks
 <p><a href="https://github.com/scholarhaozheng/mobility-network-lab/blob/c51c7dfe25559ef5fb464f2b9eeea2872d945d29/README.md">Source record</a> · <strong>Historical record: earlier scope and absence statements are not current coverage.</strong>.</p>
 <p><span class="anchor-alias" id="block-2255"></span></p>
 <p align="center">
-<a class="figure-reference" href="#stage-00-framework--g-f001">See City evidence and independent computation</a>
+<a class="figure-reference" href="#stage-00-framework--g-f001">See Complete project structure</a>
 </p>
 <p><span class="anchor-alias" id="block-2256"></span></p>
 <p><span class="anchor-alias" id="src-readme-old-part-0-document-mobility-computation-lab"></span></p>
