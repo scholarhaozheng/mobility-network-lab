@@ -23,8 +23,7 @@ This site includes the [Traffic Assignment Lab](https://scholarhaozheng.github.i
 <a id="what-this-project-adds"></a>
 
 <table width="100%">
-<tr><th colspan="3" align="left">FROM CITY INPUTS TO COMPUTATION</th></tr>
-<tr><td colspan="3"><strong><a href="#four-step-workflow">City-model foundations</a></strong><br/>GMNS · population &amp; activity · services · observations</td></tr>
+<tr><td colspan="3"><strong><a href="#four-step-workflow">City data and model foundations</a></strong><br/>GMNS · population &amp; activity · services · observations</td></tr>
 <tr><td colspan="3"><strong>FOUR-STAGE DEMAND WORKFLOW</strong></td></tr>
 <tr><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-06">01 / Trip generation</a></strong><br/>Productions &amp; attractions</td><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-07">02 / Trip distribution</a></strong><br/>Origin–destination demand</td><td width="33%" valign="top"><strong><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-08">03 / Mode choice</a></strong><br/>Demand by travel mode</td></tr>
 <tr><th colspan="3" align="left"><a id="scope-flow-assignment-title"></a><a href="https://scholarhaozheng.github.io/mobility-network-lab/volumes/overview.html#coverage-stage-09">04 / Traffic assignment</a></th></tr>

@@ -162,7 +162,6 @@ class Exporter:
             return '<strong>'+link(element,title)+'</strong>'+('<br/>'+esc(detail.get_text(' ',strip=True)) if detail else '')
         foundation=node.select_one('.scope-flow-foundation')
         out=['<table width="100%">',
-             '<tr><th colspan="3" align="left">'+esc(node.select_one('.scope-flow-kicker').get_text(' ',strip=True))+'</th></tr>',
              '<tr><td colspan="3">'+item(foundation)+'</td></tr>',
              '<tr><td colspan="3"><strong>'+esc(node.select_one('.scope-flow-label').get_text(' ',strip=True))+'</strong></td></tr>']
         out.append('<tr>'+''.join('<td width="33%" valign="top">'+item(a,a.find('b').get_text(strip=True))+'</td>' for a in node.select('.scope-flow-demand a'))+'</tr>')
