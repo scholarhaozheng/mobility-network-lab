@@ -1,22 +1,22 @@
 {
   "schema": "mcl_public_computational_archive_v1",
-  "releaseId": "20261008-r20",
-  "sourceRevision": "reproduction-2026-10-08-r20",
+  "releaseId": "20261009-r21",
+  "sourceRevision": "reproduction-2026-10-09-r21",
   "documentationRefresh": {
     "documentationOnly": true,
     "computationalRecipeRelease": "reproduction-2026-10-04-r14",
     "preservedComputationalCommands": 41,
     "preservedRecoveredRecords": 44,
     "readme": "README.md",
-    "imagePositions": 288,
-    "uniqueLocalImages": 250,
+    "imagePositions": 290,
+    "uniqueLocalImages": 252,
     "allReadmeImagesIncluded": true,
     "exporter": "tools/build_readme_from_homepage.py",
-    "scope": "Documentation-only refresh of the public homepage, README and figure assets synchronized with the reviewed full site. Computational recipes, pinned code, numerical receipts and r14 release identities remain unchanged. New city compute packages and raw scientific inputs are not included in this archive."
+    "scope": "2026-10-09 local public-ready three-city increment: Ann Arbor original numerical figures/source conditions, Chicago ADMM116 saved diagnostics, old Urbana T4 accounting. Unchanged r14 computational recipes; no new solver."
   },
   "archive": "computational-checkout.zip",
-  "sha256": "42c4830ae91b6705ad375f9c222786f5cd43e0ca23672c25f624c6bc4686c84a",
-  "bytes": 54161943,
+  "sha256": "ea089d6475360a6ec08351c9cdcaf7ee0880501e5a8cfbc917f9f202b2478f8d",
+  "bytes": 56225632,
   "files": [
     {
       "path": ".gitattributes",
@@ -45,8 +45,8 @@
     {
       "path": "README.md",
       "source": "README.md",
-      "sha256": "8c661585a4953d63db1ef01aee4af8f9886d90b14d1e5110e3e605acd3f4d9fc",
-      "bytes": 675466
+      "sha256": "e122b74ce18cc0149d4f6c50dd496549ebbc728ab27cf8ca80e9d45ccd0e87ff",
+      "bytes": 720748
     },
     {
       "path": "REPRODUCTION_PACKAGE_MANIFEST.json",
@@ -1377,8 +1377,8 @@
     {
       "path": "catalog/documentation-languages.json",
       "source": "catalog/documentation-languages.json",
-      "sha256": "93b52fb30a95d95c611391ebc7fb85c5c945b12f052b362d51549b784dfaa6e2",
-      "bytes": 15509
+      "sha256": "a83a6989b47718b4bcdabea984c759754dfada4782b1eed2530782bb0236b342",
+      "bytes": 15511
     },
     {
       "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
@@ -1403,6 +1403,12 @@
       "source": "docs/assets/atlas/HK10_PUBLICATION_20261008.json",
       "sha256": "3d04f433e05d5634f8b1f15e976ae195e79e6376ea03abcd56c2954e1ac1bda7",
       "bytes": 12823
+    },
+    {
+      "path": "docs/assets/atlas/HK10_PUBLICATION_20261009.json",
+      "source": "docs/assets/atlas/HK10_PUBLICATION_20261009.json",
+      "sha256": "cd206c2c73842c42bb8452c39b69c5c8e4aeec2165e70acf4953f4462385b8ac",
+      "bytes": 12902
     },
     {
       "path": "docs/assets/atlas/card-layout/c-boston-admm-flows.svg",
@@ -2911,6 +2917,240 @@
       "bytes": 1211
     },
     {
+      "path": "docs/assets/mainline-publication-20261009/BATCH_FILES.csv",
+      "source": "docs/assets/mainline-publication-20261009/BATCH_FILES.csv",
+      "sha256": "0543c78f5ed8071c048607ffebb9d5eea4c4f6190334cc872d28b048be1c65ca",
+      "bytes": 17114
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/CARDS.json",
+      "source": "docs/assets/mainline-publication-20261009/CARDS.json",
+      "sha256": "578d657a9269d875cc07e89b36fec8865a593b27f11303ac380221cfaa24e8e2",
+      "bytes": 13691
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json",
+      "source": "docs/assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json",
+      "sha256": "5dcc319cc9a8162a6c9797e4cceab65fbdd2eed9c08e4ebde7983ef4a4684df5",
+      "bytes": 33720
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/NOTICE.md",
+      "source": "docs/assets/mainline-publication-20261009/NOTICE.md",
+      "sha256": "f880a7234b6705c9c1bcb435cec967733ac67a6d70129057df3e913f3ddf3930",
+      "bytes": 4741
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/SOURCE_BASIS.json",
+      "source": "docs/assets/mainline-publication-20261009/SOURCE_BASIS.json",
+      "sha256": "d777829428348858a7475e38335147c74207ba7fa423988f5ff8b98b8dbee1bf",
+      "bytes": 2054
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.caption.md",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.caption.md",
+      "sha256": "af00cb705096a1e2b4c4c35d278e5615617bce745654f7d9139632b100dd6793",
+      "bytes": 906
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.png",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.png",
+      "sha256": "a3ea9639eb27fc1ded673ef69f1111e96f5f5a457d0da9a160fb268d0b37367c",
+      "bytes": 185939
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+      "sha256": "219d0098edce96dfb653bc6a97696825b22d7970c29065e4d270297b1e6b065d",
+      "bytes": 14358
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.caption.md",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.caption.md",
+      "sha256": "2157bce2ef5611903debd77e30814daeec8a80f9178421e9a73a8a881cf74c64",
+      "bytes": 755
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.png",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.png",
+      "sha256": "83a96bc6b22e4926b8a067e9a5104c1bfb1e3e0af3e49a8dae6060f9b02fc692",
+      "bytes": 363165
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+      "sha256": "3bb937946f2d4861eabf8c4cdc92b41275b01818b87ad4b0c75498a9ea764efd",
+      "bytes": 1534373
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/CHECKPOINT_AUDIT.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/CHECKPOINT_AUDIT.json",
+      "sha256": "422b92303fc2e9807b6af962a25535a689c59e9ebcd711571a39070cc1082b9d",
+      "bytes": 528
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/CONVERGENCE.plot.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/CONVERGENCE.plot.json",
+      "sha256": "a2f0059bf6b38aa271cadcfa633295518029d8e84e773c1413e640bb18326379",
+      "bytes": 734
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/FW_CHECK.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/FW_CHECK.json",
+      "sha256": "5549a46ee2258e60d53fdf902c1e59c9680963fd42dea2edbbbaef5f3d2b6e5d",
+      "bytes": 1566
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/MODEL_ID_MAP.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/MODEL_ID_MAP.json",
+      "sha256": "9a65d288af77755e761c34e496ff7f4cba6b48c8585a6233a60cb5d001ce19a5",
+      "bytes": 1453
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/PHYSICAL_ROAD_FLOW.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/PHYSICAL_ROAD_FLOW.csv",
+      "sha256": "055144a64bb8c801d77dff6575d053cb733df44005a07b4ee6b978e307121c30",
+      "bytes": 1285142
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/SCALE_COMPARISON.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/SCALE_COMPARISON.json",
+      "sha256": "d5ab81a10769f1477d981e4980f52e797997d2a5901bc18cf713aadc1d63e7c9",
+      "bytes": 3478
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/VEHICLE_DEMAND.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/VEHICLE_DEMAND.csv",
+      "sha256": "60f0e49c6b00a7c80d20c70cfa4317476bbc792dab34896a08ec4bf085bbe097",
+      "bytes": 72682
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/ZONE_ORDER.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/ZONE_ORDER.json",
+      "sha256": "ed8117e64426324621204e6d6805879a9aa57c593901fb6ae63ac969f07cf4d8",
+      "bytes": 330
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/NETWORK_BUILD_AUDIT.json",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/NETWORK_BUILD_AUDIT.json",
+      "sha256": "fdd0ac045ce92c76e968501c909e1050e8b44bc44289ddcc06bfacf5f8ef3dce",
+      "bytes": 1916
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/README.md",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/README.md",
+      "sha256": "582a4dae3e7e63c304895bf6ec33e42a8d6b77617cc64530e2d7715ed7d19b6e",
+      "bytes": 930
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/access.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/access.csv",
+      "sha256": "7dc8f75fa5d8426941116007e11fe256d4215005f71f081aa296de44ec1d1432",
+      "bytes": 431
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/network.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/network.csv",
+      "sha256": "437a5ebab64a3ca2d3d4a72d76db159f056baeff8db4a48371bb96e66747d380",
+      "bytes": 987815
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/physical_road_links.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/physical_road_links.csv",
+      "sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf",
+      "bytes": 1403471
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/restriction_audit.csv",
+      "source": "docs/assets/mainline-publication-20261009/ann-arbor/road-database/restriction_audit.csv",
+      "sha256": "01152b3f5e356ec1e8ca4422c7fd143554380cd18be03fafda4ce38cb409a6f4",
+      "bytes": 6390
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.caption.md",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.caption.md",
+      "sha256": "485fd6d340cdb49f38c9bb52557fbe6fc19ce113b897b73ce0e2f617d7e5f582",
+      "bytes": 638
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.png",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.png",
+      "sha256": "50d7d29a5498b328689e0fbc40ab22457342115a4701634c920f2d12e1120abb",
+      "bytes": 214160
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+      "sha256": "75303bf3e7cdf32aaf0ab7830472ec1e737b5e5d4036ca8827781baf06691b4c",
+      "bytes": 46077
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.caption.md",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.caption.md",
+      "sha256": "9ca59281a6148ab2476da948dfd029ac5603a25166ac53a6c71e824b48f21162",
+      "bytes": 929
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.csv",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.csv",
+      "sha256": "433c73f2ad3fad22ffea427b9951d2807f4002fdad0ba943a6c730a599c1ab0f",
+      "bytes": 23869
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.png",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.png",
+      "sha256": "143139f3f2d5c6ac4b5aa12902b8fb7b14280b6c91c46e50d61700b29ed604b7",
+      "bytes": 364346
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+      "sha256": "26d87fb5810b84e6cddc68dbf32abd992f0cee758e6c7678b12b561863c2be10",
+      "bytes": 107539
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/CAPACITY_TOP_ARCS.csv",
+      "source": "docs/assets/mainline-publication-20261009/chicago/CAPACITY_TOP_ARCS.csv",
+      "sha256": "1d5b274ca72b4aac094fdd7effe824583f7e306f6eff24a31b55dd5473db6d2c",
+      "bytes": 3000
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/ENDPOINT_AUDIT.json",
+      "source": "docs/assets/mainline-publication-20261009/chicago/ENDPOINT_AUDIT.json",
+      "sha256": "05c7d857b4e6e26bfc135b65bcf7a4546f3ddcf01af51e3bb6e411986e219483",
+      "bytes": 83971
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/chicago/VERIFICATION_IDENTITY.json",
+      "source": "docs/assets/mainline-publication-20261009/chicago/VERIFICATION_IDENTITY.json",
+      "sha256": "5db4c2f8f42a0e1f551ce9990fb380ca5a62bba5b87594b3427af946ce3514fe",
+      "bytes": 2215
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/increment.js",
+      "source": "docs/assets/mainline-publication-20261009/increment.js",
+      "sha256": "55d8f0ae595471722401cfb84a7d74707e67992866b8c59776fe24bd22895172",
+      "bytes": 14192
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/urbana-champaign/DIAGNOSIS.json",
+      "source": "docs/assets/mainline-publication-20261009/urbana-champaign/DIAGNOSIS.json",
+      "sha256": "b7459b0d83118ba52da9ca3257f966995d032e4f23449a3440bbf6b7ff389234",
+      "bytes": 613
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/urbana-champaign/OD_LEDGER.csv",
+      "source": "docs/assets/mainline-publication-20261009/urbana-champaign/OD_LEDGER.csv",
+      "sha256": "9d89c25f1e1ab75df8273acb4768f676a40130b9ac738884e1bb72999a951a0a",
+      "bytes": 75654
+    },
+    {
+      "path": "docs/assets/mainline-publication-20261009/urbana-champaign/TIMED_MODEL_ARCS.csv",
+      "source": "docs/assets/mainline-publication-20261009/urbana-champaign/TIMED_MODEL_ARCS.csv",
+      "sha256": "09cb5bbbd8efebe174b558d55be38fa4ba46347f805e778af52f1ab4e62bf851",
+      "bytes": 82242
+    },
+    {
       "path": "docs/assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
       "source": "docs/assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
       "sha256": "1b1a6c6c4a9cb9a00b8f57df7ef7b75b1eee89bbf4e5b24a7edaa5c630de7079",
@@ -3753,14 +3993,14 @@
     {
       "path": "docs/index.html",
       "source": "docs/index.html",
-      "sha256": "84a3a6aba9edca3dd4cfbe9e0820dab16fea190ef2523f585ed53176e144728e",
-      "bytes": 700432
+      "sha256": "a8a8ba0ea397af70f5c67ac9f6d9a9ba88d5769db82e245cc63511d0e4bb492c",
+      "bytes": 707299
     },
     {
       "path": "docs/index.md",
       "source": "docs/index.md",
-      "sha256": "7ac342d5632547d83c2f8b0292a2a1a64d6a0122cf1d9925bfedc2d43e35c1ba",
-      "bytes": 576249
+      "sha256": "ca7255e55899201f8ee57d379000d0eb883d33fc850d55c81a6c194af5bfb571",
+      "bytes": 624738
     },
     {
       "path": "docs/reproduce.html",
@@ -6939,8 +7179,8 @@
     {
       "path": "experiments/checkout-files.json",
       "source": "experiments/checkout-files.json",
-      "sha256": "9096ce06ef469a9e0c572607ab868bd9a99553edb0acb42b7fdfe51861122612",
-      "bytes": 91559
+      "sha256": "096f64d9b3bea87e60fee6d70f926ef59a8bf19b24ff70ba012145061c7a34dd",
+      "bytes": 96182
     },
     {
       "path": "experiments/environment-verification/boston-native-clean.json",
@@ -7467,8 +7707,8 @@
     {
       "path": "tools/check_computational_archive.py",
       "source": "tools/check_computational_archive.py",
-      "sha256": "0c7bf4d7ca783a4fb99070f7a37dd06affd128cddd0e8998814e4bdc15dca4f6",
-      "bytes": 5593
+      "sha256": "ca2eeaf7a86636259f0320a95910e2e7d34081ddc5d35b4741b5641767c4f550",
+      "bytes": 8063
     },
     {
       "path": "tools/check_readme_pages.py",
@@ -7481,6 +7721,12 @@
       "source": "tools/check_reproduction_status.py",
       "sha256": "43fe99f60ac1286440bd9e491b8837234f94a7c94e48e9b453bb9ffc2463552e",
       "bytes": 5480
+    },
+    {
+      "path": "tools/figures/render_mainline_20261009.py",
+      "source": "tools/figures/render_mainline_20261009.py",
+      "sha256": "e5b7509e72b5f79ca85e15743651255933e1bed9ed2aa674cf6d0baf33b53e56",
+      "bytes": 9091
     },
     {
       "path": "tools/gmns/boston_exchange.py",
@@ -7767,8 +8013,8 @@
     {
       "path": "tools/visuals/check_hk10_publication.py",
       "source": "tools/visuals/check_hk10_publication.py",
-      "sha256": "c1631ecc2567ef8df6ba1449e3891ad854ccb8844c2657c4f798ddf7b3753b23",
-      "bytes": 8315
+      "sha256": "b2b589157dc3f41449365187178368916cdf0c7858f93f42b30379bd6e3cd662",
+      "bytes": 9136
     },
     {
       "path": "tools/visuals/check_three_city_closeout.py",
@@ -7799,6 +8045,12 @@
       "source": "tools/visuals/freeze_hk10_publication.py",
       "sha256": "a7e824acbba2256ec623e85bd9a364efd25f79fe39ebed46695b548fbe44630b",
       "bytes": 3179
+    },
+    {
+      "path": "tools/visuals/freeze_mainline_publication.py",
+      "source": "tools/visuals/freeze_mainline_publication.py",
+      "sha256": "0bd89ffdb9b572a49db3a74d47cfa557c1dabcbaa9e719b8d5fa12911f6aebb1",
+      "bytes": 1027
     },
     {
       "path": "tools/visuals/homepage_evidence_r1_map.csv",

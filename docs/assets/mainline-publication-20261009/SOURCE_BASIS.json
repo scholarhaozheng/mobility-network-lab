@@ -1,0 +1,53 @@
+{
+  "checked_date": "2026-10-09",
+  "decision_actor": "Mobility Computation Lab mainline under explicit user project authorization",
+  "recheck_triggers": [
+    "new raw content",
+    "identifying fields",
+    "changed license scope",
+    "substantive source term change"
+  ],
+  "not_triggers": [
+    "new PNG/SVG SHA alone",
+    "private in historical filename",
+    "absent new S0 list",
+    "algorithm not converged"
+  ],
+  "sources": [
+    {
+      "id": "aaata",
+      "source": "TheRide official data terms",
+      "url": "https://www.theride.org/business/software-developers",
+      "applicable_content": "historical public-transport service research summaries",
+      "conditions": [
+        "transit-related project purpose",
+        "required attribution",
+        "no marks or endorsement",
+        "no stale live schedule service"
+      ],
+      "implementation": "NOTICE.md; no GTFS or replacement timetable included"
+    },
+    {
+      "id": "um",
+      "source": "U-M official Campus Transit",
+      "url": "https://ltp.umich.edu/campus-transit/",
+      "finding": "feed-specific redistribution permission not located; no new license claimed",
+      "applicable_content": "raw feed and replacement timetable collections",
+      "implementation": "specific raw inputs excluded, generated model summaries separately assessed"
+    },
+    {
+      "id": "census",
+      "source": "2020–2024 ACS B01003/B11001; LODES8 MI WAC 2021 C000",
+      "url": "https://www.census.gov/about/policies/citation.html",
+      "implementation": "source vintage and author-created estimates distinguished"
+    },
+    {
+      "id": "osm",
+      "source": "same frozen OSM-based road derivative",
+      "url": "https://www.openstreetmap.org/copyright",
+      "license": "https://opendatacommons.org/licenses/odbl/1-0/",
+      "applicable_content": "produced map and derivative road database",
+      "implementation": "attribution and free complete retained derivative database offer, ODbL 4.4/4.6"
+    }
+  ]
+}

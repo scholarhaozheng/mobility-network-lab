@@ -8,7 +8,8 @@ A five-zone Jane Byrne/West Loop morning HBW case with 20 positive vehicle OD pa
 
 The figures show saved method results, physical-flow maps and original-unit diagnostics. Drawing these figures invokes no optimizer.
 
-<span id="chicago-late-status-20261008"></span>
+<a id="chicago-late-status-20261008"></a>
+
 <a id="gap-20261008"></a>
 
 ## Latest received evidence · 8 October 2026
@@ -509,12 +510,14 @@ Chicago: the physical road chain is mapped to physical-node states and then to e
 
 [Complete evidence · same figure](<#figure-parity-chicago-local-details>) · [SVG](<../assets/template-parity-20261008/construction/chicago/local-details.svg>) · [PNG](<../assets/template-parity-20261008/construction/chicago/local-details.png>) · [PDF](<../assets/template-parity-20261008/construction/chicago/local-details.pdf>) · [Plot data](<../assets/template-parity-20261008/construction/chicago/local-details.plot.json>) · [Source record](<../assets/template-parity-20261008/construction/chicago/local-details.source.json>) · [Caption](<../assets/template-parity-20261008/construction/chicago/local-details.caption.md>)
 
-<span id="released-c06-t-admm-main"></span>
+<a id="released-c06-t-admm-main"></a>
+
 <a id="parity-chicago-finite"></a>
 
 ## Optimization on the time-expanded network
 
-<span id="released-c06-t-lr"></span>
+<a id="released-c06-t-lr"></a>
+
 <a id="figure-parity-chicago-lr-bounds"></a>
 
 ##### Lagrangian bounds and certified gap
@@ -544,6 +547,34 @@ The best-bound multiplier state is the saved price vector that supports the acce
 Panel a retains all 26 own-pool feasibility augmentation rounds and the ten separate original-cost rounds; the divider marks the phase boundary. Panel b shows the ten saved feasible original-cost recovery objectives. The 128 inherited own-LR paths grow to 182 through 54 new own-price events; no CG pool or reference witness was used. These are two stages of the named hybrid, not 36 identical subgradient steps.
 
 [Complete evidence · same figure](<#figure-parity-chicago-lr-recovery>) · [SVG](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.svg>) · [PNG](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.png>) · [PDF](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.pdf>) · [Plot data](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.plot.json>) · [Source record](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.source.json>) · [Caption](<../assets/template-parity-20261008/optimization/chicago/lr-recovery.caption.md>)
+
+<a id="chicago-admm116"></a>
+
+### ADMM: saved continuation to outer116
+
+The saved ADMM continuation reaches outer 116 but remains unconverged. Original x is infeasible: capacity excess 0.0421644796900 PCE, primal 0.121224522778 PCE, dual 0.0391348952092 min and endpoint stationarity 0.0250952425689 min. The CG objective difference is not evaluated. Outer 34–36 retains the original coordination; 37–116 uses the registered alpha=1.6 candidate.
+
+<a id="figure-chicago-admm116-history"></a>
+
+##### ADMM: actual history and original stopping gates
+
+[![ADMM: actual history and original stopping gates](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg>)](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg>)
+
+All 84 actual saved rows from outer 33–116 are plotted. Outer 33 is the inherited boundary; 34–36 retain the original coordination and 37–116 use alpha=1.6 (divider at 36.5). Panels show original-x objective in PCE·min, capacity excess in PCE, primal residual in PCE and rho-scaled dual residual in min, with saved original thresholds. Rho is fixed at 0.14357255844301195 min/PCE and has no separate panel. The stationarity diamond is the only verified endpoint shown, not an invented history. At outer116 the original x remains infeasible; its objective 241.864094592416 PCE·min is not a feasible upper bound. CG objective difference is not evaluated, not zero. Provider audits and two completed exact-archive read-only replays are reused; mainline checked the saved histories and signatures without running an optimizer.
+
+[SVG](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg>) · [PNG](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.png>) · [PDF](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.pdf>) · [Saved history · 84 rows](<../assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.csv>) · [Endpoint checks](<../assets/mainline-publication-20261009/chicago/ENDPOINT_AUDIT.json>) · [Verification identity](<../assets/mainline-publication-20261009/chicago/VERIFICATION_IDENTITY.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>)
+
+<a id="figure-chicago-admm116-capacity"></a>
+
+##### ADMM: original-x capacity excess at outer116
+
+[![ADMM: original-x capacity excess at outer116](<../assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg>)](<../assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg>)
+
+The ten largest positive original-x capacity excesses at outer116 are ranked. Commodity bars retain PCE flow, black marks are the frozen per-arc capacity, and the right panel shows positive excess against the original 1e−5 PCE gate. The maximum is 0.0421644796900 PCE. These are generated time-arc model values, not measured passenger records. Reused provider figure; no numerical or geometric change. This failing diagnostic does not relabel successful CG or LR hybrid results, the old pure-LR endpoints, or the failed rank26/52 reductions.
+
+[SVG](<../assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg>) · [PNG](<../assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.png>) · [PDF](<../assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.pdf>) · [Saved capacity rows](<../assets/mainline-publication-20261009/chicago/CAPACITY_TOP_ARCS.csv>) · [Endpoint checks](<../assets/mainline-publication-20261009/chicago/ENDPOINT_AUDIT.json>) · [Verification identity](<../assets/mainline-publication-20261009/chicago/VERIFICATION_IDENTITY.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>)
+
+Low-rank26/52 remain below their gates. The I80/full-minor result is not a compression success. The accepted LR hybrid does not reclassify the older pure-LR endpoint. These saved diagnostics were checked by the provider and two existing read-only archive replays; mainline performed only summary/history/signature checks.
 
 <a id="reproduction"></a>
 
@@ -804,7 +835,8 @@ T 图的细道路分段逐段向上取整会把最短网格行程推到约 40–
 
 Source and scope notice. © OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright; numerical results are engineering scenarios, not observed traffic. Jane Byrne / West Loop R2 engineering S20 and separate T4. CG is accepted on its own full-graph certificate; the current Native80 and own-pool LR hybrid retain their separate identities. Complete notice .
 
-<span id="chicago-r3-input-construction-ledger"></span>
+<a id="chicago-r3-input-construction-ledger"></a>
+
 <a id="chicago-r3-input-time-layer-excerpt"></a>
 
 ##### Time-expanded network: saved input layers
