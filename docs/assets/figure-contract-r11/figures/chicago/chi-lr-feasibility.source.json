@@ -1,0 +1,291 @@
+{
+  "figure_id": "chi-lr-feasibility",
+  "city": "chicago",
+  "instance": "LR_SELF_PRICED_FEASIBILITY_AND_RESTRICTED_RECOVERY_DUAL_ANCHOR_HYBRID_V001",
+  "role": "iteration",
+  "conclusion": "The hybrid removes its own restricted-pool artificial demand over 26 pricing rounds.",
+  "panels": [
+    "Artificial demand in own path pool"
+  ],
+  "quantity": "artificial unserved demand",
+  "unit": "PCE",
+  "original_family": "C06_LR_SELF_POOL_GAP",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "saved_states": 26,
+  "schema": "mcl_figure_r11",
+  "caption": "These are the hybrid’s 26 own-pool feasibility rounds. They precede the separate 10 original-cost iterations; they are not 36 equivalent subgradient steps. The earlier pure LR failure remains a distinct result. Frozen Jane Byrne S20/T4 engineering scenarios. LR is a new self-priced recovery hybrid; Native80 is uncompressed; ADMM33 remains failed. Household figure is ACS/TIGER area allocation not used by old generation. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census ACS/TIGER.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_LR_SELF_POOL_GAP.plot.json",
+      "sha256": "c5566c4648fe12374b46ef1be478d2ba65624fdf6dcbde297a5a121df6a515c2"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_LR_SELF_POOL_GAP.caption.md",
+      "sha256": "129da5f4fafa446f04b419ab1deed33e8990fc7b09b8e52c615da1998d8d30d9"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "Own-pool feasibility recovery",
+    "scope": "T4 / self-priced LR hybrid"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.87,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2181,
+    1134
+  ],
+  "exports": {
+    "png": "70fef77e44ade7f1e69fc84c5beda0a44708e12a9ff001cc66f7148a12c46837",
+    "svg": "b1f3f43ce25b6801fbaeacbe949f31ed46dbf647ac647a5df3d35298ed9d0eaa",
+    "pdf": "a63161d914436be769cec1f972d6bf0a9ffec4142116959a2fb6c235edf22987"
+  },
+  "text_audit": [
+    {
+      "text": "Own feasibility-pricing round",
+      "size_pt": 9.0,
+      "bounds_px": [
+        342.875,
+        46.411,
+        186.25,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        90.952,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        166.838,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        242.723,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        318.609,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        390.932,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        466.818,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "18",
+      "size_pt": 8.0,
+      "bounds_px": [
+        542.704,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "21",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.589,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "24",
+      "size_pt": 8.0,
+      "bounds_px": [
+        694.475,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "27",
+      "size_pt": 8.0,
+      "bounds_px": [
+        770.361,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Artificial unserved demand (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        62.861,
+        116.2,
+        13.0,
+        213.5
+      ]
+    },
+    {
+      "text": "−5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        79.292,
+        31.679,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.542,
+        83.521,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.542,
+        135.363,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.417,
+        187.205,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.417,
+        239.048,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.417,
+        290.89,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.417,
+        342.732,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.417,
+        394.574,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  T4 / self-priced LR hybrid",
+      "size_pt": 8.7,
+      "bounds_px": [
+        52.0,
+        400.656,
+        260.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Own-pool feasibility recovery",
+      "size_pt": 15.0,
+      "bounds_px": [
+        52.0,
+        373.711,
+        339.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#chi-lr-feasibility"
+}

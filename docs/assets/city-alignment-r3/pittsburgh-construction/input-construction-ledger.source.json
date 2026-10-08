@@ -1,0 +1,48 @@
+{
+  "city": "pittsburgh",
+  "figure": "input-construction-ledger",
+  "title": "T4 input arc ledger and four-OD pulse",
+  "caption": "INPUT ONLY / NOT OPTIMIZED. Frozen T4 construction contains 1,811,888 arcs and four commodities totaling 0.0450275484535 PCE. All demand departs at step 5 with a 30-second step and H=117 (58.5 minutes). The bars use all saved arc records and exact saved demand quantities; count axis is logarithmic. Physical, wait, turn where present, and ledger roles follow the frozen identity. This is input structure, not an optimized endpoint.",
+  "source_snapshot": {
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_arc.csv": {
+      "sha256": "0da6eb8fdcb5a1897768199508f630115749515c2f42d6a2390ccf265e2db1e2",
+      "size_bytes": 176040215
+    },
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_demand.csv": {
+      "sha256": "15b5857db8111533c956479c4674756c72f7c87477968e4b27d81e5f0057551b",
+      "size_bytes": 656
+    },
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\MODEL_IDENTITY.json": {
+      "sha256": "d4e513fa32b3ca61685150c51906fe7caa51e5e212e5079cb5d866e25c41f87e",
+      "size_bytes": 2413
+    }
+  },
+  "snapshot_utc": "2026-10-06T18:26:44.176332+00:00",
+  "scientific_solver_calls": 0,
+  "status": "INPUT ONLY / NOT OPTIMIZED",
+  "panels": [
+    {
+      "metric": "count by saved arc_type",
+      "unit": "records",
+      "counts": {
+        "physical_road": 350106,
+        "turn_movement": 779805,
+        "wait": 681742,
+        "source_connector": 4,
+        "sink_connector": 231
+      }
+    },
+    {
+      "metric": "four saved demand volumes",
+      "unit": "PCE",
+      "total": 0.045027548453549955
+    }
+  ],
+  "renderer": "build_input_figures.py",
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; navy/teal/blue; white",
+  "exports": {
+    "svg": "130db53edbbb761465fa67e925e1e3a295c07138a8703957a45a1bd0cdb4ffef",
+    "png": "321c6a4f7590a6132caefa512dc0ad956685cd2e0b05c874dac4689851c5f865",
+    "pdf": "7c50089bbbcc3c2fddac07feeec338c86746e0577d418078e545047c70db83e1"
+  }
+}

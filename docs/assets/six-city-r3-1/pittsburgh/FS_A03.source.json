@@ -1,0 +1,41 @@
+{
+  "figure_id": "FS_A03",
+  "city": "pittsburgh",
+  "title": "Physical road loading detail",
+  "caption": "All used physical links are shown, excluding virtual turn arcs. Points retain the saved PCE, v/c and BPR segment travel time. The OUT-state convention omits the first physical link when loading a path; the figure does not alter that endpoint convention. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "PCE / hour; dimensionless v/c; minutes",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/pittsburgh/original/FS_A03.svg",
+      "sha256": "e5f558dba4a2cf7637446d3e2677d29ee77c7d3683d10684cdcf46b09a445d4f"
+    },
+    {
+      "logical_source": "physical_loading.csv",
+      "sha256": "af423e3760e55d3141c8b1c20f498383a1f18080a2789b6ac3a4013e22acb646"
+    },
+    {
+      "logical_path": "figure_sources/pittsburgh/original/plot_data/physical_flow.csv",
+      "sha256": "cefd1061bc91500ba9fc03e1d176e26b57a426e41e1d6cadd977ba6a4f491dd9"
+    }
+  ],
+  "source_run_receipt_sha256": "25cefa61846a5d08a13f90723f5a3a791b51069a190501147cab9105d30d4cd0",
+  "source_metadata_sha256": "9f888de458b69f4031b490d91806d3ec5e86736817b0755b121c881865cbb45b",
+  "png_sha256": "c5eeda7e46b202db3395c48856a08f57916c7e099497fa958dcbe9c0942333bb",
+  "svg_sha256": "15f0b17f4b4d50d368159bb58bb4c571cc1dc749271d31133205036222124faf",
+  "transformation": [
+    "Keep physical rows with saved volume_pce > 1e-9; display two scatter relationships. Statistics are outside the axis labels.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_targeted_fixes.py --snapshot SNAPSHOT --output OUTPUT",
+  "page_anchor": "figure-fs-a03",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "6504ae5715f3a12ce8dc07c0f0093efbbc36e5fa4430f1118bb78153fb39d451",
+  "input_png_sha256": "c5eeda7e46b202db3395c48856a08f57916c7e099497fa958dcbe9c0942333bb",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

@@ -1,0 +1,320 @@
+{
+  "figure_id": "ith-employment-allocation",
+  "city": "ithaca",
+  "instance": "ITHACA_11ZONE_LODES2020",
+  "role": "input_evidence",
+  "conclusion": "Employment totals retain explicit uncertainty from partially intersected census blocks.",
+  "panels": [
+    "Per-zone contained/intersected accounting range and area estimate"
+  ],
+  "quantity": "workplace jobs",
+  "unit": "jobs",
+  "original_family": "ITH_GC01_Employment",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "schema": "mcl_figure_r11",
+  "caption": "Grey spans run from fully contained to all intersecting blocks; they are spatial accounting limits, not confidence intervals. Totals are 7,493 contained, 8,752.529 area-allocated and 10,858 intersecting-block jobs. This supplement did not replace the frozen HBO activity attraction. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC01_Employment.plot.csv",
+      "sha256": "a593730e53c0f46dd676a0e17f4671872c82ec702d0393845a9ccf5a1cd3028e"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC01_Employment.caption.txt",
+      "sha256": "8715d9cb5143746bb8674a0d4fb2eb73040490459906356e1877c039485aaef6"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Ithaca",
+    "title": "Employment allocation and spatial accounting limits",
+    "scope": "11 model zones / LODES 2020"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.87,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2181,
+    1134
+  ],
+  "exports": {
+    "png": "66aef5a3308b936efea1ed50abab7044cf2a366eab19e41fc9f64650329203c4",
+    "svg": "ce3faacda982d5aa19b3dde61d1a395a102f100be0042c00b2d7bfcba2abb1f1",
+    "pdf": "f0f7fdc077edad7bc662310bfdf7b1e1259a9cd906d8750221a163b588c1df25"
+  },
+  "text_audit": [
+    {
+      "text": "Workplace jobs (JT00, C000)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        361.125,
+        46.411,
+        181.75,
+        13.0
+      ]
+    },
+    {
+      "text": "−1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.607,
+        64.967,
+        37.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        159.855,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        280.104,
+        64.967,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        411.039,
+        64.967,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.975,
+        64.967,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "4000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        672.91,
+        64.967,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        803.846,
+        64.967,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2020 tract suffix",
+      "size_pt": 9.0,
+      "bounds_px": [
+        66.361,
+        170.388,
+        13.0,
+        105.125
+      ]
+    },
+    {
+      "text": "000100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        343.905,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000201",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        318.514,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000202",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        293.123,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        267.732,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        242.341,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        216.95,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        191.559,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        166.168,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        140.777,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        115.386,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.917,
+        89.995,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Fully contained blocks",
+      "size_pt": 8.0,
+      "bounds_px": [
+        621.125,
+        124.411,
+        126.875,
+        10.0
+      ]
+    },
+    {
+      "text": "All intersecting blocks",
+      "size_pt": 8.0,
+      "bounds_px": [
+        621.125,
+        108.856,
+        126.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Area-allocation scenario",
+      "size_pt": 8.0,
+      "bounds_px": [
+        621.125,
+        93.3,
+        136.875,
+        10.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  11 model zones / LODES 2020",
+      "size_pt": 8.7,
+      "bounds_px": [
+        52.0,
+        400.656,
+        279.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Employment allocation and spatial accounting limits",
+      "size_pt": 15.0,
+      "bounds_px": [
+        52.0,
+        373.711,
+        619.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#ith-employment-allocation"
+}

@@ -1,0 +1,15 @@
+{
+  "phase_i": {
+    "artificial_abs": 1e-08,
+    "negative_reduced_cost_abs": 1e-08
+  },
+  "phase_ii": {
+    "negative_reduced_cost_abs": 1e-07
+  },
+  "units": {
+    "phase_i_artificial_abs": "PCE",
+    "phase_i_negative_reduced_cost_abs": "dimensionless",
+    "phase_ii_negative_reduced_cost_abs": "minutes"
+  },
+  "pricing_rule": "Add a path only if full-graph reduced cost < -negative_reduced_cost_abs."
+}

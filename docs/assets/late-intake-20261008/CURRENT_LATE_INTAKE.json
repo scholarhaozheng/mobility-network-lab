@@ -1,0 +1,4091 @@
+{
+  "schema": "mcl.mainline.current_late_intake.20261008.v1",
+  "created_at_utc": "2026-10-07T16:24:42.606519+00:00",
+  "status": "SOURCE_CHECKED_PROVIDER_STATES_REGISTERED",
+  "scope": "Private local R8 metadata increment, with unchanged page layout, original 19 comparison rows, figure assets and historical records.",
+  "new_assets_allowed_for_integration": [],
+  "scientific_solver_calls": 0,
+  "scientific_replay_calls": 0,
+  "new_experiments_by_mainline": 0,
+  "public_release_granted": false,
+  "release_cutoff": {
+    "kind": "single_pass_local_directory_discovery",
+    "report_time_utc": "2026-10-07T16:14:56.175465+00:00",
+    "directories_observed": {
+      "S0 release": [
+        "v001",
+        "v002",
+        "v003"
+      ],
+      "S0 updates": [
+        "v002",
+        "v003"
+      ],
+      "S0 delivery intake_20261007": [],
+      "S0 assembly intake_20261007": [
+        "CHECKPOINT.json",
+        "inspect_packages.py",
+        "read_zip_key.py"
+      ]
+    },
+    "scope_note": "Directory contents were read once in this intake discovery, not repeatedly polled. Working CHECKPOINT was read as preparation only. This report does not assert no files can arrive after this observation.",
+    "s0_working_checkpoint": {
+      "task_id": "MCL_S0_CURRENT_INCREMENT_BATCH_RECEPTION_20261007",
+      "status": "IN_PROGRESS",
+      "started_at_utc": "2026-10-07T16:06:05.746259+00:00",
+      "deadline_utc": "2026-10-08T00:06:05.746259+00:00",
+      "scope": [
+        "berkeley",
+        "urbana_champaign",
+        "pittsburgh",
+        "chicago"
+      ],
+      "no_cross_thread_messages": true
+    }
+  },
+  "release_record": {
+    "file": "ACTUAL_RELEASE_CONSUMED.json",
+    "sha256": "0ecbcbc3193e5b7ed3b98949d4976bc4e34ce5e415cf8c6423025f2718dc84c6",
+    "status": "CURRENT_WAITING_S0_ACTUAL_ASSET_DECISION",
+    "hold_counts": {
+      "files": 146,
+      "by_city": {
+        "chicago": 76,
+        "urbana_champaign": 4,
+        "pittsburgh": 66
+      },
+      "figure_families": {
+        "chicago": 15,
+        "urbana_champaign": 1,
+        "pittsburgh": 13
+      }
+    }
+  },
+  "audit_records": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\late_intake_20261008\\UC_CHICAGO_CURRENT_INTAKE.json",
+      "sha256": "8715c3c526df6a93e16404fe2259065f74a37596fe24a001dbb2d2acf03ff57f",
+      "scope": "read saved provider records and verify identity; no new science acceptance"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\late_intake_20261008\\PITTSBURGH_V7_CURRENT_INTAKE.json",
+      "sha256": "883dd8d401f9101d667fb6d35175d1b09a3ac5ee4bf8b59c8cc8194c60d6b2bd",
+      "scope": "read saved provider records and verify identity; no new science acceptance"
+    }
+  ],
+  "berkeley": {
+    "producer_science": "LR formal23 PASS; original10 accepted gate plus cold-start300 diagnostic; ADMM170 accepted post-diagnostic. Same LR archive bytes are reused, not a new run.",
+    "s0_new_science_receipt": "NOT_RECEIVED_IN_ACTUAL_RELEASE",
+    "new_public_asset_decision": "NOT_RECEIVED",
+    "existing_turn_permission": "PRESERVE_v002_PNG_SVG",
+    "action": "Unchanged; retain formal LR23 PASS, original10, diagnostic coldstart300 and ADMM170. Repeated LR ZIP is not a new experiment."
+  },
+  "urbana_champaign": {
+    "current_revision": "continuation_20261007",
+    "provider_ready_status": "READY_FOR_S0_SCIENCE_AUDIT",
+    "method_status": {
+      "schema": "mcl_C02_goal_method_status_20261007_v1",
+      "created_utc": "2026-10-07T10:42:07.048032+00:00",
+      "case_id": "central_champaign_urbana_2026_r2",
+      "baseline_result_matrix_sha256": "f07124df59779b119b5c623976580ec588f39c58883a2f69f3b24451bec97e01",
+      "baseline_methods": {
+        "S_FW": "ACCEPTED",
+        "S_FINITE": "ACCEPTED",
+        "S_NATIVE26": "GATE_NOT_MET",
+        "S_NATIVE52": "GATE_NOT_MET",
+        "T_LP_HIGHS_ATTEMPT": "GATE_NOT_MET",
+        "T_LP_EXACT_DAG": "ACCEPTED",
+        "T_CG": "ACCEPTED",
+        "T_LR": "ACCEPTED",
+        "T_ADMM": "ACCEPTED",
+        "T_ADMM_TIER2": "NOT_RUN"
+      },
+      "current_methods": {
+        "S_FW": "ACCEPTED",
+        "S_FINITE": "ACCEPTED",
+        "S_NATIVE26": "ACCEPTED",
+        "S_NATIVE52": "ACCEPTED",
+        "T_LP_HIGHS_ATTEMPT": "GATE_NOT_MET",
+        "T_LP_EXACT_DAG": "ACCEPTED",
+        "T_CG": "ACCEPTED",
+        "T_LR": "ACCEPTED",
+        "T_ADMM": "ACCEPTED",
+        "T_ADMM_TIER2": "NOT_RUN"
+      },
+      "candidate_1_native": {
+        "26": {
+          "previous": "GATE_NOT_MET",
+          "candidate": "ACCEPTED",
+          "current": "ACCEPTED",
+          "outer": 9,
+          "max_OD_residual_pce": 1.8816028177388866e-08,
+          "final_solution_sha256": "b2fdfb01c0815e30084b078175243100d86320397dc6326e4f4d4ef8d2aef56f",
+          "result_sha256": "628fec6a4b91f06622b952242ed9e4fcec325d9e82e570f479643279d51d179c",
+          "independent_replay_count": 2
+        },
+        "52": {
+          "previous": "GATE_NOT_MET",
+          "candidate": "ACCEPTED",
+          "current": "ACCEPTED",
+          "outer": 9,
+          "max_OD_residual_pce": 1.8723606126256828e-08,
+          "final_solution_sha256": "5344dd0c064e6ac5c7d78251a5451580428404d976d693ea7072e61b9af159bc",
+          "result_sha256": "73a7ee1b01e3f94678fb67e2f019411b688892739e2d2293325cfaa5a0f86cfa",
+          "independent_replay_count": 2
+        }
+      },
+      "identity_note": "Old R2 outcomes and receipts remain immutable; accepted candidate status requires two saved-state replays."
+    },
+    "scope": {
+      "city": "Central Champaign–Urbana bounded subarea, not UIUC campus or whole city",
+      "area_km2": 19.303,
+      "zones": 21,
+      "four_stage_positive_OD": 418,
+      "four_stage_model_hour_pce": 1963.6483127,
+      "S_positive_OD": 72,
+      "S_model_hour_pce": 321.6296598827645,
+      "S_path_count": 360,
+      "T_OD": 4,
+      "T_pulse_pce": 0.05162314826794134,
+      "T_dt_seconds": 30,
+      "T_H": 160,
+      "T_capacity_scope": "Total pulse below minimum time-arc capacity 3.75 PCE; nonbinding capacity example.",
+      "S_units": "Saved quantities use PCE for one modeled hour (flow display PCE/h); objective PCE min; relative gaps dimensionless."
+    },
+    "native_endpoints": {
+      "26": {
+        "provider_status": "ACCEPTED",
+        "result": {
+          "path": "E:/mobility_computation_lab_v2/work/urbana_champaign_algorithm_transfer_r1/native_continuation_r1/runs/rank26/result.json",
+          "sha256": "628fec6a4b91f06622b952242ed9e4fcec325d9e82e570f479643279d51d179c",
+          "bytes": 3948
+        },
+        "solution": {
+          "path": "E:/mobility_computation_lab_v2/work/urbana_champaign_algorithm_transfer_r1/native_continuation_r1/runs/rank26/outer_09_solution.npz",
+          "sha256": "b2fdfb01c0815e30084b078175243100d86320397dc6326e4f4d4ef8d2aef56f",
+          "bytes": 25727
+        },
+        "historical_outer8": {
+          "outer": 8,
+          "check": {
+            "instance_signature": "620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+            "path_count": 360,
+            "rank": 26,
+            "min_path_flow_raw": 5.910274001486932e-09,
+            "negative_path_count_raw": 0,
+            "negative_path_mass_raw": 0.0,
+            "min_explicit_link_flow_raw": 0.0,
+            "negative_explicit_link_count_raw": 0,
+            "max_abs_od_residual": 8.244534783253296e-05,
+            "od_residual_sum": -8.240935651323612e-05,
+            "od_residual_l1": 8.24813391518298e-05,
+            "max_link_reconstruction_error": 4.263256414560601e-14,
+            "objective_checked": 1086.5534033528224,
+            "signed_full_gap": -0.00014012341466695943,
+            "full_relative_gap": -1.289603394964907e-07,
+            "signed_pool_gap": -0.00014012341739544354,
+            "pool_relative_gap": -1.2896034200760732e-07,
+            "demand_total": 321.6296598827645,
+            "positive_links_strict": 8929,
+            "positive_links_display_1e_minus_6": 6678,
+            "gates": {
+              "max_od_error_abs": 1e-06,
+              "max_od_error_rel": 1e-08,
+              "total_od_l1_rel": 1e-08,
+              "full_relative_gap_abs": 1e-05,
+              "negative_flow_abs": 1e-08,
+              "link_reconstruction_abs": 1e-07
+            },
+            "objective_minus_fw": -0.00014012341171110165,
+            "status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED"
+          },
+          "solution_sha256": "124a7f64df1ae44ead641107de41d2c75070b1fb23433175af0a62721d21ea9e",
+          "source": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_26_resumed\\outer_08_solution.npz"
+        },
+        "current_outer9": {
+          "outer": 9,
+          "rho": 2560.0,
+          "check": {
+            "instance_signature": "620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+            "path_count": 360,
+            "rank": 26,
+            "min_path_flow_raw": 2.9610665935145116e-11,
+            "negative_path_count_raw": 0,
+            "negative_path_mass_raw": 0.0,
+            "min_explicit_link_flow_raw": 0.0,
+            "negative_explicit_link_count_raw": 0,
+            "max_abs_od_residual": 1.8816028177388866e-08,
+            "od_residual_sum": -3.681580662334358e-08,
+            "od_residual_l1": 3.681580662334358e-08,
+            "max_link_reconstruction_error": 2.842170943040401e-14,
+            "objective_checked": 1086.5535433925534,
+            "signed_full_gap": -8.367373993678484e-08,
+            "full_relative_gap": -7.700777592456942e-11,
+            "signed_pool_gap": -8.367692316824105e-08,
+            "pool_relative_gap": -7.701070556025777e-11,
+            "demand_total": 321.6296598827645,
+            "positive_links_strict": 8929,
+            "positive_links_display_1e_minus_6": 5790,
+            "gates": {
+              "max_od_error_abs": 1e-06,
+              "max_od_error_rel": 1e-08,
+              "total_od_l1_rel": 1e-08,
+              "full_relative_gap_abs": 1e-05,
+              "negative_flow_abs": 1e-08,
+              "link_reconstruction_abs": 1e-07
+            },
+            "objective_minus_fw": -8.368078852072358e-08,
+            "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+          },
+          "solution_sha256": "b2fdfb01c0815e30084b078175243100d86320397dc6326e4f4d4ef8d2aef56f",
+          "native_termination": "optimal"
+        }
+      },
+      "52": {
+        "provider_status": "ACCEPTED",
+        "result": {
+          "path": "E:/mobility_computation_lab_v2/work/urbana_champaign_algorithm_transfer_r1/native_continuation_r1/runs/rank52/result.json",
+          "sha256": "73a7ee1b01e3f94678fb67e2f019411b688892739e2d2293325cfaa5a0f86cfa",
+          "bytes": 3937
+        },
+        "solution": {
+          "path": "E:/mobility_computation_lab_v2/work/urbana_champaign_algorithm_transfer_r1/native_continuation_r1/runs/rank52/outer_09_solution.npz",
+          "sha256": "5344dd0c064e6ac5c7d78251a5451580428404d976d693ea7072e61b9af159bc",
+          "bytes": 26942
+        },
+        "historical_outer8": {
+          "outer": 8,
+          "check": {
+            "instance_signature": "620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+            "path_count": 360,
+            "rank": 52,
+            "min_path_flow_raw": 8.85872494767887e-12,
+            "negative_path_count_raw": 0,
+            "negative_path_mass_raw": 0.0,
+            "min_explicit_link_flow_raw": 0.0,
+            "negative_explicit_link_count_raw": 0,
+            "max_abs_od_residual": 8.248817476135353e-05,
+            "od_residual_sum": -8.248819056961621e-05,
+            "od_residual_l1": 8.248820051627082e-05,
+            "max_link_reconstruction_error": 8.526512829121202e-14,
+            "objective_checked": 1086.553394105611,
+            "signed_full_gap": -0.00014937064793230093,
+            "full_relative_gap": -1.3747088363409305e-07,
+            "signed_pool_gap": -0.00014937065111553238,
+            "pool_relative_gap": -1.3747088656372913e-07,
+            "demand_total": 321.6296598827645,
+            "positive_links_strict": 8929,
+            "positive_links_display_1e_minus_6": 5790,
+            "gates": {
+              "max_od_error_abs": 1e-06,
+              "max_od_error_rel": 1e-08,
+              "total_od_l1_rel": 1e-08,
+              "full_relative_gap_abs": 1e-05,
+              "negative_flow_abs": 1e-08,
+              "link_reconstruction_abs": 1e-07
+            },
+            "objective_minus_fw": -0.0001493706231485703,
+            "status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED"
+          },
+          "solution_sha256": "a0934324e7c46f560d537b4225eea8bbade9d3054b132cd8874f0f7063398a0d",
+          "source": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_52\\outer_08_solution.npz"
+        },
+        "current_outer9": {
+          "outer": 9,
+          "rho": 2560.0,
+          "check": {
+            "instance_signature": "620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+            "path_count": 360,
+            "rank": 52,
+            "min_path_flow_raw": 3.6016784665120543e-09,
+            "negative_path_count_raw": 0,
+            "negative_path_mass_raw": 0.0,
+            "min_explicit_link_flow_raw": 0.0,
+            "negative_explicit_link_count_raw": 0,
+            "max_abs_od_residual": 1.8723606126256828e-08,
+            "od_residual_sum": 4.679704370693337e-08,
+            "od_residual_l1": 4.679704370693337e-08,
+            "max_link_reconstruction_error": 4.263256414560601e-14,
+            "objective_checked": 1086.5535580448768,
+            "signed_full_gap": 1.4568660162694869e-05,
+            "full_relative_gap": 1.3408031038763639e-08,
+            "signed_pool_gap": 1.4568657434210763e-05,
+            "pool_relative_gap": 1.3408028527647368e-08,
+            "demand_total": 321.6296598827645,
+            "positive_links_strict": 8929,
+            "positive_links_display_1e_minus_6": 7265,
+            "gates": {
+              "max_od_error_abs": 1e-06,
+              "max_od_error_rel": 1e-08,
+              "total_od_l1_rel": 1e-08,
+              "full_relative_gap_abs": 1e-05,
+              "negative_flow_abs": 1e-08,
+              "link_reconstruction_abs": 1e-07
+            },
+            "objective_minus_fw": 1.456864265492186e-05,
+            "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+          },
+          "solution_sha256": "5344dd0c064e6ac5c7d78251a5451580428404d976d693ea7072e61b9af159bc",
+          "native_termination": "optimal"
+        }
+      }
+    },
+    "frozen_continuation_policy": {
+      "schema": "mcl_C02_native_continuation_policy_v1",
+      "candidate": "C02_NATIVE_CONTINUATION_1",
+      "scientific_model": "C02 S72 frozen turn-expanded BPR/Beckmann, 72 selected OD, 360 legal paths, rank 26 and 52 unchanged",
+      "reason": "Both raw eighth-outer endpoints are optimal ALM subproblems with original OD error about 8.25e-5 PCE; error fell as rho doubled but misses the frozen 1e-6 PCE gate.",
+      "change": "Continue the same ALM multiplier/rho recurrence from each exact outer-08 state for at most four more outer steps. No solver, basis, path, demand, capacity, gate, or initialization change.",
+      "first_outer": 9,
+      "last_outer": 12,
+      "rho_multiplier": 2.0,
+      "inner_timeout_seconds": 600,
+      "per_rank_wall_seconds": 2400,
+      "maximum_worker_tree_private_bytes": 8589934592,
+      "guard_kind": "heavy",
+      "guard_wait_seconds": 1800,
+      "guard_timeout_seconds": 2700,
+      "gate_source": "runs/berkeley_c2a_transfer_r2/GATES.json",
+      "endpoint_rule": "First original-space evaluator PASS, otherwise outer-12 or explicit resource/failure endpoint; no best-intermediate substitution",
+      "failed_endpoints_sha256": {
+        "26": "124a7f64df1ae44ead641107de41d2c75070b1fb23433175af0a62721d21ea9e",
+        "52": "a0934324e7c46f560d537b4225eea8bbade9d3054b132cd8874f0f7063398a0d"
+      },
+      "frozen_controller_sha256": "969bdc3b352589dd1c0135b89c97395831eb97de92d11e9c9023b7627a2c2f87",
+      "frozen_shared_native_source_sha256": "3f2127ef648d6821bec9f976af54c3bb279f65128bbe2795d5dc1b95d3537f32",
+      "accepted_old_outputs": "read-only",
+      "max_new_candidates": 2,
+      "public_claim": "No acceptance unless original-space OD, link reconstruction, nonnegativity and full-graph gap gates all pass"
+    },
+    "packages": [
+      {
+        "path": "E:/mobility_computation_lab_v2/deliveries/urbana_champaign_algorithm_transfer_r1/continuation_20261007/MCL_C02_Urbana_Current_Goal_20261007_Private_Full.zip",
+        "sha256": "dd4e63c67c46a39dfa9645b909180df5065c1a99b25be4507f5cf0272927141d",
+        "bytes": 55912999,
+        "members": 363,
+        "expected_members": 363,
+        "member_count_match": true,
+        "png_members": [
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_S01.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_S02.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_S03.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_S04.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T01.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T02.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T03.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T04.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T05.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T06.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T07.png",
+          "MCL_C02_Urbana_Current_Full_20261007/deliverable/figures/UC_T08.png",
+          "MCL_C02_Urbana_Current_Full_20261007/current/figures/UC_S02_C1.png"
+        ],
+        "scope": "Archive identity and selected member byte hashes only; no scientific replay or full CRC scan."
+      },
+      {
+        "path": "E:/mobility_computation_lab_v2/deliveries/urbana_champaign_algorithm_transfer_r1/continuation_20261007/MCL_C02_Urbana_Current_Goal_20261007_ChatGPT_Upload_Final.zip",
+        "sha256": "a8607b1cf76b4a6576f459d600d69f3c7d62bee15a271e235042c64d284e3708",
+        "bytes": 361144,
+        "members": 72,
+        "expected_members": 72,
+        "member_count_match": true,
+        "png_members": [
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_S01.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_S02.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_S02_C1.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_S03.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_S04.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T01.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T02.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T03.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T04.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T05.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T06.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T07.png",
+          "MCL_C02_Urbana_Current_Goal_20261007/figures/UC_T08.png"
+        ],
+        "scope": "Archive identity and selected member byte hashes only; no scientific replay or full CRC scan."
+      }
+    ],
+    "existing_validation_receipt": {
+      "schema": "mcl_C02_portable_full_validation_v1",
+      "status": "PASS",
+      "private_full_sha256": "dd4e63c67c46a39dfa9645b909180df5065c1a99b25be4507f5cf0272927141d",
+      "private_full_bytes": 55912999,
+      "zip_members": 363,
+      "unicode_space_cleanroom": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\V\\中文 空格3",
+      "fresh_readonly_replays": {
+        "1": {
+          "sha256": "2f6793474c04b5e04cc6c9925e7c58675b40cfa283ecc36429805908fc9a2e0e",
+          "rank26": "ACCEPTED",
+          "rank52": "ACCEPTED",
+          "optimizer_calls": 0,
+          "protected_hashes_checked": 326
+        },
+        "2": {
+          "sha256": "2f6793474c04b5e04cc6c9925e7c58675b40cfa283ecc36429805908fc9a2e0e",
+          "rank26": "ACCEPTED",
+          "rank52": "ACCEPTED",
+          "optimizer_calls": 0,
+          "protected_hashes_checked": 326
+        }
+      },
+      "resigned_corrupt_endpoint_negative_test": {
+        "status": "PASS",
+        "report_sha256": "a89390a984370e4fd25d6774af0ba2c2a8c509375667e683ef363d7a661dc52d",
+        "optimizer_calls": 0
+      },
+      "frozen_R2_Full_sha256": "fdfdb265cc7d5ca838d0d434da670695110aae18a65df55991ae0febe5091808",
+      "old_saved_science_recomputed": false,
+      "earlier_packaging_attempts": [
+        {
+          "attempt": 1,
+          "classification": "INVALID_PACKAGE_PATH",
+          "note": "candidate policy was one directory above verifier expectation"
+        },
+        {
+          "attempt": 2,
+          "classification": "RESOURCE_LIMIT_MEMORY",
+          "note": "optional full historical T replay hit MemoryError during concurrent verification"
+        }
+      ],
+      "public_release": "S0_REVIEW_PENDING"
+    },
+    "private_full_receipt": {
+      "schema": "mcl_C02_current_full_receipt_v1",
+      "file": "E:\\mobility_computation_lab_v2\\deliveries\\urbana_champaign_algorithm_transfer_r1\\continuation_20261007\\MCL_C02_Urbana_Current_Goal_20261007_Private_Full.zip",
+      "sha256": "dd4e63c67c46a39dfa9645b909180df5065c1a99b25be4507f5cf0272927141d",
+      "bytes": 55912999,
+      "members": 363,
+      "frozen_old_members": 327,
+      "added_files": 34,
+      "crc_pass": true,
+      "publication_status": "S0_REVIEW_PENDING"
+    },
+    "inside_full_ready_identity": {
+      "schema": "mcl_C02_current_goal_ready_20261007_v1",
+      "created_utc": "2026-10-07T10:42:07.048032+00:00",
+      "status": "READY_FOR_S0_SCIENCE_AUDIT",
+      "case_id": "central_champaign_urbana_2026_r2",
+      "scope": "Central Champaign–Urbana bounded city subarea, 19.303 km2 and 21 zones; not UIUC campus or whole city",
+      "baseline_ready_sha256": "b450b894a09990217dd65c1f80224ef1cd3ff98c2d668dbf9547fdfae53d7fd2",
+      "baseline_full_zip": "E:\\mobility_computation_lab_v2\\deliveries\\urbana_champaign_algorithm_transfer_r1\\MCL_C02_Urbana_Algorithm_Transfer_R2_Private_Full.zip",
+      "baseline_full_zip_sha256": "fdfdb265cc7d5ca838d0d434da670695110aae18a65df55991ae0febe5091808",
+      "shared_core_ready_sha256": "ca0221c186c4d33aba4df8737800cad35ac493136622df43b52e48fb70da2352",
+      "candidate_policy_sha256": "5757b7d1025b3aa4c77de79e4b810896b691da8bcbf00aa3f72d5de5dc325168",
+      "saved_OD_diagnostic_sha256": "a26d4808b03887b8583eb1d14c7f2ba33cc414a28379cb12f3818d4967591468",
+      "native_addendum_figure_source_sha256": "5c136353a4db36093d2c6e672289660af4c7564fbf6e9ee47a1fb04d32634a15",
+      "method_status_sha256": "b0f70ab94e6ecb55d612a7ad31a6c07749361376a51b0d4177ea8a6aa07a27e1",
+      "candidate_replay_count": 2,
+      "resigned_corrupt_state_negative_test": "PASS",
+      "public_release": "S0_REVIEW_PENDING",
+      "next_command": "No required new computation; use REPRODUCTION.md to replay the full saved package.",
+      "compact_zip_receipt": "ZIP_RECEIPT.json",
+      "no_commit_push_deploy": true
+    },
+    "external_ready_metadata_delta": {
+      "portable_private_full_zip": {
+        "inside_full": "__ABSENT__",
+        "external_current": "E:\\mobility_computation_lab_v2\\deliveries\\urbana_champaign_algorithm_transfer_r1\\continuation_20261007\\MCL_C02_Urbana_Current_Goal_20261007_Private_Full.zip"
+      },
+      "compact_zip_receipt": {
+        "inside_full": "ZIP_RECEIPT.json",
+        "external_current": "ZIP_RECEIPT_FINAL.json"
+      },
+      "portable_full_validation_receipt_sha256": {
+        "inside_full": "__ABSENT__",
+        "external_current": "93cac576e57d1944eb3e5de8b4b9bcfe984dca653994c46b33372e7a524d1637"
+      },
+      "portable_private_full_sha256": {
+        "inside_full": "__ABSENT__",
+        "external_current": "dd4e63c67c46a39dfa9645b909180df5065c1a99b25be4507f5cf0272927141d"
+      },
+      "portable_full_replay_count": {
+        "inside_full": "__ABSENT__",
+        "external_current": 2
+      },
+      "portable_full_negative_test": {
+        "inside_full": "__ABSENT__",
+        "external_current": "PASS"
+      }
+    },
+    "external_ready_delta_is_only_postpackaging_metadata": true,
+    "history_rule": "outer8 failures remain historical; current outer9 accepted endpoints concern S72 only. No gates, demand, basis, paths or model changed.",
+    "replay_scope": "New Native candidate replayed twice by producer; old accepted S/T frozen results reused, not all scientific computation repeated.",
+    "S0_reception": "NOT_RECEIVED_AT_CUTOFF",
+    "new_asset_release": "PENDING_ACTUAL_S0_DECISION",
+    "candidate_figure": "UC_S02_C1; four held attachments; original Native display position preserved"
+  },
+  "chicago": {
+    "current_revision": "retry_r2_v001",
+    "final_ready": {
+      "status": "COMPLETE_LOCAL_RETRY_DELIVERY",
+      "packages": [
+        {
+          "path": "MCL_Chicago_Algorithm_Retry_R2_v001_Private_Full.zip",
+          "bytes": 180428866,
+          "sha256": "7fae86464407aba97117e85238fae2c81f8a5e77ff16b9529c90af3351dd62af"
+        },
+        {
+          "path": "MCL_Chicago_Algorithm_Retry_R2_v001_Review_Lite.zip",
+          "bytes": 3860950,
+          "sha256": "7448ceb63677c864aa987bcf5537be28f00e5a48dde33098732419bda532db1c"
+        },
+        {
+          "path": "MCL_Chicago_Algorithm_Retry_R2_v001_Volume_Handoff.zip",
+          "bytes": 9450154,
+          "sha256": "f72ccf0ea577bb31643697469fc5e2ded826a552162bbb630b2ed4d3120d2a69"
+        },
+        {
+          "path": "MCL_Chicago_Algorithm_Retry_R2_v001_ChatGPT_Upload.zip",
+          "bytes": 789323,
+          "sha256": "0e43f8dbb3663a6e12d96bc8857edb7e7f9d8990322656c65fc0b59b2be1e8e9"
+        }
+      ],
+      "final_replay_receipt": "FINAL_DOUBLE_REPLAY_RECEIPT_v001.json",
+      "method_statuses": {
+        "S_FW": "REUSED_PRIOR_ACCEPTED",
+        "S_finite": "REUSED_PRIOR_ACCEPTED",
+        "S_Native26": "GATE_NOT_MET",
+        "S_Native52": "GATE_NOT_MET",
+        "T_LP": "RESOURCE_LIMIT",
+        "T_CG": "ACCEPTED",
+        "T_LR": "GATE_NOT_MET",
+        "T_ADMM": "GATE_NOT_MET"
+      },
+      "original_R1_packages_unchanged": true,
+      "public_release": "PENDING_S0",
+      "no_commit_push_deploy": true,
+      "completed_utc": "2026-10-07T13:58:48.004299+00:00"
+    },
+    "historical_record_rule": "Root HANDOFF.json is an earlier NOT_RUN snapshot. Bundle READY is before final replay. External DELIVERY_READY_v001.json and FINAL_DOUBLE_REPLAY_RECEIPT_v001.json bind the completed final Full.",
+    "result_matrix": {
+      "schema": "MCL_C06_REGISTERED_RETRY_R2_ACTUAL_RESULTS",
+      "utc": "2026-10-07T13:42:40.226980+00:00",
+      "scientific_scope": "Chicago Jane Byrne / West Loop R2 S20 and independent T4 engineering pulse",
+      "experiment_id": "CHICAGO_JANE_BYRNE_R2_RETRY_R2_20261007",
+      "static_R3_6of6_unchanged": true,
+      "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+      "scientific_gates_unchanged": true,
+      "methods": [
+        {
+          "method": "S_FW",
+          "status": "REUSED_PRIOR_ACCEPTED",
+          "prior_status": "ACCEPTED",
+          "new_optimizer_calls": 0,
+          "reason": "原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。",
+          "independent": {
+            "method": "FW",
+            "status": "ACCEPTED",
+            "checks": {
+              "OD_max": true,
+              "OD_L1": true,
+              "link_reconstruction": true,
+              "nonnegative": true,
+              "full_gap": true,
+              "objective_recompute": true
+            },
+            "full_graph_gap": 3.446136191653708e-06,
+            "restricted_pool_gap": 3.4461361918144917e-06,
+            "objective_pce_min": 5601.461720010839,
+            "objective_saved": 5601.461720010839,
+            "min_path_flow": 0.9125503943155584,
+            "min_link_flow": 0.0,
+            "max_OD_error_pce": 2.842170943040401e-14,
+            "OD_L1_relative": 2.334383910165345e-17,
+            "max_link_reconstruction_pce": 5.684341886080802e-14,
+            "solver_to_physical_max_error_pce": 0.0,
+            "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+            "positive_links_1e_6": 1891,
+            "total_q_pce": 1754.9482512397267,
+            "saved_path_rows": 24,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+            "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+          },
+          "prior_wall_seconds": 10.233999999938533
+        },
+        {
+          "method": "S_finite",
+          "status": "REUSED_PRIOR_ACCEPTED",
+          "prior_status": "ACCEPTED",
+          "new_optimizer_calls": 0,
+          "reason": "原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。",
+          "independent": {
+            "method": "finite",
+            "status": "ACCEPTED",
+            "checks": {
+              "OD_max": true,
+              "OD_L1": true,
+              "link_reconstruction": true,
+              "nonnegative": true,
+              "full_gap": true,
+              "objective_recompute": true,
+              "pool_gap": true
+            },
+            "full_graph_gap": 8.005091514776758e-12,
+            "restricted_pool_gap": 4.006565346202338e-12,
+            "objective_pce_min": 5601.461468286856,
+            "objective_saved": 5601.461468286853,
+            "min_path_flow": 0.0,
+            "min_link_flow": 0.0,
+            "max_OD_error_pce": 1.7763568394002505e-14,
+            "OD_L1_relative": 1.012198985437548e-17,
+            "max_link_reconstruction_pce": 0.0,
+            "solver_to_physical_max_error_pce": 0.0,
+            "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+            "positive_links_1e_6": 1868,
+            "total_q_pce": 1754.9482512397267,
+            "saved_path_rows": 100,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+            "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+          },
+          "prior_wall_seconds": 6.937999999965541
+        },
+        {
+          "method": "S_Native26",
+          "status": "GATE_NOT_MET",
+          "prior_status": "GATE_NOT_MET",
+          "reason": "详见独立 checks；门槛未放宽",
+          "execution_receipt": "execution/Native_attempt4/RECEIPT.json",
+          "run_wall_seconds": 186.26599999994505,
+          "peak_tree_private_bytes": 712781824,
+          "peak_tree_RSS_bytes": 563040256,
+          "execution_status": "EXITED",
+          "optimizer_started": true,
+          "verification": "validation/Native_independent.json",
+          "independent": {
+            "method": "Native26",
+            "status": "GATE_NOT_MET",
+            "checks": {
+              "OD_max": true,
+              "OD_L1": true,
+              "link_reconstruction": true,
+              "nonnegative": true,
+              "full_gap": false,
+              "objective_recompute": true,
+              "pool_gap": false
+            },
+            "full_graph_gap": 0.006381671764390549,
+            "restricted_pool_gap": 0.004674739717953027,
+            "objective_pce_min": 5604.647688841039,
+            "objective_saved": 5604.647688841032,
+            "min_path_flow": 1.0815348616688425e-11,
+            "min_link_flow": 0.0,
+            "max_OD_error_pce": 2.2737367544323206e-13,
+            "OD_L1_relative": 2.4596435346132415e-16,
+            "max_link_reconstruction_pce": 3.410605131648481e-13,
+            "solver_to_physical_max_error_pce": 0.0,
+            "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+            "positive_links_1e_6": 2615,
+            "total_q_pce": 1754.9482512397267,
+            "saved_path_rows": 100,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+            "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+          },
+          "total_retry_started_process_wall_seconds": 186.26599999994505
+        },
+        {
+          "method": "S_Native52",
+          "status": "GATE_NOT_MET",
+          "prior_status": "GATE_NOT_MET",
+          "reason": "详见独立 checks；门槛未放宽",
+          "execution_receipt": "execution/Native_attempt4/RECEIPT.json",
+          "run_wall_seconds": 186.26599999994505,
+          "peak_tree_private_bytes": 712781824,
+          "peak_tree_RSS_bytes": 563040256,
+          "execution_status": "EXITED",
+          "optimizer_started": true,
+          "verification": "validation/Native_independent.json",
+          "independent": {
+            "method": "Native52",
+            "status": "GATE_NOT_MET",
+            "checks": {
+              "OD_max": true,
+              "OD_L1": true,
+              "link_reconstruction": true,
+              "nonnegative": true,
+              "full_gap": false,
+              "objective_recompute": true,
+              "pool_gap": false
+            },
+            "full_graph_gap": 0.004796364762935965,
+            "restricted_pool_gap": 0.003486357293765045,
+            "objective_pce_min": 5604.409384283838,
+            "objective_saved": 5604.409384283843,
+            "min_path_flow": 3.715561192052519e-11,
+            "min_link_flow": 0.0,
+            "max_OD_error_pce": 1.1368683772161603e-13,
+            "OD_L1_relative": 1.8238560468852818e-16,
+            "max_link_reconstruction_pce": 5.684341886080801e-13,
+            "solver_to_physical_max_error_pce": 0.0,
+            "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+            "positive_links_1e_6": 2109,
+            "total_q_pce": 1754.9482512397267,
+            "saved_path_rows": 100,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+            "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+          },
+          "total_retry_started_process_wall_seconds": 186.26599999994505
+        },
+        {
+          "method": "T_LP",
+          "status": "RESOURCE_LIMIT",
+          "prior_status": "RESOURCE_LIMIT",
+          "reason": "No complete saved primal/dual endpoint",
+          "execution_receipt": "execution/LP_attempt31/RECEIPT.json",
+          "run_wall_seconds": 3280.7970000000205,
+          "peak_tree_private_bytes": 2831888384,
+          "peak_tree_RSS_bytes": 1345990656,
+          "execution_status": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+          "optimizer_started": true,
+          "verification": "validation/LP_independent.json",
+          "independent": {
+            "status": "RESOURCE_LIMIT",
+            "receipt": "execution\\LP_attempt31\\RECEIPT.json",
+            "reason": "No complete saved primal/dual endpoint",
+            "execution_status": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+            "optimizer_calls": 0,
+            "seconds": 0.0470000000204891,
+            "runtime_guard": {
+              "installed_before_numeric_imports": true,
+              "blocked_optimizer_imports": 0,
+              "blocked_process_launches": 0,
+              "blocked_network_calls": 0,
+              "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+            }
+          },
+          "total_retry_started_process_wall_seconds": 3280.7970000000205
+        },
+        {
+          "method": "T_CG",
+          "status": "ACCEPTED",
+          "prior_status": "GATE_NOT_MET",
+          "reason": "原坐标科学门槛全部满足",
+          "execution_receipt": "execution/CG_attempt3/RECEIPT.json",
+          "run_wall_seconds": 2157.75,
+          "peak_tree_private_bytes": 709873664,
+          "peak_tree_RSS_bytes": 681558016,
+          "execution_status": "EXITED",
+          "optimizer_started": true,
+          "verification": "validation/CG_independent.json",
+          "independent": {
+            "status": "ACCEPTED",
+            "checks": {
+              "two_phases_executed": true,
+              "phase_I_cleared": true,
+              "OD": true,
+              "capacity": true,
+              "pricing_all_commodities": true,
+              "dual_gap": true,
+              "saved_objective": true
+            },
+            "objective_pce_min": 241.2185242449435,
+            "dual_pce_min": 241.2185242449434,
+            "pricing_by_OD": [
+              0.0,
+              -8.881784197001252e-16,
+              -3.552713678800501e-15,
+              -2.6645352591003757e-15
+            ],
+            "max_OD_pce": 7.105427357601002e-15,
+            "max_capacity_pce": 7.105427357601002e-15,
+            "columns": 425,
+            "rounds": 268,
+            "optimizer_calls": 0,
+            "LP_independent_reference_status": "UNAVAILABLE; own full-graph dual/pricing certificate checked separately",
+            "seconds": 18.79700000002049,
+            "runtime_guard": {
+              "installed_before_numeric_imports": true,
+              "blocked_optimizer_imports": 0,
+              "blocked_process_launches": 0,
+              "blocked_network_calls": 0,
+              "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+            }
+          },
+          "total_retry_started_process_wall_seconds": 2845.0
+        },
+        {
+          "method": "T_LR",
+          "status": "GATE_NOT_MET",
+          "prior_status": "GATE_NOT_MET",
+          "reason": "own generated pool has no feasible recovery",
+          "execution_receipt": "execution/LR_attempt4/RECEIPT.json",
+          "run_wall_seconds": 3415.344000000041,
+          "peak_tree_private_bytes": 2474639360,
+          "peak_tree_RSS_bytes": 2381029376,
+          "execution_status": "EXITED",
+          "optimizer_started": true,
+          "verification": "validation/LR_independent.json",
+          "independent": {
+            "status": "GATE_NOT_MET",
+            "dual_pce_min": 227.20471615228504,
+            "objective_pce_min": null,
+            "certified_gap": null,
+            "reason": "own generated pool has no feasible recovery",
+            "pool_paths": 128,
+            "iterations": 759,
+            "recovery_calls": 77,
+            "reported_stop_reason": "WALL_BUDGET",
+            "priced_cost_min_by_OD": [
+              2.927539419788435,
+              3.208843103121511,
+              4.455008270216095,
+              4.442066818120931
+            ],
+            "multiplier_count": 1351628,
+            "positive_multipliers": 533,
+            "max_multiplier": 0.3663060412333533,
+            "demand_weighted_pricing_pce_min": 240.77278679843513,
+            "capacity_penalty_pce_min": 13.568070646150087,
+            "optimizer_calls": 0,
+            "seconds": 18.530999999959022,
+            "runtime_guard": {
+              "installed_before_numeric_imports": true,
+              "blocked_optimizer_imports": 0,
+              "blocked_process_launches": 0,
+              "blocked_network_calls": 0,
+              "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+            }
+          },
+          "total_retry_started_process_wall_seconds": 3632.3760000000475
+        },
+        {
+          "method": "T_ADMM",
+          "status": "GATE_NOT_MET",
+          "prior_status": "GATE_NOT_MET",
+          "reason": "详见独立 checks；门槛未放宽",
+          "execution_receipt": "execution/ADMM_attempt3/RECEIPT.json",
+          "run_wall_seconds": 3831.6879999999655,
+          "peak_tree_private_bytes": 2982719488,
+          "peak_tree_RSS_bytes": 2490535936,
+          "execution_status": "EXITED",
+          "optimizer_started": true,
+          "verification": "validation/ADMM_independent.json",
+          "independent": {
+            "status": "GATE_NOT_MET",
+            "checks": {
+              "balance": true,
+              "KKT": true,
+              "x_capacity": false,
+              "z_capacity": true,
+              "z_nonnegative": true,
+              "z_forbidden": true,
+              "projection": true,
+              "dual_update": true,
+              "primal": false,
+              "dual": false,
+              "physical_pullback": true,
+              "objective_recompute": true,
+              "LP_objective": false
+            },
+            "objective_pce_min": 216.5087007354914,
+            "rho": 0.004486642451344123,
+            "completed_iterations": 9,
+            "balance_pce": 3.2673414188559937e-12,
+            "KKT_min": 7.384500178096348e-08,
+            "x_capacity_pce": 9.507039548603403,
+            "z_capacity_pce": 4.884981308350689e-15,
+            "projection_pce": 1.4210854715202004e-14,
+            "dual_update_pce": 1.4210854715202004e-14,
+            "physical_pullback_pce": 1.4210854715202004e-14,
+            "primal": 20.97881890129412,
+            "dual": 0.05407933291905006,
+            "primal_threshold": 0.004163042298159444,
+            "dual_threshold": 0.0023340572897360403,
+            "LP_normalized_difference": null,
+            "optimizer_calls": 0,
+            "returned_local_trial_audit": {
+              "status": "VALID_RETURNED_TRIAL_EVIDENCE",
+              "optimizer_calls": 0,
+              "trials": [
+                {
+                  "outer": 1,
+                  "commodity": "T01",
+                  "balance_pce": 3.6303793542844375e-13,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848038856445
+                },
+                {
+                  "outer": 1,
+                  "commodity": "T02",
+                  "balance_pce": 1.4210854715202004e-14,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.7590095301054513e-07,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 138.86959757821273
+                },
+                {
+                  "outer": 1,
+                  "commodity": "T03",
+                  "balance_pce": 3.552713678800501e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 6.974348094879179e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 66.92682322778522
+                },
+                {
+                  "outer": 1,
+                  "commodity": "T04",
+                  "balance_pce": 1.5473340795485333e-16,
+                  "balance_gate_passed": true,
+                  "KKT_min": 2.1713800588198946e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 27.510628910180703
+                },
+                {
+                  "outer": 2,
+                  "commodity": "T01",
+                  "balance_pce": 7.260758708568875e-13,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.584284803921512
+                },
+                {
+                  "outer": 2,
+                  "commodity": "T02",
+                  "balance_pce": 7.105427357601002e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.677700957099289e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 134.57652431014264
+                },
+                {
+                  "outer": 2,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.1490610370972228e-07,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 67.32636004775237
+                },
+                {
+                  "outer": 2,
+                  "commodity": "T04",
+                  "balance_pce": 1.4723145947954252e-16,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.6686036830027007e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 27.75249669539426
+                },
+                {
+                  "outer": 3,
+                  "commodity": "T01",
+                  "balance_pce": 1.0891138062853312e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848039573801
+                },
+                {
+                  "outer": 3,
+                  "commodity": "T02",
+                  "balance_pce": 1.4210854715202004e-14,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.3864440545892602e-07,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 135.11430349429136
+                },
+                {
+                  "outer": 3,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 4.893119726068207e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 68.7413275867079
+                },
+                {
+                  "outer": 3,
+                  "commodity": "T04",
+                  "balance_pce": 5.46933131216253e-17,
+                  "balance_gate_passed": true,
+                  "KKT_min": 5.365538235935219e-09,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 28.15394880515687
+                },
+                {
+                  "outer": 4,
+                  "commodity": "T01",
+                  "balance_pce": 1.452151741713775e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848039932478
+                },
+                {
+                  "outer": 4,
+                  "commodity": "T02",
+                  "balance_pce": 7.105427357601002e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.304190955054264e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 139.76902181360373
+                },
+                {
+                  "outer": 4,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 3.085453875728561e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 71.07988426494511
+                },
+                {
+                  "outer": 4,
+                  "commodity": "T04",
+                  "balance_pce": 5.329070518200751e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 5.661540544284467e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 28.71041549649065
+                },
+                {
+                  "outer": 5,
+                  "commodity": "T01",
+                  "balance_pce": 1.8151896771422187e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848040291149
+                },
+                {
+                  "outer": 5,
+                  "commodity": "T02",
+                  "balance_pce": 1.4210854715202004e-14,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.2039482258942233e-07,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 145.44840021861125
+                },
+                {
+                  "outer": 5,
+                  "commodity": "T03",
+                  "balance_pce": 3.552713678800501e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 9.156476313134008e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 74.15691797313184
+                },
+                {
+                  "outer": 5,
+                  "commodity": "T04",
+                  "balance_pce": 8.881784197001252e-16,
+                  "balance_gate_passed": true,
+                  "KKT_min": 4.092624882910299e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 29.386377670725327
+                },
+                {
+                  "outer": 6,
+                  "commodity": "T01",
+                  "balance_pce": 2.1782276125706625e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848040649823
+                },
+                {
+                  "outer": 6,
+                  "commodity": "T02",
+                  "balance_pce": 5.833911131958303e-10,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 152.3105176809827
+                },
+                {
+                  "outer": 6,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 5.175076736332288e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 77.91041991326227
+                },
+                {
+                  "outer": 6,
+                  "commodity": "T04",
+                  "balance_pce": 5.551115123125783e-17,
+                  "balance_gate_passed": true,
+                  "KKT_min": 7.993773976089358e-09,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 30.14721905314094
+                },
+                {
+                  "outer": 7,
+                  "commodity": "T01",
+                  "balance_pce": 2.5412655479991062e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.58428480410085
+                },
+                {
+                  "outer": 7,
+                  "commodity": "T02",
+                  "balance_pce": 7.105427357601002e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.4450231772840518e-07,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 160.32307612586268
+                },
+                {
+                  "outer": 7,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 2.986103593673777e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 82.14118512634701
+                },
+                {
+                  "outer": 7,
+                  "commodity": "T04",
+                  "balance_pce": 3.552713678800501e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 4.69345393730445e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 30.943100606704945
+                },
+                {
+                  "outer": 8,
+                  "commodity": "T01",
+                  "balance_pce": 2.90430348342755e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848041367179
+                },
+                {
+                  "outer": 8,
+                  "commodity": "T02",
+                  "balance_pce": 7.105427357601002e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 9.353957372821343e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 169.68800837802706
+                },
+                {
+                  "outer": 8,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 6.395132040785831e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 86.68492544737865
+                },
+                {
+                  "outer": 8,
+                  "commodity": "T04",
+                  "balance_pce": 1.1102230246251565e-16,
+                  "balance_gate_passed": true,
+                  "KKT_min": 1.2837408913668469e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 31.71986852886304
+                },
+                {
+                  "outer": 9,
+                  "commodity": "T01",
+                  "balance_pce": 3.2673414188559937e-12,
+                  "balance_gate_passed": true,
+                  "KKT_min": 8.881784197001252e-16,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 0.5842848041725852
+                },
+                {
+                  "outer": 9,
+                  "commodity": "T02",
+                  "balance_pce": 1.4210854715202004e-14,
+                  "balance_gate_passed": true,
+                  "KKT_min": 7.098374606968277e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 180.15711577630802
+                },
+                {
+                  "outer": 9,
+                  "commodity": "T03",
+                  "balance_pce": 1.7763568394002505e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 4.3825233321876036e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 91.282456594682
+                },
+                {
+                  "outer": 9,
+                  "commodity": "T04",
+                  "balance_pce": 3.552713678800501e-15,
+                  "balance_gate_passed": true,
+                  "KKT_min": 7.384500178096348e-08,
+                  "KKT_gate_passed": true,
+                  "min_flow": 0.0,
+                  "forbidden_flow_max": 0.0,
+                  "local_objective": 32.4236650408625
+                }
+              ],
+              "resource_truncated_scope": false,
+              "scope": "independently reconstructed complete returned trial files; does not make them accepted ADMM outers"
+            },
+            "seconds": 23.5,
+            "runtime_guard": {
+              "installed_before_numeric_imports": true,
+              "blocked_optimizer_imports": 0,
+              "blocked_process_launches": 0,
+              "blocked_network_calls": 0,
+              "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+            }
+          },
+          "total_retry_started_process_wall_seconds": 3853.5470000000205
+        }
+      ]
+    },
+    "input_identity": {
+      "experiment_id": "CHICAGO_JANE_BYRNE_R2_ALGORITHM_TRANSFER_R1_20261006",
+      "scientific_identity": "S0 accepted Jane Byrne / West Loop R2; same original physical graph and Stage3 PCE",
+      "seen_status": "previously diagnosed R2 inputs; post-diagnostic algorithm transfer, not a new holdout",
+      "S": {
+        "cohort": "all 20 positive vehicle OD; SHA order",
+        "prepared_instance_signature": "626bf2dc8bfc27d9b82d3f48b1a8bbbcea1f977d81aad662139672f313dac614",
+        "original_graph_sha256": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120",
+        "stage3_sha256": "99b14b75028b986b0bd36134cbcabb29705619907f924e43b50658090734b95c",
+        "access_sha256": "0968feac7bbc456ecb19e6d1c7ff42b0a19eb678546dfbea47dfb940a32d167f",
+        "PCE_per_one_hour_engineering_scenario": 1754.9482512397267,
+        "paths": 100,
+        "major": 20,
+        "minor": 80,
+        "actual_input_basis_ranks": [
+          26,
+          52
+        ],
+        "pool_paths_sha256": "5437c38079831b541564efa063ff4f44fda41dbf589b1e9f36d345da538b21d1"
+      },
+      "T": {
+        "cohort": "first four input-hash ordered OD, fixed before any city optimizer",
+        "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+        "signature_rule": "sha256(sha256(ordered arc CSV) + | + sha256(ordered demand CSV))",
+        "arc_sha256": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+        "demand_sha256": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+        "PCE_first_5min_engineering_pulse": 66.53295454563035,
+        "dt_seconds": 30,
+        "departure_step": 5,
+        "H_steps": 169,
+        "arcs": 1351628,
+        "node_time_states": 490223,
+        "exact_arc_flow_variables": 1550188,
+        "fixed_cost_finite_space_time": true,
+        "DNL_or_DUE": false
+      },
+      "turn_identity": "original R2 UNKNOWN_NOT_FETCHED; current-date restriction sidecar excluded",
+      "parameter_identity": "engineering assumptions and inherited methods, no current local empirical calibration",
+      "city_optimizer_calls_at_input_checkpoint": 0,
+      "old_accepted_six_city_state": "preserved; no original four-stage recomputation"
+    },
+    "gates": {
+      "frozen_before_solve": true,
+      "S": {
+        "full_gap_abs": 1e-05,
+        "pool_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs_pce": 1e-07,
+        "od_abs_pce": 1e-06,
+        "od_rel": 1e-08,
+        "od_l1_rel": 1e-08
+      },
+      "T_LP": {
+        "primal_abs": 1e-06,
+        "dual_abs": 1e-06,
+        "nonnegative_flow_abs": 1e-08,
+        "reduced_cost_and_duality": "independent original-coordinate checker"
+      },
+      "T_CG": {
+        "phase_I_artificial_abs": 1e-08,
+        "pricing_reduced_cost_abs": 1e-07,
+        "every_commodity_full_DAG_pricing": true
+      },
+      "T_LR": {
+        "certified_bound_gap_rel": 0.01,
+        "own_generated_paths_and_nonnegative_multipliers": true
+      },
+      "T_ADMM": {
+        "local_balance_pce": 1e-05,
+        "x_capacity_pce": 1e-05,
+        "z_capacity_pce": 1e-08,
+        "nonneg_and_forbidden": 1e-08,
+        "projection_and_dualupdate_abs": 1e-07,
+        "KKT_min": 0.001,
+        "objective_recompute_rel": 1e-07,
+        "physical_pullback_pce": 1e-06,
+        "lp_normalized_objective_difference": 0.0001,
+        "lp_comparison_formula": "abs(f-fLP)/max(1,abs(fLP)); report absolute and true relative also when abs(fLP)<1",
+        "rho": "clip(median positive finite arc costs / median positive commodity volumes,1e-4,1.0); once per actual city T input",
+        "endpoint": "registered stage final post-dual state, never best intermediate or z substitute",
+        "primary": {
+          "abs": 1e-06,
+          "rel": 1e-05,
+          "max_cumulative_outer": 300,
+          "wall_seconds": 3600
+        },
+        "secondary_preregistered": {
+          "eligibility": "primary stopped by internal criterion or budget without all external/stricter internal gates",
+          "abs": 1e-07,
+          "rel": 1e-06,
+          "max_cumulative_outer": 1000,
+          "combined_new_wall_seconds": 7200,
+          "resume": "own complete post-dual checkpoint"
+        },
+        "independent_cold_confirmation": {
+          "required_for_ACCEPTED": true,
+          "max_wall_seconds": 7200,
+          "no_state_reference_initialization": true
+        }
+      },
+      "status_values": [
+        "ACCEPTED",
+        "GATE_NOT_MET",
+        "RESOURCE_LIMIT",
+        "INVALID_STATE",
+        "NOT_RUN",
+        "REUSED_PRIOR_ACCEPTED",
+        "NUMERIC_PASS_CONFIRMATION_PENDING"
+      ],
+      "invalid_state_is_not_expected_solver_failure": true
+    },
+    "packages": [
+      {
+        "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/MCL_Chicago_Algorithm_Retry_R2_v001_Private_Full.zip",
+        "sha256": "7fae86464407aba97117e85238fae2c81f8a5e77ff16b9529c90af3351dd62af",
+        "bytes": 180428866,
+        "members": 723,
+        "expected_members": 723,
+        "member_count_match": true,
+        "png_members": [
+          "figures/results/C06_T_ADMM_main.png",
+          "figures/results/C06_T_ADMM_main_local_QP.png",
+          "figures/results/C06_T_CG.png",
+          "figures/results/C06_T_CG_generated_paths.png",
+          "figures/results/C06_T_LR.png",
+          "figures/results/C06_T_input_seed_paths.png",
+          "figures/results/C06_T_physical_flow.png",
+          "figures/results/C06_method_status.png",
+          "figures/retry_comparison/C06_R2_actual_resources.png",
+          "figures/retry_comparison/C06_R2_feasibility_witness.png",
+          "figures/retry_comparison/C06_R2_retry_comparison.png",
+          "figures/static_layout_v2/C06_S_convergence.png",
+          "figures/static_layout_v2/C06_S_dimensions.png",
+          "figures/static_layout_v2/C06_S_flow.png",
+          "figures/static_layout_v2/C06_S_native_difference.png"
+        ],
+        "scope": "Archive identity and selected member byte hashes only; no scientific replay or full CRC scan."
+      },
+      {
+        "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/MCL_Chicago_Algorithm_Retry_R2_v001_ChatGPT_Upload.zip",
+        "sha256": "0e43f8dbb3663a6e12d96bc8857edb7e7f9d8990322656c65fc0b59b2be1e8e9",
+        "bytes": 789323,
+        "members": 44,
+        "expected_members": 44,
+        "member_count_match": true,
+        "png_members": [
+          "figures/results/C06_T_ADMM_main_local_QP.png",
+          "figures/results/C06_T_CG.png",
+          "figures/results/C06_T_LR.png",
+          "figures/retry_comparison/C06_R2_feasibility_witness.png",
+          "figures/retry_comparison/C06_R2_retry_comparison.png"
+        ],
+        "scope": "Archive identity and selected member byte hashes only; no scientific replay or full CRC scan."
+      }
+    ],
+    "external_final_validation_receipt": {
+      "status": "PASS",
+      "exact_final_full_zip": {
+        "path": "MCL_Chicago_Algorithm_Retry_R2_v001_Private_Full.zip",
+        "bytes": 180428866,
+        "sha256": "7fae86464407aba97117e85238fae2c81f8a5e77ff16b9529c90af3351dd62af"
+      },
+      "extracted_input": "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\正式 中文 空格 v001\\Full 解压输入",
+      "external_output": "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\最终 外部核验 v001",
+      "two_consecutive_replays": [
+        {
+          "run": 1,
+          "command": [
+            "C:\\Users\\SuperDoctorCat\\anaconda3\\python.exe",
+            "-B",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\正式 中文 空格 v001\\Full 解压输入\\verify_saved.py",
+            "--input-root",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\正式 中文 空格 v001\\Full 解压输入",
+            "--output-root",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\最终 外部核验 v001\\第1次"
+          ],
+          "exit_code": 0,
+          "wall_seconds": 111.125,
+          "report_sha256": "855f28526fe80a48f69e48bf2fd1f929ed22d88f889cbf3434b132e5bf415cfb",
+          "status": "PASS_SAVED_DELIVERY",
+          "method_checks": {
+            "S_FW": {
+              "method": "FW",
+              "status": "REUSED_PRIOR_ACCEPTED",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": true,
+                "objective_recompute": true
+              },
+              "full_graph_gap": 3.446136191653708e-06,
+              "restricted_pool_gap": 3.4461361918144917e-06,
+              "objective_pce_min": 5601.461720010839,
+              "objective_saved": 5601.461720010839,
+              "min_path_flow": 0.9125503943155584,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 2.842170943040401e-14,
+              "OD_L1_relative": 2.334383910165345e-17,
+              "max_link_reconstruction_pce": 5.684341886080802e-14,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 1891,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 24,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_finite": {
+              "method": "finite",
+              "status": "REUSED_PRIOR_ACCEPTED",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": true,
+                "objective_recompute": true,
+                "pool_gap": true
+              },
+              "full_graph_gap": 8.005091514776758e-12,
+              "restricted_pool_gap": 4.006565346202338e-12,
+              "objective_pce_min": 5601.461468286856,
+              "objective_saved": 5601.461468286853,
+              "min_path_flow": 0.0,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 1.7763568394002505e-14,
+              "OD_L1_relative": 1.012198985437548e-17,
+              "max_link_reconstruction_pce": 0.0,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 1868,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_Native26": {
+              "method": "Native26",
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": false,
+                "objective_recompute": true,
+                "pool_gap": false
+              },
+              "full_graph_gap": 0.006381671764390549,
+              "restricted_pool_gap": 0.004674739717953027,
+              "objective_pce_min": 5604.647688841039,
+              "objective_saved": 5604.647688841032,
+              "min_path_flow": 1.0815348616688425e-11,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 2.2737367544323206e-13,
+              "OD_L1_relative": 2.4596435346132415e-16,
+              "max_link_reconstruction_pce": 3.410605131648481e-13,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 2615,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_Native52": {
+              "method": "Native52",
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": false,
+                "objective_recompute": true,
+                "pool_gap": false
+              },
+              "full_graph_gap": 0.004796364762935965,
+              "restricted_pool_gap": 0.003486357293765045,
+              "objective_pce_min": 5604.409384283838,
+              "objective_saved": 5604.409384283843,
+              "min_path_flow": 3.715561192052519e-11,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 1.1368683772161603e-13,
+              "OD_L1_relative": 1.8238560468852818e-16,
+              "max_link_reconstruction_pce": 5.684341886080801e-13,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 2109,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "T_LP": {
+              "status": "RESOURCE_LIMIT",
+              "receipt": "execution\\LP_attempt31\\RECEIPT.json",
+              "reason": "No complete saved primal/dual endpoint",
+              "execution_status": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+              "optimizer_calls": 0,
+              "seconds": 0.0,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_CG": {
+              "status": "ACCEPTED",
+              "checks": {
+                "two_phases_executed": true,
+                "phase_I_cleared": true,
+                "OD": true,
+                "capacity": true,
+                "pricing_all_commodities": true,
+                "dual_gap": true,
+                "saved_objective": true
+              },
+              "objective_pce_min": 241.2185242449435,
+              "dual_pce_min": 241.2185242449434,
+              "pricing_by_OD": [
+                0.0,
+                -8.881784197001252e-16,
+                -3.552713678800501e-15,
+                -2.6645352591003757e-15
+              ],
+              "max_OD_pce": 7.105427357601002e-15,
+              "max_capacity_pce": 7.105427357601002e-15,
+              "columns": 425,
+              "rounds": 268,
+              "optimizer_calls": 0,
+              "LP_independent_reference_status": "UNAVAILABLE; own full-graph dual/pricing certificate checked separately",
+              "seconds": 23.219000000040978,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_LR": {
+              "status": "GATE_NOT_MET",
+              "dual_pce_min": 227.20471615228504,
+              "objective_pce_min": null,
+              "certified_gap": null,
+              "reason": "own generated pool has no feasible recovery",
+              "pool_paths": 128,
+              "iterations": 759,
+              "recovery_calls": 77,
+              "reported_stop_reason": "WALL_BUDGET",
+              "priced_cost_min_by_OD": [
+                2.927539419788435,
+                3.208843103121511,
+                4.455008270216095,
+                4.442066818120931
+              ],
+              "multiplier_count": 1351628,
+              "positive_multipliers": 533,
+              "max_multiplier": 0.3663060412333533,
+              "demand_weighted_pricing_pce_min": 240.77278679843513,
+              "capacity_penalty_pce_min": 13.568070646150087,
+              "optimizer_calls": 0,
+              "seconds": 28.405999999959022,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_ADMM": {
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "balance": true,
+                "KKT": true,
+                "x_capacity": false,
+                "z_capacity": true,
+                "z_nonnegative": true,
+                "z_forbidden": true,
+                "projection": true,
+                "dual_update": true,
+                "primal": false,
+                "dual": false,
+                "physical_pullback": true,
+                "objective_recompute": true,
+                "LP_objective": false
+              },
+              "objective_pce_min": 216.5087007354914,
+              "rho": 0.004486642451344123,
+              "completed_iterations": 9,
+              "balance_pce": 3.2673414188559937e-12,
+              "KKT_min": 7.384500178096348e-08,
+              "x_capacity_pce": 9.507039548603403,
+              "z_capacity_pce": 4.884981308350689e-15,
+              "projection_pce": 1.4210854715202004e-14,
+              "dual_update_pce": 1.4210854715202004e-14,
+              "physical_pullback_pce": 1.4210854715202004e-14,
+              "primal": 20.97881890129412,
+              "dual": 0.05407933291905006,
+              "primal_threshold": 0.004163042298159444,
+              "dual_threshold": 0.0023340572897360403,
+              "LP_normalized_difference": null,
+              "optimizer_calls": 0,
+              "returned_local_trial_audit": {
+                "status": "VALID_RETURNED_TRIAL_EVIDENCE",
+                "optimizer_calls": 0,
+                "trials": [
+                  {
+                    "outer": 1,
+                    "commodity": "T01",
+                    "balance_pce": 3.6303793542844375e-13,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848038856445
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.7590095301054513e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 138.86959757821273
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T03",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 6.974348094879179e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 66.92682322778522
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T04",
+                    "balance_pce": 1.5473340795485333e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 2.1713800588198946e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 27.510628910180703
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T01",
+                    "balance_pce": 7.260758708568875e-13,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.584284803921512
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.677700957099289e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 134.57652431014264
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.1490610370972228e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 67.32636004775237
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T04",
+                    "balance_pce": 1.4723145947954252e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.6686036830027007e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 27.75249669539426
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T01",
+                    "balance_pce": 1.0891138062853312e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848039573801
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.3864440545892602e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 135.11430349429136
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.893119726068207e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 68.7413275867079
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T04",
+                    "balance_pce": 5.46933131216253e-17,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.365538235935219e-09,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 28.15394880515687
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T01",
+                    "balance_pce": 1.452151741713775e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848039932478
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.304190955054264e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 139.76902181360373
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 3.085453875728561e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 71.07988426494511
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T04",
+                    "balance_pce": 5.329070518200751e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.661540544284467e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 28.71041549649065
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T01",
+                    "balance_pce": 1.8151896771422187e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848040291149
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.2039482258942233e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 145.44840021861125
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T03",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 9.156476313134008e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 74.15691797313184
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T04",
+                    "balance_pce": 8.881784197001252e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.092624882910299e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 29.386377670725327
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T01",
+                    "balance_pce": 2.1782276125706625e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848040649823
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T02",
+                    "balance_pce": 5.833911131958303e-10,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 152.3105176809827
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.175076736332288e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 77.91041991326227
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T04",
+                    "balance_pce": 5.551115123125783e-17,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.993773976089358e-09,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 30.14721905314094
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T01",
+                    "balance_pce": 2.5412655479991062e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.58428480410085
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.4450231772840518e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 160.32307612586268
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 2.986103593673777e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 82.14118512634701
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T04",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.69345393730445e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 30.943100606704945
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T01",
+                    "balance_pce": 2.90430348342755e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848041367179
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 9.353957372821343e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 169.68800837802706
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 6.395132040785831e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 86.68492544737865
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T04",
+                    "balance_pce": 1.1102230246251565e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.2837408913668469e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 31.71986852886304
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T01",
+                    "balance_pce": 3.2673414188559937e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848041725852
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.098374606968277e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 180.15711577630802
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.3825233321876036e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 91.282456594682
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T04",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.384500178096348e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 32.4236650408625
+                  }
+                ],
+                "resource_truncated_scope": false,
+                "scope": "independently reconstructed complete returned trial files; does not make them accepted ADMM outers"
+              },
+              "seconds": 22.141000000061467,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            }
+          },
+          "T_input": {
+            "status": "PASS_FULL_T_INPUT_DOMAIN",
+            "arcs": 1351628,
+            "movement_arcs": 876268,
+            "waiting_arcs": 475122,
+            "ledger_connectors": 238,
+            "nodes": 490223,
+            "q_pce": 66.53295454563035,
+            "H_steps": 169,
+            "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+            "exact_domain_no_missing_or_extra_arcs": true,
+            "DAG_proof": "physical/waiting arcs strictly increase time; at equal time source precedes physical node and terminal sink follows physical node; no arc leaves a terminal sink",
+            "cost_and_capacity_exact_R2": true,
+            "loader_heap_lower_bound_bytes": 740351199,
+            "lower_bound_parts": {
+              "retained_row_dicts": 627155392,
+              "unique_arc_id_strings": 102382783,
+              "retained_list_pointers": 10813024
+            },
+            "bound_omits": "all other value strings, arrays, adjacency, node maps, QP state and solver workspace",
+            "frozen_memory_ceiling_bytes": 4294967296,
+            "ADMM_and_LR_v002_full_loader_exceeds_ceiling_before_solver": false,
+            "optimizer_calls": 0,
+            "seconds": 16.936999999918044
+          },
+          "separate_feasibility_witness": {
+            "status": "FEASIBLE_UPPER_BOUND_WITNESS",
+            "not_a_registered_method_solution": true,
+            "not_an_optimality_certificate": true,
+            "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+            "paths": 124,
+            "distinct_used_arcs": 13454,
+            "positive_commodity_arc_pairs_in_exact_LP_domain": 13454,
+            "OD_volume_pce": {
+              "T01": 0.19958221566368337,
+              "T02": 44.33172763594412,
+              "T03": 15.621715371640422,
+              "T04": 6.37992932238215
+            },
+            "max_OD_error_pce": 2.1316282072803006e-14,
+            "max_node_balance_pce": 2.1316282072803006e-14,
+            "max_shared_capacity_excess_pce": 2.1316282072803006e-14,
+            "max_capacity_ratio": 1.0000000000000007,
+            "objective_pce_min": 731.6102207729215,
+            "movement_cost_pce_min": 232.61306168069603,
+            "waiting_cost_pce_min": 498.9971590922203,
+            "maximum_actual_arrival_elapsed_minutes": 82.0,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy exact LP-domain membership, path continuity and original-unit reconstruction; does not import witness builder, solver model loaders or optimizers",
+            "scientific_scope": "Constructive feasible upper only. Does not alter LP/CG/LR/ADMM acceptance; no witness state supplied to their initialization."
+          },
+          "optimizer_calls": 0,
+          "input_mutations": 0,
+          "files_checked": 722,
+          "seconds": 104.07799999997951,
+          "all_input_files_unchanged": true,
+          "input_file_count": 723,
+          "runtime_guard": {
+            "installed_before_numeric_imports": true,
+            "blocked_optimizer_imports": 0,
+            "blocked_process_launches": 0,
+            "blocked_network_calls": 0,
+            "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+          }
+        },
+        {
+          "run": 2,
+          "command": [
+            "C:\\Users\\SuperDoctorCat\\anaconda3\\python.exe",
+            "-B",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\正式 中文 空格 v001\\Full 解压输入\\verify_saved.py",
+            "--input-root",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\正式 中文 空格 v001\\Full 解压输入",
+            "--output-root",
+            "E:\\mobility_computation_lab_v2\\deliveries\\chicago_algorithm_transfer_r1\\retry_r2\\最终 外部核验 v001\\第2次"
+          ],
+          "exit_code": 0,
+          "wall_seconds": 105.45299999997951,
+          "report_sha256": "125fbe56acb2bff13c93e3a2ef810474dbfed99342c2970604c66d86a84b94bd",
+          "status": "PASS_SAVED_DELIVERY",
+          "method_checks": {
+            "S_FW": {
+              "method": "FW",
+              "status": "REUSED_PRIOR_ACCEPTED",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": true,
+                "objective_recompute": true
+              },
+              "full_graph_gap": 3.446136191653708e-06,
+              "restricted_pool_gap": 3.4461361918144917e-06,
+              "objective_pce_min": 5601.461720010839,
+              "objective_saved": 5601.461720010839,
+              "min_path_flow": 0.9125503943155584,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 2.842170943040401e-14,
+              "OD_L1_relative": 2.334383910165345e-17,
+              "max_link_reconstruction_pce": 5.684341886080802e-14,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 1891,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 24,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_finite": {
+              "method": "finite",
+              "status": "REUSED_PRIOR_ACCEPTED",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": true,
+                "objective_recompute": true,
+                "pool_gap": true
+              },
+              "full_graph_gap": 8.005091514776758e-12,
+              "restricted_pool_gap": 4.006565346202338e-12,
+              "objective_pce_min": 5601.461468286856,
+              "objective_saved": 5601.461468286853,
+              "min_path_flow": 0.0,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 1.7763568394002505e-14,
+              "OD_L1_relative": 1.012198985437548e-17,
+              "max_link_reconstruction_pce": 0.0,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 1868,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_Native26": {
+              "method": "Native26",
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": false,
+                "objective_recompute": true,
+                "pool_gap": false
+              },
+              "full_graph_gap": 0.006381671764390549,
+              "restricted_pool_gap": 0.004674739717953027,
+              "objective_pce_min": 5604.647688841039,
+              "objective_saved": 5604.647688841032,
+              "min_path_flow": 1.0815348616688425e-11,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 2.2737367544323206e-13,
+              "OD_L1_relative": 2.4596435346132415e-16,
+              "max_link_reconstruction_pce": 3.410605131648481e-13,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 2615,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "S_Native52": {
+              "method": "Native52",
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "OD_max": true,
+                "OD_L1": true,
+                "link_reconstruction": true,
+                "nonnegative": true,
+                "full_gap": false,
+                "objective_recompute": true,
+                "pool_gap": false
+              },
+              "full_graph_gap": 0.004796364762935965,
+              "restricted_pool_gap": 0.003486357293765045,
+              "objective_pce_min": 5604.409384283838,
+              "objective_saved": 5604.409384283843,
+              "min_path_flow": 3.715561192052519e-11,
+              "min_link_flow": 0.0,
+              "max_OD_error_pce": 1.1368683772161603e-13,
+              "OD_L1_relative": 1.8238560468852818e-16,
+              "max_link_reconstruction_pce": 5.684341886080801e-13,
+              "solver_to_physical_max_error_pce": 0.0,
+              "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+              "positive_links_1e_6": 2109,
+              "total_q_pce": 1754.9482512397267,
+              "saved_path_rows": 100,
+              "optimizer_calls": 0,
+              "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+              "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted"
+            },
+            "T_LP": {
+              "status": "RESOURCE_LIMIT",
+              "receipt": "execution\\LP_attempt31\\RECEIPT.json",
+              "reason": "No complete saved primal/dual endpoint",
+              "execution_status": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+              "optimizer_calls": 0,
+              "seconds": 0.015000000013969839,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_CG": {
+              "status": "ACCEPTED",
+              "checks": {
+                "two_phases_executed": true,
+                "phase_I_cleared": true,
+                "OD": true,
+                "capacity": true,
+                "pricing_all_commodities": true,
+                "dual_gap": true,
+                "saved_objective": true
+              },
+              "objective_pce_min": 241.2185242449435,
+              "dual_pce_min": 241.2185242449434,
+              "pricing_by_OD": [
+                0.0,
+                -8.881784197001252e-16,
+                -3.552713678800501e-15,
+                -2.6645352591003757e-15
+              ],
+              "max_OD_pce": 7.105427357601002e-15,
+              "max_capacity_pce": 7.105427357601002e-15,
+              "columns": 425,
+              "rounds": 268,
+              "optimizer_calls": 0,
+              "LP_independent_reference_status": "UNAVAILABLE; own full-graph dual/pricing certificate checked separately",
+              "seconds": 23.719000000040978,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_LR": {
+              "status": "GATE_NOT_MET",
+              "dual_pce_min": 227.20471615228504,
+              "objective_pce_min": null,
+              "certified_gap": null,
+              "reason": "own generated pool has no feasible recovery",
+              "pool_paths": 128,
+              "iterations": 759,
+              "recovery_calls": 77,
+              "reported_stop_reason": "WALL_BUDGET",
+              "priced_cost_min_by_OD": [
+                2.927539419788435,
+                3.208843103121511,
+                4.455008270216095,
+                4.442066818120931
+              ],
+              "multiplier_count": 1351628,
+              "positive_multipliers": 533,
+              "max_multiplier": 0.3663060412333533,
+              "demand_weighted_pricing_pce_min": 240.77278679843513,
+              "capacity_penalty_pce_min": 13.568070646150087,
+              "optimizer_calls": 0,
+              "seconds": 27.32799999997951,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            },
+            "T_ADMM": {
+              "status": "GATE_NOT_MET",
+              "checks": {
+                "balance": true,
+                "KKT": true,
+                "x_capacity": false,
+                "z_capacity": true,
+                "z_nonnegative": true,
+                "z_forbidden": true,
+                "projection": true,
+                "dual_update": true,
+                "primal": false,
+                "dual": false,
+                "physical_pullback": true,
+                "objective_recompute": true,
+                "LP_objective": false
+              },
+              "objective_pce_min": 216.5087007354914,
+              "rho": 0.004486642451344123,
+              "completed_iterations": 9,
+              "balance_pce": 3.2673414188559937e-12,
+              "KKT_min": 7.384500178096348e-08,
+              "x_capacity_pce": 9.507039548603403,
+              "z_capacity_pce": 4.884981308350689e-15,
+              "projection_pce": 1.4210854715202004e-14,
+              "dual_update_pce": 1.4210854715202004e-14,
+              "physical_pullback_pce": 1.4210854715202004e-14,
+              "primal": 20.97881890129412,
+              "dual": 0.05407933291905006,
+              "primal_threshold": 0.004163042298159444,
+              "dual_threshold": 0.0023340572897360403,
+              "LP_normalized_difference": null,
+              "optimizer_calls": 0,
+              "returned_local_trial_audit": {
+                "status": "VALID_RETURNED_TRIAL_EVIDENCE",
+                "optimizer_calls": 0,
+                "trials": [
+                  {
+                    "outer": 1,
+                    "commodity": "T01",
+                    "balance_pce": 3.6303793542844375e-13,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848038856445
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.7590095301054513e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 138.86959757821273
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T03",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 6.974348094879179e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 66.92682322778522
+                  },
+                  {
+                    "outer": 1,
+                    "commodity": "T04",
+                    "balance_pce": 1.5473340795485333e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 2.1713800588198946e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 27.510628910180703
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T01",
+                    "balance_pce": 7.260758708568875e-13,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.584284803921512
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.677700957099289e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 134.57652431014264
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.1490610370972228e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 67.32636004775237
+                  },
+                  {
+                    "outer": 2,
+                    "commodity": "T04",
+                    "balance_pce": 1.4723145947954252e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.6686036830027007e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 27.75249669539426
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T01",
+                    "balance_pce": 1.0891138062853312e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848039573801
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.3864440545892602e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 135.11430349429136
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.893119726068207e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 68.7413275867079
+                  },
+                  {
+                    "outer": 3,
+                    "commodity": "T04",
+                    "balance_pce": 5.46933131216253e-17,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.365538235935219e-09,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 28.15394880515687
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T01",
+                    "balance_pce": 1.452151741713775e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848039932478
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.304190955054264e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 139.76902181360373
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 3.085453875728561e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 71.07988426494511
+                  },
+                  {
+                    "outer": 4,
+                    "commodity": "T04",
+                    "balance_pce": 5.329070518200751e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.661540544284467e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 28.71041549649065
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T01",
+                    "balance_pce": 1.8151896771422187e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848040291149
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.2039482258942233e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 145.44840021861125
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T03",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 9.156476313134008e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 74.15691797313184
+                  },
+                  {
+                    "outer": 5,
+                    "commodity": "T04",
+                    "balance_pce": 8.881784197001252e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.092624882910299e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 29.386377670725327
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T01",
+                    "balance_pce": 2.1782276125706625e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848040649823
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T02",
+                    "balance_pce": 5.833911131958303e-10,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 152.3105176809827
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 5.175076736332288e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 77.91041991326227
+                  },
+                  {
+                    "outer": 6,
+                    "commodity": "T04",
+                    "balance_pce": 5.551115123125783e-17,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.993773976089358e-09,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 30.14721905314094
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T01",
+                    "balance_pce": 2.5412655479991062e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.58428480410085
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.4450231772840518e-07,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 160.32307612586268
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 2.986103593673777e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 82.14118512634701
+                  },
+                  {
+                    "outer": 7,
+                    "commodity": "T04",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.69345393730445e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 30.943100606704945
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T01",
+                    "balance_pce": 2.90430348342755e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848041367179
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T02",
+                    "balance_pce": 7.105427357601002e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 9.353957372821343e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 169.68800837802706
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 6.395132040785831e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 86.68492544737865
+                  },
+                  {
+                    "outer": 8,
+                    "commodity": "T04",
+                    "balance_pce": 1.1102230246251565e-16,
+                    "balance_gate_passed": true,
+                    "KKT_min": 1.2837408913668469e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 31.71986852886304
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T01",
+                    "balance_pce": 3.2673414188559937e-12,
+                    "balance_gate_passed": true,
+                    "KKT_min": 8.881784197001252e-16,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 0.5842848041725852
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T02",
+                    "balance_pce": 1.4210854715202004e-14,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.098374606968277e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 180.15711577630802
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T03",
+                    "balance_pce": 1.7763568394002505e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 4.3825233321876036e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 91.282456594682
+                  },
+                  {
+                    "outer": 9,
+                    "commodity": "T04",
+                    "balance_pce": 3.552713678800501e-15,
+                    "balance_gate_passed": true,
+                    "KKT_min": 7.384500178096348e-08,
+                    "KKT_gate_passed": true,
+                    "min_flow": 0.0,
+                    "forbidden_flow_max": 0.0,
+                    "local_objective": 32.4236650408625
+                  }
+                ],
+                "resource_truncated_scope": false,
+                "scope": "independently reconstructed complete returned trial files; does not make them accepted ADMM outers"
+              },
+              "seconds": 22.5,
+              "runtime_guard": {
+                "installed_before_numeric_imports": true,
+                "blocked_optimizer_imports": 0,
+                "blocked_process_launches": 0,
+                "blocked_network_calls": 0,
+                "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+              }
+            }
+          },
+          "T_input": {
+            "status": "PASS_FULL_T_INPUT_DOMAIN",
+            "arcs": 1351628,
+            "movement_arcs": 876268,
+            "waiting_arcs": 475122,
+            "ledger_connectors": 238,
+            "nodes": 490223,
+            "q_pce": 66.53295454563035,
+            "H_steps": 169,
+            "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+            "exact_domain_no_missing_or_extra_arcs": true,
+            "DAG_proof": "physical/waiting arcs strictly increase time; at equal time source precedes physical node and terminal sink follows physical node; no arc leaves a terminal sink",
+            "cost_and_capacity_exact_R2": true,
+            "loader_heap_lower_bound_bytes": 740351199,
+            "lower_bound_parts": {
+              "retained_row_dicts": 627155392,
+              "unique_arc_id_strings": 102382783,
+              "retained_list_pointers": 10813024
+            },
+            "bound_omits": "all other value strings, arrays, adjacency, node maps, QP state and solver workspace",
+            "frozen_memory_ceiling_bytes": 4294967296,
+            "ADMM_and_LR_v002_full_loader_exceeds_ceiling_before_solver": false,
+            "optimizer_calls": 0,
+            "seconds": 16.10999999998603
+          },
+          "separate_feasibility_witness": {
+            "status": "FEASIBLE_UPPER_BOUND_WITNESS",
+            "not_a_registered_method_solution": true,
+            "not_an_optimality_certificate": true,
+            "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+            "paths": 124,
+            "distinct_used_arcs": 13454,
+            "positive_commodity_arc_pairs_in_exact_LP_domain": 13454,
+            "OD_volume_pce": {
+              "T01": 0.19958221566368337,
+              "T02": 44.33172763594412,
+              "T03": 15.621715371640422,
+              "T04": 6.37992932238215
+            },
+            "max_OD_error_pce": 2.1316282072803006e-14,
+            "max_node_balance_pce": 2.1316282072803006e-14,
+            "max_shared_capacity_excess_pce": 2.1316282072803006e-14,
+            "max_capacity_ratio": 1.0000000000000007,
+            "objective_pce_min": 731.6102207729215,
+            "movement_cost_pce_min": 232.61306168069603,
+            "waiting_cost_pce_min": 498.9971590922203,
+            "maximum_actual_arrival_elapsed_minutes": 82.0,
+            "optimizer_calls": 0,
+            "independence": "CSV/NumPy exact LP-domain membership, path continuity and original-unit reconstruction; does not import witness builder, solver model loaders or optimizers",
+            "scientific_scope": "Constructive feasible upper only. Does not alter LP/CG/LR/ADMM acceptance; no witness state supplied to their initialization."
+          },
+          "optimizer_calls": 0,
+          "input_mutations": 0,
+          "files_checked": 722,
+          "seconds": 102.95300000009593,
+          "all_input_files_unchanged": true,
+          "input_file_count": 723,
+          "runtime_guard": {
+            "installed_before_numeric_imports": true,
+            "blocked_optimizer_imports": 0,
+            "blocked_process_launches": 0,
+            "blocked_network_calls": 0,
+            "scope": "Python audit hook rejects known optimizer module imports, subprocess launch, and network connection; saved verifier source is included for review"
+          }
+        }
+      ],
+      "queries": [
+        {
+          "query": "summary",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "b9b3a13ac93537c86b5662a747c216709a8f68b915e6b8df083e1df393668e20"
+        },
+        {
+          "query": "FW_OD0",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "b7718ea88a6f1782c72d67a43e2a336006f68a018d21e79d7d4eea0101c51d9d"
+        },
+        {
+          "query": "finite_OD0",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "0e35f5b9c6f6b03d54ea04b426955b51e0db5de295199466498b2d039d14482e"
+        },
+        {
+          "query": "Native26_OD0",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "f33ddfd6207b2b38fa29c6bcedbb8f0b32bc6e6c1a32e2c32776aa1570960e74"
+        },
+        {
+          "query": "Native52_OD0",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "897da39c0bf2499fa47d0fe45d1a9642e8a8459f25f6c634bd8995c94b41caac"
+        },
+        {
+          "query": "CG_T02",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "90966675e62688169ff6e3709731c0bc73d5cbd65a0421b839e1932eb55a73a6"
+        },
+        {
+          "query": "LP_T02",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "7d54c0fd76cc737ec72237a53941c03956e0722ca2f04d84a90fdc6f9ac4b817"
+        },
+        {
+          "query": "LR_T02",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "ede5530058d41a16e4b88b886f7b58eb9ff3ef19be26247330dcd29fc301d1c0"
+        },
+        {
+          "query": "ADMM_T02",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "418a100c8d459ecd24f5278e6f2845c525b1e211da78183fcdb405b908aab4bf"
+        },
+        {
+          "query": "witness_T02",
+          "exit_code": 0,
+          "optimizer_calls": 0,
+          "output_sha256": "49893e64a66d30fb7feb620314ed0f8de6296cc6b820d4a19a44bcb62bfd55a4"
+        }
+      ],
+      "optimizer_calls": 0,
+      "input_unchanged_both": true,
+      "actual_new_saved_entry_negatives": {
+        "status": "PASS",
+        "actual_city_saved_entry_tests": 15,
+        "tests": [
+          {
+            "test": "missing_state",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "No such file",
+            "actual_reason": "[Errno 2] No such file or directory: 'E:\\\\mobility_computation_lab_v2\\\\deliveries\\\\chicago_algorithm_transfer_r1\\\\retry_r2\\\\真实 入口负测 v001\\\\重签副本 semantic copy\\\\runs\\\\S_finite\\\\path_flow.csv'"
+          },
+          {
+            "test": "wrong_shape",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "returned path shape",
+            "actual_reason": "returned path shape changed"
+          },
+          {
+            "test": "wrong_ID_order",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "returned link shape/ID/order",
+            "actual_reason": "returned link shape/ID/order changed"
+          },
+          {
+            "test": "NaN_flow",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "nonfinite",
+            "actual_reason": "nonfinite numeric value"
+          },
+          {
+            "test": "negative_flow",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "negative saved path",
+            "actual_reason": "negative saved path flow"
+          },
+          {
+            "test": "bad_OD",
+            "method": "S_finite",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "OD volume changed",
+            "actual_reason": "OD volume changed"
+          },
+          {
+            "test": "forged_CG_closure",
+            "method": "T_CG",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "false CG closure",
+            "actual_reason": "T_CG invalid state: false CG closure contradicted by original graph"
+          },
+          {
+            "test": "false_LR_lower",
+            "method": "T_LR",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "LR false lower bound",
+            "actual_reason": "T_LR invalid state: LR false lower bound"
+          },
+          {
+            "test": "negative_LR_multiplier",
+            "method": "T_LR",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "LR invalid multipliers",
+            "actual_reason": "T_LR invalid state: LR invalid multipliers"
+          },
+          {
+            "test": "ADMM_dual",
+            "method": "T_ADMM",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "ADMM",
+            "actual_reason": "T_ADMM invalid state: ADMM invalid projection/dual state identity"
+          },
+          {
+            "test": "ADMM_rho",
+            "method": "T_ADMM",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "ADMM",
+            "actual_reason": "T_ADMM invalid state: ADMM fixed rho changed"
+          },
+          {
+            "test": "ADMM_false_success",
+            "method": "T_ADMM",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "ADMM",
+            "actual_reason": "T_ADMM invalid state: ADMM false internal success"
+          },
+          {
+            "test": "ADMM_returned_trial_changed",
+            "method": "T_ADMM",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "local reported balance differs",
+            "actual_reason": "T_ADMM invalid state: local reported balance differs from trial"
+          },
+          {
+            "test": "witness_NaN_flow",
+            "method": "T_feasibility_witness",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "witness invalid flow",
+            "actual_reason": "witness invalid flow"
+          },
+          {
+            "test": "witness_bad_OD",
+            "method": "T_feasibility_witness",
+            "resigned_manifest": true,
+            "exit_code": 2,
+            "semantic_rejection": true,
+            "expected_reason_fragment": "false witness feasibility",
+            "actual_reason": "false witness feasibility"
+          }
+        ],
+        "original_and_restored_copy_identical": true,
+        "negative_optimizer_calls": 0,
+        "city_ADMM_endpoint_available_for_negative": true,
+        "ADMM_fixture_additional_coverage": "validation/reused_R1_entry_negative/REPORT.json",
+        "elapsed_seconds": 327.9530000000959
+      },
+      "utc": "2026-10-07T13:58:46.058459+00:00"
+    },
+    "units": {
+      "S_flow": "PCE per one modeled hour / PCE h^-1 display",
+      "T_flow": "PCE pulse",
+      "objective": "PCE min",
+      "reduced_cost": "min",
+      "LR_multiplier": "min",
+      "ADMM_primal": "PCE",
+      "ADMM_dual": "min",
+      "ADMM_rho": "min/PCE",
+      "relative_gap": "dimensionless"
+    },
+    "S0_reception": "NOT_RECEIVED_AT_CUTOFF",
+    "new_asset_release": "PENDING_ACTUAL_S0_DECISION",
+    "limits": [
+      "CG has its own full-graph pricing/dual certificate; separate LP implementation remains unavailable.",
+      "LR has no own feasible upper and no own certified gap; CG difference or independent witness is not an LR upper.",
+      "ADMM own x violates capacity and consensus; z feasibility cannot repair or certify x.",
+      "Native ranks fail full and pool gap gates; feasibility alone is insufficient.",
+      "S20 static modeled-hour demand differs from T4 pulse."
+    ]
+  },
+  "pittsburgh": {
+    "current_revision": "v7",
+    "packages": [
+      {
+        "kind": "Private_Full",
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v7_Private_Full.zip",
+        "bytes": 59716780,
+        "sha256": "650264dceb5bd2030599230e5b2c1f455364f1bde91b392c12c4908ae56f421b",
+        "actual_members": 479,
+        "protected_members": 478,
+        "all_payload_hashes_match": true,
+        "hash_mismatches": [],
+        "unmanifested": [],
+        "duplicate_member_check": "PASS_NO_DUPLICATES; all ZIP members read with CRC checking",
+        "manifest_revision": "v7",
+        "manifest_status": "COMPLETE_READY_FOR_S0_INCREMENTAL_REVIEW"
+      },
+      {
+        "kind": "Review_Lite",
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v7_Review_Lite.zip",
+        "bytes": 596638,
+        "sha256": "2e387a9bdd8f1a0855d670d42cf2f5ac993504a4b03d353453464e9ca91deebf",
+        "actual_members": 117,
+        "protected_members": 116,
+        "all_payload_hashes_match": true,
+        "hash_mismatches": [],
+        "unmanifested": [],
+        "duplicate_member_check": "PASS_NO_DUPLICATES; all ZIP members read with CRC checking",
+        "manifest_revision": "v7",
+        "manifest_status": "COMPLETE_READY_FOR_S0_INCREMENTAL_REVIEW"
+      },
+      {
+        "kind": "Volume_Handoff",
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v7_Volume_Handoff.zip",
+        "bytes": 547472,
+        "sha256": "7409e7d785cd80dc54f090db03c1292dccb153e278b569e38f6620750a8ae3f5",
+        "actual_members": 76,
+        "protected_members": 75,
+        "all_payload_hashes_match": true,
+        "hash_mismatches": [],
+        "unmanifested": [],
+        "duplicate_member_check": "PASS_NO_DUPLICATES; all ZIP members read with CRC checking",
+        "manifest_revision": "v7",
+        "manifest_status": "COMPLETE_READY_FOR_S0_INCREMENTAL_REVIEW"
+      },
+      {
+        "kind": "ChatGPT_Upload",
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v7_ChatGPT_Upload.zip",
+        "bytes": 432012,
+        "sha256": "230fe38c6b8a3c84168b61effc9ac2665fdffb407414da985c233c41ad3c8605",
+        "actual_members": 72,
+        "protected_members": 71,
+        "all_payload_hashes_match": true,
+        "hash_mismatches": [],
+        "unmanifested": [],
+        "duplicate_member_check": "PASS_NO_DUPLICATES; all ZIP members read with CRC checking",
+        "manifest_revision": "v7",
+        "manifest_status": "COMPLETE_READY_FOR_S0_INCREMENTAL_REVIEW"
+      }
+    ],
+    "root_evidence": [
+      {
+        "path": "SOURCE_MAP.json",
+        "sha256": "e5b75409f2a843025c47d9cedbba4e3335aa7dbaec27e2bed412c86de8bf35ad"
+      },
+      {
+        "path": "RESULT_MATRIX.json",
+        "sha256": "8e485632e9bd10590a83d5bc89d5402aba064c5c06602c504bb1507dc7609448"
+      },
+      {
+        "path": "READY.json",
+        "sha256": "a9ea9b809f27da77bb0ea6f88c32def71b8b44481609f5c62c09a648333a163c"
+      },
+      {
+        "path": "FINAL_VALIDATION_RECEIPT.json",
+        "sha256": "bab336d6f8327df76e47d1b45122669993a5ff4f99abc045f75c183b93c1bcc9"
+      },
+      {
+        "path": "PUBLIC_CANDIDATE_MANIFEST.json",
+        "sha256": "21a609bfe96d4b074c4d3b01b443f357a063a4888fbb9d6720f15375947a7b10"
+      },
+      {
+        "path": "METHOD_SOURCE_IDENTITY.json",
+        "sha256": "2c6593ee8af25934a400908e31a8fdc302f48b2bf0a2c460243cc76a39f41410"
+      },
+      {
+        "path": "VOLUME_ADDENDUM.md",
+        "sha256": "2d302c6d2d83be5755e168450bf14a3c6fdcbabdce7a11146cf4c908e68e202c"
+      }
+    ],
+    "methods": [
+      {
+        "method": "S_FW",
+        "status": "ACCEPTED",
+        "instance": "S72",
+        "objective_pce_min": 763.227941458126,
+        "full_relative_gap": 6.405076187649018e-15,
+        "max_OD_residual_pce": 0.0,
+        "evidence": "runs/berkeley_c2a_transfer_r2/S/fw_72_candidate/verification.json",
+        "scope": "zero FW updates; accepted AON and BPR math with vectorized arithmetic"
+      },
+      {
+        "method": "S_FINITE",
+        "status": "ACCEPTED",
+        "instance": "S72",
+        "objective_pce_min": 763.227941458126,
+        "full_relative_gap": 1.4895526017788486e-15,
+        "max_OD_residual_pce": 0.0,
+        "paths": 360,
+        "full_solver_arcs": 56384,
+        "evidence": "runs/berkeley_c2a_transfer_r2/S/finite_72/independent_check.json"
+      },
+      {
+        "method": "S_NATIVE26",
+        "status": "GATE_NOT_MET",
+        "instance": "S72",
+        "outer_iterations": 8,
+        "max_OD_residual_pce": 0.0013572688986740193,
+        "declared_OD_gate_pce": 1e-06,
+        "full_relative_gap": -4.276164421593077e-05,
+        "evidence": "runs/berkeley_c2a_transfer_r2/S/native_26_base/status.json",
+        "scope": "raw endpoint, no feasibility repair or accepted claim"
+      },
+      {
+        "method": "S_NATIVE52",
+        "status": "GATE_NOT_MET",
+        "instance": "S72",
+        "outer_iterations": 8,
+        "max_OD_residual_pce": 0.0013572683147812983,
+        "declared_OD_gate_pce": 1e-06,
+        "full_relative_gap": -4.2762562568790355e-05,
+        "evidence": "runs/berkeley_c2a_transfer_r2/S/native_52_abs/status.json",
+        "scope": "raw endpoint, no feasibility repair or accepted claim"
+      },
+      {
+        "method": "T_LP_HIGHS_ATTEMPT",
+        "status": "RESOURCE_LIMIT",
+        "instance": "T4",
+        "private_bytes_at_stop": 5621870592,
+        "registered_ceiling_bytes": 4294967296,
+        "exact_reachable_variables_built": 2015562,
+        "evidence": "runs/berkeley_c2a_transfer_r2/T/LP_HIGHS_RESOURCE_BOUNDARY.json",
+        "scope": "matrix built, no HiGHS solution or success claim"
+      },
+      {
+        "method": "T_LP_EXACT_DAG",
+        "status": "ACCEPTED",
+        "instance": "T4",
+        "objective_pce_min": 0.24793241990274612,
+        "dual_pce_min": 0.2479324199027458,
+        "primal_dual_gap_pce_min": 3.0531133177191805e-16,
+        "exact_reachable_variables": 2015562,
+        "physical_capacity_rows": 0,
+        "total_pulse_pce": 0.045027548453549955,
+        "minimum_physical_time_arc_capacity_pce": 2.5,
+        "evidence": "runs/berkeley_c2a_transfer_r2/T/lp_dag/independent_check.json",
+        "scope": "full original-domain LP primal/dual certificate; separate from HiGHS attempt"
+      },
+      {
+        "method": "T_CG",
+        "status": "ACCEPTED",
+        "instance": "T4",
+        "objective_pce_min": 0.2479324199027461,
+        "phase_I_artificial_pce": 0.0,
+        "minimum_full_DAG_reduced_cost_min": 0.0,
+        "generated_columns": 4,
+        "evidence": "runs/berkeley_c2a_transfer_r2/T/cg/independent_check.json"
+      },
+      {
+        "method": "T_LR",
+        "status": "ACCEPTED",
+        "instance": "T4",
+        "feasible_upper_pce_min": 0.2479324199027461,
+        "valid_dual_lower_pce_min": 0.24793241990274573,
+        "certified_gap": 3.608224830031759e-16,
+        "generated_pool_paths": 4,
+        "evidence": "runs/berkeley_c2a_transfer_r2/T/lr/independent_check.json"
+      },
+      {
+        "method": "T_ADMM",
+        "status": "ACCEPTED",
+        "instance": "T4",
+        "objective_pce_min": 0.2479324199052491,
+        "outer_iterations": 1,
+        "primal_residual_pce": 0.0,
+        "dual_residual_pce": 1.510761290551328e-13,
+        "max_balance_pce": 2.7850292342213303e-15,
+        "LP_absolute_difference_pce_min": 2.5029978090174154e-12,
+        "LP_true_relative_difference": 1.0095484124259508e-11,
+        "exact_cold_confirmation": true,
+        "evidence": "runs/berkeley_c2a_transfer_r2/T/ADMM_CONFIRMATION.json"
+      },
+      {
+        "method": "T_ADMM_TIER2",
+        "status": "NOT_RUN",
+        "instance": "T4",
+        "reason": "primary stage and independent cold confirmation passed all registered gates"
+      }
+    ],
+    "source_map": {
+      "entries": 44,
+      "unique_paths": 43,
+      "all_match": true,
+      "entries_detail": [
+        {
+          "path": "source_reference/03_C04_PITTSBURGH_ALGORITHM_TRANSFER_R2.txt",
+          "sha256": "968539aa16222bf36606b5e3e9d3bd73dd8ee9db9585f30b029adfb50ef39342",
+          "meaning": "authorized task",
+          "actual_sha256": "968539aa16222bf36606b5e3e9d3bd73dd8ee9db9585f30b029adfb50ef39342",
+          "matches": true
+        },
+        {
+          "path": "source_reference/01_RECEIVER_ACCEPTANCE_REPORT.md",
+          "sha256": "14802d79607ff2152b6879caef50ae1a97d5905fc685ec46b561f93fc81bfbb9",
+          "meaning": "Berkeley/C02 acceptance scope",
+          "actual_sha256": "14802d79607ff2152b6879caef50ae1a97d5905fc685ec46b561f93fc81bfbb9",
+          "matches": true
+        },
+        {
+          "path": "INSTANCE_IDENTITY.json",
+          "sha256": "4a1abef2b4beb058072b76c4ca2c84a362819ca49130366099cd1d6372600956",
+          "meaning": "accepted R3 Pittsburgh input and loading identity",
+          "actual_sha256": "4a1abef2b4beb058072b76c4ca2c84a362819ca49130366099cd1d6372600956",
+          "matches": true
+        },
+        {
+          "path": "CONSUMED_CORE_IDENTITY.json",
+          "sha256": "65eba50d5c5f389e01a56c5114d2191c68a0ded55392c4cc885f016cc9cca6d1",
+          "meaning": "54-file frozen C02 v002 core check",
+          "actual_sha256": "65eba50d5c5f389e01a56c5114d2191c68a0ded55392c4cc885f016cc9cca6d1",
+          "matches": true
+        },
+        {
+          "path": "LOCAL_METHOD_WRAPPER_IDENTITY_v2.json",
+          "sha256": "26e20e4d950bcf445ba95608ea237c1587292892eaabde4b9e8cc0918cbe1d36",
+          "meaning": "city wrapper lineage",
+          "actual_sha256": "26e20e4d950bcf445ba95608ea237c1587292892eaabde4b9e8cc0918cbe1d36",
+          "matches": true
+        },
+        {
+          "path": "OUT_STATE_ALL_PATH_AUDIT.json",
+          "sha256": "f6a1f6c8f8cf9d95e97862fc08bff9ef9e67e92ad457081d2df99066424437f0",
+          "meaning": "all 1406 saved R2 OUT-state paths",
+          "actual_sha256": "f6a1f6c8f8cf9d95e97862fc08bff9ef9e67e92ad457081d2df99066424437f0",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/prepared_72/manifest.json",
+          "sha256": "05aea145eb68c595e629ea6e5eaa0cb445fd3225b395b8b9fcf870615e795270",
+          "meaning": "same S72 prepared instance",
+          "actual_sha256": "05aea145eb68c595e629ea6e5eaa0cb445fd3225b395b8b9fcf870615e795270",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/pool_72_fast/pool.json",
+          "sha256": "dfbba9fd5f78ace134f9036d2c7e024e18c23f4515b1f643e8b2455924a9b3a1",
+          "meaning": "360 real paths and incidence",
+          "actual_sha256": "dfbba9fd5f78ace134f9036d2c7e024e18c23f4515b1f643e8b2455924a9b3a1",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/model/MODEL_IDENTITY.json",
+          "sha256": "d4e513fa32b3ca61685150c51906fe7caa51e5e212e5079cb5d866e25c41f87e",
+          "meaning": "same T4 graph and demand signature",
+          "actual_sha256": "d4e513fa32b3ca61685150c51906fe7caa51e5e212e5079cb5d866e25c41f87e",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/T_MODEL_INDEPENDENT_CHECK.json",
+          "sha256": "a3c74d3bcdbcdef0ae0961c308089a30dc557d0fe4ce23bb9c41781f12c0be4b",
+          "meaning": "original T4 graph semantics",
+          "actual_sha256": "a3c74d3bcdbcdef0ae0961c308089a30dc557d0fe4ce23bb9c41781f12c0be4b",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/LP_HIGHS_RESOURCE_BOUNDARY.json",
+          "sha256": "40a2a68c57478a03fea82fceafcc889e9a82574310fcf93a76cfde97a983dde2",
+          "meaning": "HiGHS attempt resource boundary",
+          "actual_sha256": "40a2a68c57478a03fea82fceafcc889e9a82574310fcf93a76cfde97a983dde2",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/fw_72_candidate/verification.json",
+          "sha256": "8a9af72d174f6375b8437cb92f144c16435621ce6acd5a45f3d30f2647e85a94",
+          "meaning": "S_FW saved method check",
+          "actual_sha256": "8a9af72d174f6375b8437cb92f144c16435621ce6acd5a45f3d30f2647e85a94",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/finite_72/independent_check.json",
+          "sha256": "94055a3ea0e718b02def36ca4e6b241e5f00948ad80121ea75fe126332099b3d",
+          "meaning": "S_FINITE saved method check",
+          "actual_sha256": "94055a3ea0e718b02def36ca4e6b241e5f00948ad80121ea75fe126332099b3d",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/native_26_base/status.json",
+          "sha256": "b5f868687e0f9f0e24648c89be178777d3f7d3a83c00cf02a0675333efd3d0e1",
+          "meaning": "S_NATIVE26 saved method check",
+          "actual_sha256": "b5f868687e0f9f0e24648c89be178777d3f7d3a83c00cf02a0675333efd3d0e1",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/native_52_abs/status.json",
+          "sha256": "f148dcb012f547b16b7d79723fe05a2b01c3fdaaf5d830bf56310004d335aa8d",
+          "meaning": "S_NATIVE52 saved method check",
+          "actual_sha256": "f148dcb012f547b16b7d79723fe05a2b01c3fdaaf5d830bf56310004d335aa8d",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/LP_HIGHS_RESOURCE_BOUNDARY.json",
+          "sha256": "40a2a68c57478a03fea82fceafcc889e9a82574310fcf93a76cfde97a983dde2",
+          "meaning": "T_LP_HIGHS_ATTEMPT saved method check",
+          "actual_sha256": "40a2a68c57478a03fea82fceafcc889e9a82574310fcf93a76cfde97a983dde2",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/lp_dag/independent_check.json",
+          "sha256": "ea12b5567bce45bfca2e4da43c264e9c31d18918cd5be370f47b1cca293e6dab",
+          "meaning": "T_LP_EXACT_DAG saved method check",
+          "actual_sha256": "ea12b5567bce45bfca2e4da43c264e9c31d18918cd5be370f47b1cca293e6dab",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/cg/independent_check.json",
+          "sha256": "e42709622845cd207c3f73c7f861a8a02d4964bdd5a564d11d145707e9da4e3b",
+          "meaning": "T_CG saved method check",
+          "actual_sha256": "e42709622845cd207c3f73c7f861a8a02d4964bdd5a564d11d145707e9da4e3b",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/lr/independent_check.json",
+          "sha256": "95d1ddcf348e1fa787230ed874525f0fb1b6a958973a5967cafba6646bc09c61",
+          "meaning": "T_LR saved method check",
+          "actual_sha256": "95d1ddcf348e1fa787230ed874525f0fb1b6a958973a5967cafba6646bc09c61",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/T/ADMM_CONFIRMATION.json",
+          "sha256": "c0c66cbe8ceb832db7a5666ab1b1f4d1fcf4375a266c2a9c53872329ff5e2438",
+          "meaning": "T_ADMM saved method check",
+          "actual_sha256": "c0c66cbe8ceb832db7a5666ab1b1f4d1fcf4375a266c2a9c53872329ff5e2438",
+          "matches": true
+        },
+        {
+          "path": "figures/PIT_AT00.source.json",
+          "sha256": "7d7779dd9565076891984515c0221bc0744f4364ecafac4af457577935146dc5",
+          "meaning": "PIT_AT00 plot source",
+          "actual_sha256": "7d7779dd9565076891984515c0221bc0744f4364ecafac4af457577935146dc5",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_S01.source.json",
+          "sha256": "103b539e7b6732253262a9198608331541ba88199ecb6c4d111e450b0cabbdb5",
+          "meaning": "PIT_S01 plot source",
+          "actual_sha256": "103b539e7b6732253262a9198608331541ba88199ecb6c4d111e450b0cabbdb5",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_S02.source.json",
+          "sha256": "1cf1035c28fc9e4b697cd641296dca5802b781362e5638b525974ad65552954c",
+          "meaning": "PIT_S02 plot source",
+          "actual_sha256": "1cf1035c28fc9e4b697cd641296dca5802b781362e5638b525974ad65552954c",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_S03.source.json",
+          "sha256": "c07bc05cc5914c20ddd7208b6fa272c006069946185350e3d77f7a2fd6b916ba",
+          "meaning": "PIT_S03 plot source",
+          "actual_sha256": "c07bc05cc5914c20ddd7208b6fa272c006069946185350e3d77f7a2fd6b916ba",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_S04.source.json",
+          "sha256": "74ecb1380252d2026eb1017aa141a688f783403a32bf702708a945dca02e3c6c",
+          "meaning": "PIT_S04 plot source",
+          "actual_sha256": "74ecb1380252d2026eb1017aa141a688f783403a32bf702708a945dca02e3c6c",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T01.source.json",
+          "sha256": "ca9425df08a7ad46cc473e3e05dbd363565f92f38ba9a6e194025e56bab9c665",
+          "meaning": "PIT_T01 plot source",
+          "actual_sha256": "ca9425df08a7ad46cc473e3e05dbd363565f92f38ba9a6e194025e56bab9c665",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T02.source.json",
+          "sha256": "972342d1ad27cbd9b29ed160c886e5ba5d1a357bac931bbd86de3c6f58d61f62",
+          "meaning": "PIT_T02 plot source",
+          "actual_sha256": "972342d1ad27cbd9b29ed160c886e5ba5d1a357bac931bbd86de3c6f58d61f62",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T03.source.json",
+          "sha256": "22f87e5e6157788a33bb45776e9a332e08c24fc1afaf075ee79db1c568aaff18",
+          "meaning": "PIT_T03 plot source",
+          "actual_sha256": "22f87e5e6157788a33bb45776e9a332e08c24fc1afaf075ee79db1c568aaff18",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T04.source.json",
+          "sha256": "a0b45ca26e02d74fbef914a12116809d4689f64dc6030fad36e7b24c7b98d3f9",
+          "meaning": "PIT_T04 plot source",
+          "actual_sha256": "a0b45ca26e02d74fbef914a12116809d4689f64dc6030fad36e7b24c7b98d3f9",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T05.source.json",
+          "sha256": "0770e509e121c090670aeb168b490762f5f1b20a2b6acbe273f4679f0e3ca1cd",
+          "meaning": "PIT_T05 plot source",
+          "actual_sha256": "0770e509e121c090670aeb168b490762f5f1b20a2b6acbe273f4679f0e3ca1cd",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T06.source.json",
+          "sha256": "d35f7936489187660e9bec4cac42875a427591b80103667733f69c3a175e00b2",
+          "meaning": "PIT_T06 plot source",
+          "actual_sha256": "d35f7936489187660e9bec4cac42875a427591b80103667733f69c3a175e00b2",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T07.source.json",
+          "sha256": "3b48332561b8f8dbefb79a8742215d7d2d78f6796d57952ad5c0be9f86b856d6",
+          "meaning": "PIT_T07 plot source",
+          "actual_sha256": "3b48332561b8f8dbefb79a8742215d7d2d78f6796d57952ad5c0be9f86b856d6",
+          "matches": true
+        },
+        {
+          "path": "figures/methods/PIT_T08.source.json",
+          "sha256": "99f3ae508de0d8ac59ea1a35b7d1ec03eaddc019979e450ef3c1522bf8a7212a",
+          "meaning": "PIT_T08 plot source",
+          "actual_sha256": "99f3ae508de0d8ac59ea1a35b7d1ec03eaddc019979e450ef3c1522bf8a7212a",
+          "matches": true
+        },
+        {
+          "path": "METHOD_SOURCE_IDENTITY.json",
+          "sha256": "2c6593ee8af25934a400908e31a8fdc302f48b2bf0a2c460243cc76a39f41410",
+          "meaning": "accepted source lineage and Pittsburgh outcome boundary",
+          "actual_sha256": "2c6593ee8af25934a400908e31a8fdc302f48b2bf0a2c460243cc76a39f41410",
+          "matches": true
+        },
+        {
+          "path": "EXECUTION_COMMANDS.json",
+          "sha256": "52a7d1c63e50bcacc15920bb93209285a0f45c2b1e0927c70edc56dcfdc3dfce",
+          "meaning": "recorded invocations and source-validated fresh-output templates",
+          "actual_sha256": "52a7d1c63e50bcacc15920bb93209285a0f45c2b1e0927c70edc56dcfdc3dfce",
+          "matches": true
+        },
+        {
+          "path": "VOLUME_ADDENDUM.md",
+          "sha256": "2d302c6d2d83be5755e168450bf14a3c6fdcbabdce7a11146cf4c908e68e202c",
+          "meaning": "corrected standalone Pittsburgh city-volume addendum",
+          "actual_sha256": "2d302c6d2d83be5755e168450bf14a3c6fdcbabdce7a11146cf4c908e68e202c",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/POOL_RESOURCE_FROZEN.json",
+          "sha256": "eb140d68ac764a2da3db75ae7574ccc0ec4b16a5adfa7257af82dfdd254b1ba8",
+          "meaning": "all-path support: 49108 fixed-zero solver links",
+          "actual_sha256": "eb140d68ac764a2da3db75ae7574ccc0ec4b16a5adfa7257af82dfdd254b1ba8",
+          "matches": true
+        },
+        {
+          "path": "runs/berkeley_c2a_transfer_r2/S/basis_26/basis.json",
+          "sha256": "4eb85ae6b8cbdb2d04fe4e08776dfe6688bfd223f8d55d5023fd72de77edd397",
+          "meaning": "minor-only basis: 49109 zero columns",
+          "actual_sha256": "4eb85ae6b8cbdb2d04fe4e08776dfe6688bfd223f8d55d5023fd72de77edd397",
+          "matches": true
+        },
+        {
+          "path": "AUTOMATION_CONTINUATION.json",
+          "sha256": "98c573642255ce013449d993c3893a8a82a8428a450313a51b4f6817f18b9c8a",
+          "meaning": "same-thread heartbeat created active and confirmed paused at completion",
+          "actual_sha256": "98c573642255ce013449d993c3893a8a82a8428a450313a51b4f6817f18b9c8a",
+          "matches": true
+        },
+        {
+          "path": "NEGATIVE_TESTS_FINAL.json",
+          "sha256": "602849431b636ca2d30a46973b59982025f0e057ae51989c7cd813d6876482d3",
+          "meaning": "complete 15-case adversarial retry on v6 package",
+          "actual_sha256": "602849431b636ca2d30a46973b59982025f0e057ae51989c7cd813d6876482d3",
+          "matches": true
+        },
+        {
+          "path": "NEGATIVE_TEST_MEMORY_BOUNDARY.json",
+          "sha256": "d8fe4a56aad8b92bd0ce5e678e4781ae2a431fa00ada689ba174c102e9c85141",
+          "meaning": "first v6 test-harness resource failure kept separately",
+          "actual_sha256": "d8fe4a56aad8b92bd0ce5e678e4781ae2a431fa00ada689ba174c102e9c85141",
+          "matches": true
+        },
+        {
+          "path": "READY.json",
+          "sha256": "a9ea9b809f27da77bb0ea6f88c32def71b8b44481609f5c62c09a648333a163c",
+          "meaning": "current Pittsburgh method and handoff status",
+          "actual_sha256": "a9ea9b809f27da77bb0ea6f88c32def71b8b44481609f5c62c09a648333a163c",
+          "matches": true
+        },
+        {
+          "path": "FINAL_VALIDATION_RECEIPT.json",
+          "sha256": "bab336d6f8327df76e47d1b45122669993a5ff4f99abc045f75c183b93c1bcc9",
+          "meaning": "v6 two-pass saved replay",
+          "actual_sha256": "bab336d6f8327df76e47d1b45122669993a5ff4f99abc045f75c183b93c1bcc9",
+          "matches": true
+        },
+        {
+          "path": "REPRODUCTION.md",
+          "sha256": "676954789126a091958d85b49d47044f3f73b6dd3bdca370d917e88cf32376be",
+          "meaning": "run and saved-replay commands",
+          "actual_sha256": "676954789126a091958d85b49d47044f3f73b6dd3bdca370d917e88cf32376be",
+          "matches": true
+        }
+      ]
+    },
+    "receipt_identity": {
+      "internal_v6": {
+        "member": "FINAL_VALIDATION_RECEIPT.json",
+        "sha256": "bab336d6f8327df76e47d1b45122669993a5ff4f99abc045f75c183b93c1bcc9",
+        "contents": {
+          "schema": "mcl_C04_Pittsburgh_final_double_saved_replay_v1",
+          "at_utc": "2026-10-07T10:54:06.079685+00:00",
+          "revision": "v6",
+          "private_zip": "E:\\mobility_computation_lab_v2\\deliveries\\pittsburgh_algorithm_transfer_r1\\MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v6_Private_Full.zip",
+          "private_zip_sha256_before_after": "ede7e66756dc76121e514380535c86c67f01fabf8dcc042e5decea85f5c859f8",
+          "extraction_path": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\validation\\中文 空格 最终验收 v6\\full",
+          "path_contains_chinese_and_space": true,
+          "replays": [
+            {
+              "status": "PASS_FINAL_METHOD_REPLAY",
+              "optimizer_calls": 0,
+              "protected_members_before": 477,
+              "protected_members_after": 477,
+              "report_sha256": "bbf48da2fd721220759ec7958e263e55a556ea21c3095ca31397015ec75beede"
+            },
+            {
+              "status": "PASS_FINAL_METHOD_REPLAY",
+              "optimizer_calls": 0,
+              "protected_members_before": 477,
+              "protected_members_after": 477,
+              "report_sha256": "45bce4770a272df7c1fa9f6a85be12dbf8b3b9d1b3e067762ffc15bcc0bea3e3"
+            }
+          ],
+          "negative_tests": "PASS_15_OF_15",
+          "resigned_manifest_semantic_rejection": true,
+          "status": "PASS_FINAL_DOUBLE_REPLAY"
+        }
+      },
+      "READY": {
+        "schema": "mcl_C04_Pittsburgh_algorithm_transfer_ready_v1",
+        "at_utc": "2026-10-07T11:02:52.669031+00:00",
+        "status": "READY_FOR_S0_INCREMENTAL_REVIEW",
+        "experiment_id": "PITTSBURGH_BERKELEY_C2A_TRANSFER_R2_20261006",
+        "shared_core_version": "v002",
+        "shared_core_ready_sha256": "ca0221c186c4d33aba4df8737800cad35ac493136622df43b52e48fb70da2352",
+        "shared_core_file_count": 54,
+        "S_instance": "72 OD; 149.92142389506478 PCE/hour; 56384 original solver arcs",
+        "T_instance": "4 OD; 0.045027548453549955 PCE pulse; dt30s; H117",
+        "T_model_signature": "ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+        "method_statuses": {
+          "S_FW": "ACCEPTED",
+          "S_FINITE": "ACCEPTED",
+          "S_NATIVE26": "GATE_NOT_MET",
+          "S_NATIVE52": "GATE_NOT_MET",
+          "T_LP_HIGHS_ATTEMPT": "RESOURCE_LIMIT",
+          "T_LP_EXACT_DAG": "ACCEPTED",
+          "T_CG": "ACCEPTED",
+          "T_LR": "ACCEPTED",
+          "T_ADMM": "ACCEPTED",
+          "T_ADMM_TIER2": "NOT_RUN"
+        },
+        "candidate_saved_replay": "PASS_FINAL_METHOD_REPLAY",
+        "negative_tests": "PASS_15_OF_15",
+        "public_release": "PENDING_S0_INCREMENTAL_SCIENCE_AND_RIGHTS_REVIEW",
+        "web_integration": "A_ONLY_AFTER_S0",
+        "optimizer_calls_for_saved_replay": 0,
+        "double_saved_replay": "PASS_FINAL_DOUBLE_REPLAY",
+        "double_saved_replay_revision": "v6",
+        "double_saved_replay_receipt_sha256": "bab336d6f8327df76e47d1b45122669993a5ff4f99abc045f75c183b93c1bcc9",
+        "handoff_correction": {
+          "source_identity": "pre-run statement replaced with RESULT_MATRIX outcome reference",
+          "native_all_path_fixed_zero_links": 49108,
+          "native_minor_only_zero_columns": 49109,
+          "model_solver_outputs_changed": false
+        },
+        "negative_tests_origin": "v6 package 15/15 retry after test-harness graph release",
+        "negative_test_memory_boundary": "NEGATIVE_TEST_MEMORY_BOUNDARY.json"
+      },
+      "external_v7": {
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/FINAL_DOUBLE_REPLAY_RECEIPT_v7.json",
+        "sha256": "be18c9967bcb1fb4db1523b820b35fc08a6c875906449fe7573140065eeff782",
+        "contents": {
+          "schema": "mcl_C04_Pittsburgh_final_double_saved_replay_v1",
+          "at_utc": "2026-10-07T11:13:45.125574+00:00",
+          "revision": "v7",
+          "private_zip": "E:\\mobility_computation_lab_v2\\deliveries\\pittsburgh_algorithm_transfer_r1\\MCL_C04_Pittsburgh_Algorithm_Transfer_R2_Final_v7_Private_Full.zip",
+          "private_zip_sha256_before_after": "650264dceb5bd2030599230e5b2c1f455364f1bde91b392c12c4908ae56f421b",
+          "extraction_path": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\validation\\中文 空格 最终交付 v7\\full",
+          "path_contains_chinese_and_space": true,
+          "replays": [
+            {
+              "status": "PASS_FINAL_METHOD_REPLAY",
+              "optimizer_calls": 0,
+              "protected_members_before": 478,
+              "protected_members_after": 478,
+              "report_sha256": "6f81703e5e6ab7b174b4e53880e883c61a4acac73b841e6dd3cfdd2ba043479f"
+            },
+            {
+              "status": "PASS_FINAL_METHOD_REPLAY",
+              "optimizer_calls": 0,
+              "protected_members_before": 478,
+              "protected_members_after": 478,
+              "report_sha256": "123cd004892ccb6039f7bee887fd32f034662d3dd5a35180e7cefe240f70528e"
+            }
+          ],
+          "negative_tests": "PASS_15_OF_15",
+          "resigned_manifest_semantic_rejection": true,
+          "status": "PASS_FINAL_DOUBLE_REPLAY"
+        }
+      },
+      "saved_report_hash_bindings": [
+        {
+          "path": "work/pittsburgh_algorithm_transfer_r1/validation/中文 空格 最终交付 v7/check_1/VERIFY_SAVED_REPORT.json",
+          "actual_sha256": "6f81703e5e6ab7b174b4e53880e883c61a4acac73b841e6dd3cfdd2ba043479f",
+          "receipt_sha256": "6f81703e5e6ab7b174b4e53880e883c61a4acac73b841e6dd3cfdd2ba043479f",
+          "matches": true,
+          "saved_status": "PASS_FINAL_METHOD_REPLAY",
+          "provider_receipt": {
+            "status": "PASS_FINAL_METHOD_REPLAY",
+            "optimizer_calls": 0,
+            "protected_members_before": 478,
+            "protected_members_after": 478,
+            "report_sha256": "6f81703e5e6ab7b174b4e53880e883c61a4acac73b841e6dd3cfdd2ba043479f"
+          }
+        },
+        {
+          "path": "work/pittsburgh_algorithm_transfer_r1/validation/中文 空格 最终交付 v7/check_2/VERIFY_SAVED_REPORT.json",
+          "actual_sha256": "123cd004892ccb6039f7bee887fd32f034662d3dd5a35180e7cefe240f70528e",
+          "receipt_sha256": "123cd004892ccb6039f7bee887fd32f034662d3dd5a35180e7cefe240f70528e",
+          "matches": true,
+          "saved_status": "PASS_FINAL_METHOD_REPLAY",
+          "provider_receipt": {
+            "status": "PASS_FINAL_METHOD_REPLAY",
+            "optimizer_calls": 0,
+            "protected_members_before": 478,
+            "protected_members_after": 478,
+            "report_sha256": "123cd004892ccb6039f7bee887fd32f034662d3dd5a35180e7cefe240f70528e"
+          }
+        }
+      ],
+      "provider_current_state_audit": {
+        "path": "deliveries/pittsburgh_algorithm_transfer_r1/CURRENT_STATE_AUDIT_v7.json",
+        "sha256": "3e384c5bac8d8e462c900326b94017ad73dfed131719f642692f74596f88c063",
+        "contents": {
+          "schema": "mcl_C04_Pittsburgh_current_handoff_audit_v1",
+          "at_utc": "2026-10-07T11:16:41.385754+00:00",
+          "status": "PASS_CURRENT_STATE",
+          "revision": "v7",
+          "scope": "existing 03_C04 Pittsburgh algorithm transfer and current v7 deliverables",
+          "core_files_rehashed": 54,
+          "essential_science_files_rehashed": 64,
+          "original_R2_files_rehashed": 6,
+          "original_R3_capsule_archive_rehashed": true,
+          "method_statuses": {
+            "S_FW": "ACCEPTED",
+            "S_FINITE": "ACCEPTED",
+            "S_NATIVE26": "GATE_NOT_MET",
+            "S_NATIVE52": "GATE_NOT_MET",
+            "T_LP_HIGHS_ATTEMPT": "RESOURCE_LIMIT",
+            "T_LP_EXACT_DAG": "ACCEPTED",
+            "T_CG": "ACCEPTED",
+            "T_LR": "ACCEPTED",
+            "T_ADMM": "ACCEPTED",
+            "T_ADMM_TIER2": "NOT_RUN"
+          },
+          "figures": 13,
+          "negative_cases": 15,
+          "negative_current_package_report_sha256": "fe0ff9c4c649cef915fcabe61e08c7defd8af4a7e89020237202274f2bfcf16c",
+          "previous_to_current_science_members_byte_identical": 311,
+          "saved_replay_runs": 2,
+          "saved_replay_optimizer_calls": 0,
+          "public_release": "PENDING_S0_INCREMENTAL_SCIENCE_AND_RIGHTS_REVIEW",
+          "heartbeat": "PAUSED",
+          "packages": [
+            {
+              "package": "Private_Full",
+              "sha256": "650264dceb5bd2030599230e5b2c1f455364f1bde91b392c12c4908ae56f421b",
+              "bytes": 59716780,
+              "members": 478
+            },
+            {
+              "package": "Review_Lite",
+              "sha256": "2e387a9bdd8f1a0855d670d42cf2f5ac993504a4b03d353453464e9ca91deebf",
+              "bytes": 596638,
+              "members": 116
+            },
+            {
+              "package": "Volume_Handoff",
+              "sha256": "7409e7d785cd80dc54f090db03c1292dccb153e278b569e38f6620750a8ae3f5",
+              "bytes": 547472,
+              "members": 75
+            },
+            {
+              "package": "ChatGPT_Upload",
+              "sha256": "230fe38c6b8a3c84168b61effc9ac2665fdffb407414da985c233c41ad3c8605",
+              "bytes": 432012,
+              "members": 71
+            }
+          ]
+        }
+      }
+    },
+    "zero_count_identity": {
+      "solver": {
+        "path": "runs/berkeley_c2a_transfer_r2/S/POOL_RESOURCE_FROZEN.json",
+        "sha256": "eb140d68ac764a2da3db75ae7574ccc0ec4b16a5adfa7257af82dfdd254b1ba8",
+        "full_record": {
+          "schema": "mcl_C04_S72_pool_resource_frozen_v1",
+          "pool_paths_sha256": "4780f3904e067c310f76e9cc4669caf42386f11c27bd221f801cfca62c61ae92",
+          "pool_source_sha256": "dfbba9fd5f78ace134f9036d2c7e024e18c23f4515b1f643e8b2455924a9b3a1",
+          "input_only": true,
+          "optimization_calls": 0,
+          "full_original_solver_links": 56384,
+          "selected_od": 72,
+          "paths": 360,
+          "major_paths": 72,
+          "minor_paths": 288,
+          "path_link_nnz": 66420,
+          "supported_solver_links": 7276,
+          "fixed_zero_unsupported_links": 49108,
+          "finite_dense_workspace_estimate_bytes": 17998944,
+          "native_source_quadratic_floor_bytes_before_expression_terms": 3802448896,
+          "predeclared_heavy_process_ceiling_bytes": 4294967296,
+          "finite_within_ceiling": true,
+          "native_floor_within_ceiling": true,
+          "zero_elimination_identity": "unsupported link rows of all frozen path columns are zero; their flow is identically zero in the path model; full graph remains for verification"
+        }
+      },
+      "minor_basis": {
+        "path": "runs/berkeley_c2a_transfer_r2/S/basis_26/basis.json",
+        "sha256": "4eb85ae6b8cbdb2d04fe4e08776dfe6688bfd223f8d55d5023fd72de77edd397",
+        "full_record": {
+          "instance_signature": "c72d664ba0cd26f258b22d3194fe062bc15bccdf6b9843248edd98cb24bc7a0d",
+          "pool_sha256": "4780f3904e067c310f76e9cc4669caf42386f11c27bd221f801cfca62c61ae92",
+          "requested_rank": 26,
+          "rank": 26,
+          "major_paths": 72,
+          "minor_paths": 288,
+          "path_count": 360,
+          "link_count": 56384,
+          "od_count": 72,
+          "used_minor_solver_links": 7275,
+          "eliminated_zero_columns": 49109,
+          "exact_identity": "B2_used B2_used^T == B2_full B2_full^T because omitted columns are identically zero",
+          "engine": "scipy_sparse_svds_seed42",
+          "singular_values": [
+            58.36738721585798,
+            54.8353633780688,
+            50.94098566007073,
+            48.881880872773976,
+            47.25523726489983,
+            44.72801717261592,
+            42.27466420759746,
+            41.46457880863529,
+            41.031600008024036,
+            38.48024856176403,
+            37.373186627330135,
+            36.240413672155704,
+            35.56405950071497,
+            34.42294934108121,
+            32.776343238195,
+            32.68509064590777,
+            31.037879778764847,
+            30.776606557953492,
+            29.507448268294194,
+            28.850261991471868,
+            28.247107795216948,
+            27.952621295600544,
+            26.678134926581624,
+            25.780766547360212,
+            25.465021815957996,
+            24.338144222940663
+          ],
+          "numeric_rank_threshold": 9.428518898854472e-11,
+          "basis_seconds": 0.5097037999657914,
+          "native_total_variables_before_fixed_zero": 56482,
+          "native_effective_variables_if_unsupported_links_fixed": 7374
+        }
+      },
+      "explanation": "49,108 original solver links unsupported by ALL 360 paths may be fixed to zero. 49,109 columns are zero in the MINOR-only operator; one of those links is used by a major path. The counts refer to different support sets and are not interchangeable.",
+      "corrected_caption": {
+        "path": "figures/methods/PIT_S04.caption.txt",
+        "sha256": "4c39ccef4a5677952da67ecb8b4fc948c760f8515036f91577bd9d8ad7265d52",
+        "text": "Rank 26/52 changes path coordinates from 98 to 124. The Native controller fixes 49,108 links unsupported by all paths; the minor-only basis has 49,109 zero columns, one of whose links is used by a major path.\r\n"
+      }
+    },
+    "v6_to_v7_science": {
+      "prefixes": [
+        "input_snapshot/",
+        "shared_core_snapshot/",
+        "runs/berkeley_c2a_transfer_r2/S/",
+        "runs/berkeley_c2a_transfer_r2/T/"
+      ],
+      "files": 311,
+      "byte_identical": true,
+      "changed": [],
+      "meaning": "Direct ZIP member byte comparison, not mathematical correctness verification."
+    },
+    "v4_to_v7_figures": {
+      "common_members": 66,
+      "changed": [
+        "figures/methods/FIGURE_MANIFEST.json",
+        "figures/methods/PIT_S04.caption.txt",
+        "figures/methods/PIT_S04.source.json"
+      ]
+    },
+    "result_matrix_byte_identical_v4": true,
+    "PIT_T05": {
+      "status": "KNOWN_UNIT_LABEL_DEFECT_PERSISTS_IN_V7",
+      "shared_axis_text": "Residual (dot) to stop threshold (tick) · PCE",
+      "shared_axis_present": true,
+      "correct_units": {
+        "primal": "PCE",
+        "dual": "minutes; rho-scaled dual residual"
+      },
+      "legacy_matrix_key": "dual_residual_pce is immutable historical producer key; do not relabel it as scientifically correct unit",
+      "files": [
+        {
+          "path": "figures/methods/PIT_T05.caption.txt",
+          "sha256": "f4f73d5826e7f9650c068fc1adffd402963e3eb8d1e095a4f2aa395f1f432c28",
+          "byte_identical_v4": true
+        },
+        {
+          "path": "figures/methods/PIT_T05.plot.json",
+          "sha256": "4643eecd66e365407e53167f06252f59a0a9a0239a17f1c69ff64a81d3262ec9",
+          "byte_identical_v4": true
+        },
+        {
+          "path": "figures/methods/PIT_T05.png",
+          "sha256": "fef24ce81f453d7609f85f2c29178a1cc09f08e4a473121bacb31655bd2ea15b",
+          "byte_identical_v4": true
+        },
+        {
+          "path": "figures/methods/PIT_T05.source.json",
+          "sha256": "0770e509e121c090670aeb168b490762f5f1b20a2b6acbe273f4679f0e3ca1cd",
+          "byte_identical_v4": true
+        },
+        {
+          "path": "figures/methods/PIT_T05.svg",
+          "sha256": "66f57890fb197daac73db93c7688ab3a514dfcf6df9d44e331eedee439a78e29",
+          "byte_identical_v4": true
+        }
+      ],
+      "plot_record": [
+        {
+          "iteration": 1.0,
+          "primal_residual": 0.0,
+          "dual_residual": 1.510761290551328e-13,
+          "primal_threshold": 0.002695306468400502,
+          "dual_threshold": 0.002692127782999908,
+          "objective": 0.2479324199052491
+        }
+      ],
+      "existing_V_fix_status": "No released corrected asset established by this scoped audit; parent separately checks actual S0/V intake. Existing standing_goal PIT_T05_V_TARGETED_REQUEST.md is an unsent draft, not evidence of completion.",
+      "integration_rule": "If other 12 figure sets have actual item-level release, quarantine only PIT_T05; if no new increment release exists, register provider status and quarantine new assets without importing any of the13."
+    },
+    "units_override_note": "Immutable producer key dual_residual_pce is historical naming; rho-scaled ADMM dual residual units are min. Primal is PCE. PIT_T05 alone requires unit correction.",
+    "S0_reception": "NOT_RECEIVED_AT_CUTOFF",
+    "new_asset_release": "PENDING_ACTUAL_S0_DECISION",
+    "history_rule": "Preserve R8/v4 as historical; embedded v6/477 and external v7/478 remain separately bound. 479 ZIP members includes the manifest.",
+    "asset_rule": "PIT_T05 additionally awaits a V unit correction. Other twelve figure families are independently pending S0 decisions, not blocked by PIT_T05."
+  },
+  "source_file_identities": [
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/urbana_champaign_algorithm_transfer_r1/continuation_20261007/READY.json",
+      "sha256": "4dc0dfa99316f31533c712d3def8070f4b4021bf8f32db184e715e91b1aa209f",
+      "bytes": 1999
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/urbana_champaign_algorithm_transfer_r1/continuation_20261007/METHOD_STATUS.json",
+      "sha256": "b0f70ab94e6ecb55d612a7ad31a6c07749361376a51b0d4177ea8a6aa07a27e1",
+      "bytes": 1943
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/urbana_champaign_algorithm_transfer_r1/continuation_20261007/PORTABLE_FULL_VALIDATION_RECEIPT.json",
+      "sha256": "93cac576e57d1944eb3e5de8b4b9bcfe984dca653994c46b33372e7a524d1637",
+      "bytes": 1619
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/DELIVERY_READY_v001.json",
+      "sha256": "7c5250226ed951053676805a441f67d0d333864bdb9a137d7f98bf344bd7c9c1",
+      "bytes": 1386
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/FINAL_DOUBLE_REPLAY_RECEIPT_v001.json",
+      "sha256": "149347294eb663a1b9021122e31e6c4a78ae5d714040b99f34fb21ebc14e8cfc",
+      "bytes": 68365
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/bundle_v001/RESULT_MATRIX.json",
+      "sha256": "2bfe931182910e205c3f9fc16ef9ff5edf7dca4af3722b7f8cfb1a1278fbfe87",
+      "bytes": 29465
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/bundle_v001/READY.json",
+      "sha256": "59125f4d48d08468a2102f90a903e3cc45b83dcc1a54d227e01ce105f95cd8f3",
+      "bytes": 565
+    },
+    {
+      "path": "E:/mobility_computation_lab_v2/deliveries/chicago_algorithm_transfer_r1/retry_r2/HANDOFF.json",
+      "sha256": "632aee1ab9b384fddc1073a6bc7928ec9b68fe921e51e3f57e5bde61f2482394",
+      "bytes": 634
+    }
+  ],
+  "preservation": [
+    "Boston/Hong Kong/Sioux Falls/Berkeley/Ann Arbor/Ithaca volumes and figure assets unchanged.",
+    "Existing S0 v001/v002/v003 nine released files retained, verified separately.",
+    "R7 238 assets / 424 placements remains a historical R6 inventory, not a new total.",
+    "Prior R8 browser QA remains valid with its recorded limitations; this increment receives a bounded final page check."
+  ],
+  "stop_condition": "Source intake complete; missing exact S0 decisions and PIT_T05 fix are recorded. No repeated polling, heartbeat, cross-thread message, commit, push or deploy."
+}

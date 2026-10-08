@@ -1,0 +1,427 @@
+{
+  "figure_id": "R12-LR-BOUNDS",
+  "city": "pittsburgh",
+  "instance": "Original four-OD T4; nonbinding capacities",
+  "role": "saved-state-check",
+  "conclusion": "Lagrangian bounds and certified gap",
+  "panels": {
+    "a": "Actual valid lower and feasible upper",
+    "b": "Certificate against frozen gate"
+  },
+  "quantity": "valid bounds and certificate",
+  "unit": "PCE·min; %",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T04.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "One actual LR iteration. Best valid lower is 0.2479324199027457 PCE·min; own recovered feasible upper is 0.2479324199027457 PCE·min. The certified gap is max(0,(U−L)/max(1,|U|)) = 0; the frozen gate is 1%. Lower and upper are separate markers at the same recorded iteration; they coincide to displayed precision. Tiny signed floating-point differences remain in the plot data. Capacities are nonbinding in this T4 pulse; this does not prove that city area caused the short trace.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T04.plot.json",
+      "sha256": "89e010f4ed1ef86f06be285be0b2dde403fd7eef5fa0acc80708c42f848ee24b"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Lagrangian bounds and certified gap",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 10.848,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3041,
+    1131
+  ],
+  "exports": {
+    "png": "b36fda5749f1e0b9ab553753e3e7252ff86f76470225c6623df75fa46d78924a",
+    "svg": "e5421c388ef77e68408e07c0f128d7c518f88a868a6e63b395047329fe72b9ee",
+    "pdf": "21a95a38cafa77fa1e3b0d0d6fdccc715215fce85a3b63db5c29981d5b1af2c0"
+  },
+  "text_audit": [
+    {
+      "text": "0.24793",
+      "size_pt": 8.0,
+      "bounds_px": [
+        310.586,
+        157.283,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        250.975,
+        35.361,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        295.912,
+        53.917,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Bound (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        43.711,
+        147.062,
+        13.0,
+        109.625
+      ]
+    },
+    {
+      "text": "0.230",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        62.478,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.235",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        95.155,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        127.831,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.245",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        160.508,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        193.184,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.255",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        225.861,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.260",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        258.537,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.265",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        291.214,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.270",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        323.89,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.275",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.267,
+        356.567,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Separate lower and upper bounds",
+      "size_pt": 11.0,
+      "bounds_px": [
+        102.6,
+        336.833,
+        282.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Best valid lower",
+      "size_pt": 8.0,
+      "bounds_px": [
+        143.711,
+        311.5,
+        90.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Own feasible upper",
+      "size_pt": 8.0,
+      "bounds_px": [
+        143.711,
+        295.944,
+        110.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        861.836,
+        95.001,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        802.225,
+        35.361,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        847.163,
+        53.917,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Certified gap (%)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        609.211,
+        147.0,
+        13.0,
+        109.75
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.517,
+        43.707,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        81.279,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        118.851,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        156.424,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        193.996,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        231.569,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        269.141,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        306.714,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        344.286,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Same-instance certificate",
+      "size_pt": 11.0,
+      "bounds_px": [
+        653.85,
+        336.833,
+        216.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen 1% gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        694.961,
+        311.5,
+        88.75,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        388.889,
+        344.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Lagrangian bounds and certified gap",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        361.944,
+        433.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "bf6aaa2c087ec986ed8b1a33592b9b2166f3684e2267577b888b25fb893b0b0a"
+  }
+}

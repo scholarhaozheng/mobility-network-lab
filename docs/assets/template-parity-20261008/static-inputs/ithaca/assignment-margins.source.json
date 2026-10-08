@@ -1,0 +1,467 @@
+{
+  "figure_id": "ithaca-assignment-margins-parity",
+  "city": "ithaca",
+  "instance": "S110",
+  "method": "static assignment inputs",
+  "period": "11:00–12:00",
+  "role": "geographic",
+  "quantity": "Selected assignment-input PCE margins",
+  "unit": "PCE/hour",
+  "conclusion": "Saved assignment demand can be traced from source-zone margins to its own physical access endpoints without changing OD identities.",
+  "panels": [
+    {
+      "a": "origin loaded assignment demand"
+    },
+    {
+      "b": "destination loaded assignment demand"
+    }
+  ],
+  "public_or_private": "private",
+  "numerical_validation": {
+    "total": 421.2613256336401,
+    "margin_origin_sum": 421.26132563364035,
+    "margin_destination_sum": 421.2613256336403,
+    "endpoint_origin_sum": 421.26132563364035,
+    "endpoint_destination_sum": 421.2613256336403,
+    "positive_od": 110,
+    "loaded_node_od": 110,
+    "source_zone_count": 11,
+    "origin_zone_count": 11,
+    "destination_zone_count": 11,
+    "origin_endpoint_count": 11,
+    "destination_endpoint_count": 11,
+    "all_frozen_access_count": 11,
+    "road_context_count": 15148,
+    "source_to_assignment_join": "PASS",
+    "no_person_demand_substitution": true
+  },
+  "source_notice": "© OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright",
+  "reference_template": "Hong Kong saved static demand margin choropleths and physical endpoint PCE maps",
+  "renderer": "render_static_inputs_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "S110: 110 positive source-zone OD pairs, 110 loaded solver-node OD pairs and 421.261325634 PCE/hour. Origin and destination margins sum the selected assignment PCE by source zone, after the saved mode/occupancy conversion. All source-zone polygons, including any zero selected demand, use a common square-root normalization with ticks in original PCE/hour. S110 contains 110 original zone-state ODs. The margin polygons are the original R2 City-block unions for the 11 populated zones, not the earlier preflight tract footprint. Virtual zone-state demand is joined through original connectors to saved physical OSM access nodes for display only; solver ODs are not aggregated. These are modeled assignment-input quantities, not population generation, observed traffic or assigned link flow. Both panels share one map extent; context roads outside this input footprint are clipped only for display.",
+  "sources": [
+    {
+      "source_identity": "demand.csv",
+      "sha256": "40aac06cace5e2ccbf629d2d457ae8f8b4cde188b7d538da5ea001a770e6bb26",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "access.csv",
+      "sha256": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "zones.csv",
+      "sha256": "f982678b4e1628c5a3c488a6623ee5bdcf6e3220aaa4826039703bf54199c52e",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "network.csv",
+      "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "target_r2_physical_links.csv",
+      "sha256": "6ae420c264c450bf5572811ff97aed3896e7cf5e0c19ffc0a518e90b21c9b97f",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "target_r2_zones.csv",
+      "sha256": "f8f8eadd36f82162407d30be1b3e8d6305e110761057d831ec6711ea04d75f57",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "demand.csv",
+      "sha256": "40aac06cace5e2ccbf629d2d457ae8f8b4cde188b7d538da5ea001a770e6bb26",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "INPUT_AUDIT.json",
+      "sha256": "85732af61471ec0f632312109f993b2226f3360d70920533b46f0cd89f560d89",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Static assignment demand margins",
+    "scope": "S110 / 110 OD / 11:00–12:00"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 31.778,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2384,
+    1532
+  ],
+  "exports": {
+    "png": "0183f4e5d32e42ba16a6025be42008e01168381aa731835d568660c95c2fd8a2",
+    "svg": "96ff4a95cf67d1e0694c52fb0904a586109cfe764ab8bb9a7d133992ff411f20",
+    "pdf": "962ce7a963e44861ed436129df8e4114188c53cb4c7186fc2dabc2d9468ac894"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        175.1,
+        135.998,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.428,
+        154.554,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        124.42,
+        154.554,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        220.037,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        311.03,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        402.022,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        14.911,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.467,
+        150.513,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.467,
+        223.306,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        296.1,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        368.894,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        441.687,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Origin demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        68.8,
+        439.424,
+        135.875,
+        14.0
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        596.5,
+        135.998,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        454.828,
+        154.554,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        545.82,
+        154.554,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.437,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        732.43,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        823.422,
+        154.554,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        436.311,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        454.867,
+        150.513,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        454.867,
+        223.306,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        296.1,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        368.894,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        441.687,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Destination demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        490.2,
+        439.424,
+        177.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Source-zone loaded demand (PCE/hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        320.075,
+        4.472,
+        254.25,
+        13.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        180.325,
+        23.028,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "25.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        434.762,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "51.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.63,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "76.7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        623.632,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "102.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        689.2,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  S110 / 110 OD / 11:00–12:00",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.9,
+        491.479,
+        268.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Static assignment demand margins",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.9,
+        464.535,
+        414.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: each exported PNG individually opened; all endpoints shown; label placement, geographic extent, common scales, numeric tick labels and numeric sums checked",
+  "visible_non_numeric_text_overlap_candidates": [],
+  "text_overlap_policy": "Automated title/axis/legend/annotation text check; locator tick candidates are reviewed in rendered PNG because source text audit includes unrendered off-axis ticks."
+}

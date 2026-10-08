@@ -1,0 +1,78 @@
+{
+  "id": "admm_physical_flow_comparison",
+  "title": "ADMM and LP physical-link flow",
+  "city": "Berkeley",
+  "stage": "Finite methods",
+  "caption": "Saved Berkeley T4 physical-link projections for four assumed first-bin OD pulses (10.439304601 PCE), using the accepted ADMM own x at completed outer 170 and an independently solved same-graph LP. Panels a–b share a PowerNorm(0.5) absolute color scale. Panel c uses a separate symmetric ADMM-minus-LP scale; panel d contains all 2,150matched physical IDs and an identity line. The maximum physical-flow difference is 0.990967760238112 PCE, despite a relative objective difference of 0.00531869%. The objective gate does not establish link-flow equality. All 2,150 original road geometries are retained with longitude/latitude aspect correction. The 137 links without a movement arc in the bounded T4 graph remain zero and are shown dotted; missing sparse LP entries are zero-filled by physical ID. Flows are PCE over this bounded departure instance, not hourly counts or observed traffic. No optimizer was rerun. © OpenStreetMap contributors, ODbL 1.0.",
+  "panels": [
+    "ADMM physical projection",
+    "Independent LP physical projection",
+    "Signed physical-link difference",
+    "All-link identity comparison"
+  ],
+  "renderer": {
+    "file": "tools/visuals/berkeley_alignment_r2/render_flow_maps.py",
+    "function": "<module>",
+    "line": 1
+  },
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW",
+  "scientific_solver_rerun": false,
+  "sources": [
+    {
+      "path": "data/admm_physical_flow.csv",
+      "sha256": "71d1727a69fd96432f2db9f80e082cc5a0d91e351ff0432dba618a4944ca0154"
+    },
+    {
+      "path": "data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    }
+  ],
+  "plot_style": {
+    "layout": "C",
+    "palette": "A/B blue–teal/navy",
+    "font": "DejaVu Serif",
+    "shared_functions": [
+      "configure",
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_hash": "a96485ced49883acb09a51e9239b16256c7fddd65b8ff2d9d2994176ce7414a9"
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3016,
+    1995
+  ],
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 23.112,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "path": "admm_physical_flow_comparison.png",
+      "sha256": "d73c017fc211bad1458572edc9b009f9e6ce46bbd22cb8972c8f5905968b9c07"
+    },
+    "svg": {
+      "path": "admm_physical_flow_comparison.svg",
+      "sha256": "4983dc2eb005a77f1d03bdca320e86faab0eea857ca94eb2629d9e1a115de987"
+    },
+    "pdf": {
+      "path": "admm_physical_flow_comparison.pdf",
+      "sha256": "54185575a70562947557adf8a11cfc90515ac50d8c22184a7b915e2653b905f8"
+    }
+  },
+  "integrity": "Saved values only; no optimizer, smoothing or fabricated iterations. Original accepted figures are retained separately."
+}

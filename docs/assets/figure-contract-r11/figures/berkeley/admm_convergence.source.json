@@ -1,0 +1,880 @@
+{
+  "figure_id": "R11-BERKELEY-ADMM_CONVERGENCE",
+  "city": "berkeley",
+  "instance": "Berkeley frozen bounded T4",
+  "role": "iteration",
+  "saved_states": 170,
+  "conclusion": "ADMM convergence and objective agreement",
+  "panels": {
+    "a": "local_balance_pce and capacity_excess_pce; semilog y, exact-zero-only 1e-16 PCE display floor",
+    "b": "primal_residual and recorded_primal_threshold; PCE; semilog y",
+    "c": "dual_residual and recorded_dual_threshold; min; semilog y",
+    "d": "log10(abs(ADMM_objective_pce_minutes - same_T4_LP_objective_pce_minutes)/(1 PCE·min)); no zero floor needed"
+  },
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-atlas-r2/admm_convergence.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "Accepted Berkeley T4 ADMM saved history, all 170 recorded outer iterations. The four panels follow the current Boston/Hong Kong diagnostic objects: original-unit balance and capacity feasibility, primal consensus, dual update, and log10 absolute objective error against the independent LP on the same T4 graph. Balance/capacity and primal residuals are PCE. The dual residual is rho times the consensus change and is in minutes: rho has min/PCE units. The dotted scientific feasibility gate is 1e-5 PCE; the internal thresholds are the recorded values. The objective gate line is the unchanged 1e-4 relative criterion expressed on the absolute-error axis. Only exact-zero feasibility values use a display value of 1e-16 PCE; every positive value, including smaller positives, is retained unchanged. The vertical separator is after C1 outer 38; C2a contributes 132 further updates under its disclosed new wall budget. The actual trace ends at 170; the registered 300-outer ceiling is not an extrapolated trace. Final own-x objective is 43.66974694298355 PCE·min against LP 43.66742440800644 PCE·min, absolute difference 0.00232253497711 PCE·min and relative difference 0.00531869%. Objective agreement is separate from physical-link flow agreement. No smoothing, interpolation or solver call.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/accuracy_objective_vs_lp.plot_data.json",
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/accuracy_primal_dual_internal_gates.plot_data.json",
+      "sha256": "9b544e7c822cb4e40b16ee57315bfb3ed8359ca59e0d6988a822b83f0fcae7b1"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/accuracy_local_and_capacity_gates.plot_data.json",
+      "sha256": "cbf58ca0ecce930b5692772c6ddefebd6396f42ce893c8d5df069d6ad24d7d4a"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "ADMM convergence and objective agreement",
+    "scope": "T4 / four OD / C1 + C2a / accepted stop 170"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.746,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3176,
+    2146
+  ],
+  "exports": {
+    "png": "234c915ebc107e7f59f00165eade31bbfdacc8f0b8b89bf27fa5acae7b9a1748",
+    "svg": "fe35f9658df0083be7dbd2b68689f5b849952ac89277dfcbbceecd492c334943",
+    "pdf": "52c212211e01addc754e7b6d3cf957270297f09ebb55dc32495ef1a0ba5a3128"
+  },
+  "text_audit": [
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        242.21,
+        407.196,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        110.438,
+        425.752,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "38",
+      "size_pt": 8.0,
+      "bounds_px": [
+        197.442,
+        425.752,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        300.248,
+        425.752,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        394.596,
+        425.752,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "170",
+      "size_pt": 8.0,
+      "bounds_px": [
+        516.983,
+        425.752,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Original-unit residual (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        55.027,
+        472.93,
+        13.0,
+        177.625
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-19}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.52,
+        405.711,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-17}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.582,
+        432.758,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.645,
+        459.804,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.582,
+        486.851,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.035,
+        513.897,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.468,
+        541.544,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.531,
+        568.591,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.593,
+        595.637,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.531,
+        622.684,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.984,
+        649.13,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        85.501,
+        676.177,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        85.048,
+        703.823,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "a  Original-unit feasibility",
+      "size_pt": 11.0,
+      "bounds_px": [
+        114.0,
+        684.733,
+        198.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Local balance",
+      "size_pt": 7.0,
+      "bounds_px": [
+        440.546,
+        661.65,
+        68.0,
+        9.0
+      ]
+    },
+    {
+      "text": "Capacity excess",
+      "size_pt": 7.0,
+      "bounds_px": [
+        440.546,
+        647.789,
+        78.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Scientific gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        440.546,
+        633.928,
+        70.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        808.94,
+        407.196,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        677.167,
+        425.752,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "38",
+      "size_pt": 8.0,
+      "bounds_px": [
+        764.171,
+        425.752,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        866.977,
+        425.752,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        961.325,
+        425.752,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "170",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.712,
+        425.752,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Primal residual (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        626.642,
+        492.618,
+        13.0,
+        138.25
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        640.311,
+        395.396,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        640.765,
+        434.649,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.197,
+        474.502,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.26,
+        513.755,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.322,
+        553.009,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.26,
+        592.262,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.713,
+        630.915,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        652.23,
+        670.168,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        651.777,
+        710.022,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        651.84,
+        749.275,
+        20.556,
+        13.8
+      ]
+    },
+    {
+      "text": "b  Primal consensus",
+      "size_pt": 11.0,
+      "bounds_px": [
+        680.729,
+        684.733,
+        154.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Primal residual",
+      "size_pt": 7.0,
+      "bounds_px": [
+        960.275,
+        661.65,
+        74.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved stopping threshold",
+      "size_pt": 7.0,
+      "bounds_px": [
+        960.275,
+        647.789,
+        125.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        242.21,
+        44.811,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        110.438,
+        63.367,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "38",
+      "size_pt": 8.0,
+      "bounds_px": [
+        197.442,
+        63.367,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        300.248,
+        63.367,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        394.596,
+        63.367,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "170",
+      "size_pt": 8.0,
+      "bounds_px": [
+        516.983,
+        63.367,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Dual residual (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        59.975,
+        138.045,
+        13.0,
+        122.625
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.593,
+        -29.94,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.25,
+        39.084,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.531,
+        109.307,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.781,
+        178.931,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.984,
+        247.954,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.985,
+        318.178,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        85.501,
+        387.201,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "c  Dual update",
+      "size_pt": 11.0,
+      "bounds_px": [
+        114.0,
+        322.348,
+        112.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Dual residual",
+      "size_pt": 7.0,
+      "bounds_px": [
+        393.546,
+        299.265,
+        65.625,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved stopping threshold",
+      "size_pt": 7.0,
+      "bounds_px": [
+        393.546,
+        285.404,
+        125.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        808.94,
+        44.811,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        677.167,
+        63.367,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "38",
+      "size_pt": 8.0,
+      "bounds_px": [
+        764.171,
+        63.367,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        866.977,
+        63.367,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        961.325,
+        63.367,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "170",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.712,
+        63.367,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "$\\log_{10}$(absolute objective error\n/ (PCE·min))",
+      "size_pt": 9.0,
+      "bounds_px": [
+        607.84,
+        103.414,
+        32.0,
+        191.887
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        50.692,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        99.473,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        148.254,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        197.034,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        245.815,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        645.396,
+        294.596,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        654.646,
+        343.376,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "d  Objective error against same-graph LP",
+      "size_pt": 11.0,
+      "bounds_px": [
+        680.729,
+        322.348,
+        320.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Equivalent relative gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        967.775,
+        299.265,
+        117.875,
+        9.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / four OD / C1 + C2a / accepted stop 170",
+      "size_pt": 8.7,
+      "bounds_px": [
+        74.1,
+        736.789,
+        392.0,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM convergence and objective agreement",
+      "size_pt": 15.0,
+      "bounds_px": [
+        74.1,
+        709.844,
+        531.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

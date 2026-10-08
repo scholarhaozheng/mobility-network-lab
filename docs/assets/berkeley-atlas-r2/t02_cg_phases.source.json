@@ -1,0 +1,115 @@
+{
+  "id": "t02_cg_phases",
+  "title": "Column generation: feasibility and pricing",
+  "city": "Berkeley",
+  "stage": "T4 column generation",
+  "caption": "All five Phase I and three Phase II saved records are shown. Phase I minimizes artificial flow in PCE and clears it at round 4. Phase II minimizes real PCE·min cost, reaching the independent same-T4 LP value 43.66742440800644 at saved round 1; its complete-graph pricing record then closes at round 2 with minimum reduced cost −4.4408920985e−16 minutes and ten columns. Panel c gives Phase I's dimensionless reduced costs and Phase II's minute-valued reduced costs separate axes. The actual frozen tolerances are 1e−8 PCE artificial flow and 1e−8 dimensionless negative reduced cost in Phase I, and 1e−7 minutes negative reduced cost in Phase II; a column is added only when reduced cost is below the negative tolerance. Zero is the plotted reference line; the Phase II tolerance is annotated separately because the two are indistinguishable at this scale. Panel d retains the repeated eight-column checkpoint at the phase transition. Lines connect saved records; no unsaved rounds, smoothed values or extra solver iterations are inserted.",
+  "panels": {
+    "a": "Phase I artificial flow",
+    "b": "Phase II real-cost objective and same-T4 LP",
+    "c": "Full-graph reduced costs on separate phase-unit axes",
+    "d": "Column-pool size at every saved checkpoint"
+  },
+  "renderer": {
+    "file": "tools/visuals/berkeley_alignment_r2/render_finite.py",
+    "function": "t02_cg_phases",
+    "line": 108
+  },
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW",
+  "scientific_solver_rerun": false,
+  "sources": [
+    {
+      "path": "data/t02_cg_phases.plot_data.json",
+      "sha256": "e04732f043f5c1e8f4b6430882fd176c9021fb22c8017f8ffaf119aa86d793b3"
+    },
+    {
+      "path": "data/accuracy_objective_vs_lp.plot_data.json",
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278"
+    },
+    {
+      "path": "data/t02_frozen_pricing_gates.json",
+      "sha256": "bc366cec18dfdcc4cd17ffc1adfc724b69dcdd6838169e63058de5749b0e2b92"
+    }
+  ],
+  "plot_style": {
+    "layout": "C",
+    "palette": "A/B blue–teal/navy",
+    "font": "DejaVu Serif",
+    "shared_functions": [
+      "configure",
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_hash": "a96485ced49883acb09a51e9239b16256c7fddd65b8ff2d9d2994176ce7414a9"
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2978,
+    1950
+  ],
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 28.008,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "path": "t02_cg_phases.png",
+      "sha256": "7f2836b6cf13a9ec8f7db5d1c7d624c5261189d1608f195858c96f7642a363ff"
+    },
+    "svg": {
+      "path": "t02_cg_phases.svg",
+      "sha256": "84ac0523029d913537aa7ea91232454c1c19c0ed3de70526fbb6ed84c2547501"
+    },
+    "pdf": {
+      "path": "t02_cg_phases.pdf",
+      "sha256": "6542eda4844e7897c7eb2b22bf29582480708798d827276b4d3cc734b75391ea"
+    }
+  },
+  "integrity": "Saved values only; no optimizer, smoothing or fabricated iterations. Original accepted figures are retained separately.",
+  "plotter": {
+    "path": "render_finite.py",
+    "function": "t02_cg_phases",
+    "line": 108,
+    "sha256": "72330eeb7d6e1979ec3389a1be3a069e12f1bbd1e0a5d334c36977ca6b81ae18"
+  },
+  "numeric_validation": {
+    "phase_i_rows": 5,
+    "phase_ii_rows": 3,
+    "all_rows_retained": true,
+    "total_plot_checkpoints": 8,
+    "phase_i_terminal_artificial_flow": 0.0,
+    "phase_ii_terminal_reduced_cost": -4.440892098500626e-16,
+    "phase_ii_terminal_objective": 43.667424408006426,
+    "lp_reference": 43.66742440800644,
+    "terminal_columns": 10,
+    "frozen_phase_i_gates": {
+      "artificial_abs": 1e-08,
+      "negative_reduced_cost_abs": 1e-08
+    },
+    "frozen_phase_ii_gates": {
+      "negative_reduced_cost_abs": 1e-07
+    },
+    "phase_ii_terminal_pricing_pass": true
+  },
+  "metric_formulas": {
+    "phase_i_objective": "sum artificial PCE",
+    "phase_ii_objective": "saved master_objective in PCE·min",
+    "phase_i_pricing_units": "PCE/PCE = dimensionless",
+    "phase_ii_pricing_units": "(PCE·min)/PCE = min",
+    "pool_growth": "saved pool_columns; no interpolation or synthetic checkpoints"
+  },
+  "scope": "Accepted bounded Berkeley T4 saved-result presentation; modeled PCE, not observed traffic."
+}

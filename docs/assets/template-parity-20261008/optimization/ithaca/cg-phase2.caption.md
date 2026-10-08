@@ -1,0 +1,1 @@
+One actual Phase II round has real objective 0.91842826893935303 PCE·min. The same-graph independent reference is 0.9184282689393537. The four seed paths suffice and no new column is added. The Phase I artificial objective is not joined to the Phase II cost.

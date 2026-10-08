@@ -1,0 +1,208 @@
+{
+  "table_id": "ith-time-endpoints",
+  "city": "ithaca",
+  "title": "T4 finite-time endpoint comparison",
+  "scope": "T4; 0.656755360434 PCE pulse;fixed cost PCE·min",
+  "original_assets": [
+    "assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.png"
+  ],
+  "notes": [
+    "The original producer status remains in the status column; current S0 acceptance is separate. All CSV numeric strings are preserved. Contract normalization divides by max(1,|reference|)=1; true relative difference divides by 0.9184282689393537. Objective proximity alone is not feasibility. CG solved each phase once; LR and ADMM each retain one completed iteration. No short convergence curve is fabricated. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.plot.csv",
+      "href": "assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.plot.csv",
+      "sha256": "9f0ad8c938d5c56bb6c0f3c0081388c3f98354b1abd50377963ee702701ba9a4"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.caption.txt",
+      "href": "assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.caption.txt",
+      "sha256": "43ff11432c8a138fa625883dc956697f9b3172076123f132c6d06a3eed58c5eb"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md",
+      "href": "assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md",
+      "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "T4 finite-time endpoint comparison",
+      "columns": [
+        "Method",
+        "Original producer status",
+        "Objective (PCE·min)",
+        "Signed difference (PCE·min)",
+        "Contract-normalized absolute difference",
+        "True-relative absolute difference",
+        "Contract denominator",
+        "True-relative denominator",
+        "Current S0 status"
+      ],
+      "rows": [
+        {
+          "Method": "lp",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min)": "0.9184282689393537",
+          "Signed difference (PCE·min)": "0.0",
+          "Contract-normalized absolute difference": "0.0",
+          "True-relative absolute difference": "0.0",
+          "Contract denominator": "1",
+          "True-relative denominator": "0.9184282689393537",
+          "Current S0 status": "Accepted"
+        },
+        {
+          "Method": "cg",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min)": "0.9184282689393536",
+          "Signed difference (PCE·min)": "-1.1102230246251565e-16",
+          "Contract-normalized absolute difference": "1.1102230246251565e-16",
+          "True-relative absolute difference": "1.2088293252420212e-16",
+          "Contract denominator": "1",
+          "True-relative denominator": "0.9184282689393537",
+          "Current S0 status": "Accepted"
+        },
+        {
+          "Method": "lr",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min)": "0.9184282689393536",
+          "Signed difference (PCE·min)": "-1.1102230246251565e-16",
+          "Contract-normalized absolute difference": "1.1102230246251565e-16",
+          "True-relative absolute difference": "1.2088293252420212e-16",
+          "Contract denominator": "1",
+          "True-relative denominator": "0.9184282689393537",
+          "Current S0 status": "Accepted"
+        },
+        {
+          "Method": "admm",
+          "Original producer status": "NUMERIC_PASS_CONFIRMATION_PENDING",
+          "Objective (PCE·min)": "0.9184282689395722",
+          "Signed difference (PCE·min)": "2.184918912462308e-13",
+          "Contract-normalized absolute difference": "2.184918912462308e-13",
+          "True-relative absolute difference": "2.3789761120762976e-13",
+          "Contract denominator": "1",
+          "True-relative denominator": "0.9184282689393537",
+          "Current S0 status": "Accepted saved-state numeric"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Actual saved history counts",
+      "columns": [
+        "Instance / method",
+        "Saved history / updates",
+        "Current status"
+      ],
+      "rows": [
+        {
+          "Instance / method": "ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Exact DAG LP certificate",
+          "Saved history / updates": "saved endpoint certificates = 1; HiGHS calls = 0; optimizer iteration history applicable = No",
+          "Current status": "S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE"
+        },
+        {
+          "Instance / method": "ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Column generation",
+          "Saved history / updates": "saved history rows = 2; phase I rounds = 1; phase II rounds = 1; restricted master solves = 2; seed paths = 4; new columns after seed = 0",
+          "Current status": "ACCEPTED"
+        },
+        {
+          "Instance / method": "ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Lagrangian relaxation",
+          "Saved history / updates": "saved history rows = 1; reported iterations = 1; recovery calls = 1; pool paths = 4; positive multipliers = 0",
+          "Current status": "ACCEPTED"
+        },
+        {
+          "Instance / method": "ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / ADMM",
+          "Saved history / updates": "saved history rows = 1; indices = [1]; completed updates = 1; parent completed iterations = 0; local QP calls = 4; inner minimize calls = 4; local LBFGS iterations = 0; local Newton iterations = 0",
+          "Current status": "S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "ADMM stopping checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "cold start",
+          "Saved value": true,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "internal stop reached",
+          "Saved value": true,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "primal PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "primal threshold PCE",
+          "Saved value": 0.00041271817605266075,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "rho scaled dual min",
+          "Saved value": 7.41569988066967e-15,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "dual threshold min",
+          "Saved value": 0.0003813659659696969,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "max balance PCE",
+          "Saved value": 6.190705997016553e-15,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "max capacity excess PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "all independent gates pass",
+          "Saved value": true,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "objective difference from LP PCE min",
+          "Saved value": 2.184918912462308e-13,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "producer original status",
+          "Saved value": "NUMERIC_PASS_CONFIRMATION_PENDING",
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "current S0 status",
+          "Saved value": "S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE",
+          "Unit / interpretation": "as saved"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 20,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"ith-time-endpoints\"><h4>T4 finite-time endpoint comparison</h4><p class=\"evidence-table-scope\">T4; 0.656755360434 PCE pulse;fixed cost PCE·min</p><h5>T4 finite-time endpoint comparison</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"T4 finite-time endpoint comparison\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Original producer status</th><th scope=\"col\">Objective (PCE·min)</th><th scope=\"col\">Signed difference (PCE·min)</th><th scope=\"col\">Contract-normalized absolute difference</th><th scope=\"col\">True-relative absolute difference</th><th scope=\"col\">Contract denominator</th><th scope=\"col\">True-relative denominator</th><th scope=\"col\">Current S0 status</th></tr></thead><tbody><tr><td>lp</td><td>ACCEPTED</td><td>0.9184282689393537</td><td>0.0</td><td>0.0</td><td>0.0</td><td>1</td><td>0.9184282689393537</td><td>Accepted</td></tr><tr><td>cg</td><td>ACCEPTED</td><td>0.9184282689393536</td><td>-1.1102230246251565e-16</td><td>1.1102230246251565e-16</td><td>1.2088293252420212e-16</td><td>1</td><td>0.9184282689393537</td><td>Accepted</td></tr><tr><td>lr</td><td>ACCEPTED</td><td>0.9184282689393536</td><td>-1.1102230246251565e-16</td><td>1.1102230246251565e-16</td><td>1.2088293252420212e-16</td><td>1</td><td>0.9184282689393537</td><td>Accepted</td></tr><tr><td>admm</td><td>NUMERIC_PASS_CONFIRMATION_PENDING</td><td>0.9184282689395722</td><td>2.184918912462308e-13</td><td>2.184918912462308e-13</td><td>2.3789761120762976e-13</td><td>1</td><td>0.9184282689393537</td><td>Accepted saved-state numeric</td></tr></tbody></table></div><h5>Actual saved history counts</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Actual saved history counts\"><table><thead><tr><th scope=\"col\">Instance / method</th><th scope=\"col\">Saved history / updates</th><th scope=\"col\">Current status</th></tr></thead><tbody><tr><td>ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Exact DAG LP certificate</td><td>saved endpoint certificates = 1; HiGHS calls = 0; optimizer iteration history applicable = No</td><td>S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE</td></tr><tr><td>ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Column generation</td><td>saved history rows = 2; phase I rounds = 1; phase II rounds = 1; restricted master solves = 2; seed paths = 4; new columns after seed = 0</td><td>ACCEPTED</td></tr><tr><td>ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / Lagrangian relaxation</td><td>saved history rows = 1; reported iterations = 1; recovery calls = 1; pool paths = 4; positive multipliers = 0</td><td>ACCEPTED</td></tr><tr><td>ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD / ADMM</td><td>saved history rows = 1; indices = [1]; completed updates = 1; parent completed iterations = 0; local QP calls = 4; inner minimize calls = 4; local LBFGS iterations = 0; local Newton iterations = 0</td><td>S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE</td></tr></tbody></table></div><h5>ADMM stopping checks</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"ADMM stopping checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>cold start</td><td>Yes</td><td>as saved</td></tr><tr><td>internal stop reached</td><td>Yes</td><td>as saved</td></tr><tr><td>primal PCE</td><td>0.0</td><td>PCE</td></tr><tr><td>primal threshold PCE</td><td>0.00041271817605266075</td><td>PCE</td></tr><tr><td>rho scaled dual min</td><td>7.41569988066967e-15</td><td>min</td></tr><tr><td>dual threshold min</td><td>0.0003813659659696969</td><td>min</td></tr><tr><td>max balance PCE</td><td>6.190705997016553e-15</td><td>PCE</td></tr><tr><td>max capacity excess PCE</td><td>0.0</td><td>PCE</td></tr><tr><td>all independent gates pass</td><td>Yes</td><td>as saved</td></tr><tr><td>objective difference from LP PCE min</td><td>2.184918912462308e-13</td><td>PCE·min</td></tr><tr><td>producer original status</td><td>NUMERIC_PASS_CONFIRMATION_PENDING</td><td>as saved</td></tr><tr><td>current S0 status</td><td>S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE</td><td>as saved</td></tr></tbody></table></div><p>The original producer status remains in the status column; current S0 acceptance is separate. All CSV numeric strings are preserved. Contract normalization divides by max(1,|reference|)=1; true relative difference divides by 0.9184282689393537. Objective proximity alone is not feasibility. CG solved each phase once; LR and ADMM each retain one completed iteration. No short convergence curve is fabricated. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.plot.csv\" download>ITH_GC04_T_Endpoints.plot.csv</a> · <a href=\"assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.caption.txt\" download>ITH_GC04_T_Endpoints.caption.txt</a> · <a href=\"assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md\" download>VOLUME_ADDENDUM_S0.md</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.png\">ITH_GC04_T_Endpoints.png</a></p></details></section>",
+  "caption": "The original producer status remains in the status column; current S0 acceptance is separate. All CSV numeric strings are preserved. Contract normalization divides by max(1,|reference|)=1; true relative difference divides by 0.9184282689393537. Objective proximity alone is not feasibility. CG solved each phase once; LR and ADMM each retain one completed iteration. No short convergence curve is fabricated. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright."
+}

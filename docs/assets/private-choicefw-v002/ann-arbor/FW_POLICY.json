@@ -1,0 +1,32 @@
+{
+  "experiment_id": "ANN_TRANSIT_CHOICE_FW_V002",
+  "locked_utc": "2026-10-08T10:01:31.215991+00:00",
+  "compute_deadline_utc": "2026-10-08T17:01:31.215991+00:00",
+  "delivery_deadline_utc": "2026-10-08T18:01:31.215991+00:00",
+  "canonical_model_id": "ANN_ARBOR_CHOICE_TIMETABLE_R1",
+  "input_signature": "aa29cb776f01ec9a01a4adcd602c4d739213c450e49c0ce004cdde57d65e3ec5",
+  "FW_source_sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe",
+  "max_iterations": 300,
+  "relative_gap_tolerance": 1e-05,
+  "signed_absolute_gap_floor": -1e-08,
+  "wall_limit_seconds": 1800,
+  "gates": {
+    "max_od_error_abs": 1e-06,
+    "max_od_error_rel": 1e-08,
+    "total_od_l1_rel": 1e-08,
+    "full_relative_gap_abs": 1e-05,
+    "negative_flow_abs": 1e-08,
+    "link_reconstruction_abs": 1e-07
+  },
+  "checkpoint": "Actual link/path flows at iteration0 and after every real update; no forced extra iterations",
+  "input_change": "Only existing timetable-derived vehicle/PCE OD; use directly, no occupancy/PCE conversion again",
+  "resource": {
+    "threads": 1,
+    "estimated_increment_bytes": 201326592,
+    "system_reserve_bytes": 536870912,
+    "available_at_policy_bytes": 1944653824,
+    "reason": "Narrow pure-stdlib FW only; no NumPy/SVD/native/time-graph phase. Prior176MB peak included JIT+path pool;192MiB conservative increment. New branch512MiB reserve; prior mixed-workload1.5GiB reserve not inherited.",
+    "exclusive_guard": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\instructions\\support\\mcl_batch_guard.py",
+    "C06_priority": "Acquire original heavy slots only after current owner releases; no process interruption or lock deletion"
+  }
+}

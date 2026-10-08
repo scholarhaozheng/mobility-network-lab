@@ -1,0 +1,163 @@
+{
+  "table_id": "uc-t4-cg-checks",
+  "city": "urbana-champaign",
+  "title": "Column generation: two phase certificates",
+  "scope": "Original four-OD T4; one saved round per phase",
+  "original_assets": [
+    "assets/city-alignment-r3/urbana-transfer/cg-phase1.svg",
+    "assets/city-alignment-r3/urbana-transfer/cg-objective.svg",
+    "assets/city-alignment-r3/urbana-transfer/cg-closure.svg"
+  ],
+  "notes": [
+    "Phase I clears artificial capacity-row mass; Phase II evaluates original cost. They are not start/end points of one objective. Four seed paths suffice; no post-seed column was added."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-phase1.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-phase1.plot_data.json",
+      "sha256": "5afae0e1fd0cc823f550d6c5045dea49ff9a685fb818fd37e007fc977b35dec5"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-phase1.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-phase1.source.json",
+      "sha256": "05231ed67962f063f92fc99ac14df12c6d857893a4c0f63d89d42e9bdc375dbc"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-closure.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-closure.plot_data.json",
+      "sha256": "b18c212d46ffdd1fe75cd619c1c7d5707998e013480e96f13e70210b831ed381"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-objective.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-objective.plot_data.json",
+      "sha256": "16bceab5bf35c12751c4252895158c4f175906bd21ba73f068599a3083512f92"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-objective.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-objective.source.json",
+      "sha256": "49403fe7f16ed0e1b883a1ef2e45de0d19f17b11784c3283eab760c5767c3af8"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-closure.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/cg-closure.source.json",
+      "sha256": "6651f04985bf435f7bbf2a14b45335ce1354fe209e168e02720f20a83f118d6b"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Phase-specific saved checks",
+      "columns": [
+        "Phase",
+        "Saved round",
+        "Objective",
+        "Objective unit",
+        "Minimum reduced cost",
+        "Pricing unit",
+        "Artificial mass (PCE)",
+        "Path pool",
+        "Capacity rows",
+        "Wall time (s)"
+      ],
+      "rows": [
+        {
+          "Phase": "I",
+          "Saved round": "1",
+          "Objective": "0.0",
+          "Objective unit": "PCE artificial mass",
+          "Minimum reduced cost": "0.0",
+          "Pricing unit": "dimensionless",
+          "Artificial mass (PCE)": "0.0",
+          "Path pool": "4",
+          "Capacity rows": "373",
+          "Wall time (s)": "28.454346899990924"
+        },
+        {
+          "Phase": "II",
+          "Saved round": "1",
+          "Objective": "0.3759836651335291",
+          "Objective unit": "PCE·min",
+          "Minimum reduced cost": "0.0",
+          "Pricing unit": "min",
+          "Artificial mass (PCE)": "0.0",
+          "Path pool": "4",
+          "Capacity rows": "373",
+          "Wall time (s)": "44.06005169998389"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "History accounting",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "phase I saved rounds",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "phase II saved rounds",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "round indices per phase",
+          "Saved value": [
+            1
+          ],
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "seed paths",
+          "Saved value": 4,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "added after seed",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Frozen full-DAG pricing gates",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Phase I absolute reduced-cost gate",
+          "Saved value": 1e-07,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Phase II absolute reduced-cost gate",
+          "Saved value": 1e-07,
+          "Unit / interpretation": "min"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 9,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"uc-t4-cg-checks\"><h4>Column generation: two phase certificates</h4><p class=\"evidence-table-scope\">Original four-OD T4; one saved round per phase</p><h5>Phase-specific saved checks</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Phase-specific saved checks\"><table><thead><tr><th scope=\"col\">Phase</th><th scope=\"col\">Saved round</th><th scope=\"col\">Objective</th><th scope=\"col\">Objective unit</th><th scope=\"col\">Minimum reduced cost</th><th scope=\"col\">Pricing unit</th><th scope=\"col\">Artificial mass (PCE)</th><th scope=\"col\">Path pool</th><th scope=\"col\">Capacity rows</th><th scope=\"col\">Wall time (s)</th></tr></thead><tbody><tr><td>I</td><td>1</td><td>0.0</td><td>PCE artificial mass</td><td>0.0</td><td>dimensionless</td><td>0.0</td><td>4</td><td>373</td><td>28.454346899990924</td></tr><tr><td>II</td><td>1</td><td>0.3759836651335291</td><td>PCE·min</td><td>0.0</td><td>min</td><td>0.0</td><td>4</td><td>373</td><td>44.06005169998389</td></tr></tbody></table></div><h5>History accounting</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"History accounting\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>phase I saved rounds</td><td>1</td><td>count</td></tr><tr><td>phase II saved rounds</td><td>1</td><td>count</td></tr><tr><td>round indices per phase</td><td>[1]</td><td>count</td></tr><tr><td>seed paths</td><td>4</td><td>count</td></tr><tr><td>added after seed</td><td>0</td><td>count</td></tr></tbody></table></div><h5>Frozen full-DAG pricing gates</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Frozen full-DAG pricing gates\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Phase I absolute reduced-cost gate</td><td>1e-07</td><td>dimensionless</td></tr><tr><td>Phase II absolute reduced-cost gate</td><td>1e-07</td><td>min</td></tr></tbody></table></div><p>Phase I clears artificial capacity-row mass; Phase II evaluates original cost. They are not start/end points of one objective. Four seed paths suffice; no post-seed column was added.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/urbana-transfer/cg-phase1.plot_data.json\" download>cg-phase1.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-phase1.source.json\" download>cg-phase1.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-closure.plot_data.json\" download>cg-closure.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-objective.plot_data.json\" download>cg-objective.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-objective.source.json\" download>cg-objective.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-closure.source.json\" download>cg-closure.source.json</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/urbana-transfer/cg-phase1.svg\">cg-phase1.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-objective.svg\">cg-objective.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/cg-closure.svg\">cg-closure.svg</a></p></details></section>",
+  "caption": "Phase I clears artificial capacity-row mass; Phase II evaluates original cost. They are not start/end points of one objective. Four seed paths suffice; no post-seed column was added."
+}

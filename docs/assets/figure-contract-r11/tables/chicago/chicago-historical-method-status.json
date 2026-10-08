@@ -1,0 +1,1496 @@
+{
+  "table_id": "chicago-historical-method-status",
+  "city": "chicago",
+  "title": "Earlier method-status record · before the new hybrid and Native80",
+  "scope": "Chicago Jane Byrne / West Loop R2 S20 and independent T4 engineering pulse",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/chicago/C06_method_status.svg"
+  ],
+  "notes": [
+    "Earlier retry receipt: Native80 is a separate uncompressed control; the accepted LR hybrid does not make pure LR759 pass; ADMM33 remains failed. HiGHS remains resource-limited. Failed historical rows stay visible."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_method_status_plot_data.json",
+      "href": "assets/algorithm-transfer-r8/chicago/C06_method_status_plot_data.json",
+      "sha256": "9b009325aa237a707ee089144d51b09f67f3d664838bd374751ba026d3060209"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Historical retry endpoints",
+      "columns": [
+        "Method",
+        "Prior status",
+        "Historical retry status",
+        "Objective",
+        "Objective unit",
+        "Full gap / certificate",
+        "Saved iterations / rounds"
+      ],
+      "rows": [
+        {
+          "Method": "S_FW",
+          "Prior status": "ACCEPTED",
+          "Historical retry status": "REUSED_PRIOR_ACCEPTED",
+          "Objective": 5601.461720010839,
+          "Objective unit": "PCE·min/h",
+          "Full gap / certificate": 3.446136191653708e-06,
+          "Saved iterations / rounds": "Not recorded in this row"
+        },
+        {
+          "Method": "S_finite",
+          "Prior status": "ACCEPTED",
+          "Historical retry status": "REUSED_PRIOR_ACCEPTED",
+          "Objective": 5601.461468286856,
+          "Objective unit": "PCE·min/h",
+          "Full gap / certificate": 8.005091514776758e-12,
+          "Saved iterations / rounds": "Not recorded in this row"
+        },
+        {
+          "Method": "S_Native26",
+          "Prior status": "GATE_NOT_MET",
+          "Historical retry status": "GATE_NOT_MET",
+          "Objective": 5604.647688841039,
+          "Objective unit": "PCE·min/h",
+          "Full gap / certificate": 0.006381671764390549,
+          "Saved iterations / rounds": "Not recorded in this row"
+        },
+        {
+          "Method": "S_Native52",
+          "Prior status": "GATE_NOT_MET",
+          "Historical retry status": "GATE_NOT_MET",
+          "Objective": 5604.409384283838,
+          "Objective unit": "PCE·min/h",
+          "Full gap / certificate": 0.004796364762935965,
+          "Saved iterations / rounds": "Not recorded in this row"
+        },
+        {
+          "Method": "T_LP",
+          "Prior status": "RESOURCE_LIMIT",
+          "Historical retry status": "RESOURCE_LIMIT",
+          "Objective": null,
+          "Objective unit": "PCE·min",
+          "Full gap / certificate": null,
+          "Saved iterations / rounds": "Not recorded in this row"
+        },
+        {
+          "Method": "T_CG",
+          "Prior status": "GATE_NOT_MET",
+          "Historical retry status": "ACCEPTED",
+          "Objective": 241.2185242449435,
+          "Objective unit": "PCE·min",
+          "Full gap / certificate": null,
+          "Saved iterations / rounds": 268
+        },
+        {
+          "Method": "T_LR",
+          "Prior status": "GATE_NOT_MET",
+          "Historical retry status": "GATE_NOT_MET",
+          "Objective": null,
+          "Objective unit": "PCE·min",
+          "Full gap / certificate": null,
+          "Saved iterations / rounds": 759
+        },
+        {
+          "Method": "T_ADMM",
+          "Prior status": "GATE_NOT_MET",
+          "Historical retry status": "GATE_NOT_MET",
+          "Objective": 216.5087007354914,
+          "Objective unit": "PCE·min",
+          "Full gap / certificate": null,
+          "Saved iterations / rounds": 9
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "S_FW — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "S_FW",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "REUSED_PRIOR_ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "new optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / method",
+          "Saved value": "FW",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD max",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD L1",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / link reconstruction",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / nonnegative",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / full gap",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / objective recompute",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / full graph gap",
+          "Saved value": 3.446136191653708e-06,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / restricted pool gap",
+          "Saved value": 3.4461361918144917e-06,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 5601.461720010839,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / objective saved",
+          "Saved value": 5601.461720010839,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / min path flow",
+          "Saved value": 0.9125503943155584,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / min link flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / max OD error PCE",
+          "Saved value": 2.842170943040401e-14,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / OD L1 relative",
+          "Saved value": 2.334383910165345e-17,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / max link reconstruction PCE",
+          "Saved value": 5.684341886080802e-14,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / solver to physical max error PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / physical identity",
+          "Saved value": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / positive links 1e 6",
+          "Saved value": 1891,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / total q PCE",
+          "Saved value": 1754.9482512397267,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / saved path rows",
+          "Saved value": 24,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / independence",
+          "Saved value": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / turn boundary",
+          "Saved value": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior wall seconds",
+          "Saved value": 10.233999999938533,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "S_finite — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "S_finite",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "REUSED_PRIOR_ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "new optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / method",
+          "Saved value": "finite",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD max",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD L1",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / link reconstruction",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / nonnegative",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / full gap",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / objective recompute",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / pool gap",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / full graph gap",
+          "Saved value": 8.005091514776758e-12,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / restricted pool gap",
+          "Saved value": 4.006565346202338e-12,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 5601.461468286856,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / objective saved",
+          "Saved value": 5601.461468286853,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / min path flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / min link flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / max OD error PCE",
+          "Saved value": 1.7763568394002505e-14,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / OD L1 relative",
+          "Saved value": 1.012198985437548e-17,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / max link reconstruction PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / solver to physical max error PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / physical identity",
+          "Saved value": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / positive links 1e 6",
+          "Saved value": 1868,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / total q PCE",
+          "Saved value": 1754.9482512397267,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / saved path rows",
+          "Saved value": 100,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / independence",
+          "Saved value": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / turn boundary",
+          "Saved value": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior wall seconds",
+          "Saved value": 6.937999999965541,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "S_Native26 — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "S_Native26",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "详见独立 checks；门槛未放宽",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 186.26599999994505,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 712781824,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 563040256,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "EXITED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / method",
+          "Saved value": "Native26",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD max",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD L1",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / link reconstruction",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / nonnegative",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / full gap",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / objective recompute",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / pool gap",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / full graph gap",
+          "Saved value": 0.006381671764390549,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / restricted pool gap",
+          "Saved value": 0.004674739717953027,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 5604.647688841039,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / objective saved",
+          "Saved value": 5604.647688841032,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / min path flow",
+          "Saved value": 1.0815348616688425e-11,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / min link flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / max OD error PCE",
+          "Saved value": 2.2737367544323206e-13,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / OD L1 relative",
+          "Saved value": 2.4596435346132415e-16,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / max link reconstruction PCE",
+          "Saved value": 3.410605131648481e-13,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / solver to physical max error PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / physical identity",
+          "Saved value": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / positive links 1e 6",
+          "Saved value": 2615,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / total q PCE",
+          "Saved value": 1754.9482512397267,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / saved path rows",
+          "Saved value": 100,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / independence",
+          "Saved value": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / turn boundary",
+          "Saved value": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 186.26599999994505,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "S_Native52 — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "S_Native52",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "详见独立 checks；门槛未放宽",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 186.26599999994505,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 712781824,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 563040256,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "EXITED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / method",
+          "Saved value": "Native52",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD max",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD L1",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / link reconstruction",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / nonnegative",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / full gap",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / objective recompute",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / pool gap",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / full graph gap",
+          "Saved value": 0.004796364762935965,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / restricted pool gap",
+          "Saved value": 0.003486357293765045,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 5604.409384283838,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / objective saved",
+          "Saved value": 5604.409384283843,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "independent / min path flow",
+          "Saved value": 3.715561192052519e-11,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / min link flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / max OD error PCE",
+          "Saved value": 1.1368683772161603e-13,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / OD L1 relative",
+          "Saved value": 1.8238560468852818e-16,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / max link reconstruction PCE",
+          "Saved value": 5.684341886080801e-13,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / solver to physical max error PCE",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / physical identity",
+          "Saved value": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / positive links 1e 6",
+          "Saved value": 2109,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / total q PCE",
+          "Saved value": 1754.9482512397267,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "independent / saved path rows",
+          "Saved value": 100,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / independence",
+          "Saved value": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / turn boundary",
+          "Saved value": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 186.26599999994505,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "T_LP — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "T_LP",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "RESOURCE_LIMIT",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "RESOURCE_LIMIT",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "No complete saved primal/dual endpoint",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 3280.7970000000205,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 2831888384,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 1345990656,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "RESOURCE_LIMIT",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / reason",
+          "Saved value": "No complete saved primal/dual endpoint",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / execution status",
+          "Saved value": "RESOURCE_LIMIT_SYSTEM_COMMIT",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / seconds",
+          "Saved value": 0.0470000000204891,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 3280.7970000000205,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "T_CG — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "T_CG",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "原坐标科学门槛全部满足",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 2157.75,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 709873664,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 681558016,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "EXITED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "ACCEPTED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / two phases executed",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / phase I cleared",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / OD",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / capacity",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / pricing all commodities",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / dual gap",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / saved objective",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 241.2185242449435,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "independent / dual PCE min",
+          "Saved value": 241.2185242449434,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / pricing by OD / 1",
+          "Saved value": 0.0,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / pricing by OD / 2",
+          "Saved value": -8.881784197001252e-16,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / pricing by OD / 3",
+          "Saved value": -3.552713678800501e-15,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / pricing by OD / 4",
+          "Saved value": -2.6645352591003757e-15,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / max OD PCE",
+          "Saved value": 7.105427357601002e-15,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / max capacity PCE",
+          "Saved value": 7.105427357601002e-15,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / columns",
+          "Saved value": 425,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / rounds",
+          "Saved value": 268,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / LP independent reference status",
+          "Saved value": "UNAVAILABLE; own full-graph dual/pricing certificate checked separately",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / seconds",
+          "Saved value": 18.79700000002049,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 2845.0,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "T_LR — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "T_LR",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "own generated pool has no feasible recovery",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 3415.344000000041,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 2474639360,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 2381029376,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "EXITED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / dual PCE min",
+          "Saved value": 227.20471615228504,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": null,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "independent / certified gap",
+          "Saved value": null,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / reason",
+          "Saved value": "own generated pool has no feasible recovery",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / pool paths",
+          "Saved value": 128,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / iterations",
+          "Saved value": 759,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / recovery calls",
+          "Saved value": 77,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / reported stop reason",
+          "Saved value": "WALL_BUDGET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / priced cost min by OD / 1",
+          "Saved value": 2.927539419788435,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / priced cost min by OD / 2",
+          "Saved value": 3.208843103121511,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / priced cost min by OD / 3",
+          "Saved value": 4.455008270216095,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / priced cost min by OD / 4",
+          "Saved value": 4.442066818120931,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / multiplier count",
+          "Saved value": 1351628,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / positive multipliers",
+          "Saved value": 533,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / max multiplier",
+          "Saved value": 0.3663060412333533,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / demand weighted pricing PCE min",
+          "Saved value": 240.77278679843513,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / capacity penalty PCE min",
+          "Saved value": 13.568070646150087,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / seconds",
+          "Saved value": 18.530999999959022,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 3632.3760000000475,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "T_ADMM — full saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "method",
+          "Saved value": "T_ADMM",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "prior status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "reason",
+          "Saved value": "详见独立 checks；门槛未放宽",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "run wall seconds",
+          "Saved value": 3831.6879999999655,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "peak tree private bytes",
+          "Saved value": 2982719488,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "peak tree RSS bytes",
+          "Saved value": 2490535936,
+          "Unit / interpretation": "bytes"
+        },
+        {
+          "Metric": "execution status",
+          "Saved value": "EXITED",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "optimizer started",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / status",
+          "Saved value": "GATE_NOT_MET",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / balance",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / KKT",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / x capacity",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / z capacity",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / z nonnegative",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / z forbidden",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / projection",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / dual update",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / primal",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / dual",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / physical pullback",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / objective recompute",
+          "Saved value": true,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / checks / LP objective",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / objective PCE min",
+          "Saved value": 216.5087007354914,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "independent / rho",
+          "Saved value": 0.004486642451344123,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / completed iterations",
+          "Saved value": 9,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / balance PCE",
+          "Saved value": 3.2673414188559937e-12,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / KKT min",
+          "Saved value": 7.384500178096348e-08,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / x capacity PCE",
+          "Saved value": 9.507039548603403,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / z capacity PCE",
+          "Saved value": 4.884981308350689e-15,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / projection PCE",
+          "Saved value": 1.4210854715202004e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / dual update PCE",
+          "Saved value": 1.4210854715202004e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / physical pullback PCE",
+          "Saved value": 1.4210854715202004e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / primal",
+          "Saved value": 20.97881890129412,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "independent / dual",
+          "Saved value": 0.05407933291905006,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "independent / primal threshold",
+          "Saved value": 0.004163042298159444,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "independent / dual threshold",
+          "Saved value": 0.0023340572897360403,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "independent / LP normalized difference",
+          "Saved value": null,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "independent / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / returned local trial audit / status",
+          "Saved value": "VALID_RETURNED_TRIAL_EVIDENCE",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / returned local trial audit / optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "independent / returned local trial audit / trials — records",
+          "Saved value": 36,
+          "Unit / interpretation": "count; full public data download"
+        },
+        {
+          "Metric": "independent / returned local trial audit / resource truncated scope",
+          "Saved value": false,
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / returned local trial audit / scope",
+          "Saved value": "independently reconstructed complete returned trial files; does not make them accepted ADMM outers",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "independent / seconds",
+          "Saved value": 23.5,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "total retry started process wall seconds",
+          "Saved value": 3853.5470000000205,
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    }
+  ],
+  "rows": 265,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"chicago-historical-method-status\"><h4>Earlier method-status record · before the new hybrid and Native80</h4><p class=\"evidence-table-scope\">Chicago Jane Byrne / West Loop R2 S20 and independent T4 engineering pulse</p><h5>Historical retry endpoints</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Historical retry endpoints\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Prior status</th><th scope=\"col\">Historical retry status</th><th scope=\"col\">Objective</th><th scope=\"col\">Objective unit</th><th scope=\"col\">Full gap / certificate</th><th scope=\"col\">Saved iterations / rounds</th></tr></thead><tbody><tr><td>S_FW</td><td>ACCEPTED</td><td>REUSED_PRIOR_ACCEPTED</td><td>5601.461720010839</td><td>PCE·min/h</td><td>3.446136191653708e-06</td><td>Not recorded in this row</td></tr><tr><td>S_finite</td><td>ACCEPTED</td><td>REUSED_PRIOR_ACCEPTED</td><td>5601.461468286856</td><td>PCE·min/h</td><td>8.005091514776758e-12</td><td>Not recorded in this row</td></tr><tr><td>S_Native26</td><td>GATE_NOT_MET</td><td>GATE_NOT_MET</td><td>5604.647688841039</td><td>PCE·min/h</td><td>0.006381671764390549</td><td>Not recorded in this row</td></tr><tr><td>S_Native52</td><td>GATE_NOT_MET</td><td>GATE_NOT_MET</td><td>5604.409384283838</td><td>PCE·min/h</td><td>0.004796364762935965</td><td>Not recorded in this row</td></tr><tr><td>T_LP</td><td>RESOURCE_LIMIT</td><td>RESOURCE_LIMIT</td><td>Not available</td><td>PCE·min</td><td>Not available</td><td>Not recorded in this row</td></tr><tr><td>T_CG</td><td>GATE_NOT_MET</td><td>ACCEPTED</td><td>241.2185242449435</td><td>PCE·min</td><td>Not available</td><td>268</td></tr><tr><td>T_LR</td><td>GATE_NOT_MET</td><td>GATE_NOT_MET</td><td>Not available</td><td>PCE·min</td><td>Not available</td><td>759</td></tr><tr><td>T_ADMM</td><td>GATE_NOT_MET</td><td>GATE_NOT_MET</td><td>216.5087007354914</td><td>PCE·min</td><td>Not available</td><td>9</td></tr></tbody></table></div><details><summary>S_FW — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"S_FW — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>S_FW</td><td>text</td></tr><tr><td>status</td><td>REUSED_PRIOR_ACCEPTED</td><td>text</td></tr><tr><td>prior status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>new optimizer calls</td><td>0</td><td>count</td></tr><tr><td>reason</td><td>原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。</td><td>text</td></tr><tr><td>independent / method</td><td>FW</td><td>text</td></tr><tr><td>independent / status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>independent / checks / OD max</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / OD L1</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / link reconstruction</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / nonnegative</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / full gap</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / objective recompute</td><td>Yes</td><td>text</td></tr><tr><td>independent / full graph gap</td><td>3.446136191653708e-06</td><td>dimensionless</td></tr><tr><td>independent / restricted pool gap</td><td>3.4461361918144917e-06</td><td>dimensionless</td></tr><tr><td>independent / objective PCE min</td><td>5601.461720010839</td><td>PCE·min/h</td></tr><tr><td>independent / objective saved</td><td>5601.461720010839</td><td>PCE·min/h</td></tr><tr><td>independent / min path flow</td><td>0.9125503943155584</td><td>PCE/h</td></tr><tr><td>independent / min link flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / max OD error PCE</td><td>2.842170943040401e-14</td><td>PCE/h</td></tr><tr><td>independent / OD L1 relative</td><td>2.334383910165345e-17</td><td>dimensionless</td></tr><tr><td>independent / max link reconstruction PCE</td><td>5.684341886080802e-14</td><td>PCE/h</td></tr><tr><td>independent / solver to physical max error PCE</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / physical identity</td><td>all 27129 R2 solver links map one-to-one to source directed physical segments</td><td>text</td></tr><tr><td>independent / positive links 1e 6</td><td>1891</td><td>count</td></tr><tr><td>independent / total q PCE</td><td>1754.9482512397267</td><td>PCE/h</td></tr><tr><td>independent / saved path rows</td><td>24</td><td>count</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / independence</td><td>CSV/NumPy/heapq; no shared model loader, evaluator or solver imports</td><td>text</td></tr><tr><td>independent / turn boundary</td><td>UNKNOWN_NOT_FETCHED; no new-date restrictions asserted</td><td>text</td></tr><tr><td>prior wall seconds</td><td>10.233999999938533</td><td>s</td></tr></tbody></table></div></details><details><summary>S_finite — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"S_finite — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>S_finite</td><td>text</td></tr><tr><td>status</td><td>REUSED_PRIOR_ACCEPTED</td><td>text</td></tr><tr><td>prior status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>new optimizer calls</td><td>0</td><td>count</td></tr><tr><td>reason</td><td>原 R1 已接受、同输入同核状态直接复用；本次只读重放重新检查。</td><td>text</td></tr><tr><td>independent / method</td><td>finite</td><td>text</td></tr><tr><td>independent / status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>independent / checks / OD max</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / OD L1</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / link reconstruction</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / nonnegative</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / full gap</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / objective recompute</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / pool gap</td><td>Yes</td><td>text</td></tr><tr><td>independent / full graph gap</td><td>8.005091514776758e-12</td><td>dimensionless</td></tr><tr><td>independent / restricted pool gap</td><td>4.006565346202338e-12</td><td>dimensionless</td></tr><tr><td>independent / objective PCE min</td><td>5601.461468286856</td><td>PCE·min/h</td></tr><tr><td>independent / objective saved</td><td>5601.461468286853</td><td>PCE·min/h</td></tr><tr><td>independent / min path flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / min link flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / max OD error PCE</td><td>1.7763568394002505e-14</td><td>PCE/h</td></tr><tr><td>independent / OD L1 relative</td><td>1.012198985437548e-17</td><td>dimensionless</td></tr><tr><td>independent / max link reconstruction PCE</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / solver to physical max error PCE</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / physical identity</td><td>all 27129 R2 solver links map one-to-one to source directed physical segments</td><td>text</td></tr><tr><td>independent / positive links 1e 6</td><td>1868</td><td>count</td></tr><tr><td>independent / total q PCE</td><td>1754.9482512397267</td><td>PCE/h</td></tr><tr><td>independent / saved path rows</td><td>100</td><td>count</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / independence</td><td>CSV/NumPy/heapq; no shared model loader, evaluator or solver imports</td><td>text</td></tr><tr><td>independent / turn boundary</td><td>UNKNOWN_NOT_FETCHED; no new-date restrictions asserted</td><td>text</td></tr><tr><td>prior wall seconds</td><td>6.937999999965541</td><td>s</td></tr></tbody></table></div></details><details><summary>S_Native26 — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"S_Native26 — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>S_Native26</td><td>text</td></tr><tr><td>status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>prior status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>reason</td><td>详见独立 checks；门槛未放宽</td><td>text</td></tr><tr><td>run wall seconds</td><td>186.26599999994505</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>712781824</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>563040256</td><td>bytes</td></tr><tr><td>execution status</td><td>EXITED</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / method</td><td>Native26</td><td>text</td></tr><tr><td>independent / status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>independent / checks / OD max</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / OD L1</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / link reconstruction</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / nonnegative</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / full gap</td><td>No</td><td>text</td></tr><tr><td>independent / checks / objective recompute</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / pool gap</td><td>No</td><td>text</td></tr><tr><td>independent / full graph gap</td><td>0.006381671764390549</td><td>dimensionless</td></tr><tr><td>independent / restricted pool gap</td><td>0.004674739717953027</td><td>dimensionless</td></tr><tr><td>independent / objective PCE min</td><td>5604.647688841039</td><td>PCE·min/h</td></tr><tr><td>independent / objective saved</td><td>5604.647688841032</td><td>PCE·min/h</td></tr><tr><td>independent / min path flow</td><td>1.0815348616688425e-11</td><td>PCE/h</td></tr><tr><td>independent / min link flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / max OD error PCE</td><td>2.2737367544323206e-13</td><td>PCE/h</td></tr><tr><td>independent / OD L1 relative</td><td>2.4596435346132415e-16</td><td>dimensionless</td></tr><tr><td>independent / max link reconstruction PCE</td><td>3.410605131648481e-13</td><td>PCE/h</td></tr><tr><td>independent / solver to physical max error PCE</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / physical identity</td><td>all 27129 R2 solver links map one-to-one to source directed physical segments</td><td>text</td></tr><tr><td>independent / positive links 1e 6</td><td>2615</td><td>count</td></tr><tr><td>independent / total q PCE</td><td>1754.9482512397267</td><td>PCE/h</td></tr><tr><td>independent / saved path rows</td><td>100</td><td>count</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / independence</td><td>CSV/NumPy/heapq; no shared model loader, evaluator or solver imports</td><td>text</td></tr><tr><td>independent / turn boundary</td><td>UNKNOWN_NOT_FETCHED; no new-date restrictions asserted</td><td>text</td></tr><tr><td>total retry started process wall seconds</td><td>186.26599999994505</td><td>s</td></tr></tbody></table></div></details><details><summary>S_Native52 — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"S_Native52 — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>S_Native52</td><td>text</td></tr><tr><td>status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>prior status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>reason</td><td>详见独立 checks；门槛未放宽</td><td>text</td></tr><tr><td>run wall seconds</td><td>186.26599999994505</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>712781824</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>563040256</td><td>bytes</td></tr><tr><td>execution status</td><td>EXITED</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / method</td><td>Native52</td><td>text</td></tr><tr><td>independent / status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>independent / checks / OD max</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / OD L1</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / link reconstruction</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / nonnegative</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / full gap</td><td>No</td><td>text</td></tr><tr><td>independent / checks / objective recompute</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / pool gap</td><td>No</td><td>text</td></tr><tr><td>independent / full graph gap</td><td>0.004796364762935965</td><td>dimensionless</td></tr><tr><td>independent / restricted pool gap</td><td>0.003486357293765045</td><td>dimensionless</td></tr><tr><td>independent / objective PCE min</td><td>5604.409384283838</td><td>PCE·min/h</td></tr><tr><td>independent / objective saved</td><td>5604.409384283843</td><td>PCE·min/h</td></tr><tr><td>independent / min path flow</td><td>3.715561192052519e-11</td><td>PCE/h</td></tr><tr><td>independent / min link flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / max OD error PCE</td><td>1.1368683772161603e-13</td><td>PCE/h</td></tr><tr><td>independent / OD L1 relative</td><td>1.8238560468852818e-16</td><td>dimensionless</td></tr><tr><td>independent / max link reconstruction PCE</td><td>5.684341886080801e-13</td><td>PCE/h</td></tr><tr><td>independent / solver to physical max error PCE</td><td>0.0</td><td>PCE/h</td></tr><tr><td>independent / physical identity</td><td>all 27129 R2 solver links map one-to-one to source directed physical segments</td><td>text</td></tr><tr><td>independent / positive links 1e 6</td><td>2109</td><td>count</td></tr><tr><td>independent / total q PCE</td><td>1754.9482512397267</td><td>PCE/h</td></tr><tr><td>independent / saved path rows</td><td>100</td><td>count</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / independence</td><td>CSV/NumPy/heapq; no shared model loader, evaluator or solver imports</td><td>text</td></tr><tr><td>independent / turn boundary</td><td>UNKNOWN_NOT_FETCHED; no new-date restrictions asserted</td><td>text</td></tr><tr><td>total retry started process wall seconds</td><td>186.26599999994505</td><td>s</td></tr></tbody></table></div></details><details><summary>T_LP — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"T_LP — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>T_LP</td><td>text</td></tr><tr><td>status</td><td>RESOURCE_LIMIT</td><td>text</td></tr><tr><td>prior status</td><td>RESOURCE_LIMIT</td><td>text</td></tr><tr><td>reason</td><td>No complete saved primal/dual endpoint</td><td>text</td></tr><tr><td>run wall seconds</td><td>3280.7970000000205</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>2831888384</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>1345990656</td><td>bytes</td></tr><tr><td>execution status</td><td>RESOURCE_LIMIT_SYSTEM_COMMIT</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / status</td><td>RESOURCE_LIMIT</td><td>text</td></tr><tr><td>independent / reason</td><td>No complete saved primal/dual endpoint</td><td>text</td></tr><tr><td>independent / execution status</td><td>RESOURCE_LIMIT_SYSTEM_COMMIT</td><td>text</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / seconds</td><td>0.0470000000204891</td><td>s</td></tr><tr><td>total retry started process wall seconds</td><td>3280.7970000000205</td><td>s</td></tr></tbody></table></div></details><details><summary>T_CG — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"T_CG — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>T_CG</td><td>text</td></tr><tr><td>status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>prior status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>reason</td><td>原坐标科学门槛全部满足</td><td>text</td></tr><tr><td>run wall seconds</td><td>2157.75</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>709873664</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>681558016</td><td>bytes</td></tr><tr><td>execution status</td><td>EXITED</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / status</td><td>ACCEPTED</td><td>text</td></tr><tr><td>independent / checks / two phases executed</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / phase I cleared</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / OD</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / capacity</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / pricing all commodities</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / dual gap</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / saved objective</td><td>Yes</td><td>text</td></tr><tr><td>independent / objective PCE min</td><td>241.2185242449435</td><td>PCE·min</td></tr><tr><td>independent / dual PCE min</td><td>241.2185242449434</td><td>PCE</td></tr><tr><td>independent / pricing by OD / 1</td><td>0.0</td><td>as saved</td></tr><tr><td>independent / pricing by OD / 2</td><td>-8.881784197001252e-16</td><td>as saved</td></tr><tr><td>independent / pricing by OD / 3</td><td>-3.552713678800501e-15</td><td>as saved</td></tr><tr><td>independent / pricing by OD / 4</td><td>-2.6645352591003757e-15</td><td>as saved</td></tr><tr><td>independent / max OD PCE</td><td>7.105427357601002e-15</td><td>PCE</td></tr><tr><td>independent / max capacity PCE</td><td>7.105427357601002e-15</td><td>PCE</td></tr><tr><td>independent / columns</td><td>425</td><td>as saved</td></tr><tr><td>independent / rounds</td><td>268</td><td>count</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / LP independent reference status</td><td>UNAVAILABLE; own full-graph dual/pricing certificate checked separately</td><td>text</td></tr><tr><td>independent / seconds</td><td>18.79700000002049</td><td>s</td></tr><tr><td>total retry started process wall seconds</td><td>2845.0</td><td>s</td></tr></tbody></table></div></details><details><summary>T_LR — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"T_LR — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>T_LR</td><td>text</td></tr><tr><td>status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>prior status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>reason</td><td>own generated pool has no feasible recovery</td><td>text</td></tr><tr><td>run wall seconds</td><td>3415.344000000041</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>2474639360</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>2381029376</td><td>bytes</td></tr><tr><td>execution status</td><td>EXITED</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>independent / dual PCE min</td><td>227.20471615228504</td><td>PCE</td></tr><tr><td>independent / objective PCE min</td><td>Not available</td><td>PCE·min</td></tr><tr><td>independent / certified gap</td><td>Not available</td><td>dimensionless</td></tr><tr><td>independent / reason</td><td>own generated pool has no feasible recovery</td><td>text</td></tr><tr><td>independent / pool paths</td><td>128</td><td>count</td></tr><tr><td>independent / iterations</td><td>759</td><td>dimensionless</td></tr><tr><td>independent / recovery calls</td><td>77</td><td>count</td></tr><tr><td>independent / reported stop reason</td><td>WALL_BUDGET</td><td>text</td></tr><tr><td>independent / priced cost min by OD / 1</td><td>2.927539419788435</td><td>min</td></tr><tr><td>independent / priced cost min by OD / 2</td><td>3.208843103121511</td><td>min</td></tr><tr><td>independent / priced cost min by OD / 3</td><td>4.455008270216095</td><td>min</td></tr><tr><td>independent / priced cost min by OD / 4</td><td>4.442066818120931</td><td>min</td></tr><tr><td>independent / multiplier count</td><td>1351628</td><td>count</td></tr><tr><td>independent / positive multipliers</td><td>533</td><td>as saved</td></tr><tr><td>independent / max multiplier</td><td>0.3663060412333533</td><td>min</td></tr><tr><td>independent / demand weighted pricing PCE min</td><td>240.77278679843513</td><td>PCE</td></tr><tr><td>independent / capacity penalty PCE min</td><td>13.568070646150087</td><td>PCE</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / seconds</td><td>18.530999999959022</td><td>s</td></tr><tr><td>total retry started process wall seconds</td><td>3632.3760000000475</td><td>s</td></tr></tbody></table></div></details><details><summary>T_ADMM — full saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"T_ADMM — full saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>method</td><td>T_ADMM</td><td>text</td></tr><tr><td>status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>prior status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>reason</td><td>详见独立 checks；门槛未放宽</td><td>text</td></tr><tr><td>run wall seconds</td><td>3831.6879999999655</td><td>s</td></tr><tr><td>peak tree private bytes</td><td>2982719488</td><td>bytes</td></tr><tr><td>peak tree RSS bytes</td><td>2490535936</td><td>bytes</td></tr><tr><td>execution status</td><td>EXITED</td><td>text</td></tr><tr><td>optimizer started</td><td>Yes</td><td>text</td></tr><tr><td>independent / status</td><td>GATE_NOT_MET</td><td>text</td></tr><tr><td>independent / checks / balance</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / KKT</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / x capacity</td><td>No</td><td>text</td></tr><tr><td>independent / checks / z capacity</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / z nonnegative</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / z forbidden</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / projection</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / dual update</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / primal</td><td>No</td><td>text</td></tr><tr><td>independent / checks / dual</td><td>No</td><td>text</td></tr><tr><td>independent / checks / physical pullback</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / objective recompute</td><td>Yes</td><td>text</td></tr><tr><td>independent / checks / LP objective</td><td>No</td><td>text</td></tr><tr><td>independent / objective PCE min</td><td>216.5087007354914</td><td>PCE·min</td></tr><tr><td>independent / rho</td><td>0.004486642451344123</td><td>as saved</td></tr><tr><td>independent / completed iterations</td><td>9</td><td>dimensionless</td></tr><tr><td>independent / balance PCE</td><td>3.2673414188559937e-12</td><td>PCE</td></tr><tr><td>independent / KKT min</td><td>7.384500178096348e-08</td><td>min</td></tr><tr><td>independent / x capacity PCE</td><td>9.507039548603403</td><td>PCE</td></tr><tr><td>independent / z capacity PCE</td><td>4.884981308350689e-15</td><td>PCE</td></tr><tr><td>independent / projection PCE</td><td>1.4210854715202004e-14</td><td>PCE</td></tr><tr><td>independent / dual update PCE</td><td>1.4210854715202004e-14</td><td>PCE</td></tr><tr><td>independent / physical pullback PCE</td><td>1.4210854715202004e-14</td><td>PCE</td></tr><tr><td>independent / primal</td><td>20.97881890129412</td><td>as saved</td></tr><tr><td>independent / dual</td><td>0.05407933291905006</td><td>PCE·min</td></tr><tr><td>independent / primal threshold</td><td>0.004163042298159444</td><td>PCE</td></tr><tr><td>independent / dual threshold</td><td>0.0023340572897360403</td><td>min</td></tr><tr><td>independent / LP normalized difference</td><td>Not available</td><td>dimensionless</td></tr><tr><td>independent / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / returned local trial audit / status</td><td>VALID_RETURNED_TRIAL_EVIDENCE</td><td>text</td></tr><tr><td>independent / returned local trial audit / optimizer calls</td><td>0</td><td>count</td></tr><tr><td>independent / returned local trial audit / trials — records</td><td>36</td><td>count; full public data download</td></tr><tr><td>independent / returned local trial audit / resource truncated scope</td><td>No</td><td>text</td></tr><tr><td>independent / returned local trial audit / scope</td><td>independently reconstructed complete returned trial files; does not make them accepted ADMM outers</td><td>text</td></tr><tr><td>independent / seconds</td><td>23.5</td><td>s</td></tr><tr><td>total retry started process wall seconds</td><td>3853.5470000000205</td><td>s</td></tr></tbody></table></div></details><p>Earlier retry receipt: Native80 is a separate uncompressed control; the accepted LR hybrid does not make pure LR759 pass; ADMM33 remains failed. HiGHS remains resource-limited. Failed historical rows stay visible.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/chicago/C06_method_status_plot_data.json\" download>C06_method_status_plot_data.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/chicago/C06_method_status.svg\">C06_method_status.svg</a></p></details></section>",
+  "caption": "Earlier retry receipt: Native80 is a separate uncompressed control; the accepted LR hybrid does not make pure LR759 pass; ADMM33 remains failed. HiGHS remains resource-limited. Failed historical rows stay visible."
+}

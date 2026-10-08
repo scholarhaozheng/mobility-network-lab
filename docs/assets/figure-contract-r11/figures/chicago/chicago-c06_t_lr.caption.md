@@ -1,0 +1,1 @@
+LR diagnostic: lower bound without own feasible recovery All 759 original pure-subgradient LR records are shown. This run has no own feasible upper bound, so no certified gap is drawn. The newly accepted self-priced recovery hybrid is a distinct run and does not change this failure.

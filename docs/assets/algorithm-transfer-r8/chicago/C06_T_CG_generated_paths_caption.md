@@ -1,0 +1,1 @@
+Actual saved CG path columns, including the four input seeds, projected onto original road geometry. Each column counts once per physical link. These counts are candidate-path support, not assigned PCE. The numerical endpoint status and feasibility are reported separately in RESULT_MATRIX.

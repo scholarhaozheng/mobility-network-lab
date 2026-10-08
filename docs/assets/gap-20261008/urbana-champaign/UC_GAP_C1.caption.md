@@ -1,0 +1,1 @@
+UC_GAP_C1. Fixed 2,989.8528 person trips across 418 positive OD. The 2026-10-07 CUMTD schedule scenario predicts 461.581416 transit person trips and 1,667.089946 PCE/h vehicle demand actually assigned by static FW, versus 1,963.648313 PCE/h under earlier mode inputs. Different demands are not solver-quality comparisons; these are not observed boardings.

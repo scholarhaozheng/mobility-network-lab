@@ -1,0 +1,2570 @@
+{
+  "schema": "mcl.case-coverage.v1",
+  "groups": [
+    {
+      "id": "I",
+      "title": "City data and model foundations"
+    },
+    {
+      "id": "II",
+      "title": "Transit and observation evidence"
+    },
+    {
+      "id": "III",
+      "title": "Four-stage travel-demand workflow"
+    },
+    {
+      "id": "IV",
+      "title": "Static assignment · BPR / Beckmann"
+    },
+    {
+      "id": "V",
+      "title": "Finite time-expanded computation"
+    },
+    {
+      "id": "VI",
+      "title": "Reusable outputs and tools"
+    }
+  ],
+  "rows": [
+    {
+      "id": "01",
+      "title": "Source data and preparation",
+      "group": "I"
+    },
+    {
+      "id": "02",
+      "title": "GMNS network, zones and access",
+      "group": "I"
+    },
+    {
+      "id": "03",
+      "title": "Population, households and activity",
+      "group": "I"
+    },
+    {
+      "id": "04",
+      "title": "Transit and pedestrian inputs",
+      "group": "II"
+    },
+    {
+      "id": "05",
+      "title": "GPS, trajectory and detector evidence",
+      "group": "II"
+    },
+    {
+      "id": "06",
+      "title": "01 / Trip generation — productions / attractions",
+      "group": "III"
+    },
+    {
+      "id": "07",
+      "title": "02 / Trip distribution — zonal OD demand",
+      "group": "III"
+    },
+    {
+      "id": "08",
+      "title": "03 / Mode choice — mode-specific demand",
+      "group": "III"
+    },
+    {
+      "id": "09",
+      "title": "04 / Traffic assignment — assigned network flows",
+      "group": "III"
+    },
+    {
+      "id": "10",
+      "title": "Frank–Wolfe",
+      "group": "IV"
+    },
+    {
+      "id": "11",
+      "title": "Official tap-b Algorithm B",
+      "group": "IV"
+    },
+    {
+      "id": "12",
+      "title": "Finite-path reference",
+      "group": "IV"
+    },
+    {
+      "id": "13",
+      "title": "Native Diagnostic L3 / compression",
+      "group": "IV"
+    },
+    {
+      "id": "14",
+      "title": "Network construction and generated columns",
+      "group": "V"
+    },
+    {
+      "id": "15",
+      "title": "Arc-flow LP reference",
+      "group": "V"
+    },
+    {
+      "id": "16",
+      "title": "Two-phase column generation",
+      "group": "V"
+    },
+    {
+      "id": "17",
+      "title": "Lagrangian",
+      "group": "V"
+    },
+    {
+      "id": "18",
+      "title": "ADMM",
+      "group": "V"
+    },
+    {
+      "id": "19",
+      "title": "Reusable outputs, queries and checks",
+      "group": "VI"
+    }
+  ],
+  "cities": [
+    {
+      "slug": "boston",
+      "name": "Boston",
+      "cohort": "original",
+      "summary": "Bounded city demand, static assignment controls and separate finite time-expanded cases.",
+      "volume_href": "volumes/boston.html",
+      "release_note": "Original cross-method evidence and its stated scope are retained. Static and finite instances remain separate.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "GMNS Plus, ACS/GTFS and registered source preparation.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-01"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 01; volumes/boston.html#coverage-row-01"
+        },
+        {
+          "id": "02",
+          "detail": "5,091 physical links; 177 H3 fine zones, nine parents; connectors separate.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-02"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 02; volumes/boston.html#coverage-row-02"
+        },
+        {
+          "id": "03",
+          "detail": "ACS 2024 five-year block groups allocated to 177 clipped H3 zones.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-03"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 03; volumes/boston.html#coverage-row-03"
+        },
+        {
+          "id": "04",
+          "detail": "MBTA service and pedestrian access support the bounded demand/feedback example.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-04"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 04; volumes/boston.html#coverage-row-04"
+        },
+        {
+          "id": "05",
+          "detail": "Exploratory map matching and service feedback.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-05"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 05; volumes/boston.html#coverage-row-05"
+        },
+        {
+          "id": "06",
+          "detail": "Purpose-level productions and attractions in the bounded Boston example.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-06"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 06; volumes/boston.html#coverage-row-06"
+        },
+        {
+          "id": "07",
+          "detail": "Zonal OD construction for the bounded semantic scenario.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-07"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 07; volumes/boston.html#coverage-row-07"
+        },
+        {
+          "id": "08",
+          "detail": "S1/S2 service response and conditional absolute choice remain separate.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-08"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 08; volumes/boston.html#coverage-row-08"
+        },
+        {
+          "id": "09",
+          "detail": "Static road flow from the bounded demand scenario; methods below.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-09"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 09; volumes/boston.html#coverage-row-09"
+        },
+        {
+          "id": "10",
+          "detail": "Expanded Boston FW, up to 17,522 loaded node ODs; separate from 26-OD controls.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-10"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 10; volumes/boston.html#coverage-row-10"
+        },
+        {
+          "id": "11",
+          "detail": "B0/B1 numerical transfer via task-local lossless TAPLab-compatible adapter.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-11"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 11; volumes/boston.html#coverage-row-11"
+        },
+        {
+          "id": "12",
+          "detail": "26 OD, 130-path uncompressed SLSQP reference on ABS_PLANNED.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-12"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 12; volumes/boston.html#coverage-row-12"
+        },
+        {
+          "id": "13",
+          "detail": "Rank-26/52 native controls on the same 26-OD ABS_PLANNED instance.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-13"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 13; volumes/boston.html#coverage-row-13"
+        },
+        {
+          "id": "14",
+          "detail": "90-node/125-link/10-OD finite graph; saved time-indexed column.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-14"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 14; volumes/boston.html#coverage-row-14"
+        },
+        {
+          "id": "15",
+          "detail": "Own-graph LP reference for the bounded ten-OD fixed-cost instance.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-15"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 15; volumes/boston.html#coverage-row-15"
+        },
+        {
+          "id": "16",
+          "detail": "Phase I/II and independent 10/10 pricing closure.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-16"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 16; volumes/boston.html#coverage-row-16"
+        },
+        {
+          "id": "17",
+          "detail": "Saved Boston R2 10-OD best-bound iteration trace; feasible primal, 1.1002% gap misses the frozen 1% gate.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-17"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 17; volumes/boston.html#coverage-row-17"
+        },
+        {
+          "id": "18",
+          "detail": "Ten-OD original-space checks; own-LP gap 6.68e-6.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-18"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 18; volumes/boston.html#coverage-row-18"
+        },
+        {
+          "id": "19",
+          "detail": "Released source tables, GMNS and saved-result queries; separate static and finite runners. A saved-result check is distinct from a fresh solve.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/boston.html#coverage-row-19"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Boston, row 19; volumes/boston.html#coverage-row-19"
+        }
+      ]
+    },
+    {
+      "slug": "hong-kong",
+      "name": "Hong Kong",
+      "cohort": "original",
+      "summary": "Bounded turn-aware city demand, static H1 controls and separate finite cases.",
+      "volume_href": "volumes/hong-kong.html",
+      "release_note": "Original cross-method evidence and its stated scope are retained. Static and finite instances remain separate.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "Official-derived bounded network and source layers.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-01"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 01; volumes/hong-kong.html#coverage-row-01"
+        },
+        {
+          "id": "02",
+          "detail": "780 physical nodes, 1,239 links; 95 fine zones, ten parents and turn-aware access.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-02"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 02; volumes/hong-kong.html#coverage-row-02"
+        },
+        {
+          "id": "03",
+          "detail": "2021 census households/population and explicitly modeled building activity proxies.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-03"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 03; volumes/hong-kong.html#coverage-row-03"
+        },
+        {
+          "id": "04",
+          "detail": "GTFS same-trip rides, fares, headways and pedestrian access enter generalized costs.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-04"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 04; volumes/hong-kong.html#coverage-row-04"
+        },
+        {
+          "id": "05",
+          "detail": "Detector and private trajectory association; no held-out validation claim.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-05"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 05; volumes/hong-kong.html#coverage-row-05"
+        },
+        {
+          "id": "06",
+          "detail": "Transferred rate and declared capture sensitivity.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-06"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 06; volumes/hong-kong.html#coverage-row-06"
+        },
+        {
+          "id": "07",
+          "detail": "Turn-aware gravity/IPF balances 8,930 reachable directed OD pairs.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-07"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 07; volumes/hong-kong.html#coverage-row-07"
+        },
+        {
+          "id": "08",
+          "detail": "GTFS/pedestrian generalized cost and declared sensitivity logit.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-08"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 08; volumes/hong-kong.html#coverage-row-08"
+        },
+        {
+          "id": "09",
+          "detail": "Modeled one-hour static PCE road flow.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-09"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 09; volumes/hong-kong.html#coverage-row-09"
+        },
+        {
+          "id": "10",
+          "detail": "Turn-aware one-hour 723.191 PCE static engineering scenario.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-10"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 10; volumes/hong-kong.html#coverage-row-10"
+        },
+        {
+          "id": "11",
+          "detail": "Accepted task-local lossless adapter; official-adapter parity remains unverified.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-11"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 11; volumes/hong-kong.html#coverage-row-11"
+        },
+        {
+          "id": "12",
+          "detail": "Accepted bounded H1: 26 ODs / 126 legal paths; matches H1 FW with full-graph relative gap approximately zero.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-12"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 12; volumes/hong-kong.html#coverage-row-12"
+        },
+        {
+          "id": "13",
+          "detail": "Accepted H1 ranks 26 and 52; full-graph relative gap approximately 2.31×10⁻¹¹; evaluated under low congestion.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-13"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 13; volumes/hong-kong.html#coverage-row-13"
+        },
+        {
+          "id": "14",
+          "detail": "100-node / 111-link / ten-OD finite graph, with saved time-layer construction and generated-column evidence.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-14"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 14; volumes/hong-kong.html#coverage-row-14"
+        },
+        {
+          "id": "15",
+          "detail": "Own-graph LP reference for R5 ten-OD finite case.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-15"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 15; volumes/hong-kong.html#coverage-row-15"
+        },
+        {
+          "id": "16",
+          "detail": "Phase I/II, same-graph LP agreement and independent 10/10 closure.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-16"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 16; volumes/hong-kong.html#coverage-row-16"
+        },
+        {
+          "id": "17",
+          "detail": "Ten-OD feasible recovery with 0.7444% certified gap.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-17"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 17; volumes/hong-kong.html#coverage-row-17"
+        },
+        {
+          "id": "18",
+          "detail": "Accepted bounded ADMM R3 transfer Fresh preregistered 4-OD holdout · 165 iterations · LP-relative difference 6.83×10⁻⁶ Finite 30-s × 50-step shared-capacity case with modeled OD demand in a bounded study area; empirical traffic validation remains open.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-18"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 18; volumes/hong-kong.html#coverage-row-18"
+        },
+        {
+          "id": "19",
+          "detail": "GMNS and demand tables, static/H1 and finite case packages; accepted four-OD ADMM R3 is separate from ten-OD R2. Source-to-result reproduction has distinct requirements.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/hong-kong.html#coverage-row-19"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Hong Kong, row 19; volumes/hong-kong.html#coverage-row-19"
+        }
+      ]
+    },
+    {
+      "slug": "ann-arbor",
+      "name": "Ann Arbor",
+      "cohort": "static",
+      "summary": "Central Ann Arbor retains the accepted 25-zone R2 case. S0 release v002 adds S600 FW and sparse fixed-path FW with one update each, S600 Algorithm B with one reported iteration, and separate S72 Native26/52 initial-state acceptance with zero updates. Native600 is resource-gated; the separate timetable-choice revision has no new assigned flow, and T1/T4 remain unsolved.",
+      "volume_href": "volumes/ann-arbor.html",
+      "release_note": "Current reception: S0 gap release_v002, 2026-10-08. New method/model scopes are separate from earlier releases and historical failures. Only exact approved public assets are integrated; no website-side solver, matcher or replay.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "Central Ann Arbor: 19.633 km² circle, 25 clipped grid zones and a 400 m routing halo. Saved inputs use 2020–2024 ACS, 2021 LODES, OSM and U-M GTFS for 5 October 2026. Full derived figures are available in this local reading edition.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-sources"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "02",
+          "detail": "Accepted four-stage graph: 5,138 physical road arcs within 14,203 total arcs, and 25 in-zone road access points. This differs from the earlier 4,059-link road-centerline preflight; source and accepted graphs are not mixed.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-sources"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "03",
+          "detail": "Approximately 52,954 residents, 19,287 households and 69,183 workplace jobs are area allocated into all 25 model zones. ACS and LODES vintages differ; these are model inputs rather than a measured 2026 population.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-population"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "04",
+          "detail": "Original U-M service-day chart stays bound to R2: bus 110/600 OD and walk 366/600. A separate timetable-choice revision has numeric-only reception; its new U-M-derived figures remain held and no new road assignment follows it.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-transit"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "05",
+          "detail": "Exact GPS remains withheld. The licensed State Street photograph is dated 17 August 2013 and supplies city context only, not modeled-demand or traffic evidence.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Historical photograph and limits",
+              "href": "volumes/ann-arbor.html#evidence-photo"
+            }
+          ],
+          "source_note": "Public volumes/ann-arbor.html opening release notice and #evidence-photo."
+        },
+        {
+          "id": "06",
+          "detail": "Household-based generation produces 6,596.065080 person-trip opportunities: 3,627.835794 external/uncaptured, 237.458343 intrazonal and 2,730.770943 internal interzonal. All 25 zones and the complete ledger are shown.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-generation"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "07",
+          "detail": "Complete 25×25 matrix contains 600 positive directed interzonal OD pairs and 2,730.770943 person trips. Five IPF iterations leave maximum margin residual 1.1862e−7; the declared 90/10 period direction conversion is applied once.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-distribution"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "08",
+          "detail": "Retained R2 mode choice: 1,977.380 drive, 244.808 U-M bus and 508.583 walk persons; occupancy 1.2 gives 1,647.817 PCE/h. The separate new timetable-choice output has not been assigned; its held chart families are not displayed.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-mode"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "09",
+          "detail": "Original R2 map: 600 OD, 5,138 physical arcs, 1,991 positive at old 1e-4 FW gate. New S600 FW assigns the same 1,647.816622 PCE/h under 1e-5 with one update. The R9 map remains the original endpoint; the new accepted aggregate is separately labelled.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-static-flow"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "10",
+          "detail": "Original R2: iteration 0 only, gap 5.10283e-5≤1e-4. New S600 FW: states 0/1 and one actual update under 1e-5; final gap is floating-point scale. Separate S72 FW has 0 updates. Short traces do not establish geographic-area causality.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-static-check"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "11",
+          "detail": "S0 accepts same-S600 Algorithm B: 600 OD, 1,647.816622 PCE/h, one reported iteration containing 50 shifts. Original-space gap≈−8.19e-15 passes the 1e-5 evaluator gate; no initialization history is invented.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "12",
+          "detail": "Sparse fixed-path FW passes: S600 has 3,000 paths, two states and one update; pool-gap gate 1e-7 plus independent full-graph gate 1e-5. Separate S72 has 360 paths and 0 updates.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "13",
+          "detail": "Separate S72 Native26/52 initial states pass with zero optimizer updates at 243.071389 PCE/h. This is initial-state acceptance, not an iterative compression test. S600 Native26/52 are resource-gated and were not solved.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "14",
+          "detail": "Network construction and generated columns is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "15",
+          "detail": "Arc-flow LP reference is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "16",
+          "detail": "Two-phase column generation is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "17",
+          "detail": "Lagrangian is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "18",
+          "detail": "ADMM is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ann-arbor.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "19",
+          "detail": "S0 release_v002 adds the approved static aggregate, corrected caption and addendum. Earlier exact-SHA assets and old R2 checks remain. New U-M-derived figure families remain held; T1/T4 are unsolved and Native 600 resource-gated.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/ann-arbor.html#ann-r3-static-flow"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ann-arbor.html#gap-20261008"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        }
+      ]
+    },
+    {
+      "slug": "urbana-champaign",
+      "name": "Urbana–Champaign",
+      "cohort": "static",
+      "summary": "S0 release v002 accepts the dated 2026-10-07 CUMTD timetable revision: 418 positive OD have modeled transit options and the revised 1,667.089946 PCE/h was actually assigned. New FW saves its initial check only. Algorithm B is newly accepted on the unchanged S72; prior S72 Native outer9 and T4 certificates remain separate and unchanged.",
+      "volume_href": "volumes/urbana-champaign.html",
+      "release_note": "Current reception: S0 gap release_v002, 2026-10-08. New method/model scopes are separate from earlier releases and historical failures. Only exact approved public assets are integrated; no website-side solver, matcher or replay.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "A fixed 19.303 km² rectangle uses four OSM tiles, selected 2020 Census blocks and 2023 Illinois LODES workplace jobs; UIUC is location context, not the demand boundary.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Case boundary and period",
+              "href": "volumes/urbana-champaign.html#scope"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#scope and #inputs."
+        },
+        {
+          "id": "02",
+          "detail": "21 zones; preflight GMNS has 24,775 nodes and 46,203 directed physical links. The assignment graph separately retains 11,365 traversal arcs and 15,237 turn arcs.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Assignment graph and access",
+              "href": "volumes/urbana-champaign.html#assignment"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#inputs and #assignment."
+        },
+        {
+          "id": "03",
+          "detail": "725 selected blocks contain 52,040 residents, 19,696 occupied housing units and 43,602 workplace jobs. Earlier whole-tract population (84,805) is not the demand denominator.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/urbana-champaign.html#inputs"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#inputs"
+        },
+        {
+          "id": "04",
+          "detail": "New dated CUMTD 2026-10-07 service: 1,937 active trips and 1,672 timetable queries (418 OD×four departures), each with a legal ride. Directed walk and transfer rules were checked. Queries are scheduled options, not observed boardings; old geometry-only inputs stay historical.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Transit source context",
+              "href": "volumes/urbana-champaign.html#figure-f04-transit-reference"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#inputs and #mode.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "05",
+          "detail": "Current observation bridge has 27 GPS points and 35 source links; 33/35 links and 32/34 turns map to frozen R2. Two unmatched flow cells remain empty. Unknown mode and mismatched dates prevent route ground truth or local calibration; exact traces stay private.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Observation limitations",
+              "href": "volumes/urbana-champaign.html#limitations"
+            },
+            {
+              "label": "Historic facility photographs",
+              "href": "volumes/urbana-champaign.html#historic-facility-photos"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#limitations and #historic-facility-photos.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "06",
+          "detail": "Assumed 1.2 HBW trips per occupied unit/day and 25% hour share generate 5,908.8 person trips; 55% capture and 8% intrazonal share leave 2,989.8528 internal interzonal person trips.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Generation figure",
+              "href": "volumes/urbana-champaign.html#figure-fs-g01"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#generation."
+        },
+        {
+          "id": "07",
+          "detail": "Gravity/IPF produces 418 positive directed OD pairs and 2,989.8528 person trips using an 85% forward / 15% reverse conversion; five IPF iterations leave 7.6423×10⁻⁶-person-trip margin error.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Distribution figure",
+              "href": "volumes/urbana-champaign.html#figure-fs-d01"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#distribution."
+        },
+        {
+          "id": "08",
+          "detail": "New timetable revision conserves 2,989.8528 persons: 2,083.862 drive, 444.409 walk and 461.581 transit. Occupancy 1.25 yields 1,667.089946 PCE/h. Old drive/walk-only 1,963.6483 PCE/h is a distinct historical input, not a same-demand algorithm comparison.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Mode-choice figure",
+              "href": "volumes/urbana-champaign.html#figure-fs-m01"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#mode.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "09",
+          "detail": "New 418-OD demand 1,667.089946 PCE/h was actually assigned on unchanged 26,602-arc graph; objective 6,898.584026 PCE·min/h and max physical v/c 1.012866. No new approved FW map was supplied; R9 map is explicitly old 1,963.6483 PCE/h baseline.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Physical-road flow map",
+              "href": "volumes/urbana-champaign.html#figure-fs-a04"
+            },
+            {
+              "label": "Physical v/c map",
+              "href": "volumes/urbana-champaign.html#figure-fs-a05"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#assignment; companion #figure-fs-a05.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "10",
+          "detail": "New 418-OD FW saves iteration 0 only, 0 updates under frozen 1e-4; independent signed full-graph gap≈−4.60e-15. Maximum v/c≈1.0129 prevents interpreting initial stopping as uncongested roads. Old R2 and S72 remain distinct.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Initial assignment check",
+              "href": "volumes/urbana-champaign.html#figure-fs-a02"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/urbana-champaign.html#assignment and #figure-fs-a02.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "11",
+          "detail": "S0 accepts B on unchanged old S72 only: 72 OD, 321.629660 PCE/h, one reported iteration with 42 shifts; full-graph gap 2.97e-14. This is not B on new 418-OD demand, and no new public B spatial figure was released.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/urbana-champaign.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "12",
+          "detail": "Separate S72 finite reference: 72 selected OD, 321.6296599 PCE/hour, all 360 paths. Objective 1086.5535434763 PCE min matches same-S72 FW; original-coordinate checks pass. This is not the full 418-OD demand.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-static-comparison"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "13",
+          "detail": "S0 has independently checked the original-coordinate Native26/52 outer9 states and accepted both under the unchanged gates. UC_S02_C1 now occupies the current Native figure position; outer8 failure remains historical. S72 (72 OD, 321.6296599 PCE/h), the full 418-OD city case and the T4 pulse are separate scopes. Rank26/52 maximum OD errors: 1.88160e-8 / 1.87236e-8 PCE; signed full relative gaps: −7.70078e-11 / 1.34080e-8.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-native-check"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/urbana-champaign.html#urbana-champaign-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/urbana-champaign.html#native-candidate-1"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-native-check"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "14",
+          "detail": "Separate T4 pulse: 4 selected OD, 0.0516231483 PCE, 30-second steps, H=160. The actual 1,429,496-arc graph distinguishes physical traversal, turn, wait and ledger connectors; four computed paths are retained.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-time-layers"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "15",
+          "detail": "Exact-DAG LP primal/dual certificate accepted on the same T4 domain after proving capacity redundancy; objective 0.37598366513352877 PCE min. The separate HiGHS process crashed and is not claimed successful.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#r3-method-transfer"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "16",
+          "detail": "Accepted two-phase CG on T4: one saved round per phase, zero artificial flow, four self-generated paths and independent full-DAG pricing closure. Objective 0.37598366513352854 PCE min.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-cg-phase1"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "17",
+          "detail": "Accepted same-T4 LR: one actual iteration, zero capacity multipliers, separately recovered feasible upper bound and independently checked lower bound. Capacities do not bind at this pulse.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-lr-bounds"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "18",
+          "detail": "Accepted same-T4 ADMM: one cold-start update and independent cold confirmation. Own-x objective 0.37598366514196835 PCE min; absolute LP difference 8.44e−12 PCE min, true relative difference 2.24e−11. All original-unit gates pass.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/urbana-champaign.html#uc-r3-admm-objective"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "19",
+          "detail": "S0 release_v002 accepts new dated timetable choice and actual 418-OD FW, plus same-old-S72 B. Native outer 9 and T4 prior acceptance remain; outer 8 and HiGHS failures stay historical. UC_GAP_C1/C2 are mode figures; no unapproved new FW/B maps are added.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved and fresh checks",
+              "href": "volumes/urbana-champaign.html#results"
+            },
+            {
+              "label": "Reproduction status",
+              "href": "volumes/urbana-champaign.html#reproduction"
+            },
+            {
+              "label": "Bounded S2 sample",
+              "href": "volumes/urbana-champaign.html#figure-f08-s2"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/urbana-champaign.html#urbana-champaign-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/urbana-champaign.html#native-candidate-1"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/urbana-champaign.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        }
+      ]
+    },
+    {
+      "slug": "ithaca",
+      "name": "Ithaca",
+      "cohort": "static",
+      "summary": "S0 release v002 accepts saved S110 FW/finite/Native26/Native52 endpoints and separate T4 LP/CG/LR/ADMM numerical endpoints. Native ranks each required four outer solves; FW has zero updates. T4 is a 0.65675536 PCE pulse below 2.5 PCE minimum physical time-arc capacity, so capacity is nonbinding. Employment and observations do not recalibrate the frozen model; no Algorithm B endpoint exists.",
+      "volume_href": "volumes/ithaca.html",
+      "release_note": "Current reception: S0 gap release_v002, 2026-10-08. New method/model scopes are separate from earlier releases and historical failures. Only exact approved public assets are integrated; no website-side solver, matcher or replay.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "11 populated tract groups cover the 7.501778 km² City demand area; 13.235585 km² of road support provides surrounding routes. This is midday HBO_LOCAL_ACTIVITY, not morning HBW.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/ithaca.html#scope"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#scope"
+        },
+        {
+          "id": "02",
+          "detail": "The preflight graph has 20,928 nodes and 24,420 segments; the separate four-stage graph has 15,148 physical directed roads plus turn/access arcs. Zone access uses public-road nodes, not audited entrances.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Assignment graph and access",
+              "href": "volumes/ithaca.html#assignment"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#inputs and #assignment."
+        },
+        {
+          "id": "03",
+          "detail": "Original 27,797.946 residents, 10,361.966 occupied units and 1,127 OSM activity objects remain. New 2020 LODES all-job supplement: 8,752.529038 area-allocated jobs; 7,493 fully-contained to 10,858 intersecting-block spatial bounds. Not unique persons or confidence intervals; original attractions unchanged.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/ithaca.html#inputs"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#inputs; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "04",
+          "detail": "Original TCAT feed 20260922 feed supplies 2026-10-05 service: 836 active trips, 627 active service-day stops. Earlier 168 union stops are a different bounded geometry scope. Direct transit 98/110 OD, walk 108/110; no transfers or observed boarding validation.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Transit and walking assumptions",
+              "href": "volumes/ithaca.html#mode"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#inputs and #mode.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "05",
+          "detail": "Current bridge: 87 source links, 60 geometric R2 candidates, 27 unresolved; exact ordered route private. NYSDOT adds 294 legacy 2015–2019 records/76 sites and 51 source 2022 records/17 historical station IDs, only 3 with new coordinates. No aligned calibration or fresh holdout.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Observation limitations",
+              "href": "volumes/ithaca.html#limitations"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#limitations; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "06",
+          "detail": "Assumed 0.8 daily local-activity trips per resident and 0.08 midday share generate 1,779.0685 person trips; boundary and intrazonal accounting leaves 1,017.6272 internal interzonal person trips.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Generation figure",
+              "href": "volumes/ithaca.html#figure-fs-g01"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#generation."
+        },
+        {
+          "id": "07",
+          "detail": "Seven gravity/IPF iterations yield 110 positive directed OD pairs and 9.8700×10⁻⁸-person-trip margin error. A 60% forward / 40% reverse conversion conserves 1,017.6272 person trips.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Distribution figure",
+              "href": "volumes/ithaca.html#figure-fs-d01"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#distribution."
+        },
+        {
+          "id": "08",
+          "detail": "Approximately 547.640 drive, 172.911 direct-transit and 297.077 walk person trips; occupancy 1.3 yields 421.2613 PCE. Transit uses four departure ticks, without transfers or boarding validation.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Mode-choice figure",
+              "href": "volumes/ithaca.html#figure-fs-m01"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#mode."
+        },
+        {
+          "id": "09",
+          "detail": "All 110 positive vehicle OD pairs load 15,148 physical roads; the map joins saved PCE to frozen two-endpoint OSM segments, excluding virtual movements. Maximum physical v/c is 0.1126.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Physical-road flow map",
+              "href": "volumes/ithaca.html#figure-fs-a04"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#assignment and #figure-fs-a04."
+        },
+        {
+          "id": "10",
+          "detail": "New S110 FW: 110 OD, 421.261326 PCE/h, one initial record, 0 updates under 1e-5, signed gap−1.38750e-16. Max physical v/c≈0.1126 supports light loading of this scenario, not geographic-area causality. Original R2 trace stays separate.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Initial assignment check",
+              "href": "volumes/ithaca.html#figure-fs-a02"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#assignment and #figure-fs-a02.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "11",
+          "detail": "Official tap-b Algorithm B is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "12",
+          "detail": "S110 finite SLSQP accepted: 550 frozen paths, 421.261326 PCE/h, objective 1,638.7317576864 PCE·min/h, full gap≈−1.39e-16. Reports nit=1 but no separate iteration history. GC03 compares methods, not iteration states.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "13",
+          "detail": "S110 Native26/52 each has 4 actual outer solves; outer 1–3 fail conservation, outer 4 passes. Final OD residuals≈7.59e-11/1.25e-10 PCE/h. Exact link-variable elimination retains original-space checks. No Algorithm B endpoint.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "14",
+          "detail": "New separate fixed-cost T4: 4 shortest-input OD, 36,360 arc-times, 30-second steps, H 41, 0.656755360434 PCE pulse at 11:02:30. Full eligible arc-time coverage is checked; not DNL/DUE, and no new public route diagram.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "15",
+          "detail": "Accepted same-T4 exact-DAG LP certificate: objective 0.9184282689393537 PCE·min. Pulse 0.65675536 PCE<minimum physical arc capacity 2.5 PCE proves all capacity rows redundant; no HiGHS iteration run claimed.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "16",
+          "detail": "Accepted T4 CG saves one round per phase with 4 own seed paths, no added columns. Artificial 0 and full-DAG minimum reduced cost 0 close the nonbinding-capacity case. Two phases are not one objective trajectory.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "17",
+          "detail": "Accepted T4 LR: one iteration and own recovery, zero prices and projected subgradient, U/L≈0.918428268939353 PCE·min agree. Certified-gap stopping follows nonbinding capacity; not a fabricated multi-round flat line.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "18",
+          "detail": "S0 accepts exact saved T4 ADMM endpoint after two Full-bound read-only replays: one cold-start outer update, all original-unit gates pass, LP objective difference 2.18492e-13 PCE·min. Producer NUMERIC_PASS_CONFIRMATION_PENDING remains unchanged. Not a congestion stress test.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/ithaca.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "19",
+          "detail": "S0 release_v002 adds six approved aggregate figure families and corrected addendum, including current saved S110/T4 acceptance. Employment and observations do not recalibrate the frozen model. Exact route and 2022 source-row payloads remain private; no Algorithm B or DNL/DUE is implied.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved and fresh checks",
+              "href": "volumes/ithaca.html#results"
+            },
+            {
+              "label": "Reproduction status",
+              "href": "volumes/ithaca.html#reproduction"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/ithaca.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/ithaca.html#results, #limitations and #reproduction.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        }
+      ]
+    },
+    {
+      "slug": "berkeley",
+      "name": "Berkeley",
+      "cohort": "static",
+      "summary": "Central Berkeley · 3.884 km² · 13 zones · 08:00–09:00 HBW. 90 positive person OD pairs become 72 positive vehicle OD pairs.",
+      "volume_href": "volumes/berkeley.html",
+      "release_note": "Public four-stage figures and the separately bounded local turn candidate are available. The turn sidecar does not change the accepted conservative-deletion OD/FW result; the compute package remains pending.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "Two research tiles form a 3.884 km² central Berkeley union; 13 clipped tracts define demand. A larger 10.803 km² acquisition envelope is not the model boundary.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Case boundary and period ↗",
+              "href": "volumes/berkeley.html#scope"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#scope and #inputs."
+        },
+        {
+          "id": "02",
+          "detail": "The retained auto graph has 2,150 directed roads; 11 zones have auto access and all 13 have walk access. Conservative restriction screening removes 105 links; this is not complete turn-aware routing.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#inputs"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#inputs"
+        },
+        {
+          "id": "03",
+          "detail": "Selected 2020 Census blocks contain 31,821 residents; 2023 LODES supplies 16,583 primary workplace jobs. Housing units remain a separate field and are not relabelled households.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#inputs"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#inputs"
+        },
+        {
+          "id": "04",
+          "detail": "Direct AC Transit for 5 October 2026 is available on 38 directed zone pairs, with stop snaps limited to 120 m. BART, Bear Transit and transfers are excluded from the selected-day model.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#mode"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#mode"
+        },
+        {
+          "id": "05",
+          "detail": "No observed OD, independent link counts or field-audited entrances calibrate the case. The public Shattuck/Center turn sidecar is an engineering candidate, not observed or surveyed turn truth.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Local turn candidate and limits ↗",
+              "href": "volumes/berkeley.html#local-turn-candidate"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#local-turn-candidate and #limitations."
+        },
+        {
+          "id": "06",
+          "detail": "Assumed 0.65 HBW trips per resident/day and 35% hour share generate 7,239.2775 person trips. After capture/intrazonal accounting, 2,381.7223 person trips enter interzonal distribution.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Generation figure ↗",
+              "href": "volumes/berkeley.html#figure-f10-generation"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#generation."
+        },
+        {
+          "id": "07",
+          "detail": "Walking-network gravity and seven IPF iterations produce 90 positive person OD pairs, with 2.1453×10⁻⁵-person-trip margin error. A 90% forward / 10% reverse conversion retains all 13-zone context.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Distribution figure ↗",
+              "href": "volumes/berkeley.html#figure-f11-distribution"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#distribution."
+        },
+        {
+          "id": "08",
+          "detail": "OD-specific choice yields 1,238.9648 drive, 169.6685 direct-transit and 973.0890 walk person trips. Occupancy 1.30 yields 953.0498 PCE across 72 positive vehicle OD pairs.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Mode-choice figure ↗",
+              "href": "volumes/berkeley.html#figure-f12-mode-choice"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#mode."
+        },
+        {
+          "id": "09",
+          "detail": "All 72 positive vehicle OD pairs load the 2,150-link graph; 670 roads carry positive flow, maximum v/c ≈0.434. Restriction-based link removal can also remove lawful alternatives.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Physical assignment and limits ↗",
+              "href": "volumes/berkeley.html#figure-f13-assignment"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#assignment and #figure-f13-assignment."
+        },
+        {
+          "id": "10",
+          "detail": "Initial gap 1.6551×10⁻¹⁵ is below 10⁻⁴, with objective 2,746.0944 PCE-min and zero FW updates. The accepted result uses the unchanged conservative network, not the local turn sidecar.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Initial assignment check ↗",
+              "href": "volumes/berkeley.html#figure-f13-assignment"
+            }
+          ],
+          "source_note": "Public volumes/berkeley.html#assignment and #local-turn-candidate."
+        },
+        {
+          "id": "11",
+          "detail": "Official tap-b Algorithm B is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/berkeley.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "12",
+          "detail": "Finite-path SLSQP solved all 72 vehicle OD on the frozen K=5, 360-path pool; objective 2746.0944149794555 PCE·min and independently checked complete-graph gap 4.96534e-16.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-finite-reference"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        },
+        {
+          "id": "13",
+          "detail": "Native L3 ranks 26/52 passed original-coordinate and full-graph checks. Path coordinates are 98/124 plus 2,150 explicit link variables; no performance superiority is inferred.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-native-l3"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        },
+        {
+          "id": "14",
+          "detail": "The separate T4 finite graph has 92,578 states and 250,886 arcs for four first-bin OD pulses (10.439304601026 PCE), 30-second step and H165 horizon.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-time-semantics"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        },
+        {
+          "id": "15",
+          "detail": "Full arc-flow HiGHS LP solved the unchanged T4 at 43.66742440800644 PCE·min; independent primal-dual and complete-arc checks passed.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-t-lp"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        },
+        {
+          "id": "16",
+          "detail": "Two-phase CG closed the same T4 objective at 43.667424408006426 PCE·min with ten columns and full-DAG pricing.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-t-cg"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        },
+        {
+          "id": "17",
+          "detail": "The saved 300-iteration same-model cold-start LR diagnostic has now passed all 23 original formal-entry checks. The original ten-iteration run passed the unchanged 1% gate; first improvement is at 19 and best bound at 256. The saved zero gap is floating-point closure. R6 pending records are retained as historical export evidence. S0 batch v001 confirms the existing method identity and accepts the released original summary assets. Existing local presentation bytes retain their separate permission boundary; no new experiment is counted.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current formal status and retained figures ↗",
+              "href": "volumes/berkeley.html#berkeley-lr-current-status-20261007"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/berkeley.html#berkeley-admm-accuracy-r3"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "18",
+          "detail": "Post-diagnostic ADMM C2a stopped at cumulative outer 170; its own x objective differs from same-T4 LP by 5.31869009587e-5 (0.00531869%), within the unchanged 1e-4 gate. Physical-link flow is checked separately; maximum absolute ADMM–LP difference is 0.990967760238112 PCE. S0 batch v001 confirms the existing method identity and accepts the released original summary assets. Existing local presentation bytes retain their separate permission boundary; no new experiment is counted.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/berkeley.html#berkeley-t-admm"
+            },
+            {
+              "label": "Physical-flow comparison ↗",
+              "href": "volumes/berkeley.html#figure-admm-physical-flow-comparison"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/berkeley.html#berkeley-admm-accuracy-r3"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "19",
+          "detail": "Four-stage R3 saved replay and six negative fixtures passed; its fresh-solve/full-graph acceptance remains supported by earlier unchanged-input receiver evidence. Separately, accepted ADMM accuracy R3 passed two receiver formal saved replays and 12/12 corrupted-copy entry tests. Observation R2 S2 mapping is a separate evidence layer, not full-area assignment calibration.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Acceptance provenance ↗",
+              "href": "volumes/berkeley.html#results"
+            },
+            {
+              "label": "Reproduction status ↗",
+              "href": "volumes/berkeley.html#reproduction"
+            }
+          ],
+          "source_note": "Accepted Berkeley S72/T4 integration; canonical current docs/index.html; local reading candidate pending item-level S0 release."
+        }
+      ]
+    },
+    {
+      "slug": "chicago",
+      "name": "Chicago",
+      "cohort": "static",
+      "summary": "S0 release v002 adds three accepted post-diagnostic candidates on unchanged S20/T4 inputs: own-pool LR hybrid (0.8744685% certificate), uncompressed Native80 (three outer solves), and same-S20 Algorithm B (six reported iterations). Prior CG remains accepted on its own full-graph certificate. Original Native26/52 and pure LR759 failures remain; ADMM33 still fails and HiGHS remains resource-limited.",
+      "volume_href": "volumes/chicago.html",
+      "release_note": "Current reception: S0 gap release_v002, 2026-10-08. New method/model scopes are separate from earlier releases and historical failures. Only exact approved public assets are integrated; no website-side solver, matcher or replay.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "A 12.023 km² Jane Byrne/West Loop rectangle uses 4 October 2026 OSM roads and five clipped City community areas. It is separate from Chicago Sketch, Regional and teaching-network cases.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/chicago.html#scope"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#scope"
+        },
+        {
+          "id": "02",
+          "detail": "The final road graph has 15,133 nodes and 27,129 directed links, with five anchors in a strong component. OSM restriction relations were not fetched; real turn legality remains unverified.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Road assignment and restriction limits",
+              "href": "volumes/chicago.html#assignment"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#inputs and #assignment."
+        },
+        {
+          "id": "03",
+          "detail": "Original≈73,375 population and active-license attraction weights remain. New ACS 2019–2023 tract-area allocation adds 51,874.133727 households/occupied units across five zones. This estimate did not enter original generation and is not measured zone households.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/chicago.html#inputs"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#inputs; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "04",
+          "detail": "Drive is available on all 20 OD pairs; walk on ten under a 35-minute limit. CTA service-day costs were not obtained under its license; transit is Not modelled, not predicted zero ridership.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/chicago.html#mode"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#mode"
+        },
+        {
+          "id": "05",
+          "detail": "Historical 2011 data supplied a 1,778-point matching sample: native matching passed 2/10 distance gates, HMM 10/10. These internal smoke metrics are not surveyed accuracy or 2026 route observations.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Historical matching and limits",
+              "href": "volumes/chicago.html#limitations"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#limitations"
+        },
+        {
+          "id": "06",
+          "detail": "Assumed 0.4 daily HBW trips per resident and 35% hour share generate 10,272.5339 person trips; external/intrazonal accounting leaves 2,835.2193 internal interzonal person trips.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Generation figure",
+              "href": "volumes/chicago.html#figure-fs-g01"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#generation."
+        },
+        {
+          "id": "07",
+          "detail": "All 20 possible directed interzonal pairs are positive. Gravity/IPF takes 27 iterations with 2.4071×10⁻⁵-person-trip margin error; zone IDs are 8, 24, 28, 32 and 33.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Distribution figure",
+              "href": "volumes/chicago.html#figure-fs-d01"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#distribution."
+        },
+        {
+          "id": "08",
+          "detail": "OD-specific choice produces approximately 2,105.938 drive and 729.281 walk person trips. Occupancy 1.2 converts driving once to 1,754.9483 vehicle/PCE trips; transit is Not modelled.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Mode-choice figure",
+              "href": "volumes/chicago.html#figure-fs-m01"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#mode."
+        },
+        {
+          "id": "09",
+          "detail": "All 20 vehicle OD pairs load the saved 27,129-link graph; 1,891 links carry positive flow and maximum v/c is 0.97274. The geographic map retains each directed segment without summing serial flows.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Physical-road flow map",
+              "href": "volumes/chicago.html#figure-fs-a04"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#assignment and #figure-fs-a04."
+        },
+        {
+          "id": "10",
+          "detail": "Three actual FW updates reach gap 2.0989×10⁻⁵ below 10⁻⁴ and objective 5,601.4625 PCE-min. The saved trace contains the initial assignment plus those three updates.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Recorded FW trace",
+              "href": "volumes/chicago.html#figure-fs-a02"
+            }
+          ],
+          "source_note": "Public volumes/chicago.html#assignment and #figure-fs-a02."
+        },
+        {
+          "id": "11",
+          "detail": "Same-original-S20 B is S0 accepted through a lossless integer-ID adapter: 20 OD, 1,754.948251 PCE/h, six saved iterations; signed full gap 1.58075e-9, objective 5,601.4614682869 PCE·min/h. No official Chicago converter byte-parity claim.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/chicago.html static scope; no corresponding result is claimed.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "12",
+          "detail": "Retry R2 reuses the prior accepted S20 finite-path reference: 100 saved paths, objective 5601.461468286856 PCE·min and full-graph relative gap 8.005091514776758e-12. This is the one-hour static model, separate from T4 CG. No new finite-path solve is claimed; released summaries are now integrated with notice.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-s-flow"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "13",
+          "detail": "New uncompressed Native80 passes at outer 3: 20 major+80 minor, U=I80, gap 1.48998e-12, OD residual 1.78858e-10 PCE/h. Original rank 26/52 still fail gaps≈0.00638167/0.00479636. This is not compression success.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-s-convergence"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "14",
+          "detail": "S0 retry R2 reception: The retry T4 contains 490,223 states and 1,351,628 arcs, 66.53295454563035 PCE, 30-second steps and H169. It differs from the original S20 one-hour static case and other cities’ T4 demand. A separately constructed feasible witness is neither LR’s own recovery nor an optimality certificate. Saved input diagrams below retain their input-only scope. The released figure and plot-data assets are now integrated with notice.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved input figures ↗",
+              "href": "volumes/chicago.html#chicago-r3-input-construction-ledger"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-t-input-seed-paths"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "15",
+          "detail": "S0 retry R2 reception: HiGHS RESOURCE_LIMIT. No independent implementation certificate; this does not erase CG’s own primal/dual certificate. The released figure and plot-data assets are now integrated with notice.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "16",
+          "detail": "S0 retry R2 reception: CG ACCEPTED. Primal 241.2185242449435; dual 241.2185242449434 PCE·min; 425 columns, 268 saved round records and independently checked full-graph pricing closure. The released figure and plot-data assets are now integrated with notice.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-t-cg"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "17",
+          "detail": "New own-pool LR hybrid accepted: 26 feasibility rounds+10 bound/price iterations, 182 own paths, U 241.2268172335/L 239.1173646810 PCE·min, gap 0.8744685%≤1%. Original pure LR759 has no own feasible upper and remains failed.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-t-lr"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "18",
+          "detail": "Current ADMM33 is EXPECTED_SOLVER_GATE_FAILURE: full history 1–33, public increment 9–33. Capacity excess 1.491228076 PCE; primal/dual remain≈618.27/174.74 times gates. Saved x objective is not a feasible upper. Old outer 9 failure remains.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Current evidence gaps",
+              "href": "figure-update-status.html#chicago"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/chicago.html#released-c06-t-admm-main"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "19",
+          "detail": "S0 release_v002 accepts new LR hybrid, Native80 and same-S20 B. Prior full-graph CG acceptance remains; original rank 26/52, pure LR759, ADMM33 failures and HiGHS limit stay explicit. New households and D input ledger did not rerun four-stage outputs or produce DNL/DUE.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Saved and fresh checks",
+              "href": "volumes/chicago.html#results"
+            },
+            {
+              "label": "Reproduction status",
+              "href": "volumes/chicago.html#reproduction"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/chicago.html#chicago-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/chicago.html#algorithm-retry-r2"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/chicago.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        }
+      ]
+    },
+    {
+      "slug": "pittsburgh",
+      "name": "Pittsburgh",
+      "cohort": "static",
+      "summary": "S0 release v002 accepts same-S72 Native rank26/52 continuations at outer14: OD residuals 8.0701e-8 and 2.6256e-7 PCE pass the original 1e-6 gate together with full gap, nonnegativity and reconstruction. Outer1–8 failures remain historical. Prior T4 LP/CG/LR/ADMM and corrected PIT_T05 remain unchanged; Pit30M matching returned zero route links.",
+      "volume_href": "volumes/pittsburgh.html",
+      "release_note": "Current reception: S0 gap release_v002, 2026-10-08. New method/model scopes are separate from earlier releases and historical failures. Only exact approved public assets are integrated; no website-side solver, matcher or replay.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "The 19.77 km² East End rectangle covers Oakland, Shadyside and Squirrel Hill, with a larger routing halo. CMU is a landmark; the earlier 4.35 km² preflight is a separate source product.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/pittsburgh.html#scope"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#scope"
+        },
+        {
+          "id": "02",
+          "detail": "41 distinct OUT-state zone access points load 17,534 physical traversal and 38,850 virtual movement arcs. OUT-state loading omits the first physical link; conservative via-way closures can remove legal alternatives.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/pittsburgh.html#assignment"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#assignment"
+        },
+        {
+          "id": "03",
+          "detail": "1,130 selected 2020 blocks aggregate into 41 tract-ID groups: 71,684 residents, 32,432 occupied units and 91,801 jobs from 2023 LODES. These are selected-block, not whole-tract totals.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/pittsburgh.html#inputs"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#inputs"
+        },
+        {
+          "id": "04",
+          "detail": "Driving covers every positive OD; walking is unavailable for 105 positive-demand pairs. No accepted timetable/path input supports transit, so transit is Not modelled.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence",
+              "href": "volumes/pittsburgh.html#mode"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#mode"
+        },
+        {
+          "id": "05",
+          "detail": "New Pit30M diagnostic made an actual native matcher call on 173 inputs and returned zero route links. No matched route, direction, bridge/tunnel/layer, turn-legality or calibration claim follows. Earlier small-preflight evidence stays separate; exact GPS remains private.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Observation limitations",
+              "href": "volumes/pittsburgh.html#limitations"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/pittsburgh.html#gap-20261008"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#limitations; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "06",
+          "detail": "Transferred 1.90 HBW trips per occupied unit/day and assumed 25% hour share generate 15,405.2 person trips. LODES-derived scalar proxies leave 4,007.5466 internal interzonal person trips; they are not measured hourly rates.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Generation figure",
+              "href": "volumes/pittsburgh.html#figure-fs-g01"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#inputs and #generation."
+        },
+        {
+          "id": "07",
+          "detail": "Four IPF iterations produce 1,406 positive OD pairs with 1.6168×10⁻⁶-person-trip margin residual. A 100% forward convention conserves 4,007.5466 person trips; the updated heatmap retains all 41 model zones, including two zero-demand rows/columns.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/pittsburgh.html#figure-fs-d01"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "08",
+          "detail": "Approximately 3,138.9 drive and 868.6 walk person trips result from OD-specific costs; occupancy 1.2 yields 2,615.7673 vehicles/PCE. Transit is Not modelled, and pedestrian capacity is not assigned.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Mode-choice figure",
+              "href": "volumes/pittsburgh.html#figure-fs-m01"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#mode."
+        },
+        {
+          "id": "09",
+          "detail": "All 1,406 positive vehicle OD pairs load the declared graph; 4,971 physical links carry flow and maximum v/c is 0.924094. The physical-road map excludes movement arcs and retains the OUT-state endpoint convention.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Physical-road flow map",
+              "href": "volumes/pittsburgh.html#figure-fs-a01"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#assignment."
+        },
+        {
+          "id": "10",
+          "detail": "Initial gap 4.7740×10⁻⁷ is below 10⁻⁴, objective is 12,081.0666 PCE-min and no FW updates are needed. This internal-demand-only scenario does not measure total road congestion.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Initial assignment check",
+              "href": "volumes/pittsburgh.html#figure-fs-a02"
+            }
+          ],
+          "source_note": "Public volumes/pittsburgh.html#assignment and #figure-fs-a02."
+        },
+        {
+          "id": "11",
+          "detail": "Official tap-b Algorithm B is not included in this bounded static case.",
+          "status": "not_in_scope",
+          "links": [],
+          "source_note": "Original docs/index.html additional static coverage and public volumes/pittsburgh.html static scope; no corresponding result is claimed."
+        },
+        {
+          "id": "12",
+          "detail": "Separate selected S72 transfer: 72 OD, 149.9214239 PCE/hour, 360 finite paths. Independent check passes with objective 763.227941458126 PCE min, zero OD/reconstruction error and full-graph gap 1.49e−15. The original 1,406-OD instance is distinct.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Saved figure and evidence ↗",
+              "href": "volumes/pittsburgh.html#pit-r3-static-reference"
+            }
+          ],
+          "source_note": "Reviewed saved independent check and current local reading figure."
+        },
+        {
+          "id": "13",
+          "detail": "S0 accepts same-S72 Native26/52 outer 14: OD maxima 8.07013e-8/2.62564e-7 PCE pass original 1e-6 gate, with full gap, nonnegative and reconstruction checks. Each rank has 14 checks; original outer 1–8 failures remain. PIT_G05 differs from prior PIT_T05 unit correction.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-s02"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/pittsburgh.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "14",
+          "detail": "The frozen T4 graph has 1,811,888 arcs, four OD and a 0.04502754845355 PCE pulse at 08:02:30, 30-second steps and H117. Final v7 now includes computed paths. The retained two figures show input construction only; new result figures are released with notice. Minimum physical time-arc capacity is 2.5 PCE and is nonbinding.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-at00"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "15",
+          "detail": "Final v7 S0 acceptance uses an exact-DAG LP certificate on the same T4: primal 0.24793241990274612 and dual 0.2479324199027458 PCE·min. The separate HiGHS attempt stopped at RESOURCE_LIMIT without a solution. The allowed result figures are integrated with notice.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-t08"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "16",
+          "detail": "Prior T4 CG unchanged: one round per phase, four own seed paths, no added columns, zero artificial and full-DAG minimum reduced cost. Pulse 0.04502754845 PCE<minimum arc capacity 2.5 PCE proves capacity redundancy; no area-size causality or new T4 run is claimed.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-t03"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/pittsburgh.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        },
+        {
+          "id": "17",
+          "detail": "Final v7 LR is S0 accepted with own feasible upper 0.2479324199027461 and lower 0.24793241990274573 PCE·min. The max(1,abs(U))-normalized contract gap is 3.608224830031759e-16; true relative difference is about 1.45532594384e-15. New figures are released with notice.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-t04"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration."
+        },
+        {
+          "id": "18",
+          "detail": "Final v7 ADMM is S0 accepted after one actual outer update and an independent same-configuration cold-start confirmation. Saved own-x objective is 0.2479324199052491 PCE·min; true relative LP difference is 1.0095484124259508e-11. Thirteen figure families are integrated following the separate S0 release of corrected PIT_T05. The stopping-gate figure keeps primal residual and threshold in PCE, and rho-scaled dual residual and threshold in minutes; frozen numerical values are unchanged.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Current figure in city volume ↗",
+              "href": "volumes/pittsburgh.html#released-pit-t05"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration. Separate PIT_T05 final-byte release SHA 95d31d2e7d54b8e31aea31e69745d4d834487a23909183d8f9a96d8c06e78ca8."
+        },
+        {
+          "id": "19",
+          "detail": "S0 release_v002 adds accepted S72 Native outer 14 and PIT_G05. Prior v7 T4 and corrected PIT_T05 exact-byte acceptance remain, with old outer 8 failure and HiGHS resource limit retained. Pit30M returned zero route links; website integration runs no solver or replay.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Historical Final v4 status and exact quarantine boundary ↗",
+              "href": "volumes/pittsburgh.html#pittsburgh-final-v4-status"
+            },
+            {
+              "label": "Historical pre-release intake",
+              "href": "volumes/pittsburgh.html#pittsburgh-late-status-20261008"
+            },
+            {
+              "label": "Current S0 result and released figures",
+              "href": "volumes/pittsburgh.html#algorithm-transfer-r2"
+            },
+            {
+              "label": "Corrected ADMM stopping-gate figure ↗",
+              "href": "volumes/pittsburgh.html#released-pit-t05"
+            },
+            {
+              "label": "Current gap addendum ↗",
+              "href": "volumes/pittsburgh.html#gap-20261008"
+            }
+          ],
+          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration. Separate PIT_T05 final-byte release SHA 95d31d2e7d54b8e31aea31e69745d4d834487a23909183d8f9a96d8c06e78ca8.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+        }
+      ]
+    },
+    {
+      "slug": "sioux-falls",
+      "name": "Sioux Falls · demonstration benchmark",
+      "cohort": "original",
+      "summary": "Classic supplied-OD benchmark and separate selected-OD finite graphs; no upstream city demand compiler.",
+      "volume_href": "volumes/sioux-falls.html",
+      "release_note": "Original cross-method evidence and its stated scope are retained. Static and finite instances remain separate.",
+      "rows": [
+        {
+          "id": "01",
+          "detail": "Frozen classic 24-node/76-link source graph and supplied vehicle OD.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-01"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 01; volumes/sioux-falls.html#coverage-row-01"
+        },
+        {
+          "id": "02",
+          "detail": "24-node, 76-link supplied directed benchmark.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-02"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 02; volumes/sioux-falls.html#coverage-row-02"
+        },
+        {
+          "id": "03",
+          "detail": "Supplied OD; no demographic city compiler.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-03"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 03; volumes/sioux-falls.html#coverage-row-03"
+        },
+        {
+          "id": "04",
+          "detail": "No GTFS or pedestrian city-input lane.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-04"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 04; volumes/sioux-falls.html#coverage-row-04"
+        },
+        {
+          "id": "05",
+          "detail": "No modern GPS or detector observations.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-05"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 05; volumes/sioux-falls.html#coverage-row-05"
+        },
+        {
+          "id": "06",
+          "detail": "Vehicle OD supplied; no trip-generation run.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-06"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 06; volumes/sioux-falls.html#coverage-row-06"
+        },
+        {
+          "id": "07",
+          "detail": "Supplied OD is input.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-07"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 07; volumes/sioux-falls.html#coverage-row-07"
+        },
+        {
+          "id": "08",
+          "detail": "Vehicle OD supplied; no mode-choice run.",
+          "status": "not_in_scope",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-08"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 08; volumes/sioux-falls.html#coverage-row-08"
+        },
+        {
+          "id": "09",
+          "detail": "Static network flow from supplied vehicle OD; no upstream four-stage compiler.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-09"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 09; volumes/sioux-falls.html#coverage-row-09"
+        },
+        {
+          "id": "10",
+          "detail": "Classic 528-OD static FW, with ID-matched link-flow comparison against Algorithm B.",
+          "status": "available",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-10"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 10; volumes/sioux-falls.html#coverage-row-10"
+        },
+        {
+          "id": "11",
+          "detail": "Official TAPLab registered-adapter parity passes on Sioux Falls.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-11"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 11; volumes/sioux-falls.html#coverage-row-11"
+        },
+        {
+          "id": "12",
+          "detail": "Frozen 2,218-path B_BECKMANN native candidate; full-network UE remains uncertified.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-12"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 12; volumes/sioux-falls.html#coverage-row-12"
+        },
+        {
+          "id": "13",
+          "detail": "Rank-50 classic static benchmark candidates.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-13"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 13; volumes/sioux-falls.html#coverage-row-13"
+        },
+        {
+          "id": "14",
+          "detail": "Selected 200/250-OD finite graphs; saved time-indexed columns.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-14"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 14; volumes/sioux-falls.html#coverage-row-14"
+        },
+        {
+          "id": "15",
+          "detail": "Own selected-graph LP references for historical 200/250 ODs.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-15"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 15; volumes/sioux-falls.html#coverage-row-15"
+        },
+        {
+          "id": "16",
+          "detail": "Separate historical 200 / 250-OD CG results; independent full-DAG pricing closure is not established.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-16"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 16; volumes/sioux-falls.html#coverage-row-16"
+        },
+        {
+          "id": "17",
+          "detail": "Saved P07 best-dual and recovered feasible-primal traces for separate 200-OD and 250-OD instances; final certified gaps are 0.0746% and 0.3177%.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-17"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 17; volumes/sioux-falls.html#coverage-row-17"
+        },
+        {
+          "id": "18",
+          "detail": "Selected 200/250-OD original-space checks on finite graphs; the static 528-OD benchmark is a separate case.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-18"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 18; volumes/sioux-falls.html#coverage-row-18"
+        },
+        {
+          "id": "19",
+          "detail": "Given-input benchmark exports, static implementations and selected-OD finite checks. Historical CG pricing closure remains a separate limitation.",
+          "status": "limited",
+          "links": [
+            {
+              "label": "Read evidence ↗",
+              "href": "volumes/sioux-falls.html#coverage-row-19"
+            }
+          ],
+          "source_note": "Original docs/index.html, first coverage matrix, Sioux Falls, row 19; volumes/sioux-falls.html#coverage-row-19"
+        }
+      ],
+      "case_role": "demonstration-benchmark"
+    }
+  ],
+  "status_labels": {
+    "available": "Public evidence",
+    "limited": "Bounded evidence",
+    "not_in_scope": "Not part of this case",
+    "not_public": "Not publicly released"
+  },
+  "status_note": "Status describes available evidence and scope, not empirical validation. Numerical acceptance and publication permission are different decisions."
+}

@@ -1,0 +1,601 @@
+{
+  "figure_id": "R9-PITTSBURGH-PITTSBURGH-ADMM-CONSERVATION-R11",
+  "city": "pittsburgh",
+  "instance": "At the single saved completed ADMM iteration 1, reconstruct original-unit outflow minus inflow minus commodity supply using the exact saved arc order and the original loader’s lexically sorted 700,226 time-node identities. All four commodity maximum residuals and their worst-node IDs match the previously saved independent check exactly; the overall maximum is 2.7850292342213303e−15 PCE against the unchanged 1e−5 PCE gate. The heatmap shows the 35 nodes with largest maximum residual over all four commodities, with lexical node-order tie breaking; all nodes were included in selection. Values ≤1e−15 use a display-floor color without changing data. The color ceiling is the gate, and the figure does not imply an iteration history. Original OUT-state loading is unchanged. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 asset release is claimed.\n",
+  "role": "saved-result presentation",
+  "conclusion": "ADMM: final commodity conservation",
+  "panels": [
+    {
+      "grid_shape": [
+        4,
+        35
+      ],
+      "all_nodes_checked": 700226,
+      "display_floor_pce": 1e-15,
+      "ceiling_and_gate_pce": 1e-05,
+      "saved_completed_updates": 1,
+      "raw_values_sha256": "db3c6edd54cf630205552527e7dc13277a0f680ae00f6b76702d9f956a71f9ce"
+    }
+  ],
+  "quantity": "Absolute original-commodity node-balance residual",
+  "unit": "PCE",
+  "render_method": "data-replot",
+  "original_asset": "docs/assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.svg",
+  "original_asset_sha256": "5f73b43d5d4fa46887ac7c8be501e9ada90d90cedf223ea09e1a042906b3da75",
+  "original_home_ids": [
+    "R9-PITTSBURGH-PITTSBURGH-ADMM-CONSERVATION"
+  ],
+  "original_volume_anchors": [
+    "figure-r9-pittsburgh-admm-conservation"
+  ],
+  "scope_note": "At the single saved completed ADMM iteration 1, reconstruct original-unit outflow minus inflow minus commodity supply using the exact saved arc order and the original loader’s lexically sorted 700,226 time-node identities. All four commodity maximum residuals and their worst-node IDs match the previously saved independent check exactly; the overall maximum is 2.7850292342213303e−15 PCE against the unchanged 1e−5 PCE gate. The heatmap shows the 35 nodes with largest maximum residual over all four commodities, with lexical node-order tie breaking; all nodes were included in selection. Values ≤1e−15 use a display-floor color without changing data. The color ceiling is the gate, and the figure does not imply an iteration history. Original OUT-state loading is unchanged. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 asset release is claimed.\n The heatmap is the saved final spatial conservation state, not an iteration-history heatmap. The displayed color floor and unchanged gate are retained; all exact raw residual values remain in the linked public plot data.",
+  "schema": "mcl_figure_r11",
+  "caption": "At the single saved completed ADMM iteration 1, reconstruct original-unit outflow minus inflow minus commodity supply using the exact saved arc order and the original loader’s lexically sorted 700,226 time-node identities. All four commodity maximum residuals and their worst-node IDs match the previously saved independent check exactly; the overall maximum is 2.7850292342213303e−15 PCE against the unchanged 1e−5 PCE gate. The heatmap shows the 35 nodes with largest maximum residual over all four commodities, with lexical node-order tie breaking; all nodes were included in selection. Values ≤1e−15 use a display-floor color without changing data. The color ceiling is the gate, and the figure does not imply an iteration history. Original OUT-state loading is unchanged. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 asset release is claimed.\n The heatmap is the saved final spatial conservation state, not an iteration-history heatmap. The displayed color floor and unchanged gate are retained; all exact raw residual values remain in the linked public plot data.",
+  "sources": [
+    {
+      "public_path": "docs/assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.svg",
+      "sha256": "5f73b43d5d4fa46887ac7c8be501e9ada90d90cedf223ea09e1a042906b3da75",
+      "role": "Unchanged prior display asset"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.plot_data.json",
+      "sha256": "77baafe463c9af25eb8fc9c2349f53d5cc525dc62ecf7de32320156ec4ad6313",
+      "role": "Approved saved public plot data"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "ADMM: final commodity conservation",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 38.376,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true,
+    "all_labels_editable": true,
+    "retained_outlined_legacy_labels": false
+  },
+  "dimensions": [
+    3188,
+    1007
+  ],
+  "exports": {
+    "svg": "8fb2d92273feb96324af3983f08959baf6b0920254c609a0a8748f5956e078f5",
+    "png": "468b3e5b33514e2efd7332fc1039275a5f4b8cde681ec286d69e9f59bcb0d1c2",
+    "pdf": "f4fd40317c2353bbaea4483f6367bde85d28a794e43e91b9f43fe3144bf2e7cd"
+  },
+  "text_audit": [
+    {
+      "text": "Selected time-node identity",
+      "size_pt": 9.0,
+      "bounds_px": [
+        456.346,
+        15.472,
+        174.625,
+        13.0
+      ]
+    },
+    {
+      "text": "OUT:10606@t59",
+      "size_pt": 7.0,
+      "bounds_px": [
+        90.593,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12484@t50",
+      "size_pt": 7.0,
+      "bounds_px": [
+        116.979,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12484@t64",
+      "size_pt": 7.0,
+      "bounds_px": [
+        143.365,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12484@t74",
+      "size_pt": 7.0,
+      "bounds_px": [
+        169.752,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12484@t88",
+      "size_pt": 7.0,
+      "bounds_px": [
+        196.138,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12527@t69",
+      "size_pt": 7.0,
+      "bounds_px": [
+        222.524,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12840@t82",
+      "size_pt": 7.0,
+      "bounds_px": [
+        248.91,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12945@t75",
+      "size_pt": 7.0,
+      "bounds_px": [
+        275.296,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12973@t58",
+      "size_pt": 7.0,
+      "bounds_px": [
+        301.682,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12979@t63",
+      "size_pt": 7.0,
+      "bounds_px": [
+        328.069,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:22936@t65",
+      "size_pt": 7.0,
+      "bounds_px": [
+        354.455,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:28459@t103",
+      "size_pt": 7.0,
+      "bounds_px": [
+        380.841,
+        34.028,
+        9.0,
+        88.25
+      ]
+    },
+    {
+      "text": "OUT:28459@t93",
+      "size_pt": 7.0,
+      "bounds_px": [
+        407.227,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:29212@t83",
+      "size_pt": 7.0,
+      "bounds_px": [
+        433.613,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:50947@t64",
+      "size_pt": 7.0,
+      "bounds_px": [
+        460.0,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19357@t41",
+      "size_pt": 7.0,
+      "bounds_px": [
+        486.386,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t103",
+      "size_pt": 7.0,
+      "bounds_px": [
+        512.772,
+        34.028,
+        9.0,
+        88.25
+      ]
+    },
+    {
+      "text": "OUT:19372@t63",
+      "size_pt": 7.0,
+      "bounds_px": [
+        539.158,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t67",
+      "size_pt": 7.0,
+      "bounds_px": [
+        565.544,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t71",
+      "size_pt": 7.0,
+      "bounds_px": [
+        591.93,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t75",
+      "size_pt": 7.0,
+      "bounds_px": [
+        618.317,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t79",
+      "size_pt": 7.0,
+      "bounds_px": [
+        644.703,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t83",
+      "size_pt": 7.0,
+      "bounds_px": [
+        671.089,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t87",
+      "size_pt": 7.0,
+      "bounds_px": [
+        697.475,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t91",
+      "size_pt": 7.0,
+      "bounds_px": [
+        723.861,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t95",
+      "size_pt": 7.0,
+      "bounds_px": [
+        750.247,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:19372@t99",
+      "size_pt": 7.0,
+      "bounds_px": [
+        776.634,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:747@t48",
+      "size_pt": 7.0,
+      "bounds_px": [
+        803.02,
+        52.403,
+        9.0,
+        69.875
+      ]
+    },
+    {
+      "text": "OUT:747@t52",
+      "size_pt": 7.0,
+      "bounds_px": [
+        829.406,
+        52.403,
+        9.0,
+        69.875
+      ]
+    },
+    {
+      "text": "OUT:747@t56",
+      "size_pt": 7.0,
+      "bounds_px": [
+        855.792,
+        52.403,
+        9.0,
+        69.875
+      ]
+    },
+    {
+      "text": "OUT:12490@t100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        882.178,
+        34.028,
+        9.0,
+        88.25
+      ]
+    },
+    {
+      "text": "OUT:12490@t76",
+      "size_pt": 7.0,
+      "bounds_px": [
+        908.564,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12832@t64",
+      "size_pt": 7.0,
+      "bounds_px": [
+        934.951,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12832@t79",
+      "size_pt": 7.0,
+      "bounds_px": [
+        961.337,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OUT:12832@t90",
+      "size_pt": 7.0,
+      "bounds_px": [
+        987.723,
+        40.153,
+        9.0,
+        82.125
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.553,
+        259.0,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.553,
+        221.0,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.553,
+        183.0,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.553,
+        145.0,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Absolute balance residual (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1084.656,
+        105.312,
+        13.0,
+        205.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-17}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        93.1,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        123.5,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        153.9,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        184.3,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        215.3,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        245.7,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        276.1,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1047.016,
+        306.5,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "PITTSBURGH",
+      "size_pt": 8.7,
+      "bounds_px": [
+        76.05,
+        327.956,
+        94.0,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM: final commodity conservation",
+      "size_pt": 15.0,
+      "bounds_px": [
+        76.05,
+        301.011,
+        443.0,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "prior_layout_caption": "At the single saved completed ADMM iteration 1, reconstruct original-unit outflow minus inflow minus commodity supply using the exact saved arc order and the original loader’s lexically sorted 700,226 time-node identities. All four commodity maximum residuals and their worst-node IDs match the previously saved independent check exactly; the overall maximum is 2.7850292342213303e−15 PCE against the unchanged 1e−5 PCE gate. The heatmap shows the 35 nodes with largest maximum residual over all four commodities, with lexical node-order tie breaking; all nodes were included in selection. Values ≤1e−15 use a display-floor color without changing data. The color ceiling is the gate, and the figure does not imply an iteration history. Original OUT-state loading is unchanged. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 asset release is claimed.\n The heatmap is the saved final spatial conservation state, not an iteration-history heatmap. The displayed color floor and unchanged gate are retained; all exact raw residual values remain in the linked public plot data.",
+  "legacy_renderer_sha256": "04806fd7331ee9a21fab285a731a7bffb19f02a537d2f72c1efa8ac6fb9c3ac4",
+  "pdf_adapter_sha256": "c4c08e56cb76e0609b343e3a6581ff68e4d089d95683cbde39fe263eaf3d45a7",
+  "visual_qa": "PASS: directly inspected exported PNG"
+}

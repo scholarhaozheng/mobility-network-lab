@@ -54,6 +54,9 @@ def clean(node):
 
 def table(node):
     node=deepcopy(node)
+    if 'comparison-table' in node.get('class',[]):
+        for row in node.select('.cmp-summary-row'):row.decompose()
+        for control in node.select('.cmp-group-toggle'):control.decompose()
     if 'coverage-matrix' in node.get('class',[]):
         for label in node.select('th > span, th > small'):label.insert_after(' · ')
     t=clean(node);t['width']='100%'
@@ -64,6 +67,12 @@ def table(node):
     return str(t)+'\n\n'
 
 def image_cell(card,columns):
+    if card.get('data-r11-policy') or card.get('data-r12-figures'):
+        series=card.select_one('.r11-figure-series, .r12-figure-series')
+        if series:
+            panels=series.select('.r11-panel, .r12-panel');width=str(round(100/max(1,len(panels))))+'%'
+            return '<table width="100%"><tr>'+''.join('<td valign="top" width="'+width+'">'+str(clean(p))+'</td>' for p in panels)+'</tr></table>'
+        return ''
     images=card.select('.atlas-image img')
     # Give every figure its original aspect ratio. Table rows align their tops
     # and place all following descriptions at a common vertical position.
@@ -84,6 +93,7 @@ class Exporter:
     def gallery(self,gallery,label=None):
         self.gallery_count+=1
         cards=gallery.find_all(class_='atlas-card',recursive=False)
+        if not cards:return ''
         stage=gallery.find_parent(class_='atlas-stage')
         is_hk_transit=stage and stage.get('data-stage')=='hong-kong-transit'
         cols=4 if is_hk_transit else int(gallery.get('data-columns',min(3,len(cards))))
@@ -105,6 +115,7 @@ class Exporter:
                         description.extend(str(clean(c)) for c in child.select('figcaption'))
                         continue
                     # A two-image companion uses a wrapper with figcaptions.
+                    if 'r11-figure-series' in cl or 'r12-figure-series' in cl:continue
                     if child.select('.atlas-image'):
                         description.extend(str(clean(c)) for c in child.select('figcaption'))
                         continue
@@ -197,7 +208,10 @@ class Exporter:
                 if len(row)<4:out+='<td colspan="'+str(4-len(row))+'"></td>'
                 out+='</tr>\n'
             return out+'</table>\n\n'
-        if node.get('id')=='project-map-help':return '[Full-size SVG]('+SITE+'assets/atlas/project-map.svg) · [PNG](docs/assets/atlas/figures/g-f001.png) · [Accessible module and source table]('+SITE+'volumes/overview.html#src-docs-architecture-document).\n\n'
+        # Keep homepage map instructions and its current accessible-table link.
+        # The normal paragraph/details branches preserve both text and anchors.
+        if 'coverage-comparison' in cls:
+            return anchor('six-city-coverage')+inline(node.select_one('.cmp-intro'))+'\n\n'+table(node.select_one('.comparison-table'))+str(clean(node.select_one('.cmp-scope')))+'\n\n'
         if node.name=='table':return table(node)
         if node.name in ('h1','h2','h3','h4','h5','h6'):
             return anchor(node.get('id'))+'#'*int(node.name[1])+' '+inline(node).strip()+'\n\n'
@@ -206,7 +220,12 @@ class Exporter:
         if node.name in ('ul','ol'):
             return ''.join(('- ' if node.name=='ul' else str(i+1)+'. ')+(('<a id="'+esc(x['id'])+'"></a>') if x.get('id') else '')+inline(x).strip()+'\n' for i,x in enumerate(node.find_all('li',recursive=False)))+'\n'
         if node.name=='pre':return '~~~bash\n'+node.get_text().strip()+'\n~~~\n\n'
-        if node.name=='details':return str(clean(node))+'\n\n'
+        if node.name=='details':
+            if node.select('.atlas-card'):
+                summary=node.find('summary',recursive=False)
+                body=''.join(self.render(c) for c in node.children if c is not summary)
+                return '<details><summary>'+inline(summary)+'</summary>\n\n'+body+'</details>\n\n'
+            return str(clean(node))+'\n\n'
         return ''.join(self.render(c) for c in node.children)
 
 def main():
@@ -226,7 +245,7 @@ def main():
         parts.append(exporter.render(child))
         if isinstance(child,Tag) and child.name=='h1':
             parts.append('**Project website: ['+SITE+']('+SITE+')**\n\n')
-            parts.append('[Overview]('+SITE+'volumes/overview.html) · [Boston]('+SITE+'volumes/boston.html) · [Sioux Falls]('+SITE+'volumes/sioux-falls.html) · [Hong Kong]('+SITE+'volumes/hong-kong.html) · [Reproduction guide]('+SITE+'reproduction.html) · [Experiment catalog]('+SITE+'reproduce.html)\n\n')
+            parts.append('[Overview]('+SITE+'volumes/overview.html) · [Boston]('+SITE+'volumes/boston.html) · [Hong Kong]('+SITE+'volumes/hong-kong.html) · [Ann Arbor]('+SITE+'volumes/ann-arbor.html) · [Urbana–Champaign]('+SITE+'volumes/urbana-champaign.html) · [Ithaca]('+SITE+'volumes/ithaca.html) · [Berkeley]('+SITE+'volumes/berkeley.html) · [Chicago]('+SITE+'volumes/chicago.html) · [Pittsburgh]('+SITE+'volumes/pittsburgh.html) · [Sioux Falls demonstration]('+SITE+'volumes/sioux-falls.html) · [Reproduction guide]('+SITE+'reproduction.html) · [Experiment catalog]('+SITE+'reproduce.html)\n\n')
             parts.append('[01 Contributions](#01-what-this-project-adds) · [02 Project structure](#02-complete-project-structure) · [03 Coverage](#03-case-coverage-and-selected-evidence) · [04 City atlas](#04-explore-the-three-cases) · [05 Run and inspect](#05-run-and-inspect) · [06 Attribution](#06-attribution-scope-and-further-reading)\n\n')
         if isinstance(child,Tag) and child.get('id')=='04-explore-the-three-cases':
             parts.append('This README shows the complete static atlas in the same city, stage and method groups as the website. The [website atlas]('+SITE+'#04-explore-the-three-cases) also offers city and stage views. Both Sioux Falls OD scales are expanded here.\n\n')

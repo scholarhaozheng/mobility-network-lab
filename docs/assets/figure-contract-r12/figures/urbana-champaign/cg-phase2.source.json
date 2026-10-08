@@ -1,0 +1,284 @@
+{
+  "figure_id": "R12-CG-PHASE2",
+  "city": "urbana-champaign",
+  "instance": "Original four-OD T4; one saved round per phase",
+  "role": "saved-state-check",
+  "conclusion": "Column generation: Phase II real cost",
+  "panels": {
+    "a": "Saved Phase II objective and independent LP"
+  },
+  "quantity": "real fixed-cost objective",
+  "unit": "PCE·min",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/city-alignment-r3/urbana-transfer/cg-objective.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "One actual saved Phase II round. CG real cost is 0.3759836651335291 PCE·min; the separate same-graph LP reference is 0.37598366513352877 PCE·min. The marker and dashed reference can coincide at displayed precision. No Phase I artificial objective is connected to this real-cost objective. No new column after the four seed paths.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-phase1.plot_data.json",
+      "sha256": "5afae0e1fd0cc823f550d6c5045dea49ff9a685fb818fd37e007fc977b35dec5"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-phase1.source.json",
+      "sha256": "05231ed67962f063f92fc99ac14df12c6d857893a4c0f63d89d42e9bdc375dbc"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-closure.plot_data.json",
+      "sha256": "b18c212d46ffdd1fe75cd619c1c7d5707998e013480e96f13e70210b831ed381"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-objective.plot_data.json",
+      "sha256": "16bceab5bf35c12751c4252895158c4f175906bd21ba73f068599a3083512f92"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-objective.source.json",
+      "sha256": "49403fe7f16ed0e1b883a1ef2e45de0d19f17b11784c3283eab760c5767c3af8"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/cg-closure.source.json",
+      "sha256": "6651f04985bf435f7bbf2a14b45335ce1354fe209e168e02720f20a83f118d6b"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.plot_data.json",
+      "sha256": "a62657cce3f7dfa78a7ef153f41e7efb172eb639a2c0e0b60ee2758c7a7b6abe"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/GATES.json",
+      "sha256": "4f33707329393c4961c03ca2f223b1c39e012a34b80219a3d5a0e68963391a57",
+      "role": "Frozen direct CG independent pricing tolerance",
+      "field": "T.CG_independent_pricing_closure_abs"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Column generation: Phase II real cost",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 24.768,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    1918,
+    1073
+  ],
+  "exports": {
+    "png": "a4a802541af1dde7410f58905dbc87398702fd6d4d3419faa5527182adbc821c",
+    "svg": "632d9837a8d27ff0ffee8782c5e030f842d68e342432da67d3a13bccce5cd80e",
+    "pdf": "760b694d63c500f4f782a26da76d71f569a042aa17fc3909135b877218725c54"
+  },
+  "text_audit": [
+    {
+      "text": "0.37598",
+      "size_pt": 8.0,
+      "bounds_px": [
+        362.561,
+        201.727,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved Phase II round",
+      "size_pt": 9.0,
+      "bounds_px": [
+        283.45,
+        35.361,
+        136.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        347.887,
+        53.917,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Real objective (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        10.936,
+        122.625,
+        13.0,
+        158.5
+      ]
+    },
+    {
+      "text": "0.34",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        24.599,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        67.695,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.36",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        110.79,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.37",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        153.885,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.38",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        196.98,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.39",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        240.076,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        283.171,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.41",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        326.266,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved CG real cost",
+      "size_pt": 8.0,
+      "bounds_px": [
+        103.811,
+        311.5,
+        107.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Same-graph LP",
+      "size_pt": 8.0,
+      "bounds_px": [
+        103.811,
+        295.944,
+        86.75,
+        10.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        42.9,
+        369.556,
+        405.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Column generation: Phase II real cost",
+      "size_pt": 15.0,
+      "bounds_px": [
+        42.9,
+        342.611,
+        445.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "4088963f44de0b933263d2587a3f5ad499b862a87fad35467dbdb58d18b80cbc"
+  },
+  "pricing_gate_provenance": {
+    "field": "T.CG_independent_pricing_closure_abs",
+    "value": 1e-07,
+    "phase_I_unit": "dimensionless",
+    "phase_II_unit": "min",
+    "plotted_sign": "negative of absolute closure tolerance",
+    "direct_source": "docs/assets/city-alignment-r3/urbana-transfer/GATES.json"
+  }
+}

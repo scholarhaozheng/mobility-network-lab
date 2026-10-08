@@ -1,0 +1,93 @@
+{
+  "id": "cg-pricing-closure",
+  "city": "chicago",
+  "stage": "finite",
+  "method": "cg",
+  "title": "Column generation: full-graph pricing closure",
+  "caption": "Separate columns show Phase I dimensionless pricing and Phase II minute-valued pricing. Upper panels preserve every saved full-graph minimum with its phase-specific negative-reduced-cost gate (−1e−8 and −1e−7). Lower panels show the actual saved four-commodity reduced costs, T01–T04, across every round; their matrix minimum is checked against the plotted minimum for every state. Each heatmap has its own explicitly labelled scale and units. The final Phase I minimum is 0; final Phase II minimum is −3.552713678800501e−15 min, satisfying the frozen full-graph closure gate. Linear axes retain signed roundoff; no positive floor or smoothed pricing history is added. Chicago Jane Byrne / West Loop R2 T4 engineering pulse; modelled scenario, not observed traffic. CG is accepted on its own independently checked full-graph primal/dual pricing certificate. The separate HiGHS LP is resource-limited and is not plotted as an accepted reference. © OpenStreetMap contributors, ODbL 1.0. ",
+  "resultStatus": "ACCEPTED_CG_OWN_FULL_GRAPH_CERTIFICATE",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "originals_preserved": true,
+  "renderer": {
+    "file": "render_chicago_cg_canonical.py",
+    "sha256": "7883014f96b3a3edc586559719e4f383915dfc58e5ec12248354f2d12c2b87b6",
+    "function": "pricing_closure",
+    "line_start": 65,
+    "line_end": 74
+  },
+  "sources": [
+    {
+      "role": "Approved saved CG history",
+      "path": "assets/algorithm-transfer-r8/chicago/C06_T_CG_plot_data.json",
+      "sha256": "57690fd086384d562a48c11386f50750d1f7aaf51c489159967a2fbcfbd9c4c2",
+      "rows": 268
+    },
+    {
+      "role": "Own saved CG endpoint",
+      "sha256": "c69f4d22a3b22de3c0b131e689152c297aca7f18acfc8ef77dbd56db49819836"
+    },
+    {
+      "role": "Independent own-CG certificate check",
+      "sha256": "a1135911dbbe7f57ea72fdc5f4d466f325c89f30b2ee129897cbdc033d7714ae"
+    },
+    {
+      "role": "Frozen two-phase gates",
+      "sha256": "9f5766a702f28c1dae01cf6ca5fda0f9b5c88fce8b347d79a0fd08012adbb8f4"
+    },
+    {
+      "role": "Frozen CG source inspected read-only, not imported",
+      "sha256": "4149058fb77bb6daabbe302139b816d64b2eaabf8d24baa23882fa592304db62",
+      "lines": "114-128 artificial OD variables;143-157 saved master/pricing states;161-166 phase stopping"
+    },
+    {
+      "role": "Saved T4 commodity order",
+      "sha256": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+      "ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ]
+    }
+  ],
+  "dimensions": [
+    2393,
+    1532
+  ],
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 37.099,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "canonical_style": "Boston/Hong Kong DejaVu Serif Layout C; saved post-step states and markers, independent phase units",
+  "exports": {
+    "png": {
+      "file": "cg-pricing-closure.png",
+      "sha256": "737f4cf40ae5fdb710aecf36f65fec933eb4cf4b0f01b9c4e74cff730f3cf7e2"
+    },
+    "svg": {
+      "file": "cg-pricing-closure.svg",
+      "sha256": "56b8536b8334b55c885ddf5fd6960c1c791141260ee02d2e7fbca880deb1bd00"
+    },
+    "pdf": {
+      "file": "cg-pricing-closure.pdf",
+      "sha256": "a7e5264ff8b7b2300668c14c0539e8233449e7eb976834886bd15d19ac02ef12"
+    }
+  },
+  "planned_anchor": "atlas-chicago-canonical-cg-pricing-closure",
+  "planned_volume_anchor": "figure-canonical-cg-pricing-closure",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

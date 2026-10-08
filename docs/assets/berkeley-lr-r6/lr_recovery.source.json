@@ -1,0 +1,247 @@
+{
+  "id": "BERKELEY-R6-LR-RECOVERY",
+  "stem": "lr_recovery",
+  "title": "Path-pool growth and separate primal recovery",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "The original accepted run remains separately preserved at iteration 10. This view uses 300 actual saved records from run BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1, through iteration 300. The extended trace is a diagnostic experiment and does not retroactively change the original stopping decision. Independent diagnostic audit passed. The original formal-entry replay is pending at this figure export; the 300-round run is not labelled formally accepted. The formal 1% certificate is first met at saved iteration 10; later rounds, when present, are shaded as post-gate diagnostics. Panel a retains all 300 saved path-pool sizes; panel b shows exactly 31 actual recovery calls (30 feasible, 1 infeasible). Filled circles are feasible calls and open squares are infeasible calls. Null objectives remain missing and are never zero-imputed. Pool growth is not a sequence of feasible upper bounds. The call records and own recovered physical flow retain their separate source identities.",
+  "panels": {
+    "a": "Every saved path_pool_size",
+    "b": "Actual recovery calls and their feasibility"
+  },
+  "dimensions": [
+    2815,
+    1348
+  ],
+  "renderer": {
+    "file": "render_lr_diagnostics.py",
+    "function": "lr_recovery",
+    "line": 524,
+    "sha256": "58ff592e0aab8388da62e3d7f1dd5884ec090d65704dea73c8f1a10ff8227972"
+  },
+  "source_records": [
+    {
+      "path": "inputs/history.csv",
+      "sha256": "836bececaa1380acba3b1f41b76a14b9aefa5216400046c89ac7e3528ed0b701"
+    },
+    {
+      "path": "inputs/result.json",
+      "sha256": "2a3b52c69225f4de5ef51803bca08a90b31e26fec4cc8cfc839e907da4d39994"
+    },
+    {
+      "path": "inputs/recovery_history.json",
+      "sha256": "5a8704d42dc6677182fcf686a2297fdfad88bc69ee14160423b67b1ebfb0eb0a"
+    },
+    {
+      "path": "inputs/lr_selected_physical_link_flow.csv",
+      "sha256": "060bdcf591593e7ae8635aa193cf88505afb6dcc546dcba02c6d9e17d6062b1a"
+    },
+    {
+      "path": "inputs/diagnostic_plan.json",
+      "sha256": "d20325cae4ac3238f65b173896b7bbe8706f1002f6e97dddfa76a0f7d5f07881"
+    },
+    {
+      "path": "inputs/diagnostic_registration.json",
+      "sha256": "a43bce1f1b279f717ab1a0d973248aff7b1cae05db7217f200fe98230bbe8d0a"
+    },
+    {
+      "path": "inputs/original_accepted_result.json",
+      "sha256": "301a405cd8da9240e4694f9f6cd516d9bb4966e3b301a4317b4f409e1eff8a00"
+    },
+    {
+      "path": "inputs/DIAGNOSTIC_AUDIT.json",
+      "sha256": "af84969ec4b46d7a409fe28fff94fb31bb1961cbf66c6d7b4e17abf37b42da98"
+    },
+    {
+      "path": "inputs/HISTORY_LIGHT_AUDIT.json",
+      "sha256": "7ccd9d77344039614475c575ded14f1e9dda242f576ff85f60c381975b46d919"
+    },
+    {
+      "path": "inputs/MULTIPLIER_TIMING.json",
+      "sha256": "8a459527b710e0fde3c05856dead20ee732b81ea9c08979a05be920be0470c53"
+    },
+    {
+      "path": "inputs/FIRST10_COMPARISON.csv",
+      "sha256": "4339635620a383d0f8ac317085252d8f152c5f1f05cfc5235baf1f6da4c12822"
+    },
+    {
+      "path": "inputs/HANDOFF_FOR_DIAGNOSTIC_DISPLAY.json",
+      "sha256": "82f6edd6316bfaf1334f515d4e5c471def5ba2799b40060732e52e336a4407f3"
+    },
+    {
+      "path": "inputs/HANDOFF_FOR_DIAGNOSTIC_DISPLAY.md",
+      "sha256": "4f4c4f6f171a8c62ca920067749d92b131c61582cbe43f61aeba5e63167b42c3"
+    },
+    {
+      "path": "inputs/SNAPSHOT_DUAL_RECHECK.csv",
+      "sha256": "6884227e616e31a79840d2581a48abeeb55a9f7d2b570b4c83bd5039944d1b65"
+    },
+    {
+      "path": "inputs/RECOVERY_RECHECK.csv",
+      "sha256": "0ec48b3852faa5a5d69138cac211b9c0489bd9b9a51b364e35cee764df30b75c"
+    },
+    {
+      "path": "inputs/current_multipliers_t300_preupdate.csv",
+      "sha256": "eb5c2a204809a0c08b4e9de4816feec08142a153a49346f7ac76f2bf5ca39674"
+    },
+    {
+      "path": "inputs/post_update_next_multipliers.csv",
+      "sha256": "4a61dca1f49063fa56a79927699cf5944934029f349649fcef54428ea6c8ec9a"
+    },
+    {
+      "path": "inputs/LR_EXTENDED_PLOT_DATA.csv",
+      "sha256": "e9b9b2e2b6557aa16a7f69549b161f31d9a818d19d1fb5bcb0e85df6d5af1654"
+    },
+    {
+      "path": "inputs/RECOVERY_HISTORY.csv",
+      "sha256": "4b525dcc768b2643966d9ff252518202e1ae9e3ffdcbba25d57ca28c6b1aade8"
+    },
+    {
+      "path": "inputs/physical_link_flow_full.csv",
+      "sha256": "f911fe8fa302c966ea5b4e224776aa5d516ea76673335d1a6bb218a53a9b6719"
+    },
+    {
+      "path": "inputs/best_multipliers.csv",
+      "sha256": "3d2dc070a71d9d58db41dce4f6e25fcd3e18e57e05ce986e5d4ec12e122dbf6b"
+    },
+    {
+      "path": "inputs/multiplier_snapshots.csv",
+      "sha256": "8b78ab0878104be0fb4130bcd69533b8bb96d99f68843f53654ae36526818175"
+    },
+    {
+      "path": "inputs/terminal_current_multipliers.csv",
+      "sha256": "4a61dca1f49063fa56a79927699cf5944934029f349649fcef54428ea6c8ec9a"
+    },
+    {
+      "path": "inputs/positive_paths.csv",
+      "sha256": "7ced0c3229ce1fddb182fdfe457be0b52cb411ac6ece713ea5e116e8ae52c164"
+    },
+    {
+      "path": "inputs/commodity_arc_flow.csv",
+      "sha256": "6bb0f0074cd3eaf5810aa5a3d071739a781d67206ee029333c45c9660a806696"
+    },
+    {
+      "path": "inputs/pool_paths.csv",
+      "sha256": "416be4b568d86528906a0f30d2ed84265ff3f227e6d792c34cc4ac5615f4ccb2"
+    },
+    {
+      "path": "inputs/physical_flows.csv",
+      "sha256": "05e6744c02f5fd12b3220e3d11c6f50fd621b33f2f4f9d4e742bb37d30ae7553"
+    },
+    {
+      "path": "inputs/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    }
+  ],
+  "run": {
+    "id": "BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1",
+    "iterations": 300,
+    "diagnostic": true,
+    "kind": "cold_start",
+    "fixture": false,
+    "validation_status": "PASS",
+    "first_certified_iteration": 10,
+    "best_dual_iteration": 256,
+    "terminal_current_dual": 43.66228345703368,
+    "selected_recovery_iteration": 10,
+    "model_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+    "stop_reason": "MAX_ITERATIONS",
+    "terminal_multiplier_semantics": "Final history/snapshot describes the evaluated current iteration; post-update terminal vector is not used for plots.",
+    "acceptance_scope": "independently_audited_diagnostic_display",
+    "formal_evaluation_status": "PENDING_SHARED_HEAVY_LOCK"
+  },
+  "original_accepted": {
+    "run_id": "BERKELEY_R2_T4_LAGRANGIAN_TRANSFER",
+    "iterations": 10,
+    "best_dual": 43.58459836422644,
+    "best_primal": 43.667424408006426,
+    "gap": 0.0018967467145784354,
+    "stop_reason": "CERTIFIED_GAP"
+  },
+  "reference": {
+    "lp_objective_pce_minutes": 43.66742440800644
+  },
+  "display_validation": {
+    "status": "PASS",
+    "history_rows": 300,
+    "first_iteration": 1,
+    "last_iteration": 300,
+    "missing_upper_rows": 9,
+    "missing_gap_rows": 9,
+    "recovery_calls": 31,
+    "first_certified_iteration": 10,
+    "best_bound_attained_iteration": 256,
+    "highest_saved_best_dual": 43.66742440800643,
+    "final_current_dual": 43.66228345703368,
+    "final_signed_upper_minus_lower": -7.105427357601002e-15,
+    "certificate_formula": "max(0,(best_primal-best_dual)/max(1,abs(best_primal)))",
+    "zero_gap_interpretation": "Saved clipping at zero can indicate numerical agreement at floating-point precision; it is not an algebraic proof of exact equality.",
+    "numerical_acceptance": "Receiver status is metadata; this checks plotting semantics only."
+  },
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 19.894,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "solver_calls_by_renderer": 0,
+  "status": "SAVED_DIAGNOSTIC_PLOT",
+  "exports": {
+    "svg": {
+      "path": "lr_recovery.svg",
+      "sha256": "953e93824369a3d333ee0c2339284aa57314acc991479d6caf46b769ad1145c6"
+    },
+    "png": {
+      "path": "lr_recovery.png",
+      "sha256": "86ed7d9495238ee5eca151321133a071370f8dfc1c3c710bbfb6ac20fe291716"
+    },
+    "pdf": {
+      "path": "lr_recovery.pdf",
+      "sha256": "d26121f38547b284364efa3801136bb4c5a02a68f0d1565c107fa9528d2da63e"
+    }
+  }
+}

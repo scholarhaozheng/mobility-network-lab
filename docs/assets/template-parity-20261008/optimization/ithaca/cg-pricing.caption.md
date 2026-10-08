@@ -1,0 +1,1 @@
+One full-DAG minimum reduced-cost check is saved in each phase. Phase I units are dimensionless; Phase II units are minutes, with the unchanged absolute closure tolerance 1e-7. These are the global minima, not invented per-commodity reduced costs. Two phases are separate checks, not two iterations of one common objective.

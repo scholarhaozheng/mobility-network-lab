@@ -1,0 +1,99 @@
+{
+  "id": "BERKELEY-R3-LR-BOUNDS",
+  "stem": "lr_bounds",
+  "title": "Lagrangian bounds and certified gap",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "The Hong Kong/Boston bound-and-gap design is applied to the actual Berkeley trace: teal is the saved best dual lower bound, blue the separately recovered feasible primal upper, and the right panel is the certified relative gap in percent on a linear axis. All ten best lower bounds equal 43.58459836422644 PCE·min; the flat line is real. The first and only saved feasible upper is 43.667424408006426 PCE·min at iteration 10, so it appears as a blue point, with a single gap point of 0.18967467145784354%, below the frozen 1% gate. The gap is 100×(best_primal−best_dual)/max(1,|best_primal|). Missing primal/gap values at iterations 1–9 remain missing; no curve is extrapolated. The independent same-T4 LP 43.66742440800644 remains in the source record but is not drawn as an LR upper-bound trajectory. Current relaxed dual iterates are not substituted for the best bound.",
+  "panels": {
+    "a": "Saved best dual lower (teal) and feasible recovered upper (blue), preserving nine missing upper bounds",
+    "b": "Saved gap percent and frozen 1% gate; only iteration 10 has a certificate"
+  },
+  "dimensions": [
+    2022,
+    943
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "lr_bounds",
+    "line": 228,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/t03_lr_bounds_physical.plot_data.json",
+      "sha256": "d003989e9db3af49f51d15f116b653a5c956a99b673366a92319e41defe6abb9"
+    },
+    {
+      "path": "data/accuracy_objective_vs_lp.plot_data.json",
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "lr_bounds.svg",
+      "sha256": "8849b00bd457dc9c610c66a3f149932105bb313b7ab110ee92883b3fbc9782f0"
+    },
+    "png": {
+      "path": "lr_bounds.png",
+      "sha256": "55c31fde716e59c9f0fa27a5e199cd39656472de8e30b2d7fcad99975909893d"
+    },
+    "pdf": {
+      "path": "lr_bounds.pdf",
+      "sha256": "f4b62caf2770ed4206af2bf83d8bdfa20cbba76198daa091b05fb9608f48f2a4"
+    }
+  }
+}

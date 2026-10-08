@@ -353,3 +353,9 @@ html[data-reading-location-ready] .reading-details-panel{max-height:var(--readin
 
 /* The atlas selector belongs to chapter 04; preserve its measured size outside it. */
 html[data-reading-location-ready]:has(.reading-location-bar:not([data-chapter="04"])) .atlas-view-controls.is-docked{visibility:hidden;pointer-events:none}
+
+/* Explicit row sizes shared by current and retained evidence galleries. */
+@media(min-width:761px){
+ .case-atlas .atlas-gallery[data-columns="1"]{grid-template-columns:minmax(0,1fr)}
+ .case-atlas .atlas-gallery[data-columns="2"]{grid-template-columns:repeat(2,minmax(0,1fr))}
+}

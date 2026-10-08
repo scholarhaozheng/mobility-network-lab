@@ -1,0 +1,552 @@
+{
+  "figure_id": "UC-R3-COMPUTED-PATHS-R11",
+  "city": "urbana-champaign",
+  "instance": "Computed paths: time layers and fixed costs",
+  "role": "saved-result presentation",
+  "conclusion": "Column generation: computed paths",
+  "panels": [
+    "four saved physical-route arrival sequences",
+    "four exact saved route costs"
+  ],
+  "quantity": "Arrival layers and fixed route objective costs",
+  "unit": "30-second steps; minutes",
+  "render_method": "data-replot",
+  "original_asset": "docs/assets/city-alignment-r3/urbana-transfer/computed-paths.svg",
+  "original_asset_sha256": "fb5f5cc1e8b297acfdf89fb6a800bd34191efa40dbea1421c9e6d4bd98883f9e",
+  "original_home_ids": [
+    "UC-R3-COMPUTED-PATHS"
+  ],
+  "original_volume_anchors": [
+    "uc-r3-computed-paths"
+  ],
+  "scope_note": "Computed paths: time layers and fixed costs",
+  "schema": "mcl_figure_r11",
+  "caption": "Computed paths: time layers and fixed costs",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/computed-paths.svg",
+      "sha256": "fb5f5cc1e8b297acfdf89fb6a800bd34191efa40dbea1421c9e6d4bd98883f9e",
+      "role": "Unchanged prior display asset"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/computed-paths.plot_data.json",
+      "sha256": "6eea0c2ff3ea507875974c0d0bbcaf7de88696dea6a0529fa8837c728de2c95b",
+      "role": "Approved saved public plot data"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Column generation: computed paths",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 14.304,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true,
+    "all_labels_editable": true,
+    "retained_outlined_legacy_labels": false
+  },
+  "dimensions": [
+    2550,
+    1050
+  ],
+  "exports": {
+    "svg": "dfd821f3c4a12dbaf11ead7b32c7bba06ba4e0ffeede0b90bf0ca6fcf1de1e1b",
+    "png": "7432a7f321d5465c0d6417e8ec6cafaadd2a50f8873ad8406e63719f17d348d0",
+    "pdf": "b3afe012bd5ff540eeab1d989cc4cb1029dac5f4783d978180a6500f5d84c785"
+  },
+  "text_audit": [
+    {
+      "text": "Physical traversal index",
+      "size_pt": 9.0,
+      "bounds_px": [
+        162.449,
+        35.111,
+        151.875,
+        13.0
+      ]
+    },
+    {
+      "text": "−20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.088,
+        53.667,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        83.564,
+        53.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        119.289,
+        53.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        158.578,
+        53.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        197.866,
+        53.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        237.155,
+        53.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        272.881,
+        53.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        312.169,
+        53.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        351.458,
+        53.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "160",
+      "size_pt": 8.0,
+      "bounds_px": [
+        390.746,
+        53.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "180",
+      "size_pt": 8.0,
+      "bounds_px": [
+        430.035,
+        53.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Arrival time layer",
+      "size_pt": 9.0,
+      "bounds_px": [
+        23.736,
+        132.125,
+        13.0,
+        111.75
+      ]
+    },
+    {
+      "text": "−20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        40.937,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.542,
+        68.328,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.417,
+        95.719,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.417,
+        123.11,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.417,
+        150.501,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.417,
+        177.891,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.292,
+        205.282,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.292,
+        232.673,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.292,
+        260.064,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "160",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.292,
+        287.455,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "180",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.292,
+        314.845,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved path timing",
+      "size_pt": 11.0,
+      "bounds_px": [
+        72.0,
+        309.333,
+        160.375,
+        14.0
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        113.111,
+        284.0,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        113.111,
+        268.444,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        113.111,
+        252.889,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        113.111,
+        237.333,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        563.885,
+        53.667,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.496,
+        53.667,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        723.106,
+        53.667,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        802.717,
+        53.667,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Fixed route cost (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        497.213,
+        117.75,
+        13.0,
+        140.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        66.0,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        92.561,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        119.121,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        145.682,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        172.243,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        198.803,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        225.364,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        251.925,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        278.485,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        515.769,
+        305.046,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Objective cost",
+      "size_pt": 11.0,
+      "bounds_px": [
+        531.227,
+        309.333,
+        129.125,
+        14.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN",
+      "size_pt": 8.7,
+      "bounds_px": [
+        58.5,
+        361.389,
+        155.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Column generation: computed paths",
+      "size_pt": 15.0,
+      "bounds_px": [
+        58.5,
+        334.444,
+        428.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "prior_layout_caption": "Computed paths: time layers and fixed costs",
+  "legacy_renderer_sha256": "04806fd7331ee9a21fab285a731a7bffb19f02a537d2f72c1efa8ac6fb9c3ac4",
+  "pdf_adapter_sha256": "c4c08e56cb76e0609b343e3a6581ff68e4d089d95683cbde39fe263eaf3d45a7",
+  "visual_qa": "PASS: directly inspected exported PNG"
+}

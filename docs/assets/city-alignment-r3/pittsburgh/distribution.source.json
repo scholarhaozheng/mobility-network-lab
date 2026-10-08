@@ -1,0 +1,53 @@
+{
+  "id": "R3-PITTSBURGH-DISTRIBUTION",
+  "city": "pittsburgh",
+  "title": "Complete OD matrix with origin and destination margins",
+  "caption": "Full 41×41 model-zone matrix including zero cells; 1406 positive OD pairs and 4,007.546608857 persons in 08:00–09:00 HBW. Colours are log(1+persons); margins are untransformed directed OD totals after PA direction. Every model zone is retained.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        41,
+        41
+      ],
+      "positive_cells": 1406,
+      "total": 4007.5466088572334
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 4007.5466088572334
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 4007.5466088572334
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\pittsburgh\\plot_data\\FS_D01\\distribution.csv",
+      "sha256": "af8ab0ecf4df44cd9467f0d46dea08f1e412dd0ecc4bc81eab7940e3ac7773c0"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\pittsburgh\\plot_data\\generation_complete.csv",
+      "sha256": "27a3088aaf4f9fc075cb56f6ed5c67693787b9d653cf1c52652c2b27c36171ee"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "distribution"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "0bd10ab81a6eef64ebe6242b98b13e01501532100f1d33fcc1b16bc2ed3c10bf",
+    "png": "b43bf2b2cc48f98afcd73eaea4366e097c3f0be87f47c2c13b63339d92fec350",
+    "pdf": "b8fcebe8281f621e392adbd36f550ee2b3ccaaca5f582afc11e62e3866dda1e6"
+  },
+  "width": 2028,
+  "height": 1018,
+  "src": "assets/city-alignment-r3/pittsburgh/distribution.svg"
+}

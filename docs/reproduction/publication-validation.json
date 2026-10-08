@@ -1,23 +1,23 @@
 {
   "schema": "mcl_publication_validation_v1",
   "status": "PASS",
-  "releaseId": "20261005-r19",
-  "sourceRevision": "reproduction-2026-10-05-r19",
+  "releaseId": "20261008-r20",
+  "sourceRevision": "reproduction-2026-10-08-r20",
   "archive": "computational-checkout.zip",
-  "archiveSha256": "7431d476787c6666a3c57fd66adb4e1dfaf04bd6ce83f17664ee2f2731711b07",
-  "archiveBytes": 25653207,
-  "members": 1106,
+  "archiveSha256": "42c4830ae91b6705ad375f9c222786f5cd43e0ca23672c25f624c6bc4686c84a",
+  "archiveBytes": 54161943,
+  "members": 1325,
   "documentationRefresh": {
     "documentationOnly": true,
     "computationalRecipeRelease": "reproduction-2026-10-04-r14",
     "preservedComputationalCommands": 41,
     "preservedRecoveredRecords": 44,
     "readme": "README.md",
-    "imagePositions": 127,
-    "uniqueLocalImages": 89,
+    "imagePositions": 288,
+    "uniqueLocalImages": 250,
     "allReadmeImagesIncluded": true,
     "exporter": "tools/build_readme_from_homepage.py",
-    "scope": "Documentation-only copyedit of the homepage, README and linked reading text. Requested diagram labels and caption phrases were removed, and contrastive wording was simplified while preserving the documented instance limits. Computational recipes, pinned code, numeric receipts and r14 identities are unchanged."
+    "scope": "Documentation-only refresh of the public homepage, README and figure assets synchronized with the reviewed full site. Computational recipes, pinned code, numerical receipts and r14 release identities remain unchanged. New city compute packages and raw scientific inputs are not included in this archive."
   },
   "safeExtraction": true,
   "everyMemberMatchesPublicRepositorySource": true,
@@ -628,5 +628,5 @@
     "verifyReceiptExitCode": 0,
     "python": "3.11.4"
   },
-  "scope": "Integrity validation of every exact public download member, including the original 41 commands and all supplemental recovered entries, plus a fresh public-table query and independent verification from the extracted ZIP. Other lightweight city runs and historical inspections are recorded separately; this packaging check does not rerun every solver or certify complete raw-source city pipelines."
+  "scope": "Integrity validation of every exact public download member, including the original 41 commands and all supplemental recovered entries, plus a fresh public-table query and independent verification from the extracted ZIP. Historical runs and inspections are recorded separately. This documentation release runs no solver or experiment, and does not certify complete raw-source city pipelines."
 }

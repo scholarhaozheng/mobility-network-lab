@@ -1,0 +1,321 @@
+{
+  "figure_id": "chi-lr-bounds",
+  "city": "chicago",
+  "instance": "LR_SELF_PRICED_FEASIBILITY_AND_RESTRICTED_RECOVERY_DUAL_ANCHOR_HYBRID_V001",
+  "role": "iteration",
+  "conclusion": "The saved hybrid closes its own feasible upper and full-graph lower bounds.",
+  "panels": [
+    "Own upper and full-graph lower"
+  ],
+  "quantity": "objective bound",
+  "unit": "PCE·min",
+  "original_family": "C06_LR_SELF_POOL_GAP",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "saved_states": 10,
+  "schema": "mcl_figure_r11",
+  "caption": "All 10 original-cost iterations are retained. At the independently checked endpoint, lower=239.1173646810 and upper=241.2268172335 PCE·min. Recovery uses the hybrid’s own path pool; the bounds do not relabel the earlier pure LR result. Frozen Jane Byrne S20/T4 engineering scenarios. LR is a new self-priced recovery hybrid; Native80 is uncompressed; ADMM33 remains failed. Household figure is ACS/TIGER area allocation not used by old generation. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census ACS/TIGER.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_LR_SELF_POOL_GAP.plot.json",
+      "sha256": "c5566c4648fe12374b46ef1be478d2ba65624fdf6dcbde297a5a121df6a515c2"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_LR_SELF_POOL_GAP.caption.md",
+      "sha256": "129da5f4fafa446f04b419ab1deed33e8990fc7b09b8e52c615da1998d8d30d9"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "Lagrangian bounds and own recovery",
+    "scope": "T4 / self-priced LR hybrid"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.87,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2181,
+    1134
+  ],
+  "exports": {
+    "png": "d22968b205162bc47f2e1b001387554234cb2e8885f41a8436c08ec65c82c463",
+    "svg": "7a1fd24ac5b5115ae172c308e6561d438073a803339d5f387da321948e1760c3",
+    "pdf": "957413b30f32f446f315f0fc14abed1598819812f55466a1ff7ff94bccda7e14"
+  },
+  "text_audit": [
+    {
+      "text": "Original-cost pricing iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        341.188,
+        46.411,
+        189.625,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        45.982,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        116.247,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        186.512,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        256.776,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        327.041,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        397.305,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        467.57,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        537.834,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        608.099,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        678.363,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        745.065,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "11",
+      "size_pt": 8.0,
+      "bounds_px": [
+        815.33,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Objective bound (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        55.736,
+        136.575,
+        13.0,
+        172.75
+      ]
+    },
+    {
+      "text": "225",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        66.021,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "230",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        120.392,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "235",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        174.762,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        229.132,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "245",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        283.503,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        337.873,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "255",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.292,
+        392.244,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Own feasible upper",
+      "size_pt": 8.0,
+      "bounds_px": [
+        648.0,
+        342.6,
+        110.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Full-graph lower",
+      "size_pt": 8.0,
+      "bounds_px": [
+        648.0,
+        327.044,
+        94.125,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  T4 / self-priced LR hybrid",
+      "size_pt": 8.7,
+      "bounds_px": [
+        52.0,
+        400.656,
+        260.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Lagrangian bounds and own recovery",
+      "size_pt": 15.0,
+      "bounds_px": [
+        52.0,
+        373.711,
+        438.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#chi-lr-bounds"
+}

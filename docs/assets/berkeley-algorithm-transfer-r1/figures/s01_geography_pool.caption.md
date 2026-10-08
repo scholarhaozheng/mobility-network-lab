@@ -1,0 +1,1 @@
+Actual Berkeley R2 geometry and S72 FW physical flow. Green widths show saved PCE per hour; blue dots are model zone access nodes. The 360 K=5 paths are checked separately and are not all drawn. Network derived from OpenStreetMap contributors, ODbL. Private figure candidate; no observed traffic calibration.

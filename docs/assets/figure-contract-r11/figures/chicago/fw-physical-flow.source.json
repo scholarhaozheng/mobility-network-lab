@@ -1,0 +1,579 @@
+{
+  "figure_id": "R11-KEEP-chicago-fw-physical-flow",
+  "city": "chicago",
+  "instance": "Original four-stage instance · one modeled hour",
+  "role": "spatial_comparison",
+  "conclusion": "Frank–Wolfe: physical flow and distribution",
+  "panels": {
+    "map": {
+      "count": 27129,
+      "positive_overlay_count": 1891,
+      "original_geometry_exact": true,
+      "normalization": "PowerNorm(gamma=0.5)",
+      "bounds": [
+        0,
+        778.1917250553527
+      ]
+    },
+    "histogram": {
+      "edges": [
+        0.0,
+        35.372351138879665,
+        70.74470227775933,
+        106.117053416639,
+        141.48940455551866,
+        176.8617556943983,
+        212.234106833278,
+        247.60645797215767,
+        282.9788091110373,
+        318.351160249917,
+        353.7235113887966,
+        389.09586252767633,
+        424.468213666556,
+        459.84056480543563,
+        495.21291594431534,
+        530.5852670831949,
+        565.9576182220746,
+        601.3299693609544,
+        636.702320499834,
+        672.0746716387137,
+        707.4470227775932,
+        742.819373916473,
+        778.1917250553527
+      ],
+      "counts": [
+        26166,
+        203,
+        242,
+        43,
+        27,
+        129,
+        79,
+        6,
+        35,
+        73,
+        17,
+        32,
+        1,
+        0,
+        0,
+        50,
+        0,
+        0,
+        21,
+        2,
+        0,
+        3
+      ],
+      "includes_exact_zeros": true,
+      "count": 27129
+    },
+    "alignment": {
+      "map_bounds": [
+        0.08,
+        0.26614926061221184,
+        0.365,
+        0.5138507393877882
+      ],
+      "histogram_bounds": [
+        0.64,
+        0.26614926061221184,
+        0.31999999999999995,
+        0.5138507393877882
+      ],
+      "top_and_bottom_equal": true
+    },
+    "projected_crs": "EPSG:26916",
+    "local_origin_projected_metres": [
+      444394.1685000272,
+      4634865.747927463
+    ],
+    "physical_link_ids_exact": true,
+    "saved_check_count": 4,
+    "actual_updates": 3
+  },
+  "quantity": "Saved physical flow; all-link frequency",
+  "unit": "PCE / modeled hour; directed physical links",
+  "renderer": {
+    "public_path": "tools/figures/render_keep_repairs.py",
+    "sha256": "aa4ae649abb3d967276f23ae885bfb4b2267ccdf07b6b6c9a38d79f835f4f2c5"
+  },
+  "original_asset": "docs/assets/plot-semantics-r9/chicago/fw-physical-flow.svg",
+  "original_asset_sha256": "8c59cba9efa40c0106f29c3f8dc7abc4666cdc8a2319a9329f9448315dbbcbe1",
+  "numerical_equivalence": "EXACT_SAVED_VECTOR_AND_BIN_MATCH",
+  "original_bytes_unchanged": true,
+  "schema": "mcl_figure_r11",
+  "caption": "Saved Chicago static Frank–Wolfe endpoint for 08:00–09:00 HBW. The map and 22-bin histogram use the same complete 27,129-link physical-flow vector, including 25,238 exact-zero links; 1,891 links exceed 1e-6 PCE. Flow is PCE accumulated during the declared one-hour period, not persons or flow per simulation time step. The map uses a square-root sequential color scale with original-unit ticks and gray road context; histogram counts are linear and no links are omitted. Turn, access and other nonphysical solver arcs are excluded. The endpoint follows 3 actual FW updates; all 4 saved checks remain separate diagnostic evidence. Reciprocal directed arcs may overlap geometrically; flows are not summed. This full saved static case is distinct from the separate S20 and T4 method-transfer instances. This is a modeled engineering scenario, not observed traffic. © OpenStreetMap contributors / ODbL 1.0. R11 layout repair: map and all-link histogram share measured top and bottom panel bounds. The original saved physical-link IDs, exact flow vector, geographic vertices, display offsets, histogram edges and counts remain unchanged.",
+  "sources": [
+    {
+      "public_path": "docs/assets/plot-semantics-r9/chicago/fw-physical-flow.plot_data.json",
+      "sha256": "e475a3e07fb7c36e4eac25656eb694e6d16049457ffabbb5177b103f779692ab",
+      "role": "Complete saved physical IDs, flow, geometry and histogram bins"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/chicago/fw-physical-flow.svg",
+      "sha256": "8c59cba9efa40c0106f29c3f8dc7abc4666cdc8a2319a9329f9448315dbbcbe1",
+      "role": "Original preserved displayed SVG"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/chicago/fw-physical-flow.source.json",
+      "sha256": "016811abf956031b549dfe42390bf417e4b78f5c65651bb2065daa252283f289",
+      "role": "Original frozen figure record"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "Frank–Wolfe: physical flow and distribution",
+    "scope": "Original four-stage instance · one modeled hour"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.584,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2930,
+    1365
+  ],
+  "exports": {
+    "png": "02b8628d1401c723c9fc1bb2be36e3310cf8cd85a5b036e74a5e1052b55374cb",
+    "svg": "f501ff265ec8b1c5f45099450e9f3ae01a839424ae5078da2a36bd0f339964f1",
+    "pdf": "8625d5105358e77135363a24e6370f8831a8db939f9afee72dedb6a814dfd12a"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        229.75,
+        136.108,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -60.445,
+        154.664,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.581,
+        154.664,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        232.982,
+        154.664,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        377.383,
+        154.664,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        521.784,
+        154.664,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        50.786,
+        284.061,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.092,
+        81.655,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.342,
+        177.922,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.342,
+        274.19,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.342,
+        370.457,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.342,
+        466.725,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.342,
+        562.992,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved physical flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        84.8,
+        515.111,
+        187.5,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / modeled hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        542.453,
+        283.811,
+        10.0,
+        112.375
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        192.547,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        294.319,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        336.474,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        368.821,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        396.09,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        420.115,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        441.835,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "700",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        461.809,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        480.4,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Physical-link flow (PCE / modeled hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        721.875,
+        136.108,
+        252.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.442,
+        154.664,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        690.256,
+        154.664,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        782.195,
+        154.664,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        881.259,
+        154.664,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "750",
+      "size_pt": 8.0,
+      "bounds_px": [
+        980.323,
+        154.664,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1075.825,
+        154.664,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Directed physical links",
+      "size_pt": 9.0,
+      "bounds_px": [
+        615.886,
+        267.436,
+        13.0,
+        145.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.942,
+        166.997,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        239.939,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "12000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        312.88,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "18000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        385.822,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "24000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        458.763,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "30000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        531.705,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All physical links",
+      "size_pt": 11.0,
+      "bounds_px": [
+        678.4,
+        515.111,
+        167.5,
+        14.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  Original four-stage instance · one modeled hour",
+      "size_pt": 8.7,
+      "bounds_px": [
+        68.9,
+        567.167,
+        414.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: physical flow and distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        68.9,
+        540.222,
+        508.75,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every final PNG individually opened with view_image; title/panel alignment, geometry aspect, units, fonts, legends, gaps and clipping checked. Repeated final render PNG hashes exactly match visually reviewed PNGs.",
+    "result": "PASS",
+    "reviewed_png_sha256": "02b8628d1401c723c9fc1bb2be36e3310cf8cd85a5b036e74a5e1052b55374cb",
+    "original_asset_bytes_preserved": true
+  }
+}

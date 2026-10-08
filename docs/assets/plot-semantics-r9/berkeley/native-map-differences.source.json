@@ -1,0 +1,80 @@
+{
+  "id": "native-map-differences",
+  "title": "Native L3 physical flows against S72 FW",
+  "city": "berkeley",
+  "stage": "static",
+  "method": "native-l3",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "released_original_bytes_overwritten": false,
+  "canonical_reference": "Hong Kong h1_static Native card:rank26absolute map+rank26-FW/rank52-FW signed maps+rank26all-link histogram.",
+  "sources": [
+    {
+      "path": "assets/berkeley-atlas-r2/data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "path": "assets/berkeley-atlas-r2/data/s72_physical_flow.csv",
+      "sha256": "080946fc37d6ed420ff57f18e7e8d1288df693e5e5ea43260b2515670afaa97f"
+    }
+  ],
+  "renderer": {
+    "file": "render_berkeley_canonical.py",
+    "sha256": "7d00e7e6981fc59ff70e26ff4142961a53ef7931f60031312f951275a6dcee78",
+    "function": "native_map_differences",
+    "line_start": 90,
+    "line_end": 105
+  },
+  "style": {
+    "family": "Existing Boston/Hong Kong Layout C",
+    "font": "DejaVu Serif",
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "palette": "existing blue/teal",
+    "histogram_population": "ALL physical links including zero",
+    "absolute_flow_norm": "PowerNorm(gamma=0.5) shared for all3cards",
+    "absolute_max": 390.318194730158
+  },
+  "caption": "The upper row shows Berkeley S72 Native rank 26 own saved explicit physical-link flow, then signed rank 26−FW and rank 52−FW differences; the bottom 22-bin histogram contains all 2,150 rank 26 physical links, including zero/near-zero values. The absolute map uses the same square-root colour scale as the companion FW and finite cards. The signed maps use one shared symmetric zero-centred scale in PCE/hour; no micro-unit magnification changes the quantity. Maximum absolute differences are 2.645862196e-08 PCE/h and1.5853784987e-06 PCE/h. These tiny numerical differences are not traffic improvement. Raw saved numerical values, including rank 52 negatives down to −4.380487468063516e-47 PCE/h, remain in plot data; |flow|≤1e-12 only suppresses coloured map overlays, with the full geographic base retained. The Native vectors are actual saved explicit v, not substituted FW/finite vectors. This bounded low-congestion same-instance agreement establishes neither a difficult congestion test nor speedup. © OpenStreetMap contributors, ODbL 1.0; modelled one-hour engineering scenario, not observations.",
+  "dimensions": [
+    2354,
+    1092
+  ],
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 126.491,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "file": "native-map-differences.png",
+      "sha256": "bfc5a2c76dd1e142fe88fc94ad82cfaaf2a51e873238e78e98628649f90f4de2"
+    },
+    "svg": {
+      "file": "native-map-differences.svg",
+      "sha256": "416f3f528e6ec6b177b6518aeac47450cb2bce884b1be9908d5815a1848c6738"
+    },
+    "pdf": {
+      "file": "native-map-differences.pdf",
+      "sha256": "74652555a5abeae495ad8d14dd80acc5725840c44f31924383e471dfa1a9303f"
+    }
+  },
+  "planned_anchor": "atlas-berkeley-canonical-native-map-differences",
+  "planned_volume_anchor": "figure-canonical-native-map-differences",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

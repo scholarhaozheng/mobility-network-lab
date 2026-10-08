@@ -1,0 +1,19 @@
+{
+  "history": [
+    {
+      "iteration": "0",
+      "objective": "2746.0944149794555",
+      "signed_gap": "2.7284841053187847e-12",
+      "relative_gap": "9.930680236469416e-16",
+      "step": ""
+    }
+  ],
+  "gate": 1e-05,
+  "updates": 0,
+  "signed_gap_lower_guard_pce_minutes": -1e-08,
+  "relative_gap_definition": "signed_gap / max(total_travel_cost, 1e-12)",
+  "stopping_rule": "abs(relative_gap) <= gate and signed_gap >= -1e-8",
+  "initial_stopping_check_passed": true,
+  "gap_axis": "horizontal logarithmic; no iteration axis",
+  "objective_display": "direct value; no objective axis"
+}

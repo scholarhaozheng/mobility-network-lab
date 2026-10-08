@@ -115,3 +115,19 @@ article a{overflow-wrap:anywhere}
 /* Keyboard entry is visible only while focused; reading layout is unchanged. */
 .skip-link{position:fixed;top:8px;left:12px;z-index:10000;padding:10px 16px;background:#fff;color:#173f55;border:2px solid #173f55;border-radius:4px;transform:translateY(-160%)}
 .skip-link:focus{transform:translateY(0);outline:2px solid #bd702f;outline-offset:3px}
+
+
+/* S0 public additions: contain only the four figures outside canonical wrappers.
+   Preserve intrinsic sizes on wide screens and aspect ratios on narrow screens. */
+article > section:is(#figure-fs-g01, #figure-fs-d01, #evidence-photo, #local-turn-candidate) > figure:not(.canonical-figure){max-width:100%;margin-inline:0}
+article > section:is(#figure-fs-g01, #figure-fs-d01, #evidence-photo, #local-turn-candidate) > figure:not(.canonical-figure) img{display:block;max-width:100%;height:auto;object-fit:contain}
+
+
+/* Narrow six-city records: let evidence links and their separators wrap.
+   The inherited flex row otherwise spends most mobile width on fixed gaps. */
+@media(max-width:760px){.six-city-volume article .figure-links{flex-wrap:wrap;gap:6px 12px}.six-city-volume article .figure-links > a{min-width:0;max-width:100%}}
+
+/* R11: nine complete case destinations fit the shared volume header. */
+header nav[aria-label="Volumes"]{flex:1 1 560px;min-width:0;flex-wrap:wrap;gap:8px 16px;line-height:1.5}
+header nav[aria-label="Volumes"] a{white-space:nowrap}
+@media(max-width:760px){header nav[aria-label="Volumes"]{flex-basis:100%;justify-content:flex-start;gap:8px 14px}}

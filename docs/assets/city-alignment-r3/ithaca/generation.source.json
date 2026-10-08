@@ -1,0 +1,46 @@
+{
+  "id": "R3-ITHACA-GENERATION",
+  "city": "ithaca",
+  "title": "All-zone trip generation and demand ledger",
+  "caption": "All 11 zones; 11:00–12:00 local activity. The left panel shows saved interzonal productions/attractions. The right panel accounts for all generated persons, including excluded and intrazonal components. No top-12 truncation.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "production and attraction",
+      "unit": "persons per declared period",
+      "zone_count": 11,
+      "P_total": 1017.6271915363841,
+      "A_total": 1017.627191536384
+    },
+    {
+      "panel": "b",
+      "metric": "generation ledger",
+      "fields": {
+        "generated_person_trips": 1779.068516672,
+        "external_or_uncaptured_person_trips": 622.6739808352,
+        "intrazonal_person_trips": 138.76734430041603,
+        "interzonal_production_person_trips": 1017.6271915363841
+      }
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\ithaca\\plot_data\\generation_complete.csv",
+      "sha256": "08f60c3c882bbd545b7f8761a72998874c3becf775200f1f1363bdfd28c08944"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "generation"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "1856fc79364b9b0056213b1aaf357588451f48ed6fd34aff65823f0fbb2e9c17",
+    "png": "f4a64bee1ea8f22289c5fac835607424df1ed65c4056fb262f5078cfa76e1121",
+    "pdf": "57680fffbefabfc29104126d9e42a18cf90ef93d6106b8c71d7db5a8843dc521"
+  },
+  "width": 1968,
+  "height": 965,
+  "src": "assets/city-alignment-r3/ithaca/generation.svg"
+}

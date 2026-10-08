@@ -1,0 +1,103 @@
+{
+  "id": "BERKELEY-R3-TIME-LAYERS",
+  "stem": "time_layers",
+  "title": "Road states across selected time layers",
+  "city": "Berkeley",
+  "stage": "construction",
+  "caption": "A declared local fragment of the accepted T4 graph shows seven real road nodes across time indices 5–11 (08:02:30–08:05:30). Every drawn edge is a saved dynamic arc with both endpoints in this node/time window. Teal marks the first six actual movement arcs of positive computed column 1; blue marks waiting arcs, and gray marks other retained movements. Both panels display the same 57-arc fragment, first in actual local geographic coordinates and then as a discrete node/time graph. Only node-time states present as endpoints in the saved arc subset are marked. This is a construction view, not a whole-city dynamic simulation or the complete 89-movement route. Arc costs and rounded 30-second time increments are different quantities; the following route figure retains that distinction.",
+  "panels": {
+    "a": "Actual geographic 3D local graph at seven time layers",
+    "b": "Same saved arc subset in a node-ID/time-index graph"
+  },
+  "dimensions": [
+    2441,
+    1250
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "time_layers",
+    "line": 171,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/time_layer_arcs.csv",
+      "sha256": "e0bcb7e9b7fa6b34c8461001694ee7e37528d47f83d52fd765bbdd7af9b2083e"
+    },
+    {
+      "path": "data/time_layer_nodes.csv",
+      "sha256": "6086cdf8e3e42e0190281a8c31735bfb8ee3ef43a9e0d692c2dd40a28e39e197"
+    },
+    {
+      "path": "data/t01_selected_path.csv",
+      "sha256": "cb25c2ae54e83976b008768a529f9666f5748d2881b7aa9953c3c77521a935c2"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "time_layers.svg",
+      "sha256": "9637cbd14298d8127aa78728df1676b5774fcecb24be3d08c2ad033b8be10525"
+    },
+    "png": {
+      "path": "time_layers.png",
+      "sha256": "84f61008541006cef7fc6514ee967dbea7b83d56ba69423b826e6049b72766a0"
+    },
+    "pdf": {
+      "path": "time_layers.pdf",
+      "sha256": "c739254ffc34eed8d78766df90c192e417b9df8ef40772d4b8845ace099ccd75"
+    }
+  }
+}

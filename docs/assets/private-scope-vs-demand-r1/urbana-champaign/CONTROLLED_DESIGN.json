@@ -1,0 +1,50 @@
+{
+  "schema": "C02_SCOPE_VS_DEMAND_CONTROLLED_DESIGN_R1",
+  "frozen_before_new_solver_endpoint_utc": "2026-10-08T10:10:00Z",
+  "accepted_control": "original T4 bd634a94e6dfa1435fdbb087bc78fc87959198537b314d44cedd953465c71d8b; original four OD; first of 12 five-minute bins",
+  "experiment_type": "D_same_original_physical_graph_demand_cohort_extension",
+  "interpretation": "DESCRIPTIVE_ONLY unless the identical common network/support and all non-demand inputs are independently verified; do not claim geographic causality",
+  "input_sources": {
+    "old_stage3_hourly_pce_csv_sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+    "old_static_network_csv_sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "old_access_csv_sha256": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "old_T4_arc_csv_sha256": "76db0032a865d56a8823c17d4a049491d037799a323bbba7bc30e3d809689764",
+    "old_T4_demand_csv_sha256": "156830401e0012f77651b49eef5fb243160e79de66e62cabe4b4e77105978d7a"
+  },
+  "locked_selection_rule": {
+    "base_OD": "retain all original four, exactly as frozen",
+    "additional_OD_sort": "descending original Stage3 hourly PCE; tie break origin_zone_id then destination_zone_id",
+    "topology_screen_limit": 2,
+    "topology_screen": "check at most top two for directed static path rounded duration <=145 steps, to allow departure step 5 and 10-step clearance within H=160; use first eligible; otherwise no candidate",
+    "new_candidate_max_OD": 5,
+    "new_solver_ready_models_max": 1,
+    "same_demand_unit": "Stage3 vehicle PCE per hour; exactly divide by 12 once for first 5-minute bin; no repeated hourly loading and no extra occupancy conversion",
+    "use_new_CUMTD_transit_revision": false
+  },
+  "locked_graph_and_time": {
+    "geographic_case": "central_champaign_urbana_2026_r2, 19.303 km2 Stage3 background",
+    "physical_static_graph": "same 26602 turn-expanded directed solver arcs, 11365 physical arcs and 15237 turns",
+    "dt_seconds": 30,
+    "H_steps": 160,
+    "departure_step": 5,
+    "physical_duration": "ceil(original vdf_fftt_minutes / 0.5), minimum 1",
+    "physical_cost": "original vdf_fftt minutes once per traversal",
+    "physical_capacity": "original effective hourly PCE / 120 per timed physical arc",
+    "turn_cost": "original 0.001 minute engineering turn cost, no separate capacity",
+    "wait_cost": "0.5 minute per 30 second step",
+    "sink": "zero-cost accounting exit at any legal destination arrival, not physical storage",
+    "time_graph_pruning": "exact directed reachability for selected OD union only; this may change retained support but not original road source or attributes"
+  },
+  "resource_gate_before_build": {
+    "shared_lock": "original mcl_batch_guard.py heavy; --wait 0; C06 and C01 priority; no timer or poll",
+    "maximum_new_graph_build": 1,
+    "maximum_new_reference_solve": 1,
+    "compute_wall_seconds_max": 21600,
+    "total_case_wall_seconds_max": 28800,
+    "memory_rule": "estimate exact relevant commodity-arc count using frozen time rule and old 1121.244 bytes/variable plus 512MiB; build only if estimate <= 75 percent of contemporaneous available physical memory; otherwise record resource gate and stop heavy work",
+    "solve_rule": "after input-only AON screening, attempt one bounded CG full-graph pricing certificate; if gate fails report actual bounds without shrinking OD"
+  },
+  "capacity_active_label_rule": "only if independently verified constrained objective exceeds unconstrained shortest-path lower bound beyond 1e-6 PCE-min and affected resource/path evidence is identified",
+  "geographic_control_G": "perform only if same-source, same-direction, cost/capacity-compatible existing outer ring is proven; otherwise GEOGRAPHIC_CAUSALITY_NOT_TESTED",
+  "forbidden_adaptations": ["change capacity", "multiply OD", "change bin weight", "shrink H after failure", "choose OD after solver outcome", "rerun accepted LP/CG/LR/ADMM/Native"]
+}

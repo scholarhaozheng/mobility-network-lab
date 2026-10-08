@@ -1,0 +1,317 @@
+{
+  "figure_id": "R12-T4-ARC-ROLES",
+  "city": "pittsburgh",
+  "instance": "Frozen input graph; not an optimized endpoint",
+  "role": "saved-state-check",
+  "conclusion": "Time-expanded network: saved arc roles",
+  "panels": {
+    "a": "Saved arc-role composition"
+  },
+  "quantity": "dynamic arc roles",
+  "unit": "arc records",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.svg",
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T01.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "Counts come from the saved T4 construction: 350,106 physical-road arcs, 779,805 turn arcs, 681,742 wait arcs, 4 source connectors and 231 sink connectors. The model uses 30-second steps over 117 steps and four selected departure demands. This composition chart is a count summary, not a geometric reconstruction of the full time-expanded graph; the real road-network view remains separate.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.source.json",
+      "sha256": "47fcc0bcd09d6f37e8268370f6ddc6f33d0bd97e4d0c27896dc89ad9cbb52dd8"
+    },
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T01.plot.json",
+      "sha256": "23670ee8b410f9df611d88ee30bec8c6b284d6ee1b9b457f8be79560dc8f0f6b"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Time-expanded network: saved arc roles",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 24.768,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2119,
+    1077
+  ],
+  "exports": {
+    "png": "6a164fffb56bc46e1dddd8876f9b4ec3a15a7387d406d7cadcbb2c46d6524820",
+    "svg": "7b3ed681123c5067847e4a231b32ec2be739b03cc8636bebb320a03ad16e4612",
+    "pdf": "09e684375ba0668fa92b5ec6ee5cb2a19a27a85529698ccc352d9aebb1b71038"
+  },
+  "text_audit": [
+    {
+      "text": "350,106",
+      "size_pt": 8.0,
+      "bounds_px": [
+        563.965,
+        299.345,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "779,805",
+      "size_pt": 8.0,
+      "bounds_px": [
+        594.974,
+        248.11,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "681,742",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.77,
+        196.875,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        123.324,
+        145.64,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "231",
+      "size_pt": 8.0,
+      "bounds_px": [
+        280.384,
+        94.405,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved dynamic arc records (log scale)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        230.075,
+        30.761,
+        242.75,
+        13.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -39.801,
+        49.317,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        52.359,
+        50.117,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        141.777,
+        49.317,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        230.836,
+        50.117,
+        20.369,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        319.871,
+        50.117,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        408.89,
+        49.317,
+        20.9,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        498.222,
+        50.117,
+        20.556,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        587.319,
+        50.117,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        676.51,
+        50.117,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        765.67,
+        50.117,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "Physical movement",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -54.633,
+        298.345,
+        109.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Legal turn",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -4.508,
+        247.11,
+        58.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Waiting",
+      "size_pt": 8.0,
+      "bounds_px": [
+        11.367,
+        195.875,
+        43.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Source connector",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -45.383,
+        144.64,
+        99.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Sink connector",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -31.008,
+        93.405,
+        85.375,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        42.9,
+        369.556,
+        344.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Time-expanded network: saved arc roles",
+      "size_pt": 15.0,
+      "bounds_px": [
+        42.9,
+        342.611,
+        471.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "bf6aaa2c087ec986ed8b1a33592b9b2166f3684e2267577b888b25fb893b0b0a"
+  }
+}

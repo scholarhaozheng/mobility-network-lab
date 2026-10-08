@@ -1,0 +1,42 @@
+{
+  "id": "R3-ITHACA-TRANSIT",
+  "city": "ithaca",
+  "title": "Transit source geography and service boundary",
+  "caption": "TCAT stops / 2026-10-05 service-day flags. Service-day flags do not certify pedestrian access or observed ridership. The gray retained road graph is geographic context, not a transit route model.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "stop coordinates",
+      "unit": "projected km",
+      "count": 168,
+      "source_scope": "TCAT stops / 2026-10-05 service-day flags"
+    },
+    {
+      "panel": "b",
+      "metric": "stop service-day flags",
+      "unit": "records",
+      "served": 163,
+      "not_flagged": 5
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\processed\\tcat_stops_aoi.csv",
+      "sha256": "6319654899b69b27183de4480af2b306f43b788d4932ff5e5d46c491a9ba5dfc"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "transit"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "c4444def01089f33675842957736a50fd55ea588af0c40ba34dd82dcb33f856e",
+    "png": "da4ae6000e1c5a72fb83f2004dfe5c1a89e235cb5119c4e3d3f3c8003913adbe",
+    "pdf": "222f4468504f23f1e9db7c41a33f2b10fc06a3b25ae3928452ba5ab03e418e3f"
+  },
+  "width": 1755,
+  "height": 952,
+  "src": "assets/city-alignment-r3/ithaca/transit.svg"
+}

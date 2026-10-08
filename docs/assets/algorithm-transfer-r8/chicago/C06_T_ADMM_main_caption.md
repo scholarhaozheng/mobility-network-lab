@@ -1,0 +1,1 @@
+Actual committed ADMM x history only. Dashed curves are declared internal thresholds. Primal and dual have their respective ADMM units. Values floored at 1e-16 only for log display. Infeasible x objectives are not feasible upper bounds.

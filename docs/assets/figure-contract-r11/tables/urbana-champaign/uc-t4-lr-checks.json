@@ -1,0 +1,242 @@
+{
+  "table_id": "uc-t4-lr-checks",
+  "city": "urbana-champaign",
+  "title": "Lagrangian relaxation: one saved check",
+  "scope": "Original four-OD T4; independent zero-price cold start",
+  "original_assets": [
+    "assets/city-alignment-r3/urbana-transfer/lr-bounds.svg",
+    "assets/city-alignment-r3/urbana-transfer/lr-prices.svg",
+    "assets/city-alignment-r3/urbana-transfer/lr-recovery.svg"
+  ],
+  "notes": [
+    "One evaluated LR iteration and one recovery call; four path rows are demands, not iterations. Saved roundoff can place upper below lower by a few ulps. Full ordered arc vectors stay in the public download."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-bounds.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.plot_data.json",
+      "sha256": "18087cd9fbaf47e2f8d072e7eb1c5a9b2c4d9014e1a55840e93f70ac2dc03675"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-bounds.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.source.json",
+      "sha256": "1c31f78e9a1966504857d18973d672580a63a583931443e47215627999c67662"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-recovery.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-recovery.plot_data.json",
+      "sha256": "97526093dbc5e898b3477efbe28ac854919f40ac97323c80f344847f425d9d0b"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-prices.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-prices.plot_data.json",
+      "sha256": "18087cd9fbaf47e2f8d072e7eb1c5a9b2c4d9014e1a55840e93f70ac2dc03675"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-prices.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-prices.source.json",
+      "sha256": "5ce3721bab1da42b1eeb6c42699816e3304d849c7e6b2b4b2254d74ab4f7c9a9"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/lr-recovery.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/lr-recovery.source.json",
+      "sha256": "412fd5acf7c57544bf2e7b9f0f73f21a1985213abe13543f73a0e7c8b5c220f2"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Bounds, prices and recovery",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Saved LR iteration",
+          "Saved value": "1",
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Best lower bound",
+          "Saved value": "0.3759836651335291",
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "Own feasible upper bound",
+          "Saved value": "0.3759836651335287",
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "Reported certificate gap",
+          "Saved value": "0",
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Positive multipliers",
+          "Saved value": "0",
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Maximum multiplier",
+          "Saved value": "0.0",
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "Path pool",
+          "Saved value": "4",
+          "Unit / interpretation": "paths"
+        },
+        {
+          "Metric": "Recovery calls",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Recovered path-flow scalars",
+      "columns": [
+        "Demand ID",
+        "Recovered flow (PCE)"
+      ],
+      "rows": [
+        {
+          "Demand ID": "C02_OD_01_17019001400_17019005601",
+          "Recovered flow (PCE)": "0.00069826228772431817"
+        },
+        {
+          "Demand ID": "C02_OD_02_17019005902_17019005601",
+          "Recovered flow (PCE)": "0.0019779674551795852"
+        },
+        {
+          "Demand ID": "C02_OD_03_17019000301_17019005701",
+          "Recovered flow (PCE)": "0.023537243205750943"
+        },
+        {
+          "Demand ID": "C02_OD_04_17019005500_17019011001",
+          "Recovered flow (PCE)": "0.025409675319286493"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Additional saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "iteration",
+          "Saved value": "1",
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "dual",
+          "Saved value": "0.3759836651335291",
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "best dual",
+          "Saved value": "0.3759836651335291",
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "best primal",
+          "Saved value": "0.3759836651335287",
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "gap",
+          "Saved value": "0",
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "capacity subgradient norm",
+          "Saved value": "1046280077226.3363",
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "projected subgradient norm",
+          "Saved value": "0.0",
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "max current capacity violation",
+          "Saved value": "0.0",
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "multiplier positive count",
+          "Saved value": "0",
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "max multiplier",
+          "Saved value": "0.0",
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "step coefficient",
+          "Saved value": "5.0",
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "serious step",
+          "Saved value": "True",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "path pool size",
+          "Saved value": "4",
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "wall seconds",
+          "Saved value": "9.632163299946114",
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "cpu seconds",
+          "Saved value": "9.625",
+          "Unit / interpretation": "s"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    },
+    {
+      "title": "Original certificate gate",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Certified gap gate",
+          "Saved value": 0.01,
+          "Unit / interpretation": "dimensionless; 1%"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 28,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"uc-t4-lr-checks\"><h4>Lagrangian relaxation: one saved check</h4><p class=\"evidence-table-scope\">Original four-OD T4; independent zero-price cold start</p><h5>Bounds, prices and recovery</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Bounds, prices and recovery\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Saved LR iteration</td><td>1</td><td>count</td></tr><tr><td>Best lower bound</td><td>0.3759836651335291</td><td>PCE·min</td></tr><tr><td>Own feasible upper bound</td><td>0.3759836651335287</td><td>PCE·min</td></tr><tr><td>Reported certificate gap</td><td>0</td><td>dimensionless</td></tr><tr><td>Positive multipliers</td><td>0</td><td>count</td></tr><tr><td>Maximum multiplier</td><td>0.0</td><td>min</td></tr><tr><td>Path pool</td><td>4</td><td>paths</td></tr><tr><td>Recovery calls</td><td>1</td><td>count</td></tr></tbody></table></div><h5>Recovered path-flow scalars</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Recovered path-flow scalars\"><table><thead><tr><th scope=\"col\">Demand ID</th><th scope=\"col\">Recovered flow (PCE)</th></tr></thead><tbody><tr><td>C02_OD_01_17019001400_17019005601</td><td>0.00069826228772431817</td></tr><tr><td>C02_OD_02_17019005902_17019005601</td><td>0.0019779674551795852</td></tr><tr><td>C02_OD_03_17019000301_17019005701</td><td>0.023537243205750943</td></tr><tr><td>C02_OD_04_17019005500_17019011001</td><td>0.025409675319286493</td></tr></tbody></table></div><details><summary>Additional saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Additional saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>iteration</td><td>1</td><td>dimensionless</td></tr><tr><td>dual</td><td>0.3759836651335291</td><td>PCE·min</td></tr><tr><td>best dual</td><td>0.3759836651335291</td><td>PCE·min</td></tr><tr><td>best primal</td><td>0.3759836651335287</td><td>PCE·min</td></tr><tr><td>gap</td><td>0</td><td>dimensionless</td></tr><tr><td>capacity subgradient norm</td><td>1046280077226.3363</td><td>as saved</td></tr><tr><td>projected subgradient norm</td><td>0.0</td><td>as saved</td></tr><tr><td>max current capacity violation</td><td>0.0</td><td>PCE</td></tr><tr><td>multiplier positive count</td><td>0</td><td>count</td></tr><tr><td>max multiplier</td><td>0.0</td><td>min</td></tr><tr><td>step coefficient</td><td>5.0</td><td>count</td></tr><tr><td>serious step</td><td>True</td><td>text</td></tr><tr><td>path pool size</td><td>4</td><td>count</td></tr><tr><td>wall seconds</td><td>9.632163299946114</td><td>s</td></tr><tr><td>cpu seconds</td><td>9.625</td><td>s</td></tr></tbody></table></div></details><h5>Original certificate gate</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Original certificate gate\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Certified gap gate</td><td>0.01</td><td>dimensionless; 1%</td></tr></tbody></table></div><p>One evaluated LR iteration and one recovery call; four path rows are demands, not iterations. Saved roundoff can place upper below lower by a few ulps. Full ordered arc vectors stay in the public download.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/urbana-transfer/lr-bounds.plot_data.json\" download>lr-bounds.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-bounds.source.json\" download>lr-bounds.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-recovery.plot_data.json\" download>lr-recovery.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-prices.plot_data.json\" download>lr-prices.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-prices.source.json\" download>lr-prices.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-recovery.source.json\" download>lr-recovery.source.json</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/urbana-transfer/lr-bounds.svg\">lr-bounds.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-prices.svg\">lr-prices.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/lr-recovery.svg\">lr-recovery.svg</a></p></details></section>",
+  "caption": "One evaluated LR iteration and one recovery call; four path rows are demands, not iterations. Saved roundoff can place upper below lower by a few ulps. Full ordered arc vectors stay in the public download."
+}

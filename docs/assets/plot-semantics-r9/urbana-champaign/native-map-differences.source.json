@@ -1,0 +1,256 @@
+{
+  "id": "native-map-differences",
+  "title": "Native L3 physical flows against S72 FW",
+  "caption": "Urbana–Champaign Native L3 accepted outer 9, on the unchanged S72 instance: 72 selected OD pairs, 321.6296598827645 PCE in one declared hour and 360 frozen paths. The upper row shows rank 26 own saved explicit physical-link v, followed by signed rank 26−FW and rank 52−FW differences from the same-instance own saved FW vector. The lower 22-bin linear histogram contains all 11,365 rank 26 physical solver arcs, including zeros and near-zero values. All 42 A/B halves for 21 split source roads retain their own saved values and geometry; serial pieces are never added together. The 15,237 turn-movement rows are excluded from these physical-road maps and histogram. The absolute map uses a square-root colour scale; the difference maps share one symmetric zero-centred scale, all in PCE/hour. Maximum absolute rank 26−FW and rank 52−FW physical-link differences are 5.94165001644e-08 and 2.7191668373e-05 PCE/h. These endpoint discrepancies are not evidence of traffic improvement or comparative solver speed. Raw vectors are unmodified, with no clipping or replacement; both own explicit vectors have minimum exactly zero. Only colored overlays hide absolute values at most 1e-12 PCE/h, while the complete gray road geometry, histogram and plot data retain every link. Both endpoints have saved original-space acceptance and two replay receipts; the existing current conservation figure remains complementary evidence. This bounded S72 case is distinct from the full 418-OD city case and the four-OD time-expanded experiment. © OpenStreetMap contributors, ODbL 1.0; engineering scenario, not observed traffic.",
+  "city": "urbana-champaign",
+  "stage": "static",
+  "method": "native-l3",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "scientific_endpoint_status": "ACCEPTED ranks 26 and 52, outer 9",
+  "sources": [
+    {
+      "source_id": "saved-result/ADDENDUM_MANIFEST.json",
+      "sha256": "8a5e91e23d1ff65bbf28d92a826407285cba0497f3d0cbcbbbc5bcba779f098f",
+      "bytes": 5395
+    },
+    {
+      "source_id": "saved-result/PROTECTED_HASHES.json",
+      "sha256": "322e6038feaf9cdb9306eb85d7c2b9585d7f2707ab895c66e28f65d2ae7014cb",
+      "bytes": 37959
+    },
+    {
+      "source_id": "saved-result/manifest.json",
+      "sha256": "b7fb47614f6d28a1e4af3fbb767dc9f8c062486b76ce40b06196391a8417f046",
+      "bytes": 1226
+    },
+    {
+      "source_id": "saved-result/link.csv",
+      "sha256": "2ec560c6570bccab3923251d867aa7ad87889974c9ae52d266abbc221091db79",
+      "bytes": 1722337
+    },
+    {
+      "source_id": "saved-result/demand.csv",
+      "sha256": "c9282e98b415ea227cd15cf6d356ad8b90b8b3863c29bb0b2352f1aa73bddc21",
+      "bytes": 2499
+    },
+    {
+      "source_id": "saved-result/run.json",
+      "sha256": "efa0f753e56e3813cec090535a36b8226be4601c279f4ff8134e7f543d338314",
+      "bytes": 1701
+    },
+    {
+      "source_id": "saved-result/link_flow.csv",
+      "sha256": "1b8adcbbd642842047a8f6a682373a7a73c5523573e77ad99dd44b25c736e15a",
+      "bytes": 754270
+    },
+    {
+      "source_id": "saved-result/pool.json",
+      "sha256": "75acd6798220ca6b09a145be7e5673a1dec6b532537d95f373bd80bb4a53aae1",
+      "bytes": 429
+    },
+    {
+      "source_id": "saved-result/paths.csv",
+      "sha256": "81f24fa787d2b60ad14f7067429ffbc329532aa7af4df19071888121eba70eb8",
+      "bytes": 747784
+    },
+    {
+      "source_id": "saved-result/REPLAY.json",
+      "sha256": "be452ba7995f2791d80779748088ef8994d3073601561bef818d1a72ccb5e75d",
+      "bytes": 3578
+    },
+    {
+      "source_id": "saved-result/REPLAY.json",
+      "sha256": "be452ba7995f2791d80779748088ef8994d3073601561bef818d1a72ccb5e75d",
+      "bytes": 3578
+    },
+    {
+      "source_id": "saved-result/result.json",
+      "sha256": "628fec6a4b91f06622b952242ed9e4fcec325d9e82e570f479643279d51d179c",
+      "bytes": 3948
+    },
+    {
+      "source_id": "saved-result/outer_09_check.json",
+      "sha256": "4cf9f41e66e4e30385bf16b77fc49e4f3db49c8d674cffb9203df4c4b667d411",
+      "bytes": 1200
+    },
+    {
+      "source_id": "saved-result/outer_09_native.json",
+      "sha256": "18646509932d86b73d47b8194b004f334c07d8c1c787c49a3c4f9b6b6eda7757",
+      "bytes": 3392
+    },
+    {
+      "source_id": "saved-result/basis.json",
+      "sha256": "e30dd396de85bc099dd069a96704550133982be50ca6ec89ad84c8c81b31542a",
+      "bytes": 1433
+    },
+    {
+      "source_id": "saved-result/outer_09_solution.npz",
+      "sha256": "b2fdfb01c0815e30084b078175243100d86320397dc6326e4f4d4ef8d2aef56f",
+      "bytes": 25727
+    },
+    {
+      "source_id": "saved-result/result.json",
+      "sha256": "73a7ee1b01e3f94678fb67e2f019411b688892739e2d2293325cfaa5a0f86cfa",
+      "bytes": 3937
+    },
+    {
+      "source_id": "saved-result/outer_09_check.json",
+      "sha256": "357554c36f29dc5cda46a03785f9967980368f148150310549e43053ecb01374",
+      "bytes": 1198
+    },
+    {
+      "source_id": "saved-result/outer_09_native.json",
+      "sha256": "b18611e17a9ddb855f685b2432b65842d1e6b32bcd382764b66734e5162ea770",
+      "bytes": 3414
+    },
+    {
+      "source_id": "saved-result/basis.json",
+      "sha256": "f9795956f69705101763f6aa2f9db04a0dea68f3d059df6a2a17494d22fe61c1",
+      "bytes": 2074
+    },
+    {
+      "source_id": "saved-result/outer_09_solution.npz",
+      "sha256": "5344dd0c064e6ac5c7d78251a5451580428404d976d693ea7072e61b9af159bc",
+      "bytes": 26942
+    },
+    {
+      "source_id": "saved-result/mcl_assignment.py",
+      "sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe",
+      "bytes": 39370
+    },
+    {
+      "source_id": "saved-result/mcl_path_methods.py",
+      "sha256": "322d7713511ab373e9fde6b7ba66936844c3fccbe1fbdfd95c084511805bcf40",
+      "bytes": 16110
+    },
+    {
+      "source_id": "saved-result/native_zero_elim_controller.py",
+      "sha256": "969bdc3b352589dd1c0135b89c97395831eb97de92d11e9c9023b7627a2c2f87",
+      "bytes": 20043
+    },
+    {
+      "source_id": "saved-result/diagnostic_l3_source.py",
+      "sha256": "d727e1c551c4135c1d55f1eb3ac0d587c3912e16d22cb4dd2fa747786aacd457",
+      "bytes": 3452
+    },
+    {
+      "source_id": "saved-result/verify_candidate.py",
+      "sha256": "2e5732b6b04df9e6ae51b52de869df9189a4c7e46edb67a79af4228fedeb9cbf",
+      "bytes": 3765
+    }
+  ],
+  "renderer": {
+    "file": "render_urbana_native_canonical.py",
+    "sha256": "98177504fe3c3ed0ce9bb27ff89b72c4612dcbf3a304120ce89c8d617190b7bc",
+    "function": "native_map_differences",
+    "line_start": 107,
+    "line_end": 161
+  },
+  "canonical_reference": "HK Native and Berkeley native-map-differences: rank26 absolute; rank26-FW; rank52-FW; rank26 all-link histogram.",
+  "row_order_code_evidence": [
+    {
+      "source_id": "saved-result/mcl_assignment.py",
+      "sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe",
+      "function": "load_instance",
+      "lines": [
+        286,
+        293
+      ]
+    },
+    {
+      "source_id": "saved-result/mcl_path_methods.py",
+      "sha256": "322d7713511ab373e9fde6b7ba66936844c3fccbe1fbdfd95c084511805bcf40",
+      "function": "load_pool",
+      "lines": [
+        98,
+        124
+      ]
+    },
+    {
+      "source_id": "saved-result/native_zero_elim_controller.py",
+      "sha256": "969bdc3b352589dd1c0135b89c97395831eb97de92d11e9c9023b7627a2c2f87",
+      "function": "load_case / worker",
+      "lines": [
+        117,
+        137,
+        169,
+        173
+      ]
+    },
+    {
+      "source_id": "saved-result/diagnostic_l3_source.py",
+      "sha256": "d727e1c551c4135c1d55f1eb3ac0d587c3912e16d22cb4dd2fa747786aacd457",
+      "function": "build_alm_model_levels",
+      "lines": [
+        8,
+        26
+      ]
+    },
+    {
+      "source_id": "saved-result/verify_candidate.py",
+      "sha256": "2e5732b6b04df9e6ae51b52de869df9189a4c7e46edb67a79af4228fedeb9cbf",
+      "function": "main",
+      "lines": [
+        39,
+        60
+      ]
+    }
+  ],
+  "geometry_identity": {
+    "path": "assets/city-alignment-r3/urbana-transfer/derived.json",
+    "sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae"
+  },
+  "style": {
+    "family": "Existing Boston/Hong Kong",
+    "histogram_bins": 22,
+    "histogram_count_scale": "linear",
+    "zero_geography": "all roads gray; overlay only if abs(value)>1e-12",
+    "absolute_norm": "PowerNorm gamma=0.5",
+    "absolute_max": 105.17373610896398,
+    "signed_norm": "shared TwoSlopeNorm zero center",
+    "signed_bounds": [
+      -2.7191668372950062e-05,
+      2.7191668372950062e-05
+    ]
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 105.094,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2371,
+    1235
+  ],
+  "exports": {
+    "png": {
+      "file": "native-map-differences.png",
+      "sha256": "090fba9a729f8050970b5cddcbc76b1cb3cee0adfb0792dd6e4067ace7300870"
+    },
+    "svg": {
+      "file": "native-map-differences.svg",
+      "sha256": "fee2ea070b085c04a834b9a4dd46ca06d7c374145c0967c2f2f926fd62335f36"
+    },
+    "pdf": {
+      "file": "native-map-differences.pdf",
+      "sha256": "53245de2fb93e0d52cb39f486e2ce81511d391edab5ea9711e790ee150a44c04"
+    }
+  },
+  "preserve_existing_current_supplement": "UC_S02_C1 conservation evidence remains current, not historical",
+  "planned_anchor": "atlas-uc-canonical-native-map-differences",
+  "planned_volume_anchor": "figure-canonical-native-map-differences",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

@@ -1,0 +1,53 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-DISTRIBUTION",
+  "city": "urbana-champaign",
+  "title": "Complete OD matrix with origin and destination margins",
+  "caption": "Full 21×21 model-zone matrix including zero cells; 418 positive OD pairs and 2,989.852800000 persons in 08:00–09:00 HBW. Colours are log(1+persons); margins are untransformed directed OD totals after PA direction. Every model zone is retained.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        21,
+        21
+      ],
+      "positive_cells": 418,
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 2989.8527999999988
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\urbana-champaign\\plot_data\\FS_D01\\distribution.csv",
+      "sha256": "0cd7283390cc1fd8ffe908540f4f3b26f8d51c46e597d39f23f3005c74539baf"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\urbana-champaign\\plot_data\\generation_complete.csv",
+      "sha256": "623f72e07332d1ef115c355d7dca77cc362c5888b90d52289898dab5195c09a8"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "distribution"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "0370fe9c9240cbcf08e3f2a4a8c60c66edbc0ac41e058d9eb66660e6b89e47de",
+    "png": "a3a2a72021364ec956f863e9e705b41009b8a6ba9c6716234868256c52352ff5",
+    "pdf": "6596c7c33c93fc5bf6032d6a22398544315f6ee98f957f41c2050b840a8b6943"
+  },
+  "width": 2028,
+  "height": 1018,
+  "src": "assets/city-alignment-r3/urbana-champaign/distribution.svg"
+}

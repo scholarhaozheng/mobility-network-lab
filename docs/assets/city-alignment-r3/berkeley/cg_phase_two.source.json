@@ -1,0 +1,98 @@
+{
+  "id": "BERKELEY-R3-CG-PHASE-TWO",
+  "stem": "cg_phase_two",
+  "title": "Phase II objective",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "Boston-matched raw-objective post-step view of all three saved Phase-II states (rounds 0–2), not a normalized or logarithmic error plot. The hollow initial circle, filled decrease circle and hollow unchanged square classify adjacent recorded objective values; the Berkeley trace does not store Boston commit-classification labels, so no degenerate-commit claim is made. Objective decreases from 46.81717881521473 to 43.667424408006426 PCE·min at round 1 and is unchanged at round 2. The same-T4 independent LP is 43.66742440800644 PCE·min. Round 1 agrees with LP within floating-point precision but still has minimum full-graph reduced cost −0.06717 min; pricing closes only at round 2 (−4.44e−16 min). Only saved states are drawn. This is the four-OD finite T4 instance, not S72.",
+  "panels": {
+    "a": "Raw objective post-step, recorded initial/decreased/unchanged states, same-graph LP and distinct pricing-closure round"
+  },
+  "dimensions": [
+    1894,
+    935
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "cg_phase_two",
+    "line": 203,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/t02_cg_phases.plot_data.json",
+      "sha256": "e04732f043f5c1e8f4b6430882fd176c9021fb22c8017f8ffaf119aa86d793b3"
+    },
+    {
+      "path": "data/accuracy_objective_vs_lp.plot_data.json",
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "cg_phase_two.svg",
+      "sha256": "f7d21983dcacca8e3721b25a36f51d6df1555126e9702b11537de959c6f52b49"
+    },
+    "png": {
+      "path": "cg_phase_two.png",
+      "sha256": "bf886c7086577ba588c417c5fa359efaf4d23431d72d15d3cbf0860a1bfe17a3"
+    },
+    "pdf": {
+      "path": "cg_phase_two.pdf",
+      "sha256": "b190cc235dc72a3111785dbeea748db45c1bb9ac503bf4dd0b3cc649a48a9a7f"
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "id": "BERKELEY-R3-LR-RECOVERY",
+  "stem": "lr_recovery",
+  "title": "Path-pool growth and separate primal recovery",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "All ten path-pool sizes and exactly two saved recovery attempts are shown. The call at iteration 1 uses four paths and is infeasible, so its objective remains null. The call at iteration 10 uses six paths and is feasible, with objective 43.667424408006426 PCE·min. The curve in panel a is path-pool growth, not a sequence of solved feasible upper bounds. A separate physical-link projection figure compares the actual recovered LR flow against independent LP and CG, rather than substituting their flow as LR output.",
+  "panels": {
+    "a": "All saved path-pool sizes",
+    "b": "Exactly two recovery calls and their feasibility"
+  },
+  "dimensions": [
+    2294,
+    894
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "lr_recovery",
+    "line": 260,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/t03_lr_bounds_physical.plot_data.json",
+      "sha256": "d003989e9db3af49f51d15f116b653a5c956a99b673366a92319e41defe6abb9"
+    },
+    {
+      "path": "data/t03_recovery_history.json",
+      "sha256": "53f9dea3851f46673724c66b975557f6cf09886eb2ccded61a0ea04f79944102"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "lr_recovery.svg",
+      "sha256": "9a87cbdca306878da375dd4d0532e53bdb7e9594aec4b92ab112cde7d93176a2"
+    },
+    "png": {
+      "path": "lr_recovery.png",
+      "sha256": "5a291a5ca33ec4c75daf5e562b25c7ef95632baa70b1ddf350fdc0fc2a01c9b5"
+    },
+    "pdf": {
+      "path": "lr_recovery.pdf",
+      "sha256": "d3e6bb4ab112a2db6bfd0444d13c19ef40fd7f77196da9f0e8ea464857dacf1f"
+    }
+  }
+}

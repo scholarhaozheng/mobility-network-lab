@@ -1,0 +1,36 @@
+{
+  "history": [
+    {
+      "iteration": 1.0,
+      "objective": 0.37598366514196835,
+      "primal_residual": 0.0,
+      "dual_residual": 3.4388605706864527e-13,
+      "primal_threshold": 0.0023967625505464836,
+      "dual_threshold": 0.0023912306455045277,
+      "capacity_residual": 0.0,
+      "balance_residual": 5.351749497492834e-15
+    }
+  ],
+  "lp_objective_pce_min": 0.37598366513352877,
+  "absolute_error_pce_min": 8.439582366293052e-12,
+  "plotted_log10_absolute_error": -11.073679043955153,
+  "actual_saved_iterations": [
+    1
+  ],
+  "zero_residual_display_floor": 1e-16,
+  "objective_error_display_floor": 1e-15,
+  "units": {
+    "objective": "PCE min",
+    "primal_residual": "PCE",
+    "dual_residual": "min (rho-scaled)",
+    "primal_threshold": "PCE",
+    "dual_threshold": "min",
+    "capacity_residual": "PCE",
+    "balance_residual": "PCE"
+  },
+  "capacity_redundancy_proof": {
+    "total_possible_pce": 0.05162314826794134,
+    "minimum_physical_arc_capacity_pce": 3.75,
+    "all_capacity_rows_redundant": true
+  }
+}

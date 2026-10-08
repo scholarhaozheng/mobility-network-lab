@@ -8,6 +8,8 @@ import json
 from pathlib import Path
 import subprocess
 
+from check_hk10_publication import validate as validate_publication_continuation
+
 RECORD = "docs/assets/atlas/HK10_PRESENTATION_20261004.json"
 EDITORIAL = "docs/assets/atlas/HK10_EDITORIAL_20261005.json"
 HISTORICAL = "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json"
@@ -68,6 +70,11 @@ def validate(root: Path) -> dict:
             check(all(revised.get(path) == current.get(path) for path in (SOURCE, SVG)), "HK10 editorial revision changes scientific figure identity")
             check(set(editorial.get("changed_pages", [])) == {path for path in READING_PAGES | MIGRATED_PAGES if revised.get(path) != current.get(path)}, "HK10 editorial changed-page list differs")
             current = revised
+        continuation = validate_publication_continuation(root)
+        errors.extend(continuation["errors"])
+        checks += continuation["checks"]
+        if continuation["status"] == "PASS":
+            current.update(continuation["current_pages"])
         for relative, digest in current.items():
             check((root / relative).is_file() and sha(root / relative) == digest, f"Current HK10 presentation hash differs: {relative}")
         source = json.loads((root / SOURCE).read_text(encoding="utf-8"))
@@ -98,7 +105,8 @@ def validate(root: Path) -> dict:
             text = (root / relative).read_text(encoding="utf-8")
             check(any(target in text for target in targets), f"Current entry page lost the complete HK10 reading destination: {relative}")
         return {"status": "PASS" if not errors else "FAIL", "checks": checks, "errors": errors,
-                "migrated_pages": {path: current[path] for path in MIGRATED_PAGES if path in current}}
+                "migrated_pages": {path: current[path] for path in MIGRATED_PAGES if path in current},
+                "continued_pages": continuation["current_pages"]}
     except (OSError, ValueError, TypeError, KeyError) as exc:
         errors.append(f"Invalid HK10 presentation migration: {exc}")
         return {"status": "FAIL", "checks": checks, "errors": errors, "migrated_pages": {}}

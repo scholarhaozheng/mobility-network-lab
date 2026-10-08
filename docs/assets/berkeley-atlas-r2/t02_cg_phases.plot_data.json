@@ -1,0 +1,156 @@
+{
+  "phase_i": [
+    {
+      "phase": 1,
+      "round": 0,
+      "pool_columns": 4,
+      "master_objective": 1.2003774460867707,
+      "artificial_flow": 1.2003774460867707,
+      "min_full_graph_reduced_cost": -1.0,
+      "pricing_by_od": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 3.187000000034459,
+      "rss_bytes": 169713664,
+      "columns_added": 1
+    },
+    {
+      "phase": 1,
+      "round": 1,
+      "pool_columns": 5,
+      "master_objective": 1.2003774460867707,
+      "artificial_flow": 1.2003774460867707,
+      "min_full_graph_reduced_cost": -1.0,
+      "pricing_by_od": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 4.953000000095926,
+      "rss_bytes": 170254336,
+      "columns_added": 1
+    },
+    {
+      "phase": 1,
+      "round": 2,
+      "pool_columns": 6,
+      "master_objective": 1.2003774460867707,
+      "artificial_flow": 1.2003774460867707,
+      "min_full_graph_reduced_cost": -1.0,
+      "pricing_by_od": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 6.687000000034459,
+      "rss_bytes": 169836544,
+      "columns_added": 1
+    },
+    {
+      "phase": 1,
+      "round": 3,
+      "pool_columns": 7,
+      "master_objective": 1.2003774460867707,
+      "artificial_flow": 1.2003774460867707,
+      "min_full_graph_reduced_cost": -1.0,
+      "pricing_by_od": [
+        0.0,
+        -1.0,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 8.922000000020489,
+      "rss_bytes": 170418176,
+      "columns_added": 1
+    },
+    {
+      "phase": 1,
+      "round": 4,
+      "pool_columns": 8,
+      "master_objective": 0.0,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": 0.0,
+      "pricing_by_od": [
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 11.547000000020489,
+      "rss_bytes": 170045440
+    }
+  ],
+  "phase_ii": [
+    {
+      "phase": 2,
+      "round": 0,
+      "pool_columns": 8,
+      "master_objective": 46.81717881521473,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -2.623969999999999,
+      "pricing_by_od": [
+        0.0,
+        -2.623969999999999,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 14.156000000075437,
+      "rss_bytes": 173338624,
+      "columns_added": 1
+    },
+    {
+      "phase": 2,
+      "round": 1,
+      "pool_columns": 9,
+      "master_objective": 43.667424408006426,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -0.06716999999999995,
+      "pricing_by_od": [
+        0.0,
+        -0.06716999999999995,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 16.719000000040978,
+      "rss_bytes": 173191168,
+      "columns_added": 1
+    },
+    {
+      "phase": 2,
+      "round": 2,
+      "pool_columns": 10,
+      "master_objective": 43.667424408006426,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -4.440892098500626e-16,
+      "pricing_by_od": [
+        0.0,
+        -4.440892098500626e-16,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 19.31200000003446,
+      "rss_bytes": 173776896
+    }
+  ],
+  "reduced_cost_unit": "min = (PCE·min)/PCE",
+  "frozen_pricing_gates": {
+    "phase_i": {
+      "artificial_abs": 1e-08,
+      "negative_reduced_cost_abs": 1e-08
+    },
+    "phase_ii": {
+      "negative_reduced_cost_abs": 1e-07
+    },
+    "units": {
+      "phase_i_artificial_abs": "PCE",
+      "phase_i_negative_reduced_cost_abs": "dimensionless",
+      "phase_ii_negative_reduced_cost_abs": "minutes"
+    },
+    "pricing_rule": "Add a path only if full-graph reduced cost < -negative_reduced_cost_abs."
+  }
+}

@@ -1,0 +1,1 @@
+One actual evaluated LR state. Own lower and recovered feasible upper are both 0.918428268939353 PCE·min; they overlap at displayed precision. The original 1% certificate is retained. This is the frozen four-OD pulse; capacity redundancy does not establish a geographic-size cause.

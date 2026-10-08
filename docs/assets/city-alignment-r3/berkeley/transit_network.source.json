@@ -1,0 +1,107 @@
+{
+  "id": "BERKELEY-R3-TRANSIT-NETWORK",
+  "stem": "transit_network",
+  "title": "Scheduled transit geography and model availability",
+  "city": "Berkeley",
+  "stage": "transit",
+  "caption": "Left: all 168 AC Transit stops in the frozen source envelope, shown at their supplied coordinates against the 2,150-link model road context. Equal symbol size identifies stops, not ridership or frequency. Right: the saved direct-service option exists on 38 of 156 directed interzonal pairs in the complete 13-zone system. A stop on the map does not by itself guarantee an OD alternative, legal crossing, accessible entrance, or transfer. BART from a different service date and documentary Bear Transit maps are excluded from this selected-day calculation. Service date 5 October 2026; feed S1000256; no observed-operations inference. © OpenStreetMap contributors for road context; AC Transit scheduled source.",
+  "panels": {
+    "a": "All 168 source-envelope stop coordinates",
+    "b": "Binary direct-transit OD availability, all 13 × 13 cells"
+  },
+  "dimensions": [
+    2603,
+    1099
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "transit_network",
+    "line": 91,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/transit_stops.csv",
+      "sha256": "6019c721c4d983ca3f1c11613e0741976f9414f376ec6303198eb83576d87069"
+    },
+    {
+      "path": "data/transit_direct.csv",
+      "sha256": "5fa7dab47aa149ce5c1847539aa5e11f55be70fb63ae2bbf3fd3a2965ebf0a8c"
+    },
+    {
+      "path": "data/zones.csv",
+      "sha256": "c16e20897ee7dd3c808b1401d339d5671067e1932c0b3d322cadc4731f1c72af"
+    },
+    {
+      "path": "data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "transit_network.svg",
+      "sha256": "890039dcc1a01427bdf5964a088b831e0c2df9b4ab879a4cf4a09f72df6c125e"
+    },
+    "png": {
+      "path": "transit_network.png",
+      "sha256": "936a7ea9c53ca11f21ee9e581e35a78ff431f0066a6b5b9f4848d6421bd1b9ed"
+    },
+    "pdf": {
+      "path": "transit_network.pdf",
+      "sha256": "654710fa74400e0f2c3e8588f9a5d351814a7849479f52cb3b8a05d628106e9e"
+    }
+  }
+}

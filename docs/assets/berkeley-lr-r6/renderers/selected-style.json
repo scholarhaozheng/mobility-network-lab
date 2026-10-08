@@ -1,0 +1,121 @@
+{
+  "schema": 1,
+  "backend": "Python / matplotlib",
+  "purpose": "Real-data layout comparison, not a new scientific experiment",
+  "styles": [
+    {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "composition": "Selected C compact geometry and panel layout, A/B blue–teal and navy palette, serif typography."
+    }
+  ],
+  "shared_rules": {
+    "city_title": "City identifier in same upper-left header slot above title; no old section/row numbers.",
+    "map": "True saved WKT geometry; top-down local equirectangular projection; faint road context; continuous numeric colorbar; identical extent and normalization across styles.",
+    "curve": "16 recorded Phase-II objective values, rounds 0–15; no smoothing, unit vehicle-minutes; same-graph arc-flow LP reference; strict and degenerate commits distinguishable.",
+    "integrity": "Only stored table reads and plotting; no optimizer invocation, synthetic geometry or pasted raster panels.",
+    "exports": [
+      "PNG 300 dpi",
+      "SVG with editable text",
+      "PDF TrueType text"
+    ],
+    "caption": "Captions and caveats kept outside figure canvas for webpage."
+  },
+  "samples": [
+    {
+      "id": "map",
+      "kind": "map",
+      "core_conclusion": "The saved Boston ABS_PLANNED Frank–Wolfe flow occupies a subset of the 5091 physical directed links.",
+      "archetype": "quantitative grid",
+      "evidence": [
+        {
+          "panel": "single",
+          "file": "docs/assets/boston/assignment_methods_r1/boston_abs_planned_assignment_links.csv",
+          "field": "fw_volume",
+          "units": "modeled vehicle trips in the frozen 26-OD panel"
+        }
+      ],
+      "risk": "Model results, not observed counts; no citywide calibration claim."
+    },
+    {
+      "id": "curve",
+      "kind": "curve",
+      "core_conclusion": "The recorded Boston bounded-pilot Phase-II objective declines from 64.8296764834 to 64.3968615115 by round 15, including degenerate nonincreasing commits.",
+      "archetype": "quantitative grid",
+      "evidence": [
+        {
+          "panel": "single",
+          "file": "docs/assets/boston/space_time_cg_r4/data/phase_ii_objective.csv",
+          "units": "vehicle-minutes"
+        },
+        {
+          "panel": "reference line",
+          "file": "docs/assets/boston/space_time_cg_r4/data/validation_summary.json",
+          "field": "identical_graph_arc_lp_reference_objective"
+        }
+      ],
+      "risk": "Same bounded 90-node/125-link/10-demand finite graph, separate from ABS_PLANNED static instance; reference match alone is not pricing closure."
+    },
+    {
+      "id": "multi",
+      "kind": "multi-panel",
+      "core_conclusion": "The saved rank-26 and rank-52 L3 flows nearly agree with FW; the signed deviations are on the order of 1e-6 modeled vehicle trips, and absolute versus difference views must not be confused.",
+      "archetype": "quantitative grid",
+      "evidence": [
+        {
+          "panel": "a",
+          "field": "rank26_v_from_paths"
+        },
+        {
+          "panel": "b",
+          "field": "rank52_v_from_paths"
+        },
+        {
+          "panel": "c",
+          "field": "rank26_minus_fw"
+        },
+        {
+          "panel": "d",
+          "field": "rank52_minus_fw"
+        }
+      ],
+      "risk": "Actual saved L3 v_from_paths columns, not finite-path reference mislabeled as L3; shared flow/difference scales, no cross-instance comparison."
+    }
+  ],
+  "selection": {
+    "source": "explicit_user_message",
+    "user_request": "C的风格，A、B的配色，字体要serif字体（不是times，是serif）",
+    "confirmed_at": "2026-10-03T10:38:56.599Z",
+    "layout": "C",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "font": {
+      "family": "serif",
+      "resolved_family": "DejaVu Serif",
+      "mathtext": "dejavuserif",
+      "times_allowed": false
+    },
+    "scope": "All final scientific figures; no repeated version switching; applied samples demonstrate the selected specification."
+  }
+}

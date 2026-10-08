@@ -1,0 +1,40 @@
+{
+  "id": "R3-PITTSBURGH-TRANSIT",
+  "city": "pittsburgh",
+  "title": "Transit source geography and service boundary",
+  "caption": "Earlier bounded preflight stop tags; no timetable. Stop tags and road proximity do not prove legal walk access or operating service. The gray retained road graph is geographic context, not a transit route model.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "stop coordinates",
+      "unit": "projected km",
+      "count": 109,
+      "source_scope": "Earlier bounded preflight stop tags; no timetable"
+    },
+    {
+      "panel": "b",
+      "metric": "evidence boundary",
+      "transit_prediction": "not modeled"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\pittsburgh\\processed\\stops.csv",
+      "sha256": "c4b8a6d06ce98a61197c1e60c4c99491701f642d375069f0b4278c6091b1fb62"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "transit"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "5f5425815921fb4cf416e687acf77e020d977ae6a883820257a7c647e2564e4a",
+    "png": "384e56b3a08d3c4a76b0c9dddc23d435a9eae692bedd0bc129e91111fc91ebe5",
+    "pdf": "f2c9a5460c629df4d848ae7855d4c01bba3448692b6aa7b0108eb7641f8ca9aa"
+  },
+  "width": 1716,
+  "height": 942,
+  "src": "assets/city-alignment-r3/pittsburgh/transit.svg"
+}

@@ -1,0 +1,35 @@
+{
+  "figure_id": "f01_network",
+  "city": "berkeley",
+  "title": "Preflight source-road geography, retained as contextual evidence rather than assigned flow.",
+  "caption": "Preflight source-road geography, retained as contextual evidence rather than assigned flow.",
+  "unit": "Source context; see figure legend",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/berkeley/original/f01_network.svg",
+      "sha256": "c7fe1c292cca7be7a7e1e5b4b40c52635340d11aa3893935894bf9536f1f7bfe"
+    }
+  ],
+  "source_run_receipt_sha256": null,
+  "source_metadata_sha256": "3c4f53df683a6d84fcb11e4cc7369c6ad89ce4c9b3e442284373cfcd22d5cc5f",
+  "png_sha256": "fba0dc8db31a49111a9f719bd423152643357e178fe6df6efe3d3b2fa510add0",
+  "svg_sha256": "f658ccc0c183a58fa36d766b2eae241d2eb51fc92c57ecc7b6156006643cd63d",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-f01-network",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "c7fe1c292cca7be7a7e1e5b4b40c52635340d11aa3893935894bf9536f1f7bfe",
+  "input_png_sha256": "fba0dc8db31a49111a9f719bd423152643357e178fe6df6efe3d3b2fa510add0",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false,
+  "related_case_run_receipt_sha256": "a6de9d5d79f18651b64355ed12a6a87e94251701999a17f823e75d84e4c189d7",
+  "run_binding_semantics": "Preflight context figure predates the four-stage assignment; the receipt identifies the related accepted case, not a scientific run that generated this figure. Exact source figure bytes are bound in inputs."
+}

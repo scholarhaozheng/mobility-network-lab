@@ -1,0 +1,68 @@
+{
+  "table_id": "uc-native-od-gates",
+  "city": "urbana-champaign",
+  "title": "Native original-OD conservation: accepted outer 9",
+  "scope": "Original S72; 9 actual outer checks per rank",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.svg"
+  ],
+  "notes": [
+    "This table compares endpoint gates. Nine real outer states per rank remain in the linked public data; no intermediate solver state is missing."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.plot.json",
+      "href": "assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.plot.json",
+      "sha256": "94646c53f5ee11a276909822d09267c73ae32eddb20de867164953830387f51c"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Original-coordinate conservation",
+      "columns": [
+        "Rank",
+        "First outer",
+        "Initial OD residual",
+        "Accepted outer",
+        "Final OD residual",
+        "Original OD gate",
+        "Saved states",
+        "Status"
+      ],
+      "rows": [
+        {
+          "Rank": "26",
+          "First outer": 1,
+          "Initial OD residual": 0.7593402348386186,
+          "Accepted outer": 9,
+          "Final OD residual": 1.8816028177388866e-08,
+          "Original OD gate": 1e-06,
+          "Saved states": 9,
+          "Status": "ACCEPTED"
+        },
+        {
+          "Rank": "52",
+          "First outer": 1,
+          "Initial OD residual": 0.7593402349228081,
+          "Accepted outer": 9,
+          "Final OD residual": 1.8723606126256828e-08,
+          "Original OD gate": 1e-06,
+          "Saved states": 9,
+          "Status": "ACCEPTED"
+        }
+      ],
+      "column_units": {
+        "Initial OD residual": "PCE/h",
+        "Final OD residual": "PCE/h",
+        "Original OD gate": "PCE/h"
+      },
+      "details": false
+    }
+  ],
+  "rows": 2,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"uc-native-od-gates\"><h4>Native original-OD conservation: accepted outer 9</h4><p class=\"evidence-table-scope\">Original S72; 9 actual outer checks per rank</p><h5>Original-coordinate conservation</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Original-coordinate conservation\"><table><thead><tr><th scope=\"col\">Rank</th><th scope=\"col\">First outer</th><th scope=\"col\">Initial OD residual <small>(PCE/h)</small></th><th scope=\"col\">Accepted outer</th><th scope=\"col\">Final OD residual <small>(PCE/h)</small></th><th scope=\"col\">Original OD gate <small>(PCE/h)</small></th><th scope=\"col\">Saved states</th><th scope=\"col\">Status</th></tr></thead><tbody><tr><td>26</td><td>1</td><td>0.7593402348386186</td><td>9</td><td>1.8816028177388866e-08</td><td>1e-06</td><td>9</td><td>ACCEPTED</td></tr><tr><td>52</td><td>1</td><td>0.7593402349228081</td><td>9</td><td>1.8723606126256828e-08</td><td>1e-06</td><td>9</td><td>ACCEPTED</td></tr></tbody></table></div><p>This table compares endpoint gates. Nine real outer states per rank remain in the linked public data; no intermediate solver state is missing.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.plot.json\" download>UC_S02_C1.plot.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.svg\">UC_S02_C1.svg</a></p></details></section>",
+  "caption": "This table compares endpoint gates. Nine real outer states per rank remain in the linked public data; no intermediate solver state is missing."
+}

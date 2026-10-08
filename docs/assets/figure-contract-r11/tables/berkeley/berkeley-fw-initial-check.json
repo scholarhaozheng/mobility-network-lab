@@ -1,0 +1,85 @@
+{
+  "table_id": "berkeley-fw-initial-check",
+  "city": "berkeley",
+  "title": "Frank–Wolfe: initial stopping check",
+  "scope": "Original Berkeley S72; 953.049842713612 PCE/h",
+  "original_assets": [
+    "assets/city-alignment-r3/berkeley/fw_saved_check.svg"
+  ],
+  "notes": [
+    "abs(relative_gap) <= gate and signed_gap >= -1e-8",
+    "The solver-side saved check differs by roundoff from the independent method endpoint recomputation. Neither replaces the other."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/fw_saved_check.plot_data.json",
+      "href": "assets/city-alignment-r3/berkeley/fw_saved_check.plot_data.json",
+      "sha256": "4b356fa30a97ef00dfc81027ee7b8dda7c96778479d3b844db25d0bec10cbc68"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/fw_saved_check.source.json",
+      "href": "assets/city-alignment-r3/berkeley/fw_saved_check.source.json",
+      "sha256": "5e3f6869387913817cf27c8809cff579db23e7f34e59ae9934d45586f8545817"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Saved initialization",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Saved rows",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Saved iteration",
+          "Saved value": "0",
+          "Unit / interpretation": "initialization"
+        },
+        {
+          "Metric": "FW updates",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Objective",
+          "Saved value": "2746.0944149794555",
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "Signed gap numerator",
+          "Saved value": "2.7284841053187847e-12",
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "Relative gap",
+          "Saved value": "9.930680236469416e-16",
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Relative-gap gate",
+          "Saved value": 1e-05,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Signed-gap lower guard",
+          "Saved value": -1e-08,
+          "Unit / interpretation": "PCE·min/h"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 8,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"berkeley-fw-initial-check\"><h4>Frank–Wolfe: initial stopping check</h4><p class=\"evidence-table-scope\">Original Berkeley S72; 953.049842713612 PCE/h</p><h5>Saved initialization</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Saved initialization\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Saved rows</td><td>1</td><td>count</td></tr><tr><td>Saved iteration</td><td>0</td><td>initialization</td></tr><tr><td>FW updates</td><td>0</td><td>count</td></tr><tr><td>Objective</td><td>2746.0944149794555</td><td>PCE·min/h</td></tr><tr><td>Signed gap numerator</td><td>2.7284841053187847e-12</td><td>PCE·min/h</td></tr><tr><td>Relative gap</td><td>9.930680236469416e-16</td><td>dimensionless</td></tr><tr><td>Relative-gap gate</td><td>1e-05</td><td>dimensionless</td></tr><tr><td>Signed-gap lower guard</td><td>-1e-08</td><td>PCE·min/h</td></tr></tbody></table></div><p>abs(relative_gap) &lt;= gate and signed_gap &gt;= -1e-8</p><p>The solver-side saved check differs by roundoff from the independent method endpoint recomputation. Neither replaces the other.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/berkeley/fw_saved_check.plot_data.json\" download>fw_saved_check.plot_data.json</a> · <a href=\"assets/city-alignment-r3/berkeley/fw_saved_check.source.json\" download>fw_saved_check.source.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/berkeley/fw_saved_check.svg\">fw_saved_check.svg</a></p></details></section>",
+  "caption": "abs(relative_gap) <= gate and signed_gap >= -1e-8 The solver-side saved check differs by roundoff from the independent method endpoint recomputation. Neither replaces the other."
+}

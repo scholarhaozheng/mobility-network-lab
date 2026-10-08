@@ -1,0 +1,41 @@
+{
+  "id": "R3-ITHACA-POPULATION",
+  "city": "ithaca",
+  "title": "All-zone demographic denominator",
+  "caption": "Saved clipped-zone demographic allocation; not a campus census. All 11 zones are retained; population total 27,797.9. Occupied units total 10,362.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 27797.945573000005
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 10361.965919
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\inputs\\zones.csv",
+      "sha256": "f982678b4e1628c5a3c488a6623ee5bdcf6e3220aaa4826039703bf54199c52e"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "population"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "b6480905b8208a241c799c1c87024746520197dc6af529bd1fd1f844c41c2394",
+    "png": "eaec67409a1289930902fa26de65da5c8a05f807646de4a3d74dd2bdff985be1",
+    "pdf": "ec536732fc52453eb458900e812d3b230d19ac3b95c7a2ecc40bd1692cb071b3"
+  },
+  "width": 1885,
+  "height": 926,
+  "src": "assets/city-alignment-r3/ithaca/population.svg"
+}

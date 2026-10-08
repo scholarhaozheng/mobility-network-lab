@@ -1,0 +1,163 @@
+{
+  "table_id": "aa-static-endpoints",
+  "city": "ann-arbor",
+  "title": "Static endpoints on separate S600 and S72 instances",
+  "scope": "Two distinct frozen static cohorts; no invented trajectory",
+  "original_assets": [
+    "assets/gap-20261008/ann-arbor/AA_GAP_STATIC.png"
+  ],
+  "notes": [
+    "The signed gaps retain only the rounded precision actually printed in the approved SVG; no private high-precision plot data is exported. The stated absolute gap gate is 1e−5. S600 and S72 are separate instances. Native600, new-choice FW and T1/T4 remain unsolved. Separate frozen S600 and S72 static instances. S72 Native passed at initialization with zero updates; Native600 and new-choice FW were not solved. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census/LEHD.",
+    "Only approved SVG rounded gaps are transferred. R10 supplies history counts, not replacement high-precision values. A different independent Algorithm B gap in R10 is not substituted for the approved plotted number."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ann-arbor/AA_GAP_STATIC.svg",
+      "href": "assets/gap-20261008/ann-arbor/AA_GAP_STATIC.svg",
+      "sha256": "6fa8e2e162af2af6e2ef794dd498fe788603fd5a49c4861b6e545bd2c74787a7"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ann-arbor/AA_GAP_STATIC.caption.md",
+      "href": "assets/gap-20261008/ann-arbor/AA_GAP_STATIC.caption.md",
+      "sha256": "b6476a0fff30aaa23911ef4e642769116c7cf245be265a72c683a65b3790b2d5"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ann-arbor/AA_STATIC_GAP_ADDENDUM_S0.md",
+      "href": "assets/gap-20261008/ann-arbor/AA_STATIC_GAP_ADDENDUM_S0.md",
+      "sha256": "6fca56bed8abf88aee5c28558b9c7091a451bcf5d5b14da043a281e6b8fece0d"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Static endpoints on separate S600 and S72 instances",
+      "columns": [
+        "Instance",
+        "Method",
+        "Signed full-graph gap (printed)",
+        "Current S0 status",
+        "Process scope"
+      ],
+      "rows": [
+        {
+          "Instance": "S600",
+          "Method": "FW",
+          "Signed full-graph gap (printed)": "-1.15e-16",
+          "Current S0 status": "Accepted",
+          "Process scope": "New saved S600 method"
+        },
+        {
+          "Instance": "S600",
+          "Method": "Sparse fixed-path FW",
+          "Signed full-graph gap (printed)": "-2.31e-16",
+          "Current S0 status": "Accepted",
+          "Process scope": "New saved S600 method"
+        },
+        {
+          "Instance": "S600",
+          "Method": "Algorithm B",
+          "Signed full-graph gap (printed)": "-2.31e-16",
+          "Current S0 status": "Accepted",
+          "Process scope": "New saved S600 method"
+        },
+        {
+          "Instance": "S72",
+          "Method": "FW",
+          "Signed full-graph gap (printed)": "1.03e-11",
+          "Current S0 status": "Accepted",
+          "Process scope": "Separate frozen S72 endpoint"
+        },
+        {
+          "Instance": "S72",
+          "Method": "Finite path",
+          "Signed full-graph gap (printed)": "1.03e-11",
+          "Current S0 status": "Accepted",
+          "Process scope": "Separate frozen S72 endpoint"
+        },
+        {
+          "Instance": "S72",
+          "Method": "Native26",
+          "Signed full-graph gap (printed)": "1.03e-11",
+          "Current S0 status": "Accepted",
+          "Process scope": "Initialization; 0 updates"
+        },
+        {
+          "Instance": "S72",
+          "Method": "Native52",
+          "Signed full-graph gap (printed)": "1.03e-11",
+          "Current S0 status": "Accepted",
+          "Process scope": "Initialization; 0 updates"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Actual saved history counts",
+      "columns": [
+        "Instance / method",
+        "Saved history / updates",
+        "Current status"
+      ],
+      "rows": [
+        {
+          "Instance / method": "ANN_ARBOR_R2_S600_20261008 / FW",
+          "Saved history / updates": "saved rows = 2; indices = [0, 1]; optimization updates = 1",
+          "Current status": "ACCEPTED_STATIC_SUBSET"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S600_20261008 / finite",
+          "Saved history / updates": "saved rows = 2; indices = [0, 1]; optimization updates = 1",
+          "Current status": "ACCEPTED_STATIC_SUBSET"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S72_20261008 / FW",
+          "Saved history / updates": "saved rows = 1; indices = [0]; optimization updates = 0",
+          "Current status": "ACCEPTED_STATIC_SUBSET"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S72_20261008 / finite",
+          "Saved history / updates": "saved rows = 1; indices = [0]; optimization updates = 0",
+          "Current status": "ACCEPTED_STATIC_SUBSET"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S72_20261008 / Native rank 26",
+          "Saved history / updates": "saved initial states = 1; optimization updates = 0; native solver calls = 0",
+          "Current status": "PASS_INITIAL_STATE_ZERO_UPDATES"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S600_20261008 / Native rank 26",
+          "Saved history / updates": "saved initial checks = 1; optimization updates = 0; native solver calls = 0",
+          "Current status": "RESOURCE_GATED_NO_NATIVE_SOLVE"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S72_20261008 / Native rank 52",
+          "Saved history / updates": "saved initial states = 1; optimization updates = 0; native solver calls = 0",
+          "Current status": "PASS_INITIAL_STATE_ZERO_UPDATES"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S600_20261008 / Native rank 52",
+          "Saved history / updates": "saved initial checks = 1; optimization updates = 0; native solver calls = 0",
+          "Current status": "RESOURCE_GATED_NO_NATIVE_SOLVE"
+        },
+        {
+          "Instance / method": "ANN_ARBOR_R2_S600_20261008 / Algorithm B",
+          "Saved history / updates": "saved history rows = 1; solver reported iteration indices = [1]; reported B iterations = 1; shifts in reported iteration = 50",
+          "Current status": "ACCEPTED"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 16,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"aa-static-endpoints\"><h4>Static endpoints on separate S600 and S72 instances</h4><p class=\"evidence-table-scope\">Two distinct frozen static cohorts; no invented trajectory</p><h5>Static endpoints on separate S600 and S72 instances</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Static endpoints on separate S600 and S72 instances\"><table><thead><tr><th scope=\"col\">Instance</th><th scope=\"col\">Method</th><th scope=\"col\">Signed full-graph gap (printed)</th><th scope=\"col\">Current S0 status</th><th scope=\"col\">Process scope</th></tr></thead><tbody><tr><td>S600</td><td>FW</td><td>-1.15e-16</td><td>Accepted</td><td>New saved S600 method</td></tr><tr><td>S600</td><td>Sparse fixed-path FW</td><td>-2.31e-16</td><td>Accepted</td><td>New saved S600 method</td></tr><tr><td>S600</td><td>Algorithm B</td><td>-2.31e-16</td><td>Accepted</td><td>New saved S600 method</td></tr><tr><td>S72</td><td>FW</td><td>1.03e-11</td><td>Accepted</td><td>Separate frozen S72 endpoint</td></tr><tr><td>S72</td><td>Finite path</td><td>1.03e-11</td><td>Accepted</td><td>Separate frozen S72 endpoint</td></tr><tr><td>S72</td><td>Native26</td><td>1.03e-11</td><td>Accepted</td><td>Initialization; 0 updates</td></tr><tr><td>S72</td><td>Native52</td><td>1.03e-11</td><td>Accepted</td><td>Initialization; 0 updates</td></tr></tbody></table></div><h5>Actual saved history counts</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Actual saved history counts\"><table><thead><tr><th scope=\"col\">Instance / method</th><th scope=\"col\">Saved history / updates</th><th scope=\"col\">Current status</th></tr></thead><tbody><tr><td>ANN_ARBOR_R2_S600_20261008 / FW</td><td>saved rows = 2; indices = [0, 1]; optimization updates = 1</td><td>ACCEPTED_STATIC_SUBSET</td></tr><tr><td>ANN_ARBOR_R2_S600_20261008 / finite</td><td>saved rows = 2; indices = [0, 1]; optimization updates = 1</td><td>ACCEPTED_STATIC_SUBSET</td></tr><tr><td>ANN_ARBOR_R2_S72_20261008 / FW</td><td>saved rows = 1; indices = [0]; optimization updates = 0</td><td>ACCEPTED_STATIC_SUBSET</td></tr><tr><td>ANN_ARBOR_R2_S72_20261008 / finite</td><td>saved rows = 1; indices = [0]; optimization updates = 0</td><td>ACCEPTED_STATIC_SUBSET</td></tr><tr><td>ANN_ARBOR_R2_S72_20261008 / Native rank 26</td><td>saved initial states = 1; optimization updates = 0; native solver calls = 0</td><td>PASS_INITIAL_STATE_ZERO_UPDATES</td></tr><tr><td>ANN_ARBOR_R2_S600_20261008 / Native rank 26</td><td>saved initial checks = 1; optimization updates = 0; native solver calls = 0</td><td>RESOURCE_GATED_NO_NATIVE_SOLVE</td></tr><tr><td>ANN_ARBOR_R2_S72_20261008 / Native rank 52</td><td>saved initial states = 1; optimization updates = 0; native solver calls = 0</td><td>PASS_INITIAL_STATE_ZERO_UPDATES</td></tr><tr><td>ANN_ARBOR_R2_S600_20261008 / Native rank 52</td><td>saved initial checks = 1; optimization updates = 0; native solver calls = 0</td><td>RESOURCE_GATED_NO_NATIVE_SOLVE</td></tr><tr><td>ANN_ARBOR_R2_S600_20261008 / Algorithm B</td><td>saved history rows = 1; solver reported iteration indices = [1]; reported B iterations = 1; shifts in reported iteration = 50</td><td>ACCEPTED</td></tr></tbody></table></div><p>The signed gaps retain only the rounded precision actually printed in the approved SVG; no private high-precision plot data is exported. The stated absolute gap gate is 1e−5. S600 and S72 are separate instances. Native600, new-choice FW and T1/T4 remain unsolved. Separate frozen S600 and S72 static instances. S72 Native passed at initialization with zero updates; Native600 and new-choice FW were not solved. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census/LEHD.</p><p>Only approved SVG rounded gaps are transferred. R10 supplies history counts, not replacement high-precision values. A different independent Algorithm B gap in R10 is not substituted for the approved plotted number.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/gap-20261008/ann-arbor/AA_GAP_STATIC.svg\" download>AA_GAP_STATIC.svg</a> · <a href=\"assets/gap-20261008/ann-arbor/AA_GAP_STATIC.caption.md\" download>AA_GAP_STATIC.caption.md</a> · <a href=\"assets/gap-20261008/ann-arbor/AA_STATIC_GAP_ADDENDUM_S0.md\" download>AA_STATIC_GAP_ADDENDUM_S0.md</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/gap-20261008/ann-arbor/AA_GAP_STATIC.png\">AA_GAP_STATIC.png</a></p></details></section>",
+  "caption": "The signed gaps retain only the rounded precision actually printed in the approved SVG; no private high-precision plot data is exported. The stated absolute gap gate is 1e−5. S600 and S72 are separate instances. Native600, new-choice FW and T1/T4 remain unsolved. Separate frozen S600 and S72 static instances. S72 Native passed at initialization with zero updates; Native600 and new-choice FW were not solved. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census/LEHD. Only approved SVG rounded gaps are transferred. R10 supplies history counts, not replacement high-precision values. A different independent Algorithm B gap in R10 is not substituted for the approved plotted number."
+}

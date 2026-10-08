@@ -1,0 +1,644 @@
+{
+  "figure_id": "R12-GENERATED-ROUTE-PROFILE",
+  "city": "pittsburgh",
+  "instance": "Original four-OD T4; one generated path per OD",
+  "role": "saved-state-check",
+  "conclusion": "Generated routes: flow, cost and arc roles",
+  "panels": {
+    "a": "Own path flow",
+    "b": "Fixed cost",
+    "c": "Separate arc roles"
+  },
+  "quantity": "path flow, cost, arc composition",
+  "unit": "PCE; min; count",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T06.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "Each category is one of the four saved demand commodities, not a solver iteration. Panels retain the method’s own generated path flow, fixed route cost, and separate counts of movement, turn, and waiting arcs. All four paths have zero waiting arcs. The ordered dynamic arc sequences and existing route maps remain separate geographic evidence; a fixed cost in minutes is not the rounded arrival clock.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T06.plot.json",
+      "sha256": "980cb3268d8f3fdccfc3a4aaf9ddb0f9cd505bedfadb9e9a608bddc4e98e9a9b"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Generated routes: flow, cost and arc roles",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 12.23,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3378,
+    1106
+  ],
+  "exports": {
+    "png": "df6208703827a01283eaf60d4a5a1a21595aa56e04a50903e3eb506fe35984bf",
+    "svg": "a9eb38ae4feda287d4fb515ed92b4c5cc3e0fe7e753c254fd6ca91659d02d659",
+    "pdf": "5d542ee2190dd6f6717d2580549df433f6e17331ffe5f167aec60b18bb1bea10"
+  },
+  "text_audit": [
+    {
+      "text": "0.012249",
+      "size_pt": 7.0,
+      "bounds_px": [
+        124.493,
+        233.681,
+        46.0,
+        9.0
+      ]
+    },
+    {
+      "text": "0.017349",
+      "size_pt": 7.0,
+      "bounds_px": [
+        194.27,
+        298.356,
+        46.0,
+        9.0
+      ]
+    },
+    {
+      "text": "0.01542",
+      "size_pt": 7.0,
+      "bounds_px": [
+        267.109,
+        273.891,
+        39.875,
+        9.0
+      ]
+    },
+    {
+      "text": "1.0448e-05",
+      "size_pt": 7.0,
+      "bounds_px": [
+        329.323,
+        78.488,
+        55.0,
+        9.0
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        133.18,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        202.957,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        272.734,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        342.51,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Assigned flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        47.986,
+        144.313,
+        13.0,
+        129.375
+      ]
+    },
+    {
+      "text": "0.0000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        68.8,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0025",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        100.502,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0050",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        132.205,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0075",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        163.907,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        195.61,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0125",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        227.312,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0150",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        259.015,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0175",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        290.717,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        322.419,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0225",
+      "size_pt": 8.0,
+      "bounds_px": [
+        66.542,
+        354.122,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Own path flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        114.0,
+        348.533,
+        131.875,
+        14.0
+      ]
+    },
+    {
+      "text": "5.7069",
+      "size_pt": 7.0,
+      "bounds_px": [
+        517.46,
+        234.326,
+        33.75,
+        9.0
+      ]
+    },
+    {
+      "text": "8.0498",
+      "size_pt": 7.0,
+      "bounds_px": [
+        587.237,
+        298.356,
+        33.75,
+        9.0
+      ]
+    },
+    {
+      "text": "2.4875",
+      "size_pt": 7.0,
+      "bounds_px": [
+        657.013,
+        146.338,
+        33.75,
+        9.0
+      ]
+    },
+    {
+      "text": "1.9075",
+      "size_pt": 7.0,
+      "bounds_px": [
+        726.79,
+        130.486,
+        33.75,
+        9.0
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        520.022,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.799,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        659.576,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        729.353,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Fixed route cost (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        466.828,
+        138.75,
+        13.0,
+        140.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.384,
+        68.8,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.384,
+        123.46,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.384,
+        178.12,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.384,
+        232.78,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.384,
+        287.44,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        478.259,
+        342.1,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Own path cost",
+      "size_pt": 11.0,
+      "bounds_px": [
+        500.842,
+        348.533,
+        131.25,
+        14.0
+      ]
+    },
+    {
+      "text": "OD 1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        909.693,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        977.584,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1045.475,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1113.366,
+        56.467,
+        28.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved arc records",
+      "size_pt": 9.0,
+      "bounds_px": [
+        839.42,
+        151.25,
+        13.0,
+        115.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        872.226,
+        68.8,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        865.101,
+        106.338,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        865.101,
+        143.877,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        865.101,
+        181.415,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        865.101,
+        218.954,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        857.976,
+        256.492,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        857.976,
+        294.031,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        857.976,
+        331.569,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "160",
+      "size_pt": 8.0,
+      "bounds_px": [
+        857.976,
+        369.108,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Path composition",
+      "size_pt": 11.0,
+      "bounds_px": [
+        887.684,
+        348.533,
+        151.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Road",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1130.25,
+        325.45,
+        25.0,
+        9.0
+      ]
+    },
+    {
+      "text": "Turn",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1130.25,
+        311.589,
+        23.625,
+        9.0
+      ]
+    },
+    {
+      "text": "Wait",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1130.25,
+        297.728,
+        21.75,
+        9.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        78.0,
+        400.589,
+        344.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Generated routes: flow, cost and arc roles",
+      "size_pt": 15.0,
+      "bounds_px": [
+        78.0,
+        373.644,
+        488.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "bf6aaa2c087ec986ed8b1a33592b9b2166f3684e2267577b888b25fb893b0b0a"
+  }
+}

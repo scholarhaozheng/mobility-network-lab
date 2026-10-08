@@ -1,0 +1,39 @@
+{
+  "id": "R3-PITTSBURGH-SOURCES",
+  "city": "pittsburgh",
+  "title": "Physical source roads and retained graph",
+  "caption": "17,534 retained physical directed traversals in the saved 08:00–09:00 HBW model, shown in EPSG:26917. This is the retained model graph, not a claim to draw every road in the source archive. Virtual movements are excluded; colour has no traffic meaning. © OpenStreetMap contributors / ODbL.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26917",
+      "local_origin_metres": [
+        585158.4286945096,
+        4473903.319270447
+      ]
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\pittsburgh\\plot_data\\FS_A01\\physical_flow.csv",
+      "sha256": "cefd1061bc91500ba9fc03e1d176e26b57a426e41e1d6cadd977ba6a4f491dd9"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "sources"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "1203e368b0a45e4e23622054829dbf01d68ce5c07c5e1af750ea7d3c63986176",
+    "png": "6a518d0ba8998cf0b3d683b3e919d61139bff82f102f9ab88513095d86d420a3",
+    "pdf": "80e6afc996805a12c4fc2c33d56ff93d3c40d97d1397f19ff59d78d0e677dcd0"
+  },
+  "width": 1121,
+  "height": 991,
+  "src": "assets/city-alignment-r3/pittsburgh/sources.svg"
+}

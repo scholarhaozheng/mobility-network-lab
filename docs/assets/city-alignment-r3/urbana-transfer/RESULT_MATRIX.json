@@ -1,0 +1,124 @@
+{
+  "schema": "mcl_C02_algorithm_transfer_result_matrix_v2",
+  "case_id": "central_champaign_urbana_2026_r2",
+  "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+  "scientific_identity": "SEEN_DIAGNOSTIC_TRANSFER",
+  "S_OD": 72,
+  "S_PCE": 321.6296598827645,
+  "T_OD": 4,
+  "T_PCE": 0.05162314826794134,
+  "same_T_model_signature": "bd634a94e6dfa1435fdbb087bc78fc87959198537b314d44cedd953465c71d8b",
+  "methods": [
+    {
+      "method": "S_FW",
+      "status": "ACCEPTED",
+      "instance": "S72",
+      "implementation": "actual C02 vectorized BPR arithmetic candidate plus accepted AON/path math",
+      "objective_pce_min": 1086.5535434762646,
+      "full_relative_gap": 2.9714876265136327e-14,
+      "max_OD_residual_pce": 0.0,
+      "independent_evidence": "run/S/fw_fast_72_r2/verification.json",
+      "scope_note": "initial loading passes; no FW update or acceleration claim"
+    },
+    {
+      "method": "S_FINITE",
+      "status": "ACCEPTED",
+      "instance": "S72",
+      "implementation": "full 360-path finite SLSQP",
+      "objective_pce_min": 1086.5535434762646,
+      "full_relative_gap": 1.6740775360640655e-15,
+      "max_OD_residual_pce": 0.0,
+      "independent_evidence": "run/S/finite_72/independent_check.json",
+      "scope_note": "same selected OD and complete 26,602 solver-link incidence"
+    },
+    {
+      "method": "S_NATIVE26",
+      "status": "GATE_NOT_MET",
+      "instance": "S72",
+      "implementation": "Native rank 26, eight actual ALM/IPOPT outer steps",
+      "max_OD_residual_pce": 8.244534783253296e-05,
+      "declared_OD_gate_pce": 1e-06,
+      "independent_evidence": "run/S/native_26_resumed/result.json",
+      "scope_note": "raw endpoint retained; subproblem optimal is not whole-method acceptance"
+    },
+    {
+      "method": "S_NATIVE52",
+      "status": "GATE_NOT_MET",
+      "instance": "S72",
+      "implementation": "Native rank 52, eight actual ALM/IPOPT outer steps",
+      "max_OD_residual_pce": 8.248817476135353e-05,
+      "declared_OD_gate_pce": 1e-06,
+      "independent_evidence": "run/S/native_52/status.json",
+      "scope_note": "raw endpoint retained; no repaired flow substituted"
+    },
+    {
+      "method": "T_LP_HIGHS_ATTEMPT",
+      "status": "GATE_NOT_MET",
+      "instance": "T4",
+      "implementation": "HiGHS full exact-reachable arc-flow matrix",
+      "process_exit_code_hex": "0xC0000409",
+      "elapsed_seconds": 3854.9679999999935,
+      "independent_evidence": "run/T/lp/HIGHS_FAILURE.json",
+      "scope_note": "native process crash; no solver endpoint and no HiGHS success claim"
+    },
+    {
+      "method": "T_LP_EXACT_DAG",
+      "status": "ACCEPTED",
+      "instance": "T4",
+      "implementation": "full exact-reachable arc LP primal/dual DAG certificate after proved capacity redundancy",
+      "objective_pce_min": 0.37598366513352877,
+      "dual_pce_min": 0.3759836651335293,
+      "variables": 2608286,
+      "capacity_rows": 0,
+      "max_balance_pce": 0.0,
+      "independent_evidence": "run/T/lp_dag/independent_check.json",
+      "scope_note": "mathematical LP endpoint; distinct from failed HiGHS implementation"
+    },
+    {
+      "method": "T_CG",
+      "status": "ACCEPTED",
+      "instance": "T4",
+      "implementation": "two-phase compact CG with independent full-DAG pricing",
+      "objective_pce_min": 0.37598366513352854,
+      "phase_I_artificial_pce": 0.0,
+      "minimum_reduced_cost_min": 0.0,
+      "independent_evidence": "run/T/cg/independent_check.json",
+      "scope_note": "four self-generated paths; physical capacities nonbinding"
+    },
+    {
+      "method": "T_LR",
+      "status": "ACCEPTED",
+      "instance": "T4",
+      "implementation": "zero-multiplier LR and self-generated path recovery",
+      "upper_pce_min": 0.37598366513352854,
+      "lower_pce_min": 0.3759836651335291,
+      "iterations": 1,
+      "independent_evidence": "run/T/lr/independent_check.json",
+      "scope_note": "one-iteration bound closure is this low-demand case result"
+    },
+    {
+      "method": "T_ADMM",
+      "status": "ACCEPTED",
+      "instance": "T4",
+      "implementation": "shared v002 C1/C2 exact math, rho=1, own-input cold main and independent cold confirmation",
+      "objective_pce_min": 0.37598366514196835,
+      "outer_iterations": 1,
+      "primal_residual_pce": 0.0,
+      "dual_residual_pce": 3.4388605706864527e-13,
+      "max_balance_pce": 5.351749497492834e-15,
+      "LP_absolute_difference_pce_min": 8.439582366293052e-12,
+      "LP_true_relative_difference": 2.2446672951325626e-11,
+      "independent_evidence": "run/T/ADMM_CONFIRMATION.json",
+      "scope_note": "main stage passed and exact-state cold confirmation; no tier2 run"
+    },
+    {
+      "method": "T_ADMM_TIER2",
+      "status": "NOT_RUN",
+      "instance": "T4",
+      "implementation": "pre-registered stricter continuation",
+      "independent_evidence": "run/T/ADMM_TIER2_DECISION.json",
+      "scope_note": "main stage passed all gates, so tier2 trigger was absent"
+    }
+  ],
+  "public_release": "S0_REVIEW_PENDING"
+}

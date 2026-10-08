@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "solver_calls": 0,
+  "counts": {
+    "zones": 13,
+    "population": 31821,
+    "jobs": 16583,
+    "transit_stops": 168,
+    "selected_date_stop_events": 14649,
+    "direct_transit_pairs": 38,
+    "layer_arcs": 57,
+    "layer_nodes": 7
+  },
+  "outputs": {
+    "accuracy_objective_vs_lp.plot_data.json": {
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278",
+      "bytes": 12756
+    },
+    "generation_complete.csv": {
+      "sha256": "aa8f809a8d693423904c8255836a3ff7166e36c5b17a4a3e64ec9ab89703a974",
+      "bytes": 1883
+    },
+    "INPUT_PROVENANCE.json": {
+      "sha256": "15c72063c1ecbdb663a6e3085cea3c22a721379b97365d6eb781f57a86084b4b",
+      "bytes": 6197
+    },
+    "physical_geometry.csv": {
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5",
+      "bytes": 297328
+    },
+    "s02_same_instance_methods.plot_data.json": {
+      "sha256": "1356cb9648f665a1a6d4a1655552197260b7756cdc6169bfda3498f3a435839c",
+      "bytes": 2921
+    },
+    "static_demand.csv": {
+      "sha256": "4d9e5023e17a5fafea9194965a2a3c79bfc08fceb108963b8734334a2b508627",
+      "bytes": 4954
+    },
+    "static_fw_history.csv": {
+      "sha256": "2a0cdc0421f44aedb6b016986a42e0d707917e535b36aad8dd1be4209c35fb22",
+      "bytes": 118
+    },
+    "static_link_attributes.csv": {
+      "sha256": "78b1ffe32b14e711cfe9069e21aa338a58670763e4192eae3acd73d9803129f3",
+      "bytes": 244577
+    },
+    "static_policy.json": {
+      "sha256": "78eae2f621376cee222f4d020d0c6992187b8ba1507b64c078e0e63b4b5c1429",
+      "bytes": 899
+    },
+    "t01_computed_column.plot_data.json": {
+      "sha256": "6002aed7702d8b5c89e03c37c68c1968b136bab47123f5d067837455179b8ead",
+      "bytes": 5096
+    },
+    "t01_selected_path.csv": {
+      "sha256": "cb25c2ae54e83976b008768a529f9666f5748d2881b7aa9953c3c77521a935c2",
+      "bytes": 2032
+    },
+    "t02_cg_phases.plot_data.json": {
+      "sha256": "e04732f043f5c1e8f4b6430882fd176c9021fb22c8017f8ffaf119aa86d793b3",
+      "bytes": 3320
+    },
+    "t02_frozen_pricing_gates.json": {
+      "sha256": "bc366cec18dfdcc4cd17ffc1adfc724b69dcdd6838169e63058de5749b0e2b92",
+      "bytes": 425
+    },
+    "t03_lr_bounds_physical.plot_data.json": {
+      "sha256": "d003989e9db3af49f51d15f116b653a5c956a99b673366a92319e41defe6abb9",
+      "bytes": 58163
+    },
+    "t03_recovery_history.json": {
+      "sha256": "53f9dea3851f46673724c66b975557f6cf09886eb2ccded61a0ea04f79944102",
+      "bytes": 432
+    },
+    "time_layer_arcs.csv": {
+      "sha256": "e0bcb7e9b7fa6b34c8461001694ee7e37528d47f83d52fd765bbdd7af9b2083e",
+      "bytes": 4450
+    },
+    "time_layer_nodes.csv": {
+      "sha256": "6086cdf8e3e42e0190281a8c31735bfb8ee3ef43a9e0d692c2dd40a28e39e197",
+      "bytes": 244
+    },
+    "transit_direct.csv": {
+      "sha256": "5fa7dab47aa149ce5c1847539aa5e11f55be70fb63ae2bbf3fd3a2965ebf0a8c",
+      "bytes": 5201
+    },
+    "transit_service_hours.csv": {
+      "sha256": "5dadbbf04d38c88f4aed8fdd9b0fa8a1c10372491bbd6715fa9666d7ce7b3840",
+      "bytes": 594
+    },
+    "transit_stops.csv": {
+      "sha256": "6019c721c4d983ca3f1c11613e0741976f9414f376ec6303198eb83576d87069",
+      "bytes": 4589
+    },
+    "zones.csv": {
+      "sha256": "c16e20897ee7dd3c808b1401d339d5671067e1932c0b3d322cadc4731f1c72af",
+      "bytes": 29338
+    }
+  },
+  "source_identities": [
+    {
+      "logical_source": "zones.csv",
+      "sha256": "bbfffb394ea34cfe6c20351da887c36639fc6bb22620d7f02c9eff906ee0779d"
+    },
+    {
+      "logical_source": "zone.csv",
+      "sha256": "3cda23edbb22e788560a491013bb255cfa7079f2774631d872c813a10f0fe174"
+    },
+    {
+      "logical_source": "access.csv",
+      "sha256": "389716aa3310ab720a4aea7c383ee48dcaa63e9b66106bb438b3959137a3db6c"
+    },
+    {
+      "logical_source": "transit_direct_best.csv",
+      "sha256": "5fa7dab47aa149ce5c1847539aa5e11f55be70fb63ae2bbf3fd3a2965ebf0a8c"
+    },
+    {
+      "logical_source": "stops_in_source_envelope.csv",
+      "sha256": "1cb9c37420b218c19d23e46fbcdb6acb76d151041157dc0d789e56930d432b20"
+    },
+    {
+      "logical_source": "stop_times_service_date_in_envelope.csv",
+      "sha256": "0494415aac7f650f5d396b36136924c5f11ece75ca32875ef6866264c93e3758"
+    },
+    {
+      "logical_source": "physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "logical_source": "t01_selected_path.csv",
+      "sha256": "cb25c2ae54e83976b008768a529f9666f5748d2881b7aa9953c3c77521a935c2"
+    },
+    {
+      "logical_source": "t01_computed_column.plot_data.json",
+      "sha256": "6002aed7702d8b5c89e03c37c68c1968b136bab47123f5d067837455179b8ead"
+    },
+    {
+      "logical_source": "t02_cg_phases.plot_data.json",
+      "sha256": "e04732f043f5c1e8f4b6430882fd176c9021fb22c8017f8ffaf119aa86d793b3"
+    },
+    {
+      "logical_source": "t02_frozen_pricing_gates.json",
+      "sha256": "bc366cec18dfdcc4cd17ffc1adfc724b69dcdd6838169e63058de5749b0e2b92"
+    },
+    {
+      "logical_source": "t03_lr_bounds_physical.plot_data.json",
+      "sha256": "d003989e9db3af49f51d15f116b653a5c956a99b673366a92319e41defe6abb9"
+    },
+    {
+      "logical_source": "t03_recovery_history.json",
+      "sha256": "53f9dea3851f46673724c66b975557f6cf09886eb2ccded61a0ea04f79944102"
+    },
+    {
+      "logical_source": "accuracy_objective_vs_lp.plot_data.json",
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278"
+    },
+    {
+      "logical_source": "s02_same_instance_methods.plot_data.json",
+      "sha256": "1356cb9648f665a1a6d4a1655552197260b7756cdc6169bfda3498f3a435839c"
+    },
+    {
+      "logical_source": "demand_s.csv",
+      "sha256": "4d9e5023e17a5fafea9194965a2a3c79bfc08fceb108963b8734334a2b508627"
+    },
+    {
+      "logical_source": "link.csv",
+      "sha256": "78b1ffe32b14e711cfe9069e21aa338a58670763e4192eae3acd73d9803129f3"
+    },
+    {
+      "logical_source": "history.csv",
+      "sha256": "2a0cdc0421f44aedb6b016986a42e0d707917e535b36aad8dd1be4209c35fb22"
+    },
+    {
+      "logical_source": "S_POLICY.json",
+      "sha256": "78eae2f621376cee222f4d020d0c6992187b8ba1507b64c078e0e63b4b5c1429"
+    },
+    {
+      "logical_source": "generation_complete.csv",
+      "sha256": "aa8f809a8d693423904c8255836a3ff7166e36c5b17a4a3e64ec9ab89703a974"
+    },
+    {
+      "logical_source": "dynamic_arc.csv",
+      "sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757"
+    }
+  ]
+}

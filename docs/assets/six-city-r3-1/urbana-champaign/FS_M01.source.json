@@ -1,0 +1,41 @@
+{
+  "figure_id": "FS_M01",
+  "city": "urbana-champaign",
+  "title": "Mode choice \u2014 drive and walk",
+  "caption": "Drive and walk use the frozen OD-specific logit outputs. Transit is Not modelled because verified service-day costs were not established; the omitted transit bar is not a prediction of zero transit demand. Person trips and person-weighted generalized minutes are shown separately. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips / hour; generalized minutes",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/urbana_champaign/original/FS_M01.svg",
+      "sha256": "a750fe9345b34eeca8f3bc30e317fb025b6eecc35f27d8b67d01e35eb9925d9c"
+    },
+    {
+      "logical_source": "mode_summary.csv",
+      "sha256": "0a93bfd5878ed2b82f72951e7063afd187cec52f231db580e94d35c601952ba5"
+    },
+    {
+      "logical_path": "private_snapshot/compute_capsules/urbana_champaign/reference_run/mode_choice/mode_choice_by_od.csv",
+      "sha256": "9bd7b4f5e40157f25b8c7f468b5659d756d09f7e7713e911852ca40a9aec8110"
+    }
+  ],
+  "source_run_receipt_sha256": "0ef7800bd618539b174bbed0ac620461851d24af9881cba0846d1ccc16224654",
+  "source_metadata_sha256": "d5b5a24f273b5aa236ebe90f69a611ca07edc67de6d67f8bbd56fdcf91aa9096",
+  "png_sha256": "19f16d82a7d99489f37a4ae862d515d326cbe5ef483a1ecb94f08414a4cd2778",
+  "svg_sha256": "472f511e2027cdc19f76f3e6e567ce4f34229c6a85484ac681a0eae7d5fad058",
+  "transformation": [
+    "Sum saved person_trips by modeled mode; cost = sum(person_trips \u00d7 generalized_min) / sum(person_trips). Exclude unmodelled transit from quantitative bars and mark explicitly.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_targeted_fixes.py --snapshot SNAPSHOT --output OUTPUT",
+  "page_anchor": "figure-fs-m01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "83023f46b116453d6feb952f66f9356e951a0ef241405e9a1e4f217d426dfea9",
+  "input_png_sha256": "19f16d82a7d99489f37a4ae862d515d326cbe5ef483a1ecb94f08414a4cd2778",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

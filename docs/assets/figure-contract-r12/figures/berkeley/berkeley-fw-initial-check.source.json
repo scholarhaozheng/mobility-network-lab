@@ -1,0 +1,389 @@
+{
+  "figure_id": "R12-BERKELEY-FW-INITIAL-CHECK",
+  "city": "berkeley",
+  "instance": "Original Berkeley S72; 953.049842713612 PCE/h",
+  "role": "saved-state-check",
+  "conclusion": "One saved initial state is displayed truthfully as a point, not converted to a table.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 1,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "Only the actual saved iteration 0 is shown: objective 2746.09441497946 PCE·min/h and relative gap 9.93068023646942e-16, against the unchanged 1e-05 stopping gate. There were zero updates. Each panel contains a single numerical point; no missing trajectory or second state is inferred. The companion physical-flow map reads this method’s own saved vector. The saved signed gap numerator is 2.7284841053187847e−12 PCE·min/h; the independent endpoint evaluator remains a separate numerical evaluation.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/fw_saved_check.plot_data.json",
+      "sha256": "4b356fa30a97ef00dfc81027ee7b8dda7c96778479d3b844db25d0bec10cbc68"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Berkeley",
+    "title": "Frank–Wolfe: the saved initial check",
+    "scope": "S72 · 72 OD · 953.049842714 PCE/h"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 21.155,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2453,
+    1117
+  ],
+  "exports": {
+    "png": "fb4ffe7d7106b1922333c02b1129fff344b5615f874aa661daf954e9463aa21a",
+    "svg": "f8aaa86ea2b414ff2a0ca884509b3c29bfcd76abacff818a19c6d7a9fd4edb7d",
+    "pdf": "2371da253d3bc35903421d8f0271fb70d2c99dabff41c25d10ec08cc47d36c6e"
+  },
+  "text_audit": [
+    {
+      "text": "2746.09441",
+      "size_pt": 9.0,
+      "bounds_px": [
+        190.226,
+        236.917,
+        75.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        179.663,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.601,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        21.111,
+        118.812,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "2600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        89.728,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2650",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        133.371,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        177.015,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2750",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        220.659,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        264.303,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2850",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        307.947,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2900",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        351.59,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved objective",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        351.211,
+        139.625,
+        14.0
+      ]
+    },
+    {
+      "text": "9.93068e-16",
+      "size_pt": 9.0,
+      "bounds_px": [
+        637.399,
+        136.08,
+        79.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        628.587,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        673.524,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        480.784,
+        131.875,
+        13.0,
+        182.75
+      ]
+    },
+    {
+      "text": "1e−5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        525.423,
+        345.267,
+        30.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.09,
+        85.666,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        119.191,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        152.715,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        186.24,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        219.764,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        253.289,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        286.813,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        320.338,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.34,
+        353.862,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Relative-gap stopping check",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        363.378,
+        240.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved gap",
+      "size_pt": 7.7,
+      "bounds_px": [
+        747.75,
+        323.475,
+        56.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Gate = 1e-05",
+      "size_pt": 7.7,
+      "bounds_px": [
+        747.75,
+        308.128,
+        71.375,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  S72 · 72 OD · 953.049842714 PCE/h",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        415.433,
+        340.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: the saved initial check",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        388.489,
+        423.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

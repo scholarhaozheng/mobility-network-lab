@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the current reading homepage, four volumes and reproducibility entry.
+"""Validate the current nine-case reading homepage, volumes and reproducibility entry.
 
 The retired preview-table/220px contracts are replaced by the approved text-only
 coverage table and canonical atlas/volume links. Historical scientific source,
@@ -31,6 +31,27 @@ def ids(p):
   _CACHE[p]=found
  return _CACHE[p]
 
+def parse_atlas_data(text):
+ """Read the two JSON payloads without executing the page's JavaScript.
+
+ The historical model and additive city bundle are separately JSON encoded.
+ Reject unknown wrappers and trailing code rather than silently ignoring them.
+ """
+ prefix='window.MCL_ATLAS_MODEL ='
+ if not text.startswith(prefix):raise ValueError('Unknown atlas model assignment')
+ payload=text[len(prefix):].lstrip()
+ model,end=json.JSONDecoder().raw_decode(payload)
+ tail=payload[end:]
+ wrapper=';\n\n/* V R3.1 additive static city presentation. Original three-city model is retained above. */\n(function(m,extra){m.cities.push(...extra.cities);Object.assign(m.representatives,extra.representatives);Object.assign(m.comparisons.static.fw,extra.fw);Object.assign(m.comparisonNotes.static.fw,extra.notes);if(!m.stageOrder.includes("reusable"))m.stageOrder.push("reusable");m.stageNumbers.reusable="19";})(window.MCL_ATLAS_MODEL,'
+ if not tail.startswith(wrapper):raise ValueError('Unknown additive atlas wrapper')
+ extra,extra_end=json.JSONDecoder().raw_decode(tail[len(wrapper):])
+ if tail[len(wrapper)+extra_end:].strip()!=');':raise ValueError('Unexpected trailing atlas code')
+ model['cities'].extend(extra['cities'])
+ city_ids=[city['id'] for city in model['cities']]
+ if len(set(city_ids))!=len(city_ids):raise ValueError('Duplicate atlas city')
+ return model
+
+
 def main():
  errors=[];checks=0
  def check(ok,message):
@@ -38,9 +59,9 @@ def main():
   checks+=1
   if not ok:errors.append(message)
  readme=read(ROOT/'README.md');home=read(DOCS/'index.html');s=BeautifulSoup(home,'html.parser')
- headings=['01 / What this project adds','02 / Complete project structure','03 / Case coverage and selected evidence','04 / Explore the three cases','05 / Run and inspect','06 / Attribution, scope and further reading']
+ headings=['01 / What this project adds','02 / Complete project structure','03 / Case coverage and selected evidence','04 / Explore the city cases','05 / Run and inspect','06 / Attribution, scope and further reading']
  check(all(x in readme and x in home for x in headings),'Six-block research entry missing')
- for needle in ('[Hao Zheng](https://scholarhaozheng.github.io/)','under the guidance of **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)**','[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)','[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)','official [tap-b Algorithm B](https://github.com/spartalab/tap-b)','Project-specific work includes assembling and adapting the Boston, Sioux Falls, and Hong Kong cases'):
+ for needle in ('[Hao Zheng](https://scholarhaozheng.github.io/)','under the guidance of **[Professor Xuesong Zhou](https://search.asu.edu/profile/2182101)**','[General Modeling Network Specification (GMNS)](https://github.com/zephyr-data-specs/GMNS)','[TAPLab: An Open Laboratory for Reproducible Traffic Assignment Experiments](https://github.com/asu-trans-ai-lab/TAPLab)','official [tap-b Algorithm B](https://github.com/spartalab/tap-b)','Project-specific work includes assembling and adapting the eight real-city cases'):
   check(needle in readme,'Author/upstream attribution missing: '+needle)
  for phrase in ('City-to-model representations','Computational implementations and diagnostics','Reusable cross-city computational tools'):
   check(phrase in home and phrase in readme and phrase in read(DOCS/'contributions.md'),'Contribution missing: '+phrase)
@@ -55,14 +76,24 @@ def main():
   check(f'volumes/{city}.html' in home,'Homepage volume entry missing: '+city)
  for legacy in ('framework','coverage','cg-experiments','boston','sioux-falls','hong-kong'):
   check(s.find(id=legacy) is not None,'Homepage compatibility anchor missing: '+legacy)
- matrix=s.select_one('table.coverage-matrix')
- check(matrix is not None and len(matrix.select('tbody tr:not(.matrix-group)'))==19,'Coverage matrix must have nineteen text rows')
+ matrix=s.select_one('table.comparison-table')
+ rows=matrix.select('tbody tr.cmp-data-row') if matrix else []
+ check(matrix is not None and len(rows)==19,'Coverage matrix must have nineteen evidence rows')
  check(matrix is not None and not matrix.find('img'),'Section 03 must be text-only')
- for row in matrix.select('tbody tr:not(.matrix-group)') if matrix else []:
-  check(len(row.find_all(['th','td'],recursive=False))==4,'Coverage row must compare exactly three cities')
- cards=s.select('.atlas-card[data-figure]');check(len(cards)==80,'Homepage retains 80 cards after two L3 reference comparisons move to long volumes')
+ expected_cities={'boston','sioux-falls','hong-kong','ann-arbor','urbana-champaign','ithaca','berkeley','chicago','pittsburgh'}
+ matrix_cities=[cell.get('data-city') for cell in matrix.select('thead th[data-city]')] if matrix else []
+ check(len(matrix_cities)==9 and set(matrix_cities)==expected_cities,'Coverage matrix must identify eight city cases and the Sioux Falls benchmark')
+ for row in rows:
+  cells=row.find_all(['th','td'],recursive=False)
+  check(len(cells)==10 and [cell.get('data-city') for cell in cells[1:]]==matrix_cities,'Coverage row must compare every declared city exactly once')
+ cards=s.select('.atlas-card[data-figure]')
+ historical_cards=[card for card in cards if card.find_parent(attrs={'data-city':{'boston','sioux-falls','hong-kong'}})]
+ check(len(historical_cards)==80,'The three original cases must retain their 80 homepage cards')
+ check(len({card['data-figure'] for card in cards})==len(cards),'Homepage figure-card identifiers must be unique')
+ for city in expected_cities:
+  check(s.select_one(f'.case-atlas[data-city="{city}"] .atlas-card[data-figure]') is not None,'Homepage case has no evidence cards: '+city)
  check(not any(c['data-figure'].lower()=='g-f115' for c in cards),'Saved Sioux column belongs only in the long volume')
- volumes={city:BeautifulSoup(read(DOCS/f'volumes/{city}.html'),'html.parser') for city in ('overview','boston','sioux-falls','hong-kong')}
+ volumes={city:BeautifulSoup(read(DOCS/f'volumes/{city}.html'),'html.parser') for city in {'overview',*expected_cities}}
  for city,cid,slug in [('boston','C-BOSTON-ABS-L3','c-boston-abs-l3'),('hong-kong','C-HK-L3-STATIC','c-hk-l3-static')]:
   check(not any(c['data-figure']==cid for c in cards),'L3 reference comparison must remain in long volume: '+cid)
   check(volumes[city].find(id='stage-13-native-l3--'+slug) is not None,'L3 figure lost from long volume: '+cid)
@@ -79,7 +110,8 @@ def main():
    target_imgs=figure.find_all('img') if figure else []
    source_image=target(DOCS/'index.html',image['src'])[0]
    check(any(target(dest,im['src'])[0]==source_image for im in target_imgs),'Linked volume does not display same figure: '+c['data-figure'])
- for city,vol in volumes.items():
+ for city in ('overview','boston','sioux-falls','hong-kong'):
+  vol=volumes[city]
   check(vol.html.get('lang')=='en','Volume language must be English: '+city)
   check(vol.find('a',href='../index.html') is not None,'Volume back link missing: '+city)
   check(vol.find(id='current-reproduction') is not None,'Volume current reproduction status missing: '+city)
@@ -97,8 +129,11 @@ def main():
  css=read(DOCS/'assets/reading/atlas.css');check('DejaVu Serif' in css and 'ui-monospace' in css,'Homepage serif/monospace typography contract missing')
  for name in ('DejaVuSerif.ttf','DejaVuSerif-Bold.ttf','LICENSE-DejaVu.txt','dejavu-serif.css'):
   check((DOCS/'assets/fonts'/name).is_file(),'Shared licensed font asset missing: '+name)
- model_js=read(DOCS/'assets/reading/atlas-data.js');model=json.loads(model_js.split('=',1)[1].strip().rstrip(';'))
- check(len(model['cities'])==3,'Atlas runtime must contain all three cities')
+ try:
+  model=parse_atlas_data(read(DOCS/'assets/reading/atlas-data.js'))
+  check(len(model['cities'])==9 and {c['id'] for c in model['cities']}==expected_cities,'Atlas data must declare all nine cases exactly once')
+ except (ValueError,KeyError,TypeError) as exc:
+  check(False,'Atlas data is invalid: '+str(exc))
  app=read(DOCS/'assets/reading/atlas.js');check(all(x in app for x in ('atlas-view','sioux-od','av-stage-jumpbar')),'Atlas view/stage/instance controls missing')
  diagram=DOCS/'assets/atlas/project-map.svg';svg=read(diagram)
  check(svg.count('href=')>=26,'Clickable project map modules missing')
@@ -146,6 +181,6 @@ def main():
    if fragment and (p in current or p.suffix=='.md') and dest.suffix in ('.html','.md') and dest.is_file():
     dynamic=dest==DOCS/'reproduce.html' and fragment in record_ids
     check(dynamic or fragment in ids(dest),'Broken local fragment: '+str(p.relative_to(ROOT))+' -> '+raw)
- print(json.dumps({'status':'PASS' if not errors else 'FAIL','checks':checks,'errors':errors,'home_cards':len(cards),'coverage_rows':19,'volumes':4,'pages_html_files':len(pages),'historical_scientific_guards_retained':True,'visual_qa_performed':False},indent=2))
+ print(json.dumps({'status':'PASS' if not errors else 'FAIL','checks':checks,'errors':errors,'home_cards':len(cards),'coverage_rows':len(rows),'volumes':len(volumes),'pages_html_files':len(pages),'historical_scientific_guards_retained':True,'visual_qa_performed':False},indent=2))
  return int(bool(errors))
 if __name__=='__main__':raise SystemExit(main())

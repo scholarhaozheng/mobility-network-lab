@@ -1,0 +1,741 @@
+{
+  "figure_id": "chicago-native80-full-history",
+  "city": "chicago",
+  "instance": "S20 uncompressed Native80; signature 626bf2dc8bfc27d9b82d3f48b1a8bbbcea1f977d81aad662139672f313dac614",
+  "role": "iteration",
+  "saved_states": 3,
+  "updates": 3,
+  "conclusion": "All three saved outer iterations are visible; original-coordinate gates pass at outer 3.",
+  "panels": [
+    "Original Beckmann objective",
+    "Signed full-graph relative gap",
+    "Relative original OD L1 residual",
+    "Original-link reconstruction residual"
+  ],
+  "quantity": [
+    "Original Beckmann objective",
+    "Signed relative gap",
+    "OD L1 / total demand",
+    "Maximum reconstructed-link residual"
+  ],
+  "unit": [
+    "PCE-minutes/hour",
+    "dimensionless",
+    "dimensionless",
+    "PCE/hour"
+  ],
+  "release_scope": "PRIVATE_PREVIEW_ONLY",
+  "no_failure_trial_card": true,
+  "all_saved_states_of_accepted_run": true,
+  "schema": "mcl_figure_r12",
+  "caption": "One accepted Chicago S20 run, not three separate experiments: 20 OD, 100 input paths and 80 uncompressed minor coordinates (U = I80). All three existing outer states are plotted at their actual indices 1–3. The original Beckmann objective increases as the early OD deficit is removed; the negative early signed gap is not a better feasible solution. The saved per-OD gate is |r_i| ≤ 10⁻⁶ + 10⁻⁸ max(1, q_i), alongside the displayed relative OD-L1 gate. Maximum per-OD residuals are 0.716124, 1.32514×10⁻⁵ and 1.78858×10⁻¹⁰ PCE/hour. The third state passes the complete frozen checks. These are the saved controller checks; the separately released independent final replay reports objective 5601.461468294976 and gap 1.4899811815539771×10⁻¹², agreeing at numerical precision. The first two states are part of this accepted run’s full history, not discarded failed trials. PRIVATE PREVIEW: the numerical history comes from the existing private Full run; the public released increment contains its endpoint only. No solver was run.",
+  "sources": [
+    {
+      "source_id": "chicago-native-identity80/RESULT.json",
+      "sha256": "cd1d70282db73cff48dcc48786fe313d9c511ac178df3e5416da42bf77658430",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_01_check.json",
+      "sha256": "f59de45c59cc57a559934cecc964e54aae176cbe78f077007d7d58a10aa951e4",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_01_native.json",
+      "sha256": "14f2e09e76634955f92ea808b474b78b4a568d6ad1ae37e8b4f13e8310aeda2e",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_02_check.json",
+      "sha256": "7b5b82a326ca85599b85db9c82eee4bcab81e4b475fbcd44a1ecff4d7b1f68c3",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_02_native.json",
+      "sha256": "4f6c4525117e06cf6e5320568e954442e5c97b35d1d7d5c478d081bfce4da47c",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_03_check.json",
+      "sha256": "801e5c0fb22eec4989668cb011ea1d758e22c64732904f312c9b5d3448747695",
+      "access": "private_saved_run"
+    },
+    {
+      "source_id": "chicago-native-identity80/outer_03_native.json",
+      "sha256": "3304b906f4ec8fdc65e09718d8643560ba19267f685436a1c63b16263443609a",
+      "access": "private_saved_run"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Chicago",
+    "title": "Native80: all three saved outer iterations",
+    "scope": "S20 / uncompressed 80-minor representation"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.453,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2778,
+    1761
+  ],
+  "exports": {
+    "png": "60be4e40393812733e51906db89ceb501a09645a1e3207c19167240d82723e16",
+    "svg": "9fb68d2d776b84db5f90f39cfc3e3a50317c7cdcaa8d3a294dbe87ba5972fd9d",
+    "pdf": "90afd5f072570ccaca1730c1f286d4a4671ec52b42516ca89dcd7e4207f94088"
+  },
+  "text_audit": [
+    {
+      "text": "5566.351",
+      "size_pt": 8.0,
+      "bounds_px": [
+        118.477,
+        374.525,
+        53.375,
+        10.0
+      ]
+    },
+    {
+      "text": "5601.461",
+      "size_pt": 8.0,
+      "bounds_px": [
+        365.016,
+        506.319,
+        53.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        189.809,
+        323.255,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        106.581,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        264.871,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        423.162,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "PCE-minutes per hour",
+      "size_pt": 9.0,
+      "bounds_px": [
+        31.011,
+        378.109,
+        13.0,
+        141.125
+      ]
+    },
+    {
+      "text": "5560",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        333.076,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5570",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        378.92,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5580",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        424.764,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5590",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        470.608,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        516.452,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5610",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.567,
+        562.296,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Original Beckmann objective",
+      "size_pt": 11.0,
+      "bounds_px": [
+        86.4,
+        542.533,
+        242.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        684.941,
+        323.255,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.713,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        760.004,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        918.294,
+        341.81,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        520.768,
+        334.984,
+        13.0,
+        227.375
+      ]
+    },
+    {
+      "text": "−10⁻²",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.324,
+        360.025,
+        33.875,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.449,
+        389.33,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁸",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.449,
+        418.635,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        566.074,
+        449.026,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        548.699,
+        508.722,
+        24.5,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Full-graph optimality check",
+      "size_pt": 11.0,
+      "bounds_px": [
+        581.532,
+        542.533,
+        233.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Signed relative gap",
+      "size_pt": 7.5,
+      "bounds_px": [
+        833.725,
+        384.727,
+        102.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen ±10⁻⁵ gate",
+      "size_pt": 7.5,
+      "bounds_px": [
+        833.725,
+        369.518,
+        98.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        189.809,
+        31.111,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        106.581,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        264.871,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        423.162,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative L1 residual",
+      "size_pt": 9.0,
+      "bounds_px": [
+        27.88,
+        92.778,
+        13.0,
+        127.5
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.045,
+        24.628,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        45.982,
+        56.857,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.435,
+        89.086,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        50.868,
+        121.915,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        50.931,
+        154.145,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        50.993,
+        186.374,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        50.931,
+        218.603,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.384,
+        250.232,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        57.901,
+        282.461,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "c  Original OD feasibility",
+      "size_pt": 11.0,
+      "bounds_px": [
+        86.4,
+        250.39,
+        191.75,
+        14.0
+      ]
+    },
+    {
+      "text": "OD L1 / total demand",
+      "size_pt": 7.5,
+      "bounds_px": [
+        328.218,
+        225.682,
+        112.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen 10⁻⁸ gate",
+      "size_pt": 7.5,
+      "bounds_px": [
+        328.218,
+        210.473,
+        89.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        684.941,
+        31.111,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.713,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        760.004,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        918.294,
+        49.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Flow residual (PCE/hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        522.278,
+        75.966,
+        13.0,
+        161.125
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-16}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.052,
+        15.236,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-14}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        540.833,
+        59.5,
+        32.366,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-12}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.365,
+        103.764,
+        31.834,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.052,
+        148.028,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        546.063,
+        192.892,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        546.001,
+        237.157,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        545.782,
+        280.821,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        546.313,
+        325.685,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "d  Original-link reconstruction",
+      "size_pt": 11.0,
+      "bounds_px": [
+        581.532,
+        250.39,
+        235.25,
+        14.0
+      ]
+    },
+    {
+      "text": "Maximum |link − path sum|",
+      "size_pt": 7.5,
+      "bounds_px": [
+        790.1,
+        158.632,
+        146.125,
+        11.0
+      ]
+    },
+    {
+      "text": "Frozen 10⁻⁷ gate",
+      "size_pt": 7.5,
+      "bounds_px": [
+        790.1,
+        143.424,
+        89.25,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  S20 / uncompressed 80-minor representation",
+      "size_pt": 8.7,
+      "bounds_px": [
+        62.4,
+        594.589,
+        395.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Native80: all three saved outer iterations",
+      "size_pt": 15.0,
+      "bounds_px": [
+        62.4,
+        567.644,
+        481.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_SOURCE_AND_PNG_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "manual_visual_qa": {
+    "panels": 4,
+    "actual_marker_indices": [
+      1,
+      2,
+      3
+    ],
+    "font": "DejaVu Serif",
+    "colors": "existing R12 teal/blue",
+    "crowded_symlog_ticks": "reduced to explicit signed sparse ticks",
+    "legend_collisions": false,
+    "no_fabricated_intermediate_samples": true
+  }
+}

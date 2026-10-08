@@ -1,0 +1,146 @@
+{
+  "id": "s03_native_flows",
+  "title": "Native and FW physical-link flow",
+  "city": "Berkeley",
+  "stage": "S72 / bounded static assignment",
+  "caption": "Actual saved FW and Native rank-26/rank-52 explicit physical-link vectors, each joined one-to-one to all 2,150 frozen S72 link geometries. Finite-path flow is not used as a Native substitute. The three absolute maps share a square-root colour scale and the same geographic bounds; the two signed Native−FW maps share a symmetric zero-centred scale. Differences are magnified into 10⁻⁶ PCE/h and retain their signs. Maximum absolute differences are 2.645862196e-08 PCE/h for rank 26 and 1.585378499e-06 PCE/h for rank 52. Panel f includes every physical link, including overlapping points at zero. These are tiny numerical endpoint differences, not traffic improvement, diversion sensitivity or measured accuracy. Rank-52 raw flow includes numerical negatives down to −4.380487468063516×10⁻⁴⁷ PCE/h; they remain in the source and the common colour normalization lower bound, without clipping. Line widths use absolute magnitude with the same maximum within each comparison family. Local display kilometres preserve the original road vertices. © OpenStreetMap contributors, ODbL 1.0. One bounded uncalibrated one-hour engineering scenario; no new solver run.",
+  "panels": [
+    {
+      "id": "a",
+      "metric": "FW_flow_pce_per_hour",
+      "rows": 2150,
+      "unit": "PCE/h",
+      "transform": "shared PowerNorm(gamma=0.5); width=0.4+1.35*sqrt(abs(flow)/shared absolute maximum)",
+      "shared_colour_min": -4.380487468063516e-47,
+      "shared_colour_max": 390.318194730158
+    },
+    {
+      "id": "b",
+      "metric": "Native26_flow_pce_per_hour",
+      "rows": 2150,
+      "unit": "PCE/h",
+      "transform": "shared PowerNorm(gamma=0.5); width=0.4+1.35*sqrt(abs(flow)/shared absolute maximum)",
+      "shared_colour_min": -4.380487468063516e-47,
+      "shared_colour_max": 390.318194730158
+    },
+    {
+      "id": "c",
+      "metric": "Native52_flow_pce_per_hour",
+      "rows": 2150,
+      "unit": "PCE/h",
+      "transform": "shared PowerNorm(gamma=0.5); width=0.4+1.35*sqrt(abs(flow)/shared absolute maximum)",
+      "shared_colour_min": -4.380487468063516e-47,
+      "shared_colour_max": 390.318194730158
+    },
+    {
+      "id": "d",
+      "metric": "Native26_minus_FW",
+      "rows": 2150,
+      "unit": "micro PCE/h",
+      "transform": "actual saved Native explicit v minus actual FW flow; multiply 1e6; shared symmetric linear colour and shared sqrt width maximum",
+      "colour_bounds_micro": [
+        -1.585378498702994,
+        1.585378498702994
+      ],
+      "max_abs_difference_pce_per_hour": 2.6458621960046003e-08
+    },
+    {
+      "id": "e",
+      "metric": "Native52_minus_FW",
+      "rows": 2150,
+      "unit": "micro PCE/h",
+      "transform": "actual saved Native explicit v minus actual FW flow; multiply 1e6; shared symmetric linear colour and shared sqrt width maximum",
+      "colour_bounds_micro": [
+        -1.585378498702994,
+        1.585378498702994
+      ],
+      "max_abs_difference_pce_per_hour": 1.585378498702994e-06
+    },
+    {
+      "id": "f",
+      "metric": "Native minus FW against FW physical-link flow",
+      "rows_per_method": 2150,
+      "x_unit": "PCE/h",
+      "y_unit": "micro PCE/h",
+      "transform": "linear axes; all points including exact overlap"
+    }
+  ],
+  "renderer": {
+    "path": "render_static.py",
+    "sha256": "8b09e5e4f1a6ef3433b6167327308ee8c640577b98c8d138bfe52614a2382882",
+    "function": "s03_native_flows",
+    "line_start": 239,
+    "line_end": 312
+  },
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW",
+  "scientific_solver_rerun": false,
+  "sources": [
+    {
+      "path": "data/s72_physical_flow.csv",
+      "sha256": "080946fc37d6ed420ff57f18e7e8d1288df693e5e5ea43260b2515670afaa97f"
+    },
+    {
+      "path": "data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    }
+  ],
+  "plot_style": {
+    "layout": "C",
+    "palette": "A/B blue–teal/navy",
+    "font": "DejaVu Serif",
+    "shared_functions": [
+      "configure",
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_hash": "a96485ced49883acb09a51e9239b16256c7fddd65b8ff2d9d2994176ce7414a9"
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3961,
+    1825
+  ],
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 24.667,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "path": "s03_native_flows.png",
+      "sha256": "fe7494ce927c277e9c8306b28e20d128c8810e68f43784bd0d7a45f7320fefb7"
+    },
+    "svg": {
+      "path": "s03_native_flows.svg",
+      "sha256": "4e9ea5620d07410a3d05d6e70bd7b699fbfbca4d995d257b54a4201a1d06d546"
+    },
+    "pdf": {
+      "path": "s03_native_flows.pdf",
+      "sha256": "d1e38f36bec3033df33ea7da3df66f2eeacea4949138a40c7e56cdebed8e1ba2"
+    }
+  },
+  "integrity": "Saved values only; no optimizer, smoothing or fabricated iterations. Original accepted figures are retained separately.",
+  "coordinate_transform": {
+    "purpose": "Display only, same local-linear-kilometre convention as the Boston atlas",
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(longitude + 122.27) * 111.320 * cos(37.87 degrees)",
+    "y_km": "(latitude - 37.87) * 110.574",
+    "scientific_geometry_altered": false
+  },
+  "scope": "One saved S72 engineering scenario, 72 positive vehicle OD pairs, 953.049842713612 PCE in one declared hour; no observed-traffic calibration, uncertainty sample, or new solver run."
+}

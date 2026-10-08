@@ -1,0 +1,457 @@
+{
+  "figure_id": "R12-UC-NATIVE-OD-CONSERVATION",
+  "city": "urbana-champaign",
+  "instance": "Original S72; 9 actual outer checks per rank",
+  "role": "saved-state-check",
+  "conclusion": "The complete accepted method history uses the same conservation objective as the reference-city diagnostic.",
+  "panels": [
+    {
+      "metric": "maximum original-OD residual",
+      "unit": "PCE/h"
+    }
+  ],
+  "quantity": [
+    "maximum original-OD residual"
+  ],
+  "unit": [
+    "PCE/h"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 9,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "All nine actual saved outer checks are retained for the accepted S72 Native26 and Native52 runs, using the original 72-OD conservation metric. The frozen gate is 1e−6 PCE/h; both runs first meet it at outer 9. Lines join actual saved iterations only, without smoothing or invented points. Earlier high residuals belong to these ultimately accepted trajectories. The two panels use identical ordinate limits. Rank 26 uses 98 path coordinates and rank 52 uses 124; each retains 26,602 explicit-link variables. These dimension counts are distinct from iteration counts.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/urbana-champaign/UC_S02_C1.plot.json",
+      "sha256": "94646c53f5ee11a276909822d09267c73ae32eddb20de867164953830387f51c"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_S04.plot.json",
+      "sha256": "f8ece2f4bba10260269cc8c2cb59a9c68c8de1ee949bc0819f6217481f606417"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Native L3: original-OD conservation",
+    "scope": "S72 · 72 ORIGINAL OD · 9 SAVED OUTER CHECKS"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 35.042,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2446,
+    1142
+  ],
+  "exports": {
+    "png": "f850cbfbda2e0bbf2344b0c1ec8b651772af62e6dcc7094b8151031015c60d15",
+    "svg": "36c21edf844333e50da8138f075efb041fee43f106f60543eccc94ddf84bffad",
+    "pdf": "7cc6af689ba5c6f6eda79d63b6ddbbe586cdf9b97082ace649223baadd6f6776"
+  },
+  "text_audit": [
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        160.726,
+        75.311,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        86.725,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        155.663,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.601,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        293.539,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        362.477,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum original-OD residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        22.194,
+        117.562,
+        13.0,
+        249.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.02,
+        41.033,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.031,
+        104.3,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.968,
+        166.967,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.75,
+        229.034,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.281,
+        292.301,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        47.485,
+        354.968,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        47.798,
+        417.635,
+        20.369,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        47.267,
+        479.702,
+        20.9,
+        14.6
+      ]
+    },
+    {
+      "text": "a  Rank 26",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        380.411,
+        83.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 8.0,
+      "bounds_px": [
+        117.611,
+        137.756,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Original OD gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        117.611,
+        122.2,
+        95.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        609.649,
+        75.311,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        535.648,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        604.586,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        673.524,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        742.462,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        811.4,
+        93.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum original-OD residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        471.117,
+        117.562,
+        13.0,
+        249.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.943,
+        41.033,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        104.3,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.892,
+        166.967,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.673,
+        229.034,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.204,
+        292.301,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        496.409,
+        354.968,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        496.721,
+        417.635,
+        20.369,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        496.19,
+        479.702,
+        20.9,
+        14.6
+      ]
+    },
+    {
+      "text": "b  Rank 52",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        380.411,
+        84.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 8.0,
+      "bounds_px": [
+        566.534,
+        137.756,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Original OD gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        566.534,
+        122.2,
+        95.75,
+        10.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  S72 · 72 ORIGINAL OD · 9 SAVED OUTER CHECKS",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        432.467,
+        521.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Native L3: original-OD conservation",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        405.522,
+        421.125,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

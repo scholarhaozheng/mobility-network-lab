@@ -1,0 +1,473 @@
+{
+  "figure_id": "R12-TIME-METHOD-OBJECTIVES",
+  "city": "pittsburgh",
+  "instance": "Original T4; independent same-graph endpoints",
+  "role": "saved-state-check",
+  "conclusion": "Accepted methods on the same finite graph",
+  "panels": {
+    "a": "Actual accepted method objectives",
+    "b": "Signed difference from independent reference"
+  },
+  "quantity": "same-graph objective and signed difference",
+  "unit": "PCE·min",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T08.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "The methods share this exact four-OD finite graph and fixed-cost objective. Categories are independent method endpoints, not an optimization timeline. Left: each saved objective with the independent reference. Right: signed differences retain full numerical precision, including negative roundoff. All shown methods currently satisfy their independent acceptance conditions. Objective proximity by itself is not a feasibility certificate and does not imply identical physical-link flow.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T08.plot.json",
+      "sha256": "29afdff0b92330b14248bc73c4defb0241bc71b3bdd1ef6fc4d8b7e23d5e29cd"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Accepted methods on the same finite graph",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 2.088,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3021,
+    1168
+  ],
+  "exports": {
+    "png": "210a4e5c31ba1a0338a7c3301a2ff6a4c47520a0a5cf491f2ecb5185f9de9de2",
+    "svg": "0d01f515032656a087dfc9449c32087972066844b88d9769b16435f72ff194b4",
+    "pdf": "a90280c21ad19bea678bae54f59e5b31336371f9a1637e3e37c7a76455a1649f"
+  },
+  "text_audit": [
+    {
+      "text": "Method",
+      "size_pt": 9.0,
+      "bounds_px": [
+        275.038,
+        35.361,
+        48.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Exact LP",
+      "size_pt": 8.0,
+      "bounds_px": [
+        120.729,
+        53.917,
+        49.875,
+        10.0
+      ]
+    },
+    {
+      "text": "CG",
+      "size_pt": 8.0,
+      "bounds_px": [
+        239.518,
+        53.917,
+        17.375,
+        10.0
+      ]
+    },
+    {
+      "text": "LR",
+      "size_pt": 8.0,
+      "bounds_px": [
+        342.932,
+        53.917,
+        15.625,
+        10.0
+      ]
+    },
+    {
+      "text": "ADMM",
+      "size_pt": 8.0,
+      "bounds_px": [
+        433.471,
+        53.917,
+        39.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Fixed-cost objective (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        50.836,
+        104.25,
+        13.0,
+        195.25
+      ]
+    },
+    {
+      "text": "0.22",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        23.913,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.23",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        76.195,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.24",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        128.477,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        180.76,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.26",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        233.042,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.27",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        285.325,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.28",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.392,
+        337.607,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Same-instance method endpoints",
+      "size_pt": 11.0,
+      "bounds_px": [
+        102.6,
+        336.833,
+        276.25,
+        14.0
+      ]
+    },
+    {
+      "text": "Independent reference",
+      "size_pt": 8.0,
+      "bounds_px": [
+        143.711,
+        311.5,
+        129.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        693.854,
+        115.008,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "-2.7756e-17",
+      "size_pt": 7.0,
+      "bounds_px": [
+        770.33,
+        115.006,
+        58.25,
+        9.0
+      ]
+    },
+    {
+      "text": "-2.7756e-17",
+      "size_pt": 7.0,
+      "bounds_px": [
+        872.87,
+        115.006,
+        58.25,
+        9.0
+      ]
+    },
+    {
+      "text": "2.503e-12",
+      "size_pt": 7.0,
+      "bounds_px": [
+        980.096,
+        290.175,
+        48.875,
+        9.0
+      ]
+    },
+    {
+      "text": "Method",
+      "size_pt": 9.0,
+      "bounds_px": [
+        826.288,
+        35.361,
+        48.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Exact LP",
+      "size_pt": 8.0,
+      "bounds_px": [
+        671.979,
+        53.917,
+        49.875,
+        10.0
+      ]
+    },
+    {
+      "text": "CG",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.768,
+        53.917,
+        17.375,
+        10.0
+      ]
+    },
+    {
+      "text": "LR",
+      "size_pt": 8.0,
+      "bounds_px": [
+        894.182,
+        53.917,
+        15.625,
+        10.0
+      ]
+    },
+    {
+      "text": "ADMM",
+      "size_pt": 8.0,
+      "bounds_px": [
+        984.721,
+        53.917,
+        39.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed difference from reference (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        599.961,
+        61.688,
+        13.0,
+        280.375
+      ]
+    },
+    {
+      "text": "1e−12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.85,
+        333.667,
+        37.125,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.517,
+        31.302,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.517,
+        66.294,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        101.285,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        136.277,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        171.269,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        206.26,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        241.252,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        276.243,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        311.235,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        627.767,
+        346.226,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Numerical difference at full precision",
+      "size_pt": 11.0,
+      "bounds_px": [
+        653.85,
+        349.0,
+        310.5,
+        14.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        401.056,
+        344.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Accepted methods on the same finite graph",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        374.111,
+        511.125,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "bf6aaa2c087ec986ed8b1a33592b9b2166f3684e2267577b888b25fb893b0b0a"
+  }
+}

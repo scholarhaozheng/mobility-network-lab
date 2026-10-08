@@ -1,0 +1,1591 @@
+{
+  "figure_id": "G-F001-R11",
+  "city": "shared",
+  "instance": "Current eight-city reading scope plus independent Sioux Falls demonstration; 2026-10-08",
+  "role": "architecture",
+  "conclusion": "All real-city cases occupy the same conceptual layer; static and finite contracts and method-level acceptance remain distinct.",
+  "panels": [
+    "source evidence",
+    "model preparation",
+    "four-stage demand",
+    "assignment layers and contracts",
+    "saved outputs",
+    "eight real-city cases",
+    "demonstration benchmark",
+    "tools"
+  ],
+  "quantity": "Qualitative model roles and reading links",
+  "unit": "Not quantitative",
+  "case_order": [
+    "boston",
+    "hong-kong",
+    "ann-arbor",
+    "urbana-champaign",
+    "ithaca",
+    "berkeley",
+    "chicago",
+    "pittsburgh",
+    "sioux-falls"
+  ],
+  "equal_real_city_card_model_dimensions": [
+    208,
+    67
+  ],
+  "data_limits": "No numerical result or new method acceptance is inferred by diagram membership.",
+  "text_overflow_checks": {
+    "cards": 31,
+    "failures": []
+  },
+  "schema": "mcl_figure_r11",
+  "caption": "Source evidence and model preparation connect the four travel-demand stages to separate static BPR/Beckmann and fixed-cost, hard-capacity finite-network contracts. A–D are internal assignment reading layers. Eight real-city cases share equal card sizes and one reading order; Sioux Falls follows them as a supplied-OD demonstration benchmark. S600, S110, S72 and S20 identify distinct saved static instances; T4 identifies separate bounded finite instances. A card does not imply that every method is accepted. Follow its case page and the current nineteen-row coverage table for method-level results, failures and limits. All module links remain available. This architecture rendering reuses documented scope and does not rerun any numerical computation.",
+  "sources": [
+    {
+      "public_path": "docs/assets/atlas/figures/g-f001.svg",
+      "sha256": "243f52b4b82e9560d52bc721199968b370fd11a190ba8a41217bc6a1c78821eb",
+      "role": "Preserved prior structure and module targets"
+    },
+    {
+      "public_path": "tools/figures/project_structure.py",
+      "sha256": "982db14112f4942602a64fbb89cef8bd0ddc43fad7507f573f05df1b27124c90",
+      "role": "Current declarative architecture and pure renderer"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Mobility Computation Lab",
+    "title": "Complete project structure",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": -5.184,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3435,
+    4338
+  ],
+  "exports": {
+    "png": "c5f958b6fc3268563e6cc7778c61ef6e1a0fbc5756e2bdd03513b6f2f16ff87d",
+    "svg": "5cc731555e1f7f2b3bed54b193e9baa0fb6d850594a9556e07fef6ea4f31a8ed",
+    "pdf": "d76e8e437a081b8fd9a391aabfd63781093d6987bf95f12d73e742fbcaedc96f"
+  },
+  "text_audit": [
+    {
+      "text": "SOURCE EVIDENCE",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        1426.0,
+        163.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Roads, boundaries, zones",
+      "size_pt": 9.7,
+      "bounds_px": [
+        96.075,
+        1387.029,
+        190.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Network geography records",
+      "size_pt": 8.7,
+      "bounds_px": [
+        96.075,
+        1363.296,
+        173.125,
+        13.0
+      ]
+    },
+    {
+      "text": "People and activity",
+      "size_pt": 9.7,
+      "bounds_px": [
+        384.73,
+        1387.029,
+        142.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Households, population, proxies",
+      "size_pt": 8.7,
+      "bounds_px": [
+        384.73,
+        1363.296,
+        196.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Transit and walking",
+      "size_pt": 9.7,
+      "bounds_px": [
+        673.384,
+        1387.029,
+        149.625,
+        13.0
+      ]
+    },
+    {
+      "text": "GTFS, fares, service and access",
+      "size_pt": 8.7,
+      "bounds_px": [
+        673.384,
+        1363.296,
+        194.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Observation records",
+      "size_pt": 9.7,
+      "bounds_px": [
+        962.039,
+        1387.029,
+        152.375,
+        13.0
+      ]
+    },
+    {
+      "text": "GPS, trajectories, detectors",
+      "size_pt": 8.7,
+      "bounds_px": [
+        962.039,
+        1363.296,
+        168.875,
+        13.0
+      ]
+    },
+    {
+      "text": "MODEL REPRESENTATION AND UPSTREAM PREPARATION",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        1308.585,
+        490.5,
+        14.0
+      ]
+    },
+    {
+      "text": "GMNS representation",
+      "size_pt": 9.7,
+      "bounds_px": [
+        96.075,
+        1269.614,
+        164.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Directed physical links\nHierarchy, centroids, access\nSource IDs, units and turns",
+      "size_pt": 8.7,
+      "bounds_px": [
+        96.075,
+        1212.881,
+        172.625,
+        46.0
+      ]
+    },
+    {
+      "text": "City demand preparation",
+      "size_pt": 9.7,
+      "bounds_px": [
+        384.73,
+        1269.614,
+        187.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Statistics and boundaries\nSeparate activity attributes\nVersion / geography checks",
+      "size_pt": 8.7,
+      "bounds_px": [
+        384.73,
+        1212.881,
+        168.375,
+        46.0
+      ]
+    },
+    {
+      "text": "Declared vehicle OD",
+      "size_pt": 9.7,
+      "bounds_px": [
+        673.384,
+        1269.614,
+        153.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Supplied demand may enter\nstatic assignment directly\nNo demographic compiler",
+      "size_pt": 8.7,
+      "bounds_px": [
+        673.384,
+        1212.881,
+        172.5,
+        46.0
+      ]
+    },
+    {
+      "text": "Observation association",
+      "size_pt": 9.7,
+      "bounds_px": [
+        962.039,
+        1269.614,
+        180.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Match/associate links and service\nOptional input or diagnostics\nNot automatic OD or calibration",
+      "size_pt": 8.7,
+      "bounds_px": [
+        962.039,
+        1212.881,
+        205.625,
+        46.0
+      ]
+    },
+    {
+      "text": "FOUR-STAGE TRAVEL-DEMAND WORKFLOW",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        1159.942,
+        369.25,
+        14.0
+      ]
+    },
+    {
+      "text": "01 / Trip generation",
+      "size_pt": 10.4,
+      "bounds_px": [
+        96.075,
+        1119.971,
+        161.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Activities → productions and attractions",
+      "size_pt": 9.0,
+      "bounds_px": [
+        96.075,
+        1097.238,
+        253.5,
+        13.0
+      ]
+    },
+    {
+      "text": "02 / Trip distribution",
+      "size_pt": 10.4,
+      "bounds_px": [
+        481.377,
+        1119.971,
+        169.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Margins + impedance\n→ person origin–destination",
+      "size_pt": 9.0,
+      "bounds_px": [
+        481.377,
+        1080.738,
+        176.625,
+        29.5
+      ]
+    },
+    {
+      "text": "03 / Mode choice",
+      "size_pt": 10.4,
+      "bounds_px": [
+        866.68,
+        1119.971,
+        137.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Costs + declared choice model\n→ mode-specific demand",
+      "size_pt": 9.0,
+      "bounds_px": [
+        866.68,
+        1080.738,
+        196.625,
+        29.5
+      ]
+    },
+    {
+      "text": "04 / Traffic assignment",
+      "size_pt": 11.4,
+      "bounds_px": [
+        99.941,
+        997.058,
+        204.625,
+        17.0
+      ]
+    },
+    {
+      "text": "Vehicle demand → network flows",
+      "size_pt": 9.0,
+      "bounds_px": [
+        989.359,
+        997.31,
+        208.5,
+        13.0
+      ]
+    },
+    {
+      "text": "FOUR INTERNAL ASSIGNMENT LAYERS",
+      "size_pt": 9.5,
+      "bounds_px": [
+        99.941,
+        956.09,
+        301.125,
+        13.0
+      ]
+    },
+    {
+      "text": "A / Native assignment",
+      "size_pt": 9.6,
+      "bounds_px": [
+        114.116,
+        914.87,
+        162.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Reference solvers\nand reconstruction",
+      "size_pt": 8.7,
+      "bounds_px": [
+        114.116,
+        874.637,
+        116.0,
+        29.5
+      ]
+    },
+    {
+      "text": "B / Decomposition",
+      "size_pt": 9.6,
+      "bounds_px": [
+        395.039,
+        914.87,
+        136.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Distributed methods\nand subproblems",
+      "size_pt": 8.7,
+      "bounds_px": [
+        395.039,
+        874.637,
+        125.125,
+        29.5
+      ]
+    },
+    {
+      "text": "C / Spatial hierarchy",
+      "size_pt": 9.6,
+      "bounds_px": [
+        675.961,
+        914.87,
+        152.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Representation\nand access / turn states",
+      "size_pt": 8.7,
+      "bounds_px": [
+        675.961,
+        874.637,
+        144.375,
+        29.5
+      ]
+    },
+    {
+      "text": "D / Coordination",
+      "size_pt": 9.6,
+      "bounds_px": [
+        956.884,
+        914.87,
+        123.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Shared capacities\nand verification",
+      "size_pt": 8.7,
+      "bounds_px": [
+        956.884,
+        874.637,
+        108.75,
+        29.5
+      ]
+    },
+    {
+      "text": "TWO INDEPENDENT MATHEMATICAL CONTRACTS",
+      "size_pt": 9.5,
+      "bounds_px": [
+        99.941,
+        822.437,
+        385.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Static road assignment",
+      "size_pt": 10.4,
+      "bounds_px": [
+        114.116,
+        781.466,
+        187.125,
+        14.0
+      ]
+    },
+    {
+      "text": "BPR / Beckmann; period-specific vehicle OD\nFrank–Wolfe · official tap-b Algorithm B; adapters vary\nFinite-path reference · native L3 diagnostics\nPhysical-link flows and original-space checks",
+      "size_pt": 8.8,
+      "bounds_px": [
+        114.116,
+        709.233,
+        340.125,
+        62.5
+      ]
+    },
+    {
+      "text": "Finite time-expanded optimization",
+      "size_pt": 10.4,
+      "bounds_px": [
+        670.807,
+        781.466,
+        279.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Separately selected graph, OD, time and capacities\nFixed arc costs · shared hard capacity\nArc-flow LP · two-phase CG · Lagrangian · ADMM\nMovement-flow reconstruction and feasibility checks",
+      "size_pt": 8.8,
+      "bounds_px": [
+        670.807,
+        709.233,
+        329.75,
+        62.5
+      ]
+    },
+    {
+      "text": "SAVED OUTPUTS AND INDEPENDENT CHECKS",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        632.823,
+        389.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved outputs and independent checks",
+      "size_pt": 10.2,
+      "bounds_px": [
+        96.075,
+        592.852,
+        310.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Zonal / mode demand · generated columns · physical-link flows · CSV / SQLite · figures\nUnits, conservation, objective / gap and provenance checks are specific to each instance.",
+      "size_pt": 9.0,
+      "bounds_px": [
+        96.075,
+        553.619,
+        566.25,
+        29.5
+      ]
+    },
+    {
+      "text": "REAL-CITY CASES / ONE COMPARISON FRAMEWORK",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        504.166,
+        442.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Boston",
+      "size_pt": 10.1,
+      "bounds_px": [
+        96.075,
+        461.697,
+        55.25,
+        14.0
+      ]
+    },
+    {
+      "text": "City demand and static scales\nSeparate bounded finite cases",
+      "size_pt": 8.7,
+      "bounds_px": [
+        96.075,
+        422.464,
+        184.75,
+        29.5
+      ]
+    },
+    {
+      "text": "Hong Kong",
+      "size_pt": 10.1,
+      "bounds_px": [
+        384.73,
+        461.697,
+        89.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Turn-aware city demand\nSeparate static and finite cases",
+      "size_pt": 8.7,
+      "bounds_px": [
+        384.73,
+        422.464,
+        191.375,
+        29.5
+      ]
+    },
+    {
+      "text": "Ann Arbor",
+      "size_pt": 10.1,
+      "bounds_px": [
+        673.384,
+        461.697,
+        80.75,
+        14.0
+      ]
+    },
+    {
+      "text": "25-zone morning city model\nS600 static; finite unsolved",
+      "size_pt": 8.7,
+      "bounds_px": [
+        673.384,
+        422.464,
+        170.375,
+        29.5
+      ]
+    },
+    {
+      "text": "Urbana–Champaign",
+      "size_pt": 10.1,
+      "bounds_px": [
+        962.039,
+        461.697,
+        154.0,
+        14.0
+      ]
+    },
+    {
+      "text": "21-zone morning city model\nS72 static; separate T4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        962.039,
+        422.464,
+        170.375,
+        29.5
+      ]
+    },
+    {
+      "text": "Ithaca",
+      "size_pt": 10.1,
+      "bounds_px": [
+        96.075,
+        361.769,
+        50.0,
+        14.0
+      ]
+    },
+    {
+      "text": "11-zone midday activity model\nS110 static; separate T4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        96.075,
+        322.536,
+        186.0,
+        29.5
+      ]
+    },
+    {
+      "text": "Berkeley",
+      "size_pt": 10.1,
+      "bounds_px": [
+        384.73,
+        361.769,
+        68.875,
+        14.0
+      ]
+    },
+    {
+      "text": "13-zone morning city model\nS72 static; separate T4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        384.73,
+        322.536,
+        170.375,
+        29.5
+      ]
+    },
+    {
+      "text": "Chicago",
+      "size_pt": 10.1,
+      "bounds_px": [
+        673.384,
+        361.769,
+        63.375,
+        14.0
+      ]
+    },
+    {
+      "text": "5-zone morning city model\nS20 static; separate T4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        673.384,
+        322.536,
+        162.75,
+        29.5
+      ]
+    },
+    {
+      "text": "Pittsburgh",
+      "size_pt": 10.1,
+      "bounds_px": [
+        962.039,
+        361.769,
+        84.125,
+        14.0
+      ]
+    },
+    {
+      "text": "41-group morning city model\nS72 static; separate T4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        962.039,
+        322.536,
+        178.25,
+        29.5
+      ]
+    },
+    {
+      "text": "DEMONSTRATION BENCHMARK",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        268.087,
+        270.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Sioux Falls",
+      "size_pt": 10.1,
+      "bounds_px": [
+        96.075,
+        225.617,
+        85.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Supplied-OD static benchmark · separate historical selected 200 / 250-OD finite cases\nCity-demographic and mode-choice preparation are outside this benchmark.",
+      "size_pt": 9.0,
+      "bounds_px": [
+        96.075,
+        186.384,
+        546.75,
+        29.5
+      ]
+    },
+    {
+      "text": "TOOLS AND DOCUMENTATION",
+      "size_pt": 10.4,
+      "bounds_px": [
+        81.9,
+        139.43,
+        256.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Data and GMNS tools",
+      "size_pt": 9.7,
+      "bounds_px": [
+        96.075,
+        100.458,
+        162.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Catalog · exports · queries",
+      "size_pt": 8.7,
+      "bounds_px": [
+        96.075,
+        76.726,
+        161.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Generic RC5 engine",
+      "size_pt": 9.7,
+      "bounds_px": [
+        384.73,
+        100.458,
+        150.25,
+        13.0
+      ]
+    },
+    {
+      "text": "0.3.0-rc5 scope only",
+      "size_pt": 8.7,
+      "bounds_px": [
+        384.73,
+        76.726,
+        123.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Versioned method code",
+      "size_pt": 9.7,
+      "bounds_px": [
+        673.384,
+        100.458,
+        175.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Algorithms · case adapters",
+      "size_pt": 8.7,
+      "bounds_px": [
+        673.384,
+        76.726,
+        163.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Examples and checks",
+      "size_pt": 9.7,
+      "bounds_px": [
+        962.039,
+        100.458,
+        160.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved results · validation\nIndependent validators",
+      "size_pt": 8.7,
+      "bounds_px": [
+        962.039,
+        60.226,
+        154.25,
+        29.5
+      ]
+    },
+    {
+      "text": "MOBILITY COMPUTATION LAB",
+      "size_pt": 8.7,
+      "bounds_px": [
+        81.9,
+        1478.056,
+        214.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Complete project structure",
+      "size_pt": 15.0,
+      "bounds_px": [
+        81.9,
+        1451.111,
+        318.0,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "hotspots": [
+    {
+      "id": "roads",
+      "label": "Roads, boundaries, zones",
+      "href": "volumes/overview.html#coverage-stage-01",
+      "model_box": [
+        0,
+        18,
+        208,
+        58
+      ],
+      "svg_box": [
+        3.96,
+        56.908303,
+        192.98618199999999,
+        52.16231100000001
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 5.46585568020285,
+        "width": 23.40928942261038,
+        "height": 5.01001872910984
+      }
+    },
+    {
+      "id": "people",
+      "label": "People and activity",
+      "href": "volumes/overview.html#coverage-stage-03",
+      "model_box": [
+        224,
+        18,
+        208,
+        58
+      ],
+      "svg_box": [
+        211.791273,
+        56.908303,
+        192.98618199999999,
+        52.16231100000001
+      ],
+      "percent": {
+        "left": 25.690353347889374,
+        "top": 5.46585568020285,
+        "width": 23.40928942261038,
+        "height": 5.01001872910984
+      }
+    },
+    {
+      "id": "transit",
+      "label": "Transit and walking",
+      "href": "volumes/overview.html#coverage-stage-04",
+      "model_box": [
+        448,
+        18,
+        208,
+        58
+      ],
+      "svg_box": [
+        419.622545,
+        56.908303,
+        192.98618200000004,
+        52.16231100000001
+      ],
+      "percent": {
+        "left": 50.900357229500244,
+        "top": 5.46585568020285,
+        "width": 23.40928942261039,
+        "height": 5.01001872910984
+      }
+    },
+    {
+      "id": "observations",
+      "label": "Observation records",
+      "href": "volumes/overview.html#coverage-stage-05",
+      "model_box": [
+        672,
+        18,
+        208,
+        58
+      ],
+      "svg_box": [
+        627.453818,
+        56.908303,
+        192.9861820000001,
+        52.16231100000001
+      ],
+      "percent": {
+        "left": 76.11036123241145,
+        "top": 5.46585568020285,
+        "width": 23.4092894226104,
+        "height": 5.01001872910984
+      }
+    },
+    {
+      "id": "gmns",
+      "label": "GMNS representation",
+      "href": "volumes/overview.html#src-docs-data-contract-document",
+      "model_box": [
+        0,
+        112,
+        208,
+        83
+      ],
+      "svg_box": [
+        3.96,
+        141.44722,
+        192.98618199999999,
+        74.64606500000002
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 13.58554112720427,
+        "width": 23.40928942261038,
+        "height": 7.169509489415653
+      }
+    },
+    {
+      "id": "demand",
+      "label": "City demand preparation",
+      "href": "volumes/overview.html#coverage-stage-06",
+      "model_box": [
+        224,
+        112,
+        208,
+        83
+      ],
+      "svg_box": [
+        211.791273,
+        141.44722,
+        192.98618199999999,
+        74.64606500000002
+      ],
+      "percent": {
+        "left": 25.690353347889374,
+        "top": 13.58554112720427,
+        "width": 23.40928942261038,
+        "height": 7.169509489415653
+      }
+    },
+    {
+      "id": "declared-od",
+      "label": "Declared vehicle OD",
+      "href": "volumes/sioux-falls.html#coverage-row-01",
+      "model_box": [
+        448,
+        112,
+        208,
+        83
+      ],
+      "svg_box": [
+        419.622545,
+        141.44722,
+        192.98618200000004,
+        74.64606500000002
+      ],
+      "percent": {
+        "left": 50.900357229500244,
+        "top": 13.58554112720427,
+        "width": 23.40928942261039,
+        "height": 7.169509489415653
+      }
+    },
+    {
+      "id": "association",
+      "label": "Observation association",
+      "href": "volumes/overview.html#coverage-stage-05",
+      "model_box": [
+        672,
+        112,
+        208,
+        83
+      ],
+      "svg_box": [
+        627.453818,
+        141.44722,
+        192.9861820000001,
+        74.64606500000002
+      ],
+      "percent": {
+        "left": 76.11036123241145,
+        "top": 13.58554112720427,
+        "width": 23.4092894226104,
+        "height": 7.169509489415653
+      }
+    },
+    {
+      "id": "generation",
+      "label": "01 / Trip generation",
+      "href": "volumes/overview.html#coverage-stage-06",
+      "model_box": [
+        0,
+        231,
+        282,
+        74
+      ],
+      "svg_box": [
+        3.96,
+        248.469892,
+        261.64472700000005,
+        66.55191299999998
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 23.864717430558223,
+        "width": 31.73759425036391,
+        "height": 6.392092761919396
+      }
+    },
+    {
+      "id": "distribution",
+      "label": "02 / Trip distribution",
+      "href": "volumes/overview.html#coverage-stage-07",
+      "model_box": [
+        299,
+        231,
+        282,
+        74
+      ],
+      "svg_box": [
+        281.377636,
+        248.469892,
+        261.64472800000004,
+        66.55191299999998
+      ],
+      "percent": {
+        "left": 34.13120281416788,
+        "top": 23.864717430558223,
+        "width": 31.737594371664244,
+        "height": 6.392092761919396
+      }
+    },
+    {
+      "id": "mode",
+      "label": "03 / Mode choice",
+      "href": "volumes/overview.html#coverage-stage-08",
+      "model_box": [
+        598,
+        231,
+        282,
+        74
+      ],
+      "svg_box": [
+        558.795273,
+        248.469892,
+        261.6447270000001,
+        66.55191299999998
+      ],
+      "percent": {
+        "left": 67.78205640465792,
+        "top": 23.864717430558223,
+        "width": 31.737594250363912,
+        "height": 6.392092761919396
+      }
+    },
+    {
+      "id": "assignment",
+      "label": "04 / Traffic assignment",
+      "href": "volumes/overview.html#coverage-stage-09",
+      "model_box": [
+        0,
+        330,
+        880,
+        30
+      ],
+      "svg_box": [
+        3.96,
+        337.50556,
+        816.48,
+        26.980505406360408
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 32.41630104883014,
+        "width": 99.03930131004367,
+        "height": 2.5913889706059017
+      }
+    },
+    {
+      "id": "layer-a",
+      "label": "A / Native assignment",
+      "href": "#assignment-layer-a",
+      "model_box": [
+        14,
+        396,
+        198,
+        69
+      ],
+      "svg_box": [
+        16.949455,
+        396.862671,
+        183.708,
+        62.05516300000005
+      ],
+      "percent": {
+        "left": 2.0559746482290153,
+        "top": 38.117356698298046,
+        "width": 22.283842794759824,
+        "height": 5.960194686695613
+      }
+    },
+    {
+      "id": "layer-b",
+      "label": "B / Decomposition",
+      "href": "#assignment-layer-b",
+      "model_box": [
+        232,
+        396,
+        198,
+        69
+      ],
+      "svg_box": [
+        219.213818,
+        396.862671,
+        183.70799999999997,
+        62.05516300000005
+      ],
+      "percent": {
+        "left": 26.590710577389615,
+        "top": 38.117356698298046,
+        "width": 22.28384279475982,
+        "height": 5.960194686695613
+      }
+    },
+    {
+      "id": "layer-c",
+      "label": "C / Spatial hierarchy",
+      "href": "#assignment-layer-c",
+      "model_box": [
+        450,
+        396,
+        198,
+        69
+      ],
+      "svg_box": [
+        421.478182,
+        396.862671,
+        183.70800000000003,
+        62.05516300000005
+      ],
+      "percent": {
+        "left": 51.125446627850565,
+        "top": 38.117356698298046,
+        "width": 22.28384279475983,
+        "height": 5.960194686695613
+      }
+    },
+    {
+      "id": "layer-d",
+      "label": "D / Coordination",
+      "href": "#assignment-layer-d",
+      "model_box": [
+        668,
+        396,
+        198,
+        69
+      ],
+      "svg_box": [
+        623.742545,
+        396.862671,
+        183.70800000000008,
+        62.05516300000005
+      ],
+      "percent": {
+        "left": 75.66018255701115,
+        "top": 38.117356698298046,
+        "width": 22.28384279475984,
+        "height": 5.960194686695613
+      }
+    },
+    {
+      "id": "static",
+      "label": "Static road assignment",
+      "href": "volumes/overview.html#src-docs-methods-document-static-frankwolfe-reference-implementation",
+      "model_box": [
+        14,
+        502,
+        420,
+        95
+      ],
+      "svg_box": [
+        16.949455,
+        492.193791,
+        389.683636,
+        85.43826700000005
+      ],
+      "percent": {
+        "left": 2.0559746482290153,
+        "top": 47.273597813976714,
+        "width": 47.26875739932071,
+        "height": 8.206065062046184
+      }
+    },
+    {
+      "id": "finite",
+      "label": "Finite time-expanded optimization",
+      "href": "volumes/overview.html#src-docs-methods-space-time-cg-document",
+      "model_box": [
+        446,
+        502,
+        420,
+        95
+      ],
+      "svg_box": [
+        417.766909,
+        492.193791,
+        389.68363600000004,
+        85.43826700000005
+      ],
+      "percent": {
+        "left": 50.67526795245027,
+        "top": 47.273597813976714,
+        "width": 47.26875739932073,
+        "height": 8.206065062046184
+      }
+    },
+    {
+      "id": "outputs",
+      "label": "Saved outputs and independent checks",
+      "href": "volumes/overview.html#src-docs-outputs-document",
+      "model_box": [
+        0,
+        653,
+        880,
+        62
+      ],
+      "svg_box": [
+        3.96,
+        627.995668,
+        816.48,
+        55.759710999999925
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 60.3169222789965,
+        "width": 99.03930131004367,
+        "height": 5.355537189288863
+      }
+    },
+    {
+      "id": "city-boston",
+      "label": "Boston",
+      "href": "volumes/boston.html",
+      "model_box": [
+        0,
+        758,
+        208,
+        67
+      ],
+      "svg_box": [
+        3.96,
+        722.427437,
+        192.98618199999999,
+        60.25646199999994
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 69.3867836835837,
+        "width": 23.40928942261038,
+        "height": 5.787435360559369
+      }
+    },
+    {
+      "id": "city-hong-kong",
+      "label": "Hong Kong",
+      "href": "volumes/hong-kong.html",
+      "model_box": [
+        224,
+        758,
+        208,
+        67
+      ],
+      "svg_box": [
+        211.791273,
+        722.427437,
+        192.98618199999999,
+        60.25646199999994
+      ],
+      "percent": {
+        "left": 25.690353347889374,
+        "top": 69.3867836835837,
+        "width": 23.40928942261038,
+        "height": 5.787435360559369
+      }
+    },
+    {
+      "id": "city-ann-arbor",
+      "label": "Ann Arbor",
+      "href": "volumes/ann-arbor.html",
+      "model_box": [
+        448,
+        758,
+        208,
+        67
+      ],
+      "svg_box": [
+        419.622545,
+        722.427437,
+        192.98618200000004,
+        60.25646199999994
+      ],
+      "percent": {
+        "left": 50.900357229500244,
+        "top": 69.3867836835837,
+        "width": 23.40928942261039,
+        "height": 5.787435360559369
+      }
+    },
+    {
+      "id": "city-urbana-champaign",
+      "label": "Urbana–Champaign",
+      "href": "volumes/urbana-champaign.html",
+      "model_box": [
+        672,
+        758,
+        208,
+        67
+      ],
+      "svg_box": [
+        627.453818,
+        722.427437,
+        192.9861820000001,
+        60.25646199999994
+      ],
+      "percent": {
+        "left": 76.11036123241145,
+        "top": 69.3867836835837,
+        "width": 23.4092894226104,
+        "height": 5.787435360559369
+      }
+    },
+    {
+      "id": "city-ithaca",
+      "label": "Ithaca",
+      "href": "volumes/ithaca.html",
+      "model_box": [
+        0,
+        838,
+        208,
+        67
+      ],
+      "svg_box": [
+        3.96,
+        794.375451,
+        192.98618199999999,
+        60.256462000000056
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 76.29715423181835,
+        "width": 23.40928942261038,
+        "height": 5.787435360559381
+      }
+    },
+    {
+      "id": "city-berkeley",
+      "label": "Berkeley",
+      "href": "volumes/berkeley.html",
+      "model_box": [
+        224,
+        838,
+        208,
+        67
+      ],
+      "svg_box": [
+        211.791273,
+        794.375451,
+        192.98618199999999,
+        60.256462000000056
+      ],
+      "percent": {
+        "left": 25.690353347889374,
+        "top": 76.29715423181835,
+        "width": 23.40928942261038,
+        "height": 5.787435360559381
+      }
+    },
+    {
+      "id": "city-chicago",
+      "label": "Chicago",
+      "href": "volumes/chicago.html",
+      "model_box": [
+        448,
+        838,
+        208,
+        67
+      ],
+      "svg_box": [
+        419.622545,
+        794.375451,
+        192.98618200000004,
+        60.256462000000056
+      ],
+      "percent": {
+        "left": 50.900357229500244,
+        "top": 76.29715423181835,
+        "width": 23.40928942261039,
+        "height": 5.787435360559381
+      }
+    },
+    {
+      "id": "city-pittsburgh",
+      "label": "Pittsburgh",
+      "href": "volumes/pittsburgh.html",
+      "model_box": [
+        672,
+        838,
+        208,
+        67
+      ],
+      "svg_box": [
+        627.453818,
+        794.375451,
+        192.9861820000001,
+        60.256462000000056
+      ],
+      "percent": {
+        "left": 76.11036123241145,
+        "top": 76.29715423181835,
+        "width": 23.4092894226104,
+        "height": 5.787435360559381
+      }
+    },
+    {
+      "id": "city-sioux-falls",
+      "label": "Sioux Falls",
+      "href": "volumes/sioux-falls.html",
+      "model_box": [
+        0,
+        947,
+        880,
+        63
+      ],
+      "svg_box": [
+        3.96,
+        892.404621,
+        816.48,
+        56.65906099999995
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 85.7125341926313,
+        "width": 99.03930131004367,
+        "height": 5.441916804333623
+      }
+    },
+    {
+      "id": "tools",
+      "label": "Data and GMNS tools",
+      "href": "volumes/overview.html#src-docs-data-tools-document",
+      "model_box": [
+        0,
+        1048,
+        208,
+        60
+      ],
+      "svg_box": [
+        3.96,
+        983.238989,
+        192.98618199999999,
+        53.9610110000001
+      ],
+      "percent": {
+        "left": 0.48034934497816595,
+        "top": 94.43687704099273,
+        "width": 23.40928942261038,
+        "height": 5.182777959199363
+      }
+    },
+    {
+      "id": "rc5",
+      "label": "Generic RC5 engine",
+      "href": "volumes/overview.html#src-docs-getting-started-document-run-from-raw-input",
+      "model_box": [
+        224,
+        1048,
+        208,
+        60
+      ],
+      "svg_box": [
+        211.791273,
+        983.238989,
+        192.98618199999999,
+        53.9610110000001
+      ],
+      "percent": {
+        "left": 25.690353347889374,
+        "top": 94.43687704099273,
+        "width": 23.40928942261038,
+        "height": 5.182777959199363
+      }
+    },
+    {
+      "id": "code",
+      "label": "Versioned method code",
+      "href": "reproduce.html",
+      "model_box": [
+        448,
+        1048,
+        208,
+        60
+      ],
+      "svg_box": [
+        419.622545,
+        983.238989,
+        192.98618200000004,
+        53.9610110000001
+      ],
+      "percent": {
+        "left": 50.900357229500244,
+        "top": 94.43687704099273,
+        "width": 23.40928942261039,
+        "height": 5.182777959199363
+      }
+    },
+    {
+      "id": "examples",
+      "label": "Examples and checks",
+      "href": "reproduce.html",
+      "model_box": [
+        672,
+        1048,
+        208,
+        60
+      ],
+      "svg_box": [
+        627.453818,
+        983.238989,
+        192.9861820000001,
+        53.9610110000001
+      ],
+      "percent": {
+        "left": 76.11036123241145,
+        "top": 94.43687704099273,
+        "width": 23.4092894226104,
+        "height": 5.182777959199363
+      }
+    }
+  ],
+  "svg_viewbox": [
+    0.0,
+    0.0,
+    824.4,
+    1041.16
+  ],
+  "visual_qa": {
+    "method": "Direct inspection of final PNG in view_image; text extent checks in renderer.",
+    "findings": "All eight real-city cards are equal-sized, readable, ordered in two rows; Sioux Falls is a separate benchmark row. No visible text/card overlap or clipped title. Existing architecture roles are preserved.",
+    "browser_screenshot_claimed": false
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "figure": {
+    "id": "UC-R3-LR-BOUNDS",
+    "title": "Lagrangian bounds at the actual saved iteration",
+    "src": "assets/city-alignment-r3/urbana-transfer/lr-bounds.svg",
+    "width": 1720,
+    "height": 856,
+    "caption": "One actual iteration closes the bounds in this nonbinding-capacity T4 instance. Tiny signed roundoff remains in the saved values; no interpolated iterations or smoothed gap are created.",
+    "href": "volumes/urbana-champaign.html#uc-r3-lr-bounds",
+    "anchor": "atlas-uc-r3-lr-bounds",
+    "full": "assets/city-alignment-r3/urbana-transfer/lr-bounds.svg",
+    "evidence": "volumes/urbana-champaign.html#uc-r3-lr-bounds",
+    "stage": "finite",
+    "method": "lagrangian",
+    "links": [
+      {
+        "label": "SVG",
+        "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.svg"
+      },
+      {
+        "label": "PNG",
+        "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.png"
+      },
+      {
+        "label": "PDF",
+        "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.pdf"
+      },
+      {
+        "label": "Plot data",
+        "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.plot_data.json"
+      },
+      {
+        "label": "Source record",
+        "href": "assets/city-alignment-r3/urbana-transfer/lr-bounds.source.json"
+      }
+    ]
+  },
+  "renderer": {
+    "file": "render.py",
+    "function": "main",
+    "style": "new_figure / format_axes / compact_header"
+  },
+  "solver_calls": 0,
+  "result_matrix_sha256": "f07124df59779b119b5c623976580ec588f39c58883a2f69f3b24451bec97e01",
+  "derived_data_sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE",
+  "exports": {
+    "svg": "f2e831831c0acfd4138008b48a0d1a3aa5db182125e865d4a68f41f451865947",
+    "png": "0bd477c6bbb5b3fbce6b468dee872ae448b18bade1218d54f867dfc23651c91e",
+    "pdf": "0cf87a9c37f5ebb9530d6aef95d8d69b74ca3ff434c122234c9419c5695c7fd6"
+  }
+}

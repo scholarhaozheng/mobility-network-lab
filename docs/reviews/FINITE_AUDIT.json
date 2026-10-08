@@ -1,0 +1,1208 @@
+{
+  "schema": "mcl-finite-method-audit-history-repair-20261008",
+  "as_of_local": "2026-10-08 Asia/Shanghai",
+  "read_only_science": true,
+  "solver_calls": 0,
+  "city_coverage": [
+    "Ann Arbor",
+    "Urbana–Champaign",
+    "Ithaca",
+    "Berkeley",
+    "Chicago",
+    "Pittsburgh",
+    "Boston",
+    "Hong Kong",
+    "Sioux Falls"
+  ],
+  "rows": [
+    {
+      "city": "Urbana–Champaign",
+      "instance": "原 T4；4 OD；30 s / H160；首个5分钟释放",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase I": 1,
+        "Phase II": 1,
+        "seed_paths": 4,
+        "added_columns": 0
+      },
+      "actual_updates": "各阶段1次主问题求解；新增列0；不是同一目标的2轮下降",
+      "figures": [
+        {
+          "id": "atlas-uc-r3-cg-phase1",
+          "title": "Column generation: Phase I feasibility",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/cg-phase1.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-uc-r3-cg-phase1",
+          "volume_links": []
+        },
+        {
+          "id": "atlas-uc-r3-cg-objective",
+          "title": "Column generation: Phase II real cost",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-uc-r3-cg-objective",
+          "volume_links": []
+        },
+        {
+          "id": "atlas-uc-r3-cg-closure",
+          "title": "Column generation: full-DAG pricing closure",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-uc-r3-cg-closure",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "Column generation: Phase I feasibility",
+        "Column generation: Phase II real cost",
+        "Column generation: full-DAG pricing closure"
+      ],
+      "id": [
+        "atlas-uc-r3-cg-phase1",
+        "atlas-uc-r3-cg-objective",
+        "atlas-uc-r3-cg-closure"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/urbana-champaign/cg-phase1.svg",
+        "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+        "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-uc-r3-cg-phase1",
+        "index.html?atlas-view=full#atlas-uc-r3-cg-objective",
+        "index.html?atlas-view=full#atlas-uc-r3-cg-closure"
+      ],
+      "issue_type": "short_trace_nonbinding_capacity",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "总脉冲0.0516231482679 PCE低于任意物理时间弧的最小容量3.75 PCE；初始四条路径即可行，完整DAG定价在各阶段首轮闭合。没有缺绘中间迭代，也不是算法错的证据。Phase I约化成本无量纲，Phase II为分钟，不能拼成一条曲线。地理范围影响未检验。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\urbana-transfer\\cg-phase1.plot_data.json",
+          "sha256": "5afae0e1fd0cc823f550d6c5045dea49ff9a685fb818fd37e007fc977b35dec5"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\urbana-transfer\\cg-objective.plot_data.json",
+          "sha256": "16bceab5bf35c12751c4252895158c4f175906bd21ba73f068599a3083512f92"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\urbana-transfer\\GATES.json",
+          "sha256": "4f33707329393c4961c03ca2f223b1c39e012a34b80219a3d5a0e68963391a57"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\choicefw-scope-20261008\\urbana-champaign\\SCOPE_VS_DEMAND_PUBLIC_NOTE.md",
+          "sha256": "9b82b08cb2b034d2940bcc2d215a26d248ca9b57173df6d160b41ec985142834"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Urbana–Champaign",
+      "instance": "原 T4；4 OD；30 s / H160；首个5分钟释放",
+      "method": "Lagrangian relaxation",
+      "actual_saved_states": {
+        "evaluated_iterations": 1,
+        "recovery_calls": 1,
+        "positive_multipliers": 0
+      },
+      "actual_updates": "1次已评估状态；不能据此声称经历多轮价格优化",
+      "figures": [
+        {
+          "id": "atlas-uc-r3-lr-bounds",
+          "title": "Lagrangian bounds and certified gap",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-uc-r3-lr-bounds",
+          "volume_links": []
+        },
+        {
+          "id": "atlas-uc-r3-lr-prices",
+          "title": "Lagrangian prices and recovery",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/lr-prices-recovery.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-uc-r3-lr-prices",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "Lagrangian bounds and certified gap",
+        "Lagrangian prices and recovery"
+      ],
+      "id": [
+        "atlas-uc-r3-lr-bounds",
+        "atlas-uc-r3-lr-prices"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+        "assets/figure-contract-r12/figures/urbana-champaign/lr-prices-recovery.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-uc-r3-lr-bounds",
+        "index.html?atlas-view=full#atlas-uc-r3-lr-prices"
+      ],
+      "issue_type": "short_trace_zero_price",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "容量不绑定，零价格的完整图下界与自身路径池恢复上界已在浮点精度内相合；图中同点重叠是真实数值。无正乘子就没有可画的正价格空间图；不能造出价格地图或把区域小当成已证明原因。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\urbana-transfer\\lr-bounds.plot_data.json",
+          "sha256": "18087cd9fbaf47e2f8d072e7eb1c5a9b2c4d9014e1a55840e93f70ac2dc03675"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\choicefw-scope-20261008\\urbana-champaign\\SCOPE_VS_DEMAND_PUBLIC_NOTE.md",
+          "sha256": "9b82b08cb2b034d2940bcc2d215a26d248ca9b57173df6d160b41ec985142834"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Urbana–Champaign",
+      "instance": "原 T4；4 OD；30 s / H160；首个5分钟释放",
+      "method": "ADMM",
+      "actual_saved_states": {
+        "saved_outer_states": 1,
+        "iteration_indices": [
+          1
+        ]
+      },
+      "actual_updates": 1,
+      "figures": [
+        {
+          "id": "atlas-r9-urbana-champaign-urbana-champaign-admm-main",
+          "title": "ADMM residuals and objective agreement",
+          "source_path": [
+            "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-r9-urbana-champaign-urbana-champaign-admm-main",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "ADMM residuals and objective agreement"
+      ],
+      "id": [
+        "atlas-r9-urbana-champaign-urbana-champaign-admm-main"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-r9-urbana-champaign-urbana-champaign-admm-main"
+      ],
+      "issue_type": "one_completed_update_nonbinding",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "确实完成1次外层更新；不是只存起终点而省略过程。原单位守恒/容量、primal与rho-scaled dual分别达门槛；当前图是四面板单点检查。PCE残差与分钟dual门槛分开；目标接近不表示每条路流相同。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\plot-semantics-r9\\urbana-champaign\\urbana-champaign-admm-main.plot_data.json",
+          "sha256": "a62657cce3f7dfa78a7ef153f41e7efb172eb639a2c0e0b60ee2758c7a7b6abe"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Pittsburgh",
+      "instance": "原 East End T4；4 OD；30 s / H117",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase I": 1,
+        "Phase II": 1,
+        "seed_paths": 4,
+        "added_columns": 0
+      },
+      "actual_updates": "各阶段1次主问题求解；新增列0；不是同一目标的2轮下降",
+      "figures": [
+        {
+          "id": "atlas-released-pit-t03",
+          "title": "Column generation: one certificate per phase",
+          "source_path": [
+            "assets/figure-contract-r12/figures/pittsburgh/cg-phase1.svg",
+            "assets/figure-contract-r12/figures/pittsburgh/cg-phase2.svg",
+            "assets/figure-contract-r12/figures/pittsburgh/cg-pricing.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-released-pit-t03",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "Column generation: one certificate per phase"
+      ],
+      "id": [
+        "atlas-released-pit-t03"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/pittsburgh/cg-phase1.svg",
+        "assets/figure-contract-r12/figures/pittsburgh/cg-phase2.svg",
+        "assets/figure-contract-r12/figures/pittsburgh/cg-pricing.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-released-pit-t03"
+      ],
+      "issue_type": "short_trace_nonbinding_capacity",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "总脉冲0.0450275484535 PCE低于任意物理时间弧的最小容量2.5 PCE；初始四条路径即可行，完整DAG定价在各阶段首轮闭合。没有缺绘中间迭代，也不是算法错的证据。Phase I约化成本无量纲，Phase II为分钟，不能拼成一条曲线。地理范围影响未检验。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\pittsburgh\\PIT_T03.plot.json",
+          "sha256": "cf5271b8986e6f9677d5f496cf7da6e72509a7b0a3d9a00f9c39369908a90028"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\plot-semantics-r9\\pittsburgh\\pittsburgh-admm-main.plot_data.json",
+          "sha256": "235a09af4f3334887c480d971ae76f607ec529417a08ac3769b5b34ee8182582"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Pittsburgh",
+      "instance": "原 East End T4；4 OD；30 s / H117",
+      "method": "Lagrangian relaxation",
+      "actual_saved_states": {
+        "evaluated_iterations": 1,
+        "recovery_calls": 1,
+        "positive_multipliers": 0
+      },
+      "actual_updates": "1次已评估状态；不能据此声称经历多轮价格优化",
+      "figures": [
+        {
+          "id": "atlas-released-pit-t04",
+          "title": "Lagrangian relaxation: one evaluated state",
+          "source_path": [
+            "assets/figure-contract-r12/figures/pittsburgh/lr-bounds.svg",
+            "assets/figure-contract-r12/figures/pittsburgh/lr-prices-recovery.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-released-pit-t04",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "Lagrangian relaxation: one evaluated state"
+      ],
+      "id": [
+        "atlas-released-pit-t04"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/pittsburgh/lr-bounds.svg",
+        "assets/figure-contract-r12/figures/pittsburgh/lr-prices-recovery.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-released-pit-t04"
+      ],
+      "issue_type": "short_trace_zero_price",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "容量不绑定，零价格的完整图下界与自身路径池恢复上界已在浮点精度内相合；图中同点重叠是真实数值。无正乘子就没有可画的正价格空间图；不能造出价格地图或把区域小当成已证明原因。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\pittsburgh\\PIT_T04.plot.json",
+          "sha256": "89e010f4ed1ef86f06be285be0b2dde403fd7eef5fa0acc80708c42f848ee24b"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\figure-contract-r12\\figures\\pittsburgh\\lr-prices-recovery.plot.json",
+          "sha256": "d1e347567709da3c2e39b20ddf776c8ff4f592c5d52289f84bc8bed7128b3640"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Pittsburgh",
+      "instance": "原 East End T4；4 OD；30 s / H117",
+      "method": "ADMM",
+      "actual_saved_states": {
+        "saved_outer_states": 1,
+        "iteration_indices": [
+          1
+        ]
+      },
+      "actual_updates": 1,
+      "figures": [
+        {
+          "id": "atlas-r9-pittsburgh-pittsburgh-admm-main",
+          "title": "ADMM residuals and objective agreement",
+          "source_path": [
+            "assets/figure-contract-r12/figures/pittsburgh/admm-saved-state.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-admm-main",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "ADMM residuals and objective agreement"
+      ],
+      "id": [
+        "atlas-r9-pittsburgh-pittsburgh-admm-main"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/pittsburgh/admm-saved-state.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-admm-main"
+      ],
+      "issue_type": "one_completed_update_nonbinding",
+      "scientific_status": "S0 ACCEPTED（原实例）",
+      "explanation_zh": "确实完成1次外层更新；不是只存起终点而省略过程。原单位守恒/容量、primal与rho-scaled dual分别达门槛；当前图是四面板单点检查。PCE残差与分钟dual门槛分开；目标接近不表示每条路流相同。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\plot-semantics-r9\\pittsburgh\\pittsburgh-admm-main.plot_data.json",
+          "sha256": "235a09af4f3334887c480d971ae76f607ec529417a08ac3769b5b34ee8182582"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Urbana–Champaign",
+      "instance": "scope_vs_demand_r1 新候选",
+      "method": "Candidate scope / demand study",
+      "actual_saved_states": 0,
+      "actual_updates": 0,
+      "figures": [
+        {
+          "id": "urbana-scope-candidate-status",
+          "title": "New candidate: rules frozen; not executed; waiting for the original shared compute lock. The recorde",
+          "source_path": [],
+          "anchor": "index.html?atlas-view=full#urbana-scope-candidate-status",
+          "volume_links": [
+            "volumes/urbana-champaign.html#scope-vs-demand-20261008"
+          ]
+        }
+      ],
+      "figure_title": [
+        "New candidate: rules frozen; not executed; waiting for the original shared compute lock. The recorde"
+      ],
+      "id": [
+        "urbana-scope-candidate-status"
+      ],
+      "source_path": [],
+      "anchor": [
+        "index.html?atlas-view=full#urbana-scope-candidate-status"
+      ],
+      "issue_type": "not_executed",
+      "scientific_status": "规则已冻结，尚未执行，等待原共享锁",
+      "explanation_zh": "现有新增两图只诊断旧T4：4个选中OD、首个5分钟0.051623 PCE，最大弧使用率0.677591%。没有新候选时空图、解、最优值或容量活跃结论；区域影响未检验。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\choicefw-scope-20261008\\urbana-champaign\\SCOPE_VS_DEMAND_PUBLIC_NOTE.md",
+          "sha256": "9b82b08cb2b034d2940bcc2d215a26d248ca9b57173df6d160b41ec985142834"
+        }
+      ],
+      "next_action_zh": "不补画不存在的新结果；若之后正式运行，需独立接收其新字节。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Ithaca",
+      "instance": "T4；4 OD；0.656755360434 PCE pulse",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "reported_Phase_I_rounds": 1,
+        "reported_Phase_II_rounds": 1,
+        "public_numeric_endpoint": 1,
+        "public_full_history": false
+      },
+      "actual_updates": "S0正文记录两阶段各1次RMP；新增列0",
+      "figures": [
+        {
+          "id": "atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "title": "T4 finite-time endpoint comparison",
+          "source_path": [
+            "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+            "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "T4 finite-time endpoint comparison"
+      ],
+      "id": [
+        "atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+        "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "issue_type": "short_trace_with_public_history_gap",
+      "scientific_status": "S0 ACCEPTED",
+      "explanation_zh": "S0公开正文明确两阶段各一次；现有公开数值图件仅方法端点，缺CG阶段逐行history。不能为了与香港图型一致补造轨迹/OD热图。 总脉冲小于最小弧容量2.5 PCE，共享容量全部冗余；这是简单冻结输入，不能称拥堵压力验证或已证明区域太小。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\VOLUME_ADDENDUM_S0.md",
+          "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\ITH_GC04_T_Endpoints.plot.csv",
+          "sha256": "9f0ad8c938d5c56bb6c0f3c0081388c3f98354b1abd50377963ee702701ba9a4"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\figure-contract-r12\\figures\\ithaca\\admm-saved-state.plot.json",
+          "sha256": "8f2b2c9e880a0f53f983b1ee1b7a9fb1f13eefc9490b799247eec4e8cd07a04f"
+        }
+      ],
+      "next_action_zh": "保留端点/单点图；如要CG/LR专用过程图，先接收相应公开逐行数据，不需要凭空延长实验。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Ithaca",
+      "instance": "T4；4 OD；0.656755360434 PCE pulse",
+      "method": "Lagrangian relaxation",
+      "actual_saved_states": {
+        "reported_iterations": 1,
+        "public_numeric_endpoint": 1,
+        "public_full_history": false
+      },
+      "actual_updates": "S0正文记录1次迭代",
+      "figures": [
+        {
+          "id": "atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "title": "T4 finite-time endpoint comparison",
+          "source_path": [
+            "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+            "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "T4 finite-time endpoint comparison"
+      ],
+      "id": [
+        "atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+        "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "issue_type": "short_trace_with_public_history_gap",
+      "scientific_status": "S0 ACCEPTED",
+      "explanation_zh": "S0正文明确一次LR；公开图件给端点而无完整价格/恢复数值history。无正价格，不能凭端点画正乘子地图或多轮bounds曲线。 总脉冲小于最小弧容量2.5 PCE，共享容量全部冗余；这是简单冻结输入，不能称拥堵压力验证或已证明区域太小。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\VOLUME_ADDENDUM_S0.md",
+          "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\ITH_GC04_T_Endpoints.plot.csv",
+          "sha256": "9f0ad8c938d5c56bb6c0f3c0081388c3f98354b1abd50377963ee702701ba9a4"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\figure-contract-r12\\figures\\ithaca\\admm-saved-state.plot.json",
+          "sha256": "8f2b2c9e880a0f53f983b1ee1b7a9fb1f13eefc9490b799247eec4e8cd07a04f"
+        }
+      ],
+      "next_action_zh": "保留端点/单点图；如要CG/LR专用过程图，先接收相应公开逐行数据，不需要凭空延长实验。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Ithaca",
+      "instance": "T4；4 OD；0.656755360434 PCE pulse",
+      "method": "ADMM",
+      "actual_saved_states": {
+        "saved_outer_states": 1,
+        "iteration_indices": [
+          1
+        ]
+      },
+      "actual_updates": 1,
+      "figures": [
+        {
+          "id": "atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "title": "T4 finite-time endpoint comparison",
+          "source_path": [
+            "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+            "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        "T4 finite-time endpoint comparison"
+      ],
+      "id": [
+        "atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "source_path": [
+        "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+        "assets/figure-contract-r12/figures/ithaca/time-method-objectives.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-gap-ithaca-ith-gc04-t-endpoints"
+      ],
+      "issue_type": "short_trace_nonbinding_capacity",
+      "scientific_status": "S0_ACCEPTED_SAVED_STATE_NUMERIC_WITH_SCOPE",
+      "explanation_zh": "一轮真实outer更新已有公开数值：primal=0 PCE，dual=7.4157e-15 min，守恒6.1907e-15 PCE；S0已接受保存数值，原producer pending字段是历史记录。 总脉冲小于最小弧容量2.5 PCE，共享容量全部冗余；这是简单冻结输入，不能称拥堵压力验证或已证明区域太小。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\VOLUME_ADDENDUM_S0.md",
+          "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\ithaca\\ITH_GC04_T_Endpoints.plot.csv",
+          "sha256": "9f0ad8c938d5c56bb6c0f3c0081388c3f98354b1abd50377963ee702701ba9a4"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\figure-contract-r12\\figures\\ithaca\\admm-saved-state.plot.json",
+          "sha256": "8f2b2c9e880a0f53f983b1ee1b7a9fb1f13eefc9490b799247eec4e8cd07a04f"
+        }
+      ],
+      "next_action_zh": "保留端点/单点图；如要CG/LR专用过程图，先接收相应公开逐行数据，不需要凭空延长实验。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Berkeley",
+      "instance": "T4；原30 s / H165，4 OD",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase_I_states": 5,
+        "Phase_I_rounds": [
+          0,
+          4
+        ],
+        "Phase_II_states": 3,
+        "Phase_II_rounds": [
+          0,
+          2
+        ],
+        "Phase_II_objective_decreases": 1
+      },
+      "actual_updates": "Phase I 4次增列；Phase II 2次增列，但目标只下降一次",
+      "figures": [
+        {
+          "id": "atlas-berkeley-r3-cg-phase-two",
+          "title": "Phase II objective",
+          "source_path": [
+            "assets/city-alignment-r3/berkeley/cg_phase_two.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r3-cg-phase-two",
+          "volume_links": [
+            "volumes/berkeley.html#figure-r3-cg-phase-two"
+          ]
+        },
+        {
+          "id": "atlas-berkeley-r3-cg-pricing-closure",
+          "title": "Complete-graph pricing closure",
+          "source_path": [
+            "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r3-cg-pricing-closure",
+          "volume_links": [
+            "volumes/berkeley.html#figure-r3-cg-pricing-closure"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Phase II objective",
+        "Complete-graph pricing closure"
+      ],
+      "id": [
+        "atlas-berkeley-r3-cg-phase-two",
+        "atlas-berkeley-r3-cg-pricing-closure"
+      ],
+      "source_path": [
+        "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+        "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-berkeley-r3-cg-phase-two",
+        "index.html?atlas-view=full#atlas-berkeley-r3-cg-pricing-closure"
+      ],
+      "issue_type": "few_objective_changes_not_one_algorithm_round",
+      "scientific_status": "Accepted same-T4 full-graph pricing closure",
+      "explanation_zh": "Phase II三状态为46.8171788152→43.6674244080→43.6674244080 PCE·min。round1虽达到LP目标，最小约化成本仍−0.06717 min；round2才闭合。图中平台是实际退化/等目标增列，不能删掉末轮或将其误诊为只跑一轮。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\berkeley\\cg_phase_one.plot_data.json",
+          "sha256": "7664d4216ffd45b18632a17f9cfead4cce84bae18f79359afa24ad23ae14e5e3"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\city-alignment-r3\\berkeley\\cg_phase_two.plot_data.json",
+          "sha256": "2d77a738e970b80b407662b48b25235887ed8f4de3a9865b71d6e90efd269660"
+        }
+      ],
+      "next_action_zh": "保留全部3点和定价闭合；不需强行追加下降。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Berkeley",
+      "instance": "原 LR10 与独立冷启动 LR300 分别保留",
+      "method": "Lagrangian relaxation",
+      "actual_saved_states": {
+        "original": 10,
+        "extended_cold_start": 300,
+        "recovery_calls_extended": 31,
+        "feasible_recovery_calls": 30
+      },
+      "actual_updates": "原10次；扩展300次，不能拼成310次",
+      "figures": [
+        {
+          "id": "atlas-berkeley-r3-lr-bounds",
+          "title": "Lagrangian bounds and certified gap",
+          "source_path": [
+            "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r3-lr-bounds",
+          "volume_links": [
+            "volumes/berkeley.html#figure-r3-lr-bounds"
+          ]
+        },
+        {
+          "id": "atlas-berkeley-r3-lr-prices",
+          "title": "Lagrangian prices and relaxed capacity violations",
+          "source_path": [
+            "assets/figure-contract-r11/figures/berkeley/lr_prices.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r3-lr-prices",
+          "volume_links": [
+            "volumes/berkeley.html#figure-r3-lr-prices"
+          ]
+        },
+        {
+          "id": "atlas-berkeley-r3-lr-recovery",
+          "title": "Path-pool growth and separate primal recovery",
+          "source_path": [
+            "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r3-lr-recovery",
+          "volume_links": [
+            "volumes/berkeley.html#figure-r3-lr-recovery"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Lagrangian bounds and certified gap",
+        "Lagrangian prices and relaxed capacity violations",
+        "Path-pool growth and separate primal recovery"
+      ],
+      "id": [
+        "atlas-berkeley-r3-lr-bounds",
+        "atlas-berkeley-r3-lr-prices",
+        "atlas-berkeley-r3-lr-recovery"
+      ],
+      "source_path": [
+        "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+        "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+        "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-berkeley-r3-lr-bounds",
+        "index.html?atlas-view=full#atlas-berkeley-r3-lr-prices",
+        "index.html?atlas-view=full#atlas-berkeley-r3-lr-recovery"
+      ],
+      "issue_type": "flat_best_bound_is_not_short_trace",
+      "scientific_status": "LR10 ACCEPTED_PRIOR_FORMAL_PASS_REUSED；LR300 PASS_EXTENDED_DIAGNOSTIC_PRIOR_FORMAL_PASS_REUSED",
+      "explanation_zh": "当前是300条真实history，首次1%门在第10次，best bound到第256次才达到最高；当前dual继续变化但running best可呈平台。31次独立recovery中30次可行，不能把可行上界当成每次dual更新。末端zero gap是浮点证书，不是严格代数等式。旧plot元数据仍留PENDING_SHARED_HEAVY_LOCK，最新S0接收字段已正式通过，必须按接收记录解释。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\berkeley-lr-r6\\lr_bounds.plot_data.json",
+          "sha256": "ec11427369ae581acac550a0b4156003919919b923ce0a1fda67b4770444f048"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保持300条全过程与旧10条身份；不因平台重跑或删图。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Berkeley",
+      "instance": "同一 T4；ADMM own x outer170 vs exact LP",
+      "method": "ADMM flow comparison",
+      "actual_saved_states": 170,
+      "actual_updates": 170,
+      "figures": [
+        {
+          "id": "atlas-berkeley-r2-admm-physical-flow-comparison",
+          "title": "ADMM and LP physical-link flow",
+          "source_path": [
+            "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-berkeley-r2-admm-physical-flow-comparison",
+          "volume_links": [
+            "volumes/berkeley.html#figure-admm-physical-flow-comparison"
+          ]
+        }
+      ],
+      "figure_title": [
+        "ADMM and LP physical-link flow"
+      ],
+      "id": [
+        "atlas-berkeley-r2-admm-physical-flow-comparison"
+      ],
+      "source_path": [
+        "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-berkeley-r2-admm-physical-flow-comparison"
+      ],
+      "issue_type": "objective_agreement_not_flow_equality",
+      "scientific_status": "S0 ACCEPTED_PRIOR_FORMAL_PASS_REUSED",
+      "explanation_zh": "不是单轮：170条外迭代。目标相对差仅0.00531869%，但物理链路最大差0.990967760238112 PCE；两种都可行的分配可在退化最优/近最优路线时间拆分上不同。差异图并非画错，不得用CG或LP向量替代ADMM own x。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\figure-contract-r11\\figures\\berkeley\\admm_physical_flow_comparison.source.json",
+          "sha256": "3b6c35d5af1715c0c2c352c083824779e1d58d9f9f7f3e5fd37d3859e65ea016"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留同尺度绝对图、对称差图、全链路散点；勿将目标一致写成流量一致。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Hong Kong",
+      "instance": "R5 CG 10 OD；与4 OD ADMM分开",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase_I_states": 13,
+        "Phase_I_rounds": [
+          0,
+          12
+        ],
+        "Phase_II_states": 2,
+        "Phase_II_rounds": [
+          0,
+          1
+        ]
+      },
+      "actual_updates": "Phase II一次已存目标更新；Phase I另12次",
+      "figures": [],
+      "figure_title": [
+        "Phase II记录未嵌入当前页面；当前可见Phase I图为13态"
+      ],
+      "id": [],
+      "source_path": [
+        "assets/atlas/figures/c-hk-cg-phase1.svg",
+        "assets/hong_kong/full_stack_r5/figures/hk_cg_phase_ii_objective.svg"
+      ],
+      "anchor": [
+        "volumes/hong-kong.html#reading-section-17"
+      ],
+      "issue_type": "reference_trace_not_embedded",
+      "scientific_status": "accepted independent 10/10 pricing closure",
+      "explanation_zh": "Phase II真实两保存态（0、1），一次有效目标更新：75.07523596555359→75.03632985794832；但这张原SVG没有嵌入当前主页或大卷，大卷用两行数值说明。用户实际看到的是另一张Phase I人工流清除图，包含0–12共13态。此前将科学短记录当作当前可见图例的说法不准确。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\hong_kong\\full_stack_r5\\cg_run\\full_cg_v1_phase_i_artificial_flow_trace.csv",
+          "sha256": "6b33852b1bdf0bf5343127f8c1cfc9307931692c0f35b35dd9227fd587ee13a6"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\hong_kong\\full_stack_r5\\cg_run\\full_cg_v1_phase_ii_objective_trace.csv",
+          "sha256": "8468513da45d3c34719b54aa9c1de484c253851e8f8eb04db7446fe2bad2b458"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\history_repair_20261008\\REFERENCE_VISIBLE_SHORT_RECORDS.json",
+          "sha256": "4146d6b58979b0ef7ee3804bfb2c05c4a9552a2ca3dc6db500f3992025d08bac"
+        }
+      ],
+      "next_action_zh": "分别保留Phase I多轮可见图和Phase II未嵌入记录，不能再将Phase I图称为单更新。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true,
+      "visible_short_iteration_curve": false
+    },
+    {
+      "city": "Boston",
+      "instance": "R2 finite 10 OD",
+      "method": "Lagrangian relaxation",
+      "actual_saved_states": 300,
+      "actual_updates": 300,
+      "figures": [
+        {
+          "id": "atlas-final-g-f147",
+          "title": "Lagrangian bounds and certified gap",
+          "source_path": [
+            "assets/atlas/figures/g-f147.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-final-g-f147",
+          "volume_links": [
+            "volumes/boston.html#stage-17-lagrangian--g-f147",
+            "volumes/boston.html#src-docs-cases-boston-document-finite-time-expanded-algorithms"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Lagrangian bounds and certified gap"
+      ],
+      "id": [
+        "atlas-final-g-f147"
+      ],
+      "source_path": [
+        "assets/atlas/figures/g-f147.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-final-g-f147"
+      ],
+      "issue_type": "existing_reference_not_accepted",
+      "scientific_status": "Final gap 1.1002% > frozen 1% gate; not accepted",
+      "explanation_zh": "旧参考页仍展示300次LR未通过的证书；这不是短记录，且图注诚实标注未接收。它与用户“失败尝试不在网页”的要求存在历史展示冲突，但本次用户保护原城市布局，未擅自更改旧城。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\homepage_evidence_r2\\BOSTON_ROW17_DERIVED_FIGURE_APPROVAL.json",
+          "sha256": "704f866ebabe40e882d3e2812a91ba747c1dadeeb628ca22ff1e8bcde6e0a39d"
+        }
+      ],
+      "next_action_zh": "列为旧页残留待定事项；未经范围扩展不改受保护旧城。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Sioux Falls",
+      "instance": "Historical selected graph 200 OD",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase_I_states": 52,
+        "final_round": 51
+      },
+      "actual_updates": "Phase I记录0–51，不是短轨迹",
+      "figures": [
+        {
+          "id": "atlas-final-r05-sioux200-cg-phase1",
+          "title": "Phase I: artificial-flow clearance",
+          "source_path": [
+            "assets/atlas/sioux-scale/r05-sioux200-cg-phase1.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-final-r05-sioux200-cg-phase1",
+          "volume_links": [
+            "volumes/sioux-falls.html#figure-r05-sioux200-cg-phase1"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Phase I: artificial-flow clearance"
+      ],
+      "id": [
+        "atlas-final-r05-sioux200-cg-phase1"
+      ],
+      "source_path": [
+        "assets/atlas/sioux-scale/r05-sioux200-cg-phase1.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-final-r05-sioux200-cg-phase1"
+      ],
+      "issue_type": "certificate_scope_gap",
+      "scientific_status": "Phase I feasibility shown; independent full-DAG pricing closure not established",
+      "explanation_zh": "可行性清零、容量交换与最终物理流图都不能单独证明完整图的最优性。当前图注正确保留独立full-DAG pricing尚未建立的限制；不能作为新城闭合证书的相同强度模板。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\sioux\\phase_i_r1\\data\\200_phase_i_trace.csv",
+          "sha256": "a20adcf3370fc732540d33aab551b9617d533b0024fc0fa2bffba9bd1be0745a"
+        }
+      ],
+      "next_action_zh": "保留范围说明；本轮不另跑pricing或改旧城。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Sioux Falls",
+      "instance": "Historical selected graph 250 OD",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase_I_states": 63,
+        "final_round": 62
+      },
+      "actual_updates": "Phase I记录0–62，不是短轨迹",
+      "figures": [
+        {
+          "id": "atlas-final-r05-sioux250-cg-phase1",
+          "title": "Phase I: artificial-flow clearance",
+          "source_path": [
+            "assets/atlas/sioux-scale/r05-sioux250-cg-phase1.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-final-r05-sioux250-cg-phase1",
+          "volume_links": [
+            "volumes/sioux-falls.html#figure-r05-sioux250-cg-phase1"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Phase I: artificial-flow clearance"
+      ],
+      "id": [
+        "atlas-final-r05-sioux250-cg-phase1"
+      ],
+      "source_path": [
+        "assets/atlas/sioux-scale/r05-sioux250-cg-phase1.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-final-r05-sioux250-cg-phase1"
+      ],
+      "issue_type": "certificate_scope_gap",
+      "scientific_status": "Phase I feasibility shown; independent full-DAG pricing closure not established",
+      "explanation_zh": "可行性清零、容量交换与最终物理流图都不能单独证明完整图的最优性。当前图注正确保留独立full-DAG pricing尚未建立的限制；不能作为新城闭合证书的相同强度模板。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\sioux\\phase_i_r1\\data\\250_phase_i_trace.csv",
+          "sha256": "e537b2c446335cdb4fc148dfe0608291b8f96375839402ee959359654d51dab3"
+        }
+      ],
+      "next_action_zh": "保留范围说明；本轮不另跑pricing或改旧城。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Ann Arbor",
+      "instance": "T1/T4 与choice_fw_v002 S600静态任务分开",
+      "method": "Finite time-expanded methods",
+      "actual_saved_states": 0,
+      "actual_updates": 0,
+      "figures": [
+        {
+          "id": "ann-arbor-finite",
+          "title": "",
+          "source_path": [],
+          "anchor": "index.html?atlas-view=full#ann-arbor-finite",
+          "volume_links": []
+        }
+      ],
+      "figure_title": [
+        ""
+      ],
+      "id": [
+        "ann-arbor-finite"
+      ],
+      "source_path": [],
+      "anchor": [
+        "index.html?atlas-view=full#ann-arbor-finite"
+      ],
+      "issue_type": "not_executed",
+      "scientific_status": "没有已完成的可展示有限时空解",
+      "explanation_zh": "新choice的600 OD进入FW只接收静态分配；不会使T1/T4的CG/LR/ADMM自动通过。当前无同实例有限时空优化图，属于真实未完成内容，不是丢绘图。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\choicefw-scope-20261008\\ann-arbor\\CHOICE_FW_PUBLIC_STATUS.md",
+          "sha256": "cfffa50b1d82ef555cee998bc892373eb3209ebf68306c3db586341bddb950d6"
+        }
+      ],
+      "next_action_zh": "保持未完成状态；不从静态图推有限时空结果。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": true
+    },
+    {
+      "city": "Chicago",
+      "instance": "原 R2 T4 30 s / H169",
+      "method": "Column generation",
+      "actual_saved_states": {
+        "Phase_I_states": 208,
+        "Phase_II_states": 60
+      },
+      "actual_updates": "Phase I 0–207，Phase II 0–59",
+      "figures": [
+        {
+          "id": "atlas-r9-chicago-cg-phase-one",
+          "title": "Column generation: Phase I feasibility",
+          "source_path": [
+            "assets/plot-semantics-r9/chicago/cg-phase-one.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-r9-chicago-cg-phase-one",
+          "volume_links": [
+            "volumes/chicago.html#figure-r9-cg-phase-one"
+          ]
+        },
+        {
+          "id": "atlas-r9-chicago-cg-phase-two",
+          "title": "Column generation: Phase II real cost",
+          "source_path": [
+            "assets/plot-semantics-r9/chicago/cg-phase-two.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-r9-chicago-cg-phase-two",
+          "volume_links": [
+            "volumes/chicago.html#figure-r9-cg-phase-two"
+          ]
+        },
+        {
+          "id": "atlas-r9-chicago-cg-pricing-closure",
+          "title": "Column generation: full-graph pricing closure",
+          "source_path": [
+            "assets/figure-contract-r11/figures/chicago/cg-pricing-closure.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-r9-chicago-cg-pricing-closure",
+          "volume_links": [
+            "volumes/chicago.html#figure-r9-cg-pricing-closure"
+          ]
+        }
+      ],
+      "figure_title": [
+        "Column generation: Phase I feasibility",
+        "Column generation: Phase II real cost",
+        "Column generation: full-graph pricing closure"
+      ],
+      "id": [
+        "atlas-r9-chicago-cg-phase-one",
+        "atlas-r9-chicago-cg-phase-two",
+        "atlas-r9-chicago-cg-pricing-closure"
+      ],
+      "source_path": [
+        "assets/plot-semantics-r9/chicago/cg-phase-one.svg",
+        "assets/plot-semantics-r9/chicago/cg-phase-two.svg",
+        "assets/figure-contract-r11/figures/chicago/cg-pricing-closure.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-r9-chicago-cg-phase-one",
+        "index.html?atlas-view=full#atlas-r9-chicago-cg-phase-two",
+        "index.html?atlas-view=full#atlas-r9-chicago-cg-pricing-closure"
+      ],
+      "issue_type": "not_short_trace",
+      "scientific_status": "S0_ACCEPTED own full-graph primal/dual pricing certificate",
+      "explanation_zh": "当前三阶段曲线保存全部268个主问题状态。Phase II参照是自身最后完整图dual bound，并非不存在的HiGHS最优解。所有四commodity完整定价记录存在，未发现短过程缺绘。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\plot-semantics-r9\\chicago\\cg-phase-one.plot_data.json",
+          "sha256": "6315ac0e05e0c57a94db0a5efeea443fbab6c8ddf6ec44a0dcdf564d66f4cf52"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\plot-semantics-r9\\chicago\\cg-phase-two.plot_data.json",
+          "sha256": "ef3da491e5abbc0e9532e3ea94e6c0c3975678a8ad0a211181d86c9798779089"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\algorithm-transfer-r8\\CURRENT_STATUS.json",
+          "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": false
+    },
+    {
+      "city": "Chicago",
+      "instance": "LR_SELF_PRICED_FEASIBILITY_AND_RESTRICTED_RECOVERY_DUAL_ANCHOR_HYBRID_V001",
+      "method": "LR own-pool hybrid",
+      "actual_saved_states": {
+        "feasibility_rounds": 26,
+        "original_cost_iterations": 10,
+        "final_pool_paths": 182
+      },
+      "actual_updates": "26可行性扩池 + 10原成本步骤，非36等价subgradient步骤",
+      "figures": [
+        {
+          "id": "atlas-gap-chicago-c06-lr-self-pool-gap",
+          "title": "New LR hybrid: own-pool feasibility and certified bounds",
+          "source_path": [
+            "assets/figure-contract-r11/figures/chicago/chi-lr-feasibility.svg",
+            "assets/figure-contract-r11/figures/chicago/chi-lr-bounds.svg",
+            "assets/figure-contract-r11/figures/chicago/chi-lr-certificate.svg"
+          ],
+          "anchor": "index.html?atlas-view=full#atlas-gap-chicago-c06-lr-self-pool-gap",
+          "volume_links": [
+            "volumes/chicago.html#figure-gap-c06-lr-self-pool-gap"
+          ]
+        }
+      ],
+      "figure_title": [
+        "New LR hybrid: own-pool feasibility and certified bounds"
+      ],
+      "id": [
+        "atlas-gap-chicago-c06-lr-self-pool-gap"
+      ],
+      "source_path": [
+        "assets/figure-contract-r11/figures/chicago/chi-lr-feasibility.svg",
+        "assets/figure-contract-r11/figures/chicago/chi-lr-bounds.svg",
+        "assets/figure-contract-r11/figures/chicago/chi-lr-certificate.svg"
+      ],
+      "anchor": [
+        "index.html?atlas-view=full#atlas-gap-chicago-c06-lr-self-pool-gap"
+      ],
+      "issue_type": "not_short_trace",
+      "scientific_status": "S0_ACCEPTED_NEW_HYBRID",
+      "explanation_zh": "当前保存完整26+10过程，自己的上界241.2268172335391与下界239.1173646810173，gap0.8744685%过1%门。不能将此成功归给历史759轮纯LR方法。",
+      "evidence": [
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\chicago\\C06_LR_SELF_POOL_GAP.plot.json",
+          "sha256": "c5566c4648fe12374b46ef1be478d2ba65624fdf6dcbde297a5a121df6a515c2"
+        },
+        {
+          "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\gap-20261008\\chicago\\VOLUME_GAP_APPENDIX_S0.md",
+          "sha256": "af017e15d54a1806f8fe5f604a53286990f552abe73dd963800a22932664a8da"
+        }
+      ],
+      "next_action_zh": "保留如实绘图和限定语；本轮不重跑。",
+      "public_or_private": "public_current_candidate",
+      "include_in_issue_table": false
+    }
+  ],
+  "reference_controls": [
+    {
+      "city": "Boston",
+      "method": "CG",
+      "counts": "Phase I 91 states; Phase II 16 states",
+      "source": "assets/boston/space_time_cg_r4/data/phase_i_total.csv;phase_ii_objective.csv",
+      "finding": "multi-step normal control"
+    },
+    {
+      "city": "Hong Kong",
+      "method": "LR / ADMM",
+      "counts": "LR25 actual history rows; ADMM accepted4OD165 iterations",
+      "source": "assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/lagrangian_run/history.csv; index.html#atlas-final-g-f097",
+      "finding": "do not mix10OD LR/CG and4OD ADMM"
+    },
+    {
+      "city": "Sioux Falls",
+      "method": "LR / ADMM",
+      "counts": "LR200/250 P07 each10 pool records; ADMM20085/250101iterations",
+      "source": "index.html#atlas-final-r05-sioux200-admm-convergence; index.html#atlas-final-r05-sioux250-admm-convergence",
+      "finding": "objectives can agree while max physical flow differences600/3031.780 model-flow units; schematic coordinates not geographic failure"
+    }
+  ],
+  "important_rules": [
+    "保存状态数、优化更新数、目标下降次数是不同计数。",
+    "只有端点图不能证明只有一次迭代；如正文提供实际次数必须标明证据层级。",
+    "固定容量冗余是该冻结T4的数学性质，不等于区域过小的因果结论。",
+    "单点用marker、不同phase不同轴；无公开正乘子不造价格地图。",
+    "未完成/未接收结果不因同城另一方法通过而改写。"
+  ],
+  "prior_audit_preserved": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\card_layout_and_method_audit_20261008\\FINITE_AUDIT.json"
+}

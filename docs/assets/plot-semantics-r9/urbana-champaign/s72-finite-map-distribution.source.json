@@ -1,0 +1,92 @@
+{
+  "id": "s72-finite-map-distribution",
+  "city": "urbana-champaign",
+  "stage": "static",
+  "method": "finite-path",
+  "title": "S72 finite-path reference flow and feasibility",
+  "caption": "Saved S72 instance: 72 selected OD pairs, 321.6296598827645 PCE in one declared hour, and 360 frozen paths. Each method reads its own saved physical-link vector; none is substituted from another method. All 11,365 physical solver arcs are shown, including 42 separate A/B geometry halves for 21 split source links; turn movements are excluded. The all-link histogram includes exact zeros. Absolute maps share a square-root colour scale in PCE/hour and constant overlay width. Only coloured map overlays suppress absolute values at most 1e-12 PCE/h, while all values remain in plot data and histograms. This is distinct from the original 418-OD city case. © OpenStreetMap contributors, ODbL 1.0; engineering scenario, not observed traffic. All 72 OD mass residuals are calculated from the 360 saved path flows minus the frozen per-OD demands; all are exactly zero. The frozen independent endpoint check is SOLVED_WITHIN_DECLARED_TOLERANCE. No optimizer or path-generation code is run.",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "sources": [
+    {
+      "role": "S/fw_fast_72_r2/link_flow.csv",
+      "sha256": "1b8adcbbd642842047a8f6a682373a7a73c5523573e77ad99dd44b25c736e15a",
+      "bytes": 754270
+    },
+    {
+      "role": "S/finite_72/link_flow.csv",
+      "sha256": "2bac087410e7aea0f98cecae006d8907161b6b14b40c6b1b7cab710db425c505",
+      "bytes": 495679
+    },
+    {
+      "role": "S/finite_72/path_flow.csv",
+      "sha256": "99182f45d9d4744a8828ddced4432ec825731ad3b8af37b00de46fb0e40051cb",
+      "bytes": 5267
+    },
+    {
+      "role": "S/prepared_72/demand.csv",
+      "sha256": "c9282e98b415ea227cd15cf6d356ad8b90b8b3863c29bb0b2352f1aa73bddc21",
+      "bytes": 2499
+    },
+    {
+      "role": "S/pool_72/paths.csv",
+      "sha256": "81f24fa787d2b60ad14f7067429ffbc329532aa7af4df19071888121eba70eb8",
+      "bytes": 747784
+    },
+    {
+      "role": "S/finite_72/independent_check.json",
+      "sha256": "184a1de932a6c01928adf0fa1e2155afe9430ad419916a3eeb6de68bdaeb0e65",
+      "bytes": 1070
+    }
+  ],
+  "geometry_source": {
+    "path": "assets/city-alignment-r3/urbana-transfer/derived.json",
+    "sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae"
+  },
+  "renderer": {
+    "file": "render_urbana_static_canonical.py",
+    "sha256": "c3141e937405f4c77153a2ad14fdbed29963ef33ff290cbf2a6d11a9cbc1c099",
+    "function": "finite_card",
+    "line_start": 76,
+    "line_end": 80
+  },
+  "dimensions": [
+    2228,
+    1319
+  ],
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 52.097,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "canonical_type": "Boston finite map+all-link histogram+all-OD mass residual",
+  "exports": {
+    "png": {
+      "file": "s72-finite-map-distribution.png",
+      "sha256": "ac68d7f012098a5b059ac3d5be7faa173c2c34663f239294e1a44e344a4ab4de"
+    },
+    "svg": {
+      "file": "s72-finite-map-distribution.svg",
+      "sha256": "c278fcddf61e3beec5eb84f65cf1110ce2d777dde31f947aaf9a70161702f89f"
+    },
+    "pdf": {
+      "file": "s72-finite-map-distribution.pdf",
+      "sha256": "ee27496c2add696e3ee171c27c11c69e8346ccb6ee27b3c35a9df16d71206616"
+    }
+  },
+  "planned_anchor": "atlas-uc-canonical-s72-finite-map-distribution",
+  "planned_volume_anchor": "figure-canonical-s72-finite-map-distribution",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

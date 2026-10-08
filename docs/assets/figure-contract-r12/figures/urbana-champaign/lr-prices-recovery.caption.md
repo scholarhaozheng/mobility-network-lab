@@ -1,0 +1,1 @@
+At saved iteration 1 the positive capacity-price count is 0, so there are no positive-price arcs for a top-price map or time histogram. One actual recovery call uses the four paths in this method’s own pool and returns a feasible upper bound. Filled recovery marker follows the Boston/Hong Kong feasible-recovery convention. No additional calls or multipliers are invented.

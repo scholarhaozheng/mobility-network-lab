@@ -1,0 +1,1 @@
+Residuals and corresponding recorded stage-specific thresholds are shown in their implemented units. The C1 threshold changes only at the saved continuation boundary; the scientific LP objective gate is separate.

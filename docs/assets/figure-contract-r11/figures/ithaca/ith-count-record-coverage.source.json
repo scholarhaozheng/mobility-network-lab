@@ -1,0 +1,494 @@
+{
+  "figure_id": "ith-count-record-coverage",
+  "city": "ithaca",
+  "instance": "NYSDOT_SHORT_COUNTS_2015_2019",
+  "role": "diagnostic",
+  "conclusion": "The acquired historical snapshot contains 294 records with uneven yearly coverage.",
+  "panels": [
+    "Source records by year",
+    "Within-year unique RCSTA codes"
+  ],
+  "quantity": "source-record and site counts",
+  "unit": [
+    "records",
+    "sites"
+  ],
+  "original_family": "ITH_GC05_Count_Coverage",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "schema": "mcl_figure_r11",
+  "caption": "The bounded acquisition contains 294 records and 76 unique RCSTA sites overall. Sites repeat across years; the annual site counts must not be added as distinct sites. Directional and combined count records are not summed vehicle volumes, and this is not a calibrated 2026 holdout. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC05_Count_Coverage.plot.csv",
+      "sha256": "314785a4646f6a1a34adb3c2b30f95da9aaf006504030c91d614d5b0894cf06c"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC05_Count_Coverage.caption.txt",
+      "sha256": "1eee4169c54869bf8edbf36acca0a3756066cc3e70987e54a750c143c0f3f1d3"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Ithaca",
+    "title": "Historical count-record coverage",
+    "scope": "NYSDOT / 2015–2019 snapshot"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 30.95,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2529,
+    1162
+  ],
+  "exports": {
+    "png": "2b0bba899850994243503744d3e0585fff284b150565c4261eaf44fccefadfc6",
+    "svg": "aef257ee76c8ce62801d876e8720d4e85262df7f284fac33fca3ae51db626464",
+    "pdf": "d3013404d83b85feea1415acf1f555209f8eb31ea8c2ca362abd68c25af785ce"
+  },
+  "text_audit": [
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        109.752,
+        168.43,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "78",
+      "size_pt": 8.0,
+      "bounds_px": [
+        176.069,
+        320.366,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "79",
+      "size_pt": 8.0,
+      "bounds_px": [
+        242.386,
+        323.232,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "44",
+      "size_pt": 8.0,
+      "bounds_px": [
+        308.702,
+        222.897,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "68",
+      "size_pt": 8.0,
+      "bounds_px": [
+        375.019,
+        291.698,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Source measurement year",
+      "size_pt": 9.0,
+      "bounds_px": [
+        166.073,
+        56.211,
+        166.875,
+        13.0
+      ]
+    },
+    {
+      "text": "2015",
+      "size_pt": 8.0,
+      "bounds_px": [
+        102.627,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2016",
+      "size_pt": 8.0,
+      "bounds_px": [
+        168.944,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2017",
+      "size_pt": 8.0,
+      "bounds_px": [
+        235.261,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2018",
+      "size_pt": 8.0,
+      "bounds_px": [
+        301.577,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2019",
+      "size_pt": 8.0,
+      "bounds_px": [
+        367.894,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Records",
+      "size_pt": 9.0,
+      "bounds_px": [
+        39.861,
+        201.913,
+        13.0,
+        51.875
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        65.542,
+        87.1,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.417,
+        144.434,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.417,
+        201.769,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.417,
+        259.103,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.417,
+        316.437,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.292,
+        373.772,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Source records",
+      "size_pt": 11.0,
+      "bounds_px": [
+        81.0,
+        367.933,
+        137.0,
+        14.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        568.294,
+        172.252,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "26",
+      "size_pt": 8.0,
+      "bounds_px": [
+        631.048,
+        314.845,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "27",
+      "size_pt": 8.0,
+      "bounds_px": [
+        697.364,
+        323.232,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        763.681,
+        222.579,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "23",
+      "size_pt": 8.0,
+      "bounds_px": [
+        829.998,
+        289.681,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Source measurement year",
+      "size_pt": 9.0,
+      "bounds_px": [
+        621.052,
+        56.211,
+        166.875,
+        13.0
+      ]
+    },
+    {
+      "text": "2015",
+      "size_pt": 8.0,
+      "bounds_px": [
+        557.606,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2016",
+      "size_pt": 8.0,
+      "bounds_px": [
+        623.923,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2017",
+      "size_pt": 8.0,
+      "bounds_px": [
+        690.239,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2018",
+      "size_pt": 8.0,
+      "bounds_px": [
+        756.556,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2019",
+      "size_pt": 8.0,
+      "bounds_px": [
+        822.873,
+        74.767,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Distinct RCSTA codes",
+      "size_pt": 9.0,
+      "bounds_px": [
+        494.84,
+        158.725,
+        13.0,
+        138.25
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        520.52,
+        87.1,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        520.52,
+        129.039,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        170.978,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        212.917,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        254.856,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        296.795,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        338.734,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.395,
+        380.673,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Sites within each year",
+      "size_pt": 11.0,
+      "bounds_px": [
+        535.979,
+        367.933,
+        191.75,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  NYSDOT / 2015–2019 snapshot",
+      "size_pt": 8.7,
+      "bounds_px": [
+        58.5,
+        419.989,
+        285.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Historical count-record coverage",
+      "size_pt": 15.0,
+      "bounds_px": [
+        58.5,
+        393.044,
+        386.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#ith-count-record-coverage"
+}

@@ -1,0 +1,722 @@
+{
+  "figure_id": "R11-BERKELEY-F11_DISTRIBUTION",
+  "city": "berkeley",
+  "instance": "Berkeley 13-zone frozen one-hour demand",
+  "role": "demand",
+  "saved_states": 0,
+  "conclusion": "Trip distribution",
+  "panels": [
+    "Complete 13x13 matrix; intrazonal cells excluded",
+    "All 90 positive OD; 12 original bins"
+  ],
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/six-city-r3-1/berkeley/f11_distribution.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "The complete saved 13 × 13 one-hour HBW matrix has 90 positive directed OD pairs. Pale cells are structural zero interzonal demand; the gray diagonal excludes intrazonal demand. All 156 interzonal impedance records are available. The full positive-OD histogram retains 12 bins; saved PA and OD totals agree at 2,381.7222975 person trips/h, with seven IPF iterations and a maximum margin residual of 2.1453153408401704e-05. Single-pass engineering scenario; no local empirical calibration.",
+  "sources": [
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/plot_data/f11_distribution/distribution_matrix.csv",
+      "sha256": "d79583b3a3798a629a64cf42e78362f63650a43d0e41921ff37e083b51dad67e"
+    },
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/plot_data/f11_distribution/zone_order.csv",
+      "sha256": "a57b29393c30dcc87b99b1dda5daa5d7ace23c639f8ca82cf13a2ba3e20d12e1"
+    },
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/plot_data/f11_distribution/distribution_histogram.csv",
+      "sha256": "91fed3aeaf664740e7c4310b9b666c8b596c1bdf6bbe8228835caaa83c4a1506"
+    },
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/f11_distribution.source.json",
+      "sha256": "477ecb27c09539c1e06e783c2bf2a6908d4ea7442c4f6fede3b476d8979334a9"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "Trip distribution",
+    "scope": "Complete 13-zone OD matrix"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 17.558,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2925,
+    1421
+  ],
+  "exports": {
+    "png": "2d3110f2f1794b003471874b5c64aeb475506e52187b9b3e1e9a661bf901308e",
+    "svg": "41df835153743756acd4edc086ac28b4344a79b04b7e5e2ae81651c4bc539ae4",
+    "pdf": "56773d65b63cbbf3056e289ff56b24be70c763db294b2b61bda4a2b6a07f09ed"
+  },
+  "text_audit": [
+    {
+      "text": "Destination zone",
+      "size_pt": 9.0,
+      "bounds_px": [
+        201.135,
+        32.961,
+        106.25,
+        13.0
+      ]
+    },
+    {
+      "text": "400100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        99.722,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        124.645,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        149.568,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        174.491,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        199.414,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.337,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422901",
+      "size_pt": 8.0,
+      "bounds_px": [
+        249.26,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "422902",
+      "size_pt": 8.0,
+      "bounds_px": [
+        274.183,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "423000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        299.106,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "423500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        324.029,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "423602",
+      "size_pt": 8.0,
+      "bounds_px": [
+        348.952,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "423700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        373.875,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "982100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        398.798,
+        51.517,
+        10.0,
+        42.75
+      ]
+    },
+    {
+      "text": "Origin zone",
+      "size_pt": 9.0,
+      "bounds_px": [
+        22.621,
+        227.663,
+        13.0,
+        73.875
+      ]
+    },
+    {
+      "text": "400100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        408.138,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        383.215,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        358.292,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        333.369,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        308.446,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        283.523,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422901",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        258.6,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "422902",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        233.677,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "423000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        208.754,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "423500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        183.831,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "423602",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        158.908,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "423700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        133.985,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "982100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.177,
+        109.062,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Interzonal person trips",
+      "size_pt": 11.0,
+      "bounds_px": [
+        155.885,
+        431.933,
+        196.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Person trips / h",
+      "size_pt": 9.0,
+      "bounds_px": [
+        483.673,
+        216.1,
+        13.0,
+        97.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        96.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        143.237,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        189.875,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "150",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        236.512,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        283.149,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        329.787,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        376.424,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "350",
+      "size_pt": 8.0,
+      "bounds_px": [
+        456.742,
+        423.061,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Person trips / h",
+      "size_pt": 9.0,
+      "bounds_px": [
+        783.5,
+        65.711,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        637.56,
+        84.267,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        686.58,
+        84.267,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        723.851,
+        84.267,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        761.121,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "150",
+      "size_pt": 8.0,
+      "bounds_px": [
+        801.954,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        842.787,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        883.62,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        924.453,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "350",
+      "size_pt": 8.0,
+      "bounds_px": [
+        965.286,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1006.119,
+        84.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Positive directed OD pairs",
+      "size_pt": 9.0,
+      "bounds_px": [
+        634.861,
+        181.163,
+        13.0,
+        166.875
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        660.542,
+        96.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        141.32,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        186.041,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        230.761,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        275.482,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        320.202,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        364.923,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "70",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        409.643,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.417,
+        454.364,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Complete positive-OD distribution",
+      "size_pt": 11.0,
+      "bounds_px": [
+        690.125,
+        431.933,
+        283.75,
+        14.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  Complete 13-zone OD matrix",
+      "size_pt": 8.7,
+      "bounds_px": [
+        67.6,
+        483.989,
+        293.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Trip distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        67.6,
+        457.044,
+        194.0,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

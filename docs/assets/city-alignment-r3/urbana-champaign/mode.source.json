@@ -1,0 +1,40 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-MODE",
+  "city": "urbana-champaign",
+  "title": "Mode choice: persons, costs and availability",
+  "caption": "Saved OD-specific choice in 08:00–09:00 HBW; sums over every positive-demand OD. Persons, person-weighted generalized minutes, and available OD counts have separate axes. Transit is not modeled; no zero bar is shown.",
+  "panels": [
+    {
+      "mode": "drive",
+      "person_trips": 2454.560390890696,
+      "person_weighted_generalized_minutes": 7.089352640329476,
+      "available_positive_od": 418
+    },
+    {
+      "mode": "walk",
+      "person_trips": 535.2924091093028,
+      "person_weighted_generalized_minutes": 23.418024105477954,
+      "available_positive_od": 418
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\run_v1\\mode_choice\\mode_choice_by_od.csv",
+      "sha256": "9bd7b4f5e40157f25b8c7f468b5659d756d09f7e7713e911852ca40a9aec8110"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "mode"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "9c92490e4c1d80c216a00213d0abc4595ab14df5f5b2c52108fcacc8b852f996",
+    "png": "e274923e17650a92cb6579c3f7f53e907adc7a7c4ecab6802287b4ecb9e1d743",
+    "pdf": "b6cd565a95fe0db68fc20b30499a17f05258cf94f0e9feb386b4974035415494"
+  },
+  "width": 1965,
+  "height": 926,
+  "src": "assets/city-alignment-r3/urbana-champaign/mode.svg"
+}

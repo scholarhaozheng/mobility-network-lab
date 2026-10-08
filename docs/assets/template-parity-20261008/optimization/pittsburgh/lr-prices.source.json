@@ -1,0 +1,410 @@
+{
+  "city": "pittsburgh",
+  "figure_id": "TEMPLATE-pittsburgh-lr-prices",
+  "conclusion": "Capacity prices at the best dual bound",
+  "role": "lr-prices",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Positive-price support",
+    "2": "b  All timed prices by departure step"
+  },
+  "quantity": "Capacity prices at the best dual bound",
+  "unit": "Sum of capacity multipliers (min)",
+  "schema": "mcl_figure_r12",
+  "caption": "The saved best-bound multiplier vector contains 1,811,888 original dynamic-arc entries, all exactly zero. Consequently there is no nonempty top-price ranking. The second panel sums every timed multiplier by its real 30-second departure index, including the zero sums; source/sink entries without a time suffix are excluded only from the time aggregation. Empty positive support is shown explicitly, not replaced with another city or method. These numerical details remain a private local preview.",
+  "sources": [
+    {
+      "sha256": "d8dd191d3a4f5c86682f4199df6468d6a8043737890aac45f7e701f36d574943",
+      "identity": "LR_STATE.npz",
+      "access": "private"
+    },
+    {
+      "sha256": "4b5eecd216dbfabd665751280a8e9d71aced10e5f38da912af50b42ed490d55c",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "31c52e8bd59283dd35e61cecbb67d2194d56e85fb5fe66b2bb7868c30ab98a6d",
+      "identity": "recovery_history.json",
+      "access": "private"
+    },
+    {
+      "sha256": "ba12948bf13722c248080bd2114e4f9aeceb525898c83981e6c231002aa674ab",
+      "identity": "result.json",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Capacity prices at the best dual bound",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 15.398,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2753,
+    1133
+  ],
+  "exports": {
+    "png": "d161b03aa2e0dd9c3e70377dc2ab0bd1091b40a67b0148a87335ff2a42b46de9",
+    "svg": "a5c94a67e1e2089cc59852e79153b6bc30400574e167b43dad3b805f09478aaf",
+    "pdf": "f45baee2ec0f3ab33338b8e68a65bc58b61caefeebb02ea4bae06893b41e588f"
+  },
+  "text_audit": [
+    {
+      "text": "No positive multipliers",
+      "size_pt": 10.0,
+      "bounds_px": [
+        186.599,
+        218.98,
+        161.0,
+        14.0
+      ]
+    },
+    {
+      "text": "All saved prices are exactly zero",
+      "size_pt": 8.0,
+      "bounds_px": [
+        176.099,
+        183.636,
+        182.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Capacity multiplier (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        187.224,
+        42.311,
+        159.75,
+        13.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.125,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        148.965,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        221.804,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        294.644,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        367.483,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        440.323,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Positive-price support",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        344.133,
+        188.125,
+        14.0
+      ]
+    },
+    {
+      "text": "1,811,888 saved arc prices; 0 positive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        616.728,
+        303.052,
+        214.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Model departure index (30 s per step)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        666.651,
+        42.311,
+        242.5,
+        13.0
+      ]
+    },
+    {
+      "text": "−20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        538.401,
+        60.867,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        605.293,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        660.434,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        719.137,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        777.841,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        836.545,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        891.686,
+        60.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        950.39,
+        60.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1009.093,
+        60.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Sum of capacity multipliers (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        544.789,
+        103.063,
+        13.0,
+        211.875
+      ]
+    },
+    {
+      "text": "−0.02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        563.344,
+        73.2,
+        34.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        110.286,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        147.371,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.04",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        184.457,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.06",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        221.543,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.08",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        258.629,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        295.714,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        332.8,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All timed prices by departure step",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        284.375,
+        14.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        396.189,
+        322.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Capacity prices at the best dual bound",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        369.244,
+        450.625,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

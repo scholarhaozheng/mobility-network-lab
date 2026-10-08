@@ -1,0 +1,1 @@
+Per-method status from actual process receipts and independent original-coordinate checks. A resource boundary or numerical gate failure is not an accepted method. The old six-city static R3 acceptance remains unchanged.

@@ -1,0 +1,74 @@
+{
+  "id": "s20-finite-map-distribution",
+  "city": "chicago",
+  "stage": "static",
+  "method": "finite-path",
+  "title": "S20 finite-path reference and physical support",
+  "caption": "Finite-path own saved physical-link flow on the frozen Chicago Jane Byrne / West Loop R2 S20 instance: 20 selected OD pairs and 1,754.9482512397267 PCE in one declared hour. The full map and 22-bin histogram each retain all 27,129 directed physical links. 1,868 links exceed 1e−6 PCE/h; exact zeros remain in the histogram. The vector is joined one-to-one by persistent link ID to every original road geometry vertex. Both method cards share a square-root colour scale and constant overlay width in PCE/hour. Tiny values with absolute magnitude at most 1e−12 PCE/h are hidden only from coloured overlays; all raw values and geographic context remain. The finite card reads its own saved vector, not the FW vector or a difference map. Both S20 endpoints retain their own REUSED_PRIOR_ACCEPTED status; this does not accept Native, LR or ADMM diagnostics. This is a static one-hour instance, distinct from the separate four-OD T4 pulse. © OpenStreetMap contributors, ODbL 1.0; engineering scenario, not observed traffic.",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "resultStatus": "REUSED_PRIOR_ACCEPTED",
+  "solver_calls": 0,
+  "canonical_type": "HK physical map + ALL-link histogram",
+  "source_identities": [
+    {
+      "role": "Released own FW and finite physical-link vectors",
+      "path": "assets/algorithm-transfer-r8/chicago/C06_S_flow_plot_data.json",
+      "sha256": "e47c8f19d2d903bcc2e4828d5cbf99e6c000dd8480c7264897109c8a1cf9bbe5",
+      "rows_per_method": 27129
+    },
+    {
+      "role": "Frozen R2 full physical-link geometry, matched by persistent link ID",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615",
+      "rows": 27129
+    },
+    {
+      "role": "Saved independent method-specific status",
+      "sha256": "2bfe931182910e205c3f9fc16ef9ff5edf7dca4af3722b7f8cfb1a1278fbfe87"
+    }
+  ],
+  "dimensions": [
+    2136,
+    900
+  ],
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 98.279,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "renderer": {
+    "file": "render_chicago_static_canonical.py",
+    "sha256": "6839a1f5077b7995560ed0a45fc7600174e3d75d427972e69eed85cd6ddad694",
+    "function": "method_card",
+    "line_start": 24,
+    "line_end": 40
+  },
+  "exports": {
+    "png": {
+      "file": "s20-finite-map-distribution.png",
+      "sha256": "b5f7357c1378391b9169b4a1148309ed459fa8e19c9eceb396660e5c6a0e7c93"
+    },
+    "svg": {
+      "file": "s20-finite-map-distribution.svg",
+      "sha256": "ec930ca39692a34775c29228bdb5a6e1dfc3262ee8965dd57681f4d16b93beae"
+    },
+    "pdf": {
+      "file": "s20-finite-map-distribution.pdf",
+      "sha256": "4e97bf21ed8a07d20fb431d07913f564298330b5a132f93b6f00a7ae0baf2386"
+    }
+  },
+  "planned_anchor": "atlas-chicago-canonical-s20-finite-map-distribution",
+  "planned_volume_anchor": "figure-canonical-s20-finite-map-distribution",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

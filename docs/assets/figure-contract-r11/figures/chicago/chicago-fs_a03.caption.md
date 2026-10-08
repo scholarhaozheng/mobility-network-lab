@@ -1,0 +1,1 @@
+v/c and one-hour BPR link time on ten representative loaded directed segments from distinct source ways; capacities are engineering proxies. Single-pass engineering scenario; no local empirical calibration. Jane Byrne / West Loop 12.023 km2

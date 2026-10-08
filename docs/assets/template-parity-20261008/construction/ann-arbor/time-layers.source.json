@@ -1,0 +1,450 @@
+{
+  "figure_id": "ann-arbor-construction-layers-parity",
+  "city": "ann-arbor",
+  "method": "finite time graph construction",
+  "instance": "AA_R2_T4_PULSE5MIN_DT30_20261008",
+  "period": "30-second time index",
+  "role": "time_construction",
+  "conclusion": "Frozen input rules map the actual allowed road chain to time-indexed movement and turn objects; execution remains pending.",
+  "archetype": "schematic-led composite",
+  "panels": [
+    {
+      "a": "slanted time-layer graph; exact saved arcs or explicitly unexecuted frozen rule"
+    },
+    {
+      "b": "movement and zero-time turn key"
+    }
+  ],
+  "quantity": "Routing-state and time-arc incidence",
+  "unit": "time index; 30 seconds per step",
+  "public_or_private": "private",
+  "limitations": [
+    "Frozen construction rule applied to an actual allowed two-road chain. The full graph has not been built and no time-expanded solver has run.",
+    "The displayed turn is an actual allowed static-network turn chosen for illustration; this is not a saved assignment path.",
+    "Displayed timing is the deterministic frozen 30-second rule applied to original free-flow minutes, not a measured or computed route time.",
+    "This input-only illustration does not change Native600 or finite-time reception status."
+  ],
+  "source_status": "FROZEN_RULE_NOT_EXECUTED",
+  "reference_layout": "Hong Kong layered construction and local construction details; existing project style",
+  "renderer": "render_construction_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "Ann Arbor: the frozen 30-second construction rule is illustrated on an actual allowed two-road chain. Frozen construction rule applied to an actual allowed two-road chain. The full graph has not been built and no time-expanded solver has run. The displayed turn is an actual allowed static-network turn chosen for illustration; this is not a saved assignment path. Displayed timing is the deterministic frozen 30-second rule applied to original free-flow minutes, not a measured or computed route time. This input-only illustration does not change Native600 or finite-time reception status. The slanted planes and horizontal positions are schematic display coordinates. A−/A+ and B−/B+ denote entry/exit routing states, not original intersections. Exact state IDs, physical-road IDs and time indices are retained in plot data.",
+  "sources": [
+    {
+      "source_identity": "T_POLICY.json",
+      "sha256": "a7dc60ec9b15c7bfeb258e3a39a90dd0064c44324b09084112b103a6d52ca75b",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "network.csv",
+      "sha256": "437a5ebab64a3ca2d3d4a72d76db159f056baeff8db4a48371bb96e66747d380",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "physical_road_links.csv",
+      "sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "READY_FOR_COMPUTE.json",
+      "sha256": "8eb440a12a0b698458cc4e47887575a537de1d763c43ffd85b9b5bae80840315",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "build_time.py",
+      "sha256": "dff032b8098e56299c4250db0e46842d094477dc7c3821012d96e87d1cf8fcad",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Road states across selected time layers",
+    "scope": "T4 / FROZEN RULE ILLUSTRATION"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 23.69,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2508,
+    1340
+  ],
+  "exports": {
+    "png": "9450df97cb97bfacb75030de8285199ce52fb2ac25e1065b794b51100dc08382",
+    "svg": "7016f9b2d967c955c44ff9a72c9ee3b16e8730f39e14cd669a8eabcb38ec71de",
+    "pdf": "7f5e6c4d3e7f20632c0bc5917c6c70652def1823c8ac22b84809aba61ba5f56c"
+  },
+  "text_audit": [
+    {
+      "text": "t = 5",
+      "size_pt": 9.1,
+      "bounds_px": [
+        41.786,
+        98.027,
+        34.0,
+        13.0
+      ]
+    },
+    {
+      "text": "t = 6",
+      "size_pt": 9.1,
+      "bounds_px": [
+        53.227,
+        223.309,
+        34.0,
+        13.0
+      ]
+    },
+    {
+      "text": "t = 7",
+      "size_pt": 9.1,
+      "bounds_px": [
+        64.668,
+        348.591,
+        34.0,
+        13.0
+      ]
+    },
+    {
+      "text": "A−@5",
+      "size_pt": 9.5,
+      "bounds_px": [
+        117.005,
+        93.817,
+        43.5,
+        13.0
+      ]
+    },
+    {
+      "text": "A+@6",
+      "size_pt": 9.5,
+      "bounds_px": [
+        180.376,
+        245.517,
+        43.5,
+        13.0
+      ]
+    },
+    {
+      "text": "B−@6",
+      "size_pt": 9.5,
+      "bounds_px": [
+        372.084,
+        196.934,
+        44.5,
+        13.0
+      ]
+    },
+    {
+      "text": "B+@7",
+      "size_pt": 9.5,
+      "bounds_px": [
+        503.955,
+        347.244,
+        44.5,
+        13.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        4.528,
+        27.694,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        75.88,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        124.065,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        172.251,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        220.436,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        268.622,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        316.807,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        364.992,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.778,
+        413.178,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Selected time layers",
+      "size_pt": 10.4,
+      "bounds_px": [
+        30.625,
+        418.672,
+        183.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Movement",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        378.476,
+        83.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Along a road, later time",
+      "size_pt": 9.3,
+      "bounds_px": [
+        630.0,
+        354.759,
+        156.25,
+        13.0
+      ]
+    },
+    {
+      "text": "(i, t) → (j, t + τ)",
+      "size_pt": 10.4,
+      "bounds_px": [
+        630.0,
+        328.651,
+        111.875,
+        14.391
+      ]
+    },
+    {
+      "text": "Zero-time turn",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        272.546,
+        116.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Exit → next road entry",
+      "size_pt": 9.3,
+      "bounds_px": [
+        630.0,
+        248.829,
+        146.5,
+        13.0
+      ]
+    },
+    {
+      "text": "(A+, 6) → (B−, 6)",
+      "size_pt": 10.1,
+      "bounds_px": [
+        630.0,
+        223.112,
+        122.5,
+        14.0
+      ]
+    },
+    {
+      "text": "A−/A+: first road entry/exit\nB−/B+: next road entry/exit",
+      "size_pt": 9.1,
+      "bounds_px": [
+        630.0,
+        164.24,
+        179.0,
+        30.5
+      ]
+    },
+    {
+      "text": "30 seconds per time step.\nNo waiting arc is highlighted.",
+      "size_pt": 9.0,
+      "bounds_px": [
+        630.0,
+        104.213,
+        189.375,
+        30.5
+      ]
+    },
+    {
+      "text": "Frozen rule; not yet executed.",
+      "size_pt": 8.6,
+      "bounds_px": [
+        630.0,
+        71.748,
+        183.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        47.5,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        118.12,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        188.74,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        259.36,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        329.98,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        400.6,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Construction key",
+      "size_pt": 10.4,
+      "bounds_px": [
+        630.0,
+        418.878,
+        157.875,
+        14.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  T4 / FROZEN RULE ILLUSTRATION",
+      "size_pt": 8.7,
+      "bounds_px": [
+        56.875,
+        470.933,
+        348.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Road states across selected time layers",
+      "size_pt": 15.0,
+      "bounds_px": [
+        56.875,
+        443.989,
+        458.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: individually opened PNG; corrected layer placement and labels; no text overlap or clipping",
+  "text_overlap_candidates": []
+}

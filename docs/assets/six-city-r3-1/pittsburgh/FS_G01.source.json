@@ -1,0 +1,41 @@
+{
+  "figure_id": "FS_G01",
+  "city": "pittsburgh",
+  "title": "Trip generation \u2014 top 12 groups",
+  "caption": "Top 12 of the 41 modeled groups ranked by interzonal production. Each group aggregates only selected blocks sharing a tract ID, not the full tract population. The complete 41-zone production and attraction table is retained. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "HBW person trips / 08:00\u201309:00",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/pittsburgh/original/FS_G01.svg",
+      "sha256": "cb2f9c1c0656fd8aae8466ad52d37d82906e1b0af89a0e63996b169bdc9a260e"
+    },
+    {
+      "logical_source": "generation_complete.csv",
+      "sha256": "99d69b6589c9a3ec15c8d3ab4950be5ac96bc07261e814e8da0b1876ec3a619f"
+    },
+    {
+      "logical_path": "private_snapshot/compute_capsules/pittsburgh/reference_run/generation/generation.csv",
+      "sha256": "27a3088aaf4f9fc075cb56f6ed5c67693787b9d653cf1c52652c2b27c36171ee"
+    }
+  ],
+  "source_run_receipt_sha256": "25cefa61846a5d08a13f90723f5a3a791b51069a190501147cab9105d30d4cd0",
+  "source_metadata_sha256": "6aa4ab8e73fdb5606ca235b65047dd59da11fb9cfe42c7ab2d9e3db07b7ee8fc",
+  "png_sha256": "e47bd0730571e5dc4c66ae25e36c4437e757945d86fdc10ead9ecff439844d2e",
+  "svg_sha256": "7690dfa7c3717e89ee05b54074173697378d7b5ec01d87d10ab892c796cb4089",
+  "transformation": [
+    "Stable descending sort by production; only top 12 plotted; all 41 records retained.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_targeted_fixes.py --snapshot SNAPSHOT --output OUTPUT",
+  "page_anchor": "figure-fs-g01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "8f9f785173317a512176353626790612ce5dc9c658f03b0e18ab8d2879e1950f",
+  "input_png_sha256": "e47bd0730571e5dc4c66ae25e36c4437e757945d86fdc10ead9ecff439844d2e",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

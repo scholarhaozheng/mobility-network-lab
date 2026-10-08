@@ -1,0 +1,137 @@
+{
+  "saved_terminal_results": {
+    "methods": [
+      {
+        "method": "FW",
+        "status": "ACCEPTED_FULL_GRAPH",
+        "objective_pce_minutes": 2746.0944149794555,
+        "signed_full_gap": 1.3642420526593924e-12,
+        "full_relative_gap": 4.96534011823471e-16,
+        "signed_pool_gap": 0.0,
+        "pool_relative_gap": 0.0,
+        "max_od_residual": 0.0,
+        "od_l1_rel": 0.0,
+        "minimum_path_flow": 0.0,
+        "minimum_physical_flow": 0.0,
+        "max_link_reconstruction": 0.0,
+        "positive_minor_gt_1e_8": 0,
+        "positive_physical_links_gt_1e_8": 670,
+        "total_pce": 953.049842713612
+      },
+      {
+        "method": "finite_SLSQP",
+        "status": "ACCEPTED_FULL_GRAPH",
+        "objective_pce_minutes": 2746.0944149794555,
+        "signed_full_gap": 1.3642420526593924e-12,
+        "full_relative_gap": 4.96534011823471e-16,
+        "signed_pool_gap": 0.0,
+        "pool_relative_gap": 0.0,
+        "max_od_residual": 0.0,
+        "od_l1_rel": 0.0,
+        "minimum_path_flow": 0.0,
+        "minimum_physical_flow": 0.0,
+        "max_link_reconstruction": 0.0,
+        "positive_minor_gt_1e_8": 0,
+        "positive_physical_links_gt_1e_8": 670,
+        "total_pce": 953.049842713612
+      },
+      {
+        "method": "Native_L3_rank26",
+        "status": "ACCEPTED_FULL_GRAPH",
+        "objective_pce_minutes": 2746.094414979262,
+        "signed_full_gap": -1.9235812942497432e-10,
+        "full_relative_gap": -7.001129566711576e-14,
+        "signed_pool_gap": -1.9372237147763371e-10,
+        "pool_relative_gap": -7.050782967893929e-14,
+        "max_od_residual": 1.0759748647615197e-10,
+        "od_l1_rel": 1.7987314414729034e-12,
+        "minimum_path_flow": 1.0691849181713203e-11,
+        "minimum_physical_flow": 0.0,
+        "max_link_reconstruction": 2.8421709430404007e-13,
+        "positive_minor_gt_1e_8": 0,
+        "positive_physical_links_gt_1e_8": 696,
+        "total_pce": 953.049842713612,
+        "effective_rank": 26,
+        "outer_iterations": 3,
+        "coordinate_count": 98
+      },
+      {
+        "method": "Native_L3_rank52",
+        "status": "ACCEPTED_FULL_GRAPH",
+        "objective_pce_minutes": 2746.0944154632957,
+        "signed_full_gap": 4.838420863961801e-07,
+        "full_relative_gap": 1.761007526025011e-10,
+        "signed_pool_gap": 4.838411769014783e-07,
+        "pool_relative_gap": 1.7610042157982662e-10,
+        "max_od_residual": 9.580958248989191e-11,
+        "od_l1_rel": 2.9028768165081736e-12,
+        "minimum_path_flow": 5.643299028632247e-10,
+        "minimum_physical_flow": 0.0,
+        "max_link_reconstruction": 1.7053025658242404e-13,
+        "positive_minor_gt_1e_8": 214,
+        "positive_physical_links_gt_1e_8": 992,
+        "total_pce": 953.049842713612,
+        "effective_rank": 52,
+        "outer_iterations": 3,
+        "coordinate_count": 124
+      }
+    ],
+    "objective_difference_to_FW_micro_pce_min": [
+      0.0,
+      0.0,
+      -0.00019326762412674725,
+      0.48384026740677655
+    ]
+  },
+  "diagnostic_definitions": {
+    "full_relative_gap_formula": "(sum_a v_path[a]*t_a(v_path[a]) - sum_od q_od*shortest_path_cost_od_on_full_graph_at_final_costs) / max(sum_a v_path[a]*t_a(v_path[a]), 1e-12)",
+    "acceptance_gate": "abs(full_relative_gap) <= 1e-5",
+    "max_od_residual_formula": "max_od abs((C @ reconstructed_path_flow)[od] - q[od])",
+    "max_link_reconstruction_formula": "max_a abs(explicit_link_v[a] - (A @ reconstructed_path_flow)[a])",
+    "objective": "Original BPR integral, in PCE-min, not sum_a flow*travel_time",
+    "source_roles": [
+      {
+        "file": "mcl_native_l3_controller_fix.py",
+        "function": "evaluate",
+        "lines": [
+          178,
+          214
+        ],
+        "sha256": "3f2127ef648d6821bec9f976af54c3bb279f65128bbe2795d5dc1b95d3537f32"
+      },
+      {
+        "file": "mcl_assignment.py",
+        "definition": "GATES",
+        "lines": [
+          22,
+          24
+        ],
+        "sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe"
+      }
+    ],
+    "derivation": "Read-only inspection of frozen accepted static checker definitions; no execution of checker or solver.",
+    "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW"
+  },
+  "dimensions": [
+    {
+      "method": "finite_SLSQP",
+      "path_coordinates": 360,
+      "native_explicit_link_variables": 0,
+      "display_total": 360
+    },
+    {
+      "method": "Native_L3_rank26",
+      "path_coordinates": 98,
+      "native_explicit_link_variables": 2150,
+      "display_total": 2248
+    },
+    {
+      "method": "Native_L3_rank52",
+      "path_coordinates": 124,
+      "native_explicit_link_variables": 2150,
+      "display_total": 2274
+    }
+  ],
+  "diagnostic_display_scale": 10000000000.0,
+  "signed_gap_display_linear_threshold": 1e-14
+}

@@ -1,0 +1,1 @@
+v/c and BPR travel time for top 10 loaded physical road links; turn/access connectors excluded; v/c>1 is allowed in static BPR. Single-pass engineering scenario; no local empirical calibration. City demand area 7.50 km2; 13.24 km2 road support

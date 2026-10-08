@@ -1,0 +1,1 @@
+Finite uses 100 path variables. Native uses 20 major plus rank26/52 path coordinates and 2,916 active explicit link variables. Fixed-zero auxiliaries remain represented in the full graph and saved outputs; no speedup claim follows from coordinate count.

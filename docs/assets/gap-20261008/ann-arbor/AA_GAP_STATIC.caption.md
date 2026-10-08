@@ -1,0 +1,1 @@
+AA_GAP_STATIC. Separate frozen static instances: S600 FW, sparse fixed-path FW and Algorithm B pass; S72 Native26/52 pass at initialization with zero optimization updates. No Native600, T1/T4, new-choice FW or calibration claim.

@@ -1,0 +1,508 @@
+{
+  "figure_id": "R11-BERKELEY-LP_CG_LR_PHYSICAL_FLOW",
+  "city": "berkeley",
+  "instance": "Berkeley T4 cold-start diagnostic 300; original accepted 10 retained separately",
+  "role": "spatial",
+  "saved_states": 300,
+  "conclusion": "LP, CG and recovered LR physical flow",
+  "panels": {
+    "a": "Selected LR own recovery on all physical road geometries",
+    "b": "All-link CG and LR comparison with fixed independent LP"
+  },
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-lr-r6/lp_cg_lr_physical_flow.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "The 300-iteration same-rule cold-start LR diagnostic retains the original T4 model and the official 1% gate, first met at iteration 10. The map uses LR’s own selected feasible recovery (saved recovery iteration 10), joined by physical-link ID to all 2,150 road geometries. The scatter includes every road ID and compares the unchanged independent LP and CG projections with the selected LR projection. Maximum absolute differences from LP are 0 PCE for CG and 0 PCE for LR. The stored aggregate physical projections coincide exactly in this instance. Colors and widths use PowerNorm(0.5), retaining the absolute scale used by the existing ADMM–LP map unless new values require a larger maximum. The 137 physical links with no admitted T4 movement arc remain distinct as dotted background links. Flows are PCE over the bounded departure instance, not PCE/hour. The original accepted 10-iteration evidence is retained separately. No LP flow was substituted for the LR recovery. © OpenStreetMap contributors, ODbL 1.0. Independent diagnostic audit passed. The original formal-entry replay is pending at this export; the extended diagnostic is not labelled formally accepted.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-lr-r6/lr_bounds.plot_data.json",
+      "sha256": "ec11427369ae581acac550a0b4156003919919b923ce0a1fda67b4770444f048"
+    },
+    {
+      "public_path": "docs/assets/berkeley-lr-r6/lp_cg_lr_physical_flow.plot_data.json",
+      "sha256": "7b8ee0d322f929df1a5b4a197fe8fb8a72c028b7cc03491c88d4bd5c648ad892"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "LP, CG and recovered LR physical flow",
+    "scope": "T4 / 300-iteration extended diagnostic / own LR recovery"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 8.461,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2895,
+    1148
+  ],
+  "exports": {
+    "png": "73284676bd6b4a2f6d0ef0da592de33a1e90a85f241b436bb8de12a2fea7964b",
+    "svg": "c0d5c8a0a3190d7604caa12e565f2361a304afecc6961ebdeb36edcd1f917a07",
+    "pdf": "92878ac66f0c49e4d25d8aa2834b5c80235cf14f038969ffe6fc58ed33e8e231"
+  },
+  "text_audit": [
+    {
+      "text": "Longitude (°E)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        223.525,
+        176.254,
+        93.75,
+        13.0
+      ]
+    },
+    {
+      "text": "-122.290",
+      "size_pt": 8.0,
+      "bounds_px": [
+        61.91,
+        194.809,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.275",
+      "size_pt": 8.0,
+      "bounds_px": [
+        170.119,
+        194.809,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.260",
+      "size_pt": 8.0,
+      "bounds_px": [
+        278.327,
+        194.809,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.245",
+      "size_pt": 8.0,
+      "bounds_px": [
+        386.535,
+        194.809,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.230",
+      "size_pt": 8.0,
+      "bounds_px": [
+        494.743,
+        194.809,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Latitude (°N)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        22.386,
+        253.921,
+        13.0,
+        84.5
+      ]
+    },
+    {
+      "text": "37.860",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        187.189,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.865",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        232.882,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.870",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        278.575,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        324.267,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.880",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        369.96,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.885",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        415.652,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  LR own recovered physical flow",
+      "size_pt": 10.0,
+      "bounds_px": [
+        88.4,
+        390.089,
+        264.375,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / bounded T4 instance",
+      "size_pt": 8.0,
+      "bounds_px": [
+        194.087,
+        121.265,
+        152.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        85.338,
+        136.82,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "bounds_px": [
+        262.712,
+        136.82,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "4.7",
+      "size_pt": 7.0,
+      "bounds_px": [
+        338.099,
+        136.82,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "7.1",
+      "size_pt": 7.0,
+      "bounds_px": [
+        395.946,
+        136.82,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "9.5",
+      "size_pt": 7.0,
+      "bounds_px": [
+        444.712,
+        136.82,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "max |CG − LP| = 0 PCE\nmax |LR − LP| = 0 PCE",
+      "size_pt": 8.0,
+      "bounds_px": [
+        626.34,
+        345.232,
+        133.375,
+        23.6
+      ]
+    },
+    {
+      "text": "Independent LP (PCE / instance)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        691.662,
+        83.111,
+        207.875,
+        13.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        511.36,
+        101.667,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        621.726,
+        101.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        727.466,
+        101.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        833.207,
+        101.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        938.947,
+        101.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1041.126,
+        101.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "CG or recovered LR (PCE / instance)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        579.586,
+        132.913,
+        13.0,
+        233.375
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        588.892,
+        47.026,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        598.142,
+        122.323,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        598.142,
+        197.62,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        598.142,
+        272.916,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        598.142,
+        348.213,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        591.017,
+        423.509,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All 2,150 physical links",
+      "size_pt": 10.0,
+      "bounds_px": [
+        613.6,
+        390.089,
+        200.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Identity",
+      "size_pt": 7.5,
+      "bounds_px": [
+        879.1,
+        159.792,
+        41.0,
+        10.0
+      ]
+    },
+    {
+      "text": "CG",
+      "size_pt": 7.5,
+      "bounds_px": [
+        879.1,
+        144.583,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "LR own recovery",
+      "size_pt": 7.5,
+      "bounds_px": [
+        879.1,
+        129.375,
+        89.125,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / 300-iteration extended diagnostic / own LR recovery",
+      "size_pt": 8.7,
+      "bounds_px": [
+        67.6,
+        442.144,
+        482.375,
+        13.0
+      ]
+    },
+    {
+      "text": "LP, CG and recovered LR physical flow",
+      "size_pt": 15.0,
+      "bounds_px": [
+        67.6,
+        415.2,
+        448.125,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

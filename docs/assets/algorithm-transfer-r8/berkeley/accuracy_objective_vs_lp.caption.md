@@ -1,0 +1,1 @@
+Every point is a saved completed outer iteration. The curve shows ADMM x objective against the unchanged same-T4 LP scalar; early infeasible iterates are not feasible upper bounds. C1 ends at 38, later stages use actual continuation rows, and the 1e-4 gate is unchanged.

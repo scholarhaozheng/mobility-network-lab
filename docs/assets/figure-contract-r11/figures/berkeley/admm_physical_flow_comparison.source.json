@@ -1,0 +1,896 @@
+{
+  "figure_id": "R11-BERKELEY-ADMM_PHYSICAL_FLOW_COMPARISON",
+  "city": "berkeley",
+  "instance": "Berkeley frozen bounded T4",
+  "role": "spatial",
+  "saved_states": 0,
+  "conclusion": "ADMM and LP physical-link flow",
+  "panels": [
+    "ADMM physical projection",
+    "Independent LP physical projection",
+    "Signed physical-link difference",
+    "All-link identity comparison"
+  ],
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-atlas-r2/admm_physical_flow_comparison.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "Saved Berkeley T4 physical-link projections for four assumed first-bin OD pulses (10.439304601 PCE), using the accepted ADMM own x at completed outer 170 and an independently solved same-graph LP. Panels a–b share a PowerNorm(0.5) absolute color scale. Panel c uses a separate symmetric ADMM-minus-LP scale; panel d contains all 2,150matched physical IDs and an identity line. The maximum physical-flow difference is 0.990967760238112 PCE, despite a relative objective difference of 0.00531869%. The objective gate does not establish link-flow equality. All 2,150 original road geometries are retained with longitude/latitude aspect correction. The 137 links without a movement arc in the bounded T4 graph remain zero and are shown dotted; missing sparse LP entries are zero-filled by physical ID. Flows are PCE over this bounded departure instance, not hourly counts or observed traffic. No optimizer was rerun. © OpenStreetMap contributors, ODbL 1.0.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/admm_physical_flow.csv",
+      "sha256": "71d1727a69fd96432f2db9f80e082cc5a0d91e351ff0432dba618a4944ca0154"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "ADMM and LP physical-link flow",
+    "scope": "T4 / 4 OD / 30 s × 165 steps"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 23.112,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3016,
+    1900
+  ],
+  "exports": {
+    "png": "ffb7f251fc21148cdf6b236ec665a54ec333607c9cf46805e9df594992d3c454",
+    "svg": "907225f7fb7d0fc58f34b77fc5c16764618baa6a71ab8174326672446b6d892d",
+    "pdf": "ba73281741a2f953ba1079ed0148d551d77ad9e4809a5d4e53ca819a0cd44563"
+  },
+  "text_audit": [
+    {
+      "text": "Longitude (°E)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        236.525,
+        345.192,
+        93.75,
+        13.0
+      ]
+    },
+    {
+      "text": "-122.300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -15.488,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.280",
+      "size_pt": 8.0,
+      "bounds_px": [
+        139.096,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.260",
+      "size_pt": 8.0,
+      "bounds_px": [
+        293.679,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        448.262,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.220",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.845,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Latitude (°N)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        22.386,
+        428.791,
+        13.0,
+        84.5
+      ]
+    },
+    {
+      "text": "37.860",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        354.703,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.865",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        403.659,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.870",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        452.616,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        501.572,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.880",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        550.528,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.885",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        599.484,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  ADMM own x · outer 170",
+      "size_pt": 11.0,
+      "bounds_px": [
+        88.4,
+        569.5,
+        233.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Longitude (°E)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        756.525,
+        345.192,
+        93.75,
+        13.0
+      ]
+    },
+    {
+      "text": "-122.300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        504.512,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.280",
+      "size_pt": 8.0,
+      "bounds_px": [
+        659.096,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.260",
+      "size_pt": 8.0,
+      "bounds_px": [
+        813.679,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        968.262,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.220",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1122.845,
+        363.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Latitude (°N)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        542.386,
+        428.791,
+        13.0,
+        84.5
+      ]
+    },
+    {
+      "text": "37.860",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        354.703,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.865",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        403.659,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.870",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        452.616,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        501.572,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.880",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        550.528,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.885",
+      "size_pt": 8.0,
+      "bounds_px": [
+        560.942,
+        599.484,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Independent same-graph LP",
+      "size_pt": 11.0,
+      "bounds_px": [
+        608.4,
+        569.5,
+        264.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Longitude (°E)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        236.525,
+        58.192,
+        93.75,
+        13.0
+      ]
+    },
+    {
+      "text": "-122.300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -15.488,
+        76.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.280",
+      "size_pt": 8.0,
+      "bounds_px": [
+        139.096,
+        76.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.260",
+      "size_pt": 8.0,
+      "bounds_px": [
+        293.679,
+        76.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        448.262,
+        76.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "-122.220",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.845,
+        76.748,
+        50.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Latitude (°N)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        22.386,
+        141.791,
+        13.0,
+        84.5
+      ]
+    },
+    {
+      "text": "37.860",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        67.703,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.865",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        116.659,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.870",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        165.616,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        214.572,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.880",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        263.528,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37.885",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.942,
+        312.484,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "c  ADMM minus LP",
+      "size_pt": 11.0,
+      "bounds_px": [
+        88.4,
+        282.5,
+        164.875,
+        14.0
+      ]
+    },
+    {
+      "text": "n = 2,150 links\nmax |ADMM − LP| = 0.991 PCE\nObjective difference = 0.00532%",
+      "size_pt": 8.5,
+      "bounds_px": [
+        622.05,
+        232.573,
+        198.75,
+        34.2
+      ]
+    },
+    {
+      "text": "Independent LP (PCE / instance)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        699.462,
+        58.192,
+        207.875,
+        13.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.442,
+        76.748,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        617.36,
+        76.748,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        730.654,
+        76.748,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        843.948,
+        76.748,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        957.241,
+        76.748,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1066.972,
+        76.748,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "ADMM own x (PCE / instance)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        574.386,
+        87.666,
+        13.0,
+        192.75
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.692,
+        43.11,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        592.942,
+        94.794,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        592.942,
+        146.479,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        592.942,
+        198.164,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        592.942,
+        249.848,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        585.817,
+        301.533,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "d  All matched physical links",
+      "size_pt": 11.0,
+      "bounds_px": [
+        608.4,
+        282.5,
+        247.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Identity",
+      "size_pt": 7.5,
+      "bounds_px": [
+        913.525,
+        119.665,
+        41.0,
+        10.0
+      ]
+    },
+    {
+      "text": "All 2,150 links",
+      "size_pt": 7.5,
+      "bounds_px": [
+        913.525,
+        104.456,
+        75.5,
+        10.0
+      ]
+    },
+    {
+      "text": "PCE / bounded T4 instance",
+      "size_pt": 8.0,
+      "bounds_px": [
+        207.087,
+        299.97,
+        152.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        85.338,
+        315.526,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "bounds_px": [
+        275.712,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "4.7",
+      "size_pt": 7.0,
+      "bounds_px": [
+        356.484,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "7.1",
+      "size_pt": 7.0,
+      "bounds_px": [
+        418.462,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "9.5",
+      "size_pt": 7.0,
+      "bounds_px": [
+        470.712,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "PCE / bounded T4 instance",
+      "size_pt": 8.0,
+      "bounds_px": [
+        727.088,
+        299.97,
+        152.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        605.338,
+        315.526,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "2.4",
+      "size_pt": 7.0,
+      "bounds_px": [
+        795.712,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "4.7",
+      "size_pt": 7.0,
+      "bounds_px": [
+        876.484,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "7.1",
+      "size_pt": 7.0,
+      "bounds_px": [
+        938.462,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "9.5",
+      "size_pt": 7.0,
+      "bounds_px": [
+        990.712,
+        315.526,
+        15.375,
+        9.0
+      ]
+    },
+    {
+      "text": "ADMM − LP (PCE)",
+      "size_pt": 8.0,
+      "bounds_px": [
+        230.025,
+        12.673,
+        106.75,
+        10.297
+      ]
+    },
+    {
+      "text": "-0.99",
+      "size_pt": 7.0,
+      "bounds_px": [
+        76.025,
+        28.526,
+        24.75,
+        9.0
+      ]
+    },
+    {
+      "text": "-0.50",
+      "size_pt": 7.0,
+      "bounds_px": [
+        173.525,
+        28.526,
+        24.75,
+        9.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 7.0,
+      "bounds_px": [
+        272.65,
+        28.526,
+        21.5,
+        9.0
+      ]
+    },
+    {
+      "text": "0.50",
+      "size_pt": 7.0,
+      "bounds_px": [
+        370.15,
+        28.526,
+        21.5,
+        9.0
+      ]
+    },
+    {
+      "text": "0.99",
+      "size_pt": 7.0,
+      "bounds_px": [
+        467.65,
+        28.526,
+        21.5,
+        9.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / 4 OD / 30 s × 165 steps",
+      "size_pt": 8.7,
+      "bounds_px": [
+        67.6,
+        621.556,
+        285.0,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM and LP physical-link flow",
+      "size_pt": 15.0,
+      "bounds_px": [
+        67.6,
+        594.611,
+        382.0,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

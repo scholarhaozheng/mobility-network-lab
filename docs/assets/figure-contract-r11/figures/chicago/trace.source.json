@@ -1,0 +1,533 @@
+{
+  "figure_id": "R11-CHICAGO-TRACE",
+  "city": "chicago",
+  "title": "Frank–Wolfe objective and relative gap",
+  "instance": {
+    "saved_run": "runs/chicago_core_hbw_am_v1",
+    "declared_period": "08:00–09:00 HBW",
+    "revision": "frozen four-stage scenario used by R3 source figures"
+  },
+  "role": "iteration",
+  "conclusion": "4 saved record(s), 3 updates; final objective 5601.46245807 PCE-min, gap 2.09891131527e-05 against 0.0001.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        5604.649794989295,
+        5601.517154205409,
+        5601.466927235301,
+        5601.462458069035
+      ],
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "instance": "runs/chicago_core_hbw_am_v1 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0065316576428806,
+        0.000212092996143,
+        0.0001664210465667,
+        2.0989113152700773e-05
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "axis": "log",
+      "instance": "runs/chicago_core_hbw_am_v1 / 08:00–09:00 HBW"
+    }
+  ],
+  "quantity": "Beckmann objective; relative gap",
+  "unit": "PCE-min; dimensionless",
+  "renderer": {
+    "script": "tools/figures/render_city_foundations.py",
+    "function": "trace",
+    "sha256": "256a79187e951a0e950f82ae2f561f371a1a44c10b1363aeec291a89bdea58ac"
+  },
+  "original_asset": {
+    "public_path": "docs/assets/city-alignment-r3/chicago/trace.svg",
+    "sha256": "cf0711f917787125468f780efc64cabab3b440a403ff4dd15cfba2b8082f7112"
+  },
+  "original_source_record": {
+    "public_path": "docs/assets/city-alignment-r3/chicago/trace.source.json",
+    "sha256": "6cf5e9929daa2a00cded7d1ebb43a0433dcaf38c8e0eebf19542563a0291da26"
+  },
+  "original_evidence_panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        5604.649794989295,
+        5601.517154205409,
+        5601.466927235301,
+        5601.462458069035
+      ],
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0065316576428806,
+        0.000212092996143,
+        0.0001664210465667,
+        2.0989113152700773e-05
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "axis": "log"
+    }
+  ],
+  "moved_canvas_notes": "3 actual updates; markers are saved iterations only. Gap uses a logarithmic y-axis. An accepted numerical gap concerns this scenario and demand set; it does not certify real traffic conditions.",
+  "numeric_evidence_preserved": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        5604.649794989295,
+        5601.517154205409,
+        5601.466927235301,
+        5601.462458069035
+      ],
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0065316576428806,
+        0.000212092996143,
+        0.0001664210465667,
+        2.0989113152700773e-05
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "axis": "log"
+    }
+  ],
+  "numerical_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD",
+  "preserved_limits": [
+    "No later supplementary field is asserted to be used in the frozen demand model.",
+    "Copyright and explanatory prose are retained in the external caption."
+  ],
+  "saved_states": 4,
+  "schema": "mcl_figure_r11",
+  "caption": "4 saved record(s), 3 updates; final objective 5601.46245807 PCE-min, gap 2.09891131527e-05 against 0.0001. Original iteration samples and objective retained. An accepted numerical gap concerns this scenario and demand set; it does not certify real traffic conditions. This drawing uses the frozen runs/chicago_core_hbw_am_v1 evidence. Later supplementary datasets are separate and are not implied to have entered this scenario.",
+  "sources": [
+    {
+      "sha256": "5c53778b01cb320c8b5e4c7e55f1f7e3509760947d760baa41d037695007060a",
+      "source_id": "chicago/trace/fw_trace.csv"
+    },
+    {
+      "sha256": "a85cdddae154e5c8c36738b87329fd0d716c456563110f1235f56a34e6ba471e",
+      "source_id": "chicago/trace/assignment_summary.json"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "Frank–Wolfe objective and relative gap",
+    "scope": "ACTUAL SAVED ITERATIONS"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.11,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3031,
+    1212
+  ],
+  "exports": {
+    "png": "8e01fdea596e3579650c05ad4847e99958b2b63b6bde8329de8bbcfee8f31d44",
+    "svg": "f6124a7ff48ffea0390b467828eb69cf40fc4ff5379cfb093843b5aeb69d8463",
+    "pdf": "e3973adcb218b1ccad8b2931307136130fde33f3880834c795c02fc46609c6aa"
+  },
+  "text_audit": [
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        223.83,
+        87.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        103.076,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        213.537,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        323.998,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        434.459,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "PCE-minutes",
+      "size_pt": 9.0,
+      "bounds_px": [
+        7.486,
+        223.538,
+        13.0,
+        82.125
+      ]
+    },
+    {
+      "text": "5601.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        93.926,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5601.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        133.97,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5602.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        174.015,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5602.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        214.06,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5603.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        254.105,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5603.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        294.15,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5604.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        334.195,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5604.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        374.239,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5605.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        26.042,
+        414.284,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Beckmann objective",
+      "size_pt": 11.0,
+      "bounds_px": [
+        73.5,
+        415.889,
+        194.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        760.67,
+        87.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        639.916,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        750.377,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        860.838,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        971.299,
+        105.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Dimensionless relative gap",
+      "size_pt": 9.0,
+      "bounds_px": [
+        556.035,
+        178.913,
+        13.0,
+        171.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        574.809,
+        -6.301,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        574.934,
+        96.093,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        574.59,
+        197.888,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        574.871,
+        300.882,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        575.121,
+        403.277,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        575.324,
+        505.072,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "b  Relative gap",
+      "size_pt": 11.0,
+      "bounds_px": [
+        610.34,
+        415.889,
+        127.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Tolerance 0.0001",
+      "size_pt": 8.0,
+      "bounds_px": [
+        900.25,
+        385.0,
+        97.75,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  ACTUAL SAVED ITERATIONS",
+      "size_pt": 8.7,
+      "bounds_px": [
+        68.25,
+        467.944,
+        286.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe objective and relative gap",
+      "size_pt": 15.0,
+      "bounds_px": [
+        68.25,
+        441.0,
+        453.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every full PNG inspected with view_image; source and transit map anchor adjusted; UC paired maps use equal widths.",
+    "png_sha256": "8e01fdea596e3579650c05ad4847e99958b2b63b6bde8329de8bbcfee8f31d44",
+    "checks": [
+      "headers readable and close to axes",
+      "no clipping or text overlaps",
+      "actual units and legend retained",
+      "real map geometry unwarped",
+      "notes outside canvas"
+    ],
+    "numeric_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD"
+  }
+}

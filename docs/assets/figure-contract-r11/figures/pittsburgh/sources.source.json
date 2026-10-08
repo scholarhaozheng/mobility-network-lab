@@ -1,0 +1,362 @@
+{
+  "figure_id": "R11-PITTSBURGH-SOURCES",
+  "city": "pittsburgh",
+  "title": "Retained physical road graph",
+  "instance": {
+    "saved_run": "run_001",
+    "declared_period": "08:00–09:00 HBW",
+    "revision": "frozen four-stage scenario used by R3 source figures"
+  },
+  "role": "geography",
+  "conclusion": "17,534 retained physical directed traversals in the saved 08:00–09:00 HBW model, shown in EPSG:26917.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26917",
+      "local_origin_metres": [
+        585158.4286945096,
+        4473903.319270447
+      ],
+      "instance": "run_001 / 08:00–09:00 HBW"
+    }
+  ],
+  "quantity": "physical road geography",
+  "unit": "projected km",
+  "renderer": {
+    "script": "tools/figures/render_city_foundations.py",
+    "function": "sources",
+    "sha256": "256a79187e951a0e950f82ae2f561f371a1a44c10b1363aeec291a89bdea58ac"
+  },
+  "original_asset": {
+    "public_path": "docs/assets/city-alignment-r3/pittsburgh/sources.svg",
+    "sha256": "1203e368b0a45e4e23622054829dbf01d68ce5c07c5e1af750ea7d3c63986176"
+  },
+  "original_source_record": {
+    "public_path": "docs/assets/city-alignment-r3/pittsburgh/sources.source.json",
+    "sha256": "f42003beb22d7a2c4e4fad5784fe8026395866bd60ac278ea2d0472a37608de9"
+  },
+  "original_evidence_panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26917",
+      "local_origin_metres": [
+        585158.4286945096,
+        4473903.319270447
+      ]
+    }
+  ],
+  "moved_canvas_notes": "EPSG:26917; projected kilometres. Reciprocal arcs may share geometry. No virtual turn/access arcs, no assigned flow encoded. © OpenStreetMap contributors / ODbL.",
+  "numeric_evidence_preserved": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26917",
+      "local_origin_metres": [
+        585158.4286945096,
+        4473903.319270447
+      ]
+    }
+  ],
+  "numerical_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD",
+  "preserved_limits": [
+    "No later supplementary field is asserted to be used in the frozen demand model.",
+    "Copyright and explanatory prose are retained in the external caption."
+  ],
+  "schema": "mcl_figure_r11",
+  "caption": "17,534 retained physical directed traversals in the saved 08:00–09:00 HBW model, shown in EPSG:26917. This is the retained model graph, not a claim to draw every road in the source archive. Virtual movements are excluded; colour has no traffic meaning. © OpenStreetMap contributors / ODbL. Reciprocal directed arcs can share geometry; no assigned flow is encoded. This drawing uses the frozen run_001 evidence. Later supplementary datasets are separate and are not implied to have entered this scenario.",
+  "sources": [
+    {
+      "sha256": "cefd1061bc91500ba9fc03e1d176e26b57a426e41e1d6cadd977ba6a4f491dd9",
+      "public_path": "docs/assets/six-city-r3-1/pittsburgh/plot_data/FS_A01/physical_flow.csv"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Retained physical road graph",
+    "scope": "GEOGRAPHIC SUPPORT"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 47.203,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    1351,
+    1431
+  ],
+  "exports": {
+    "png": "46e70e99fd4c4fc2b5141efa2acd5273784a4b8e704c99cb4f75b06c0c5dc35e",
+    "svg": "4bceee513974424cded93dc5ae97e71ae44890753bb8441249ce9cd1f5dc50f3",
+    "pdf": "c6cfd8705e4d28af765f391c39c9c97400a7e782af3a821f1cd52ed5d35066f0"
+  },
+  "text_audit": [
+    {
+      "text": "Easting from local origin (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        190.501,
+        62.311,
+        190.875,
+        13.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        41.168,
+        80.867,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        97.705,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        149.617,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        201.529,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        253.441,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        305.353,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        357.265,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        409.178,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.09,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.002,
+        80.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Northing from local origin (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        48.786,
+        188.112,
+        13.0,
+        200.375
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.092,
+        58.479,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        110.391,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        162.303,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        214.215,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        266.127,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        318.04,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        369.952,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        421.864,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.342,
+        473.776,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  GEOGRAPHIC SUPPORT",
+      "size_pt": 8.7,
+      "bounds_px": [
+        59.8,
+        515.456,
+        282.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Retained physical road graph",
+      "size_pt": 15.0,
+      "bounds_px": [
+        59.8,
+        488.511,
+        344.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every full PNG inspected with view_image; source and transit map anchor adjusted; UC paired maps use equal widths.",
+    "png_sha256": "46e70e99fd4c4fc2b5141efa2acd5273784a4b8e704c99cb4f75b06c0c5dc35e",
+    "checks": [
+      "headers readable and close to axes",
+      "no clipping or text overlaps",
+      "actual units and legend retained",
+      "real map geometry unwarped",
+      "notes outside canvas"
+    ],
+    "numeric_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD"
+  }
+}

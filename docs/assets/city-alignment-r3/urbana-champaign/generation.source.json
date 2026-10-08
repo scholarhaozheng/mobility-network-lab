@@ -1,0 +1,46 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-GENERATION",
+  "city": "urbana-champaign",
+  "title": "All-zone trip generation and demand ledger",
+  "caption": "All 21 zones; 08:00–09:00 HBW. The left panel shows saved interzonal productions/attractions. The right panel accounts for all generated persons, including excluded and intrazonal components. No top-12 truncation.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "production and attraction",
+      "unit": "persons per declared period",
+      "zone_count": 21,
+      "P_total": 2989.8527999999997,
+      "A_total": 2989.852799999999
+    },
+    {
+      "panel": "b",
+      "metric": "generation ledger",
+      "fields": {
+        "generated_person_trips": 5908.799999999999,
+        "external_or_uncaptured_person_trips": 2658.959999999999,
+        "intrazonal_person_trips": 259.9872,
+        "interzonal_production_person_trips": 2989.8527999999997
+      }
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\urbana-champaign\\plot_data\\generation_complete.csv",
+      "sha256": "623f72e07332d1ef115c355d7dca77cc362c5888b90d52289898dab5195c09a8"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "generation"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "0c2a979d73fe4e640d446f635111a65b504ba79fae16d88e1906a64b54e400e0",
+    "png": "26921d605a9beab03e3c82c535cd2c12393dc7b6a715782cbb01864b6e5456bc",
+    "pdf": "9e00726435e389b7c7c5bf65786fec37abd9716c2c841b4f7c1c5826dda90820"
+  },
+  "width": 1981,
+  "height": 965,
+  "src": "assets/city-alignment-r3/urbana-champaign/generation.svg"
+}

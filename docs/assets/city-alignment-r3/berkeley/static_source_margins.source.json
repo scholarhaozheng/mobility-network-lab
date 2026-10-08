@@ -1,0 +1,103 @@
+{
+  "id": "BERKELEY-R3-STATIC-SOURCE-MARGINS",
+  "stem": "static_source_margins",
+  "title": "Demand ledger and vehicle assignment margins",
+  "city": "Berkeley",
+  "stage": "static",
+  "caption": "The first panel retains the complete one-hour person ledger: 4,705.530375 external/uncaptured, 152.0248275 intrazonal and 2,381.7222975 internal-interzonal person trips. The second panel aggregates all 72 positive vehicle OD pairs by all 13 possible origin/destination zones. Each side sums to 953.049842713612 PCE/h, after the single person-to-vehicle conversion; absence of positive vehicle demand remains zero. This separates the boundary/capture ledger from the actual assignment margins. The assumptions are 0.65 HBW movements/resident/day, 35% morning allocation, 35% capture, 6% intrazonal share, and 1.30 occupancy; these are engineering values, not locally fitted rates.",
+  "panels": {
+    "a": "Person-trip generation boundary ledger",
+    "b": "Complete 13-zone vehicle origin and destination margins"
+  },
+  "dimensions": [
+    2561,
+    981
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "static_source_margins",
+    "line": 121,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/generation_complete.csv",
+      "sha256": "aa8f809a8d693423904c8255836a3ff7166e36c5b17a4a3e64ec9ab89703a974"
+    },
+    {
+      "path": "data/static_demand.csv",
+      "sha256": "4d9e5023e17a5fafea9194965a2a3c79bfc08fceb108963b8734334a2b508627"
+    },
+    {
+      "path": "data/zones.csv",
+      "sha256": "c16e20897ee7dd3c808b1401d339d5671067e1932c0b3d322cadc4731f1c72af"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "static_source_margins.svg",
+      "sha256": "764a3c5b45246ae4657b8b96cfe50f188717f918731efd7959e1e659fc0b0c2a"
+    },
+    "png": {
+      "path": "static_source_margins.png",
+      "sha256": "3c163a03464905513c976f2d8baf5f0006bd6f284ed140d68ca009601c5e51de"
+    },
+    "pdf": {
+      "path": "static_source_margins.pdf",
+      "sha256": "97c8cb98ecbc93ed40636ea67c5799ee1c86cbb6a26587eca1677a2e91ee7ca7"
+    }
+  }
+}

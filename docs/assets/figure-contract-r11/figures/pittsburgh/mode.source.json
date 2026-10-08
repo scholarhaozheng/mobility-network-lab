@@ -1,0 +1,634 @@
+{
+  "figure_id": "R11-PITTSBURGH-MODE",
+  "city": "pittsburgh",
+  "title": "Mode choice: demand, cost and availability",
+  "instance": {
+    "saved_run": "run_001",
+    "declared_period": "08:00–09:00 HBW",
+    "revision": "frozen four-stage scenario used by R3 source figures"
+  },
+  "role": "demand",
+  "conclusion": "Saved OD-specific choice in 08:00–09:00 HBW; sums over every positive-demand OD.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "person demand",
+      "unit": "person trips per declared period",
+      "modes": [
+        "drive",
+        "walk"
+      ],
+      "values": [
+        3138.920788274633,
+        868.6258205826002
+      ],
+      "instance": "run_001 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "b",
+      "metric": "person-weighted generalized cost",
+      "unit": "generalized minutes",
+      "modes": [
+        "drive",
+        "walk"
+      ],
+      "values": [
+        16.615913467267728,
+        25.888788991846663
+      ],
+      "instance": "run_001 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "c",
+      "metric": "available positive OD pairs",
+      "unit": "OD pairs",
+      "modes": [
+        "drive",
+        "walk"
+      ],
+      "values": [
+        1406,
+        1301
+      ],
+      "instance": "run_001 / 08:00–09:00 HBW"
+    }
+  ],
+  "quantity": "person demand; person-weighted generalized cost; available positive OD pairs",
+  "unit": "person trips per declared period; generalized minutes; OD pairs",
+  "renderer": {
+    "script": "tools/figures/render_city_foundations.py",
+    "function": "mode",
+    "sha256": "256a79187e951a0e950f82ae2f561f371a1a44c10b1363aeec291a89bdea58ac"
+  },
+  "original_asset": {
+    "public_path": "docs/assets/city-alignment-r3/pittsburgh/mode.svg",
+    "sha256": "6ed3c241aba384f30913db2937eed9263d920dfa18f40c22837b10bd8f1e1e4a"
+  },
+  "original_source_record": {
+    "public_path": "docs/assets/city-alignment-r3/pittsburgh/mode.source.json",
+    "sha256": "c1222228a1a44af729304a0507e91fb5940c82623d321275e759980ef19531b0"
+  },
+  "original_evidence_panels": [
+    {
+      "mode": "drive",
+      "person_trips": 3138.920788274633,
+      "person_weighted_generalized_minutes": 16.615913467267728,
+      "available_positive_od": 1406
+    },
+    {
+      "mode": "walk",
+      "person_trips": 868.6258205826002,
+      "person_weighted_generalized_minutes": 25.888788991846663,
+      "available_positive_od": 1301
+    }
+  ],
+  "moved_canvas_notes": "Transit is not modeled: no accepted service-day path costs. An omitted bar is not a prediction of zero transit. Generalized cost includes the model time and money terms. Person totals precede the separate occupancy-to-PCE conversion.",
+  "numeric_evidence_preserved": [
+    {
+      "mode": "drive",
+      "person_trips": 3138.920788274633,
+      "person_weighted_generalized_minutes": 16.615913467267728,
+      "available_positive_od": 1406
+    },
+    {
+      "mode": "walk",
+      "person_trips": 868.6258205826002,
+      "person_weighted_generalized_minutes": 25.888788991846663,
+      "available_positive_od": 1301
+    }
+  ],
+  "numerical_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD",
+  "preserved_limits": [
+    "No later supplementary field is asserted to be used in the frozen demand model.",
+    "Copyright and explanatory prose are retained in the external caption."
+  ],
+  "schema": "mcl_figure_r11",
+  "caption": "Saved OD-specific choice in 08:00–09:00 HBW; sums over every positive-demand OD. Persons, person-weighted generalized minutes, and available OD counts have separate axes. Transit is not modeled; no zero bar is shown. Generalized cost includes model time and money terms. Person totals precede the separate occupancy-to-PCE conversion. This drawing uses the frozen run_001 evidence. Later supplementary datasets are separate and are not implied to have entered this scenario.",
+  "sources": [
+    {
+      "sha256": "56bb1046e7cdd0c98cb3cf0b5fbb6fc78958afb64fe7c45d4bdbfc7df3ed5e5f",
+      "source_id": "pittsburgh/mode/mode_choice_by_od.csv"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Mode choice: demand, cost and availability",
+    "scope": "08:00–09:00 HBW"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 33.661,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3266,
+    1240
+  ],
+  "exports": {
+    "png": "669818e7dfdf0760dcf8b07e8c66dd9824c08378f663d66e9d6bf5eb7234a420",
+    "svg": "2df6323cdf58c00bbcc5d8cf49a697bd8b92da814fce3da98b6c956d7cb7fa20",
+    "pdf": "d5aab1e3b31291d7c82ada0501243251c9485680c8c9121521778ec653b3b752"
+  },
+  "text_audit": [
+    {
+      "text": "3,138.92",
+      "size_pt": 9.0,
+      "bounds_px": [
+        121.082,
+        379.127,
+        55.75,
+        13.0
+      ]
+    },
+    {
+      "text": "868.63",
+      "size_pt": 9.0,
+      "bounds_px": [
+        266.727,
+        201.26,
+        43.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Drive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        133.644,
+        109.267,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Walk",
+      "size_pt": 8.0,
+      "bounds_px": [
+        275.04,
+        109.267,
+        27.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Person trips / period",
+      "size_pt": 9.0,
+      "bounds_px": [
+        25.111,
+        216.238,
+        13.0,
+        130.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        65.042,
+        121.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        50.792,
+        160.773,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        199.945,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        239.118,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        278.291,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        317.463,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        356.636,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        395.809,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "4000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.667,
+        434.982,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Person demand",
+      "size_pt": 11.0,
+      "bounds_px": [
+        80.5,
+        445.889,
+        153.375,
+        14.0
+      ]
+    },
+    {
+      "text": "16.62",
+      "size_pt": 9.0,
+      "bounds_px": [
+        504.459,
+        291.043,
+        35.875,
+        13.0
+      ]
+    },
+    {
+      "text": "25.89",
+      "size_pt": 9.0,
+      "bounds_px": [
+        644.166,
+        379.127,
+        35.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Drive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        507.084,
+        109.267,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Walk",
+      "size_pt": 8.0,
+      "bounds_px": [
+        648.479,
+        109.267,
+        27.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Generalized minutes",
+      "size_pt": 9.0,
+      "bounds_px": [
+        412.8,
+        215.925,
+        13.0,
+        130.75
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        438.481,
+        121.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        438.481,
+        169.095,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        216.591,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        264.086,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        311.582,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        359.077,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        406.573,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.356,
+        454.068,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Person-weighted cost",
+      "size_pt": 11.0,
+      "bounds_px": [
+        453.939,
+        445.889,
+        205.375,
+        14.0
+      ]
+    },
+    {
+      "text": "1,406",
+      "size_pt": 9.0,
+      "bounds_px": [
+        877.898,
+        379.127,
+        35.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1,301",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1017.606,
+        360.762,
+        35.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Drive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        880.523,
+        109.267,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Walk",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1021.918,
+        109.267,
+        27.25,
+        10.0
+      ]
+    },
+    {
+      "text": "OD pairs",
+      "size_pt": 9.0,
+      "bounds_px": [
+        771.989,
+        253.05,
+        13.0,
+        56.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        811.92,
+        121.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        797.67,
+        156.582,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        797.67,
+        191.563,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        797.67,
+        226.545,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        797.67,
+        261.526,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.545,
+        296.508,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.545,
+        331.489,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.545,
+        366.471,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.545,
+        401.452,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.545,
+        436.434,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Available OD pairs",
+      "size_pt": 11.0,
+      "bounds_px": [
+        827.378,
+        445.889,
+        178.0,
+        14.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  08:00–09:00 HBW",
+      "size_pt": 8.7,
+      "bounds_px": [
+        74.75,
+        497.944,
+        236.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Mode choice: demand, cost and availability",
+      "size_pt": 15.0,
+      "bounds_px": [
+        74.75,
+        471.0,
+        505.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every full PNG inspected with view_image; source and transit map anchor adjusted; UC paired maps use equal widths.",
+    "png_sha256": "669818e7dfdf0760dcf8b07e8c66dd9824c08378f663d66e9d6bf5eb7234a420",
+    "checks": [
+      "headers readable and close to axes",
+      "no clipping or text overlaps",
+      "actual units and legend retained",
+      "real map geometry unwarped",
+      "notes outside canvas"
+    ],
+    "numeric_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD"
+  }
+}

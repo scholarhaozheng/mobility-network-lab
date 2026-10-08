@@ -1,0 +1,41 @@
+{
+  "id": "R3-CHICAGO-POPULATION",
+  "city": "chicago",
+  "title": "All-zone demographic denominator",
+  "caption": "Clipped community-area allocation of ACS population; uniform-area assumption. All 5 zones are retained; population total 73,375.2. Households are unknown.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 73375.24195493403
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": false,
+      "total": null
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\inputs\\zones.csv",
+      "sha256": "cd0b2bf70719e39e17e8f6bdce1eee265c7593f143bba4181dd44fa44dbdd77e"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "population"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "0f25abf0bf2ac94dc5d4c98a4db5a40290171a5e81d73e9008c8a3ce8981c185",
+    "png": "c68b90570ffb425ec00046439b863c6f5a3fc036c6727a2556c3d11e0450bc47",
+    "pdf": "bafc994f24bd0350064bd54417491c04f824b391cb2302d40eb9da978ec75540"
+  },
+  "width": 1898,
+  "height": 926,
+  "src": "assets/city-alignment-r3/chicago/population.svg"
+}

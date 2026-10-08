@@ -1,0 +1,43 @@
+{
+  "id": "R3-ITHACA-SOURCES",
+  "city": "ithaca",
+  "title": "Physical source roads and retained graph",
+  "caption": "15,148 retained physical directed traversals in the saved 11:00–12:00 local activity model, shown in EPSG:26918. This is the retained model graph, not a claim to draw every road in the source archive. Virtual movements are excluded; colour has no traffic meaning. © OpenStreetMap contributors / ODbL.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26918",
+      "local_origin_metres": [
+        375797.00123382633,
+        4698915.120773738
+      ]
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\run_20261005\\assignment\\link_solution.csv",
+      "sha256": "4f845f594cf878ce3c563a99a7a7fde7ce090719a024ab0ff4b830936a240536"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\ithaca\\plot_data\\FS_A04\\FS_A04_plot_data.csv",
+      "sha256": "6fbd1a69e100e7649183f6a09685279956e79a3c3e22a3dc88b391479db6c974"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "sources"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "b1202dd8c852a7408db476b37afe260ba9d8ee8766670b51f309a60cae4930c6",
+    "png": "e703bf25ed191c5ca9b36c628e3a16f995462369257f7ce3f5f931100c5d89e5",
+    "pdf": "36df3ba82252f130a50cedfbef5740d3937fb39300155c334641f953f86a3da3"
+  },
+  "width": 1156,
+  "height": 991,
+  "src": "assets/city-alignment-r3/ithaca/sources.svg"
+}

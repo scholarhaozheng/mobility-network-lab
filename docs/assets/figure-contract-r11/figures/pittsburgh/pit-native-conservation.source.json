@@ -1,0 +1,401 @@
+{
+  "figure_id": "pit-native-conservation",
+  "city": "pittsburgh",
+  "instance": "PIT_S72_STATIC_BPR_NATIVE_ORIGINAL",
+  "role": "iteration",
+  "conclusion": "Both saved Native ranks meet the original OD gate at outer 14 after continuation.",
+  "panels": [
+    "Maximum original-coordinate OD residual"
+  ],
+  "quantity": "maximum absolute OD residual",
+  "unit": "PCE in modeled hour",
+  "original_family": "PIT_G05",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "saved_states": 14,
+  "schema": "mcl_figure_r11",
+  "caption": "Each rank has 14 saved outer states. The divider separates original outers 1–8 from continuation 9–14. At outer 14 the rank 26/52 residuals are 8.0701348e−8 and 2.6256443e−7 PCE; the original gate is 1e−6 PCE. Other original-space gates are checked separately. Frozen East End S72 post-diagnostic Native outer14, not GPS calibration. Original outer8 failures preserved; Pit30M returned zero route links. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/pittsburgh/PIT_G05.plot.json",
+      "sha256": "23ebaa361aec44ca9ebcbe87525b2c82fca84c705f4340a90e64d07143545658"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/pittsburgh/PIT_G05.caption.txt",
+      "sha256": "fe168a028fd59e54aac31ce02c2fba93a9547510957c146ec92c9cabd5f010f1"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Native conservation through outer 14",
+    "scope": "S72 / ranks 26 and 52"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.87,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2181,
+    1133
+  ],
+  "exports": {
+    "png": "ffc2c317497ef9799c920595d21bafcc587a3e2d87b4b924ba5bd5462c7bd2d2",
+    "svg": "1462be845b2e15b26c44fccf3df5f644dd850b2b6e1cd834076a0c89158a36c1",
+    "pdf": "934c70de410152840a9f31a5d2f9db3a6d9329a90008c9efb9f731bf90dd99c4"
+  },
+  "text_audit": [
+    {
+      "text": "Completed ALM outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        340.375,
+        46.411,
+        199.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        124.057,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        172.115,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        220.174,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        268.232,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        316.291,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        364.35,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        412.408,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        460.467,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        508.525,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.022,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "11",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.08,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        649.139,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "13",
+      "size_pt": 8.0,
+      "bounds_px": [
+        697.197,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "14",
+      "size_pt": 8.0,
+      "bounds_px": [
+        745.256,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum OD residual (PCE in modeled hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        57.694,
+        77.138,
+        13.0,
+        291.625
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.468,
+        22.669,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.531,
+        58.368,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.531,
+        94.066,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.468,
+        129.764,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.593,
+        165.462,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.25,
+        200.561,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.531,
+        236.859,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.781,
+        272.557,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.984,
+        307.655,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        82.985,
+        343.954,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        83.501,
+        379.052,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        83.298,
+        415.35,
+        20.369,
+        13.8
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.25,
+        342.6,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.25,
+        327.044,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Original OD gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.25,
+        311.489,
+        95.75,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  S72 / ranks 26 and 52",
+      "size_pt": 8.7,
+      "bounds_px": [
+        52.0,
+        400.656,
+        262.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Native conservation through outer 14",
+      "size_pt": 15.0,
+      "bounds_px": [
+        52.0,
+        373.711,
+        441.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#pit-native-conservation"
+}

@@ -1,0 +1,47 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-SOURCES",
+  "city": "urbana-champaign",
+  "title": "Physical source roads and retained graph",
+  "caption": "11,365 retained physical directed traversals in the saved 08:00–09:00 HBW model, shown in EPSG:26916. This is the retained model graph, not a claim to draw every road in the source archive. Virtual movements are excluded; colour has no traffic meaning. © OpenStreetMap contributors / ODbL.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26916",
+      "local_origin_metres": [
+        391194.06074461574,
+        4437738.627947984
+      ]
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\run_v1\\assignment\\link_solution.csv",
+      "sha256": "e0e9e2ba12c76751f2a00ec8a863a1074f5eaf6ff0c2aa0dc1776e2812663b3a"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\processed\\gmns\\link.csv",
+      "sha256": "9db365b6d1e52fdf010978aecf439e93ca35cfaeb8865ab2fdc2d1fe331f538e"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\inputs\\physical_link_map.csv",
+      "sha256": "d0685df440cf6f636ecff521cbcf773ebe02a25cf7e3bdf02182234061e63b54"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "sources"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "6ba636564afad7ad5d34dc584828ca5ddaddda8b80d3b6d66424502841197be7",
+    "png": "8945acfe9591e6c21774d2bbbfe40c04e5d1c6debfbe469d0b753bb511c4f0e1",
+    "pdf": "d0602ef1e2a9c9bb016ce39a924db31e4c9f5b9d0db755d82f5810674900cb8c"
+  },
+  "width": 1199,
+  "height": 991,
+  "src": "assets/city-alignment-r3/urbana-champaign/sources.svg"
+}

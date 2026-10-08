@@ -1,0 +1,1 @@
+Saved compact CG trace on T4. Phase I clears artificial flow; Phase II closes only after the negative priced column is added. Reduced cost has units minutes, equivalent to (PCE·min)/PCE. The line is the −1e−7 min closure gate.

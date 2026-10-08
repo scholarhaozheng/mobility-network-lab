@@ -1,0 +1,9 @@
+# Pittsburgh C04 science endpoint
+
+Frozen core C02 v002 and OUT-state first-link convention remain byte-identical. The East End S72 modeled hour has 72 positive vehicle OD and 149.921423895 PCE. Finite and FW were previously accepted. Native rank26 outer14 max raw OD residual 8.07013475569e-08 PCE; rank52 outer14 2.62564432214e-07 PCE. The declared OD absolute gate is 1e-6 PCE. The saved original-space checker also passed full gap, nonnegativity and link reconstruction; the new independent check recomputed OD from C_od_path and the saved basis coordinates. These are post-diagnostic continuations, not a fresh city holdout or empirical calibration.
+
+The original T4 fixed-cost DAG model has accepted exact LP, CG, LR and ADMM states in the prior v7 Full; direct HiGHS hit a resource limit and tier2 ADMM was not run. Those methods were not rerun. The original four-stage Trip Generation, Distribution, Mode Choice and Assignment chain remains the previously accepted R3 state.
+
+Official Pit30M online raw WGS84 source was examined as two diagnostic segments. The first 1,416-point segment is out of the physical graph at 40 m for 167 one-Hz points. A later selected 1,437-point segment yielded 173 exact one-Hz matcher inputs near auto physical roads. The actual MapMatching4GMNS 0.3.0 native call returned zero route links. An independent checker confirmed rejection. No matched-route spatial direction, bridge/tunnel/layer or route turn conclusion can be made. Source GPS seconds were not mapped to the weekday 08–09 model period. No local parameter calibration or field turn legality is claimed.
+
+PIT_G05 is rendered from saved raw Native checks. Existing Pittsburgh figures and long-form city volume remain in the accepted baseline; the accompanying Volume Handoff is an addendum for S0, not a website edit.

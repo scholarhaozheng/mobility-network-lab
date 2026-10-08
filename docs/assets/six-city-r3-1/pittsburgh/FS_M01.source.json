@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_M01",
+  "city": "pittsburgh",
+  "title": "Mode choice",
+  "caption": "Current OD-specific logit output: person trips, mode shares and person-weighted generalized time. Drive and walk are modeled; transit is Not modelled. The 41 groups aggregate selected blocks by tract ID, not whole-tract totals. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips / 08:00\u201309:00 HBW; person-weighted generalized minutes",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/pittsburgh/original/FS_M01.svg",
+      "sha256": "ff974f1f29b0a7eb69aa8c200d244043f68fdc30ab4b0206f1f3323b99393fe2"
+    },
+    {
+      "logical_source": "choice.csv",
+      "sha256": "56bb1046e7cdd0c98cb3cf0b5fbb6fc78958afb64fe7c45d4bdbfc7df3ed5e5f"
+    }
+  ],
+  "source_run_receipt_sha256": "25cefa61846a5d08a13f90723f5a3a791b51069a190501147cab9105d30d4cd0",
+  "source_metadata_sha256": "6d6a01c47fc7c984d7190b0e91b84b7467a4ceb20969075dad88d45a859d4128",
+  "png_sha256": "8425330b838abe5feb6da18777a1693f5e8ef8eea72b1934a1b3dcb6926cb188",
+  "svg_sha256": "2e7d042310f2dde630af2583cd08da6beddde7ab0d46270d1ad2a28269170d05",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-m01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "ff974f1f29b0a7eb69aa8c200d244043f68fdc30ab4b0206f1f3323b99393fe2",
+  "input_png_sha256": "8425330b838abe5feb6da18777a1693f5e8ef8eea72b1934a1b3dcb6926cb188",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

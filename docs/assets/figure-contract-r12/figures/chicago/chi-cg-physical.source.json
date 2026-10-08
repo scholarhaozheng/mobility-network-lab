@@ -1,0 +1,545 @@
+{
+  "figure_id": "R12-CHI-CG-PHYSICAL",
+  "city": "chicago",
+  "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+  "role": "spatial",
+  "conclusion": "Accepted CG own pulse flow is localized over a sparse subset of the retained physical road network.",
+  "panels": [
+    {
+      "quantity": "Own physical-link CG movement flow",
+      "unit": "PCE"
+    },
+    {
+      "quantity": "All-link CG flow distribution",
+      "unit": "link count / PCE bins"
+    }
+  ],
+  "quantity": [
+    "Physical-link pulse flow",
+    "Physical-link counts"
+  ],
+  "unit": [
+    "PCE",
+    "count"
+  ],
+  "render_route": "Saved-data replot; approved CG flow joined to approved original physical geometry by exact unique persistent IDs.",
+  "geometry_join": {
+    "flow_count": 27129,
+    "geometry_count": 27129,
+    "unique_id_sets_equal": true,
+    "geometry_projected_crs": "EPSG:26916",
+    "local_origin_projected_metres": [
+      444394.1685000272,
+      4634865.747927463
+    ],
+    "no_other_method_flow_read": true
+  },
+  "statistics": {
+    "exact_zero": 26597,
+    "positive": 532,
+    "minimum": 0.0,
+    "maximum": 50.711656958326245,
+    "histogram_count": 27129
+  },
+  "acceptance": {
+    "city": "chicago",
+    "method": "T_CG",
+    "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+    "producer_status": "ACCEPTED",
+    "receiver_status": "ACCEPTED",
+    "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_INDEPENDENT_FULL_GRAPH; no new optimization",
+    "receiver_new_optimizer_calls": 0
+  },
+  "no_failed_attempts_displayed": true,
+  "schema": "mcl_figure_r12",
+  "caption": "Accepted Chicago R2 T4 column-generation endpoint on the original 30-second/H169 finite graph. The map sums this method’s own saved movement-arc flow over commodities and time onto each original physical-link ID; the unit is PCE in the selected pulse, not an hourly rate. The complete 27,129-link vector includes 26,597 exact zeros and 532 positive values. All physical links remain gray context, and positive links use a square-root sequential scale with original-unit colorbar ticks. The 22-bin histogram counts every physical link, including zeros, on a linear count axis. Public saved geometry is joined by a unique exact ID set; no static FW flow is reused. Ledger connectors are excluded. © OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright. Numerical results are engineering scenarios, not observed traffic.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_T_physical_flow_plot_data.json",
+      "sha256": "a8502878ec63756f7dd85c17aceb1ba71821312c689c0a111b0a2c1b6072bedf",
+      "role": "Own CG physical-link pulse-flow vector; only CG saved endpoint selected"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/chicago/fw-physical-flow.plot_data.json",
+      "sha256": "e475a3e07fb7c36e4eac25656eb694e6d16049457ffabbb5177b103f779692ab",
+      "role": "Public physical geometry and coordinate system only; FW volume field unused"
+    },
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/CURRENT_STATUS.json",
+      "sha256": "c4cc1db097d2fa1da564e95d43486c2ccfd0c27c9ce2ecfcd53588f6bfde3abc",
+      "role": "S0 accepted T_CG receiver status"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Chicago",
+    "title": "Column generation: physical flow and distribution",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 0.062,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2811,
+    1572
+  ],
+  "exports": {
+    "png": "09bc8e481bc9d9993996a3aa72e01b8add8bb021ed25f6f26f0cea5bdf8b370b",
+    "svg": "a6ff5ddcfe2a78435b454979091ef1d87c0f38c29ecfe21238f8eb2fb3bfeb9b",
+    "pdf": "3ba5914e0abfe997ba22f5ad6b8213eb22ec524ce65c2b8c0c72e3eda48c4a5a"
+  },
+  "text_audit": [
+    {
+      "text": "Local easting (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        211.062,
+        90.011,
+        117.875,
+        13.0
+      ]
+    },
+    {
+      "text": "−0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1.649,
+        108.567,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        82.405,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        158.535,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        234.666,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        310.796,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        386.926,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        463.057,
+        108.567,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Local northing (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        37.705,
+        225.837,
+        13.0,
+        126.125
+      ]
+    },
+    {
+      "text": "−0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        47.01,
+        52.484,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        128.614,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        204.745,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        280.875,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        357.006,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        433.136,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        56.26,
+        509.267,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Own physical-link movement flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        139.562,
+        456.233,
+        260.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Physical-link pulse flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        174.938,
+        8.086,
+        190.125,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.781,
+        26.641,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        241.882,
+        26.641,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        338.736,
+        26.641,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        447.889,
+        26.641,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "27,129 physical links\n26,597 exact zeros",
+      "size_pt": 8.0,
+      "bounds_px": [
+        832.022,
+        416.34,
+        119.375,
+        21.6
+      ]
+    },
+    {
+      "text": "Physical-link pulse flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        679.938,
+        90.011,
+        190.125,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.781,
+        108.567,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        654.228,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        728.237,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        802.246,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        876.255,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "50",
+      "size_pt": 8.0,
+      "bounds_px": [
+        950.264,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1024.274,
+        108.567,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Physical links (count)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        521.33,
+        220.962,
+        13.0,
+        135.875
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        571.885,
+        120.9,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        547.01,
+        177.358,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "10,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.885,
+        233.816,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "15,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.885,
+        290.274,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.885,
+        346.732,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "25,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.885,
+        403.19,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "30,000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        539.885,
+        459.648,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "All physical-link flow values",
+      "size_pt": 11.0,
+      "bounds_px": [
+        667.625,
+        456.233,
+        214.75,
+        14.0
+      ]
+    },
+    {
+      "text": "CHICAGO",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        508.289,
+        66.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Column generation: physical flow and distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        481.344,
+        589.75,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual PNG inspection using view_image",
+    "result": "PASS",
+    "checked": [
+      "Serif and blue-teal style",
+      "City and title hierarchy",
+      "Legible metric labels and original units",
+      "No clipping or label overlap",
+      "Actual saved points only",
+      "Only accepted method panels",
+      "Map and histogram aligned with full link vector"
+    ]
+  }
+}

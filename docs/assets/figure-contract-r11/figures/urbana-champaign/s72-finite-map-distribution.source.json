@@ -1,0 +1,601 @@
+{
+  "figure_id": "R11-KEEP-urbana-champaign-s72-finite-map-distribution",
+  "city": "urbana-champaign",
+  "instance": "S72 / 72 selected ODs / 321.6296598827645 PCE in one hour",
+  "role": "spatial_comparison",
+  "conclusion": "Finite paths: physical flow and distribution",
+  "panels": {
+    "map": {
+      "count": 11365,
+      "positive_overlay_count": 2861,
+      "original_geometry_exact": true,
+      "normalization": "PowerNorm(gamma=0.5)",
+      "bounds": [
+        0,
+        105.17373545862498
+      ]
+    },
+    "histogram": {
+      "edges": [
+        0.0,
+        5.258686772931249,
+        10.517373545862498,
+        15.776060318793746,
+        21.034747091724995,
+        26.293433864656244,
+        31.552120637587493,
+        36.81080741051874,
+        42.06949418344999,
+        47.32818095638124,
+        52.58686772931249,
+        57.845554502243736,
+        63.104241275174985,
+        68.36292804810623,
+        73.62161482103748,
+        78.88030159396874,
+        84.13898836689998,
+        89.39767513983122,
+        94.65636191276248,
+        99.91504868569373,
+        105.17373545862498
+      ],
+      "counts": [
+        10287,
+        275,
+        282,
+        209,
+        86,
+        5,
+        57,
+        6,
+        17,
+        37,
+        47,
+        3,
+        43,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ],
+      "includes_exact_zeros": true,
+      "count": 11365
+    },
+    "alignment": {
+      "map_bounds": [
+        0.08,
+        0.3494688974459711,
+        0.365,
+        0.43053110255402893
+      ],
+      "histogram_bounds": [
+        0.64,
+        0.3494688974459711,
+        0.31999999999999995,
+        0.43053110255402893
+      ],
+      "top_and_bottom_equal": true
+    },
+    "physical_solver_link_ids_exact": true,
+    "source_gmns_ids_exact": true,
+    "projection": "EPSG:4326 to EPSG:26916, local km from southwest model extent",
+    "shared_same_instance_FW_colour_scale": true
+  },
+  "quantity": "Own saved finite physical flow; all-link frequency",
+  "unit": "PCE / modeled hour; directed physical arcs",
+  "renderer": {
+    "public_path": "tools/figures/render_keep_repairs.py",
+    "sha256": "aa4ae649abb3d967276f23ae885bfb4b2267ccdf07b6b6c9a38d79f835f4f2c5"
+  },
+  "original_asset": "docs/assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.svg",
+  "original_asset_sha256": "c278fcddf61e3beec5eb84f65cf1110ce2d777dde31f947aaf9a70161702f89f",
+  "numerical_equivalence": "EXACT_SAVED_VECTOR_AND_BIN_MATCH",
+  "original_bytes_unchanged": true,
+  "removed_status_panel": {
+    "reason": "All 72 OD residual values are exactly zero; endpoint table is clearer",
+    "unit": "PCE",
+    "source_field": "all72_od_checks[].residual_pce",
+    "independent_summary": {
+      "instance_signature": "620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+      "method": "finite_full_path",
+      "max_od_residual": 0.0,
+      "od_residual_sum": 0.0,
+      "od_residual_l1": 0.0,
+      "max_link_reconstruction_error": 0.0,
+      "demand_total": 321.6296598827645,
+      "path_count": 360,
+      "node_od": 72,
+      "gates": {
+        "max_od_error_abs": 1e-06,
+        "max_od_error_rel": 1e-08,
+        "total_od_l1_rel": 1e-08,
+        "full_relative_gap_abs": 1e-05,
+        "negative_flow_abs": 1e-08,
+        "link_reconstruction_abs": 1e-07
+      },
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+    }
+  },
+  "schema": "mcl_figure_r11",
+  "caption": "Saved S72 instance: 72 selected OD pairs, 321.6296598827645 PCE in one declared hour, and 360 frozen paths. Each method reads its own saved physical-link vector; none is substituted from another method. All 11,365 physical solver arcs are shown, including 42 separate A/B geometry halves for 21 split source links; turn movements are excluded. The all-link histogram includes exact zeros. Absolute maps share a square-root colour scale in PCE/hour and constant overlay width. Only coloured map overlays suppress absolute values at most 1e-12 PCE/h, while all values remain in plot data and histograms. This is distinct from the original 418-OD city case. © OpenStreetMap contributors, ODbL 1.0; engineering scenario, not observed traffic. All 72 OD mass residuals are calculated from the 360 saved path flows minus the frozen per-OD demands; all are exactly zero. The frozen independent endpoint check is SOLVED_WITHIN_DECLARED_TOLERANCE. No optimizer or path-generation code is run. R11 layout repair: the map and histogram share measured bounds. The 72 zero-valued OD residuals are retained in the linked endpoint table, with the frozen mass-balance gates (absolute 1e-6 PCE; relative 1e-8; total OD L1 relative 1e-8). Their absence from a third status-only plot does not remove any OD record or change the accepted status.",
+  "sources": [
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.plot_data.json",
+      "sha256": "e4369f4a2322b1835f078c4eac6b4cdaab11feb5f08a42a637f0b2930c1c4150",
+      "role": "Own finite vector, bins and all 72 saved OD balance checks"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/derived.json",
+      "sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae",
+      "role": "Exactly matched persistent physical solver IDs and split geometry"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.plot_data.json",
+      "sha256": "14f2722a66ea5ab4653793bb2ef05b0ca52d5eb7aa051e90ab1526a897e882e4",
+      "role": "Same-instance saved FW vector for the shared color maximum"
+    },
+    {
+      "source_id": "UC_R2_S72_FINITE_INDEPENDENT_CHECK",
+      "sha256": "184a1de932a6c01928adf0fa1e2155afe9430ad419916a3eeb6de68bdaeb0e65",
+      "role": "Frozen independent endpoint check; exact gate field names retained"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.svg",
+      "sha256": "c278fcddf61e3beec5eb84f65cf1110ce2d777dde31f947aaf9a70161702f89f",
+      "role": "Original preserved displayed SVG"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.source.json",
+      "sha256": "594304bb1c25a18c408e8ae27b789fb91c0118bc1847c4720ac89e87001d9ac8",
+      "role": "Original frozen figure record"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Finite paths: physical flow and distribution",
+    "scope": "S72 · 72 selected ODs · one modeled hour"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.584,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2962,
+    1202
+  ],
+  "exports": {
+    "png": "9a87eb614ced852aa8d2f52f4fecd4e78932dd3c964009cc6ab7f65fe4c630ec",
+    "svg": "11645deef0a0661c78d6f0eef44853eadb3eb79c27662bb6de267fab057357d8",
+    "pdf": "b0c5fa996db3354a8a231cf2405696876317462406ab66b52304b492410498a9"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        229.75,
+        190.266,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -36.657,
+        208.821,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.581,
+        208.821,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        209.193,
+        208.821,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "5.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        329.805,
+        208.821,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "7.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        450.418,
+        208.821,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "10.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        567.468,
+        208.821,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        40.161,
+        311.14,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.467,
+        157.941,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        230.309,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        302.676,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        375.043,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        447.411,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "6.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        519.778,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved physical flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        84.8,
+        515.111,
+        187.5,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / modeled hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        542.453,
+        310.89,
+        10.0,
+        112.375
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        242.643,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        346.372,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        389.337,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        422.306,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        450.1,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        474.587,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "bounds_px": [
+        518.522,
+        496.725,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Physical-link flow (PCE / modeled hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        721.875,
+        190.266,
+        252.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        594.11,
+        208.821,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        690.256,
+        208.821,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        774.652,
+        208.821,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        862.61,
+        208.821,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "90",
+      "size_pt": 8.0,
+      "bounds_px": [
+        950.568,
+        208.821,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1034.964,
+        208.821,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Directed physical links",
+      "size_pt": 9.0,
+      "bounds_px": [
+        615.886,
+        294.515,
+        13.0,
+        145.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.942,
+        221.155,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        285.926,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        350.697,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        415.467,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "10000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        480.238,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.442,
+        545.009,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All physical links",
+      "size_pt": 11.0,
+      "bounds_px": [
+        678.4,
+        515.111,
+        167.5,
+        14.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  S72 · 72 selected ODs · one modeled hour",
+      "size_pt": 8.7,
+      "bounds_px": [
+        68.9,
+        567.167,
+        459.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Finite paths: physical flow and distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        68.9,
+        540.222,
+        504.5,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every final PNG individually opened with view_image; title/panel alignment, geometry aspect, units, fonts, legends, gaps and clipping checked. Repeated final render PNG hashes exactly match visually reviewed PNGs.",
+    "result": "PASS",
+    "reviewed_png_sha256": "9a87eb614ced852aa8d2f52f4fecd4e78932dd3c964009cc6ab7f65fe4c630ec",
+    "original_asset_bytes_preserved": true
+  }
+}

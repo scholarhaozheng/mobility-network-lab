@@ -1,0 +1,106 @@
+{
+  "table_id": "chicago-resource-receipts",
+  "city": "chicago",
+  "title": "Actual process resources and declared budgets",
+  "scope": "Historical started processes; measured resources versus declared budgets",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/chicago/C06_R2_actual_resources.svg"
+  ],
+  "notes": [
+    "Operational context, not scientific acceptance. Wrapper wall time and declared solver budget are distinct."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_R2_actual_resources_plot_data.json",
+      "href": "assets/algorithm-transfer-r8/chicago/C06_R2_actual_resources_plot_data.json",
+      "sha256": "470cdae2e6e028dcc72f79710203b72ac5ec25d02784b7ee79d38cf775c248b5"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Actual process resources",
+      "columns": [
+        "Run",
+        "Wrapper wall (min)",
+        "Solver budget (min)",
+        "Peak resident (GiB)",
+        "Peak private commit (GiB)",
+        "Own-tree cap (GiB)"
+      ],
+      "rows": [
+        {
+          "Run": "LP first start",
+          "Wrapper wall (min)": 54.67995000000034,
+          "Solver budget (min)": 60.0,
+          "Peak resident (GiB)": 1.2535514831542969,
+          "Peak private commit (GiB)": 2.637401580810547,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "Native first start",
+          "Wrapper wall (min)": 3.1044333333324174,
+          "Solver budget (min)": 23.333333333333332,
+          "Peak resident (GiB)": 0.5243721008300781,
+          "Peak private commit (GiB)": 0.6638298034667969,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "CG first start",
+          "Wrapper wall (min)": 11.454166666666667,
+          "Solver budget (min)": 90.0,
+          "Peak resident (GiB)": 0.6331558227539062,
+          "Peak private commit (GiB)": 0.6416511535644531,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "LR first start",
+          "Wrapper wall (min)": 3.6172000000001088,
+          "Solver budget (min)": 60.0,
+          "Peak resident (GiB)": 1.8037872314453125,
+          "Peak private commit (GiB)": 2.1282730102539062,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "ADMM first start",
+          "Wrapper wall (min)": 0.36431666666758244,
+          "Solver budget (min)": 60.0,
+          "Peak resident (GiB)": 1.5733299255371094,
+          "Peak private commit (GiB)": 1.7343597412109375,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "CG recovery",
+          "Wrapper wall (min)": 35.9625,
+          "Solver budget (min)": 78.53333333333333,
+          "Peak resident (GiB)": 0.6347503662109375,
+          "Peak private commit (GiB)": 0.6611213684082031,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "LR recovery",
+          "Wrapper wall (min)": 56.922400000000685,
+          "Solver budget (min)": 56.36666666666667,
+          "Peak resident (GiB)": 2.2175064086914062,
+          "Peak private commit (GiB)": 2.3046875,
+          "Own-tree cap (GiB)": 4
+        },
+        {
+          "Run": "ADMM recovery",
+          "Wrapper wall (min)": 63.86146666666609,
+          "Solver budget (min)": 59.63333333333333,
+          "Peak resident (GiB)": 2.3194923400878906,
+          "Peak private commit (GiB)": 2.777873992919922,
+          "Own-tree cap (GiB)": 4
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 8,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"chicago-resource-receipts\"><h4>Actual process resources and declared budgets</h4><p class=\"evidence-table-scope\">Historical started processes; measured resources versus declared budgets</p><h5>Actual process resources</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Actual process resources\"><table><thead><tr><th scope=\"col\">Run</th><th scope=\"col\">Wrapper wall (min)</th><th scope=\"col\">Solver budget (min)</th><th scope=\"col\">Peak resident (GiB)</th><th scope=\"col\">Peak private commit (GiB)</th><th scope=\"col\">Own-tree cap (GiB)</th></tr></thead><tbody><tr><td>LP first start</td><td>54.67995000000034</td><td>60.0</td><td>1.2535514831542969</td><td>2.637401580810547</td><td>4</td></tr><tr><td>Native first start</td><td>3.1044333333324174</td><td>23.333333333333332</td><td>0.5243721008300781</td><td>0.6638298034667969</td><td>4</td></tr><tr><td>CG first start</td><td>11.454166666666667</td><td>90.0</td><td>0.6331558227539062</td><td>0.6416511535644531</td><td>4</td></tr><tr><td>LR first start</td><td>3.6172000000001088</td><td>60.0</td><td>1.8037872314453125</td><td>2.1282730102539062</td><td>4</td></tr><tr><td>ADMM first start</td><td>0.36431666666758244</td><td>60.0</td><td>1.5733299255371094</td><td>1.7343597412109375</td><td>4</td></tr><tr><td>CG recovery</td><td>35.9625</td><td>78.53333333333333</td><td>0.6347503662109375</td><td>0.6611213684082031</td><td>4</td></tr><tr><td>LR recovery</td><td>56.922400000000685</td><td>56.36666666666667</td><td>2.2175064086914062</td><td>2.3046875</td><td>4</td></tr><tr><td>ADMM recovery</td><td>63.86146666666609</td><td>59.63333333333333</td><td>2.3194923400878906</td><td>2.777873992919922</td><td>4</td></tr></tbody></table></div><p>Operational context, not scientific acceptance. Wrapper wall time and declared solver budget are distinct.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/chicago/C06_R2_actual_resources_plot_data.json\" download>C06_R2_actual_resources_plot_data.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/chicago/C06_R2_actual_resources.svg\">C06_R2_actual_resources.svg</a></p></details></section>",
+  "caption": "Operational context, not scientific acceptance. Wrapper wall time and declared solver budget are distinct."
+}

@@ -1,0 +1,80 @@
+{
+  "schema": "mcl_v_berkeley_admm_visual_delta_v1",
+  "figure": "accuracy_primal_dual_internal_gates",
+  "scientific_status": "ACCEPTED_BOUNDED_BERKELEY_T4_ADMM_POST_DIAGNOSTIC",
+  "public_release": "PENDING_S0_INCREMENTAL_REVIEW",
+  "T_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "units": {
+    "primal": "PCE",
+    "dual": "rho-weighted PCE"
+  },
+  "original_archive": {
+    "name": "MCL_Berkeley_ADMM_Accuracy_R3_Volume_Handoff.zip",
+    "sha256": "0221f5d00905c81baaf8e655bf37c22fdc3ff805c3f93a71b0c6423eb5913858"
+  },
+  "original_assets": {
+    "accuracy_primal_dual_internal_gates.png": "bee62ad0b47784c0dcfc583b79992a66493481e166891f74faff5e987a7e9e73",
+    "accuracy_primal_dual_internal_gates.svg": "793370b853b6262c9d4e3c4f21400ddc04c91ce84258f740ba6c3c6ace699354",
+    "accuracy_primal_dual_internal_gates.plot_data.json": "9b544e7c822cb4e40b16ee57315bfb3ed8359ca59e0d6988a822b83f0fcae7b1",
+    "accuracy_primal_dual_internal_gates.source.json": "5848190f751f018306ad33ce5801f06c71e6c3aef2c8b6f9a86883a28ca1f87f",
+    "accuracy_primal_dual_internal_gates.caption.md": "d648af6a234a8237c833f1d7e7fa157082ee8d7ce4104311c3c85534b765673a"
+  },
+  "original_renderer": {
+    "file": "render_accuracy_figures.py",
+    "sha256": "66dcccb787ec5c1e08857a8881cddeeccabe4b6b9c747c3fc546d4db800a9436"
+  },
+  "original_source_sha256": {
+    "stage_a/final_checkpoint/history.csv": "b4fdbc61f7b5800a9c721afc7abc51a69dc18672e90c17d5ffa178f6c41fd678",
+    "checks/stage_a/INDEPENDENT_CHECK.json": "ad2e315483ef3fb469973a3b3c648aee7b3e5a24f721cecdf9cfae5804ea23eb",
+    "input/LP_REFERENCE.json": "23ec86481e1a4e3e3e0eae8dd52433f758f3496d9457c50f2e72941948b31f08",
+    "ADMM_ACCURACY_PLAN.json": "74ea63671b54acf18846dbb163d73ce849e17edf49b14156145839f974264cc6",
+    "FINAL_SELECTION.json": "f3699f29b0b83fd9220710ebef64f758bb99fa76c35f7a1eb5f957d150afa877"
+  },
+  "renderer": {
+    "file": "renderers/render_berkeley_admm_visual.py",
+    "sha256": "88812fbe9b4073107bdb5ba1a0f8495975e30c8ad78a870faad93c3452e35499"
+  },
+  "outputs": {
+    "accuracy_primal_dual_internal_gates.png": {
+      "sha256": "42dbec571dcde7fabad02730860d3db3f5b27606aaf13a8c8a2e66db48369bc8",
+      "bytes": 267209
+    },
+    "accuracy_primal_dual_internal_gates.svg": {
+      "sha256": "fa4977b58c78c555f9449eced218b4616c46736e13bf6721cac9a4783eed979c",
+      "bytes": 37108
+    },
+    "accuracy_primal_dual_internal_gates.plot_data.json": {
+      "sha256": "9b544e7c822cb4e40b16ee57315bfb3ed8359ca59e0d6988a822b83f0fcae7b1",
+      "bytes": 22679
+    },
+    "accuracy_primal_dual_internal_gates.caption.md": {
+      "sha256": "5c1c460bcceb07f166ed9c971facf600347c6bc4c08536e838525bfe4babac1f",
+      "bytes": 1110
+    }
+  },
+  "data_unchanged": {
+    "plot_data_bytes_identical": true,
+    "all_saved_iterations": 170,
+    "display_only": {
+      "x_range": [
+        -1,
+        173
+      ],
+      "log_floor": null,
+      "threshold_change": "saved C1 38 / C2a 39",
+      "no_values_changed": true
+    }
+  },
+  "style": {
+    "font": "DejaVu Serif",
+    "browser_fallback": [
+      "Georgia",
+      "Times New Roman",
+      "serif"
+    ],
+    "font_binaries_included": false,
+    "navy": "#132f51",
+    "teal": "#087f82",
+    "editable_svg_text": true
+  }
+}

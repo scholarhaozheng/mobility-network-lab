@@ -1,0 +1,81 @@
+{
+  "id": "CANONICAL-CHICAGO-FW-PHYSICAL",
+  "city": "chicago",
+  "title": "Frank–Wolfe physical-link flow",
+  "caption": "Saved Chicago static Frank–Wolfe endpoint for 08:00–09:00 HBW. The map and 22-bin histogram use the same complete 27,129-link physical-flow vector, including 25,238 exact-zero links; 1,891 links exceed 1e-6 PCE. Flow is PCE accumulated during the declared one-hour period, not persons or flow per simulation time step. The map uses a square-root sequential color scale with original-unit ticks and gray road context; histogram counts are linear and no links are omitted. Turn, access and other nonphysical solver arcs are excluded. The endpoint follows 3 actual FW updates; all 4 saved checks remain separate diagnostic evidence. Reciprocal directed arcs may overlap geometrically; flows are not summed. This full saved static case is distinct from the separate S20 and T4 method-transfer instances. This is a modeled engineering scenario, not observed traffic. © OpenStreetMap contributors / ODbL 1.0.",
+  "status": "STAGED_LOCAL_READING_REVISION",
+  "not_a_new_scientific_release": true,
+  "scientific_solver_calls": 0,
+  "prior_current_figure_id": "R3-CHICAGO-ENDPOINTS",
+  "canonical_reference": "G-F052",
+  "panels": {
+    "a": "All retained physical geography with true terminal per-link flow; virtual arcs excluded",
+    "b": "22-bin histogram of the same complete flow vector, including exact zero and near-zero links"
+  },
+  "renderer": {
+    "script": "render_static_fw_staged.py",
+    "function": "run",
+    "sha256": "81124c94d457a64770b6f8fb8077109b5925bcaf2f41f35378f38ec1d5468664"
+  },
+  "style": "Unchanged shared stage3 figure_style functions; same Hong Kong map+histogram recipe; city-specific projected geometry retained",
+  "sources": [
+    {
+      "source_id": "R3-CHICAGO-ENDPOINTS:input-1",
+      "sha256": "7efa31d6c5e8d1acf9738f8f467d6d8a285e301bfbff28c4f11909f4355dc472",
+      "bytes": 2267339
+    },
+    {
+      "source_id": "R3-CHICAGO-ENDPOINTS:input-2",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615",
+      "bytes": 5047512
+    },
+    {
+      "source_id": "R3-CHICAGO-ENDPOINTS:assignment-summary",
+      "sha256": "a85cdddae154e5c8c36738b87329fd0d716c456563110f1235f56a34e6ba471e",
+      "bytes": 456
+    },
+    {
+      "source_id": "R3-CHICAGO-ENDPOINTS:saved-fw-checks",
+      "sha256": "5c53778b01cb320c8b5e4c7e55f1f7e3509760947d760baa41d037695007060a",
+      "bytes": 464
+    }
+  ],
+  "private_paths_exposed": false,
+  "width": 2612,
+  "height": 1619,
+  "files": {
+    "fw-physical-flow.svg": {
+      "sha256": "8c59cba9efa40c0106f29c3f8dc7abc4666cdc8a2319a9329f9448315dbbcbe1",
+      "bytes": 4544673
+    },
+    "fw-physical-flow.png": {
+      "sha256": "71dedd4f14a0da8228a4e953ae5891a9f37eb0805c425f42cf49f76f95b79b38",
+      "bytes": 525440
+    },
+    "fw-physical-flow.plot_data.json": {
+      "sha256": "e475a3e07fb7c36e4eac25656eb694e6d16049457ffabbb5177b103f779692ab",
+      "bytes": 5571384
+    },
+    "fw-physical-flow.caption.txt": {
+      "sha256": "ebd26e3a5b68dac892f62c0dcd49eb1683a6d92ea3f565a432f79b91db3587aa",
+      "bytes": 909
+    }
+  },
+  "checks": {
+    "all_approved_input_hashes_match": true,
+    "all_physical_rows_counted": true,
+    "identical_flow_vector_used_both_panels": true,
+    "zero_rows_included": true,
+    "valid_unique_physical_ids": true,
+    "full_scenario_not_preflight_or_subset": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 39.245,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE",
+  "solver_calls": 0
+}

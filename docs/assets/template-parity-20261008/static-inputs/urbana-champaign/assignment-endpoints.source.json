@@ -1,0 +1,527 @@
+{
+  "figure_id": "urbana-champaign-assignment-endpoints-parity",
+  "city": "urbana-champaign",
+  "instance": "S72",
+  "method": "static assignment inputs",
+  "period": "08:00–09:00",
+  "role": "geographic",
+  "quantity": "Selected assignment PCE at physical access endpoints",
+  "unit": "PCE/hour",
+  "conclusion": "Saved assignment demand can be traced from source-zone margins to its own physical access endpoints without changing OD identities.",
+  "panels": [
+    {
+      "a": "origin loaded assignment demand"
+    },
+    {
+      "b": "destination loaded assignment demand"
+    }
+  ],
+  "public_or_private": "private",
+  "numerical_validation": {
+    "total": 321.62965988276443,
+    "margin_origin_sum": 321.6296598827645,
+    "margin_destination_sum": 321.6296598827645,
+    "endpoint_origin_sum": 321.6296598827646,
+    "endpoint_destination_sum": 321.6296598827645,
+    "positive_od": 72,
+    "loaded_node_od": 72,
+    "source_zone_count": 21,
+    "origin_zone_count": 19,
+    "destination_zone_count": 21,
+    "origin_endpoint_count": 19,
+    "destination_endpoint_count": 21,
+    "all_frozen_access_count": 21,
+    "road_context_count": 11344,
+    "source_to_assignment_join": "PASS",
+    "no_person_demand_substitution": true
+  },
+  "source_notice": "© OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright",
+  "reference_template": "Hong Kong saved static demand margin choropleths and physical endpoint PCE maps",
+  "renderer": "render_static_inputs_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "S72: 72 positive source-zone OD pairs, 72 loaded solver-node OD pairs and 321.629659883 PCE/hour. Original access records locate 19 loaded physical origins and 21 loaded physical destinations. Open circles show the frozen access system and filled colors show selected endpoint PCE/hour. The largest loaded endpoint in each panel is labelled by its physical source ID (or the saved M-state road-midpoint identifier). Each side sums to the same total; this aggregation is for display only. S72 has 72 frozen source-zone OD pairs, separate from the original 418-OD city case. M states are the saved public-road midpoint access proxies. Coordinates use the original builder rule: arithmetic mean of the directed source link endpoint coordinates, not a zone centroid. These are modeled assignment-input quantities, not population generation, observed traffic or assigned link flow. Both panels share one map extent; context roads outside this input footprint are clipped only for display.",
+  "sources": [
+    {
+      "source_identity": "demand_72.csv",
+      "sha256": "c33211ddfd9705b630e4298d11c488f42df4e9b2363b4850d23b306dda1c0664",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "access.csv",
+      "sha256": "805b308b5ea4e361624155327f83b21c87ced33205b85c3ae69ec6bfdce17333",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "demand.csv",
+      "sha256": "c9282e98b415ea227cd15cf6d356ad8b90b8b3863c29bb0b2352f1aa73bddc21",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "link.csv",
+      "sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "census_tract_2020.geojson",
+      "sha256": "9b88bce7f09cb463c58b48ec1888762cc46bdf03f1ea87dc6ef5c9c8c1dadad8",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "link.csv",
+      "sha256": "9db365b6d1e52fdf010978aecf439e93ca35cfaeb8865ab2fdc2d1fe331f538e",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "physical_link_map.csv",
+      "sha256": "d0685df440cf6f636ecff521cbcf773ebe02a25cf7e3bdf02182234061e63b54",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "build_road_model.py",
+      "sha256": "e6a202f7b2330ad840850a9da08d0ea821a3a0dcb85f3562c0efb541200256e2",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Physical demand endpoints",
+    "scope": "S72 / 72 OD / 08:00–09:00"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 21.115,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2356,
+    1577
+  ],
+  "exports": {
+    "png": "472dd24efee610dcb553ddebb2eeed97319dee27a37c0cc275dba3f928760f24",
+    "svg": "bcfe70687661b6b95997b89fd7205ff801768860132716e0e625f4b8e3f0dcaa",
+    "pdf": "ffda18b2593501d0664d84e73935310d316af20d7569ec1aaaf4abcb6bc3779d"
+  },
+  "text_audit": [
+    {
+      "text": "M:10871",
+      "size_pt": 7.4,
+      "bounds_px": [
+        189.647,
+        311.751,
+        55.041,
+        18.056
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        175.1,
+        121.188,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−6.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -9.126,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        80.594,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        170.313,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        260.032,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        354.377,
+        139.744,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        444.096,
+        139.744,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        24.161,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.467,
+        134.768,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        224.488,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        314.207,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        403.926,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        42.717,
+        493.645,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Origin demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        68.8,
+        454.234,
+        135.875,
+        14.0
+      ]
+    },
+    {
+      "text": "M:844",
+      "size_pt": 7.4,
+      "bounds_px": [
+        540.118,
+        279.743,
+        42.131,
+        17.855
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        596.5,
+        121.188,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−6.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        412.274,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        501.994,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        591.713,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        681.432,
+        139.744,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        775.777,
+        139.744,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        865.496,
+        139.744,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        445.561,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        454.867,
+        134.768,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        224.488,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        314.207,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        403.926,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.117,
+        493.645,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Destination demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        490.2,
+        454.234,
+        177.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Physical access-node loaded demand (PCE/hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        292.388,
+        4.472,
+        309.625,
+        13.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        180.325,
+        23.028,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "26.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        434.762,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "52.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        541.63,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "78.9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        623.632,
+        23.028,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "105.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        689.2,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  S72 / 72 OD / 08:00–09:00",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.9,
+        506.29,
+        351.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Physical demand endpoints",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.9,
+        479.345,
+        320.875,
+        20.0
+      ]
+    },
+    {
+      "text": "Frozen physical access locations",
+      "size_pt": 8.0,
+      "bounds_px": [
+        247.0,
+        89.8,
+        184.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Selected assignment loading",
+      "size_pt": 8.0,
+      "bounds_px": [
+        480.014,
+        89.8,
+        161.875,
+        10.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: each exported PNG individually opened; all endpoints shown; label placement, geographic extent, common scales, numeric tick labels and numeric sums checked",
+  "visible_non_numeric_text_overlap_candidates": [],
+  "text_overlap_policy": "Automated title/axis/legend/annotation text check; locator tick candidates are reviewed in rendered PNG because source text audit includes unrendered off-axis ticks."
+}

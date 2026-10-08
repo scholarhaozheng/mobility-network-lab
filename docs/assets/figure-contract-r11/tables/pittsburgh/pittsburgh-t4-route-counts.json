@@ -1,0 +1,80 @@
+{
+  "table_id": "pittsburgh-t4-route-counts",
+  "city": "pittsburgh",
+  "title": "CG-generated route and flow scalars",
+  "scope": "Original four-OD T4; one generated path per OD",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T06.svg"
+  ],
+  "notes": [
+    "Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T06.plot.json",
+      "href": "assets/algorithm-transfer-r8/pittsburgh/PIT_T06.plot.json",
+      "sha256": "980cb3268d8f3fdccfc3a4aaf9ddb0f9cd505bedfadb9e9a608bddc4e98e9a9b"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Saved path records",
+      "columns": [
+        "demand_id",
+        "flow_pce",
+        "route_cost_minutes",
+        "physical_road_arcs",
+        "turn_movement_arcs",
+        "wait_arcs"
+      ],
+      "rows": [
+        {
+          "demand_id": "C04_OD_01_tract2020_42003151700_tract2020_42003980500",
+          "flow_pce": 0.012248688106889767,
+          "route_cost_minutes": 5.706924829396324,
+          "physical_road_arcs": 56,
+          "turn_movement_arcs": 56,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C04_OD_02_tract2020_42003151700_tract2020_42003050100",
+          "flow_pce": 0.017348827206873488,
+          "route_cost_minutes": 8.049775357042124,
+          "physical_road_arcs": 110,
+          "turn_movement_arcs": 110,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C04_OD_03_tract2020_42003050600_tract2020_42003050100",
+          "flow_pce": 0.01541958515861922,
+          "route_cost_minutes": 2.4874850000000017,
+          "physical_road_arcs": 35,
+          "turn_movement_arcs": 35,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C04_OD_04_tract2020_42003562901_tract2020_42003151600",
+          "flow_pce": 1.0447981167474074e-05,
+          "route_cost_minutes": 1.9074600083512294,
+          "physical_road_arcs": 32,
+          "turn_movement_arcs": 32,
+          "wait_arcs": 0
+        }
+      ],
+      "column_units": {
+        "flow_pce": "PCE",
+        "route_cost_minutes": "min",
+        "physical_road_arcs": "count",
+        "turn_movement_arcs": "count",
+        "wait_arcs": "count"
+      },
+      "details": false
+    }
+  ],
+  "rows": 4,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"pittsburgh-t4-route-counts\"><h4>CG-generated route and flow scalars</h4><p class=\"evidence-table-scope\">Original four-OD T4; one generated path per OD</p><h5>Saved path records</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Saved path records\"><table><thead><tr><th scope=\"col\">demand_id</th><th scope=\"col\">flow_pce <small>(PCE)</small></th><th scope=\"col\">route_cost_minutes <small>(min)</small></th><th scope=\"col\">physical_road_arcs <small>(count)</small></th><th scope=\"col\">turn_movement_arcs <small>(count)</small></th><th scope=\"col\">wait_arcs <small>(count)</small></th></tr></thead><tbody><tr><td>C04_OD_01_tract2020_42003151700_tract2020_42003980500</td><td>0.012248688106889767</td><td>5.706924829396324</td><td>56</td><td>56</td><td>0</td></tr><tr><td>C04_OD_02_tract2020_42003151700_tract2020_42003050100</td><td>0.017348827206873488</td><td>8.049775357042124</td><td>110</td><td>110</td><td>0</td></tr><tr><td>C04_OD_03_tract2020_42003050600_tract2020_42003050100</td><td>0.01541958515861922</td><td>2.4874850000000017</td><td>35</td><td>35</td><td>0</td></tr><tr><td>C04_OD_04_tract2020_42003562901_tract2020_42003151600</td><td>1.0447981167474074e-05</td><td>1.9074600083512294</td><td>32</td><td>32</td><td>0</td></tr></tbody></table></div><p>Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T06.plot.json\" download>PIT_T06.plot.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T06.svg\">PIT_T06.svg</a></p></details></section>",
+  "caption": "Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles."
+}

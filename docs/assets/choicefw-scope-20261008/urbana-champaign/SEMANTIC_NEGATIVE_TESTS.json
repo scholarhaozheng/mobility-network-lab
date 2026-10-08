@@ -1,0 +1,28 @@
+{
+  "status": "PASS_ALL_REJECTED",
+  "positive_control": "PASS",
+  "negative_cases": [
+    {
+      "case": "duplicate_time_bin_hourly_loaded_each_5min",
+      "status": "PASS_REJECTED",
+      "error": "duplicate or incorrect bin loading"
+    },
+    {
+      "case": "mix_new_CUMTD_demand_with_old_T4_identity",
+      "status": "PASS_REJECTED",
+      "error": "mixed old/new demand identity"
+    },
+    {
+      "case": "hide_one_unserved_OD",
+      "status": "PASS_REJECTED",
+      "error": "hidden unserved OD"
+    },
+    {
+      "case": "bad_origin_access_mapping",
+      "status": "PASS_REJECTED",
+      "error": "bad access mapping"
+    }
+  ],
+  "static_stage3_sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+  "old_T4_demand_sha256": "156830401e0012f77651b49eef5fb243160e79de66e62cabe4b4e77105978d7a"
+}

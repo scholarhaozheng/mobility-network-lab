@@ -1,0 +1,456 @@
+{
+  "city": "ithaca",
+  "figure_id": "TEMPLATE-ithaca-cg-phase1",
+  "conclusion": "Phase I: artificial-flow clearance",
+  "role": "cg-phase1",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Saved Phase I feasibility check",
+    "2": "b  All 110 artificial capacity slacks",
+    "3": ""
+  },
+  "quantity": "Phase I: artificial-flow clearance",
+  "unit": "Total artificial capacity slack (PCE); Capacity row in the saved master; Artificial capacity slack (PCE)",
+  "schema": "mcl_figure_r12",
+  "caption": "This implementation uses one nonnegative artificial variable per restricted-master capacity row, not per commodity. The saved Phase I state contains four path-flow variables followed by 110 actual artificial capacity slacks, all exactly zero. The left panel sums those saved slacks; the heatmap retains all 110 rows at their actual saved round. Row-to-dynamic-arc indices are preserved in plot data. The color range uses the frozen 1e-8 PCE total-slack tolerance only as a display reference, not as a separate per-row gate. Zero capacity slack is not a plot of OD unmet demand. Four seed paths suffice; no extra solve or intermediate state is inferred.",
+  "sources": [
+    {
+      "sha256": "d685c7daaff804cbe008af7a0eee461a55953ec5d23e77144a9af8b606d7e045",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "9ee7f70763c08755d9b6cba765b2016793588ea7e2396b4b15f8e7d730834e49",
+      "identity": "result.json",
+      "access": "private"
+    },
+    {
+      "sha256": "b39c29b29779940ccf5b8566575ccb0dda3968903cd2deffbe7e1831aecfa798",
+      "identity": "LP_RESULT.json",
+      "access": "private"
+    },
+    {
+      "sha256": "fead962ccf203f0c093d765ad2b61d653ad4142ddb687d6d2dbe8e00b2e02dbc",
+      "identity": "CG_PLAN.json",
+      "access": "private"
+    },
+    {
+      "sha256": "fe972d93d0af69336888ab1cdd5fd2da817784597d68c39b66e916a2cacf4af0",
+      "identity": "solve_t_cg.py",
+      "access": "private"
+    },
+    {
+      "sha256": "fa1a5b171acffe892e02849e8a053ac0f9854e63ee55ae1708089ba0792a6dbe",
+      "identity": "CG_PHASE_I_STATE.npz",
+      "access": "private"
+    },
+    {
+      "sha256": "fe972d93d0af69336888ab1cdd5fd2da817784597d68c39b66e916a2cacf4af0",
+      "identity": "solve_t_cg.py",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Phase I: artificial-flow clearance",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 6.638,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2945,
+    1169
+  ],
+  "exports": {
+    "png": "4de020c0774c5356943e977d7384e9be2259a95336ff77d5bdba1e74d3a7b6a8",
+    "svg": "762e0e7fcb7b93f275c0dc3f63d136d84f0f2c5d9ac574b3a0c2d4dc48ea1194",
+    "pdf": "f59a87ff39a58775ad0bd6183c6090fba3b5ea08b89a89f30423ae6fe9d849b2"
+  },
+  "text_audit": [
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        218.599,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        263.536,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Total artificial capacity slack (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        40.361,
+        97.063,
+        13.0,
+        223.875
+      ]
+    },
+    {
+      "text": "1e−8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        85.0,
+        340.967,
+        30.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.667,
+        59.537,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        93.695,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        127.853,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        162.011,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        196.168,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        230.326,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        264.484,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        298.642,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        332.8,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved Phase I feasibility check",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        356.3,
+        258.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen total-slack gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        327.573,
+        321.05,
+        112.875,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved Phase I round",
+      "size_pt": 9.0,
+      "bounds_px": [
+        709.654,
+        42.311,
+        131.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        771.592,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Capacity row in the saved master",
+      "size_pt": 9.0,
+      "bounds_px": [
+        557.539,
+        102.5,
+        13.0,
+        213.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.344,
+        331.62,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.219,
+        286.78,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.219,
+        239.58,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.219,
+        192.38,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        583.219,
+        145.18,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        97.98,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "110",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        74.38,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All 110 artificial capacity slacks",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        266.25,
+        14.0
+      ]
+    },
+    {
+      "text": "Artificial capacity slack (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        999.619,
+        114.0,
+        13.0,
+        190.0
+      ]
+    },
+    {
+      "text": "1e−8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        936.591,
+        340.967,
+        30.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        73.2,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        125.12,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        177.04,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        228.96,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        280.88,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        976.313,
+        332.8,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        408.356,
+        283.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Phase I: artificial-flow clearance",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        381.411,
+        380.125,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

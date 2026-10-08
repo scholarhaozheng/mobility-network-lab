@@ -1,0 +1,459 @@
+{
+  "figure_id": "ann-arbor-assignment-margins-parity",
+  "city": "ann-arbor",
+  "instance": "New choice600",
+  "method": "static assignment inputs",
+  "period": "one declared hour",
+  "role": "geographic",
+  "quantity": "Selected assignment-input PCE margins",
+  "unit": "PCE/hour",
+  "conclusion": "Saved assignment demand can be traced from source-zone margins to its own physical access endpoints without changing OD identities.",
+  "panels": [
+    {
+      "a": "origin loaded assignment demand"
+    },
+    {
+      "b": "destination loaded assignment demand"
+    }
+  ],
+  "public_or_private": "private",
+  "numerical_validation": {
+    "total": 1569.5008966739672,
+    "margin_origin_sum": 1569.500896673968,
+    "margin_destination_sum": 1569.5008966739679,
+    "endpoint_origin_sum": 1569.500896673968,
+    "endpoint_destination_sum": 1569.5008966739676,
+    "positive_od": 600,
+    "loaded_node_od": 600,
+    "source_zone_count": 25,
+    "origin_zone_count": 25,
+    "destination_zone_count": 25,
+    "origin_endpoint_count": 25,
+    "destination_endpoint_count": 25,
+    "all_frozen_access_count": 25,
+    "road_context_count": 5138,
+    "source_to_assignment_join": "PASS",
+    "no_person_demand_substitution": true
+  },
+  "source_notice": "© OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright",
+  "reference_template": "Hong Kong saved static demand margin choropleths and physical endpoint PCE maps",
+  "renderer": "render_static_inputs_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "New choice600: 600 positive source-zone OD pairs, 600 loaded solver-node OD pairs and 1569.500896674 PCE/hour. Origin and destination margins sum the selected assignment PCE by source zone, after the saved mode/occupancy conversion. All source-zone polygons, including any zero selected demand, use a common square-root normalization with ticks in original PCE/hour. New choice600 is separate from old S600, S72 and the original R2 scenario. Drive-person demand has already been converted by saved occupancy and PCE factors; it is not converted again. Native600 and finite-time status are not changed. These are modeled assignment-input quantities, not population generation, observed traffic or assigned link flow. Both panels share one map extent; context roads outside this input footprint are clipped only for display.",
+  "sources": [
+    {
+      "source_identity": "Vehicle_demand.private.csv",
+      "sha256": "60f0e49c6b00a7c80d20c70cfa4317476bbc792dab34896a08ec4bf085bbe097",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "zones.csv",
+      "sha256": "2ddbecfa38341065df8efcebeffe0cf7caed335ad9002341039995549a1a6b7b",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "access.csv",
+      "sha256": "7dc8f75fa5d8426941116007e11fe256d4215005f71f081aa296de44ec1d1432",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "network.csv",
+      "sha256": "437a5ebab64a3ca2d3d4a72d76db159f056baeff8db4a48371bb96e66747d380",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "physical_road_links.csv",
+      "sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "demand.csv",
+      "sha256": "8e77e2c3e2d9f65f7771e2fcb3710c2581143e34630d8127d1c6a1ae651dc8d8",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Static assignment demand margins",
+    "scope": "NEW CHOICE600 / 600 OD / one declared hour"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 14.003,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2382,
+    1606
+  ],
+  "exports": {
+    "png": "f481d6840bce1958ff47f33d3379d10b56c236e2917106c47e655571fb2ba9b5",
+    "svg": "147a9b275f25c8f4e063fccbab777c96ceb97bf467f530f58ff64f9ddf82dd78",
+    "pdf": "18106e8c36175b53fe6dd2ad1d647498de2f7db6d276bc83df135dd22417c5e0"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        175.1,
+        111.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.852,
+        129.867,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        124.976,
+        129.867,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        214.725,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        299.849,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        384.973,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        15.342,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.898,
+        125.852,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.898,
+        210.976,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.148,
+        296.1,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.148,
+        381.224,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.148,
+        466.348,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Origin demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        69.231,
+        464.111,
+        135.875,
+        14.0
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        596.5,
+        111.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.252,
+        129.867,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        546.376,
+        129.867,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        636.125,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        721.249,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        806.373,
+        129.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        436.742,
+        246.163,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        455.298,
+        125.852,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        455.298,
+        210.976,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.548,
+        296.1,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.548,
+        381.224,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        464.548,
+        466.348,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Destination demand",
+      "size_pt": 10.0,
+      "bounds_px": [
+        490.631,
+        464.111,
+        177.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Source-zone loaded demand (PCE/hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        320.075,
+        4.472,
+        254.25,
+        13.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        180.325,
+        23.028,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "107.7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        431.2,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "215.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        538.067,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "323.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        620.069,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "430.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        689.2,
+        23.028,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  NEW CHOICE600 / 600 OD / one declared hour",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.9,
+        516.167,
+        426.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Static assignment demand margins",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.9,
+        489.222,
+        414.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: each exported PNG individually opened; all endpoints shown; label placement, geographic extent, common scales, numeric tick labels and numeric sums checked",
+  "text_overlap_candidates": [],
+  "visible_text_overlap_candidates": [],
+  "text_overlap_policy": "Automated title/axis/legend/annotation text check; locator tick candidates are reviewed in rendered PNG because source text audit includes unrendered off-axis ticks.",
+  "visible_non_numeric_text_overlap_candidates": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "R3-CHICAGO-DISTRIBUTION",
+  "city": "chicago",
+  "title": "Complete OD matrix with origin and destination margins",
+  "caption": "Full 5×5 model-zone matrix including zero cells; 20 positive OD pairs and 2,835.219349139 persons in 08:00–09:00 HBW. Colours are log(1+persons); margins are untransformed directed OD totals after PA direction. Every model zone is retained.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        5,
+        5
+      ],
+      "positive_cells": 20,
+      "total": 2835.2193491386506
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 2835.2193491386506
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 2835.2193491386506
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\chicago\\plot_data\\FS_D01\\distribution.csv",
+      "sha256": "77e8392c4b914b9b618e3777d46df23a24873fba9e1cce77e1c4a617b76dc658"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\chicago\\plot_data\\generation_complete.csv",
+      "sha256": "91df6e3156cd81c131ddac93cae3c8fa46ec5d55c1785482411525db70445a22"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "distribution"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "d8a3cd6935453a1496a35e391bd6099af7c9c30290aaf559cbae442e3420dba8",
+    "png": "9ca550217068eaca576d37d91bb0ed28432241204ef18fa7367c54437ca8aa8f",
+    "pdf": "92240201ae4a9fda172f19ac64b3ad3acf0ddbc762b3d625f624b185e4ff8b0f"
+  },
+  "width": 1998,
+  "height": 1018,
+  "src": "assets/city-alignment-r3/chicago/distribution.svg"
+}

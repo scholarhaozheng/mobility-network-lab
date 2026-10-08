@@ -1,0 +1,41 @@
+{
+  "id": "R3-PITTSBURGH-POPULATION",
+  "city": "pittsburgh",
+  "title": "All-zone demographic denominator",
+  "caption": "Selected 2020 blocks grouped by tract ID; not whole-tract totals. All 41 zones are retained; population total 71,684. Occupied units total 32,432.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 71684.0
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 32432.0
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\pittsburgh\\four_stage\\inputs\\zones.csv",
+      "sha256": "32e1a5f7d714073f5dcd1feb215dc662faaa2486270d71faf0c27a84b3d24580"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "population"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "9d5829159d547981f5292363d4c514e9bc371ab67d4c556aabbee80b9af54954",
+    "png": "026be45f596f9f50257886dda2b514c4052ad5317b0ffb173f1dca572e78b929",
+    "pdf": "33de426ad13442380f7c64320e17b2486b7cb48dc9bc82dac2d41e78442e749b"
+  },
+  "width": 1885,
+  "height": 926,
+  "src": "assets/city-alignment-r3/pittsburgh/population.svg"
+}

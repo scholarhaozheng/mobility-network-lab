@@ -1,0 +1,1 @@
+All four static methods use the same S72 graph, demand, BPR coefficients and 360-path pool. FW and finite-path solve at the initial minimum path; both Native L3 ranks reach the full-graph gates after three outer iterations. Tiny objective differences are shown in micro PCE·minutes, with exact axes; no demand scaling or synthetic convergence history.

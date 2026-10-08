@@ -1,0 +1,544 @@
+{
+  "figure_id": "PITTSBURGH-ASSIGNMENT-MARGINS",
+  "city": "pittsburgh",
+  "instance": "S72 / c72d664ba0cd26f258b22d3194fe062bc15bccdf6b9843248edd98cb24bc7a0d",
+  "method": "static assignment input",
+  "role": "geographic",
+  "conclusion": "Actual selected vehicle demand is retained from source zones through exact solver loading endpoints.",
+  "quantity": "selected vehicle demand",
+  "unit": "PCE/h",
+  "period": "synthetic_weekday_0800_0900_one_hour",
+  "panels": {
+    "a": "Selected-vehicle origin margins on complete saved source-zone geometry",
+    "b": "Selected-vehicle destination margins on same source-zone geometry"
+  },
+  "public_or_private": "private-local-review",
+  "original_demand_rows": 72,
+  "total_demand_pce_h": 149.92142389506478,
+  "source_input_checks": {
+    "demand_sha_matches_instance_manifest": true,
+    "link_sha_matches_instance_manifest": true,
+    "ledger_node_OD_equals_actual_prepared_demand": true,
+    "zone_access_equals_actual_prepared_nodes": true,
+    "all_access_nodes_resolved_to_actual_road_endpoint": true,
+    "all_road_node_coordinates_consistent": true,
+    "all_source_hashes_unchanged": true,
+    "origin_and_destination_sum_to_exact_selected_demand": true,
+    "zero_solver_calls": true
+  },
+  "limitations": [
+    "Engineering scenario, not observed trip endpoints.",
+    "Full-city, selected-demand and T4 finite-time scenarios remain distinct.",
+    "Presentation only; no solver, matching or demand generation."
+  ],
+  "renderer_sha256": "a9cb6f45534ddcf7d6372abb05fef4a95ad586e26ece2e68d067b03bd40e72b8",
+  "schema": "mcl_figure_r12",
+  "caption": "Pittsburgh S72: origin and destination margins from the exact frozen 72-OD vehicle-demand table, after its existing person-to-vehicle conversion. Each map sums to 149.921423895065 PCE/h; all 41 model zones remain, including zero selected margins. Both panels use the same square-root colour normalization with original-unit ticks. The source-zone ledger is joined exactly to actual prepared node OD rows, rather than to person-trip generation or all-mode distribution. This S72 selection is separate from the original 1,406-OD city assignment; unselected OD is not added. The source polygons are saved selected-block groups by tract ID, not full-tract population regions. All saved road geometry is retained as pale context and clipped only at the common display viewport. These are model inputs, not observed travel or an optimization trajectory. Private local derivative; no new public release is claimed. © OpenStreetMap contributors, ODbL 1.0; source-zone geography as documented in the frozen case.",
+  "sources": [
+    {
+      "source_id": "pittsburgh/demand.csv",
+      "sha256": "f47947251b10f2b1217daa06a9c87c0a98f4e3aba1584cf03020b84e191a619d",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/demand_ledger.csv",
+      "sha256": "10af70af02a492e753354bc3f68dc2ea2d485ff596ca1a61595e570d1c0b5a95",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/manifest.json",
+      "sha256": "05aea145eb68c595e629ea6e5eaa0cb445fd3225b395b8b9fcf870615e795270",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/link.csv",
+      "sha256": "256550b111788b0ea389fac0211a036a8f53dad33df41613011180ead9dffe56",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/network.csv",
+      "sha256": "13f2419ebc2242ebaac954647378b06cc7e3a6ed98f477ff0e54826af9dc1e13",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/access.csv",
+      "sha256": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/zones.csv",
+      "sha256": "32e1a5f7d714073f5dcd1feb215dc662faaa2486270d71faf0c27a84b3d24580",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/physical_links.csv",
+      "sha256": "a04d678e0da67581c1a2cb76ecee9854de99b52744af0aff4c21da7fb7e7f606",
+      "private_source": true
+    },
+    {
+      "source_id": "pittsburgh/zones.geojson",
+      "sha256": "2583c1aaf169a90013a13c63543459c53cc3a7dc5af17c20ff32c2612aef38ac",
+      "private_source": true
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Static assignment demand margins",
+    "scope": "S72 / SELECTED VEHICLE DEMAND"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 49.202,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2848,
+    1538
+  ],
+  "exports": {
+    "png": "3b7784f77c38a2fcc5661248517c544621a629c8ec98292eaa1cfd1d3ef644a3",
+    "svg": "fee2c6ff7a21a8dac74d6db2e92643b1d43595142559ff6c1a9952c246a33578",
+    "pdf": "3e9a6f3462453c594f01cb26bbb82ba0cd7de563ad4c3f3656d096bbef3b91b5"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        221.5,
+        127.821,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.482,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        132.911,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        197.341,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        266.395,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        330.824,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        395.254,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        459.683,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        43.136,
+        254.062,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        61.692,
+        110.684,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        61.692,
+        175.113,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        61.692,
+        239.542,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        70.942,
+        303.972,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        70.942,
+        368.401,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        70.942,
+        432.83,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        70.942,
+        497.26,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Source-zone origins",
+      "size_pt": 11.0,
+      "bounds_px": [
+        86.4,
+        460.623,
+        191.875,
+        14.0
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        750.7,
+        127.821,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        597.682,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.111,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        726.541,
+        146.377,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        795.595,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        860.024,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        924.454,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        988.883,
+        146.377,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        572.336,
+        254.062,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.892,
+        110.684,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.892,
+        175.113,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.892,
+        239.542,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        600.142,
+        303.972,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        600.142,
+        368.401,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        600.142,
+        432.83,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        600.142,
+        497.26,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Source-zone destinations",
+      "size_pt": 11.0,
+      "bounds_px": [
+        615.6,
+        460.623,
+        238.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Selected assignment demand (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        447.25,
+        23.722,
+        239.5,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        244.838,
+        42.278,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "11.458",
+      "size_pt": 8.0,
+      "bounds_px": [
+        547.438,
+        42.278,
+        39.125,
+        10.0
+      ]
+    },
+    {
+      "text": "22.9159",
+      "size_pt": 8.0,
+      "bounds_px": [
+        675.843,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "34.3739",
+      "size_pt": 8.0,
+      "bounds_px": [
+        777.106,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "45.8318",
+      "size_pt": 8.0,
+      "bounds_px": [
+        862.475,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  S72 / SELECTED VEHICLE DEMAND",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        512.679,
+        363.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Static assignment demand margins",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        485.735,
+        414.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_AND_NUMERICAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "All four PNGs directly inspected; matched origin/destination geography, no clipped labels, one shared colour scale, all access points inside viewport, actual serif titles."
+}

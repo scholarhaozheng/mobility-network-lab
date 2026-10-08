@@ -1,0 +1,46 @@
+{
+  "id": "R3-ITHACA-MODE",
+  "city": "ithaca",
+  "title": "Mode choice: persons, costs and availability",
+  "caption": "Saved OD-specific choice in 11:00–12:00 local activity; sums over every positive-demand OD. Persons, person-weighted generalized minutes, and available OD counts have separate axes. Transit is included only where saved as available.",
+  "panels": [
+    {
+      "mode": "drive",
+      "person_trips": 547.6397233237325,
+      "person_weighted_generalized_minutes": 14.890058474114104,
+      "available_positive_od": 110
+    },
+    {
+      "mode": "walk",
+      "person_trips": 297.0765463740297,
+      "person_weighted_generalized_minutes": 19.414940321873857,
+      "available_positive_od": 108
+    },
+    {
+      "mode": "transit",
+      "person_trips": 172.91092183862204,
+      "person_weighted_generalized_minutes": 26.631972419592866,
+      "available_positive_od": 98
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\run_20261005\\mode_choice\\mode_choice_by_od.csv",
+      "sha256": "d62746a4928c93324e7d095c1e36d43aeebf69ff380b36b32348d2bf41181f87"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "mode"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "d62430a730bdc7250990c94bb64a4de2c6bafda0d38f656040f7560140cf15ea",
+    "png": "251b4a50a47043be309d2b7634819e481d18cd8e1f703c55bf5979414c0525e4",
+    "pdf": "531b04eafb8e1e6315aea34b446898ac2ec699539988f883dc79c773bf531700"
+  },
+  "width": 1952,
+  "height": 926,
+  "src": "assets/city-alignment-r3/ithaca/mode.svg"
+}

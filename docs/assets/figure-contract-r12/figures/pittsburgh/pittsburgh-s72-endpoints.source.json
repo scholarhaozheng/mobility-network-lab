@@ -1,0 +1,463 @@
+{
+  "figure_id": "R12-PITTSBURGH-S72-ENDPOINTS",
+  "city": "pittsburgh",
+  "instance": "Original selected S72; 149.92142389506472 PCE/h",
+  "role": "saved-state-check",
+  "conclusion": "Endpoint metrics supplement existing own-method physical-flow maps.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "full-graph relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "full-graph relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": "categorical endpoints",
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "Independent FW and finite-path endpoints on the same selected Pittsburgh S72 demand. Both checked objectives equal 763.227941458126 PCE·min/h and both saved OD and reconstruction residuals are zero. Categorical points are never connected as an iteration history. The companion method-specific maps and distributions retain all 56,384 physical links and their own saved vectors.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh-transfer/static-reference.plot_data.json",
+      "sha256": "fc8948e78cf99fa7ea4461a156e0f2fc1a2f2cfd594437ef028ea1a6fb351770"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh-transfer/static-reference.source.json",
+      "sha256": "e3d9bec0d7a7250b6542c8ddb1a060f452b1b909a191f13bcd31c29095e2ddd0"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Static objective and optimality checks",
+    "scope": "S72 · 72 OD · 149.921423895 PCE/h"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 33.76,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2432,
+    1074
+  ],
+  "exports": {
+    "png": "4e7aca2a200917fe4ea7e3213567864997dfb2f3fe01bbaa2890deaa62476b22",
+    "svg": "191a04adee149b1eae8c050ec3c4ba1ab7b449a47990269d6df04d5d0fc6fcc2",
+    "pdf": "87574b2bcbd73653321d7781cbbc803adf8e3193c63f0983be3772a9158a680e"
+  },
+  "text_audit": [
+    {
+      "text": "763.227941",
+      "size_pt": 7.6,
+      "bounds_px": [
+        116.278,
+        248.0,
+        64.125,
+        10.0
+      ]
+    },
+    {
+      "text": "763.227941",
+      "size_pt": 7.6,
+      "bounds_px": [
+        275.924,
+        248.0,
+        64.125,
+        10.0
+      ]
+    },
+    {
+      "text": "FW",
+      "size_pt": 8.0,
+      "bounds_px": [
+        138.778,
+        91.667,
+        19.125,
+        10.0
+      ]
+    },
+    {
+      "text": "finite",
+      "size_pt": 8.0,
+      "bounds_px": [
+        293.174,
+        91.667,
+        29.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        28.236,
+        133.062,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        55.459,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "720",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        111.144,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "740",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        166.828,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "760",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        222.513,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "780",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        278.197,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        333.882,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "820",
+      "size_pt": 8.0,
+      "bounds_px": [
+        46.792,
+        389.566,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved method objectives",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        373.111,
+        211.5,
+        14.0
+      ]
+    },
+    {
+      "text": "6.41e-15",
+      "size_pt": 7.6,
+      "bounds_px": [
+        573.826,
+        339.071,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "1.49e-15",
+      "size_pt": 7.6,
+      "bounds_px": [
+        733.472,
+        278.903,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "FW",
+      "size_pt": 8.0,
+      "bounds_px": [
+        587.701,
+        91.667,
+        19.125,
+        10.0
+      ]
+    },
+    {
+      "text": "finite",
+      "size_pt": 8.0,
+      "bounds_px": [
+        742.097,
+        91.667,
+        29.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed relative gap",
+      "size_pt": 9.0,
+      "bounds_px": [
+        466.169,
+        175.375,
+        13.0,
+        124.25
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        508.715,
+        139.429,
+        8.375,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.068,
+        243.465,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-14}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.724,
+        338.448,
+        32.366,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.006,
+        433.431,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-12}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.256,
+        528.414,
+        31.834,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.459,
+        623.397,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.943,
+        718.381,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.892,
+        813.964,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        908.947,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        1003.93,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.892,
+        1098.913,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.017,
+        1193.896,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.673,
+        1288.279,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        1383.862,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.204,
+        1478.845,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.407,
+        1573.228,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        496.409,
+        1668.811,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "b  Full-graph relative gap",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        373.111,
+        199.0,
+        14.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  S72 · 72 OD · 149.921423895 PCE/h",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        425.167,
+        358.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Static objective and optimality checks",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        398.222,
+        445.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

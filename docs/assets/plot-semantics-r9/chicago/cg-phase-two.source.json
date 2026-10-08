@@ -1,0 +1,93 @@
+{
+  "id": "cg-phase-two",
+  "city": "chicago",
+  "stage": "finite",
+  "method": "cg",
+  "title": "Column generation: Phase II real cost",
+  "caption": "All 60 saved Phase II master objectives, rounds 0–59, in PCE·minutes. They decrease from 374.533127798287 to 241.2185242449435. The dashed reference is the final same-run full-graph-valid CG dual bound, 241.2185242449434 PCE·minutes, independently checked at pricing closure; it is not a time series of per-round valid bounds and not a HiGHS LP result. The endpoint independent objective is 241.2185242449435 PCE·minutes. The frozen producer recomputes 241.21852424494347, differing only at floating-point precision. No objective transformation, interpolation, omitted rounds or smoothing is applied. Chicago Jane Byrne / West Loop R2 T4 engineering pulse; modelled scenario, not observed traffic. CG is accepted on its own independently checked full-graph primal/dual pricing certificate. The separate HiGHS LP is resource-limited and is not plotted as an accepted reference. © OpenStreetMap contributors, ODbL 1.0. ",
+  "resultStatus": "ACCEPTED_CG_OWN_FULL_GRAPH_CERTIFICATE",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "originals_preserved": true,
+  "renderer": {
+    "file": "render_chicago_cg_canonical.py",
+    "sha256": "7883014f96b3a3edc586559719e4f383915dfc58e5ec12248354f2d12c2b87b6",
+    "function": "phase_two",
+    "line_start": 58,
+    "line_end": 63
+  },
+  "sources": [
+    {
+      "role": "Approved saved CG history",
+      "path": "assets/algorithm-transfer-r8/chicago/C06_T_CG_plot_data.json",
+      "sha256": "57690fd086384d562a48c11386f50750d1f7aaf51c489159967a2fbcfbd9c4c2",
+      "rows": 268
+    },
+    {
+      "role": "Own saved CG endpoint",
+      "sha256": "c69f4d22a3b22de3c0b131e689152c297aca7f18acfc8ef77dbd56db49819836"
+    },
+    {
+      "role": "Independent own-CG certificate check",
+      "sha256": "a1135911dbbe7f57ea72fdc5f4d466f325c89f30b2ee129897cbdc033d7714ae"
+    },
+    {
+      "role": "Frozen two-phase gates",
+      "sha256": "9f5766a702f28c1dae01cf6ca5fda0f9b5c88fce8b347d79a0fd08012adbb8f4"
+    },
+    {
+      "role": "Frozen CG source inspected read-only, not imported",
+      "sha256": "4149058fb77bb6daabbe302139b816d64b2eaabf8d24baa23882fa592304db62",
+      "lines": "114-128 artificial OD variables;143-157 saved master/pricing states;161-166 phase stopping"
+    },
+    {
+      "role": "Saved T4 commodity order",
+      "sha256": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+      "ids": [
+        "T01",
+        "T02",
+        "T03",
+        "T04"
+      ]
+    }
+  ],
+  "dimensions": [
+    1903,
+    893
+  ],
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 34.408,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "canonical_style": "Boston/Hong Kong DejaVu Serif Layout C; saved post-step states and markers, independent phase units",
+  "exports": {
+    "png": {
+      "file": "cg-phase-two.png",
+      "sha256": "ceadce089a536d4bfe0bf20a325f2135e07f66a921808225873b18182dbe86be"
+    },
+    "svg": {
+      "file": "cg-phase-two.svg",
+      "sha256": "dd90d04c163f2a7025ebd8ac4728b4a57cf35a23d4829a2fefef8c6e57c0b15a"
+    },
+    "pdf": {
+      "file": "cg-phase-two.pdf",
+      "sha256": "2c8387cd1b1df8e1792371a1e95a29b722cfee260f33253b95d39dcfc1f96b60"
+    }
+  },
+  "planned_anchor": "atlas-chicago-canonical-cg-phase-two",
+  "planned_volume_anchor": "figure-canonical-cg-phase-two",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

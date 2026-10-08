@@ -1,0 +1,1235 @@
+{
+  "figure_id": "ithaca-admm-physical-flow",
+  "city": "ithaca",
+  "instance": "frozen T4; 4OD; one update; own x versus exact-graph LP",
+  "role": "physical_flow_comparison",
+  "archetype": "quantitative grid",
+  "conclusion": "Own ADMM and LP physical flows agree within numerical roundoff on this nonbinding T4 instance.",
+  "panels": {
+    "a": "ADMM own physical flow",
+    "b": "same graph LP physical flow",
+    "c": "signed ADMM minus LP",
+    "d": "all instantiated physical links versus identity"
+  },
+  "quantity": "physical movement flow",
+  "unit": "PCE per bounded departure pulse",
+  "saved_states": 1,
+  "access": "private_local_review",
+  "public_release_confirmed": false,
+  "same_graph_identity": "b10c330f27fad084d9c0ce0c0769c0504fd72c764cad92e17a9a891caec0e5d7",
+  "renderer_sha256": "dc7ff04f2b383e54e2df67578a44d7910467326f35b65c67ff6f14e512a51ad4",
+  "plot_data_sha256": "6a72b2b5c98c8a528b6e66b5010990bfb577869204c8f84241729503a90fed06",
+  "schema": "mcl_figure_r12",
+  "caption": "Own saved ADMM x at its one completed update and the independent same-graph LP are projected onto the 684 physical links instantiated in the exact frozen Ithaca T4 graph. Sum across commodities and time, retain only physical_road arcs, and join exact GMNS link IDs; each physical_fraction is 1, so no serial-segment double counting occurs. The remaining 14,464 of 15,148 original physical roads appear as grey context, not solved zero-flow roads. Panels a–b share a square-root absolute PCE scale; panel c uses a distinct symmetric signed ADMM-minus-LP scale. Panel d includes every instantiated link, including zeros, with the identity line and equal linear axes. The actual maximum absolute difference is 2.26215512725091e-14 PCE and is not rounded to zero. All geometry uses original OSM endpoint coordinates with a common local metric projection; no schematic node positions are invented. The original IN-state loading and first physical-road traversal are preserved. Fixed-cost four-OD departure pulse, 0.656755360434 PCE; physical capacity is nonbinding for this frozen instance. This is a final spatial comparison, not evidence of a multi-round trajectory, area-size causality or measured traffic. Private local derivative; no new public asset release or optimizer run is claimed. © OpenStreetMap contributors, ODbL 1.0.",
+  "sources": [
+    {
+      "identity": "S0 received Ithaca T4 T/model/dynamic_arc.csv",
+      "member": "T/model/dynamic_arc.csv",
+      "sha256": "28e0be842ed12bb4c5bfd524d61d16e86e5466494887d2fa16a7da7ce60cea74",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/model/dynamic_demand.csv",
+      "member": "T/model/dynamic_demand.csv",
+      "sha256": "0d9ecc8ebcb2941ff4cad8309b83c5825b9a62c4f398da7fdd294b63106ece87",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/admm/final_checkpoint/state.npz",
+      "member": "T/admm/final_checkpoint/state.npz",
+      "sha256": "b464f3b98d156e92158d6d56ddf7b8bd968d17bc7d2bb8875ae42271d69d982b",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 verification/T_admm.json",
+      "member": "verification/T_admm.json",
+      "sha256": "f41dadc6001f63919ca5bd462f284d16b70e4a735d1bac05063127ef9bda76b8",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/model/MODEL_IDENTITY.json",
+      "member": "T/model/MODEL_IDENTITY.json",
+      "sha256": "d02031bcabe28c03d88f9a4e57053c42210023126c5a8b31fe4ea9a3c678c535",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/admm/final_checkpoint/checkpoint_identity.json",
+      "member": "T/admm/final_checkpoint/checkpoint_identity.json",
+      "sha256": "777b4f925382ab5bb4373878e9e60cd1b24c8c3b470d9680edc17ef3da69b341",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/lp/LP_SOLUTION.npz",
+      "member": "T/lp/LP_SOLUTION.npz",
+      "sha256": "6bad92543b988dfbae7c9a165621eab1126460f803ec46b8fba7b1b47a770689",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/lp/LP_RESULT.json",
+      "member": "T/lp/LP_RESULT.json",
+      "sha256": "b39c29b29779940ccf5b8566575ccb0dda3968903cd2deffbe7e1831aecfa798",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 frozen/r2/inputs/network.csv",
+      "member": "frozen/r2/inputs/network.csv",
+      "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "original OSM coordinate source osm_tile_ne",
+      "sha256": "1ef5f036e746afc36d5fc9b01d9e4d1a875df620075bc238e41f509d63e41a75",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "original OSM coordinate source osm_tile_nw",
+      "sha256": "121223da32c67f7f1e36452ca3364c2d20657eacd8d79ec71f9c9a0acaab5da8",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "original OSM coordinate source osm_tile_se",
+      "sha256": "b58f5b3f33e71128642bd345bed64a46dfadc48af3dc94ed792150d0fa90ad36",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "original OSM coordinate source osm_tile_sw",
+      "sha256": "6aea448d8754e32b7cad92fedf4e798fb01c4c8cc48ed019f7f696363cfcf015",
+      "access": "private_local_review"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "ADMM and arc-flow LP: physical-link flow",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 32.506,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3049,
+    2486
+  ],
+  "exports": {
+    "png": "19d5e210ead893a910a004478913b14cfab9f502a5e90f19d48a231d9e6c7ef6",
+    "svg": "74bfeb081f726931e014c25cd94ea3557dfd6c13d6508d1e69cde6b0a9151b8f",
+    "pdf": "00ac8440ffe32cea5c1b1ad160524607ba2d1282677daeb762976ed458467ac2"
+  },
+  "text_audit": [
+    {
+      "text": "Easting from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        186.799,
+        466.151,
+        194.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        97.837,
+        484.707,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        172.386,
+        484.707,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        251.56,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        326.109,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        400.658,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        475.207,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Northing from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        53.265,
+        543.37,
+        13.0,
+        203.5
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        475.898,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        513.172,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        550.447,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        587.721,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        624.995,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        662.27,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        699.544,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        736.819,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        774.093,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        811.368,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  ADMM own flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        107.154,
+        792.533,
+        148.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Easting from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        712.782,
+        466.151,
+        194.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        623.82,
+        484.707,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        698.369,
+        484.707,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        777.543,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        852.092,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        926.641,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1001.19,
+        484.707,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Northing from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        579.248,
+        543.37,
+        13.0,
+        203.5
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        597.804,
+        475.898,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        597.804,
+        513.172,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        597.804,
+        550.447,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        597.804,
+        587.721,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        624.995,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        662.27,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        699.544,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        736.819,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        774.093,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.054,
+        811.368,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Same-graph arc-flow LP",
+      "size_pt": 11.0,
+      "bounds_px": [
+        633.137,
+        792.533,
+        206.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Easting from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        186.799,
+        39.911,
+        194.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        97.837,
+        58.467,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        172.386,
+        58.467,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        251.56,
+        58.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        326.109,
+        58.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        400.658,
+        58.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        475.207,
+        58.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Northing from local centre (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        53.265,
+        117.13,
+        13.0,
+        203.5
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        49.658,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        86.932,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        124.207,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.821,
+        161.481,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        198.755,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        236.03,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        273.304,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        310.579,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        347.853,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        81.071,
+        385.128,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "c  ADMM − LP",
+      "size_pt": 11.0,
+      "bounds_px": [
+        107.154,
+        366.293,
+        115.625,
+        14.0
+      ]
+    },
+    {
+      "text": "684 links\nmax |difference| = 2.26e-14 PCE",
+      "size_pt": 8.0,
+      "bounds_px": [
+        688.178,
+        324.152,
+        184.5,
+        22.6
+      ]
+    },
+    {
+      "text": "LP physical-link flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        732.579,
+        39.911,
+        172.625,
+        13.0
+      ]
+    },
+    {
+      "text": "−0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        626.659,
+        58.467,
+        34.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 8.0,
+      "bounds_px": [
+        674.898,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        718.513,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        762.127,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        805.741,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        849.356,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        892.97,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        936.584,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        980.198,
+        58.467,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "ADMM physical-link flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        625.048,
+        118.505,
+        13.0,
+        200.75
+      ]
+    },
+    {
+      "text": "−0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        634.353,
+        37.71,
+        34.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        81.324,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        124.939,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        168.553,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        212.167,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        255.782,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        299.396,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        343.01,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        643.603,
+        386.624,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "d  All instantiated physical links",
+      "size_pt": 11.0,
+      "bounds_px": [
+        676.811,
+        366.293,
+        247.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        522.648,
+        609.12,
+        13.0,
+        72.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.00}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        496.54,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.05}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        612.233,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.10}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        660.155,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.15}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        696.926,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.20}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        727.926,
+        22.728,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.25}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        755.238,
+        22.603,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.30}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        779.929,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.35}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        802.635,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "Flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1048.631,
+        609.12,
+        13.0,
+        72.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.00}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        496.54,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.05}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        612.233,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.10}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        660.155,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.15}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        696.926,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.20}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        727.926,
+        22.728,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.25}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        755.238,
+        22.603,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.30}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        779.929,
+        22.978,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.35}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1020.097,
+        802.635,
+        22.853,
+        11.0
+      ]
+    },
+    {
+      "text": "Difference (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        515.067,
+        165.067,
+        13.0,
+        107.625
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−14}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        442.717,
+        362.727,
+        41.676,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−3}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        23.958,
+        15.662,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−2}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        86.765,
+        15.397,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−1}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        149.573,
+        15.022,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        212.38,
+        7.516,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        275.187,
+        6.875,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        337.995,
+        7.25,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{3}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        494.114,
+        400.802,
+        7.516,
+        11.0
+      ]
+    },
+    {
+      "text": "ITHACA",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.85,
+        844.589,
+        54.625,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM and arc-flow LP: physical-link flow",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.85,
+        817.644,
+        490.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_PRIVATE_LOCAL_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_review": {
+    "png_viewed": true,
+    "text_overlap_or_clipping": false,
+    "original_template_scientific_objects": true,
+    "all_check_maxima_exact": true,
+    "private_only": true
+  }
+}

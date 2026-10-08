@@ -1,0 +1,125 @@
+{
+  "id": "s02_same_instance_methods",
+  "title": "S72 same-instance method diagnostics",
+  "city": "Berkeley",
+  "stage": "S72 / bounded static assignment",
+  "caption": "Four saved terminal checks of the same S72 graph, demand, BPR coefficients and K=5 pool; all four have ACCEPTED_FULL_GRAPH status. (a) The saved objective minus the FW objective is shown in micro PCE·minutes; the tiny rank-26 negative difference is retained. (b) The signed full-graph relative gaps use a symmetric-log display with a linear interval of ±10⁻¹⁴. Both bounds of the accepted |full-graph relative gap| ≤ 10⁻⁵ gate are shown; no positive value is clipped, and the negative rank-26 numerical gap is not converted to an absolute value. (c) Maximum OD mass and physical-link reconstruction residuals are shown on a linear axis in 10⁻¹⁰ PCE; exact zeros remain zero. (d) The finite pool has 360 path coordinates. Native ranks 26 and 52 use 98 and 124 representation coordinates (72 major plus rank), but each also contains 2,150 explicit physical-link variables, for raw totals of 2,248 and 2,274. Thus the compact path representation is not a claim of fewer total variables or faster computation. Native records contain three outer iterations per rank; this terminal comparison is not a convergence trace. Only one engineering scenario is shown, with no uncertainty interval or measured-traffic validation.",
+  "panels": [
+    {
+      "id": "a",
+      "metric": "(saved_objective - saved_FW_objective) * 1e6",
+      "unit": "micro PCE·min",
+      "rows": 4,
+      "transform": "linear; signed"
+    },
+    {
+      "id": "b",
+      "metric": "full_relative_gap",
+      "unit": "dimensionless",
+      "rows": 4,
+      "transform": "symlog(linthresh=1e-14,linscale=1)",
+      "scientific_gate": "|full_relative_gap| <= 1e-5",
+      "formula": "(sum_a v_path[a]*t_a(v_path[a]) - sum_od q_od*shortest_path_cost_od_on_full_graph_at_final_costs) / max(sum_a v_path[a]*t_a(v_path[a]), 1e-12)",
+      "negative_signed_value_retained": true
+    },
+    {
+      "id": "c",
+      "metric": [
+        "max_od_residual",
+        "max_link_reconstruction"
+      ],
+      "unit": "PCE",
+      "rows": 4,
+      "transform": "multiply by 1e10 for linear display; exact zeros preserved"
+    },
+    {
+      "id": "d",
+      "metric": "finite path coordinates; Native major-plus-rank coordinates and explicit physical-link variables",
+      "unit": "count",
+      "rows": 3,
+      "transform": "stacked counts; no speed or total-dimension advantage claim"
+    }
+  ],
+  "renderer": {
+    "path": "render_static.py",
+    "sha256": "8b09e5e4f1a6ef3433b6167327308ee8c640577b98c8d138bfe52614a2382882",
+    "function": "s02_same_instance_methods",
+    "line_start": 147,
+    "line_end": 236
+  },
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW",
+  "scientific_solver_rerun": false,
+  "sources": [
+    {
+      "path": "data/s02_same_instance_methods.plot_data.json",
+      "sha256": "1356cb9648f665a1a6d4a1655552197260b7756cdc6169bfda3498f3a435839c"
+    },
+    {
+      "path": "data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "path": "data/s72_diagnostic_definition.json",
+      "sha256": "2cd174761d81954c7e839987f60bfff51f853c474c56dc19f586b83406bb8abe"
+    }
+  ],
+  "plot_style": {
+    "layout": "C",
+    "palette": "A/B blue–teal/navy",
+    "font": "DejaVu Serif",
+    "shared_functions": [
+      "configure",
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_hash": "a96485ced49883acb09a51e9239b16256c7fddd65b8ff2d9d2994176ce7414a9"
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3283,
+    2318
+  ],
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 33.221,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "path": "s02_same_instance_methods.png",
+      "sha256": "eeb5a70ee830e363bc5241a7eba6c2757a3310824d1c984d563bef3f041cf988"
+    },
+    "svg": {
+      "path": "s02_same_instance_methods.svg",
+      "sha256": "1e03cd91c58c9b75159f4f53f080b0e64362773b4f2afff120f49d690675b2c0"
+    },
+    "pdf": {
+      "path": "s02_same_instance_methods.pdf",
+      "sha256": "5c8f906a51836796df6b4f542168f0f5d06a041d2eda54e81c6fee4afb4d1346"
+    }
+  },
+  "integrity": "Saved values only; no optimizer, smoothing or fabricated iterations. Original accepted figures are retained separately.",
+  "coordinate_transform": {
+    "purpose": "Display only, same local-linear-kilometre convention as the Boston atlas",
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(longitude + 122.27) * 111.320 * cos(37.87 degrees)",
+    "y_km": "(latitude - 37.87) * 110.574",
+    "scientific_geometry_altered": false
+  },
+  "scope": "One saved S72 engineering scenario, 72 positive vehicle OD pairs, 953.049842713612 PCE in one declared hour; no observed-traffic calibration, uncertainty sample, or new solver run."
+}

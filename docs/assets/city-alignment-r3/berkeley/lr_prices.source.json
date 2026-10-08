@@ -1,0 +1,96 @@
+{
+  "id": "BERKELEY-R3-LR-PRICES",
+  "stem": "lr_prices",
+  "title": "Lagrangian prices and relaxed capacity violations",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "All ten saved current-iterate summaries are retained: maximum capacity multiplier in minutes (PCE·min objective divided by PCE capacity), number of strictly positive-price dynamic arcs, and maximum current relaxed capacity excess in PCE. These current price iterates are not the best-dual multiplier state, which is an independent saved vector; large swings do not change the flat best-valid-bound sequence. Relaxed capacity violation does not describe the final separately recovered feasible flow. Only these recorded summaries are plotted, without inventing per-arc history or interpolated recovery outcomes.",
+  "panels": {
+    "a": "Current maximum multiplier, min",
+    "b": "Current positive multiplier count",
+    "c": "Current relaxed maximum capacity excess, PCE"
+  },
+  "dimensions": [
+    2472,
+    895
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "lr_prices",
+    "line": 252,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/t03_lr_bounds_physical.plot_data.json",
+      "sha256": "d003989e9db3af49f51d15f116b653a5c956a99b673366a92319e41defe6abb9"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "lr_prices.svg",
+      "sha256": "8f9383cc0c968ab9af5dbbeaba034487754432d2aa98bc71da3e4a41b3ade1af"
+    },
+    "png": {
+      "path": "lr_prices.png",
+      "sha256": "45659eee5b05b0c0213b4830784593403422f021bfde6506363e76e07ec4b26d"
+    },
+    "pdf": {
+      "path": "lr_prices.pdf",
+      "sha256": "3e1e068409a7df987383f17b47c17053d641d33a80d5d341f66c9ab5bdf768d4"
+    }
+  }
+}

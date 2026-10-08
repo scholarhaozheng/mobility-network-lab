@@ -1,0 +1,430 @@
+{
+  "figure_id": "R11-BERKELEY-LR_RECOVERY",
+  "city": "berkeley",
+  "instance": "Berkeley T4 cold-start diagnostic 300; original accepted 10 retained separately",
+  "role": "iteration",
+  "saved_states": 300,
+  "conclusion": "Path-pool growth and separate primal recovery",
+  "panels": {
+    "a": "Every saved path_pool_size",
+    "b": "Actual recovery calls and their feasibility"
+  },
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-lr-r6/lr_recovery.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "The original accepted run remains separately preserved at iteration 10. This view uses 300 actual saved records from run BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1, through iteration 300. The extended trace is a diagnostic experiment and does not retroactively change the original stopping decision. Independent diagnostic audit passed. The original formal-entry replay is pending at this figure export; the 300-round run is not labelled formally accepted. The formal 1% certificate is first met at saved iteration 10; later rounds, when present, are shaded as post-gate diagnostics. Panel a retains all 300 saved path-pool sizes; panel b shows exactly 31 actual recovery calls (30 feasible, 1 infeasible). Filled circles are feasible calls and open squares are infeasible calls. Null objectives remain missing and are never zero-imputed. Pool growth is not a sequence of feasible upper bounds. The call records and own recovered physical flow retain their separate source identities.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-lr-r6/lr_bounds.plot_data.json",
+      "sha256": "ec11427369ae581acac550a0b4156003919919b923ce0a1fda67b4770444f048"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "Path-pool growth and separate primal recovery",
+    "scope": "T4 / original accepted stop 10 / cold diagnostic: 300 rounds"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 19.894,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2815,
+    1135
+  ],
+  "exports": {
+    "png": "169d131447526cc62c96913b38745be6a34584e8bc8b173a252ddffc9535bd60",
+    "svg": "13753c26a6c8d1f309e229099d51bffe5b73c5d8eb49fb799c06173f6407da93",
+    "pdf": "e35f2fd27224ad5bc11c7c63484c033f1c313cd712f1432be59177143a9181ec"
+  },
+  "text_audit": [
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        209.913,
+        80.711,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -24.719,
+        99.267,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        100.806,
+        99.267,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        207.456,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        321.231,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        435.006,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        548.781,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Available paths",
+      "size_pt": 9.0,
+      "bounds_px": [
+        59.586,
+        196.438,
+        13.0,
+        97.125
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.142,
+        62.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.142,
+        141.0,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.142,
+        219.4,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.142,
+        297.8,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.017,
+        376.2,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved path pool",
+      "size_pt": 10.0,
+      "bounds_px": [
+        93.6,
+        383.289,
+        143.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Best feasible call: 43.66742441 PCE·min",
+      "size_pt": 7.6,
+      "bounds_px": [
+        762.72,
+        127.792,
+        218.0,
+        10.0
+      ]
+    },
+    {
+      "text": "LR iteration at recovery call",
+      "size_pt": 9.0,
+      "bounds_px": [
+        716.688,
+        80.711,
+        178.625,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        505.681,
+        99.267,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        631.206,
+        99.267,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        737.856,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        851.631,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        965.406,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1079.181,
+        99.267,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Paths supplied to recovery LP",
+      "size_pt": 9.0,
+      "bounds_px": [
+        582.861,
+        150.125,
+        13.0,
+        189.75
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        608.542,
+        85.688,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        608.542,
+        143.27,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        608.542,
+        200.852,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        608.542,
+        258.434,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.417,
+        316.016,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.417,
+        373.598,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Actual recovery LP calls",
+      "size_pt": 10.0,
+      "bounds_px": [
+        624.0,
+        383.289,
+        206.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Feasible",
+      "size_pt": 7.5,
+      "bounds_px": [
+        662.542,
+        353.025,
+        43.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Infeasible",
+      "size_pt": 7.5,
+      "bounds_px": [
+        756.292,
+        353.025,
+        51.875,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / original accepted stop 10 / cold diagnostic: 300 rounds",
+      "size_pt": 8.7,
+      "bounds_px": [
+        67.6,
+        435.344,
+        500.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Path-pool growth and separate primal recovery",
+      "size_pt": 15.0,
+      "bounds_px": [
+        67.6,
+        408.4,
+        551.75,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

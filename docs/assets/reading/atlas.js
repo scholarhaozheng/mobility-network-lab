@@ -119,7 +119,8 @@ scheduleReadingCardAlignment();
   key:element.dataset.city,
   label:element.querySelector(':scope > h3')?.textContent.trim()||element.dataset.city,
   element,
-  target:document.getElementById(element.dataset.city)||element.querySelector(':scope > h3')||element,
+  // Keep reading navigation attached to the actual city article, even if a legacy external anchor is misplaced.
+  target:element.querySelector(':scope > h3')||element,
   stages:[...element.querySelectorAll(':scope > .atlas-stage[data-stage]')].map(stage=>({
    key:stage.dataset.stage,
    label:stage.querySelector(':scope > h4')?.textContent.trim()||stage.dataset.stage,
@@ -284,7 +285,7 @@ scheduleReadingCardAlignment();
   if(inFullAtlas){
    const line=top+bar.getBoundingClientRect().height+(document.getElementById('atlas-view-controls')?.getBoundingClientRect().height||0)+20;
    let city=null,stage=null;
-   for(const item of cities){if(item.target.getBoundingClientRect().top<=line)city=item;else break;}
+   for(const item of cities){if(item.element.getBoundingClientRect().top<=line)city=item;else break;}
    for(const item of city?.stages||[]){if(item.element.getBoundingClientRect().top<=line)stage=item;else break;}
    setLocation(city,stage);
   }else genericLocation(currentChapter,view);
@@ -455,6 +456,22 @@ scheduleReadingCardAlignment();
       if (context === 'city') paragraph(group, 'av-control-note', 'Applies to finite optimization.');
       parent.appendChild(group);
     }
+    function sharedNotice(parent, city, includeCityName) {
+      var notice = city && city.sharedNotice;
+      if (!notice || !cleanText(notice.text)) return;
+      var details = node('details', 'av-shared-notice');
+      var label = 'Sources and model scope · © OpenStreetMap contributors / ODbL 1.0';
+      if (includeCityName) label = city.name + ' · ' + label;
+      details.appendChild(node('summary', '', label));
+      paragraph(details, 'av-shared-notice-text', notice.text);
+      var href = safeURL(notice.href);
+      if (href) {
+        var link = node('a', '', 'Complete source and model notice');
+        link.href = href;
+        details.appendChild(link);
+      }
+      parent.appendChild(details);
+    }
     function actionLink(parent, stage, card, text, cls) {
       var button = node('button', cls || 'av-open', text);
       button.type = 'button';
@@ -470,9 +487,14 @@ scheduleReadingCardAlignment();
         link.href = href;
         row.appendChild(link);
       }
+      if (city.directFigureLinks && card && card.links) {card.links.forEach(function(item){var href = safeURL(item.href);if(!href)return;var assetLink = node('a', '', item.label);assetLink.href = href;row.appendChild(assetLink);});}
       if (row.childNodes.length) parent.appendChild(row);
     }
-    function fullCount(parent, city, stage) {
+    function fullCount(parent, city, stage, selectedCard) {
+      if (selectedCard && selectedCard.currentMethodFigureCount) {
+        actionLink(parent, stage, selectedCard, "View all " + selectedCard.currentMethodFigureCount + " " + selectedCard.currentMethodLabel + " figures", "av-open av-stage-link");
+        return;
+      }
       var cards = availableCards(stage, city, scale);
       var count = cards.reduce(function (sum, card) { return sum + (Number(card.figureCount) || 1); }, 0);
       if (count) actionLink(parent, stage, null, 'View all ' + count + ' figure' + (count === 1 ? '' : 's') + ' in this stage', 'av-open av-stage-link');
@@ -480,19 +502,17 @@ scheduleReadingCardAlignment();
     }
     function figure(parent, city, stage, card, compare, comparisonNote) {
       var source = safeURL(card.src);
-      var imageButton = node('button', 'av-figure');
-      imageButton.type = 'button';
-      imageButton.setAttribute('aria-label', 'Open ' + card.title + ' in the full atlas');
-      imageButton.addEventListener('click', function () { openStage(stage, card); });
-      if (source) {
-        var img = node('img');
-        img.src = source;
-        img.alt = card.title || '';
-        img.loading = 'lazy';
-        img.decoding = 'async';
-        imageButton.appendChild(img);
-      }
-      parent.appendChild(imageButton);
+      var direct = city.directFigureLinks && safeURL(card.evidence);
+      var series = card.r11Figures && card.r11Figures.length ? card.r11Figures : (source ? [{src:source,title:card.title}] : []);
+      var imageGroup = node('div','av-figure-series');imageGroup.dataset.columns=String(Math.min(3,series.length));
+      series.forEach(function (item) {
+        var imageButton = node(direct ? 'a' : 'button', 'av-figure');
+        if (direct) imageButton.href = safeURL(card.evidence);
+        else {imageButton.type='button';imageButton.addEventListener('click',function(){openStage(stage,card);});}
+        imageButton.setAttribute('aria-label','Open '+item.title+' in the complete city record');
+        var img=node('img');img.src=safeURL(item.src);img.alt=item.title||'';img.loading='lazy';img.decoding='async';imageButton.appendChild(img);imageGroup.appendChild(imageButton);
+      });
+      if (series.length) parent.appendChild(imageGroup);
       parent.appendChild(node(compare ? 'h4' : 'h5', 'av-figure-title', card.title));
       paragraph(parent, 'av-instance', card.instance);
       var scope = cleanText(stage.scope);
@@ -508,9 +528,18 @@ scheduleReadingCardAlignment();
         paragraph(details, '', caption);
         parent.appendChild(details);
       }
+      if (city.sharedNotice && card.notice) {
+        var attribution = node('small', 'av-attribution');
+        var sourceLink = node('a', '', '© OpenStreetMap contributors · ODbL 1.0');
+        sourceLink.href = 'https://www.openstreetmap.org/copyright';
+        attribution.appendChild(sourceLink);
+        attribution.appendChild(node('span', '', ' · Modeled scenario, not observed traffic.'));
+        parent.appendChild(attribution);
+      }
       var footer = node('div', 'av-card-footer');
-      actionLink(footer, stage, card, 'Open figure in full atlas', 'av-open av-figure-link');
-      fullCount(footer, city, stage);
+      if (direct) { var directLink = node('a', 'av-open av-figure-link', 'Open figure in complete city record'); directLink.href = safeURL(card.evidence); footer.appendChild(directLink); }
+      else actionLink(footer, stage, card, 'Open figure in full atlas', 'av-open av-figure-link');
+      fullCount(footer, city, stage, card);
       evidenceLinks(footer, city, card);
       parent.appendChild(footer);
     }
@@ -548,15 +577,17 @@ scheduleReadingCardAlignment();
       var heading = node('div', 'av-view-heading');
       heading.appendChild(node('h3', '', activeCity.name));
       paragraph(heading, 'av-intro', activeCity.summary);
+      if (activeCity.directFigureLinks) {var recordLink = node('a', 'av-open', 'Read complete city record');recordLink.href = safeURL(activeCity.volume);heading.appendChild(recordLink);}
       paragraph(heading, 'av-help', 'One selected figure per stage. Open a stage to read its complete figure set and source records.');
       shell.appendChild(heading);
+      sharedNotice(shell, activeCity, false);
       var grid = node('div', 'av-city-grid');
       var unavailableStages = [];
       stageOrder.forEach(function (stageKey, index) {
         var stage = stageFor(activeCity, stageKey);
         if (!stage) return;
-        if (stage.status === 'not-run' && !availableCards(stage, activeCity, scale).length) { unavailableStages.push(stage); return; }
-        var panelMethods = model.methods && model.methods[stageKey] || DEFAULT_METHODS[stageKey] || [];
+        if ((stage.status === 'not-run' || activeCity.textOnlyStages) && !availableCards(stage, activeCity, scale).length) { unavailableStages.push(stage); return; }
+        var panelMethods = stage.methods || model.methods && model.methods[stageKey] || DEFAULT_METHODS[stageKey] || [];
         var requestedMethod = state.cityMethods && state.cityMethods[stageKey];
         var panelMethod = panelMethods.some(function (m) { return m.id === requestedMethod; }) ? requestedMethod : panelMethods[0] && panelMethods[0].id;
         var panelComparisons = model.comparisons && model.comparisons[stageKey];
@@ -597,7 +628,7 @@ scheduleReadingCardAlignment();
           cell.dataset.avFigure = card.id;
           var panelNote = model.comparisonNotes && model.comparisonNotes[stageKey] && model.comparisonNotes[stageKey][panelMethod] && model.comparisonNotes[stageKey][panelMethod][activeCity.id];
           figure(cell, activeCity, stage, card, false, selectedText(panelNote, scale));
-        } else empty(cell, activeCity, stage);
+        } else empty(cell, activeCity, stage, stage.currentMethodNotes && stage.currentMethodNotes[panelMethod]);
         grid.appendChild(cell);
       });
       if (grid.children.length === 4) grid.classList.add('av-city-grid-four');
@@ -651,10 +682,12 @@ scheduleReadingCardAlignment();
         }
         section.appendChild(header);
         var grid = node('div', 'av-comparison-grid');
+        var textScopes = node('dl', 'av-coverage-list six-city-stage-scope');
         cities.forEach(function (city) {
           var stage = stageFor(city, stageKey);if (!stage) return;
           var selection = comparisons && methods.length ? comparisons[method] && comparisons[method][city.id] : model.representatives && model.representatives[city.id] && model.representatives[city.id][stageKey];
           var card = findCard(stage, city, selection, scale);
+          if (!card && city.textOnlyStages) {textScopes.appendChild(node('dt', '', city.name));textScopes.appendChild(node('dd', '', methods.length ? (stage.scope + ' No saved ' + method + ' figure is supplied for this case.') : stage.scope));return;}
           var cell = node('article', 'av-card av-comparison-card');
           cell.dataset.avCity = city.id;
           cell.appendChild(node('h4', 'av-city-title', city.name));
@@ -664,7 +697,7 @@ scheduleReadingCardAlignment();
           else empty(cell, city, stage, note);
           grid.appendChild(cell);
         });
-        section.appendChild(grid);return section;
+        section.appendChild(grid);if (textScopes.childNodes.length) section.appendChild(textScopes);return section;
       }
       // Method/instance changes replace only their own stage, preserving all other DOM.
       var existing = renderOptions.patchStage && container.querySelector('[data-av-stage-block="' + renderOptions.patchStage + '"]');
@@ -683,7 +716,8 @@ scheduleReadingCardAlignment();
       label.appendChild(select);controls.appendChild(label);
       paragraph(controls, 'av-jump-help', 'All stages are shown below. This menu moves to a stage.');
       shell.appendChild(controls);
-      paragraph(shell, 'av-help av-stage-introduction', 'Each stage shows three city cases. Figures retain their own model scope; open the full atlas for complete evidence.');
+      paragraph(shell, 'av-help av-stage-introduction', 'The atlas contains ' + cities.length + ' city cases. Each stage retains the available figures and explicit scope notes; open the complete evidence for each model instance.');
+      cities.forEach(function (city) { sharedNotice(shell, city, true); });
       stageOrder.forEach(function (stageKey, index) {shell.appendChild(stageSection(stageKey, index));});
     }
     container.replaceChildren(shell);
@@ -703,16 +737,27 @@ const tabs=[...toolbar.querySelectorAll('[data-atlas-view]')];
 const names=Object.fromEntries(model.cities.map(c=>[c.id,c.name]));
 const originalNav=document.querySelector('body > .nav');
 const locationBar=document.querySelector('.reading-location-bar');
+// BERKELEY_CITY_METHOD_NORMALIZER_R1
 const methods={static:['fw','algorithm-b','finite-path'],finite:['cg','lagrangian','admm']};
+function methodIds(key,cityId,view){
+ const city=model.cities.find(c=>c.id===cityId);
+ const stage=city?.stages.find(s=>s.key===key);
+ const definitions=view==='city'&&stage?.methods?stage.methods:model.methods?.[key];
+ return definitions?.map(m=>m.id)||methods[key]||[];
+}
 function normalized(next){
  const s={view:'full',city:'boston',stage:'sources',method:'fw',siouxOd:'200',...next};
  if(!['full','city','stage'].includes(s.view))s.view='full';
  if(!names[s.city])s.city='boston';
  if(!model.stageOrder.includes(s.stage))s.stage='sources';
- if(methods[s.stage]&&!methods[s.stage].includes(s.method))s.method=methods[s.stage][0];
+ const active=methodIds(s.stage,s.city,s.view);
+ if(methods[s.stage]&&!active.includes(s.method))s.method=active[0];
  s.siouxOd=s.siouxOd==='250'?'250':'200';
  s.cityMethods={static:'fw',finite:'cg',...s.cityMethods};
- for(const key of ['static','finite'])if(!methods[key].includes(s.cityMethods[key]))s.cityMethods[key]=methods[key][0];
+ for(const key of ['static','finite']){
+  const allowed=methodIds(key,s.city,s.view);
+  if(!allowed.includes(s.cityMethods[key]))s.cityMethods[key]=allowed[0];
+ }
  return s;
 }
 function fromUrl(){
@@ -720,7 +765,7 @@ function fromUrl(){
  const next={view:p.get('atlas-view')||'full',city:p.get('city')||'boston',stage:p.get('stage')||'sources',method:p.get('method')||'fw',siouxOd:p.get('sioux-od')||'200',cityMethods:{static:p.get('static-method')||'fw',finite:p.get('finite-method')||'cg'}};
  const hashKey=location.hash.replace('#atlas-compare-','');
  if(location.hash.startsWith('#atlas-compare-')&&model.stageOrder.includes(hashKey))next.stage=hashKey;
- if(p.has('method')&&methods[next.stage]?.includes(next.method))next.cityMethods[next.stage]=next.method;
+ if(p.has('method')&&methodIds(next.stage,next.city,next.view).includes(next.method))next.cityMethods[next.stage]=next.method;
  return normalized(next);
 }
 let state=fromUrl();
@@ -820,7 +865,7 @@ function render(renderOptions){
  }
  viewTrigger.textContent='View: '+(isFull?'Full atlas':state.view==='city'?'By city':'By stage')+' ▾';
  viewTrigger.setAttribute('aria-label','Choose atlas view. Current view: '+(isFull?'Full atlas':state.view==='city'?'By city':'By stage'));
- status.textContent=isFull?'All figures, in the existing reading order':state.view==='city'?'Selected figures · '+names[state.city]:'All stages · three cities side by side';
+ status.textContent=isFull?'All figures, in the existing reading order':state.view==='city'?'Selected figures · '+names[state.city]:'All stages · ' + model.cities.length + ' city records';
  scheduleToolbar();window.dispatchEvent(new Event('scroll'));
 }
 function change(patch){

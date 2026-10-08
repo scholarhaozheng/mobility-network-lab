@@ -1,0 +1,66 @@
+{
+  "task_id": "BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1",
+  "registration_phase": "after_accepted_10_iteration_run_before_extended_diagnostic",
+  "model_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "inherited_plan_sha256": "2b5994ba582cf264f501b988fb4c4570af0f285cce488fc3eecacf0c16677888",
+  "common": {
+    "initial_multipliers": "zero on every dynamic arc; no reference information",
+    "capacity_subgradient": "g[a]=sum_k demand[k]*1[a on priced shortest path(k)]-capacity[a]",
+    "projected_direction": "q[a]=g[a] if lambda[a]>0 or g[a]>0; else 0",
+    "projection": "coordinatewise max(0,trial_multiplier)",
+    "shortest_path_tie": "stable ascending arc ID; first predecessor on ties within 1e-10",
+    "pool_enrichment": "add one complete unique priced shortest path per commodity per iteration; exact arc-ID sequence identity; cap 100 paths per commodity",
+    "max_paths_per_commodity": 100,
+    "recovery_schedule": "independent restricted-path LP at iteration 1, every 10 iterations, and terminal iteration; direct priced paths may provide a feasible candidate when capacity passes",
+    "recovery_every": 10,
+    "multiplier_snapshot_every": 1,
+    "target_gap": 0.01,
+    "feasibility": {
+      "max_demand_balance_residual": 1e-06,
+      "max_capacity_violation": 1e-06,
+      "min_flow": -1e-08,
+      "objective_relative_error": 1e-08,
+      "dual_relative_error": 1e-08
+    },
+    "plateau_start": 200,
+    "plateau_check_every": 50,
+    "plateau_window": 100,
+    "plateau_absolute_improvement": 1e-07,
+    "plateau_gap_fraction": 1e-05,
+    "plateau_rule": "at t>=200 every 50 iterations, stop if best_dual[t]-best_dual[t-99] <= max(1e-7,1e-5*max(0,U-best_dual[t]))",
+    "stop": "first certified 1% algorithm gap, plateau, per-case wall limit, or iteration limit; final independent evaluator decides gate",
+    "max_total_heavy_wall_seconds": 28800,
+    "max_new_storage_bytes": 10737418240,
+    "one_heavy_process_at_a_time": true
+  },
+  "variants": [
+    {
+      "id": "R3_CONTINUATION",
+      "update_rule": "continuation",
+      "max_iterations": 300,
+      "wall_seconds_per_case": 900,
+      "polyak_fraction": 0.7,
+      "step_norm_cap": 15.0,
+      "fallback_scale": 5.0,
+      "serious_improvement_relative": 1e-09,
+      "step_formula": "alpha=min(0.7*(U-D)/max(||q||_2^2,1),15/max(||q||_2,1)) when finite U>D; otherwise 5/(sqrt(t)*max(||q||_2,1))",
+      "multiplier_update": "lambda_next=project(lambda+alpha*g)"
+    }
+  ],
+  "reference_paths_flows_duals_used": false,
+  "parent_plan_sha256": "74e35a6961134bedfcf5880af69b5933c6c03d047ccebecd0798f80dd0a38325",
+  "diagnostic_only": {
+    "cold_start": true,
+    "no_formal_gate_change": true,
+    "continue_after_first_certified_gap": true,
+    "continue_after_first_plateau": true,
+    "original_target_gap": 0.01,
+    "original_max_iterations": 900,
+    "original_stop_reason": "CERTIFIED_GAP at iteration 10",
+    "same_update_rule": true,
+    "same_step_rule": true,
+    "same_recovery_every": true,
+    "same_input_graph_demand_capacity_cost": true,
+    "reference_used_by_solver": false
+  }
+}

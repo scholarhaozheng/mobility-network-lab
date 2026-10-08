@@ -1,0 +1,81 @@
+{
+  "figure_id": "f10_generation",
+  "city": "berkeley",
+  "title": "Trip generation",
+  "caption": "Saved productions and job-weighted attractions for all 13 model zones. Population and jobs use different source years (2020 and 2023). The captured interzonal total is 2,381.7222975 person trips in 08:00\u201309:00; 4,705.530375 external/uncaptured and 152.0248275 intrazonal person trips remain separate. This bounded engineering scenario is not locally calibrated. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips per declared hour",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/berkeley/original/f10_generation.svg",
+      "sha256": "547265b9aa31e5245e931534b6228bdb7a09fd97372f2e2c57bed98371f85c8c"
+    },
+    {
+      "logical_source": "f10_generation.plot_data.csv",
+      "sha256": "901c860592e4f935209e04e662fb02d8112166d75c7dc7303bd8c9014a095bce"
+    },
+    {
+      "logical_source": "zone_order.csv",
+      "sha256": "a57b29393c30dcc87b99b1dda5daa5d7ace23c639f8ca82cf13a2ba3e20d12e1"
+    },
+    {
+      "path": "snapshot/READY.json",
+      "sha256": "5326dac20a6d4ed47f511f5f4f69187294bc604789ca9336218b4e21f39b13c3"
+    },
+    {
+      "path": "snapshot/PUBLIC_DERIVED_CONTENT_POLICY.json",
+      "sha256": "a1219aab14ea6d9ea010784c0f2173ad63b3853936a961d7ec61b7c7032c83ea"
+    },
+    {
+      "path": "compute_capsule/FOUR_STAGE_RUN_CONFIG.json",
+      "sha256": "f73c4abc3f73bdcca09f582c69242e9f7c655ac8002dcabc683882be9a3262d5"
+    },
+    {
+      "path": "compute_capsule/reference_run/generation/generation.csv",
+      "sha256": "aa8f809a8d693423904c8255836a3ff7166e36c5b17a4a3e64ec9ab89703a974"
+    },
+    {
+      "path": "compute_capsule/inputs/zones.csv",
+      "sha256": "bbfffb394ea34cfe6c20351da887c36639fc6bb22620d7f02c9eff906ee0779d"
+    },
+    {
+      "path": "original/f10_generation.plot_data.csv",
+      "sha256": "901c860592e4f935209e04e662fb02d8112166d75c7dc7303bd8c9014a095bce"
+    },
+    {
+      "path": "original/f10_generation.source.json",
+      "sha256": "25484e6a2f3b796c34fd16e6662b2d5c779e9d173b0556218acfbd9f6d1eb7fc"
+    },
+    {
+      "path": "compute_capsule/reference_run/generation/generation_ledger.json",
+      "sha256": "fed8d818eebaedb0e67e2b09ff699d3cdaf2f3f4828ea95c0d2768f0a268b501"
+    }
+  ],
+  "source_run_receipt_sha256": "a6de9d5d79f18651b64355ed12a6a87e94251701999a17f823e75d84e4c189d7",
+  "source_metadata_sha256": "feb985b9f5673fd542cd8fa69a7543eb77fa329f246d9537a4847da7073ce1d3",
+  "png_sha256": "10d493394bdb77281e2852543fb3f5de67da11c22e26b50bd4b9a0adcfed69e8",
+  "svg_sha256": "796759b9caccf653aeb2a2902e77aa24d40cc5fbb5892cae64bfb2f0898bce05",
+  "transformation": [
+    "Read frozen plotdata unchanged in stable full-zone-ID order.",
+    "Re-layout grouped production/attraction bars; retain zero zones.",
+    "No demand recalculation.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_berkeley_visual.py --snapshot s0_snapshot_v1 --output figure_edits/berkeley",
+  "page_anchor": "figure-f10-generation",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "42b543191b78f378952ac7e1ef49c45f7645ccfbaafd38a837289cdc822f2e4d",
+  "input_png_sha256": "10d493394bdb77281e2852543fb3f5de67da11c22e26b50bd4b9a0adcfed69e8",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false,
+  "supporting_plot_data": [
+    {
+      "path": "plot_data/f10_generation/zone_order.csv",
+      "sha256": "a57b29393c30dcc87b99b1dda5daa5d7ace23c639f8ca82cf13a2ba3e20d12e1"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "task": "Berkeley same-T4 LR post-certificate diagnostic display",
+  "status": "INDEPENDENT_NUMERIC_AUDIT_PASS_FORMAL_EVALUATION_PENDING_SHARED_HEAVY_LOCK",
+  "approval_scope": "Display the saved 300-iteration diagnostic series with an explicit diagnostic label; preserve the accepted 10-iteration result and its formal status.",
+  "not_a_formal_300_iteration_acceptance": true,
+  "original_accepted": {
+    "iterations": 10,
+    "stop_reason": "CERTIFIED_GAP",
+    "best_lower_pce_minutes": 43.58459836422644,
+    "feasible_upper_pce_minutes": 43.667424408006426,
+    "certified_gap_fraction": 0.0018967467145784354,
+    "first10_scientific_fields_exact_in_diagnostic": true
+  },
+  "diagnostic": {
+    "iterations": 300,
+    "first_original_1_percent_gate_iteration": 10,
+    "best_dual_iteration": 256,
+    "best_lower_pce_minutes": 43.66742440800643,
+    "recorded_current_lower_at_t300_pce_minutes": 43.66228345703368,
+    "feasible_upper_pce_minutes": 43.667424408006426,
+    "reported_clipped_gap_fraction": 0.0,
+    "upper_minus_best_pce_minutes": -7.105427357601002e-15,
+    "same_T4_independently_checked_LP_pce_minutes": 43.66742440800644,
+    "pool_paths": 9,
+    "recovery_calls": 31,
+    "wall_seconds": 332.77986539993435,
+    "peak_rss_bytes": 431591424,
+    "stop_reason": "MAX_ITERATIONS_DIAGNOSTIC_AFTER_GATE"
+  },
+  "model_identity": {
+    "model_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+    "case_manifest_sha256": "e556bd0756629ae5f43728b7b5fffed960d4d6074218f3c15880ac0942de47a0",
+    "dynamic_arc_sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+    "dynamic_demand_sha256": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+    "graph_demand_capacity_cost_update_rule_unchanged": true,
+    "original_1_percent_gate_unchanged": true,
+    "accepted_plan_run_and_source_untouched": true
+  },
+  "independent_audit": {
+    "status": "PASS_DIAGNOSTIC_INDEPENDENT_AUDIT",
+    "saved_snapshot_lower_bounds_recomputed": 39,
+    "max_abs_snapshot_dual_error_pce_minutes": 1.1527134802236105e-10,
+    "saved_recovery_LPs_resolved": 31,
+    "positive_final_paths": 5,
+    "full_physical_links_checked": 2150,
+    "max_demand_error_pce": 0.0,
+    "max_capacity_excess_pce": 0.0,
+    "max_physical_projection_error_pce": 0.0,
+    "LP_physical_flow_max_difference_pce": 0.0,
+    "snapshot_projected_norm_rechecks_skipped_due_to_sparse_threshold": 2,
+    "formal_original_entry_status": "PENDING_SHARED_HEAVY_LOCK"
+  },
+  "display_data": {
+    "bounds_gap_step_recovery_series": "LR_EXTENDED_PLOT_DATA.csv",
+    "recovery_event_series": "RECOVERY_HISTORY.csv",
+    "saved_result": "runs/T_LR_extended_300/result.json",
+    "saved_history": "runs/T_LR_extended_300/history.csv",
+    "best_price_full_vector": "runs/T_LR_extended_300/best_multipliers.csv",
+    "recorded_t300_current_price_full_vector": "current_multipliers_t300_preupdate.csv",
+    "sparse_price_preview": "BEST_AND_T300_CURRENT_PRICES_SPARSE.csv (created by final handoff packager; not required for display)",
+    "bounds_unit": "PCE minutes",
+    "multiplier_unit": "minutes",
+    "gap_unit": "fraction (multiply by 100 for percent)",
+    "after_iteration_10_label": "post-certificate diagnostic only"
+  },
+  "interpretation": [
+    "The accepted ten-point flat best-bound prefix is the original early 1% certified stop, not a recording error.",
+    "At iteration 256 the best lower is one floating-point ULP above the saved feasible upper. Reported zero gap is clipped floating-point arithmetic, not exact symbolic equality.",
+    "The fallback step is computed at iteration 256, producing the iteration-257 state. The best-so-far bound stays fixed while current dual can fall.",
+    "The raw terminal_current_multipliers.csv stores the post-t300 update, not the recorded t300 price. Use current_multipliers_t300_preupdate.csv for t300.",
+    "Snapshots serialize only lambda > 1e-12; two projected-norm rechecks are skipped because smaller positive entries are omitted."
+  ],
+  "evidence": {
+    "audit_json": "DIAGNOSTIC_AUDIT.json",
+    "audit_sha256": "af84969ec4b46d7a409fe28fff94fb31bb1961cbf66c6d7b4e17abf37b42da98",
+    "plot_data_sha256": "e9b9b2e2b6557aa16a7f69549b161f31d9a818d19d1fb5bcb0e85df6d5af1654",
+    "result_sha256": "2a3b52c69225f4de5ef51803bca08a90b31e26fec4cc8cfc839e907da4d39994",
+    "snapshot_rechecks": "SNAPSHOT_DUAL_RECHECK.csv",
+    "recovery_rechecks": "RECOVERY_RECHECK.csv",
+    "full_physical_flow": "physical_link_flow_full.csv",
+    "multiplier_timing": "MULTIPLIER_TIMING.json",
+    "timing_sha256": "8a459527b710e0fde3c05856dead20ee732b81ea9c08979a05be920be0470c53"
+  },
+  "root_absolute": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1",
+  "formal_final_handoff_to_follow": "HANDOFF_TO_MAINLINE.json / .md and compact/full ZIP after the original formal evaluator passes"
+}

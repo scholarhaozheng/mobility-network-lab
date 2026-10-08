@@ -1,0 +1,315 @@
+{
+  "city": "chicago",
+  "states": [
+    "osm:1324341003",
+    "osm:1324341002",
+    "osm:1324341004"
+  ],
+  "aliases": {
+    "osm:1324341003": "A",
+    "osm:1324341002": "B",
+    "osm:1324341004": "C"
+  },
+  "time_indices": [
+    46,
+    47,
+    48,
+    49,
+    50
+  ],
+  "dt_seconds": 30,
+  "arc_records": [
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t46",
+      "from_node_time_id": "nosm:1324341003_t46",
+      "to_node_time_id": "nosm:1324341002_t47",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t47",
+      "from_node_time_id": "nosm:1324341003_t47",
+      "to_node_time_id": "nosm:1324341002_t48",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t48",
+      "from_node_time_id": "nosm:1324341003_t48",
+      "to_node_time_id": "nosm:1324341002_t49",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t49",
+      "from_node_time_id": "nosm:1324341003_t49",
+      "to_node_time_id": "nosm:1324341002_t50",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t47",
+      "from_node_time_id": "nosm:1324341002_t47",
+      "to_node_time_id": "nosm:1324341004_t48",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t48",
+      "from_node_time_id": "nosm:1324341002_t48",
+      "to_node_time_id": "nosm:1324341004_t49",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t49",
+      "from_node_time_id": "nosm:1324341002_t49",
+      "to_node_time_id": "nosm:1324341004_t50",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t47",
+      "from_node_time_id": "nosm:1324341002_t47",
+      "to_node_time_id": "nosm:1324341002_t48",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t48",
+      "from_node_time_id": "nosm:1324341002_t48",
+      "to_node_time_id": "nosm:1324341002_t49",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t49",
+      "from_node_time_id": "nosm:1324341002_t49",
+      "to_node_time_id": "nosm:1324341002_t50",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t46",
+      "from_node_time_id": "nosm:1324341003_t46",
+      "to_node_time_id": "nosm:1324341003_t47",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t47",
+      "from_node_time_id": "nosm:1324341003_t47",
+      "to_node_time_id": "nosm:1324341003_t48",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t48",
+      "from_node_time_id": "nosm:1324341003_t48",
+      "to_node_time_id": "nosm:1324341003_t49",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t49",
+      "from_node_time_id": "nosm:1324341003_t49",
+      "to_node_time_id": "nosm:1324341003_t50",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t46",
+      "from_node_time_id": "nosm:1324341004_t46",
+      "to_node_time_id": "nosm:1324341004_t47",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t47",
+      "from_node_time_id": "nosm:1324341004_t47",
+      "to_node_time_id": "nosm:1324341004_t48",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t48",
+      "from_node_time_id": "nosm:1324341004_t48",
+      "to_node_time_id": "nosm:1324341004_t49",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t49",
+      "from_node_time_id": "nosm:1324341004_t49",
+      "to_node_time_id": "nosm:1324341004_t50",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    }
+  ],
+  "selected_arc_ids": [
+    "arc_osmway:1000025128:0:f_t46",
+    "arc_osmway:432382643:0:f_t47"
+  ],
+  "selected_arc_records": [
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t46",
+      "from_node_time_id": "nosm:1324341003_t46",
+      "to_node_time_id": "nosm:1324341002_t47",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t47",
+      "from_node_time_id": "nosm:1324341002_t47",
+      "to_node_time_id": "nosm:1324341004_t48",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    }
+  ],
+  "physical_chain": [
+    "osm:1324341003",
+    "osm:1324341002",
+    "osm:1324341004"
+  ],
+  "physical_links": [
+    "1000025128:0:f",
+    "432382643:0:f"
+  ],
+  "selected_role": "Saved construction excerpt",
+  "context_key": "Pale arcs: retained movements\nand waits in this local slice.",
+  "description": "The highlighted continuous chain is selected from saved construction records to explain incidence; it is not an optimized or observed trajectory.",
+  "selection_rule": "Retained published frozen local arc slice; first physical movement and saved continuous successor (with exact zero-time turn for Pittsburgh).",
+  "limitations": [
+    "This T4 graph has no independent turn connectors; the later static turn sidecar is excluded.",
+    "The highlighted structural chain carries no assigned-flow claim."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/chicago-construction/frozen-input-records.json",
+      "sha256": "dcf17484f0dab0b6c05bd034e852afb073db707363c4bee29bfd414d2af1c522"
+    }
+  ],
+  "representation": "physical-node states",
+  "optimizer_calls": 0,
+  "public_rights": "Presentation derivative of saved records already in the current public candidate. No new private records exposed."
+}
