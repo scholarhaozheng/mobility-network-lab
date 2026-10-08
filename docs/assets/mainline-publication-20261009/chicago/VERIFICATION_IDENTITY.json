@@ -1,0 +1,45 @@
+{
+  "verification_subject": "Chicago ADMM outer116",
+  "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+  "checkpoint_files": {
+    "state.npz": "94db476c704dfb99a77b7d67dab425a81a20a832f3c5b98813ae1c9e23257bf0",
+    "history.csv": "94097e79e38442b7a87a9cf9e1ab379f60b1c21b372d67fa4ab27ea6d12279ba",
+    "result.json": "23dce8683371b231acea2dd36f61b8026e3033213bdd9d7c39c89c052c570a57",
+    "checkpoint_identity.json": "36559e781357d8ce8f9c306c65bb6d7fc150aa74435a6df459ed56a86007f9dc"
+  },
+  "audit_sha256": "05c7d857b4e6e26bfc135b65bcf7a4546f3ddcf01af51e3bb6e411986e219483",
+  "verification_actor": "Chicago provider saved-state audits and two independent-code read-only full-package replays performed in the provider workflow",
+  "mainline_check": "Read-only saved summary/history/signature cross-check; no state replay or optimizer executed in mainline",
+  "scientific_status": "EXPECTED_SOLVER_GATE_FAILURE",
+  "same_exact_archive_twice": true,
+  "endpoint_numeric_reproduction": {
+    "original_audit_sha256": "05c7d857b4e6e26bfc135b65bcf7a4546f3ddcf01af51e3bb6e411986e219483",
+    "records": [
+      {
+        "replay": 1,
+        "status": "PASS",
+        "numerical_values_compared": 2062,
+        "maximum_absolute_difference": 0.0,
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 1e-12,
+        "all_original_gate_decisions_identical": true,
+        "replayed_audit_sha256": "c4cfec70a1ed69951abf29f2f182a656fc26706af0700191607375c4c2c5d20f",
+        "whole_report_bytes_claimed_identical": false
+      },
+      {
+        "replay": 2,
+        "status": "PASS",
+        "numerical_values_compared": 2062,
+        "maximum_absolute_difference": 0.0,
+        "relative_tolerance": 1e-12,
+        "absolute_tolerance": 1e-12,
+        "all_original_gate_decisions_identical": true,
+        "replayed_audit_sha256": "80fa6e87b9f71ac29a77fc6bcbee5e16a1e06fd74578ae0b08299d600933849f",
+        "whole_report_bytes_claimed_identical": false
+      }
+    ],
+    "wall_clock_seconds_excluded_from_numeric_comparison": true,
+    "checked_utc": "2026-10-08T14:30:05.360719+00:00"
+  },
+  "new_S0_acceptance": false
+}

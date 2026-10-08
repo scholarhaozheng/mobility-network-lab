@@ -8,7 +8,8 @@ A 21-zone morning HBW scenario for the 19.303 km² Champaign–Urbana subarea, w
 
 The figures show saved method results, physical-flow maps and original-unit diagnostics. Drawing these figures invokes no optimizer.
 
-<span id="urbana-champaign-late-status-20261008"></span>
+<a id="urbana-champaign-late-status-20261008"></a>
+
 <a id="gap-20261008"></a>
 
 ## Latest received evidence · 8 October 2026
@@ -730,7 +731,7 @@ Computed paths: time layers and fixed costs
 
 ### Original T4: demand and capacity diagnosis
 
-Private local review. The following data describe the accepted old T4 diagnostic. Frozen new-candidate rules do not constitute an executed candidate.
+Saved original-T4 demand and capacity diagnosis; the new candidate has not been executed.
 
 The original T4 selects four OD pairs by the frozen rule and loads only their first five-minute bin: 0.05162314826794134 PCE (0.6194777792152961 PCE/h before the 1/12 time factor). This is separate from both the old 418-OD hourly total and the later CUMTD choice revision. On this frozen graph, capacity is nonbinding: the minimum timed physical-arc capacity is 3.75 PCE and maximum used-arc utilization is 0.6775913418476398%. Geographic support effects have not been tested; this does not prove the area too small.
 
@@ -744,9 +745,7 @@ New candidate: rules frozen; not executed; waiting for the original shared compu
 
 Original T4 demand accounting. The 418-OD hourly total, four selected hourly OD pairs, and selected first five-minute bin use different time windows. The four pairs follow frozen hash rank; the small first-bin mass is not a sampling rate. No new candidate is shown.
 
-Private local review: detailed old-T4 plot data are linked below; they remain outside the public release.
-
-[Full figure](<../assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg>) · [PNG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.png>) · [Approved caption](<../assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.caption.md>) · [Source and scope](<../assets/choicefw-scope-20261008/urbana-champaign/SCOPE_VS_DEMAND_PUBLIC_NOTE.md>) · [Release and SHA](<../assets/choicefw-scope-20261008/CONSUMPTION.json>) · [Private plot data · OD ledger](<../assets/private-scope-vs-demand-r1/urbana-champaign/OD_LEDGER.csv>) · [Private source and SHA](<../assets/private-scope-vs-demand-r1/urbana-champaign/RECEIPT.json>)
+[SVG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg>) · [PNG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.png>) · [Saved model plot data](<../assets/mainline-publication-20261009/urbana-champaign/OD_LEDGER.csv>) · [Demand/capacity accounting](<../assets/mainline-publication-20261009/urbana-champaign/DIAGNOSIS.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>) · [Publication record](<../assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json>)
 
 <a id="uc-t4-capacity-use"></a>
 
@@ -756,11 +755,9 @@ Private local review: detailed old-T4 plot data are linked below; they remain ou
 
 Utilization on 373 used timed physical arcs of original T4, sorted by load/capacity. Maximum 0.6775913418476398%; dotted 0.5% is a visual guide, not a capacity threshold. No timed physical arc is shared across OD; 28 physical link IDs recur at different times. This does not certify a new candidate.
 
-Private local review: detailed old-T4 plot data are linked below; they remain outside the public release.
+[SVG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg>) · [PNG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.png>) · [Saved model plot data](<../assets/mainline-publication-20261009/urbana-champaign/TIMED_MODEL_ARCS.csv>) · [Demand/capacity accounting](<../assets/mainline-publication-20261009/urbana-champaign/DIAGNOSIS.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>) · [Publication record](<../assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json>)
 
-[Full figure](<../assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg>) · [PNG](<../assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.png>) · [Approved caption](<../assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.caption.md>) · [Source and scope](<../assets/choicefw-scope-20261008/urbana-champaign/SCOPE_VS_DEMAND_PUBLIC_NOTE.md>) · [Release and SHA](<../assets/choicefw-scope-20261008/CONSUMPTION.json>) · [Private plot data · timed arcs](<../assets/private-scope-vs-demand-r1/urbana-champaign/T4_POSITIVE_ARCS.csv>) · [Private path composition](<../assets/private-scope-vs-demand-r1/urbana-champaign/T4_PATH_COMPOSITION.json>) · [Private physical paths](<../assets/private-scope-vs-demand-r1/urbana-champaign/T4_PHYSICAL_PATHS.json>) · [Private source and SHA](<../assets/private-scope-vs-demand-r1/urbana-champaign/RECEIPT.json>)
-
-[Complete scoped source notice](<../assets/choicefw-scope-20261008/urbana-champaign/SCOPE_VS_DEMAND_PUBLIC_NOTE.md>) · [Saved semantic checks](<../assets/choicefw-scope-20261008/urbana-champaign/SEMANTIC_NEGATIVE_TESTS.json>)
+[Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>) · [Frozen demand/capacity accounting](<../assets/mainline-publication-20261009/urbana-champaign/DIAGNOSIS.json>)
 
 ### Finite-time optimization
 
@@ -875,7 +872,8 @@ ADMM and exact LP on physical roads Own ADMM physical-road vector and exact LP o
 
 <a id="uc-original-uc_s01"></a>
 
-<span id="native-candidate-1"></span>
+<a id="native-candidate-1"></a>
+
 <a id="uc-original-uc_s02"></a>
 
 **Historical outer-8 Native endpoint.** Both ranks had maximum OD residual about 8.25e-5 PCE, above the original 1e-6 PCE gate. Those files and original records remain in the private historical archive. This batch does not redistribute the old UC\_S02 PNG, SVG, plot or source; [the current accepted outer9 figure](<#uc-r3-native-check>) occupies the Native display position.

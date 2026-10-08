@@ -714,7 +714,7 @@
         },
         {
           "id": "09",
-          "detail": "Original R2 map: 600 OD, 5,138 physical arcs, 1,991 positive at old 1e-4 FW gate. New S600 FW assigns the same 1,647.816622 PCE/h under 1e-5 with one update. The R9 map remains the original endpoint; the new accepted aggregate is separately labelled.",
+          "detail": "Original R2 map: 600 OD, 5,138 physical arcs, 1,991 positive at old 1e-4 FW gate. New S600 FW assigns the same 1,647.816622 PCE/h under 1e-5 with one update. The R9 map remains the original endpoint; the new accepted aggregate is separately labelled. Original R2 and later S600 remain distinct. The new ChoiceR1 map now shows 1,569.500896674 PCE/h, 600 positive OD and all 5,138 roads (1,998 positive; 3,140 zero-flow).",
           "status": "available",
           "links": [
             {
@@ -724,13 +724,17 @@
             {
               "label": "Current gap addendum ↗",
               "href": "volumes/ann-arbor.html#gap-20261008"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/ann-arbor.html#figure-ann-choice-fw-network-v002"
             }
           ],
-          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         },
         {
           "id": "10",
-          "detail": "Original R2: iteration 0 only, gap 5.10283e-5≤1e-4. New S600 FW: states 0/1 and one actual update under 1e-5; final gap is floating-point scale. Separate S72 FW has 0 updates. Short traces do not establish geographic-area causality.",
+          "detail": "Original R2: iteration 0 only, gap 5.10283e-5≤1e-4. New S600 FW: states 0/1 and one actual update under 1e-5; final gap is floating-point scale. Separate S72 FW has 0 updates. Short traces do not establish geographic-area causality. New timetable ChoiceR1 separately saves states 0/1 and one FW update; independent final gap 5.078039901982526e−15 under 1e−5. Initial and final max v/c are separately recorded.",
           "status": "available",
           "links": [
             {
@@ -740,9 +744,13 @@
             {
               "label": "Current gap addendum ↗",
               "href": "volumes/ann-arbor.html#gap-20261008"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/ann-arbor.html#figure-ann-choice-fw-convergence-v002"
             }
           ],
-          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         },
         {
           "id": "11",
@@ -817,7 +825,7 @@
         },
         {
           "id": "19",
-          "detail": "S0 release_v002 adds the approved static aggregate, corrected caption and addendum. Earlier exact-SHA assets and old R2 checks remain. New U-M-derived figure families remain held; T1/T4 are unsolved and Native 600 resource-gated.",
+          "detail": "Project-authored ChoiceFW summaries, two result figures, necessary plot data and the retained ODbL road database are available under the mainline publication decision. Earlier S0 receipts and R2/S600/S72 identities remain unchanged. Original GTFS and replacement timetables are not included. Native600 and T1/T4 remain incomplete.",
           "status": "limited",
           "links": [
             {
@@ -827,9 +835,13 @@
             {
               "label": "Current gap addendum ↗",
               "href": "volumes/ann-arbor.html#gap-20261008"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/ann-arbor.html#choicefw-current-status"
             }
           ],
-          "source_note": "Reviewed saved independent check and current local reading figure.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         }
       ]
     },
@@ -1039,15 +1051,19 @@
         },
         {
           "id": "14",
-          "detail": "Separate T4 pulse: 4 selected OD, 0.0516231483 PCE, 30-second steps, H=160. The actual 1,429,496-arc graph distinguishes physical traversal, turn, wait and ledger connectors; four computed paths are retained.",
+          "detail": "Separate T4 pulse: 4 selected OD, 0.0516231483 PCE, 30-second steps, H=160. The actual 1,429,496-arc graph distinguishes physical traversal, turn, wait and ledger connectors; four computed paths are retained. The old 418-OD hourly ledger is available. Its selected first-bin total is below minimum capacity 3.75 PCE; frozen-instance capacity is nonbinding. Geographic effects remain untested; the new candidate was not executed after LOCK_TIMEOUT.",
           "status": "available",
           "links": [
             {
               "label": "Saved figure and evidence ↗",
               "href": "volumes/urbana-champaign.html#uc-r3-time-layers"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/urbana-champaign.html#scope-vs-demand-20261008"
             }
           ],
-          "source_note": "Reviewed saved independent check and current local reading figure."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         },
         {
           "id": "15",
@@ -1931,7 +1947,7 @@
         },
         {
           "id": "18",
-          "detail": "Current ADMM33 is EXPECTED_SOLVER_GATE_FAILURE: full history 1–33, public increment 9–33. Capacity excess 1.491228076 PCE; primal/dual remain≈618.27/174.74 times gates. Saved x objective is not a feasible upper. Old outer 9 failure remains.",
+          "detail": "Unconverged diagnostic: 84 saved rows from outer33–116; 34–36 original coordination, 37–116 alpha1.6 candidate. At 116: original-x capacity excess 0.0421644796900 PCE; primal 0.121224522778 PCE; dual 0.0391348952092 min; stationarity 0.0250952425689 min. Original x is infeasible; CG objective difference is not evaluated.",
           "status": "limited",
           "links": [
             {
@@ -1953,13 +1969,17 @@
             {
               "label": "Current gap addendum ↗",
               "href": "volumes/chicago.html#gap-20261008"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/chicago.html#figure-chicago-admm116-history"
             }
           ],
-          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         },
         {
           "id": "19",
-          "detail": "S0 release_v002 accepts new LR hybrid, Native80 and same-S20 B. Prior full-graph CG acceptance remains; original rank 26/52, pure LR759, ADMM33 failures and HiGHS limit stay explicit. New households and D input ledger did not rerun four-stage outputs or produce DNL/DUE.",
+          "detail": "Current accepted evidence includes S20 FW/finite-path, Algorithm B, uncompressed Native80, full-graph T4 CG and the own-pool LR hybrid. New household allocation and the D input ledger did not recompute the original four-stage outputs or produce DNL/DUE results. ADMM116 history and original-unit diagnostic plots are now available as a failed stopping-gate result; they do not alter the successful methods or make rank26/52 a compression success.",
           "status": "limited",
           "links": [
             {
@@ -1981,9 +2001,13 @@
             {
               "label": "Current gap addendum ↗",
               "href": "volumes/chicago.html#gap-20261008"
+            },
+            {
+              "label": "Current result and same figure ↗",
+              "href": "volumes/chicago.html#chicago-admm116"
             }
           ],
-          "source_note": "S0 batch v001: science intake SHA 14506e7e…6083a9d; per-file release SHA c1bfea6c…df37e8; no new optimizer in website integration.; current S0 gap release_v002 (2026-10-08), exact approved addendum and saved-state audit; old cutoff retained."
+          "source_note": "Mainline 2026-10-09 update from saved exact-instance evidence; no new solver or S0 receipt."
         }
       ]
     },

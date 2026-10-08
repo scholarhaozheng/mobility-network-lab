@@ -23,6 +23,40 @@ def safe_member(name: str) -> bool:
             and (path.suffix.lower() in ALLOWED_SUFFIXES or name in EXTENSIONLESS))
 
 
+def validate_road_database(root: Path) -> dict:
+    """Check the specific ODbL database offer, never allow arbitrary extra ZIPs."""
+    base=Path('docs/assets/mainline-publication-20261009')
+    rel=(base/'ann-arbor/ANN_ROAD_DATABASE_ODBL.zip').as_posix()
+    archive=root/rel
+    if not archive.exists():
+        return {'checks':0,'errors':[],'allowed_archives':[]}
+    errors=[];checks=0
+    names={'README.md','network.csv','physical_road_links.csv','restriction_audit.csv','access.csv','NETWORK_BUILD_AUDIT.json','PHYSICAL_ROAD_FLOW.csv'}
+    try:
+        decision=json.loads((root/base/'MAINLINE_PUBLICATION_DECISION.json').read_text(encoding='utf-8'))
+        record=next(x for x in decision['records'] if x['target_path']==rel)
+        if hashlib.sha256(archive.read_bytes()).hexdigest()!=record['sha256']:
+            errors.append('Road database offer hash differs from its exact file decision')
+        checks+=1
+        with zipfile.ZipFile(archive) as z:
+            if len(z.infolist())!=len(names) or set(z.namelist())!=names:
+                errors.append('Unexpected road database offer members')
+            if sum(x.file_size for x in z.infolist())>16*1024*1024:
+                errors.append('Road database offer exceeds declared small derivative scope')
+            checks+=2
+            for item in z.infolist():
+                if item.filename not in names or item.is_dir() or stat.S_ISLNK(item.external_attr>>16) or item.flag_bits&1:
+                    errors.append('Unsafe road database offer member');continue
+                source=root/base/'ann-arbor'/('PHYSICAL_ROAD_FLOW.csv' if item.filename=='PHYSICAL_ROAD_FLOW.csv' else 'road-database/'+item.filename)
+                if z.read(item)!=source.read_bytes():errors.append('Road database offer source bytes differ: '+item.filename)
+                checks+=1
+            if b'ODbL 1.0' not in z.read('README.md'):errors.append('Road database license notice missing')
+            checks+=1
+    except (OSError,ValueError,KeyError,TypeError,StopIteration,zipfile.BadZipFile) as e:
+        errors.append('Invalid road database offer: '+str(e))
+    return {'checks':checks,'errors':errors,'allowed_archives':[rel] if not errors else []}
+
+
 def validate(root: Path) -> dict:
     archive, manifest = root / ARCHIVE, root / MANIFEST
     errors: list[str] = []
@@ -86,8 +120,10 @@ def validate(root: Path) -> dict:
                 checks += 4
     except (OSError, ValueError, KeyError, TypeError, zipfile.BadZipFile) as exc:
         errors.append(f"Invalid computational archive: {exc}")
+    road=validate_road_database(root)
+    checks+=road['checks'];errors.extend(road['errors'])
     return {"status": "PASS" if not errors else "FAIL", "checks": checks, "errors": errors,
-            "allowed_archives": [ARCHIVE] if not errors else []}
+            "allowed_archives": [ARCHIVE]+road['allowed_archives'] if not errors else []}
 
 
 if __name__ == "__main__":

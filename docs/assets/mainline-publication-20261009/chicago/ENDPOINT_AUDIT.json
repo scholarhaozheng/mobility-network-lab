@@ -1,0 +1,3163 @@
+{
+  "status": "EXPECTED_SOLVER_GATE_FAILURE",
+  "state_valid": true,
+  "checks": {
+    "balance": true,
+    "local_KKT": true,
+    "nonnegative": true,
+    "allowed_graph": true,
+    "x_shared_capacity": false,
+    "z_capacity": true,
+    "z_nonnegative": true,
+    "z_allowed": true,
+    "projection": true,
+    "dual_update": true,
+    "primal_consensus": false,
+    "dual_consensus": false,
+    "generalized_dual_stationarity": false,
+    "physical_pullback": true,
+    "external_CG_objective": false
+  },
+  "completed_outer": 116,
+  "new_outer": 75,
+  "objective_pce_min": 241.86409459241577,
+  "not_a_feasible_upper_unless_capacity_and_conservation_pass": true,
+  "primal": 0.12122452277829657,
+  "dual": 0.03913489520917085,
+  "alpha": 1.6,
+  "generalized_dual": 0.02509524256886555,
+  "primal_threshold": 0.003887928108388672,
+  "dual_threshold": 0.002351149908325469,
+  "capacity_excess_pce": 0.042164479690020684,
+  "z_capacity_excess_pce": 0.0,
+  "projection_error": 8.881784197001252e-16,
+  "dual_update_error": 1.7763568394002505e-15,
+  "physical_pullback_error": 7.105427357601002e-15,
+  "local_metrics": [
+    {
+      "balance": 5.31510227338206e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803987417
+    },
+    {
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.7410260113546912e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.52506503941257
+    },
+    {
+      "balance": 2.34123831432953e-12,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.99219489434498
+    },
+    {
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.499311380077529e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.216640690441874
+    }
+  ],
+  "external_reference": {
+    "source": "S0 accepted CG full-graph primal/dual pricing certificate",
+    "value": 241.2185242449435,
+    "signed_difference_pce_min": null,
+    "x_primal_feasible": false,
+    "evaluation_rule": "Compute optimal-reference difference only after x passes original feasibility gates",
+    "normalization_denominator": 241.2185242449435,
+    "signed_normalized_difference": null,
+    "true_relative_difference": null,
+    "not_new_HiGHS": true
+  },
+  "state_sha256": "94db476c704dfb99a77b7d67dab425a81a20a832f3c5b98813ae1c9e23257bf0",
+  "optimizer_calls": 0,
+  "cross_checkpoint_transitions": [
+    {
+      "outer": 42,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 43,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 44,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 45,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 46,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 47,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 48,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 49,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 50,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 51,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 52,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 53,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 54,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 55,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 56,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 57,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 58,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 59,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 60,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 61,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 62,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 63,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 64,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 65,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 66,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 67,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 68,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 69,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 70,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412258165e-16
+    },
+    {
+      "outer": 71,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 72,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 73,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 74,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 75,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841197544e-16
+    },
+    {
+      "outer": 76,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 77,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 78,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 79,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 80,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 81,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 82,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 83,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 84,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 85,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 86,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 87,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 88,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 89,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 90,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 91,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 92,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 93,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 94,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 95,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 96,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 97,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 98,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 99,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 100,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 101,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 102,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 103,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841228819e-16
+    },
+    {
+      "outer": 104,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 105,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 106,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841228819e-16
+    },
+    {
+      "outer": 107,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 108,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 109,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 110,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.2315658412298555e-16
+    },
+    {
+      "outer": 111,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841197544e-16
+    },
+    {
+      "outer": 112,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841262167e-16
+    },
+    {
+      "outer": 113,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841197544e-16
+    },
+    {
+      "outer": 114,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841197544e-16
+    },
+    {
+      "outer": 115,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841262167e-16
+    },
+    {
+      "outer": 116,
+      "previous_z_error": 0.0,
+      "physical_dual_continuity_error": 2.231565841262167e-16
+    }
+  ],
+  "manifest_sha256": "279fd72582c2c5b25a046b30e734fddaf7ac51885649e72a3649a9e69fa11051",
+  "returned_trials": [
+    {
+      "outer": 42,
+      "commodity": "T01",
+      "balance": 8.026541853613248e-13,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038690178
+    },
+    {
+      "outer": 42,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 3.151062253940817e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 151.53343790508606
+    },
+    {
+      "outer": 42,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.579359869836716e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 125.73082939035277
+    },
+    {
+      "outer": 42,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 9.423555144850065e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.471504686379006
+    },
+    {
+      "outer": 43,
+      "commodity": "T01",
+      "balance": 8.636332135778212e-13,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038706165
+    },
+    {
+      "outer": 43,
+      "commodity": "T02",
+      "balance": 2.1316282072803006e-14,
+      "KKT": 1.883788538691379e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.99783007708157
+    },
+    {
+      "outer": 43,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.853136274138456e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 118.59352552227645
+    },
+    {
+      "outer": 43,
+      "commodity": "T04",
+      "balance": 4.440892098500626e-16,
+      "KKT": 5.018049206182359e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.250625844341446
+    },
+    {
+      "outer": 44,
+      "commodity": "T01",
+      "balance": 9.246122417943176e-13,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038722162
+    },
+    {
+      "outer": 44,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 2.490942338161614e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.27960628739612
+    },
+    {
+      "outer": 44,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.633980270833818e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 111.64607588123619
+    },
+    {
+      "outer": 44,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 9.209528997767947e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.067150072595933
+    },
+    {
+      "outer": 45,
+      "commodity": "T01",
+      "balance": 9.85591270010814e-13,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803873815
+    },
+    {
+      "outer": 45,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 4.091649797590379e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 155.20827107219827
+    },
+    {
+      "outer": 45,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.544250216095691e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 105.08632882581611
+    },
+    {
+      "outer": 45,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.938258212585147e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.9240276657108
+    },
+    {
+      "outer": 46,
+      "commodity": "T01",
+      "balance": 1.0465702982273106e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038754145
+    },
+    {
+      "outer": 46,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 4.860503422434482e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 155.77022890669252
+    },
+    {
+      "outer": 46,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 6.258986079584763e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 99.02398931140006
+    },
+    {
+      "outer": 46,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.202793783892048e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.819676632126203
+    },
+    {
+      "outer": 47,
+      "commodity": "T01",
+      "balance": 1.107549326443807e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038770139
+    },
+    {
+      "outer": 47,
+      "commodity": "T02",
+      "balance": 2.1316282072803006e-14,
+      "KKT": 1.996116971437836e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 156.06886695497354
+    },
+    {
+      "outer": 47,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.6951814401266556e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 93.5307613358762
+    },
+    {
+      "outer": 47,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.807359848144382e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.746055550443558
+    },
+    {
+      "outer": 48,
+      "commodity": "T01",
+      "balance": 1.1685283546603034e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803878613
+    },
+    {
+      "outer": 48,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.6366373596753945e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 156.14646994224626
+    },
+    {
+      "outer": 48,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.4364668185519936e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 88.77350637191648
+    },
+    {
+      "outer": 48,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.1635029245086435e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.70546921482284
+    },
+    {
+      "outer": 49,
+      "commodity": "T01",
+      "balance": 1.2295073828767997e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038802124
+    },
+    {
+      "outer": 49,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.1419753989093226e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 156.02841648486992
+    },
+    {
+      "outer": 49,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.092600752032034e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.87138508870777
+    },
+    {
+      "outer": 49,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.4154084027009e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.700933502912886
+    },
+    {
+      "outer": 50,
+      "commodity": "T01",
+      "balance": 1.290486411093296e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038818109
+    },
+    {
+      "outer": 50,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.769645533316816e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 155.75086661965815
+    },
+    {
+      "outer": 50,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.0427939446376433e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.89378719258995
+    },
+    {
+      "outer": 50,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.028429801774409e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.73508211062874
+    },
+    {
+      "outer": 51,
+      "commodity": "T01",
+      "balance": 1.3514654393097925e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038834102
+    },
+    {
+      "outer": 51,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 2.142529484630484e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 155.36169035046365
+    },
+    {
+      "outer": 51,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.5110923860225638e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 80.06466796294696
+    },
+    {
+      "outer": 51,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.081641363791465e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.803511467714
+    },
+    {
+      "outer": 52,
+      "commodity": "T01",
+      "balance": 1.4124444675262888e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038850096
+    },
+    {
+      "outer": 52,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.27789283914405e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.8907324772759
+    },
+    {
+      "outer": 52,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 8.620885780280388e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.27426614250236
+    },
+    {
+      "outer": 52,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.501292976195076e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.899698212011707
+    },
+    {
+      "outer": 53,
+      "commodity": "T01",
+      "balance": 1.4734234957427853e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038866086
+    },
+    {
+      "outer": 53,
+      "commodity": "T02",
+      "balance": 3.552713678800501e-15,
+      "KKT": 8.897289873029083e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.33702139184132
+    },
+    {
+      "outer": 53,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 1.1799592772187449e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.08326111937792
+    },
+    {
+      "outer": 53,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.1758396722860864e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.023463294223593
+    },
+    {
+      "outer": 54,
+      "commodity": "T01",
+      "balance": 1.5344025239592816e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038882076
+    },
+    {
+      "outer": 54,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 4.5324548891834127e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.70989084558494
+    },
+    {
+      "outer": 54,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.934224247880715e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.19688185556502
+    },
+    {
+      "outer": 54,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.429941613529265e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.170731326582526
+    },
+    {
+      "outer": 55,
+      "commodity": "T01",
+      "balance": 1.5953815521757781e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038898074
+    },
+    {
+      "outer": 55,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 9.958201077076012e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.06291682717736
+    },
+    {
+      "outer": 55,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.072463119011218e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.29199022740053
+    },
+    {
+      "outer": 55,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.971907194255664e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.328704800276473
+    },
+    {
+      "outer": 56,
+      "commodity": "T01",
+      "balance": 1.6563605803922744e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038914064
+    },
+    {
+      "outer": 56,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 7.555569685457897e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.47159622808536
+    },
+    {
+      "outer": 56,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.400749074155556e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.24813927991941
+    },
+    {
+      "outer": 56,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.336439475492885e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.47925799072844
+    },
+    {
+      "outer": 57,
+      "commodity": "T01",
+      "balance": 1.717339608608771e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038930056
+    },
+    {
+      "outer": 57,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.8250507881247975e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.01440553582268
+    },
+    {
+      "outer": 57,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.3676942675807267e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.18025950257523
+    },
+    {
+      "outer": 57,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.325691124273582e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.604926878884775
+    },
+    {
+      "outer": 58,
+      "commodity": "T01",
+      "balance": 1.7783186368252675e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038946048
+    },
+    {
+      "outer": 58,
+      "commodity": "T02",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.5231280478237038e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 151.74319956604137
+    },
+    {
+      "outer": 58,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.5565385629216707e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.26464179917201
+    },
+    {
+      "outer": 58,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.5973011474889063e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.69375118754293
+    },
+    {
+      "outer": 59,
+      "commodity": "T01",
+      "balance": 1.839297665041764e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038962045
+    },
+    {
+      "outer": 59,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 6.237469254433137e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 151.6776849465016
+    },
+    {
+      "outer": 59,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.172678061476534e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 79.57875992990976
+    },
+    {
+      "outer": 59,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.560696622658013e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.74141172581438
+    },
+    {
+      "outer": 60,
+      "commodity": "T01",
+      "balance": 1.9002766932582605e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038978034
+    },
+    {
+      "outer": 60,
+      "commodity": "T02",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.119112604696666e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 151.7934577066376
+    },
+    {
+      "outer": 60,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 2.1326164304804153e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 80.13251987693194
+    },
+    {
+      "outer": 60,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 1.0728257521017072e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.744358098745263
+    },
+    {
+      "outer": 61,
+      "commodity": "T01",
+      "balance": 1.9612557214747566e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848038994028
+    },
+    {
+      "outer": 61,
+      "commodity": "T02",
+      "balance": 2.842170943040401e-14,
+      "KKT": 1.6360590321200677e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.03662859772018
+    },
+    {
+      "outer": 61,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 6.532885739987934e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 80.90254844615919
+    },
+    {
+      "outer": 61,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.93851515570418e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.70527354728205
+    },
+    {
+      "outer": 62,
+      "commodity": "T01",
+      "balance": 2.022234749691253e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039010013
+    },
+    {
+      "outer": 62,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.2795703499195e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.34524600588327
+    },
+    {
+      "outer": 62,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.1536372673349586e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.9436552835956
+    },
+    {
+      "outer": 62,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.837626087253231e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.632363622538566
+    },
+    {
+      "outer": 63,
+      "commodity": "T01",
+      "balance": 2.0832137779077496e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039026011
+    },
+    {
+      "outer": 63,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.2440008480030952e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.6748152677173
+    },
+    {
+      "outer": 63,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.1878858674195235e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.20819505531495
+    },
+    {
+      "outer": 63,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 6.51211683304592e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.5357246178788
+    },
+    {
+      "outer": 64,
+      "commodity": "T01",
+      "balance": 2.1441928061242457e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039042001
+    },
+    {
+      "outer": 64,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 2.047475690093562e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.00000669804427
+    },
+    {
+      "outer": 64,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.550497617079486e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.45117632053586
+    },
+    {
+      "outer": 64,
+      "commodity": "T04",
+      "balance": 4.440892098500626e-16,
+      "KKT": 6.040255399953472e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.426051347779104
+    },
+    {
+      "outer": 65,
+      "commodity": "T01",
+      "balance": 2.2051718343407422e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039057996
+    },
+    {
+      "outer": 65,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.101032121312178e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.3060445171445
+    },
+    {
+      "outer": 65,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.5401044720848977e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.42225542377949
+    },
+    {
+      "outer": 65,
+      "commodity": "T04",
+      "balance": 4.440892098500626e-16,
+      "KKT": 4.0428188988933053e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.313466406545782
+    },
+    {
+      "outer": 66,
+      "commodity": "T01",
+      "balance": 2.2661508625572383e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039073987
+    },
+    {
+      "outer": 66,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.2562007516806727e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.5846347638424
+    },
+    {
+      "outer": 66,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.0339839799098872e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 86.00693923365772
+    },
+    {
+      "outer": 66,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.528269527860996e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.204872964737802
+    },
+    {
+      "outer": 67,
+      "commodity": "T01",
+      "balance": 2.3271298907737352e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039089982
+    },
+    {
+      "outer": 67,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 2.3128008858446048e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.83365097029693
+    },
+    {
+      "outer": 67,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.191078260489981e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 86.23982924736885
+    },
+    {
+      "outer": 67,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 2.555440078846748e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.106470453167013
+    },
+    {
+      "outer": 68,
+      "commodity": "T01",
+      "balance": 2.3881089189902313e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039105973
+    },
+    {
+      "outer": 68,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.5378377116596748e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.0512530257011
+    },
+    {
+      "outer": 68,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.1678114892105945e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 86.27541346801078
+    },
+    {
+      "outer": 68,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.099349436627932e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.02311059416871
+    },
+    {
+      "outer": 69,
+      "commodity": "T01",
+      "balance": 2.449087947206728e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803912196
+    },
+    {
+      "outer": 69,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 2.258770235618451e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.23751397237783
+    },
+    {
+      "outer": 69,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.706070598936058e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 86.22346125407475
+    },
+    {
+      "outer": 69,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.368907804630043e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.95687834917635
+    },
+    {
+      "outer": 70,
+      "commodity": "T01",
+      "balance": 2.5100669754232244e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039137951
+    },
+    {
+      "outer": 70,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 2.0960675805314347e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.3883326932036
+    },
+    {
+      "outer": 70,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.6227512488670503e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 86.10949317067818
+    },
+    {
+      "outer": 70,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 4.1066634969019935e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.909790500103867
+    },
+    {
+      "outer": 71,
+      "commodity": "T01",
+      "balance": 2.571046003639721e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039153945
+    },
+    {
+      "outer": 71,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.5505613349346873e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.48218950548622
+    },
+    {
+      "outer": 71,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 1.0165939052826008e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.90817140199941
+    },
+    {
+      "outer": 71,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.520065891256561e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.882597046966747
+    },
+    {
+      "outer": 72,
+      "commodity": "T01",
+      "balance": 2.632025031856217e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039169944
+    },
+    {
+      "outer": 72,
+      "commodity": "T02",
+      "balance": 1.588773557159584e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.49052424741905
+    },
+    {
+      "outer": 72,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.053074606882078e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.59403535047454
+    },
+    {
+      "outer": 72,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.234396275662427e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.875642805070612
+    },
+    {
+      "outer": 73,
+      "commodity": "T01",
+      "balance": 2.6930040600727135e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039185932
+    },
+    {
+      "outer": 73,
+      "commodity": "T02",
+      "balance": 4.702371825260343e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.39088186496105
+    },
+    {
+      "outer": 73,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.0479881443706597e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.14405110539445
+    },
+    {
+      "outer": 73,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 2.807445555347139e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.887349179515866
+    },
+    {
+      "outer": 74,
+      "commodity": "T01",
+      "balance": 2.75398308828921e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039201924
+    },
+    {
+      "outer": 74,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.6381117763389305e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 154.1851499194995
+    },
+    {
+      "outer": 74,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.3645613898457893e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.5604263779585
+    },
+    {
+      "outer": 74,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.044285938580715e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.917469912599316
+    },
+    {
+      "outer": 75,
+      "commodity": "T01",
+      "balance": 2.8149621165057065e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039217918
+    },
+    {
+      "outer": 75,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 2.2742934180118098e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.9039634776413
+    },
+    {
+      "outer": 75,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.2200210530721733e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.908716558239
+    },
+    {
+      "outer": 75,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.014647014023367e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.96494470721018
+    },
+    {
+      "outer": 76,
+      "commodity": "T01",
+      "balance": 2.8759411447222026e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039233909
+    },
+    {
+      "outer": 76,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 2.701356813823149e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.599016926614
+    },
+    {
+      "outer": 76,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.994888796300485e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.26040615833033
+    },
+    {
+      "outer": 76,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.214547382964444e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.0277846163808
+    },
+    {
+      "outer": 77,
+      "commodity": "T01",
+      "balance": 2.936920172938699e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039249897
+    },
+    {
+      "outer": 77,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.2431412307386278e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.32258976735187
+    },
+    {
+      "outer": 77,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.150776207396011e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.6695841759057
+    },
+    {
+      "outer": 77,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.260248802381076e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.102757259788497
+    },
+    {
+      "outer": 78,
+      "commodity": "T01",
+      "balance": 2.9978992011551956e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039265889
+    },
+    {
+      "outer": 78,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 2.5616711884919183e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.10811483095162
+    },
+    {
+      "outer": 78,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 5.304292473002294e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.18378533772946
+    },
+    {
+      "outer": 78,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.022864241583176e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.18513377881452
+    },
+    {
+      "outer": 79,
+      "commodity": "T01",
+      "balance": 3.058878229371692e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039281879
+    },
+    {
+      "outer": 79,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 5.115275041323031e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.96189918569758
+    },
+    {
+      "outer": 79,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 1.363717535169956e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.81955430225354
+    },
+    {
+      "outer": 79,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.074510543068213e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.268529994841018
+    },
+    {
+      "outer": 80,
+      "commodity": "T01",
+      "balance": 3.1198572575881882e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039297872
+    },
+    {
+      "outer": 80,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.435243470383824e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.8691609690219
+    },
+    {
+      "outer": 80,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.4571484151220674e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.56916252978952
+    },
+    {
+      "outer": 80,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.67075376367152e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.346394868596228
+    },
+    {
+      "outer": 81,
+      "commodity": "T01",
+      "balance": 3.180836285804685e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039313865
+    },
+    {
+      "outer": 81,
+      "commodity": "T02",
+      "balance": 8.881784197001252e-16,
+      "KKT": 1.0022585484222884e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.80843408878673
+    },
+    {
+      "outer": 81,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.125257504505947e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.40378201690172
+    },
+    {
+      "outer": 81,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 5.57014507293428e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.414357228281563
+    },
+    {
+      "outer": 82,
+      "commodity": "T01",
+      "balance": 3.2418153140211812e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803932986
+    },
+    {
+      "outer": 82,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.7003414367500424e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.76702239245762
+    },
+    {
+      "outer": 82,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 4.1997745237054573e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.315832249048
+    },
+    {
+      "outer": 82,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.796942678868257e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.46767766321449
+    },
+    {
+      "outer": 83,
+      "commodity": "T01",
+      "balance": 3.3027943422376778e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039345853
+    },
+    {
+      "outer": 83,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.3926546078579437e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.74767896711433
+    },
+    {
+      "outer": 83,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 6.51633109862924e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.31037051432685
+    },
+    {
+      "outer": 83,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.250569416825834e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.502748846756656
+    },
+    {
+      "outer": 84,
+      "commodity": "T01",
+      "balance": 3.363773370454174e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039361839
+    },
+    {
+      "outer": 84,
+      "commodity": "T02",
+      "balance": 3.47455397786689e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.76136038089584
+    },
+    {
+      "outer": 84,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 5.577714746679481e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.38867052695332
+    },
+    {
+      "outer": 84,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.712074320877762e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.516590647676555
+    },
+    {
+      "outer": 85,
+      "commodity": "T01",
+      "balance": 3.4247523986706708e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039377833
+    },
+    {
+      "outer": 85,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.5093085410287573e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.81961618096554
+    },
+    {
+      "outer": 85,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 7.015611727927725e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.53032036721086
+    },
+    {
+      "outer": 85,
+      "commodity": "T04",
+      "balance": 2.6645352591003757e-15,
+      "KKT": 4.4799191104375595e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.508463900465415
+    },
+    {
+      "outer": 86,
+      "commodity": "T01",
+      "balance": 3.485731426887167e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039393824
+    },
+    {
+      "outer": 86,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.3402323539791411e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 152.92547988543447
+    },
+    {
+      "outer": 86,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.903110301104205e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.72334892401807
+    },
+    {
+      "outer": 86,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 5.630163145668595e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.479973635131604
+    },
+    {
+      "outer": 87,
+      "commodity": "T01",
+      "balance": 3.5467104551036634e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039409818
+    },
+    {
+      "outer": 87,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 8.359595462345278e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.06896942845756
+    },
+    {
+      "outer": 87,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.797904377629718e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.97472441704662
+    },
+    {
+      "outer": 87,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.1762979552802865e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.434472627773726
+    },
+    {
+      "outer": 88,
+      "commodity": "T01",
+      "balance": 3.60768948332016e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039425809
+    },
+    {
+      "outer": 88,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.6020217819624859e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.23161603653475
+    },
+    {
+      "outer": 88,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.928626667359404e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.28332816681537
+    },
+    {
+      "outer": 88,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.842046756010952e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.377124119957717
+    },
+    {
+      "outer": 89,
+      "commodity": "T01",
+      "balance": 3.668668511536656e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039441806
+    },
+    {
+      "outer": 89,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.1213155506464124e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.39124425831133
+    },
+    {
+      "outer": 89,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.1738128266959183e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.64892256653607
+    },
+    {
+      "outer": 89,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.475610061827368e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.312770280264765
+    },
+    {
+      "outer": 90,
+      "commodity": "T01",
+      "balance": 3.729647539753153e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039457798
+    },
+    {
+      "outer": 90,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 8.977278036501149e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.5280379347354
+    },
+    {
+      "outer": 90,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 5.892301524525496e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.06888363411257
+    },
+    {
+      "outer": 90,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.4575439271373514e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.24676527015366
+    },
+    {
+      "outer": 91,
+      "commodity": "T01",
+      "balance": 3.790626567969649e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039473791
+    },
+    {
+      "outer": 91,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.9630324207343475e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.62809782919135
+    },
+    {
+      "outer": 91,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 1.2923556748348296e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.53038504134753
+    },
+    {
+      "outer": 91,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.274416733692697e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.18337493724443
+    },
+    {
+      "outer": 92,
+      "commodity": "T01",
+      "balance": 3.851605596186145e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039489781
+    },
+    {
+      "outer": 92,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.5132318889541301e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.68505914983703
+    },
+    {
+      "outer": 92,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 9.368673407707532e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.00965921012782
+    },
+    {
+      "outer": 92,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.770941826610452e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.12552136308599
+    },
+    {
+      "outer": 93,
+      "commodity": "T01",
+      "balance": 3.912584624402642e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039505772
+    },
+    {
+      "outer": 93,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 5.646208035817008e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.70324245827118
+    },
+    {
+      "outer": 93,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.22703153722588e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.4711269484158
+    },
+    {
+      "outer": 93,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.115485121450409e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.07595939927617
+    },
+    {
+      "outer": 94,
+      "commodity": "T01",
+      "balance": 3.973563652619139e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039521764
+    },
+    {
+      "outer": 94,
+      "commodity": "T02",
+      "balance": 4.973799150320701e-14,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.69069668491102
+    },
+    {
+      "outer": 94,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 1.4427129133755796e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.87903693887505
+    },
+    {
+      "outer": 94,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 3.592150608933469e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.035986393898366
+    },
+    {
+      "outer": 95,
+      "commodity": "T01",
+      "balance": 4.034542680835635e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803953776
+    },
+    {
+      "outer": 95,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.57270426812788e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.65597747525746
+    },
+    {
+      "outer": 95,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.022500647171207e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.2263047346048
+    },
+    {
+      "outer": 95,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.282861982437621e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.005724752735393
+    },
+    {
+      "outer": 96,
+      "commodity": "T01",
+      "balance": 4.095521709052131e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803955375
+    },
+    {
+      "outer": 96,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.2779572477523737e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.60488992337403
+    },
+    {
+      "outer": 96,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.3110740463229346e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.489674629075
+    },
+    {
+      "outer": 96,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.385524757650532e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.986441775591466
+    },
+    {
+      "outer": 97,
+      "commodity": "T01",
+      "balance": 4.156500737268628e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039569739
+    },
+    {
+      "outer": 97,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.4585092119245421e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.54206273052353
+    },
+    {
+      "outer": 97,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.880863030908068e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.6547562443267
+    },
+    {
+      "outer": 97,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.375666909309875e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.979141872276966
+    },
+    {
+      "outer": 98,
+      "commodity": "T01",
+      "balance": 4.217479765485123e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039585733
+    },
+    {
+      "outer": 98,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 9.390069056867886e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.47039576723802
+    },
+    {
+      "outer": 98,
+      "commodity": "T03",
+      "balance": 5.329070518200751e-15,
+      "KKT": 1.2840484779949585e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.71726640215792
+    },
+    {
+      "outer": 98,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.273222033961549e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 28.984388249819673
+    },
+    {
+      "outer": 99,
+      "commodity": "T01",
+      "balance": 4.27845879370162e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039601757
+    },
+    {
+      "outer": 99,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 1.1025488063311766e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.39178465026674
+    },
+    {
+      "outer": 99,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 6.683145036162383e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.68119584549265
+    },
+    {
+      "outer": 99,
+      "commodity": "T04",
+      "balance": 4.440892098500626e-16,
+      "KKT": 4.526426861651723e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.002138212215936
+    },
+    {
+      "outer": 100,
+      "commodity": "T01",
+      "balance": 4.339437821918116e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039617783
+    },
+    {
+      "outer": 100,
+      "commodity": "T02",
+      "balance": 3.21831034650315e-09,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.30865579571497
+    },
+    {
+      "outer": 100,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 8.602555358754724e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.5579870627147
+    },
+    {
+      "outer": 100,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.023831402798225e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.031443897109664
+    },
+    {
+      "outer": 101,
+      "commodity": "T01",
+      "balance": 4.400416850134614e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039633805
+    },
+    {
+      "outer": 101,
+      "commodity": "T02",
+      "balance": 5.1457504923746455e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.22562296869233
+    },
+    {
+      "outer": 101,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.682140691353676e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.36403553127002
+    },
+    {
+      "outer": 101,
+      "commodity": "T04",
+      "balance": 4.440892098500626e-16,
+      "KKT": 7.059108713916687e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.070296835097324
+    },
+    {
+      "outer": 102,
+      "commodity": "T01",
+      "balance": 4.461395878351109e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039649828
+    },
+    {
+      "outer": 102,
+      "commodity": "T02",
+      "balance": 1.0557243967923569e-10,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.14947567226764
+    },
+    {
+      "outer": 102,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 8.389648023559308e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 85.11890140993266
+    },
+    {
+      "outer": 102,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.703903096283862e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.115994511062873
+    },
+    {
+      "outer": 103,
+      "commodity": "T01",
+      "balance": 4.522374906567606e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039665851
+    },
+    {
+      "outer": 103,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.059858398731946e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.08811298620998
+    },
+    {
+      "outer": 103,
+      "commodity": "T03",
+      "balance": 3.552713678800501e-15,
+      "KKT": 9.307403883376861e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.8409082871922
+    },
+    {
+      "outer": 103,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.801488976936082e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.165794966231836
+    },
+    {
+      "outer": 104,
+      "commodity": "T01",
+      "balance": 4.5833539347841024e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803968188
+    },
+    {
+      "outer": 104,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.9399526780001916e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.04838478542632
+    },
+    {
+      "outer": 104,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 4.015734067497334e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.5442203098759
+    },
+    {
+      "outer": 104,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.944947249109634e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.216554436977336
+    },
+    {
+      "outer": 105,
+      "commodity": "T01",
+      "balance": 4.644332963000599e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039697898
+    },
+    {
+      "outer": 105,
+      "commodity": "T02",
+      "balance": 2.8937075942842423e-08,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.03427089930804
+    },
+    {
+      "outer": 105,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.191144155075247e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 84.24108253693502
+    },
+    {
+      "outer": 105,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 3.7659332448541806e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.264459314167315
+    },
+    {
+      "outer": 106,
+      "commodity": "T01",
+      "balance": 4.705311991217095e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039713929
+    },
+    {
+      "outer": 106,
+      "commodity": "T02",
+      "balance": 2.5551116777933203e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.04590030192077
+    },
+    {
+      "outer": 106,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.2315380599511343e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.9393836479371
+    },
+    {
+      "outer": 106,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.152656897818441e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.305815757319404
+    },
+    {
+      "outer": 107,
+      "commodity": "T01",
+      "balance": 4.766291019433591e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039729952
+    },
+    {
+      "outer": 107,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.484428940840886e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.080039381106
+    },
+    {
+      "outer": 107,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.902753357680865e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.64329039315042
+    },
+    {
+      "outer": 107,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 7.608497745670337e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.338082715183045
+    },
+    {
+      "outer": 108,
+      "commodity": "T01",
+      "balance": 4.8272700476500884e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039745976
+    },
+    {
+      "outer": 108,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.9237144976527815e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.13224941113023
+    },
+    {
+      "outer": 108,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.099974742292441e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.3546292123648
+    },
+    {
+      "outer": 108,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 1.0372163985255555e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.359968166913816
+    },
+    {
+      "outer": 109,
+      "commodity": "T01",
+      "balance": 4.888249075866585e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039762001
+    },
+    {
+      "outer": 109,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 8.421982501268681e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.19757552314059
+    },
+    {
+      "outer": 109,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 9.310150899470457e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 83.07687591181991
+    },
+    {
+      "outer": 109,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 2.684001071129411e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.37074107744638
+    },
+    {
+      "outer": 110,
+      "commodity": "T01",
+      "balance": 4.949228104083081e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039778022
+    },
+    {
+      "outer": 110,
+      "commodity": "T02",
+      "balance": 7.966605153342243e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.26969963995694
+    },
+    {
+      "outer": 110,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 8.450877107421214e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.81526468311061
+    },
+    {
+      "outer": 110,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.425806213302844e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.37014299613839
+    },
+    {
+      "outer": 111,
+      "commodity": "T01",
+      "balance": 5.010207132299577e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039794049
+    },
+    {
+      "outer": 111,
+      "commodity": "T02",
+      "balance": 1.4210854715202004e-14,
+      "KKT": 2.6465827895828137e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.34171114974103
+    },
+    {
+      "outer": 111,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 3.2675847716490125e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.57554378627638
+    },
+    {
+      "outer": 111,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 6.080278115628555e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.35871089061308
+    },
+    {
+      "outer": 112,
+      "commodity": "T01",
+      "balance": 5.071186160516074e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039810076
+    },
+    {
+      "outer": 112,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 9.870477784333435e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.40593954481682
+    },
+    {
+      "outer": 112,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 6.564752511115767e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.3644167363374
+    },
+    {
+      "outer": 112,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.9381998645785e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.33914389339872
+    },
+    {
+      "outer": 113,
+      "commodity": "T01",
+      "balance": 5.13216518873257e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039826096
+    },
+    {
+      "outer": 113,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.5845512550337146e-06,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.45718429911597
+    },
+    {
+      "outer": 113,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 8.800065953731841e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.19048008113487
+    },
+    {
+      "outer": 113,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 3.0775873889987163e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.313575650115443
+    },
+    {
+      "outer": 114,
+      "commodity": "T01",
+      "balance": 5.193144216949066e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039842119
+    },
+    {
+      "outer": 114,
+      "commodity": "T02",
+      "balance": 9.410427992406767e-11,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.4932982167618
+    },
+    {
+      "outer": 114,
+      "commodity": "T03",
+      "balance": 8.881784197001252e-16,
+      "KKT": 5.617287057806576e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 82.06316379461309
+    },
+    {
+      "outer": 114,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 4.950763936684924e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.283488564328053
+    },
+    {
+      "outer": 115,
+      "commodity": "T01",
+      "balance": 5.254123245165562e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.5842848039858146
+    },
+    {
+      "outer": 115,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 7.472885085013832e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.51491927471588
+    },
+    {
+      "outer": 115,
+      "commodity": "T03",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 4.6471749692855724e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.9937649249931
+    },
+    {
+      "outer": 115,
+      "commodity": "T04",
+      "balance": 8.881784197001252e-16,
+      "KKT": 6.303415484307868e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.250612492393167
+    },
+    {
+      "outer": 116,
+      "commodity": "T01",
+      "balance": 5.31510227338206e-12,
+      "KKT": 1.7763568394002505e-15,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 0.584284803987417
+    },
+    {
+      "outer": 116,
+      "commodity": "T02",
+      "balance": 7.105427357601002e-15,
+      "KKT": 1.7410260113546912e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 153.52506503941257
+    },
+    {
+      "outer": 116,
+      "commodity": "T03",
+      "balance": 2.34123831432953e-12,
+      "KKT": 8.881784197001252e-16,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 81.99219489434498
+    },
+    {
+      "outer": 116,
+      "commodity": "T04",
+      "balance": 1.7763568394002505e-15,
+      "KKT": 2.499311380077529e-07,
+      "min_flow": 0.0,
+      "foreign_flow": 0.0,
+      "local_objective": 29.216640690441874
+    }
+  ],
+  "all_local_trials_pass": true,
+  "seconds": 102.45299999997951,
+  "code_sha256": "0213c2705ae4d558b430191ca22e40fdf75278d109ac1cbedadf0b03154f19ef",
+  "optimizer_import_guard": true
+}

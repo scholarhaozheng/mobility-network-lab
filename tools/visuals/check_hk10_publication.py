@@ -14,6 +14,8 @@ import subprocess
 from bs4 import BeautifulSoup
 
 RECEIPT = "docs/assets/atlas/HK10_PUBLICATION_20261008.json"
+CURRENT_RECEIPT = "docs/assets/atlas/HK10_PUBLICATION_20261009.json"
+LOCAL_INSTRUCTION = {"date": "2026-10-09", "instruction_original": "已有研究成果一次完成核对、绘图、网页接入和公开成品准备", "scope": "Prepare local public-ready increment; no remote write authorization"}
 BASELINE = "f2e97d0ee760a0feac65d6b5731037caea7324f7"
 HISTORICAL = "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json"
 MIGRATION = "docs/assets/atlas/HK10_PRESENTATION_20261004.json"
@@ -70,7 +72,8 @@ def expected_scope(root: Path) -> tuple[dict, dict, dict]:
 
 
 def validate(root: Path) -> dict:
-    if not (root / RECEIPT).is_file():
+    receipt_path = CURRENT_RECEIPT if (root / CURRENT_RECEIPT).is_file() else RECEIPT
+    if not (root / receipt_path).is_file():
         return {"status": "NOT_PRESENT", "checks": 0, "errors": [], "current_pages": {}}
     checks, errors = 0, []
     def check(ok: bool, message: str) -> None:
@@ -79,12 +82,16 @@ def validate(root: Path) -> dict:
         if not ok:
             errors.append(message)
     try:
-        record = json.loads((root / RECEIPT).read_text(encoding="utf-8"))
+        record = json.loads((root / receipt_path).read_text(encoding="utf-8"))
         baseline_pages, science, documents = expected_scope(root)
         check(record.get("schema") == "mcl_hk10_publication_continuation_v1", "Unknown HK10 continuation schema")
         check(record.get("source_baseline") == BASELINE, "HK10 continuation baseline changed")
         check(record.get("record_type") == "presentation-change-verification-not-scientific-approval", "HK10 continuation misrepresents its authority")
-        check(record.get("publication_instruction") == {"date": "2026-10-08", "instruction_original": "推送吧", "scope": "Publish the reviewed current presentation"}, "Current presentation publication instruction differs")
+        expected_instruction = LOCAL_INSTRUCTION if receipt_path == CURRENT_RECEIPT else {"date": "2026-10-08", "instruction_original": "推送吧", "scope": "Publish the reviewed current presentation"}
+        check(record.get("publication_instruction") == expected_instruction, "Current presentation publication instruction differs")
+        if receipt_path == CURRENT_RECEIPT:
+            check(record.get("previous_presentation_receipt_sha256") == sha(root / RECEIPT), "Previous presentation record binding differs")
+            check(record.get("remote_write_authorized") is False, "Local increment incorrectly authorizes remote writes")
         for flag in ("historical_approval_rewritten", "scientific_solver_rerun", "new_hk10_scientific_payload_disclosure", "new_artifact_level_scientific_approval"):
             check(record.get(flag) is False, "HK10 continuation overstates authority: " + flag)
         check(record.get("approved_identity") == documents[HISTORICAL]["approved_identity"], "HK10 continuation changes approved identity")

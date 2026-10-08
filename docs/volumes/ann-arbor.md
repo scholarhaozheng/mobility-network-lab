@@ -14,19 +14,17 @@ The figures show saved method results, physical-flow maps and original-unit diag
 
 ## Current choice-to-assignment status
 
-The new timetable-based choice and road-assignment scenario has passed S0 scientific intake. Its new figures, detailed model data, and long prose await confirmed public rights for University of Michigan timetable derivatives. Keep the existing Ann Arbor static entry and approved assets unchanged. The old S600 and S72 are comparison baselines.
+The timetable-sensitive transit-choice scenario produced 600 positive vehicle OD pairs (1,569.500896674 PCE/h) and one actual Frank–Wolfe update on the unchanged road graph. The independent final full-graph gap is 5.078039901982526e−15 against the 1e−5 gate. Existing S0 scientific intake applies to this saved result. Original R2, old S600 and independent S72 remain distinct; Native600 and T1/T4 remain incomplete.
 
-Original R2, later frozen S600 and independent S72 results below retain their own identities. Native600 and finite time-expanded T1/T4 remain incomplete.
-
-[S0 approved status](<../assets/choicefw-scope-20261008/ann-arbor/CHOICE_FW_PUBLIC_STATUS.md>) · [Release and SHA](<../assets/choicefw-scope-20261008/CONSUMPTION.json>)
+Historical engineering scenario, service date 2026-10-05, 08:00–09:00; not a current journey planner or observed policy effect. The field chain is person OD → timetable-sensitive mode choice → drive persons / 1.2 persons per vehicle → PCE demand → original-road assignment.
 
 <a id="choicefw-private-v002"></a>
 
 ## New timetable choice → actual FW assignment
 
-**Private local review · S0 scientific intake passed · public rights pending.**
+ANN\_TRANSIT\_CHOICE\_FW\_V002 / ANN\_ARBOR\_CHOICE\_TIMETABLE\_R1 — saved numerical result.
 
-The new timetable-based choice produced 600 positive vehicle OD pairs totalling 1,569.500896674 PCE/h, and these values actually entered Frank–Wolfe on the unchanged original directed road graph. One actual update was saved. The provider checks passed, and S0 accepted the saved numerical result as S0\_ACCEPTED\_NEW\_CHOICE\_FW\_SAVED\_NUMERIC. New figures, plot data and detailed prose remain restricted to this private preview pending the public basis for University of Michigan timetable derivatives.
+The timetable-sensitive transit-choice scenario produced 600 positive vehicle OD pairs (1,569.500896674 PCE/h) and one actual Frank–Wolfe update on the unchanged road graph. The independent final full-graph gap is 5.078039901982526e−15 against the 1e−5 gate. Existing S0 scientific intake applies to this saved result. Original R2, old S600 and independent S72 remain distinct; Native600 and T1/T4 remain incomplete.
 
 ### Field chain and input identity
 
@@ -36,31 +34,41 @@ Frozen generation and distribution → unchanged person OD → OD-specific timet
 
 ##### New timetable demand and its physical road assignment
 
-[![New timetable demand and its physical road assignment](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.svg>)](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.svg>)
+[![New timetable demand and its physical road assignment](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg>)](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg>)
 
 This new-choice instance alone uses 600 positive vehicle OD pairs and 1,569.500896674 PCE/h. The left panel is vehicle OD demand (PCE/h per OD); the right panel is the resulting assigned flow (PCE/h per directed physical road arc), with separate colour scales. All 5,138 physical roads are retained: 1,998 have positive flow and 3,140 have zero flow. Grey roads represent zero flow; overlapping directions remain separate data rows. The 9,065 turn arcs are not counted as physical roads. Summing road flows counts a trip on multiple roads and is not the total vehicle demand. Engineering timetable scenario, not observed or locally calibrated traffic.
 
-[Full figure](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.svg>) · [PNG](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.png>) · [Plot data · Vehicle\_demand.private.csv](<../assets/private-choicefw-v002/ann-arbor/figures/Vehicle_demand.private.csv>) · [Plot data · Assigned\_physical\_flow.private.csv](<../assets/private-choicefw-v002/ann-arbor/figures/Assigned_physical_flow.private.csv>) · [Source · FIGURE\_SOURCES.json](<../assets/private-choicefw-v002/ann-arbor/figures/FIGURE_SOURCES.json>) · [Source · FIELD\_CHAIN.csv](<../assets/private-choicefw-v002/ann-arbor/FIELD_CHAIN.csv>) · [Source · FIELD\_CHAIN\_HASHES.csv](<../assets/private-choicefw-v002/ann-arbor/FIELD_CHAIN_HASHES.csv>) · [Source · FW\_CHECK.json](<../assets/private-choicefw-v002/ann-arbor/verification/FW_CHECK.json>) · [S0 scope and SHA](<../assets/private-choicefw-v002/ann-arbor/RECEIPT.json>)
+[SVG](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg>) · [PNG](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.png>) · [PDF](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.pdf>) · [Model OD · 600 rows](<../assets/mainline-publication-20261009/ann-arbor/VEHICLE_DEMAND.csv>) · [Physical flow · 5,138 roads](<../assets/mainline-publication-20261009/ann-arbor/PHYSICAL_ROAD_FLOW.csv>) · [ODbL road database](<../assets/mainline-publication-20261009/ann-arbor/ANN_ROAD_DATABASE_ODBL.zip>) · [Model comparison](<../assets/mainline-publication-20261009/ann-arbor/SCALE_COMPARISON.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>) · [Publication record](<../assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json>)
 
 <a id="figure-ann-choice-fw-convergence-v002"></a>
 
 ##### Frank–Wolfe: one actual update on the new choice demand
 
-[![Frank–Wolfe: one actual update on the new choice demand](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.svg>)](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.svg>)
+[![Frank–Wolfe: one actual update on the new choice demand](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg>)](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg>)
 
 The two markers are the actual saved iteration 0 and iteration 1 of ANN\_TRANSIT\_CHOICE\_FW\_V002; they are not sampled from another experiment. Beckmann objective decreases from 7,511.797008491 to 7,511.745981436 PCE·min (0.051027055 PCE·min); the left panel displays excess above the final objective. Independent full-graph relative gap decreases from 3.6149991422457574e−5 to 5.078039901982526e−15 against the fixed 1e−5 gate. Solver-native final gap is separately retained as 3.627171358558947e−15 because the independent sum order differs. Initial max v/c is 0.6830239071239427; the separately checked final max v/c happens to have the same value. A short curve does not prove the region too small, and the initial state belongs to this accepted run rather than a separate failed trial.
 
-[Full figure](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.svg>) · [PNG](<../assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.png>) · [Plot data · CONVERGENCE.plot.json](<../assets/private-choicefw-v002/ann-arbor/figures/CONVERGENCE.plot.json>) · [Plot data · history.csv](<../assets/private-choicefw-v002/ann-arbor/S/ChoiceR1/FW/history.csv>) · [Source · CHECKPOINT\_AUDIT.json](<../assets/private-choicefw-v002/ann-arbor/verification/CHECKPOINT_AUDIT.json>) · [Source · FW\_EXECUTION.json](<../assets/private-choicefw-v002/ann-arbor/FW_EXECUTION.json>) · [Source · FW\_POLICY.json](<../assets/private-choicefw-v002/ann-arbor/FW_POLICY.json>) · [S0 scope and SHA](<../assets/private-choicefw-v002/ann-arbor/RECEIPT.json>)
+[SVG](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg>) · [PNG](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.png>) · [PDF](<../assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.pdf>) · [Plot data · two saved states](<../assets/mainline-publication-20261009/ann-arbor/CONVERGENCE.plot.json>) · [Independent saved gap check](<../assets/mainline-publication-20261009/ann-arbor/FW_CHECK.json>) · [Model comparison](<../assets/mainline-publication-20261009/ann-arbor/SCALE_COMPARISON.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>) · [Publication record](<../assets/mainline-publication-20261009/MAINLINE_PUBLICATION_DECISION.json>)
 
 ### Separate baselines and comparison limits
 
-The original R2 600-OD initial check remains a separate historical record: zero updates under its original 1e−4 gate. The later frozen S600 baseline (ANN\_ARBOR\_R2\_S600\_20261008) uses 1,647.816622273 PCE/h and one update under 1e−5. The separate S72 baseline (ANN\_ARBOR\_R2\_S72\_20261008) uses 72 OD and 243.071388651 PCE/h, with zero updates at 1e−5; its Native26/52 initial acceptance is limited to S72. S600 and S72 are reused accepted comparison baselines, with zero new optimizer runs in this intake. The new ChoiceR1 experiment (ANN\_TRANSIT\_CHOICE\_FW\_V002; model ANN\_ARBOR\_CHOICE\_TIMETABLE\_R1) is the only new solve here. Do not combine these records into one trajectory or count the two reused baselines as new experiments. Native600 and finite time-expanded T1/T4 remain incomplete; this FW result does not pass them.
+The original R2 600-OD initial check remains a separate historical record: zero updates under its original 1e−4 gate. The later frozen S600 baseline (ANN\_ARBOR\_R2\_S600\_20261008) uses 1,647.816622273 PCE/h and one update under 1e−5. The separate S72 baseline (ANN\_ARBOR\_R2\_S72\_20261008) uses 72 OD and 243.071388651 PCE/h, with zero updates at 1e−5; its Native26/52 initial acceptance is limited to S72. S600 and S72 are reused accepted comparison baselines; they are not additional experiments. The ChoiceR1 experiment (ANN\_TRANSIT\_CHOICE\_FW\_V002; model ANN\_ARBOR\_CHOICE\_TIMETABLE\_R1) is the distinct choice-to-FW run saved on 8 October 2026. These records represent distinct demand instances and do not form one iteration trajectory. Native600 and finite time-expanded T1/T4 remain incomplete; this FW result does not pass them.
 
 The same network, access, BPR rules and original person OD are retained, but mode choice changes the vehicle-demand vector. New demand is 4.752696662% below old S600 and the saved Beckmann objectives differ by −360.149153578 PCE·min. These are different engineering demand scenarios; the objective difference is not same-instance algorithm performance or an observed causal policy effect. All three later cohorts retain the approximately 19.633 km² Central Ann Arbor urban subregion and the original routing halo. Geographic adequacy was not tested.
 
-S0 has accepted the saved numerical result. These unchanged source figures still contain their producer-era pending-public-release label; this refers to public rights, not a missing scientific intake. The new figures and detailed data are private review material pending the U-M timetable-derived public basis. Transit scheduling, geographic, and real-time data provided by permission of AAATA/TheRide. © OpenStreetMap contributors; road-derived data ODbL 1.0.
+Transit scheduling, geographic, and real-time data provided by permission of AAATA/TheRide. Service date 2026-10-05; historical engineering scenario, not a current journey planner. © OpenStreetMap contributors; road-derived database ODbL 1.0. ACS 2020–2024 and LODES 2021 are original statistical sources; model estimates are the authors’ analysis.
 
-[Complete field chain](<../assets/private-choicefw-v002/ann-arbor/MODEL_AND_FIELD_CHAIN.md>) · [Comparison scope](<../assets/private-choicefw-v002/ann-arbor/SCALE_AND_COMPARABILITY.md>) · [Producer chapter](<../assets/private-choicefw-v002/ann-arbor/ANN_ARBOR_CITY_VOLUME_INCREMENT.md>) · [Source notice](<../assets/private-choicefw-v002/ann-arbor/SOURCE_NOTICE.md>)
+[Source versions, reuse conditions and original input entry points](<../assets/mainline-publication-20261009/NOTICE.md>) · [Download retained ODbL road database](<../assets/mainline-publication-20261009/ann-arbor/ANN_ROAD_DATABASE_ODBL.zip>). Original GTFS and detailed stop-by-stop timetable itineraries are not included; the model summaries and plotting data above are available.
+
+[All three distinct model summaries](<../assets/mainline-publication-20261009/ann-arbor/SCALE_COMPARISON.json>) · [Model and input signatures](<../assets/mainline-publication-20261009/ann-arbor/MODEL_ID_MAP.json>) · [Source and reuse notice](<../assets/mainline-publication-20261009/NOTICE.md>)
+
+Distinct demand instances; objectives do not establish algorithm superiority across different demand
+
+| Instance | Model ID | Positive OD | Demand (PCE/h) | Actual FW updates | Identity |
+| --- | --- | --- | --- | --- | --- |
+| S600 | ANN\_ARBOR\_R2\_S600\_20261008 | 600 | 1647.816622273 | 1 | Reused comparison; no new solve |
+| ChoiceR1 | ANN\_ARBOR\_CHOICE\_TIMETABLE\_R1 | 600 | 1569.500896674 | 1 | New saved choice-to-FW instance |
+| S72 | ANN\_ARBOR\_R2\_S72\_20261008 | 72 | 243.071388651 | 0 | Reused comparison; no new solve |
 
 <a id="gap-20261008"></a>
 
@@ -90,7 +98,7 @@ Accepted static endpoints are grouped by their own frozen demand instance. S600 
 
 ### Source and scope notice
 
-Separate frozen S600 and S72 static instances. S72 Native passed at initialization with zero updates; Native600 remains incomplete. New timetable-choice FW has since passed S0 scientific intake; its new derivatives await public rights. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census/LEHD.
+Separate frozen S600 and S72 static instances. S72 Native passed at initialization with zero updates; Native600 remains incomplete. New timetable-choice FW has passed S0 scientific intake; its current model summaries and figures are available with the source notice. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census/LEHD.
 
 ### Complete approved source chapters
 
