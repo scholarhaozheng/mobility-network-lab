@@ -1,0 +1,1 @@
+v/c and BPR travel time for top 10 loaded links; v/c>1 is allowed in static BPR. Single-pass engineering scenario; no local empirical calibration. These rankings use the saved solver-arc table and remain separate from the physical-road maps; virtual arcs are not road geometry. 19.303 km2 central urban subarea / weekday AM HBW

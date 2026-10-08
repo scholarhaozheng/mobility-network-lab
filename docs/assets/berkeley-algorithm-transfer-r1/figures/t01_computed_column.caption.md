@@ -1,0 +1,1 @@
+Saved 7.5 PCE T02 column: 89 road movements, fixed objective cost 3.90345 min; assumed departure 08:02:30 and rounded-state physical arrival 08:47 (44.5 elapsed min). The H165 sink connector is zero-cost terminal bookkeeping, not road travel or queueing. Original road geometry is OpenStreetMap-derived; private candidate pending S0 review.

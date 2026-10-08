@@ -1,0 +1,62 @@
+{
+  "table_id": "pittsburgh-t4-objectives",
+  "city": "pittsburgh",
+  "title": "Same-T4 objective comparison",
+  "scope": "Original T4; independent same-graph endpoints",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T08.svg"
+  ],
+  "notes": [
+    "Signed roundoff is preserved. Objective proximity alone is not feasibility. Method categories are not an iteration axis."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T08.plot.json",
+      "href": "assets/algorithm-transfer-r8/pittsburgh/PIT_T08.plot.json",
+      "sha256": "29afdff0b92330b14248bc73c4defb0241bc71b3bdd1ef6fc4d8b7e23d5e29cd"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Endpoint objective values",
+      "columns": [
+        "method",
+        "objective_pce_min",
+        "signed_difference_from_exact_LP_pce_min"
+      ],
+      "rows": [
+        {
+          "method": "Exact LP",
+          "objective_pce_min": 0.24793241990274612,
+          "signed_difference_from_exact_LP_pce_min": 0.0
+        },
+        {
+          "method": "CG",
+          "objective_pce_min": 0.2479324199027461,
+          "signed_difference_from_exact_LP_pce_min": -2.7755575615628914e-17
+        },
+        {
+          "method": "LR",
+          "objective_pce_min": 0.2479324199027461,
+          "signed_difference_from_exact_LP_pce_min": -2.7755575615628914e-17
+        },
+        {
+          "method": "ADMM",
+          "objective_pce_min": 0.2479324199052491,
+          "signed_difference_from_exact_LP_pce_min": 2.5029978090174154e-12
+        }
+      ],
+      "column_units": {
+        "objective_pce_min": "PCE·min",
+        "signed_difference_from_exact_LP_pce_min": "PCE·min"
+      },
+      "details": false
+    }
+  ],
+  "rows": 4,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"pittsburgh-t4-objectives\"><h4>Same-T4 objective comparison</h4><p class=\"evidence-table-scope\">Original T4; independent same-graph endpoints</p><h5>Endpoint objective values</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Endpoint objective values\"><table><thead><tr><th scope=\"col\">method</th><th scope=\"col\">objective_pce_min <small>(PCE·min)</small></th><th scope=\"col\">signed_difference_from_exact_LP_pce_min <small>(PCE·min)</small></th></tr></thead><tbody><tr><td>Exact LP</td><td>0.24793241990274612</td><td>0.0</td></tr><tr><td>CG</td><td>0.2479324199027461</td><td>-2.7755575615628914e-17</td></tr><tr><td>LR</td><td>0.2479324199027461</td><td>-2.7755575615628914e-17</td></tr><tr><td>ADMM</td><td>0.2479324199052491</td><td>2.5029978090174154e-12</td></tr></tbody></table></div><p>Signed roundoff is preserved. Objective proximity alone is not feasibility. Method categories are not an iteration axis.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T08.plot.json\" download>PIT_T08.plot.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T08.svg\">PIT_T08.svg</a></p></details></section>",
+  "caption": "Signed roundoff is preserved. Objective proximity alone is not feasibility. Method categories are not an iteration axis."
+}

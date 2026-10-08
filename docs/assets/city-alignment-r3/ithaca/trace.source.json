@@ -1,0 +1,56 @@
+{
+  "id": "R3-ITHACA-TRACE",
+  "city": "ithaca",
+  "title": "Frank–Wolfe saved objective and gap",
+  "caption": "1 saved record(s), 0 updates; final objective 1638.73175769 PCE-min, gap 0 against 0.0001. The exact zero (where present) is plotted on a linear axis; no convergence history is fabricated.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        1638.7317576864002
+      ],
+      "iteration": [
+        0.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0
+      ],
+      "axis": "linear"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\run_20261005\\assignment\\fw_trace.csv",
+      "sha256": "eb2230363ac7feafb3c782d43d4d0656feb576b97b778f8f784d79ad1e9aec25"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\run_20261005\\assignment\\assignment_summary.json",
+      "sha256": "8fe6d8285bfb64fb98dfde1c6e56a10375fcc95b162bd0ebf6159be395bfc80b"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "trace"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "9daa120188466e849104d3cd4977f3c2123fb762c3e902a172df7354341099b6",
+    "png": "d9e5b6c8e0d949710863f84117c5904ffc0aba42997163cf3e4d79c5d8956aec",
+    "pdf": "b5578f1af771cd71083038c384b9c9986fcafc7b4406912a03c58a88e029e07c"
+  },
+  "width": 1805,
+  "height": 873,
+  "src": "assets/city-alignment-r3/ithaca/trace.svg"
+}

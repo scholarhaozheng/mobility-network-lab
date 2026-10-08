@@ -1,0 +1,389 @@
+{
+  "figure_id": "R12-PITTSBURGH-INITIAL-FW",
+  "city": "pittsburgh",
+  "instance": "Original full-city four-stage instance; distinct from later selected static cohorts",
+  "role": "saved-state-check",
+  "conclusion": "One saved initial state is displayed truthfully as a point, not converted to a table.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 1,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "Only the actual saved iteration 0 is shown: objective 12081.0666458954 PCE·min/h and relative gap 4.77399256443488e-07, against the unchanged 0.0001 stopping gate. There were zero updates. Each panel contains a single numerical point; no missing trajectory or second state is inferred. The companion physical-flow map reads this method’s own saved vector. This frozen original demand instance is not relabelled as a later selected-demand or transit-revision run.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh/trace.source.json",
+      "sha256": "f8c27add7aa0cc74083ee10973fc719d643a78420e0594683f5e4f33dd5aa46f"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Frank–Wolfe: the saved initial check",
+    "scope": "ORIGINAL FOUR-STAGE INSTANCE · 0 UPDATES"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.915,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2474,
+    1081
+  ],
+  "exports": {
+    "png": "e25b1ab495b82e20b33d3cda4a18d76df2438d7d2440f75b0d4005028b0f2829",
+    "svg": "2650af3fe0973afd4807e900422fa0da46271a13799cf7fdd523fbfe27c04ea1",
+    "pdf": "93e2b244ad9aa7d7e219af82be3d7024d7523e49683751cc2ec2995534a89a7e"
+  },
+  "text_audit": [
+    {
+      "text": "12081.0666",
+      "size_pt": 9.0,
+      "bounds_px": [
+        190.226,
+        236.917,
+        75.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        179.663,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.601,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        13.986,
+        118.812,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "11400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        82.12,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "11600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        121.802,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "11800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        161.484,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        201.166,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        240.848,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        280.529,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        320.211,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        32.542,
+        359.893,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved objective",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        351.211,
+        139.625,
+        14.0
+      ]
+    },
+    {
+      "text": "4.77399e-07",
+      "size_pt": 9.0,
+      "bounds_px": [
+        637.399,
+        136.88,
+        79.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        628.587,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        673.524,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        452.284,
+        131.875,
+        13.0,
+        182.75
+      ]
+    },
+    {
+      "text": "−0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.59,
+        85.666,
+        55.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        119.191,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        152.715,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00004",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        186.24,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00006",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        219.764,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00008",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        253.289,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00010",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        286.813,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00012",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        320.338,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00014",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        353.862,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Relative-gap stopping check",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        351.211,
+        240.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved gap",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        323.475,
+        56.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Gate = 0.0001",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        308.128,
+        78.375,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  ORIGINAL FOUR-STAGE INSTANCE · 0 UPDATES",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        403.267,
+        450.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: the saved initial check",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        376.322,
+        423.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

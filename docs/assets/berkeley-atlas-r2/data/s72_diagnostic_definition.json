@@ -1,0 +1,29 @@
+{
+  "full_relative_gap_formula": "(sum_a v_path[a]*t_a(v_path[a]) - sum_od q_od*shortest_path_cost_od_on_full_graph_at_final_costs) / max(sum_a v_path[a]*t_a(v_path[a]), 1e-12)",
+  "acceptance_gate": "abs(full_relative_gap) <= 1e-5",
+  "max_od_residual_formula": "max_od abs((C @ reconstructed_path_flow)[od] - q[od])",
+  "max_link_reconstruction_formula": "max_a abs(explicit_link_v[a] - (A @ reconstructed_path_flow)[a])",
+  "objective": "Original BPR integral, in PCE-min, not sum_a flow*travel_time",
+  "source_roles": [
+    {
+      "file": "mcl_native_l3_controller_fix.py",
+      "function": "evaluate",
+      "lines": [
+        178,
+        214
+      ],
+      "sha256": "3f2127ef648d6821bec9f976af54c3bb279f65128bbe2795d5dc1b95d3537f32"
+    },
+    {
+      "file": "mcl_assignment.py",
+      "definition": "GATES",
+      "lines": [
+        22,
+        24
+      ],
+      "sha256": "b66c412281da24a66deacc3b6d90bc44e040d6f4fc7975d9b5e315fa76de5bbe"
+    }
+  ],
+  "derivation": "Read-only inspection of frozen accepted static checker definitions; no execution of checker or solver.",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW"
+}

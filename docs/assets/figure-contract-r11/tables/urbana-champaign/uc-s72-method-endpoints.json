@@ -1,0 +1,54 @@
+{
+  "table_id": "uc-s72-method-endpoints",
+  "city": "urbana-champaign",
+  "title": "Static methods on the same selected demand",
+  "scope": "Original S72; 321.6296598827645 PCE/h; separate from 418 OD",
+  "original_assets": [
+    "assets/city-alignment-r3/urbana-transfer/static-comparison.svg"
+  ],
+  "notes": [
+    "Two method endpoints are not iterations. FW completed zero updates."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/static-comparison.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/static-comparison.plot_data.json",
+      "sha256": "0c00599ff5a204b6c72cc38e9e71fdd00eeb1dbf0230a63c5eafea7f7babe342"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/static-comparison.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/static-comparison.source.json",
+      "sha256": "bd37c7193ce7b54343219663ce2e14a30e691b7bb3fdb749027df38dea374c33"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Method endpoints",
+      "columns": [
+        "Method",
+        "Objective (PCE·min/h)",
+        "Full-graph relative gap"
+      ],
+      "rows": [
+        {
+          "Method": "FW anchor",
+          "Objective (PCE·min/h)": 1086.5535434762646,
+          "Full-graph relative gap": 2.9714876265136327e-14
+        },
+        {
+          "Method": "Finite K=5",
+          "Objective (PCE·min/h)": 1086.5535434762646,
+          "Full-graph relative gap": 1.6740775360640655e-15
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 2,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"uc-s72-method-endpoints\"><h4>Static methods on the same selected demand</h4><p class=\"evidence-table-scope\">Original S72; 321.6296598827645 PCE/h; separate from 418 OD</p><h5>Method endpoints</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Method endpoints\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Objective (PCE·min/h)</th><th scope=\"col\">Full-graph relative gap</th></tr></thead><tbody><tr><td>FW anchor</td><td>1086.5535434762646</td><td>2.9714876265136327e-14</td></tr><tr><td>Finite K=5</td><td>1086.5535434762646</td><td>1.6740775360640655e-15</td></tr></tbody></table></div><p>Two method endpoints are not iterations. FW completed zero updates.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/urbana-transfer/static-comparison.plot_data.json\" download>static-comparison.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/static-comparison.source.json\" download>static-comparison.source.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/urbana-transfer/static-comparison.svg\">static-comparison.svg</a></p></details></section>",
+  "caption": "Two method endpoints are not iterations. FW completed zero updates."
+}

@@ -1,0 +1,469 @@
+{
+  "figure_id": "R12-UC-S72-METHOD-ENDPOINTS",
+  "city": "urbana-champaign",
+  "instance": "Original S72; 321.6296598827645 PCE/h; separate from 418 OD",
+  "role": "saved-state-check",
+  "conclusion": "Endpoint metrics supplement existing own-method physical-flow maps.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "full-graph relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "full-graph relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": "categorical endpoints",
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "FW and finite-path K=5 each retain their own independent saved S72 endpoint. The identical Beckmann values are shown as two distinct method-category points, with signed full-graph gaps on a separate axis. Method categories are not iterations. The existing FW and finite-path physical-flow maps and all-link histograms remain the primary spatial evidence; these scalar checks are supplementary. The 418-OD full-city and revised-transit demands are separate instances.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/static-comparison.plot_data.json",
+      "sha256": "0c00599ff5a204b6c72cc38e9e71fdd00eeb1dbf0230a63c5eafea7f7babe342"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Static objective and optimality checks",
+    "scope": "S72 · 72 OD · 321.629659883 PCE/h"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 33.76,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2453,
+    1074
+  ],
+  "exports": {
+    "png": "bb7ed99803ab4f9ff2303358ab0d9545c4d599244cae40c6b0dbc751ee8dae79",
+    "svg": "1a0c5f32b8c20f838994bce47a17397709eb0b9af5bd93a4c71b454a8dc04682",
+    "pdf": "528cfb4fe6e1ae64a5936c943a3298148e3a11dc7f0e04e3731f37b4f37cc341"
+  },
+  "text_audit": [
+    {
+      "text": "1086.55354",
+      "size_pt": 7.6,
+      "bounds_px": [
+        116.278,
+        248.0,
+        64.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1086.55354",
+      "size_pt": 7.6,
+      "bounds_px": [
+        275.924,
+        248.0,
+        64.125,
+        10.0
+      ]
+    },
+    {
+      "text": "FW anchor",
+      "size_pt": 8.0,
+      "bounds_px": [
+        117.341,
+        91.667,
+        62.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Finite K=5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        277.236,
+        91.667,
+        61.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        21.111,
+        133.062,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "1020",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        101.34,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1040",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        140.454,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1060",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        179.569,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1080",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        218.683,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        257.798,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        296.912,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        336.027,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1160",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        375.141,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved method objectives",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        373.111,
+        211.5,
+        14.0
+      ]
+    },
+    {
+      "text": "2.97e-14",
+      "size_pt": 7.6,
+      "bounds_px": [
+        573.826,
+        339.071,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "1.67e-15",
+      "size_pt": 7.6,
+      "bounds_px": [
+        733.472,
+        251.02,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "FW anchor",
+      "size_pt": 8.0,
+      "bounds_px": [
+        566.264,
+        91.667,
+        62.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Finite K=5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        726.159,
+        91.667,
+        61.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed relative gap",
+      "size_pt": 9.0,
+      "bounds_px": [
+        466.169,
+        175.375,
+        13.0,
+        124.25
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        508.715,
+        139.429,
+        8.375,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.068,
+        216.247,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-14}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.724,
+        286.733,
+        32.366,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.006,
+        357.22,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-12}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.256,
+        427.706,
+        31.834,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        485.459,
+        498.192,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.943,
+        568.679,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.892,
+        639.765,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        710.252,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        780.738,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.892,
+        851.224,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.017,
+        921.711,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.673,
+        991.597,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        489.954,
+        1062.684,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.204,
+        1133.17,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        490.407,
+        1203.056,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        496.409,
+        1274.143,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "b  Full-graph relative gap",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        373.111,
+        199.0,
+        14.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  S72 · 72 OD · 321.629659883 PCE/h",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        425.167,
+        419.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Static objective and optimality checks",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        398.222,
+        445.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

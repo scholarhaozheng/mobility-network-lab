@@ -1,0 +1,142 @@
+{
+  "figure_id": "R3-CHICAGO-INPUT-TIME-LAYER-EXCERPT-R11",
+  "city": "chicago",
+  "instance": "INPUT ONLY / NOT OPTIMIZED. 18 actual dynamic_arc rows connect 3 selected physical/IN/OUT states over steps 46–50 (23–25 minutes after 08:00). Time coordinates and edge directions come directly from the frozen input; vertical spacing is schematic. Chicago has physical movement and one-step waiting; its new turn sidecar is excluded. Connector examples are also exact saved records; their sink-time jumps are ledger bookkeeping, not observed waiting. No optimized flow/path is shown.",
+  "role": "saved-result presentation",
+  "conclusion": "Time-expanded network: saved input layers",
+  "panels": [
+    {
+      "metric": "saved input arc incidence",
+      "unit": "time steps of 30 seconds",
+      "arc_records": 18,
+      "states": [
+        "osm:1324341003",
+        "osm:1324341002",
+        "osm:1324341004"
+      ],
+      "time_range": [
+        46,
+        50
+      ],
+      "assigned_flow_encoded": false
+    }
+  ],
+  "quantity": "Actual quantities and units retained in axes and source data",
+  "unit": "See panel axes; no conversion",
+  "render_method": "vector-transform",
+  "original_asset": "docs/assets/city-alignment-r3/chicago-construction/input-time-layer-excerpt.svg",
+  "original_asset_sha256": "1bac6ff4763a2ce3fd4175c96ea68377b886cc3f098995c21e1a64a8825cd23d",
+  "original_home_ids": [
+    "R3-CHICAGO-INPUT-TIME-LAYER-EXCERPT"
+  ],
+  "original_volume_anchors": [
+    "chicago-r3-input-time-layer-excerpt"
+  ],
+  "vector_body_geometry_sha256": "bef48d2917776342a7cec18a44c9ad93502f88333c2d8e648d5db5209be03b92",
+  "vector_body_geometry_count": 70,
+  "removed_figure_text": [
+    "CHICAGO  /  INPUT ONLY / NOT OPTIMIZED",
+    "T4 construction: an actual local time-layer excerpt",
+    "Structural excerpt selected from records; arrows carry no assigned flow and no optimized path.",
+    "Saved bookkeeping examples outside this local excerpt:",
+    "Source: source_T01_t5 → nosm:9913425856_t5; t=5→5; cost=0 min",
+    "Sink: nosm:261207373_t88 → sink_T01_t169; t=88→169; cost=0 min",
+    "Ledger jumps align arrival bookkeeping to H; they are not physical travel or waiting. State spacing is schematic.",
+    "Full graph support and nonselected neighbours are omitted from this excerpt; all shown edges are saved input rows."
+  ],
+  "vector_transform": {
+    "crop_origin_svg_units": [
+      45.0,
+      39.0
+    ],
+    "crop_size_svg_units": [
+      624.0,
+      279.0
+    ],
+    "scientific_geometry_transformed": false,
+    "only_uniform_outer_translation": true,
+    "outer_translation_svg_units": [
+      -41.04,
+      1.7199999999999704
+    ]
+  },
+  "raw_data_replot": false,
+  "schema": "mcl_figure_r11",
+  "caption": "INPUT ONLY / NOT OPTIMIZED. 18 actual dynamic_arc rows connect 3 selected physical/IN/OUT states over steps 46–50 (23–25 minutes after 08:00). Time coordinates and edge directions come directly from the frozen input; vertical spacing is schematic. Chicago has physical movement and one-step waiting; its new turn sidecar is excluded. Connector examples are also exact saved records; their sink-time jumps are ledger bookkeeping, not observed waiting. No optimized flow/path is shown. Structural excerpt selected from records; arrows carry no assigned flow and no optimized path. Saved bookkeeping examples outside this local excerpt: Source: source_T01_t5 → nosm:9913425856_t5; t=5→5; cost=0 min Sink: nosm:261207373_t88 → sink_T01_t169; t=88→169; cost=0 min Ledger jumps align arrival bookkeeping to H; they are not physical travel or waiting. State spacing is schematic. Full graph support and nonselected neighbours are omitted from this excerpt; all shown edges are saved input rows.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/chicago-construction/input-time-layer-excerpt.svg",
+      "sha256": "1bac6ff4763a2ce3fd4175c96ea68377b886cc3f098995c21e1a64a8825cd23d",
+      "role": "Unchanged prior display asset"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "Time-expanded network: saved input layers",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 37.652,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true,
+    "all_labels_editable": true,
+    "retained_outlined_legacy_labels": false,
+    "editability_scope": "New city/title and original live SVG text are editable; retained outlined legacy numerical labels remain outlines."
+  },
+  "dimensions": [
+    2633,
+    1349
+  ],
+  "exports": {
+    "svg": "efa12ee545c5e23642de22eb7e3e3bc96af3d769c41bcb1c93c998d29dd8c657",
+    "png": "8ff26ae6be463d03b5e1fbc7f121e6fbcce7ff4ab29360730df37420f798d6d2",
+    "pdf": "9b048ae713c85d2fa18b8f01f1356ac36c9c647594fb4eae83216aea9560a224"
+  },
+  "text_audit": [
+    {
+      "text": "CHICAGO",
+      "size_pt": 8.7,
+      "bounds_px": [
+        5.556,
+        431.111,
+        66.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Time-expanded network: saved input layers",
+      "size_pt": 15.0,
+      "bounds_px": [
+        5.556,
+        404.167,
+        508.5,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "pdf_converter_diagnostics": "",
+  "vector_body_post_sha256": "bef48d2917776342a7cec18a44c9ad93502f88333c2d8e648d5db5209be03b92",
+  "vector_geometry_preserved": true,
+  "prior_layout_caption": "INPUT ONLY / NOT OPTIMIZED. 18 actual dynamic_arc rows connect 3 selected physical/IN/OUT states over steps 46–50 (23–25 minutes after 08:00). Time coordinates and edge directions come directly from the frozen input; vertical spacing is schematic. Chicago has physical movement and one-step waiting; its new turn sidecar is excluded. Connector examples are also exact saved records; their sink-time jumps are ledger bookkeeping, not observed waiting. No optimized flow/path is shown. CHICAGO  /  INPUT ONLY / NOT OPTIMIZED T4 construction: an actual local time-layer excerpt Structural excerpt selected from records; arrows carry no assigned flow and no optimized path. Saved bookkeeping examples outside this local excerpt: Source: source_T01_t5 → nosm:9913425856_t5; t=5→5; cost=0 min Sink: nosm:261207373_t88 → sink_T01_t169; t=88→169; cost=0 min Ledger jumps align arrival bookkeeping to H; they are not physical travel or waiting. State spacing is schematic. Full graph support and nonselected neighbours are omitted from this excerpt; all shown edges are saved input rows. Presentation method: vector-transform of the unchanged prior released SVG. Scientific drawing paths, images, data marks, axes, legends and numeric labels are retained exactly; only the figure-level title, city label, prose placement and outer canvas are changed. This is not a raw-data replot. ",
+  "legacy_renderer_sha256": "04806fd7331ee9a21fab285a731a7bffb19f02a537d2f72c1efa8ac6fb9c3ac4",
+  "pdf_adapter_sha256": "c4c08e56cb76e0609b343e3a6581ff68e4d089d95683cbde39fe263eaf3d45a7",
+  "visual_qa": "PASS: directly inspected exported PNG"
+}

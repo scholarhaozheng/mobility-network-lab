@@ -1,0 +1,216 @@
+{
+  "figure_id": "R12-CG-PHASE1",
+  "city": "pittsburgh",
+  "instance": "Original four-OD T4; separate phase objectives",
+  "role": "saved-state-check",
+  "conclusion": "Column generation: Phase I feasibility",
+  "panels": {
+    "a": "Saved total artificial flow"
+  },
+  "quantity": "artificial flow",
+  "unit": "PCE",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T03.svg"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "Phase I has one actual saved restricted-master round. Its total artificial flow is 0 PCE. A single marker retains that real record; there is no interpolated trajectory. Four seed paths suffice. Commodity-level artificial-flow history was not included in these public plot files, so no heatmap is inferred. Phase I feasibility is separate from Phase II real cost and full-DAG pricing closure.",
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T03.plot.json",
+      "sha256": "cf5271b8986e6f9677d5f496cf7da6e72509a7b0a3d9a00f9c39369908a90028"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Pittsburgh",
+    "title": "Column generation: Phase I feasibility",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 21.888,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    1917,
+    1085
+  ],
+  "exports": {
+    "png": "8e4bd24a6856394ec5c120295b531dc857609d21d0f0583ff76a4360e0686bf0",
+    "svg": "162b697c85ffc13b90b149df73e658d369bf911a19d9c00f8a907c87db0ae3e5",
+    "pdf": "3de0b825c96cb83bfd05ed4ca11a147750e238a0e6c1893d5942077bfd91bd3c"
+  },
+  "text_audit": [
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        362.561,
+        115.731,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved Phase I round",
+      "size_pt": 9.0,
+      "bounds_px": [
+        285.95,
+        35.361,
+        131.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        347.887,
+        53.917,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Total artificial flow (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        10.936,
+        121.375,
+        13.0,
+        161.0
+      ]
+    },
+    {
+      "text": "−0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        20.242,
+        57.31,
+        34.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        102.009,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.05",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        146.707,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        191.405,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        236.103,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        280.802,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        29.492,
+        325.5,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "PITTSBURGH  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        42.9,
+        373.556,
+        344.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Column generation: Phase I feasibility",
+      "size_pt": 15.0,
+      "bounds_px": [
+        42.9,
+        346.611,
+        449.875,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "bf6aaa2c087ec986ed8b1a33592b9b2166f3684e2267577b888b25fb893b0b0a"
+  }
+}

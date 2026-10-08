@@ -1,0 +1,191 @@
+{
+  "table_id": "urbana-champaign-t4-admm-check",
+  "city": "urbana-champaign",
+  "title": "ADMM: one completed update and stopping checks",
+  "scope": "Original four-OD T4; one true saved outer update",
+  "original_assets": [
+    "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.svg",
+    "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.svg",
+    "assets/city-alignment-r3/urbana-transfer/admm-objective.svg",
+    "assets/city-alignment-r3/urbana-transfer/admm-residuals.svg"
+  ],
+  "notes": [
+    "Unit correction: primal, balance and capacity use PCE; rho-scaled dual residual and its threshold use minutes (min). Older dual-PCE captions are historical only. Exact zero is printed as 0 with no display floor. The total pulse is below physical capacities: a nonbinding-capacity explanation, not evidence of code error or of a causal effect of city area."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.plot_data.json",
+      "href": "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.plot_data.json",
+      "sha256": "a62657cce3f7dfa78a7ef153f41e7efb172eb639a2c0e0b60ee2758c7a7b6abe"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.source.json",
+      "href": "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.source.json",
+      "sha256": "97120b347b4c2a4b2bd7cb5861173caeb893cd3885a3778023b36240f05db27f"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.plot_data.json",
+      "href": "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.plot_data.json",
+      "sha256": "a62657cce3f7dfa78a7ef153f41e7efb172eb639a2c0e0b60ee2758c7a7b6abe"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.source.json",
+      "href": "assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.source.json",
+      "sha256": "ad954922e7b6965e25eeec87f318ab2fffd415b6664e20414316c1e72d249fe4"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/admm-objective.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.plot_data.json",
+      "sha256": "f4e6e04fd395356aa5b5fcdc66ce4be2fd120d43ee0bf954a5025050dc5e269f"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/admm-objective.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.source.json",
+      "sha256": "ada518c1ade134dd8eeab79cd6020b83a9efbfd7a8bad74f23140534f83af8a5"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/admm-residuals.plot_data.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.plot_data.json",
+      "sha256": "8f5d41bc7eaf8bcf1bb686cbd9780880f12578c122901986e17c4bffced17be4"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/admm-residuals.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.source.json",
+      "sha256": "4e1a8c343b0802f52049dd55759fec1fc59766476f12f544d34a7c2966669785"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Saved state and reference",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Saved rows",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Completed outer update",
+          "Saved value": 1.0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Raw ADMM objective",
+          "Saved value": 0.37598366514196835,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "Same-graph LP objective",
+          "Saved value": 0.37598366513352877,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "Absolute objective difference",
+          "Saved value": 8.439582366293052e-12,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "Total possible pulse",
+          "Saved value": 0.05162314826794134,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "Minimum physical time-arc capacity",
+          "Saved value": 3.75,
+          "Unit / interpretation": "PCE"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Primal, dual and feasibility",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Own threshold",
+        "Unit"
+      ],
+      "rows": [
+        {
+          "Metric": "Node balance",
+          "Saved value": 5.351749497492834e-15,
+          "Own threshold": 1e-05,
+          "Unit": "PCE"
+        },
+        {
+          "Metric": "Shared-capacity excess",
+          "Saved value": 0.0,
+          "Own threshold": 1e-05,
+          "Unit": "PCE"
+        },
+        {
+          "Metric": "Primal residual",
+          "Saved value": 0.0,
+          "Own threshold": 0.0023967625505464836,
+          "Unit": "PCE"
+        },
+        {
+          "Metric": "Rho-scaled dual residual",
+          "Saved value": 3.4388605706864527e-13,
+          "Own threshold": 0.0023912306455045277,
+          "Unit": "min"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Objective-error normalization",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Contract objective-error denominator",
+          "Saved value": 1,
+          "Unit / interpretation": "PCE·min; max(1 PCE·min, |LP objective|)"
+        },
+        {
+          "Metric": "Contract-normalized absolute difference",
+          "Saved value": 8.439582366293052e-12,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Original normalized objective-error gate",
+          "Saved value": 0.0001,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "True-relative denominator",
+          "Saved value": 0.37598366513352877,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "True-relative absolute difference",
+          "Saved value": 2.2446672951325626e-11,
+          "Unit / interpretation": "dimensionless"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 16,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"urbana-champaign-t4-admm-check\"><h4>ADMM: one completed update and stopping checks</h4><p class=\"evidence-table-scope\">Original four-OD T4; one true saved outer update</p><h5>Saved state and reference</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Saved state and reference\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Saved rows</td><td>1</td><td>count</td></tr><tr><td>Completed outer update</td><td>1.0</td><td>count</td></tr><tr><td>Raw ADMM objective</td><td>0.37598366514196835</td><td>PCE·min</td></tr><tr><td>Same-graph LP objective</td><td>0.37598366513352877</td><td>PCE·min</td></tr><tr><td>Absolute objective difference</td><td>8.439582366293052e-12</td><td>PCE·min</td></tr><tr><td>Total possible pulse</td><td>0.05162314826794134</td><td>PCE</td></tr><tr><td>Minimum physical time-arc capacity</td><td>3.75</td><td>PCE</td></tr></tbody></table></div><h5>Primal, dual and feasibility</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Primal, dual and feasibility\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Own threshold</th><th scope=\"col\">Unit</th></tr></thead><tbody><tr><td>Node balance</td><td>5.351749497492834e-15</td><td>1e-05</td><td>PCE</td></tr><tr><td>Shared-capacity excess</td><td>0.0</td><td>1e-05</td><td>PCE</td></tr><tr><td>Primal residual</td><td>0.0</td><td>0.0023967625505464836</td><td>PCE</td></tr><tr><td>Rho-scaled dual residual</td><td>3.4388605706864527e-13</td><td>0.0023912306455045277</td><td>min</td></tr></tbody></table></div><h5>Objective-error normalization</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Objective-error normalization\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Contract objective-error denominator</td><td>1</td><td>PCE·min; max(1 PCE·min, |LP objective|)</td></tr><tr><td>Contract-normalized absolute difference</td><td>8.439582366293052e-12</td><td>dimensionless</td></tr><tr><td>Original normalized objective-error gate</td><td>0.0001</td><td>dimensionless</td></tr><tr><td>True-relative denominator</td><td>0.37598366513352877</td><td>PCE·min</td></tr><tr><td>True-relative absolute difference</td><td>2.2446672951325626e-11</td><td>dimensionless</td></tr></tbody></table></div><p>Unit correction: primal, balance and capacity use PCE; rho-scaled dual residual and its threshold use minutes (min). Older dual-PCE captions are historical only. Exact zero is printed as 0 with no display floor. The total pulse is below physical capacities: a nonbinding-capacity explanation, not evidence of code error or of a causal effect of city area.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.plot_data.json\" download>urbana-champaign-admm-main.plot_data.json</a> · <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.source.json\" download>urbana-champaign-admm-main.source.json</a> · <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.plot_data.json\" download>urbana-champaign-admm-stopping-corrected.plot_data.json</a> · <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.source.json\" download>urbana-champaign-admm-stopping-corrected.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-objective.plot_data.json\" download>admm-objective.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-objective.source.json\" download>admm-objective.source.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-residuals.plot_data.json\" download>admm-residuals.plot_data.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-residuals.source.json\" download>admm-residuals.source.json</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.svg\">urbana-champaign-admm-main.svg</a> · <a href=\"assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.svg\">urbana-champaign-admm-stopping-corrected.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-objective.svg\">admm-objective.svg</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/admm-residuals.svg\">admm-residuals.svg</a></p></details></section>",
+  "caption": "Unit correction: primal, balance and capacity use PCE; rho-scaled dual residual and its threshold use minutes (min). Older dual-PCE captions are historical only. Exact zero is printed as 0 with no display floor. The total pulse is below physical capacities: a nonbinding-capacity explanation, not evidence of code error or of a causal effect of city area."
+}

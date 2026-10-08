@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_D01",
+  "city": "ithaca",
+  "title": "Trip distribution",
+  "caption": "The original heatmap contains 11 effective OD-zone indices, using the sorted union of origin and destination IDs. Colors show log(1 + person trips) for 11:00\u201312:00 HBO_LOCAL_ACTIVITY. The zone-index table preserves all 11 modeled zones; absent OD cells remain zero, and unassigned intrazonal and unreachable movements are not imputed. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips / 11:00\u201312:00 HBO_LOCAL_ACTIVITY",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/ithaca/original/FS_D01.svg",
+      "sha256": "a0299ad37c425ba2128b629a58b4ba80acf9cefff6c3d372de9b5983a8fb649d"
+    },
+    {
+      "logical_source": "distribution.csv",
+      "sha256": "acd1665cd27722f07a8c6f8bec182c9458860c2c4c764e2509d6c7e79a01894d"
+    }
+  ],
+  "source_run_receipt_sha256": "dc9d82b6e67552301c2ea16c78358065709625220d26fd66c19d5f80467abbe1",
+  "source_metadata_sha256": "86b61b69ec7bb21b5fa135de80e65565c044eea7bd03b0f7a7640dfb2ccaf88d",
+  "png_sha256": "93c551e0ef383d2d2b3dd530a841d9d64f531899e8d079a6caed9d5898324d6a",
+  "svg_sha256": "47ae897c852c4cbccf8286673ff22b5830e4479f7058f5f2714c717a91ed6488",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-d01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "a0299ad37c425ba2128b629a58b4ba80acf9cefff6c3d372de9b5983a8fb649d",
+  "input_png_sha256": "93c551e0ef383d2d2b3dd530a841d9d64f531899e8d079a6caed9d5898324d6a",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

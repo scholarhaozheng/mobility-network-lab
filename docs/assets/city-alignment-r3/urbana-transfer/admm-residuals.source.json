@@ -1,0 +1,52 @@
+{
+  "figure": {
+    "id": "UC-R3-ADMM-RESIDUALS",
+    "title": "ADMM residuals and recorded stopping thresholds",
+    "src": "assets/city-alignment-r3/urbana-transfer/admm-residuals.svg",
+    "width": 1735,
+    "height": 846,
+    "caption": "Only one saved update exists. Exact zero is displayed at 1e−16 only for the logarithmic axis; all positive saved residuals remain unchanged. This solver receipt reports both residual quantities in PCE.",
+    "href": "volumes/urbana-champaign.html#uc-r3-admm-residuals",
+    "anchor": "atlas-uc-r3-admm-residuals",
+    "full": "assets/city-alignment-r3/urbana-transfer/admm-residuals.svg",
+    "evidence": "volumes/urbana-champaign.html#uc-r3-admm-residuals",
+    "stage": "finite",
+    "method": "admm",
+    "links": [
+      {
+        "label": "SVG",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.svg"
+      },
+      {
+        "label": "PNG",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.png"
+      },
+      {
+        "label": "PDF",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.pdf"
+      },
+      {
+        "label": "Plot data",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.plot_data.json"
+      },
+      {
+        "label": "Source record",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-residuals.source.json"
+      }
+    ]
+  },
+  "renderer": {
+    "file": "render.py",
+    "function": "main",
+    "style": "new_figure / format_axes / compact_header"
+  },
+  "solver_calls": 0,
+  "result_matrix_sha256": "f07124df59779b119b5c623976580ec588f39c58883a2f69f3b24451bec97e01",
+  "derived_data_sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE",
+  "exports": {
+    "svg": "86b3f4dbf9a0e6f38ef92cee62a4184084fd51bfd70590f77e7c007e120c6240",
+    "png": "5244dd9df7ed5a176cf8125abc13aa679569dfa32252c1e10dcf43c96bd53a78",
+    "pdf": "8b008dae0adbbdacd0bf19730f5c639eb80780d1920a8fa469dc82f07ce573eb"
+  }
+}

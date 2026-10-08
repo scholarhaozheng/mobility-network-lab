@@ -1,0 +1,107 @@
+{
+  "id": "BERKELEY-R3-STATIC-ENDPOINTS",
+  "stem": "static_endpoints",
+  "title": "Where the vehicle demand enters and leaves",
+  "city": "Berkeley",
+  "stage": "static",
+  "caption": "Origin and destination margins from all 72 positive vehicle OD rows are placed at the actual saved auto access nodes. Both panels share the same color and symbol-area scale, with area proportional to PCE/h and zero-demand symbols omitted. All 13 polygons and all 2,150 retained road links remain as context; zone numbering is consistent with the OD matrix. Source and sink are engineering access nodes, not surveyed parcel entrances or observed trip endpoints. Each side sums to 953.049842713612 PCE/h. © OpenStreetMap contributors; Census-derived zone geography.",
+  "panels": {
+    "a": "Origin demand at actual access nodes",
+    "b": "Destination demand at actual access nodes"
+  },
+  "dimensions": [
+    2559,
+    726
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "static_endpoints",
+    "line": 134,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/static_demand.csv",
+      "sha256": "4d9e5023e17a5fafea9194965a2a3c79bfc08fceb108963b8734334a2b508627"
+    },
+    {
+      "path": "data/zones.csv",
+      "sha256": "c16e20897ee7dd3c808b1401d339d5671067e1932c0b3d322cadc4731f1c72af"
+    },
+    {
+      "path": "data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "path": "data/static_link_attributes.csv",
+      "sha256": "78b1ffe32b14e711cfe9069e21aa338a58670763e4192eae3acd73d9803129f3"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "static_endpoints.svg",
+      "sha256": "24a5a101a9714d9442163536bc7f4496d4b1bba97b8ee6f4dd74bf3bbdddc946"
+    },
+    "png": {
+      "path": "static_endpoints.png",
+      "sha256": "772efa6e509a18ede71d00ec39be23c2586efb797c831c31df0234098fe62f03"
+    },
+    "pdf": {
+      "path": "static_endpoints.pdf",
+      "sha256": "8cb2b0e3dd387d5ae1fffc205a6112fef17f65781e6c2be61cc26e9dfffd99ae"
+    }
+  }
+}

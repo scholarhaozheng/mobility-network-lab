@@ -1,0 +1,157 @@
+{
+  "schema": "mcl-local-saved-vector-display-v1",
+  "city": "pittsburgh",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_NOT_NEW_PUBLIC_RELEASE",
+  "renderer": {
+    "file": "render_pittsburgh_flow.py",
+    "function": "module saved-vector derivation and draw_map",
+    "sha256": "b522ef37e0076f2b328fbbab7b0a8af7c6aa630d7365b978b7695cdf98a80a10"
+  },
+  "figure_contract": {
+    "conclusion": "All original commodity/node conservation residuals match the saved audit and are well below the fixed gate at the sole saved ADMM update.",
+    "panels": [
+      "4 commodities × worst 35 time-node residuals"
+    ],
+    "backend": "Python/matplotlib",
+    "limits": "Endpoint heatmap; not temporal convergence; selection includes all nodes before showing worst35."
+  },
+  "sources": [
+    {
+      "source_id": "saved-result/model/dynamic_arc.csv",
+      "bytes": 176040215,
+      "sha256": "0da6eb8fdcb5a1897768199508f630115749515c2f42d6a2390ccf265e2db1e2",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/model/dynamic_demand.csv",
+      "bytes": 656,
+      "sha256": "15b5857db8111533c956479c4674756c72f7c87477968e4b27d81e5f0057551b",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/admm_main/final_checkpoint/state.npz",
+      "bytes": 17123663,
+      "sha256": "097a663f2e2f9e55078bd0a206cdf98b19d8a4866798d8a268d0a399b639443d",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/lp_dag/LP_SOLUTION.npz",
+      "bytes": 4368886,
+      "sha256": "0c179ad33134536c7d88cae66f4ef326de853f329f4bbdeead7e09a308ae8722",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/physical_links.csv",
+      "bytes": 3515599,
+      "sha256": "a04d678e0da67581c1a2cb76ecee9854de99b52744af0aff4c21da7fb7e7f606",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/admm_main/independent_check.json",
+      "bytes": 4119,
+      "sha256": "13aaaecaaf3c54018a7b172cfa8004e339f46a3e5e2d606e8e21983836101fa7",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/admm_main/final_checkpoint/checkpoint_identity.json",
+      "bytes": 1077,
+      "sha256": "71a700e95d64beb5b93de4e8ddbe3a35719c70b2365f8eff8728e04d7aaf2f60",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/lp_dag/LP_RESULT.json",
+      "bytes": 2833,
+      "sha256": "23b27573435f1860f6f90cc19119262216233703207c3d07c6d2c8c48a51b92e",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/space_time_capacity_problem_contract.py",
+      "bytes": 3370,
+      "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/independent_admm_evaluator.py",
+      "bytes": 6413,
+      "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "public_source": false
+    }
+  ],
+  "metrics": {
+    "status": "PASS_SAVED_VECTOR_DISPLAY_DERIVATION",
+    "optimizer_calls": 0,
+    "model_builder_calls": 0,
+    "rows_reordered": false,
+    "exact_arc_order_sha_matches": true,
+    "exact_demand_order_sha_matches": true,
+    "source_member_hashes_match": true,
+    "physical_geometry_links": 17534,
+    "physical_solver_to_gmns_one_to_one": true,
+    "physical_fractions": [
+      1.0
+    ],
+    "time_expanded_arcs": 1811888,
+    "time_expanded_physical_arcs": 350106,
+    "node_count": 700226,
+    "instantiated_physical_links": 9106,
+    "context_links_not_solved_zeros": 8428,
+    "positive_ADMM_physical_links": 5933,
+    "positive_LP_physical_links": 232,
+    "ADMM_objective_pce_min": 0.24793241990524933,
+    "LP_objective_pce_min": 0.2479324199027461,
+    "maximum_absolute_physical_difference_pce": 3.1115818793010805e-14,
+    "sum_ADMM_physical_traversal_pce": 3.1343173427233255,
+    "sum_LP_physical_traversal_pce": 3.1343173426909425,
+    "max_balance_pce": 2.7850292342213303e-15,
+    "reported_max_balance_pce": 2.7850292342213303e-15,
+    "balance_gate_pce": 1e-05,
+    "balance_matches_original_per_od": [
+      {
+        "commodity": "C04_OD_01_tract2020_42003151700_tract2020_42003980500",
+        "volume_pce": 0.012248688106889767,
+        "max_balance_pce": 2.7850292342213303e-15,
+        "worst_node": "OUT:10606@t59",
+        "saved_matches": true
+      },
+      {
+        "commodity": "C04_OD_02_tract2020_42003151700_tract2020_42003050100",
+        "volume_pce": 0.017348827206873488,
+        "max_balance_pce": 1.9723333033281833e-15,
+        "worst_node": "OUT:13206@t24",
+        "saved_matches": true
+      },
+      {
+        "commodity": "C04_OD_03_tract2020_42003050600_tract2020_42003050100",
+        "volume_pce": 0.01541958515861922,
+        "max_balance_pce": 2.1912548445782278e-15,
+        "worst_node": "OUT:19357@t41",
+        "saved_matches": true
+      },
+      {
+        "commodity": "C04_OD_04_tract2020_42003562901_tract2020_42003151600",
+        "volume_pce": 1.0447981167474074e-05,
+        "max_balance_pce": 1.8244576350798727e-15,
+        "worst_node": "OUT:2107@t40",
+        "saved_matches": true
+      }
+    ],
+    "heatmap_nodes": 35,
+    "heatmap_selection": "35 nodes with largest max over all 4 commodity absolute residuals; ties use lexical loader node order",
+    "heatmap_display_floor_pce": 1e-15,
+    "heatmap_display_max_pce": 1e-05,
+    "state_stage": "POST_CONSENSUS_POST_DUAL_UPDATE",
+    "completed_iteration": 1,
+    "model_signature": "ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+    "original_OUT_loading_preserved": "The frozen model starts at the OUT origin state; its first P:origin traversal is absent by design. No omitted movement was added back."
+  },
+  "no_solver_calls": true,
+  "no_frozen_asset_mutations": true,
+  "exports": {
+    "svg": "5f73b43d5d4fa46887ac7c8be501e9ada90d90cedf223ea09e1a042906b3da75",
+    "png": "20b8df3a2ed4006572cab94848a5f8ba9d797976ade590b2df2dc1698dd586b3"
+  },
+  "plot_data_sha256": "77baafe463c9af25eb8fc9c2349f53d5cc525dc62ecf7de32320156ec4ad6313",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE",
+  "solver_calls": 0,
+  "caption": "At the single saved completed ADMM iteration 1, reconstruct original-unit outflow minus inflow minus commodity supply using the exact saved arc order and the original loader’s lexically sorted 700,226 time-node identities. All four commodity maximum residuals and their worst-node IDs match the previously saved independent check exactly; the overall maximum is 2.7850292342213303e−15 PCE against the unchanged 1e−5 PCE gate. The heatmap shows the 35 nodes with largest maximum residual over all four commodities, with lexical node-order tie breaking; all nodes were included in selection. Values ≤1e−15 use a display-floor color without changing data. The color ceiling is the gate, and the figure does not imply an iteration history. Original OUT-state loading is unchanged. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 asset release is claimed.\n"
+}

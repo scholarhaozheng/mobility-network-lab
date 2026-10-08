@@ -1,0 +1,1 @@
+Native link differences from the finite reference These retained compressed Native rank-26/52 endpoints remain below their acceptance gates. The later accepted uncompressed Native80 run is separate evidence.

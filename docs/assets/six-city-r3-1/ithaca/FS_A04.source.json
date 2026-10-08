@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_A04",
+  "city": "ithaca",
+  "title": "Physical road flow; excludes virtual movement arcs; static model PCE, not counts",
+  "caption": "Saved physical-link PCE for 11:00\u201312:00 HBO_LOCAL_ACTIVITY. Only physical road geometry is drawn; virtual movement arcs are excluded. Color is log(1 + PCE), with the legend labelled in PCE per period. OpenStreetMap contributors, ODbL 1.0. Model output, not observed traffic. The frozen OSM source segments each have two endpoints; the map preserves those straight source segments. Demand covers 7.501778 km\u00b2 while road support covers 13.235585 km\u00b2. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "PCE / 11:00\u201312:00 HBO_LOCAL_ACTIVITY",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/ithaca/r3_map/FS_A04.svg",
+      "sha256": "74d902f8ad4e9a76d964339a97211b284ea17478bffc3d78f6cba9aa52edb458"
+    },
+    {
+      "logical_source": "FS_A04_plot_data.csv",
+      "sha256": "6fbd1a69e100e7649183f6a09685279956e79a3c3e22a3dc88b391479db6c974"
+    }
+  ],
+  "source_run_receipt_sha256": "dc9d82b6e67552301c2ea16c78358065709625220d26fd66c19d5f80467abbe1",
+  "source_metadata_sha256": "ee184506fccc86fef550ee42bc4cf239490b40aab757ef48305bd70828df0511",
+  "png_sha256": "61089da0855f7949dbb82b679648307fb4070e689d4a2105bb48b1668d27447c",
+  "svg_sha256": "8622af208094b253f3c1948690de41499fd411957ed8cbda150b9b7fcbecb0c7",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-a04",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "74d902f8ad4e9a76d964339a97211b284ea17478bffc3d78f6cba9aa52edb458",
+  "input_png_sha256": "61089da0855f7949dbb82b679648307fb4070e689d4a2105bb48b1668d27447c",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

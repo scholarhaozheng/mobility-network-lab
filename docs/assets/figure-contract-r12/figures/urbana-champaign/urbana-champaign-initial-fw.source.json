@@ -1,0 +1,409 @@
+{
+  "figure_id": "R12-URBANA-CHAMPAIGN-INITIAL-FW",
+  "city": "urbana-champaign",
+  "instance": "Original full-city four-stage instance; distinct from later selected static cohorts",
+  "role": "saved-state-check",
+  "conclusion": "One saved initial state is displayed truthfully as a point, not converted to a table.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 1,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "Only the actual saved iteration 0 is shown: objective 8041.08681276163 PCE·min/h and relative gap 0, against the unchanged 0.0001 stopping gate. There were zero updates. Each panel contains a single numerical point; no missing trajectory or second state is inferred. The companion physical-flow map reads this method’s own saved vector. This frozen original demand instance is not relabelled as a later selected-demand or transit-revision run.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-champaign/trace.source.json",
+      "sha256": "519cbe7832780331c8307d6370583ee9bd6e605cafe0850824be61410ba23056"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Frank–Wolfe: the saved initial check",
+    "scope": "ORIGINAL FOUR-STAGE INSTANCE · 0 UPDATES"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.915,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2453,
+    1081
+  ],
+  "exports": {
+    "png": "d2279f7aed33a2f3740f948cde81888f75d27d3c81436438c681b41958258f0a",
+    "svg": "bd2a9ea09372f30c4c79757095df3086356f5533a35e3f08dc06a3b821b8a852",
+    "pdf": "d69e5334675345a7637b19870f55614bc37b1e11c2cf33c6ecb85c275a6b100a"
+  },
+  "text_audit": [
+    {
+      "text": "8041.08681",
+      "size_pt": 9.0,
+      "bounds_px": [
+        190.226,
+        236.917,
+        75.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        179.663,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.601,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        21.111,
+        118.812,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "7600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        85.765,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        115.574,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        145.383,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7900",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        175.193,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        205.002,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        234.812,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        264.621,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        294.43,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        324.24,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        354.049,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved objective",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        351.211,
+        139.625,
+        14.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 9.0,
+      "bounds_px": [
+        673.087,
+        136.08,
+        8.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        628.587,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        673.524,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        452.284,
+        131.875,
+        13.0,
+        182.75
+      ]
+    },
+    {
+      "text": "−0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.59,
+        85.666,
+        55.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        119.191,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        152.715,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00004",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        186.24,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00006",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        219.764,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00008",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        253.289,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00010",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        286.813,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00012",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        320.338,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00014",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        353.862,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Relative-gap stopping check",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        351.211,
+        240.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved gap",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        323.475,
+        56.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Gate = 0.0001",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        308.128,
+        78.375,
+        10.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  ORIGINAL FOUR-STAGE INSTANCE · 0 UPDATES",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        403.267,
+        511.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: the saved initial check",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        376.322,
+        423.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

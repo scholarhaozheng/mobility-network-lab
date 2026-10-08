@@ -1,0 +1,45 @@
+{
+  "figure_id": "FS_A02",
+  "city": "urbana-champaign",
+  "title": "Initial assignment check",
+  "caption": "The saved initial all-or-nothing assignment has relative gap 0, against the unchanged 0.0001 stopping threshold. No Frank\u2013Wolfe updates were needed. This does not imply uncongested roads. Reported zero is drawn at 1e-12 on the log axis; it is not a positive measured gap.",
+  "unit": "dimensionless relative gap",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/urbana_champaign/original/FS_A02.svg",
+      "sha256": "ab82e8490508dba3010e6dd9b80752acde9f57141e50de1c8194511d604320f2"
+    },
+    {
+      "logical_source": "initial_assignment_check.csv",
+      "sha256": "ff9fabaa7e2aaaa0468634c129b76134c32118cc60b793a39be169d3d5499aa0"
+    },
+    {
+      "logical_path": "private_snapshot/compute_capsules/urbana_champaign/reference_run/assignment/fw_trace.csv",
+      "sha256": "f53ff70720348187ce10eb6ea489b9f8fcd287ec6d7b0bf28773644883dc442e"
+    },
+    {
+      "logical_path": "private_snapshot/compute_capsules/urbana_champaign/FOUR_STAGE_RUN_CONFIG.json",
+      "sha256": "9eb316749d925243d18c6a8ff7b5dcd5402506d7ca765333ea2a06878268f933"
+    }
+  ],
+  "source_run_receipt_sha256": "0ef7800bd618539b174bbed0ac620461851d24af9881cba0846d1ccc16224654",
+  "source_metadata_sha256": "2928320baaad92374f6ff6c8766509b82cd357be0a422187d47139d200db8eda",
+  "png_sha256": "c44b6554c7a14f2b4ad81b43f5ee0d6429950c466f66a3968acece84227fe7bf",
+  "svg_sha256": "72cd52ec0341607c459747d3b455f2d846064cbf60e69943f639905287c8a6f8",
+  "transformation": [
+    "One actual saved iteration-0 observation. Log floor only when reported gap is zero; original numeric value retained in plot data.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_targeted_fixes.py --snapshot SNAPSHOT --output OUTPUT --only-initial",
+  "page_anchor": "figure-fs-a02",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "530dd24ba5daa0f9f8c397f6606a9bfb8c3bf5887635563326398a6f589fc47d",
+  "input_png_sha256": "c44b6554c7a14f2b4ad81b43f5ee0d6429950c466f66a3968acece84227fe7bf",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

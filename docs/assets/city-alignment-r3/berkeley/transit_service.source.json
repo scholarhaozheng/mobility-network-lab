@@ -1,0 +1,99 @@
+{
+  "id": "BERKELEY-R3-TRANSIT-SERVICE",
+  "stem": "transit_service",
+  "title": "Scheduled service and direct-option time components",
+  "city": "Berkeley",
+  "stage": "transit",
+  "caption": "Panel a counts all 14,649 scheduled stop-departure events in the frozen source-envelope table for 5 October 2026, preserving timetable hours beyond midnight. These are stop events: one trip contributes at multiple stops, so this is not a count of vehicles, unique trips or observed service. The highlighted 08:00–09:00 interval matches the engineering demand hour. Panel b shows every one of the 38 saved direct OD options, with deterministic sorted offsets to reveal overlapping values. In-vehicle and access times are saved option values; the identical ten-minute waits are an explicit assumption. Transfers are zero and fare is USD 2.50 in this case. No ridership or wait-time observations are inferred.",
+  "panels": {
+    "a": "Selected-day stop-event count by timetable hour",
+    "b": "All 38 option times; sorted point offsets, median ticks"
+  },
+  "dimensions": [
+    2409,
+    955
+  ],
+  "renderer": {
+    "file": "render_figures.py",
+    "function": "transit_service",
+    "line": 107,
+    "sha256": "4432d247f47d20810afbcce0dc046a1ec2c3b251af5a71e42273b42bc3938e5c"
+  },
+  "source_data": [
+    {
+      "path": "data/transit_service_hours.csv",
+      "sha256": "5dadbbf04d38c88f4aed8fdd9b0fa8a1c10372491bbd6715fa9666d7ce7b3840"
+    },
+    {
+      "path": "data/transit_direct.csv",
+      "sha256": "5fa7dab47aa149ce5c1847539aa5e11f55be70fb63ae2bbf3fd3a2965ebf0a8c"
+    }
+  ],
+  "style": {
+    "layout": "C",
+    "font": "DejaVu Serif",
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ]
+  },
+  "solver_calls": 0,
+  "scope": "Saved engineering scenario, not observed traffic or a local empirical calibration.",
+  "coordinate_transform": {
+    "origin_lon_lat": [
+      -122.27,
+      37.87
+    ],
+    "x_km": "(lon+122.27)*111.320*cos(37.87 deg)",
+    "y_km": "(lat-37.87)*110.574",
+    "scientific_geometry_changed": false
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "exports": {
+    "svg": {
+      "path": "transit_service.svg",
+      "sha256": "179e9c4f187ab23b825edcd19cd698f83250c82a0028b2e1b7f3a9b7c4d6f8ba"
+    },
+    "png": {
+      "path": "transit_service.png",
+      "sha256": "122473abacdaa050d92a2bb67305bcafe35f280e0da1d5558dd75d220aa539e7"
+    },
+    "pdf": {
+      "path": "transit_service.pdf",
+      "sha256": "d9f28aae4be3d1eb42d9fa2c59f77e15c24c46fdfb677efee503ad4e217e1b2b"
+    }
+  }
+}

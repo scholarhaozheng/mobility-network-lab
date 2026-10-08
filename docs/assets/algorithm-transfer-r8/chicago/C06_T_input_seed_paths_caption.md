@@ -1,0 +1,1 @@
+Four real input-cost shortest seed paths on the fixed T DAG. Width/color shows each frozen pulse demand placed on its seed, not a feasible capacity assignment or an observation. Road time advances by rounded 30 s steps; terminal ledger extension is not road waiting.

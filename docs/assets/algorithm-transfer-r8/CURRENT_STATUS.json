@@ -1,0 +1,329 @@
+{
+  "schema": "mcl.public.current.received.results.v1",
+  "as_of_utc": "2026-10-07T16:28:43.372984+00:00",
+  "current_reception": "S0_BATCH_V001_PLUS_PIT_T05_FINAL_BYTES_INTEGRATED",
+  "release_sha256": "c1bfea6c8de88693aa03689b7c35deaa79158ba486fc046ae6173a34bbdf37e8",
+  "science_intake_sha256": "14506e7ebafcb818aa785d0b5075b9c718ba2a43faa076bc7552967916083a9d",
+  "allowed_items": 129,
+  "copy_file_items": 125,
+  "merged_prose_items": 4,
+  "notice": "NOTICE.md",
+  "mainline_scientific_solver_calls": 0,
+  "publication": "LOCAL_INTEGRATION_ONLY_NO_COMMIT_PUSH_DEPLOY",
+  "pending_figure": null,
+  "cities": [
+    {
+      "city": "berkeley",
+      "summary": "S0 batch v001 accepts the saved ADMM C2a outer170 endpoint, retains the original accepted LR10 result, and records LR300 as a separate post-certificate cold-start diagnostic. Existing local presentation figures are retained; newly released original figures, captions and plot data are linked separately by exact bytes.",
+      "volume": "../../volumes/berkeley.html#berkeley-admm-accuracy-r3"
+    },
+    {
+      "city": "urbana-champaign",
+      "summary": "S0 has independently checked the original-coordinate Native26/52 outer9 states and accepted both under the unchanged gates. UC_S02_C1 now occupies the current Native figure position; outer8 failure remains historical. S72 (72 OD, 321.6296599 PCE/h), the full 418-OD city case and the T4 pulse are separate scopes.",
+      "volume": "../../volumes/urbana-champaign.html#native-candidate-1"
+    },
+    {
+      "city": "pittsburgh",
+      "summary": "S0 has received Final v7 and replayed its 478 protected payloads. S FW/finite and T exact-DAG LP/CG/LR/ADMM remain accepted; Native26/52 remain GATE_NOT_MET and the separate HiGHS attempt remains RESOURCE_LIMIT. Thirteen figure families are now integrated. S0 has separately released the corrected PIT_T05 final bytes: primal residual and gate are in PCE; rho-scaled dual residual and gate are in minutes. The original 129-item receipt remains historical and unchanged.",
+      "volume": "../../volumes/pittsburgh.html#algorithm-transfer-r2"
+    },
+    {
+      "city": "chicago",
+      "summary": "S0 independently accepts retry R2 CG on its complete graph: 425 columns, primal 241.2185242449435 and dual 241.2185242449434 PCE·min, with pricing for all four OD. Fifteen released figure families show accepted evidence and failed-method diagnostics separately. HiGHS is RESOURCE_LIMIT; Native, LR and ADMM remain GATE_NOT_MET.",
+      "volume": "../../volumes/chicago.html#algorithm-retry-r2"
+    }
+  ],
+  "methods": [
+    {
+      "city": "urbana-champaign",
+      "method": "S_FW",
+      "instance": "central_champaign_urbana_2026_r2 S72; signature 620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "S_FINITE",
+      "instance": "central_champaign_urbana_2026_r2 S72; signature 620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "S_NATIVE26",
+      "instance": "central_champaign_urbana_2026_r2 S72; signature 620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED; old R2 baseline hash/receipt reused",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "S_NATIVE52",
+      "instance": "central_champaign_urbana_2026_r2 S72; signature 620822afd5ef04f54ebc8fcf6d785df1459966c473735874180d550a4b29039d",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED; old R2 baseline hash/receipt reused",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_LP_HIGHS_ATTEMPT",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_LP_EXACT_DAG",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_CG",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_LR",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_ADMM",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "urbana-champaign",
+      "method": "T_ADMM_TIER2",
+      "instance": "central_champaign_urbana_2026_r2 T4; independent 30s/H160 engineering pulse",
+      "producer_status": "NOT_RUN",
+      "receiver_status": "NOT_RUN",
+      "receiver_level": "OLD_BASELINE_HASH_AND_RECEIPT_REUSED; no new endpoint math",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "S_FW",
+      "instance": "Pittsburgh East End R3 S72; 149.92142389506478 PCE/hour",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "S_FINITE",
+      "instance": "Pittsburgh East End R3 S72; 149.92142389506478 PCE/hour",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "S_NATIVE26",
+      "instance": "Pittsburgh East End R3 S72; 149.92142389506478 PCE/hour",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "S_NATIVE52",
+      "instance": "Pittsburgh East End R3 S72; 149.92142389506478 PCE/hour",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_LP_HIGHS_ATTEMPT",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "RESOURCE_LIMIT",
+      "receiver_status": "RESOURCE_LIMIT",
+      "receiver_level": "RESOURCE_LIMIT_RECEIPT_IDENTITY_REUSED; no LP primal endpoint",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_LP_EXACT_DAG",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_CG",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_LR",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_ADMM",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "V7_SAVED_ENDPOINT_MATH_RECOMPUTED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "pittsburgh",
+      "method": "T_ADMM_TIER2",
+      "instance": "Pittsburgh East End T4; 30s/H117; model ecc72753a7afff8188eecdf95bb68fb207ffd9b36cfa566e65369fc40db55225",
+      "producer_status": "NOT_RUN",
+      "receiver_status": "NOT_RUN",
+      "receiver_level": "REGISTERED_NOT_RUN; no endpoint",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "S_FW",
+      "instance": "Chicago Jane Byrne / West Loop R2 S20; 1754.948251239727 PCE/hour",
+      "producer_status": "REUSED_PRIOR_ACCEPTED",
+      "receiver_status": "REUSED_PRIOR_ACCEPTED",
+      "receiver_level": "OLD_ACCEPTED_ENDPOINT_MATH_REPLAYED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "S_finite",
+      "instance": "Chicago Jane Byrne / West Loop R2 S20; 1754.948251239727 PCE/hour",
+      "producer_status": "REUSED_PRIOR_ACCEPTED",
+      "receiver_status": "REUSED_PRIOR_ACCEPTED",
+      "receiver_level": "OLD_ACCEPTED_ENDPOINT_MATH_REPLAYED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "S_Native26",
+      "instance": "Chicago Jane Byrne / West Loop R2 S20; 1754.948251239727 PCE/hour",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_FAILURE_PRESERVED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "S_Native52",
+      "instance": "Chicago Jane Byrne / West Loop R2 S20; 1754.948251239727 PCE/hour",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_FAILURE_PRESERVED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "T_LP",
+      "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+      "producer_status": "RESOURCE_LIMIT",
+      "receiver_status": "RESOURCE_LIMIT",
+      "receiver_level": "RESOURCE_LIMIT_RECEIPT_VERIFIED; no primal endpoint",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "T_CG",
+      "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_INDEPENDENT_FULL_GRAPH; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "T_LR",
+      "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_FAILURE_PRESERVED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "chicago",
+      "method": "T_ADMM",
+      "instance": "Chicago Jane Byrne / West Loop R2 T4; 30s/H169; model 6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+      "producer_status": "GATE_NOT_MET",
+      "receiver_status": "GATE_NOT_MET",
+      "receiver_level": "NEW_SAVED_ENDPOINT_MATH_RECOMPUTED_FAILURE_PRESERVED; no new optimization",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "berkeley",
+      "method": "T_ADMM_C2a_outer170",
+      "instance": "Berkeley_R2_T4_first_5min_dt30; 30s/H165; model f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+      "producer_status": "ACCEPTED",
+      "receiver_status": "ACCEPTED_PRIOR_FORMAL_PASS_REUSED",
+      "receiver_level": "OLD_ACCEPTED_IDENTITY_REUSED; NO_NEW_MATH_OR_OPTIMIZATION",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "berkeley",
+      "method": "T_LR_original_10",
+      "instance": "Berkeley_R2_T4_first_5min_dt30; 30s/H165; model f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+      "producer_status": "ACCEPTED_1_PERCENT_GATE",
+      "receiver_status": "ACCEPTED_PRIOR_FORMAL_PASS_REUSED",
+      "receiver_level": "OLD_ACCEPTED_IDENTITY_REUSED; NO_NEW_MATH_OR_OPTIMIZATION",
+      "receiver_new_optimizer_calls": 0
+    },
+    {
+      "city": "berkeley",
+      "method": "T_LR_cold_start_300",
+      "instance": "Berkeley_R2_T4_first_5min_dt30; 30s/H165; model f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+      "producer_status": "PASS_EXTENDED_DIAGNOSTIC",
+      "receiver_status": "PASS_EXTENDED_DIAGNOSTIC_PRIOR_FORMAL_PASS_REUSED",
+      "receiver_level": "DUPLICATE_ZIP_IDENTITY_REUSED; NO_NEW_MATH_OR_OPTIMIZATION",
+      "receiver_new_optimizer_calls": 0
+    }
+  ],
+  "existing_local_presentation_boundary": "Three Berkeley ADMM local display SVGs are retained separately from the new released original bytes. Their release identity is recorded as an individual discrepancy; they are not automatically publicly cleared by this batch.",
+  "updated_utc": "2026-10-07T18:05:18.133774+00:00",
+  "single_figure_increment": {
+    "family": "PIT_T05",
+    "decision_sha256": "95d31d2e7d54b8e31aea31e69745d4d834487a23909183d8f9a96d8c06e78ca8",
+    "approved_asset_count": 4,
+    "prior_batch_allowed_items": 129,
+    "current_integrated_items": 133,
+    "display": "../../volumes/pittsburgh.html#released-pit-t05",
+    "frozen_plot_sha256": "4643eecd66e365407e53167f06252f59a0a9a0239a17f1c69ff64a81d3262ec9",
+    "source_metadata": "PRIVATE_NOT_LINKED"
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "figure_id": "chi-admm-capacity",
+  "city": "chicago",
+  "instance": "CH_T4_30S_66.53295454563035PCE",
+  "role": "iteration",
+  "conclusion": "The saved endpoint retains 1.491228076 PCE excess and fails its original capacity gate.",
+  "panels": [
+    "Shared capacity excess"
+  ],
+  "quantity": "maximum capacity violation",
+  "unit": "PCE",
+  "original_family": "C06_ADMM_GAP_INCREMENT",
+  "archetype": "quantitative grid",
+  "generator_public_path": "tools/figures/render_gap_progress.py",
+  "generator_sha256": "dbc7ecb2f664727c45e06cdde5bd07bc4ffd8eba1abb103d3c4d827c1e6e4ba8",
+  "data_transform": "Saved values; scalar display conversions only. No fitted or interpolated states.",
+  "source_status": "S0 release_v002; receiver status recorded separately from frozen producer metadata.",
+  "saved_states": 33,
+  "schema": "mcl_figure_r11",
+  "caption": "All 33 saved outers are retained, with the repeated outer 9 verified before joining the two public sources. Capacity excess ends at 1.491228076 PCE, above the 1e−5 PCE gate. The symmetric-log axis keeps exact zero valid; no missing values were filled. Frozen Jane Byrne S20/T4 engineering scenarios. LR is a new self-priced recovery hybrid; Native80 is uncompressed; ADMM33 remains failed. Household figure is ACS/TIGER area allocation not used by old generation. © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright; U.S. Census ACS/TIGER.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_ADMM_GAP_INCREMENT.public_plot.json",
+      "sha256": "93a68537ad83cd365fa46b76fe5f256c04fe4a4057360f2fd46779685a2c4a7d"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_ADMM_GAP_INCREMENT.caption.md",
+      "sha256": "7d0d974472980d1046674f9a81e03114bcbe098e8215210b31f1e5aa76ceb8fa"
+    },
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_plot_data.json",
+      "sha256": "d761c62c48c081e75ff4cdd7fd276117badf9c1da313cb6332b98584a547f827"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Chicago",
+    "title": "ADMM: shared-capacity violation",
+    "scope": "T4 / original gates not met"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 44.87,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2181,
+    1133
+  ],
+  "exports": {
+    "png": "bcce77666a820237912e842cb7ad352b8b6980e9fc73af68cd0c4a03a247b72b",
+    "svg": "1367ef1001874c78bc0acc0a6db175a1153c414af3b58517ef8e40ab0c8c674b",
+    "pdf": "d10dfe4fb1a42bfa1c57904a5d5df471702d7f535ea28076c0e7150cada72d17"
+  },
+  "text_audit": [
+    {
+      "text": "Completed outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        353.438,
+        46.411,
+        165.125,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        96.485,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        175.533,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        254.58,
+        64.967,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        330.065,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "16",
+      "size_pt": 8.0,
+      "bounds_px": [
+        409.113,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        488.161,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "24",
+      "size_pt": 8.0,
+      "bounds_px": [
+        567.208,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "28",
+      "size_pt": 8.0,
+      "bounds_px": [
+        646.256,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "32",
+      "size_pt": 8.0,
+      "bounds_px": [
+        725.304,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "36",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.351,
+        64.967,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum capacity excess (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        49.694,
+        119.575,
+        13.0,
+        206.75
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.468,
+        46.822,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.593,
+        88.095,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.25,
+        128.769,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.531,
+        170.642,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-2}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.781,
+        211.916,
+        26.886,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.984,
+        252.589,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{0}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.985,
+        294.463,
+        20.681,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        75.501,
+        335.136,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "Original capacity gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        151.751,
+        176.055,
+        125.0,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  T4 / original gates not met",
+      "size_pt": 8.7,
+      "bounds_px": [
+        52.0,
+        400.656,
+        269.25,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM: shared-capacity violation",
+      "size_pt": 15.0,
+      "bounds_px": [
+        52.0,
+        373.711,
+        389.5,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUALLY_REVIEWED_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa_record": "VISUAL_QA.json#chi-admm-capacity"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "R3-PITTSBURGH-GENERATION",
+  "city": "pittsburgh",
+  "title": "All-zone trip generation and demand ledger",
+  "caption": "All 41 zones; 08:00–09:00 HBW. The left panel shows saved interzonal productions/attractions. The right panel accounts for all generated persons, including excluded and intrazonal components. No top-12 truncation.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "production and attraction",
+      "unit": "persons per declared period",
+      "zone_count": 41,
+      "P_total": 4007.5466088572316,
+      "A_total": 4007.546608857233
+    },
+    {
+      "panel": "b",
+      "metric": "generation ledger",
+      "fields": {
+        "generated_person_trips": 15405.2,
+        "external_or_uncaptured_person_trips": 10971.681175065256,
+        "intrazonal_person_trips": 425.97221607751186,
+        "interzonal_production_person_trips": 4007.5466088572316
+      }
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\pittsburgh\\plot_data\\generation_complete.csv",
+      "sha256": "27a3088aaf4f9fc075cb56f6ed5c67693787b9d653cf1c52652c2b27c36171ee"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "generation"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "4b0d14b8b514cc6dc51f569252e4370716547e83e64cc5ba261638e8b0dd97d8",
+    "png": "f2de5b381d564c052dd3622792f53e674a650bb30f7987cda4237395fa64eef8",
+    "pdf": "fa20266365f78494adfde40263f39f7a0e08a0697a22dcfd602ae1901eb15e89"
+  },
+  "width": 1991,
+  "height": 965,
+  "src": "assets/city-alignment-r3/pittsburgh/generation.svg"
+}

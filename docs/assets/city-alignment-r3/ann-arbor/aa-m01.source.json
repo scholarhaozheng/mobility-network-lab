@@ -1,0 +1,49 @@
+{
+  "id": "AA-M01",
+  "title": "Mode choice over every directed OD pair",
+  "city": "ann-arbor",
+  "stage": "mode",
+  "caption": "All 600 OD pairs enter OD-specific three-mode choice. The three heatmaps use a common 0–1 probability scale; gray intrazonal cells were not modeled, while zero probabilities include unavailable alternatives. The bar chart weights probabilities by each OD demand: drive 1,977.380 persons, U-M bus 244.808, walk 508.583. Only driving converts to road demand, once: persons ÷ 1.2 × 1.0 = 1,647.816622 PCE. These are saved engineering-scenario probabilities, not measured mode shares. U-M schedule-derived inputs; local reading revision, not a new public release.",
+  "panels": [
+    "a/b/c: per-OD probabilities; shared scale, gray diagonal",
+    "d: demand-weighted mode totals"
+  ],
+  "sources": [
+    {
+      "input": "reference_run/mode_choice/mode_choice_by_od.csv",
+      "sha256": "d2c7b672d84a5b7babce3c74c51f9983bf52ba58e8db9e922011f0b8c088fa45"
+    },
+    {
+      "input": "reference_run/mode_choice/choice_ledger.json",
+      "sha256": "5caf49c0a499210b5d58a049fb9654d3dc66a7c8929617663ee1a9637ba68515"
+    }
+  ],
+  "renderer": {
+    "file": "render_ann_arbor.py",
+    "function": "mode",
+    "line": 157,
+    "sha256": "6c494fb62b5f01b0ef8a7a8e6cb56a645a2cf9c8f4a2d821f018e91cced9ec7b"
+  },
+  "scope": "accepted 25-zone / 600-OD four-stage instance; local reading revision",
+  "scientific_solver_rerun": false,
+  "font": "DejaVu Serif",
+  "colors": "existing Boston / Hong Kong navy-teal-blue",
+  "dimensions": [
+    3238,
+    2131
+  ],
+  "release_status": "LOCAL_READING_REVISION_NOT_NEW_PUBLIC_RELEASE",
+  "exports": {
+    "svg": "d4f57c9b94269c7d7877d66201d22228e7ca826f7d70d54de0f29d96c0a2aae2",
+    "pdf": "eeb09318fdfa6205c704898eab04c494c853f1a83cd76dee441b9e973759bae1",
+    "png": "b17d697784c423ace68411c2623b1938a0f0a7238ccfdace72c900818271fa48",
+    "tiff": "c2ae380aa2efca19f470ed8cd606004f46f062457649032e9051a673d32e2d62"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 25.568,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  }
+}

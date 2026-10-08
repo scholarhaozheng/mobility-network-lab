@@ -1,0 +1,61 @@
+{
+  "id": "AA-T01",
+  "title": "Scheduled stops and modeled mode availability",
+  "city": "ann-arbor",
+  "stage": "transit",
+  "caption": "Left: the 63 saved U-M GTFS stop locations used as input to the accepted mode-cost build, over the accepted 25-zone OSM physical network. Right: actual availability in 600 directed OD pairs—drive 600, U-M bus 110, walk 366. The modeled U-M service uses 109 scheduled route-stop legs and frequency-based waits; 11 zones are within the stop-access rule. Stop symbols are planned service locations, not observed GPS. No TheRide service, exact departure-time itinerary or verified pedestrian connector is implied. © OpenStreetMap contributors; University of Michigan GTFS. Local reading revision.",
+  "panels": [
+    "a: saved stops; no route reconstruction",
+    "b: accepted OD-specific mode-cost availability"
+  ],
+  "sources": [
+    {
+      "input": "saved_um_schedule_stops.csv",
+      "sha256": "121a7fb9329ad1e3af990c51950483114b301d1d63c590ec51d924e95cbbdb8b"
+    },
+    {
+      "input": "inputs/mode_costs.csv",
+      "sha256": "84e90d7743b9f6d71aff6b8ae692d3b10434e94d0a613469bda922a551efb366"
+    },
+    {
+      "input": "inputs/MODE_COST_AUDIT.json",
+      "sha256": "937ae824effc7a56310b2b026282e8bb6321b307109f6de517e29b353242d222"
+    },
+    {
+      "input": "inputs/physical_road_links.csv",
+      "sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf"
+    },
+    {
+      "input": "inputs/zones.csv",
+      "sha256": "2ddbecfa38341065df8efcebeffe0cf7caed335ad9002341039995549a1a6b7b"
+    }
+  ],
+  "renderer": {
+    "file": "render_ann_arbor.py",
+    "function": "transit",
+    "line": 130,
+    "sha256": "6c494fb62b5f01b0ef8a7a8e6cb56a645a2cf9c8f4a2d821f018e91cced9ec7b"
+  },
+  "scope": "accepted 25-zone / 600-OD four-stage instance; local reading revision",
+  "scientific_solver_rerun": false,
+  "font": "DejaVu Serif",
+  "colors": "existing Boston / Hong Kong navy-teal-blue",
+  "dimensions": [
+    2760,
+    1525
+  ],
+  "release_status": "LOCAL_READING_REVISION_NOT_NEW_PUBLIC_RELEASE",
+  "exports": {
+    "svg": "d7f32987e362b9f26e4a7fea34b75205b113aa33eb5d30f5f0b2252082cd810d",
+    "pdf": "b0fcb3deb285e44a2a77fd7c6ec92659bd9080e2c97936e7ddb9aaf2c908c352",
+    "png": "2e85e56044067d4631782f61be5e473f291e026046b45178dbc28a92e6488340",
+    "tiff": "6e000e7daeeba40b709a1358febaa0029bd691c7a9dd97288f21918955572cb6"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 31.27,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "figure_id": "R12-CHICAGO-NATIVE80-ENDPOINT",
+  "city": "chicago",
+  "instance": "Frozen S20; hourly demand; public scalar endpoints only",
+  "role": "saved-state-check",
+  "conclusion": "Accepted Native80 scalar results remain visible without failed representation plots or borrowed physical flow.",
+  "panels": [
+    {
+      "metric": "Full-graph relative gap",
+      "unit": "Relative gap (dimensionless)"
+    },
+    {
+      "metric": "Original-OD conservation",
+      "unit": "Maximum residual (PCE/h)"
+    },
+    {
+      "metric": "Link reconstruction",
+      "unit": "Maximum residual (PCE/h)"
+    }
+  ],
+  "quantity": [
+    "Full-graph relative gap",
+    "Original-OD conservation",
+    "Link reconstruction"
+  ],
+  "unit": [
+    "Relative gap (dimensionless)",
+    "Maximum residual (PCE/h)",
+    "Maximum residual (PCE/h)"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 1,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "The accepted Native80 endpoint uses the full uncompressed 80-dimensional minor representation (U=I80), with 20 major paths; no compression advantage is claimed. Its checked objective is 5601.461468294976 PCE·min/h. The three panels show the actual full-graph gap, original-OD residual and link-reconstruction residual with their own units. Each is a single method endpoint, not an iteration trajectory. Public accepted data do not include this method’s complete physical-flow vector, so no flow map is inferred from FW or another representation.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/chicago/C06_NATIVE_B_INCREMENT.public_plot.json",
+      "sha256": "1e0bb20fb1c34546cc1d9cc225a92644093199de20ec81c2468f376dfb634a6a"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Chicago",
+    "title": "Native80: accepted original-coordinate endpoint",
+    "scope": "S20 · 20 MAJOR + 80 MINOR PATH COORDINATES"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 19.413,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3549,
+    1093
+  ],
+  "exports": {
+    "png": "89c2fa99576e96469f6a02d1be26977494d8a3b9e88e969a7874b342bfaf1e52",
+    "svg": "3fce77d12c91d483ed9379a0d5ca603273fe4faf460eda1abfcf406449893811",
+    "pdf": "2fbfb302a14241e6623501cda4c3bfd15443d2ef852b13033db600f153ef7372"
+  },
+  "text_audit": [
+    {
+      "text": "1.49e-12",
+      "size_pt": 7.6,
+      "bounds_px": [
+        233.784,
+        274.035,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Native80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        231.472,
+        87.267,
+        51.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        68.885,
+        136.625,
+        13.0,
+        182.75
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−12}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        114.75,
+        352.167,
+        41.144,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        87.44,
+        98.6,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.6}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        87.44,
+        162.199,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1.2}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.065,
+        225.798,
+        18.351,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1.8}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        87.815,
+        289.397,
+        18.601,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2.4}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        87.268,
+        352.996,
+        19.148,
+        12.0
+      ]
+    },
+    {
+      "text": "a  Full-graph relative gap",
+      "size_pt": 10.0,
+      "bounds_px": [
+        114.75,
+        374.878,
+        198.375,
+        14.0
+      ]
+    },
+    {
+      "text": "1.79e-10",
+      "size_pt": 7.6,
+      "bounds_px": [
+        655.5,
+        274.035,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Native80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.188,
+        87.267,
+        51.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        490.429,
+        142.188,
+        13.0,
+        171.625
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−10}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        536.466,
+        352.167,
+        41.457,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        509.156,
+        98.6,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.8}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        509.531,
+        169.242,
+        18.601,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1.6}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        509.156,
+        239.884,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2.4}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        508.984,
+        310.525,
+        19.148,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{3.2}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        509.781,
+        381.167,
+        18.351,
+        12.0
+      ]
+    },
+    {
+      "text": "b  Original-OD conservation",
+      "size_pt": 10.0,
+      "bounds_px": [
+        536.466,
+        374.878,
+        218.625,
+        14.0
+      ]
+    },
+    {
+      "text": "1.14e-13",
+      "size_pt": 7.6,
+      "bounds_px": [
+        1077.216,
+        274.035,
+        46.875,
+        10.0
+      ]
+    },
+    {
+      "text": "Native80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1074.903,
+        87.267,
+        51.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        912.317,
+        142.188,
+        13.0,
+        171.625
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−13}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        958.182,
+        352.167,
+        41.394,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        930.872,
+        98.6,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.5}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        930.95,
+        168.061,
+        18.898,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1.0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        930.872,
+        237.522,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{1.5}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        930.95,
+        306.982,
+        18.898,
+        12.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2.0}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        930.872,
+        376.443,
+        18.976,
+        12.0
+      ]
+    },
+    {
+      "text": "c  Link reconstruction",
+      "size_pt": 10.0,
+      "bounds_px": [
+        958.182,
+        374.878,
+        173.0,
+        14.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  S20 · 20 MAJOR + 80 MINOR PATH COORDINATES",
+      "size_pt": 8.7,
+      "bounds_px": [
+        82.875,
+        426.933,
+        436.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Native80: accepted original-coordinate endpoint",
+      "size_pt": 15.0,
+      "bounds_px": [
+        82.875,
+        399.989,
+        569.125,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

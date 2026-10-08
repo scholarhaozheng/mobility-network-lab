@@ -1,0 +1,46 @@
+{
+  "id": "R3-CHICAGO-GENERATION",
+  "city": "chicago",
+  "title": "All-zone trip generation and demand ledger",
+  "caption": "All 5 zones; 08:00–09:00 HBW. The left panel shows saved interzonal productions/attractions. The right panel accounts for all generated persons, including excluded and intrazonal components. No top-12 truncation.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "production and attraction",
+      "unit": "persons per declared period",
+      "zone_count": 5,
+      "P_total": 2835.2193491386506,
+      "A_total": 2835.2193491386506
+    },
+    {
+      "panel": "b",
+      "metric": "generation ledger",
+      "fields": {
+        "generated_person_trips": 10272.533873690763,
+        "external_or_uncaptured_person_trips": 7190.773711583534,
+        "intrazonal_person_trips": 246.5408129685783,
+        "interzonal_production_person_trips": 2835.2193491386506
+      }
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\chicago\\plot_data\\generation_complete.csv",
+      "sha256": "91df6e3156cd81c131ddac93cae3c8fa46ec5d55c1785482411525db70445a22"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "generation"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "94ae394df5dac6d787b8ee7800b176b24c7e33118a13aaa020a29d1759ec3838",
+    "png": "322122823e7866bf8ba27addc0d125ee7c96f7cf554bb2dbb1c255335aec3a2f",
+    "pdf": "2a267b6c93302253483b1a97a6ac04d273a5f64f0417761ec7a4d7499a52e3db"
+  },
+  "width": 1981,
+  "height": 965,
+  "src": "assets/city-alignment-r3/chicago/generation.svg"
+}

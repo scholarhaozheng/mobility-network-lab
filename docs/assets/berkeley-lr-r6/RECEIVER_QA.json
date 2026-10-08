@@ -1,0 +1,779 @@
+{
+  "status": "PASS",
+  "receiver_optimizer_calls": 0,
+  "receiver_shortest_path_recomputations": 0,
+  "checks": [
+    {
+      "check": "300_contiguous_rows",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "original_first10_exact_scientific_fields",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "prefix_max_upper_monotonic_gap_formula",
+      "passed": true,
+      "details": []
+    },
+    {
+      "check": "missing_upper_and_gap_only_first9",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "result_history_matches",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "31_recovery_calls_and_schedule",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "recovery_pool_size_as_of_call",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "all_recovery_objectives_equal_after_initial_infeasibility",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "nine_unique_own_pool_paths",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "frozen_plan_identity",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "registered_inputs_match_original_and_copy",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "accepted_result_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "accepted_source_hashes_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "all_other_source_modules_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "registered_diagnostic_solver_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "coefficient_recovery_and_writer_functions_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "step_rule_variant_unchanged_except_diagnostic_horizon",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "common_rules_unchanged_except_snapshot_frequency",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "saved_paths_use_real_arcs",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "own_recovery_paths_continuous_in_pool",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "own_primal_feasibility",
+      "passed": true,
+      "details": {
+        "max_demand_error": 0.0,
+        "max_capacity_excess": 0
+      }
+    },
+    {
+      "check": "own_reconstructed_objective",
+      "passed": true,
+      "details": {
+        "objective": 43.66742440800644
+      }
+    },
+    {
+      "check": "own_arc_and_physical_projection",
+      "passed": true,
+      "details": {
+        "arc_error": 0.0,
+        "physical_error": 0.0
+      }
+    },
+    {
+      "check": "diagnostic_own_recovery_identical_to_original_selected_recovery",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "best_vector_matches_iteration256_snapshot",
+      "passed": true,
+      "details": {
+        "max_abs_difference": 8.636023917536209e-13
+      }
+    },
+    {
+      "check": "all12_baseline_snapshot_hashes_unchanged",
+      "passed": true,
+      "details": {
+        "files_checked": 12
+      }
+    },
+    {
+      "check": "website_plot_data_preserves_all300_scientific_rows",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "website_plot_data_marks_original_prefix_vs_diagnostic",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "upstream_light_audit_hashes_match",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "recovery_plot_data_preserves_all31_records",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "raw_extended_sources_unchanged_since_initial_receiver_audit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "all12_original_baseline_hashes_still_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "iteration256_fallback_branch_explains_recorded_step",
+      "passed": true,
+      "details": {
+        "iteration": 256,
+        "current_dual": 43.66742440800643,
+        "upper": 43.667424408006426,
+        "upper_greater_than_current_dual": false,
+        "saved_step_coefficient": 0.009432897061395272,
+        "fallback_step_recomputed": 0.009432897061395272,
+        "next_current_dual_iteration257": 38.65698058621554,
+        "interpretation": "At floating-point closure, original coefficient condition upper > dual is false and invokes fallback; the current dual then drops while historical best remains. This continued diagnostic is not evidence that every subsequent multiplier/current dual is stationary."
+      }
+    },
+    {
+      "check": "evaluated_current300_export_matches_saved_snapshot",
+      "passed": true,
+      "details": {
+        "full_rows": 250886,
+        "nonzero": 77,
+        "max_abs_difference": 0.0
+      }
+    },
+    {
+      "check": "post_update_alias_preserves_raw_terminal_file",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "timing_receipt_matches_history300_and_next_state",
+      "passed": true,
+      "details": {
+        "recorded_current_iteration": 300,
+        "recorded_current_csv": "current_multipliers_t300_preupdate.csv",
+        "recorded_current_dual_recomputed": 43.66228345703368,
+        "saved_terminal_file": "runs/T_LR_extended_300/terminal_current_multipliers.csv",
+        "saved_terminal_file_semantics": "post-update next state, not the t300 history price",
+        "alias": "post_update_next_multipliers.csv",
+        "post_update_trial_max_error": 0.0,
+        "post_update_unrecorded_next_dual_if_evaluated": 43.6619420262119
+      }
+    },
+    {
+      "check": "upstream_independent_diagnostic_audit_pass",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "upstream_audit_summaries_match_raw",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "39_snapshot_rechecks_cover_declared_schedule",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "snapshot_dual_checks_match_saved_history_and_tolerance",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "projected_norm_skips_declared_where_sparse_counts_differ",
+      "passed": true,
+      "details": {
+        "skipped_iterations": [
+          240,
+          250
+        ],
+        "checked_iterations": 37
+      }
+    },
+    {
+      "check": "31_recovery_rechecks_match_saved_schedule_and_objectives",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "full_physical_projection_covers_exact2150_links",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "full_physical_projection_matches_own_saved_LR_flow",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "upstream_final_flow_residuals_zero",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "raw_extended_data_unchanged_after_upstream_audit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "explicit_stage_handoff_json_and_markdown_present",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_declares_limited_diagnostic_display_and_pending_formal",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_evidence_hashes_match_actual_artifacts",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_matches_model_and_input_hashes",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_diagnostic_values_match_raw",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_preserves_original_accepted10",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_discloses_sparse_projected_norm_limit",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "stage_handoff_discloses_roundoff_and_state_timing",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "upstream_certified_artifacts_unchanged_since_receiver_checks",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "accepted_baseline_hash_snapshot_still_intact_at_display_acceptance",
+      "passed": true,
+      "details": {
+        "files_checked": 12
+      }
+    },
+    {
+      "check": "frozen_input_and_source_registration_still_intact",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "check_count": 57,
+  "failed_checks": [],
+  "selected_own_recovery": {
+    "iteration": 10,
+    "selection_reason": "_choose_recovery retains existing best unless candidate objective is strictly lower; all later feasible candidate objectives tie the iteration10 value; final path/arc/physical files are byte-identical to original iteration10 selected recovery.",
+    "positive_path_count": 5,
+    "source_path": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\runs\\T_LR_extended_300\\positive_paths.csv",
+    "paths": [
+      {
+        "demand_id": "T01",
+        "pool_discovery_iteration": 1,
+        "flow": 0.4564421239032875,
+        "arc_count": 114
+      },
+      {
+        "demand_id": "T02",
+        "pool_discovery_iteration": 1,
+        "flow": 7.5,
+        "arc_count": 91
+      },
+      {
+        "demand_id": "T02",
+        "pool_discovery_iteration": 2,
+        "flow": 1.2003774460867707,
+        "arc_count": 93
+      },
+      {
+        "demand_id": "T03",
+        "pool_discovery_iteration": 1,
+        "flow": 0.5084076120924037,
+        "arc_count": 144
+      },
+      {
+        "demand_id": "T04",
+        "pool_discovery_iteration": 1,
+        "flow": 0.7740774189438165,
+        "arc_count": 140
+      }
+    ],
+    "physical_positive_links": 340,
+    "physical_comparisons": {
+      "LP": {
+        "max_abs_difference_pce": 0.0,
+        "l1_difference_pce": 0.0,
+        "raw_reference_path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_LP_stage2\\physical_link_flow.csv",
+        "raw_reference_sha256": "2b0bbdcd76dbd9f26be5fa00dd90101669e490d5522ab3f9d29d74ed07f971dc"
+      },
+      "CG": {
+        "max_abs_difference_pce": 0.0,
+        "l1_difference_pce": 0.0,
+        "raw_reference_path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_CG_compact\\physical_link_flow.csv",
+        "raw_reference_sha256": "2b0bbdcd76dbd9f26be5fa00dd90101669e490d5522ab3f9d29d74ed07f971dc"
+      }
+    }
+  },
+  "trace_summary": {
+    "iterations": 300,
+    "first_improvement_after_original_stop": {
+      "iteration": 19,
+      "best_dual": 43.58735412724451
+    },
+    "best_dual_iteration": 256,
+    "final_best_dual": 43.66742440800643,
+    "final_current_dual": 43.66228345703368,
+    "final_best_primal": 43.667424408006426,
+    "raw_final_signed_upper_minus_lower": -7.105427357601002e-15,
+    "raw_final_relative_gap_before_clamp": -1.627168868768505e-16,
+    "saved_final_gap": 0,
+    "raw_negative_roundoff_semantics": "Tiny negative U-L (~one floating-point ulp), original max(0,...) gap is exactly0. Report floating-point closure, not a negative gap or a rigorous exact-arithmetic zero-gap proof.",
+    "improvement_event_count": 124
+  },
+  "terminal_state_timing": {
+    "snapshot_iteration": 300,
+    "terminal_vs_snapshot_max_abs_difference": 7.675759496998736e-06,
+    "interpretation": "Diagnostic loop applies update after recording iteration300; terminal_current_multipliers is post-update / next state unless upstream supplies explicit clarification. Saved final current dual belongs to iteration300 snapshot.",
+    "requires_upstream_clarification": false,
+    "resolved_by": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\MULTIPLIER_TIMING.json",
+    "evaluated_current_file": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\current_multipliers_t300_preupdate.csv",
+    "post_update_alias_file": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\post_update_next_multipliers.csv",
+    "upstream_receipt": {
+      "recorded_current_iteration": 300,
+      "recorded_current_csv": "current_multipliers_t300_preupdate.csv",
+      "recorded_current_dual_recomputed": 43.66228345703368,
+      "saved_terminal_file": "runs/T_LR_extended_300/terminal_current_multipliers.csv",
+      "saved_terminal_file_semantics": "post-update next state, not the t300 history price",
+      "alias": "post_update_next_multipliers.csv",
+      "post_update_trial_max_error": 0.0,
+      "post_update_unrecorded_next_dual_if_evaluated": 43.6619420262119
+    },
+    "evaluated_current_export_precision": "Dense zero-filled reconstruction of snapshot300; positive lambda <=1e-12 are omitted by original snapshot policy. It is not an exact original full-current checkpoint.",
+    "iteration300_positive_count_comparison": {
+      "history_count_gt_zero": 77,
+      "snapshot_count_gt_1e_12": 77,
+      "omitted_positive_count_inferred_from_counts": 0
+    }
+  },
+  "pending": [],
+  "source_files_sha256": {
+    "runs\\T_LR_extended_300\\history.csv": "836bececaa1380acba3b1f41b76a14b9aefa5216400046c89ac7e3528ed0b701",
+    "runs\\T_LR_extended_300\\result.json": "2a3b52c69225f4de5ef51803bca08a90b31e26fec4cc8cfc839e907da4d39994",
+    "runs\\T_LR_extended_300\\best_multipliers.csv": "3d2dc070a71d9d58db41dce4f6e25fcd3e18e57e05ce986e5d4ec12e122dbf6b",
+    "runs\\T_LR_extended_300\\terminal_current_multipliers.csv": "4a61dca1f49063fa56a79927699cf5944934029f349649fcef54428ea6c8ec9a",
+    "runs\\T_LR_extended_300\\positive_paths.csv": "7ced0c3229ce1fddb182fdfe457be0b52cb411ac6ece713ea5e116e8ae52c164",
+    "runs\\T_LR_extended_300\\physical_link_flow.csv": "060bdcf591593e7ae8635aa193cf88505afb6dcc546dcba02c6d9e17d6062b1a",
+    "DIAGNOSTIC_PLAN.json": "d20325cae4ac3238f65b173896b7bbe8706f1002f6e97dddfa76a0f7d5f07881",
+    "DIAGNOSTIC_REGISTRATION.json": "a43bce1f1b279f717ab1a0d973248aff7b1cae05db7217f200fe98230bbe8d0a"
+  },
+  "upstream_light_audit": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\HISTORY_LIGHT_AUDIT.json",
+    "sha256": "7ccd9d77344039614475c575ded14f1e9dda242f576ff85f60c381975b46d919",
+    "status": "PASS_HISTORY_PREFIX_AND_GAP"
+  },
+  "derived_plot_data_sha256": {
+    "LR_EXTENDED_PLOT_DATA.csv": "e9b9b2e2b6557aa16a7f69549b161f31d9a818d19d1fb5bcb0e85df6d5af1654",
+    "RECOVERY_HISTORY.csv": "4b525dcc768b2643966d9ff252518202e1ae9e3ffdcbba25d57ca28c6b1aade8"
+  },
+  "post_closure_diagnostic_behavior": {
+    "iteration": 256,
+    "current_dual": 43.66742440800643,
+    "upper": 43.667424408006426,
+    "upper_greater_than_current_dual": false,
+    "saved_step_coefficient": 0.009432897061395272,
+    "fallback_step_recomputed": 0.009432897061395272,
+    "next_current_dual_iteration257": 38.65698058621554,
+    "interpretation": "At floating-point closure, original coefficient condition upper > dual is false and invokes fallback; the current dual then drops while historical best remains. This continued diagnostic is not evidence that every subsequent multiplier/current dual is stationary."
+  },
+  "observations": [
+    {
+      "id": "roundoff_closure_triggers_original_fallback",
+      "severity": "interpretation_only_not_failure",
+      "source_file": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\source\\time\\lr\\lagrangian_dual_solver.py",
+      "function": "_coefficient",
+      "source_lines": {
+        "function": 31,
+        "condition": 33,
+        "fallback": 36
+      },
+      "history_file": "E:/mobility_computation_lab_v2/work/berkeley_lr_extended_review_r1/runs/T_LR_extended_300/history.csv",
+      "evidence": {
+        "iteration": 256,
+        "current_dual": 43.66742440800643,
+        "upper": 43.667424408006426,
+        "upper_greater_than_current_dual": false,
+        "saved_step_coefficient": 0.009432897061395272,
+        "fallback_step_recomputed": 0.009432897061395272,
+        "next_current_dual_iteration257": 38.65698058621554,
+        "interpretation": "At floating-point closure, original coefficient condition upper > dual is false and invokes fallback; the current dual then drops while historical best remains. This continued diagnostic is not evidence that every subsequent multiplier/current dual is stationary."
+      },
+      "preceding_steps": {
+        "iteration254": 9.06375977205108e-18,
+        "iteration255": 9.06375977205108e-18
+      },
+      "conclusion": "Best bound closes to floating-point precision at256. Since saved current dual exceeds saved upper by one ULP, original upper > dual condition is false; fallback step equals0.009432897061395272. Current dual drops to38.65698058621554 at257, while historical best stays43.66742440800643. This is a diagnostic consequence of the unmodified rule, not a receiver failure. Do not equate best-bound closure with stationary subsequent current iterates."
+    },
+    {
+      "id": "sparse_snapshot_threshold_limits_multiplier_audit",
+      "severity": "coverage_limit_not_failure",
+      "source_file": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\source\\time\\lr\\lagrangian_dual_solver.py",
+      "threshold": 1e-12,
+      "saved_snapshot_rule": "lambda > 1e-12",
+      "history_summary_rule": "multiplier_positive_count counts lambda > 0",
+      "number_of_history_rows_with_omitted_positive_prices": 35,
+      "affected_rows": [
+        {
+          "iteration": 221,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 222,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 223,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 224,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 225,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 226,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 227,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 228,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 229,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 231,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 232,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 233,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 234,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 235,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 236,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 237,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 238,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 239,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 240,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 241,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 242,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 243,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 244,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 245,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 246,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 247,
+          "history_positive_count": 120,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 86
+        },
+        {
+          "iteration": 248,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 34,
+          "omitted_positive_count": 43
+        },
+        {
+          "iteration": 249,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 250,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 251,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 252,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 253,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 254,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 255,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        },
+        {
+          "iteration": 256,
+          "history_positive_count": 77,
+          "snapshot_above_1e_12_count": 16,
+          "omitted_positive_count": 61
+        }
+      ],
+      "evaluated_current_export": "current_multipliers_t300_preupdate.csv is a dense zero-filled reconstruction of the thresholded iteration300 snapshot, not a newly recovered full-precision original current vector.",
+      "audit_limit": "Snapshot dual and capacity checks can pass within declared tolerances, but omitted tiny positive prices can change projected-direction membership because its predicate is lambda>0. Do not claim exact per-arc or projected-norm reconstruction where truncation matters. Full saved best_multipliers and raw post-update terminal vector are separate artifacts.",
+      "plotting_rule": "Use actual history scalar summaries for per-iteration positive counts, max price and projected norm; do not replace them with thresholded snapshot counts or invent omitted prices."
+    }
+  ],
+  "timing_artifact_sha256": {
+    "MULTIPLIER_TIMING.json": "8a459527b710e0fde3c05856dead20ee732b81ea9c08979a05be920be0470c53",
+    "current_multipliers_t300_preupdate.csv": "eb5c2a204809a0c08b4e9de4816feec08142a153a49346f7ac76f2bf5ca39674",
+    "post_update_next_multipliers.csv": "4a61dca1f49063fa56a79927699cf5944934029f349649fcef54428ea6c8ec9a"
+  },
+  "audit_coverage_limits": [
+    "Sparse multiplier snapshots omit lambda<=1e-12; affected projected-norm recomputations must be explicitly skipped/disclosed.",
+    "All300 scalar best-bound and gap identities are checked; this is distinct from independently re-solving shortest paths at every recorded iteration.",
+    "Receiver performs no optimizer calls; upstream independently reoptimizes saved recovery pools."
+  ],
+  "upstream_independent_certificate": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\DIAGNOSTIC_AUDIT.json",
+    "sha256": "af84969ec4b46d7a409fe28fff94fb31bb1961cbf66c6d7b4e17abf37b42da98",
+    "status": "PASS_DIAGNOSTIC_INDEPENDENT_AUDIT",
+    "snapshot_count": 39,
+    "projected_norm_checked_count": 37,
+    "projected_norm_skipped_iterations": [
+      240,
+      250
+    ],
+    "max_abs_snapshot_dual_error_pce_minutes": 1.1527134802236105e-10,
+    "recovery_reoptimization_count": 31,
+    "full_physical_link_count": 2150
+  },
+  "upstream_certificate_artifact_sha256": {
+    "DIAGNOSTIC_AUDIT.json": "af84969ec4b46d7a409fe28fff94fb31bb1961cbf66c6d7b4e17abf37b42da98",
+    "SNAPSHOT_DUAL_RECHECK.csv": "6884227e616e31a79840d2581a48abeeb55a9f7d2b570b4c83bd5039944d1b65",
+    "RECOVERY_RECHECK.csv": "0ec48b3852faa5a5d69138cac211b9c0489bd9b9a51b364e35cee764df30b75c",
+    "physical_link_flow_full.csv": "f911fe8fa302c966ea5b4e224776aa5d516ea76673335d1a6bb218a53a9b6719"
+  },
+  "acceptance_scope": "independently_audited_diagnostic_display",
+  "formal_evaluation_status": "PENDING_SHARED_HEAVY_LOCK",
+  "formal_generic_entry_acceptance_of_extended_run": false,
+  "original_accepted_run": {
+    "iterations": 10,
+    "stop_reason": "CERTIFIED_GAP",
+    "unchanged": true,
+    "diagnostic_does_not_replace_original": true
+  },
+  "pass_status_meaning": "A PASS here authorizes integration of the independently audited 300-round diagnostic for display only, not acceptance by the original generic formal entry. Formal status is tracked separately.",
+  "deferred_not_a_display_blocker": [
+    "Original generic formal evaluator, currently pending shared heavy lock",
+    "ZIP packaging completion"
+  ],
+  "stage_handoff": {
+    "json_path": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\HANDOFF_FOR_DIAGNOSTIC_DISPLAY.json",
+    "json_sha256": "82f6edd6316bfaf1334f515d4e5c471def5ba2799b40060732e52e336a4407f3",
+    "markdown_path": "E:\\mobility_computation_lab_v2\\work\\berkeley_lr_extended_review_r1\\HANDOFF_FOR_DIAGNOSTIC_DISPLAY.md",
+    "markdown_sha256": "4f4c4f6f171a8c62ca920067749d92b131c61582cbe43f61aeba5e63167b42c3",
+    "producer_status": "INDEPENDENT_NUMERIC_AUDIT_PASS_FORMAL_EVALUATION_PENDING_SHARED_HEAVY_LOCK",
+    "approval_scope": "Display the saved 300-iteration diagnostic series with an explicit diagnostic label; preserve the accepted 10-iteration result and its formal status."
+  },
+  "formal_evaluation_artifact": null,
+  "accepted_at_utc": "2026-10-07T08:37:43.119759+00:00",
+  "integration_ready": true,
+  "integration_conditions": [
+    "Label every extended plot as a 300-round post-certificate diagnostic; distinguish the original accepted stop at10.",
+    "Preserve formal_evaluation_status pending in provenance until a real formal PASS artifact is supplied; do not claim the original formal entry accepted300 rounds.",
+    "Retain sparse-snapshot audit limits, floating-point gap clipping, and evaluated-current300 versus post-update-next-state distinction.",
+    "Use own LR recovered flow, which remains the iteration10 selected recovery; agreement with LP/CG is a verified comparison, not imported solver evidence."
+  ],
+  "stop_reason_semantics": {
+    "raw_result_stop_reason": "MAX_ITERATIONS",
+    "stage_display_stop_label": "MAX_ITERATIONS_DIAGNOSTIC_AFTER_GATE",
+    "meaning": "MAX_ITERATIONS after deliberately bypassing the original early gate for this diagnostic; no raw stop_reason was modified."
+  }
+}

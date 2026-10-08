@@ -1,0 +1,46 @@
+{
+  "city": "urbana-champaign",
+  "stem": "urbana-champaign-admm-main",
+  "title": "ADMM objective and feasibility: one saved update",
+  "caption": "Urbana–Champaign T4: the single saved cold-start outer update is shown. The four panels answer the same metric questions as the Hong Kong ADMM main figure: original-unit balance/capacity feasibility, primal consensus, rho-scaled dual update, and log10 absolute objective difference from the same-graph LP. A single marker is a single recorded state, not a convergence trajectory; no iteration 0 or intermediate states are invented. Balance, capacity and primal quantities use PCE; the rho-scaled dual residual and threshold use minutes. Exact zero residuals alone are displayed at 1e−16 in the respective units; every positive value is unchanged. The objective panel uses log10(|ADMM−LP|/(1 PCE·min)), with a 1e−15 display floor that is inactive here. The LP redundancy proof records total pulse 0.0516231482679 PCE below minimum physical time-arc capacity 3.75 PCE. This is a bounded nonbinding-capacity check, not a congested performance test. Numerical results are engineering scenarios, not observed traffic.",
+  "dimensions": [
+    2306,
+    1565
+  ],
+  "exports": {
+    "png": "urbana-champaign-admm-main.png",
+    "svg": "urbana-champaign-admm-main.svg",
+    "pdf": "urbana-champaign-admm-main.pdf"
+  },
+  "reference": "Hong Kong G-F097 four metric panels; actual saved length is one, not 165",
+  "style_functions": [
+    "figure_style.new_figure",
+    "format_axes",
+    "compact_header"
+  ],
+  "renderer": {
+    "file": "render_single_update_admm.py",
+    "function": "main"
+  },
+  "input_sources": [
+    {
+      "source_id": "saved-result/admm_main/final_checkpoint/history.csv",
+      "bytes": 446,
+      "sha256": "cf556f61ceb0840d46fff14107bed7859c6caaf7f8dcb5c6b783b46022104eb0"
+    },
+    {
+      "source_id": "saved-result/lp_dag/LP_RESULT.json",
+      "bytes": 2674,
+      "sha256": "f54f8461673082e7a6a10f0d6af6c30ab582776159f4c6f12a40930d9244ef92"
+    },
+    {
+      "source_id": "saved-result/admm_solver_accuracy.py",
+      "bytes": 16644,
+      "sha256": "2814d7e3f9cad635a1519e391202016869940c2f5577199610ea5dc1ae39a833"
+    }
+  ],
+  "solver_calls": 0,
+  "asset_status": "LOCAL_DERIVATIVE_FROM_SAVED_RESULTS_NOT_A_NEW_S0_BYTE_RELEASE",
+  "plot_data_sha256": "a62657cce3f7dfa78a7ef153f41e7efb172eb639a2c0e0b60ee2758c7a7b6abe",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

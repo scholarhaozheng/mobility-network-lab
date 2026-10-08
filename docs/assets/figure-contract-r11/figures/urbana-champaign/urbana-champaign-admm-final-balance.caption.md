@@ -1,0 +1,1 @@
+Four-commodity finite T4 final state, one completed update The heatmap is the saved final spatial conservation state, not an iteration-history heatmap. The displayed color floor and unchanged gate are retained; all exact raw residual values remain in the linked public plot data.

@@ -1,0 +1,67 @@
+{
+  "figure_id": "f12_mode_choice",
+  "city": "berkeley",
+  "title": "Mode choice",
+  "caption": "Saved OD-specific logit probabilities apply only over available alternatives. Modeled one-hour demand is 1,238.9647955 drive, 169.6685413 direct-transit and 973.0889606 walk person trips; shares and trip-weighted generalized costs are copied from frozen plotdata. Direct AC Transit is available for a subset of zone pairs. All costs and behavior remain engineering assumptions, without a local behavioral fit. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips per declared hour; share; generalized minutes",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/berkeley/original/f12_mode_choice.svg",
+      "sha256": "2a09c7603a8facba96352837082d037ad9a39c7db36fe4de99fd09e937cd6374"
+    },
+    {
+      "logical_source": "f12_mode_choice.plot_data.csv",
+      "sha256": "d3b77270fa1e83e7df52e2dd8dfe8acbe54aaa5002159b51146383b823462abf"
+    },
+    {
+      "path": "snapshot/READY.json",
+      "sha256": "5326dac20a6d4ed47f511f5f4f69187294bc604789ca9336218b4e21f39b13c3"
+    },
+    {
+      "path": "snapshot/PUBLIC_DERIVED_CONTENT_POLICY.json",
+      "sha256": "a1219aab14ea6d9ea010784c0f2173ad63b3853936a961d7ec61b7c7032c83ea"
+    },
+    {
+      "path": "compute_capsule/FOUR_STAGE_RUN_CONFIG.json",
+      "sha256": "f73c4abc3f73bdcca09f582c69242e9f7c655ac8002dcabc683882be9a3262d5"
+    },
+    {
+      "path": "compute_capsule/reference_run/mode_choice/mode_choice_by_od.csv",
+      "sha256": "bc2b67d91896688c1d54732eaf913a623e67fea8b71aa32f287c71bb884442ab"
+    },
+    {
+      "path": "compute_capsule/inputs/mode_costs.csv",
+      "sha256": "e99df5d50189c82ff0289b0bef067470db7fa686ccc8c00651be3e06f6925576"
+    },
+    {
+      "path": "original/f12_mode_choice.plot_data.csv",
+      "sha256": "d3b77270fa1e83e7df52e2dd8dfe8acbe54aaa5002159b51146383b823462abf"
+    },
+    {
+      "path": "original/f12_mode_choice.source.json",
+      "sha256": "cad1e7e4c8e2182b0755d2b80e4b9df16cc9d0b1af626de5fdbb212e21d0c6bd"
+    }
+  ],
+  "source_run_receipt_sha256": "a6de9d5d79f18651b64355ed12a6a87e94251701999a17f823e75d84e4c189d7",
+  "source_metadata_sha256": "55a33ae606830962299dbcaa8935e2927e37afbd07202086a25b15de4f99a01e",
+  "png_sha256": "5db9cd5cc25744be45d35ad29b526e263b0c729d0b9fb16bfc9b5828d775237f",
+  "svg_sha256": "c47aee708ef30a7785ead1cdcf1a29894467e3d2cad732e74f40ea789889b024",
+  "transformation": [
+    "Read three saved mode rows unchanged; display drive, transit, walk order.",
+    "Display share as 100 \u00d7 saved share and values rounded for labels only.",
+    "No logit recalculation.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_berkeley_visual.py --snapshot s0_snapshot_v1 --output figure_edits/berkeley",
+  "page_anchor": "figure-f12-mode-choice",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "193b95f225b8d7474fb6bb24c70e44360736f79e7fff3fae8b7bf0523bce866a",
+  "input_png_sha256": "5db9cd5cc25744be45d35ad29b526e263b0c729d0b9fb16bfc9b5828d775237f",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

@@ -1,0 +1,41 @@
+{
+  "basis": {
+    "ranks": [
+      26,
+      52
+    ],
+    "seed": "f0 free-flow minimum path only",
+    "wall_seconds": 300
+  },
+  "cohort": "S72",
+  "finite": {
+    "ftol": 1e-10,
+    "max_iterations": 300,
+    "method": "SLSQP",
+    "wall_seconds": 900
+  },
+  "fw": {
+    "full_relative_gap_abs": 1e-05,
+    "max_iterations": 300,
+    "wall_seconds": 900
+  },
+  "gates": {
+    "full_relative_gap_abs": 1e-05,
+    "link_reconstruction_abs": 1e-07,
+    "max_od_error_abs": 1e-06,
+    "max_od_error_rel": 1e-08,
+    "negative_flow_abs": 1e-08,
+    "pool_relative_gap_abs": 1e-05,
+    "total_od_l1_rel": 1e-08
+  },
+  "k_paths_per_od": 5,
+  "memory_ceiling_bytes": 687203942,
+  "native": {
+    "gamma": 0.0,
+    "inner_seconds": 600,
+    "linear_solver": "mumps",
+    "max_outer": 8,
+    "total_seconds": 1800
+  },
+  "source_selection": "input-only SHA256"
+}

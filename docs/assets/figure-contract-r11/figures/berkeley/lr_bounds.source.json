@@ -1,0 +1,500 @@
+{
+  "figure_id": "R11-BERKELEY-LR_BOUNDS",
+  "city": "berkeley",
+  "instance": "Berkeley T4 cold-start diagnostic 300; original accepted 10 retained separately",
+  "role": "iteration",
+  "saved_states": 300,
+  "conclusion": "Lagrangian bounds and certified gap",
+  "panels": {
+    "a": "Saved best lower and recovered best upper; PCE·min",
+    "b": "Saved certified gap in percent; frozen gate"
+  },
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-lr-r6/lr_bounds.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "The original accepted run remains separately preserved at iteration 10. This view uses 300 actual saved records from run BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1, through iteration 300. The extended trace is a diagnostic experiment and does not retroactively change the original stopping decision. Independent diagnostic audit passed. The original formal-entry replay is pending at this figure export; the 300-round run is not labelled formally accepted. The formal 1% certificate is first met at saved iteration 10; later rounds, when present, are shaded as post-gate diagnostics. Teal denotes the saved best dual lower bound and blue the separately recovered feasible upper. The right panel shows 100 times the saved dimensionless certificate on a linear percentage axis, against the unchanged gate. Missing upper/gap records remain unplotted. Final best lower is 43.66742440800643 PCE·min; best upper is 43.66742440800643 PCE·min and gap is 0%. The highest saved best bound first appears at iteration 256. The final current relaxed dual is separately 43.66228345703368 PCE·min; it is not substituted for the running best bound. The certificate is max(0, (U−L)/max(1,|U|)). The final signed U−L is -7.10543e-15 PCE·min. A saved zero gap here denotes numerical agreement at floating-point precision, not an algebraic proof of exact equality. The independent LP scalar remains in metadata and is not substituted for an LR upper bound. No smoothing, invented points, or optimizer calls are used by this renderer.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-lr-r6/lr_bounds.plot_data.json",
+      "sha256": "ec11427369ae581acac550a0b4156003919919b923ce0a1fda67b4770444f048"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "Lagrangian bounds and certified gap",
+    "scope": "T4 / original accepted stop 10 / cold diagnostic: 300 rounds"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 17.101,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2644,
+    1133
+  ],
+  "exports": {
+    "png": "8213fc220033daf50bd2269c2f29f5c3d3eefc09630a589113e05a38f9e69ed9",
+    "svg": "1d4f25c749b5f99156850497ae62fb52eb2cb5ae772d9efeafc15ae73eb486fc",
+    "pdf": "52945b24c7492018c7f5318b88ae5a476dd38d35e2ee97a75e6e2ee985d1dc48"
+  },
+  "text_audit": [
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        195.562,
+        75.911,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -21.843,
+        94.467,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        96.805,
+        94.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        196.579,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        303.477,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        410.376,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        517.274,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Objective (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        31.361,
+        175.5,
+        13.0,
+        129.0
+      ]
+    },
+    {
+      "text": "43.54",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        56.151,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.57",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        110.354,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        164.557,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.63",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        218.759,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.66",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        272.962,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.69",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        327.165,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "43.72",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.917,
+        381.368,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Best saved bounds",
+      "size_pt": 10.0,
+      "bounds_px": [
+        90.25,
+        378.089,
+        164.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Best dual lower bound",
+      "size_pt": 7.5,
+      "bounds_px": [
+        128.792,
+        347.825,
+        118.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Recovered primal upper",
+      "size_pt": 7.5,
+      "bounds_px": [
+        128.792,
+        332.617,
+        127.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0% at 300\n(floating-point closure)",
+      "size_pt": 8.0,
+      "bounds_px": [
+        753.976,
+        131.357,
+        129.625,
+        22.256
+      ]
+    },
+    {
+      "text": "0.18967% at 10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        607.485,
+        169.653,
+        89.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        675.312,
+        75.911,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        472.784,
+        94.467,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        585.493,
+        94.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        679.328,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        780.287,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        881.247,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        982.207,
+        94.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Gap (%)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        534.861,
+        214.25,
+        13.0,
+        51.5
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        544.167,
+        72.476,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        112.857,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        153.238,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        193.619,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        234.0,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        274.381,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        314.762,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        355.143,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        553.417,
+        395.524,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Certified relative gap",
+      "size_pt": 10.0,
+      "bounds_px": [
+        579.5,
+        378.089,
+        185.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen 1% gate",
+      "size_pt": 8.0,
+      "bounds_px": [
+        803.75,
+        347.2,
+        88.75,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / original accepted stop 10 / cold diagnostic: 300 rounds",
+      "size_pt": 8.7,
+      "bounds_px": [
+        61.75,
+        430.144,
+        500.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Lagrangian bounds and certified gap",
+      "size_pt": 15.0,
+      "bounds_px": [
+        61.75,
+        403.2,
+        433.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

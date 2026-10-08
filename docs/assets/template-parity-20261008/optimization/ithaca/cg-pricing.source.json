@@ -1,0 +1,365 @@
+{
+  "city": "ithaca",
+  "figure_id": "TEMPLATE-ithaca-cg-pricing",
+  "conclusion": "Independent pricing closure",
+  "role": "cg-pricing",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Phase I",
+    "2": "b  Phase II"
+  },
+  "quantity": "Independent pricing closure",
+  "unit": "Minimum full-DAG reduced cost (dimensionless); Minimum full-DAG reduced cost (min)",
+  "schema": "mcl_figure_r12",
+  "caption": "One full-DAG minimum reduced-cost check is saved in each phase. Phase I units are dimensionless; Phase II units are minutes, with the unchanged absolute closure tolerance 1e-7. These are the global minima, not invented per-commodity reduced costs. Two phases are separate checks, not two iterations of one common objective.",
+  "sources": [
+    {
+      "sha256": "d685c7daaff804cbe008af7a0eee461a55953ec5d23e77144a9af8b606d7e045",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "9ee7f70763c08755d9b6cba765b2016793588ea7e2396b4b15f8e7d730834e49",
+      "identity": "result.json",
+      "access": "private"
+    },
+    {
+      "sha256": "b39c29b29779940ccf5b8566575ccb0dda3968903cd2deffbe7e1831aecfa798",
+      "identity": "LP_RESULT.json",
+      "access": "private"
+    },
+    {
+      "sha256": "fead962ccf203f0c093d765ad2b61d653ad4142ddb687d6d2dbe8e00b2e02dbc",
+      "identity": "CG_PLAN.json",
+      "access": "private"
+    },
+    {
+      "sha256": "fe972d93d0af69336888ab1cdd5fd2da817784597d68c39b66e916a2cacf4af0",
+      "identity": "solve_t_cg.py",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Independent pricing closure",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 6.638,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2846,
+    1169
+  ],
+  "exports": {
+    "png": "7a6a367559b683f8143cb9e02899fd367641fabf10a0d36fa5b40432adccb761",
+    "svg": "6156026ebe84a51ec0b0ad6fd11ddc057875e2d4c5869376dc2501c181835596",
+    "pdf": "7802b6398003c19881119ecb52d85e2bcd287297eecf09913bb0eae0a01242af"
+  },
+  "text_audit": [
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        218.599,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        263.536,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Minimum full-DAG reduced cost (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        31.111,
+        55.375,
+        13.0,
+        307.25
+      ]
+    },
+    {
+      "text": "1e−7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        85.0,
+        340.967,
+        30.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.667,
+        63.929,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.667,
+        110.286,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.667,
+        156.643,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        203.0,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        249.357,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        295.714,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.917,
+        342.071,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Phase I",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        356.3,
+        75.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen closure tolerance",
+      "size_pt": 7.0,
+      "bounds_px": [
+        317.698,
+        321.05,
+        122.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        739.401,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        784.339,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Minimum full-DAG reduced cost (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        551.914,
+        88.125,
+        13.0,
+        241.75
+      ]
+    },
+    {
+      "text": "1e−7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        605.802,
+        340.967,
+        30.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        570.469,
+        63.929,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        570.469,
+        110.286,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        570.469,
+        156.643,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        203.0,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        249.357,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        295.714,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        342.071,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Phase II",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        356.3,
+        82.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen closure tolerance",
+      "size_pt": 7.0,
+      "bounds_px": [
+        838.5,
+        321.05,
+        122.75,
+        9.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        408.356,
+        283.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Independent pricing closure",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        381.411,
+        333.125,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

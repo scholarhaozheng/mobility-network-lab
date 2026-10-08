@@ -1,0 +1,653 @@
+{
+  "figure_id": "ithaca-admm-final-conservation",
+  "city": "ithaca",
+  "instance": "same accepted T4; own x; outer 1",
+  "role": "final_state_conservation",
+  "archetype": "quantitative grid",
+  "conclusion": "All commodity balance residuals satisfy their original-unit gate.",
+  "panels": {
+    "a": "four commodity rows by 35 selected final-state time nodes"
+  },
+  "quantity": "absolute outflow minus inflow minus supply",
+  "unit": "PCE",
+  "saved_states": 1,
+  "all_node_count": 15322,
+  "access": "private_local_review",
+  "public_release_confirmed": false,
+  "same_graph_identity": "b10c330f27fad084d9c0ce0c0769c0504fd72c764cad92e17a9a891caec0e5d7",
+  "renderer_sha256": "dc7ff04f2b383e54e2df67578a44d7910467326f35b65c67ff6f14e512a51ad4",
+  "plot_data_sha256": "f8744dc09f0de6970d0ffc0f99e55182281324d2e42329585db7ef11b756352f",
+  "schema": "mcl_figure_r12",
+  "caption": "Final saved ADMM own-x state at completed outer 1. Reconstruct outflow minus inflow minus commodity supply in the original units and exact saved arc order, with the loader's lexical node order. The heatmap selects the 35 nodes with the largest maximum absolute residual across all four commodities; ties retain lexical node order. All 15,322 nodes were included in this selection. The complete per-commodity maximum residuals and worst-node IDs reproduce the saved independent check exactly; overall maximum is 6.19070599701655e-15 PCE against the unchanged 1e−5 PCE gate. Colors show log10(max(|residual|,1e−15 PCE)/(1 PCE)); sub-floor values and exact zeros share the floor color, with their raw signed and absolute values preserved in plot data. This is a final spatial conservation diagnostic, not an iteration-history heatmap. The run completed one actual update on the frozen capacity-nonbinding T4 pulse, not a multi-iteration stress test. Private local derivative of the accepted saved result; no new public asset release or optimizer run is claimed. Engineering scenario, not observed traffic.",
+  "sources": [
+    {
+      "identity": "S0 received Ithaca T4 T/model/dynamic_arc.csv",
+      "member": "T/model/dynamic_arc.csv",
+      "sha256": "28e0be842ed12bb4c5bfd524d61d16e86e5466494887d2fa16a7da7ce60cea74",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/model/dynamic_demand.csv",
+      "member": "T/model/dynamic_demand.csv",
+      "sha256": "0d9ecc8ebcb2941ff4cad8309b83c5825b9a62c4f398da7fdd294b63106ece87",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/admm/final_checkpoint/state.npz",
+      "member": "T/admm/final_checkpoint/state.npz",
+      "sha256": "b464f3b98d156e92158d6d56ddf7b8bd968d17bc7d2bb8875ae42271d69d982b",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 verification/T_admm.json",
+      "member": "verification/T_admm.json",
+      "sha256": "f41dadc6001f63919ca5bd462f284d16b70e4a735d1bac05063127ef9bda76b8",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/model/MODEL_IDENTITY.json",
+      "member": "T/model/MODEL_IDENTITY.json",
+      "sha256": "d02031bcabe28c03d88f9a4e57053c42210023126c5a8b31fe4ea9a3c678c535",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/admm/final_checkpoint/checkpoint_identity.json",
+      "member": "T/admm/final_checkpoint/checkpoint_identity.json",
+      "sha256": "777b4f925382ab5bb4373878e9e60cd1b24c8c3b470d9680edc17ef3da69b341",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/lp/LP_SOLUTION.npz",
+      "member": "T/lp/LP_SOLUTION.npz",
+      "sha256": "6bad92543b988dfbae7c9a165621eab1126460f803ec46b8fba7b1b47a770689",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 T/lp/LP_RESULT.json",
+      "member": "T/lp/LP_RESULT.json",
+      "sha256": "b39c29b29779940ccf5b8566575ccb0dda3968903cd2deffbe7e1831aecfa798",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "S0 received Ithaca T4 frozen/r2/inputs/network.csv",
+      "member": "frozen/r2/inputs/network.csv",
+      "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "archive_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "access": "private_local_review"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Commodity conservation at the final state",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 27.624,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3250,
+    1273
+  ],
+  "exports": {
+    "png": "56ae087baa5ee6acf393dd085a04ac2dc9decc6afaa66dc34668d5b3073eef6c",
+    "svg": "03c34868fa01981d3911b30ba2a89ece01defc3411b7fcbebdf654452dead63d",
+    "pdf": "bb3e8f1817e65046b2a96a8a71f321ecfa3520eff04d796709fc8dfcc67f5401"
+  },
+  "text_audit": [
+    {
+      "text": "Time-expanded node (35 largest residuals)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        431.325,
+        55.642,
+        272.25,
+        13.0
+      ]
+    },
+    {
+      "text": "p_20191779_11_F:o@t26",
+      "size_pt": 6.4,
+      "bounds_px": [
+        91.249,
+        83.254,
+        38.621,
+        111.774
+      ]
+    },
+    {
+      "text": "p_20185869_1_F:o@t30",
+      "size_pt": 6.4,
+      "bounds_px": [
+        118.445,
+        88.687,
+        37.165,
+        106.34
+      ]
+    },
+    {
+      "text": "p_20189546_0_F:i@t25",
+      "size_pt": 6.4,
+      "bounds_px": [
+        144.832,
+        91.102,
+        36.518,
+        103.925
+      ]
+    },
+    {
+      "text": "p_20189546_0_F:o@t26",
+      "size_pt": 6.4,
+      "bounds_px": [
+        169.925,
+        88.687,
+        37.165,
+        106.34
+      ]
+    },
+    {
+      "text": "p_20189546_1_R:i@t27",
+      "size_pt": 6.4,
+      "bounds_px": [
+        196.085,
+        90.257,
+        36.745,
+        104.771
+      ]
+    },
+    {
+      "text": "p_20189546_1_R:o@t28",
+      "size_pt": 6.4,
+      "bounds_px": [
+        221.178,
+        87.842,
+        37.392,
+        107.185
+      ]
+    },
+    {
+      "text": "p_785161233_0_F:o@t13",
+      "size_pt": 6.4,
+      "bounds_px": [
+        245.689,
+        83.254,
+        38.621,
+        111.774
+      ]
+    },
+    {
+      "text": "p_1187505156_2_R:o@t21",
+      "size_pt": 6.4,
+      "bounds_px": [
+        269.746,
+        76.976,
+        40.304,
+        118.052
+      ]
+    },
+    {
+      "text": "p_20188110_3_F:i@t25",
+      "size_pt": 6.4,
+      "bounds_px": [
+        299.272,
+        91.102,
+        36.518,
+        103.925
+      ]
+    },
+    {
+      "text": "p_20188110_3_F:o@t26",
+      "size_pt": 6.4,
+      "bounds_px": [
+        324.365,
+        88.687,
+        37.165,
+        106.34
+      ]
+    },
+    {
+      "text": "p_738266573_3_F:o@t19",
+      "size_pt": 6.4,
+      "bounds_px": [
+        348.649,
+        83.254,
+        38.621,
+        111.774
+      ]
+    },
+    {
+      "text": "p_738266573_3_R:o@t20",
+      "size_pt": 6.4,
+      "bounds_px": [
+        374.162,
+        82.409,
+        38.848,
+        112.619
+      ]
+    },
+    {
+      "text": "p_89838218_3_F:i@t29",
+      "size_pt": 6.4,
+      "bounds_px": [
+        402.232,
+        91.102,
+        36.518,
+        103.925
+      ]
+    },
+    {
+      "text": "p_89838218_3_F:o@t30",
+      "size_pt": 6.4,
+      "bounds_px": [
+        427.325,
+        88.687,
+        37.165,
+        106.34
+      ]
+    },
+    {
+      "text": "p_345084321_0_R:o@t15",
+      "size_pt": 6.4,
+      "bounds_px": [
+        451.382,
+        82.409,
+        38.848,
+        112.619
+      ]
+    },
+    {
+      "text": "p_20191779_7_R:i@t32",
+      "size_pt": 6.4,
+      "bounds_px": [
+        479.225,
+        90.257,
+        36.745,
+        104.771
+      ]
+    },
+    {
+      "text": "p_20191779_7_R:o@t33",
+      "size_pt": 6.4,
+      "bounds_px": [
+        504.318,
+        87.842,
+        37.392,
+        107.185
+      ]
+    },
+    {
+      "text": "p_20191779_8_R:i@t31",
+      "size_pt": 6.4,
+      "bounds_px": [
+        530.705,
+        90.257,
+        36.745,
+        104.771
+      ]
+    },
+    {
+      "text": "p_20191779_8_R:o@t32",
+      "size_pt": 6.4,
+      "bounds_px": [
+        555.798,
+        87.842,
+        37.392,
+        107.185
+      ]
+    },
+    {
+      "text": "p_24663530_7_R:i@t27",
+      "size_pt": 6.4,
+      "bounds_px": [
+        582.185,
+        90.257,
+        36.745,
+        104.771
+      ]
+    },
+    {
+      "text": "p_24663530_7_R:o@t28",
+      "size_pt": 6.4,
+      "bounds_px": [
+        607.278,
+        87.842,
+        37.392,
+        107.185
+      ]
+    },
+    {
+      "text": "p_345319826_3_R:i@t21",
+      "size_pt": 6.4,
+      "bounds_px": [
+        632.209,
+        84.824,
+        38.201,
+        110.204
+      ]
+    },
+    {
+      "text": "p_345319826_3_R:o@t22",
+      "size_pt": 6.4,
+      "bounds_px": [
+        657.302,
+        82.409,
+        38.848,
+        112.619
+      ]
+    },
+    {
+      "text": "p_345319826_4_R:i@t20",
+      "size_pt": 6.4,
+      "bounds_px": [
+        683.689,
+        84.824,
+        38.201,
+        110.204
+      ]
+    },
+    {
+      "text": "p_345319826_4_R:o@t21",
+      "size_pt": 6.4,
+      "bounds_px": [
+        708.782,
+        82.409,
+        38.848,
+        112.619
+      ]
+    },
+    {
+      "text": "p_785161237_1_R:i@t34",
+      "size_pt": 6.4,
+      "bounds_px": [
+        735.169,
+        84.824,
+        38.201,
+        110.204
+      ]
+    },
+    {
+      "text": "p_785161237_1_R:o@t35",
+      "size_pt": 6.4,
+      "bounds_px": [
+        760.262,
+        82.409,
+        38.848,
+        112.619
+      ]
+    },
+    {
+      "text": "p_1335036934_0_R:o@t13",
+      "size_pt": 6.4,
+      "bounds_px": [
+        784.546,
+        76.976,
+        40.304,
+        118.052
+      ]
+    },
+    {
+      "text": "p_1335036934_0_R:o@t15",
+      "size_pt": 6.4,
+      "bounds_px": [
+        810.286,
+        76.976,
+        40.304,
+        118.052
+      ]
+    },
+    {
+      "text": "p_20190849_1_R:i@t26",
+      "size_pt": 6.4,
+      "bounds_px": [
+        839.585,
+        90.257,
+        36.745,
+        104.771
+      ]
+    },
+    {
+      "text": "p_20190849_1_R:o@t27",
+      "size_pt": 6.4,
+      "bounds_px": [
+        864.678,
+        87.842,
+        37.392,
+        107.185
+      ]
+    },
+    {
+      "text": "p_20191779_11_F:i@t25",
+      "size_pt": 6.4,
+      "bounds_px": [
+        889.836,
+        85.669,
+        37.974,
+        109.359
+      ]
+    },
+    {
+      "text": "p_20191779_11_F:o@t25",
+      "size_pt": 6.4,
+      "bounds_px": [
+        914.929,
+        83.254,
+        38.621,
+        111.774
+      ]
+    },
+    {
+      "text": "p_20191779_13_F:i@t23",
+      "size_pt": 6.4,
+      "bounds_px": [
+        941.316,
+        85.669,
+        37.974,
+        109.359
+      ]
+    },
+    {
+      "text": "p_20191779_13_F:o@t24",
+      "size_pt": 6.4,
+      "bounds_px": [
+        966.409,
+        83.254,
+        38.621,
+        111.774
+      ]
+    },
+    {
+      "text": "Commodity",
+      "size_pt": 9.0,
+      "bounds_px": [
+        52.972,
+        265.688,
+        13.0,
+        72.375
+      ]
+    },
+    {
+      "text": "OD 01",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        368.719,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        320.156,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 03",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        271.594,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 04",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        223.031,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Final saved state · outer 1",
+      "size_pt": 11.0,
+      "bounds_px": [
+        117.0,
+        404.333,
+        202.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1051.968,
+        405.741,
+        23.125,
+        9.0
+      ]
+    },
+    {
+      "text": "$\\log_{10}$(absolute balance residual / PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1112.838,
+        179.06,
+        17.0,
+        245.63
+      ]
+    },
+    {
+      "text": "−15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        198.75,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−13",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        237.6,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−11",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        276.45,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        315.3,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        354.15,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        393.0,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "ITHACA",
+      "size_pt": 8.7,
+      "bounds_px": [
+        76.05,
+        456.389,
+        54.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Commodity conservation at the final state",
+      "size_pt": 15.0,
+      "bounds_px": [
+        76.05,
+        429.444,
+        492.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_PRIVATE_LOCAL_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_review": {
+    "png_viewed": true,
+    "text_overlap_or_clipping": false,
+    "original_template_scientific_objects": true,
+    "all_check_maxima_exact": true,
+    "private_only": true
+  }
+}

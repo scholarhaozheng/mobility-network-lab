@@ -1,0 +1,409 @@
+{
+  "figure_id": "R12-AA-ORIGINAL-INITIAL-CHECK",
+  "city": "ann-arbor",
+  "instance": "central_ann_arbor_urban_subregion_2500m_20261005",
+  "role": "saved-state-check",
+  "conclusion": "One saved initial state is displayed truthfully as a point, not converted to a table.",
+  "panels": [
+    {
+      "metric": "Beckmann objective",
+      "unit": "PCE·min/h"
+    },
+    {
+      "metric": "relative gap",
+      "unit": "dimensionless"
+    }
+  ],
+  "quantity": [
+    "Beckmann objective",
+    "relative gap"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless"
+  ],
+  "renderer_path": "tools/figures/render_static_r12.py",
+  "renderer_sha256": "e604333735f96147f66350f96c440a324cbbc990661e0ba0365a70aa111898fe",
+  "saved_states": 1,
+  "preserves_true_zero": true,
+  "interpolation": false,
+  "failed_candidates_displayed": false,
+  "schema": "mcl_figure_r12",
+  "caption": "Only the actual saved iteration 0 is shown: objective 7871.97062992656 PCE·min/h and relative gap 5.10282992009334e-05, against the unchanged 0.0001 stopping gate. There were zero updates. Each panel contains a single numerical point; no missing trajectory or second state is inferred. The companion physical-flow map reads this method’s own saved vector. This original 1e−4-gate instance is distinct from the later S600 1e−5-gate run, which saved iterations 0 and 1.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/ann-arbor/aa-a02.plot_data.json",
+      "sha256": "d85cea73c50b70515373bb70d2b67c1e99233ba26fd7bd98c6277d1907e61f52"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Frank–Wolfe: the saved initial check",
+    "scope": "ORIGINAL S600 · 600 OD · 0 UPDATES"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.915,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2453,
+    1081
+  ],
+  "exports": {
+    "png": "21640bb555ee1cc200ac119f91367c2f4e9bff10dd9ad1fe1569e02f0fc00a6f",
+    "svg": "3126841d96df0ba7f5a34d62bb338293dc459be0664441e57c1de91b5b02f599",
+    "pdf": "8c949aef8609d7ae7f93883eb6f6e714843a15b78081ce483b10c2607aaf22f8"
+  },
+  "text_audit": [
+    {
+      "text": "7871.97063",
+      "size_pt": 9.0,
+      "bounds_px": [
+        190.226,
+        236.917,
+        75.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        179.663,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        224.601,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        21.111,
+        118.812,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "7400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        73.536,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        103.986,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        134.435,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        164.885,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        195.335,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7900",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        225.785,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        256.235,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        286.685,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        317.134,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        39.667,
+        347.584,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved objective",
+      "size_pt": 10.0,
+      "bounds_px": [
+        76.5,
+        351.211,
+        139.625,
+        14.0
+      ]
+    },
+    {
+      "text": "5.10283e-05",
+      "size_pt": 9.0,
+      "bounds_px": [
+        637.399,
+        221.615,
+        79.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        628.587,
+        66.511,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        673.524,
+        85.067,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        452.284,
+        131.875,
+        13.0,
+        182.75
+      ]
+    },
+    {
+      "text": "−0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.59,
+        85.666,
+        55.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        119.191,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        152.715,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00004",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        186.24,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00006",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        219.764,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00008",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        253.289,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00010",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        286.813,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00012",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        320.338,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00014",
+      "size_pt": 8.0,
+      "bounds_px": [
+        470.84,
+        353.862,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Relative-gap stopping check",
+      "size_pt": 10.0,
+      "bounds_px": [
+        525.423,
+        351.211,
+        240.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved gap",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        323.475,
+        56.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Gate = 0.0001",
+      "size_pt": 7.7,
+      "bounds_px": [
+        740.75,
+        308.128,
+        78.375,
+        10.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  ORIGINAL S600 · 600 OD · 0 UPDATES",
+      "size_pt": 8.7,
+      "bounds_px": [
+        55.25,
+        403.267,
+        371.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: the saved initial check",
+      "size_pt": 15.0,
+      "bounds_px": [
+        55.25,
+        376.322,
+        423.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_review": "Every final PNG inspected with view_image; exact-zero markers, annotations, labels, legends and panel spacing checked. Boston/Hong Kong C-layout, serif and palette retained."
+}

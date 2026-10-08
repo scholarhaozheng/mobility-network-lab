@@ -1,0 +1,78 @@
+{
+  "schema": "mcl-local-saved-result-derivative-v1",
+  "id": "LOCAL-PIT-S72-FW-FLOW",
+  "title": "Frank–Wolfe: physical-road flow and distribution",
+  "city": "pittsburgh",
+  "stage": "static",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_NOT_NEW_PUBLIC_RELEASE",
+  "renderer": {
+    "file": "render_pittsburgh_static.py",
+    "function": "per-method render loop",
+    "sha256": "224e8d254a6b7dee3a64475ebb01ef813328581e1d9adf17c71b45773977c5f8"
+  },
+  "figure_contract": {
+    "conclusion": "Show this method’s own full physical-link assignment and distribution for the same bounded S72 cohort.",
+    "archetype": "quantitative grid",
+    "backend": "Python/matplotlib",
+    "panels": [
+      "complete physical-link map",
+      "complete physical-link histogram including zeros"
+    ],
+    "limits": "Spatial endpoint only; not a convergence trajectory; no new empirical validity or traffic observation."
+  },
+  "sources": [
+    {
+      "source_id": "saved-result/physical_links.csv",
+      "sha256": "a04d678e0da67581c1a2cb76ecee9854de99b52744af0aff4c21da7fb7e7f606",
+      "bytes": 3515599,
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/network.csv",
+      "sha256": "13f2419ebc2242ebaac954647378b06cc7e3a6ed98f477ff0e54826af9dc1e13",
+      "bytes": 3137376,
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/link_flow.csv",
+      "sha256": "7c032c86ccf3e0a9956f15328106c1323950e1cbe8e639a4b07130bcec18a855",
+      "bytes": 1549177,
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/run.json",
+      "sha256": "42b16f8882ccff9a75df58dbe1769193d286590298af555f9391d551886d4b10",
+      "bytes": 1677,
+      "public_source": false
+    },
+    {
+      "source_id": "saved-result/verification.json",
+      "sha256": "8a9af72d174f6375b8437cb92f144c16435621ce6acd5a45f3d30f2647e85a94",
+      "bytes": 1122,
+      "public_source": false
+    }
+  ],
+  "numerical_checks": {
+    "all_solver_ids_exact": true,
+    "physical_geometry_join_one_to_one": true,
+    "physical_count": 17534,
+    "turn_count_excluded": 38850,
+    "histogram_count_sum": 17534,
+    "histogram_bin_count": 22,
+    "histogram_scale": "linear",
+    "map_grey_context_all_physical_links": true,
+    "map_positive_overlay_threshold_pce": 1e-12,
+    "own_method_vector_used": true,
+    "finite_nonnegative_all": true,
+    "method_full_graph_gap": 6.405076187649018e-15,
+    "same_instance_signature": "c72d664ba0cd26f258b22d3194fe062bc15bccdf6b9843248edd98cb24bc7a0d",
+    "no_solver_calls": true
+  },
+  "exports": {
+    "svg": "a09e3d94ffc7a1fb7fd5391d0de2c05e0f9a593b0c901a900a377dabf5fdde5c",
+    "png": "2cedb345fe4c22e5d80e0d7d4f13e19a17d1953d48985e7478206ebdda783f7c"
+  },
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE",
+  "solver_calls": 0,
+  "caption": "Frank–Wolfe on the frozen Pittsburgh S72 static instance: 72 directed OD, 149.92142389506472 PCE in the modeled hour, independent checked Beckmann objective 763.227941458126 PCE min and full-graph relative gap 6.405076187649018e-15 against the unchanged 1e-5 gate. The map and linear-count 22-bin histogram use all 17,534 physical traversal arc values from this method’s own complete 56,384-solver-link vector, joined exactly by P:physical_link_id to original geometry. Every physical link is drawn as a grey base road, while the constant-width colored overlay includes only flow greater than 1e-12 PCE/hour. Exact and near-zero values remain unchanged in the all-link histogram and plot data; the 38,850 turn arcs are excluded from map and histogram. Both method views use identical absolute flow color limits and histogram bins. FW initial loading passed; zero FW updates. The finite endpoint is not synthesized from the FW vector. S72 excludes the original city case’s other 1,334 OD; it must not be merged with that 1,406-OD experiment. The original OUT-state loading omits the origin-link traversal and is preserved. A static endpoint map/distribution does not depict convergence speed. © OpenStreetMap contributors; road-derived data ODbL 1.0. Modeled scenario, not observed traffic. Local saved-result derivative; no new S0 release claimed."
+}

@@ -1,0 +1,1 @@
+Actual saved original-unit local conservation and shared capacity excess across completed C1 and continuation outer iterations. The horizontal lines are unchanged original acceptance gates; zeros are displayed at a plotting floor only.

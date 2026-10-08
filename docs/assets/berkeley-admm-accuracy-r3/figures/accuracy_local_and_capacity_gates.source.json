@@ -1,0 +1,81 @@
+{
+  "schema": "mcl_v_berkeley_admm_visual_delta_v1",
+  "figure": "accuracy_local_and_capacity_gates",
+  "scientific_status": "ACCEPTED_BOUNDED_BERKELEY_T4_ADMM_POST_DIAGNOSTIC",
+  "public_release": "PENDING_S0_INCREMENTAL_REVIEW",
+  "T_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "units": {
+    "balance": "PCE",
+    "capacity_excess": "PCE"
+  },
+  "original_archive": {
+    "name": "MCL_Berkeley_ADMM_Accuracy_R3_Volume_Handoff.zip",
+    "sha256": "0221f5d00905c81baaf8e655bf37c22fdc3ff805c3f93a71b0c6423eb5913858"
+  },
+  "original_assets": {
+    "accuracy_local_and_capacity_gates.png": "b3758eab344110c0c49a7e5febb3f22e6cbfc8c8176b0f3d44e770dbe753fb56",
+    "accuracy_local_and_capacity_gates.svg": "2852dfe9621fd7d994f0dbe9514760e283447295ec5ac7798814abd5f8357965",
+    "accuracy_local_and_capacity_gates.plot_data.json": "cbf58ca0ecce930b5692772c6ddefebd6396f42ce893c8d5df069d6ad24d7d4a",
+    "accuracy_local_and_capacity_gates.source.json": "2788d256ca9ec4b3d98ed426d362e9c2dd648e0aabb6dffbc87663ca70c09b22",
+    "accuracy_local_and_capacity_gates.caption.md": "24662e9f6a2a6d0dbafec0f224919f24de44b0f523db54ac3b7c4cb718fa3029"
+  },
+  "original_renderer": {
+    "file": "render_accuracy_figures.py",
+    "sha256": "66dcccb787ec5c1e08857a8881cddeeccabe4b6b9c747c3fc546d4db800a9436"
+  },
+  "original_source_sha256": {
+    "stage_a/final_checkpoint/history.csv": "b4fdbc61f7b5800a9c721afc7abc51a69dc18672e90c17d5ffa178f6c41fd678",
+    "checks/stage_a/INDEPENDENT_CHECK.json": "ad2e315483ef3fb469973a3b3c648aee7b3e5a24f721cecdf9cfae5804ea23eb",
+    "input/LP_REFERENCE.json": "23ec86481e1a4e3e3e0eae8dd52433f758f3496d9457c50f2e72941948b31f08",
+    "ADMM_ACCURACY_PLAN.json": "74ea63671b54acf18846dbb163d73ce849e17edf49b14156145839f974264cc6",
+    "FINAL_SELECTION.json": "f3699f29b0b83fd9220710ebef64f758bb99fa76c35f7a1eb5f957d150afa877"
+  },
+  "renderer": {
+    "file": "renderers/render_berkeley_admm_visual.py",
+    "sha256": "88812fbe9b4073107bdb5ba1a0f8495975e30c8ad78a870faad93c3452e35499"
+  },
+  "outputs": {
+    "accuracy_local_and_capacity_gates.png": {
+      "sha256": "6c2975e542c63ff0ca1199b2d138401085ea5f4abd631c571bb2ed8ce1c02232",
+      "bytes": 353567
+    },
+    "accuracy_local_and_capacity_gates.svg": {
+      "sha256": "5cfcd00384b5673877f77a920d7c4abfa8896e461c443f98df8e000bfde2bc95",
+      "bytes": 26978
+    },
+    "accuracy_local_and_capacity_gates.plot_data.json": {
+      "sha256": "cbf58ca0ecce930b5692772c6ddefebd6396f42ce893c8d5df069d6ad24d7d4a",
+      "bytes": 12076
+    },
+    "accuracy_local_and_capacity_gates.caption.md": {
+      "sha256": "25143d89774cfc2b1f00e4aa0661e3a4cb0bd8e9630df1f78036484addb1a569",
+      "bytes": 910
+    }
+  },
+  "data_unchanged": {
+    "plot_data_bytes_identical": true,
+    "all_saved_iterations": 170,
+    "display_only": {
+      "x_range": [
+        -1,
+        173
+      ],
+      "capacity_exact_zeros_only_floor_pce": 1e-16,
+      "positive_values_unchanged": true,
+      "balance_floor": null,
+      "no_data_file_changes": true
+    }
+  },
+  "style": {
+    "font": "DejaVu Serif",
+    "browser_fallback": [
+      "Georgia",
+      "Times New Roman",
+      "serif"
+    ],
+    "font_binaries_included": false,
+    "navy": "#132f51",
+    "teal": "#087f82",
+    "editable_svg_text": true
+  }
+}

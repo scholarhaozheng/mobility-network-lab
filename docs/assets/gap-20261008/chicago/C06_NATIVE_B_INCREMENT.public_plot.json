@@ -1,0 +1,157 @@
+{
+  "B_reported_history": [
+    {
+      "iteration": 1,
+      "reported_relative_gap": 0.000111275064791
+    },
+    {
+      "iteration": 2,
+      "reported_relative_gap": 1.3140927121e-05
+    },
+    {
+      "iteration": 3,
+      "reported_relative_gap": 1.525245179e-06
+    },
+    {
+      "iteration": 4,
+      "reported_relative_gap": 1.53982013e-07
+    },
+    {
+      "iteration": 5,
+      "reported_relative_gap": 1.5598775e-08
+    },
+    {
+      "iteration": 6,
+      "reported_relative_gap": 1.580746e-09
+    }
+  ],
+  "B_independent_endpoint": {
+    "status": "NUMERIC_PASS_RECEIVER_PENDING",
+    "state_valid": true,
+    "checks": {
+      "original_full_gap_1e_5": true,
+      "OD": true,
+      "link_path_reconstruction": true,
+      "public_B_additional_gates": true
+    },
+    "objective_pce_minutes_per_hour": 5601.46146828686,
+    "full_graph_signed_relative_gap": 1.5807459068370499e-09,
+    "gap_denominator_TSTT": 5656.640174886008,
+    "SPTT": 5656.640165944297,
+    "max_OD_error_pce_per_hour": 1.1368683772161603e-13,
+    "max_link_reconstruction_error": 4.547473508864641e-13,
+    "paths": 23,
+    "OD": 20,
+    "source_signature": "626bf2dc8bfc27d9b82d3f48b1a8bbbcea1f977d81aad662139672f313dac614",
+    "public_evaluator_status": "ACCEPTED",
+    "public_evaluator_issues": [],
+    "optimizer_calls": 0,
+    "input_hashes_unchanged": true,
+    "checker_sha256": "7d7bb9c635b2282504aed6637999666a30bc86e04f242423e7e08e47273e114a"
+  },
+  "Native_new_controls": [
+    {
+      "method": "Native26",
+      "status": "EXPECTED_SOLVER_GATE_FAILURE",
+      "state_valid": true,
+      "representation": "unchanged original input-only rank26 or52; exact link equality substitution, same minor cone and OD ALM, gamma0",
+      "candidate_number": 1,
+      "checks": {
+        "OD_max": true,
+        "OD_L1": true,
+        "link_reconstruction": true,
+        "nonnegative": true,
+        "full_gap": false,
+        "objective_recompute": true,
+        "pool_gap": false
+      },
+      "full_graph_gap": 0.006381671764398963,
+      "restricted_pool_gap": 0.004674739717959697,
+      "objective_pce_min": 5604.64768884104,
+      "objective_saved": 5604.647688841035,
+      "min_path_flow": 1.0815459638990887e-11,
+      "min_link_flow": 0.0,
+      "max_OD_error_pce": 1.1368683772161603e-13,
+      "OD_L1_relative": 1.8814248641820423e-16,
+      "max_link_reconstruction_pce": 2.2737367544323206e-13,
+      "solver_to_physical_max_error_pce": 0.0,
+      "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+      "positive_links_1e_6": 2615,
+      "total_q_pce": 1754.9482512397267,
+      "saved_path_rows": 100,
+      "optimizer_calls": 0,
+      "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+      "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+      "checker_sha256": "8e6a623682765f44fbab73175c09926201f5f5d595c262575bf5e34f469c9af1"
+    },
+    {
+      "method": "Native52",
+      "status": "EXPECTED_SOLVER_GATE_FAILURE",
+      "state_valid": true,
+      "representation": "unchanged original input-only rank26 or52; exact link equality substitution, same minor cone and OD ALM, gamma0",
+      "candidate_number": 1,
+      "checks": {
+        "OD_max": true,
+        "OD_L1": true,
+        "link_reconstruction": true,
+        "nonnegative": true,
+        "full_gap": false,
+        "objective_recompute": true,
+        "pool_gap": false
+      },
+      "full_graph_gap": 0.004796364762936125,
+      "restricted_pool_gap": 0.0034863572937653647,
+      "objective_pce_min": 5604.409384283837,
+      "objective_saved": 5604.40938428384,
+      "min_path_flow": 3.715516783131534e-11,
+      "min_link_flow": 0.0,
+      "max_OD_error_pce": 2.2737367544323206e-13,
+      "OD_L1_relative": 2.55516981386391e-16,
+      "max_link_reconstruction_pce": 2.2737367544323206e-13,
+      "solver_to_physical_max_error_pce": 0.0,
+      "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+      "positive_links_1e_6": 2109,
+      "total_q_pce": 1754.9482512397267,
+      "saved_path_rows": 100,
+      "optimizer_calls": 0,
+      "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+      "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+      "checker_sha256": "8e6a623682765f44fbab73175c09926201f5f5d595c262575bf5e34f469c9af1"
+    },
+    {
+      "method": "Native80",
+      "status": "NUMERIC_PASS_RECEIVER_PENDING",
+      "state_valid": true,
+      "representation": "NATIVE_L3_INPUT_PATH_IDENTITY80: original20major plus80uncompressed minor input-path coordinates; U=I80; no compression advantage claimed; oldrank26/52 unchanged",
+      "candidate_number": 2,
+      "checks": {
+        "OD_max": true,
+        "OD_L1": true,
+        "link_reconstruction": true,
+        "nonnegative": true,
+        "full_gap": true,
+        "objective_recompute": true,
+        "pool_gap": true
+      },
+      "full_graph_gap": 1.4899811815539771e-12,
+      "restricted_pool_gap": 1.4899811815539771e-12,
+      "objective_pce_min": 5601.461468294976,
+      "objective_saved": 5601.461468294986,
+      "min_path_flow": 3.902442324137781e-11,
+      "min_link_flow": 0.0,
+      "max_OD_error_pce": 1.7885781744553242e-10,
+      "OD_L1_relative": 4.607170451071888e-13,
+      "max_link_reconstruction_pce": 1.1368683772161603e-13,
+      "solver_to_physical_max_error_pce": 0.0,
+      "physical_identity": "all 27129 R2 solver links map one-to-one to source directed physical segments",
+      "positive_links_1e_6": 1922,
+      "total_q_pce": 1754.9482512397267,
+      "saved_path_rows": 100,
+      "optimizer_calls": 0,
+      "independence": "CSV/NumPy/heapq; no shared model loader, evaluator or solver imports",
+      "turn_boundary": "UNKNOWN_NOT_FETCHED; no new-date restrictions asserted",
+      "checker_sha256": "8e6a623682765f44fbab73175c09926201f5f5d595c262575bf5e34f469c9af1"
+    }
+  ],
+  "source_plot_data_sha256": "eebb8e71ee552d8d91ff709cb4e1993e78685693ad279182e3738182be349dea"
+}

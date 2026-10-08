@@ -1,0 +1,141 @@
+{
+  "table_id": "chicago-feasible-witness",
+  "city": "chicago",
+  "title": "Independent feasible witness: not a method solution",
+  "scope": "Constructive feasible upper; not a registered method solution",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/chicago/C06_R2_feasibility_witness.svg"
+  ],
+  "notes": [
+    "Not an optimality certificate or an LR solution. No witness state supplied to optimizer initialization. The 27,129 physical-flow entries and arrival rows stay in the full public source."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_R2_feasibility_witness_plot_data.json",
+      "href": "assets/algorithm-transfer-r8/chicago/C06_R2_feasibility_witness_plot_data.json",
+      "sha256": "4b92527b60eabf93fcb289753d60607a649d95441367e5238af6b601a958de4a"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Independent witness checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "status",
+          "Saved value": "FEASIBLE_UPPER_BOUND_WITNESS",
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "not a registered method solution",
+          "Saved value": true,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "not an optimality certificate",
+          "Saved value": true,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "paths",
+          "Saved value": 124,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "distinct used arcs",
+          "Saved value": 13454,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "positive commodity arc pairs in exact LP domain",
+          "Saved value": 13454,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "max OD error PCE",
+          "Saved value": 2.1316282072803006e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "max node balance PCE",
+          "Saved value": 2.1316282072803006e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "max shared capacity excess PCE",
+          "Saved value": 2.1316282072803006e-14,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "max capacity ratio",
+          "Saved value": 1.0000000000000007,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "objective PCE min",
+          "Saved value": 731.6102207729215,
+          "Unit / interpretation": "PCE·min"
+        },
+        {
+          "Metric": "movement cost PCE min",
+          "Saved value": 232.61306168069603,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "waiting cost PCE min",
+          "Saved value": 498.9971590922203,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "maximum actual arrival elapsed minutes",
+          "Saved value": 82.0,
+          "Unit / interpretation": "min"
+        },
+        {
+          "Metric": "optimizer calls",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Witness demand",
+      "columns": [
+        "OD",
+        "Pulse (PCE)"
+      ],
+      "rows": [
+        {
+          "OD": "T01",
+          "Pulse (PCE)": 0.19958221566368337
+        },
+        {
+          "OD": "T02",
+          "Pulse (PCE)": 44.33172763594412
+        },
+        {
+          "OD": "T03",
+          "Pulse (PCE)": 15.621715371640422
+        },
+        {
+          "OD": "T04",
+          "Pulse (PCE)": 6.37992932238215
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 19,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"chicago-feasible-witness\"><h4>Independent feasible witness: not a method solution</h4><p class=\"evidence-table-scope\">Constructive feasible upper; not a registered method solution</p><h5>Independent witness checks</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Independent witness checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>status</td><td>FEASIBLE_UPPER_BOUND_WITNESS</td><td>as saved</td></tr><tr><td>not a registered method solution</td><td>Yes</td><td>as saved</td></tr><tr><td>not an optimality certificate</td><td>Yes</td><td>as saved</td></tr><tr><td>paths</td><td>124</td><td>count</td></tr><tr><td>distinct used arcs</td><td>13454</td><td>count</td></tr><tr><td>positive commodity arc pairs in exact LP domain</td><td>13454</td><td>as saved</td></tr><tr><td>max OD error PCE</td><td>2.1316282072803006e-14</td><td>PCE</td></tr><tr><td>max node balance PCE</td><td>2.1316282072803006e-14</td><td>PCE</td></tr><tr><td>max shared capacity excess PCE</td><td>2.1316282072803006e-14</td><td>PCE</td></tr><tr><td>max capacity ratio</td><td>1.0000000000000007</td><td>dimensionless</td></tr><tr><td>objective PCE min</td><td>731.6102207729215</td><td>PCE·min</td></tr><tr><td>movement cost PCE min</td><td>232.61306168069603</td><td>PCE</td></tr><tr><td>waiting cost PCE min</td><td>498.9971590922203</td><td>PCE</td></tr><tr><td>maximum actual arrival elapsed minutes</td><td>82.0</td><td>min</td></tr><tr><td>optimizer calls</td><td>0</td><td>count</td></tr></tbody></table></div><h5>Witness demand</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Witness demand\"><table><thead><tr><th scope=\"col\">OD</th><th scope=\"col\">Pulse (PCE)</th></tr></thead><tbody><tr><td>T01</td><td>0.19958221566368337</td></tr><tr><td>T02</td><td>44.33172763594412</td></tr><tr><td>T03</td><td>15.621715371640422</td></tr><tr><td>T04</td><td>6.37992932238215</td></tr></tbody></table></div><p>Not an optimality certificate or an LR solution. No witness state supplied to optimizer initialization. The 27,129 physical-flow entries and arrival rows stay in the full public source.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/chicago/C06_R2_feasibility_witness_plot_data.json\" download>C06_R2_feasibility_witness_plot_data.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/chicago/C06_R2_feasibility_witness.svg\">C06_R2_feasibility_witness.svg</a></p></details></section>",
+  "caption": "Not an optimality certificate or an LR solution. No witness state supplied to optimizer initialization. The 27,129 physical-flow entries and arrival rows stay in the full public source."
+}

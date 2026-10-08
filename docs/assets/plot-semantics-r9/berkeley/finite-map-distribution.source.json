@@ -1,0 +1,80 @@
+{
+  "id": "finite-map-distribution",
+  "title": "Finite-path reference and physical support",
+  "city": "berkeley",
+  "stage": "static",
+  "method": "finite-path",
+  "status": "LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE",
+  "solver_calls": 0,
+  "released_original_bytes_overwritten": false,
+  "canonical_reference": "Hong Kong static_flow_distribution:map+22-bin histogram over ALLlinks; separateper-method vector. Boston finite equivalentusesmap+all-linkhist; itsadditionalODmasspanel is not claimedhere.",
+  "sources": [
+    {
+      "path": "assets/berkeley-atlas-r2/data/physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "path": "assets/berkeley-atlas-r2/data/s72_physical_flow.csv",
+      "sha256": "080946fc37d6ed420ff57f18e7e8d1288df693e5e5ea43260b2515670afaa97f"
+    }
+  ],
+  "renderer": {
+    "file": "render_berkeley_canonical.py",
+    "sha256": "7d00e7e6981fc59ff70e26ff4142961a53ef7931f60031312f951275a6dcee78",
+    "function": "static_flow_distribution",
+    "line_start": 77,
+    "line_end": 88
+  },
+  "style": {
+    "family": "Existing Boston/Hong Kong Layout C",
+    "font": "DejaVu Serif",
+    "functions": [
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "palette": "existing blue/teal",
+    "histogram_population": "ALL physical links including zero",
+    "absolute_flow_norm": "PowerNorm(gamma=0.5) shared for all3cards",
+    "absolute_max": 390.318194730158
+  },
+  "caption": "Finite-path own saved physical-link vector on the unchanged Berkeley S72 model: 72 positive vehicle OD pairs, 953.049842713612 PCE in one declared hour, 360 frozen candidate paths and all 2,150 directed physical road links. The left map retains every original road vertex and full gray graph; the right 22-bin histogram includes all 2,150 links, including 1,480 exact zeros. Both figures use the same square-root colour scale in PCE/hour and constant overlay width. FW and finite have exactly equal saved link vectors in this particular instance; each figure reads its own saved column. FW stopped at its initial check with zero updates; these maps are endpoint loading, not evidence of iterative progress. Values with absolute magnitude at most 1e-12 PCE/h are hidden only from coloured map overlays, not removed from the histogram or plot data. © OpenStreetMap contributors, ODbL 1.0; engineering scenario, not observed traffic.",
+  "dimensions": [
+    2133,
+    608
+  ],
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 142.141,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "file": "finite-map-distribution.png",
+      "sha256": "dba01cb44345d99994abddb2b6cb7bacebe60c475d7fb936d6d689c201cdbb5f"
+    },
+    "svg": {
+      "file": "finite-map-distribution.svg",
+      "sha256": "1b1a6c6c4a9cb9a00b8f57df7ef7b75b1eee89bbf4e5b24a7edaa5c630de7079"
+    },
+    "pdf": {
+      "file": "finite-map-distribution.pdf",
+      "sha256": "6443b8655cf1a33b90515d02d6fc4de711263af28c3ba927d2f0323dce78f6eb"
+    }
+  },
+  "planned_anchor": "atlas-berkeley-canonical-finite-map-distribution",
+  "planned_volume_anchor": "figure-canonical-finite-map-distribution",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

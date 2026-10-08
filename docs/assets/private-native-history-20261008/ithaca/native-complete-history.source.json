@@ -1,0 +1,881 @@
+{
+  "figure_id": "ithaca-native-complete-history",
+  "city": "ithaca",
+  "instance": "S110",
+  "role": "iteration",
+  "archetype": "quantitative grid",
+  "conclusion": "Both Native ranks use all 4 real outer iterations to reach the original conservation and optimality gates.",
+  "panels": [
+    {
+      "id": "a",
+      "metric": "objective_checked",
+      "unit": "Beckmann objective (PCE·min/h)"
+    },
+    {
+      "id": "b",
+      "metric": "full_relative_gap",
+      "unit": "Signed relative gap (dimensionless)"
+    },
+    {
+      "id": "c",
+      "metric": "max_abs_od_residual",
+      "unit": "Maximum absolute OD residual (PCE/h)"
+    },
+    {
+      "id": "d",
+      "metric": "max_link_reconstruction_error",
+      "unit": "Maximum reconstruction residual (PCE/h)"
+    }
+  ],
+  "quantity": [
+    "objective_checked",
+    "full_relative_gap",
+    "max_abs_od_residual",
+    "max_link_reconstruction_error"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless",
+    "PCE/h",
+    "PCE/h"
+  ],
+  "saved_states": 4,
+  "ranks": [
+    26,
+    52
+  ],
+  "saved_states_total": 8,
+  "interpolation": false,
+  "endpoint_comparison_replaced": false,
+  "physical_flow_figures_preserved": true,
+  "access": "private_local_review",
+  "public_release_confirmed": false,
+  "renderer_path": "render_native_history.py",
+  "renderer_sha256": "71d69127ecb819601ec7f125b18a8943a4b9a22be6b4cfde544b23c7191e6a13",
+  "source_package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+  "source_release_scope": "S0 gap release_v002; scalar endpoints and count of 4 outers public; full numerical histories not present in public_payload",
+  "uncertainty": "One fixed engineering instance, no uncertainty interval or statistical replicate.",
+  "schema": "mcl_figure_r12",
+  "caption": "All 4 saved outer checks are plotted for each Native rank on the same frozen S110 instance (110 positive OD, 421.261325634 PCE/h). Each marker is an actual saved check at outer 1–4; the connecting segments do not add intermediate observations. Rank 26 uses open circles and rank 52 filled squares; near-coincident lines are both retained. Panels separate checked BPR/Beckmann objective, signed full-graph relative gap, maximum original-OD residual, and physical-flow reconstruction residual. The horizontal FW value is an independent same-instance endpoint, not an additional Native iteration. Early checked objectives lie below that endpoint while OD conservation has not yet reached its frozen gate; these are not feasible upper bounds or better traffic solutions. Signed negative gaps remain negative and are not interpreted as superior optimality. The gap axis is symmetric-log with a linear interval of ±10⁻¹²; OD/reconstruction axes are logarithmic in their original PCE/h units. The original gap bounds ±10⁻⁵, OD absolute gate 10⁻⁶ PCE/h, and reconstruction gate 10⁻⁷ PCE/h are unchanged. Both runs reach their original acceptance checks at outer 4; other relative-OD/nonnegativity gates remain in the source records. These early states belong to the ultimately accepted run; no separate failed trial is added. Endpoint comparison and method-specific physical-flow maps remain separate evidence. Private local preview of complete saved numerical history: public release currently covers endpoints, not these per-iteration values. Engineering scenario, not observed traffic or measured policy effect.",
+  "sources": [
+    {
+      "identity": "ithaca accepted run / rank 26 / outer 1 check",
+      "sha256": "3581311c57d8ac47e95b7e2f0341636cb248d7b247e4c764ffdc720074c35ddd",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_26/outer_01_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 26 / outer 2 check",
+      "sha256": "04018c225728b1003db0905c13bab96b3a689db0de260df57f6dce36ff8bbd96",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_26/outer_02_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 26 / outer 3 check",
+      "sha256": "3a757d9b8eae3a637cdde845847640c9dfe50f0273182cc11a74f5326edea71c",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_26/outer_03_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 26 / outer 4 check",
+      "sha256": "eb249cfb2f01397c40bde05d501b9bc3727e350ee0c8ba79b779dec8f692f7a7",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_26/outer_04_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 52 / outer 1 check",
+      "sha256": "01f28f09e5cc565b378b780b08b36429249bf2c86b3a62b1de1170fc5b39a4fd",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_52/outer_01_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 52 / outer 2 check",
+      "sha256": "b660d2aa3cdc31a0895010663e1ef33f5e9b157794f4304c67d42d67fd930f88",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_52/outer_02_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 52 / outer 3 check",
+      "sha256": "79e03270acd6a423a9b8cc19619d582001fabadf5ad639bab9b4a1d40569180d",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_52/outer_03_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "ithaca accepted run / rank 52 / outer 4 check",
+      "sha256": "9f9bee3480c8c82ea566bd4c565ba5e5c3cfdf795e74a2deac2564758da0d120",
+      "package_sha256": "e1dfc5aef224cbb07f730a4a9eebe29019fb6f38ed366dc234801e301fa8cd1b",
+      "member": "S/native_52/outer_04_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.plot.csv",
+      "sha256": "60739c1a2dc26ecfe4915b85ed2743ef6056f91d20e66efa09174109d8255a4c",
+      "role": "same-instance terminal cross-check only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Native L3: the complete saved iteration history",
+    "scope": "S110 · RANKS 26 / 52 · 4 OUTER ITERATIONS"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 35.957,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3020,
+    1855
+  ],
+  "exports": {
+    "png": "ee718a56b2909e81a332371c7422521f9c36c3baf816187bd0eb2f14521f024c",
+    "svg": "de1ebc563dce5b84e4dc17c1e0e30c678c41c50ba3b7630b58882ab118c639f2",
+    "pdf": "77a3572fdbcf7e830e92f8163f74ccd24d3dcc267f9cf80b2a2a00d215ffcf40"
+  },
+  "text_audit": [
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        245.03,
+        336.306,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        133.257,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        250.356,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        367.455,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.553,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        58.011,
+        366.86,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "1440",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        348.211,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1480",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        389.728,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1520",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        431.246,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1560",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        472.763,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        514.281,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1640",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        555.798,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1680",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        597.315,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Checked objective",
+      "size_pt": 10.5,
+      "bounds_px": [
+        113.4,
+        578.9,
+        168.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        412.986,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        397.778,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Same-instance FW endpoint",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        382.569,
+        148.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        786.495,
+        336.306,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        674.722,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        791.82,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        908.919,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1026.018,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        594.101,
+        357.61,
+        13.0,
+        227.375
+      ]
+    },
+    {
+      "text": "−10⁻¹",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        370.975,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻³",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.656,
+        389.976,
+        33.875,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        408.976,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁹",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        446.978,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        639.406,
+        482.868,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.031,
+        556.76,
+        24.5,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Signed full-graph gap",
+      "size_pt": 10.5,
+      "bounds_px": [
+        654.864,
+        578.9,
+        199.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        550.025,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        534.817,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen bounds ±10⁻⁵",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        519.608,
+        113.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        245.03,
+        36.111,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        133.257,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        250.356,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        367.455,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        484.553,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum absolute OD residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        54.88,
+        44.103,
+        13.0,
+        254.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        72.982,
+        29.777,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.435,
+        64.5,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.868,
+        99.823,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.931,
+        134.547,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.993,
+        169.27,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.931,
+        203.994,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.384,
+        238.117,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.901,
+        272.841,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.448,
+        308.164,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "c  Original-OD conservation",
+      "size_pt": 10.5,
+      "bounds_px": [
+        113.4,
+        278.706,
+        228.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        112.792,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        97.583,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen gate 10⁻⁶ PCE/h",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        82.375,
+        125.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        786.495,
+        36.111,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        674.722,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        791.82,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        908.919,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1026.018,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum reconstruction residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        595.61,
+        36.915,
+        13.0,
+        268.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-16}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.384,
+        12.881,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-14}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.165,
+        64.5,
+        32.366,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-12}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.697,
+        116.119,
+        31.834,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.384,
+        167.738,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.395,
+        219.957,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.333,
+        271.576,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.114,
+        322.595,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "d  Physical-flow reconstruction",
+      "size_pt": 10.5,
+      "bounds_px": [
+        654.864,
+        278.706,
+        255.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        181.311,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        166.103,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen gate 10⁻⁷ PCE/h",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        150.894,
+        125.375,
+        10.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  S110 · RANKS 26 / 52 · 4 OUTER ITERATIONS",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        630.956,
+        390.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Native L3: the complete saved iteration history",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        604.011,
+        550.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_PRIVATE_LOCAL_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "PNG_individually_inspected": true,
+    "legend_overlaps_repaired": true,
+    "all_actual_iteration_markers_visible": true,
+    "integer_iteration_ticks": true,
+    "no_line_smoothing_or_invented_states": true,
+    "labels_not_clipped": true,
+    "public_release": false
+  }
+}

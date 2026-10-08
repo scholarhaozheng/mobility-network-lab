@@ -1,0 +1,1 @@
+Actual saved assignment backprojected only to physical traversal segments; model zone access and turn arcs excluded. Single-pass engineering scenario; no local empirical calibration. 19.303 km2 central urban subarea / weekday AM HBW

@@ -1,0 +1,74 @@
+{
+  "table_id": "pittsburgh-initial-fw",
+  "city": "pittsburgh",
+  "title": "Frank–Wolfe saved objective and gap",
+  "scope": "Original full-city four-stage instance; distinct from later selected static cohorts",
+  "original_assets": [
+    "assets/city-alignment-r3/pittsburgh/trace.svg"
+  ],
+  "notes": [
+    "Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh/trace.source.json",
+      "href": "assets/city-alignment-r3/pittsburgh/trace.source.json",
+      "sha256": "f8c27add7aa0cc74083ee10973fc719d643a78420e0594683f5e4f33dd5aa46f"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Initial saved check",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Beckmann objective",
+          "Saved value": 12081.06664589537,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "relative gap",
+          "Saved value": 4.773992564434884e-07,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "relative gap frozen threshold",
+          "Saved value": 0.0001,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Saved records",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Saved iteration index",
+          "Saved value": 0,
+          "Unit / interpretation": "initialization"
+        },
+        {
+          "Metric": "Completed FW updates",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 6,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"pittsburgh-initial-fw\"><h4>Frank–Wolfe saved objective and gap</h4><p class=\"evidence-table-scope\">Original full-city four-stage instance; distinct from later selected static cohorts</p><h5>Initial saved check</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Initial saved check\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Beckmann objective</td><td>12081.06664589537</td><td>PCE·min/h</td></tr><tr><td>relative gap</td><td>4.773992564434884e-07</td><td>dimensionless</td></tr><tr><td>relative gap frozen threshold</td><td>0.0001</td><td>dimensionless</td></tr><tr><td>Saved records</td><td>1</td><td>count</td></tr><tr><td>Saved iteration index</td><td>0</td><td>initialization</td></tr><tr><td>Completed FW updates</td><td>0</td><td>count</td></tr></tbody></table></div><p>Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/pittsburgh/trace.source.json\" download>trace.source.json</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/pittsburgh/trace.svg\">trace.svg</a></p></details></section>",
+  "caption": "Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history."
+}

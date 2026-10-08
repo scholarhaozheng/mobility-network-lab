@@ -1,0 +1,51 @@
+{
+  "city": "chicago",
+  "figure": "input-construction-ledger",
+  "title": "T4 input arc ledger and four-OD pulse",
+  "caption": "INPUT ONLY / NOT OPTIMIZED. Frozen T4 construction contains 1,351,628 arcs and four commodities totaling 66.5329545456 PCE. All demand departs at step 5 with a 30-second step and H=169 (84.5 minutes). The bars use all saved arc records and exact saved demand quantities; count axis is logarithmic. Physical, wait, turn where present, and ledger roles follow the frozen identity. This is input structure, not an optimized endpoint.",
+  "source_snapshot": {
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\dynamic_arc.csv": {
+      "sha256": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+      "size_bytes": 214080002
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\dynamic_demand.csv": {
+      "sha256": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+      "size_bytes": 282
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\BUILD_RECEIPT.json": {
+      "sha256": "c07f591241405952adde1b2bd34596f5a535bb72facc8eba19bfd4e72dc50ad8",
+      "size_bytes": 2414
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\case_manifest.json": {
+      "sha256": "690fd6b254e6abc3c8e777dc2421f85db2573a83af8e7fc89ee5f1fe268478b2",
+      "size_bytes": 813
+    }
+  },
+  "snapshot_utc": "2026-10-06T18:26:29.956266+00:00",
+  "scientific_solver_calls": 0,
+  "status": "INPUT ONLY / NOT OPTIMIZED",
+  "panels": [
+    {
+      "metric": "count by saved arc_type",
+      "unit": "records",
+      "counts": {
+        "movement": 876268,
+        "waiting": 475122,
+        "source_connector": 4,
+        "sink_connector": 234
+      }
+    },
+    {
+      "metric": "four saved demand volumes",
+      "unit": "PCE",
+      "total": 66.53295454563035
+    }
+  ],
+  "renderer": "build_input_figures.py",
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; navy/teal/blue; white",
+  "exports": {
+    "svg": "4cbef5ac3d7499d936d231fd69f1df9e228c80d3ad5a63c642ba87c36985aa2c",
+    "png": "1ad9739baba99d066eb1aacbc984c44ed30ab4fc0a1b96494c7d3f71ec4d35f9",
+    "pdf": "fcf1a3069ffbd2977c9bc7fead5e78c61701331811d76fb4c87528c9488b0c06"
+  }
+}

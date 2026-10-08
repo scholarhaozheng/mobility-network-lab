@@ -39,6 +39,7 @@ presentation_migration = validate_current_presentation(ROOT)
 errors.extend(presentation_migration["errors"])
 checks += presentation_migration["checks"]
 migrated_pages = presentation_migration["migrated_pages"]
+continued_pages = presentation_migration.get("continued_pages", {})
 
 identity = approved["approved_identity"]
 check(identity == {"demand_id": "HK10", "column_id": "ORACLE_R1_HK10_K1",
@@ -59,7 +60,7 @@ check(set(payload) | set(shared) == recorded, "approved exact group differs from
 check(len(payload) == 22 and len(shared) == 9, "approved dependency partition changed")
 for rel, digest in {**payload, **shared}.items():
     target = ROOT / rel
-    current_digest = migrated_pages.get(rel, digest)
+    current_digest = continued_pages.get(rel, migrated_pages.get(rel, digest))
     check(target.is_file() and sha(target) == current_digest, f"approved dependency missing or hash changed: {rel}")
     check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
           f"unapproved private scope entered exact allowlist: {rel}")
@@ -71,7 +72,7 @@ expected_presentation = {"docs/full-walkthrough.md", "docs/full-walkthrough.html
 check(set(presentation) == expected_presentation,
       "layered presentation dependency set differs from the exact added walkthrough pages")
 for rel, digest in presentation.items():
-    check((ROOT / rel).is_file() and sha(ROOT / rel) == digest,
+    check((ROOT / rel).is_file() and sha(ROOT / rel) == continued_pages.get(rel, digest),
           f"new exact-HK10 presentation page missing or hash changed: {rel}")
     check(not any(token in rel.lower() for token in ("full_pool", "dual_array", "raw_gps", "urbannav", "trajectory")),
           f"private scope entered presentation dependency: {rel}")

@@ -1,0 +1,789 @@
+{
+  "figure_id": "R11-URBANA-CHAMPAIGN-POPULATION",
+  "city": "urbana-champaign",
+  "title": "Population and household inputs",
+  "instance": {
+    "saved_run": "run_v1",
+    "declared_period": "08:00–09:00 HBW",
+    "revision": "frozen four-stage scenario used by R3 source figures"
+  },
+  "role": "demand",
+  "conclusion": "2020 blocks selected by internal point; not earlier whole-tract totals.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 52040.0,
+      "instance": "run_v1 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 19696.0,
+      "instance": "run_v1 / 08:00–09:00 HBW"
+    }
+  ],
+  "quantity": "resident population; occupied housing proxy",
+  "unit": "persons; occupied units",
+  "renderer": {
+    "script": "tools/figures/render_city_foundations.py",
+    "function": "population",
+    "sha256": "256a79187e951a0e950f82ae2f561f371a1a44c10b1363aeec291a89bdea58ac"
+  },
+  "original_asset": {
+    "public_path": "docs/assets/city-alignment-r3/urbana-champaign/population.svg",
+    "sha256": "addb43800c7c0c7e4f7ce0680043bcd5e19ef6bb8593eaf497829c4cde8a9a03"
+  },
+  "original_source_record": {
+    "public_path": "docs/assets/city-alignment-r3/urbana-champaign/population.source.json",
+    "sha256": "324c4664dc50b6dc4bdc56f230ee28affbf9b25d18ad17f00f1427357a8e333f"
+  },
+  "original_evidence_panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 52040.0
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 19696.0
+    }
+  ],
+  "moved_canvas_notes": "2020 blocks selected by internal point; not earlier whole-tract totals. Every model zone is shown in stable ID order; Census/ACS input, not simulated traffic.",
+  "numeric_evidence_preserved": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 52040.0
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 19696.0
+    }
+  ],
+  "numerical_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD",
+  "preserved_limits": [
+    "No later supplementary field is asserted to be used in the frozen demand model.",
+    "Copyright and explanatory prose are retained in the external caption."
+  ],
+  "schema": "mcl_figure_r11",
+  "caption": "2020 blocks selected by internal point; not earlier whole-tract totals. All 21 zones are retained; population total 52,040. Occupied units total 19,696. Missing household fields are unknown, not zero. Census/ACS allocation is an input, not a simulated traffic quantity. This drawing uses the frozen run_v1 evidence. Later supplementary datasets are separate and are not implied to have entered this scenario.",
+  "sources": [
+    {
+      "sha256": "cbc2bb1a3c9e597f58cc17023a1942305cfb55c3bed2617343ead2b2a101997e",
+      "source_id": "urbana-champaign/population/zones_activity.csv"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Population and household inputs",
+    "scope": "DEMAND INPUTS"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 33.661,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3132,
+    1275
+  ],
+  "exports": {
+    "png": "c7d4438f827a07694229b04e8bed7a824c6b766d4369afc5451b8e9d01ba6cfa",
+    "svg": "8a997281872ad5a9bef477222ecd4a27534a3b660fb6ef0f9a3c07a91ce1df65",
+    "pdf": "e6773e9c7f929e9d88d810774b8872ea66caf50a9b9609c4d87ec3d57efa039e"
+  },
+  "text_audit": [
+    {
+      "text": "Zone ID (last 6 digits for long Census IDs)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        151.298,
+        95.961,
+        268.0,
+        13.0
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 6.3,
+      "bounds_px": [
+        98.719,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 6.3,
+      "bounds_px": [
+        116.927,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 6.3,
+      "bounds_px": [
+        135.135,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 6.3,
+      "bounds_px": [
+        153.343,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 6.3,
+      "bounds_px": [
+        171.551,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 6.3,
+      "bounds_px": [
+        189.759,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 6.3,
+      "bounds_px": [
+        207.966,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 6.3,
+      "bounds_px": [
+        226.174,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 6.3,
+      "bounds_px": [
+        244.382,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 6.3,
+      "bounds_px": [
+        262.59,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 6.3,
+      "bounds_px": [
+        280.798,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 6.3,
+      "bounds_px": [
+        299.006,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 6.3,
+      "bounds_px": [
+        317.214,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 6.3,
+      "bounds_px": [
+        335.421,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 6.3,
+      "bounds_px": [
+        353.629,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 6.3,
+      "bounds_px": [
+        371.837,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 6.3,
+      "bounds_px": [
+        390.045,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 6.3,
+      "bounds_px": [
+        408.253,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 6.3,
+      "bounds_px": [
+        426.461,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 6.3,
+      "bounds_px": [
+        444.669,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 6.3,
+      "bounds_px": [
+        462.876,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "Persons",
+      "size_pt": 9.0,
+      "bounds_px": [
+        21.611,
+        270.988,
+        13.0,
+        49.625
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        61.542,
+        150.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        190.816,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        231.032,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        271.247,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "4000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        311.463,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        351.679,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "6000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        391.895,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        40.167,
+        432.111,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Resident population",
+      "size_pt": 11.0,
+      "bounds_px": [
+        77.0,
+        445.889,
+        194.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Zone ID (last 6 digits for long Census IDs)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        713.702,
+        95.961,
+        268.0,
+        13.0
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 6.3,
+      "bounds_px": [
+        661.124,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 6.3,
+      "bounds_px": [
+        679.331,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 6.3,
+      "bounds_px": [
+        697.539,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 6.3,
+      "bounds_px": [
+        715.747,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 6.3,
+      "bounds_px": [
+        733.955,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 6.3,
+      "bounds_px": [
+        752.163,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 6.3,
+      "bounds_px": [
+        770.371,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 6.3,
+      "bounds_px": [
+        788.579,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 6.3,
+      "bounds_px": [
+        806.786,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 6.3,
+      "bounds_px": [
+        824.994,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 6.3,
+      "bounds_px": [
+        843.202,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 6.3,
+      "bounds_px": [
+        861.41,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 6.3,
+      "bounds_px": [
+        879.618,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 6.3,
+      "bounds_px": [
+        897.826,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 6.3,
+      "bounds_px": [
+        916.034,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 6.3,
+      "bounds_px": [
+        934.241,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 6.3,
+      "bounds_px": [
+        952.449,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 6.3,
+      "bounds_px": [
+        970.657,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 6.3,
+      "bounds_px": [
+        988.865,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 6.3,
+      "bounds_px": [
+        1007.073,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 6.3,
+      "bounds_px": [
+        1025.281,
+        114.517,
+        9.0,
+        33.75
+      ]
+    },
+    {
+      "text": "Occupied units",
+      "size_pt": 9.0,
+      "bounds_px": [
+        584.015,
+        248.112,
+        13.0,
+        95.375
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        623.946,
+        150.6,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        609.696,
+        197.214,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.571,
+        243.829,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "1500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.571,
+        290.443,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.571,
+        337.058,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.571,
+        383.672,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.571,
+        430.287,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Household proxy",
+      "size_pt": 11.0,
+      "bounds_px": [
+        639.404,
+        445.889,
+        165.875,
+        14.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  DEMAND INPUTS",
+      "size_pt": 8.7,
+      "bounds_px": [
+        71.5,
+        497.944,
+        299.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Population and household inputs",
+      "size_pt": 15.0,
+      "bounds_px": [
+        71.5,
+        471.0,
+        387.5,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every full PNG inspected with view_image; source and transit map anchor adjusted; UC paired maps use equal widths.",
+    "png_sha256": "c7d4438f827a07694229b04e8bed7a824c6b766d4369afc5451b8e9d01ba6cfa",
+    "checks": [
+      "headers readable and close to axes",
+      "no clipping or text overlaps",
+      "actual units and legend retained",
+      "real map geometry unwarped",
+      "notes outside canvas"
+    ],
+    "numeric_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD"
+  }
+}

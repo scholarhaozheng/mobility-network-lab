@@ -1,0 +1,45 @@
+{
+  "id": "R3-CHICAGO-ENDPOINTS",
+  "city": "chicago",
+  "title": "Physical-road flow and v/c endpoint maps",
+  "caption": "Same saved static solution, 08:00–09:00 HBW; 1891 of 27129 physical links positive, maximum v/c 0.972739656. Flow colour uses PowerNorm(0.5); v/c colour is linear. Line width follows square-root flow. Virtual turns and access arcs are excluded. Reciprocal arcs may overlap geographically. Soft-capacity BPR, not observed congestion.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical-link flow",
+      "unit": "PCE / declared hour",
+      "encoding": "PowerNorm(0.5) colour, square-root width",
+      "max": 778.1917250553527
+    },
+    {
+      "panel": "b",
+      "metric": "volume/capacity",
+      "unit": "dimensionless",
+      "max": 0.9727396563191908
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\runs\\chicago_core_hbw_am_v1\\assignment\\link_solution.csv",
+      "sha256": "7efa31d6c5e8d1acf9738f8f467d6d8a285e301bfbff28c4f11909f4355dc472"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\inputs\\network_source_crosswalk.csv",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "endpoints"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "3ebd981d1cbae22299c919d90c5fcabcacd0ca333db77751c7e2bb013631f333",
+    "png": "cce4ae02bc163882c0ff8e7afe990dcdb0eefc97e85c5d10a322e41cae642bd9",
+    "pdf": "f4ede695d4b10e7925a574ef3ee9b3102aaaa386abb722fd807b92066aba7a32"
+  },
+  "width": 2009,
+  "height": 1027,
+  "src": "assets/city-alignment-r3/chicago/endpoints.svg"
+}

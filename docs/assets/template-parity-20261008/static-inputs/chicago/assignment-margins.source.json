@@ -1,0 +1,664 @@
+{
+  "figure_id": "CHICAGO-ASSIGNMENT-MARGINS",
+  "city": "chicago",
+  "instance": "S20 / 626bf2dc8bfc27d9b82d3f48b1a8bbbcea1f977d81aad662139672f313dac614",
+  "method": "static assignment input",
+  "role": "geographic",
+  "conclusion": "Actual selected vehicle demand is retained from source zones through exact solver loading endpoints.",
+  "quantity": "selected vehicle demand",
+  "unit": "PCE/h",
+  "period": "generic_weekday_08_09_America_Chicago_one_hour",
+  "panels": {
+    "a": "Selected-vehicle origin margins on complete saved source-zone geometry",
+    "b": "Selected-vehicle destination margins on same source-zone geometry"
+  },
+  "public_or_private": "private-local-review",
+  "original_demand_rows": 20,
+  "total_demand_pce_h": 1754.9482512397267,
+  "source_input_checks": {
+    "demand_sha_matches_instance_manifest": true,
+    "link_sha_matches_instance_manifest": true,
+    "ledger_node_OD_equals_actual_prepared_demand": true,
+    "zone_access_equals_actual_prepared_nodes": true,
+    "all_access_nodes_resolved_to_actual_road_endpoint": true,
+    "all_road_node_coordinates_consistent": true,
+    "all_source_hashes_unchanged": true,
+    "origin_and_destination_sum_to_exact_selected_demand": true,
+    "zero_solver_calls": true
+  },
+  "limitations": [
+    "Engineering scenario, not observed trip endpoints.",
+    "Full-city, selected-demand and T4 finite-time scenarios remain distinct.",
+    "Presentation only; no solver, matching or demand generation."
+  ],
+  "renderer_sha256": "a9cb6f45534ddcf7d6372abb05fef4a95ad586e26ece2e68d067b03bd40e72b8",
+  "schema": "mcl_figure_r12",
+  "caption": "Chicago S20: origin and destination margins from the exact frozen 20-OD vehicle-demand table, after its existing person-to-vehicle conversion. Each map sums to 1754.94825123973 PCE/h; all 5 model zones remain, including zero selected margins. Both panels use the same square-root colour normalization with original-unit ticks. The source-zone ledger is joined exactly to actual prepared node OD rows, rather than to person-trip generation or all-mode distribution. The 20 selected pairs retain the Jane Byrne / West Loop S20 identity and five clipped model zones. All saved road geometry is retained as pale context and clipped only at the common display viewport. These are model inputs, not observed travel or an optimization trajectory. Private local derivative; no new public release is claimed. © OpenStreetMap contributors, ODbL 1.0; source-zone geography as documented in the frozen case.",
+  "sources": [
+    {
+      "source_id": "chicago/demand.csv",
+      "sha256": "200755d44c9566cf7422719d0bbb0d8847c9e33b4af52c17e3ef63d134c33964",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/demand_ledger.csv",
+      "sha256": "1db3e8b0e5cc79f260efd40cb2090fb084081389afd31b055b527c9b4bf60726",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/manifest.json",
+      "sha256": "39d9504dc1e1cf87a67d3fabd0b3e4549766f86ae88442804f4cf78a839cd3e2",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/link.csv",
+      "sha256": "d08c44c8e7483fafa4dfbc628a2d81ee20b2060d2ad3d59edd8bf050cee43985",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/network.csv",
+      "sha256": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/access.csv",
+      "sha256": "0968feac7bbc456ecb19e6d1c7ff42b0a19eb678546dfbea47dfb940a32d167f",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/zones.csv",
+      "sha256": "cd0b2bf70719e39e17e8f6bdce1eee265c7593f143bba4181dd44fa44dbdd77e",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/network_source_crosswalk.csv",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/r2_model_zone_geometry.csv",
+      "sha256": "b4e5a19b4b4aa7a587678fa2b3a93a0449f639f5c00230c9154a2c75890bb6ff",
+      "private_source": true
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Chicago",
+    "title": "Static assignment demand margins",
+    "scope": "S20 / SELECTED VEHICLE DEMAND"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 37.788,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2884,
+    1586
+  ],
+  "exports": {
+    "png": "bf01f9d08643470efe790846f38a7c6fb5fece88687be6bf840baad34c0b2b23",
+    "svg": "20a0bb6cde2d55a4212afebc529eeb02952a3a8bdc7e38b1830170248179f959",
+    "pdf": "6efed09ea970824c69cf76678daa596e8c9f58f7d8010361543407cc099d8911"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        221.5,
+        111.967,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.477,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        80.489,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        124.501,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        168.513,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        212.525,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        261.162,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        305.174,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        349.186,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        393.198,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        437.21,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        481.222,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        32.511,
+        254.062,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.067,
+        127.93,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.067,
+        171.942,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.067,
+        215.954,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        51.067,
+        259.966,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.317,
+        303.978,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.317,
+        347.99,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.317,
+        392.002,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.317,
+        436.014,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        60.317,
+        480.026,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Source-zone origins",
+      "size_pt": 11.0,
+      "bounds_px": [
+        86.4,
+        476.477,
+        191.875,
+        14.0
+      ]
+    },
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        750.7,
+        111.967,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.677,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        609.689,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        653.701,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        697.713,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        741.725,
+        130.523,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.362,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        834.374,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        878.386,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        922.398,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        966.41,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1010.422,
+        130.523,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        561.711,
+        254.062,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        580.267,
+        127.93,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        580.267,
+        171.942,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        580.267,
+        215.954,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        580.267,
+        259.966,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.517,
+        303.978,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.517,
+        347.99,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.517,
+        392.002,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.517,
+        436.014,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "2.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        589.517,
+        480.026,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Source-zone destinations",
+      "size_pt": 11.0,
+      "bounds_px": [
+        615.6,
+        476.477,
+        238.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Selected assignment demand (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        447.25,
+        23.722,
+        239.5,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        244.838,
+        42.278,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "205.833",
+      "size_pt": 8.0,
+      "bounds_px": [
+        543.875,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "411.667",
+      "size_pt": 8.0,
+      "bounds_px": [
+        675.843,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "617.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        784.231,
+        42.278,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "823.334",
+      "size_pt": 8.0,
+      "bounds_px": [
+        862.475,
+        42.278,
+        46.25,
+        10.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  S20 / SELECTED VEHICLE DEMAND",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        528.533,
+        336.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Static assignment demand margins",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        501.588,
+        414.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_AND_NUMERICAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "All four PNGs directly inspected; matched origin/destination geography, no clipped labels, one shared colour scale, all access points inside viewport, actual serif titles."
+}

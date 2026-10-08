@@ -1,0 +1,465 @@
+{
+  "figure_id": "BERKELEY-TIME-LAYERS",
+  "city": "berkeley",
+  "instance": "Saved T4 finite time-expanded graph",
+  "method": "time-expanded graph construction",
+  "period": "30-second time steps in the frozen finite horizon",
+  "role": "time_construction",
+  "conclusion": "Saved roads or routing states become exact time-indexed movement, wait and, where present, turn arcs.",
+  "archetype": "schematic-led composite",
+  "panels": {
+    "a": "Slanted semantic time planes with exact saved states/arcs and a highlighted saved chain",
+    "b": "Movement and wait/turn key with explicit 30-second time unit"
+  },
+  "quantity": "directed state-time incidence",
+  "unit": "model time index; 30 seconds per step",
+  "limitations": [
+    "No independent turn connector exists in this T4 representation.",
+    "Blue dashed waiting arcs are available local context; the selected three movements contain no wait.",
+    "Elapsed rounded model time and fixed arc cost are different quantities."
+  ],
+  "public_or_private": "public-derived",
+  "source_selection": "Saved positive T02 column, first three movements; all published local arcs among these four nodes and selected times.",
+  "selected_arc_ids": [
+    "arc_3946_t5",
+    "arc_3943_t6",
+    "arc_3949_t7"
+  ],
+  "arc_count": 35,
+  "state_count": 18,
+  "template_sources": [
+    "Hong Kong r07 layered construction",
+    "Hong Kong G-F085 local construction"
+  ],
+  "renderer_sha256": "556742893f41325c7f9ca17bf6dd4a56456f0561f1b95993d63f3ee793664d1a",
+  "schema": "mcl_figure_r12",
+  "caption": "Berkeley: selected time layers 5–10 use 30 seconds per time step. Every arrow is an actual saved arc; only node-time states occurring as saved endpoints are drawn. The first three movements of the saved positive T02 column (7.5 PCE) are highlighted. The complete column has 89 movements; this local display is not its entire route. State aliases: A = 2838, B = 2837, C = 2836, D = 1535. Pale arrows show other saved arcs in this local slice. Time planes and horizontal placement are schematic; this is neither a full graph nor observed traffic. No independent turn connector exists in this T4 representation. Blue dashed waiting arcs are available local context; the selected three movements contain no wait. Elapsed rounded model time and fixed arc cost are different quantities.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/data/time_layer_arcs.csv",
+      "sha256": "e0bcb7e9b7fa6b34c8461001694ee7e37528d47f83d52fd765bbdd7af9b2083e"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/data/time_layer_nodes.csv",
+      "sha256": "6086cdf8e3e42e0190281a8c31735bfb8ee3ef43a9e0d692c2dd40a28e39e197"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/berkeley/data/t01_selected_path.csv",
+      "sha256": "cb25c2ae54e83976b008768a529f9666f5748d2881b7aa9953c3c77521a935c2"
+    },
+    {
+      "public_path": "docs/assets/berkeley-algorithm-transfer-r1/figures/t01_computed_column.plot_data.json",
+      "sha256": "6002aed7702d8b5c89e03c37c68c1968b136bab47123f5d067837455179b8ead"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Berkeley",
+    "title": "Road states across selected time layers",
+    "scope": "FINITE TIME-EXPANDED NETWORK"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 14.208,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2513,
+    1419
+  ],
+  "exports": {
+    "png": "50febee8df78720f656a34165a50a0d2cf2b5fdb4617db8bfacd01b396864475",
+    "svg": "44d54547f9bca671d46707f33cbe3d19b083734c4ace5af5b48e3bda7a1a0e22",
+    "pdf": "97565e57f8c6c4ab3df3306c955806a9f6882d9a4d85e77860daa0d0d26c3290"
+  },
+  "text_audit": [
+    {
+      "text": "t = 5",
+      "size_pt": 8.6,
+      "bounds_px": [
+        40.301,
+        94.86,
+        32.0,
+        11.0
+      ]
+    },
+    {
+      "text": "t = 6",
+      "size_pt": 8.6,
+      "bounds_px": [
+        54.353,
+        154.944,
+        32.0,
+        11.0
+      ]
+    },
+    {
+      "text": "t = 7",
+      "size_pt": 8.6,
+      "bounds_px": [
+        68.404,
+        215.029,
+        32.0,
+        11.0
+      ]
+    },
+    {
+      "text": "t = 8",
+      "size_pt": 8.6,
+      "bounds_px": [
+        82.456,
+        275.113,
+        32.0,
+        11.0
+      ]
+    },
+    {
+      "text": "t = 9",
+      "size_pt": 8.6,
+      "bounds_px": [
+        96.507,
+        335.198,
+        32.0,
+        11.0
+      ]
+    },
+    {
+      "text": "t = 10",
+      "size_pt": 8.6,
+      "bounds_px": [
+        110.559,
+        395.283,
+        40.25,
+        11.0
+      ]
+    },
+    {
+      "text": "A@5",
+      "size_pt": 9.3,
+      "bounds_px": [
+        88.779,
+        57.114,
+        31.875,
+        13.0
+      ]
+    },
+    {
+      "text": "B@6",
+      "size_pt": 9.3,
+      "bounds_px": [
+        281.641,
+        104.621,
+        32.75,
+        13.0
+      ]
+    },
+    {
+      "text": "C@7",
+      "size_pt": 9.3,
+      "bounds_px": [
+        155.647,
+        217.078,
+        32.125,
+        13.0
+      ]
+    },
+    {
+      "text": "D@8",
+      "size_pt": 9.3,
+      "bounds_px": [
+        407.023,
+        236.807,
+        33.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        0.153,
+        -4.605,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        62.155,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        128.916,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        195.677,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        262.437,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        329.198,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        395.959,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        9.403,
+        462.719,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Selected time layers",
+      "size_pt": 11.0,
+      "bounds_px": [
+        26.25,
+        432.047,
+        176.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Movement",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        389.016,
+        83.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Along a road, later time",
+      "size_pt": 9.3,
+      "bounds_px": [
+        630.0,
+        364.731,
+        156.25,
+        13.0
+      ]
+    },
+    {
+      "text": "(i, t) → (j, t + τ)",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        330.976,
+        109.75,
+        14.406
+      ]
+    },
+    {
+      "text": "Waiting",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        285.648,
+        61.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Same node, one step",
+      "size_pt": 9.3,
+      "bounds_px": [
+        630.0,
+        262.108,
+        136.5,
+        13.0
+      ]
+    },
+    {
+      "text": "(i, t) → (i, t + 1)",
+      "size_pt": 10.2,
+      "bounds_px": [
+        630.0,
+        230.618,
+        111.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved T02 column",
+      "size_pt": 9.8,
+      "bounds_px": [
+        630.0,
+        193.32,
+        140.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Pale arcs: retained movements\nand waits in this local slice.",
+      "size_pt": 8.8,
+      "bounds_px": [
+        630.0,
+        149.664,
+        192.25,
+        31.0
+      ]
+    },
+    {
+      "text": "30 seconds per time step.\nCoordinates are schematic.",
+      "size_pt": 8.8,
+      "bounds_px": [
+        630.0,
+        94.262,
+        170.875,
+        31.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        47.5,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        121.865,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        196.23,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        270.595,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        344.96,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        602.528,
+        419.325,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Construction key",
+      "size_pt": 11.0,
+      "bounds_px": [
+        630.0,
+        432.047,
+        151.625,
+        14.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  FINITE TIME-EXPANDED NETWORK",
+      "size_pt": 8.7,
+      "bounds_px": [
+        56.875,
+        484.103,
+        349.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Road states across selected time layers",
+      "size_pt": 15.0,
+      "bounds_px": [
+        56.875,
+        457.158,
+        458.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_AND_SOURCE_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "Each SVG-source PNG inspected: correct city, physical/routing identities, semantic time layers, legend, no clipping or text overlap."
+}

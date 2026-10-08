@@ -1,0 +1,394 @@
+{
+  "snapshot_utc": "2026-10-06T18:26:29.956266+00:00",
+  "input_files": {
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\dynamic_arc.csv": {
+      "sha256": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+      "size_bytes": 214080002
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\dynamic_demand.csv": {
+      "sha256": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+      "size_bytes": 282
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\BUILD_RECEIPT.json": {
+      "sha256": "c07f591241405952adde1b2bd34596f5a535bb72facc8eba19bfd4e72dc50ad8",
+      "size_bytes": 2414
+    },
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\T_case\\case_manifest.json": {
+      "sha256": "690fd6b254e6abc3c8e777dc2421f85db2573a83af8e7fc89ee5f1fe268478b2",
+      "size_bytes": 813
+    }
+  },
+  "identity": {
+    "status": "BUILT_INPUT_ONLY",
+    "profile": "T4",
+    "model_signature": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+    "signature_rule": "sha256(sha256(ordered arc CSV)|sha256(ordered demand CSV))",
+    "H_steps": 169,
+    "H_minutes": 84.5,
+    "dt_seconds": 30,
+    "departure_step": 5,
+    "demand_q_pce": 66.53295454563035,
+    "arc_counts": {
+      "movement": 876268,
+      "waiting": 475122,
+      "source_connector": 4,
+      "sink_connector": 234
+    },
+    "arcs": 1351628,
+    "dynamic_nodes": 490223,
+    "physical_support_links": 19202,
+    "original_links": 27129,
+    "original_nodes": 15133,
+    "OD_rounded_shortest_steps": [
+      83,
+      80,
+      134,
+      129
+    ],
+    "peak_sampled_rss_bytes": 54857728,
+    "input_build_seconds": 16.67200000002049,
+    "optimizer_calls": 0,
+    "semantics": {
+      "dt_seconds": 30,
+      "departure_seconds": 150,
+      "departure_clock": "08:02:30 America/Chicago generic weekday engineering pulse",
+      "q": "hourly Stage3 PCE / 12",
+      "horizon": "max(25 min, departure + max selected rounded shortest + 15 min)",
+      "H_steps": 169,
+      "capacity": "R2 PCE/hour times dt/3600",
+      "travel_duration": "ceil(t0 minutes*60/dt), at least1 for physical roads",
+      "travel_cost": "original t0 minutes",
+      "wait_cost_minutes": 0.5,
+      "terminal_ledger_connector": "zero-cost bookkeeping, not physical waiting",
+      "new_turn_sidecar": "excluded"
+    },
+    "exact_pruning": "exact union of forward/reverse rounded source-sink reachability intervals; all times in closed merged intervals; no finite path restriction",
+    "union_proof": "integer interval union is identical to set union of each commodity arc-time domain; adjacent intervals can be merged without adding a missing integer",
+    "node_order": "deterministic physical node then integer time; nodes do not change ordered arc/demand signature",
+    "core_loader_resource_gate_pending": true,
+    "hashes": {
+      "case_manifest.json": "690fd6b254e6abc3c8e777dc2421f85db2573a83af8e7fc89ee5f1fe268478b2",
+      "dynamic_arc.csv": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+      "dynamic_demand.csv": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+      "dynamic_node.csv": "714e208cdaef92c59f0a5b2a967ab1f883e884f1477baeeac6b6c79f70046afa",
+      "physical_link.csv": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120"
+    }
+  },
+  "city": "chicago",
+  "H_steps": 169,
+  "dt_seconds": 30,
+  "departure_step": 5,
+  "pulse_pce": 66.53295454563035,
+  "demand_records": [
+    {
+      "demand_id": "T01",
+      "origin_node_id": "osm:9913425856",
+      "destination_node_id": "osm:261207373",
+      "departure_time": "5",
+      "volume": "0.19958221566368328"
+    },
+    {
+      "demand_id": "T02",
+      "origin_node_id": "osm:261881717",
+      "destination_node_id": "osm:9913425856",
+      "departure_time": "5",
+      "volume": "44.3317276359441"
+    },
+    {
+      "demand_id": "T03",
+      "origin_node_id": "osm:5844620237",
+      "destination_node_id": "osm:261881717",
+      "departure_time": "5",
+      "volume": "15.621715371640413"
+    },
+    {
+      "demand_id": "T04",
+      "origin_node_id": "osm:9708251508",
+      "destination_node_id": "osm:9913425856",
+      "departure_time": "5",
+      "volume": "6.379929322382154"
+    }
+  ],
+  "complete_arc_counts": {
+    "movement": 876268,
+    "waiting": 475122,
+    "source_connector": 4,
+    "sink_connector": 234
+  },
+  "total_arcs": 1351628,
+  "excerpt_t0": 46,
+  "excerpt_t1": 50,
+  "excerpt_states": [
+    "osm:1324341003",
+    "osm:1324341002",
+    "osm:1324341004"
+  ],
+  "excerpt_arc_records": [
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t46",
+      "from_node_time_id": "nosm:1324341003_t46",
+      "to_node_time_id": "nosm:1324341002_t47",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t47",
+      "from_node_time_id": "nosm:1324341003_t47",
+      "to_node_time_id": "nosm:1324341002_t48",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t48",
+      "from_node_time_id": "nosm:1324341003_t48",
+      "to_node_time_id": "nosm:1324341002_t49",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:1000025128:0:f_t49",
+      "from_node_time_id": "nosm:1324341003_t49",
+      "to_node_time_id": "nosm:1324341002_t50",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:1000025128:0:f",
+      "cost": "0.01090257893899626",
+      "capacity": "15.0"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t47",
+      "from_node_time_id": "nosm:1324341002_t47",
+      "to_node_time_id": "nosm:1324341004_t48",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t48",
+      "from_node_time_id": "nosm:1324341002_t48",
+      "to_node_time_id": "nosm:1324341004_t49",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "arc_osmway:432382643:0:f_t49",
+      "from_node_time_id": "nosm:1324341002_t49",
+      "to_node_time_id": "nosm:1324341004_t50",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "movement",
+      "physical_link_id": "osmway:432382643:0:f",
+      "cost": "0.016774536705639064",
+      "capacity": "22.5"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t47",
+      "from_node_time_id": "nosm:1324341002_t47",
+      "to_node_time_id": "nosm:1324341002_t48",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t48",
+      "from_node_time_id": "nosm:1324341002_t48",
+      "to_node_time_id": "nosm:1324341002_t49",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341002_t49",
+      "from_node_time_id": "nosm:1324341002_t49",
+      "to_node_time_id": "nosm:1324341002_t50",
+      "from_physical_node_id": "osm:1324341002",
+      "to_physical_node_id": "osm:1324341002",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t46",
+      "from_node_time_id": "nosm:1324341003_t46",
+      "to_node_time_id": "nosm:1324341003_t47",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t47",
+      "from_node_time_id": "nosm:1324341003_t47",
+      "to_node_time_id": "nosm:1324341003_t48",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t48",
+      "from_node_time_id": "nosm:1324341003_t48",
+      "to_node_time_id": "nosm:1324341003_t49",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341003_t49",
+      "from_node_time_id": "nosm:1324341003_t49",
+      "to_node_time_id": "nosm:1324341003_t50",
+      "from_physical_node_id": "osm:1324341003",
+      "to_physical_node_id": "osm:1324341003",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t46",
+      "from_node_time_id": "nosm:1324341004_t46",
+      "to_node_time_id": "nosm:1324341004_t47",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "46",
+      "to_time": "47",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t47",
+      "from_node_time_id": "nosm:1324341004_t47",
+      "to_node_time_id": "nosm:1324341004_t48",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "47",
+      "to_time": "48",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t48",
+      "from_node_time_id": "nosm:1324341004_t48",
+      "to_node_time_id": "nosm:1324341004_t49",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "48",
+      "to_time": "49",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    },
+    {
+      "arc_id": "wait_osm:1324341004_t49",
+      "from_node_time_id": "nosm:1324341004_t49",
+      "to_node_time_id": "nosm:1324341004_t50",
+      "from_physical_node_id": "osm:1324341004",
+      "to_physical_node_id": "osm:1324341004",
+      "from_time": "49",
+      "to_time": "50",
+      "arc_type": "waiting",
+      "physical_link_id": "",
+      "cost": "0.5",
+      "capacity": "66.53295454563035"
+    }
+  ],
+  "actual_connector_examples": {
+    "source": {
+      "arc_id": "source_T01",
+      "from_node_time_id": "source_T01_t5",
+      "to_node_time_id": "nosm:9913425856_t5",
+      "from_physical_node_id": "osm:9913425856",
+      "to_physical_node_id": "osm:9913425856",
+      "from_time": "5",
+      "to_time": "5",
+      "arc_type": "source_connector",
+      "physical_link_id": "",
+      "cost": "0.0",
+      "capacity": "0.19958221566368328"
+    },
+    "sink": {
+      "arc_id": "sink_T01_osm:261207373_t88",
+      "from_node_time_id": "nosm:261207373_t88",
+      "to_node_time_id": "sink_T01_t169",
+      "from_physical_node_id": "osm:261207373",
+      "to_physical_node_id": "osm:261207373",
+      "from_time": "88",
+      "to_time": "169",
+      "arc_type": "sink_connector",
+      "physical_link_id": "",
+      "cost": "0.0",
+      "capacity": "0.19958221566368328"
+    }
+  },
+  "inputs_unchanged_during_extraction": true,
+  "selection_rule": "First saved one-step physical arc at the frozen slice start, its first available outgoing neighbour; include all saved arcs between selected states within five time layers. Structural selection; no optimization.",
+  "scope": "INPUT ONLY / NOT OPTIMIZED",
+  "scientific_solver_calls": 0
+}

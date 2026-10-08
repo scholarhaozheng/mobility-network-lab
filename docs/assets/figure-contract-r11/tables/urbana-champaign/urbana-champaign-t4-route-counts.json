@@ -1,0 +1,85 @@
+{
+  "table_id": "urbana-champaign-t4-route-counts",
+  "city": "urbana-champaign",
+  "title": "CG-generated route and flow scalars",
+  "scope": "Original four-OD T4; one generated path per OD",
+  "original_assets": [
+    "assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.svg"
+  ],
+  "notes": [
+    "Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.plot.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.plot.json",
+      "sha256": "67a3992ca777408c42c50f164c94144e297153b857c0d2a52a73c7eaf8e51b76"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.source.json",
+      "href": "assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.source.json",
+      "sha256": "0160e0281ad177a43f967c828ec3ba270271f233b5797e29976afa2558d1715f"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Saved path records",
+      "columns": [
+        "demand_id",
+        "flow_pce",
+        "route_cost_minutes",
+        "physical_road_arcs",
+        "turn_movement_arcs",
+        "wait_arcs"
+      ],
+      "rows": [
+        {
+          "demand_id": "C02_OD_01_17019001400_17019005601",
+          "flow_pce": 0.0006982622877243182,
+          "route_cost_minutes": 4.60636333333333,
+          "physical_road_arcs": 67,
+          "turn_movement_arcs": 66,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C02_OD_02_17019005902_17019005601",
+          "flow_pce": 0.001977967455179585,
+          "route_cost_minutes": 3.9479940476190434,
+          "physical_road_arcs": 57,
+          "turn_movement_arcs": 56,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C02_OD_03_17019000301_17019005701",
+          "flow_pce": 0.023537243205750943,
+          "route_cost_minutes": 6.525005833333337,
+          "physical_road_arcs": 94,
+          "turn_movement_arcs": 93,
+          "wait_arcs": 0
+        },
+        {
+          "demand_id": "C02_OD_04_17019005500_17019011001",
+          "flow_pce": 0.025409675319286493,
+          "route_cost_minutes": 8.318782500000017,
+          "physical_road_arcs": 155,
+          "turn_movement_arcs": 154,
+          "wait_arcs": 0
+        }
+      ],
+      "column_units": {
+        "flow_pce": "PCE",
+        "route_cost_minutes": "min",
+        "physical_road_arcs": "count",
+        "turn_movement_arcs": "count",
+        "wait_arcs": "count"
+      },
+      "details": false
+    }
+  ],
+  "rows": 4,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"urbana-champaign-t4-route-counts\"><h4>CG-generated route and flow scalars</h4><p class=\"evidence-table-scope\">Original four-OD T4; one generated path per OD</p><h5>Saved path records</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Saved path records\"><table><thead><tr><th scope=\"col\">demand_id</th><th scope=\"col\">flow_pce <small>(PCE)</small></th><th scope=\"col\">route_cost_minutes <small>(min)</small></th><th scope=\"col\">physical_road_arcs <small>(count)</small></th><th scope=\"col\">turn_movement_arcs <small>(count)</small></th><th scope=\"col\">wait_arcs <small>(count)</small></th></tr></thead><tbody><tr><td>C02_OD_01_17019001400_17019005601</td><td>0.0006982622877243182</td><td>4.60636333333333</td><td>67</td><td>66</td><td>0</td></tr><tr><td>C02_OD_02_17019005902_17019005601</td><td>0.001977967455179585</td><td>3.9479940476190434</td><td>57</td><td>56</td><td>0</td></tr><tr><td>C02_OD_03_17019000301_17019005701</td><td>0.023537243205750943</td><td>6.525005833333337</td><td>94</td><td>93</td><td>0</td></tr><tr><td>C02_OD_04_17019005500_17019011001</td><td>0.025409675319286493</td><td>8.318782500000017</td><td>155</td><td>154</td><td>0</td></tr></tbody></table></div><p>Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.plot.json\" download>UC_T06.plot.json</a> · <a href=\"assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.source.json\" download>UC_T06.source.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T06.svg\">UC_T06.svg</a></p></details></section>",
+  "caption": "Four route records are not optimizer iterations. Road, turn and wait counts retain their separate roles."
+}

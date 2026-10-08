@@ -1,0 +1,1107 @@
+{
+  "figure_id": "ithaca-native-physical-flow-parity",
+  "city": "ithaca",
+  "instance": "S110 / 421.2613256336401 PCE/hour / 11:00–12:00",
+  "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+  "role": "geographic",
+  "method": "native26 + native52 versus own S110 FW",
+  "quantity": "Physical-link flow and signed Native–own-FW differences",
+  "unit": "PCE/hour",
+  "conclusion": "Saved method-specific S110 physical vectors are displayed on their own unchanged complete road graph.",
+  "panels": {
+    "a": {
+      "all_geometry_rows": 15148,
+      "display_nonzero_threshold": 1e-12,
+      "displayed_links": 2503,
+      "raw_min": 0.0,
+      "raw_max": 132.099088572336,
+      "normalization": "PowerNorm gamma=0.5",
+      "colourbar_unit": "PCE/hour"
+    },
+    "b": {
+      "all_geometry_rows": 15148,
+      "display_nonzero_threshold": 1e-12,
+      "displayed_links": 1656,
+      "raw_min": -1.2968847329375421e-08,
+      "raw_max": 2.2384824660548475e-08,
+      "normalization": "symmetric zero-centred linear",
+      "colourbar_unit": "PCE/hour"
+    },
+    "c": {
+      "all_geometry_rows": 15148,
+      "display_nonzero_threshold": 1e-12,
+      "displayed_links": 2035,
+      "raw_min": -2.0549634882627288e-08,
+      "raw_max": 5.082172549464303e-08,
+      "normalization": "symmetric zero-centred linear",
+      "colourbar_unit": "PCE/hour"
+    },
+    "d": {
+      "all_link_count": 15148,
+      "includes_exact_zero": true,
+      "exact_zero_count": 12645,
+      "positive_gt_1e_6": 2359,
+      "bins": 22,
+      "bin_edges": [
+        0.0,
+        6.0045040260152724,
+        12.009008052030545,
+        18.013512078045817,
+        24.01801610406109,
+        30.022520130076362,
+        36.027024156091635,
+        42.03152818210691,
+        48.03603220812218,
+        54.04053623413745,
+        60.045040260152724,
+        66.049544286168,
+        72.05404831218327,
+        78.05855233819854,
+        84.06305636421382,
+        90.06756039022909,
+        96.07206441624436,
+        102.07656844225963,
+        108.0810724682749,
+        114.08557649429018,
+        120.09008052030545,
+        126.09458454632072,
+        132.099088572336
+      ],
+      "bin_counts": [
+        13682,
+        326,
+        269,
+        211,
+        201,
+        138,
+        79,
+        49,
+        17,
+        20,
+        31,
+        44,
+        17,
+        2,
+        4,
+        0,
+        0,
+        0,
+        37,
+        7,
+        0,
+        14
+      ],
+      "sum_counts": 15148
+    },
+    "shared_signed_scale_bounds_pce_hour": [
+      -5.082172549464303e-08,
+      5.082172549464303e-08
+    ],
+    "max_abs_native_minus_fw_pce_hour": {
+      "native26": 2.2384824660548475e-08,
+      "native52": 5.082172549464303e-08
+    }
+  },
+  "public_or_private": "private",
+  "numerical_validation": {
+    "finite": {
+      "own_vector_source": "finite/link_flow.csv",
+      "path_reconstruction_max_abs_pce_hour": 0.0,
+      "max_abs_od_residual_pce_hour": 0.0,
+      "saved_objective_pce_min": 1638.731757686398,
+      "saved_iterations": 1
+    },
+    "native26": {
+      "own_vector_source": "native_26/outer_04_solution.npz:v",
+      "outer": 4,
+      "rank": 26,
+      "path_reconstruction_max_abs_pce_hour": 8.526512829121202e-14,
+      "affine_reconstruction_max_abs_pce_hour": 8.526512829121202e-14,
+      "max_abs_od_residual_pce_hour": 7.58841878223393e-11,
+      "independent_saved_check": {
+        "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+        "path_count": 550,
+        "rank": 26,
+        "min_path_flow_raw": 6.034934791012343e-11,
+        "negative_path_count_raw": 0,
+        "negative_path_mass_raw": 0.0,
+        "min_explicit_link_flow_raw": 0.0,
+        "negative_explicit_link_count_raw": 0,
+        "max_abs_od_residual": 7.58841878223393e-11,
+        "od_residual_sum": -1.42759121191105e-09,
+        "od_residual_l1": 1.4840412232430822e-09,
+        "max_link_reconstruction_error": 8.526512829121202e-14,
+        "objective_checked": 1638.73175768472,
+        "signed_full_gap": -1.6868852981133386e-09,
+        "full_relative_gap": -1.029383210352421e-12,
+        "signed_pool_gap": -1.6948433767538518e-09,
+        "pool_relative_gap": -1.0342394460125281e-12,
+        "demand_total": 421.2613256336403,
+        "positive_links_strict": 5307,
+        "positive_links_display_1e_minus_6": 4798,
+        "gates": {
+          "max_od_error_abs": 1e-06,
+          "max_od_error_rel": 1e-08,
+          "total_od_l1_rel": 1e-08,
+          "full_relative_gap_abs": 1e-05,
+          "negative_flow_abs": 1e-08,
+          "link_reconstruction_abs": 1e-07
+        },
+        "objective_minus_fw": -1.6846115613589063e-09,
+        "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+      },
+      "own_saved_vector_used_directly": true
+    },
+    "native52": {
+      "own_vector_source": "native_52/outer_04_solution.npz:v",
+      "outer": 4,
+      "rank": 52,
+      "path_reconstruction_max_abs_pce_hour": 7.105427357601002e-14,
+      "affine_reconstruction_max_abs_pce_hour": 7.105427357601002e-14,
+      "max_abs_od_residual_pce_hour": 1.2492393230978394e-10,
+      "independent_saved_check": {
+        "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+        "path_count": 550,
+        "rank": 52,
+        "min_path_flow_raw": 1.636446935278069e-10,
+        "negative_path_count_raw": 0,
+        "negative_path_mass_raw": 0.0,
+        "min_explicit_link_flow_raw": 0.0,
+        "negative_explicit_link_count_raw": 0,
+        "max_abs_od_residual": 1.2492393230978394e-10,
+        "od_residual_sum": -1.6460155183306568e-09,
+        "od_residual_l1": 1.6460155183306568e-09,
+        "max_link_reconstruction_error": 7.105427357601002e-14,
+        "objective_checked": 1638.7317576873045,
+        "signed_full_gap": 9.147242963081226e-10,
+        "full_relative_gap": 5.581896017308553e-13,
+        "signed_pool_gap": 9.069935913430527e-10,
+        "pool_relative_gap": 5.534721156610444e-13,
+        "demand_total": 421.2613256336403,
+        "positive_links_strict": 5307,
+        "positive_links_display_1e_minus_6": 4798,
+        "gates": {
+          "max_od_error_abs": 1e-06,
+          "max_od_error_rel": 1e-08,
+          "total_od_l1_rel": 1e-08,
+          "full_relative_gap_abs": 1e-05,
+          "negative_flow_abs": 1e-08,
+          "link_reconstruction_abs": 1e-07
+        },
+        "objective_minus_fw": 8.999450074043125e-10,
+        "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+      },
+      "own_saved_vector_used_directly": true
+    }
+  },
+  "reference_template": "Hong Kong h1_static Native / rank26 own absolute flow + rank26−FW + rank52−FW + rank26 all-link histogram; Berkeley canonical same-panel reference.",
+  "renderer": "render_ithaca_static_method_parity.py",
+  "source_notice": "© OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright",
+  "scope_note": "Engineering scenario, not observed traffic; physical links only, no virtual arcs in maps/histograms.",
+  "all_physical_roads": 15148,
+  "all_solver_arcs": 47938,
+  "absolute_shared_max": 132.09908857315517,
+  "schema": "mcl_figure_r12",
+  "caption": "Ithaca S110 Native rank 26 own saved physical-link flow (a), signed rank 26−FW (b) and rank 52−FW (c), and all 15,148 rank-26 physical roads in a 22-bin histogram (d). Both Native vectors are read directly from their own outer-04 saved v arrays; exact source link IDs select the physical rows. Saved basis/pool products verify these arrays to below 1e-10 PCE/hour without running a solver or evaluator. The absolute map shares the finite card’s square-root scale; both difference maps share one symmetric zero-centred linear scale, in original PCE/hour, with the scientific-notation multiplier printed at each colourbar. Maximum absolute differences are 2.23848246605e-08 and 5.08217254946e-08 PCE/hour. These tiny numerical differences are not a traffic improvement. Rank 26/52 actually have four saved outer states; this card shows their final geographic endpoint and does not replace the saved-history card. FW belongs to this same S110 instance and stops at its initial check. All raw zeros and near-zero values remain in the histogram and plot data; only |value|≤1e-12 is hidden from coloured overlays. Modelled one-hour engineering scenario, not observations.",
+  "sources": [
+    {
+      "source_identity": "observations/frozen/private/inputs/target_r2_physical_links.csv",
+      "sha256": "6ae420c264c450bf5572811ff97aed3896e7cf5e0c19ffc0a518e90b21c9b97f",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "frozen/r2/inputs/network.csv",
+      "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/link.csv",
+      "sha256": "aa4fd1ecf51f368de712c8e1ca14e98444d7d31a9b69cd969e45646ec667db7c",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/demand.csv",
+      "sha256": "40aac06cace5e2ccbf629d2d457ae8f8b4cde188b7d538da5ea001a770e6bb26",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/manifest.json",
+      "sha256": "373c981410c10480dc65ec6bee0b07bf1702231a57241a8dd0d465997af7b1f2",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/link_flow.csv",
+      "sha256": "8029b4d92ca54ab44143130c7c0d6a899dc2fc7c4c89d56aa615ba8f634b16bc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/path_flow.csv",
+      "sha256": "5d51be41d1ba80c921900ce18f52f38065b486cfe819d75406b21ba1bc701f8e",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/run.json",
+      "sha256": "94832899017b55f798e933399ca377deaa46f2c4a10336d2e4f89fbd3b5071cc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/fw/link_flow.csv",
+      "sha256": "ee873633ac168059a7ca07d6698c4cdd43d0704058eafe6baed35718e0c87787",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/fw/run.json",
+      "sha256": "1dee42a124ef1a189c5b0c89a446918066287e4035ee31d1a1212f03a958637f",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/paths.csv",
+      "sha256": "159ed28cb852b1f484618f09a767c54861d6236fa1e1b0364935229a41d05767",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/A_link_path.npz",
+      "sha256": "bb2732cfecf28227421948910fcec86e9f3c112f75637583cb285d5261fbd416",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/C_od_path.npz",
+      "sha256": "21d49e4fb28497bdbeb7cc7523cb8549eaccbe395c91b51b10c3edba0b989a05",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/pool.json",
+      "sha256": "7db4adf68470f02afe0f3adc7321b403775bc94b496347c76f0968df5f35264a",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_26/basis.npz",
+      "sha256": "dbf2b997edcdfcebc41e6e88ee92cd33bf118f5d31fdca5ed8d41af42647aecc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_26/basis.json",
+      "sha256": "d594a110e5e91c9ac0f6b23bd50d4873a711a8c03e8396ee76f190739d25cf51",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_solution.npz",
+      "sha256": "7f7879bfe6dc6e80c7204bea2035c4f861ade92932cea017278e3090848f66b7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_check.json",
+      "sha256": "eb249cfb2f01397c40bde05d501b9bc3727e350ee0c8ba79b779dec8f692f7a7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_native.json",
+      "sha256": "4426194bb2acfea1bd984391962257b25cd21c36bfdb153b1d86433a22b08086",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_52/basis.npz",
+      "sha256": "b151373d814168e51f673040ca9f5407cac379b3333a32643fe4b1e08a1f0dea",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_52/basis.json",
+      "sha256": "0ecdb2898277abd6ae3fadb64295eaa71bc15809e81a035a01937e66176378a7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_solution.npz",
+      "sha256": "bb725750c8640fcb0a5e6bddb945cd3d34a65f1ed030e32df573cd652149ec6b",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_check.json",
+      "sha256": "9f9bee3480c8c82ea566bd4c565ba5e5c3cfdf795e74a2deac2564758da0d120",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_native.json",
+      "sha256": "f6e72b17aad39f69de40e8047defa32ea059ad0cd044d81cfc6e9f51e8a629c6",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Native L3 physical flows against S110 FW",
+    "scope": "Ranks 26 and 52 / saved outer 4"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 94.211,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3108,
+    1627
+  ],
+  "exports": {
+    "png": "9de1a91a8bbce674e5ee78a8d77de73206712ff170a5b98f2a68fba6dda9c3c5",
+    "svg": "5baa17a9440173c211da4c0cdf1dbd079f9b4084e07b1a82fc8dc49363f07b92",
+    "pdf": "ff440c98afbd6bf406d8e58f7f36d68ea7881fabf7a50ce06e3d1be0d8c9f768"
+  },
+  "text_audit": [
+    {
+      "text": "East (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        164.65,
+        350.911,
+        61.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        33.366,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        107.571,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        186.4,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        260.604,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        334.809,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        36.986,
+        444.325,
+        13.0,
+        70.75
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.542,
+        374.761,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.542,
+        424.23,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        64.792,
+        473.7,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        64.792,
+        523.17,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        64.792,
+        572.639,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Rank 26 flow",
+      "size_pt": 10.0,
+      "bounds_px": [
+        80.25,
+        579.711,
+        121.25,
+        14.0
+      ]
+    },
+    {
+      "text": "East (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        491.0,
+        350.911,
+        61.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        359.716,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        433.921,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        512.75,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        586.954,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        661.159,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Rank 26 − S110 FW",
+      "size_pt": 10.0,
+      "bounds_px": [
+        406.6,
+        579.711,
+        175.125,
+        14.0
+      ]
+    },
+    {
+      "text": "East (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        817.35,
+        350.911,
+        61.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        686.066,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        760.271,
+        369.467,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        839.1,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        913.304,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        987.509,
+        369.467,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Rank 52 − S110 FW",
+      "size_pt": 10.0,
+      "bounds_px": [
+        732.95,
+        579.711,
+        173.875,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        375.302,
+        449.137,
+        10.0,
+        61.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        396.085,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        456.875,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        482.055,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        501.376,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        517.664,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        532.015,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        544.989,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 7.0,
+      "bounds_px": [
+        349.982,
+        556.919,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Signed PCE / hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        708.215,
+        427.887,
+        10.0,
+        103.625
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−8}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        630.164,
+        559.982,
+        36.446,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−5.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        676.332,
+        396.348,
+        24.939,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−2.5}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        676.332,
+        434.774,
+        24.814,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        676.332,
+        473.2,
+        16.792,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2.5}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        676.332,
+        511.626,
+        16.667,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{5.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        676.332,
+        550.052,
+        16.792,
+        11.0
+      ]
+    },
+    {
+      "text": "Signed PCE / hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1034.565,
+        427.887,
+        10.0,
+        103.625
+      ]
+    },
+    {
+      "text": "$\\times\\mathdefault{10^{−8}}\\mathdefault{}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        956.514,
+        559.982,
+        36.446,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−5.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1002.682,
+        396.348,
+        24.939,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{−2.5}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1002.682,
+        434.774,
+        24.814,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{0.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1002.682,
+        473.2,
+        16.792,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{2.5}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1002.682,
+        511.626,
+        16.667,
+        11.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{5.0}$",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1002.682,
+        550.052,
+        16.792,
+        11.0
+      ]
+    },
+    {
+      "text": "2,359 positive links\n12,789 zero / near-zero links",
+      "size_pt": 8.5,
+      "bounds_px": [
+        773.47,
+        271.572,
+        171.875,
+        21.6
+      ]
+    },
+    {
+      "text": "Positive: > 10⁻⁶ PCE/h",
+      "size_pt": 8.0,
+      "bounds_px": [
+        818.595,
+        243.32,
+        126.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Physical-link flow (PCE / hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        424.625,
+        113.111,
+        194.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -12.875,
+        131.667,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        116.812,
+        131.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        234.75,
+        131.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        356.249,
+        131.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        477.749,
+        131.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        599.249,
+        131.667,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        717.186,
+        131.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        838.686,
+        131.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        960.185,
+        131.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Number of physical links",
+      "size_pt": 9.0,
+      "bounds_px": [
+        17.736,
+        144.55,
+        13.0,
+        158.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        64.792,
+        144.0,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.417,
+        169.685,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.417,
+        195.371,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "7500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        43.417,
+        221.056,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "10000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.292,
+        246.742,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.292,
+        272.427,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "15000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        36.292,
+        298.113,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "d  Rank 26 distribution across all 15,148 physical links",
+      "size_pt": 10.0,
+      "bounds_px": [
+        80.25,
+        305.711,
+        430.875,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  Ranks 26 and 52 / saved outer 4",
+      "size_pt": 8.7,
+      "bounds_px": [
+        69.55,
+        631.767,
+        293.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Native L3 physical flows against S110 FW",
+      "size_pt": 15.0,
+      "bounds_px": [
+        69.55,
+        604.822,
+        487.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "status": "PASS",
+    "png_reviewed": true,
+    "labels_colourbar_units_and_exponents_readable": true,
+    "full_geometry_and_all_link_histogram_preserved": true,
+    "no_title_or_panel_overlap": true,
+    "editable_vector_no_raster_embed": true,
+    "all_text_audit_bounds_finite": true,
+    "no_solver_or_evaluator_calls": true
+  }
+}

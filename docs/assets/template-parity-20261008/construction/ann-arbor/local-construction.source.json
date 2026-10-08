@@ -1,0 +1,463 @@
+{
+  "figure_id": "ann-arbor-construction-local-parity",
+  "city": "ann-arbor",
+  "method": "finite time graph construction",
+  "instance": "AA_R2_T4_PULSE5MIN_DT30_20261008",
+  "period": "30-second time index",
+  "role": "time_construction",
+  "conclusion": "Frozen input rules map the actual allowed road chain to time-indexed movement and turn objects; execution remains pending.",
+  "archetype": "schematic-led composite",
+  "panels": [
+    {
+      "a": "source-directed physical two-road chain"
+    },
+    {
+      "b": "physical → routing → time-indexed object mapping"
+    },
+    {
+      "c": "exact three movement/turn arcs, or frozen rule with execution pending"
+    }
+  ],
+  "quantity": "Routing-state and time-arc incidence",
+  "unit": "time index; 30 seconds per step",
+  "public_or_private": "private",
+  "limitations": [
+    "Frozen construction rule applied to an actual allowed two-road chain. The full graph has not been built and no time-expanded solver has run.",
+    "The displayed turn is an actual allowed static-network turn chosen for illustration; this is not a saved assignment path.",
+    "Displayed timing is the deterministic frozen 30-second rule applied to original free-flow minutes, not a measured or computed route time.",
+    "This input-only illustration does not change Native600 or finite-time reception status."
+  ],
+  "source_status": "FROZEN_RULE_NOT_EXECUTED",
+  "reference_layout": "Hong Kong layered construction and local construction details; existing project style",
+  "renderer": "render_construction_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "Ann Arbor: panels map two source-directed physical roads to four routing entry/exit states and their time-indexed movements. Frozen construction rule applied to an actual allowed two-road chain. The full graph has not been built and no time-expanded solver has run. The displayed turn is an actual allowed static-network turn chosen for illustration; this is not a saved assignment path. Displayed timing is the deterministic frozen 30-second rule applied to original free-flow minutes, not a measured or computed route time. This input-only illustration does not change Native600 or finite-time reception status. The turn has zero elapsed time; physical road durations are positive. No waiting arc is drawn and terminal bookkeeping states are outside this local excerpt. Plot data carry all exact source IDs, field values, and short-label aliases.",
+  "sources": [
+    {
+      "source_identity": "T_POLICY.json",
+      "sha256": "a7dc60ec9b15c7bfeb258e3a39a90dd0064c44324b09084112b103a6d52ca75b",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "network.csv",
+      "sha256": "437a5ebab64a3ca2d3d4a72d76db159f056baeff8db4a48371bb96e66747d380",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "physical_road_links.csv",
+      "sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "READY_FOR_COMPUTE.json",
+      "sha256": "8eb440a12a0b698458cc4e47887575a537de1d763c43ffd85b9b5bae80840315",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "build_time.py",
+      "sha256": "dff032b8098e56299c4250db0e46842d094477dc7c3821012d96e87d1cf8fcad",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Local construction of the time-expanded graph",
+    "scope": "T4 / FROZEN RULE ILLUSTRATION"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 36.25,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3646,
+    1927
+  ],
+  "exports": {
+    "png": "4a8ae433d86e87c120b17c93103bb97fd7647106f1b5e4042935c7c22e5a4d89",
+    "svg": "1a2e6f4a4dfe5d5260bb6ba4dd2be7402f7c271017fe97e8a2f1f7f7a77b56b9",
+    "pdf": "30628c0cc77f5cea68a5eb57c6ee493a9fddad16397f7df20c7635c832f780f1"
+  },
+  "text_audit": [
+    {
+      "text": "62512849",
+      "size_pt": 8.5,
+      "bounds_px": [
+        115.769,
+        517.632,
+        60.0,
+        10.0
+      ]
+    },
+    {
+      "text": "4140338128",
+      "size_pt": 8.5,
+      "bounds_px": [
+        305.866,
+        517.632,
+        75.0,
+        10.0
+      ]
+    },
+    {
+      "text": "62486873",
+      "size_pt": 8.5,
+      "bounds_px": [
+        510.963,
+        517.632,
+        60.0,
+        10.0
+      ]
+    },
+    {
+      "text": "road e469",
+      "size_pt": 8.6,
+      "bounds_px": [
+        213.755,
+        457.056,
+        61.625,
+        10.0
+      ]
+    },
+    {
+      "text": "road e467",
+      "size_pt": 8.6,
+      "bounds_px": [
+        411.352,
+        457.056,
+        61.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Schematic spacing; source-directed road chain",
+      "size_pt": 8.0,
+      "bounds_px": [
+        145.769,
+        419.196,
+        265.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        387.432,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        412.672,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        437.912,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        463.152,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        488.392,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        513.632,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        538.872,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        564.112,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        589.352,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        614.592,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Directed physical road chain",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        605.733,
+        241.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Physical link → routing entry / exit\nRouting states → time-indexed states\nTurn connector ≠ physical road\nWaiting preserves the routing state",
+      "size_pt": 10.0,
+      "bounds_px": [
+        713.268,
+        486.503,
+        260.75,
+        77.45
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        402.576,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        440.94,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        479.305,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        517.67,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        556.035,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        594.4,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Object mapping",
+      "size_pt": 11.0,
+      "bounds_px": [
+        713.268,
+        605.733,
+        142.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Model time index (30 seconds per step)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        521.125,
+        39.111,
+        251.5,
+        13.0
+      ]
+    },
+    {
+      "text": "t5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        208.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.062,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1073.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "A−  road e469 entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -16.708,
+        279.039,
+        114.625,
+        10.0
+      ]
+    },
+    {
+      "text": "A+  road e469 exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -7.833,
+        217.557,
+        105.75,
+        10.0
+      ]
+    },
+    {
+      "text": "B−  road e467 entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -16.833,
+        156.075,
+        114.75,
+        10.0
+      ]
+    },
+    {
+      "text": "B+  road e467 exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -7.958,
+        94.593,
+        105.875,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Frozen movement and turn rule: execution pending",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        321.114,
+        418.125,
+        14.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  T4 / FROZEN RULE ILLUSTRATION",
+      "size_pt": 8.7,
+      "bounds_px": [
+        81.25,
+        657.789,
+        348.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Local construction of the time-expanded graph",
+      "size_pt": 15.0,
+      "bounds_px": [
+        81.25,
+        630.844,
+        551.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: individually opened PNG; corrected layer placement and labels; no text overlap or clipping",
+  "text_overlap_candidates": []
+}

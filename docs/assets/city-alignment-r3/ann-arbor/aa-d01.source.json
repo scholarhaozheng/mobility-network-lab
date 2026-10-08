@@ -1,0 +1,49 @@
+{
+  "id": "AA-D01",
+  "title": "Complete directed OD demand and road impedance",
+  "city": "ann-arbor",
+  "stage": "distribution",
+  "caption": "The complete 25 × 25 directed matrix contains 600 positive interzonal pairs and structural zeros on the intrazonal diagonal. Color is log(1 + person trips), with original-unit tick labels; no values are discarded. The scatter shows the same 600 saved OD demands against their actual directed road impedance, without a fitted trend. Doubly constrained gravity/IPF and the one-time 90% forward / 10% reverse convention determine these modeled demands. © OpenStreetMap contributors; U.S. Census Bureau ACS/LODES. Local reading revision, not an observed commuting matrix.",
+  "panels": [
+    "a: 25×25 log1p OD heatmap",
+    "b: 600 saved impedance-demand pairs"
+  ],
+  "sources": [
+    {
+      "input": "reference_run/distribution/od_person.csv",
+      "sha256": "2c6f66e99971c765449ae3efe4958abfa74f38066ab9b6f56ebd6ba19a30f2d6"
+    },
+    {
+      "input": "inputs/impedance.csv",
+      "sha256": "d409dac7c54046fe761455a4366510af53e6b5265d58cae0e5842bec742a3f71"
+    }
+  ],
+  "renderer": {
+    "file": "render_ann_arbor.py",
+    "function": "distribution",
+    "line": 149,
+    "sha256": "6c494fb62b5f01b0ef8a7a8e6cb56a645a2cf9c8f4a2d821f018e91cced9ec7b"
+  },
+  "scope": "accepted 25-zone / 600-OD four-stage instance; local reading revision",
+  "scientific_solver_rerun": false,
+  "font": "DejaVu Serif",
+  "colors": "existing Boston / Hong Kong navy-teal-blue",
+  "dimensions": [
+    3091,
+    1579
+  ],
+  "release_status": "LOCAL_READING_REVISION_NOT_NEW_PUBLIC_RELEASE",
+  "exports": {
+    "svg": "8addeccd6ad08da5a08b6b7623a0802c962d25ac98d2b9f792245b4b6d8a6ffd",
+    "pdf": "9f9c2e5623e85982657fd29e9328313231ff5e5bc49b6bbdf64d1931a95490e1",
+    "png": "3e59bd958b6a0d2d9a72a3d0e88ca7b94b9e400571c90c2bc5c70709444d075c",
+    "tiff": "80c05002287fb8e462d224c052a3ea5fd481d3750aefb50acc8f2be38264f3b6"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 34.251,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  }
+}

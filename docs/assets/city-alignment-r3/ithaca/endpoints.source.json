@@ -1,0 +1,45 @@
+{
+  "id": "R3-ITHACA-ENDPOINTS",
+  "city": "ithaca",
+  "title": "Physical-road flow and v/c endpoint maps",
+  "caption": "Same saved static solution, 11:00–12:00 local activity; 2359 of 15148 physical links positive, maximum v/c 0.112592528. Flow colour uses PowerNorm(0.5); v/c colour is linear. Line width follows square-root flow. Virtual turns and access arcs are excluded. Reciprocal arcs may overlap geographically. Soft-capacity BPR, not observed congestion.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical-link flow",
+      "unit": "PCE / declared hour",
+      "encoding": "PowerNorm(0.5) colour, square-root width",
+      "max": 132.09908857315517
+    },
+    {
+      "panel": "b",
+      "metric": "volume/capacity",
+      "unit": "dimensionless",
+      "max": 0.1125925283195747
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\four_stage\\run_20261005\\assignment\\link_solution.csv",
+      "sha256": "4f845f594cf878ce3c563a99a7a7fde7ce090719a024ab0ff4b830936a240536"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\ithaca\\plot_data\\FS_A04\\FS_A04_plot_data.csv",
+      "sha256": "6fbd1a69e100e7649183f6a09685279956e79a3c3e22a3dc88b391479db6c974"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "endpoints"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "da1f2672b78fb7aeaaf0663b196166c49b1e7558fd1b936bbc9787419892c4d9",
+    "png": "a3ad9e7fa6ac47f8481774806c477c4e43f52f387e999c5094c2bf0cf97982e7",
+    "pdf": "91e7debb5218bf0aeb89496195b3504fb39e5b412320bee23fee6cd3b8b3691e"
+  },
+  "width": 2009,
+  "height": 1020,
+  "src": "assets/city-alignment-r3/ithaca/endpoints.svg"
+}

@@ -1,0 +1,611 @@
+{
+  "figure_id": "R11-BERKELEY-LR_PRICES",
+  "city": "berkeley",
+  "instance": "Berkeley T4 cold-start diagnostic 300; original accepted 10 retained separately",
+  "role": "iteration",
+  "saved_states": 300,
+  "conclusion": "Lagrangian prices and relaxed capacity violations",
+  "panels": {
+    "a": "Current max_multiplier, min",
+    "b": "Current multiplier_positive_count",
+    "c": "Current max_current_capacity_violation, PCE"
+  },
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/berkeley-lr-r6/lr_prices.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "The original accepted run remains separately preserved at iteration 10. This view uses 300 actual saved records from run BERKELEY_T4_LR_EXTENDED_DIAGNOSTIC_R1, through iteration 300. The extended trace is a diagnostic experiment and does not retroactively change the original stopping decision. Independent diagnostic audit passed. The original formal-entry replay is pending at this figure export; the 300-round run is not labelled formally accepted. The formal 1% certificate is first met at saved iteration 10; later rounds, when present, are shaded as post-gate diagnostics. Every saved current-iterate maximum capacity multiplier, strictly positive multiplier count and maximum relaxed capacity excess is shown. Multiplier units are minutes, from a PCE·min objective divided by a PCE capacity; relaxed excess is PCE. These current-iterate summaries are distinct from the saved best-dual multiplier state. Relaxed excess is not the feasibility residual of separately recovered primal flow. A closed best-bound certificate does not imply that subsequent current multipliers stop changing; the full diagnostic retains those changes. No smoothing or per-arc history is inferred.",
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-lr-r6/lr_bounds.plot_data.json",
+      "sha256": "ec11427369ae581acac550a0b4156003919919b923ce0a1fda67b4770444f048"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "Lagrangian prices and relaxed capacity violations",
+    "scope": "T4 / original accepted stop 10 / cold diagnostic: 300 rounds"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 19.542,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3138,
+    1184
+  ],
+  "exports": {
+    "png": "06d499d90755b3917f466970d509dd66dfbe1f515a3c119d2d07df11fae641b7",
+    "svg": "101c4354bec44f944b56ae2f83a88bce87f773b5ca546fa8805463ae65e98ab7",
+    "pdf": "74f2f1caa954dcd174c771d1584b371f6b68320c7b51e57bf8e7e957c81b3645"
+  },
+  "text_audit": [
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        140.538,
+        82.961,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        0.687,
+        101.517,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.375,
+        101.517,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        157.189,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        233.127,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        309.066,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        385.004,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Price (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        40.111,
+        212.1,
+        13.0,
+        70.5
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        113.85,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        147.621,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        181.391,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        215.162,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        248.932,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        282.703,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        316.473,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        350.244,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.667,
+        384.014,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Maximum capacity\nmultiplier",
+      "size_pt": 10.0,
+      "bounds_px": [
+        84.75,
+        385.739,
+        166.125,
+        30.2
+      ]
+    },
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        513.438,
+        82.961,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        373.587,
+        101.517,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        461.275,
+        101.517,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        530.089,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        606.027,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        681.966,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        757.904,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Priced dynamic arcs",
+      "size_pt": 9.0,
+      "bounds_px": [
+        409.386,
+        182.662,
+        13.0,
+        129.375
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        442.192,
+        113.85,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        435.067,
+        167.466,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        435.067,
+        221.083,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "90",
+      "size_pt": 8.0,
+      "bounds_px": [
+        435.067,
+        274.699,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        427.942,
+        328.316,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "150",
+      "size_pt": 8.0,
+      "bounds_px": [
+        427.942,
+        381.932,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Positive-price\ndynamic arcs",
+      "size_pt": 10.0,
+      "bounds_px": [
+        457.65,
+        385.739,
+        126.0,
+        30.2
+      ]
+    },
+    {
+      "text": "Lagrangian iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        886.338,
+        82.961,
+        131.375,
+        13.0
+      ]
+    },
+    {
+      "text": "−100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        746.487,
+        101.517,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        834.175,
+        101.517,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        902.989,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        978.927,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1054.866,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1130.804,
+        101.517,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum excess (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        785.911,
+        172.6,
+        13.0,
+        149.5
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        113.85,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        150.476,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        187.103,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        223.729,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        260.356,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        296.982,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        333.608,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        804.467,
+        370.235,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Relaxed capacity\nexcess",
+      "size_pt": 10.0,
+      "bounds_px": [
+        830.55,
+        385.739,
+        149.625,
+        30.2
+      ]
+    },
+    {
+      "text": "BERKELEY  /  T4 / original accepted stop 10 / cold diagnostic: 300 rounds",
+      "size_pt": 8.7,
+      "bounds_px": [
+        73.45,
+        453.994,
+        500.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Lagrangian prices and relaxed capacity violations",
+      "size_pt": 15.0,
+      "bounds_px": [
+        73.45,
+        427.05,
+        581.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

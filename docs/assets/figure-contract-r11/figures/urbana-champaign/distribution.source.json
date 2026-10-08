@@ -1,0 +1,1291 @@
+{
+  "figure_id": "R11-URBANA-CHAMPAIGN-DISTRIBUTION",
+  "city": "urbana-champaign",
+  "title": "Trip distribution and directed OD margins",
+  "instance": {
+    "saved_run": "run_v1",
+    "declared_period": "08:00–09:00 HBW",
+    "revision": "frozen four-stage scenario used by R3 source figures"
+  },
+  "role": "demand",
+  "conclusion": "Full 21×21 model-zone matrix including zero cells; 418 positive OD pairs and 2,989.852800000 persons in 08:00–09:00 HBW.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        21,
+        21
+      ],
+      "positive_cells": 418,
+      "total": 2989.8527999999988,
+      "unit": "person trips per declared period",
+      "instance": "run_v1 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 2989.8527999999988,
+      "unit": "person trips per declared period",
+      "instance": "run_v1 / 08:00–09:00 HBW"
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 2989.8527999999988,
+      "unit": "person trips per declared period",
+      "instance": "run_v1 / 08:00–09:00 HBW"
+    }
+  ],
+  "quantity": "directed OD person trips; origin and destination margins",
+  "unit": "person trips per declared period; log(1 + person trips) colour",
+  "renderer": {
+    "script": "tools/figures/render_city_foundations.py",
+    "function": "distribution",
+    "sha256": "256a79187e951a0e950f82ae2f561f371a1a44c10b1363aeec291a89bdea58ac"
+  },
+  "original_asset": {
+    "public_path": "docs/assets/city-alignment-r3/urbana-champaign/distribution.svg",
+    "sha256": "0370fe9c9240cbcf08e3f2a4a8c60c66edbc0ac41e058d9eb66660e6b89e47de"
+  },
+  "original_source_record": {
+    "public_path": "docs/assets/city-alignment-r3/urbana-champaign/distribution.source.json",
+    "sha256": "30b79ae608a73ab300ea0e23f9daae7bf2345229f4c85fa13afdba2d694f50a8"
+  },
+  "original_evidence_panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        21,
+        21
+      ],
+      "positive_cells": 418,
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 2989.8527999999988
+    }
+  ],
+  "moved_canvas_notes": "Positive cells: 418; total: 2,989.852800 persons. Zero rows/columns and intrazonal structural zeros remain visible. Margins shown are directed OD totals after the declared PA direction, not the original PA targets. Long labels use final 6 digits.",
+  "numeric_evidence_preserved": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        21,
+        21
+      ],
+      "positive_cells": 418,
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 2989.8527999999988
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 2989.8527999999988
+    }
+  ],
+  "numerical_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD",
+  "preserved_limits": [
+    "No later supplementary field is asserted to be used in the frozen demand model.",
+    "Copyright and explanatory prose are retained in the external caption."
+  ],
+  "schema": "mcl_figure_r11",
+  "caption": "Full 21×21 model-zone matrix including zero cells; 418 positive OD pairs and 2,989.852800000 persons in 08:00–09:00 HBW. Colours are log(1+persons); margins are untransformed directed OD totals after PA direction. Every model zone is retained. Zero rows and columns remain visible; intrazonal cells are structural zeros. Labels use the final six digits of long zone IDs. This drawing uses the frozen run_v1 evidence. Later supplementary datasets are separate and are not implied to have entered this scenario.",
+  "sources": [
+    {
+      "sha256": "0cd7283390cc1fd8ffe908540f4f3b26f8d51c46e597d39f23f3005c74539baf",
+      "public_path": "docs/assets/six-city-r3-1/urbana-champaign/plot_data/FS_D01/distribution.csv"
+    },
+    {
+      "sha256": "623f72e07332d1ef115c355d7dca77cc362c5888b90d52289898dab5195c09a8",
+      "public_path": "docs/assets/six-city-r3-1/urbana-champaign/plot_data/generation_complete.csv"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Trip distribution and directed OD margins",
+    "scope": "08:00–09:00 HBW"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 43.899,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3657,
+    1463
+  ],
+  "exports": {
+    "png": "9f9ee6cc13133875adb7642d9992c4f2bcce8a55869a9d4f56f963892c80bee5",
+    "svg": "e81fc33b1cd6ef93b805864c15738f8be19fc4e0f6765d819ddb0921c6caec3a",
+    "pdf": "14c4d31889107e9dfeac281e6b07444f982c37d57b4e09ab2b3d40ce8d591d55"
+  },
+  "text_audit": [
+    {
+      "text": "Destination zone",
+      "size_pt": 9.0,
+      "bounds_px": [
+        266.262,
+        101.022,
+        106.25,
+        13.0
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 6.0,
+      "bounds_px": [
+        152.173,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 6.0,
+      "bounds_px": [
+        168.444,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 6.0,
+      "bounds_px": [
+        184.716,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 6.0,
+      "bounds_px": [
+        200.987,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 6.0,
+      "bounds_px": [
+        217.259,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 6.0,
+      "bounds_px": [
+        233.53,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 6.0,
+      "bounds_px": [
+        249.802,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 6.0,
+      "bounds_px": [
+        266.073,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 6.0,
+      "bounds_px": [
+        282.344,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 6.0,
+      "bounds_px": [
+        298.616,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 6.0,
+      "bounds_px": [
+        314.887,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 6.0,
+      "bounds_px": [
+        331.159,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 6.0,
+      "bounds_px": [
+        347.43,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 6.0,
+      "bounds_px": [
+        363.702,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 6.0,
+      "bounds_px": [
+        379.973,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 6.0,
+      "bounds_px": [
+        396.244,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 6.0,
+      "bounds_px": [
+        412.516,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 6.0,
+      "bounds_px": [
+        428.787,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 6.0,
+      "bounds_px": [
+        445.059,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 6.0,
+      "bounds_px": [
+        461.33,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 6.0,
+      "bounds_px": [
+        477.602,
+        119.578,
+        9.0,
+        31.5
+      ]
+    },
+    {
+      "text": "Origin zone",
+      "size_pt": 9.0,
+      "bounds_px": [
+        88.76,
+        294.712,
+        13.0,
+        73.875
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        488.864,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        472.593,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        456.321,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        440.05,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        423.779,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        407.507,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        391.236,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        374.964,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        358.693,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        342.421,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        326.15,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        309.879,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        293.607,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        277.336,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        261.064,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        244.793,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        228.521,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        212.25,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        195.979,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        179.707,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 6.0,
+      "bounds_px": [
+        107.315,
+        163.436,
+        31.5,
+        9.0
+      ]
+    },
+    {
+      "text": "a  Full 21 × 21 OD matrix",
+      "size_pt": 11.0,
+      "bounds_px": [
+        148.537,
+        507.833,
+        218.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Person trips / period",
+      "size_pt": 9.0,
+      "bounds_px": [
+        711.37,
+        123.911,
+        130.125,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        637.566,
+        142.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        696.525,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        762.609,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        828.693,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        894.777,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        960.861,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        474.994,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        460.06,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        445.126,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        430.191,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        415.257,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        400.322,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        385.388,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        370.453,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        355.519,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        340.584,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        325.65,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        310.716,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        295.781,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        280.847,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        265.912,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        250.978,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        236.043,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        221.109,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        206.174,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        191.24,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        590.045,
+        176.306,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Origin totals",
+      "size_pt": 11.0,
+      "bounds_px": [
+        641.128,
+        513.389,
+        130.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Person trips / period",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1095.633,
+        123.911,
+        130.125,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1021.829,
+        142.467,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1074.802,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1134.9,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1194.998,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1255.095,
+        142.467,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1311.631,
+        142.467,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "000200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        474.994,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000301",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        460.06,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000302",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        445.126,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000401",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        430.191,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000402",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        415.257,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        400.322,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "000700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        385.388,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001301",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        370.453,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "001400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        355.519,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        340.584,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005401",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        325.65,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        310.716,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005601",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        295.781,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005701",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        280.847,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        265.912,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005901",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        250.978,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "005902",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        236.043,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "006000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        221.109,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011001",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        206.174,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011002",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        191.24,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "011100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        974.309,
+        176.306,
+        42.75,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Destination totals",
+      "size_pt": 11.0,
+      "bounds_px": [
+        1025.392,
+        513.389,
+        173.5,
+        14.0
+      ]
+    },
+    {
+      "text": "log(1 + person trips)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        547.044,
+        265.15,
+        13.0,
+        133.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        154.8,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        224.078,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        293.356,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        362.635,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        431.913,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        534.363,
+        501.191,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  08:00–09:00 HBW",
+      "size_pt": 8.7,
+      "bounds_px": [
+        87.75,
+        565.444,
+        298.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Trip distribution and directed OD margins",
+      "size_pt": 15.0,
+      "bounds_px": [
+        87.75,
+        538.5,
+        495.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every full PNG inspected with view_image; source and transit map anchor adjusted; UC paired maps use equal widths.",
+    "png_sha256": "9f9ee6cc13133875adb7642d9992c4f2bcce8a55869a9d4f56f963892c80bee5",
+    "checks": [
+      "headers readable and close to axes",
+      "no clipping or text overlaps",
+      "actual units and legend retained",
+      "real map geometry unwarped",
+      "notes outside canvas"
+    ],
+    "numeric_equivalence": "EXACT_MATCH_TO_FROZEN_FIGURE_RECORD"
+  }
+}

@@ -17,11 +17,46 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / 'src'))
 
 
+def declared_documentation_languages(root: Path) -> tuple[set[str], list[str]]:
+    """Preserve explicitly catalogued bilingual source documents at exact hashes.
+
+    The default reader language remains English. This declaration covers retained
+    source appendices and author-maintained guides; it grants no publication rights.
+    """
+    catalog_path = root / 'catalog/documentation-languages.json'
+    if not catalog_path.is_file():
+        return set(), []
+    approved: set[str] = set()
+    errors: list[str] = []
+    try:
+        catalog = json.loads(catalog_path.read_text(encoding='utf-8'))
+        if catalog.get('schema') != 'mcl_documentation_languages_v1':
+            raise ValueError('Unknown documentation language schema')
+        for item in catalog['documents']:
+            relative = item['path']
+            path = root / relative
+            if (relative in approved or not relative.startswith('docs/')
+                    or not path.resolve().is_relative_to(root.resolve())
+                    or path.suffix not in ('.html', '.md')
+                    or item.get('language') not in ('zh-CN', 'en-zh')
+                    or not item.get('reason')):
+                raise ValueError('Invalid documentation language declaration: ' + relative)
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != item['sha256']:
+                errors.append('Declared multilingual document hash differs: ' + relative)
+                continue
+            approved.add(relative)
+    except (OSError, ValueError, KeyError, TypeError) as exc:
+        errors.append('Invalid documentation language catalog: ' + str(exc))
+    return approved, errors
+
+
 def main() -> int:
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--publication',action='store_true',help='Also require a confirmed repository URL and root license')
     args=parser.parse_args()
     errors=[];warnings=[];checks=0
+    multilingual, language_errors = declared_documentation_languages(ROOT)
+    errors.extend(language_errors); checks += len(multilingual)
     archive_result=validate_computational_archive(ROOT)
     errors.extend(archive_result["errors"]);checks+=archive_result["checks"]
     allowed_archives=set(archive_result["allowed_archives"])
@@ -44,10 +79,13 @@ def main() -> int:
         if p.suffix in ('.md','.html'):
             text=p.read_text(encoding='utf-8-sig')
             prose_text=re.sub(r'<script type="application/json"[^>]*>.*?</script>','',text,flags=re.DOTALL)
-            if re.search(r'[\u4e00-\u9fff]',prose_text):errors.append(f'Non-English public page: {relative}')
+            if re.search(r'[\u4e00-\u9fff]',prose_text) and relative not in multilingual:errors.append(f'Undeclared non-English public page: {relative}')
             # The README and documentation use plain relative links without spaces.
-            refs=re.findall(r'(?:href|src)=["\']([^"\']+)',text) if p.suffix=='.html' else re.findall(r'\]\(([^)]+)\)',text)+re.findall(r'(?:href|src)=["\']([^"\']+)',text)
+            refs=re.findall(r'(?:href|src)=["\']([^"\']+)',text) if p.suffix=='.html' else re.findall(r'\]\((<[^>\n]+>|[^)\n]+)\)',text)+re.findall(r'(?:href|src)=["\']([^"\']+)',text)
             for raw in refs:
+                # CommonMark permits an inline destination wrapped in angle brackets.
+                if p.suffix == '.md' and raw.startswith('<') and raw.endswith('>'):
+                    raw=raw[1:-1]
                 raw=html.unescape(raw)
                 if raw.startswith(('http:','https:','mailto:','#','data:')):continue
                 target=unquote(urlsplit(raw).path)

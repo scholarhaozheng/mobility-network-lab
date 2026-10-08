@@ -1,0 +1,86 @@
+{
+  "id": "CANONICAL-URBANA-CHAMPAIGN-FW-PHYSICAL",
+  "city": "urbana-champaign",
+  "title": "Frank–Wolfe physical-link flow",
+  "caption": "Saved Urbana–Champaign static Frank–Wolfe endpoint for 08:00–09:00 HBW. The map and 22-bin histogram use the same complete 11,365-link physical-flow vector, including 7,681 exact-zero links; 3,684 links exceed 1e-6 PCE. Flow is PCE accumulated during the declared one-hour period, not persons or flow per simulation time step. The map uses a square-root sequential color scale with original-unit ticks and gray road context; histogram counts are linear and no links are omitted. Turn, access and other nonphysical solver arcs are excluded. Only the saved iteration-0 initialization exists; FW performed zero subsequent updates. Reciprocal directed arcs may overlap geometrically; flows are not summed. Serial A/B road traversals retain their directed first/second geometry halves. These are 11,365 model physical traversals, not the 5,913-link preflight graph or the separate S72 transfer. This is a modeled engineering scenario, not observed traffic. © OpenStreetMap contributors / ODbL 1.0.",
+  "status": "STAGED_LOCAL_READING_REVISION",
+  "not_a_new_scientific_release": true,
+  "scientific_solver_calls": 0,
+  "prior_current_figure_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS",
+  "canonical_reference": "G-F052",
+  "panels": {
+    "a": "All retained physical geography with true terminal per-link flow; virtual arcs excluded",
+    "b": "22-bin histogram of the same complete flow vector, including exact zero and near-zero links"
+  },
+  "renderer": {
+    "script": "render_static_fw_staged.py",
+    "function": "run",
+    "sha256": "81124c94d457a64770b6f8fb8077109b5925bcaf2f41f35378f38ec1d5468664"
+  },
+  "style": "Unchanged shared stage3 figure_style functions; same Hong Kong map+histogram recipe; city-specific projected geometry retained",
+  "sources": [
+    {
+      "source_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS:input-1",
+      "sha256": "e0e9e2ba12c76751f2a00ec8a863a1074f5eaf6ff0c2aa0dc1776e2812663b3a",
+      "bytes": 1415577
+    },
+    {
+      "source_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS:input-2",
+      "sha256": "9db365b6d1e52fdf010978aecf439e93ca35cfaeb8865ab2fdc2d1fe331f538e",
+      "bytes": 8120211
+    },
+    {
+      "source_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS:input-3",
+      "sha256": "d0685df440cf6f636ecff521cbcf773ebe02a25cf7e3bdf02182234061e63b54",
+      "bytes": 496864
+    },
+    {
+      "source_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS:assignment-summary",
+      "sha256": "7b75abefca6d0658bec3a19d19cb4def4101067aaaf044a0d94cb94d47ace4d3",
+      "bytes": 383
+    },
+    {
+      "source_id": "R3-URBANA-CHAMPAIGN-ENDPOINTS:saved-fw-checks",
+      "sha256": "f53ff70720348187ce10eb6ea489b9f8fcd287ec6d7b0bf28773644883dc442e",
+      "bytes": 150
+    }
+  ],
+  "private_paths_exposed": false,
+  "width": 2633,
+  "height": 1619,
+  "files": {
+    "fw-physical-flow.svg": {
+      "sha256": "c0257032058979a29356c37f0017a5923b78ea55c9850cd186cd587a5fa6d2c9",
+      "bytes": 2586334
+    },
+    "fw-physical-flow.png": {
+      "sha256": "02d5a7073900891256cdbf9fde45a4aa07490965f7da9e6222f3e464eef0b7e4",
+      "bytes": 348387
+    },
+    "fw-physical-flow.plot_data.json": {
+      "sha256": "1206ba21a1fd650013fe237f73a1d31a27539c67d2a4691821b19d429b085fd3",
+      "bytes": 2687415
+    },
+    "fw-physical-flow.caption.txt": {
+      "sha256": "3987c530d9eecb3b86aa59a006f65dfc787e2c5b9061c0b0917128ff442813fb",
+      "bytes": 1001
+    }
+  },
+  "checks": {
+    "all_approved_input_hashes_match": true,
+    "all_physical_rows_counted": true,
+    "identical_flow_vector_used_both_panels": true,
+    "zero_rows_included": true,
+    "valid_unique_physical_ids": true,
+    "full_scenario_not_preflight_or_subset": true
+  },
+  "layout": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 39.245,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE",
+  "solver_calls": 0
+}

@@ -1,0 +1,46 @@
+{
+  "city": "pittsburgh",
+  "stem": "pittsburgh-admm-main",
+  "title": "ADMM objective and feasibility: one saved update",
+  "caption": "Pittsburgh T4: the single saved cold-start outer update is shown. The four panels answer the same metric questions as the Hong Kong ADMM main figure: original-unit balance/capacity feasibility, primal consensus, rho-scaled dual update, and log10 absolute objective difference from the same-graph LP. A single marker is a single recorded state, not a convergence trajectory; no iteration 0 or intermediate states are invented. Balance, capacity and primal quantities use PCE; the rho-scaled dual residual and threshold use minutes. Exact zero residuals alone are displayed at 1e−16 in the respective units; every positive value is unchanged. The objective panel uses log10(|ADMM−LP|/(1 PCE·min)), with a 1e−15 display floor that is inactive here. The LP redundancy proof records total pulse 0.0450275484535 PCE below minimum physical time-arc capacity 2.5 PCE. This is a bounded nonbinding-capacity check, not a congested performance test. Numerical results are engineering scenarios, not observed traffic.",
+  "dimensions": [
+    2306,
+    1565
+  ],
+  "exports": {
+    "png": "pittsburgh-admm-main.png",
+    "svg": "pittsburgh-admm-main.svg",
+    "pdf": "pittsburgh-admm-main.pdf"
+  },
+  "reference": "Hong Kong G-F097 four metric panels; actual saved length is one, not 165",
+  "style_functions": [
+    "figure_style.new_figure",
+    "format_axes",
+    "compact_header"
+  ],
+  "renderer": {
+    "file": "render_single_update_admm.py",
+    "function": "main"
+  },
+  "input_sources": [
+    {
+      "source_id": "saved-result/admm_main/final_checkpoint/history.csv",
+      "bytes": 440,
+      "sha256": "8d1ad6c63ff00714f5ff4a99d3316fbba8db180d658fdac6cb711dd07f74eac7"
+    },
+    {
+      "source_id": "saved-result/lp_dag/LP_RESULT.json",
+      "bytes": 2833,
+      "sha256": "23b27573435f1860f6f90cc19119262216233703207c3d07c6d2c8c48a51b92e"
+    },
+    {
+      "source_id": "saved-result/admm_solver_accuracy.py",
+      "bytes": 16644,
+      "sha256": "2814d7e3f9cad635a1519e391202016869940c2f5577199610ea5dc1ae39a833"
+    }
+  ],
+  "solver_calls": 0,
+  "asset_status": "LOCAL_DERIVATIVE_FROM_SAVED_RESULTS_NOT_A_NEW_S0_BYTE_RELEASE",
+  "plot_data_sha256": "235a09af4f3334887c480d971ae76f607ec529417a08ac3769b5b34ee8182582",
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

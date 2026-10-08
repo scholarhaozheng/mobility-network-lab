@@ -1,0 +1,579 @@
+{
+  "figure_id": "R11-KEEP-ann-arbor-fw-physical-flow",
+  "city": "ann-arbor",
+  "instance": "25 zones · 600 ODs · 08:00–09:00 HBW",
+  "role": "spatial_comparison",
+  "conclusion": "Frank–Wolfe: physical flow and distribution",
+  "panels": {
+    "map": {
+      "count": 5138,
+      "positive_overlay_count": 1991,
+      "original_geometry_exact": true,
+      "normalization": "PowerNorm(gamma=0.5)",
+      "bounds": [
+        0,
+        654.1568110609659
+      ]
+    },
+    "histogram": {
+      "edges": [
+        0.0,
+        29.734400502771177,
+        59.46880100554235,
+        89.20320150831353,
+        118.9376020110847,
+        148.6720025138559,
+        178.40640301662705,
+        208.14080351939825,
+        237.8752040221694,
+        267.6096045249406,
+        297.3440050277118,
+        327.07840553048294,
+        356.8128060332541,
+        386.54720653602527,
+        416.2816070387965,
+        446.01600754156766,
+        475.7504080443388,
+        505.48480854711,
+        535.2192090498812,
+        564.9536095526523,
+        594.6880100554235,
+        624.4224105581947,
+        654.1568110609659
+      ],
+      "counts": [
+        4437,
+        171,
+        190,
+        76,
+        127,
+        32,
+        26,
+        29,
+        5,
+        7,
+        8,
+        0,
+        0,
+        14,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        12,
+        4
+      ],
+      "includes_exact_zeros": true,
+      "count": 5138
+    },
+    "alignment": {
+      "map_bounds": [
+        0.08,
+        0.18,
+        0.3629254425865757,
+        0.6000000000000001
+      ],
+      "histogram_bounds": [
+        0.64,
+        0.18,
+        0.31999999999999995,
+        0.6000000000000001
+      ],
+      "top_and_bottom_equal": true
+    },
+    "projected_crs": "EPSG:26917",
+    "local_origin_projected_metres": [
+      271689.38413450797,
+      4681609.917523124
+    ],
+    "physical_link_ids_exact": true,
+    "saved_check_count": 1,
+    "actual_updates": 0
+  },
+  "quantity": "Saved physical flow; all-link frequency",
+  "unit": "PCE / modeled hour; directed physical links",
+  "renderer": {
+    "public_path": "tools/figures/render_keep_repairs.py",
+    "sha256": "aa4ae649abb3d967276f23ae885bfb4b2267ccdf07b6b6c9a38d79f835f4f2c5"
+  },
+  "original_asset": "docs/assets/plot-semantics-r9/ann-arbor/fw-physical-flow.svg",
+  "original_asset_sha256": "ebbcf10108e89f34fc4285298e7ec7da3b2e69c26188f83b5f9cc8ea435dc4d1",
+  "numerical_equivalence": "EXACT_SAVED_VECTOR_AND_BIN_MATCH",
+  "original_bytes_unchanged": true,
+  "schema": "mcl_figure_r11",
+  "caption": "Saved Ann Arbor static Frank–Wolfe endpoint for 08:00–09:00 HBW. The map and 22-bin histogram use the same complete 5,138-link physical-flow vector, including 3,147 exact-zero links; 1,991 links exceed 1e-6 PCE. Flow is PCE accumulated during the declared one-hour period, not persons or flow per simulation time step. The map uses a square-root sequential color scale with original-unit ticks and gray road context; histogram counts are linear and no links are omitted. Turn, access and other nonphysical solver arcs are excluded. Only the saved iteration-0 initialization exists; FW performed zero subsequent updates. Opposite directed geometries retain a 3 m display offset; values and IDs are unchanged. This is a modeled engineering scenario, not observed traffic. © OpenStreetMap contributors / ODbL 1.0. R11 layout repair: map and all-link histogram share measured top and bottom panel bounds. The original saved physical-link IDs, exact flow vector, geographic vertices, display offsets, histogram edges and counts remain unchanged.",
+  "sources": [
+    {
+      "public_path": "docs/assets/plot-semantics-r9/ann-arbor/fw-physical-flow.plot_data.json",
+      "sha256": "27bf9b6ed4806149969f664bcb410855a03546a6ccfe4c3f4975ca080f35a3c7",
+      "role": "Complete saved physical IDs, flow, geometry and histogram bins"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/ann-arbor/fw-physical-flow.svg",
+      "sha256": "ebbcf10108e89f34fc4285298e7ec7da3b2e69c26188f83b5f9cc8ea435dc4d1",
+      "role": "Original preserved displayed SVG"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r9/ann-arbor/fw-physical-flow.source.json",
+      "sha256": "fc3c0ee730cc0ccb2369ab29909844bba1e9e22f84054b928a85a5c263af22ff",
+      "role": "Original frozen figure record"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Frank–Wolfe: physical flow and distribution",
+    "scope": "25 zones · 600 ODs · 08:00–09:00 HBW"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 29.584,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2962,
+    1533
+  ],
+  "exports": {
+    "png": "e3d79182fb4a24656791bc48b784f9576b136c4f98c76acfecfd1bad6bd8d035",
+    "svg": "a08e91b05e27e6551ee1640c4a0a3badf1fade07c70808961c1f6afa34609103",
+    "pdf": "95eb2e1bdc1b5653a408a65bbe9ec75257ec4898b137cd243b63d53784fa16c5"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        228.65,
+        80.111,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -21.084,
+        98.667,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        88.688,
+        98.667,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        193.836,
+        98.667,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        298.983,
+        98.667,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        404.131,
+        98.667,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "6.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        509.278,
+        98.667,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        40.161,
+        256.062,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.467,
+        18.817,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        123.964,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        229.111,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        334.259,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "4.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        439.406,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "6.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.717,
+        544.554,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved physical flow",
+      "size_pt": 11.0,
+      "bounds_px": [
+        84.8,
+        515.111,
+        187.5,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / modeled hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        540.254,
+        255.812,
+        10.0,
+        112.375
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        140.75,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        270.361,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        324.048,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        365.243,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        399.972,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        430.569,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        458.231,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "700",
+      "size_pt": 7.0,
+      "bounds_px": [
+        516.323,
+        483.669,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "Physical-link flow (PCE / modeled hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        721.875,
+        80.111,
+        252.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        584.227,
+        98.667,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        690.256,
+        98.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        777.409,
+        98.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        871.687,
+        98.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        965.965,
+        98.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1060.243,
+        98.667,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Directed physical links",
+      "size_pt": 9.0,
+      "bounds_px": [
+        623.011,
+        239.438,
+        13.0,
+        145.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        662.942,
+        111.0,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        194.712,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        278.423,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "3000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        362.135,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "4000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        445.847,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "5000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.567,
+        529.558,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All physical links",
+      "size_pt": 11.0,
+      "bounds_px": [
+        678.4,
+        515.111,
+        167.5,
+        14.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  25 zones · 600 ODs · 08:00–09:00 HBW",
+      "size_pt": 8.7,
+      "bounds_px": [
+        68.9,
+        567.167,
+        371.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Frank–Wolfe: physical flow and distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        68.9,
+        540.222,
+        508.75,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every final PNG individually opened with view_image; title/panel alignment, geometry aspect, units, fonts, legends, gaps and clipping checked. Repeated final render PNG hashes exactly match visually reviewed PNGs.",
+    "result": "PASS",
+    "reviewed_png_sha256": "e3d79182fb4a24656791bc48b784f9576b136c4f98c76acfecfd1bad6bd8d035",
+    "original_asset_bytes_preserved": true
+  }
+}

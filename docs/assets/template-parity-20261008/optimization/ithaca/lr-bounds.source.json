@@ -1,0 +1,395 @@
+{
+  "city": "ithaca",
+  "figure_id": "TEMPLATE-ithaca-lr-bounds",
+  "conclusion": "Lagrangian bounds and certified gap",
+  "role": "lr-bounds",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Valid bounds on the same graph",
+    "2": "b  Bound certificate"
+  },
+  "quantity": "Lagrangian bounds and certified gap",
+  "unit": "Bound (PCE·min); Certified gap (%)",
+  "schema": "mcl_figure_r12",
+  "caption": "One actual evaluated LR state. Own lower and recovered feasible upper are both 0.918428268939353 PCE·min; they overlap at displayed precision. The original 1% certificate is retained. This is the frozen four-OD pulse; capacity redundancy does not establish a geographic-size cause.",
+  "sources": [
+    {
+      "sha256": "92c4545da258b655b4d11a675409a8d31f2c9bf7063437168f5785ae8d978030",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "bae4041fdec9fddd71d7c5e32dde6bccdd4a43258b9de357e1a6bef4741e53cb",
+      "identity": "recovery_history.json",
+      "access": "private"
+    },
+    {
+      "sha256": "7435ad479971d36ede19a0599e103130855dd1999261e5588e61d886be53e102",
+      "identity": "result.json",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Lagrangian bounds and certified gap",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 15.398,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2861,
+    1132
+  ],
+  "exports": {
+    "png": "7f1191d5ec9af778ba996eb1225aff2987f0416b52bbacf5ddbb7291399f7a43",
+    "svg": "b1d198885acfd9116e05199779607189ce31fb9f816adecdd5825cac0d0718ab",
+    "pdf": "c5afe977aa69c93b0833c3e20b682881acc59b5dfc2ae0ebb576896b7750cd15"
+  },
+  "text_audit": [
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        218.599,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        263.536,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Bound (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        26.111,
+        154.188,
+        13.0,
+        109.625
+      ]
+    },
+    {
+      "text": "0.825",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        59.965,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.850",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        90.688,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        121.412,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.900",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        152.135,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.925",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        182.859,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.950",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        213.582,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.975",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        244.306,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        275.03,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.025",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        305.753,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.050",
+      "size_pt": 8.0,
+      "bounds_px": [
+        44.667,
+        336.477,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Valid bounds on the same graph",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        344.133,
+        267.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Best valid lower",
+      "size_pt": 7.0,
+      "bounds_px": [
+        344.698,
+        321.05,
+        79.25,
+        9.0
+      ]
+    },
+    {
+      "text": "Own feasible upper",
+      "size_pt": 7.0,
+      "bounds_px": [
+        344.698,
+        307.189,
+        95.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        739.401,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        784.339,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Certified gap (%)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        561.164,
+        154.125,
+        13.0,
+        109.75
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        570.469,
+        54.657,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        91.743,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        128.829,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        165.914,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        203.0,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        240.086,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        277.171,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        314.257,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        579.719,
+        351.343,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Bound certificate",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        153.25,
+        14.0
+      ]
+    },
+    {
+      "text": "Frozen 1% gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        884.0,
+        321.05,
+        77.25,
+        9.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        396.189,
+        283.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Lagrangian bounds and certified gap",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        369.244,
+        433.625,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

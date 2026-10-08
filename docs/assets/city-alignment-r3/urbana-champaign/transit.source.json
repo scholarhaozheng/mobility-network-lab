@@ -1,0 +1,45 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-TRANSIT",
+  "city": "urbana-champaign",
+  "title": "Transit source geography and service boundary",
+  "caption": "BTS/NTM archive / 2026-03-09; timetable unknown. 564 stop records; 607 route-shape records, not unique routes or scheduled trips. The gray retained road graph is geographic context, not a transit route model.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "stop coordinates",
+      "unit": "projected km",
+      "count": 564,
+      "source_scope": "BTS/NTM archive / 2026-03-09; timetable unknown"
+    },
+    {
+      "panel": "b",
+      "metric": "archived route shapes",
+      "count": 607,
+      "unit": "records, not unique routes"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\continuation_20261005\\processed\\ntm_mtd_stops_20260309.csv",
+      "sha256": "8022b100aaae5555070373fc15502cea3f81edeacf31246680d8baea1a2c199a"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\continuation_20261005\\processed\\ntm_mtd_route_shapes_20260309.geojson",
+      "sha256": "5a6c880990af94dc2729b797e450415731bbced2d14132775559bddb21605072"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "transit"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "00a78478fd8fbfc4d447951fd88f9d4eef7eebb8bff25e9241e65c74f02ae6bc",
+    "png": "66d377db69df3d1804f797ddc11991c5c38cd4cf3ea7443497cde166bb3fcfe5",
+    "pdf": "fbc8b86ba992bd30dd7363f6ea159fa1a7ef68e141f6d9b7d788563bbd25d818"
+  },
+  "width": 1767,
+  "height": 936,
+  "src": "assets/city-alignment-r3/urbana-champaign/transit.svg"
+}

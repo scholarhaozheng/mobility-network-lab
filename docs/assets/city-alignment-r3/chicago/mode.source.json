@@ -1,0 +1,40 @@
+{
+  "id": "R3-CHICAGO-MODE",
+  "city": "chicago",
+  "title": "Mode choice: persons, costs and availability",
+  "caption": "Saved OD-specific choice in 08:00–09:00 HBW; sums over every positive-demand OD. Persons, person-weighted generalized minutes, and available OD counts have separate axes. Transit is not modeled; no zero bar is shown.",
+  "panels": [
+    {
+      "mode": "drive",
+      "person_trips": 2105.9379014876718,
+      "person_weighted_generalized_minutes": 21.12288553238234,
+      "available_positive_od": 20
+    },
+    {
+      "mode": "walk",
+      "person_trips": 729.2814476509791,
+      "person_weighted_generalized_minutes": 25.169597845294508,
+      "available_positive_od": 10
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\runs\\chicago_core_hbw_am_v1\\mode_choice\\mode_choice_by_od.csv",
+      "sha256": "cb24bd328cc3149d5143e02855df697ef6bd7387397e29508630a8bc58d55a46"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "mode"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "4ff59fa200a856b53768f6bdca2da1fea0a6b2607d45e3f694c23a724b9f5b99",
+    "png": "d55e62cc84442b17e27de5acfb4f5adc005a0b8c409f678f7bde56aa65af1fe0",
+    "pdf": "7acbed3dbf5f8c1bb25ea1c1e1a9e91a32f027348c84f97e30519d8aaef002b5"
+  },
+  "width": 1965,
+  "height": 926,
+  "src": "assets/city-alignment-r3/chicago/mode.svg"
+}

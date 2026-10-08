@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_G01",
+  "city": "chicago",
+  "title": "Trip generation",
+  "caption": "Top 5 of 5 zones by modeled production; full table supplied. 08:00\u201309:00 HBW; the full production and attraction table is supplied. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips / 08:00\u201309:00 HBW",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/chicago/original/FS_G01.svg",
+      "sha256": "65ddc5385329a764a6b3bf6a5f8bef376032c83e25b93bacd0c7901efdd6eb38"
+    },
+    {
+      "logical_source": "generation.csv",
+      "sha256": "91df6e3156cd81c131ddac93cae3c8fa46ec5d55c1785482411525db70445a22"
+    }
+  ],
+  "source_run_receipt_sha256": "7cc867734be1a56412ffe869ae53d8d8747ee62feb59dad287116b3056e7cede",
+  "source_metadata_sha256": "59311788e18734694d8dc0f4e36d4eec15f7b185d2287e2b8f12a98f18d6216d",
+  "png_sha256": "a3ef1e12126e61701db32f5ea53f98ea967f94f0f9415444ece035e3a1690e12",
+  "svg_sha256": "e2796f5d77d210359c70bb332419023e4801349d0a57a6b8d64cf4e561303afc",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-g01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "65ddc5385329a764a6b3bf6a5f8bef376032c83e25b93bacd0c7901efdd6eb38",
+  "input_png_sha256": "a3ef1e12126e61701db32f5ea53f98ea967f94f0f9415444ece035e3a1690e12",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

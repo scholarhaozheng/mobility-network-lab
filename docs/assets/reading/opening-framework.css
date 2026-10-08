@@ -14,7 +14,8 @@
 .scope-flow a:focus-visible{outline:3px solid #a36e2c;outline-offset:3px}
 .scope-flow a:hover{color:#175e62}
 .scope-flow .scope-flow-foundation{display:flex;align-items:center;gap:11px;padding:11px 12px;border:1px solid #d5dfdb;border-radius:2px;background:#fff}
-.scope-flow .scope-flow-foundation-icon{display:grid;place-items:center;width:30px;height:30px;background:#e8f0eb;font-size:24px;color:#4a7876}
+.scope-flow .scope-flow-foundation-icon{display:grid;place-items:center;flex:0 0 30px;width:30px;height:30px;border-radius:6px;background:#e8f0eb;color:#4a7876}
+.scope-flow .scope-flow-foundation-icon svg{display:block;width:22px;height:22px}
 .scope-flow .scope-flow-foundation>span:nth-child(2){flex:1;min-width:0}
 .scope-flow .scope-flow-foundation strong{display:block;font-size:12px;line-height:1.5;font-weight:700}
 .scope-flow .scope-flow-foundation small{display:block;font-size:9.5px;line-height:1.7;color:#6a787c}

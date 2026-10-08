@@ -1,0 +1,620 @@
+{
+  "figure_id": "berkeley-admm-final-conservation",
+  "city": "berkeley",
+  "instance": "same accepted T4; own x; outer 170",
+  "role": "final_state_conservation",
+  "archetype": "quantitative grid",
+  "conclusion": "All commodity balance residuals satisfy their original-unit gate.",
+  "panels": {
+    "a": "four commodity rows by 35 selected final-state time nodes"
+  },
+  "quantity": "absolute outflow minus inflow minus supply",
+  "unit": "PCE",
+  "saved_states": 1,
+  "all_node_count": 92578,
+  "access": "private_local_review",
+  "public_release_confirmed": false,
+  "same_graph_identity": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "renderer_sha256": "dc7ff04f2b383e54e2df67578a44d7910467326f35b65c67ff6f14e512a51ad4",
+  "plot_data_sha256": "d1be735464efc8f982b03dfecd9f5b12d5312caad825fa933779f92d54414baa",
+  "schema": "mcl_figure_r12",
+  "caption": "Final saved ADMM own-x state at completed outer 170. Reconstruct outflow minus inflow minus commodity supply in the original units and exact saved arc order, with the loader's lexical node order. The heatmap selects the 35 nodes with the largest maximum absolute residual across all four commodities; ties retain lexical node order. All 92,578 nodes were included in this selection. The complete per-commodity maximum residuals and worst-node IDs reproduce the saved independent check exactly; overall maximum is 3.74010259123591e-12 PCE against the unchanged 1e−5 PCE gate. Colors show log10(max(|residual|,1e−15 PCE)/(1 PCE)); sub-floor values and exact zeros share the floor color, with their raw signed and absolute values preserved in plot data. This is a final spatial conservation diagnostic, not an iteration-history heatmap. It complements the existing 170-record convergence and ADMM-versus-LP physical-flow figures; it does not replace the latter or imply link-flow equality. Private local derivative of the accepted saved result; no new public asset release or optimizer run is claimed. Engineering scenario, not observed traffic.",
+  "sources": [
+    {
+      "identity": "berkeley accepted T4 arc order",
+      "sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted T4 demand order",
+      "sha256": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted T4 own x at 170",
+      "sha256": "57acdfecbe67d9345d65dd975ec629340767674096589b34ee9538f171a0ac17",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted T4 independent final check",
+      "sha256": "ad2e315483ef3fb469973a3b3c648aee7b3e5a24f721cecdf9cfae5804ea23eb",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted T4 selection",
+      "sha256": "f3699f29b0b83fd9220710ebef64f758bb99fa76c35f7a1eb5f957d150afa877",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted T4 identity",
+      "sha256": "dd5f81e65fd01ae65dd73667361b0253b8a455fb0dfd58de6e6656bbd09aca95",
+      "access": "private_local_review"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Berkeley",
+    "title": "Commodity conservation at the final state",
+    "scope": ""
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 27.624,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3250,
+    1079
+  ],
+  "exports": {
+    "png": "f8c4ac872d3c4ff27dda1f2c05e899bab3d93087674f1634b4183760cd846c02",
+    "svg": "bbb3304372c6a1d56fc8712ed0129abf1c4eb622e6245442d24d517c61f6e869",
+    "pdf": "040cd903fbd5e9c4cce0697d3d6a451d4e5f14e437777e8ad8b09bf70d2a41e4"
+  },
+  "text_audit": [
+    {
+      "text": "Time-expanded node (35 largest residuals)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        431.325,
+        119.876,
+        272.25,
+        13.0
+      ]
+    },
+    {
+      "text": "n494_t130",
+      "size_pt": 6.4,
+      "bounds_px": [
+        108.234,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t132",
+      "size_pt": 6.4,
+      "bounds_px": [
+        133.974,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t134",
+      "size_pt": 6.4,
+      "bounds_px": [
+        159.714,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t137",
+      "size_pt": 6.4,
+      "bounds_px": [
+        185.454,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t140",
+      "size_pt": 6.4,
+      "bounds_px": [
+        211.194,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t142",
+      "size_pt": 6.4,
+      "bounds_px": [
+        236.934,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n494_t144",
+      "size_pt": 6.4,
+      "bounds_px": [
+        262.674,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n2816_t125",
+      "size_pt": 6.4,
+      "bounds_px": [
+        286.958,
+        141.21,
+        23.092,
+        53.818
+      ]
+    },
+    {
+      "text": "n609_t123",
+      "size_pt": 6.4,
+      "bounds_px": [
+        314.154,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n609_t124",
+      "size_pt": 6.4,
+      "bounds_px": [
+        339.894,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n609_t135",
+      "size_pt": 6.4,
+      "bounds_px": [
+        365.634,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n129_t130",
+      "size_pt": 6.4,
+      "bounds_px": [
+        391.374,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n129_t81",
+      "size_pt": 6.4,
+      "bounds_px": [
+        418.57,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n147_t112",
+      "size_pt": 6.4,
+      "bounds_px": [
+        442.854,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t118",
+      "size_pt": 6.4,
+      "bounds_px": [
+        468.594,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t119",
+      "size_pt": 6.4,
+      "bounds_px": [
+        494.334,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t126",
+      "size_pt": 6.4,
+      "bounds_px": [
+        520.074,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t128",
+      "size_pt": 6.4,
+      "bounds_px": [
+        545.814,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t129",
+      "size_pt": 6.4,
+      "bounds_px": [
+        571.554,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t139",
+      "size_pt": 6.4,
+      "bounds_px": [
+        597.294,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t142",
+      "size_pt": 6.4,
+      "bounds_px": [
+        623.034,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t144",
+      "size_pt": 6.4,
+      "bounds_px": [
+        648.774,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n147_t92",
+      "size_pt": 6.4,
+      "bounds_px": [
+        675.97,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n147_t93",
+      "size_pt": 6.4,
+      "bounds_px": [
+        701.71,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n2008_t117",
+      "size_pt": 6.4,
+      "bounds_px": [
+        724.538,
+        141.21,
+        23.092,
+        53.818
+      ]
+    },
+    {
+      "text": "n654_t121",
+      "size_pt": 6.4,
+      "bounds_px": [
+        751.734,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n161_t114",
+      "size_pt": 6.4,
+      "bounds_px": [
+        777.474,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n313_t141",
+      "size_pt": 6.4,
+      "bounds_px": [
+        803.214,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n497_t138",
+      "size_pt": 6.4,
+      "bounds_px": [
+        828.954,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n853_t84",
+      "size_pt": 6.4,
+      "bounds_px": [
+        856.15,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n853_t85",
+      "size_pt": 6.4,
+      "bounds_px": [
+        881.89,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n853_t90",
+      "size_pt": 6.4,
+      "bounds_px": [
+        907.63,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n853_t92",
+      "size_pt": 6.4,
+      "bounds_px": [
+        933.37,
+        152.076,
+        20.18,
+        42.951
+      ]
+    },
+    {
+      "text": "n270_t131",
+      "size_pt": 6.4,
+      "bounds_px": [
+        957.654,
+        146.643,
+        21.636,
+        48.385
+      ]
+    },
+    {
+      "text": "n2817_t126",
+      "size_pt": 6.4,
+      "bounds_px": [
+        981.938,
+        141.21,
+        23.092,
+        53.818
+      ]
+    },
+    {
+      "text": "Commodity",
+      "size_pt": 9.0,
+      "bounds_px": [
+        52.972,
+        265.688,
+        13.0,
+        72.375
+      ]
+    },
+    {
+      "text": "OD 01",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        368.719,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        320.156,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 03",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        271.594,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "OD 04",
+      "size_pt": 8.0,
+      "bounds_px": [
+        71.528,
+        223.031,
+        35.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Final saved state · outer 170",
+      "size_pt": 11.0,
+      "bounds_px": [
+        117.0,
+        404.333,
+        221.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        1051.968,
+        405.741,
+        23.125,
+        9.0
+      ]
+    },
+    {
+      "text": "$\\log_{10}$(absolute balance residual / PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        1112.838,
+        179.06,
+        17.0,
+        245.63
+      ]
+    },
+    {
+      "text": "−15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        198.75,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−13",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        237.6,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−11",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        276.45,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        315.3,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        354.15,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1083.782,
+        393.0,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY",
+      "size_pt": 8.7,
+      "bounds_px": [
+        76.05,
+        456.389,
+        75.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Commodity conservation at the final state",
+      "size_pt": 15.0,
+      "bounds_px": [
+        76.05,
+        429.444,
+        492.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_PRIVATE_LOCAL_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_review": {
+    "png_viewed": true,
+    "text_overlap_or_clipping": false,
+    "original_template_scientific_objects": true,
+    "all_check_maxima_exact": true,
+    "private_only": true
+  }
+}

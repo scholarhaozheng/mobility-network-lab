@@ -1,0 +1,49 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-ENDPOINTS",
+  "city": "urbana-champaign",
+  "title": "Physical-road flow and v/c endpoint maps",
+  "caption": "Same saved static solution, 08:00–09:00 HBW; 3684 of 11365 physical links positive, maximum v/c 1.21296159. Flow colour uses PowerNorm(0.5); v/c colour is linear. Line width follows square-root flow. Virtual turns and access arcs are excluded. Reciprocal arcs may overlap geographically. Soft-capacity BPR, not observed congestion.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical-link flow",
+      "unit": "PCE / declared hour",
+      "encoding": "PowerNorm(0.5) colour, square-root width",
+      "max": 545.8327173393718
+    },
+    {
+      "panel": "b",
+      "metric": "volume/capacity",
+      "unit": "dimensionless",
+      "max": 1.212961594087493
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\run_v1\\assignment\\link_solution.csv",
+      "sha256": "e0e9e2ba12c76751f2a00ec8a863a1074f5eaf6ff0c2aa0dc1776e2812663b3a"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\processed\\gmns\\link.csv",
+      "sha256": "9db365b6d1e52fdf010978aecf439e93ca35cfaeb8865ab2fdc2d1fe331f538e"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\inputs\\physical_link_map.csv",
+      "sha256": "d0685df440cf6f636ecff521cbcf773ebe02a25cf7e3bdf02182234061e63b54"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "endpoints"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "89cd45b201296f11d553cbc12ee5e6f5b520d4d1c5ab7ab18080cdd7fab165e9",
+    "png": "3cb63e656aa0d95679ef8ccbeb349c0c74303169f8fb88d5eb4dc0e380b505f0",
+    "pdf": "ecc3133a8fc2b388772c34c1a218883ff1e147f98be23ddf4bda687c784e6fe3"
+  },
+  "width": 1990,
+  "height": 1013,
+  "src": "assets/city-alignment-r3/urbana-champaign/endpoints.svg"
+}

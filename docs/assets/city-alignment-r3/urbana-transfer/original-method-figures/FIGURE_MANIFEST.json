@@ -1,0 +1,322 @@
+[
+  {
+    "figure_id": "UC_S01",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "FW and finite solve the same selected static instance. Their objective agreement is a bounded reconstruction result; the initial FW loading already passed.",
+    "scope": "72 selected OD · AM08–09 HBW · 321.630 PCE",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\fw_fast_72_r2\\verification.json",
+        "sha256": "8b6b1d16d2d892ed0e075b80a7397591232aa48d6289f06f9f50e856b84665b1"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\finite_72\\independent_check.json",
+        "sha256": "184a1de932a6c01928adf0fa1e2155afe9430ad419916a3eeb6de68bdaeb0e65"
+      }
+    ],
+    "plot_data_sha256": "2b123936639f30c8cf06f5d866f7c3356e20eb9bfe718d835381fc2e87ae9428",
+    "png_sha256": "28f41669bd7ed8ab5fb934bc4d5b7ad09e9c2c1ee8aade5d23dc032777a0f1f4",
+    "svg_sha256": "45c4b785d7ce8c58002308ebeceb792d447ffdf8a89402157b48e69d1647d393",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_S02",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Both Native ranks reached the eighth registered outer step; raw OD conservation remains above 1e-6 PCE, so neither rank is accepted.",
+    "scope": "72 OD · rank 26/52 · raw endpoint, no repaired flow",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_26_resumed\\result.json",
+        "sha256": "c65e18fc3f0f90a1229e00e75e44f27ba6284d6a8337aaa788a3728fbe6c9d7c"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_52\\status.json",
+        "sha256": "10369685889fbbde4e597bdd5f3d94bde45edef4796389fa1decb82edda7049b"
+      }
+    ],
+    "plot_data_sha256": "9f301ae506884cb86990b28684644089a5781bec735fd0c027324ce68a2f0a80",
+    "png_sha256": "10504bdc45b3be20709bce288d395769412c657209d0c5010988ae911151d8ac",
+    "svg_sha256": "a0574bec55d2a666d06f0f88d740a54d6aa36bba4f4836bedd1562271418f767",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_S03",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "These are the largest physical solver-road flows for the 72-OD static cohort. Turn arcs and the excluded 346 OD pairs are not represented as additional roads or trips.",
+    "scope": "Top 10 of 11,365 physical road arcs · S72 only",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\fw_fast_72_r2\\link_flow.csv",
+        "sha256": "1b8adcbbd642842047a8f6a682373a7a73c5523573e77ad99dd44b25c736e15a"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\fw_fast_72_r2\\verification.json",
+        "sha256": "8b6b1d16d2d892ed0e075b80a7397591232aa48d6289f06f9f50e856b84665b1"
+      }
+    ],
+    "plot_data_sha256": "f24e616e599e2c403d4a8d85d80332aa18d7fe9745a0ac045dd92b6ac2af0f0b",
+    "png_sha256": "c99c16152c8c308c003d0b30b8bb4664337593bf74b007419a4a45b52457532a",
+    "svg_sha256": "3d148360c150f809e83263a532497d107fec3fae1f467c5b7d06e6048ad8d402",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_S04",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Rank 26/52 changes path coordinates from 98 to 124, while each Native problem still contains 26,602 explicit link variables before proven fixed-zero elimination.",
+    "scope": "72 major · 288 minor paths · 26,602 explicit links",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_26\\outer_01_native.json",
+        "sha256": "6662470c91f116f5a2f3cb56596df1f2e43ccbc15b646ecf70e4a50a5b28b2a2"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_52\\outer_08_native.json",
+        "sha256": "692efcc8489e093aac5378ce76399f9e097ef1f50805141c3c6c5f8dbcb50778"
+      }
+    ],
+    "plot_data_sha256": "f8ece2f4bba10260269cc8c2cb59a9c68c8de1ee949bc0819f6217481f606417",
+    "png_sha256": "fa1156b7e784b4041c784bd2834c17230e0fcf5f373014dd0616eef16fa04567",
+    "svg_sha256": "f08169ba27a79ee01f663ae01512465d439cde30dc87d530e6699f06fcd639c9",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T01",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Actual constructed T graph: physical traversal, turn, wait and connector arcs have distinct meanings. Sink ledger arcs are not queued waiting.",
+    "scope": "30 s steps · H=160 · four selected OD",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\MODEL_IDENTITY.json",
+        "sha256": "bcac22f9ae2b9a0b6e6fb219ac9530bc1b302ba239a69c954e04c1d2959e772a"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\T_RESOURCE_DECISION.json",
+        "sha256": "9d18237ab7f5b882204f4c97d5a9f50a65ccec607866b2e61ecf04b34bcc47cb"
+      }
+    ],
+    "plot_data_sha256": "6c060610533b23826c7aaaa1e5d56f22b742cc8b3ff45ece7815c1b58bf1c4f9",
+    "png_sha256": "48e0f8dd6625603f56dfb89ae319323f7c48baa0bb24fa32e054563af384e3cd",
+    "svg_sha256": "319c5458ee42dfa0c2dbd94f9a660d0e1a7142a465ef369d1d086b48b322413d",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T02",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "The four selected directed OD contribute 0.051623 PCE to this pulse. Eleven other 5-minute bins and unselected OD remain outside T; bars do not represent observed 30-second counts.",
+    "scope": "08:02:30 departure · first of twelve engineering bins",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_demand.csv",
+        "sha256": "156830401e0012f77651b49eef5fb243160e79de66e62cabe4b4e77105978d7a"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\T_RESOURCE_DECISION.json",
+        "sha256": "9d18237ab7f5b882204f4c97d5a9f50a65ccec607866b2e61ecf04b34bcc47cb"
+      }
+    ],
+    "plot_data_sha256": "2cd0a14541732ea7a5eb06e96027d96ffb3eb99fbc77d1b9db2c64cdbe4db72c",
+    "png_sha256": "b260f5a412e5c76474c403d0707b377432725dcc4c4742ccabd2989c17bd4ae4",
+    "svg_sha256": "90657b270647338af108c28831bf3032cb1343017b4ba4d01c2f523c99c0135e",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T03",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Saved two-phase CG reduced costs are checked against all legal DAG arcs for each commodity; a matching objective alone does not establish closure.",
+    "scope": "Exact T model · Phase I and II",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\cg\\history.csv",
+        "sha256": "07a50dc955143b2e534bb60a6f8ab3fc21b33de6882a59952cf871bc389f2ab1"
+      }
+    ],
+    "plot_data_sha256": "cf5271b8986e6f9677d5f496cf7da6e72509a7b0a3d9a00f9c39369908a90028",
+    "png_sha256": "8b14061b837b1cbcce4f66474a53a7e1ce54a827fe4f79119ae94152c965e452",
+    "svg_sha256": "d3e6981e560d593c82dc43c1135a4fec333d1786579f6ae83e21a70e931b3fbe",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T04",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "The LR curve uses saved nonnegative arc prices for its dual lower bound and a separately recovered feasible path solution for its upper bound.",
+    "scope": "Exact T model · no LP/CG initialization",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\lr\\history.csv",
+        "sha256": "3f75180a62bba3c49a4469ccdbb7623152919fd6ac08a9fd69080242449a5c86"
+      }
+    ],
+    "plot_data_sha256": "537c993f03856edde1e35d2572c811f86048ac6c500a3858de721a5d27f7a32a",
+    "png_sha256": "2a9c28954b51f63eb873b35336b07e4ad949ca9235dab0301cdfb187cbdab9a6",
+    "svg_sha256": "25beb9595d5223078af11b47dd8e493ccd4a38c429b42ecc7bfc8713ebb3ce94",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T05",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Dots show actual residuals and ticks show registered main-stage stopping thresholds. The zero primal residual uses a stated display floor on the log axis; independent endpoint checks determine scientific status.",
+    "scope": "C02 cold start · actual completed iterations",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\admm_main\\final_checkpoint\\history.csv",
+        "sha256": "cf556f61ceb0840d46fff14107bed7859c6caaf7f8dcb5c6b783b46022104eb0"
+      }
+    ],
+    "plot_data_sha256": "d52aeda8cca821819a4d008f651db6e93c6dbec396b2b3a9eb1aa063cbeea056",
+    "png_sha256": "f8255cbf019d9c2eb4c43e67b4e036c3752cc7c8de4cc247c4438f4cb83b2136",
+    "svg_sha256": "16d311888a4788fdf8c9a50e25b02314579faf6e75b7fea4e8b23f67f0b8f969",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T06",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Actual CG-generated source-to-sink paths are decomposed into physical traversals, turn transitions, and explicit waits. Connector arcs are omitted from the bars; path cost and flow remain in plot data.",
+    "scope": "One positive path per selected OD · exact DAG",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\cg\\positive_paths.csv",
+        "sha256": "d71942bdcb47d6f4220f6206ff8509a4cd5a9f0ccd951f3f7fce8dfb06b179fc"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_arc.csv",
+        "sha256": "76db0032a865d56a8823c17d4a049491d037799a323bbba7bc30e3d809689764"
+      }
+    ],
+    "plot_data_sha256": "67a3992ca777408c42c50f164c94144e297153b857c0d2a52a73c7eaf8e51b76",
+    "png_sha256": "9ae9cc2ff071350481c91902dad2825242538bc1c692f14b890b43aac2984485",
+    "svg_sha256": "213b0bd41e9a8f96c0aa128693394c80d334d9071ef969e23f0d335e2245be34",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T07",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Physical road flow sums ADMM x across time copies sharing each GMNS link ID. This is a modeled four-OD pulse result, not an observed 30-second count or a spatial map.",
+    "scope": "Top 10 time-aggregated GMNS links · T4 pulse",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\admm_main\\final_checkpoint\\state.npz",
+        "sha256": "656e709782b49427760967d2b91f33d5e27fc6f6d26269c6e76170d0ab02b400"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_arc.csv",
+        "sha256": "76db0032a865d56a8823c17d4a049491d037799a323bbba7bc30e3d809689764"
+      }
+    ],
+    "plot_data_sha256": "6bf7fc9d7856cd625be3248a8d798e5318135b0747351fed3a5a700799cf812c",
+    "png_sha256": "2115518d3a43bd49d6e53d4982596dda2b44538126d1b8b75f26a0cd8109c665",
+    "svg_sha256": "14a5feaaec64aa0b0ac27572020f1e07abe463bc0bf46062adceb653935af96b",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  },
+  {
+    "figure_id": "UC_T08",
+    "city": "urbana_champaign",
+    "experiment_id": "C02_UC_R3_STATIC_TO_ALGORITHM_TRANSFER_20261006_R2",
+    "caption": "Exact-DAG LP, CG, LR feasible recovery, and ADMM x use the same frozen T cost and demand. Their agreement tests numerical transfer on this low-demand pulse; it does not measure congestion improvement.",
+    "scope": "Four-OD pulse · physical capacity nonbinding",
+    "source_files": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\lp_dag\\independent_check.json",
+        "sha256": "e9c8227c5a99ab95da29a16bcfdb63e8dda30236583c0a2cbd18750d8b4ed471"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\cg\\independent_check.json",
+        "sha256": "e8a48c1f0bfef5e27e777cefcf9ea01edd0e4952f546c093f9edfb1404879be8"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\lr\\independent_check.json",
+        "sha256": "1a86f108a9f7367d5aea4ade916c0c67a887075e16ed71d24a61969ebbb08d64"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\admm_main\\independent_check.json",
+        "sha256": "2029a195ed263460e4383efb9870fc0b65253a11e82c47f86a8cdb3d1a5b1abd"
+      }
+    ],
+    "plot_data_sha256": "115b4409cdff7686c6ea300254d9e234762d7cb4c666d6841762d19800043730",
+    "png_sha256": "496b4041cce75b0c66d38d1fc6406bd3b30775140fe1e390abe6afb6ba8051e6",
+    "svg_sha256": "34f5e0f364aafe5f6ab6a5d6763f8d48fbdc0f4e5a96d874de67fe4185932464",
+    "renderer_source_sha256": "0a99c514218cde2f308c99b052710e282d6fe143ec045ac89ab3e3cbaf7ead43",
+    "font": "DejaVu Serif",
+    "canvas_px": [
+      600,
+      360
+    ],
+    "status": "RENDERED_FROM_SAVED_RESULT"
+  }
+]

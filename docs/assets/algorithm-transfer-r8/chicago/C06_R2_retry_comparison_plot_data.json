@@ -1,0 +1,83 @@
+{
+  "Native_full_gap": {
+    "R1": [
+      0.006381671764389914,
+      0.004796364762935488
+    ],
+    "R2": [
+      0.006381671764390549,
+      0.004796364762935965
+    ],
+    "gate": 1e-05
+  },
+  "CG_terminal_artificial": {
+    "R1": 20.373394302610762,
+    "R2": 0.0,
+    "not_an_infeasibility_certificate": true
+  },
+  "LR": {
+    "lower": [
+      211.07415180573577,
+      227.20471615228504
+    ],
+    "upper": [
+      null,
+      null
+    ]
+  },
+  "ADMM": {
+    "R1_logged": {
+      "T01": 3.6303793542844375e-13,
+      "T02": 0.09167475527580393,
+      "T03": 0.0014846011282738658,
+      "T04": 0.013402955524209226
+    },
+    "R2_last_independent_trials": {
+      "T01": {
+        "outer": 9,
+        "commodity": "T01",
+        "balance_pce": 3.2673414188559937e-12,
+        "balance_gate_passed": true,
+        "KKT_min": 8.881784197001252e-16,
+        "KKT_gate_passed": true,
+        "min_flow": 0.0,
+        "forbidden_flow_max": 0.0,
+        "local_objective": 0.5842848041725852
+      },
+      "T02": {
+        "outer": 9,
+        "commodity": "T02",
+        "balance_pce": 1.4210854715202004e-14,
+        "balance_gate_passed": true,
+        "KKT_min": 7.098374606968277e-08,
+        "KKT_gate_passed": true,
+        "min_flow": 0.0,
+        "forbidden_flow_max": 0.0,
+        "local_objective": 180.15711577630802
+      },
+      "T03": {
+        "outer": 9,
+        "commodity": "T03",
+        "balance_pce": 1.7763568394002505e-15,
+        "balance_gate_passed": true,
+        "KKT_min": 4.3825233321876036e-08,
+        "KKT_gate_passed": true,
+        "min_flow": 0.0,
+        "forbidden_flow_max": 0.0,
+        "local_objective": 91.282456594682
+      },
+      "T04": {
+        "outer": 9,
+        "commodity": "T04",
+        "balance_pce": 3.552713678800501e-15,
+        "balance_gate_passed": true,
+        "KKT_min": 7.384500178096348e-08,
+        "KKT_gate_passed": true,
+        "min_flow": 0.0,
+        "forbidden_flow_max": 0.0,
+        "local_objective": 32.4236650408625
+      }
+    },
+    "completed_outer": 9
+  }
+}

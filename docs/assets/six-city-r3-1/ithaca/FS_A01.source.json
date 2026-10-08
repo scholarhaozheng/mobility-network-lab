@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_A01",
+  "city": "ithaca",
+  "title": "Assigned physical road flow",
+  "caption": "Top 10 of 15148 physical road links; turn/access connectors excluded; nonspatial chart. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "PCE / 11:00\u201312:00 HBO_LOCAL_ACTIVITY",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/ithaca/original/FS_A01.svg",
+      "sha256": "b798028e152fa20364e594ca95f024047e2046f953a27d0fa4ddbb5dc8fea63b"
+    },
+    {
+      "logical_source": "links.csv",
+      "sha256": "4f845f594cf878ce3c563a99a7a7fde7ce090719a024ab0ff4b830936a240536"
+    }
+  ],
+  "source_run_receipt_sha256": "dc9d82b6e67552301c2ea16c78358065709625220d26fd66c19d5f80467abbe1",
+  "source_metadata_sha256": "95f885570b25a3ce08aa5aa635be48ad778badafc12c46604b76e0812a42ba97",
+  "png_sha256": "6a2dfea85bd84628482aaca282a1227d6a82de912b7f72ca3a89822ab4381ed2",
+  "svg_sha256": "b79590bc06472ff9987a5ef07913cb7c1365bc119cf0725c36943390b977ece7",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-a01",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "b798028e152fa20364e594ca95f024047e2046f953a27d0fa4ddbb5dc8fea63b",
+  "input_png_sha256": "6a2dfea85bd84628482aaca282a1227d6a82de912b7f72ca3a89822ab4381ed2",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

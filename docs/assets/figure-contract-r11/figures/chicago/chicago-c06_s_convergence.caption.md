@@ -1,0 +1,1 @@
+FW and Native: gap and conservation histories These are the retained six FW states and twelve original Native outer records per rank, not the later accepted uncompressed Native80 run. The compressed Native rank-26/52 endpoints remain unaccepted.

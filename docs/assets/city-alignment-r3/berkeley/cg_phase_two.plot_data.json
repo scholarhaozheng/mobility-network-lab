@@ -1,0 +1,67 @@
+{
+  "phase_ii": [
+    {
+      "phase": 2,
+      "round": 0,
+      "pool_columns": 8,
+      "master_objective": 46.81717881521473,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -2.623969999999999,
+      "pricing_by_od": [
+        0.0,
+        -2.623969999999999,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 14.156000000075437,
+      "rss_bytes": 173338624,
+      "columns_added": 1
+    },
+    {
+      "phase": 2,
+      "round": 1,
+      "pool_columns": 9,
+      "master_objective": 43.667424408006426,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -0.06716999999999995,
+      "pricing_by_od": [
+        0.0,
+        -0.06716999999999995,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 16.719000000040978,
+      "rss_bytes": 173191168,
+      "columns_added": 1
+    },
+    {
+      "phase": 2,
+      "round": 2,
+      "pool_columns": 10,
+      "master_objective": 43.667424408006426,
+      "artificial_flow": 0.0,
+      "min_full_graph_reduced_cost": -4.440892098500626e-16,
+      "pricing_by_od": [
+        0.0,
+        -4.440892098500626e-16,
+        0.0,
+        0.0
+      ],
+      "wall_seconds": 19.31200000003446,
+      "rss_bytes": 173776896
+    }
+  ],
+  "same_T4_LP_objective_pce_minutes": 43.66742440800644,
+  "objective_delta_from_previous": [
+    null,
+    -3.149754407208306,
+    0.0
+  ],
+  "display_classification": [
+    "initial",
+    "objective_decrease",
+    "objective_unchanged"
+  ],
+  "classification_source": "Derived from adjacent saved objective values; not a solver commit category.",
+  "matching_reference": "Boston cg_figures / G-F079; raw linear objective with post-step and point classes"
+}

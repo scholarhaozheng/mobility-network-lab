@@ -1,0 +1,959 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>图件对照与短轨迹审计 · 修正版</title><style>body{margin:0;background:#f7f9fa;color:#153653;font:17px/1.65 Georgia,"Noto Serif SC",serif}main{max-width:1450px;margin:auto;padding:48px 28px}h1{font-size:36px;line-height:1.25}h2{margin-top:42px;font-size:26px}h3{font-size:21px}a{color:#007f83}section{scroll-margin-top:24px}.eyebrow{font:12px/1.6 sans-serif;letter-spacing:.15em;color:#007f83}table{border-collapse:collapse;width:100%;background:white;font-size:14px;line-height:1.65}th,td{padding:13px 15px;border:1px solid #d8e2e8;vertical-align:top;text-align:left}th{background:#e8f0f4;color:#153653}td:first-child{min-width:180px}code{font-size:12px;overflow-wrap:anywhere}.table-scroll{overflow:auto;max-height:78vh}thead th{position:sticky;top:0;z-index:1}td p{margin:.5em 0 0}.examples{display:grid;grid-template-columns:1fr 1fr;gap:20px}.examples figure{margin:0;background:white;padding:15px}.examples img{width:100%;height:auto}.examples figcaption{font-size:14px}input{font-size:16px;padding:10px;min-width:300px;border:1px solid #9fb5c0}details{margin-top:20px}summary{cursor:pointer;color:#007f83}#audit-table tr[hidden]{display:none}@media(max-width:800px){main{padding:25px 16px}.examples{grid-template-columns:1fr}h1{font-size:28px}td,th{min-width:180px}input{min-width:220px}}</style></head><body><main id="top"><header><a href="index.html?atlas-view=full#berkeley">← 返回完整主页</a><p class="eyebrow">2026-10-08 · SAVED-RESULT PLOT REVIEW</p><h1>图件对照与短轨迹审计 · 修正版</h1><p>此前“已与香港、波士顿统一”的表述不够准确：卡片格式与字体一致，并不代表绘图对象、指标和科学问题一致。本页按真实绘图代码和保存数据纠正这一点。</p></header>
+<section><h2>短曲线究竟说明什么</h2><div class="table-scroll"><table><thead><tr><th>情形</th><th>直接证据</th><th>能得出的判断</th></tr></thead><tbody>
+<tr><td>Ann Arbor FW</td><td>仅 iteration 0；gap 5.10282992009334e−5 &lt; 冻结阈值 1e−4。</td><td>初始化在容差内；不是精确最优证明，也没有证明“区域太小”。</td></tr>
+<tr><td>Urbana T4</td><td>总脉冲0.05162314826794134 PCE；最小物理时间弧容量3.75 PCE；原证明标记全部容量约束冗余。</td><td>需求/容量设置不具拥堵难度；CG 两阶段各一个记录，LR/ADMM 各一个更新。</td></tr>
+<tr><td>Pittsburgh T4</td><td>总脉冲0.045027548453549955 PCE；最小容量2.5 PCE；同样全部容量约束冗余。</td><td>有直接的非绑定解释；不能把短序列判作算法错误或城市面积的因果结果。</td></tr>
+<tr><td>PIT_T05</td><td>每个面板比较一次残差与它的门限；横轴是数值量。</td><td>不是起点—终点迭代曲线。正确保留为补充停止检查。</td></tr>
+<tr><td>Chicago</td><td>CG 268条记录；LR759条记录但没有自身可行上界；ADMM9次完成更新且全局门限未过。</td><td>不是短记录城市；仅CG获接受，失败诊断单独展开。</td></tr>
+</tbody></table></div><p>目前没有证据支持“所有短曲线都是算法错误”，也没有进行改变区域、需求强度或容量的对照实验，因此不能声称已证明面积的因果作用。香港也存在只有两个 Phase II 保存检查点的图，不能将旧城市概括成所有方法都有长轨迹。</p></section>
+<section><h2>这次改了什么</h2><p>24 张本地保存数据派生图已接回原主页及城市大卷。原科学图件和放行字节保留，未运行求解器。当前接收状态仍为129项＋PIT_T05修正4项，共133项；本轮重绘不冒充新的 S0 字节放行。</p><div class="table-scroll"><table><thead><tr><th>图件任务</th><th>香港/波士顿真实参考</th><th>此前错误</th><th>修正与数据边界</th></tr></thead><tbody><tr><td>静态 FW / finite</td><td>HK G-F052 / H1：本方法物理流量地图＋全部物理路段直方图，包括零值。Boston finite 另含 OD 平衡。</td><td>Berkeley、Urbana、Pittsburgh 的标量目标值或前十路段条形图不能对应这种主图。</td><td>四城选定实例分别读取各方法自己的全向量；另更新五城全案例 FW 地图＋全路段分布。</td></tr><tr><td>Native</td><td>HK：Native 绝对物理流量、相对同实例 FW 的有符号空间差值、完整路段分布。</td><td>维数柱状图和守恒门限只能作诊断。不能将旧失败状态的流量标作当前 accepted。</td><td>Berkeley 使用各自 rank26/52 向量；Urbana 采用当前已接受 outer9 独立向量。守恒过程另保留。</td></tr><tr><td>CG Phase I</td><td>总人工量与实际轮次；若存有逐 OD 人工量才画热图。</td><td>不同模型人工变量的含义不同；不能统一称 unmet demand。</td><td>Chicago 为 OD 等式人工需求；Urbana/Pittsburgh 为容量行松弛。后两者只存一个 Phase I 记录。</td></tr><tr><td>CG Phase II / pricing</td><td>实际 Phase II 目标，合法同模型参考；逐 OD 定价或已保存的全图最小定价。</td><td>不能把只有终点的比较图当完整过程，不能借用未完成的 HiGHS 目标。</td><td>Chicago 展示 208 个 Phase I 与 60 个 Phase II 记录、四 OD 定价；参考界仅用最终合法自身 CG dual bound。</td></tr><tr><td>ADMM 主图</td><td>HK G-F097：原单位可行性、primal、rho-scaled dual、log10绝对目标误差。Boston G-F065 的目标面板则为原始目标值。</td><td>PIT_T05 为残差与门限横向比较，不是迭代过程；UC 旧 dual 单位 PCE 错误。</td><td>Urbana/Pittsburgh 按 HK 四指标画真实 iteration1 单点，dual 使用 min；没有虚构起点或补插值。</td></tr><tr><td>ADMM 守恒与空间终点</td><td>HK G-F101：最终四 OD × 最坏35个时间节点；物理图为两方法地图、差值、散点。</td><td>Top10 路段条形图不能代表全网空间比较；最终节点热图不是迭代热图。</td><td>从真实保存 x 与冻结弧顺序恢复 UC/PIT 守恒矩阵，逐 OD 对上原独立检查；PIT 完整9106条实例化路段比较，8428条仅作背景。</td></tr></tbody></table></div></section>
+<section><h2>相同绘图问题，保留各自真实地理</h2><div class="examples"><figure><a href="assets/atlas/figures/g-f052.svg"><img src="assets/atlas/figures/g-f052.svg" alt="Hong Kong original physical-flow map and all-link distribution" loading="lazy"></a><figcaption>Hong Kong G-F052 · 原参考：物理流量地图＋全部路段分布</figcaption></figure><figure><a href="assets/plot-semantics-r9/berkeley/fw-map-distribution.svg"><img src="assets/plot-semantics-r9/berkeley/fw-map-distribution.svg" alt="Berkeley updated physical-flow map and all-link distribution" loading="lazy"></a><figcaption>Berkeley · 各方法自己的保存向量；不拉伸地理来凑相同长宽</figcaption></figure></div></section>
+<section id="short-records"><h2>全部41条短记录 / 终点图核查</h2><p>这是重绘前逐图审计快照，包含主图及保留历史图；并非41次独立运行，也并非41个错误。另有42幅双城参考图核查，以及149个优化相关资产索引。</p><label for="filter">筛选城市、方法或原因：</label> <input id="filter" type="search" placeholder="例如：ADMM、ann-arbor、初始、capacity"><p id="count" aria-live="polite"></p><div class="table-scroll"><table id="audit-table"><thead><tr><th>城市 / 图件（原锚点保留）</th><th>图型 / 实际保存数</th><th>解释与证据边界</th><th>原图 / 绘图函数</th></tr></thead><tbody><tr data-city="ann-arbor"><td>1 · Ann Arbor<br><a href="index.html?atlas-view=full#atlas-ann-r3-aa-a02">Initialization already meets the frozen thresholds</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>先按自由流最短路进行全有全无加载，然后检查当前BPR成本下的相对间隙。5.10282992009334e-5低于预先冻结的1e-4，所以未做FW更新。是容差内初始解，不等于精确最优，也不能归因于城市范围小。<p>若要解释初始接近最优的物理原因，需要逐路段v/c、BPR增量和初始/当前最短路切换统计；本轮没有把面积小当作因果证据。</p></td><td><a href="assets/city-alignment-r3/ann-arbor/aa-a02.svg">审计时原图</a><br><code>static</code></td></tr><tr data-city="urbana-champaign"><td>2 · Urbana–Champaign<br><a href="index.html?atlas-view=full#r3-urbana-champaign-trace">Frank–Wolfe saved objective and gap</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/city-alignment-r3/urbana-champaign/trace.svg">审计时原图</a><br><code>trace</code></td></tr><tr data-city="urbana-champaign"><td>3 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-final-v31-urbana-champaign-fs-a02">Initial assignment check</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/six-city-r3-1/urbana-champaign/FS_A02.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="ithaca"><td>4 · Ithaca<br><a href="index.html?atlas-view=full#r3-ithaca-trace">Frank–Wolfe saved objective and gap</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/city-alignment-r3/ithaca/trace.svg">审计时原图</a><br><code>trace</code></td></tr><tr data-city="ithaca"><td>5 · Ithaca<br><a href="index.html?atlas-view=full#atlas-final-v31-ithaca-fs-a02">Initial assignment check</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/six-city-r3-1/ithaca/FS_A02.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>6 · Pittsburgh<br><a href="index.html?atlas-view=full#r3-pittsburgh-trace">Frank–Wolfe saved objective and gap</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/city-alignment-r3/pittsburgh/trace.svg">审计时原图</a><br><code>trace</code></td></tr><tr data-city="pittsburgh"><td>7 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-final-v31-pittsburgh-fs-a02">Initial assignment check</a></td><td><code>single_initialization_check</code><br>saved_rows = 1; indices = [0]; fw_updates = 0</td><td>原始fw_trace只有iteration0，初始加载已经通过1e-4门槛。单点是完整已存记录，不是抽样截断；保存为0的间隙不能升级为精确数学最优证明。原四阶段城市实例与S72转移实验分开。<p>没有后续迭代；若需要拥挤条件下的收敛过程，须另行定义并授权新实验，不能补点。</p></td><td><a href="assets/six-city-r3-1/pittsburgh/FS_A02.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>8 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-cg-phase1">CG Phase I: artificial flow at the saved check</a></td><td><code>single_round_per_phase_certificate</code><br>phase_I_saved_rounds = 1; phase_II_saved_rounds = 1; round_indices_per_phase = [1]; seed_paths = 4; added_after_seed = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 Phase I人工量是373条(UC)/233条(PIT)容量约束的松弛量，不是每OD未满足需求；每phase一个证书点。<p>未保存每OD reduced-cost历史向量；只有各phase最小值，不能伪造4OD热图。；CG_PHASE_I_STATE完整保留capacity人工变量，可做正确的容量行诊断，但与旧城OD artificial不可混用。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/cg-phase1.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>9 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-cg-objective">CG Phase II: saved objective against exact LP</a></td><td><code>single_round_per_phase_certificate</code><br>phase_I_saved_rounds = 1; phase_II_saved_rounds = 1; round_indices_per_phase = [1]; seed_paths = 4; added_after_seed = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 Phase I人工量是373条(UC)/233条(PIT)容量约束的松弛量，不是每OD未满足需求；每phase一个证书点。<p>未保存每OD reduced-cost历史向量；只有各phase最小值，不能伪造4OD热图。；CG_PHASE_I_STATE完整保留capacity人工变量，可做正确的容量行诊断，但与旧城OD artificial不可混用。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/cg-objective.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>10 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-cg-closure">CG closure: full-DAG pricing by phase</a></td><td><code>single_round_per_phase_certificate</code><br>phase_I_saved_rounds = 1; phase_II_saved_rounds = 1; round_indices_per_phase = [1]; seed_paths = 4; added_after_seed = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 Phase I人工量是373条(UC)/233条(PIT)容量约束的松弛量，不是每OD未满足需求；每phase一个证书点。<p>未保存每OD reduced-cost历史向量；只有各phase最小值，不能伪造4OD热图。；CG_PHASE_I_STATE完整保留capacity人工变量，可做正确的容量行诊断，但与旧城OD artificial不可混用。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/cg-closure.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>11 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_t03">Saved two-phase CG reduced costs are checked against all legal DAG arcs for each commodity; a matching objective alone does not establish closure.</a></td><td><code>single_round_per_phase_certificate</code><br>phase_I_saved_rounds = 1; phase_II_saved_rounds = 1; round_indices_per_phase = [1]; seed_paths = 4; added_after_seed = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 Phase I人工量是373条(UC)/233条(PIT)容量约束的松弛量，不是每OD未满足需求；每phase一个证书点。<p>未保存每OD reduced-cost历史向量；只有各phase最小值，不能伪造4OD热图。；CG_PHASE_I_STATE完整保留capacity人工变量，可做正确的容量行诊断，但与旧城OD artificial不可混用。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T03.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>12 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-lr-bounds">Lagrangian bounds at the actual saved iteration</a></td><td><code>single_iteration_bound_certificate</code><br>lr_iterations = 1; recovery_calls = 1; pool_paths = 4; positive_multipliers = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 第一条下界与独立恢复可行上界在浮点精度内相合，projected subgradient=0；无多轮价格变化。<p>长轨迹不存在；只能画真实单点下/上界、零价格和一次恢复。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/lr-bounds.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>13 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-lr-prices">Capacity prices remain zero in this T4 instance</a></td><td><code>single_iteration_bound_certificate</code><br>lr_iterations = 1; recovery_calls = 1; pool_paths = 4; positive_multipliers = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 第一条下界与独立恢复可行上界在浮点精度内相合，projected subgradient=0；无多轮价格变化。<p>长轨迹不存在；只能画真实单点下/上界、零价格和一次恢复。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/lr-prices.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>14 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_t04">The LR curve uses saved nonnegative arc prices for its dual lower bound and a separately recovered feasible path solution for its upper bound.</a></td><td><code>single_iteration_bound_certificate</code><br>lr_iterations = 1; recovery_calls = 1; pool_paths = 4; positive_multipliers = 0</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 第一条下界与独立恢复可行上界在浮点精度内相合，projected subgradient=0；无多轮价格变化。<p>长轨迹不存在；只能画真实单点下/上界、零价格和一次恢复。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T04.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>15 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-admm-objective">ADMM objective: one completed cold-start update</a></td><td><code>single_completed_update_diagnostic</code><br>history_rows = 1; completed_updates = 1; indices = [1]; independent_cold_confirmation_updates = 1</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 result.json确认cold_start=true,parent_completed_iterations=0；kernel在完成一次localQP、projection和dual-update之后才写history并检查stop。<p>现有公开plot只暴露6列；完整保存history还含capacity_residual和balance_residual，可据其补全四面板。；UC当前admm-residuals以及历史UC_T05把rho-scaled dual写成PCE有单位错误，应为min。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/admm-objective.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>16 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-admm-residuals">ADMM residuals and recorded stopping thresholds</a></td><td><code>single_completed_update_diagnostic</code><br>history_rows = 1; completed_updates = 1; indices = [1]; independent_cold_confirmation_updates = 1</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 result.json确认cold_start=true,parent_completed_iterations=0；kernel在完成一次localQP、projection和dual-update之后才写history并检查stop。<p>现有公开plot只暴露6列；完整保存history还含capacity_residual和balance_residual，可据其补全四面板。；UC当前admm-residuals以及历史UC_T05把rho-scaled dual写成PCE有单位错误，应为min。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/admm-residuals.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>17 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_t05">Dots show actual residuals and ticks show registered main-stage stopping thresholds. The zero primal residual uses a stated display floor on the log axis; independent endpoint checks determine scientific status.</a></td><td><code>single_completed_update_diagnostic</code><br>history_rows = 1; completed_updates = 1; indices = [1]; independent_cold_confirmation_updates = 1</td><td>真实T4低需求场景：总脉冲0.051623148267941343 PCE低于最小物理弧容量3.75 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 result.json确认cold_start=true,parent_completed_iterations=0；kernel在完成一次localQP、projection和dual-update之后才写history并检查stop。<p>现有公开plot只暴露6列；完整保存history还含capacity_residual和balance_residual，可据其补全四面板。；UC当前admm-residuals以及历史UC_T05把rho-scaled dual写成PCE有单位错误，应为min。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T05.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>18 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-t03">Column generation: full-DAG pricing closure</a></td><td><code>single_round_per_phase_certificate</code><br>phase_I_saved_rounds = 1; phase_II_saved_rounds = 1; round_indices_per_phase = [1]; seed_paths = 4; added_after_seed = 0</td><td>真实T4低需求场景：总脉冲0.045027548453549955 PCE低于最小物理弧容量2.5 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 Phase I人工量是373条(UC)/233条(PIT)容量约束的松弛量，不是每OD未满足需求；每phase一个证书点。<p>未保存每OD reduced-cost历史向量；只有各phase最小值，不能伪造4OD热图。；CG_PHASE_I_STATE完整保留capacity人工变量，可做正确的容量行诊断，但与旧城OD artificial不可混用。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_T03.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>19 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-t04">LR: saved lower and recovered upper bounds</a></td><td><code>single_iteration_bound_certificate</code><br>lr_iterations = 1; recovery_calls = 1; pool_paths = 4; positive_multipliers = 0</td><td>真实T4低需求场景：总脉冲0.045027548453549955 PCE低于最小物理弧容量2.5 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 第一条下界与独立恢复可行上界在浮点精度内相合，projected subgradient=0；无多轮价格变化。<p>长轨迹不存在；只能画真实单点下/上界、零价格和一次恢复。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_T04.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>20 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-t05">ADMM: primal and rho-scaled dual stopping gates</a></td><td><code>single_completed_update_diagnostic</code><br>history_rows = 1; completed_updates = 1; indices = [1]; independent_cold_confirmation_updates = 1</td><td>真实T4低需求场景：总脉冲0.045027548453549955 PCE低于最小物理弧容量2.5 PCE；原LP证书明确all_capacity_rows_redundant=true。各方法独立用自由流最短路初始化，非借LP解warmstart；这不测试绑定瓶颈或拥堵下的迭代难度。 result.json确认cold_start=true,parent_completed_iterations=0；kernel在完成一次localQP、projection和dual-update之后才写history并检查stop。<p>现有公开plot只暴露6列；完整保存history还含capacity_residual和balance_residual，可据其补全四面板。；当前PIT_T05已改为PCE和min两个单位；应保留该正确证书。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_T05.png">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="ann-arbor"><td>21 · Ann Arbor<br><a href="index.html?atlas-view=full#atlas-ann-r3-aa-a01">Saved physical-link assignment</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/ann-arbor/aa-a01.svg">审计时原图</a><br><code>static</code></td></tr><tr data-city="urbana-champaign"><td>22 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-static-comparison">Static methods on the same selected demand</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/static-comparison.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>23 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-static-map">Selected static physical-road loading</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/static-map.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>24 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-lr-recovery">Lagrangian recovery: four feasible path flows</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/lr-recovery.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>25 · Urbana–Champaign<br><a href="index.html?atlas-view=full#atlas-uc-r3-admm-physical">ADMM and exact LP on physical roads</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/admm-physical.svg">审计时原图</a><br><code>main</code></td></tr><tr data-city="urbana-champaign"><td>26 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_s01">FW and finite solve the same selected static instance. Their objective agreement is a bounded reconstruction result; the initial FW loading already passed.</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_S01.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>27 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_s03">These are the largest physical solver-road flows for the 72-OD static cohort. Turn arcs and the excluded 346 OD pairs are not represented as additional roads or trips.</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_S03.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>28 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_t07">Physical road flow sums ADMM x across time copies sharing each GMNS link ID. This is a modeled four-OD pulse result, not an observed 30-second count or a spatial map.</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T07.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="urbana-champaign"><td>29 · Urbana–Champaign<br><a href="volumes/urbana-champaign.html#uc-original-uc_t08">Exact-DAG LP, CG, LR feasible recovery, and ADMM x use the same frozen T cost and demand. Their agreement tests numerical transfer on this low-demand pulse; it does not measure congestion improvement.</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T08.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>30 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-pit-r3-static-reference">Static FW and finite-path reference</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/pittsburgh-transfer/static-reference.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>31 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-s01">FW and finite: same-instance objective check</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_S01.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>32 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-s03">S72 physical-road flow: selected cohort</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_S03.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>33 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-t07">ADMM endpoint: physical-road pulse flow</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_T07.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="pittsburgh"><td>34 · Pittsburgh<br><a href="index.html?atlas-view=full#atlas-released-pit-t08">Same-T4 objective comparison</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/algorithm-transfer-r8/pittsburgh/PIT_T08.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="berkeley"><td>35 · Berkeley<br><a href="index.html?atlas-view=full#atlas-berkeley-r3-fw-saved-check">Frank–Wolfe: initial stopping check</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/city-alignment-r3/berkeley/fw_saved_check.svg">审计时原图</a><br><code>fw_saved_check</code></td></tr><tr data-city="berkeley"><td>36 · Berkeley<br><a href="index.html?atlas-view=full#atlas-berkeley-r3-s02-same-instance-methods">S72 same-instance method diagnostics</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/berkeley-atlas-r2/s02_same_instance_methods.svg">审计时原图</a><br><code>s02_same_instance_methods</code></td></tr><tr data-city="berkeley"><td>37 · Berkeley<br><a href="index.html?atlas-view=full#atlas-final-v31-berkeley-f13-assignment">Physical assignment and initial check</a></td><td><code>endpoint_summary_or_map</code><br>iterations_inferred_from_bars = False</td><td>该图展示保存端点的空间流量、方法目标/门槛对比或单次初始检查；类别/路段不是迭代。可以保留，但不能用条形图数目推导收敛速度或称作完整优化过程。<p>逐图实际指标与renderer见sidecar及canonical/targeted audit；缺少时间轨迹时不补线。</p></td><td><a href="assets/six-city-r3-1/berkeley/f13_assignment.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="sioux-falls"><td>38 · Sioux Falls<br><a href="index.html?atlas-view=full#atlas-final-r05-sioux200-cg-exchange">Shared-capacity exchange</a></td><td><code>before_after_capacity_exchange</code><br>display_states = 2; selected_phase_I_round = 34</td><td>两个条是一个真实容量交换事件的前/后端点，不是把全程压成两轮。完整Phase I另图显示全部保存轮次。</td><td><a href="assets/atlas/sioux-scale/r05-sioux200-cg-exchange.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="sioux-falls"><td>39 · Sioux Falls<br><a href="index.html?atlas-view=full#atlas-final-r05-sioux200-lagrangian-recovery">Path-pool growth and primal recovery</a></td><td><code>full_pool_history_with_two_recovery_calls</code><br>LR_history_rows = 10; recovery_calls = 2; call_iterations = [1, 10]</td><td>路径池全部10个记录均画出；只有iteration1与10真实调用恢复LP，分别不可行/可行。中间没有保存恢复结果，不能画中间恢复成功轨迹。</td><td><a href="assets/atlas/sioux-scale/r05-sioux200-lagrangian-recovery.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="sioux-falls"><td>40 · Sioux Falls<br><a href="index.html?atlas-view=full#atlas-final-r05-sioux250-cg-exchange">Shared-capacity exchange</a></td><td><code>before_after_capacity_exchange</code><br>display_states = 2; selected_phase_I_round = 39</td><td>两个条是一个真实容量交换事件的前/后端点，不是把全程压成两轮。完整Phase I另图显示全部保存轮次。</td><td><a href="assets/atlas/sioux-scale/r05-sioux250-cg-exchange.svg">审计时原图</a><br><code>see source record</code></td></tr><tr data-city="sioux-falls"><td>41 · Sioux Falls<br><a href="index.html?atlas-view=full#atlas-final-r05-sioux250-lagrangian-recovery">Path-pool growth and primal recovery</a></td><td><code>full_pool_history_with_two_recovery_calls</code><br>LR_history_rows = 10; recovery_calls = 2; call_iterations = [1, 10]</td><td>路径池全部10个记录均画出；只有iteration1与10真实调用恢复LP，分别不可行/可行。中间没有保存恢复结果，不能画中间恢复成功轨迹。</td><td><a href="assets/atlas/sioux-scale/r05-sioux250-lagrangian-recovery.svg">审计时原图</a><br><code>see source record</code></td></tr></tbody></table></div></section>
+<section id="ann-arbor"><h2>Ann Arbor · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-ann-arbor-fw-physical-flow">Frank–Wolfe physical-link flow</a></td><td>fw</td><td><a href="volumes/ann-arbor.html#figure-r9-fw-physical-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/ann-arbor/fw-physical-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/ann-arbor/fw-physical-flow.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section><section id="urbana-champaign"><h2>Urbana–Champaign · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-fw-physical-flow">Frank–Wolfe physical-link flow</a></td><td>fw</td><td><a href="volumes/urbana-champaign.html#figure-r9-fw-physical-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/fw-physical-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/fw-physical-flow.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-s72-fw-map-distribution">S72 Frank–Wolfe physical loading and distribution</a></td><td>fw</td><td><a href="volumes/urbana-champaign.html#figure-r9-s72-fw-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-s72-finite-map-distribution">S72 finite-path reference flow and feasibility</a></td><td>finite-path</td><td><a href="volumes/urbana-champaign.html#figure-r9-s72-finite-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-native-map-differences">Native L3 physical flows against S72 FW</a></td><td>native-l3</td><td><a href="volumes/urbana-champaign.html#figure-r9-native-map-differences">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/native-map-differences.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-urbana-champaign-admm-main">ADMM objective and feasibility: one saved update</a></td><td>admm</td><td><a href="volumes/urbana-champaign.html#figure-r9-urbana-champaign-admm-main">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-urbana-champaign-admm-stopping-corrected">ADMM stopping checks: corrected dual units</a></td><td>admm</td><td><a href="volumes/urbana-champaign.html#figure-r9-urbana-champaign-admm-stopping-corrected">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-urbana-champaign-admm-final-balance">Commodity conservation at the final state</a></td><td>admm</td><td><a href="volumes/urbana-champaign.html#figure-r9-admm-final-balance">城市大卷同图</a> · <a href="assets/plot-semantics-r9/urbana-champaign/admm-final-balance.svg">SVG</a> · <a href="assets/plot-semantics-r9/urbana-champaign/admm-final-balance.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section><section id="ithaca"><h2>Ithaca · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-ithaca-fw-physical-flow">Frank–Wolfe physical-link flow</a></td><td>fw</td><td><a href="volumes/ithaca.html#figure-r9-fw-physical-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/ithaca/fw-physical-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/ithaca/fw-physical-flow.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section><section id="berkeley"><h2>Berkeley · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-berkeley-fw-map-distribution">Frank–Wolfe physical loading and distribution</a></td><td>fw</td><td><a href="volumes/berkeley.html#figure-r9-fw-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/berkeley/fw-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/berkeley/fw-map-distribution.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-berkeley-finite-map-distribution">Finite-path reference and physical support</a></td><td>finite-path</td><td><a href="volumes/berkeley.html#figure-r9-finite-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/berkeley/finite-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/berkeley/finite-map-distribution.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-berkeley-native-map-differences">Native L3 physical flows against S72 FW</a></td><td>native-l3</td><td><a href="volumes/berkeley.html#figure-r9-native-map-differences">城市大卷同图</a> · <a href="assets/plot-semantics-r9/berkeley/native-map-differences.svg">SVG</a> · <a href="assets/plot-semantics-r9/berkeley/native-map-differences.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section><section id="pittsburgh"><h2>Pittsburgh · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-fw-physical-flow">Frank–Wolfe physical-link flow</a></td><td>fw</td><td><a href="volumes/pittsburgh.html#figure-r9-fw-physical-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/fw-physical-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/fw-physical-flow.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-s72-fw-flow">Frank–Wolfe: physical-road flow and distribution</a></td><td>fw</td><td><a href="volumes/pittsburgh.html#figure-r9-pittsburgh-s72-fw-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-fw-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-fw-flow.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-s72-finite-flow">Finite-path: physical-road flow and distribution</a></td><td>finite-path</td><td><a href="volumes/pittsburgh.html#figure-r9-pittsburgh-s72-finite-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-finite-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-finite-flow.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-admm-main">ADMM objective and feasibility: one saved update</a></td><td>admm</td><td><a href="volumes/pittsburgh.html#figure-r9-pittsburgh-admm-main">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-main.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-main.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-admm-physical">ADMM and exact LP on physical roads</a></td><td>admm</td><td><a href="volumes/pittsburgh.html#figure-r9-pittsburgh-admm-physical">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-physical.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-physical.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-pittsburgh-pittsburgh-admm-conservation">Commodity conservation at the final state</a></td><td>admm</td><td><a href="volumes/pittsburgh.html#figure-r9-pittsburgh-admm-conservation">城市大卷同图</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.svg">SVG</a> · <a href="assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section><section id="chicago"><h2>Chicago · 本次接入</h2><div class="table-scroll"><table><thead><tr><th>主页主图 / 补充图</th><th>方法</th><th>定位和数据</th></tr></thead><tbody><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-fw-physical-flow">Frank–Wolfe physical-link flow</a></td><td>fw</td><td><a href="volumes/chicago.html#figure-r9-fw-physical-flow">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/fw-physical-flow.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/fw-physical-flow.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-cg-phase-one">Column generation: Phase I feasibility</a></td><td>cg</td><td><a href="volumes/chicago.html#figure-r9-cg-phase-one">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/cg-phase-one.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/cg-phase-one.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-cg-phase-two">Column generation: Phase II real cost</a></td><td>cg</td><td><a href="volumes/chicago.html#figure-r9-cg-phase-two">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/cg-phase-two.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/cg-phase-two.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-cg-pricing-closure">Column generation: full-graph pricing closure</a></td><td>cg</td><td><a href="volumes/chicago.html#figure-r9-cg-pricing-closure">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/cg-pricing-closure.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/cg-pricing-closure.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-s20-fw-map-distribution">S20 Frank–Wolfe physical loading and distribution</a></td><td>fw</td><td><a href="volumes/chicago.html#figure-r9-s20-fw-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/s20-fw-map-distribution.plot_data.json">绘图数据</a></td></tr><tr><td><a href="index.html?atlas-view=full#atlas-r9-chicago-s20-finite-map-distribution">S20 finite-path reference and physical support</a></td><td>finite-path</td><td><a href="volumes/chicago.html#figure-r9-s20-finite-map-distribution">城市大卷同图</a> · <a href="assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg">SVG</a> · <a href="assets/plot-semantics-r9/chicago/s20-finite-map-distribution.plot_data.json">绘图数据</a></td></tr></tbody></table></div></section>
+<a id="current-status"></a><section id="guide"><h2>完整指南与历史记录</h2><p><a href="assets/plot-semantics-r9/CORRECTED_FIGURE_GUIDE.md">完整修正版指南（含42幅参考表）</a> · <a href="assets/plot-semantics-r9/CHATGPT_READ_FIRST.md">上传给 ChatGPT 的须知</a> · <a href="assets/plot-semantics-r9/FIGURE_COMPARISON_DATA.json">逐图数据表 JSON</a></p><p><a href="figure-update-status-r6-archive.html">历史 R6 截止页（已被当前状态替代）</a>：原文保留供追溯，不代表当前仍待接收。</p><details><summary>在此阅读完整指南</summary><h1>修正版图件对照指南：绘图目的、指标、真实记录与重绘边界</h1>
+<p>版本日期：2026-10-08。供用户审阅，并与 <code>CHATGPT_READ_FIRST.md</code> 一起上传 ChatGPT。</p>
+<h2>1. 本版解决什么问题</h2>
+<p>本版根据实际绘图代码、图内轴标签、原始已存结果和当前页面资产核对，修正此前把“相同字体与卡片样式”当作“图件已经一致”的问题。<strong>一致应先指回答相同问题、使用对应指标与正确单位，再指布局、字体与颜色。</strong> 地图回答流量分配在哪里，直方图回答完整路段总体如何分布，迭代图回答真实过程怎样变化，门限图回答一个保存状态是否过关；四者不能互相替代。</p>
+<p>本次核心范围是九城静态分配、Native、时空图优化 CG/LR/ADMM 及其必要输入/图构造证据。两座参考城市逐图核对了 <strong>42 幅：Boston 24 幅、Hong Kong 18 幅</strong>，包括紧邻优化图的需求与图构造图；这不是声称两城所有网站图仅有42幅。九城优化资产清单有149个独立资产，短记录/端点详细审计为41个资产。一个实验可能有多个历史或新旧图资产，资产数不能当成实验次数。</p>
+<p>本版是对既有总指南的语义修订，未重新核验人口、四阶段所有输入图等不在本轮范围的内容。那些内容仍可查 <code>../figure_guide_r7/GUIDE_CORE.md</code>、<code>FULL_FIGURE_INDEX.json</code> 和 <code>../figure_alignment_r2/EXPERIMENT_AND_PLOTTING_REVIEW.md</code>，但其中涉及本版明确纠正的指标、单位或可绘性时，以本版及实际冻结数据为准。旧建议方案不能冒充当前旧城实际绘图实现。</p>
+<h3>阅读证据的优先次序</h3>
+<ol>
+<li>先确认城市、实例、需求、路网、时段及方法本身的状态，再看图。</li>
+<li>查该图的实际 PNG/SVG、绘图函数、输入列和数据哈希。不能只根据网页标题推断图型。</li>
+<li>对数轴上的显示下限、直方图总体、几何连接和保存记录数必须明确。</li>
+<li>可直接重绘已存结果；不存在的迭代、每 OD 数值、价格或恢复结果不得补造。</li>
+<li>科学结果接收、文件字节放行、当前显示位置是三件事，分别记录。</li>
+</ol>
+<p>参考审计的101个唯一来源文件均与原 source 记录哈希一致；42幅参考资产与前次审计哈希匹配，并与真正原导出 SVG 在换行标准化后相同。核查方式为函数/来源/实际 SVG 内容逐图核对，加8幅代表性 PNG 的视觉检查；不声称42幅均逐张做过像素级检查。</p>
+<h2>2. 先区分实例，再比较图</h2>
+<table>
+<thead>
+<tr>
+<th>城市/实例</th>
+<th>当前可确认的边界</th>
+<th>不能混在一起的东西</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boston 扩展 FW</td>
+<td>500 / 2,000 / 30,790 源区 OD，分别加载为453 / 1,684 / 17,522节点 OD；每组5091条物理路段</td>
+<td>三组是三个真实运行，不是三个迭代；不能等同26 OD控制实例</td>
+</tr>
+<tr>
+<td>Boston B1 / Algorithm B</td>
+<td>453节点 OD、1936.238475 PCE；任务专用适配结果</td>
+<td>不自动扩大为官方通用适配器已验证</td>
+</tr>
+<tr>
+<td>Boston 静态控制/有限路径/Native</td>
+<td>ABS_PLANNED 26 OD、130条路径；相同控制实例内比较</td>
+<td>有限路径参考不等于有限时域时空图，也不自动等于完整路径空间证明</td>
+</tr>
+<tr>
+<td>Boston 动态 CG/LR/ADMM</td>
+<td>10 OD、同一有限共享容量图；ADMM实际253次外迭代</td>
+<td>目标值一致不表示所有弧流相同</td>
+</tr>
+<tr>
+<td>Hong Kong 全静态</td>
+<td>95 SSG、8930有向正 OD；一小时 AM 723.191 PCE、1239物理路段</td>
+<td>不等同 H1、HK10 或 HK4</td>
+</tr>
+<tr>
+<td>Hong Kong H1</td>
+<td>26 OD、126合法路径、52.17845064587021 PCE/h；3446求解弧中1239物理弧</td>
+<td>H1有界静态方法比较不等同8930 OD全静态</td>
+</tr>
+<tr>
+<td>Hong Kong HK10</td>
+<td>CG/LR：10 commodity、30秒步长、50步/25分钟、111条选定物理路段</td>
+<td>HK4 ADMM不是 HK10的同一组结果</td>
+</tr>
+<tr>
+<td>Hong Kong HK4</td>
+<td>ADMM：4个输入选定 OD/出发记录、10.84561943484106 PCE；11942节点、24598弧、165次实际更新</td>
+<td>不能与 HK10的69条正流路段或75左右的目标值直接合并</td>
+</tr>
+<tr>
+<td>Berkeley S72</td>
+<td>72正 OD、360冻结路径、953.049842713612 PCE/声明小时、2150物理路段</td>
+<td>静态初始检查、Native端点及 T4时空优化必须分别说明</td>
+</tr>
+<tr>
+<td>Urbana–Champaign</td>
+<td>全城市静态418 OD；另有 S72的72 OD/360路径/321.6296598827645 PCE；T4为4 commodity小脉冲</td>
+<td>11365物理求解弧保留42个A/B半段；不能换成5913条预检路网，不能把 S72/T4当全城结果</td>
+</tr>
+<tr>
+<td>Pittsburgh</td>
+<td>全城市静态1406 OD；S72为72 OD、360路径、149.92142389506472 PCE/小时；T4为4 commodity</td>
+<td>S72不包括原全城其余1334 OD；原 OUT起点加载省略起点路段遍历，不能为了地图补回</td>
+</tr>
+<tr>
+<td>Chicago</td>
+<td>全城市静态与另行 S20、T4分开；S20为20 OD、1754.9482512397267 PCE/小时</td>
+<td>CG已接收；Native/LR/ADMM未过门槛、HiGHS受资源限制不能被CG状态覆盖</td>
+</tr>
+<tr>
+<td>Ann Arbor</td>
+<td>25区、600 OD；14203总求解弧中5138物理路段；08:00–09:00 HBW</td>
+<td>不是旧4059路段中心线预检图；图是模型场景而非实测交通</td>
+</tr>
+<tr>
+<td>Ithaca</td>
+<td>完整保存的15148物理路段；11:00–12:00 local activity时段</td>
+<td>不能改标为其他城市的08:00–09:00 HBW</td>
+</tr>
+</tbody>
+</table>
+<h2>3. Boston/Hong Kong 的真实绘图配方</h2>
+<h3>3.1 函数与样式来源</h3>
+<p>以下缩写相对于项目根目录，不含本机盘符；行号对应本次审计保存的文件版本，具体 SHA 在 <code>CANONICAL_BOSTON_HK_OPTIMIZATION_AUDIT.json</code>。</p>
+<table>
+<thead>
+<tr>
+<th>缩写</th>
+<th>代码位置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>B</td>
+<td><code>work/structure_review_20261003/stage3/boston/render_boston.py</code></td>
+</tr>
+<tr>
+<td>H</td>
+<td><code>work/structure_review_20261003/stage3/hong-kong/render_hong_kong.py</code></td>
+</tr>
+<tr>
+<td>A</td>
+<td><code>work/structure_review_20261003/stage3/hong-kong/render_advanced.py</code></td>
+</tr>
+<tr>
+<td>S</td>
+<td><code>work/structure_review_20261003/stage3/revisions/20261004-r01/render_static_cards.py</code></td>
+</tr>
+<tr>
+<td>M</td>
+<td><code>work/structure_review_20261003/stage3/revisions/20261004-r01/render_map_layouts.py</code></td>
+</tr>
+<tr>
+<td>L</td>
+<td><code>work/structure_review_20261003/stage3/shared/render_lagrangian_details.py</code></td>
+</tr>
+<tr>
+<td>I</td>
+<td><code>work/structure_review_20261003/stage3/hong-kong/render_static_inputs.py</code></td>
+</tr>
+<tr>
+<td>T</td>
+<td><code>work/structure_review_20261003/revisions/20261004-r07/figure-work/render_layered_construction.py</code></td>
+</tr>
+<tr>
+<td>共用样式</td>
+<td><code>work/structure_review_20261003/stage3/figure_style.py</code>：<code>configure</code>、<code>new_figure</code>、<code>format_axes</code>、<code>compact_header</code></td>
+</tr>
+</tbody>
+</table>
+<p>共同外观是既有 Layout C、DejaVu Serif、白底、蓝/青/深蓝、较淡网格、紧凑面板及可编辑文字 SVG。<strong>这些外观函数不决定科学图型；同字体的目标值条形图仍不能代替物理流量地图。</strong> 本轮沿用已有 Python/Matplotlib 风格，没有用生成式图片替代科学绘图。</p>
+<h3>3.2 按用途对应的配方</h3>
+<table>
+<thead>
+<tr>
+<th>要回答的问题</th>
+<th>真实旧城参考与函数</th>
+<th>指标、坐标及布局</th>
+<th>等价重绘最低要求</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>一个静态方法把流量放到哪里？整体分布怎样？</td>
+<td>HK <code>G-F052/G-F182</code>；H <code>static_maps</code>→<code>static_flow_distribution</code>（132–142）；Boston <code>G-F141</code>，S <code>boston_b1</code>（104–116）</td>
+<td>物理地图＋全部物理路段直方图；HK/B1为22箱；零流路段保留。地图用 <code>PowerNorm(0.5)</code>，色条显示原流量单位；直方图x=流量、y=路段数量</td>
+<td>该方法自己的完整端点向量＋物理ID＋真实几何＋单位与时段。不能借另一个几乎相同的方法向量</td>
+</tr>
+<tr>
+<td>多个需求规模的结果如何变化？</td>
+<td>Boston <code>C-BOSTON-FW-SCALES</code>；S <code>boston_scales</code>（73–102）</td>
+<td>三张独立规模地图＋每组5091路段的直方图阶梯；共用24个箱边界、数量轴取对数；地图共用绝对色标</td>
+<td>三个实际保存的实例。新城市只有一个实例时不能复制端点冒充多规模</td>
+</tr>
+<tr>
+<td>有限路径解是否满足逐 OD需求？</td>
+<td>Boston <code>C-BOSTON-FINITE-STATIC</code>；S <code>boston_finite</code>（118–137）</td>
+<td>物理流量图＋全部5091路段20箱直方图＋26个OD的路径流量和减需求散点</td>
+<td>自己的路段/路径流、路径到OD映射及冻结需求。只有最大残差摘要不能生成逐OD图</td>
+</tr>
+<tr>
+<td>Native重构流量和参考差在哪里？</td>
+<td>HK <code>C-HK-L3-STATIC</code>；A <code>h1_static</code>（4–23）；Boston <code>C-BOSTON-ABS-L3</code>，B <code>static_maps</code>（190）</td>
+<td>HK：rank26绝对流＋rank26−FW、rank52−FW有符号差＋rank26全路段直方图。Boston：FW/26/52三张绝对图＋两张差图</td>
+<td>保存的实际 Native向量，或 <code>major/minor/U/x1/theta</code>、合法路径弧序列可严格重构。差图使用同实例参考、共用对称零中心色标</td>
+</tr>
+<tr>
+<td>Native与有限路径参考的物理残差分布？</td>
+<td>Boston <code>G-F145</code>；B <code>static_maps</code></td>
+<td>rank26−finite的地图＋25箱差值直方图，单位放大为10^-6 vehicle trips</td>
+<td>这是物理路段差值，<strong>不是逐OD可行性图，也不是绝对流量图</strong></td>
+</tr>
+<tr>
+<td>CG是否消除人工需求？</td>
+<td>Boston <code>C-BOSTON-CG-PHASE1</code>，B <code>cg_figures</code>（226）；HK <code>C-HK-CG-PHASE1</code>，A <code>cg_figures</code>（25）</td>
+<td>全保存轮次的人工流总量阶梯图＋commodity×轮次热图；分别91状态0–90、13状态0–12；原单位vehicles/PCE</td>
+<td>确认人工变量确实在OD守恒式中，且保存逐OD人工量。容量行松弛量不能套同名热图</td>
+</tr>
+<tr>
+<td>CG真实成本如何下降？</td>
+<td>Boston <code>G-F079</code>；B <code>cg_figures</code></td>
+<td>Phase II 16状态0–15、15更新；线性vehicle-min；实际 post-step阶梯；实心严格改善、空心方形退化非增更新；同图LP虚线</td>
+<td>保存的成本、轮次、真实提交类别、相同图LP。<strong>HK当前无Phase II目标历史图，只有2个保存检查点；<code>G-F092</code>是最终流量地图</strong></td>
+</tr>
+<tr>
+<td>CG是否在完整定价空间闭合？</td>
+<td>Boston <code>C-BOSTON-CG-CLOSURE</code>；HK <code>G-F093</code></td>
+<td>Boston列池数量、最小RC轨迹及逐需求RC；HK逐commodity最小未生成完整路径 reduced cost条形图，单位min，门槛1e-6</td>
+<td>完整DAG/完整路径定价记录。非有限的“Exhausted”须原样解释，不能转成0；目标一致不代替定价证书</td>
+</tr>
+<tr>
+<td>LR下界、可行上界和证书怎样？</td>
+<td>Boston <code>G-F147</code>，B <code>admm_lagrangian</code>（312）；HK <code>C-HK-LAGRANGIAN-BOUNDS</code>，L <code>bounds</code>（118）</td>
+<td>best valid lower与独立恢复的feasible upper对真实迭代；另面板 gap×100%；显示原冻结1%门槛；缺失UB/gap保留空缺</td>
+<td>真实下界、可行恢复上界及证书。松弛目标、外部LP或可行见证不能冒充LR自己恢复的UB</td>
+</tr>
+<tr>
+<td>LR产生什么价格、什么时候恢复？</td>
+<td>两城 <code>*-LAGRANGIAN-PRICES/RECOVERY</code>；L <code>prices</code>（58）/<code>recovery</code>（90）</td>
+<td>前10个严格正容量乘子λ(min)＋按时间的正价弧数量；恢复图只画真实调用轮次及路径池大小，实心可行/空心失败</td>
+<td>乘子ID/时间、实际恢复调用记录；不可插入未发生的恢复，失败目标null不当0</td>
+</tr>
+<tr>
+<td>ADMM过程是否同时达到停止条件？</td>
+<td>Boston <code>G-F065</code>，B <code>admm_lagrangian</code>；HK <code>G-F097</code>，A <code>admm_figures</code>（40）</td>
+<td>四面板分别显示原单位可行性、primal、rho-scaled dual和目标/误差；用各自真实门槛；详见下节不同口径</td>
+<td>完整保存history＋同图LP参考。一个真实状态可画单标记四面板，不能称长收敛轨迹</td>
+</tr>
+<tr>
+<td>局部守恒问题在哪里？</td>
+<td>Boston <code>G-F069</code>；HK <code>G-F101</code></td>
+<td>Boston=commodity×iteration热图，log10(balance)，显示下限1e-12 vehicles；HK=最终4 commodity×最差35时空节点，<code>LogNorm(1e-15,1e-5)</code> PCE</td>
+<td>前者需要逐commodity历史；后者需要完整最终状态、准确弧/节点顺序和供给；最终节点图不能冒充时间历史</td>
+</tr>
+<tr>
+<td>ADMM与同图LP空间流是否一致？</td>
+<td>两城 <code>C-*-ADMM-FLOWS</code>；M <code>admm</code>（137）</td>
+<td>2×2：ADMM图、LP图、有符号差图、全物理路段identity散点；绝对量共用平方根色标，差值共用对称色标</td>
+<td>两者自己的完整向量＋同图物理聚合规则＋几何。不能把CG流命名为ADMM，也不能因目标近似就称路径完全相同</td>
+</tr>
+</tbody>
+</table>
+<h3>3.3 ADMM误差口径必须单独写清楚</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th>Boston G-F065</th>
+<th>Hong Kong G-F097 / HK4</th>
+<th>本轮 UC/PIT 单次更新四面板</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>真正保存长度</td>
+<td>253次外迭代</td>
+<td>165次更新，300是预算而非真实记录数</td>
+<td>各1次完整更新；不能绘制虚构iteration0</td>
+</tr>
+<tr>
+<td>primal与守恒/容量</td>
+<td>vehicles；残差显示下限1e-14</td>
+<td>PCE；残差显示下限1e-13</td>
+<td>PCE；只对精确0显示为1e-16，所有正值不变</td>
+</tr>
+<tr>
+<td>dual</td>
+<td>rho-scaled、cost/vehicle，量纲为时间</td>
+<td>rho-scaled、cost/vehicle，量纲为时间</td>
+<td>min；门槛也为min</td>
+</tr>
+<tr>
+<td>目标面板</td>
+<td>原始目标值vehicle-min，线性y轴＋同图LP</td>
+<td><code>log10(max(abs(objective−LP),1e-15)/(1 vehicle-minute))</code></td>
+<td><code>log10(abs(ADMM−LP)/(1 PCE·min))</code>，1e-15显示下限，本次未触发</td>
+</tr>
+<tr>
+<td>能否称LP相对误差？</td>
+<td>不能：画的是原目标</td>
+<td><strong>不能：画的是绝对误差的log10</strong></td>
+<td>不能：也是绝对误差的log10</td>
+</tr>
+<tr>
+<td>接收门槛与所画指标</td>
+<td>不把图的单位替换成另城门槛</td>
+<td>科学验收另用相对目标误差1e-3；并非图上当前指标，也不是Berkeley的1e-4</td>
+<td>沿用各自冻结停止门槛；不借香港165次制造过程</td>
+</tr>
+</tbody>
+</table>
+<p>对PCE·min目标，<code>rho</code>量纲为min/PCE；<code>rho × ||z−z_previous||</code>因此是min。Urbana旧 <code>admm-residuals.svg</code> 和历史 <code>UC_T05.svg</code> 把它标成PCE属于标签错误，应纠正而不改动数值。</p>
+<p>当前已正式修正放行的 <strong>PIT_T05</strong>：primal为0，门槛0.002695306468400502 <strong>PCE</strong>；dual为1.510761290551328e-13，门槛0.002692127782999908 <strong>min</strong>。精确0只为对数显示放在1e-16。图中“残差→门槛”的线段连接两个不同意义的数值，<strong>不是两次迭代，更不是收敛轨迹</strong>。该正确检查图应保留；新四面板是补全比较用途的本地派生图。</p>
+<p>Urbana对应值为：primal0 / 门槛0.0023967625505464836 PCE；dual3.4388605706864527e-13 / 门槛0.0023912306455045277 min；最大守恒误差5.351749497492834e-15 PCE，容量违反0。</p>
+<h2>4. 已识别问题、修正原则及不应误判的问题</h2>
+<table>
+<thead>
+<tr>
+<th>原现象</th>
+<th>实际问题或边界</th>
+<th>本版处理</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Berkeley“Static method comparison”看起来不像旧城</td>
+<td>原s02是终点目标微差、signed gap symlog、残差×10^10和坐标维数四面板；不是物理分配图</td>
+<td>补三张真实FW/finite/Native空间图；原数值诊断保留作补充</td>
+</tr>
+<tr>
+<td>UC静态只有目标柱/间隙点和通用地图</td>
+<td>方法自身空间向量与完整路段总体未一一展示；旧图部分直方图仅统计正流路段</td>
+<td>从保存的各方法向量画S72 FW/finite；finite追加72 OD质量残差；全路段含0</td>
+</tr>
+<tr>
+<td>Pitt只显示若干代表路段</td>
+<td>PIT_S03/PIT_T07的10路段条形摘要不是完整空间分配证据</td>
+<td>从完整保存向量增加S72各方法地图，以及真实ADMM–LP空间差和守恒图；旧摘要保留</td>
+</tr>
+<tr>
+<td>Ann/Urbana/Ithaca/Pitt FW一开始就结束</td>
+<td>容差内初始加载检查，不等于被抽样截短；没有后续迭代</td>
+<td>显示完整物理端点图，并保留单次检查；不补造下降曲线</td>
+</tr>
+<tr>
+<td>UC/PIT CG、LR、ADMM记录极短</td>
+<td>该T4脉冲很小、原证书证明容量约束冗余，真实独立初始化后即过门槛</td>
+<td>公开真实记录长度和实例边界；不能推广为拥挤情境算法优势</td>
+</tr>
+<tr>
+<td>UC/PIT CG人工量想套旧城逐OD热图</td>
+<td>其人工量是容量约束行松弛，UC373行/PIT233行，并非OD未满足需求</td>
+<td>可画容量行诊断，但命名和轴必须相符；缺逐ODRC不可补造</td>
+</tr>
+<tr>
+<td>Berkeley LR看起来平直</td>
+<td>平直本身不证明错误。必须查真实LB、恢复UB、保存精度、尺度和每次运行身份</td>
+<td>保留原10次accepted与独立300次冷启动诊断的身份，不能接成长310次“同一条轨迹”</td>
+</tr>
+<tr>
+<td>Chicago失败方法拉低版面整齐度</td>
+<td>Native/LR/ADMM未过门槛与HiGHS资源限制都是结果；CG独立证书已接收</td>
+<td>接收CG与失败诊断分开；保留268条CG、759条LR、9次ADMM及资源/重试证据</td>
+</tr>
+<tr>
+<td>把香港当成所有图都很长的标准</td>
+<td>HK Phase II只存2检查点，网页并无长成本曲线</td>
+<td>允许真实短记录；统一的是提问、指标和诚实显示，不是线段数量</td>
+</tr>
+</tbody>
+</table>
+<h3>Ann Arbor“初始即通过”的准确解释</h3>
+<p>自由流最短路全有全无加载后，程序检查当前BPR成本下相对间隙。保存的iteration0相对间隙 <strong>5.10282992009334e-5</strong>，低于事先冻结的 <strong>1e-4</strong>；节点守恒误差 <strong>5.684341886080801e-13 PCE</strong>，低于1e-7；目标 <strong>7871.970629926563 PCE·min</strong>。因此FW后续更新次数为0。这是容差内端点，不是精确数学最优证明，也没有证据能直接归因为“城市区域太小”。若要解释拥挤程度，需要检查完整v/c、BPR增量、最短路径切换；不能靠地图面积推断。</p>
+<p>完整城市静态的UC和Ithaca保存初始相对间隙为0；Pittsburgh为 <strong>4.773992564434884e-7</strong>，均低于1e-4。Pittsburgh不是0，不能照抄泛化文字。数值0也不能自动升级为无限精度的理论证明。</p>
+<h3>UC/PIT“只跑一轮”的准确解释</h3>
+<table>
+<thead>
+<tr>
+<th>项目</th>
+<th style="text-align: right;">Urbana–Champaign T4</th>
+<th style="text-align: right;">Pittsburgh T4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>总PCE脉冲</td>
+<td style="text-align: right;">0.05162314826794134</td>
+<td style="text-align: right;">0.045027548453549955</td>
+</tr>
+<tr>
+<td>最小物理时间弧容量PCE</td>
+<td style="text-align: right;">3.75</td>
+<td style="text-align: right;">2.5</td>
+</tr>
+<tr>
+<td>原LP证书</td>
+<td style="text-align: right;"><code>all_capacity_rows_redundant=true</code></td>
+<td style="text-align: right;">同左</td>
+</tr>
+<tr>
+<td>CG</td>
+<td style="text-align: right;">Phase I 1记录＋Phase II 1记录；4 seed paths、之后新增0</td>
+<td style="text-align: right;">同左</td>
+</tr>
+<tr>
+<td>LR</td>
+<td style="text-align: right;">1迭代、1次恢复、4条池路径、0个正乘子</td>
+<td style="text-align: right;">同左</td>
+</tr>
+<tr>
+<td>ADMM</td>
+<td style="text-align: right;">一次local QP、投影、dual更新完成后写history并检查停止</td>
+<td style="text-align: right;">同左</td>
+</tr>
+</tbody>
+</table>
+<p>这不是拿LP最优解做warm start：保存结果明确 <code>cold_start=true</code>、<code>parent_completed_iterations=0</code>。独立冷启动确认也为1次，但它是另一个运行，不能合并为同一运行2次迭代。证书支持的是<strong>当前需求/容量设定下无绑定容量约束的有界检查</strong>；它不支持“算法错误”“因为城区小”或“在拥堵场景更快”的结论。</p>
+<h2>5. 41个短记录/端点资产：完整逐项表</h2>
+<p>此表对应重绘前页面快照 <code>SHORT_TRACE_AUDIT.json</code>，用于解释原图与保留历史。不是41次求解，不是41项错误清单。表中不同路径可能是同一数据的不同版本；仍逐一列出以免遗漏。原路径均以 <code>candidate_repo/docs/</code> 为基准。保存次数是实际数据，不按绘图条形数或连线数推断。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>城市／原资产（docs相对路径）</th>
+<th>真正保存长度</th>
+<th>实际图型</th>
+<th>正确解释／处置</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">1</td>
+<td>Ann Arbor<br><code>assets/city-alignment-r3/ann-arbor/aa-a02.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>初始容差检查</td>
+<td>gap=5.10282992009334e-5&lt;1e-4；保留检查，完整空间分配另图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">2</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-champaign/trace.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>初始容差检查</td>
+<td>全城市418 OD实例；保存gap=0，不能补造后续轨迹。</td>
+</tr>
+<tr>
+<td style="text-align: right;">3</td>
+<td>Urbana–Champaign<br><code>assets/six-city-r3-1/urbana-champaign/FS_A02.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>同上之历史版本</td>
+<td>与上一条是同一类检查的独立图资产，不是第二次迭代。</td>
+</tr>
+<tr>
+<td style="text-align: right;">4</td>
+<td>Ithaca<br><code>assets/city-alignment-r3/ithaca/trace.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>初始容差检查</td>
+<td>保存gap=0；完整端点图与单点检查各有用途。</td>
+</tr>
+<tr>
+<td style="text-align: right;">5</td>
+<td>Ithaca<br><code>assets/six-city-r3-1/ithaca/FS_A02.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>同上之历史版本</td>
+<td>不能把两个图资产数当两轮求解。</td>
+</tr>
+<tr>
+<td style="text-align: right;">6</td>
+<td>Pittsburgh<br><code>assets/city-alignment-r3/pittsburgh/trace.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>初始容差检查</td>
+<td>全城市1406 OD；gap=4.773992564434884e-7&lt;1e-4，不是0。</td>
+</tr>
+<tr>
+<td style="text-align: right;">7</td>
+<td>Pittsburgh<br><code>assets/six-city-r3-1/pittsburgh/FS_A02.svg</code></td>
+<td>1检查，iteration0；0更新</td>
+<td>同上之历史版本</td>
+<td>与S72转移实例分开；保留历史，不添加迭代。</td>
+</tr>
+<tr>
+<td style="text-align: right;">8</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/cg-phase1.svg</code></td>
+<td>Phase I/II各1记录；4 seed，新增0</td>
+<td>CG容量松弛检查</td>
+<td>Phase I为373容量行松弛；非逐OD人工需求热图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">9</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/cg-objective.svg</code></td>
+<td>Phase I/II各1记录；4 seed，新增0</td>
+<td>CG真实目标单点</td>
+<td>单个Phase II成本，不能称成本下降过程。</td>
+</tr>
+<tr>
+<td style="text-align: right;">10</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/cg-closure.svg</code></td>
+<td>Phase I/II各1记录；4 seed，新增0</td>
+<td>CG定价汇总</td>
+<td>只存每phase最小RC；不足以还原4OD逐项轨迹。</td>
+</tr>
+<tr>
+<td style="text-align: right;">11</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T03.svg</code></td>
+<td>Phase I/II各1记录；4 seed，新增0</td>
+<td>上述CG历史原图</td>
+<td>保留原来源；相同科学运行另一个图版本。</td>
+</tr>
+<tr>
+<td style="text-align: right;">12</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/lr-bounds.svg</code></td>
+<td>1迭代；1恢复；4路径；正价0</td>
+<td>LR边界/证书单点</td>
+<td>下界与独立恢复可行上界浮点相合；不拉伸为多轮线。</td>
+</tr>
+<tr>
+<td style="text-align: right;">13</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/lr-prices.svg</code></td>
+<td>1迭代；正乘子0</td>
+<td>LR零价格状态</td>
+<td>没有多轮价格演化或正价弧排行可补造。</td>
+</tr>
+<tr>
+<td style="text-align: right;">14</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T04.svg</code></td>
+<td>1迭代；1恢复；4路径</td>
+<td>LR历史原图</td>
+<td>保留真实单点/恢复身份；不是被隐藏的长过程。</td>
+</tr>
+<tr>
+<td style="text-align: right;">15</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/admm-objective.svg</code></td>
+<td>1完整更新，index1；另一次独立确认1更新</td>
+<td>ADMM目标端点</td>
+<td>四面板补全的是指标，不是新增迭代。</td>
+</tr>
+<tr>
+<td style="text-align: right;">16</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/admm-residuals.svg</code></td>
+<td>1完整更新，index1</td>
+<td>ADMM停止检查；单位缺陷</td>
+<td>旧dual=PCE标签错误；rho-scaled dual应为min，值不变。</td>
+</tr>
+<tr>
+<td style="text-align: right;">17</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T05.svg</code></td>
+<td>1完整更新，index1</td>
+<td>ADMM历史原图；单位缺陷</td>
+<td>旧UC_T05同一单位错误；历史保留并由正确版本解释。</td>
+</tr>
+<tr>
+<td style="text-align: right;">18</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_T03.svg</code></td>
+<td>Phase I/II各1记录；4 seed，新增0</td>
+<td>CG两个phase定价检查</td>
+<td>Phase I为233容量行松弛；只有phase最小RC，非逐OD热图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">19</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_T04.svg</code></td>
+<td>1迭代；1恢复；4路径；正价0</td>
+<td>LR端点</td>
+<td>真实无绑定容量T4；不推断拥堵性能。</td>
+</tr>
+<tr>
+<td style="text-align: right;">20</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_T05.png</code></td>
+<td>1完整更新；另一次独立确认1更新</td>
+<td>PIT_T05已修正停止门限图</td>
+<td>残差→门槛线段不是两次迭代；PCE/min正确，正式四文件放行仍有效。</td>
+</tr>
+<tr>
+<td style="text-align: right;">21</td>
+<td>Ann Arbor<br><code>assets/city-alignment-r3/ann-arbor/aa-a01.svg</code></td>
+<td>端点；无从条形推断迭代数</td>
+<td>物理地图＋流量分布</td>
+<td>本来已是合法空间端点；本轮统一完整总体和布局，不称旧图算法错。</td>
+</tr>
+<tr>
+<td style="text-align: right;">22</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/static-comparison.svg</code></td>
+<td>各方法保存端点</td>
+<td>目标柱＋gap点</td>
+<td>可作数值比较补充，不能代替各方法物理地图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">23</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/static-map.svg</code></td>
+<td>一个空间端点</td>
+<td>物理地图＋正流直方图</td>
+<td>只计正流总体不等价于旧城全路段含0；本轮补完整总体。</td>
+</tr>
+<tr>
+<td style="text-align: right;">24</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/lr-recovery.svg</code></td>
+<td>1真实恢复调用</td>
+<td>LR恢复端点</td>
+<td>只有一次调用，不能补中间恢复路径。</td>
+</tr>
+<tr>
+<td style="text-align: right;">25</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/admm-physical.svg</code></td>
+<td>一个ADMM最终状态</td>
+<td>ADMM–LP空间端点</td>
+<td>合法最终状态证据，不能按路段数解释迭代。</td>
+</tr>
+<tr>
+<td style="text-align: right;">26</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_S01.svg</code></td>
+<td>各方法保存端点</td>
+<td>静态方法标量比较原图</td>
+<td>保留补充；新方法地图读取各自向量。</td>
+</tr>
+<tr>
+<td style="text-align: right;">27</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_S03.svg</code></td>
+<td>代表路段类别</td>
+<td>路段流量条形摘要</td>
+<td>不能据代表路段声称全路网分布。</td>
+</tr>
+<tr>
+<td style="text-align: right;">28</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T07.svg</code></td>
+<td>最终状态路段摘要</td>
+<td>有限时域流量端点</td>
+<td>不是过程图；本轮另有最终节点守恒图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">29</td>
+<td>Urbana–Champaign<br><code>assets/city-alignment-r3/urbana-transfer/original-method-figures/UC_T08.svg</code></td>
+<td>各方法端点类别</td>
+<td>时空方法端点比较</td>
+<td>类别数不是迭代数，方法接收状态各自保留。</td>
+</tr>
+<tr>
+<td style="text-align: right;">30</td>
+<td>Pittsburgh<br><code>assets/city-alignment-r3/pittsburgh-transfer/static-reference.svg</code></td>
+<td>有限路径参考端点</td>
+<td>静态参考标量</td>
+<td>不是完整方法空间图；保留出处和原实例。</td>
+</tr>
+<tr>
+<td style="text-align: right;">31</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_S01.svg</code></td>
+<td>各方法保存端点</td>
+<td>静态方法比较</td>
+<td>Native失败与FW/finite端点分别标明。</td>
+</tr>
+<tr>
+<td style="text-align: right;">32</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_S03.svg</code></td>
+<td>10代表路段</td>
+<td>静态路段条形摘要</td>
+<td>不足以等价旧城完整物理地图；现已另绘完整S72向量。</td>
+</tr>
+<tr>
+<td style="text-align: right;">33</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_T07.svg</code></td>
+<td>10代表路段</td>
+<td>ADMM物理条形摘要</td>
+<td>不能代替完整ADMM–LP空间差；新图用真实保存向量。</td>
+</tr>
+<tr>
+<td style="text-align: right;">34</td>
+<td>Pittsburgh<br><code>assets/algorithm-transfer-r8/pittsburgh/PIT_T08.svg</code></td>
+<td>各方法端点类别</td>
+<td>时空方法端点比较</td>
+<td>保留各自证书，不把方法条数当迭代数。</td>
+</tr>
+<tr>
+<td style="text-align: right;">35</td>
+<td>Berkeley<br><code>assets/city-alignment-r3/berkeley/fw_saved_check.svg</code></td>
+<td>1初始检查；0 FW更新</td>
+<td>Berkeley FW检查</td>
+<td>旧标题/布局不能代替FW空间分配；保留检查作补充。</td>
+</tr>
+<tr>
+<td style="text-align: right;">36</td>
+<td>Berkeley<br><code>assets/berkeley-atlas-r2/s02_same_instance_methods.svg</code></td>
+<td>各方法终点；4个指标面板</td>
+<td>目标微差/gap/残差/维数</td>
+<td>signed gap symlog、残差×10^10、维数不是物理流量。</td>
+</tr>
+<tr>
+<td style="text-align: right;">37</td>
+<td>Berkeley<br><code>assets/six-city-r3-1/berkeley/f13_assignment.svg</code></td>
+<td>一个静态加载端点</td>
+<td>分配地图</td>
+<td>合法端点证据；新S72方法图不能改称新的迭代结果。</td>
+</tr>
+<tr>
+<td style="text-align: right;">38</td>
+<td>Sioux Falls<br><code>assets/atlas/sioux-scale/r05-sioux200-cg-exchange.svg</code></td>
+<td>2状态：第34轮事件前/后</td>
+<td>真实CG容量交换事件</td>
+<td>不是把整个CG压成两轮；完整Phase I在另图。</td>
+</tr>
+<tr>
+<td style="text-align: right;">39</td>
+<td>Sioux Falls<br><code>assets/atlas/sioux-scale/r05-sioux200-lagrangian-recovery.svg</code></td>
+<td>LR历史10；恢复2次，轮1/10</td>
+<td>路径池10记录＋恢复标记</td>
+<td>只两次真实恢复，第一次失败、后一次可行；不能补中间成功。</td>
+</tr>
+<tr>
+<td style="text-align: right;">40</td>
+<td>Sioux Falls<br><code>assets/atlas/sioux-scale/r05-sioux250-cg-exchange.svg</code></td>
+<td>2状态：第39轮事件前/后</td>
+<td>真实CG容量交换事件</td>
+<td>事件快照与完整Phase I分开。</td>
+</tr>
+<tr>
+<td style="text-align: right;">41</td>
+<td>Sioux Falls<br><code>assets/atlas/sioux-scale/r05-sioux250-lagrangian-recovery.svg</code></td>
+<td>LR历史10；恢复2次，轮1/10</td>
+<td>路径池10记录＋恢复标记</td>
+<td>真实稀疏调用不是缺失收敛历史。</td>
+</tr>
+</tbody>
+</table>
+<h2>6. 必须保留的长历史、失败门槛和稀疏证据</h2>
+<table>
+<thead>
+<tr>
+<th>城市</th>
+<th>实际记录</th>
+<th>必须保留的解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Boston</td>
+<td>CG II 16状态；LR300；ADMM253</td>
+<td>LR末端gap约1.1002%，未过1%门槛；不能因为有可行恢复就标LR accepted</td>
+</tr>
+<tr>
+<td>Hong Kong</td>
+<td>CG I13；CG II仅2检查点；LR25；ADMM165</td>
+<td>HK10 LR最终gap0.7444191022435463%；前1–9次缺UB/gap，必须留空；HK4 ADMM另实例</td>
+</tr>
+<tr>
+<td>Sioux Falls</td>
+<td>tap-b18保存向量；两规模CG首次人工流为0在51/62轮；LR各10；ADMM85/101</td>
+<td>事件图两状态、恢复图仅两调用均有真实含义，不是把全部记录抽样成两点</td>
+</tr>
+<tr>
+<td>Berkeley</td>
+<td>CG I5、II3状态；原LR10 accepted；另300次冷启动诊断；ADMM170；Native每rank3个outer步骤</td>
+<td>原10次与300次是不同运行；不能抹掉原证书，也不能接为310次。原始数值和新长诊断分别溯源</td>
+</tr>
+<tr>
+<td>Chicago</td>
+<td>全城市FW4检查/3更新；CG268=208 Phase I＋60 Phase II；LR759；ADMM9完整更新</td>
+<td>CG依自身full-graph证书接收；LR无自身恢复可行UB/证书gap，ADMM/Native未过门槛，HiGHS受资源限制。失败不是丢弃依据</td>
+</tr>
+<tr>
+<td>Urbana–Champaign</td>
+<td>Native两rank均保留outer1–9；到9才过原1e-6 PCE门槛</td>
+<td>当前accepted outer9守恒诊断继续可见；不能移为“旧失败历史”或把之前未过关状态删掉</td>
+</tr>
+<tr>
+<td>Pittsburgh</td>
+<td>Native两rank8个步骤</td>
+<td>原单位OD门槛1e-6 PCE仍未通过；保持diagnostic，不借FW/finite/CG结果改写为accepted</td>
+</tr>
+</tbody>
+</table>
+<p>Chicago CG的Phase I人工变量是<strong>4个OD守恒等式中的人工需求流</strong>，不是UC/PIT那种容量行松弛。其208状态轮0–207，总人工流20.373394302610762→0 PCE；首次过1e-8门槛在207。Phase II全部60状态轮0–59，目标374.533127798287→241.2185242449435 PCE·min；最终同运行、完整图有效的CG对偶界为241.2185242449434。新图虚线标的是这个最终界，不是每轮的界轨迹，也不是受资源限制的HiGHS结果。Chicago保存了4个OD的完整定价数据，已经可以并已经绘制定价闭合；但未保存逐OD人工流历史，不能凭总量拆分热图。</p>
+<h2>7. 本轮实际新图：24张本地派生图</h2>
+<p>按 <code>INTEGRATED_FIGURES.json</code> 及最后补充的 <code>staged/urbana-native/MANIFEST.json</code>：<strong>15张静态图＋6张ADMM图＋3张CG图＝24张</strong>。图来自已经保存的结果，求解器调用0；不增加迭代、不改变需求、路径、容量或冻结门槛。下表页面路径以 <code>candidate_repo/docs/</code> 为基准，具体字节哈希、尺寸、caption和下载文件在对应manifest/source中。集成清单确认的是路径绑定，最终浏览器/响应式与整站保护验收由本轮另行报告。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">#</th>
+<th>城市/新图</th>
+<th>现在画什么</th>
+<th>已确认边界</th>
+<th>页面资产</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| 1 | Ann Arbor<br><code>fw-physical-flow</code> | 全城市FW物理地图＋22箱全路段直方图 | 5138物理路段；含3147精确0，1991条&gt;1e-6 PCE；单初始检查 | <code>assets/plot-semantics-r9/ann-arbor/fw-physical-flow.svg</code> |
+| 2 | Urbana–Champaign<br><code>fw-physical-flow</code> | 全城市FW物理地图＋22箱全路段直方图 | 11365物理遍历、含7681精确0；保留A/B半段；418 OD实例 | <code>assets/plot-semantics-r9/urbana-champaign/fw-physical-flow.svg</code> |
+| 3 | Ithaca<br><code>fw-physical-flow</code> | 全城市FW物理地图＋22箱全路段直方图 | 15148路段，含12789精确0；11:00–12:00声明时段 | <code>assets/plot-semantics-r9/ithaca/fw-physical-flow.svg</code> |
+| 4 | Chicago<br><code>fw-physical-flow</code> | 全城市FW物理地图＋22箱全路段直方图 | 27129路段，含25238精确0；3实际更新后的端点 | <code>assets/plot-semantics-r9/chicago/fw-physical-flow.svg</code> |
+| 5 | Pittsburgh<br><code>fw-physical-flow</code> | 全城市FW物理地图＋22箱全路段直方图 | 17534路段，含12563精确0；与S72分开 | <code>assets/plot-semantics-r9/pittsburgh/fw-physical-flow.svg</code> |
+| 6 | Berkeley<br><code>fw-map-distribution</code> | S72 FW自身地图＋22箱全路段分布 | 2150路段；自身FW列；不冒充多轮过程 | <code>assets/plot-semantics-r9/berkeley/fw-map-distribution.svg</code> |
+| 7 | Berkeley<br><code>finite-map-distribution</code> | S72 finite自身地图＋22箱全路段分布 | 自身finite列；与FW值相同是本实例结果，不是复制向量 | <code>assets/plot-semantics-r9/berkeley/finite-map-distribution.svg</code> |
+| 8 | Berkeley<br><code>native-map-differences</code> | rank26自身流、26−FW/52−FW差图及全路段分布 | 差值共用对称色标；极小差异不是交通改善；保留原始极微小负值 | <code>assets/plot-semantics-r9/berkeley/native-map-differences.svg</code> |
+| 9 | Urbana–Champaign<br><code>s72-fw-map-distribution</code> | S72 FW自身地图＋全路段分布 | 72 OD/360路径；11365路段；42个A/B半段完整 | <code>assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg</code> |
+| 10 | Urbana–Champaign<br><code>s72-finite-map-distribution</code> | finite自身地图＋分布＋72OD质量残差 | 360路径流严格按OD求和减冻结需求，72残差均0 | <code>assets/plot-semantics-r9/urbana-champaign/s72-finite-map-distribution.svg</code> |
+| 11 | Chicago<br><code>cg-phase-one</code> | 208真实Phase I状态的总人工OD流 | OD人工需求；非容量松弛；逐OD人工热图缺保存值 | <code>assets/plot-semantics-r9/chicago/cg-phase-one.svg</code> |
+| 12 | Chicago<br><code>cg-phase-two</code> | 60真实Phase II目标状态＋最终有效CG界 | 无降采样/插值；界不是HiGHS参考也不是每轮界 | <code>assets/plot-semantics-r9/chicago/cg-phase-two.svg</code> |
+| 13 | Chicago<br><code>cg-pricing-closure</code> | 完整保存的4OD定价闭合 | CG自身full-graph证书；与失败方法分开 | <code>assets/plot-semantics-r9/chicago/cg-pricing-closure.svg</code> |
+| 14 | Chicago<br><code>s20-fw-map-distribution</code> | S20自身FW地图＋全27129路段22箱分布 | 20 OD，1754.9482512397267 PCE/小时；自身REUSED_PRIOR_ACCEPTED | <code>assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg</code> |
+| 15 | Chicago<br><code>s20-finite-map-distribution</code> | S20自身finite地图＋全路段22箱分布 | 独立保存向量；不接受Native/LR/ADMM | <code>assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg</code> |
+| 16 | Pittsburgh<br><code>pittsburgh-s72-fw-flow</code> | S72自身FW地图＋全路段30箱分布 | 17534物理弧，排除38850转向弧；零FW更新；不是原全城1406 OD | <code>assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-fw-flow.svg</code> |
+| 17 | Pittsburgh<br><code>pittsburgh-s72-finite-flow</code> | S72自身finite地图＋同箱边界分布 | 自身360路径解；一次记录SLSQP迭代；保留OUT起点加载定义 | <code>assets/plot-semantics-r9/pittsburgh/pittsburgh-s72-finite-flow.svg</code> |
+| 18 | Urbana–Champaign<br><code>urbana-champaign-admm-main</code> | 守恒/容量、primal、dual、绝对目标误差四面板 | 一个真实完整更新；PCE与min分开；不造iteration0 | <code>assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-main.svg</code> |
+| 19 | Urbana–Champaign<br><code>urbana-champaign-admm-stopping-corrected</code> | 正确单位的残差/门槛补充检查 | dual和门槛都是min；旧数值不变；不是长过程 | <code>assets/plot-semantics-r9/urbana-champaign/urbana-champaign-admm-stopping-corrected.svg</code> |
+| 20 | Pittsburgh<br><code>pittsburgh-admm-main</code> | 与HK同指标提问的四面板单点 | 只有一次完整更新；不是165次曲线；原PIT_T05保留 | <code>assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-main.svg</code> |
+| 21 | Urbana–Champaign<br><code>admm-final-balance</code> | 最终4commodity×最差35时空节点热图 | 从4×1429496弧流重构；668725节点；四个原独立检查精确复现 | <code>assets/plot-semantics-r9/urbana-champaign/admm-final-balance.svg</code> |
+| 22 | Pittsburgh<br><code>pittsburgh-admm-physical</code> | ADMM、同图LP、有符号差图＋全路段identity散点 | 17534背景物理路段中9106在时空模型实例化；另8428背景不能称求解后零流 | <code>assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-physical.svg</code> |
+| 23 | Pittsburgh<br><code>pittsburgh-admm-conservation</code> | 最终4commodity×最差35时空节点热图 | 700226节点；最大2.7850292342213303e-15 PCE，复现各OD原检查 | <code>assets/plot-semantics-r9/pittsburgh/pittsburgh-admm-conservation.svg</code> |
+| 24 | Urbana–Champaign<br><code>native-map-differences</code> | accepted outer9 rank26自身绝对图、26−FW/52−FW差图、rank26全路段22箱分布 | 原v按26602求解弧准确顺序读取；选11365物理弧，保留42个A/B半段、排除15237转向；UC_S02_C1仍当前可见 | <code>assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg</code> |</p>
+<h3>新图应如何解读</h3>
+<ul>
+<li>静态物理地图与直方图使用同一完整方法向量。含0的直方图总体必须等于物理路段总数；彩色地图为可读性隐藏极小叠加值时，原始数值仍在plot data，灰色图底仍完整。绝对色标使用原单位，平方根归一化不把单位改成平方根PCE。</li>
+<li>Pittsburgh S72采用30箱，其他本轮主要静态图采用22箱；这属于已明确的箱数差异，不能声称每个绘图参数完全相同。要比较同实例两个方法时，共用箱边界和绝对色标；城市之间不同需求/单位不可盲目共用色条上限。</li>
+<li>Berkeley三个方法图使用真实自身向量；FW与finite恰好相等不意味着可以在代码中替换来源。Native rank26/52对FW最大差约2.645862196e-8、1.5853784987e-6 PCE/h，属于极小数值差，不是交通改善。</li>
+<li>UC Native新图使用accepted outer9的rank26/rank52自身显式v，两次原接收回放匹配；两个完整向量最小值均精确0，没有clipping或借FW替换。对同实例FW最大绝对物理差为5.94165001644e-8和2.7191668373e-5 PCE/h；这不是交通改善或速度优越性证据。其当前守恒图与新空间图互补。</li>
+<li>UC最终节点热图用保存x的准确行序、弧端点和供给计算 <code>abs(outgoing−incoming−supply)</code>；四个commodity最大值分别为3.810395106798668e-15、3.597901841530229e-15、5.351749497492834e-15、4.333118451874013e-15 PCE，与原独立检查精确一致。图选最差35节点，但全部668725节点用于筛选和最大值验证。色标下限1e-15只是显示，不把实际0改成正误差。</li>
+<li>Pitt ADMM与LP最大物理差3.1115818793010805e-14 PCE。极小正数可能增加“严格&gt;0”支持数，不能因此声称发生大规模改道；应同时读阈值与差值幅度。保存的ADMM目标0.24793241990524933、LP目标0.2479324199027461 PCE·min，并不要求弧向量逐元素相同。</li>
+<li>原先单点检查、标量对比、代表路段摘要和失败结果保留为有标签的补充证据。当前UC accepted outer9守恒诊断仍作为当前内容保留，而非收进失败历史。</li>
+</ul>
+<h3>暂存来源清单</h3>
+<p><code>staged/static_fw/STATIC_FW_STAGING_RESULT.json</code>、<code>staged/static_fw/VISUAL_AND_DATA_QA.json</code>；<code>staged/berkeley/MANIFEST.json</code>；<code>staged/urbana-static/MANIFEST.json</code>；<code>staged/urbana-native/MANIFEST.json</code>；<code>staged/chicago-static/MANIFEST.json</code>；<code>staged/chicago-cg/MANIFEST.json</code>；<code>staged/pittsburgh-static/MANIFEST.json</code>；<code>staged/finite-admm/FIGURES.json</code>；<code>staged/urbana-balance/URBANA_BALANCE_STAGING_RESULT.json</code>；<code>PITTSBURGH_FLOW_DERIVATION.json</code>；<code>PITTSBURGH_FLOW_VISUAL_QA.json</code>。</p>
+<h2>8. 仍然不能等价绘制的内容：具体缺什么</h2>
+<table>
+<thead>
+<tr>
+<th>希望与旧城完全等价的图</th>
+<th>当前缺口/事实</th>
+<th>现在能做什么；不能做什么</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>单初始检查城市的长FW收敛曲线</td>
+<td>实际没有后续更新，不是漏存许多轮</td>
+<td>可做全路段端点图、容差检查；不插值，不复制点，不以模拟曲线伪装实录</td>
+</tr>
+<tr>
+<td>UC/PIT CG逐OD人工流热图</td>
+<td>人工变量本来位于容量行，并非OD人工流</td>
+<td>可基于373/233容量行保存状态画对应诊断；不能改标OD</td>
+</tr>
+<tr>
+<td>UC/PIT逐OD reduced-cost历史或最终条形</td>
+<td>完整算法计算过逐OD值，但现有保存只留每phase最小值</td>
+<td>可显示真实最小值与证书；没有保存的4OD向量不能凭总最小值拆开</td>
+</tr>
+<tr>
+<td>Chicago逐OD人工需求热图</td>
+<td>总量208状态完整；4OD人工量各自历史未保存</td>
+<td>总量阶梯图可画且已画；4OD定价数据另有完整保存可画，不要混为同一缺口</td>
+</tr>
+<tr>
+<td>UC/PIT LR多轮下界/价格/恢复</td>
+<td>只有一迭代、一恢复，全部正乘子数为0</td>
+<td>真实单点与零状态可画；不能制造价格演化或多次恢复</td>
+</tr>
+<tr>
+<td>UC/PIT ADMM多轮曲线</td>
+<td>各只保存并实际完成1次；独立确认是另一次运行</td>
+<td>单标记四面板可画；保存最终state足以做节点热图/空间图，但不能生成逐轮热图</td>
+</tr>
+<tr>
+<td>Boston式commodity×iteration守恒图用于UC/PIT</td>
+<td>有最终完整x，缺多轮逐commodity历史，且没有多轮运行</td>
+<td>可等价HK最终commodity×node图，不能等价Boston时间热图</td>
+</tr>
+<tr>
+<td>Boston三个需求尺度地图用于单尺度城市</td>
+<td>不存在三个匹配实例</td>
+<td>仅画当前实例；额外需求尺度是新实验，应另行明确设计、运行身份及授权</td>
+</tr>
+<tr>
+<td>Native绝对/差值地图</td>
+<td>需各rank自身完整物理向量或可验证完整重构；当前UC/PIT接收/失败门槛还不同</td>
+<td>Berkeley已具备并绘制；UC已从accepted outer09自身v按精确prepared72弧序完成独立Native空间图，不能继续声称UC无完整向量。Pittsburgh不能因目标相近而借FW流。现有约束残差诊断继续保留</td>
+</tr>
+<tr>
+<td>带逐OD质量残差的有限路径三面板</td>
+<td>路段端点向量不自动提供路径到OD求和资料</td>
+<td>UC S72已找到360路径和72需求并绘出；仅有两面板的其他新图不声称含此诊断</td>
+</tr>
+<tr>
+<td>Chicago LR可行UB/证书gap、HiGHS最优参考线</td>
+<td>LR自己没有已恢复可行UB；HiGHS受资源限制</td>
+<td>保留失败事实与独立可行见证的身份；不能借外部见证改成LR own UB，不能把CG bound写成HiGHS optimum</td>
+</tr>
+<tr>
+<td>接受端点变成拥挤情景性能比较</td>
+<td>无绑定容量的T4不足以评价瓶颈压力、规模或求解速度</td>
+<td>只能报告本实例达到固定门槛；如要研究拥挤条件，应作为新的独立实验，而不是改图“增加难度”</td>
+</tr>
+</tbody>
+</table>
+<p>以上“缺”区分不存在的迭代、未保存的明细、尚未具备严格映射的状态。找到了旧保存数据即可重新评估可绘性；不能把“不在某个公开JSON里”直接断言为全项目永远没有。</p>
+<h2>9. 参考两城42幅完整定位表</h2>
+<p>以下包括优化主图及其紧邻输入/构造证据；所有页面精确锚点、图路径、函数行号、源列、SHA和轴文字在 <code>CANONICAL_BOSTON_HK_OPTIMIZATION_AUDIT.json</code> 的逐图记录中。表中标“卷”表示位于城市独立页；“首页＋卷”是同一图在两个位置，不计两幅。</p>
+<table>
+<thead>
+<tr>
+<th>城市</th>
+<th>图ID</th>
+<th>真正绘制内容/边界</th>
+<th>实际函数</th>
+<th>当前摆放</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>| Boston | <code>C-BOSTON-SOURCE-MARGINS</code> | 500/all选中源区的production/attraction四地图；person trips，非新生成总体人口 | <code>render_boston.py::scale_maps</code> L209 | 首页＋卷 |
+| Boston | <code>C-BOSTON-ENDPOINTS</code> | 物理起终点覆盖图＋数量表；不是流量图 | <code>render_map_layouts.py::boston_endpoints</code> L67 | 首页＋卷 |
+| Boston | <code>C-BOSTON-FW-SCALES</code> | 三个独立FW需求规模地图＋全路段分布；数量log轴 | <code>render_static_cards.py::boston_scales</code> L73 | 首页＋卷 |
+| Boston | <code>G-F141</code> | B1 Algorithm B实际流地图＋全5091路段22箱直方图 | <code>render_static_cards.py::boston_b1</code> L104 | 首页＋卷 |
+| Boston | <code>C-BOSTON-FINITE-STATIC</code> | 26 OD有限路径流地图＋全路段分布＋逐OD质量残差 | <code>render_static_cards.py::boston_finite</code> L118 | 首页＋卷 |
+| Boston | <code>R07-BOSTON-LAYERED-CONSTRUCTION</code> | 真实3秒时间层和movement/wait构造示意；不是地形高程 | <code>render_layered_construction.py::draw</code> L61 | 首页＋卷 |
+| Boston | <code>G-F072</code> | 真实路段与局部时空图；显示时间列非均匀索引，非整图 | <code>render_boston.py::time_graphs</code> L334 | 首页＋卷 |
+| Boston | <code>C-BOSTON-CG-PHASE1</code> | 0–90总人工vehicles阶梯＋10commodity×91状态热图 | <code>render_boston.py::cg_figures</code> L226 | 首页＋卷 |
+| Boston | <code>G-F079</code> | Phase II 0–15真实成本状态＋提交类别＋同图LP | <code>render_boston.py::cg_figures</code> L226 | 首页＋卷 |
+| Boston | <code>C-BOSTON-CG-CLOSURE</code> | 池增长、最小定价RC及逐需求闭合；不是仅池内KKT | <code>render_boston.py::cg_figures</code> L226 | 首页＋卷 |
+| Boston | <code>G-F147</code> | 300次LR valid LB/feasible UB＋gap%；末端1.1002%未过1% | <code>render_boston.py::admm_lagrangian</code> L312 | 首页＋卷 |
+| Boston | <code>C-BOSTON-LAGRANGIAN-PRICES</code> | 正容量乘子前10及按时间数量；λ为min | <code>render_lagrangian_details.py::prices</code> L58 | 首页＋卷 |
+| Boston | <code>C-BOSTON-LAGRANGIAN-RECOVERY</code> | 真实恢复调用时刻、路径池和可行/失败；null不转0 | <code>render_lagrangian_details.py::recovery</code> L90 | 首页＋卷 |
+| Boston | <code>G-F065</code> | 253次ADMM四面板；目标为线性原值vehicle-min | <code>render_boston.py::admm_lagrangian</code> L312 | 首页＋卷 |
+| Boston | <code>G-F069</code> | 10commodity×iteration守恒残差log10热图 | <code>render_boston.py::admm_lagrangian</code> L312 | 首页＋卷 |
+| Boston | <code>C-BOSTON-ADMM-FLOWS</code> | ADMM/LP/差值三地图＋全125路段identity散点；差值标10^-4 vehicles | <code>render_map_layouts.py::admm</code> L137 | 首页＋卷 |
+| Boston | <code>C-BOSTON-FEEDBACK-FLOW</code> | 固定HBW反馈S1流与S2−S1差，非观测因果效应 | <code>render_boston.py::static_maps</code> L190 | 卷 |
+| Boston | <code>C-BOSTON-ABS-L3</code> | 同26 OD实例FW/Native26/52绝对图＋两差图，差值标10^-6 vehicles | <code>render_boston.py::static_maps</code> L190 | 卷 |
+| Boston | <code>G-F145</code> | Native26−finite参考的物理残差地图＋25箱差值分布 | <code>render_boston.py::static_maps</code> L190 | 卷 |
+| Boston | <code>G-F046</code> | FW与Algorithm B逐路段identity散点；同B1实例 | <code>render_boston.py::algorithm_b</code> L304 | 卷 |
+| Boston | <code>G-F048</code> | 一个origin的18条最大重构路段流柱；非整个路网/原生bush内部状态 | <code>render_boston.py::algorithm_b</code> L304 | 卷 |
+| Boston | <code>G-F073</code> | CG最终movement流地图；52/125正流路段 | <code>render_boston.py::cg_figures</code> L226 | 卷 |
+| Boston | <code>G-F075</code> | 实际B07路径9弧顺序表：source、6movement、wait、sink | <code>render_boston.py::time_graphs</code> L334 | 卷 |
+| Boston | <code>G-F078</code> | 第1轮容量交换前后人工需求/弧容量成对柱；事件图非全程 | <code>render_boston.py::cg_figures</code> L226 | 卷 |
+| Hong Kong | <code>C-HK-ADMM-FLOWS</code> | HK4 ADMM/LP/差图＋111路段identity散点；差图单位10^-8 PCE | <code>render_map_layouts.py::admm</code> L137 | 首页＋卷 |
+| Hong Kong | <code>C-HK-CG-PHASE1</code> | HK10 Phase I总人工PCE阶梯＋10commodity×13状态热图 | <code>render_advanced.py::cg_figures</code> L25 | 首页＋卷 |
+| Hong Kong | <code>C-HK-ENDPOINTS</code> | H1的12origin/10destination叠加84物理access；两行布局 | <code>render_map_layouts.py::hk_endpoints</code> L106 | 首页＋卷 |
+| Hong Kong | <code>C-HK-FINITE-STATIC</code> | H1有限路径自身物理图＋1239全路段22箱分布；300为正流路段数 | <code>render_advanced.py::h1_static</code> L4 | 首页＋卷 |
+| Hong Kong | <code>C-HK-L3-STATIC</code> | H1 Native26绝对图、26/52−FW差图、rank26全路段分布 | <code>render_advanced.py::h1_static</code> L4 | 卷 |
+| Hong Kong | <code>C-HK-LAGRANGIAN-BOUNDS</code> | HK10 25迭代LB/UB＋gap%；1–9缺UB/gap留空 | <code>render_lagrangian_details.py::bounds</code> L118 | 首页＋卷 |
+| Hong Kong | <code>C-HK-LAGRANGIAN-PRICES</code> | 191正价弧中的top10＋按时间计数；涉及43物理路段 | <code>render_lagrangian_details.py::prices</code> L58 | 首页＋卷 |
+| Hong Kong | <code>C-HK-LAGRANGIAN-RECOVERY</code> | 4真实恢复调用，10→43池路径；首次可行在第10轮35路径 | <code>render_lagrangian_details.py::recovery</code> L90 | 首页＋卷 |
+| Hong Kong | <code>C-HK-SOURCE-MARGINS</code> | full/H1起终点需求四地图，共用原PCE平方根色标 | <code>render_static_inputs.py::source_margins</code> L117 | 首页＋卷 |
+| Hong Kong | <code>G-F052</code> | 真实全静态FW自身向量，地图＋全1239路段22箱分布 | <code>render_hong_kong.py::static_maps</code> L144 | 首页＋卷 |
+| Hong Kong | <code>G-F085</code> | HK10物理链/entry-exit/时空摘录与movement-turn-wait语义 | <code>render_advanced.py::graph_figures</code> L88 | 首页＋卷 |
+| Hong Kong | <code>G-F087</code> | 实际77弧有序路径：37movement/36turn/2zone/source/sink，无wait | <code>render_advanced.py::graph_figures</code> L88 | 卷 |
+| Hong Kong | <code>G-F092</code> | HK10 CG最终流地图，69/111正流路段；不是Phase II成本曲线 | <code>render_advanced.py::cg_figures</code> L25 | 首页＋卷 |
+| Hong Kong | <code>G-F093</code> | HK10逐OD最小未生成完整路径RC，min；Exhausted不填0 | <code>render_advanced.py::cg_figures</code> L25 | 首页＋卷 |
+| Hong Kong | <code>G-F097</code> | HK4 165更新四面板；目标面板为绝对误差log10而非相对误差 | <code>render_advanced.py::admm_figures</code> L40 | 首页＋卷 |
+| Hong Kong | <code>G-F101</code> | HK4最终4commodity×最差35时间节点守恒热图 | <code>render_advanced.py::admm_figures</code> L40 | 首页＋卷 |
+| Hong Kong | <code>G-F182</code> | 全静态Algorithm B自身向量地图＋全1239路段22箱分布 | <code>render_hong_kong.py::static_maps</code> L144 | 首页＋卷 |
+| Hong Kong | <code>R07-HONG-KONG-LAYERED-CONSTRUCTION</code> | HK10 t24–30真实30秒层片与零时间turn构造示意 | <code>render_layered_construction.py::draw</code> L61 | 首页＋卷 |</p>
+<h2>10. 接收、放行、历史与上传说明</h2>
+<p>当前正式文件放行计数为 <strong>133项 = 原129项 + PIT_T05新增4文件</strong>。原129项为125个复制文件＋4段正文合并；PIT_T05增加PNG、SVG、plot JSON和caption四文件。这个计数是接收条目数，<strong>不是133幅图，也不是本轮24张新图已获得S0逐字节批准</strong>。</p>
+<p>本轮24张图是 <code>LOCAL_SAVED_DATA_PRESENTATION_DERIVATIVE</code> / 本地保存结果的显示派生图，具有独立源绑定、plot data、caption和新字节哈希。沿用原结果、原数据或原字体，不会使新导出字节自动成为S0已批准文件。原129＋4的字节和历史回执应保留；本轮不能追改它们来伪装新放行。35项private、5项pending等原隔离身份也不能因可在本地读取就被取消。私有source、完整checkpoint、需求库和本机路径不应变成公共网页入口。</p>
+<p>此前“PIT_T05待单位修正/待S0”的文字若保存在历史记录中，必须连同历史日期/身份阅读。当前这4文件已独立接收，不能再当作当前待决项；UC本轮单位修正派生图的身份也不能与已正式放行的PIT_T05混为一谈。</p>
+<p>建议一起上传的最小可读组合：本指南、<code>CHATGPT_READ_FIRST.md</code>、<code>SHORT_TRACE_AUDIT.json</code>、<code>CANONICAL_BOSTON_HK_OPTIMIZATION_AUDIT.json</code>、<code>INTEGRATED_FIGURES.json</code>。如果需要ChatGPT实际逐图判断，再附本轮网页包中的PNG/SVG、caption、plot data及脱敏source记录。只有文档没有图时，ChatGPT不能声称自己已视觉检查图片；只给截图没有数据时，也不能声称已复算守恒或检查完整定价。</p>
+<p>不要默认上传所有带PRIVATE字样的绑定文件或整份求解输入ZIP；这些不是理解本指南的必要前提。技术追溯若缺文件，可明确点名需要的具体列、状态或记录，避免笼统要求“再跑几轮”。</p>
+<h3>最终判读规则</h3>
+<p>一张图通过的标准不是看起来热闹，而是：实例匹配、方法向量真实、指标与单位正确、总体与记录数明确、缺失值不造、状态不串用、文字不超出证据。更长轨迹、更鲜艳热图或更多差值小数，都不自动构成更强科学证据。</p></details></section>
+</main><script>const field=document.getElementById('filter');const rows=[...document.querySelectorAll('#audit-table tbody tr')];function apply(){let n=0;const q=field.value.trim().toLowerCase();for(const row of rows){row.hidden=!((row.textContent+' '+row.dataset.city).toLowerCase().includes(q));if(!row.hidden)n++;}document.getElementById('count').textContent=n+' / '+rows.length+' 条记录';}field.addEventListener('input',apply);apply();</script></body></html>

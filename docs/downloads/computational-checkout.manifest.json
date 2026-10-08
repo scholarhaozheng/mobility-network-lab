@@ -1,28 +1,28 @@
 {
   "schema": "mcl_public_computational_archive_v1",
-  "releaseId": "20261005-r19",
-  "sourceRevision": "reproduction-2026-10-05-r19",
+  "releaseId": "20261008-r20",
+  "sourceRevision": "reproduction-2026-10-08-r20",
   "documentationRefresh": {
     "documentationOnly": true,
     "computationalRecipeRelease": "reproduction-2026-10-04-r14",
     "preservedComputationalCommands": 41,
     "preservedRecoveredRecords": 44,
     "readme": "README.md",
-    "imagePositions": 127,
-    "uniqueLocalImages": 89,
+    "imagePositions": 288,
+    "uniqueLocalImages": 250,
     "allReadmeImagesIncluded": true,
     "exporter": "tools/build_readme_from_homepage.py",
-    "scope": "Documentation-only copyedit of the homepage, README and linked reading text. Requested diagram labels and caption phrases were removed, and contrastive wording was simplified while preserving the documented instance limits. Computational recipes, pinned code, numeric receipts and r14 identities are unchanged."
+    "scope": "Documentation-only refresh of the public homepage, README and figure assets synchronized with the reviewed full site. Computational recipes, pinned code, numerical receipts and r14 release identities remain unchanged. New city compute packages and raw scientific inputs are not included in this archive."
   },
   "archive": "computational-checkout.zip",
-  "sha256": "7431d476787c6666a3c57fd66adb4e1dfaf04bd6ce83f17664ee2f2731711b07",
-  "bytes": 25653207,
+  "sha256": "42c4830ae91b6705ad375f9c222786f5cd43e0ca23672c25f624c6bc4686c84a",
+  "bytes": 54161943,
   "files": [
     {
       "path": ".gitattributes",
       "source": ".gitattributes",
-      "sha256": "3cde6afc82168b4f554213374c1f2f45e2b5014790af06e194ccb1c9215f7802",
-      "bytes": 97258
+      "sha256": "4eb5134dda9cec22cefee13277fd353ca7bd27a541fb0ea830edec4534fc7d13",
+      "bytes": 99099
     },
     {
       "path": "CITATION.cff",
@@ -45,8 +45,8 @@
     {
       "path": "README.md",
       "source": "README.md",
-      "sha256": "f40f2d36c777a10603f8ba068e4423cb3a52a3f4dab4733b74f04841de1b9f50",
-      "bytes": 266345
+      "sha256": "8c661585a4953d63db1ef01aee4af8f9886d90b14d1e5110e3e605acd3f4d9fc",
+      "bytes": 675466
     },
     {
       "path": "REPRODUCTION_PACKAGE_MANIFEST.json",
@@ -1375,10 +1375,34 @@
       "bytes": 135819
     },
     {
+      "path": "catalog/documentation-languages.json",
+      "source": "catalog/documentation-languages.json",
+      "sha256": "93b52fb30a95d95c611391ebc7fb85c5c945b12f052b362d51549b784dfaa6e2",
+      "bytes": 15509
+    },
+    {
       "path": "docs/assets/admm_r2/provenance/experiment_plan.json",
       "source": "docs/assets/admm_r2/provenance/experiment_plan.json",
       "sha256": "494c53463d99ed384c8968d5feb31e8b2445e4697b0001bc8e6fdc4b80f3ac58",
       "bytes": 4282
+    },
+    {
+      "path": "docs/assets/atlas/HK10_EDITORIAL_20261005.json",
+      "source": "docs/assets/atlas/HK10_EDITORIAL_20261005.json",
+      "sha256": "3fab84fe96b23c4af431c809e56b6bf0db6d3916a29deb43c43d1c384afbf31e",
+      "bytes": 2593
+    },
+    {
+      "path": "docs/assets/atlas/HK10_PRESENTATION_20261004.json",
+      "source": "docs/assets/atlas/HK10_PRESENTATION_20261004.json",
+      "sha256": "1588d067354177d780a1105cab52a9c393a7c961976f48a2f288fe14e850c0a1",
+      "bytes": 16283
+    },
+    {
+      "path": "docs/assets/atlas/HK10_PUBLICATION_20261008.json",
+      "source": "docs/assets/atlas/HK10_PUBLICATION_20261008.json",
+      "sha256": "3d04f433e05d5634f8b1f15e976ae195e79e6376ea03abcd56c2954e1ac1bda7",
+      "bytes": 12823
     },
     {
       "path": "docs/assets/atlas/card-layout/c-boston-admm-flows.svg",
@@ -1457,6 +1481,12 @@
       "source": "docs/assets/atlas/construction/r07-boston-layered-construction.svg",
       "sha256": "009b5d21b4f9a6b0f83e3a3bd95abc76f9980822831b55d9f548442104bfb691",
       "bytes": 61516
+    },
+    {
+      "path": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.source.json",
+      "source": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.source.json",
+      "sha256": "346fd1bd9171da4e9dcc55ce1b9e0ba488b042df0962c8061532facfe3d816e9",
+      "bytes": 6299
     },
     {
       "path": "docs/assets/atlas/construction/r07-hong-kong-layered-construction.svg",
@@ -1569,8 +1599,8 @@
     {
       "path": "docs/assets/atlas/figures/g-f001.svg",
       "source": "docs/assets/atlas/figures/g-f001.svg",
-      "sha256": "a4544edbe0e0bfbae37a4de70ef8ce52c3b0c7b16934f5fcf52572e15d1a972e",
-      "bytes": 83337
+      "sha256": "243f52b4b82e9560d52bc721199968b370fd11a190ba8a41217bc6a1c78821eb",
+      "bytes": 94064
     },
     {
       "path": "docs/assets/atlas/figures/g-f015.svg",
@@ -1927,6 +1957,696 @@
       "bytes": 236
     },
     {
+      "path": "docs/assets/cg_layered_companions_r1/DISPLAY_INPUTS.json",
+      "source": "docs/assets/cg_layered_companions_r1/DISPLAY_INPUTS.json",
+      "sha256": "a07346dcce8a0520e91db80cede0e86576d32f7d8d631c2aece4eae6b0d61bba",
+      "bytes": 5016
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json",
+      "source": "docs/assets/cg_layered_companions_r1/HK10_LAYERED_COMPANION_DISCLOSURE.json",
+      "sha256": "d559ae577d004a146991cb1d2f08a782fe7a4159780ef9bc78c40189cedd5338",
+      "bytes": 2906
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_display_edges.csv",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_display_edges.csv",
+      "sha256": "16f3600b3aebcd039bb6242ff30672856a68bf5721dbed6fc3d6654601e096ee",
+      "bytes": 934
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_display_states.csv",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_display_states.csv",
+      "sha256": "2172a162acb6d96fa3bf5fd3e2e4b817765f16a278642e3b50e3b93f357e95e0",
+      "bytes": 1708
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.html",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.html",
+      "sha256": "04e5043fa9605d0313f2a0dd37e0a7731cf18981a0c640e82767deec526905bb",
+      "bytes": 3389
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.md",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.caption.md",
+      "sha256": "d71e579fb73948cdcb097ca5e1bb508012bbb1115845cf1d4723b81381063009",
+      "bytes": 627
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.png",
+      "sha256": "b388ec4a49ab20b1e0fddc6bde31d8c1b756fdcca1d21bc329fddc71e1398721",
+      "bytes": 439759
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.source.json",
+      "sha256": "424ef55867b47487f752cd97a72b30963e641cd5587b0620b3a1ffc0ddf77944",
+      "bytes": 3376
+    },
+    {
+      "path": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.svg",
+      "source": "docs/assets/cg_layered_companions_r1/hong_kong_layered_space_time_construction.svg",
+      "sha256": "7585b367350cb0f3063b5e5b651882dd5501709d03df4b3204e4f51b7cedf0f9",
+      "bytes": 20993
+    },
+    {
+      "path": "docs/assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+      "source": "docs/assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+      "sha256": "12aff2bcacd4d0c415ba88de2e8bbbfeacf4601afb9462cf1fb2c00a8e7c7622",
+      "bytes": 141419
+    },
+    {
+      "path": "docs/assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+      "source": "docs/assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+      "sha256": "08b4f47b6a3ebe5984ddf52aeb43f4a6f7c22eede1ead6a68ccfa1f112c69c28",
+      "bytes": 47812
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+      "source": "docs/assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+      "sha256": "8addeccd6ad08da5a08b6b7623a0802c962d25ac98d2b9f792245b4b6d8a6ffd",
+      "bytes": 166260
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/ann-arbor/aa-g01.svg",
+      "source": "docs/assets/city-alignment-r3/ann-arbor/aa-g01.svg",
+      "sha256": "c52268c4db66792d19ba7ca5c23e2b0d667fe589a5dea1ed3867eb208cc630f9",
+      "bytes": 89271
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+      "source": "docs/assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+      "sha256": "d4f57c9b94269c7d7877d66201d22228e7ca826f7d70d54de0f29d96c0a2aae2",
+      "bytes": 91449
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+      "source": "docs/assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+      "sha256": "8b5b83a833c67adc1ce1d6b41eb262248f4e006b0cc752136ae209ed7a92c336",
+      "bytes": 107965
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+      "source": "docs/assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+      "sha256": "598b8e7deeb87546fa6b47c4b23678bed1ec94b509a5b6d2904c8516a5e72770",
+      "bytes": 2282461
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+      "sha256": "261c3a04bebbdbf61185460ca9c17f780db25e4b28555f9f4378d185bb7eec03",
+      "bytes": 52758
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+      "sha256": "f7d21983dcacca8e3721b25a36f51d6df1555126e9702b11537de959c6f52b49",
+      "bytes": 47143
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+      "sha256": "3bd906a05561af53327d7852aad30a37d3c9390d7f4d6e4ad42759b1bb5a19c8",
+      "bytes": 52709
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/population_jobs.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/population_jobs.svg",
+      "sha256": "0bff356803afb5e72dfa3c4e6771ed169afd6f00f998e50cad9991e0a5ac34bd",
+      "bytes": 919599
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/source_geography.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/source_geography.svg",
+      "sha256": "5164eea11b104f5582c0b21c6f048c429eb32ab2726aeb30239f937bd31b1ed4",
+      "bytes": 475178
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/static_endpoints.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/static_endpoints.svg",
+      "sha256": "24a5a101a9714d9442163536bc7f4496d4b1bba97b8ee6f4dd74bf3bbdddc946",
+      "bytes": 933823
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/static_source_margins.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/static_source_margins.svg",
+      "sha256": "764a3c5b45246ae4657b8b96cfe50f188717f918731efd7959e1e659fc0b0c2a",
+      "bytes": 59402
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/transit_network.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/transit_network.svg",
+      "sha256": "890039dcc1a01427bdf5964a088b831e0c2df9b4ab879a4cf4a09f72df6c125e",
+      "bytes": 507561
+    },
+    {
+      "path": "docs/assets/city-alignment-r3/berkeley/transit_service.svg",
+      "source": "docs/assets/city-alignment-r3/berkeley/transit_service.svg",
+      "sha256": "179e9c4f187ab23b825edcd19cd698f83250c82a0028b2e1b7f3a9b7c4d6f8ba",
+      "bytes": 75846
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ann-arbor/aa-t01.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ann-arbor/aa-t01.svg",
+      "sha256": "afc1bda053154e5796d26c301e83721b184e7977e4e6d7f651faea18982fe15c",
+      "bytes": 1189244
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+      "sha256": "a08e91b05e27e6551ee1640c4a0a3badf1fade07c70808961c1f6afa34609103",
+      "bytes": 1577094
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+      "sha256": "fe35f9658df0083be7dbd2b68689f5b849952ac89277dfcbbceecd492c334943",
+      "bytes": 120893
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+      "sha256": "907225f7fb7d0fc58f34b77fc5c16764618baa6a71ab8174326672446b6d892d",
+      "bytes": 2302728
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/berkeley-turn_candidate.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/berkeley-turn_candidate.svg",
+      "sha256": "02815531c856f5cd7d40a6859b25774b12d95f32550f929d92e8fd1b640fee68",
+      "bytes": 102097
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/f10_generation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/f10_generation.svg",
+      "sha256": "547440048981641d6278ade7621bbaad815e1c968282d40cf3608a3600821fa3",
+      "bytes": 64011
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/f11_distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/f11_distribution.svg",
+      "sha256": "41df835153743756acd4edc086ac28b4344a79b04b7e5e2ae81651c4bc539ae4",
+      "bytes": 86005
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/f12_mode_choice.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/f12_mode_choice.svg",
+      "sha256": "b43e2e1c02561c5012764cd6cff0ec3e8ecd9a4309b492be183536d5ffaeb0ef",
+      "bytes": 86423
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/lp_cg_lr_physical_flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/lp_cg_lr_physical_flow.svg",
+      "sha256": "c0d5c8a0a3190d7604caa12e565f2361a304afecc6961ebdeb36edcd1f917a07",
+      "bytes": 1331215
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+      "sha256": "1d4f25c749b5f99156850497ae62fb52eb2cb5ae772d9efeafc15ae73eb486fc",
+      "bytes": 83206
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+      "sha256": "101c4354bec44f944b56ae2f83a88bce87f773b5ca546fa8805463ae65e98ab7",
+      "bytes": 79188
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+      "source": "docs/assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+      "sha256": "13753c26a6c8d1f309e229099d51bffe5b73c5d8eb49fb799c06173f6407da93",
+      "bytes": 75103
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/cg-pricing-closure.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/cg-pricing-closure.svg",
+      "sha256": "1286147cec3a3c26e7fc62150923331d601109a3018f3fd6de9c7b34018aa27c",
+      "bytes": 138618
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/chi-algorithm-b-gap.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/chi-algorithm-b-gap.svg",
+      "sha256": "12efebeba3002a6d7db34243d4a43f2c6817592107ce3aef5ba018da1583d308",
+      "bytes": 73746
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+      "sha256": "92e5a2b1171db5989361d3e4121d82ca32deb8153eafccefaf4b8fe4cf5712ed",
+      "bytes": 65391
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/chicago-c06_t_cg_generated_paths.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/chicago-c06_t_cg_generated_paths.svg",
+      "sha256": "f9809200d7d797337069a482bbde9775c473387c8d972ce6bdfb2644a0c30095",
+      "bytes": 16845677
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/chicago-fs_a03.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/chicago-fs_a03.svg",
+      "sha256": "72a940a0717aae04a6b4751239cc353aa3a8fd596524fabaa00ba7576f3c1e97",
+      "bytes": 89936
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/distribution.svg",
+      "sha256": "b94bca5f258d806be5e61aabd8f2bac2619c256b6c6d5311c6655093d0e0b905",
+      "bytes": 90225
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/fw-physical-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/fw-physical-flow.svg",
+      "sha256": "f501ff265ec8b1c5f45099450e9f3ae01a839424ae5078da2a36bd0f339964f1",
+      "bytes": 4574362
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/generation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/generation.svg",
+      "sha256": "7a17fada3cf4d94f61e3a20bf8615e903ab8ceda7f615d1d1e96ebd630f2a8be",
+      "bytes": 76370
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/mode.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/mode.svg",
+      "sha256": "289c6d29f7a27fd024296717ab13fee393f20b98e576af42406a02efd944d59d",
+      "bytes": 74465
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/population.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/population.svg",
+      "sha256": "5bac8eedfe2564ed444482bb01ac4fbe7138f309f6a7c83e460bfa37bd7b0a14",
+      "bytes": 63031
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/sources.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/sources.svg",
+      "sha256": "683457742beefc35ed69c18b2d2b704aa0d9b6a048b3d22992cd923c7996a094",
+      "bytes": 4264136
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/trace.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/trace.svg",
+      "sha256": "f6124a7ff48ffea0390b467828eb69cf40fc4ff5379cfb093843b5aeb69d8463",
+      "bytes": 79039
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/chicago/transit.svg",
+      "source": "docs/assets/figure-contract-r11/figures/chicago/transit.svg",
+      "sha256": "4b81133e4122a4c0742173dabe19f65907cca7de9bc7231bf8696befb14b9b73",
+      "bytes": 4409918
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/distribution.svg",
+      "sha256": "5c1529891c4cf236894e0946fad556284d82222b581640fc21a1c5b3fcc21016",
+      "bytes": 105508
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+      "sha256": "b960e59657c20325bc001c4bad1f1f19facce30a506a444bf8dc90b397af5206",
+      "bytes": 2795478
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/generation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/generation.svg",
+      "sha256": "cb2e33b78599e561acc9fa48f5a3313aa5725fc7c9a8c65bcffb8568ce0191c4",
+      "bytes": 79465
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/ith-count-record-coverage.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/ith-count-record-coverage.svg",
+      "sha256": "aef257ee76c8ce62801d876e8720d4e85262df7f284fac33fca3ae51db626464",
+      "bytes": 70799
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+      "sha256": "ce3faacda982d5aa19b3dde61d1a395a102f100be0042c00b2d7bfcba2abb1f1",
+      "bytes": 74735
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/ithaca-fs_a03.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/ithaca-fs_a03.svg",
+      "sha256": "86a4618ea97f4161ac0d1a3334fbf01201d99ed50b7bd622f0a7ea5636c666ae",
+      "bytes": 90421
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/mode.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/mode.svg",
+      "sha256": "fa5aebf6a84d1796fda0897f1e65eab5a2f89b8eb2eb6579ff805ddd09b4a414",
+      "bytes": 79001
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/population.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/population.svg",
+      "sha256": "ee499b1205b5f31f6c407883afe119302b615905578c2df9466d24fac14c8e69",
+      "bytes": 82641
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/sources.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/sources.svg",
+      "sha256": "45a8c6bcb5c1a5540331f281066c0f04ff36bbc3861b36329d2fa3ee1fb74b63",
+      "bytes": 2413494
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/ithaca/transit.svg",
+      "source": "docs/assets/figure-contract-r11/figures/ithaca/transit.svg",
+      "sha256": "7b2a347a5cbfdf2351a5565dbed7eef9271eeb69af7a8fc672882fe7ea1d311b",
+      "bytes": 2452006
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/distribution.svg",
+      "sha256": "b6017a486c1113cfc8666a19176cafdba0f4689e9b2e3d0240687aa322e30105",
+      "bytes": 149078
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/fw-physical-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/fw-physical-flow.svg",
+      "sha256": "0dbca90fd893559ca31f53408c527b17ba36b691a6b5b490b80efac9c427bde1",
+      "bytes": 3896773
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/generation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/generation.svg",
+      "sha256": "860e39378745e4925c906c0dab976560b9eb0bea54794029dd38e1b7722fddf7",
+      "bytes": 105920
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/mode.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/mode.svg",
+      "sha256": "2df6323cdf58c00bbcc5d8cf49a697bd8b92da814fce3da98b6c956d7cb7fa20",
+      "bytes": 80949
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pit-native-conservation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pit-native-conservation.svg",
+      "sha256": "1462be845b2e15b26c44fccf3df5f644dd850b2b6e1cd834076a0c89158a36c1",
+      "bytes": 90166
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-fs_a03.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-fs_a03.svg",
+      "sha256": "0913cf0516686715cbed681873b7d104e3c88a5b93a0cb6aaa4ecbf6b893c440",
+      "bytes": 1540855
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-admm-conservation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-admm-conservation.svg",
+      "sha256": "8fb2d92273feb96324af3983f08959baf6b0920254c609a0a8748f5956e078f5",
+      "bytes": 88966
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-admm-physical.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-admm-physical.svg",
+      "sha256": "3146c4c8afd306b33aa5eb42c254f3e52a3ec138c9624093526383434a93f4bb",
+      "bytes": 14554090
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-s72-finite-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-s72-finite-flow.svg",
+      "sha256": "1c762f52344580d0bc6d585869053ee134273be34a9f641e7cd5acd165b461b0",
+      "bytes": 3525841
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-s72-fw-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/pittsburgh-pittsburgh-s72-fw-flow.svg",
+      "sha256": "6e034996dea6db4a6603bed1f85070c7a76c766149aadc21a4178cd51c76a668",
+      "bytes": 3527239
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/population.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/population.svg",
+      "sha256": "eee5636069ea372f91aec458820ad686012e752dc198c01cfe6c252666091c42",
+      "bytes": 117568
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+      "sha256": "4bceee513974424cded93dc5ae97e71ae44890753bb8441249ce9cd1f5dc50f3",
+      "bytes": 3037391
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+      "source": "docs/assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+      "sha256": "27a89b436e2ef8a6098915084b1b54349f853859601bc7706f418e0d72c178c9",
+      "bytes": 3057305
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+      "sha256": "e81fc33b1cd6ef93b805864c15738f8be19fc4e0f6765d819ddb0921c6caec3a",
+      "bytes": 134673
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+      "sha256": "8ef2b7615acbb8f6f410631e8fd9d07aa1dad4b3fc1065025ff1887fd38b7977",
+      "bytes": 2616217
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+      "sha256": "94a27e337d0174a2bc1023cabdefbb5a475de98f18eeec434373bac8277c2cb1",
+      "bytes": 91133
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+      "sha256": "e42b7d3298678d93c2c2454b34bef1ed376019ce460e59f81ede1daccc7954de",
+      "bytes": 77180
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+      "sha256": "8a997281872ad5a9bef477222ecd4a27534a3b660fb6ef0f9a3c07a91ce1df65",
+      "bytes": 94734
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+      "sha256": "11645deef0a0661c78d6f0eef44853eadb3eb79c27662bb6de267fab057357d8",
+      "bytes": 2480984
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+      "sha256": "0c6fbbaa19b6423fb0a683c5d3e91e3c1dcc4514f737cf353791ed49a3c8c90b",
+      "bytes": 1998830
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+      "sha256": "4bb29167a0f22d4b72741d5debdba3d33971a52404222f5453f93390f6b6cd77",
+      "bytes": 4888503
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+      "sha256": "76a3659bc34ae778580f6d84bf0f01a140f2b52f1f884d4248ddcfe628f56102",
+      "bytes": 76480
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+      "sha256": "d9521ef13f1b8e54f47ec114eb3e26fae84464ecf7d1bd137ee42f5648f86d38",
+      "bytes": 67625
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+      "sha256": "396194e96c70769176aed230befc1278bc86e5056abfcc204e1003be1922080a",
+      "bytes": 89386
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+      "sha256": "c85992a3ebcfc8f8bc737d6ede48e886a7ef0200dc4d7698b61f065d1512e405",
+      "bytes": 12005254
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-f03_population.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-f03_population.svg",
+      "sha256": "a937de9054337e6cea45403e6d01a81f04bf5f6ceeee4a0df89062713e2f7567",
+      "bytes": 136191
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-f08_s2.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-f08_s2.svg",
+      "sha256": "7cf36664558b90c76ce3080a666a710cfa19a75016b0908d6e8401fe6e4d3585",
+      "bytes": 99291
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-fs_a03.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-fs_a03.svg",
+      "sha256": "8b3bdcfe7fe7e4faed2c656befe2806909f205df2a743d854b2ea2c9d2630e66",
+      "bytes": 96484
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-fs_a05.svg",
+      "source": "docs/assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-fs_a05.svg",
+      "sha256": "b49532898a254021dd96af163ed2242fd75bba7bde7e078ddf82507ab3426ed7",
+      "bytes": 2560884
+    },
+    {
+      "path": "docs/assets/figure-contract-r11/project-structure.svg",
+      "source": "docs/assets/figure-contract-r11/project-structure.svg",
+      "sha256": "5cc731555e1f7f2b3bed54b193e9baa0fb6d850594a9556e07fef6ea4f31a8ed",
+      "bytes": 118221
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ann-arbor/aa-original-initial-check.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ann-arbor/aa-original-initial-check.svg",
+      "sha256": "3126841d96df0ba7f5a34d62bb338293dc459be0664441e57c1de91b5b02f599",
+      "bytes": 77010
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+      "sha256": "fb01d83608e64e9ff8925ff13aa93c23a6f2a5b8d80cafb1d28f0b0452af1218",
+      "bytes": 74573
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/berkeley/berkeley-fw-initial-check.svg",
+      "source": "docs/assets/figure-contract-r12/figures/berkeley/berkeley-fw-initial-check.svg",
+      "sha256": "f8aaa86ea2b414ff2a0ca884509b3c29bfcd76abacff818a19c6d7a9fd4edb7d",
+      "bytes": 74592
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/berkeley/berkeley-s72-endpoints.svg",
+      "source": "docs/assets/figure-contract-r12/figures/berkeley/berkeley-s72-endpoints.svg",
+      "sha256": "d5a290c79911f22ed5cba6bf23db8019a86172e3679b3fc89eb0bfeb67c8792d",
+      "bytes": 101334
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/chicago/chi-cg-physical.svg",
+      "source": "docs/assets/figure-contract-r12/figures/chicago/chi-cg-physical.svg",
+      "sha256": "a6ff5ddcfe2a78435b454979091ef1d87c0f38c29ecfe21238f8eb2fb3bfeb9b",
+      "bytes": 4363344
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/chicago/chi-fw-history.svg",
+      "source": "docs/assets/figure-contract-r12/figures/chicago/chi-fw-history.svg",
+      "sha256": "a76049951a3b2969dc63ac01d4f113ec18c90afb7f5558638502eb7e0a9475cf",
+      "bytes": 86769
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/chicago/chicago-native80-endpoint.svg",
+      "source": "docs/assets/figure-contract-r12/figures/chicago/chicago-native80-endpoint.svg",
+      "sha256": "3fce77d12c91d483ed9379a0d5ca603273fe4faf460eda1abfcf406449893811",
+      "bytes": 74585
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+      "sha256": "684d83491a26c0fc24beb550d63a29e8611e53097d80b279686dbebb8fbf13cc",
+      "bytes": 98896
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+      "sha256": "527f4ea06a43fdb15e2c32cfdf2c2fcd539658d5f6f8d7332caefb82e8f0aa2c",
+      "bytes": 99246
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ithaca/ithaca-initial-fw.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ithaca/ithaca-initial-fw.svg",
+      "sha256": "d7b8f65d7f1eeb33fe6ef787cdbacbf130ef2095545df1f6f631b165c29bc735",
+      "bytes": 77422
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ithaca/observation-source-coverage.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ithaca/observation-source-coverage.svg",
+      "sha256": "b14c9279b46d9b0f8c3403cce55cf98b24f3ba251a708fe78995090d53fa4eed",
+      "bytes": 62432
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/ithaca/observed-counts-2022.svg",
+      "source": "docs/assets/figure-contract-r12/figures/ithaca/observed-counts-2022.svg",
+      "sha256": "86318cdbd3ba5a90560b084247553bac7ecc15d794955485ef2035b440b2d7bc",
+      "bytes": 80402
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/admm-saved-state.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/admm-saved-state.svg",
+      "sha256": "b2b19563199f5ce5051ff2712d687d42b2e496356455b52de28e42f3d7e037c1",
+      "bytes": 100807
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/cg-phase2.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/cg-phase2.svg",
+      "sha256": "4acad32923aee57eb8c3913541622bf2dd413e557cf7e36776187df608fdb646",
+      "bytes": 65067
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/cg-pricing.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/cg-pricing.svg",
+      "sha256": "7dac3404634951c83b36130a6c52aaaa9d5abb1f1585d61f31504d3b255f4a26",
+      "bytes": 71488
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/lr-bounds.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/lr-bounds.svg",
+      "sha256": "e5421c388ef77e68408e07c0f128d7c518f88a868a6e63b395047329fe72b9ee",
+      "bytes": 75452
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/pittsburgh-initial-fw.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/pittsburgh-initial-fw.svg",
+      "sha256": "2650af3fe0973afd4807e900422fa0da46271a13799cf7fdd523fbfe27c04ea1",
+      "bytes": 75534
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/pittsburgh/pittsburgh-s72-endpoints.svg",
+      "source": "docs/assets/figure-contract-r12/figures/pittsburgh/pittsburgh-s72-endpoints.svg",
+      "sha256": "191a04adee149b1eae8c050ec3c4ba1ab7b449a47990269d6df04d5d0fc6fcc2",
+      "bytes": 72882
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+      "sha256": "ac54a3e9b71b09fff85078aea55ff1907fbf86cfc8a1c348e8c77db7bbb69bce",
+      "bytes": 101502
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+      "sha256": "632d9837a8d27ff0ffee8782c5e030f842d68e342432da67d3a13bccce5cd80e",
+      "bytes": 66300
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+      "sha256": "8ec47a0db548dc73c4f65f41d69028f06a44dbb3e4854d48815fbc3f1fff1830",
+      "bytes": 72264
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+      "sha256": "7c33e3971720dec298a4b9982763ed4d13a26b67a7521f472ebb9ab8ecc06a17",
+      "bytes": 76579
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+      "sha256": "36c21edf844333e50da8138f075efb041fee43f106f60543eccc94ddf84bffad",
+      "bytes": 79808
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/uc-s72-method-endpoints.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/uc-s72-method-endpoints.svg",
+      "sha256": "1a0c5f32b8c20f838994bce47a17397709eb0b9af5bd93a4c71b454a8dc04682",
+      "bytes": 72824
+    },
+    {
+      "path": "docs/assets/figure-contract-r12/figures/urbana-champaign/urbana-champaign-initial-fw.svg",
+      "source": "docs/assets/figure-contract-r12/figures/urbana-champaign/urbana-champaign-initial-fw.svg",
+      "sha256": "bd2a9ea09372f30c4c79757095df3086356f5533a35e3f08dc06a3b821b8a852",
+      "bytes": 77579
+    },
+    {
       "path": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/ASSIGNMENT_READY_GATE_R2.json",
       "source": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_a/ASSIGNMENT_READY_GATE_R2.json",
       "sha256": "117aade768d94b88b5fe95dac13eaf4d119b50f5f0108855221c223d2da074fb",
@@ -2191,10 +2911,106 @@
       "bytes": 1211
     },
     {
+      "path": "docs/assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
+      "source": "docs/assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
+      "sha256": "1b1a6c6c4a9cb9a00b8f57df7ef7b75b1eee89bbf4e5b24a7edaa5c630de7079",
+      "bytes": 581942
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/berkeley/fw-map-distribution.svg",
+      "source": "docs/assets/plot-semantics-r9/berkeley/fw-map-distribution.svg",
+      "sha256": "b876da6558c7d08ceeaa6b46559de48570979935373741f2620649e91a0a9c63",
+      "bytes": 583307
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/berkeley/native-map-differences.svg",
+      "source": "docs/assets/plot-semantics-r9/berkeley/native-map-differences.svg",
+      "sha256": "416f3f528e6ec6b177b6518aeac47450cb2bce884b1be9908d5815a1848c6738",
+      "bytes": 1823221
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/chicago/cg-phase-one.svg",
+      "source": "docs/assets/plot-semantics-r9/chicago/cg-phase-one.svg",
+      "sha256": "ec676465ff9d752f5f9f87650ccdd93c7017649d3cee098a6485a71e08128598",
+      "bytes": 71366
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/chicago/cg-phase-two.svg",
+      "source": "docs/assets/plot-semantics-r9/chicago/cg-phase-two.svg",
+      "sha256": "dd90d04c163f2a7025ebd8ac4728b4a57cf35a23d4829a2fefef8c6e57c0b15a",
+      "bytes": 55368
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg",
+      "source": "docs/assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg",
+      "sha256": "ec930ca39692a34775c29228bdb5a6e1dfc3262ee8965dd57681f4d16b93beae",
+      "bytes": 4548187
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg",
+      "source": "docs/assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg",
+      "sha256": "fcc31c7dc42f605ac450f92a7d5be42cf48b92078632a1d8c3d7eb6be40d65a1",
+      "bytes": 4553734
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+      "source": "docs/assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+      "sha256": "fee2ea070b085c04a834b9a4dd46ca06d7c374145c0967c2f2f926fd62335f36",
+      "bytes": 7938012
+    },
+    {
+      "path": "docs/assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+      "source": "docs/assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+      "sha256": "0a0cce893092fcec9c0dad228f290091317250029352f8875bce649d0b28a674",
+      "bytes": 2454856
+    },
+    {
+      "path": "docs/assets/presentation-publication-20261008/PRESENTATION_PUBLICATION.json",
+      "source": "docs/assets/presentation-publication-20261008/PRESENTATION_PUBLICATION.json",
+      "sha256": "c78e145d283336b83d75f8058f1d4b4ce01f1f0378c0dd2d9aaeedae7d21efa8",
+      "bytes": 415401
+    },
+    {
+      "path": "docs/assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.svg",
+      "source": "docs/assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_CONVERGENCE.svg",
+      "sha256": "fbb53125f851b6e60264c3a5c59ac8636b2a4378175e4308eaa03e583f1b60d5",
+      "bytes": 14326
+    },
+    {
+      "path": "docs/assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.svg",
+      "source": "docs/assets/private-choicefw-v002/ann-arbor/figures/ANN_CHOICE_FW_NETWORK.svg",
+      "sha256": "cfa049dc3ef2136b533150c3b1fa5ae6074418156165ce2f2741a2346fa57615",
+      "bytes": 1534373
+    },
+    {
+      "path": "docs/assets/private-native-history-20261008/berkeley/native-complete-history.svg",
+      "source": "docs/assets/private-native-history-20261008/berkeley/native-complete-history.svg",
+      "sha256": "4cd50139936a40e9a13a0df3064b0fd8724184d8026d4e4e0beb6bbbbffb6cee",
+      "bytes": 114777
+    },
+    {
+      "path": "docs/assets/private-native-history-20261008/chicago/native-complete-history.svg",
+      "source": "docs/assets/private-native-history-20261008/chicago/native-complete-history.svg",
+      "sha256": "9fb68d2d776b84db5f90f39cfc3e3a50317c7cdcaa8d3a294dbe87ba5972fd9d",
+      "bytes": 102405
+    },
+    {
+      "path": "docs/assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+      "source": "docs/assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+      "sha256": "de1ebc563dce5b84e4dc17c1e0e30c678c41c50ba3b7630b58882ab118c639f2",
+      "bytes": 117241
+    },
+    {
+      "path": "docs/assets/reading/atlas-data.js",
+      "source": "docs/assets/reading/atlas-data.js",
+      "sha256": "84c00a6ce790b45bcf6a55a2dfd6fa8d6d9e9c715dd80cf1c2ae01ea11df5c96",
+      "bytes": 182109
+    },
+    {
       "path": "docs/assets/reading/opening-framework.css",
       "source": "docs/assets/reading/opening-framework.css",
-      "sha256": "a7ba5c8985e4c6414fa459a381f860c34ad517a26231fd45b237dcc65aeb0860",
-      "bytes": 6945
+      "sha256": "1ca766968107af505d991f2c67e458fa9790f8e5d5118e646ff67981a587ca50",
+      "bytes": 7044
     },
     {
       "path": "docs/assets/reproduction/app.js",
@@ -2497,6 +3313,420 @@
       "bytes": 8619
     },
     {
+      "path": "docs/assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+      "source": "docs/assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+      "sha256": "bbb3304372c6a1d56fc8712ed0129abf1c4eb622e6245442d24d517c61f6e869",
+      "bytes": 92062
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/admm/ithaca/admm-final-conservation.svg",
+      "source": "docs/assets/template-parity-20261008/admm/ithaca/admm-final-conservation.svg",
+      "sha256": "03c34868fa01981d3911b30ba2a89ece01defc3411b7fcbebdf654452dead63d",
+      "bytes": 92762
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/admm/ithaca/admm-physical-flow.svg",
+      "source": "docs/assets/template-parity-20261008/admm/ithaca/admm-physical-flow.svg",
+      "sha256": "74bfeb081f726931e014c25cd94ea3557dfd6c13d6508d1e69cde6b0a9151b8f",
+      "bytes": 7448536
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+      "source": "docs/assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+      "sha256": "1a2e6f4a4dfe5d5260bb6ba4dd2be7402f7c271017fe97e8a2f1f7f7a77b56b9",
+      "bytes": 77068
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+      "sha256": "7016f9b2d967c955c44ff9a72c9ee3b16e8730f39e14cd669a8eabcb38ec71de",
+      "bytes": 72048
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/berkeley/local-details.svg",
+      "source": "docs/assets/template-parity-20261008/construction/berkeley/local-details.svg",
+      "sha256": "7b9a188b36e22e3a8d8b74b85ff95155c727ca2adf9eab1f8763a67adf108c30",
+      "bytes": 106010
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/berkeley/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/berkeley/time-layers.svg",
+      "sha256": "44d54547f9bca671d46707f33cbe3d19b083734c4ace5af5b48e3bda7a1a0e22",
+      "bytes": 93785
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/chicago/local-details.svg",
+      "source": "docs/assets/template-parity-20261008/construction/chicago/local-details.svg",
+      "sha256": "afd59de73234db307325c7aa294da67fbb7fa7bb6824ee090a83845d8bfa4d63",
+      "bytes": 91497
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/chicago/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/chicago/time-layers.svg",
+      "sha256": "ebee75d4a09f6128213d1b5cb1c20599434d8e00d3bd989e8ebe0f0dfa7229b2",
+      "bytes": 84683
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/ithaca/local-construction.svg",
+      "source": "docs/assets/template-parity-20261008/construction/ithaca/local-construction.svg",
+      "sha256": "426e762e0c09ce02b66237994d2ab1b7f33c387f1b5a534a782497c3b1c521b4",
+      "bytes": 78288
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/ithaca/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/ithaca/time-layers.svg",
+      "sha256": "e033b1c83bf8bc529ec5ac19e8b645273e789e0ca2b2b392af89847ef157c9ff",
+      "bytes": 79605
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/pittsburgh/local-details.svg",
+      "source": "docs/assets/template-parity-20261008/construction/pittsburgh/local-details.svg",
+      "sha256": "c91b04932aaa815c06e5c3789152908debf0ca792f72e1a71ca384f8fddeda35",
+      "bytes": 98535
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/pittsburgh/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/pittsburgh/time-layers.svg",
+      "sha256": "5b725c61a8581b0c224ab238f50a17d8a0383aea36d15866ee52fa3546b26b4a",
+      "bytes": 87929
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+      "source": "docs/assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+      "sha256": "bdac0b999f69abb03598a6732e012eb06460b12764658178946bfa0d654d9c4f",
+      "bytes": 79386
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+      "source": "docs/assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+      "sha256": "3c599b574bc4235913878cbc3b17e429d8cdbd913fb6d880b21c98d38a5e7205",
+      "bytes": 81106
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/chicago/lr-bounds.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/chicago/lr-bounds.svg",
+      "sha256": "98d1e2933f9e44cb5f8909beb90f233f312040995e27a9598cc1f40285be0c13",
+      "bytes": 84151
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/chicago/lr-prices.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/chicago/lr-prices.svg",
+      "sha256": "6b96378f5a9a299e3cc038a81325cabefc98198f9f7ffb6a7f082d70a9d62e78",
+      "bytes": 110905
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/chicago/lr-recovery.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/chicago/lr-recovery.svg",
+      "sha256": "cc6fe90ec2e9e9feaee4163d54dbef17d3059969fc47dd90f1ede75f9ece4e2b",
+      "bytes": 82154
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/cg-phase1.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/cg-phase1.svg",
+      "sha256": "762e0e7fcb7b93f275c0dc3f63d136d84f0f2c5d9ac574b3a0c2d4dc48ea1194",
+      "bytes": 81994
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/cg-phase2.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/cg-phase2.svg",
+      "sha256": "c0e4d5727f34e2555f4b59f4227e6ec780bca8dab17d8253387e061bcd2ba302",
+      "bytes": 63435
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/cg-pricing.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/cg-pricing.svg",
+      "sha256": "6156026ebe84a51ec0b0ad6fd11ddc057875e2d4c5869376dc2501c181835596",
+      "bytes": 66119
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/lr-bounds.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/lr-bounds.svg",
+      "sha256": "b1d198885acfd9116e05199779607189ce31fb9f816adecdd5825cac0d0718ab",
+      "bytes": 74498
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/lr-prices.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/lr-prices.svg",
+      "sha256": "7946acf8fb68731c2113292cb0e5632a6100e0b51eceeb26d03f272aeabe6812",
+      "bytes": 78350
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/ithaca/lr-recovery.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/ithaca/lr-recovery.svg",
+      "sha256": "cfe474af365a2a2dcd74ba61db1c82b73e2ed999f7f572e8d15a304d1270d0c1",
+      "bytes": 71824
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/pittsburgh/cg-phase1.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/pittsburgh/cg-phase1.svg",
+      "sha256": "f4817fe0d05f9b42d10c7e8a73999ca58c80deead6a775633019b9730427e5d4",
+      "bytes": 83205
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/pittsburgh/lr-prices.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/pittsburgh/lr-prices.svg",
+      "sha256": "a5c94a67e1e2089cc59852e79153b6bc30400574e167b43dad3b805f09478aaf",
+      "bytes": 95866
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/pittsburgh/lr-recovery.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/pittsburgh/lr-recovery.svg",
+      "sha256": "9f06f0dae189902a75c3c17e716816b72ac141ef2b71fd4ebfdcca8332620b59",
+      "bytes": 71645
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+      "sha256": "9ec9bfaeb4eb0d7fa6028101828d70beaad01da1551d869aa51f29e634f1214a",
+      "bytes": 84241
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+      "sha256": "03b9c58559c68538f499b8fdaf9ca81c2f9d86044ee29367af67229bbd5c3be3",
+      "bytes": 106524
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+      "source": "docs/assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+      "sha256": "45693b0994f8d4824450692305fca9147b5c40971febe434f5d3c9eb0d786356",
+      "bytes": 76055
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+      "sha256": "187f68a8d65f05f6ba086e2735ed3d06d1ef30b8e5858385f7aec6843aa7ce4a",
+      "bytes": 2334303
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+      "sha256": "147a9b275f25c8f4e063fccbab777c96ceb97bf467f530f58ff64f9ddf82dd78",
+      "bytes": 4750436
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+      "sha256": "8b411a66060bde9d7ebbfe746b40c37b9cd659f5c5686c3e8ca6260248650983",
+      "bytes": 8590059
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+      "sha256": "20a0bb6cde2d55a4212afebc529eeb02952a3a8bdc7e38b1830170248179f959",
+      "bytes": 8582810
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+      "sha256": "659650292b62c3e7d1f3ccb69ff6b43a0d590f312ceb2446cb8bebffaba1109b",
+      "bytes": 4672980
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+      "sha256": "96ff4a95cf67d1e0694c52fb0904a586109cfe764ab8bb9a7d133992ff411f20",
+      "bytes": 10089737
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/pittsburgh/assignment-endpoints.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/pittsburgh/assignment-endpoints.svg",
+      "sha256": "3442ef00751acf5e5e974d926b25c97713e2578873f8c617158b8138fc347531",
+      "bytes": 6312413
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/pittsburgh/assignment-margins.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/pittsburgh/assignment-margins.svg",
+      "sha256": "fee2c6ff7a21a8dac74d6db2e92643b1d43595142559ff6c1a9952c246a33578",
+      "bytes": 6283858
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+      "sha256": "bcfe70687661b6b95997b89fd7205ff801768860132716e0e625f4b8e3f0dcaa",
+      "bytes": 3986197
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+      "source": "docs/assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+      "sha256": "5a9cfe789684d472a3548f08872283b8ccec401c0b2d324e14ea4c4ef9261d77",
+      "bytes": 8434439
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+      "source": "docs/assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+      "sha256": "388385c64dfdfeff7e2b40fa1b4ebb6b5147bf06877ca8d490ed31fd12b9fb2c",
+      "bytes": 2845781
+    },
+    {
+      "path": "docs/assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+      "source": "docs/assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+      "sha256": "5baa17a9440173c211da4c0cdf1dbd079f9b4084e07b1a82fc8dc49363f07b92",
+      "bytes": 8260547
+    },
+    {
+      "path": "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.csv",
+      "source": "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.csv",
+      "sha256": "0ca8589a8c16edd09f317af29bd2716edbda891d6a2ca7755f9d8746d01399c9",
+      "bytes": 5044
+    },
+    {
+      "path": "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.source.json",
+      "source": "docs/assets/three_city_r1/data/hong_kong_selected_generated_column.source.json",
+      "sha256": "b238c0fe96c2e3ab20bf1e48ab4ed939877100fe91f2f466d5c0a4e5112b734a",
+      "bytes": 881
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.caption.html",
+      "source": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.caption.html",
+      "sha256": "775c67ecae575a09b5ea70a46317e71608f52ee8445b74e87d5994e3d76a443a",
+      "bytes": 2258
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.caption.md",
+      "source": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.caption.md",
+      "sha256": "bcaf72a5c98fc887d9a50aa03c4c9c4611d668ce4a326c0739079714433efd5d",
+      "bytes": 251
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.png",
+      "source": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.png",
+      "sha256": "fb857d5cbd2e8856659a8a712cf8ec44a4ebd9f6b8ced06c9998588be47d4896",
+      "bytes": 356268
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.source.json",
+      "source": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.source.json",
+      "sha256": "2ae0f7abc38819b296165fc48cb68a97ee2b821f3bd9efbc70f1ffff9e58f84a",
+      "bytes": 1993
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.svg",
+      "source": "docs/assets/three_city_r1/hong_kong_finite_space_time_case_sequence.svg",
+      "sha256": "3580a2690b201cc4ca73db7ae5a287285722d4e4c19ec7bc71cc714e04ba6b0c",
+      "bytes": 170307
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.caption.html",
+      "source": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.caption.html",
+      "sha256": "0a9657a21af4fbded510da3edec5690a8b5488e45568a9da3e1adb6dbd81e179",
+      "bytes": 2255
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.caption.md",
+      "source": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.caption.md",
+      "sha256": "fa86433a282bef464ad9546b0dcd23775705f1a33db7feefa7af0deee95c8449",
+      "bytes": 250
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.png",
+      "source": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.png",
+      "sha256": "30bc8518ce019a1c9e410b3fb4e475387433ceac947b60fd0a6a59221bba3835",
+      "bytes": 98485
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.source.json",
+      "source": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.source.json",
+      "sha256": "4fc17a62781c2992afb17bf4137987967869cc952f6733f4d3554b3532b179a0",
+      "bytes": 1345
+    },
+    {
+      "path": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.svg",
+      "source": "docs/assets/three_city_r1/hong_kong_generated_column_time_indexed_path.svg",
+      "sha256": "f4cd2da79fc8d7a3ec7c1dfef7cd87dc1b072952d044efbf91b188a1716e80e2",
+      "bytes": 44773
+    },
+    {
+      "path": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+      "source": "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json",
+      "sha256": "ab33a38fef311ac798dda7092fb5fc730ba8ef60fb72616b468150e990c2f034",
+      "bytes": 5993
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.caption.html",
+      "source": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.caption.html",
+      "sha256": "307f38f5c60970868939daa65f3096e64622ee241c80734509c894941d559726",
+      "bytes": 2489
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.caption.md",
+      "source": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.caption.md",
+      "sha256": "62743842d136adb2c6109c9ff3456c0a75ab6f9d869cd060bfd9c94476ac3236",
+      "bytes": 328
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.png",
+      "source": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.png",
+      "sha256": "8e5a9b45b354e9be137dc61969e1359c07ceed708b0865ce64869b35a45db39f",
+      "bytes": 253573
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.source.json",
+      "source": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.source.json",
+      "sha256": "383ccfb40c6601f0ca29c6b64d5e02d4e44fedf314361f2868f96996d344f251",
+      "bytes": 2189
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.svg",
+      "source": "docs/assets/three_city_r2/hong_kong_finite_space_time_case_sequence.svg",
+      "sha256": "544f0e0eee77cfcc85e3909bf872042f7c355d881d001b37fba24eb19d901d6a",
+      "bytes": 35890
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.caption.html",
+      "source": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.caption.html",
+      "sha256": "9afd2d0a58b9aaaa5ac82f1482cff739792b196f7ad862ba372ec571458a9c6d",
+      "bytes": 2471
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.caption.md",
+      "source": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.caption.md",
+      "sha256": "84f54468309eab82d1903c04d2628a8727b1350969b8f2b0a9aedf0349e5e4e7",
+      "bytes": 322
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png",
+      "source": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.png",
+      "sha256": "d6ebe2f06a1c8bb1c075c21d7a971e74a92ebd531e7889325d8c1d862b4318fd",
+      "bytes": 172520
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.source.json",
+      "source": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.source.json",
+      "sha256": "16f0ee14d0c8e048eb2cca85f862ee4f392e9acf333adafb13b724f2e0ef60b6",
+      "bytes": 1441
+    },
+    {
+      "path": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.svg",
+      "source": "docs/assets/three_city_r2/hong_kong_generated_column_time_indexed_path.svg",
+      "sha256": "6a2564c94197180fb96370366b63f91268d43e8582a56958a4b5018277485fd8",
+      "bytes": 53727
+    },
+    {
+      "path": "docs/cases/hong-kong-space-time.html",
+      "source": "docs/cases/hong-kong-space-time.html",
+      "sha256": "a74344ed163cb41fdfdccfb1128dff8ffc18425cdc4263ade44b38e5d540f3e9",
+      "bytes": 27885
+    },
+    {
+      "path": "docs/cases/hong-kong-space-time.md",
+      "source": "docs/cases/hong-kong-space-time.md",
+      "sha256": "a3eb72e929d905658139741ba37c37843b9e459efbf7566d290ffd82b9e2299c",
+      "bytes": 23261
+    },
+    {
+      "path": "docs/cases/hong-kong.html",
+      "source": "docs/cases/hong-kong.html",
+      "sha256": "3fcb61aeb9ae335b896839bdb3cdb5bad6d2f2fb605f08e6865f60b371b4f92d",
+      "bytes": 11671
+    },
+    {
+      "path": "docs/cases/hong-kong.md",
+      "source": "docs/cases/hong-kong.md",
+      "sha256": "2fd28c6015bffa6e588407117ac28059203ec76bd1c06d51a48bc1e78e2a292e",
+      "bytes": 8338
+    },
+    {
       "path": "docs/data/open-mobility/city_evidence.csv",
       "source": "docs/data/open-mobility/city_evidence.csv",
       "sha256": "248e55146085605ba0cdd1683161eca786b94f7d3bfd9ec77b3a17a6847c6d3d",
@@ -2509,10 +3739,28 @@
       "bytes": 5784481
     },
     {
+      "path": "docs/full-walkthrough.html",
+      "source": "docs/full-walkthrough.html",
+      "sha256": "b0e708e9693a08e0d2f751401970e47715fbb598f804e4fa782135a1bf9e6b7e",
+      "bytes": 138791
+    },
+    {
+      "path": "docs/full-walkthrough.md",
+      "source": "docs/full-walkthrough.md",
+      "sha256": "b1d0a89b7ceb5c5169638001f3d883b3bba84d19e21ef9ebe3c41db45403eb98",
+      "bytes": 109924
+    },
+    {
       "path": "docs/index.html",
       "source": "docs/index.html",
-      "sha256": "42298ebb13f9ef54f554af0b2ab84ab463fdfb29764a1cad696110c95b6c635b",
-      "bytes": 255722
+      "sha256": "84a3a6aba9edca3dd4cfbe9e0820dab16fea190ef2523f585ed53176e144728e",
+      "bytes": 700432
+    },
+    {
+      "path": "docs/index.md",
+      "source": "docs/index.md",
+      "sha256": "7ac342d5632547d83c2f8b0292a2a1a64d6a0122cf1d9925bfedc2d43e35c1ba",
+      "bytes": 576249
     },
     {
       "path": "docs/reproduce.html",
@@ -2615,6 +3863,54 @@
       "source": "docs/reproduction/sioux-validation.json",
       "sha256": "b0a0d381439f5e04f1e4551e38d585e0403171b27dae872b583effbb062b0f4b",
       "bytes": 1842
+    },
+    {
+      "path": "docs/volumes/01-overview.md",
+      "source": "docs/volumes/01-overview.md",
+      "sha256": "5b5ccd9e95d767cdfc1787decfc0941154b11a8bed42c94a9fab09af47cb3802",
+      "bytes": 614327
+    },
+    {
+      "path": "docs/volumes/02-boston.md",
+      "source": "docs/volumes/02-boston.md",
+      "sha256": "e7204eba7c98c36204fe0aafccce03f735d42c920c3d30915417e9adc066763c",
+      "bytes": 397893
+    },
+    {
+      "path": "docs/volumes/03-sioux-falls.md",
+      "source": "docs/volumes/03-sioux-falls.md",
+      "sha256": "e8889405c4aea2e98e1fe154b363d1122999d9507169f078cd008e8c98df53d0",
+      "bytes": 202898
+    },
+    {
+      "path": "docs/volumes/04-hong-kong.md",
+      "source": "docs/volumes/04-hong-kong.md",
+      "sha256": "6ff55e77635eb3d47ad7172e39788b394d1fb70712bac7b51327049a5dac518b",
+      "bytes": 260948
+    },
+    {
+      "path": "docs/volumes/boston.html",
+      "source": "docs/volumes/boston.html",
+      "sha256": "d5e63ea1ef984b29a0e2faa2791b4fa6240cfa3ad14d54a8c8f07a04581a16cb",
+      "bytes": 411921
+    },
+    {
+      "path": "docs/volumes/hong-kong.html",
+      "source": "docs/volumes/hong-kong.html",
+      "sha256": "3bd96a02a90ec4f32b5744c598e640523e1d4fed3498f7f3bc5df5b1bdbb01a6",
+      "bytes": 268838
+    },
+    {
+      "path": "docs/volumes/overview.html",
+      "source": "docs/volumes/overview.html",
+      "sha256": "6306a79b14fb85ab752f22827b7f68e63058eee5084c70f9c0028704c94bff49",
+      "bytes": 2877608
+    },
+    {
+      "path": "docs/volumes/sioux-falls.html",
+      "source": "docs/volumes/sioux-falls.html",
+      "sha256": "baf157586dbafdd58934efcaebc74117a024a6add354493024e46e993b051dbe",
+      "bytes": 214140
     },
     {
       "path": "environments/boston-native-manifest.json",
@@ -5643,8 +6939,8 @@
     {
       "path": "experiments/checkout-files.json",
       "source": "experiments/checkout-files.json",
-      "sha256": "c4d346433c9d943af394971e4b9b2fe2e1c6fc8aed958d102ef9a3980652409b",
-      "bytes": 74518
+      "sha256": "9096ce06ef469a9e0c572607ab868bd9a99553edb0acb42b7fdfe51861122612",
+      "bytes": 91559
     },
     {
       "path": "experiments/environment-verification/boston-native-clean.json",
@@ -6097,6 +7393,12 @@
       "bytes": 4011
     },
     {
+      "path": "tests/test_publication_presentation_guards.py",
+      "source": "tests/test_publication_presentation_guards.py",
+      "sha256": "28137b9433204b97976fabb85d1ec7916ee0bb164a74599caa3231fe8345369b",
+      "bytes": 5813
+    },
+    {
       "path": "tools/boston_planned_costs.py",
       "source": "tools/boston_planned_costs.py",
       "sha256": "2f379f8e5c7aa9a001301732b5e8fa6a072a40356eab06698d182d7e8b78ad1f",
@@ -6123,8 +7425,8 @@
     {
       "path": "tools/build_computational_archive.py",
       "source": "tools/build_computational_archive.py",
-      "sha256": "e202e6525e317250582f101006122eca94ee4c7d105781c1de926de1567fd2d7",
-      "bytes": 6349
+      "sha256": "9f320429a84089beb9d4233b774331b4ff6ee00eda11c5f9fab342bded19143d",
+      "bytes": 7403
     },
     {
       "path": "tools/build_open_mobility_exports.py",
@@ -6135,8 +7437,8 @@
     {
       "path": "tools/build_readme_from_homepage.py",
       "source": "tools/build_readme_from_homepage.py",
-      "sha256": "39592b56d91e49ed41fafbf4be820ad3115eee6c17c8a2d147593d4097a0ff77",
-      "bytes": 17300
+      "sha256": "92f419699e9661fa5b73140eacf3f73821d9b7661fb606dd116aefc0997b0aba",
+      "bytes": 18770
     },
     {
       "path": "tools/build_recovered_docs.py",
@@ -6171,8 +7473,8 @@
     {
       "path": "tools/check_readme_pages.py",
       "source": "tools/check_readme_pages.py",
-      "sha256": "3542c1c9faff10809e9cc394bc4a3f86d21abca4cc49d100ddf9e9aeceffbb1c",
-      "bytes": 13074
+      "sha256": "66cf860029e78e765dc990fa4f282f1c7e4ca8c0fb3c072162fdee6cf17d0de3",
+      "bytes": 15472
     },
     {
       "path": "tools/check_reproduction_status.py",
@@ -6459,8 +7761,14 @@
     {
       "path": "tools/visuals/check_hk10_approval.py",
       "source": "tools/visuals/check_hk10_approval.py",
-      "sha256": "902416742f9889db1b8cd7dfea7bac9c0945a6464a52982c758bce77d035d4b4",
-      "bytes": 9509
+      "sha256": "1a2214a72153f2ff934eb764ec4b351cd2244905027a137b13bbae5aa4fbcc04",
+      "bytes": 9630
+    },
+    {
+      "path": "tools/visuals/check_hk10_publication.py",
+      "source": "tools/visuals/check_hk10_publication.py",
+      "sha256": "c1631ecc2567ef8df6ba1449e3891ad854ccb8844c2657c4f798ddf7b3753b23",
+      "bytes": 8315
     },
     {
       "path": "tools/visuals/check_three_city_closeout.py",
@@ -6485,6 +7793,12 @@
       "source": "tools/visuals/compose_homepage_r2.py",
       "sha256": "468a25051c2506d3839603a3455456beca4107a61d06a1e8a714b11e267055ba",
       "bytes": 61317
+    },
+    {
+      "path": "tools/visuals/freeze_hk10_publication.py",
+      "source": "tools/visuals/freeze_hk10_publication.py",
+      "sha256": "a7e824acbba2256ec623e85bd9a364efd25f79fe39ebed46695b548fbe44630b",
+      "bytes": 3179
     },
     {
       "path": "tools/visuals/homepage_evidence_r1_map.csv",

@@ -1,0 +1,160 @@
+{
+  "city": "ann-arbor",
+  "edges": [
+    {
+      "arc_id": "illustration:road:osm:8724430:62512849:4140338128:r@5",
+      "from_node_time_id": "e469:in@5",
+      "to_node_time_id": "e469:out@6",
+      "from_time": 5,
+      "to_time": 6,
+      "cost": "0.25533083536480294",
+      "capacity": 4.583333333333333,
+      "arc_type": "physical_road",
+      "solver_link_id": "road:osm:8724430:62512849:4140338128:r",
+      "gmns_link_id": "road:osm:8724430:62512849:4140338128:r",
+      "duration_steps": 1,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    },
+    {
+      "arc_id": "illustration:turn:469:467@6",
+      "from_node_time_id": "e469:out@6",
+      "to_node_time_id": "e467:in@6",
+      "from_time": 6,
+      "to_time": 6,
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "turn:469:467",
+      "gmns_link_id": "",
+      "duration_steps": 0,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    },
+    {
+      "arc_id": "illustration:road:osm:8724430:4140338128:62486873:r@6",
+      "from_node_time_id": "e467:in@6",
+      "to_node_time_id": "e467:out@7",
+      "from_time": 6,
+      "to_time": 7,
+      "cost": "0.28817993823295684",
+      "capacity": 4.583333333333333,
+      "arc_type": "physical_road",
+      "solver_link_id": "road:osm:8724430:4140338128:62486873:r",
+      "gmns_link_id": "road:osm:8724430:4140338128:62486873:r",
+      "duration_steps": 1,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    }
+  ],
+  "selected": [
+    {
+      "arc_id": "illustration:road:osm:8724430:62512849:4140338128:r@5",
+      "from_node_time_id": "e469:in@5",
+      "to_node_time_id": "e469:out@6",
+      "from_time": 5,
+      "to_time": 6,
+      "cost": "0.25533083536480294",
+      "capacity": 4.583333333333333,
+      "arc_type": "physical_road",
+      "solver_link_id": "road:osm:8724430:62512849:4140338128:r",
+      "gmns_link_id": "road:osm:8724430:62512849:4140338128:r",
+      "duration_steps": 1,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    },
+    {
+      "arc_id": "illustration:turn:469:467@6",
+      "from_node_time_id": "e469:out@6",
+      "to_node_time_id": "e467:in@6",
+      "from_time": 6,
+      "to_time": 6,
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "turn:469:467",
+      "gmns_link_id": "",
+      "duration_steps": 0,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    },
+    {
+      "arc_id": "illustration:road:osm:8724430:4140338128:62486873:r@6",
+      "from_node_time_id": "e467:in@6",
+      "to_node_time_id": "e467:out@7",
+      "from_time": 6,
+      "to_time": 7,
+      "cost": "0.28817993823295684",
+      "capacity": 4.583333333333333,
+      "arc_type": "physical_road",
+      "solver_link_id": "road:osm:8724430:4140338128:62486873:r",
+      "gmns_link_id": "road:osm:8724430:4140338128:62486873:r",
+      "duration_steps": 1,
+      "record_kind": "frozen_rule_illustration_not_built_graph_arc"
+    }
+  ],
+  "dt": 30,
+  "scope": "T4 / FROZEN RULE ILLUSTRATION",
+  "rule": true,
+  "identity": "AA_R2_T4_PULSE5MIN_DT30_20261008",
+  "origin": "First frozen OD origin; illustrative allowed turn",
+  "public_or_private": "private",
+  "physical_labels": [
+    "road e469",
+    "road e467"
+  ],
+  "physical_nodes": [
+    "62512849",
+    "4140338128",
+    "62486873"
+  ],
+  "limits": [
+    "Frozen construction rule applied to an actual allowed two-road chain. The full graph has not been built and no time-expanded solver has run.",
+    "The displayed turn is an actual allowed static-network turn chosen for illustration; this is not a saved assignment path.",
+    "Displayed timing is the deterministic frozen 30-second rule applied to original free-flow minutes, not a measured or computed route time.",
+    "This input-only illustration does not change Native600 or finite-time reception status."
+  ],
+  "states": [
+    "e469:in",
+    "e469:out",
+    "e467:in",
+    "e467:out"
+  ],
+  "aliases": {
+    "e469:in": "A−",
+    "e469:out": "A+",
+    "e467:in": "B−",
+    "e467:out": "B+"
+  },
+  "selected_arc_ids": [
+    "illustration:road:osm:8724430:62512849:4140338128:r@5",
+    "illustration:turn:469:467@6",
+    "illustration:road:osm:8724430:4140338128:62486873:r@6"
+  ],
+  "displayed_time_indices": [
+    5,
+    6,
+    7
+  ],
+  "routing_mapping": [
+    {
+      "alias": "A−",
+      "routing_state": "e469:in",
+      "road": "road e469",
+      "role": "entry"
+    },
+    {
+      "alias": "A+",
+      "routing_state": "e469:out",
+      "road": "road e469",
+      "role": "exit"
+    },
+    {
+      "alias": "B−",
+      "routing_state": "e467:in",
+      "road": "road e467",
+      "role": "entry"
+    },
+    {
+      "alias": "B+",
+      "routing_state": "e467:out",
+      "road": "road e467",
+      "role": "exit"
+    }
+  ]
+}

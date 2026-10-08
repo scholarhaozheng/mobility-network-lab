@@ -1,0 +1,1 @@
+The independent full arc-flow HiGHS LP and complete-pricing CG each give 43.6674244 PCE·minutes. LR has a valid dual 43.5845984 and recovered feasible primal 43.6674244 (0.1897% algorithm gap). Saved LP, CG, and LR physical-link projections coincide here to recorded precision; that is a case result, not a required equality of algorithmic paths.

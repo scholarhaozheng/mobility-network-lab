@@ -1,0 +1,74 @@
+{
+  "table_id": "chicago-admm-local-returns",
+  "city": "chicago",
+  "title": "ADMM local-QP returns: local checks only",
+  "scope": "Historical ADMM outers 1–9; 36 returned local calls",
+  "original_assets": [
+    "assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_local_QP.svg"
+  ],
+  "notes": [
+    "Local QP return diagnostics are not accepted global ADMM iterations. Full 36-row public data remains linked. No failed-call count is inferred from missing records. The current continuation is displayed separately through outer 33."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_local_QP_plot_data.json",
+      "href": "assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_local_QP_plot_data.json",
+      "sha256": "b276db0b6b1eb04034c2be29d7cc6c856ee657764e333aa51dbed2ea38d54252"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Local return summary",
+      "columns": [
+        "Commodity",
+        "Returned local calls",
+        "Outer range",
+        "Max reported balance (PCE)",
+        "Recorded elapsed sum (s)",
+        "Inner minimize entries"
+      ],
+      "rows": [
+        {
+          "Commodity": "T01",
+          "Returned local calls": 9,
+          "Outer range": "1–9",
+          "Max reported balance (PCE)": 3.2673414188559937e-12,
+          "Recorded elapsed sum (s)": 57.223644500016235,
+          "Inner minimize entries": 9
+        },
+        {
+          "Commodity": "T02",
+          "Returned local calls": 9,
+          "Outer range": "1–9",
+          "Max reported balance (PCE)": 5.833911131958303e-10,
+          "Recorded elapsed sum (s)": 2132.2332703998545,
+          "Inner minimize entries": 25
+        },
+        {
+          "Commodity": "T03",
+          "Returned local calls": 9,
+          "Outer range": "1–9",
+          "Max reported balance (PCE)": 3.552713678800501e-15,
+          "Recorded elapsed sum (s)": 771.0414349000202,
+          "Inner minimize entries": 27
+        },
+        {
+          "Commodity": "T04",
+          "Returned local calls": 9,
+          "Outer range": "1–9",
+          "Max reported balance (PCE)": 5.329070518200751e-15,
+          "Recorded elapsed sum (s)": 808.5365860998863,
+          "Inner minimize entries": 27
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 4,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"chicago-admm-local-returns\"><h4>ADMM local-QP returns: local checks only</h4><p class=\"evidence-table-scope\">Historical ADMM outers 1–9; 36 returned local calls</p><h5>Local return summary</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Local return summary\"><table><thead><tr><th scope=\"col\">Commodity</th><th scope=\"col\">Returned local calls</th><th scope=\"col\">Outer range</th><th scope=\"col\">Max reported balance (PCE)</th><th scope=\"col\">Recorded elapsed sum (s)</th><th scope=\"col\">Inner minimize entries</th></tr></thead><tbody><tr><td>T01</td><td>9</td><td>1–9</td><td>3.2673414188559937e-12</td><td>57.223644500016235</td><td>9</td></tr><tr><td>T02</td><td>9</td><td>1–9</td><td>5.833911131958303e-10</td><td>2132.2332703998545</td><td>25</td></tr><tr><td>T03</td><td>9</td><td>1–9</td><td>3.552713678800501e-15</td><td>771.0414349000202</td><td>27</td></tr><tr><td>T04</td><td>9</td><td>1–9</td><td>5.329070518200751e-15</td><td>808.5365860998863</td><td>27</td></tr></tbody></table></div><p>Local QP return diagnostics are not accepted global ADMM iterations. Full 36-row public data remains linked. No failed-call count is inferred from missing records. The current continuation is displayed separately through outer 33.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_local_QP_plot_data.json\" download>C06_T_ADMM_main_local_QP_plot_data.json</a></p><p>Preserved original figures: <a href=\"assets/algorithm-transfer-r8/chicago/C06_T_ADMM_main_local_QP.svg\">C06_T_ADMM_main_local_QP.svg</a></p></details></section>",
+  "caption": "Local QP return diagnostics are not accepted global ADMM iterations. Full 36-row public data remains linked. No failed-call count is inferred from missing records. The current continuation is displayed separately through outer 33."
+}

@@ -1,0 +1,1 @@
+All actual iterations are shown. Native first iterates can have negative signed gaps while infeasible; this plot shows absolute gaps and a separate conservation axis. OD acceptance uses abs+rel and L1 tests, not the displayed absolute guide alone.

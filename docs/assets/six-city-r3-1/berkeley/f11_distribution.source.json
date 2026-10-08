@@ -1,0 +1,102 @@
+{
+  "figure_id": "f11_distribution",
+  "city": "berkeley",
+  "title": "Trip distribution",
+  "caption": "The complete saved 13 \u00d7 13 one-hour HBW matrix has 90 positive directed OD pairs. Pale cells are structural zero interzonal demand; the gray diagonal excludes intrazonal demand. All 156 interzonal impedance records are available. The full positive-OD histogram retains 12 bins; saved PA and OD totals agree at 2,381.7222975 person trips/h, with seven IPF iterations and a maximum margin residual of 2.1453153408401704e-05. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "person trips per declared hour; directed OD pair count",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/berkeley/original/f11_distribution.svg",
+      "sha256": "7f3190a87148501f6e7e1d6b04e28b9eb5b7174dadf615d9280367e7a97feaca"
+    },
+    {
+      "logical_source": "f11_distribution.plot_data.csv",
+      "sha256": "8ff635cd0f76daf4dd8428260ba097bece22cb83ddc82017e2856d3be71a4d2c"
+    },
+    {
+      "logical_source": "zone_order.csv",
+      "sha256": "a57b29393c30dcc87b99b1dda5daa5d7ace23c639f8ca82cf13a2ba3e20d12e1"
+    },
+    {
+      "logical_source": "distribution_matrix.csv",
+      "sha256": "d79583b3a3798a629a64cf42e78362f63650a43d0e41921ff37e083b51dad67e"
+    },
+    {
+      "logical_source": "distribution_histogram.csv",
+      "sha256": "91fed3aeaf664740e7c4310b9b666c8b596c1bdf6bbe8228835caaa83c4a1506"
+    },
+    {
+      "path": "snapshot/READY.json",
+      "sha256": "5326dac20a6d4ed47f511f5f4f69187294bc604789ca9336218b4e21f39b13c3"
+    },
+    {
+      "path": "snapshot/PUBLIC_DERIVED_CONTENT_POLICY.json",
+      "sha256": "a1219aab14ea6d9ea010784c0f2173ad63b3853936a961d7ec61b7c7032c83ea"
+    },
+    {
+      "path": "compute_capsule/FOUR_STAGE_RUN_CONFIG.json",
+      "sha256": "f73c4abc3f73bdcca09f582c69242e9f7c655ac8002dcabc683882be9a3262d5"
+    },
+    {
+      "path": "compute_capsule/reference_run/distribution/od_person.csv",
+      "sha256": "728e4d498d5a1ce8dae12994e06a98e13dd1b1c6158f44cdb7cfa8ab0796e8d8"
+    },
+    {
+      "path": "compute_capsule/reference_run/distribution/distribution_balance.json",
+      "sha256": "7311be0a293250e27d968baf5d9b26af53d5b8ec0a18a3dd93db8c74d718bd9d"
+    },
+    {
+      "path": "original/f11_distribution.plot_data.csv",
+      "sha256": "8ff635cd0f76daf4dd8428260ba097bece22cb83ddc82017e2856d3be71a4d2c"
+    },
+    {
+      "path": "original/f11_distribution.source.json",
+      "sha256": "54356264aab454dde91d3db9c1988658713b88ae306c9105cb3a61a34840aca5"
+    },
+    {
+      "path": "compute_capsule/inputs/impedance.csv",
+      "sha256": "e88e94208c6b23decaab6f44a007c08c4c5a29fde90e4b5b62c028ea29cfb05f"
+    },
+    {
+      "path": "compute_capsule/reference_run/distribution/distribution_balance.json",
+      "sha256": "7311be0a293250e27d968baf5d9b26af53d5b8ec0a18a3dd93db8c74d718bd9d"
+    }
+  ],
+  "source_run_receipt_sha256": "a6de9d5d79f18651b64355ed12a6a87e94251701999a17f823e75d84e4c189d7",
+  "source_metadata_sha256": "bbe83e49d769c345a2161dee8370c9b800e3e7cb63a55bce77f481e1e9b303fa",
+  "png_sha256": "0742c90678aaec1de14145d5ce2f106a6ade9fdb79bc1db47545f8f44d020d52",
+  "svg_sha256": "1f150ecbafec2abb809741fb0137f2b071a56aa64a8deeb49d08dce167a4ef9b",
+  "transformation": [
+    "Pivot saved directed OD in the 13-zone generation order.",
+    "Classify diagonal separately; zero-demand cells verified against zero production or attraction and available impedance.",
+    "Use all positive saved OD values; numpy histogram with 12 bins, exported edges and counts.",
+    "No IPF run.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_berkeley_visual.py --snapshot s0_snapshot_v1 --output figure_edits/berkeley",
+  "page_anchor": "figure-f11-distribution",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "5483c5697ae0255e4f84fef35dba31936a93fbe7f7fa8e4f48b192944948fd2e",
+  "input_png_sha256": "0742c90678aaec1de14145d5ce2f106a6ade9fdb79bc1db47545f8f44d020d52",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false,
+  "supporting_plot_data": [
+    {
+      "path": "plot_data/f11_distribution/zone_order.csv",
+      "sha256": "a57b29393c30dcc87b99b1dda5daa5d7ace23c639f8ca82cf13a2ba3e20d12e1"
+    },
+    {
+      "path": "plot_data/f11_distribution/distribution_matrix.csv",
+      "sha256": "d79583b3a3798a629a64cf42e78362f63650a43d0e41921ff37e083b51dad67e"
+    },
+    {
+      "path": "plot_data/f11_distribution/distribution_histogram.csv",
+      "sha256": "91fed3aeaf664740e7c4310b9b666c8b596c1bdf6bbe8228835caaa83c4a1506"
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+Saved endpoint flow summed over actual movement arcs onto original physical links. Units are PCE for the selected first-bin pulse. Ledger connectors are excluded. Each method retains its RESULT_MATRIX status; an infeasible ADMM x is not repaired using z.

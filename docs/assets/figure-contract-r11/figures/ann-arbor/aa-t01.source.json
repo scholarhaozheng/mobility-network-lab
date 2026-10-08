@@ -1,0 +1,512 @@
+{
+  "figure_id": "R11-KEEP-ann-arbor-aa-t01",
+  "city": "ann-arbor",
+  "instance": "25 zones / 600 directed ODs / saved U-M service 2026-10-05",
+  "role": "spatial_comparison",
+  "conclusion": "Scheduled stops and modeled mode availability",
+  "panels": {
+    "map": {
+      "stops": 63,
+      "physical_links": 5138,
+      "zones": 25,
+      "origin_m": [
+        274210.20749887475,
+        4684274.036362421
+      ],
+      "projection": "EPSG:26917",
+      "limits_local_km": [
+        -3.05,
+        3.05
+      ]
+    },
+    "availability": {
+      "drive": 600,
+      "transit": 110,
+      "walk": 366
+    },
+    "alignment": {
+      "map_bounds": [
+        0.07,
+        0.18,
+        0.3657142857142858,
+        0.6000000000000001
+      ],
+      "bar_bounds": [
+        0.66,
+        0.18,
+        0.27,
+        0.6000000000000001
+      ],
+      "top_and_bottom_equal": true
+    }
+  },
+  "quantity": "Saved schedule stop location; modeled mode availability",
+  "unit": "local km; directed OD pairs",
+  "renderer": {
+    "public_path": "tools/figures/render_keep_repairs.py",
+    "sha256": "aa4ae649abb3d967276f23ae885bfb4b2267ccdf07b6b6c9a38d79f835f4f2c5"
+  },
+  "original_asset": "docs/assets/city-alignment-r3/ann-arbor/aa-t01.svg",
+  "original_asset_sha256": "d7f32987e362b9f26e4a7fea34b75205b113aa33eb5d30f5f0b2252082cd810d",
+  "numerical_equivalence": "EXACT_SAVED_VECTOR_AND_BIN_MATCH",
+  "original_bytes_unchanged": true,
+  "schema": "mcl_figure_r11",
+  "caption": "Left: the 63 saved U-M GTFS stop locations used as input to the accepted mode-cost build, over the accepted 25-zone OSM physical network. Right: actual availability in 600 directed OD pairs—drive 600, U-M bus 110, walk 366. The modeled U-M service uses 109 scheduled route-stop legs and frequency-based waits; 11 zones are within the stop-access rule. Stop symbols are planned service locations, not observed GPS. No TheRide service, exact departure-time itinerary or verified pedestrian connector is implied. © OpenStreetMap contributors; University of Michigan GTFS. Local reading revision. R11 layout repair: both panels share the actual map top and bottom bounds; the stop count is stated here rather than overprinted on the map.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/ann-arbor/aa-t01.plot_data.json",
+      "sha256": "823597b36b38fcdc5c5324f3bafd3a3daa67ebad3aeb0a57cbd2557e98b719c3",
+      "role": "Saved stop positions and exact availability counts"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/ann-arbor/aa-s01.plot_data.json",
+      "sha256": "57090849f0c9cf69e2bfae9e8dd9356b30ac3e58b4f4e0b74b5de58ba3e16394",
+      "role": "Original accepted zone and road geometries with projection origin"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/ann-arbor/aa-t01.svg",
+      "sha256": "d7f32987e362b9f26e4a7fea34b75205b113aa33eb5d30f5f0b2252082cd810d",
+      "role": "Original preserved displayed SVG"
+    },
+    {
+      "public_path": "docs/assets/city-alignment-r3/ann-arbor/aa-t01.source.json",
+      "sha256": "9d5c8bb8386dbd093af8a623ca09439defa93b0327a16ee7e7b55ff867a4b2cd",
+      "role": "Original frozen figure record"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Ann Arbor",
+    "title": "Scheduled stops and modeled mode availability",
+    "scope": "U-M service · 5 October 2026"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 28.662,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2868,
+    1514
+  ],
+  "exports": {
+    "png": "247048004a0964d21d02341848dc9e91f069154b26724ae6bdfbf4858ee6b8c7",
+    "svg": "afc1bda053154e5796d26c301e83721b184e7977e4e6d7f651faea18982fe15c",
+    "pdf": "cb29d7a48e396a35f1784aaf7713302d617dbc3d02f8eeefb68f9b10772c1d19"
+  },
+  "text_audit": [
+    {
+      "text": "East–west (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        217.0,
+        78.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        5.509,
+        96.867,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        68.46,
+        96.867,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        131.411,
+        96.867,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        194.362,
+        96.867,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        261.938,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        324.888,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        387.839,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        450.79,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        513.741,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "North–south (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        30.236,
+        251.263,
+        13.0,
+        111.875
+      ]
+    },
+    {
+      "text": "−4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        48.792,
+        49.397,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        48.792,
+        112.348,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        48.792,
+        175.298,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        48.792,
+        238.249,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.042,
+        301.2,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.042,
+        364.151,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.042,
+        427.102,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.042,
+        490.052,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.042,
+        553.003,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved U-M schedule stops",
+      "size_pt": 11.0,
+      "bounds_px": [
+        73.5,
+        507.311,
+        244.875,
+        14.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 9.0,
+      "bounds_px": [
+        944.452,
+        437.598,
+        24.0,
+        13.0
+      ]
+    },
+    {
+      "text": "110",
+      "size_pt": 9.0,
+      "bounds_px": [
+        743.126,
+        300.7,
+        24.0,
+        13.0
+      ]
+    },
+    {
+      "text": "366",
+      "size_pt": 9.0,
+      "bounds_px": [
+        848.309,
+        163.802,
+        24.0,
+        13.0
+      ]
+    },
+    {
+      "text": "Available ODs (out of 600)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        751.0,
+        78.311,
+        167.5,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        689.438,
+        96.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        723.399,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        764.486,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        805.573,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        846.66,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        887.747,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        928.834,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        969.921,
+        96.867,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Drive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        654.042,
+        438.098,
+        30.625,
+        10.0
+      ]
+    },
+    {
+      "text": "U-M bus",
+      "size_pt": 8.0,
+      "bounds_px": [
+        636.917,
+        301.2,
+        47.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Walk",
+      "size_pt": 8.0,
+      "bounds_px": [
+        657.417,
+        164.302,
+        27.25,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Available directed OD pairs",
+      "size_pt": 11.0,
+      "bounds_px": [
+        693.0,
+        507.311,
+        255.875,
+        14.0
+      ]
+    },
+    {
+      "text": "ANN ARBOR  /  U-M service · 5 October 2026",
+      "size_pt": 8.7,
+      "bounds_px": [
+        68.25,
+        559.367,
+        305.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Scheduled stops and modeled mode availability",
+      "size_pt": 15.0,
+      "bounds_px": [
+        68.25,
+        532.422,
+        555.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Every final PNG individually opened with view_image; title/panel alignment, geometry aspect, units, fonts, legends, gaps and clipping checked. Repeated final render PNG hashes exactly match visually reviewed PNGs.",
+    "result": "PASS",
+    "reviewed_png_sha256": "247048004a0964d21d02341848dc9e91f069154b26724ae6bdfbf4858ee6b8c7",
+    "original_asset_bytes_preserved": true
+  }
+}

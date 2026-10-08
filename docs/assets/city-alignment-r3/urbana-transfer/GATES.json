@@ -1,0 +1,38 @@
+{
+  "S": {
+    "full_relative_gap_abs": 1e-05,
+    "pool_relative_gap_abs": 1e-05,
+    "nonnegative_abs": 1e-08,
+    "link_reconstruction_max_pce": 1e-07,
+    "OD_error_abs_pce": 1e-06,
+    "OD_error_rel": 1e-08,
+    "OD_L1_rel": 1e-08
+  },
+  "T": {
+    "balance_max_pce": 1e-05,
+    "x_capacity_max_pce": 1e-05,
+    "z_capacity_max_pce": 1e-08,
+    "nonnegative_forbidden_abs": 1e-08,
+    "projection_max": 1e-07,
+    "dual_update_max": 1e-07,
+    "KKT_max_min": 0.001,
+    "objective_recompute_relative": 1e-07,
+    "physical_back_projection_max_pce": 1e-06,
+    "ADMM_LP_normalized_objective_gap": 0.0001,
+    "CG_independent_pricing_closure_abs": 1e-07,
+    "LR_certified_gap_relative": 0.01
+  },
+  "ADMM": {
+    "main_abs": 1e-06,
+    "main_rel": 1e-05,
+    "main_outer_max": 300,
+    "main_wall_seconds": 7200,
+    "tier2_trigger": "main endpoint only misses internal stop or science objective",
+    "tier2_abs": 1e-07,
+    "tier2_rel": 1e-06,
+    "tier2_cumulative_outer_max": 1000,
+    "combined_wall_seconds": 21600,
+    "rho_rule": "clip(median(positive finite T arc cost)/median(positive T commodity volume),1e-4,1)"
+  },
+  "endpoint_rule": "pre-registered stage endpoint, not best intermediate iteration"
+}

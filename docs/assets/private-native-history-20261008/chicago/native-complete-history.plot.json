@@ -1,0 +1,79 @@
+{
+  "figure_id": "chicago-native80-full-history",
+  "scope": "PRIVATE_PREVIEW_ONLY",
+  "rows": [
+    {
+      "outer": 1,
+      "objective_pce_min_per_hour": 5566.350913570054,
+      "signed_full_relative_gap": -0.006246005283707433,
+      "od_l1_relative": 0.004486860036485126,
+      "max_abs_od_residual_pce_per_hour": 0.7161241316505581,
+      "max_link_reconstruction_error_pce_per_hour": 1.1368683772161603e-13,
+      "status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED"
+    },
+    {
+      "outer": 2,
+      "objective_pce_min_per_hour": 5601.461209707886,
+      "signed_full_relative_gap": -4.5712423821743116e-08,
+      "od_l1_relative": 3.8292593219318625e-08,
+      "max_abs_od_residual_pce_per_hour": 1.3251400616809406e-05,
+      "max_link_reconstruction_error_pce_per_hour": 1.1368683772161603e-13,
+      "status": "SOLVER_TERMINATED_BUT_NOT_ACCEPTED"
+    },
+    {
+      "outer": 3,
+      "objective_pce_min_per_hour": 5601.461468294986,
+      "signed_full_relative_gap": 1.4793694670851563e-12,
+      "od_l1_relative": 4.607170451071888e-13,
+      "max_abs_od_residual_pce_per_hour": 1.7885781744553242e-10,
+      "max_link_reconstruction_error_pce_per_hour": 1.1368683772161603e-13,
+      "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+    }
+  ],
+  "gates": {
+    "max_od_error_abs": 1e-06,
+    "max_od_error_rel": 1e-08,
+    "total_od_l1_rel": 1e-08,
+    "full_relative_gap_abs": 1e-05,
+    "negative_flow_abs": 1e-08,
+    "link_reconstruction_abs": 1e-07
+  },
+  "source_checks": [
+    {
+      "name": "RESULT.json",
+      "sha256": "cd1d70282db73cff48dcc48786fe313d9c511ac178df3e5416da42bf77658430",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_01_check.json",
+      "sha256": "f59de45c59cc57a559934cecc964e54aae176cbe78f077007d7d58a10aa951e4",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_01_native.json",
+      "sha256": "14f2e09e76634955f92ea808b474b78b4a568d6ad1ae37e8b4f13e8310aeda2e",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_02_check.json",
+      "sha256": "7b5b82a326ca85599b85db9c82eee4bcab81e4b475fbcd44a1ecff4d7b1f68c3",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_02_native.json",
+      "sha256": "4f6c4525117e06cf6e5320568e954442e5c97b35d1d7d5c478d081bfce4da47c",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_03_check.json",
+      "sha256": "801e5c0fb22eec4989668cb011ea1d758e22c64732904f312c9b5d3448747695",
+      "manifest_match": true
+    },
+    {
+      "name": "outer_03_native.json",
+      "sha256": "3304b906f4ec8fdc65e09718d8643560ba19267f685436a1c63b16263443609a",
+      "manifest_match": true
+    }
+  ],
+  "solver_calls": 0
+}

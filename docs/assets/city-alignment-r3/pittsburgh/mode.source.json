@@ -1,0 +1,40 @@
+{
+  "id": "R3-PITTSBURGH-MODE",
+  "city": "pittsburgh",
+  "title": "Mode choice: persons, costs and availability",
+  "caption": "Saved OD-specific choice in 08:00–09:00 HBW; sums over every positive-demand OD. Persons, person-weighted generalized minutes, and available OD counts have separate axes. Transit is not modeled; no zero bar is shown.",
+  "panels": [
+    {
+      "mode": "drive",
+      "person_trips": 3138.920788274633,
+      "person_weighted_generalized_minutes": 16.615913467267728,
+      "available_positive_od": 1406
+    },
+    {
+      "mode": "walk",
+      "person_trips": 868.6258205826002,
+      "person_weighted_generalized_minutes": 25.888788991846663,
+      "available_positive_od": 1301
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\pittsburgh\\four_stage\\run_001\\mode_choice\\mode_choice_by_od.csv",
+      "sha256": "56bb1046e7cdd0c98cb3cf0b5fbb6fc78958afb64fe7c45d4bdbfc7df3ed5e5f"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "mode"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "6ed3c241aba384f30913db2937eed9263d920dfa18f40c22837b10bd8f1e1e4a",
+    "png": "4c08f7dcc2ac1f2612d047d7ad5202237239111e3502afa20bcfa07ee34c1086",
+    "pdf": "7d8dae5b20dd487fe757a53851ceed0b608f802870ade30bfbd9947d1effe539"
+  },
+  "width": 1965,
+  "height": 926,
+  "src": "assets/city-alignment-r3/pittsburgh/mode.svg"
+}

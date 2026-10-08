@@ -1,0 +1,41 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-POPULATION",
+  "city": "urbana-champaign",
+  "title": "All-zone demographic denominator",
+  "caption": "2020 blocks selected by internal point; not earlier whole-tract totals. All 21 zones are retained; population total 52,040. Occupied units total 19,696.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "population",
+      "unit": "persons",
+      "total": 52040.0
+    },
+    {
+      "panel": "b",
+      "metric": "households proxy",
+      "unit": "occupied units",
+      "available": true,
+      "total": 19696.0
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\inputs\\zones_activity.csv",
+      "sha256": "cbc2bb1a3c9e597f58cc17023a1942305cfb55c3bed2617343ead2b2a101997e"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "population"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "addb43800c7c0c7e4f7ce0680043bcd5e19ef6bb8593eaf497829c4cde8a9a03",
+    "png": "9c5d590516720aafce35a8269d3053bc959810963fbffac54f488b202288c1dc",
+    "pdf": "9c7c45f2413e65aabd248db1e93fe4c2c75b2f168dcb3936a2b063397f5c13f4"
+  },
+  "width": 1885,
+  "height": 926,
+  "src": "assets/city-alignment-r3/urbana-champaign/population.svg"
+}

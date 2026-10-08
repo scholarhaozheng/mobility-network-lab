@@ -1,0 +1,827 @@
+{
+  "figure_id": "berkeley-native-complete-history",
+  "city": "berkeley",
+  "instance": "S72",
+  "role": "iteration",
+  "archetype": "quantitative grid",
+  "conclusion": "Both Native ranks use all 3 real outer iterations to reach the original conservation and optimality gates.",
+  "panels": [
+    {
+      "id": "a",
+      "metric": "objective_checked",
+      "unit": "Beckmann objective (PCE·min/h)"
+    },
+    {
+      "id": "b",
+      "metric": "full_relative_gap",
+      "unit": "Signed relative gap (dimensionless)"
+    },
+    {
+      "id": "c",
+      "metric": "max_abs_od_residual",
+      "unit": "Maximum absolute OD residual (PCE/h)"
+    },
+    {
+      "id": "d",
+      "metric": "max_link_reconstruction_error",
+      "unit": "Maximum reconstruction residual (PCE/h)"
+    }
+  ],
+  "quantity": [
+    "objective_checked",
+    "full_relative_gap",
+    "max_abs_od_residual",
+    "max_link_reconstruction_error"
+  ],
+  "unit": [
+    "PCE·min/h",
+    "dimensionless",
+    "PCE/h",
+    "PCE/h"
+  ],
+  "saved_states": 3,
+  "ranks": [
+    26,
+    52
+  ],
+  "saved_states_total": 6,
+  "interpolation": false,
+  "endpoint_comparison_replaced": false,
+  "physical_flow_figures_preserved": true,
+  "access": "private_local_review",
+  "public_release_confirmed": false,
+  "renderer_path": "render_native_history.py",
+  "renderer_sha256": "71d69127ecb819601ec7f125b18a8943a4b9a22be6b4cfde544b23c7191e6a13",
+  "source_package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+  "source_release_scope": "Accepted corrected R2 static result; public same-instance plot data contains terminal_results only; full numerical histories have no confirmed public release",
+  "uncertainty": "One fixed engineering instance, no uncertainty interval or statistical replicate.",
+  "schema": "mcl_figure_r12",
+  "caption": "All 3 saved outer checks are plotted for each Native rank on the same frozen S72 instance (72 positive OD, 953.049842714 PCE/h). Each marker is an actual saved check at outer 1–3; the connecting segments do not add intermediate observations. Rank 26 uses open circles and rank 52 filled squares; near-coincident lines are both retained. Panels separate checked BPR/Beckmann objective, signed full-graph relative gap, maximum original-OD residual, and physical-flow reconstruction residual. The horizontal FW value is an independent same-instance endpoint, not an additional Native iteration. Early checked objectives lie below that endpoint while OD conservation has not yet reached its frozen gate; these are not feasible upper bounds or better traffic solutions. Signed negative gaps remain negative and are not interpreted as superior optimality. The gap axis is symmetric-log with a linear interval of ±10⁻¹²; OD/reconstruction axes are logarithmic in their original PCE/h units. The original gap bounds ±10⁻⁵, OD absolute gate 10⁻⁶ PCE/h, and reconstruction gate 10⁻⁷ PCE/h are unchanged. Both runs reach their original acceptance checks at outer 3; other relative-OD/nonnegativity gates remain in the source records. Berkeley objective values are taken from the per-outer checker; the independently evaluated public endpoint differs by at most 2.73×10⁻¹² PCE·min/h and is not substituted into this history. These early states belong to the ultimately accepted run; no separate failed trial is added. Endpoint comparison and method-specific physical-flow maps remain separate evidence. Private local preview of complete saved numerical history: public release currently covers endpoints, not these per-iteration values. Engineering scenario, not observed traffic or measured policy effect.",
+  "sources": [
+    {
+      "identity": "berkeley accepted run / rank 26 / outer 1 check",
+      "sha256": "dfed967b4c6c8d1ac368afaaae38754de6263192f2deb9be20f88fe727ea7c9e",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank26_fix2/outer_01_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted run / rank 26 / outer 2 check",
+      "sha256": "a499294ca9dcda87e40508edb4b41034c1dfa89ec0b4e32436f4d3b1d8bd9947",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank26_fix2/outer_02_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted run / rank 26 / outer 3 check",
+      "sha256": "69eb3381b6e9ca5e44149c068bbe003acbd08f92c63cdc609df307d740468964",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank26_fix2/outer_03_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted run / rank 52 / outer 1 check",
+      "sha256": "f9cfd49ce3c67eaa6d6f0d42cc6107f88ed5b4900251299344e790f996ca684f",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank52_fix1/outer_01_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted run / rank 52 / outer 2 check",
+      "sha256": "018539e2708896ed3095ba4a55afe19362cca236cae3543856e5934e593656b2",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank52_fix1/outer_02_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "identity": "berkeley accepted run / rank 52 / outer 3 check",
+      "sha256": "3d371e7ecb0aa8d02831a4e5e69a7ae117f753f5d19db0ad14ed738ae640d7f7",
+      "package_sha256": "709a8490078a12c54958bc43d1824e72bca1cf4869522d9ffd242fb2ec6703a3",
+      "member": "berkeley_algorithm_transfer_r1/runs/S_native_rank52_fix1/outer_03_check.json",
+      "access": "private_local_review"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/s02_same_instance_methods.plot_data.json",
+      "sha256": "595d2320759c5020513093b6bb449e7d149b3313f1c6ccbe2459f6bb01ecef9d",
+      "role": "same-instance terminal cross-check only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Berkeley",
+    "title": "Native L3: the complete saved iteration history",
+    "scope": "S72 · RANKS 26 / 52 · 3 OUTER ITERATIONS"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 35.957,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3020,
+    1855
+  ],
+  "exports": {
+    "png": "95469ebe9073d2db79130c9d68a493efc5256b8ffed686a84bab997de6e535d9",
+    "svg": "4cd50139936a40e9a13a0df3064b0fd8724184d8026d4e4e0beb6bbbbffb6cee",
+    "pdf": "d027ce7daf11704e5732891315dd7e7749f8e74ba2a021f9cf2665a92e6bc8fe"
+  },
+  "text_audit": [
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        245.03,
+        336.306,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        143.015,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        308.905,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        474.795,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Beckmann objective (PCE·min/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        58.011,
+        366.86,
+        13.0,
+        208.875
+      ]
+    },
+    {
+      "text": "2640",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        329.081,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2660",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        371.571,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2680",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        414.062,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        456.553,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2720",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        499.043,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2740",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        541.534,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "2760",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.567,
+        584.024,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Checked objective",
+      "size_pt": 10.5,
+      "bounds_px": [
+        113.4,
+        578.9,
+        168.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        412.986,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        397.778,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Same-instance FW endpoint",
+      "size_pt": 7.5,
+      "bounds_px": [
+        354.036,
+        382.569,
+        148.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        786.495,
+        336.306,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        684.48,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        850.37,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1016.26,
+        354.861,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Signed relative gap (dimensionless)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        594.101,
+        357.61,
+        13.0,
+        227.375
+      ]
+    },
+    {
+      "text": "−10⁻¹",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        370.975,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻³",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.656,
+        389.976,
+        33.875,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        408.976,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "−10⁻⁹",
+      "size_pt": 8.0,
+      "bounds_px": [
+        612.781,
+        446.978,
+        33.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        639.406,
+        482.868,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10⁻⁵",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.031,
+        556.76,
+        24.5,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Signed full-graph gap",
+      "size_pt": 10.5,
+      "bounds_px": [
+        654.864,
+        578.9,
+        199.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        550.025,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        534.817,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen bounds ±10⁻⁵",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        519.608,
+        113.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        245.03,
+        36.111,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        143.015,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        308.905,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        474.795,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum absolute OD residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        54.88,
+        44.103,
+        13.0,
+        254.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        72.982,
+        29.777,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.435,
+        64.5,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.868,
+        99.823,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.931,
+        134.547,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.993,
+        169.27,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        77.931,
+        203.994,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.384,
+        238.117,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.901,
+        272.841,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        84.448,
+        308.164,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "c  Original-OD conservation",
+      "size_pt": 10.5,
+      "bounds_px": [
+        113.4,
+        278.706,
+        228.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        112.792,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        97.583,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen gate 10⁻⁶ PCE/h",
+      "size_pt": 7.5,
+      "bounds_px": [
+        151.942,
+        82.375,
+        125.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Saved outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        786.495,
+        36.111,
+        134.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        684.48,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        850.37,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1016.26,
+        54.667,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Maximum reconstruction residual (PCE/h)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        595.61,
+        36.915,
+        13.0,
+        268.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-16}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.384,
+        12.881,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-14}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.165,
+        64.5,
+        32.366,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-12}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.697,
+        116.119,
+        31.834,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-10}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        614.384,
+        167.738,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-8}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.395,
+        219.957,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-6}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.333,
+        271.576,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-4}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        619.114,
+        322.595,
+        27.417,
+        14.6
+      ]
+    },
+    {
+      "text": "d  Physical-flow reconstruction",
+      "size_pt": 10.5,
+      "bounds_px": [
+        654.864,
+        278.706,
+        255.0,
+        14.0
+      ]
+    },
+    {
+      "text": "Rank 26",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        181.311,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Rank 52",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        166.103,
+        43.625,
+        10.0
+      ]
+    },
+    {
+      "text": "Frozen gate 10⁻⁷ PCE/h",
+      "size_pt": 7.5,
+      "bounds_px": [
+        693.406,
+        150.894,
+        125.375,
+        10.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  S72 · RANKS 26 / 52 · 3 OUTER ITERATIONS",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        630.956,
+        402.875,
+        13.0
+      ]
+    },
+    {
+      "text": "Native L3: the complete saved iteration history",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        604.011,
+        550.25,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS_PRIVATE_LOCAL_VISUAL_QA",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "PNG_individually_inspected": true,
+    "legend_overlaps_repaired": true,
+    "all_actual_iteration_markers_visible": true,
+    "integer_iteration_ticks": true,
+    "no_line_smoothing_or_invented_states": true,
+    "labels_not_clipped": true,
+    "public_release": false
+  }
+}

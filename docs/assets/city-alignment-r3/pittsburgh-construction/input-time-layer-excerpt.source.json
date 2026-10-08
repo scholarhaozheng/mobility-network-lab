@@ -1,0 +1,48 @@
+{
+  "city": "pittsburgh",
+  "figure": "input-time-layer-excerpt",
+  "title": "Actual local time layers from saved T4 arcs",
+  "caption": "INPUT ONLY / NOT OPTIMIZED. 26 actual dynamic_arc rows connect 4 selected physical/IN/OUT states over steps 40–44 (20–22 minutes after 08:00). Time coordinates and edge directions come directly from the frozen input; vertical spacing is schematic. Pittsburgh distinguishes IN→OUT physical roads, OUT→IN zero-time turns, and one-step waits. Connector examples are also exact saved records; their sink-time jumps are ledger bookkeeping, not observed waiting. No optimized flow/path is shown.",
+  "source_snapshot": {
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_arc.csv": {
+      "sha256": "0da6eb8fdcb5a1897768199508f630115749515c2f42d6a2390ccf265e2db1e2",
+      "size_bytes": 176040215
+    },
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\dynamic_demand.csv": {
+      "sha256": "15b5857db8111533c956479c4674756c72f7c87477968e4b27d81e5f0057551b",
+      "size_bytes": 656
+    },
+    "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\T\\model\\MODEL_IDENTITY.json": {
+      "sha256": "d4e513fa32b3ca61685150c51906fe7caa51e5e212e5079cb5d866e25c41f87e",
+      "size_bytes": 2413
+    }
+  },
+  "snapshot_utc": "2026-10-06T18:26:44.176332+00:00",
+  "scientific_solver_calls": 0,
+  "status": "INPUT ONLY / NOT OPTIMIZED",
+  "panels": [
+    {
+      "metric": "saved input arc incidence",
+      "unit": "time steps of 30 seconds",
+      "arc_records": 26,
+      "states": [
+        "IN:36",
+        "OUT:36",
+        "IN:37",
+        "OUT:37"
+      ],
+      "time_range": [
+        40,
+        44
+      ],
+      "assigned_flow_encoded": false
+    }
+  ],
+  "renderer": "build_input_figures.py",
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; navy/teal/blue; white",
+  "exports": {
+    "svg": "c0a303937994a36921cb14a37c65bf61d4eefcadb7c4e81c2a3556c303a3e448",
+    "png": "c6c3ab8f9418b21cda52f8a42ba95ec26dbbefb1973015a427ea031b295efab9",
+    "pdf": "1a25bf2af473199f0d72f3a776e79952935eae5e54d0170308d5aa113051070e"
+  }
+}

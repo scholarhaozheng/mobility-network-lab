@@ -1,0 +1,420 @@
+{
+  "city": "ithaca",
+  "figure_id": "TEMPLATE-ithaca-lr-prices",
+  "conclusion": "Capacity prices at the best dual bound",
+  "role": "lr-prices",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Positive-price support",
+    "2": "b  All timed prices by departure step"
+  },
+  "quantity": "Capacity prices at the best dual bound",
+  "unit": "Sum of capacity multipliers (min)",
+  "schema": "mcl_figure_r12",
+  "caption": "The saved best-bound multiplier vector contains 36,360 original dynamic-arc entries, all exactly zero. Consequently there is no nonempty top-price ranking. The second panel sums every timed multiplier by its real 30-second departure index, including the zero sums; source/sink entries without a time suffix are excluded only from the time aggregation. Empty positive support is shown explicitly, not replaced with another city or method. These numerical details remain a private local preview.",
+  "sources": [
+    {
+      "sha256": "59d00b5ffbd2d010bac3009a4d770f98288557bbe5b73d90d9707c0aca60d106",
+      "identity": "LR_STATE.npz",
+      "access": "private"
+    },
+    {
+      "sha256": "92c4545da258b655b4d11a675409a8d31f2c9bf7063437168f5785ae8d978030",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "bae4041fdec9fddd71d7c5e32dde6bccdd4a43258b9de357e1a6bef4741e53cb",
+      "identity": "recovery_history.json",
+      "access": "private"
+    },
+    {
+      "sha256": "7435ad479971d36ede19a0599e103130855dd1999261e5588e61d886be53e102",
+      "identity": "result.json",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Capacity prices at the best dual bound",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 15.398,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2747,
+    1133
+  ],
+  "exports": {
+    "png": "c97c0ef121d0c8b80d85d365ece6605b0f8c9d1b10957d2ce43c5155a6270d17",
+    "svg": "7946acf8fb68731c2113292cb0e5632a6100e0b51eceeb26d03f272aeabe6812",
+    "pdf": "4e036a11e3832c4d9f0e0deca41a92b447efee666f9d4bca0826f3ffd759f9d4"
+  },
+  "text_audit": [
+    {
+      "text": "No positive multipliers",
+      "size_pt": 10.0,
+      "bounds_px": [
+        186.599,
+        218.98,
+        161.0,
+        14.0
+      ]
+    },
+    {
+      "text": "All saved prices are exactly zero",
+      "size_pt": 8.0,
+      "bounds_px": [
+        176.099,
+        183.636,
+        182.0,
+        10.0
+      ]
+    },
+    {
+      "text": "Capacity multiplier (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        187.224,
+        42.311,
+        159.75,
+        13.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        76.125,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        148.965,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        221.804,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        294.644,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        367.483,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        440.323,
+        60.867,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Positive-price support",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        344.133,
+        188.125,
+        14.0
+      ]
+    },
+    {
+      "text": "36,360 saved arc prices; 0 positive",
+      "size_pt": 8.0,
+      "bounds_px": [
+        616.728,
+        303.052,
+        196.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Model departure index (30 s per step)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        666.651,
+        42.311,
+        242.5,
+        13.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        577.408,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.393,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        663.816,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "15",
+      "size_pt": 8.0,
+      "bounds_px": [
+        708.8,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        753.785,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "25",
+      "size_pt": 8.0,
+      "bounds_px": [
+        798.77,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        843.755,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "35",
+      "size_pt": 8.0,
+      "bounds_px": [
+        888.74,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        933.725,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "45",
+      "size_pt": 8.0,
+      "bounds_px": [
+        978.71,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Sum of capacity multipliers (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        544.789,
+        103.063,
+        13.0,
+        211.875
+      ]
+    },
+    {
+      "text": "−0.02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        563.344,
+        73.2,
+        34.125,
+        10.0
+      ]
+    },
+    {
+      "text": "0.00",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        110.286,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.02",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        147.371,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.04",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        184.457,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.06",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        221.543,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.08",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        258.629,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        295.714,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "0.12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        572.594,
+        332.8,
+        24.875,
+        10.0
+      ]
+    },
+    {
+      "text": "b  All timed prices by departure step",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        284.375,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        396.189,
+        283.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Capacity prices at the best dual bound",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        369.244,
+        450.625,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

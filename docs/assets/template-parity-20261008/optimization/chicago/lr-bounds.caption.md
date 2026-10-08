@@ -1,0 +1,1 @@
+All ten original-cost states of the accepted self-priced feasibility/recovery dual-anchor hybrid are retained. They follow 26 distinct own-pool feasibility rounds. Bounds and certificate have separate panels; the final gap is 0.8744685%. This result does not relabel the earlier pure LR run or its unsuccessful endpoints.

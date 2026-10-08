@@ -1,0 +1,131 @@
+{
+  "table_id": "ith-static-endpoints",
+  "city": "ithaca",
+  "title": "S110 static endpoint comparison",
+  "scope": "S110;421.261325634 PCE/h;47,938 original solver arcs",
+  "original_assets": [
+    "assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.png"
+  ],
+  "notes": [
+    "Every numeric string from the released CSV is preserved. Static objectives have units PCE·min/h and original-coordinate flow errors PCE/h; historical machine field names are retained without rescaling. Negative roundoff gaps remain signed. These method rows are endpoints, not four iterations. FW saved 0 updates; Native26/52 each reached their original gates after 4 actual outer iterations. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.plot.csv",
+      "href": "assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.plot.csv",
+      "sha256": "60739c1a2dc26ecfe4915b85ed2743ef6056f91d20e66efa09174109d8255a4c"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.caption.txt",
+      "href": "assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.caption.txt",
+      "sha256": "9a45b878ac1dcc1ccab2df3983601552f15af4320554f9a8991398d76f1bf8e7"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md",
+      "href": "assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md",
+      "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "S110 static endpoint comparison",
+      "columns": [
+        "Method",
+        "Original producer status",
+        "Objective (PCE·min/h)",
+        "Signed objective − FW (PCE·min/h)",
+        "Signed full relative gap",
+        "Max OD error (PCE/h)",
+        "Max reconstruction error (PCE/h)",
+        "Raw minimum path flow (PCE/h)"
+      ],
+      "rows": [
+        {
+          "Method": "fw",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min/h)": "1638.731757686398",
+          "Signed objective − FW (PCE·min/h)": "0.0",
+          "Signed full relative gap": "-1.3874959028863206e-16",
+          "Max OD error (PCE/h)": "0.0",
+          "Max reconstruction error (PCE/h)": "0.0",
+          "Raw minimum path flow (PCE/h)": "0.14005962354893392"
+        },
+        {
+          "Method": "finite",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min/h)": "1638.731757686398",
+          "Signed objective − FW (PCE·min/h)": "0.0",
+          "Signed full relative gap": "-1.3874959028863206e-16",
+          "Max OD error (PCE/h)": "0.0",
+          "Max reconstruction error (PCE/h)": "0.0",
+          "Raw minimum path flow (PCE/h)": "0.0"
+        },
+        {
+          "Method": "native26",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min/h)": "1638.73175768472",
+          "Signed objective − FW (PCE·min/h)": "-1.6780177247710526e-09",
+          "Signed full relative gap": "-1.029383210352421e-12",
+          "Max OD error (PCE/h)": "7.58841878223393e-11",
+          "Max reconstruction error (PCE/h)": "8.526512829121202e-14",
+          "Raw minimum path flow (PCE/h)": "6.034934791012343e-11"
+        },
+        {
+          "Method": "native52",
+          "Original producer status": "ACCEPTED",
+          "Objective (PCE·min/h)": "1638.7317576873045",
+          "Signed objective − FW (PCE·min/h)": "9.065388439921662e-10",
+          "Signed full relative gap": "5.581896017308553e-13",
+          "Max OD error (PCE/h)": "1.2492393230978394e-10",
+          "Max reconstruction error (PCE/h)": "7.105427357601002e-14",
+          "Raw minimum path flow (PCE/h)": "1.636446935278069e-10"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Actual saved history counts",
+      "columns": [
+        "Instance / method",
+        "Saved history / updates",
+        "Current status"
+      ],
+      "rows": [
+        {
+          "Instance / method": "ithaca_R2_S110_gap_closure_v001 / FW",
+          "Saved history / updates": "saved rows = 1; indices = [0]; optimization updates = 0",
+          "Current status": "ACCEPTED"
+        },
+        {
+          "Instance / method": "ithaca_R2_S110_gap_closure_v001 / Finite-path SLSQP",
+          "Saved history / updates": "saved endpoint records = 1; solver reported iterations nit = 1; separate iteration history rows = 0; actual step count not separately saved = Yes",
+          "Current status": "ACCEPTED"
+        },
+        {
+          "Instance / method": "ithaca_R2_S110_gap_closure_v001 / Native rank 26",
+          "Saved history / updates": "saved outer checks = 4; outer indices = [1, 2, 3, 4]; actual native worker solves = 4; accepted outer = 4",
+          "Current status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+        },
+        {
+          "Instance / method": "ithaca_R2_S110_gap_closure_v001 / Native rank 52",
+          "Saved history / updates": "saved outer checks = 4; outer indices = [1, 2, 3, 4]; actual native worker solves = 4; accepted outer = 4",
+          "Current status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 8,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"ith-static-endpoints\"><h4>S110 static endpoint comparison</h4><p class=\"evidence-table-scope\">S110;421.261325634 PCE/h;47,938 original solver arcs</p><h5>S110 static endpoint comparison</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"S110 static endpoint comparison\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Original producer status</th><th scope=\"col\">Objective (PCE·min/h)</th><th scope=\"col\">Signed objective − FW (PCE·min/h)</th><th scope=\"col\">Signed full relative gap</th><th scope=\"col\">Max OD error (PCE/h)</th><th scope=\"col\">Max reconstruction error (PCE/h)</th><th scope=\"col\">Raw minimum path flow (PCE/h)</th></tr></thead><tbody><tr><td>fw</td><td>ACCEPTED</td><td>1638.731757686398</td><td>0.0</td><td>-1.3874959028863206e-16</td><td>0.0</td><td>0.0</td><td>0.14005962354893392</td></tr><tr><td>finite</td><td>ACCEPTED</td><td>1638.731757686398</td><td>0.0</td><td>-1.3874959028863206e-16</td><td>0.0</td><td>0.0</td><td>0.0</td></tr><tr><td>native26</td><td>ACCEPTED</td><td>1638.73175768472</td><td>-1.6780177247710526e-09</td><td>-1.029383210352421e-12</td><td>7.58841878223393e-11</td><td>8.526512829121202e-14</td><td>6.034934791012343e-11</td></tr><tr><td>native52</td><td>ACCEPTED</td><td>1638.7317576873045</td><td>9.065388439921662e-10</td><td>5.581896017308553e-13</td><td>1.2492393230978394e-10</td><td>7.105427357601002e-14</td><td>1.636446935278069e-10</td></tr></tbody></table></div><h5>Actual saved history counts</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Actual saved history counts\"><table><thead><tr><th scope=\"col\">Instance / method</th><th scope=\"col\">Saved history / updates</th><th scope=\"col\">Current status</th></tr></thead><tbody><tr><td>ithaca_R2_S110_gap_closure_v001 / FW</td><td>saved rows = 1; indices = [0]; optimization updates = 0</td><td>ACCEPTED</td></tr><tr><td>ithaca_R2_S110_gap_closure_v001 / Finite-path SLSQP</td><td>saved endpoint records = 1; solver reported iterations nit = 1; separate iteration history rows = 0; actual step count not separately saved = Yes</td><td>ACCEPTED</td></tr><tr><td>ithaca_R2_S110_gap_closure_v001 / Native rank 26</td><td>saved outer checks = 4; outer indices = [1, 2, 3, 4]; actual native worker solves = 4; accepted outer = 4</td><td>SOLVED_WITHIN_DECLARED_TOLERANCE</td></tr><tr><td>ithaca_R2_S110_gap_closure_v001 / Native rank 52</td><td>saved outer checks = 4; outer indices = [1, 2, 3, 4]; actual native worker solves = 4; accepted outer = 4</td><td>SOLVED_WITHIN_DECLARED_TOLERANCE</td></tr></tbody></table></div><p>Every numeric string from the released CSV is preserved. Static objectives have units PCE·min/h and original-coordinate flow errors PCE/h; historical machine field names are retained without rescaling. Negative roundoff gaps remain signed. These method rows are endpoints, not four iterations. FW saved 0 updates; Native26/52 each reached their original gates after 4 actual outer iterations. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.plot.csv\" download>ITH_GC03_S_Endpoints.plot.csv</a> · <a href=\"assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.caption.txt\" download>ITH_GC03_S_Endpoints.caption.txt</a> · <a href=\"assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md\" download>VOLUME_ADDENDUM_S0.md</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/gap-20261008/ithaca/ITH_GC03_S_Endpoints.png\">ITH_GC03_S_Endpoints.png</a></p></details></section>",
+  "caption": "Every numeric string from the released CSV is preserved. Static objectives have units PCE·min/h and original-coordinate flow errors PCE/h; historical machine field names are retained without rescaling. Negative roundoff gaps remain signed. These method rows are endpoints, not four iterations. FW saved 0 updates; Native26/52 each reached their original gates after 4 actual outer iterations. Frozen Ithaca S110 static and T4 finite fixed-cost endpoints, not DNL/DUE or local calibration. T4 capacity is nonbinding (0.65675536 PCE pulse versus 2.5 PCE minimum physical arc capacity). U.S. Census/LEHD, NYSDOT and © OpenStreetMap contributors, ODbL: https://www.openstreetmap.org/copyright."
+}

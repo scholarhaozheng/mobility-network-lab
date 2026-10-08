@@ -1,0 +1,40 @@
+{
+  "id": "R3-CHICAGO-TRANSIT",
+  "city": "chicago",
+  "title": "Transit source geography and service boundary",
+  "caption": "OSM source-tagged stops; no service calendar. Stop tags and road proximity do not prove legal walk access or operating service. The gray retained road graph is geographic context, not a transit route model.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "stop coordinates",
+      "unit": "projected km",
+      "count": 953,
+      "source_scope": "OSM source-tagged stops; no service calendar"
+    },
+    {
+      "panel": "b",
+      "metric": "evidence boundary",
+      "transit_prediction": "not modeled"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\processed\\source_tagged_stops.csv",
+      "sha256": "05616132689d61eac2cdad3315ef287d6b97120a58903d3d2499985549914fdc"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "transit"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "35466be33990346f03a529de77a5460f7dd8cb85fe0b8b9b183e862300bc8edb",
+    "png": "91e2a5f2da92da6b71dc6ab1f79871d085b393530d0978e1c25bb2fa3688b835",
+    "pdf": "0654480fc29293589bf9915e0d02f41ee6e2d76e01b35c06a3e4211a781fe2e7"
+  },
+  "width": 1725,
+  "height": 942,
+  "src": "assets/city-alignment-r3/chicago/transit.svg"
+}

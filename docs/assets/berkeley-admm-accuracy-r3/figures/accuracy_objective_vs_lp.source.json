@@ -1,0 +1,79 @@
+{
+  "schema": "mcl_v_berkeley_admm_visual_delta_v1",
+  "figure": "accuracy_objective_vs_lp",
+  "scientific_status": "ACCEPTED_BOUNDED_BERKELEY_T4_ADMM_POST_DIAGNOSTIC",
+  "public_release": "PENDING_S0_INCREMENTAL_REVIEW",
+  "T_signature": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "units": {
+    "objective": "PCE minutes",
+    "relative_gap": "dimensionless"
+  },
+  "original_archive": {
+    "name": "MCL_Berkeley_ADMM_Accuracy_R3_Volume_Handoff.zip",
+    "sha256": "0221f5d00905c81baaf8e655bf37c22fdc3ff805c3f93a71b0c6423eb5913858"
+  },
+  "original_assets": {
+    "accuracy_objective_vs_lp.png": "4f42e3b69b8e1fef9736ea70bf52690ed330a4336e4a265bd1a2680541fbdc5f",
+    "accuracy_objective_vs_lp.svg": "16e3d35b266d2be3e16678dcef0e1755457c3afd2e4118f656467a7929ac3617",
+    "accuracy_objective_vs_lp.plot_data.json": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278",
+    "accuracy_objective_vs_lp.source.json": "8d31a3a6d5f134d4db192db7570945bf9e65484efb6537853dad9dc1007d35ce",
+    "accuracy_objective_vs_lp.caption.md": "761ae1b30e7a307ae2a8efefbe036232ca2148d490a6a4df7fab0f92834de3fd"
+  },
+  "original_renderer": {
+    "file": "render_accuracy_figures.py",
+    "sha256": "66dcccb787ec5c1e08857a8881cddeeccabe4b6b9c747c3fc546d4db800a9436"
+  },
+  "original_source_sha256": {
+    "stage_a/final_checkpoint/history.csv": "b4fdbc61f7b5800a9c721afc7abc51a69dc18672e90c17d5ffa178f6c41fd678",
+    "checks/stage_a/INDEPENDENT_CHECK.json": "ad2e315483ef3fb469973a3b3c648aee7b3e5a24f721cecdf9cfae5804ea23eb",
+    "input/LP_REFERENCE.json": "23ec86481e1a4e3e3e0eae8dd52433f758f3496d9457c50f2e72941948b31f08",
+    "ADMM_ACCURACY_PLAN.json": "74ea63671b54acf18846dbb163d73ce849e17edf49b14156145839f974264cc6",
+    "FINAL_SELECTION.json": "f3699f29b0b83fd9220710ebef64f758bb99fa76c35f7a1eb5f957d150afa877"
+  },
+  "renderer": {
+    "file": "renderers/render_berkeley_admm_visual.py",
+    "sha256": "88812fbe9b4073107bdb5ba1a0f8495975e30c8ad78a870faad93c3452e35499"
+  },
+  "outputs": {
+    "accuracy_objective_vs_lp.png": {
+      "sha256": "3fcfe09082d900d2f5eee041511e9bc68ee251b56a0142472c5daac6c4e8b0b0",
+      "bytes": 185377
+    },
+    "accuracy_objective_vs_lp.svg": {
+      "sha256": "53c429fd8b18e6169c58e1f24bb90d648463bd1d269c8f49a90e0d108685db3b",
+      "bytes": 15341
+    },
+    "accuracy_objective_vs_lp.plot_data.json": {
+      "sha256": "53ee8e504053268264a87d9d5f7058f9c79d5dd30f14282c77e9e94db203b278",
+      "bytes": 12756
+    },
+    "accuracy_objective_vs_lp.caption.md": {
+      "sha256": "c1ed6c305b8ec5bb0e7ffda3c3fbc264ff60ab8a98401be510ad42a8aeadae9b",
+      "bytes": 983
+    }
+  },
+  "data_unchanged": {
+    "plot_data_bytes_identical": true,
+    "all_saved_iterations": 170,
+    "display_only": {
+      "x_range": [
+        -1,
+        173
+      ],
+      "objective_floor": null,
+      "no_values_changed": true
+    }
+  },
+  "style": {
+    "font": "DejaVu Serif",
+    "browser_fallback": [
+      "Georgia",
+      "Times New Roman",
+      "serif"
+    ],
+    "font_binaries_included": false,
+    "navy": "#132f51",
+    "teal": "#087f82",
+    "editable_svg_text": true
+  }
+}

@@ -1502,3 +1502,13 @@ experiments/public-controls/synthetic-gtfs-members.json -text
 
 # Exact-byte project map exports.
 /docs/assets/atlas/figures/g-f001.pdf -text -diff
+
+# Preserve exact hashes for the current full presentation and received records.
+/docs/assets/** -text
+/docs/volumes/** -text
+/docs/reviews/** -text
+/docs/index-coverage-*.html -text
+/docs/downloads/*.json -text
+/docs/reproduction/*.json -text
+/catalog/documentation-languages.json -text
+/experiments/checkout-files.json -text

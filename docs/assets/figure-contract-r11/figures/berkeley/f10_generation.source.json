@@ -1,0 +1,343 @@
+{
+  "figure_id": "R11-BERKELEY-F10_GENERATION",
+  "city": "berkeley",
+  "instance": "Berkeley 13-zone frozen one-hour demand",
+  "role": "demand",
+  "saved_states": 0,
+  "conclusion": "Trip generation",
+  "panels": [
+    "All 13 productions and attractions"
+  ],
+  "quantity": "As separately labelled by panel",
+  "unit": "As separately labelled by panel",
+  "original_asset": "assets/six-city-r3-1/berkeley/f10_generation.svg",
+  "schema": "mcl_figure_r11",
+  "caption": "Saved productions and job-weighted attractions for all 13 model zones. Population and jobs use different source years (2020 and 2023). The captured interzonal total is 2,381.7222975 person trips in 08:00–09:00; 4,705.530375 external/uncaptured and 152.0248275 intrazonal person trips remain separate. This bounded engineering scenario is not locally calibrated. Single-pass engineering scenario; no local empirical calibration.",
+  "sources": [
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/plot_data/f10_generation/f10_generation.plot_data.csv",
+      "sha256": "901c860592e4f935209e04e662fb02d8112166d75c7dc7303bd8c9014a095bce"
+    },
+    {
+      "public_path": "docs/assets/six-city-r3-1/berkeley/f10_generation.source.json",
+      "sha256": "e2dbb671af2a2e7dc0c6dec9d527be26edded24028c69625ba1dd9c0fb92b641"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_admm.py",
+      "sha256": "27e2ddce06a93065e858b059df014410cdc74e45ec0e25eba1d040f00bd4d819"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_finite.py",
+      "sha256": "6677dc5a378eda4eafea824d9ecd8901597bfa47c7f62e2060c698a0f811cd53"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_flow_maps.py",
+      "sha256": "eadd2e0ec914baa997446d2d8e5f6aa6134278f6595859f654bca3d9e9e4a90b"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_diagnostics.py",
+      "sha256": "54d4a42b555ae0b67a5131810be7e7bc2929fdf4500a3d2a4701b3e568a89200"
+    },
+    {
+      "public_path": "tools/figures/recipes/render_lr_flow.py",
+      "sha256": "dc2c7b4121ed957982f7aa9a9284ba102325439f04378c72413416e76a26592e"
+    }
+  ],
+  "style_contract_sha256": "5a1c74a030d96985df11a9a2f099ecf08f2bd798fb7018e4f7ea1c443b59ae90",
+  "style_renderer_sha256": "b94198d2e4d23f90280dd580ed5b6fd98895c43a20b041ca7555a165d382f34d",
+  "header": {
+    "city": "Berkeley",
+    "title": "Trip generation",
+    "scope": "13 zones / 08:00–09:00"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 31.306,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2784,
+    1129
+  ],
+  "exports": {
+    "png": "68e9a6fff727ccc5270cfb05273782ff7ff289b35e987bae235a460fdf0707ad",
+    "svg": "547440048981641d6278ade7621bbaad815e1c968282d40cf3608a3600821fa3",
+    "pdf": "f4d28a5f48d0dc9fa9e45abaaf72cf8a3a387e5ae7bc9198e5e2aed729ec7235"
+  },
+  "text_audit": [
+    {
+      "text": "Model zone",
+      "size_pt": 9.0,
+      "bounds_px": [
+        483.375,
+        39.171,
+        73.25,
+        13.0
+      ]
+    },
+    {
+      "text": "400100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        108.923,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422300",
+      "size_pt": 8.0,
+      "bounds_px": [
+        170.906,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        232.89,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        294.873,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        356.857,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        418.84,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422901",
+      "size_pt": 8.0,
+      "bounds_px": [
+        480.824,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "422902",
+      "size_pt": 8.0,
+      "bounds_px": [
+        542.807,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "423000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        604.791,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "423500",
+      "size_pt": 8.0,
+      "bounds_px": [
+        666.774,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "423602",
+      "size_pt": 8.0,
+      "bounds_px": [
+        728.758,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "423700",
+      "size_pt": 8.0,
+      "bounds_px": [
+        790.741,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "982100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        852.725,
+        57.727,
+        39.176,
+        35.14
+      ]
+    },
+    {
+      "text": "Person trips / declared hour",
+      "size_pt": 9.0,
+      "bounds_px": [
+        36.736,
+        138.7,
+        13.0,
+        178.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        95.2,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "200",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        148.98,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "400",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        202.759,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "600",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        256.539,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "800",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        310.319,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "1000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        48.167,
+        364.098,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "Production",
+      "size_pt": 9.0,
+      "bounds_px": [
+        874.125,
+        329.95,
+        69.625,
+        13.0
+      ]
+    },
+    {
+      "text": "Attraction",
+      "size_pt": 9.0,
+      "bounds_px": [
+        874.125,
+        310.7,
+        63.75,
+        13.0
+      ]
+    },
+    {
+      "text": "BERKELEY  /  13 zones / 08:00–09:00",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        392.256,
+        251.375,
+        13.0
+      ]
+    },
+    {
+      "text": "Trip generation",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        365.311,
+        182.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "reviewed": "individual final PNG",
+    "city_and_title": "PASS",
+    "panel_labels_and_units": "PASS",
+    "legible_no_clipping": "PASS",
+    "long_footer_removed_to_caption": "PASS",
+    "numerical_input_recomputed": false
+  }
+}

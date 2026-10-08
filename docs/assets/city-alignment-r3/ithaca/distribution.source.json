@@ -1,0 +1,53 @@
+{
+  "id": "R3-ITHACA-DISTRIBUTION",
+  "city": "ithaca",
+  "title": "Complete OD matrix with origin and destination margins",
+  "caption": "Full 11×11 model-zone matrix including zero cells; 110 positive OD pairs and 1,017.627191536 persons in 11:00–12:00 local activity. Colours are log(1+persons); margins are untransformed directed OD totals after PA direction. Every model zone is retained.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "directed OD person trips",
+      "encoding": "log(1+persons)",
+      "shape": [
+        11,
+        11
+      ],
+      "positive_cells": 110,
+      "total": 1017.6271915363841
+    },
+    {
+      "panel": "b",
+      "metric": "origin margin",
+      "total": 1017.6271915363841
+    },
+    {
+      "panel": "c",
+      "metric": "destination margin",
+      "total": 1017.6271915363841
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\ithaca\\plot_data\\FS_D01\\distribution.csv",
+      "sha256": "acd1665cd27722f07a8c6f8bec182c9458860c2c4c764e2509d6c7e79a01894d"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\ithaca\\plot_data\\generation_complete.csv",
+      "sha256": "08f60c3c882bbd545b7f8761a72998874c3becf775200f1f1363bdfd28c08944"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "distribution"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "48f67ac8a24cda7438c65399b406766f35198459577c6949da36ceb0bb18f526",
+    "png": "ae1d5926ed7c50e2572743e6efdd6a74cd7256b2e2f14284a9b5b25681d7784c",
+    "pdf": "9177ebf30a2249f777e8f8aaebf35b080fa57bc9c1a8201293c13adf1304d85c"
+  },
+  "width": 2028,
+  "height": 1018,
+  "src": "assets/city-alignment-r3/ithaca/distribution.svg"
+}

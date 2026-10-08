@@ -1,0 +1,453 @@
+{
+  "figure_id": "ithaca-construction-local-parity",
+  "city": "ithaca",
+  "method": "finite time graph construction",
+  "instance": "ITHACA_R2_ZONE_T4_11_12_four_shortest_input_OD",
+  "period": "30-second time index",
+  "role": "time_construction",
+  "conclusion": "The exact saved local road and turn arcs explain the finite time-expanded construction.",
+  "archetype": "schematic-led composite",
+  "panels": [
+    {
+      "a": "source-directed physical two-road chain"
+    },
+    {
+      "b": "physical → routing → time-indexed object mapping"
+    },
+    {
+      "c": "exact three movement/turn arcs, or frozen rule with execution pending"
+    }
+  ],
+  "quantity": "Routing-state and time-arc incidence",
+  "unit": "time index; 30 seconds per step",
+  "public_or_private": "private",
+  "limitations": [
+    "This is an excerpt of an existing CG path, not a new optimization.",
+    "Full graph and path records are from the accepted private package; the new presentation remains local/private.",
+    "Physical node labels are schematic roles; exact routing state and link identifiers are retained in plot data.",
+    "Early timing, road movement and zero-time turns come from saved arcs, not an interpolation."
+  ],
+  "source_status": "SAVED_PATH_EXCERPT",
+  "reference_layout": "Hong Kong layered construction and local construction details; existing project style",
+  "renderer": "render_construction_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "Ithaca: panels map two source-directed physical roads to four routing entry/exit states and their time-indexed movements. This is an excerpt of an existing CG path, not a new optimization. Full graph and path records are from the accepted private package; the new presentation remains local/private. Physical node labels are schematic roles; exact routing state and link identifiers are retained in plot data. Early timing, road movement and zero-time turns come from saved arcs, not an interpolation. The turn has zero elapsed time; physical road durations are positive. No waiting arc is drawn and terminal bookkeeping states are outside this local excerpt. Plot data carry all exact source IDs, field values, and short-label aliases.",
+  "sources": [
+    {
+      "source_identity": "positive_paths.csv",
+      "sha256": "2a8e1b228c6c6fffa28ab9bda158c6b9ed8d035513712d99ea93454a8bf8e93d",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "dynamic_arc.csv",
+      "sha256": "28e0be842ed12bb4c5bfd524d61d16e86e5466494887d2fa16a7da7ce60cea74",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "MODEL_IDENTITY.json",
+      "sha256": "d02031bcabe28c03d88f9a4e57053c42210023126c5a8b31fe4ea9a3c678c535",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Local construction of the time-expanded graph",
+    "scope": "T4 / SAVED LOCAL EXCERPT"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 36.25,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3744,
+    1927
+  ],
+  "exports": {
+    "png": "7a4a221dfe5e4fedb117be36f98370368d8a190f7e8fafed028b5907544c8cfc",
+    "svg": "426e762e0c09ce02b66237994d2ab1b7f33c387f1b5a534a782497c3b1c521b4",
+    "pdf": "d5b90f3760de0529fc53f2903fa2029d6252652474f4d068482e90d585900a1c"
+  },
+  "text_audit": [
+    {
+      "text": "upstream",
+      "size_pt": 8.5,
+      "bounds_px": [
+        117.269,
+        517.632,
+        57.0,
+        10.0
+      ]
+    },
+    {
+      "text": "intersection",
+      "size_pt": 8.5,
+      "bounds_px": [
+        307.491,
+        517.632,
+        71.75,
+        10.0
+      ]
+    },
+    {
+      "text": "downstream",
+      "size_pt": 8.5,
+      "bounds_px": [
+        503.838,
+        517.632,
+        74.25,
+        10.0
+      ]
+    },
+    {
+      "text": "738266572_5_F",
+      "size_pt": 8.6,
+      "bounds_px": [
+        196.318,
+        456.337,
+        96.5,
+        10.719
+      ]
+    },
+    {
+      "text": "738266572_6_F",
+      "size_pt": 8.6,
+      "bounds_px": [
+        393.915,
+        456.337,
+        96.5,
+        10.719
+      ]
+    },
+    {
+      "text": "Schematic spacing; source-directed road chain",
+      "size_pt": 8.0,
+      "bounds_px": [
+        145.769,
+        419.196,
+        265.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        387.432,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        412.672,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        437.912,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        463.152,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        488.392,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        513.632,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        538.872,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        564.112,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        589.352,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        614.592,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Directed physical road chain",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        605.733,
+        241.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Physical link → routing entry / exit\nRouting states → time-indexed states\nTurn connector ≠ physical road\nWaiting preserves the routing state",
+      "size_pt": 10.0,
+      "bounds_px": [
+        713.268,
+        486.503,
+        260.75,
+        77.45
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        402.576,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        440.94,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        479.305,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        517.67,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        556.035,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        594.4,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Object mapping",
+      "size_pt": 11.0,
+      "bounds_px": [
+        713.268,
+        605.733,
+        142.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Model time index (30 seconds per step)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        521.125,
+        39.111,
+        251.5,
+        13.0
+      ]
+    },
+    {
+      "text": "t5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        208.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.062,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1073.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "A−  738266572_5_F entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -49.708,
+        278.321,
+        147.625,
+        10.719
+      ]
+    },
+    {
+      "text": "A+  738266572_5_F exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -40.833,
+        216.838,
+        138.75,
+        10.719
+      ]
+    },
+    {
+      "text": "B−  738266572_6_F entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -49.833,
+        155.356,
+        147.75,
+        10.719
+      ]
+    },
+    {
+      "text": "B+  738266572_6_F exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        -40.958,
+        93.874,
+        138.875,
+        10.719
+      ]
+    },
+    {
+      "text": "c  Exact saved movement and zero-time turn arcs",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        321.114,
+        383.5,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / SAVED LOCAL EXCERPT",
+      "size_pt": 8.7,
+      "bounds_px": [
+        81.25,
+        657.789,
+        273.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Local construction of the time-expanded graph",
+      "size_pt": 15.0,
+      "bounds_px": [
+        81.25,
+        630.844,
+        551.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: individually opened PNG; corrected layer placement and labels; no text overlap or clipping",
+  "text_overlap_candidates": []
+}

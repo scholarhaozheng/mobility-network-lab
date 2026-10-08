@@ -16,7 +16,7 @@ The static [Frank–Wolfe implementation](../algorithms/static_fw/) and [finite-
 
 ## Reusable cross-city computational tools
 
-The project packages shared data interfaces, case configurations, and analysis tools into an open-source environment for Boston, Sioux Falls, and Hong Kong. Documented examples connect zonal demand, generated paths, and physical-link results, allowing researchers to reuse the supported workflows and compare demand scales, network representations, and solution methods.
+The project packages shared data interfaces, case configurations, and analysis tools for the eight real-city cases and the separate Sioux Falls demonstration benchmark. Documented examples connect zonal demand, generated paths, and physical-link results, allowing researchers to reuse the supported workflows and compare demand scales, network representations, and solution methods.
 
 The reusable [vehicle-OD preparation and assignment CLI](RUN_YOUR_OWN_GMNS.md), [generic network command](getting-started.md), [saved-result inspector](../tools/mcl_results.py), [public Boston SQLite example](../examples/boston/SAVED_EXAMPLE.md), [source/catalog tools](data-tools.md) and [presentation builders](../tools/) expose separate supported entry points. This is not a universal any-city pipeline: the generic space–time command retains a 0.3.0-rc5 scope, while later Boston and Hong Kong CG case implementations have separately versioned evidence. [Architecture and source paths](architecture.md) · [Capability/instance statistics](capabilities.md) · [Complete technical walkthrough](full-walkthrough.md).
 

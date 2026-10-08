@@ -1,0 +1,817 @@
+{
+  "figure_id": "R12-ADMM-SAVED-STATE",
+  "city": "ithaca",
+  "instance": "T4; 0.656755360434 PCE pulse;fixed cost PCE·min",
+  "role": "saved-state-check",
+  "conclusion": "ADMM residuals and objective agreement",
+  "panels": {
+    "a": "Original-unit feasibility",
+    "b": "Primal consensus",
+    "c": "Rho-scaled dual",
+    "d": "Same-graph objective error"
+  },
+  "quantity": "primal/dual/feasibility residuals and absolute objective error",
+  "unit": "PCE; min; log10(PCE·min / PCE·min)",
+  "public_only": true,
+  "original_figure_assets": [
+    "assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.png"
+  ],
+  "canonical_functions": [
+    "render_advanced.cg_figures",
+    "render_advanced.admm_figures",
+    "render_lagrangian_details.bounds/recovery/prices"
+  ],
+  "saved_points_only": true,
+  "schema": "mcl_figure_r12",
+  "caption": "Four diagnostic panels follow the Hong Kong ADMM figure: original-unit feasibility, primal consensus, rho-scaled dual update, and log10 absolute objective error against the independent same-graph reference. This instance saved exactly one completed outer update, shown as a point rather than an invented convergence curve. Balance, capacity, and primal use PCE; rho-scaled dual and its own threshold use minutes. Only exact-zero residuals use a labeled 1e-16 display floor; positive residuals are unchanged. Objective-error display floor is 1e-15 PCE·min. Saved internal thresholds and the 1e-5 PCE feasibility gate are retained. All displayed states meet the frozen independent gates; objective agreement is not a claim of identical link flows.",
+  "sources": [
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.plot.csv",
+      "sha256": "9f0ad8c938d5c56bb6c0f3c0081388c3f98354b1abd50377963ee702701ba9a4"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/ITH_GC04_T_Endpoints.caption.txt",
+      "sha256": "43ff11432c8a138fa625883dc956697f9b3172076123f132c6d06a3eed58c5eb"
+    },
+    {
+      "public_path": "docs/assets/gap-20261008/ithaca/VOLUME_ADDENDUM_S0.md",
+      "sha256": "40dd2f19d26681ef2da8de8a894faea74a3fdb95d8827da74d622d477a9e55aa"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    },
+    {
+      "public_path": "docs/assets/figure-contract-r11/DISPLAY_REGISTRY.json",
+      "sha256": "d122881b664c8e55aabaaf07d8847e7c3eede5486f796095218e5a2fe2efebef"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "ADMM residuals and objective agreement",
+    "scope": "T4 / saved finite-horizon evidence"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 43.565,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3037,
+    1956
+  ],
+  "exports": {
+    "png": "6b1798938a1169212b3d512eed1e2f60d2517aa2c508cf288e93bf9a3afaf8d0",
+    "svg": "684d83491a26c0fc24beb550d63a29e8611e53097d80b279686dbebb8fbf13cc",
+    "pdf": "3120420275e813ca3b1ff67028913dc1c428b2d4bb79b7da9362919e6a9ae146"
+  },
+  "text_audit": [
+    {
+      "text": "0 (display floor)",
+      "size_pt": 7.0,
+      "bounds_px": [
+        309.197,
+        419.263,
+        77.75,
+        9.125
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        220.85,
+        364.418,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        295.912,
+        382.974,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Flow residual (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        43.627,
+        441.166,
+        13.0,
+        127.375
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-19}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.12,
+        357.484,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-17}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.182,
+        386.003,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.245,
+        414.523,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.182,
+        443.042,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.635,
+        471.562,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.068,
+        500.682,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.131,
+        529.201,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.193,
+        557.721,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.131,
+        586.24,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.584,
+        614.16,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.101,
+        642.679,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "a  Original-unit feasibility",
+      "size_pt": 11.0,
+      "bounds_px": [
+        102.6,
+        613.733,
+        198.5,
+        14.0
+      ]
+    },
+    {
+      "text": "Local balance",
+      "size_pt": 7.0,
+      "bounds_px": [
+        138.572,
+        532.664,
+        68.0,
+        9.0
+      ]
+    },
+    {
+      "text": "Capacity",
+      "size_pt": 7.0,
+      "bounds_px": [
+        138.572,
+        518.803,
+        43.0,
+        9.0
+      ]
+    },
+    {
+      "text": "Feasibility gate",
+      "size_pt": 7.0,
+      "bounds_px": [
+        138.572,
+        504.942,
+        75.0,
+        9.0
+      ]
+    },
+    {
+      "text": "0 (display floor)",
+      "size_pt": 7.0,
+      "bounds_px": [
+        861.836,
+        416.005,
+        77.75,
+        9.125
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        772.1,
+        364.418,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        847.163,
+        382.974,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Residual (PCE)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        594.877,
+        456.853,
+        13.0,
+        96.0
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-19}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        613.37,
+        359.759,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-17}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        613.432,
+        386.442,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        613.495,
+        413.124,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        613.432,
+        439.806,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        613.885,
+        466.489,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.318,
+        493.771,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.381,
+        520.453,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.443,
+        547.135,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.381,
+        573.818,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.834,
+        599.9,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        625.351,
+        626.582,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        624.898,
+        653.865,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "b  Primal consensus",
+      "size_pt": 11.0,
+      "bounds_px": [
+        653.85,
+        613.733,
+        154.75,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved residual",
+      "size_pt": 7.0,
+      "bounds_px": [
+        689.822,
+        532.664,
+        72.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved stopping threshold",
+      "size_pt": 7.0,
+      "bounds_px": [
+        689.822,
+        518.803,
+        125.375,
+        9.0
+      ]
+    },
+    {
+      "text": "7.4157e-15",
+      "size_pt": 7.0,
+      "bounds_px": [
+        310.586,
+        113.748,
+        55.0,
+        9.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        220.85,
+        37.211,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        295.912,
+        55.767,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Residual (min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        43.627,
+        131.397,
+        13.0,
+        92.5
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-19}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.12,
+        32.552,
+        32.147,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-17}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.182,
+        59.235,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-15}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.245,
+        85.917,
+        32.022,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-13}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.182,
+        112.599,
+        32.084,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-11}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        62.635,
+        139.282,
+        31.631,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-9}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.068,
+        166.564,
+        27.198,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-7}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.131,
+        193.246,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-5}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.193,
+        219.928,
+        27.073,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.131,
+        246.611,
+        27.136,
+        13.8
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{-1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        67.584,
+        272.693,
+        26.683,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{1}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        74.101,
+        299.375,
+        20.166,
+        14.6
+      ]
+    },
+    {
+      "text": "$\\mathdefault{10^{3}}$",
+      "size_pt": 8.0,
+      "bounds_px": [
+        73.648,
+        326.658,
+        20.619,
+        13.8
+      ]
+    },
+    {
+      "text": "c  Rho-scaled dual update",
+      "size_pt": 11.0,
+      "bounds_px": [
+        102.6,
+        286.526,
+        199.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved residual",
+      "size_pt": 7.0,
+      "bounds_px": [
+        138.572,
+        205.457,
+        72.75,
+        9.0
+      ]
+    },
+    {
+      "text": "Saved stopping threshold",
+      "size_pt": 7.0,
+      "bounds_px": [
+        138.572,
+        191.596,
+        125.375,
+        9.0
+      ]
+    },
+    {
+      "text": "2.1849e-13 PCE·min",
+      "size_pt": 7.0,
+      "bounds_px": [
+        861.836,
+        119.09,
+        100.25,
+        9.0
+      ]
+    },
+    {
+      "text": "Recorded outer iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        772.1,
+        37.211,
+        157.25,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        847.163,
+        55.767,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "$\\log_{10}$(absolute objective error / PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        599.461,
+        46.149,
+        17.0,
+        262.995
+      ]
+    },
+    {
+      "text": "−16",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.017,
+        52.17,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−14",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.017,
+        84.03,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−12",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.017,
+        115.891,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        622.017,
+        147.751,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        629.142,
+        179.612,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        629.142,
+        211.472,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        629.142,
+        243.333,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        629.142,
+        275.193,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "d  Error against same-graph reference",
+      "size_pt": 11.0,
+      "bounds_px": [
+        653.85,
+        286.526,
+        299.125,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / saved finite-horizon evidence",
+      "size_pt": 8.7,
+      "bounds_px": [
+        70.2,
+        665.789,
+        304.875,
+        13.0
+      ]
+    },
+    {
+      "text": "ADMM residuals and objective agreement",
+      "size_pt": 15.0,
+      "bounds_px": [
+        70.2,
+        638.844,
+        490.625,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "VISUAL_QA_PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "method": "Individual generated PNG inspected with view_image",
+    "result": "Readable headers, units and marker values; no label clipping. ADMM legends moved below actual threshold lines and re-inspected.",
+    "scientific_plot_policy": "Actual single records are isolated markers; method categories and distinct CG phases are never joined into false trajectories."
+  },
+  "renderer": {
+    "public_path": "tools/figures/render_short_dynamic_r12.py",
+    "sha256": "253841d898e4ac90be965d9fcee6bf2a08b63361031ad445acfa02bdbf34c93f"
+  }
+}

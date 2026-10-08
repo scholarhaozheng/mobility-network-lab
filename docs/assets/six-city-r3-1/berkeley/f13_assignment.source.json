@@ -1,0 +1,116 @@
+{
+  "figure_id": "f13_assignment",
+  "city": "berkeley",
+  "title": "Physical assignment and initial check",
+  "caption": "All 72 positive vehicle OD pairs load 953.0498427 PCE in the one-hour engineering scenario onto a 2,150-link graph; 670 physical links have positive flow. Maps retain all frozen GMNS road vertices, with a one-to-one link-ID join and no summed serial-segment flow. Flow widths, v/c, and travel times come from the same saved link table. Only the initial assignment check is recorded: gap 1.6551133727449009e-15 against 1e-4, with zero FW updates. Known restriction from-ways were conservatively removed, so this is not a complete turn-aware representation. Map attribution: \u00a9 OpenStreetMap contributors, ODbL 1.0. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "PCE per declared hour; dimensionless v/c; minutes; dimensionless relative gap",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/berkeley/original/f13_assignment.svg",
+      "sha256": "455094b21640fe0e5c4772c3e1fd9cc1c03264608ae70b611601f825dbc46ac7"
+    },
+    {
+      "logical_source": "f13_assignment.plot_data.csv",
+      "sha256": "da93f608462e5abddd3fca702fb895bc7c079c116ccbaaec3e53d6b216718237"
+    },
+    {
+      "logical_source": "assignment_physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "logical_source": "fw_trace.csv",
+      "sha256": "757c2135bf56fe30c7b06c55e47eacee69a5aae8de9706c567c3b6d786fe40f1"
+    },
+    {
+      "logical_source": "travel_time_histogram.csv",
+      "sha256": "f04b911e378c2239dfbb174b8152c541300e6d1413beb27c4e982d450fcae984"
+    },
+    {
+      "path": "snapshot/READY.json",
+      "sha256": "5326dac20a6d4ed47f511f5f4f69187294bc604789ca9336218b4e21f39b13c3"
+    },
+    {
+      "path": "snapshot/PUBLIC_DERIVED_CONTENT_POLICY.json",
+      "sha256": "a1219aab14ea6d9ea010784c0f2173ad63b3853936a961d7ec61b7c7032c83ea"
+    },
+    {
+      "path": "compute_capsule/FOUR_STAGE_RUN_CONFIG.json",
+      "sha256": "f73c4abc3f73bdcca09f582c69242e9f7c655ac8002dcabc683882be9a3262d5"
+    },
+    {
+      "path": "compute_capsule/reference_run/assignment/link_solution.csv",
+      "sha256": "da93f608462e5abddd3fca702fb895bc7c079c116ccbaaec3e53d6b216718237"
+    },
+    {
+      "path": "compute_capsule/reference_run/assignment/fw_trace.csv",
+      "sha256": "757c2135bf56fe30c7b06c55e47eacee69a5aae8de9706c567c3b6d786fe40f1"
+    },
+    {
+      "path": "compute_capsule/reference_run/assignment/network_snapshot.csv",
+      "sha256": "78b1ffe32b14e711cfe9069e21aa338a58670763e4192eae3acd73d9803129f3"
+    },
+    {
+      "path": "original/f13_assignment.plot_data.csv",
+      "sha256": "da93f608462e5abddd3fca702fb895bc7c079c116ccbaaec3e53d6b216718237"
+    },
+    {
+      "path": "original/f13_assignment.source.json",
+      "sha256": "2ea11242b7dab6b081e95cc4efba6ff0963565a33201dfe6e43e7fcde2bd440e"
+    },
+    {
+      "path": "r3_map/FS_A04_plot_data.csv",
+      "sha256": "b8d7cacd005f9c1cfb57e9480111979178062a7f1e9c8908fe7552102700e481"
+    },
+    {
+      "path": "r3_map/FS_A04.source.json",
+      "sha256": "3d26ea3e1b41aee30d774f0ed1610488cdd42aa17e0191b2332e16d9bebbfc8a"
+    },
+    {
+      "path": "compute_capsule/reference_run/assignment/fw_trace.csv",
+      "sha256": "757c2135bf56fe30c7b06c55e47eacee69a5aae8de9706c567c3b6d786fe40f1"
+    },
+    {
+      "path": "compute_capsule/reference_run/assignment/assignment_summary.json",
+      "sha256": "62218e9dceb8925974db38c76378c7e78768b923fdea8eb071bb260546735e7c"
+    }
+  ],
+  "source_run_receipt_sha256": "a6de9d5d79f18651b64355ed12a6a87e94251701999a17f823e75d84e4c189d7",
+  "source_metadata_sha256": "c59a41facc949351b0a35aa0a0c54b890f06e579e2cb5fcf17da9ef5647f7f36",
+  "png_sha256": "04fd57d373fa295618a44918f1a6f0208c929b54b85721635bef8cc077f55091",
+  "svg_sha256": "7d3ad550ec153f563b8f245c23bc64bd82ecab67e917da369cd83add2d2cbef3",
+  "transformation": [
+    "Replace node-to-node chords with frozen S0 GMNS road geometry from the accepted R3 map, keeping every road vertex.",
+    "Join model_link_id to link_id one-to-one; assert all 2,150 IDs and flow values match; draw no virtual arcs.",
+    "Use longitude/latitude aspect 1/cos(mean latitude); no geometry cropping or stretching.",
+    "Line width = 0.45 + 2.1 sqrt(flow/max flow), positive links only over neutral all-link context.",
+    "Use original 16 travel-time histogram bins; export counts/edges.",
+    "Draw one actual initial gap point and frozen threshold; no synthetic iteration.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python render_berkeley_visual.py --snapshot s0_snapshot_v1 --output figure_edits/berkeley",
+  "page_anchor": "figure-f13-assignment",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "c2299395d8aae940fc68a062b4bcc4d0274fdcce13c06fef3480a812fcc9fc2f",
+  "input_png_sha256": "04fd57d373fa295618a44918f1a6f0208c929b54b85721635bef8cc077f55091",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false,
+  "supporting_plot_data": [
+    {
+      "path": "plot_data/f13_assignment/assignment_physical_geometry.csv",
+      "sha256": "5379507f11b03a5a240dc1c15c24153883de31ad400a9466f91508d501023cd5"
+    },
+    {
+      "path": "plot_data/f13_assignment/fw_trace.csv",
+      "sha256": "757c2135bf56fe30c7b06c55e47eacee69a5aae8de9706c567c3b6d786fe40f1"
+    },
+    {
+      "path": "plot_data/f13_assignment/travel_time_histogram.csv",
+      "sha256": "f04b911e378c2239dfbb174b8152c541300e6d1413beb27c4e982d450fcae984"
+    }
+  ]
+}

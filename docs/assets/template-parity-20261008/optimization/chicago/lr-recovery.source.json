@@ -1,0 +1,466 @@
+{
+  "city": "chicago",
+  "figure_id": "TEMPLATE-chicago-lr-recovery",
+  "conclusion": "Path-pool growth and primal recovery",
+  "role": "lr-recovery",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": true,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Feasibility then original cost",
+    "2": "b  Actual feasible recovery calls"
+  },
+  "quantity": "Path-pool growth and primal recovery",
+  "unit": "Own paths after additions; Recovered objective (PCE·min)",
+  "schema": "mcl_figure_r12",
+  "caption": "Panel a retains all 26 own-pool feasibility augmentation rounds and the ten separate original-cost rounds; the divider marks the phase boundary. Panel b shows the ten saved feasible original-cost recovery objectives. The 128 inherited own-LR paths grow to 182 through 54 new own-price events; no CG pool or reference witness was used. These are two stages of the named hybrid, not 36 identical subgradient steps.",
+  "sources": [
+    {
+      "sha256": "c5566c4648fe12374b46ef1be478d2ba65624fdf6dcbde297a5a121df6a515c2",
+      "identity": "C06_LR_SELF_POOL_GAP.plot.json",
+      "access": "public",
+      "public_path": "docs/assets/gap-20261008/chicago/C06_LR_SELF_POOL_GAP.plot.json"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Chicago",
+    "title": "Path-pool growth and primal recovery",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 15.398,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2829,
+    1133
+  ],
+  "exports": {
+    "png": "0af64e7be7671652e77a4df179a1c20a3bc1fdbd740c1a70e25e2d9607dc9512",
+    "svg": "cc6fe90ec2e9e9feaee4163d54dbef17d3059969fc47dd90f1ede75f9ece4e2b",
+    "pdf": "ef1edf8bb11daef68569ae1299d49be87a4dfc20416cbf8acb14d2dd90fa5b38"
+  },
+  "text_audit": [
+    {
+      "text": "Actual own-pool price round",
+      "size_pt": 9.0,
+      "bounds_px": [
+        177.036,
+        42.311,
+        180.125,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        97.992,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        179.567,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        274.163,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "26",
+      "size_pt": 8.0,
+      "bounds_px": [
+        330.921,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "30",
+      "size_pt": 8.0,
+      "bounds_px": [
+        368.76,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "36",
+      "size_pt": 8.0,
+      "bounds_px": [
+        425.518,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Own paths after additions",
+      "size_pt": 9.0,
+      "bounds_px": [
+        36.736,
+        126.375,
+        13.0,
+        165.25
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        34.098,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "130",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        80.373,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        126.647,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "150",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        172.922,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "160",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        219.196,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "170",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        265.471,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "180",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        311.745,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "190",
+      "size_pt": 8.0,
+      "bounds_px": [
+        55.292,
+        358.02,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Feasibility then original cost",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        344.133,
+        239.25,
+        14.0
+      ]
+    },
+    {
+      "text": "Original-cost recovery iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        687.964,
+        42.311,
+        199.875,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        618.794,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        655.582,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        692.37,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        729.157,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        765.945,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        802.733,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        839.52,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        876.308,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "9",
+      "size_pt": 8.0,
+      "bounds_px": [
+        913.095,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "10",
+      "size_pt": 8.0,
+      "bounds_px": [
+        946.321,
+        60.867,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "Recovered objective (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        557.539,
+        110.25,
+        13.0,
+        197.5
+      ]
+    },
+    {
+      "text": "240",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        53.961,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "242",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        104.562,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "244",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        155.163,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "246",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        205.765,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "248",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        256.366,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "250",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        306.967,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "252",
+      "size_pt": 8.0,
+      "bounds_px": [
+        576.094,
+        357.568,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Actual feasible recovery calls",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        246.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Feasible own-pool recovery",
+      "size_pt": 7.0,
+      "bounds_px": [
+        826.5,
+        321.05,
+        134.75,
+        9.0
+      ]
+    },
+    {
+      "text": "CHICAGO  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        396.189,
+        295.25,
+        13.0
+      ]
+    },
+    {
+      "text": "Path-pool growth and primal recovery",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        369.244,
+        444.0,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

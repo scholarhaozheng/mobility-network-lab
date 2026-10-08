@@ -1,0 +1,457 @@
+{
+  "table_id": "berkeley-s72-endpoints",
+  "city": "berkeley",
+  "title": "S72 same-instance method diagnostics",
+  "scope": "Original Berkeley S72; 72 OD; 953.049842713612 PCE/h",
+  "original_assets": [
+    "assets/berkeley-atlas-r2/s02_same_instance_methods.svg"
+  ],
+  "notes": [
+    "Original gate: abs(full relative gap) ≤ 1e−5. Signed negative roundoff stays signed. Native26/52 each have three outer solves. Coordinate reduction does not remove the explicit link variables."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/s02_same_instance_methods.plot_data.json",
+      "href": "assets/berkeley-atlas-r2/s02_same_instance_methods.plot_data.json",
+      "sha256": "595d2320759c5020513093b6bb449e7d149b3313f1c6ccbe2459f6bb01ecef9d"
+    },
+    {
+      "public_path": "docs/assets/berkeley-atlas-r2/s02_same_instance_methods.source.json",
+      "href": "assets/berkeley-atlas-r2/s02_same_instance_methods.source.json",
+      "sha256": "2c4b6b6e78a40a622ff2bf0ae8eb744c51dda4643083213cfd0554a940111459"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Independent endpoints",
+      "columns": [
+        "Method",
+        "Objective (PCE·min/h)",
+        "Signed gap (PCE·min/h)",
+        "Relative gap",
+        "Max OD error (PCE/h)",
+        "Max reconstruction (PCE/h)",
+        "Status"
+      ],
+      "rows": [
+        {
+          "Method": "FW",
+          "Objective (PCE·min/h)": 2746.0944149794555,
+          "Signed gap (PCE·min/h)": 1.3642420526593924e-12,
+          "Relative gap": 4.96534011823471e-16,
+          "Max OD error (PCE/h)": 0.0,
+          "Max reconstruction (PCE/h)": 0.0,
+          "Status": "ACCEPTED_FULL_GRAPH"
+        },
+        {
+          "Method": "finite_SLSQP",
+          "Objective (PCE·min/h)": 2746.0944149794555,
+          "Signed gap (PCE·min/h)": 1.3642420526593924e-12,
+          "Relative gap": 4.96534011823471e-16,
+          "Max OD error (PCE/h)": 0.0,
+          "Max reconstruction (PCE/h)": 0.0,
+          "Status": "ACCEPTED_FULL_GRAPH"
+        },
+        {
+          "Method": "Native_L3_rank26",
+          "Objective (PCE·min/h)": 2746.094414979262,
+          "Signed gap (PCE·min/h)": -1.9235812942497432e-10,
+          "Relative gap": -7.001129566711576e-14,
+          "Max OD error (PCE/h)": 1.0759748647615197e-10,
+          "Max reconstruction (PCE/h)": 2.8421709430404007e-13,
+          "Status": "ACCEPTED_FULL_GRAPH"
+        },
+        {
+          "Method": "Native_L3_rank52",
+          "Objective (PCE·min/h)": 2746.0944154632957,
+          "Signed gap (PCE·min/h)": 4.838420863961801e-07,
+          "Relative gap": 1.761007526025011e-10,
+          "Max OD error (PCE/h)": 9.580958248989191e-11,
+          "Max reconstruction (PCE/h)": 1.7053025658242404e-13,
+          "Status": "ACCEPTED_FULL_GRAPH"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Optimization dimensions",
+      "columns": [
+        "method",
+        "path_coordinates",
+        "native_explicit_link_variables",
+        "display_total"
+      ],
+      "rows": [
+        {
+          "method": "finite_SLSQP",
+          "path_coordinates": 360,
+          "native_explicit_link_variables": 0,
+          "display_total": 360
+        },
+        {
+          "method": "Native_L3_rank26",
+          "path_coordinates": 98,
+          "native_explicit_link_variables": 2150,
+          "display_total": 2248
+        },
+        {
+          "method": "Native_L3_rank52",
+          "path_coordinates": 124,
+          "native_explicit_link_variables": 2150,
+          "display_total": 2274
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Additional saved scalar checks",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "methods / 1 / method",
+          "Saved value": "FW",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 1 / status",
+          "Saved value": "ACCEPTED_FULL_GRAPH",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 1 / objective PCE minutes",
+          "Saved value": 2746.0944149794555,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 1 / signed full gap",
+          "Saved value": 1.3642420526593924e-12,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 1 / full relative gap",
+          "Saved value": 4.96534011823471e-16,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 1 / signed pool gap",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 1 / pool relative gap",
+          "Saved value": 0.0,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 1 / max od residual",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 1 / od l1 rel",
+          "Saved value": 0.0,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 1 / minimum path flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 1 / minimum physical flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 1 / max link reconstruction",
+          "Saved value": 0.0,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 1 / positive minor gt 1e 8",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 1 / positive physical links gt 1e 8",
+          "Saved value": 670,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 1 / total PCE",
+          "Saved value": 953.049842713612,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 2 / method",
+          "Saved value": "finite_SLSQP",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 2 / status",
+          "Saved value": "ACCEPTED_FULL_GRAPH",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 2 / objective PCE minutes",
+          "Saved value": 2746.0944149794555,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 2 / signed full gap",
+          "Saved value": 1.3642420526593924e-12,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 2 / full relative gap",
+          "Saved value": 4.96534011823471e-16,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 2 / signed pool gap",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 2 / pool relative gap",
+          "Saved value": 0.0,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 2 / max od residual",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 2 / od l1 rel",
+          "Saved value": 0.0,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 2 / minimum path flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 2 / minimum physical flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 2 / max link reconstruction",
+          "Saved value": 0.0,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 2 / positive minor gt 1e 8",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 2 / positive physical links gt 1e 8",
+          "Saved value": 670,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 2 / total PCE",
+          "Saved value": 953.049842713612,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 3 / method",
+          "Saved value": "Native_L3_rank26",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 3 / status",
+          "Saved value": "ACCEPTED_FULL_GRAPH",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 3 / objective PCE minutes",
+          "Saved value": 2746.094414979262,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 3 / signed full gap",
+          "Saved value": -1.9235812942497432e-10,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 3 / full relative gap",
+          "Saved value": -7.001129566711576e-14,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 3 / signed pool gap",
+          "Saved value": -1.9372237147763371e-10,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 3 / pool relative gap",
+          "Saved value": -7.050782967893929e-14,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 3 / max od residual",
+          "Saved value": 1.0759748647615197e-10,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 3 / od l1 rel",
+          "Saved value": 1.7987314414729034e-12,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 3 / minimum path flow",
+          "Saved value": 1.0691849181713203e-11,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 3 / minimum physical flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 3 / max link reconstruction",
+          "Saved value": 2.8421709430404007e-13,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 3 / positive minor gt 1e 8",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 3 / positive physical links gt 1e 8",
+          "Saved value": 696,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 3 / total PCE",
+          "Saved value": 953.049842713612,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 3 / effective rank",
+          "Saved value": 26,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 3 / outer iterations",
+          "Saved value": 3,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 3 / coordinate count",
+          "Saved value": 98,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 4 / method",
+          "Saved value": "Native_L3_rank52",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 4 / status",
+          "Saved value": "ACCEPTED_FULL_GRAPH",
+          "Unit / interpretation": "text"
+        },
+        {
+          "Metric": "methods / 4 / objective PCE minutes",
+          "Saved value": 2746.0944154632957,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 4 / signed full gap",
+          "Saved value": 4.838420863961801e-07,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 4 / full relative gap",
+          "Saved value": 1.761007526025011e-10,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 4 / signed pool gap",
+          "Saved value": 4.838411769014783e-07,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "methods / 4 / pool relative gap",
+          "Saved value": 1.7610042157982662e-10,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 4 / max od residual",
+          "Saved value": 9.580958248989191e-11,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 4 / od l1 rel",
+          "Saved value": 2.9028768165081736e-12,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 4 / minimum path flow",
+          "Saved value": 5.643299028632247e-10,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 4 / minimum physical flow",
+          "Saved value": 0.0,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 4 / max link reconstruction",
+          "Saved value": 1.7053025658242404e-13,
+          "Unit / interpretation": "as saved"
+        },
+        {
+          "Metric": "methods / 4 / positive minor gt 1e 8",
+          "Saved value": 214,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 4 / positive physical links gt 1e 8",
+          "Saved value": 992,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 4 / total PCE",
+          "Saved value": 953.049842713612,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "methods / 4 / effective rank",
+          "Saved value": 52,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "methods / 4 / outer iterations",
+          "Saved value": 3,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "methods / 4 / coordinate count",
+          "Saved value": 124,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": true
+    }
+  ],
+  "rows": 73,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"berkeley-s72-endpoints\"><h4>S72 same-instance method diagnostics</h4><p class=\"evidence-table-scope\">Original Berkeley S72; 72 OD; 953.049842713612 PCE/h</p><h5>Independent endpoints</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Independent endpoints\"><table><thead><tr><th scope=\"col\">Method</th><th scope=\"col\">Objective (PCE·min/h)</th><th scope=\"col\">Signed gap (PCE·min/h)</th><th scope=\"col\">Relative gap</th><th scope=\"col\">Max OD error (PCE/h)</th><th scope=\"col\">Max reconstruction (PCE/h)</th><th scope=\"col\">Status</th></tr></thead><tbody><tr><td>FW</td><td>2746.0944149794555</td><td>1.3642420526593924e-12</td><td>4.96534011823471e-16</td><td>0.0</td><td>0.0</td><td>ACCEPTED_FULL_GRAPH</td></tr><tr><td>finite_SLSQP</td><td>2746.0944149794555</td><td>1.3642420526593924e-12</td><td>4.96534011823471e-16</td><td>0.0</td><td>0.0</td><td>ACCEPTED_FULL_GRAPH</td></tr><tr><td>Native_L3_rank26</td><td>2746.094414979262</td><td>-1.9235812942497432e-10</td><td>-7.001129566711576e-14</td><td>1.0759748647615197e-10</td><td>2.8421709430404007e-13</td><td>ACCEPTED_FULL_GRAPH</td></tr><tr><td>Native_L3_rank52</td><td>2746.0944154632957</td><td>4.838420863961801e-07</td><td>1.761007526025011e-10</td><td>9.580958248989191e-11</td><td>1.7053025658242404e-13</td><td>ACCEPTED_FULL_GRAPH</td></tr></tbody></table></div><h5>Optimization dimensions</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Optimization dimensions\"><table><thead><tr><th scope=\"col\">method</th><th scope=\"col\">path_coordinates</th><th scope=\"col\">native_explicit_link_variables</th><th scope=\"col\">display_total</th></tr></thead><tbody><tr><td>finite_SLSQP</td><td>360</td><td>0</td><td>360</td></tr><tr><td>Native_L3_rank26</td><td>98</td><td>2150</td><td>2248</td></tr><tr><td>Native_L3_rank52</td><td>124</td><td>2150</td><td>2274</td></tr></tbody></table></div><details><summary>Additional saved scalar checks</summary><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Additional saved scalar checks\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>methods / 1 / method</td><td>FW</td><td>text</td></tr><tr><td>methods / 1 / status</td><td>ACCEPTED_FULL_GRAPH</td><td>text</td></tr><tr><td>methods / 1 / objective PCE minutes</td><td>2746.0944149794555</td><td>PCE·min/h</td></tr><tr><td>methods / 1 / signed full gap</td><td>1.3642420526593924e-12</td><td>PCE·min/h</td></tr><tr><td>methods / 1 / full relative gap</td><td>4.96534011823471e-16</td><td>dimensionless</td></tr><tr><td>methods / 1 / signed pool gap</td><td>0.0</td><td>PCE·min/h</td></tr><tr><td>methods / 1 / pool relative gap</td><td>0.0</td><td>dimensionless</td></tr><tr><td>methods / 1 / max od residual</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 1 / od l1 rel</td><td>0.0</td><td>as saved</td></tr><tr><td>methods / 1 / minimum path flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 1 / minimum physical flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 1 / max link reconstruction</td><td>0.0</td><td>as saved</td></tr><tr><td>methods / 1 / positive minor gt 1e 8</td><td>0</td><td>count</td></tr><tr><td>methods / 1 / positive physical links gt 1e 8</td><td>670</td><td>count</td></tr><tr><td>methods / 1 / total PCE</td><td>953.049842713612</td><td>PCE/h</td></tr><tr><td>methods / 2 / method</td><td>finite_SLSQP</td><td>text</td></tr><tr><td>methods / 2 / status</td><td>ACCEPTED_FULL_GRAPH</td><td>text</td></tr><tr><td>methods / 2 / objective PCE minutes</td><td>2746.0944149794555</td><td>PCE·min/h</td></tr><tr><td>methods / 2 / signed full gap</td><td>1.3642420526593924e-12</td><td>PCE·min/h</td></tr><tr><td>methods / 2 / full relative gap</td><td>4.96534011823471e-16</td><td>dimensionless</td></tr><tr><td>methods / 2 / signed pool gap</td><td>0.0</td><td>PCE·min/h</td></tr><tr><td>methods / 2 / pool relative gap</td><td>0.0</td><td>dimensionless</td></tr><tr><td>methods / 2 / max od residual</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 2 / od l1 rel</td><td>0.0</td><td>as saved</td></tr><tr><td>methods / 2 / minimum path flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 2 / minimum physical flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 2 / max link reconstruction</td><td>0.0</td><td>as saved</td></tr><tr><td>methods / 2 / positive minor gt 1e 8</td><td>0</td><td>count</td></tr><tr><td>methods / 2 / positive physical links gt 1e 8</td><td>670</td><td>count</td></tr><tr><td>methods / 2 / total PCE</td><td>953.049842713612</td><td>PCE/h</td></tr><tr><td>methods / 3 / method</td><td>Native_L3_rank26</td><td>text</td></tr><tr><td>methods / 3 / status</td><td>ACCEPTED_FULL_GRAPH</td><td>text</td></tr><tr><td>methods / 3 / objective PCE minutes</td><td>2746.094414979262</td><td>PCE·min/h</td></tr><tr><td>methods / 3 / signed full gap</td><td>-1.9235812942497432e-10</td><td>PCE·min/h</td></tr><tr><td>methods / 3 / full relative gap</td><td>-7.001129566711576e-14</td><td>dimensionless</td></tr><tr><td>methods / 3 / signed pool gap</td><td>-1.9372237147763371e-10</td><td>PCE·min/h</td></tr><tr><td>methods / 3 / pool relative gap</td><td>-7.050782967893929e-14</td><td>dimensionless</td></tr><tr><td>methods / 3 / max od residual</td><td>1.0759748647615197e-10</td><td>PCE/h</td></tr><tr><td>methods / 3 / od l1 rel</td><td>1.7987314414729034e-12</td><td>as saved</td></tr><tr><td>methods / 3 / minimum path flow</td><td>1.0691849181713203e-11</td><td>PCE/h</td></tr><tr><td>methods / 3 / minimum physical flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 3 / max link reconstruction</td><td>2.8421709430404007e-13</td><td>as saved</td></tr><tr><td>methods / 3 / positive minor gt 1e 8</td><td>0</td><td>count</td></tr><tr><td>methods / 3 / positive physical links gt 1e 8</td><td>696</td><td>count</td></tr><tr><td>methods / 3 / total PCE</td><td>953.049842713612</td><td>PCE/h</td></tr><tr><td>methods / 3 / effective rank</td><td>26</td><td>count</td></tr><tr><td>methods / 3 / outer iterations</td><td>3</td><td>dimensionless</td></tr><tr><td>methods / 3 / coordinate count</td><td>98</td><td>count</td></tr><tr><td>methods / 4 / method</td><td>Native_L3_rank52</td><td>text</td></tr><tr><td>methods / 4 / status</td><td>ACCEPTED_FULL_GRAPH</td><td>text</td></tr><tr><td>methods / 4 / objective PCE minutes</td><td>2746.0944154632957</td><td>PCE·min/h</td></tr><tr><td>methods / 4 / signed full gap</td><td>4.838420863961801e-07</td><td>PCE·min/h</td></tr><tr><td>methods / 4 / full relative gap</td><td>1.761007526025011e-10</td><td>dimensionless</td></tr><tr><td>methods / 4 / signed pool gap</td><td>4.838411769014783e-07</td><td>PCE·min/h</td></tr><tr><td>methods / 4 / pool relative gap</td><td>1.7610042157982662e-10</td><td>dimensionless</td></tr><tr><td>methods / 4 / max od residual</td><td>9.580958248989191e-11</td><td>PCE/h</td></tr><tr><td>methods / 4 / od l1 rel</td><td>2.9028768165081736e-12</td><td>as saved</td></tr><tr><td>methods / 4 / minimum path flow</td><td>5.643299028632247e-10</td><td>PCE/h</td></tr><tr><td>methods / 4 / minimum physical flow</td><td>0.0</td><td>PCE/h</td></tr><tr><td>methods / 4 / max link reconstruction</td><td>1.7053025658242404e-13</td><td>as saved</td></tr><tr><td>methods / 4 / positive minor gt 1e 8</td><td>214</td><td>count</td></tr><tr><td>methods / 4 / positive physical links gt 1e 8</td><td>992</td><td>count</td></tr><tr><td>methods / 4 / total PCE</td><td>953.049842713612</td><td>PCE/h</td></tr><tr><td>methods / 4 / effective rank</td><td>52</td><td>count</td></tr><tr><td>methods / 4 / outer iterations</td><td>3</td><td>dimensionless</td></tr><tr><td>methods / 4 / coordinate count</td><td>124</td><td>count</td></tr></tbody></table></div></details><p>Original gate: abs(full relative gap) ≤ 1e−5. Signed negative roundoff stays signed. Native26/52 each have three outer solves. Coordinate reduction does not remove the explicit link variables.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/berkeley-atlas-r2/s02_same_instance_methods.plot_data.json\" download>s02_same_instance_methods.plot_data.json</a> · <a href=\"assets/berkeley-atlas-r2/s02_same_instance_methods.source.json\" download>s02_same_instance_methods.source.json</a></p><p>Preserved original figures: <a href=\"assets/berkeley-atlas-r2/s02_same_instance_methods.svg\">s02_same_instance_methods.svg</a></p></details></section>",
+  "caption": "Original gate: abs(full relative gap) ≤ 1e−5. Signed negative roundoff stays signed. Native26/52 each have three outer solves. Coordinate reduction does not remove the explicit link variables."
+}

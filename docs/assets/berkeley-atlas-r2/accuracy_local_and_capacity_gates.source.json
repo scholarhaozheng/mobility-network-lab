@@ -1,0 +1,72 @@
+{
+  "id": "accuracy_local_and_capacity_gates",
+  "title": "ADMM original-coordinate feasibility",
+  "city": "Berkeley",
+  "stage": "finite",
+  "caption": "Original-unit local balance error and capacity excess from all 170 saved ADMM updates, in PCE. Both are compared with their unchanged 1e-5 PCE scientific gate. Exact zeros alone are drawn at 1e-16 PCE for log display; this artificial display position is not a measured positive residual. Every positive value remains unchanged, including positive values below 1e-16. Zero counts: local balance 0; capacity excess 71. The vertical separator follows the 38 C1 updates. These original-coordinate scientific checks are separate from primal consensus and the rho-scaled dual update. No smoothing, fabricated iterations or new solve.",
+  "panels": {
+    "a": "local_balance_pce; exact-zero-only display floor 1e-16",
+    "b": "capacity_excess_pce; exact-zero-only display floor 1e-16"
+  },
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE_PENDING_RELEASE_REVIEW",
+  "scientific_solver_rerun": false,
+  "sources": [
+    {
+      "path": "data/accuracy_local_and_capacity_gates.plot_data.json",
+      "sha256": "cbf58ca0ecce930b5692772c6ddefebd6396f42ce893c8d5df069d6ad24d7d4a"
+    }
+  ],
+  "plot_style": {
+    "layout": "C",
+    "palette": "A/B blue–teal/navy",
+    "font": "DejaVu Serif",
+    "shared_functions": [
+      "configure",
+      "new_figure",
+      "format_axes",
+      "compact_header"
+    ],
+    "style_hash": "a96485ced49883acb09a51e9239b16256c7fddd65b8ff2d9d2994176ce7414a9"
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3211,
+    1291
+  ],
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 31.973,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "exports": {
+    "png": {
+      "path": "accuracy_local_and_capacity_gates.png",
+      "sha256": "d9d9c669045c89808f8cef6833dc64ee76feaccbca7ba7d796d7dd830f9a68fd"
+    },
+    "svg": {
+      "path": "accuracy_local_and_capacity_gates.svg",
+      "sha256": "36aa4b360cf81148172aa7ae772ab71fbc3014a8de1aef2897dc95ca6860e7e6"
+    },
+    "pdf": {
+      "path": "accuracy_local_and_capacity_gates.pdf",
+      "sha256": "ca91f57c8d305c16bb4083ff62fbe5cbee8d056a43a68c7b67f41b08a7d2c3dd"
+    }
+  },
+  "integrity": "Saved values only; no optimizer, smoothing or fabricated iterations. Original accepted figures are retained separately.",
+  "renderer": {
+    "file": "tools/visuals/berkeley_alignment_r2/render_admm.py",
+    "function": "local",
+    "line": 110
+  }
+}

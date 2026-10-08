@@ -1,0 +1,821 @@
+{
+  "figure_id": "ithaca-finite-physical-flow-parity",
+  "city": "ithaca",
+  "instance": "S110 / 421.2613256336401 PCE/hour / 11:00–12:00",
+  "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+  "role": "geographic",
+  "method": "finite-path",
+  "quantity": "Finite-path own physical-link flow and complete distribution",
+  "unit": "PCE/hour",
+  "conclusion": "Saved method-specific S110 physical vectors are displayed on their own unchanged complete road graph.",
+  "panels": {
+    "a": {
+      "all_geometry_rows": 15148,
+      "display_nonzero_threshold": 1e-12,
+      "displayed_links": 2359,
+      "raw_min": 0.0,
+      "raw_max": 132.09908857315517,
+      "normalization": "PowerNorm gamma=0.5",
+      "colourbar_unit": "PCE/hour"
+    },
+    "b": {
+      "all_link_count": 15148,
+      "includes_exact_zero": true,
+      "exact_zero_count": 12789,
+      "positive_gt_1e_6": 2359,
+      "bins": 22,
+      "bin_edges": [
+        0.0,
+        6.0045040260525075,
+        12.009008052105015,
+        18.01351207815752,
+        24.01801610421003,
+        30.02252013026254,
+        36.02702415631504,
+        42.03152818236755,
+        48.03603220842006,
+        54.04053623447257,
+        60.04504026052508,
+        66.04954428657759,
+        72.05404831263009,
+        78.0585523386826,
+        84.0630563647351,
+        90.06756039078762,
+        96.07206441684012,
+        102.07656844289262,
+        108.08107246894514,
+        114.08557649499764,
+        120.09008052105015,
+        126.09458454710266,
+        132.09908857315517
+      ],
+      "bin_counts": [
+        13682,
+        326,
+        269,
+        211,
+        201,
+        138,
+        79,
+        49,
+        17,
+        20,
+        31,
+        44,
+        17,
+        2,
+        4,
+        0,
+        0,
+        0,
+        37,
+        7,
+        0,
+        14
+      ],
+      "sum_counts": 15148
+    }
+  },
+  "public_or_private": "private",
+  "numerical_validation": {
+    "finite": {
+      "own_vector_source": "finite/link_flow.csv",
+      "path_reconstruction_max_abs_pce_hour": 0.0,
+      "max_abs_od_residual_pce_hour": 0.0,
+      "saved_objective_pce_min": 1638.731757686398,
+      "saved_iterations": 1
+    },
+    "native26": {
+      "own_vector_source": "native_26/outer_04_solution.npz:v",
+      "outer": 4,
+      "rank": 26,
+      "path_reconstruction_max_abs_pce_hour": 8.526512829121202e-14,
+      "affine_reconstruction_max_abs_pce_hour": 8.526512829121202e-14,
+      "max_abs_od_residual_pce_hour": 7.58841878223393e-11,
+      "independent_saved_check": {
+        "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+        "path_count": 550,
+        "rank": 26,
+        "min_path_flow_raw": 6.034934791012343e-11,
+        "negative_path_count_raw": 0,
+        "negative_path_mass_raw": 0.0,
+        "min_explicit_link_flow_raw": 0.0,
+        "negative_explicit_link_count_raw": 0,
+        "max_abs_od_residual": 7.58841878223393e-11,
+        "od_residual_sum": -1.42759121191105e-09,
+        "od_residual_l1": 1.4840412232430822e-09,
+        "max_link_reconstruction_error": 8.526512829121202e-14,
+        "objective_checked": 1638.73175768472,
+        "signed_full_gap": -1.6868852981133386e-09,
+        "full_relative_gap": -1.029383210352421e-12,
+        "signed_pool_gap": -1.6948433767538518e-09,
+        "pool_relative_gap": -1.0342394460125281e-12,
+        "demand_total": 421.2613256336403,
+        "positive_links_strict": 5307,
+        "positive_links_display_1e_minus_6": 4798,
+        "gates": {
+          "max_od_error_abs": 1e-06,
+          "max_od_error_rel": 1e-08,
+          "total_od_l1_rel": 1e-08,
+          "full_relative_gap_abs": 1e-05,
+          "negative_flow_abs": 1e-08,
+          "link_reconstruction_abs": 1e-07
+        },
+        "objective_minus_fw": -1.6846115613589063e-09,
+        "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+      },
+      "own_saved_vector_used_directly": true
+    },
+    "native52": {
+      "own_vector_source": "native_52/outer_04_solution.npz:v",
+      "outer": 4,
+      "rank": 52,
+      "path_reconstruction_max_abs_pce_hour": 7.105427357601002e-14,
+      "affine_reconstruction_max_abs_pce_hour": 7.105427357601002e-14,
+      "max_abs_od_residual_pce_hour": 1.2492393230978394e-10,
+      "independent_saved_check": {
+        "instance_signature": "6c823c853f85ce560c2650a925da14abae2e49ae7e2f64533977ee87f3794168",
+        "path_count": 550,
+        "rank": 52,
+        "min_path_flow_raw": 1.636446935278069e-10,
+        "negative_path_count_raw": 0,
+        "negative_path_mass_raw": 0.0,
+        "min_explicit_link_flow_raw": 0.0,
+        "negative_explicit_link_count_raw": 0,
+        "max_abs_od_residual": 1.2492393230978394e-10,
+        "od_residual_sum": -1.6460155183306568e-09,
+        "od_residual_l1": 1.6460155183306568e-09,
+        "max_link_reconstruction_error": 7.105427357601002e-14,
+        "objective_checked": 1638.7317576873045,
+        "signed_full_gap": 9.147242963081226e-10,
+        "full_relative_gap": 5.581896017308553e-13,
+        "signed_pool_gap": 9.069935913430527e-10,
+        "pool_relative_gap": 5.534721156610444e-13,
+        "demand_total": 421.2613256336403,
+        "positive_links_strict": 5307,
+        "positive_links_display_1e_minus_6": 4798,
+        "gates": {
+          "max_od_error_abs": 1e-06,
+          "max_od_error_rel": 1e-08,
+          "total_od_l1_rel": 1e-08,
+          "full_relative_gap_abs": 1e-05,
+          "negative_flow_abs": 1e-08,
+          "link_reconstruction_abs": 1e-07
+        },
+        "objective_minus_fw": 8.999450074043125e-10,
+        "status": "SOLVED_WITHIN_DECLARED_TOLERANCE"
+      },
+      "own_saved_vector_used_directly": true
+    }
+  },
+  "reference_template": "Hong Kong static_flow_distribution / physical map + 22-bin all-physical-link histogram; Berkeley canonical same-panel template.",
+  "renderer": "render_ithaca_static_method_parity.py",
+  "source_notice": "© OpenStreetMap contributors; road-derived data ODbL 1.0: https://www.openstreetmap.org/copyright",
+  "scope_note": "Engineering scenario, not observed traffic; physical links only, no virtual arcs in maps/histograms.",
+  "all_physical_roads": 15148,
+  "all_solver_arcs": 47938,
+  "absolute_shared_max": 132.09908857315517,
+  "schema": "mcl_figure_r12",
+  "caption": "Ithaca S110 finite-path own saved physical-link vector: 110 positive vehicle OD pairs, 421.2613256336401 PCE/hour, 550 frozen candidate paths and all 15,148 directed physical roads. The map uses original road vertices; the 22-bin histogram includes every physical road, including exact zeros. The absolute colour scale is the same square-root scale used in the companion Native card. The vector is read from finite/link_flow.csv and checked by multiplication of its own saved 550-path vector and incidence matrix; it is not copied from FW. The finite run records one solver iteration, so this endpoint loading is not an iteration-history figure. FW stopped at its initial check; finite and FW agree to floating-point precision for this instance. All raw values remain in plot data; only |flow|≤1e-12 PCE/hour is hidden from coloured map overlays. Modelled engineering demand, not observed traffic.",
+  "sources": [
+    {
+      "source_identity": "observations/frozen/private/inputs/target_r2_physical_links.csv",
+      "sha256": "6ae420c264c450bf5572811ff97aed3896e7cf5e0c19ffc0a518e90b21c9b97f",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "frozen/r2/inputs/network.csv",
+      "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/link.csv",
+      "sha256": "aa4fd1ecf51f368de712c8e1ca14e98444d7d31a9b69cd969e45646ec667db7c",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/demand.csv",
+      "sha256": "40aac06cace5e2ccbf629d2d457ae8f8b4cde188b7d538da5ea001a770e6bb26",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/instance/manifest.json",
+      "sha256": "373c981410c10480dc65ec6bee0b07bf1702231a57241a8dd0d465997af7b1f2",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/link_flow.csv",
+      "sha256": "8029b4d92ca54ab44143130c7c0d6a899dc2fc7c4c89d56aa615ba8f634b16bc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/path_flow.csv",
+      "sha256": "5d51be41d1ba80c921900ce18f52f38065b486cfe819d75406b21ba1bc701f8e",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/finite/run.json",
+      "sha256": "94832899017b55f798e933399ca377deaa46f2c4a10336d2e4f89fbd3b5071cc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/fw/link_flow.csv",
+      "sha256": "ee873633ac168059a7ca07d6698c4cdd43d0704058eafe6baed35718e0c87787",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/fw/run.json",
+      "sha256": "1dee42a124ef1a189c5b0c89a446918066287e4035ee31d1a1212f03a958637f",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/paths.csv",
+      "sha256": "159ed28cb852b1f484618f09a767c54861d6236fa1e1b0364935229a41d05767",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/A_link_path.npz",
+      "sha256": "bb2732cfecf28227421948910fcec86e9f3c112f75637583cb285d5261fbd416",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/C_od_path.npz",
+      "sha256": "21d49e4fb28497bdbeb7cc7523cb8549eaccbe395c91b51b10c3edba0b989a05",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/pool_fast_v1/pool.json",
+      "sha256": "7db4adf68470f02afe0f3adc7321b403775bc94b496347c76f0968df5f35264a",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_26/basis.npz",
+      "sha256": "dbf2b997edcdfcebc41e6e88ee92cd33bf118f5d31fdca5ed8d41af42647aecc",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_26/basis.json",
+      "sha256": "d594a110e5e91c9ac0f6b23bd50d4873a711a8c03e8396ee76f190739d25cf51",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_solution.npz",
+      "sha256": "7f7879bfe6dc6e80c7204bea2035c4f861ade92932cea017278e3090848f66b7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_check.json",
+      "sha256": "eb249cfb2f01397c40bde05d501b9bc3727e350ee0c8ba79b779dec8f692f7a7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_26/outer_04_native.json",
+      "sha256": "4426194bb2acfea1bd984391962257b25cd21c36bfdb153b1d86433a22b08086",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_52/basis.npz",
+      "sha256": "b151373d814168e51f673040ca9f5407cac379b3333a32643fe4b1e08a1f0dea",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/basis_52/basis.json",
+      "sha256": "0ecdb2898277abd6ae3fadb64295eaa71bc15809e81a035a01937e66176378a7",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_solution.npz",
+      "sha256": "bb725750c8640fcb0a5e6bddb945cd3d34a65f1ed030e32df573cd652149ec6b",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_check.json",
+      "sha256": "9f9bee3480c8c82ea566bd4c565ba5e5c3cfdf795e74a2deac2564758da0d120",
+      "role": "Saved private input; derived local preview only"
+    },
+    {
+      "source_identity": "S/native_52/outer_04_native.json",
+      "sha256": "f6e72b17aad39f69de40e8047defa32ea059ad0cd044d81cfc6e9f51e8a629c6",
+      "role": "Saved private input; derived local preview only"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Finite-path physical loading and distribution",
+    "scope": "S110 / 110 OD / one declared hour"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 102.837,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2628,
+    1081
+  ],
+  "exports": {
+    "png": "ed420d0e9a5031c9bbca24712c689b98369fc884d3d740355a7aada1f6f60038",
+    "svg": "388385c64dfdfeff7e2b40fa1b4ebb6b5147bf06877ca8d490ed31fd12b9fb2c",
+    "pdf": "95f4692ed5910daf9b54ed4cc1f9c8588eb035d80bf01f7502a841159be6b86b"
+  },
+  "text_audit": [
+    {
+      "text": "East (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        193.595,
+        156.211,
+        61.25,
+        13.0
+      ]
+    },
+    {
+      "text": "−3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        17.418,
+        174.767,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        114.069,
+        174.767,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        215.345,
+        174.767,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        311.996,
+        174.767,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "3.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        408.647,
+        174.767,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "North (km)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        31.136,
+        277.425,
+        13.0,
+        70.75
+      ]
+    },
+    {
+      "text": "−2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.692,
+        177.932,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "−1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        49.692,
+        242.366,
+        16.375,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.942,
+        306.8,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.942,
+        371.234,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        58.942,
+        435.668,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Physical-link flow",
+      "size_pt": 10.0,
+      "bounds_px": [
+        74.4,
+        440.611,
+        157.0,
+        14.0
+      ]
+    },
+    {
+      "text": "PCE / hour",
+      "size_pt": 8.0,
+      "bounds_px": [
+        435.121,
+        282.238,
+        10.0,
+        61.125
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        205.555,
+        6.125,
+        9.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        284.734,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        317.531,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        342.696,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        363.912,
+        12.25,
+        9.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        382.604,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        399.502,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 7.0,
+      "bounds_px": [
+        409.802,
+        415.042,
+        18.375,
+        9.0
+      ]
+    },
+    {
+      "text": "2,359 positive links\n12,789 zero / near-zero links",
+      "size_pt": 8.5,
+      "bounds_px": [
+        718.504,
+        403.718,
+        171.875,
+        21.6
+      ]
+    },
+    {
+      "text": "Positive: > 10⁻⁶ PCE/h",
+      "size_pt": 8.0,
+      "bounds_px": [
+        763.629,
+        350.68,
+        126.75,
+        10.0
+      ]
+    },
+    {
+      "text": "Physical-link flow (PCE / hour)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        623.663,
+        156.211,
+        194.0,
+        13.0
+      ]
+    },
+    {
+      "text": "−20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.532,
+        174.767,
+        23.5,
+        10.0
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        556.384,
+        174.767,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "20",
+      "size_pt": 8.0,
+      "bounds_px": [
+        601.487,
+        174.767,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "40",
+      "size_pt": 8.0,
+      "bounds_px": [
+        650.152,
+        174.767,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "60",
+      "size_pt": 8.0,
+      "bounds_px": [
+        698.818,
+        174.767,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "80",
+      "size_pt": 8.0,
+      "bounds_px": [
+        747.483,
+        174.767,
+        14.25,
+        10.0
+      ]
+    },
+    {
+      "text": "100",
+      "size_pt": 8.0,
+      "bounds_px": [
+        792.585,
+        174.767,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "120",
+      "size_pt": 8.0,
+      "bounds_px": [
+        841.251,
+        174.767,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "140",
+      "size_pt": 8.0,
+      "bounds_px": [
+        889.916,
+        174.767,
+        21.375,
+        10.0
+      ]
+    },
+    {
+      "text": "Number of physical links",
+      "size_pt": 9.0,
+      "bounds_px": [
+        481.361,
+        233.55,
+        13.0,
+        158.5
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        528.417,
+        187.1,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        507.042,
+        220.429,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "4000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        507.042,
+        253.757,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "6000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        507.042,
+        287.085,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "8000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        507.042,
+        320.414,
+        28.5,
+        10.0
+      ]
+    },
+    {
+      "text": "10000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.917,
+        353.742,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "12000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.917,
+        387.071,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "14000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.917,
+        420.399,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "16000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        499.917,
+        453.727,
+        35.625,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Flow distribution",
+      "size_pt": 10.0,
+      "bounds_px": [
+        543.875,
+        440.611,
+        153.375,
+        14.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  S110 / 110 OD / one declared hour",
+      "size_pt": 8.7,
+      "bounds_px": [
+        60.45,
+        492.666,
+        309.5,
+        13.0
+      ]
+    },
+    {
+      "text": "Finite-path physical loading and distribution",
+      "size_pt": 15.0,
+      "bounds_px": [
+        60.45,
+        465.722,
+        525.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": {
+    "status": "PASS",
+    "png_reviewed": true,
+    "labels_colourbar_units_and_exponents_readable": true,
+    "full_geometry_and_all_link_histogram_preserved": true,
+    "no_title_or_panel_overlap": true,
+    "editable_vector_no_raster_embed": true,
+    "all_text_audit_bounds_finite": true,
+    "no_solver_or_evaluator_calls": true
+  }
+}

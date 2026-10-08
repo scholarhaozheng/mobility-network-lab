@@ -1,0 +1,1 @@
+UC_GAP_C2. Predicted transit-person-weighted cost components use scheduled CUMTD rides, directed walk access and stated fare assumptions. The 1,672 rows are 418 OD × four timetable departure queries, not measured passenger trips, GPS or local calibration.

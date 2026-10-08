@@ -1,0 +1,1 @@
+Actual route through selected time layers The seven selected saved arcs follow one computed route: teal marks physical-road traversal and blue marks zero-time turn transitions. State spacing is schematic; no assigned-flow magnitude is encoded.

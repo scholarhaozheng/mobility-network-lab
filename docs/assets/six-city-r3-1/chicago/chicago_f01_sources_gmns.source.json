@@ -1,0 +1,35 @@
+{
+  "figure_id": "chicago_f01_sources_gmns",
+  "city": "chicago",
+  "title": "Physical OSM road coverage in the Jane Byrne/West Loop research rectangle; no current flow is encoded.",
+  "caption": "Actual Chicago OSM road geometry; one auto-eligible physical source segment per plotted line; no virtual connectors. OSM contributors / ODbL.",
+  "unit": "Source context; see figure legend",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/chicago/original/chicago_f01_sources_gmns.svg",
+      "sha256": "2a3cd084f56faf032b7c646f990a79051e158ed9557dbd8bd4fa047637e4ea91"
+    }
+  ],
+  "source_run_receipt_sha256": null,
+  "source_metadata_sha256": "f656f0497c425a8e52b39754f2ae612faa22f5c4b417bf4868cadb4a040f4345",
+  "png_sha256": "927cb7ec8382c7dfbf6efcc0aba45f69e2593b3c701d047fdc1a3c91ecc6cb6b",
+  "svg_sha256": "57896a75ed7496d89e34d4ed7c9d9d52c8f1fc6f7375eebf73f1760af86483b7",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-chicago-f01-sources-gmns",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "2a3cd084f56faf032b7c646f990a79051e158ed9557dbd8bd4fa047637e4ea91",
+  "input_png_sha256": "927cb7ec8382c7dfbf6efcc0aba45f69e2593b3c701d047fdc1a3c91ecc6cb6b",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false,
+  "related_case_run_receipt_sha256": "7cc867734be1a56412ffe869ae53d8d8747ee62feb59dad287116b3056e7cede",
+  "run_binding_semantics": "Preflight context figure predates the four-stage assignment; the receipt identifies the related accepted case, not a scientific run that generated this figure. Exact source figure bytes are bound in inputs."
+}

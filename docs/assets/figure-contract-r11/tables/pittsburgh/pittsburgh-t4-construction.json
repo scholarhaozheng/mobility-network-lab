@@ -1,0 +1,102 @@
+{
+  "table_id": "pittsburgh-t4-construction",
+  "city": "pittsburgh",
+  "title": "T4 input construction ledger",
+  "scope": "Frozen input graph; not an optimized endpoint",
+  "original_assets": [
+    "assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.svg",
+    "assets/algorithm-transfer-r8/pittsburgh/PIT_T01.svg"
+  ],
+  "notes": [
+    "INPUT ONLY / NOT OPTIMIZED. Frozen T4 construction contains 1,811,888 arcs and four commodities totaling 0.0450275484535 PCE. All demand departs at step 5 with a 30-second step and H=117 (58.5 minutes). The bars use all saved arc records and exact saved demand quantities; count axis is logarithmic. Physical, wait, turn where present, and ledger roles follow the frozen identity. This is input structure, not an optimized endpoint.",
+    "Detailed conversion fields not present in this public source record are not invented."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.source.json",
+      "href": "assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.source.json",
+      "sha256": "47fcc0bcd09d6f37e8268370f6ddc6f33d0bd97e4d0c27896dc89ad9cbb52dd8"
+    },
+    {
+      "public_path": "docs/assets/algorithm-transfer-r8/pittsburgh/PIT_T01.plot.json",
+      "href": "assets/algorithm-transfer-r8/pittsburgh/PIT_T01.plot.json",
+      "sha256": "23670ee8b410f9df611d88ee30bec8c6b284d6ee1b9b457f8be79560dc8f0f6b"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Arc roles",
+      "columns": [
+        "Saved arc type",
+        "Records"
+      ],
+      "rows": [
+        {
+          "Saved arc type": "physical_road",
+          "Records": 350106
+        },
+        {
+          "Saved arc type": "turn_movement",
+          "Records": 779805
+        },
+        {
+          "Saved arc type": "wait",
+          "Records": 681742
+        },
+        {
+          "Saved arc type": "source_connector",
+          "Records": 4
+        },
+        {
+          "Saved arc type": "sink_connector",
+          "Records": 231
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Saved clock and demand",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Total arc records",
+          "Saved value": 1811888,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Four-OD pulse",
+          "Saved value": 0.045027548453549955,
+          "Unit / interpretation": "PCE"
+        },
+        {
+          "Metric": "Departure step",
+          "Saved value": 5,
+          "Unit / interpretation": "step"
+        },
+        {
+          "Metric": "Time step",
+          "Saved value": 30,
+          "Unit / interpretation": "s"
+        },
+        {
+          "Metric": "Horizon",
+          "Saved value": 117,
+          "Unit / interpretation": "steps"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 10,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"pittsburgh-t4-construction\"><h4>T4 input construction ledger</h4><p class=\"evidence-table-scope\">Frozen input graph; not an optimized endpoint</p><h5>Arc roles</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Arc roles\"><table><thead><tr><th scope=\"col\">Saved arc type</th><th scope=\"col\">Records</th></tr></thead><tbody><tr><td>physical_road</td><td>350106</td></tr><tr><td>turn_movement</td><td>779805</td></tr><tr><td>wait</td><td>681742</td></tr><tr><td>source_connector</td><td>4</td></tr><tr><td>sink_connector</td><td>231</td></tr></tbody></table></div><h5>Saved clock and demand</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Saved clock and demand\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Total arc records</td><td>1811888</td><td>count</td></tr><tr><td>Four-OD pulse</td><td>0.045027548453549955</td><td>PCE</td></tr><tr><td>Departure step</td><td>5</td><td>step</td></tr><tr><td>Time step</td><td>30</td><td>s</td></tr><tr><td>Horizon</td><td>117</td><td>steps</td></tr></tbody></table></div><p>INPUT ONLY / NOT OPTIMIZED. Frozen T4 construction contains 1,811,888 arcs and four commodities totaling 0.0450275484535 PCE. All demand departs at step 5 with a 30-second step and H=117 (58.5 minutes). The bars use all saved arc records and exact saved demand quantities; count axis is logarithmic. Physical, wait, turn where present, and ledger roles follow the frozen identity. This is input structure, not an optimized endpoint.</p><p>Detailed conversion fields not present in this public source record are not invented.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.source.json\" download>input-construction-ledger.source.json</a> · <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T01.plot.json\" download>PIT_T01.plot.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/pittsburgh-construction/input-construction-ledger.svg\">input-construction-ledger.svg</a> · <a href=\"assets/algorithm-transfer-r8/pittsburgh/PIT_T01.svg\">PIT_T01.svg</a></p></details></section>",
+  "caption": "INPUT ONLY / NOT OPTIMIZED. Frozen T4 construction contains 1,811,888 arcs and four commodities totaling 0.0450275484535 PCE. All demand departs at step 5 with a 30-second step and H=117 (58.5 minutes). The bars use all saved arc records and exact saved demand quantities; count axis is logarithmic. Physical, wait, turn where present, and ledger roles follow the frozen identity. This is input structure, not an optimized endpoint. Detailed conversion fields not present in this public source record are not invented."
+}

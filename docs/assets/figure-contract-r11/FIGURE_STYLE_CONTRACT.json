@@ -1,0 +1,195 @@
+{
+  "schema": "mcl_figure_contract_r11",
+  "version": "2026-10-08-r11",
+  "purpose": "Current scientific figures for all eight place-based cases and the separate Sioux Falls demonstration benchmark. Preserve instance-specific facts and the selected Boston/Hong Kong presentation contract.",
+  "authority": {
+    "explicit_user_choice": "C的风格，A、B的配色，字体要serif字体（不是times，是serif）",
+    "history_review": "Both requested chats read in full;61 older turns+5 handoff turns and108 saved UI notes reviewed.",
+    "numeric_defaults": "Point sizes, colors and gaps are the verified existing renderer defaults, not invented quotations of user instructions.",
+    "text_limit": "No historical numeric word cap was found. Long explanatory prose, receipts and notices belong outside the canvas."
+  },
+  "style": {
+    "authority": "verified executed renderer values, not user-specified numeric requirements",
+    "font": {
+      "family": "serif",
+      "resolved": "DejaVu Serif",
+      "mathtext": "dejavuserif",
+      "svg_fonttype": "none",
+      "pdf_fonttype": 42
+    },
+    "sizes_pt": {
+      "base": 9,
+      "figure_title": 15,
+      "city_scope": 8.7,
+      "axes_title": 11,
+      "axes_label": 9,
+      "tick": 8
+    },
+    "header": {
+      "city_scope_initial_xy": [
+        0.065,
+        0.963
+      ],
+      "title_initial_xy": [
+        0.065,
+        0.908
+      ],
+      "city_scope_color": "#087f82",
+      "city_scope_weight": "bold",
+      "title_color": "#132f51",
+      "title_weight": "bold",
+      "title_line_length": "max(35,int(figsize_width_in*7.2))",
+      "title_linespacing": 1.12,
+      "final_position": "compact_header uses measured tight bounding boxes",
+      "title_to_body_gap_pt": 8,
+      "city_to_title_gap_pt": 5
+    },
+    "axes": {
+      "default_linewidth": 0.55,
+      "format_axes_spine_linewidth": 0.45,
+      "tick_length": 3,
+      "tick_pad": 3,
+      "top_right_spines": false,
+      "map_aspect": "equal",
+      "map_grid_linewidth": 0.4,
+      "quant_grid_axis": "y",
+      "quant_grid_linewidth": 0.5,
+      "legend_frame": false
+    },
+    "palette": {
+      "id": "C",
+      "label": "C 布局 · 蓝绿配色 · Serif",
+      "description": "保留 C 的紧凑布局；采用 A/B 的蓝绿与深蓝；统一使用 DejaVu Serif 衬线字体。",
+      "ink": "#132f51",
+      "accent": "#087f82",
+      "second": "#3773b7",
+      "grid": "#e4edf0",
+      "road": "#dbe3e7",
+      "seq": [
+        "#dfefed",
+        "#80c3bd",
+        "#278e98",
+        "#14355a"
+      ],
+      "div": [
+        "#256482",
+        "#f5f6f3",
+        "#bb6749"
+      ],
+      "title": 15,
+      "labelsize": 9
+    },
+    "exports": {
+      "dpi": 300,
+      "formats": [
+        "png",
+        "svg",
+        "pdf"
+      ],
+      "bbox_inches": "tight",
+      "pad_inches": 0.055,
+      "font_embedding": true,
+      "whitespace_crop_padding_px": 16,
+      "whitespace_crop_trigger_fraction": 0.03
+    },
+    "no_verified_numeric_text_limit": "No user-authorized maximum word/character count found. User requests short titles and moving long explanatory/count paragraphs outside. Any new lint word budget must be labelled implementation policy, not historical user wording."
+  },
+  "figure_contract_required_fields": [
+    "figure_id",
+    "city",
+    "method",
+    "instance",
+    "period",
+    "quantity",
+    "unit",
+    "role",
+    "conclusion",
+    "panels",
+    "sources",
+    "caption",
+    "limitations"
+  ],
+  "roles": {
+    "geographic": "True saved physical geometry, top-down, equal aspect; no virtual arcs mixed into road totals.",
+    "time_construction": "Recorded semantic time layers allowed; one truthful construction card first, not decorative geography height.",
+    "distribution": "Use complete corresponding vector including zero values unless explicitly stated otherwise.",
+    "iteration": "At least3 saved states to support a headline trajectory; fewer states normally become a table. Never invent iterations or smooth solver history.",
+    "endpoint": "Numbers/gates/status alone normally become a text table. A multi-method endpoint comparison is not an iteration plot.",
+    "observation": "Preserve source units and year; candidates/count inventories are not calibrated traffic.",
+    "context_photo": "Retain original licensed context image, never restyle it as a scientific result."
+  },
+  "header": {
+    "city_location": "Upper left above main title",
+    "city": "Uppercase city, optional short instance cue",
+    "title": "Short algorithm or scientific question; no retired section number or implementation status",
+    "scope_details": "Method version, model size, period, gate and detailed caveats live in adjacent subtitle/caption when they lengthen the header."
+  },
+  "page_composition": {
+    "city_order": [
+      "boston",
+      "hong-kong",
+      "ann-arbor",
+      "urbana-champaign",
+      "ithaca",
+      "berkeley",
+      "chicago",
+      "pittsburgh",
+      "sioux-falls"
+    ],
+    "sioux_role": "Demonstration benchmark; content unchanged",
+    "one_method_per_row": true,
+    "single_row_columns": "1/2/3 equal-width cards when only one row; multi-row groups use three columns",
+    "top_alignment": "Image tops and caption starts aligned within each row",
+    "canonical_evidence": "One current rendering per evidence question; previous versions are original-download archive references, not competing current cards",
+    "same_figure_deep_link": true,
+    "notice": "Exact attribution linked beside each current asset; shared city notice avoids repeated paragraphs"
+  },
+  "scientific_templates": {
+    "static_fw_b_finite": "Own-method physical flow map plus complete all-link distribution. Same-instance alternatives share extent and scale. An objective-only scoreboard is not a substitute.",
+    "native": "Rank/representation variants grouped, own reconstructed absolute flow and signed difference to a valid same-instance reference. Iterative conservation diagnostic is supplementary; do not label identity80 as compressed26/52.",
+    "cg": "Phase I actual artificial quantity; Phase II real cost; full-graph pricing and actual new columns. LP same-graph reference. Separate each phase and distinguish states from updates.",
+    "lr": "Bounds/certified gap; multiplier prices; actual recovery/own pool. A new recovery hybrid is explicitly different from original pure subgradient LR. Missing own UB is unavailable, not0gap.",
+    "admm": "Original-unit feasibility; primal consensus; rho-scaled dual residual in its own unit; same-graph objective difference. No rho-history panel. A single update becomes an endpoint table, with physical-flow/balance figures only if they answer independent questions.",
+    "foundations": "Actual source region/roads/zones, all-zone population/households/jobs, dated services and observations. Generated inputs and later unused supplemental fields separated.",
+    "four_stage": "Generation, distribution, mode choice and assignment each retain their own purpose and units; persons→vehicles/PCE conversion exactly once."
+  },
+  "export": {
+    "formats": [
+      "svg",
+      "png",
+      "pdf"
+    ],
+    "png_dpi": 300,
+    "svg_editable_text": true,
+    "svg_embedded_serif": true,
+    "pdf_fonttype": 42,
+    "outer_padding_in": 0.055,
+    "sources_and_plot_data": "Bind exact public source hashes and fields. Keep approved originals immutable; local redraws are presentation derivatives, not newly S0-signed original bytes."
+  },
+  "checks": [
+    "complete data and instance binding",
+    "correct quantity/unit/role, not merely similar colors",
+    "city/title placement and selected serif fonts",
+    "no long in-canvas prose or stale release footer",
+    "no clipped/overlapping text or excessive outer whitespace",
+    "no invented/smoothed/duplicated evidence",
+    "same asset on homepage and volume with working anchors",
+    "original evidence bytes and failure histories preserved",
+    "SVG/PNG/PDF export and reference hashes",
+    "manual review of each changed figure at real display size"
+  ],
+  "code_and_release": {
+    "figure_commands": "Read saved inputs and render only; no solver or matcher import as a hidden step.",
+    "computational_release": "Existing r19 docs/r14 computation package remains a separately versioned historical artifact. Its41 commands and108-record catalog do not cover new city computational recipes.",
+    "current_work": "Local website and reproducible figure pipeline only. No commit/push/deploy or new optimization.",
+    "publication_gate": "Inspect current files, source/rights boundary, hashes, commands, site links and actual package equality; never reuse an old green check."
+  },
+  "legacy_vector_exception": {
+    "route": "vector-transform",
+    "reason": "Approved SVG exists but full public geometry is unavailable",
+    "new_header_editable": true,
+    "all_legacy_labels_editable": false,
+    "preserve": "scientific geometry, projection, original numeric labels and palette",
+    "require": "per-figure source route, original hash and geometry verification"
+  }
+}

@@ -1,0 +1,1 @@
+Actual R1/R2 endpoints and diagnostic evidence. R1 ADMM points are logged rejected local returns; R2 points are independently reconstructed saved returns. These are local trials, not consensus convergence. Blank bounds remain unavailable. The same scientific gates apply; CG artificial flow is not an infeasibility certificate.

@@ -1,0 +1,1 @@
+A separate input-only delayed-path construction, independently checked on the unchanged T4 graph. This is a feasible upper-bound witness, not an LP, CG, LR or ADMM solution and not an optimality certificate. Map values sum movement PCE over time and must not be compared with per-slot capacity. Arrival time excludes terminal ledger extension.

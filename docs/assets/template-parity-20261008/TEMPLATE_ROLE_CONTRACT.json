@@ -1,0 +1,47 @@
+{
+  "schema": "mcl_template_roles_20261008",
+  "extends": "../figure-contract-r12/FIGURE_STYLE_CONTRACT.json",
+  "parent_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "construction": {
+    "roles": [
+      "time-layers",
+      "local-construction"
+    ],
+    "columns": 2
+  },
+  "static_inputs": {
+    "roles": [
+      "assignment-margins",
+      "assignment-endpoints"
+    ],
+    "columns": 2
+  },
+  "cg": {
+    "roles": [
+      "phase1",
+      "phase2",
+      "pricing"
+    ],
+    "columns": 3,
+    "artificial_quantity": "derive from actual RMP variable identity"
+  },
+  "lr": {
+    "roles": [
+      "bounds",
+      "prices",
+      "recovery"
+    ],
+    "columns": 3
+  },
+  "admm": {
+    "roles": [
+      "convergence",
+      "conservation",
+      "physical-flow"
+    ],
+    "columns": 3
+  },
+  "missing_result": "declare missing fields; never synthesize",
+  "gallery": "only cards are grid children; historical anchor markers stay outside",
+  "homepage_image_link": "own volume and same actual image"
+}

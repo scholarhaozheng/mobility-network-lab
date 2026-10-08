@@ -1,0 +1,1 @@
+One actual saved Phase II round. CG real cost is 0.24793241990274609 PCE·min; the separate same-graph LP reference is 0.24793241990274612 PCE·min. The marker and dashed reference can coincide at displayed precision. No Phase I artificial objective is connected to this real-cost objective. No new column after the four seed paths.

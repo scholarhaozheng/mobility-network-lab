@@ -1,0 +1,56 @@
+{
+  "id": "R3-PITTSBURGH-TRACE",
+  "city": "pittsburgh",
+  "title": "Frank–Wolfe saved objective and gap",
+  "caption": "1 saved record(s), 0 updates; final objective 12081.0666459 PCE-min, gap 4.77399256443e-07 against 0.0001. The exact zero (where present) is plotted on a linear axis; no convergence history is fabricated.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        12081.06664589537
+      ],
+      "iteration": [
+        0.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        4.773992564434884e-07
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0
+      ],
+      "axis": "linear"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\pittsburgh\\four_stage\\run_001\\assignment\\fw_trace.csv",
+      "sha256": "af51d16bd668c2796e7600e35b50bce80224d7a78447afa9020adb5bd9617b91"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\pittsburgh\\four_stage\\run_001\\assignment\\assignment_summary.json",
+      "sha256": "b9bfe475314e5f1b24b477cf58385cddac6fc29c1636669ed57c2c0db335e42a"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "trace"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "a6db990153b4d36b1f984f28bcf8aede0f88f6c2ba6e16e5928df56eb33e4cfb",
+    "png": "4c33786566235dbf212b9dc6589c8748e467d684cdc035ffa3e4346ffeacdefb",
+    "pdf": "5ee1d4dd8b82fa46dd7500b4c690c36a4b8e61acfdc6bafe38f03204cf090fd0"
+  },
+  "width": 1818,
+  "height": 873,
+  "src": "assets/city-alignment-r3/pittsburgh/trace.svg"
+}

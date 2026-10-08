@@ -1,0 +1,112 @@
+{
+  "table_id": "urbana-champaign-initial-fw",
+  "city": "urbana-champaign",
+  "title": "Frank–Wolfe saved objective and gap",
+  "scope": "Original full-city four-stage instance; distinct from later selected static cohorts",
+  "original_assets": [
+    "assets/city-alignment-r3/urbana-champaign/trace.svg"
+  ],
+  "notes": [
+    "Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history.",
+    "The timetable revision is a different demand input. Its saved maximum v/c is about 1.0129, so a blanket light-load explanation is unsupported."
+  ],
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-champaign/trace.source.json",
+      "href": "assets/city-alignment-r3/urbana-champaign/trace.source.json",
+      "sha256": "519cbe7832780331c8307d6370583ee9bd6e605cafe0850824be61410ba23056"
+    },
+    {
+      "public_path": "docs/assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "href": "assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json",
+      "sha256": "8b8af04f0805e4e73433bfedd370d10360fb0149f1eadf8dd30e43c53e6af8eb"
+    }
+  ],
+  "source_role": "Local display table from frozen public evidence; method-specific scope retained.",
+  "solver_calls": 0,
+  "private_input_reads": 0,
+  "blocks": [
+    {
+      "title": "Initial saved check",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Beckmann objective",
+          "Saved value": 8041.086812761631,
+          "Unit / interpretation": "PCE·min/h"
+        },
+        {
+          "Metric": "relative gap",
+          "Saved value": 0.0,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "relative gap frozen threshold",
+          "Saved value": 0.0001,
+          "Unit / interpretation": "dimensionless"
+        },
+        {
+          "Metric": "Saved records",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Saved iteration index",
+          "Saved value": 0,
+          "Unit / interpretation": "initialization"
+        },
+        {
+          "Metric": "Completed FW updates",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    },
+    {
+      "title": "Separate timetable-revision instance",
+      "columns": [
+        "Metric",
+        "Saved value",
+        "Unit / interpretation"
+      ],
+      "rows": [
+        {
+          "Metric": "Instance",
+          "Saved value": "UC_MODE_TRANSIT_EXTENSION_20261008_R2",
+          "Unit / interpretation": "identifier"
+        },
+        {
+          "Metric": "Vehicle demand",
+          "Saved value": 1667.0899464425695,
+          "Unit / interpretation": "PCE/h"
+        },
+        {
+          "Metric": "Saved records",
+          "Saved value": 1,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Completed updates",
+          "Saved value": 0,
+          "Unit / interpretation": "count"
+        },
+        {
+          "Metric": "Current status",
+          "Saved value": "ACCEPTED_SCOPE_BOUND",
+          "Unit / interpretation": "scope-bound status"
+        }
+      ],
+      "column_units": {},
+      "details": false
+    }
+  ],
+  "rows": 11,
+  "html": "<section class=\"evidence-table-card\" data-table-id=\"urbana-champaign-initial-fw\"><h4>Frank–Wolfe saved objective and gap</h4><p class=\"evidence-table-scope\">Original full-city four-stage instance; distinct from later selected static cohorts</p><h5>Initial saved check</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Initial saved check\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Beckmann objective</td><td>8041.086812761631</td><td>PCE·min/h</td></tr><tr><td>relative gap</td><td>0.0</td><td>dimensionless</td></tr><tr><td>relative gap frozen threshold</td><td>0.0001</td><td>dimensionless</td></tr><tr><td>Saved records</td><td>1</td><td>count</td></tr><tr><td>Saved iteration index</td><td>0</td><td>initialization</td></tr><tr><td>Completed FW updates</td><td>0</td><td>count</td></tr></tbody></table></div><h5>Separate timetable-revision instance</h5><div class=\"evidence-table-overflow\" tabindex=\"0\" role=\"region\" aria-label=\"Separate timetable-revision instance\"><table><thead><tr><th scope=\"col\">Metric</th><th scope=\"col\">Saved value</th><th scope=\"col\">Unit / interpretation</th></tr></thead><tbody><tr><td>Instance</td><td>UC_MODE_TRANSIT_EXTENSION_20261008_R2</td><td>identifier</td></tr><tr><td>Vehicle demand</td><td>1667.0899464425695</td><td>PCE/h</td></tr><tr><td>Saved records</td><td>1</td><td>count</td></tr><tr><td>Completed updates</td><td>0</td><td>count</td></tr><tr><td>Current status</td><td>ACCEPTED_SCOPE_BOUND</td><td>scope-bound status</td></tr></tbody></table></div><p>Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history.</p><p>The timetable revision is a different demand input. Its saved maximum v/c is about 1.0129, so a blanket light-load explanation is unsupported.</p><details class=\"evidence-table-links\"><summary>Source data and historical figures</summary><p>Public data: <a href=\"assets/city-alignment-r3/urbana-champaign/trace.source.json\" download>trace.source.json</a> · <a href=\"assets/plot-semantics-r10/SHORT_TRACE_REVIEW.json\" download>SHORT_TRACE_REVIEW.json</a></p><p>Preserved original figures: <a href=\"assets/city-alignment-r3/urbana-champaign/trace.svg\">trace.svg</a></p></details></section>",
+  "caption": "Initialization meets the frozen stopping tolerance; this does not prove exact optimality or that geographic area caused the short history. The timetable revision is a different demand input. Its saved maximum v/c is about 1.0129, so a blanket light-load explanation is unsupported."
+}

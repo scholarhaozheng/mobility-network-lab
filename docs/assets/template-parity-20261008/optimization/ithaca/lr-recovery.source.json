@@ -1,0 +1,355 @@
+{
+  "city": "ithaca",
+  "figure_id": "TEMPLATE-ithaca-lr-recovery",
+  "conclusion": "Path-pool growth and primal recovery",
+  "role": "lr-recovery",
+  "backend": "Python/matplotlib",
+  "reference_template": "Boston/Hong Kong method-specific panels",
+  "public_only": false,
+  "saved_points_only": true,
+  "solver_calls": 0,
+  "instance": "Frozen T4; each method retains its own accepted run",
+  "panels": {
+    "1": "a  Saved path-pool size",
+    "2": "b  Separate feasible recovery calls"
+  },
+  "quantity": "Path-pool growth and primal recovery",
+  "unit": "Paths in own pool; Recovered objective (PCE·min)",
+  "schema": "mcl_figure_r12",
+  "caption": "One actual path-pool record and one actual feasible recovery call are shown in separate panels. The four paths belong to this method’s own pool; the objective is the saved recovered feasible upper bound. No intermediate call, pool growth or capacity-price effect is invented. A filled marker denotes a feasible call, as in Boston/Hong Kong.",
+  "sources": [
+    {
+      "sha256": "92c4545da258b655b4d11a675409a8d31f2c9bf7063437168f5785ae8d978030",
+      "identity": "history.csv",
+      "access": "private"
+    },
+    {
+      "sha256": "bae4041fdec9fddd71d7c5e32dde6bccdd4a43258b9de357e1a6bef4741e53cb",
+      "identity": "recovery_history.json",
+      "access": "private"
+    },
+    {
+      "sha256": "7435ad479971d36ede19a0599e103130855dd1999261e5588e61d886be53e102",
+      "identity": "result.json",
+      "access": "private"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Ithaca",
+    "title": "Path-pool growth and primal recovery",
+    "scope": "T4 / existing saved experiment"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 15.398,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    2786,
+    1133
+  ],
+  "exports": {
+    "png": "fd991e457ea405731901f16afd75cd8b595b239a319e228c786dba3e5c492dd7",
+    "svg": "cfe474af365a2a2dcd74ba61db1c82b73e2ed999f7f572e8d15a304d1270d0c1",
+    "pdf": "80102253cf95f734871b58bdb243f6fef4637876b6b83f9f2152fca659c8d0ec"
+  },
+  "text_audit": [
+    {
+      "text": "Saved iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        218.599,
+        42.311,
+        97.0,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        263.536,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Paths in own pool",
+      "size_pt": 9.0,
+      "bounds_px": [
+        50.986,
+        152.875,
+        13.0,
+        112.25
+      ]
+    },
+    {
+      "text": "0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        73.2,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        121.274,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        169.348,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        217.422,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        265.496,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        313.57,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.542,
+        361.644,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Saved path-pool size",
+      "size_pt": 11.0,
+      "bounds_px": [
+        85.0,
+        344.133,
+        178.125,
+        14.0
+      ]
+    },
+    {
+      "text": "Saved recovery-call iteration",
+      "size_pt": 9.0,
+      "bounds_px": [
+        696.339,
+        42.311,
+        183.125,
+        13.0
+      ]
+    },
+    {
+      "text": "1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        784.339,
+        60.867,
+        7.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Recovered objective (PCE·min)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        546.914,
+        110.25,
+        13.0,
+        197.5
+      ]
+    },
+    {
+      "text": "0.825",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        59.965,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.850",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        90.688,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.875",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        121.412,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.900",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        152.135,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.925",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        182.859,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.950",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        213.582,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.975",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        244.306,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.000",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        275.03,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.025",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        305.753,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "1.050",
+      "size_pt": 8.0,
+      "bounds_px": [
+        565.469,
+        336.477,
+        32.0,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Separate feasible recovery calls",
+      "size_pt": 11.0,
+      "bounds_px": [
+        605.802,
+        344.133,
+        266.875,
+        14.0
+      ]
+    },
+    {
+      "text": "Feasible own-pool recovery",
+      "size_pt": 7.0,
+      "bounds_px": [
+        826.5,
+        321.05,
+        134.75,
+        9.0
+      ]
+    },
+    {
+      "text": "ITHACA  /  T4 / existing saved experiment",
+      "size_pt": 8.7,
+      "bounds_px": [
+        65.0,
+        396.189,
+        283.125,
+        13.0
+      ]
+    },
+    {
+      "text": "Path-pool growth and primal recovery",
+      "size_pt": 15.0,
+      "bounds_px": [
+        65.0,
+        369.244,
+        444.0,
+        20.0
+      ]
+    }
+  ],
+  "matcher_calls": 0,
+  "status": "RENDERED_PENDING_VISUAL_QA",
+  "source_bytes_preserved": true
+}

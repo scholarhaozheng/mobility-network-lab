@@ -1,0 +1,43 @@
+{
+  "id": "R3-CHICAGO-SOURCES",
+  "city": "chicago",
+  "title": "Physical source roads and retained graph",
+  "caption": "27,129 retained physical directed traversals in the saved 08:00–09:00 HBW model, shown in EPSG:26916. This is the retained model graph, not a claim to draw every road in the source archive. Virtual movements are excluded; colour has no traffic meaning. © OpenStreetMap contributors / ODbL.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical road geography",
+      "unit": "projected km",
+      "encoding": "gray lines; one per physical directed traversal",
+      "CRS": "EPSG:26916",
+      "local_origin_metres": [
+        444394.1685000272,
+        4634865.747927463
+      ]
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\runs\\chicago_core_hbw_am_v1\\assignment\\link_solution.csv",
+      "sha256": "7efa31d6c5e8d1acf9738f8f467d6d8a285e301bfbff28c4f11909f4355dc472"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\inputs\\network_source_crosswalk.csv",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "sources"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "a2ea8c742f56df6a484933a7e13d0f070d6a8a9560dd5f1c765f6fa80e39ef26",
+    "png": "a780dd36d43abc74464baece5e648247ab4a190e6a9e047ea772c76da902c086",
+    "pdf": "b97a691b972d0aafa35a70b92dc55218ff95c49326d585c9a871090edf27a903"
+  },
+  "width": 1123,
+  "height": 991,
+  "src": "assets/city-alignment-r3/chicago/sources.svg"
+}

@@ -1,0 +1,56 @@
+{
+  "id": "R3-URBANA-CHAMPAIGN-TRACE",
+  "city": "urbana-champaign",
+  "title": "Frank–Wolfe saved objective and gap",
+  "caption": "1 saved record(s), 0 updates; final objective 8041.08681276 PCE-min, gap 0 against 0.0001. The exact zero (where present) is plotted on a linear axis; no convergence history is fabricated.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        8041.086812761631
+      ],
+      "iteration": [
+        0.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0
+      ],
+      "axis": "linear"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\run_v1\\assignment\\fw_trace.csv",
+      "sha256": "f53ff70720348187ce10eb6ea489b9f8fcd287ec6d7b0bf28773644883dc442e"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\urbana_champaign\\four_stage\\run_v1\\assignment\\assignment_summary.json",
+      "sha256": "7b75abefca6d0658bec3a19d19cb4def4101067aaaf044a0d94cb94d47ace4d3"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "trace"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "db9911141021d7d700aece24d2226ce5ac888d38f2c1b2310833c2b0f55e13d0",
+    "png": "51ad1bf0386cfab0e83553c268ac77a112b9f84e1899d45ad41b9322e9df3124",
+    "pdf": "c8aed1ad6d4e7767c531070170643d958ac0c7f949359d5fb2cf94824bf75bba"
+  },
+  "width": 1805,
+  "height": 873,
+  "src": "assets/city-alignment-r3/urbana-champaign/trace.svg"
+}

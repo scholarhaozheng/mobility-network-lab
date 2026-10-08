@@ -1,0 +1,52 @@
+{
+  "figure": {
+    "id": "UC-R3-ADMM-OBJECTIVE",
+    "title": "ADMM objective: one completed cold-start update",
+    "src": "assets/city-alignment-r3/urbana-transfer/admm-objective.svg",
+    "width": 2353,
+    "height": 886,
+    "caption": "One actual update plus an independent cold confirmation. Absolute error is PCE min; contract-normalized error divides by max(1, |LP|), while true relative error divides by |LP|. Here LP < 1, so the last two differ. The objective gate remains 1e−4.",
+    "href": "volumes/urbana-champaign.html#uc-r3-admm-objective",
+    "anchor": "atlas-uc-r3-admm-objective",
+    "full": "assets/city-alignment-r3/urbana-transfer/admm-objective.svg",
+    "evidence": "volumes/urbana-champaign.html#uc-r3-admm-objective",
+    "stage": "finite",
+    "method": "admm",
+    "links": [
+      {
+        "label": "SVG",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.svg"
+      },
+      {
+        "label": "PNG",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.png"
+      },
+      {
+        "label": "PDF",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.pdf"
+      },
+      {
+        "label": "Plot data",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.plot_data.json"
+      },
+      {
+        "label": "Source record",
+        "href": "assets/city-alignment-r3/urbana-transfer/admm-objective.source.json"
+      }
+    ]
+  },
+  "renderer": {
+    "file": "render.py",
+    "function": "main",
+    "style": "new_figure / format_axes / compact_header"
+  },
+  "solver_calls": 0,
+  "result_matrix_sha256": "f07124df59779b119b5c623976580ec588f39c58883a2f69f3b24451bec97e01",
+  "derived_data_sha256": "76e18c9eea8cdd42c472c9af6b305ad0920da8f0b4c52fdffc519ca9c8d07aae",
+  "status": "LOCAL_SAVED_RESULT_DERIVATIVE",
+  "exports": {
+    "svg": "0e5da434b7e08f7a0d3515106d061d4bed2e5e6ef0f9a8cc8b1465b464d2f023",
+    "png": "3fc94a5ad06d0f8532680b95786e4b77e132128ff96bac343604fe464631793a",
+    "pdf": "c427bf15552eb9224c4cd51f3aaadf72279aad7a7dfc5634d437e74541366d23"
+  }
+}

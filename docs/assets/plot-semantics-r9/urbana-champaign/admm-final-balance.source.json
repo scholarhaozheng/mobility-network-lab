@@ -1,0 +1,58 @@
+{
+  "id": "CANONICAL-UC-T4-ADMM-FINAL-BALANCE",
+  "title": "Commodity conservation at the final state",
+  "city": "urbana-champaign",
+  "caption": "Final saved Urbana–Champaign T4 ADMM state after one completed update. Four rows follow the accepted demand-file order; columns are the 35 time-indexed nodes with the largest worst-commodity absolute conservation residual, with ties resolved by the frozen loader node order. Each value is abs(outgoing flow − incoming flow − original-unit supply), recomputed directly from the saved x array and the exact CSV arc order; no solver is called. All four commodity maxima and worst-node IDs exactly reproduce the recorded independent check. The maximum over all 668,725 nodes and four commodities is 5.351749497492834e-15 PCE, below the 1e-5 PCE gate. The logarithmic color scale runs from 1e-15 to 1e-5 PCE; zeros and smaller values use the explicit 1e-15 display floor only, with unmodified values in plot data. This is a final-state node diagnostic, not an iteration history, not the 418-OD full static case, and not observed traffic.",
+  "scope": "Four-commodity finite T4 final state, one completed update",
+  "width": 3611,
+  "height": 1557,
+  "solver_calls": 0,
+  "sources": [
+    {
+      "source_id": "UC-T4-problem-contract",
+      "sha256": "0cd4a53d11a2af8bf2657aec2580f95be063a405f41ec581ed9b87d41d803c4f",
+      "bytes": 3370
+    },
+    {
+      "source_id": "UC-T4-independent-evaluator",
+      "sha256": "0f68bb32c47188c59e1de499ce3c8c95cd6bef33b7e4c54c05f132038155779f",
+      "bytes": 6413
+    },
+    {
+      "source_id": "UC-T4-dynamic-arc",
+      "sha256": "76db0032a865d56a8823c17d4a049491d037799a323bbba7bc30e3d809689764",
+      "bytes": 130116462
+    },
+    {
+      "source_id": "UC-T4-dynamic-demand",
+      "sha256": "156830401e0012f77651b49eef5fb243160e79de66e62cabe4b4e77105978d7a",
+      "bytes": 494
+    },
+    {
+      "source_id": "UC-T4-saved-final-state",
+      "sha256": "656e709782b49427760967d2b91f33d5e27fc6f6d26269c6e76170d0ab02b400",
+      "bytes": 18678012
+    },
+    {
+      "source_id": "UC-T4-original-independent-check",
+      "sha256": "2029a195ed263460e4383efb9870fc0b65253a11e82c47f86a8cdb3d1a5b1abd",
+      "bytes": 4016
+    }
+  ],
+  "reference_figure": "G-F101",
+  "renderer": {
+    "script": "render_uc_balance_staged.py",
+    "function": "module bounded saved-state replay",
+    "sha256": "aed7cdce6bcb2f08e8bd8742a7ea3948ebad6f1d465cef0bbd8ca98a399fe0c2"
+  },
+  "private_paths_exposed": false,
+  "scientific_status": "Saved original endpoint, all four original independent checks reproduced exactly; no new acceptance or solver run.",
+  "release_status": "STAGED_LOCAL_READING_REVISION",
+  "exports": {
+    "svg": "26a2f10334103420c866150f83b0e6da3b7443268fefb052003030e4846e6c82",
+    "png": "894a529cd444cca7fe2547180c5cb35b93ad609c20202a6b0daf0ba81873eaed",
+    "plot_data.json": "70350364fba5f9fee810f60f8cd05d7bd7ab3309011ecf88a3be83b177370dbc",
+    "caption.txt": "be7fabdf1a3b60360a350b13520458bf0857cd912602eef35c9fa6222abe5388"
+  },
+  "presentation_status": "LOCAL_SAVED_DATA_DERIVATIVE_NOT_A_NEW_S0_RELEASE"
+}

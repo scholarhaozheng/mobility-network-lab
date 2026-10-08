@@ -1,0 +1,42 @@
+{
+  "figure": {
+    "id": "PIT-R3-STATIC-REFERENCE",
+    "title": "Static FW and finite-path reference",
+    "src": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.svg",
+    "width": 1936,
+    "height": 849,
+    "caption": "Saved independent checks agree on 763.227941458126 PCE min, zero OD and reconstruction errors, and full-graph gaps below 1e\u22125. This selected S72 cohort is separate from the original 1,406-OD city calculation. The checker field named physical_links counts all 56,384 solver arcs, including 38,850 turns.",
+    "href": "volumes/pittsburgh.html#pit-r3-static-reference",
+    "anchor": "atlas-pit-r3-static-reference",
+    "full": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.svg",
+    "evidence": "volumes/pittsburgh.html#pit-r3-static-reference",
+    "stage": "static",
+    "method": "finite-path",
+    "links": [
+      {
+        "label": "SVG",
+        "href": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.svg"
+      },
+      {
+        "label": "PNG",
+        "href": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.png"
+      },
+      {
+        "label": "PDF",
+        "href": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.pdf"
+      },
+      {
+        "label": "Plot data",
+        "href": "assets/city-alignment-r3/pittsburgh-transfer/static-reference.plot_data.json"
+      }
+    ]
+  },
+  "renderer": "render_pittsburgh_transfer.py",
+  "status": "READ_ONLY_SAVED_CHECKPOINT",
+  "solver_calls": 0,
+  "source_hashes": {
+    "work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\fw_72_candidate\\verification.json": "8a9af72d174f6375b8437cb92f144c16435621ce6acd5a45f3d30f2647e85a94",
+    "work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\finite_72\\independent_check.json": "94055a3ea0e718b02def36ca4e6b241e5f00948ad80121ea75fe126332099b3d",
+    "work\\pittsburgh_algorithm_transfer_r1\\runs\\berkeley_c2a_transfer_r2\\S\\native_52_abs\\status.json": "f148dcb012f547b16b7d79723fe05a2b01c3fdaaf5d830bf56310004d335aa8d"
+  }
+}

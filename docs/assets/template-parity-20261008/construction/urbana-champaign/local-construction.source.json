@@ -1,0 +1,443 @@
+{
+  "figure_id": "urbana-champaign-construction-local-parity",
+  "city": "urbana-champaign",
+  "method": "finite time graph construction",
+  "instance": "C02_T4_30s_first_5min",
+  "period": "30-second time index",
+  "role": "time_construction",
+  "conclusion": "The exact saved local road and turn arcs explain the finite time-expanded construction.",
+  "archetype": "schematic-led composite",
+  "panels": [
+    {
+      "a": "source-directed physical two-road chain"
+    },
+    {
+      "b": "physical → routing → time-indexed object mapping"
+    },
+    {
+      "c": "exact three movement/turn arcs, or frozen rule with execution pending"
+    }
+  ],
+  "quantity": "Routing-state and time-arc incidence",
+  "unit": "time index; 30 seconds per step",
+  "public_or_private": "public-derived",
+  "limitations": [
+    "The selected first fragment uses two full physical roads; the earlier split-road midpoint segment remains context only.",
+    "Only the seven already public arcs are drawn; no additional graph arcs or alternative routes are asserted.",
+    "Physical node labels are schematic roles, not invented node identifiers.",
+    "A construction example is not an observed trajectory or capacity-active proof."
+  ],
+  "source_status": "SAVED_PATH_EXCERPT",
+  "reference_layout": "Hong Kong layered construction and local construction details; existing project style",
+  "renderer": "render_construction_north.py",
+  "schema": "mcl_figure_r12",
+  "caption": "Urbana Champaign: panels map two source-directed physical roads to four routing entry/exit states and their time-indexed movements. The selected first fragment uses two full physical roads; the earlier split-road midpoint segment remains context only. Only the seven already public arcs are drawn; no additional graph arcs or alternative routes are asserted. Physical node labels are schematic roles, not invented node identifiers. A construction example is not an observed trajectory or capacity-active proof. The turn has zero elapsed time; physical road durations are positive. No waiting arc is drawn and terminal bookkeeping states are outside this local excerpt. Plot data carry all exact source IDs, field values, and short-label aliases.",
+  "sources": [
+    {
+      "public_path": "docs/assets/city-alignment-r3/urbana-transfer/time-layers.plot_data.json",
+      "sha256": "dd9c6cc2ddb9f49ffdd9ff6fe966b72d159d9ad51ab35432ed1548291eb50d3b",
+      "role": "Existing public plot data"
+    }
+  ],
+  "style_contract_sha256": "eaaed9a7c9c2a83a1463d3ef008fac0c441a9c88248da61ad06fffee2fc97ac4",
+  "style_renderer_sha256": "7d1d1b0c5a378287fe0bfafebe66e3de38573163ef4f7667ea4f6e3a7d309b92",
+  "header": {
+    "city": "Urbana–Champaign",
+    "title": "Local construction of the time-expanded graph",
+    "scope": "T4 / SAVED LOCAL EXCERPT"
+  },
+  "layout_adjustment": {
+    "policy": "Heading positions use actual rendered panel bounds; scientific axes are unchanged.",
+    "original_title_to_panels_pt": 36.25,
+    "title_to_panels_pt": 8.0,
+    "label_to_title_pt": 5.0,
+    "outer_padding_in": 0.055
+  },
+  "font": {
+    "font_family": "DejaVu Serif",
+    "format": "embedded WOFF subsets",
+    "editable_text": true,
+    "fonts": [
+      400,
+      700
+    ],
+    "copyright_and_license_names_preserved": true
+  },
+  "dimensions": [
+    3581,
+    1927
+  ],
+  "exports": {
+    "png": "b62c856f1eb429dfe1287c31509272ca2984069e8bcdfa61f16e8b8734abaec6",
+    "svg": "bdac0b999f69abb03598a6732e012eb06460b12764658178946bfa0d654d9c4f",
+    "pdf": "4298feeba3ab90edc5bc0127e24859ebde8b77bf7dc767334b9cbb76f2a2c054"
+  },
+  "text_audit": [
+    {
+      "text": "upstream",
+      "size_pt": 8.5,
+      "bounds_px": [
+        117.269,
+        517.632,
+        57.0,
+        10.0
+      ]
+    },
+    {
+      "text": "intersection",
+      "size_pt": 8.5,
+      "bounds_px": [
+        307.491,
+        517.632,
+        71.75,
+        10.0
+      ]
+    },
+    {
+      "text": "downstream",
+      "size_pt": 8.5,
+      "bounds_px": [
+        503.838,
+        517.632,
+        74.25,
+        10.0
+      ]
+    },
+    {
+      "text": "37217",
+      "size_pt": 8.6,
+      "bounds_px": [
+        225.505,
+        457.056,
+        38.125,
+        10.0
+      ]
+    },
+    {
+      "text": "37218",
+      "size_pt": 8.6,
+      "bounds_px": [
+        423.102,
+        457.056,
+        38.125,
+        10.0
+      ]
+    },
+    {
+      "text": "Schematic spacing; source-directed road chain",
+      "size_pt": 8.0,
+      "bounds_px": [
+        145.769,
+        419.196,
+        265.5,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        387.432,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        412.672,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        437.912,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "−0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        69.528,
+        463.152,
+        27.0,
+        10.0
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        488.392,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.1",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        513.632,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        538.872,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.3",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        564.112,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        589.352,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.5",
+      "size_pt": 8.0,
+      "bounds_px": [
+        78.778,
+        614.592,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "a  Directed physical road chain",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        605.733,
+        241.375,
+        14.0
+      ]
+    },
+    {
+      "text": "Physical link → routing entry / exit\nRouting states → time-indexed states\nTurn connector ≠ physical road\nWaiting preserves the routing state",
+      "size_pt": 10.0,
+      "bounds_px": [
+        713.268,
+        486.503,
+        260.75,
+        77.45
+      ]
+    },
+    {
+      "text": "0.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        402.576,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.2",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        440.94,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.4",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        479.305,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        517.67,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "0.8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        556.035,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "1.0",
+      "size_pt": 8.0,
+      "bounds_px": [
+        685.795,
+        594.4,
+        17.75,
+        10.0
+      ]
+    },
+    {
+      "text": "b  Object mapping",
+      "size_pt": 11.0,
+      "bounds_px": [
+        713.268,
+        605.733,
+        142.625,
+        14.0
+      ]
+    },
+    {
+      "text": "Model time index (30 seconds per step)",
+      "size_pt": 9.0,
+      "bounds_px": [
+        521.125,
+        39.111,
+        251.5,
+        13.0
+      ]
+    },
+    {
+      "text": "t6",
+      "size_pt": 8.0,
+      "bounds_px": [
+        208.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t7",
+      "size_pt": 8.0,
+      "bounds_px": [
+        641.062,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "t8",
+      "size_pt": 8.0,
+      "bounds_px": [
+        1073.562,
+        57.667,
+        11.625,
+        10.0
+      ]
+    },
+    {
+      "text": "A−  37217 entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        4.667,
+        279.039,
+        93.25,
+        10.0
+      ]
+    },
+    {
+      "text": "A+  37217 exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.542,
+        217.557,
+        84.375,
+        10.0
+      ]
+    },
+    {
+      "text": "B−  37218 entry",
+      "size_pt": 8.0,
+      "bounds_px": [
+        4.542,
+        156.075,
+        93.375,
+        10.0
+      ]
+    },
+    {
+      "text": "B+  37218 exit",
+      "size_pt": 8.0,
+      "bounds_px": [
+        13.417,
+        94.593,
+        84.5,
+        10.0
+      ]
+    },
+    {
+      "text": "c  Exact saved movement and zero-time turn arcs",
+      "size_pt": 11.0,
+      "bounds_px": [
+        106.25,
+        321.114,
+        383.5,
+        14.0
+      ]
+    },
+    {
+      "text": "URBANA–CHAMPAIGN  /  T4 / SAVED LOCAL EXCERPT",
+      "size_pt": 8.7,
+      "bounds_px": [
+        81.25,
+        657.789,
+        373.75,
+        13.0
+      ]
+    },
+    {
+      "text": "Local construction of the time-expanded graph",
+      "size_pt": 15.0,
+      "bounds_px": [
+        81.25,
+        630.844,
+        551.375,
+        20.0
+      ]
+    }
+  ],
+  "solver_calls": 0,
+  "matcher_calls": 0,
+  "status": "PASS",
+  "source_bytes_preserved": true,
+  "visual_qa": "PASS: individually opened PNG; corrected layer placement and labels; no text overlap or clipping",
+  "text_overlap_candidates": []
+}

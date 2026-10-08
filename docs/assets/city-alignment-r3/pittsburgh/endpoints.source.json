@@ -1,0 +1,41 @@
+{
+  "id": "R3-PITTSBURGH-ENDPOINTS",
+  "city": "pittsburgh",
+  "title": "Physical-road flow and v/c endpoint maps",
+  "caption": "Same saved static solution, 08:00–09:00 HBW; 4971 of 17534 physical links positive, maximum v/c 0.924094112. Flow colour uses PowerNorm(0.5); v/c colour is linear. Line width follows square-root flow. Virtual turns and access arcs are excluded. Reciprocal arcs may overlap geographically. Soft-capacity BPR, not observed congestion.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "physical-link flow",
+      "unit": "PCE / declared hour",
+      "encoding": "PowerNorm(0.5) colour, square-root width",
+      "max": 632.7671355246952
+    },
+    {
+      "panel": "b",
+      "metric": "volume/capacity",
+      "unit": "dimensionless",
+      "max": 0.9240941121120952
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\mcl_mainline_continuation_r1\\candidate_repo\\docs\\assets\\six-city-r3-1\\pittsburgh\\plot_data\\FS_A01\\physical_flow.csv",
+      "sha256": "cefd1061bc91500ba9fc03e1d176e26b57a426e41e1d6cadd977ba6a4f491dd9"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "endpoints"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "eae57b97440280d9f2de5ac1bfc624a879176e2697a915a1374323d5927759e8",
+    "png": "78d8ab6b71d8910e61f8ee813b1a8d097dbbfd31742de66073975e1accbe007a",
+    "pdf": "e17917460420dabbe868e8b2b0bbc8d00b07d07e2379d2bb8c7df135ea963b08"
+  },
+  "width": 1981,
+  "height": 1047,
+  "src": "assets/city-alignment-r3/pittsburgh/endpoints.svg"
+}

@@ -1,0 +1,37 @@
+{
+  "figure_id": "FS_A05",
+  "city": "urbana-champaign",
+  "title": "Physical volume / capacity map",
+  "caption": "Actual saved assignment backprojected only to physical traversal segments; model zone access and turn arcs excluded. Single-pass engineering scenario; no local empirical calibration.",
+  "unit": "dimensionless v/c",
+  "snapshot_version": "mcl_s0_to_v_presentation_inputs_r3_v1@2026-10-05T03:57:54.309662+00:00",
+  "inputs": [
+    {
+      "snapshot_path": "figure_sources/urbana_champaign/original/FS_A05.svg",
+      "sha256": "3007e8279c83a87fa58dfc6d393ced3fd523d3e6852c3dd5643107aff3e66b23"
+    },
+    {
+      "logical_source": "links.csv",
+      "sha256": "e0e9e2ba12c76751f2a00ec8a863a1074f5eaf6ff0c2aa0dc1776e2812663b3a"
+    }
+  ],
+  "source_run_receipt_sha256": "0ef7800bd618539b174bbed0ac620461851d24af9881cba0846d1ccc16224654",
+  "source_metadata_sha256": null,
+  "png_sha256": "e43b56c72832c7f9d6c02199f938ec1f61372c9f10f7cc3590864f0ebab09e4f",
+  "svg_sha256": "c651961399f56265dd0ad38515ba90fe44dd6688165b56950de3b14948b93259",
+  "transformation": [
+    "Reuse existing figure geometry and plotted content; bind portable metadata and visible caption.",
+    "Canonical SVG presentation-only transform: append an explicit DejaVu Serif, Georgia, Times New Roman, serif fallback rule for text and tspan with !important; no font binaries, geometry, numeric labels, PNG pixels or source SVG bytes changed."
+  ],
+  "plot_command": "python bind_canonical_assets.py (bind existing figures and explicit SVG font fallback; no numerical solve)",
+  "page_anchor": "figure-fs-a05",
+  "public_action": "INCLUDE_WITH_NOTICE",
+  "source_record_sanitization": "Original evidence retained in private snapshot; derived record contains logical IDs and SHA-256 only.",
+  "attribution": "\u00a9 OpenStreetMap contributors, ODbL 1.0; source-specific Census/LODES/agency attribution in city article.",
+  "numerical_source_changed": false,
+  "font_binary_embedded": false,
+  "input_svg_sha256": "3007e8279c83a87fa58dfc6d393ced3fd523d3e6852c3dd5643107aff3e66b23",
+  "input_png_sha256": "e43b56c72832c7f9d6c02199f938ec1f61372c9f10f7cc3590864f0ebab09e4f",
+  "svg_font_fallback_rule": "<style id=\"mcl-font-fallback\" type=\"text/css\">text, tspan { font-family: \"DejaVu Serif\", Georgia, \"Times New Roman\", serif !important; }</style>",
+  "reused_bytes": false
+}

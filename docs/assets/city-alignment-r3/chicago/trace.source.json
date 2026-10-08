@@ -1,0 +1,68 @@
+{
+  "id": "R3-CHICAGO-TRACE",
+  "city": "chicago",
+  "title": "Frank–Wolfe saved objective and gap",
+  "caption": "4 saved record(s), 3 updates; final objective 5601.46245807 PCE-min, gap 2.09891131527e-05 against 0.0001. Original iteration samples and objective retained.",
+  "panels": [
+    {
+      "panel": "a",
+      "metric": "Beckmann objective",
+      "unit": "PCE-min",
+      "values": [
+        5604.649794989295,
+        5601.517154205409,
+        5601.466927235301,
+        5601.462458069035
+      ],
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ]
+    },
+    {
+      "panel": "b",
+      "metric": "relative gap",
+      "unit": "dimensionless",
+      "values": [
+        0.0065316576428806,
+        0.000212092996143,
+        0.0001664210465667,
+        2.0989113152700773e-05
+      ],
+      "threshold": 0.0001,
+      "iteration": [
+        0.0,
+        1.0,
+        2.0,
+        3.0
+      ],
+      "axis": "log"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\runs\\chicago_core_hbw_am_v1\\assignment\\fw_trace.csv",
+      "sha256": "5c53778b01cb320c8b5e4c7e55f1f7e3509760947d760baa41d037695007060a"
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\four_stage\\runs\\chicago_core_hbw_am_v1\\assignment\\assignment_summary.json",
+      "sha256": "a85cdddae154e5c8c36738b87329fd0d716c456563110f1235f56a34e6ba471e"
+    }
+  ],
+  "scientific_solver_rerun": false,
+  "renderer": {
+    "script": "render_four.py",
+    "function": "trace"
+  },
+  "style": "Boston/Hong Kong compact C; DejaVu Serif; white; navy/teal/blue",
+  "exports": {
+    "svg": "cf0711f917787125468f780efc64cabab3b440a403ff4dd15cfba2b8082f7112",
+    "png": "cff9f18f8a646290ff5fcd09c9374ba7f18a01f9eb35f72a0c3502788807ad80",
+    "pdf": "99c31fdeb25e3357530aa68eab9c077e66a6fee7d9e15c507961e619ab14dc17"
+  },
+  "width": 1824,
+  "height": 873,
+  "src": "assets/city-alignment-r3/chicago/trace.svg"
+}

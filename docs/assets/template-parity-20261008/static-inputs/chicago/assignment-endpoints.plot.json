@@ -1,0 +1,483 @@
+{
+  "city": "chicago",
+  "scope": "S20",
+  "n_od": 20,
+  "total_pce": 1754.9482512397267,
+  "period_hours": 1,
+  "period": "generic_weekday_08_09_America_Chicago_one_hour",
+  "unit": "PCE/h",
+  "instance_signature": "626bf2dc8bfc27d9b82d3f48b1a8bbbcea1f977d81aad662139672f313dac614",
+  "demand_sha256": "200755d44c9566cf7422719d0bbb0d8847c9e33b4af52c17e3ef63d134c33964",
+  "source_zone_ids": [
+    "8",
+    "24",
+    "28",
+    "32",
+    "33"
+  ],
+  "origin_zone_pce_h": {
+    "8": 266.65776535641385,
+    "24": 188.38588267804005,
+    "28": 823.333829966168,
+    "32": 429.3463988653219,
+    "33": 47.22437437378278
+  },
+  "destination_zone_pce_h": {
+    "8": 319.15295514595647,
+    "24": 78.99334357704828,
+    "28": 653.8017846982686,
+    "32": 688.9055126502259,
+    "33": 14.094655168227234
+  },
+  "origin_node_pce_h": {
+    "osm:9913425856": 429.3463988653219,
+    "osm:261881717": 823.333829966168,
+    "osm:5844620237": 266.65776535641385,
+    "osm:9708251508": 188.38588267804005,
+    "osm:261207373": 47.22437437378278
+  },
+  "destination_node_pce_h": {
+    "osm:261207373": 14.094655168227234,
+    "osm:9913425856": 688.9055126502259,
+    "osm:261881717": 653.8017846982686,
+    "osm:9708251508": 78.99334357704828,
+    "osm:5844620237": 319.15295514595647
+  },
+  "zone_to_access_node": {
+    "8": "osm:5844620237",
+    "24": "osm:9708251508",
+    "28": "osm:261881717",
+    "32": "osm:9913425856",
+    "33": "osm:261207373"
+  },
+  "access_node_lonlat": {
+    "osm:5844620237": [
+      -87.632342,
+      41.8896081
+    ],
+    "osm:9708251508": [
+      -87.6551704,
+      41.8906776
+    ],
+    "osm:261881717": [
+      -87.6539327,
+      41.8765738
+    ],
+    "osm:9913425856": [
+      -87.6309104,
+      41.8781583
+    ],
+    "osm:261207373": [
+      -87.6294331,
+      41.8657004
+    ]
+  },
+  "access_node_local_km": {
+    "osm:5844620237": [
+      1.2668310105146374,
+      1.2239251537928357
+    ],
+    "osm:9708251508": [
+      -0.6261334397394094,
+      1.3568775627166032
+    ],
+    "osm:261881717": [
+      -0.5353863904669998,
+      -0.20981389329954983
+    ],
+    "osm:9913425856": [
+      1.3762522938750916,
+      -0.04818998732138425
+    ],
+    "osm:261207373": [
+      1.4886901155064116,
+      -1.4322546879192815
+    ]
+  },
+  "od_rows": [
+    {
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:261207373",
+      "volume": "2.3949865879641994"
+    },
+    {
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:9913425856",
+      "volume": "531.9807316313291"
+    },
+    {
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:261881717",
+      "volume": "187.46058445968495"
+    },
+    {
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:9913425856",
+      "volume": "76.55915186858584"
+    },
+    {
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:261881717",
+      "volume": "29.31611110088546"
+    },
+    {
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:261207373",
+      "volume": "0.9125503943155583"
+    },
+    {
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:9708251508",
+      "volume": "24.355318963674186"
+    },
+    {
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:9913425856",
+      "volume": "10.737667451244446"
+    },
+    {
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:9708251508",
+      "volume": "1.3945235429026879"
+    },
+    {
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:5844620237",
+      "volume": "55.90405102551843"
+    },
+    {
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:261881717",
+      "volume": "90.33304684953319"
+    },
+    {
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:5844620237",
+      "volume": "20.581133565605466"
+    },
+    {
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:261881717",
+      "volume": "346.69204228816506"
+    },
+    {
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:261207373",
+      "volume": "1.467823038006326"
+    },
+    {
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:261207373",
+      "volume": "9.31929514794115"
+    },
+    {
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:9708251508",
+      "volume": "45.142104910815284"
+    },
+    {
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:9708251508",
+      "volume": "8.101396159656117"
+    },
+    {
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:5844620237",
+      "volume": "5.776072278750188"
+    },
+    {
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:9913425856",
+      "volume": "69.62796169906645"
+    },
+    {
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:5844620237",
+      "volume": "236.89169827608237"
+    }
+  ],
+  "source_to_node_ledger": [
+    {
+      "row": "0",
+      "source_o": "32",
+      "source_d": "33",
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:261207373",
+      "input_volume": "2.3949865879641994",
+      "effective_pce": "2.3949865879641994",
+      "status": "loaded"
+    },
+    {
+      "row": "1",
+      "source_o": "28",
+      "source_d": "32",
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:9913425856",
+      "input_volume": "531.9807316313291",
+      "effective_pce": "531.9807316313291",
+      "status": "loaded"
+    },
+    {
+      "row": "2",
+      "source_o": "8",
+      "source_d": "28",
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:261881717",
+      "input_volume": "187.46058445968495",
+      "effective_pce": "187.46058445968495",
+      "status": "loaded"
+    },
+    {
+      "row": "3",
+      "source_o": "24",
+      "source_d": "32",
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:9913425856",
+      "input_volume": "76.55915186858584",
+      "effective_pce": "76.55915186858584",
+      "status": "loaded"
+    },
+    {
+      "row": "4",
+      "source_o": "33",
+      "source_d": "28",
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:261881717",
+      "input_volume": "29.31611110088546",
+      "effective_pce": "29.31611110088546",
+      "status": "loaded"
+    },
+    {
+      "row": "5",
+      "source_o": "24",
+      "source_d": "33",
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:261207373",
+      "input_volume": "0.9125503943155583",
+      "effective_pce": "0.9125503943155583",
+      "status": "loaded"
+    },
+    {
+      "row": "6",
+      "source_o": "32",
+      "source_d": "24",
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:9708251508",
+      "input_volume": "24.355318963674186",
+      "effective_pce": "24.355318963674186",
+      "status": "loaded"
+    },
+    {
+      "row": "7",
+      "source_o": "33",
+      "source_d": "32",
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:9913425856",
+      "input_volume": "10.737667451244446",
+      "effective_pce": "10.737667451244446",
+      "status": "loaded"
+    },
+    {
+      "row": "8",
+      "source_o": "33",
+      "source_d": "24",
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:9708251508",
+      "input_volume": "1.3945235429026879",
+      "effective_pce": "1.3945235429026879",
+      "status": "loaded"
+    },
+    {
+      "row": "9",
+      "source_o": "32",
+      "source_d": "8",
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:5844620237",
+      "input_volume": "55.90405102551843",
+      "effective_pce": "55.90405102551843",
+      "status": "loaded"
+    },
+    {
+      "row": "10",
+      "source_o": "24",
+      "source_d": "28",
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:261881717",
+      "input_volume": "90.33304684953319",
+      "effective_pce": "90.33304684953319",
+      "status": "loaded"
+    },
+    {
+      "row": "11",
+      "source_o": "24",
+      "source_d": "8",
+      "o_node_id": "osm:9708251508",
+      "d_node_id": "osm:5844620237",
+      "input_volume": "20.581133565605466",
+      "effective_pce": "20.581133565605466",
+      "status": "loaded"
+    },
+    {
+      "row": "12",
+      "source_o": "32",
+      "source_d": "28",
+      "o_node_id": "osm:9913425856",
+      "d_node_id": "osm:261881717",
+      "input_volume": "346.69204228816506",
+      "effective_pce": "346.69204228816506",
+      "status": "loaded"
+    },
+    {
+      "row": "13",
+      "source_o": "8",
+      "source_d": "33",
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:261207373",
+      "input_volume": "1.467823038006326",
+      "effective_pce": "1.467823038006326",
+      "status": "loaded"
+    },
+    {
+      "row": "14",
+      "source_o": "28",
+      "source_d": "33",
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:261207373",
+      "input_volume": "9.31929514794115",
+      "effective_pce": "9.31929514794115",
+      "status": "loaded"
+    },
+    {
+      "row": "15",
+      "source_o": "28",
+      "source_d": "24",
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:9708251508",
+      "input_volume": "45.142104910815284",
+      "effective_pce": "45.142104910815284",
+      "status": "loaded"
+    },
+    {
+      "row": "16",
+      "source_o": "8",
+      "source_d": "24",
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:9708251508",
+      "input_volume": "8.101396159656117",
+      "effective_pce": "8.101396159656117",
+      "status": "loaded"
+    },
+    {
+      "row": "17",
+      "source_o": "33",
+      "source_d": "8",
+      "o_node_id": "osm:261207373",
+      "d_node_id": "osm:5844620237",
+      "input_volume": "5.776072278750188",
+      "effective_pce": "5.776072278750188",
+      "status": "loaded"
+    },
+    {
+      "row": "18",
+      "source_o": "8",
+      "source_d": "32",
+      "o_node_id": "osm:5844620237",
+      "d_node_id": "osm:9913425856",
+      "input_volume": "69.62796169906645",
+      "effective_pce": "69.62796169906645",
+      "status": "loaded"
+    },
+    {
+      "row": "19",
+      "source_o": "28",
+      "source_d": "8",
+      "o_node_id": "osm:261881717",
+      "d_node_id": "osm:5844620237",
+      "input_volume": "236.89169827608237",
+      "effective_pce": "236.89169827608237",
+      "status": "loaded"
+    }
+  ],
+  "crs": "EPSG:26916",
+  "local_origin_m": [
+    446273.57539767993,
+    4636489.023437517
+  ],
+  "display_extent_km": [
+    -2.0862171108654453,
+    2.0853754711196393,
+    -1.8304335058629382,
+    1.8309286017771678
+  ],
+  "physical_road_count": 27129,
+  "zone_count": 5,
+  "sources": [
+    {
+      "source_id": "chicago/demand.csv",
+      "sha256": "200755d44c9566cf7422719d0bbb0d8847c9e33b4af52c17e3ef63d134c33964",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/demand_ledger.csv",
+      "sha256": "1db3e8b0e5cc79f260efd40cb2090fb084081389afd31b055b527c9b4bf60726",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/manifest.json",
+      "sha256": "39d9504dc1e1cf87a67d3fabd0b3e4549766f86ae88442804f4cf78a839cd3e2",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/link.csv",
+      "sha256": "d08c44c8e7483fafa4dfbc628a2d81ee20b2060d2ad3d59edd8bf050cee43985",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/network.csv",
+      "sha256": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/access.csv",
+      "sha256": "0968feac7bbc456ecb19e6d1c7ff42b0a19eb678546dfbea47dfb940a32d167f",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/zones.csv",
+      "sha256": "cd0b2bf70719e39e17e8f6bdce1eee265c7593f143bba4181dd44fa44dbdd77e",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/network_source_crosswalk.csv",
+      "sha256": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615",
+      "private_source": true
+    },
+    {
+      "source_id": "chicago/r2_model_zone_geometry.csv",
+      "sha256": "b4e5a19b4b4aa7a587678fa2b3a93a0449f639f5c00230c9154a2c75890bb6ff",
+      "private_source": true
+    }
+  ],
+  "private_source_manifest": {
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\S_instance\\demand.csv": "200755d44c9566cf7422719d0bbb0d8847c9e33b4af52c17e3ef63d134c33964",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\S_instance\\demand_ledger.csv": "1db3e8b0e5cc79f260efd40cb2090fb084081389afd31b055b527c9b4bf60726",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\S_instance\\manifest.json": "39d9504dc1e1cf87a67d3fabd0b3e4549766f86ae88442804f4cf78a839cd3e2",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\runs\\S_instance\\link.csv": "d08c44c8e7483fafa4dfbc628a2d81ee20b2060d2ad3d59edd8bf050cee43985",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\input\\frozen_capsule\\inputs\\network.csv": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\input\\frozen_capsule\\inputs\\access.csv": "0968feac7bbc456ecb19e6d1c7ff42b0a19eb678546dfbea47dfb940a32d167f",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\input\\frozen_capsule\\inputs\\zones.csv": "cd0b2bf70719e39e17e8f6bdce1eee265c7593f143bba4181dd44fa44dbdd77e",
+    "E:\\mobility_computation_lab_v2\\work\\chicago_algorithm_transfer_r1\\input\\frozen_capsule\\inputs\\network_source_crosswalk.csv": "8f7396988a0f4b251ca0286ca4e07b2ed983f7317c2b13beec6f7129b07d3615",
+    "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\chicago\\evidence_r2\\bridge_inputs\\r2_model_zone_geometry.csv": "b4e5a19b4b4aa7a587678fa2b3a93a0449f639f5c00230c9154a2c75890bb6ff"
+  },
+  "checks": {
+    "demand_sha_matches_instance_manifest": true,
+    "link_sha_matches_instance_manifest": true,
+    "ledger_node_OD_equals_actual_prepared_demand": true,
+    "zone_access_equals_actual_prepared_nodes": true,
+    "all_access_nodes_resolved_to_actual_road_endpoint": true,
+    "all_road_node_coordinates_consistent": true,
+    "all_source_hashes_unchanged": true,
+    "origin_and_destination_sum_to_exact_selected_demand": true,
+    "zero_solver_calls": true
+  }
+}

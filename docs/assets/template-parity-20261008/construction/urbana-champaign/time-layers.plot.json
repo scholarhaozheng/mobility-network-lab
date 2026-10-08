@@ -1,0 +1,228 @@
+{
+  "city": "urbana-champaign",
+  "edges": [
+    {
+      "arc_id": "P:1004:B@t5",
+      "from_node_time_id": "M:1004@t5",
+      "to_node_time_id": "O:1004@t6",
+      "from_time": "5",
+      "to_time": "6",
+      "cost": "0.024420000000000004",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:1004:B",
+      "arc_kind": "physical",
+      "gmns_link_id": "1004",
+      "physical_fraction": "0.5",
+      "duration_steps": "1"
+    },
+    {
+      "arc_id": "T:1004:37217@t6",
+      "from_node_time_id": "O:1004@t6",
+      "to_node_time_id": "I:37217@t6",
+      "from_time": "6",
+      "to_time": "6",
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "T:1004:37217",
+      "arc_kind": "turn",
+      "gmns_link_id": "",
+      "physical_fraction": "",
+      "duration_steps": "0"
+    },
+    {
+      "arc_id": "P:37217@t6",
+      "from_node_time_id": "I:37217@t6",
+      "to_node_time_id": "O:37217@t7",
+      "from_time": "6",
+      "to_time": "7",
+      "cost": "0.029415",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:37217",
+      "arc_kind": "physical",
+      "gmns_link_id": "37217",
+      "physical_fraction": "1.0",
+      "duration_steps": "1"
+    },
+    {
+      "arc_id": "T:37217:37218@t7",
+      "from_node_time_id": "O:37217@t7",
+      "to_node_time_id": "I:37218@t7",
+      "from_time": "7",
+      "to_time": "7",
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "T:37217:37218",
+      "arc_kind": "turn",
+      "gmns_link_id": "",
+      "physical_fraction": "",
+      "duration_steps": "0"
+    },
+    {
+      "arc_id": "P:37218@t7",
+      "from_node_time_id": "I:37218@t7",
+      "to_node_time_id": "O:37218@t8",
+      "from_time": "7",
+      "to_time": "8",
+      "cost": "0.0441",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:37218",
+      "arc_kind": "physical",
+      "gmns_link_id": "37218",
+      "physical_fraction": "1.0",
+      "duration_steps": "1"
+    },
+    {
+      "arc_id": "T:37218:37219@t8",
+      "from_node_time_id": "O:37218@t8",
+      "to_node_time_id": "I:37219@t8",
+      "from_time": "8",
+      "to_time": "8",
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "T:37218:37219",
+      "arc_kind": "turn",
+      "gmns_link_id": "",
+      "physical_fraction": "",
+      "duration_steps": "0"
+    },
+    {
+      "arc_id": "P:37219@t8",
+      "from_node_time_id": "I:37219@t8",
+      "to_node_time_id": "O:37219@t9",
+      "from_time": "8",
+      "to_time": "9",
+      "cost": "0.13549499999999998",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:37219",
+      "arc_kind": "physical",
+      "gmns_link_id": "37219",
+      "physical_fraction": "1.0",
+      "duration_steps": "1"
+    }
+  ],
+  "selected": [
+    {
+      "arc_id": "P:37217@t6",
+      "from_node_time_id": "I:37217@t6",
+      "to_node_time_id": "O:37217@t7",
+      "from_time": "6",
+      "to_time": "7",
+      "cost": "0.029415",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:37217",
+      "arc_kind": "physical",
+      "gmns_link_id": "37217",
+      "physical_fraction": "1.0",
+      "duration_steps": "1"
+    },
+    {
+      "arc_id": "T:37217:37218@t7",
+      "from_node_time_id": "O:37217@t7",
+      "to_node_time_id": "I:37218@t7",
+      "from_time": "7",
+      "to_time": "7",
+      "cost": "0.001",
+      "capacity": "1000000000.0",
+      "arc_type": "turn_movement",
+      "solver_link_id": "T:37217:37218",
+      "arc_kind": "turn",
+      "gmns_link_id": "",
+      "physical_fraction": "",
+      "duration_steps": "0"
+    },
+    {
+      "arc_id": "P:37218@t7",
+      "from_node_time_id": "I:37218@t7",
+      "to_node_time_id": "O:37218@t8",
+      "from_time": "7",
+      "to_time": "8",
+      "cost": "0.0441",
+      "capacity": "5.833333333333333",
+      "arc_type": "physical_road",
+      "solver_link_id": "P:37218",
+      "arc_kind": "physical",
+      "gmns_link_id": "37218",
+      "physical_fraction": "1.0",
+      "duration_steps": "1"
+    }
+  ],
+  "dt": 30,
+  "scope": "T4 / SAVED LOCAL EXCERPT",
+  "rule": false,
+  "identity": "C02_T4_30s_first_5min",
+  "origin": "C02_OD_01_17019001400_17019005601",
+  "public_or_private": "public-derived",
+  "physical_labels": [
+    "37217",
+    "37218"
+  ],
+  "physical_nodes": [
+    "upstream",
+    "intersection",
+    "downstream"
+  ],
+  "limits": [
+    "The selected first fragment uses two full physical roads; the earlier split-road midpoint segment remains context only.",
+    "Only the seven already public arcs are drawn; no additional graph arcs or alternative routes are asserted.",
+    "Physical node labels are schematic roles, not invented node identifiers.",
+    "A construction example is not an observed trajectory or capacity-active proof."
+  ],
+  "states": [
+    "I:37217",
+    "O:37217",
+    "I:37218",
+    "O:37218"
+  ],
+  "aliases": {
+    "I:37217": "A−",
+    "O:37217": "A+",
+    "I:37218": "B−",
+    "O:37218": "B+"
+  },
+  "selected_arc_ids": [
+    "P:37217@t6",
+    "T:37217:37218@t7",
+    "P:37218@t7"
+  ],
+  "displayed_time_indices": [
+    5,
+    6,
+    7,
+    8,
+    9
+  ],
+  "routing_mapping": [
+    {
+      "alias": "A−",
+      "routing_state": "I:37217",
+      "road": "37217",
+      "role": "entry"
+    },
+    {
+      "alias": "A+",
+      "routing_state": "O:37217",
+      "road": "37217",
+      "role": "exit"
+    },
+    {
+      "alias": "B−",
+      "routing_state": "I:37218",
+      "road": "37218",
+      "role": "entry"
+    },
+    {
+      "alias": "B+",
+      "routing_state": "O:37218",
+      "road": "37218",
+      "role": "exit"
+    }
+  ]
+}

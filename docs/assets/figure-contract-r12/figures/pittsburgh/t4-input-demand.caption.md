@@ -1,0 +1,1 @@
+The four input-selected demands total 0.04502754845355 PCE. These are the bounded time-network departure pulses after the saved hourly-to-time factor 1/12, not hourly observed counts. Input commodities are not optimizer iterations. Full source/destination identities are retained in the public plot data.
