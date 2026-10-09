@@ -19,6 +19,14 @@ from check_computational_archive import validate as validate_computational_archi
 def main() -> int:
     errors: list[str] = []
     checks = 0
+    # Figure previews and README must stay tied to the released source figures.
+    for script, arguments in [('optimize_site_images.py', ['--check']),
+                              ('build_readme_from_homepage.py', ['--check'])]:
+        result = subprocess.run([sys.executable, '-B', str(ROOT/'tools'/script), *arguments],
+                                cwd=ROOT, capture_output=True, text=True, check=False)
+        checks += 1
+        if result.returncode:
+            errors.append('Performance/README verification failed: ' + script + ' ' + result.stdout + result.stderr)
     archive_result = validate_computational_archive(ROOT)
     allowed_archives = set(archive_result["allowed_archives"])
 

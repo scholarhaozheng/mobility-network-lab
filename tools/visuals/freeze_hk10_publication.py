@@ -36,7 +36,7 @@ def build_record(root: Path) -> dict:
         "changed_pages": sorted(path for path in baseline if baseline[path] != current[path]),
         "unchanged_scientific_paths_sha256": science,
         "protected_scientific_sections": {
-            path: {"selector": selector, "normalization": "html.parser; CRLF-to-LF; remove empty compatibility anchors", "baseline_sha256": expected, "current_sha256": expected}
+            path: {"selector": selector, "normalization": "html.parser; CRLF-to-LF; remove empty compatibility anchors; restore original image markup from performance previews", "baseline_sha256": expected, "current_sha256": expected}
             for path, (selector, expected) in PROTECTED_SECTIONS.items()},
     }
 

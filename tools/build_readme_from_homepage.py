@@ -24,6 +24,11 @@ def url(value, image=False):
 def esc(value):return html.escape(str(value),quote=True)
 def anchor(value):return '<a id="'+esc(value)+'"></a>\n\n' if value else ''
 
+def preview_src(image):
+    picture=image.find_parent('picture',class_='perf-preview')
+    source=picture.find('source',recursive=False) if picture else None
+    return source['srcset'] if source else image['src']
+
 def inline(node):
     if isinstance(node,NavigableString):return str(node)
     text=''.join(inline(c) for c in node.children)
@@ -33,11 +38,13 @@ def inline(node):
     if node.name in ('em','i'):return '*'+text+'*'
     if node.name=='code':return chr(96)+node.get_text()+chr(96)
     if node.name=='br':return '  \n'
-    if node.name=='img':return '!['+node.get('alt','')+']('+url(node['src'],True)+')'
+    if node.name=='img':return '!['+node.get('alt','')+']('+url(preview_src(node),True)+')'
     return text
 
 def clean(node):
     node=deepcopy(node)
+    for picture in list(node.select('picture.perf-preview, picture.perf-original')):
+        image=picture.find('img');image['src']=preview_src(image);picture.replace_with(image)
     for t in [node]+list(node.find_all(True)):
         if t.attrs is None:continue
         if t.name in ('script','button','colgroup','col'):
@@ -71,7 +78,16 @@ def image_cell(card,columns):
         series=card.select_one('.r11-figure-series, .r12-figure-series')
         if series:
             panels=series.select('.r11-panel, .r12-panel');width=str(round(100/max(1,len(panels))))+'%'
-            return '<table width="100%"><tr>'+''.join('<td valign="top" width="'+width+'">'+str(clean(p))+'</td>' for p in panels)+'</tr></table>'
+            maxw={1:850,2:405,3:265,4:193}[columns]//max(1,len(panels))
+            cleaned=[]
+            for panel in panels:
+                part=clean(panel)
+                for image in part.find_all('img'):
+                    w=float(image.get('width',1000));h=float(image.get('height',600))
+                    scale=min(maxw/w,(360 if columns==1 else 280)/h,1)
+                    image['width']=str(max(1,round(w*scale)));image['height']=str(max(1,round(h*scale)))
+                cleaned.append(part)
+            return '<table width="100%"><tr>'+''.join('<td valign="top" width="'+width+'">'+str(part)+'</td>' for part in cleaned)+'</tr></table>'
         return ''
     images=card.select('.atlas-image img')
     # Give every figure its original aspect ratio. Table rows align their tops
@@ -82,7 +98,7 @@ def image_cell(card,columns):
     for im in images:
         w=float(im.get('width',1000));h=float(im.get('height',600))
         scale=min(maxw/w,(360 if columns==1 else 280)/h,1)
-        link=im.find_parent('a');image='<img src="'+esc(url(im['src'],True))+'" alt="'+esc(im.get('alt',''))+'" width="'+str(max(1,round(w*scale)))+'" height="'+str(max(1,round(h*scale)))+'"/>'
+        link=im.find_parent('a');image='<img src="'+esc(url(preview_src(im),True))+'" alt="'+esc(im.get('alt',''))+'" width="'+str(max(1,round(w*scale)))+'" height="'+str(max(1,round(h*scale)))+'"/>'
         if link:image='<a href="'+esc(url(link['href']))+'">'+image+'</a>'
         result.append(image)
     if len(result)==1:return result[0]
@@ -196,11 +212,11 @@ class Exporter:
         if 'scope-flow' in cls:return self.framework(node)
         if node.name in ('script','button') or node.get('id') in ('atlas-view-controls','atlas-compact-panel'):return ''
         if 'atlas-stage-prose' in cls or 'atlas-evidence-note' in cls:return str(clean(node))+'\n\n'
-        if 'case-atlas' in cls:return ''.join(self.render(c) for c in node.children)
-        if 'atlas-gallery' in cls:return self.gallery(node)
+        if 'case-atlas' in cls:return anchor(node.get('id'))+''.join(self.render(c) for c in node.children)
+        if 'atlas-gallery' in cls:return anchor(node.get('id'))+self.gallery(node)
         if 'atlas-stage' in cls and node.get('data-stage')=='sioux-falls-finite':return self.sioux_finite(node)
         if 'project-structure-map' in cls:
-            im=node.find('img');out='[!['+im.get('alt','')+']('+url(im['src'],True)+')]('+SITE+'assets/atlas/project-map.svg)\n\n'
+            im=node.find('img');out='[!['+im.get('alt','')+']('+url(preview_src(im),True)+')]('+SITE+'assets/atlas/project-map.svg)\n\n'
             out+='Open the [clickable project map]('+SITE+'assets/atlas/project-map.svg), or use the same module links below.\n\n<table width="100%">\n<tr><th colspan="4" align="left">Project modules and reading destinations</th></tr>\n'
             links=node.select('a.project-map-link')
             for i in range(0,len(links),4):
@@ -226,7 +242,7 @@ class Exporter:
                 body=''.join(self.render(c) for c in node.children if c is not summary)
                 return '<details><summary>'+inline(summary)+'</summary>\n\n'+body+'</details>\n\n'
             return str(clean(node))+'\n\n'
-        return ''.join(self.render(c) for c in node.children)
+        return anchor(node.get('id'))+''.join(self.render(c) for c in node.children)
 
 def main():
     ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--check',action='store_true');a=ap.parse_args()

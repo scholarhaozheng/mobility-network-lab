@@ -49,5 +49,5 @@
     if (event.key === 'Escape') close();
   });
   window.addEventListener('resize', close);
-  window.addEventListener('scroll', close, true);
+  window.addEventListener('scroll', close, {capture:true,passive:true});
 })();

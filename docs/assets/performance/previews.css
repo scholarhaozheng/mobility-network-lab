@@ -1,0 +1,7 @@
+/* Preserve the original image flex/grid placement. */
+picture.perf-preview,picture.perf-original{display:contents}
+/* Declared aspect ratios reserve the same box before and after decoding. */
+picture.perf-preview>img,picture.perf-original>img{width:100%!important;height:auto}
+/* An opaque sticky header avoids full-width GPU blur during scrolling. */
+body>header{background:#fff;backdrop-filter:none;-webkit-backdrop-filter:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
