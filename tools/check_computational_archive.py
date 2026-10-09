@@ -10,7 +10,7 @@ import zipfile
 
 ARCHIVE = "docs/downloads/computational-checkout.zip"
 MANIFEST = "docs/downloads/computational-checkout.manifest.json"
-ALLOWED_SUFFIXES = {".cff", ".cjs", ".css", ".csv", ".geojson", ".html", ".js", ".json", ".lock", ".md", ".npz", ".png", ".py", ".sql", ".svg", ".txt", ".yaml", ".yml"}
+ALLOWED_SUFFIXES = {".cff", ".cjs", ".css", ".csv", ".geojson", ".html", ".jpg", ".jpeg", ".js", ".json", ".lock", ".md", ".npz", ".png", ".py", ".sql", ".svg", ".txt", ".yaml", ".yml", ".webp"}
 EXTENSIONLESS = {".gitattributes", "LICENSE", "algorithms/origin_based_algorithm_b/LICENSE"}
 FORBIDDEN_PARTS = {".git", ".venv", "__pycache__", "external_data", "private_data", "private_audit", "conversation_exports", "cache", "release", "paper", "manuscript", "results", "outputs"}
 

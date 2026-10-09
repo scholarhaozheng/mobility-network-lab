@@ -11,11 +11,14 @@ import hashlib
 import json
 from pathlib import Path
 import subprocess
+import sys
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from optimize_site_images import restore_preview_markup
 from bs4 import BeautifulSoup
 
 RECEIPT = "docs/assets/atlas/HK10_PUBLICATION_20261008.json"
 CURRENT_RECEIPT = "docs/assets/atlas/HK10_PUBLICATION_20261009.json"
-LOCAL_INSTRUCTION = {"date": "2026-10-09", "instruction_original": "已有研究成果一次完成核对、绘图、网页接入和公开成品准备", "scope": "Prepare local public-ready increment; no remote write authorization"}
+CURRENT_INSTRUCTION = {"date": "2026-10-09", "instruction_original": "推送吧", "scope": "Publish the reviewed original-quality performance and README update"}
 BASELINE = "f2e97d0ee760a0feac65d6b5731037caea7324f7"
 HISTORICAL = "docs/assets/three_city_r2/HK10_DISCLOSURE_APPROVAL_CURRENT.json"
 MIGRATION = "docs/assets/atlas/HK10_PRESENTATION_20261004.json"
@@ -47,7 +50,7 @@ def protected_hash(text: str, selector: str) -> str:
     nodes = BeautifulSoup(text.replace("\r\n", "\n"), "html.parser").select(selector)
     if len(nodes) != 1:
         raise ValueError(f"Expected one protected section: {selector}")
-    section = nodes[0]
+    section = restore_preview_markup(nodes[0])
     for anchor in section.select("a[id]"):
         if not anchor.get_text(strip=True) and not anchor.get("href") and not anchor.find(True):
             anchor.decompose()
@@ -87,11 +90,11 @@ def validate(root: Path) -> dict:
         check(record.get("schema") == "mcl_hk10_publication_continuation_v1", "Unknown HK10 continuation schema")
         check(record.get("source_baseline") == BASELINE, "HK10 continuation baseline changed")
         check(record.get("record_type") == "presentation-change-verification-not-scientific-approval", "HK10 continuation misrepresents its authority")
-        expected_instruction = LOCAL_INSTRUCTION if receipt_path == CURRENT_RECEIPT else {"date": "2026-10-08", "instruction_original": "推送吧", "scope": "Publish the reviewed current presentation"}
+        expected_instruction = CURRENT_INSTRUCTION if receipt_path == CURRENT_RECEIPT else {"date": "2026-10-08", "instruction_original": "推送吧", "scope": "Publish the reviewed current presentation"}
         check(record.get("publication_instruction") == expected_instruction, "Current presentation publication instruction differs")
         if receipt_path == CURRENT_RECEIPT:
             check(record.get("previous_presentation_receipt_sha256") == sha(root / RECEIPT), "Previous presentation record binding differs")
-            check(record.get("remote_write_authorized") is False, "Local increment incorrectly authorizes remote writes")
+            check(record.get("remote_write_authorized") is True, "Current publication lacks the maintainer remote-write authorization")
         for flag in ("historical_approval_rewritten", "scientific_solver_rerun", "new_hk10_scientific_payload_disclosure", "new_artifact_level_scientific_approval"):
             check(record.get(flag) is False, "HK10 continuation overstates authority: " + flag)
         check(record.get("approved_identity") == documents[HISTORICAL]["approved_identity"], "HK10 continuation changes approved identity")
@@ -103,7 +106,7 @@ def validate(root: Path) -> dict:
         check(record.get("changed_pages") == sorted(path for path in baseline_pages if current.get(path) != baseline_pages[path]), "HK10 continuation changed-page inventory differs")
         for path, expected in {**science, **current}.items():
             check((root / path).is_file() and sha(root / path) == expected, "HK10 continuation file missing or changed: " + path)
-        proofs = {path: {"selector": selector, "normalization": "html.parser; CRLF-to-LF; remove empty compatibility anchors", "baseline_sha256": expected, "current_sha256": expected}
+        proofs = {path: {"selector": selector, "normalization": "html.parser; CRLF-to-LF; remove empty compatibility anchors; restore original image markup from performance previews", "baseline_sha256": expected, "current_sha256": expected}
                   for path, (selector, expected) in PROTECTED_SECTIONS.items()}
         check(record.get("protected_scientific_sections") == proofs, "HK10 continuation protected-section proof differs")
         for path, (selector, expected) in PROTECTED_SECTIONS.items():

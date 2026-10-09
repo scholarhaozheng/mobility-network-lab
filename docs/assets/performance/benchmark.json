@@ -1,0 +1,5415 @@
+{
+  "schema": "mcl-original-quality-performance-v2",
+  "date": "2026-10-09",
+  "baselineCommit": "764e0862e4f9a8d473b7bbcc04545b47dd6b0178",
+  "candidate": "Original-quality performance update; measured in the local working tree before publication",
+  "conditions": {
+    "browser": "Chrome 154.0.8037.59 headless",
+    "viewport": [
+      1440,
+      900
+    ],
+    "deviceScaleFactor": 1,
+    "cpuThrottlingRate": 4,
+    "trialsPerVersion": 3,
+    "execution": "Sequential alternating baseline/candidate trials, fresh Chrome per trial",
+    "network": "Local HTTP without network throttling",
+    "scrollSequence": [
+      "boston",
+      "hong-kong",
+      "urbana-champaign",
+      "ithaca",
+      "chicago",
+      "pittsburgh"
+    ],
+    "measurementScope": "Initial navigation and the complete six-city sequence, including fixed waits; long-task sums are not initial page load times. Native lazy-loading decisions and resource counts can vary by timing.",
+    "limitations": "CPU simulation on this computer, not measurements of the affected computers; GPU and physical mouse latency are not measured. Headless animation frames are not a real display FPS measurement."
+  },
+  "originalQuality": {
+    "renderMode": "original",
+    "unchangedOriginalAssets": 282,
+    "allSourceSHA256Match": true,
+    "vectorSVGPreserved": true,
+    "imageResamplingOrTranscodingUsedForDisplay": false,
+    "allHomepageOriginalFigureBytes": 262218386,
+    "homepageFigureCount": 245
+  },
+  "summary": {
+    "baseline": {
+      "mainThreadSeconds": {
+        "mean": 89.440236,
+        "median": 90.366104,
+        "minimum": 86.108057,
+        "maximum": 91.846547
+      },
+      "longTaskSeconds": {
+        "mean": 71.329,
+        "median": 71.792,
+        "minimum": 69.756,
+        "maximum": 72.439
+      },
+      "longestTaskSeconds": {
+        "mean": 4.341333333333333,
+        "median": 4.334,
+        "minimum": 4.22,
+        "maximum": 4.47
+      },
+      "cumulativeLayoutShift": {
+        "mean": 6.314644394142769,
+        "median": 6.158938028309931,
+        "minimum": 5.580987032490797,
+        "maximum": 7.204008121627577
+      },
+      "initialLayoutShift": {
+        "mean": 0.45585930823808835,
+        "median": 0.45585930823808835,
+        "minimum": 0.45585930823808835,
+        "maximum": 0.45585930823808835
+      },
+      "longTaskCount": {
+        "mean": 144,
+        "median": 146,
+        "minimum": 138,
+        "maximum": 148
+      },
+      "resourceCount": {
+        "mean": 186.33333333333334,
+        "median": 186,
+        "minimum": 179,
+        "maximum": 194
+      },
+      "resourceBytes": {
+        "mean": 203568936.33333334,
+        "median": 201484793,
+        "minimum": 199601086,
+        "maximum": 209620930
+      }
+    },
+    "originalQuality": {
+      "mainThreadSeconds": {
+        "mean": 54.35600433333333,
+        "median": 50.18717,
+        "minimum": 47.115724,
+        "maximum": 65.765119
+      },
+      "longTaskSeconds": {
+        "mean": 37.51433333333333,
+        "median": 35.168,
+        "minimum": 32.113,
+        "maximum": 45.262
+      },
+      "longestTaskSeconds": {
+        "mean": 3.0616666666666665,
+        "median": 3.042,
+        "minimum": 2.827,
+        "maximum": 3.316
+      },
+      "cumulativeLayoutShift": {
+        "mean": 0.012031363114582439,
+        "median": 0.012031474038373947,
+        "minimum": 0.012028384018467612,
+        "maximum": 0.012034231286905755
+      },
+      "initialLayoutShift": {
+        "mean": 0,
+        "median": 0,
+        "minimum": 0,
+        "maximum": 0
+      },
+      "longTaskCount": {
+        "mean": 81,
+        "median": 80,
+        "minimum": 71,
+        "maximum": 92
+      },
+      "resourceCount": {
+        "mean": 134.33333333333334,
+        "median": 132,
+        "minimum": 128,
+        "maximum": 143
+      },
+      "resourceBytes": {
+        "mean": 125611549.33333333,
+        "median": 120263368,
+        "minimum": 116936867,
+        "maximum": 139634413
+      }
+    },
+    "meanReductionsPercent": {
+      "mainThreadSeconds": 39.22645247343339,
+      "longTaskSeconds": 47.40661815904704,
+      "cumulativeLayoutShift": 99.80946887324737
+    }
+  },
+  "runs": {
+    "baseline": [
+      {
+        "label": "before-original-quality-1",
+        "initial": {
+          "images": 8,
+          "bytes": 2006563,
+          "longTasks": 5,
+          "cls": 0.45585930823808835,
+          "height": 64208
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 5489,
+            "maxFrameMs": 6.200000000000728,
+            "slowFrames": 0
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 8424,
+            "maxFrameMs": 6.200000000000728,
+            "slowFrames": 0
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 10806,
+            "maxFrameMs": 157.59999999999854,
+            "slowFrames": 2
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 19957,
+            "maxFrameMs": 412.09999999999854,
+            "slowFrames": 3
+          },
+          {
+            "city": "chicago",
+            "elapsed": 20579,
+            "maxFrameMs": 327.20000000001164,
+            "slowFrames": 2
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 25561,
+            "maxFrameMs": 503.1000000000058,
+            "slowFrames": 2
+          }
+        ],
+        "metrics": {
+          "Nodes": 2600018,
+          "LayoutDuration": 1.479299,
+          "RecalcStyleDuration": 5.110042,
+          "TaskDuration": 90.366104,
+          "JSHeapUsedSize": 4321248
+        },
+        "longTasks": 148,
+        "longTaskMs": 71792,
+        "maxLongTaskMs": 4334,
+        "cls": 5.580987032490797,
+        "resources": [
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261008-hk-anchor-repair",
+            "bytes": 64317,
+            "type": "script"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1792,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "css"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f033.svg",
+            "bytes": 246393,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-mode-response.svg",
+            "bytes": 57915,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-source-margins.svg",
+            "bytes": 3392777,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-endpoints.svg",
+            "bytes": 884802,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-fw-scales.svg",
+            "bytes": 3283201,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f141.svg",
+            "bytes": 1092745,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-finite-static.svg",
+            "bytes": 892993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/construction/r07-boston-layered-construction.svg",
+            "bytes": 61516,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f072.svg",
+            "bytes": 84081,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-phase1.svg",
+            "bytes": 112277,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f079.svg",
+            "bytes": 46247,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-closure.svg",
+            "bytes": 69869,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f147.svg",
+            "bytes": 57969,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-prices.svg",
+            "bytes": 77952,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f177.svg",
+            "bytes": 807672,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f178.svg",
+            "bytes": 89621,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f031.svg",
+            "bytes": 39243,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-source-margins.svg",
+            "bytes": 2834491,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-endpoints.svg",
+            "bytes": 687000,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f052.svg",
+            "bytes": 474651,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f182.svg",
+            "bytes": 474037,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-finite-static.svg",
+            "bytes": 402016,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/construction/r07-hong-kong-layered-construction.svg",
+            "bytes": 67875,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f085.svg",
+            "bytes": 52239,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-cg-phase1.svg",
+            "bytes": 74936,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f092.svg",
+            "bytes": 79449,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f093.svg",
+            "bytes": 45804,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-bounds.svg",
+            "bytes": 54303,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-prices.svg",
+            "bytes": 64470,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-recovery.svg",
+            "bytes": 47869,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f097.svg",
+            "bytes": 110540,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f101.svg",
+            "bytes": 83298,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-admm-flows.svg",
+            "bytes": 343461,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+            "bytes": 74573,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+            "bytes": 166260,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+            "bytes": 10089737,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+            "bytes": 4672980,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+            "bytes": 117241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+            "bytes": 99246,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+            "bytes": 2795478,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+            "bytes": 2845781,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+            "bytes": 8260547,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/time-layers.svg",
+            "bytes": 79605,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/local-construction.svg",
+            "bytes": 78288,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase1.svg",
+            "bytes": 81994,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase2.svg",
+            "bytes": 63435,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-pricing.svg",
+            "bytes": 66119,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-bounds.svg",
+            "bytes": 74498,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-prices.svg",
+            "bytes": 78350,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-recovery.svg",
+            "bytes": 71824,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+            "bytes": 98896,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/ithaca/admm-final-conservation.svg",
+            "bytes": 92762,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/ithaca/admm-physical-flow.svg",
+            "bytes": 7448536,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/berkeley/native-complete-history.svg",
+            "bytes": 114777,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/static_source_margins.svg",
+            "bytes": 59402,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/static_endpoints.svg",
+            "bytes": 933823,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/fw-map-distribution.svg",
+            "bytes": 583307,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
+            "bytes": 581942,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/native-map-differences.svg",
+            "bytes": 1823221,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/time-layers.svg",
+            "bytes": 93785,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/local-details.svg",
+            "bytes": 106010,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/distribution.svg",
+            "bytes": 90225,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/mode.svg",
+            "bytes": 74465,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+            "bytes": 8582810,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+            "bytes": 8590059,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/chicago/native-complete-history.svg",
+            "bytes": 102405,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-algorithm-b-gap.svg",
+            "bytes": 73746,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chicago-native80-endpoint.svg",
+            "bytes": 74585,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/fw-physical-flow.svg",
+            "bytes": 4574362,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg",
+            "bytes": 4553734,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg",
+            "bytes": 4548187,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chicago-c06_t_cg_generated_paths.svg",
+            "bytes": 16845677,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chi-cg-physical.svg",
+            "bytes": 4363344,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-bounds.svg",
+            "bytes": 84151,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-prices.svg",
+            "bytes": 110905,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-recovery.svg",
+            "bytes": 82154,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/generation.svg",
+            "bytes": 105920,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/distribution.svg",
+            "bytes": 149078,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 209620930
+      },
+      {
+        "label": "before-original-quality-2",
+        "initial": {
+          "images": 8,
+          "bytes": 2006563,
+          "longTasks": 6,
+          "cls": 0.45585930823808835,
+          "height": 64208
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 7046,
+            "maxFrameMs": 42.399999999999636,
+            "slowFrames": 0
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 8725,
+            "maxFrameMs": 60.69999999999709,
+            "slowFrames": 1
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 10989,
+            "maxFrameMs": 6.19999999999709,
+            "slowFrames": 0
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 17859,
+            "maxFrameMs": 290.8999999999942,
+            "slowFrames": 2
+          },
+          {
+            "city": "chicago",
+            "elapsed": 15758,
+            "maxFrameMs": 230.40000000000146,
+            "slowFrames": 2
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 25359,
+            "maxFrameMs": 442.3000000000029,
+            "slowFrames": 2
+          }
+        ],
+        "metrics": {
+          "Nodes": 2468662,
+          "LayoutDuration": 1.477108,
+          "RecalcStyleDuration": 5.318983,
+          "TaskDuration": 86.108057,
+          "JSHeapUsedSize": 4320468
+        },
+        "longTasks": 138,
+        "longTaskMs": 69756,
+        "maxLongTaskMs": 4470,
+        "cls": 6.158938028309931,
+        "resources": [
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261008-hk-anchor-repair",
+            "bytes": 64317,
+            "type": "script"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1792,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "css"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f033.svg",
+            "bytes": 246393,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-mode-response.svg",
+            "bytes": 57915,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-source-margins.svg",
+            "bytes": 3392777,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-endpoints.svg",
+            "bytes": 884802,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-fw-scales.svg",
+            "bytes": 3283201,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f141.svg",
+            "bytes": 1092745,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-finite-static.svg",
+            "bytes": 892993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/construction/r07-boston-layered-construction.svg",
+            "bytes": 61516,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f072.svg",
+            "bytes": 84081,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-phase1.svg",
+            "bytes": 112277,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f079.svg",
+            "bytes": 46247,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-closure.svg",
+            "bytes": 69869,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f147.svg",
+            "bytes": 57969,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-prices.svg",
+            "bytes": 77952,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f177.svg",
+            "bytes": 807672,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f178.svg",
+            "bytes": 89621,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f031.svg",
+            "bytes": 39243,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-endpoints.svg",
+            "bytes": 687000,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-source-margins.svg",
+            "bytes": 2834491,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f052.svg",
+            "bytes": 474651,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f182.svg",
+            "bytes": 474037,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-finite-static.svg",
+            "bytes": 402016,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/construction/r07-hong-kong-layered-construction.svg",
+            "bytes": 67875,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f085.svg",
+            "bytes": 52239,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-cg-phase1.svg",
+            "bytes": 74936,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f092.svg",
+            "bytes": 79449,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f093.svg",
+            "bytes": 45804,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-bounds.svg",
+            "bytes": 54303,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-prices.svg",
+            "bytes": 64470,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-lagrangian-recovery.svg",
+            "bytes": 47869,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f097.svg",
+            "bytes": 110540,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f101.svg",
+            "bytes": 83298,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-admm-flows.svg",
+            "bytes": 343461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+            "bytes": 2282461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+            "bytes": 107965,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+            "bytes": 74573,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+            "bytes": 10089737,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+            "bytes": 4672980,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+            "bytes": 117241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+            "bytes": 99246,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+            "bytes": 2795478,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+            "bytes": 2845781,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+            "bytes": 8260547,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/time-layers.svg",
+            "bytes": 93785,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/local-details.svg",
+            "bytes": 106010,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/distribution.svg",
+            "bytes": 90225,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/mode.svg",
+            "bytes": 74465,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+            "bytes": 8582810,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+            "bytes": 8590059,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/chicago/native-complete-history.svg",
+            "bytes": 102405,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-algorithm-b-gap.svg",
+            "bytes": 73746,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chicago-native80-endpoint.svg",
+            "bytes": 74585,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/fw-physical-flow.svg",
+            "bytes": 4574362,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg",
+            "bytes": 4553734,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg",
+            "bytes": 4548187,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chi-fw-history.svg",
+            "bytes": 86769,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chicago-c06_t_cg_generated_paths.svg",
+            "bytes": 16845677,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chi-cg-physical.svg",
+            "bytes": 4363344,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-bounds.svg",
+            "bytes": 84151,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-prices.svg",
+            "bytes": 110905,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-recovery.svg",
+            "bytes": 82154,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/generation.svg",
+            "bytes": 105920,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/distribution.svg",
+            "bytes": 149078,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 199601086
+      },
+      {
+        "label": "before-original-quality-3",
+        "initial": {
+          "images": 8,
+          "bytes": 2006563,
+          "longTasks": 4,
+          "cls": 0.45585930823808835,
+          "height": 64208
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 5759,
+            "maxFrameMs": 200,
+            "slowFrames": 3
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 7866,
+            "maxFrameMs": 36.39999999999782,
+            "slowFrames": 0
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 8049,
+            "maxFrameMs": 6.299999999999272,
+            "slowFrames": 0
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 21338,
+            "maxFrameMs": 484.8000000000029,
+            "slowFrames": 5
+          },
+          {
+            "city": "chicago",
+            "elapsed": 20454,
+            "maxFrameMs": 769.6999999999971,
+            "slowFrames": 3
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 28536,
+            "maxFrameMs": 442.3000000000029,
+            "slowFrames": 2
+          }
+        ],
+        "metrics": {
+          "Nodes": 2492003,
+          "LayoutDuration": 1.717261,
+          "RecalcStyleDuration": 5.440047,
+          "TaskDuration": 91.846547,
+          "JSHeapUsedSize": 4317212
+        },
+        "longTasks": 146,
+        "longTaskMs": 72439,
+        "maxLongTaskMs": 4220,
+        "cls": 7.204008121627577,
+        "resources": [
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261008-hk-anchor-repair",
+            "bytes": 64317,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1792,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "css"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "css"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f033.svg",
+            "bytes": 246393,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-mode-response.svg",
+            "bytes": 57915,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-source-margins.svg",
+            "bytes": 3392777,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-endpoints.svg",
+            "bytes": 884802,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-fw-scales.svg",
+            "bytes": 3283201,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f141.svg",
+            "bytes": 1092745,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-finite-static.svg",
+            "bytes": 892993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/construction/r07-boston-layered-construction.svg",
+            "bytes": 61516,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f072.svg",
+            "bytes": 84081,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-phase1.svg",
+            "bytes": 112277,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f079.svg",
+            "bytes": 46247,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-cg-closure.svg",
+            "bytes": 69869,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f147.svg",
+            "bytes": 57969,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-prices.svg",
+            "bytes": 77952,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f177.svg",
+            "bytes": 807672,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f178.svg",
+            "bytes": 89621,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f031.svg",
+            "bytes": 39243,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-source-margins.svg",
+            "bytes": 2834491,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-endpoints.svg",
+            "bytes": 687000,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f052.svg",
+            "bytes": 474651,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f182.svg",
+            "bytes": 474037,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-hk-finite-static.svg",
+            "bytes": 402016,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+            "bytes": 166260,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+            "bytes": 74573,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+            "bytes": 10089737,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+            "bytes": 4672980,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+            "bytes": 117241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+            "bytes": 99246,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+            "bytes": 2795478,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+            "bytes": 2845781,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+            "bytes": 8260547,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/time-layers.svg",
+            "bytes": 79605,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/local-construction.svg",
+            "bytes": 78288,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase1.svg",
+            "bytes": 81994,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase2.svg",
+            "bytes": 63435,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-pricing.svg",
+            "bytes": 66119,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-bounds.svg",
+            "bytes": 74498,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-prices.svg",
+            "bytes": 78350,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-recovery.svg",
+            "bytes": 71824,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/berkeley/native-complete-history.svg",
+            "bytes": 114777,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/static_source_margins.svg",
+            "bytes": 59402,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/static_endpoints.svg",
+            "bytes": 933823,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/fw-map-distribution.svg",
+            "bytes": 583307,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/finite-map-distribution.svg",
+            "bytes": 581942,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/berkeley/native-map-differences.svg",
+            "bytes": 1823221,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/time-layers.svg",
+            "bytes": 93785,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/berkeley/local-details.svg",
+            "bytes": 106010,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/distribution.svg",
+            "bytes": 90225,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/mode.svg",
+            "bytes": 74465,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+            "bytes": 8582810,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+            "bytes": 8590059,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/chicago/native-complete-history.svg",
+            "bytes": 102405,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-algorithm-b-gap.svg",
+            "bytes": 73746,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chicago-native80-endpoint.svg",
+            "bytes": 74585,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/fw-physical-flow.svg",
+            "bytes": 4574362,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-fw-map-distribution.svg",
+            "bytes": 4553734,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/s20-finite-map-distribution.svg",
+            "bytes": 4548187,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chi-fw-history.svg",
+            "bytes": 86769,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/chicago/time-layers.svg",
+            "bytes": 84683,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/chicago/local-details.svg",
+            "bytes": 91497,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/cg-phase-one.svg",
+            "bytes": 71366,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/chicago/cg-phase-two.svg",
+            "bytes": 55368,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/cg-pricing-closure.svg",
+            "bytes": 138618,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chicago-c06_t_cg_generated_paths.svg",
+            "bytes": 16845677,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/chicago/chi-cg-physical.svg",
+            "bytes": 4363344,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-bounds.svg",
+            "bytes": 84151,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-prices.svg",
+            "bytes": 110905,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/chicago/lr-recovery.svg",
+            "bytes": 82154,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/generation.svg",
+            "bytes": 105920,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/distribution.svg",
+            "bytes": 149078,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 201484793
+      }
+    ],
+    "originalQuality": [
+      {
+        "label": "original-quality-final-1",
+        "initial": {
+          "images": 8,
+          "bytes": 2039219,
+          "longTasks": 5,
+          "cls": 0,
+          "height": 97390
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 3568,
+            "maxFrameMs": 60.600000000000364,
+            "slowFrames": 1
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 4612,
+            "maxFrameMs": 6.200000000000728,
+            "slowFrames": 0
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 9655,
+            "maxFrameMs": 6.200000000000728,
+            "slowFrames": 0
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 15400,
+            "maxFrameMs": 18.299999999995634,
+            "slowFrames": 0
+          },
+          {
+            "city": "chicago",
+            "elapsed": 9957,
+            "maxFrameMs": 13.599999999998545,
+            "slowFrames": 0
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 5611,
+            "maxFrameMs": 6.200000000004366,
+            "slowFrames": 0
+          }
+        ],
+        "metrics": {
+          "Nodes": 1417637,
+          "LayoutDuration": 0.83447,
+          "RecalcStyleDuration": 2.56678,
+          "TaskDuration": 47.115724,
+          "JSHeapUsedSize": 4268888
+        },
+        "longTasks": 71,
+        "longTaskMs": 32113,
+        "maxLongTaskMs": 2827,
+        "cls": 0.012034231286905755,
+        "resources": [
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "link"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "link"
+          },
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/performance/original-map.js",
+            "bytes": 32087,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261009-original-quality",
+            "bytes": 64358,
+            "type": "script"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/performance/previews.css",
+            "bytes": 505,
+            "type": "link"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1815,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f097.svg",
+            "bytes": 110540,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f101.svg",
+            "bytes": 83298,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-hk-admm-flows.svg",
+            "bytes": 343461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+            "bytes": 2282461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+            "bytes": 107965,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/aa-t01.svg",
+            "bytes": 1189244,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-g01.svg",
+            "bytes": 89271,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+            "bytes": 166260,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+            "bytes": 10089737,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+            "bytes": 4672980,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 116936867
+      },
+      {
+        "label": "original-quality-final-2",
+        "initial": {
+          "images": 8,
+          "bytes": 2039219,
+          "longTasks": 6,
+          "cls": 0,
+          "height": 97390
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 4076,
+            "maxFrameMs": 42.30000000000018,
+            "slowFrames": 0
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 4352,
+            "maxFrameMs": 14,
+            "slowFrames": 0
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 10321,
+            "maxFrameMs": 13.30000000000291,
+            "slowFrames": 0
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 17516,
+            "maxFrameMs": 157.5,
+            "slowFrames": 1
+          },
+          {
+            "city": "chicago",
+            "elapsed": 20448,
+            "maxFrameMs": 157.59999999999854,
+            "slowFrames": 1
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 8951,
+            "maxFrameMs": 6.19999999999709,
+            "slowFrames": 0
+          }
+        ],
+        "metrics": {
+          "Nodes": 1702492,
+          "LayoutDuration": 0.980287,
+          "RecalcStyleDuration": 2.958769,
+          "TaskDuration": 65.765119,
+          "JSHeapUsedSize": 3607280
+        },
+        "longTasks": 92,
+        "longTaskMs": 45262,
+        "maxLongTaskMs": 3316,
+        "cls": 0.012028384018467612,
+        "resources": [
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "link"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "link"
+          },
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/performance/original-map.js",
+            "bytes": 32087,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261009-original-quality",
+            "bytes": 64358,
+            "type": "script"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/performance/previews.css",
+            "bytes": 505,
+            "type": "link"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1815,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f177.svg",
+            "bytes": 807672,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+            "bytes": 2282461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+            "bytes": 107965,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/aa-t01.svg",
+            "bytes": 1189244,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-g01.svg",
+            "bytes": 89271,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+            "bytes": 166260,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+            "bytes": 74573,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-margins.svg",
+            "bytes": 10089737,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ithaca/assignment-endpoints.svg",
+            "bytes": 4672980,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/ithaca/native-complete-history.svg",
+            "bytes": 117241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/ith-static-endpoints.svg",
+            "bytes": 99246,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/fw-physical-flow.svg",
+            "bytes": 2795478,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/finite-physical-flow.svg",
+            "bytes": 2845781,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-methods/ithaca/native-physical-flow.svg",
+            "bytes": 8260547,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/time-layers.svg",
+            "bytes": 79605,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ithaca/local-construction.svg",
+            "bytes": 78288,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase1.svg",
+            "bytes": 81994,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-phase2.svg",
+            "bytes": 63435,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/cg-pricing.svg",
+            "bytes": 66119,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-bounds.svg",
+            "bytes": 74498,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-prices.svg",
+            "bytes": 78350,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/ithaca/lr-recovery.svg",
+            "bytes": 71824,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ithaca/admm-saved-state.svg",
+            "bytes": 98896,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/ithaca/admm-final-conservation.svg",
+            "bytes": 92762,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/ithaca/admm-physical-flow.svg",
+            "bytes": 7448536,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 139634413
+      },
+      {
+        "label": "original-quality-final-3",
+        "initial": {
+          "images": 8,
+          "bytes": 2039219,
+          "longTasks": 4,
+          "cls": 0,
+          "height": 97390
+        },
+        "samples": [
+          {
+            "city": "boston",
+            "elapsed": 3666,
+            "maxFrameMs": 54.600000000000364,
+            "slowFrames": 1
+          },
+          {
+            "city": "hong-kong",
+            "elapsed": 4555,
+            "maxFrameMs": 6.199999999998909,
+            "slowFrames": 0
+          },
+          {
+            "city": "urbana-champaign",
+            "elapsed": 10055,
+            "maxFrameMs": 6.200000000000728,
+            "slowFrames": 0
+          },
+          {
+            "city": "ithaca",
+            "elapsed": 16291,
+            "maxFrameMs": 151.5,
+            "slowFrames": 1
+          },
+          {
+            "city": "chicago",
+            "elapsed": 6163,
+            "maxFrameMs": 6.200000000004366,
+            "slowFrames": 0
+          },
+          {
+            "city": "pittsburgh",
+            "elapsed": 10957,
+            "maxFrameMs": 7.600000047685171,
+            "slowFrames": 0
+          }
+        ],
+        "metrics": {
+          "Nodes": 1457344,
+          "LayoutDuration": 0.912356,
+          "RecalcStyleDuration": 2.751589,
+          "TaskDuration": 50.18717,
+          "JSHeapUsedSize": 4265312
+        },
+        "longTasks": 80,
+        "longTaskMs": 35168,
+        "maxLongTaskMs": 3042,
+        "cls": 0.012031474038373947,
+        "resources": [
+          {
+            "name": "assets/fonts/DejaVuSerif-Bold.ttf",
+            "bytes": 355692,
+            "type": "link"
+          },
+          {
+            "name": "assets/fonts/DejaVuSerif.ttf",
+            "bytes": 379740,
+            "type": "link"
+          },
+          {
+            "name": "assets/presentation-r3.css",
+            "bytes": 15982,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas.css?v=20261008-card-parity",
+            "bytes": 31506,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/atlas-data.js?v=20261005-mainline-r1",
+            "bytes": 182109,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/ann-public.js?v=20261005-mainline-r2",
+            "bytes": 2780,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/berkeley-public.js?v=20261007-atlas-r2",
+            "bytes": 44231,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/city-alignment-r3.js?v=20261008-r12-graphs",
+            "bytes": 625172,
+            "type": "script"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/increment.js?v=20261008-choicefw-scope",
+            "bytes": 5048,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-choicefw-v002/ann-arbor/private-increment.js",
+            "bytes": 6802,
+            "type": "script"
+          },
+          {
+            "name": "assets/private-native-history-20261008/increment.js?v=20261008-full-history",
+            "bytes": 9189,
+            "type": "script"
+          },
+          {
+            "name": "assets/template-parity-20261008/private-increment.js?v=20261008-template-parity",
+            "bytes": 119842,
+            "type": "script"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/increment.js?v=20261009",
+            "bytes": 14192,
+            "type": "script"
+          },
+          {
+            "name": "assets/performance/original-map.js",
+            "bytes": 32087,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/atlas.js?v=20261009-original-quality",
+            "bytes": 64358,
+            "type": "script"
+          },
+          {
+            "name": "assets/reproduction/entries.js",
+            "bytes": 4669,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/opening-framework.css?v=20261008-layer-icon",
+            "bytes": 7044,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.css?v=20261006-structure",
+            "bytes": 1709,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/six-city.js",
+            "bytes": 280,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/comparison.css?v=20261006-full2",
+            "bytes": 6173,
+            "type": "link"
+          },
+          {
+            "name": "assets/reading/comparison.js?v=20261006-full2",
+            "bytes": 3079,
+            "type": "script"
+          },
+          {
+            "name": "assets/figure-contract-r11/evidence-layout.css",
+            "bytes": 2595,
+            "type": "link"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures.css",
+            "bytes": 806,
+            "type": "link"
+          },
+          {
+            "name": "assets/performance/previews.css",
+            "bytes": 505,
+            "type": "link"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/A.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_C.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/D.svg",
+            "bytes": 236,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/B_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas_depth_badges/C_D.svg",
+            "bytes": 245,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas-depth-tooltips.js",
+            "bytes": 1815,
+            "type": "script"
+          },
+          {
+            "name": "assets/reading/figure-anchor-details.js?v=20261008-r9",
+            "bytes": 1121,
+            "type": "script"
+          },
+          {
+            "name": "assets/fonts/dejavu-serif.css",
+            "bytes": 326,
+            "type": "css"
+          },
+          {
+            "name": "assets/figure-contract-r11/project-structure.svg",
+            "bytes": 118221,
+            "type": "img"
+          },
+          {
+            "name": "assets/mcl-globe.svg",
+            "bytes": 467,
+            "type": "other"
+          },
+          {
+            "name": "assets/atlas/figures/g-f037.svg",
+            "bytes": 1734559,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f022.svg",
+            "bytes": 597076,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f133.svg",
+            "bytes": 3386195,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/g-f005.svg",
+            "bytes": 50320,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f134.svg",
+            "bytes": 1148172,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f135.svg",
+            "bytes": 880488,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-gps-sample.svg",
+            "bytes": 612925,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f136.svg",
+            "bytes": 1660642,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f032.svg",
+            "bytes": 43408,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f033.svg",
+            "bytes": 246393,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-mode-response.svg",
+            "bytes": 57915,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/c-boston-lagrangian-recovery.svg",
+            "bytes": 50899,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f065.svg",
+            "bytes": 108945,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f069.svg",
+            "bytes": 112271,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/card-layout/c-boston-admm-flows.svg",
+            "bytes": 303110,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f051.svg",
+            "bytes": 708442,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f024.svg",
+            "bytes": 40255,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f174.svg",
+            "bytes": 1196993,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f175.svg",
+            "bytes": 338352,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f176.svg",
+            "bytes": 317732,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f186.svg",
+            "bytes": 37385,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f015.svg",
+            "bytes": 98268,
+            "type": "img"
+          },
+          {
+            "name": "assets/atlas/figures/g-f177.svg",
+            "bytes": 807672,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-s01.svg",
+            "bytes": 2282461,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-p01.svg",
+            "bytes": 107965,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/aa-t01.svg",
+            "bytes": 1189244,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-g01.svg",
+            "bytes": 89271,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-d01.svg",
+            "bytes": 166260,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/ann-arbor/aa-m01.svg",
+            "bytes": 91449,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-margins.svg",
+            "bytes": 4750436,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/ann-arbor/assignment-endpoints.svg",
+            "bytes": 2334303,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_NETWORK.svg",
+            "bytes": 1534373,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/ann-arbor/ANN_CHOICE_FW_CONVERGENCE.svg",
+            "bytes": 14358,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/ann-arbor/aa-static-signed-gaps.svg",
+            "bytes": 74573,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ann-arbor/fw-physical-flow.svg",
+            "bytes": 1577094,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/time-layers.svg",
+            "bytes": 72048,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/ann-arbor/local-construction.svg",
+            "bytes": 77068,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/sources.svg",
+            "bytes": 1998830,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/population.svg",
+            "bytes": 94734,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/transit.svg",
+            "bytes": 4888503,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/generation.svg",
+            "bytes": 91133,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/distribution.svg",
+            "bytes": 134673,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-mode-demand.svg",
+            "bytes": 76480,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/uc-transit-cost.svg",
+            "bytes": 67625,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/mode.svg",
+            "bytes": 77180,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-margins.svg",
+            "bytes": 8434439,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/urbana-champaign/assignment-endpoints.svg",
+            "bytes": 3986197,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/fw-physical-flow.svg",
+            "bytes": 2616217,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/s72-fw-map-distribution.svg",
+            "bytes": 2454856,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/s72-finite-map-distribution.svg",
+            "bytes": 2480984,
+            "type": "img"
+          },
+          {
+            "name": "assets/plot-semantics-r9/urbana-champaign/native-map-differences.svg",
+            "bytes": 7938012,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/uc-native-od-conservation.svg",
+            "bytes": 79808,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/time-layers.svg",
+            "bytes": 81106,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/construction/urbana-champaign/local-construction.svg",
+            "bytes": 79386,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG01_DEMAND_LEDGER.svg",
+            "bytes": 141419,
+            "type": "img"
+          },
+          {
+            "name": "assets/choicefw-scope-20261008/urbana-champaign/FIG02_T4_CAPACITY_USE.svg",
+            "bytes": 47812,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/cg-phase1.svg",
+            "bytes": 84241,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-phase2.svg",
+            "bytes": 66300,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/cg-pricing.svg",
+            "bytes": 72264,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/lr-bounds.svg",
+            "bytes": 76579,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-prices.svg",
+            "bytes": 106524,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/optimization/urbana-champaign/lr-recovery.svg",
+            "bytes": 76055,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r12/figures/urbana-champaign/admm-saved-state.svg",
+            "bytes": 101502,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-final-balance.svg",
+            "bytes": 89386,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/urbana-champaign/urbana-champaign-admm-physical.svg",
+            "bytes": 12005254,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/sources.svg",
+            "bytes": 2413494,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/ith-employment-allocation.svg",
+            "bytes": 74735,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/population.svg",
+            "bytes": 82641,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/transit.svg",
+            "bytes": 2452006,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/generation.svg",
+            "bytes": 79465,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/distribution.svg",
+            "bytes": 105508,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/ithaca/mode.svg",
+            "bytes": 79001,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_one.svg",
+            "bytes": 52758,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_phase_two.svg",
+            "bytes": 47143,
+            "type": "img"
+          },
+          {
+            "name": "assets/city-alignment-r3/berkeley/cg_pricing_closure.svg",
+            "bytes": 52709,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_bounds.svg",
+            "bytes": 83206,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_prices.svg",
+            "bytes": 79188,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/lr_recovery.svg",
+            "bytes": 75103,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_convergence.svg",
+            "bytes": 120893,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/admm/berkeley/admm-final-conservation.svg",
+            "bytes": 92062,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/berkeley/admm_physical_flow_comparison.svg",
+            "bytes": 2302728,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/sources.svg",
+            "bytes": 4264136,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/chi-household-allocation.svg",
+            "bytes": 65391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/population.svg",
+            "bytes": 63031,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/transit.svg",
+            "bytes": 4409918,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/generation.svg",
+            "bytes": 76370,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/distribution.svg",
+            "bytes": 90225,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/chicago/mode.svg",
+            "bytes": 74465,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-margins.svg",
+            "bytes": 8582810,
+            "type": "img"
+          },
+          {
+            "name": "assets/template-parity-20261008/static-inputs/chicago/assignment-endpoints.svg",
+            "bytes": 8590059,
+            "type": "img"
+          },
+          {
+            "name": "assets/private-native-history-20261008/chicago/native-complete-history.svg",
+            "bytes": 102405,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_HISTORY_33_116.svg",
+            "bytes": 107539,
+            "type": "img"
+          },
+          {
+            "name": "assets/mainline-publication-20261009/chicago/ADMM_CAPACITY_DETAIL.svg",
+            "bytes": 46077,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/sources.svg",
+            "bytes": 3037391,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/population.svg",
+            "bytes": 117568,
+            "type": "img"
+          },
+          {
+            "name": "assets/figure-contract-r11/figures/pittsburgh/transit.svg",
+            "bytes": 3057305,
+            "type": "img"
+          }
+        ],
+        "errors": [],
+        "failures": [],
+        "totalResourceBytes": 120263368
+      }
+    ]
+  },
+  "functionalChecks": [
+    {
+      "reason": "All 242 homepage cards retained",
+      "ok": true
+    },
+    {
+      "reason": "Decoded scientific figures use their exact original URLs",
+      "ok": true
+    },
+    {
+      "reason": "Image keeps exact Chicago volume destination",
+      "ok": true
+    },
+    {
+      "reason": "City view keeps original image URLs",
+      "ok": true
+    },
+    {
+      "reason": "Stage view keeps original image URLs",
+      "ok": true
+    },
+    {
+      "reason": "Exact deep-linked volume figure exists",
+      "ok": true
+    },
+    {
+      "reason": "Full original figure retained as fallback and download",
+      "ok": true
+    },
+    {
+      "reason": "Mobile page has no overall horizontal overflow",
+      "ok": true
+    },
+    {
+      "reason": "Late image decoding preserves reserved image boxes (under 2 px drift)",
+      "ok": true
+    },
+    {
+      "reason": "Static atlas survives disabled JavaScript",
+      "ok": true
+    },
+    {
+      "reason": "Original figures render without JavaScript",
+      "ok": true
+    },
+    {
+      "reason": "README explicit image widths are bounded",
+      "ok": true
+    },
+    {
+      "reason": "No browser JavaScript errors",
+      "ok": true
+    },
+    {
+      "reason": "No missing local resources",
+      "ok": true
+    }
+  ],
+  "functionalErrors": [],
+  "missingResources": [],
+  "candidateFileSHA256": {
+    "docs/index.html": "fec68c72c1fb95acd39477d4e7a43f0fe20402b03506ab4f3dad66659afd398d",
+    "docs/assets/reading/atlas.js": "70423a863d09476b7ce4dd228c670a07e258a95e6b99521a08853640cf234390",
+    "docs/assets/performance/original-map.js": "9fc51f4eb3d2677ee86420a8d01d22e428ec815644f6cb2ac24a246413d372c5",
+    "docs/assets/performance/previews.css": "5dd8b2d94c704abf3ecea06ddb79f8ad185be89964764f9936d478cfd13b36c5",
+    "docs/assets/fonts/DejaVuSerif.ttf": "107244956e9962b9e96faccdc551825e0ae0898ae13737133e1b921a2fd35ffa",
+    "docs/assets/fonts/DejaVuSerif-Bold.ttf": "c3753f2ed6bc673f15846dc45addbeb3b9c872f32fb18fd53a21f1bef1ed7676"
+  },
+  "actualAuditHarnessSHA256": "fcc54c84a8805d2dac12a3ead2803197ab51077cb14a3eeca1c646b7c798b015",
+  "reproducibleHarness": "tools/visuals/browser_performance_audit.cjs",
+  "previousPreviewVersionSnapshot": "E:\\mobility_computation_lab_v2\\work\\homepage_original_quality_20261009\\previous-preview-version"
+}

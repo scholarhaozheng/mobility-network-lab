@@ -1,0 +1,25 @@
+// Local controlled comparison: Chrome headless, viewport 1440x900, CPU 4x.
+// Usage: node tools/visuals/browser_performance_audit.cjs LABEL OUTPUT_DIRECTORY
+// A label starting with before serves baseline HTML/renderers from Git HEAD.
+// All other labels serve current workspace bytes. Requires Playwright via NODE_PATH.
+const http=require('node:http'),fs=require('node:fs'),path=require('node:path'),{chromium}=require('playwright');
+const {execFileSync}=require('node:child_process');
+const root=path.resolve(__dirname,'../../docs'),label=process.argv[2]||'candidate',output=path.resolve(process.argv[3]||'.');
+if(!/^[a-z0-9-]{1,80}$/.test(label))throw new Error('Invalid measurement label');
+fs.mkdirSync(output,{recursive:true});
+const baseline=new Map();
+const originalBytes=file=>{const rel=path.relative(root,file).replaceAll('\\','/');if(!label.startsWith('before')||!(/^(index[^/]*\.html|volumes\/[^/]+\.html|assets\/reading\/atlas\.js|assets\/atlas-depth-tooltips\.js)$/.test(rel)))return null;if(!baseline.has(rel))baseline.set(rel,execFileSync('git',['show','HEAD:docs/'+rel],{cwd:path.dirname(root),maxBuffer:10000000}));return baseline.get(rel);};
+const mime={'.html':'text/html','.js':'text/javascript','.css':'text/css','.svg':'image/svg+xml','.png':'image/png','.webp':'image/webp','.ttf':'font/ttf','.json':'application/json'};
+(async()=>{
+ const server=http.createServer((req,res)=>{const file=path.resolve(root,'.'+decodeURIComponent(new URL(req.url,'http://localhost').pathname));if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404);res.end();return;}const saved=originalBytes(file);res.setHeader('Content-Type',mime[path.extname(file)]||'application/octet-stream');res.setHeader('Content-Length',saved?saved.length:fs.statSync(file).size);if(saved)res.end(saved);else fs.createReadStream(file).pipe(res);});
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));
+ const browser=await chromium.launch({headless:true,executablePath:'C:/Program Files/Google/Chrome/Application/chrome.exe',args:['--disable-extensions']});
+ const page=await browser.newPage({viewport:{width:1440,height:900},deviceScaleFactor:1});const cdp=await page.context().newCDPSession(page);await cdp.send('Performance.enable');await cdp.send('Emulation.setCPUThrottlingRate',{rate:4});
+ const failures=[],errors=[];page.on('pageerror',e=>errors.push(e.message));page.on('response',r=>{if(r.status()>=400)failures.push(r.url());});
+ await page.addInitScript(()=>{window.auditTasks=[];window.auditCLS=0;new PerformanceObserver(l=>{for(const e of l.getEntries())window.auditTasks.push({duration:e.duration,start:e.startTime});}).observe({type:'longtask',buffered:true});new PerformanceObserver(l=>{for(const e of l.getEntries())if(!e.hadRecentInput)window.auditCLS+=e.value;}).observe({type:'layout-shift',buffered:true});});
+ const base=`http://127.0.0.1:${server.address().port}`;await page.goto(base+'/index.html',{waitUntil:'domcontentloaded',timeout:60000});await page.waitForTimeout(1800);
+ const initial=await page.evaluate(()=>({images:performance.getEntriesByType('resource').filter(e=>e.initiatorType==='img').length,bytes:performance.getEntriesByType('resource').reduce((a,e)=>a+e.encodedBodySize,0),longTasks:window.auditTasks.length,cls:window.auditCLS,height:document.body.scrollHeight}));
+ const samples=[];for(const city of ['boston','hong-kong','urbana-champaign','ithaca','chicago','pittsburgh']){const start=Date.now();await page.mouse.wheel(0,1);await page.locator(`.case-atlas[data-city="${city}"]`).evaluate(el=>window.scrollTo(0,scrollY+el.getBoundingClientRect().top-150));await page.waitForTimeout(900);const frames=await page.evaluate(()=>new Promise(resolve=>{let prev=performance.now(),count=0,delta=[];const tick=now=>{delta.push(now-prev);prev=now;if(++count===30)resolve(delta);else requestAnimationFrame(tick);};requestAnimationFrame(tick);}));samples.push({city,elapsed:Date.now()-start,maxFrameMs:Math.max(...frames),slowFrames:frames.filter(x=>x>50).length});}
+ const metrics=await cdp.send('Performance.getMetrics');const result={label,initial,samples,metrics:Object.fromEntries(metrics.metrics.filter(x=>['TaskDuration','LayoutDuration','RecalcStyleDuration','JSHeapUsedSize','Nodes'].includes(x.name)).map(x=>[x.name,x.value])),...await page.evaluate(()=>({longTasks:window.auditTasks.length,longTaskMs:window.auditTasks.reduce((a,e)=>a+e.duration,0),maxLongTaskMs:Math.max(0,...window.auditTasks.map(e=>e.duration)),cls:window.auditCLS,resources:performance.getEntriesByType('resource').map(e=>({name:e.name.split('/').slice(3).join('/'),bytes:e.encodedBodySize,type:e.initiatorType}))})),errors,failures};
+ await page.screenshot({path:path.join(output,`${label}-desktop.png`)});fs.writeFileSync(path.join(output,`${label}.json`),JSON.stringify(result,null,2));console.log(JSON.stringify({...result,resources:result.resources.length},null,2));await browser.close();await new Promise(r=>server.close(r));
+})().catch(e=>{console.error(e);process.exit(1);});

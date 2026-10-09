@@ -35,10 +35,8 @@ function scheduleReadingCardAlignment(){
 // Keep original page navigation after the initial layout settles.
 let readingAnchorUserInterrupted=false;
 function settleReadingAnchor(){if(document.documentElement.dataset.atlasView!=='full')return;if(readingAnchorUserInterrupted||!location.hash)return;let id;try{id=decodeURIComponent(location.hash.slice(1));}catch{return;}const target=document.getElementById(id);if(target)target.scrollIntoView({block:'start',behavior:'instant'});}
-for(const img of document.querySelectorAll('.case-atlas .atlas-image img')){
- img.addEventListener('load',scheduleReadingCardAlignment);
- img.addEventListener('error',scheduleReadingCardAlignment);
-}
+// Static figures declare dimensions; pixel loading does not change geometry.
+// Measure rows on initial layout, fonts, widths and instance changes only.
 window.addEventListener('resize',scheduleReadingCardAlignment,{passive:true});
 window.addEventListener('load',()=>{alignReadingCardRows();settleReadingAnchor();});
 if(document.fonts)document.fonts.ready.then(scheduleReadingCardAlignment);
@@ -258,7 +256,7 @@ scheduleReadingCardAlignment();
   const finish=chapters[index+1]?.element.getBoundingClientRect().top+scrollY||pageRect.bottom+scrollY;
   const within=clamp((scrollY+readingTop-start)/Math.max(1,finish-start)*100);
   for(const [progress,value] of [[pageProgress,total],[sectionProgress,within]]){
-   const rounded=Math.round(value);progress.value.textContent=rounded+'%';progress.fill.style.width=value+'%';progress.track.setAttribute('aria-valuenow',String(rounded));
+   const rounded=Math.round(value);if(progress.value.textContent!==rounded+'%')progress.value.textContent=rounded+'%';progress.fill.style.width=value+'%';if(progress.track.getAttribute('aria-valuenow')!==String(rounded))progress.track.setAttribute('aria-valuenow',String(rounded));
   }
   progressLineFill.style.width=total+'%';
  }
@@ -268,7 +266,7 @@ scheduleReadingCardAlignment();
   const view=document.documentElement.dataset.atlasView||'full';
   // Measure both layouts so chapter thresholds do not depend on the visible controls.
   const barWidth=bar.getBoundingClientRect().width;
-  if(controls.hidden||barWidth!==chapterBarWidth||!chapterBarHeight){
+  if(barWidth!==chapterBarWidth||!chapterBarHeight){
    const wasHidden=controls.hidden;controls.hidden=true;
    chapterBarHeight=bar.getBoundingClientRect().height;
    controls.hidden=false;chapterAtlasBarHeight=bar.getBoundingClientRect().height;
@@ -349,7 +347,7 @@ scheduleReadingCardAlignment();
  window.addEventListener('load',()=>{if(!readingAnchorUserInterrupted)restoreAtlasHash();else schedule();});
  document.addEventListener('reading-card-rows-aligned',scheduleAnchorHold);document.addEventListener('atlas-view-toolbar-resized',schedule);
  new MutationObserver(schedule).observe(document.documentElement,{attributes:true,attributeFilter:['data-atlas-view']});
- for(const img of document.querySelectorAll('.mcl-page img')){img.addEventListener('load',scheduleAnchorHold);img.addEventListener('error',scheduleAnchorHold);}
+ // Page ResizeObserver corrects anchor geometry without a pass per lazy image.
  if(document.fonts)document.fonts.ready.then(scheduleAnchorHold);
  if('ResizeObserver' in window){const observer=new ResizeObserver(scheduleAnchorHold);observer.observe(globalNav);observer.observe(bar);observer.observe(page);}
  setLocation(null,null);schedule();
@@ -510,7 +508,7 @@ scheduleReadingCardAlignment();
         if (direct) imageButton.href = safeURL(card.evidence);
         else {imageButton.type='button';imageButton.addEventListener('click',function(){openStage(stage,card);});}
         imageButton.setAttribute('aria-label','Open '+item.title+' in the complete city record');
-        var img=node('img');img.src=safeURL(item.src);img.alt=item.title||'';img.loading='lazy';img.decoding='async';imageButton.appendChild(img);imageGroup.appendChild(imageButton);
+        var img=node('img');img.alt=item.title||'';img.loading='lazy';img.decoding='async';if(window.MCLPreviewImage)window.MCLPreviewImage(img,safeURL(item.src));else img.src=safeURL(item.src);imageButton.appendChild(img);imageGroup.appendChild(imageButton);
       });
       if (series.length) parent.appendChild(imageGroup);
       parent.appendChild(node(compare ? 'h4' : 'h5', 'av-figure-title', card.title));
