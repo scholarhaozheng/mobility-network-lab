@@ -1,0 +1,70 @@
+{
+  "schema": "SHARED_CG_S2_H_INDEPENDENT_DUAL_TWO_STAGE_MIX_R1",
+  "status": "VALID_FULL_ORIGINAL_GRAPH_DUAL_LOWER_OPEN_OPTIMALITY",
+  "created_utc": "2026-10-12T12:40:56.947105+00:00",
+  "case_id": "pittsburgh_S2_H",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "config_path": "work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+  "config_sha256": "6588d4aa005e8f4e18f3b3b178ebe3767625f1d4963e921717ff234df65d0f4d",
+  "stage_checkpoints": [
+    {
+      "path": "work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\pittsburgh_S2_H_fullbatch60_cold\\solver\\STAGE_CHECKPOINTS\\slot_b\\CHECKPOINT_RECEIPT.json",
+      "sha256": "34d6574a3af2f3325924b2978b84d502edf989b87a825a5ad7e71e026618f6d6",
+      "round": 57,
+      "rmp_sha256": "82f91bbd624119a5dc571a65b90abc24b46f034d5ba40bf4a5c751781bedc4e2",
+      "pool_sha256": "e650b4e7ef4ce9d9a35a2bf265b0699f3d55243fe7cf2a20a257aed1843bcdf5"
+    },
+    {
+      "path": "work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\pittsburgh_S2_H_fullbatch60_cold\\solver\\STAGE_CHECKPOINTS\\slot_a\\CHECKPOINT_RECEIPT.json",
+      "sha256": "b6d187d80ae262da41b9400e5155feadd6e9e54b0fbe2f72607ae244e77934ef",
+      "round": 60,
+      "rmp_sha256": "7424b60ce16b25939b4d735c1cbb010013cd37fcb611e840859468028cd89457",
+      "pool_sha256": "bf8fbbaa7d61da865d74038d8492c3f6841abe2d6257ad9d8228861c67742b1a"
+    }
+  ],
+  "independent_primal_certificate": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\pittsburgh_S2_H_fullbatch60_cold\\solver\\STAGE_CHECKPOINT_INDEPENDENT_PRIMAL_CERTIFICATE.json",
+  "independent_primal_certificate_sha256": "ca22c38163da52d2192c509d89a34cdf2794343b6fa3a1848d5ea307514286d3",
+  "original_commodity_events": 168720,
+  "full_original_physical_time_entry_rows": 5610880,
+  "sampled_dual_scalings": [
+    {
+      "alpha": 0.0,
+      "certified_full_original_graph_lower_bound": 24228.139344479034,
+      "maximum_all_arc_inequality_violation": 1.7763568394002505e-15,
+      "bad_reachability_arc_count": 0
+    },
+    {
+      "alpha": 0.25,
+      "certified_full_original_graph_lower_bound": 24229.00984075858,
+      "maximum_all_arc_inequality_violation": 1.7763568394002505e-15,
+      "bad_reachability_arc_count": 0
+    },
+    {
+      "alpha": 0.5,
+      "certified_full_original_graph_lower_bound": 24229.438979559676,
+      "maximum_all_arc_inequality_violation": 1.7763568394002505e-15,
+      "bad_reachability_arc_count": 0
+    },
+    {
+      "alpha": 0.75,
+      "certified_full_original_graph_lower_bound": 24229.021080895367,
+      "maximum_all_arc_inequality_violation": 1.7763568394002505e-15,
+      "bad_reachability_arc_count": 0
+    },
+    {
+      "alpha": 1.0,
+      "certified_full_original_graph_lower_bound": 24228.130783923145,
+      "maximum_all_arc_inequality_violation": 1.7763568394002505e-15,
+      "bad_reachability_arc_count": 0
+    }
+  ],
+  "best_certified_lower": 24229.438979559676,
+  "best_alpha": 0.5,
+  "separately_independently_certified_primal_upper": 24231.037590422868,
+  "relative_open_gap": 6.597368590700646e-05,
+  "proof": "Each alpha is a convex combination of two nonpositive original-capacity dual vectors. Independent original-input full time-DAG potentials and all travel/turn/wait/sink inequalities validate every lower bound. Primal upper is an independent feasible solution of the same case; it need not come from either dual stage."
+}

@@ -1,0 +1,30 @@
+{
+  "schema": "Q_COMMON_FIXED_SERVICE_GREEDY_PRE_RUN_R57",
+  "created_utc": "2026-10-12T18:53:39.947812+00:00",
+  "R55_design_sha256": "2c0b64c590f5d5da2fb2b9af01e37d7a0e6cbbf074a02be101e5a52ecb96fd66",
+  "R56_design_sha256": "2fe9b5b09fe4a76fa93f04adf85f21eb1b24c59ded3c1e5b019b2162261fedcb",
+  "cases": [
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "R55_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_r55\\pittsburgh_S2_Q\\RESULT.json",
+      "R55_result_sha256": "91da2289e2229855574103cccae93c7075047fc1b9487cd2d2472c26c6fa820d",
+      "R56_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_support_r56\\pittsburgh_S2_Q\\RESULT.json",
+      "R56_result_sha256": "0c648747c84b0207b6ffbf5ce7023334b5832933976d41c1f0ea748aa764cd70"
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "R55_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_r55\\urbana_S2_Q\\RESULT.json",
+      "R55_result_sha256": "3b309d3fc1ad7f1eb1599a99fc21bf92cdf5a93cdaf3e59b692c22ab4ddb707a",
+      "R56_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_support_r56\\urbana_S2_Q\\RESULT.json",
+      "R56_result_sha256": "23cd62ca25b353bf740c68bb9e01eca49932ecaa00d8c53f99e38bdd2bcb8a77"
+    }
+  ],
+  "selection": "all R55 positive-gain R43 fragments for each frozen case, with all original OD/releases retained in certified baseline",
+  "same_common_algorithm": "exact_prefix_policy source from q_f_fixed_bridge_exact_prefix_r49.py, plus shared full-original-physical-row greedy kernel in q_common_fixed_service_greedy_r57.py; no case-specific objective or capacity shortcuts",
+  "order": "descending exact true candidate unit cost saving, then original OD index, original release step, R43 fragment index",
+  "swap": "start from R43 independently feasible full-source flow; for each fragment replace maximal mass 0<=y<=fragment mass while every original physical edge entry-time capacity remains feasible; fixed certified bottleneck service step; no negative-gain swaps",
+  "capacity_safety_slack_PCE": 1e-10,
+  "resource": "one original shared heavy-lock run per case, <=3h each; private memory nominal 3GiB; exact compact float64 matrix on the R56 proven all-changed-edge support, no time or OD coarsening",
+  "witness": "save deterministic full-original-graph action policy and per-fragment swap variables; independent original-source replay follows",
+  "scientific_limit": "Full original event primal feasible upper only if independent replay passes; no global full-graph CG optimum or 16/16 acceptance claim."
+}

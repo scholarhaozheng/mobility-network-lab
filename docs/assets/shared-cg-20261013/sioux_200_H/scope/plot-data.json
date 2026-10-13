@@ -1,0 +1,40 @@
+{
+  "case_id": "sioux_200_H",
+  "OD": 200,
+  "events": 200,
+  "dt_seconds": null,
+  "release_steps": null,
+  "horizon_steps": 32,
+  "scale": 1,
+  "base_demand": null,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/boston_cg_pilot_r1/phase_ii_degeneracy_completion_r3/frozen_cases/200OD",
+    "parent_vehicle_OD_sha": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+    "used_OD_sha": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715",
+    "OD_scope": "200 frozen positive vehicle OD; selected benchmark/pilot pulse",
+    "period": "Frozen dynamic release records; not a full-hour city estimate",
+    "units": "native arc cost x original volume",
+    "scale": 1,
+    "release_rule": "Frozen dynamic_demand.csv departure indices [0]; total pulse 86100.0 original flow units",
+    "time_model_id": "d434b9c586d74f4e9445e0ad0a07b87e5e78609317dd77539562e0af225b68fc",
+    "graph_id": "sha256:de496f1f5406c3ef98e78460fe472e0cf71631a48c7fe7bb7c8d8ce67a57e170",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Given vehicle-OD benchmark; population/G/D/M are N/A",
+    "historical_reference_build_id": "sparse_common_dev18_demand_weighted_columns",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/sioux_200_H__upper.json"
+  },
+  "parent_note": "Supplied benchmark vehicle OD. No population, generation, distribution or mode-choice estimation is inferred. Native cost units are retained; no seconds conversion is established.",
+  "source_hashes": {
+    "dynamic_arc.csv": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+    "dynamic_demand.csv": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715"
+  },
+  "release_indices": [
+    0
+  ],
+  "pulse_volume": 86100.0,
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

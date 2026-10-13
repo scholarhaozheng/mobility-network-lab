@@ -1,0 +1,21 @@
+{
+  "case_id": "pittsburgh_F_H",
+  "renderer": "tools/visuals/render_shared_cg_scope_20261013.py",
+  "renderer_sha256": "435001fc9e8414a053f46d24041902fbf87030ef16fd5652e0d39b3afa092c5e",
+  "data": "plot-data.json",
+  "data_sha256": "8f3bf7f8cfd2dc28aaa21d5a885b1da8dbf8e2572d5f5c8f74864d30035d3b3c",
+  "input_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "pittsburgh_F_H: Equal releases over 120 steps; multiply parent vehicle demand by 1.0 once. Graph horizon 320 steps. Frozen parent vehicle demand; the CG selection changes only this assignment branch. The release count is not a CG iteration count. This scope diagram is shared by evidence versions of the same frozen case.",
+  "exports": {
+    "svg": "dd92b1c8d28455ae51efbaaf10c1db619b56e8e6a6ddbe7155e28b4d836f05d0",
+    "png": "df8b0ee16e93a574c6dff97b0a24b05c84ff20e81ffe5a7115050173f0e251d7"
+  },
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "berkeley_T4_H",
+  "OD": 4,
+  "events": 4,
+  "dt_seconds": 30,
+  "release_steps": null,
+  "horizon_steps": 165,
+  "scale": 1,
+  "base_demand": null,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/berkeley_algorithm_transfer_r1/runs/T_case",
+    "parent_vehicle_OD_sha": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+    "used_OD_sha": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+    "OD_scope": "4 frozen positive vehicle OD; selected benchmark/pilot pulse",
+    "period": "Frozen dynamic release records; not a full-hour city estimate",
+    "units": "PCE minutes",
+    "scale": 1,
+    "release_rule": "Frozen dynamic_demand.csv departure indices [5]; total pulse 10.439304601026278 original flow units",
+    "time_model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+    "graph_id": "sha256:d5a44e2fc0a61b3289988bc1643b53f1709002c3b5c488bf3931a515d9ca15bb",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "sparse_common_dev18_demand_weighted_columns",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/berkeley_T4_H__upper.json"
+  },
+  "parent_note": "Four selected OD on the frozen T4 graph. This pulse is not the full-hour city vehicle demand.",
+  "source_hashes": {
+    "dynamic_arc.csv": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+    "dynamic_demand.csv": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed"
+  },
+  "release_indices": [
+    5
+  ],
+  "pulse_volume": 10.439304601026278,
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

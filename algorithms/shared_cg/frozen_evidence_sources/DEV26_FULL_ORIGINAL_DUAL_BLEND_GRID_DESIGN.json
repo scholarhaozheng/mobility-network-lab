@@ -1,0 +1,40 @@
+{
+  "schema": "SHARED_CG_DEV26_FROZEN_FULL_ORIGINAL_DUAL_BLEND_GRID_R1",
+  "case_id": "urbana_F_Q",
+  "support_result_sha256": "abe967841ab3e37cab5252d41c3e8c26e73b797bcffb095406ae7f2d47cf3a28",
+  "support_npz_sha256": "fd83088dbe43932161a9a1af0a442fdb93e4614c98346324a675585261224000",
+  "base_independent_cert_sha256": "42a06004b72f10b94ab8304ab272ddca4a0be7f1b82a0fb015265e02a8cc6380",
+  "RMP_independent_cert_sha256": "83410e7d7eb836ce732e657c6f615878c959cd666391ae4505f52c42ec06374b",
+  "alpha_grid": [
+    0.0001,
+    0.001,
+    0.01,
+    0.05,
+    0.1,
+    0.2
+  ],
+  "blend": "For every original physical entry row, lambda_alpha=(1-alpha)*independently accepted dev25 bridge-and-loop lambda + alpha*independently source-certified dev22 RMP lambda; no rescaling, clipping, model change, or path restriction",
+  "affected_destination_node_indices": [
+    11344,
+    11346,
+    11347,
+    11351,
+    11352,
+    11353,
+    11354,
+    11356,
+    11360,
+    11362,
+    11363
+  ],
+  "affected_original_events": 923098,
+  "unaffected_original_events_proven_static": 5096102,
+  "all_original_OD": 418,
+  "all_original_release_events": 6019200,
+  "accepted_base_lower": 10334.818075811367,
+  "accepted_feasible_upper": 11334.668809209741,
+  "one_alpha_per_shared_heavy_lock": true,
+  "checkpoint": "one original destination price file and SHA receipt at a time; resume only after byte and event identity validation",
+  "acceptance": "independent source CSV Bellman audit at every alpha, including original capacity term and unaffected-event proof; use best independently verified lower only",
+  "not_claimed": "full column generation convergence or 16/16 completion from any finite blend"
+}

@@ -1,0 +1,37 @@
+{
+  "case_id": "urbana_F_H",
+  "OD": 418,
+  "events": 50160,
+  "dt_seconds": 30,
+  "release_steps": 120,
+  "horizon_steps": 480,
+  "scale": 1.0,
+  "base_demand": 1963.6483127125575,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/urbana_champaign_algorithm_transfer_r1/representative_demand_20261011/input",
+    "parent_vehicle_OD_sha": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+    "used_OD_sha": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+    "OD_scope": "418 frozen positive vehicle OD; all registered source OD",
+    "period": "Uniform release over one modeled hour",
+    "units": "PCE minutes",
+    "scale": 1.0,
+    "release_rule": "Equal releases over 120 steps; multiply parent vehicle demand by 1.0 once",
+    "time_model_id": "e8b94fef5c3eeebc734f1a287bd74a3a115b08f6885dc4feb85c28a2f11c6552",
+    "graph_id": "sha256:39b4bb89df773884e93da9c5309f42446009ad2f49f01550d6a6c7880178a247",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "sparse_common_dev10_sidetrack_pricing",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/urbana_F_H__upper.json"
+  },
+  "parent_note": "Old frozen 418-OD parent: 1963.648312713 PCE/h; distinct from the later transit-choice demand (1667.09 PCE/h).",
+  "source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

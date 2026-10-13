@@ -1,0 +1,30 @@
+{
+  "schema": "Q_COMMON_FIXED_SERVICE_INDEPENDENT_FULL_ORIGINAL_CERTIFICATE_R58",
+  "status": "PASS_FULL_ORIGINAL_OD_RELEASE_PATH_TIME_CAPACITY_OBJECTIVE",
+  "case_id": "pittsburgh_S2_Q",
+  "design_sha256": "c4d3c1d71d4c2ef2c6548f9031f8a845c5a0b91a00c641fa15f9b922effd9f31",
+  "producer_result_sha256": "e65321e00eb969b553024dcf8f621afed144b79c07e348ecc38157e380a802f9",
+  "source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "original_positive_OD": 1406,
+  "original_release_events": 20246400,
+  "selected_original_OD": 36,
+  "selected_R43_fragments": 544663,
+  "positive_fragment_swaps_independently_replayed": 14515,
+  "original_prefix_arc_actions_independently_replayed": 14052797,
+  "original_physical_actions_independently_replayed": 7077201,
+  "max_candidate_original_path_cost_error_minutes": 2.6272317654729704e-12,
+  "max_selected_per_release_mass_residual_PCE": 1.9302610318504623e-17,
+  "all_changed_original_capacity_edges_checked": 1926,
+  "all_changed_original_capacity_rows_used": 28136149,
+  "max_original_capacity_excess_PCE": 2.7755575615628914e-17,
+  "min_original_row_flow_PCE": -4.336808689942018e-19,
+  "R43_independent_full_original_feasible_upper": 51007.102372342815,
+  "independent_full_original_feasible_upper": 50976.33449678995,
+  "independent_improvement_PCE_minutes": 30.767875552865213,
+  "wall_seconds": 3.531999999890104,
+  "scientific_limit": "Independent full-original-demand primal replay on one fixed bottleneck service schedule; unrestricted global CG/dual optimum still open."
+}

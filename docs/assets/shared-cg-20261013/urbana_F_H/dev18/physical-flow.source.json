@@ -1,0 +1,38 @@
+{
+  "case_id": "urbana_F_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "4de3a9b547e964a7bb90768abc6ea18e3d02e14674e2ac568018c460de15f0c4",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/urbana_F_H/dev18/upper-certificate.json",
+    "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/urbana_F_H/dev18/lower-certificate.json",
+    "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for urbana_F_H / dev18: 11,365 physical edges; reconstructed path cost 8033.70315632184 matches selected U=8033.70315632165. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "6d78614ceb717d98774695621cd9f46110c779974d4975c39b9d4f5937be90d1",
+    "svg": "3b775ed7b33f2e1056b70f86380792e50679f169c8389e35befc55e2839a2d53"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/urbana_F_H/solver/COLUMN_POOL.npz",
+      "sha256": "14bc7cfed8338051613b3a30fe020b977620afd5094c7edf1855120e54e2664c"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/urbana_F_H/solver/LAST_RMP.npz",
+      "sha256": "eb6b6e4825efff7d927c682625b795cafd99624c3c60e62aebc7a5b3e25f1dc2"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

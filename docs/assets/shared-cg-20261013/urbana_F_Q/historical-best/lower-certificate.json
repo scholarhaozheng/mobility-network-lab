@@ -1,0 +1,93 @@
+{
+  "schema": "SHARED_CG_DEV26_INDEPENDENT_FULL_ORIGINAL_DUAL_BLEND_ALPHA_R1",
+  "status": "PASS_ALL_ORIGINAL_EVENTS_VALID_DUAL_OPEN_CG_GAP",
+  "alpha_index": 1,
+  "alpha": 0.001,
+  "producer_result_sha256": "89e64d8ec338729c8174492ea25b6afd3fd6d2e394eebd7fa0d252f82eb2ccca",
+  "source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "original_OD_count": 418,
+  "original_release_events": 6019200,
+  "original_events_independently_priced_in_affected_destinations": 3168000,
+  "original_events_static_proven_from_unpriced_AON": 5096102,
+  "affected_original_events_with_independent_price": 923098,
+  "affected_destinations": 11,
+  "maximum_producer_price_difference": 1.4210854715202004e-14,
+  "maximum_unaffected_static_price_difference": 0.0,
+  "independent_source_dual_lower": 10335.278655330989,
+  "accepted_source_feasible_upper": 11334.668809209741,
+  "relative_open_gap": 0.08817109442727777,
+  "independent_profile_sha256": "5187394bda8c4e3a9f9562e9c94b6dda490646f59729411dcdf001e2da520cf7",
+  "stages": [
+    {
+      "destination_node_index": 11344,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11346,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11347,
+      "original_events_independently_priced": 288000,
+      "affected_events": 244800,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11351,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11352,
+      "original_events_independently_priced": 288000,
+      "affected_events": 260698,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11353,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11354,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 8.881784197001252e-16
+    },
+    {
+      "destination_node_index": 11356,
+      "original_events_independently_priced": 288000,
+      "affected_events": 28800,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11360,
+      "original_events_independently_priced": 288000,
+      "affected_events": 288000,
+      "maximum_producer_price_error": 1.4210854715202004e-14
+    },
+    {
+      "destination_node_index": 11362,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    },
+    {
+      "destination_node_index": 11363,
+      "original_events_independently_priced": 288000,
+      "affected_events": 14400,
+      "maximum_producer_price_error": 0.0
+    }
+  ],
+  "scope": "full original graph Bellman prices for all potentially affected source events and exact static proof for every omitted event; no CG optimum"
+}

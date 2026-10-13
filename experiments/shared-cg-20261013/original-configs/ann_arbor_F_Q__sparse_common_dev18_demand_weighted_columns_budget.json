@@ -1,0 +1,18 @@
+{
+  "schema": "SHARED_CG_COMMON_IMPLICIT_CITY_BUDGET_R1",
+  "case_id": "ann_arbor_F_Q",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "frozen_before_solver": true,
+  "shared_lock": "mcl_batch_guard --kind heavy",
+  "solver_wall_seconds": 7200,
+  "guard_wall_seconds": 7320,
+  "minimum_launch_physical_bytes": 536870912,
+  "minimum_runtime_physical_bytes": 201326592,
+  "minimum_launch_pagefile_bytes": 4294967296,
+  "minimum_runtime_pagefile_bytes": 2147483648,
+  "maximum_tree_private_bytes": 3221225472,
+  "sampling_seconds": 2,
+  "stop_policy_note": "internal 7200s solver checkpoint plus 300s cleanup grace for stage artifact",
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged"
+}

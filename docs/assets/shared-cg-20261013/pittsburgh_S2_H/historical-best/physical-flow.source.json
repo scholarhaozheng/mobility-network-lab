@@ -1,0 +1,38 @@
+{
+  "case_id": "pittsburgh_S2_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "53bc6b82d129fb19b6745d8c196e2482680d5f61fe46dfe709b573e0abad67ee",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_S2_H/historical-best/upper-certificate.json",
+    "sha256": "7a8d90c1dbe4c5361dc491cbad1ac4280e9184efac13a7029cbe76338e8a066a"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_S2_H/historical-best/lower-certificate.json",
+    "sha256": "df35e68198804a2644a896761912bb62ac0fa7a813586da840fbe6530006860c"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for pittsburgh_S2_H / historical-best: 17,534 physical edges; reconstructed path cost 24230.7528433567 matches selected U=24230.7528433575. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "8ee6931a65f00e38125d13c2c3ca6532eb812cd7eb35707f44c9d905855d5401",
+    "svg": "f4518508ae3b5deb7f4db0117c1188591d0a606b7c5b0a7ce4ea44a3d50c5e84"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_S2_H_fullbatch_continue60/solver/COLUMN_POOL.npz",
+      "sha256": "6f6fe58f26e405322ce33deb745ed7578fb4713a393abd1ca40e6f218ac878f8"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_S2_H_fullbatch_continue60/solver/LAST_RMP.npz",
+      "sha256": "0915e1193129d74f19aed0ec5f927c286ce47d4232ec1d4309fe866132c9f955"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "SHARED_CG_DEV40_SOURCE_BRIDGE_MULTIPRICING_PRE_RUN",
+  "created_utc": "2026-10-13T13:13:54.1155398+00:00",
+  "case_id": "urbana_F_Q",
+  "source_config_sha256": "af00c28236ce01769a23255258a55379cebcbfb03352be0347c5ddf646fb2141",
+  "fresh_seed_receipt_sha256": "8ef74d50da8220ca8eaf9084c9cc733ec57d10d9d6360b3007cb4edcbb80a72d",
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "full_original_model": "0.25-second original Q time graph, 418 source vehicle ODs, uniform 14400 release steps; original capacity/cost/wait/turn/sink",
+  "core_module_sha256": {
+    "joint_delta_rmp.py": "086d8e756404831a115054f3060f3190974ae5c3caf93b263ff57001e0797208",
+    "joint_cg_loop.py": "dfee57961ab401938f37d013d426ebae916c0ed7b79f6ec984a6cfb17e549fc8",
+    "source_uniform_base.py": "beb12a819b27e9ec41407926af3003ca8a98454f47e8332dec002d0a4dd76b52",
+    "rolling_price.py": "5e05facfb953c5e1990c0eeadc1bd18ec56ff96d7c4c76cb78a7f77d8165e717",
+    "batch_rolling_paths.py": "089f859684099778be573e49694860ac0865efd6f5b59724c3410825aa383ee1",
+    "rolling_paths.py": "3a357473ecc23f9fdcb3bbffaf05e78727b75c3b534cc3411740c5f4729b2b1e",
+    "implicit_graph.py": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f",
+    "source_fifo.py": "8c64fed84ad0786dd9525cbe6b367eede0f86353863ea6c05d15d80e2ca9b569",
+    "uniform_release.py": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63",
+    "solve.py": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_full_event_base.py": "63e2c4fdf7d051eb5427b8bc95e2f79f6135eb8c0543f1e699e04cc94e26dd6d",
+    "full_event_selection.py": "7d902ad3638a43890058b7a4b90fec67f91ad0bed5a71d1311cc38fb5537e574",
+    "bridge_prefix.py": "33d8011135dff651f7939718529cbdf0105d399c4817a43894717145a9015af9",
+    "source_bridge_candidates.py": "6a28de83289c94deac30446e73d7c7e4093bb48e25e2b6644b25254b88b367d1"
+  },
+  "algorithm_policy": {
+    "initial_columns": "none; new source AON/FIFO feasible base algebraic",
+    "partial_pricing": "All original OD/release events represented: FIFO-managed OD through partition fragments; every other OD through its exact AON base event. Under zero capacity and group prices, unfragmented free-flow AON events have provably zero reduced cost and are skipped only in that round. Otherwise all 6,019,200 original events are priced in destination streams.",
+    "stabilization_alpha_initial": 0.7,
+    "center_update": "same-run 0.5 old center + 0.5 true RMP price; on no useful partial column alpha increases by 0.15 up to 1 and exact full price is invoked",
+    "selection": "Full original-event exact oracle: OD/window diverse top 320. Separately source-only FIFO weighted-wait bridge: exact fixed-service original-graph prefix, positive source raw saving, OD/window diverse top 320. All complete paths evaluated by same current joint RMP true reduced cost.",
+    "max_new_columns_per_round": 240,
+    "max_rounds": 3,
+    "max_recovered_offers_per_round": 640,
+    "column_identity": "Source fragment or unsplit original OD/release key plus full original edge/time path; one shared group demand and original capacity row system across both candidate lanes.",
+    "exact_closure": "Full 418 x 14400 original time graph price under final true RMP dual and independent Bellman audit; no partial-pricing closure claim.",
+    "RMP": "One shared joint path master; source bridge is partial candidate lane with 80 reserved negative reduced-cost slots among max 240 new columns, remaining slots global true-dual rank; all original events algebraic.",
+    "zero_flow": "retained in pool; no objective-stagnation stop",
+    "change_from_dev37": "Dev39 full event OD-diverse pricing plus Dev40 exact source-only queued-bridge prefix generator and generic true-dual lane reservation; source graph/demand/capacity/time unchanged.",
+    "change_from_dev38": "Dev39 OD-diverse selection plus Dev40 source bridge lane, no historical flow/columns/duals.",
+    "source_bridge_rule": "maximum mass-weighted wait over fresh FIFO stage edges; source edge ID tie; excludes chosen bridge during exact fixed-time prefix DP",
+    "max_bridge_recovered_per_round": 320,
+    "bridge_lane_minimum_new_columns": 80
+  },
+  "resources": {
+    "heavy_lock": "mcl_batch_guard.py --kind heavy",
+    "max_single_command_seconds": 7200,
+    "RMP_seconds_each": 1800,
+    "checkpoint_each_added_round": true,
+    "memory_rule": "stop on allocation failure; preserve last source-verified stage; no OD/time deletion"
+  },
+  "historical_best_evaluation_only": {
+    "lower": 10335.278655330989,
+    "upper": 11333.921650746439
+  },
+  "acceptance_scope": "Cold source-only Urbana F Q development candidate: actual shared joint CG + source bridge multi-pricing. Independent original primal/full graph dual required. Not final 16-case build.",
+  "runner_sha256": "34adabb9a79239de22f0cd5a3a11ecb7faf774086e41d79c642cd886357f79ab",
+  "core_build_id": "sparse_common_dev40_bridge_multi_cg",
+  "predecessor_dev37_primal_cert_sha256": "6450d142b0262493b96ea76a8701c027ac307125c706f63a467a6b7b0004537f",
+  "pre_probe_policy_sha256": "37cf6ad0c8fd47c899fe391c3de4bd643681c719cb7ffbb29109ab584104ffa1",
+  "source_probe_sha256": "d40b7c90acca4ca94c70b249385f85b6a44efea39dcd429a438c7c221c787bd6",
+  "predecessor_dev39_dual_transfer_sha256": "964228bbb6793f936a68891c8aec1b6b918ed21ae68d2b06ce941418897d4283"
+}

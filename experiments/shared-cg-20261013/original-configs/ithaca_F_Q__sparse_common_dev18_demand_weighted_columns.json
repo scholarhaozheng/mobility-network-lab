@@ -1,0 +1,26 @@
+{
+  "schema": "SHARED_CG_UNIFORM_RELEASE_Q_CASE_CONFIG_R1",
+  "case_id": "ithaca_F_Q",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "graph_type": "uniform_release_implicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev18_demand_weighted_columns",
+  "source_dir": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\representative_demand_20261011\\input",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\ithaca_F_Q\\solver",
+  "expected_source_hashes": {
+    "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+    "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+    "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+  },
+  "physical_field": "link_type",
+  "physical_value": "physical_road",
+  "dt_seconds": 0.25,
+  "release_steps": 14400,
+  "horizon_steps": 23423,
+  "demand_factor": 1.0,
+  "expected_commodity_events": 1584000,
+  "relative_gap_tolerance": 0.0001,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "Original frozen Ithaca Q parent graph and uniform releases; exact physical_road entry capacities; nonbinding shortcut only.",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them"
+}

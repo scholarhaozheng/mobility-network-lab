@@ -1,0 +1,30 @@
+{
+  "schema": "SHARED_CG_Q_UNIFORM_INDEPENDENT_FULL_GRAPH_CERT_R1",
+  "status": "PASS_FULL_GRAPH",
+  "case_id": "ann_arbor_F_Q",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "original_source_hashes": {
+    "network.csv": "eb5d486d108251b1d2bf5dd920f7fbe8765a74e8738502576fe19a321294e43b",
+    "access.csv": "31c7c1f54d75d8d68fed2684ba5aad8dd5dd382cfa07ee1e09053901b990046f",
+    "assignment_od_pce.csv": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f"
+  },
+  "original_positive_OD": 600,
+  "original_release_commodity_events": 4320000,
+  "all_original_edges": 14203,
+  "all_original_physical_arcs": 5138,
+  "all_original_physical_entry_rows": 147974400,
+  "original_hourly_pce": 1569.5008966739672,
+  "original_primal_objective": 7509.095763624765,
+  "independent_full_graph_lower_bound": 7509.095763624765,
+  "relative_gap_raw": 0.0,
+  "maximum_original_capacity_ratio": 0.6830239071239427,
+  "overcapacity_original_physical_edges": 0,
+  "worst_original_physical_edge_id": "road:osm:193245231:2037649180:2037649182:f",
+  "worst_entry_step": 753,
+  "worst_step_load_pce": 0.02845932946349761,
+  "max_original_OD_hourly_demand_residual": 0.0,
+  "all_original_release_events_served": true,
+  "max_release_plus_path_arrival_step": 8360,
+  "path_sha256": "b97eb780fefa2615d448b5d6aef70cefadeaefad3b3b13951bec7a88582b043e",
+  "proof_method": "independent original-source forward Dijkstra lower bound; every original edge/time path and all exact uniform release intervals checked; wait cost nonnegative; full physical time-entry capacity feasible"
+}

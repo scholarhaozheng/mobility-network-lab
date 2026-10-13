@@ -1,0 +1,33 @@
+{
+  "schema": "URBANA_S2_Q_CONDITIONAL_R135_ONE_EXTENSION_RULE_R136",
+  "created_utc": "2026-10-13T01:42:08.282916+00:00",
+  "case_id": "urbana_S2_Q",
+  "R133_frozen_design_sha256": "37c9b804ef753c5fd97249502b9bb4d03426bc79552d3d2f34bc4e0947b56a8a",
+  "R134_producer_result_sha256": "d8b5bd8c6bae40c1dd83e75543ecedaa6db1200536a4c47eac600aaf3c1c9371",
+  "gate": "Run only if R135 independent original CSV complete-grid certificate passes, strictly improves R72 by >1e-6, and selected factor pair is [0.9,0.9], the frozen grid upper corner.",
+  "one_extension_factor_pair_grid": [
+    [
+      0.9,
+      0.9
+    ],
+    [
+      0.91,
+      0.9
+    ],
+    [
+      0.9,
+      0.91
+    ],
+    [
+      0.91,
+      0.91
+    ],
+    [
+      0.92,
+      0.92
+    ]
+  ],
+  "fixed_identity": "all original 418 positive S2 vehicle OD, all 14400 release steps, original graph/capacity/access/dt/horizon, fixed four-cycle 0.0005 minute toll and two source-defined bridge rows",
+  "selection": "one prospective finite endpoint extension at 0.01 coordinate and 0.02 joint steps, chosen before R135 result; independent full six/next five point audit, stop after this extension regardless of endpoint",
+  "limit": "dual lower sensitivity only; not primal optimality or shared CG 16/16 completion"
+}

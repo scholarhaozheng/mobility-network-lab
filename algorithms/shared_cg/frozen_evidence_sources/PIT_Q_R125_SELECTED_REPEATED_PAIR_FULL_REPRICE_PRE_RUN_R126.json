@@ -1,0 +1,53 @@
+{
+  "schema": "PIT_Q_R125_SELECTED_REPEATED_PAIR_FULL_REPRICE_PRE_RUN_R126",
+  "created_utc": "2026-10-13T00:51:41.152404+00:00",
+  "case_id": "pittsburgh_S2_Q",
+  "R119_result_sha256": "23699b7a3848540b8dea8ca25e8b6718ca0e6541e7fcf01b2e790a8ad8dd2521",
+  "R120_independent_certificate_sha256": "d0241f8ca28c4f7509a729f5d4ac95b5eae1beb489f0dbb496a7449ec0610cad",
+  "R119_array_sha256": "40803ec77a2f032545ab9f4934aacdcc161c0ec173311f7cda6c56b2146fef80",
+  "R124_result_sha256": "4ab8a84c28df463a04c697442b8f3b901f62a255c7b94ba7d3d2a48a393f1136",
+  "R125_independent_complete_grid_certificate_sha256": "657f929177c8fe27df77963961aff690cd48f6799ee3e3d1415a7455a60397b2",
+  "generic_price_core_sha256": "30d7e92bbf92f433341fb5793cb671e9fd5d0c1c842a7a2f23b4652504b4ccfc",
+  "source_config_sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0",
+  "original_AON_array_sha256": "e704931ba19e5bb0682ab18a19773988d5a7ebf956cac431b42dd601e0c862f1",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "original_positive_OD": 1406,
+  "original_release_events": 20246400,
+  "R119_exact_affected_original_events": 2736000,
+  "original_affected_destinations": 29,
+  "bridge_original_edge": 6410,
+  "bridge_first_step": 185,
+  "price_end_exclusive": 26799,
+  "bridge_factor": 0.25,
+  "base_flat_original_physical_edge_prices_minutes": {
+    "5564": 0.001,
+    "5572": 0.001,
+    "16682": 0.0005,
+    "16684": 0.0005,
+    "11624": 0.0005,
+    "11649": 0.0005,
+    "3103": 0.0005,
+    "3106": 0.0005
+  },
+  "candidate_original_physical_edges": [
+    16684,
+    16682
+  ],
+  "selected_candidate_flat_toll_minutes": 0.001,
+  "new_flat_original_physical_edge_prices_minutes": {
+    "5564": 0.001,
+    "5572": 0.001,
+    "16682": 0.001,
+    "16684": 0.001,
+    "11624": 0.0005,
+    "11649": 0.0005,
+    "3103": 0.0005,
+    "3106": 0.0005
+  },
+  "full_exact_gate": "R125 independently certified lower > R120 by >1e-6 and selected point 0.001; complete same source AON-affected 29-destination repricing and independent original CSV certificate",
+  "scientific_limit": "unchanged full original OD/time/topology/capacity; exact dual point only, independent primal upper remains R58, global optimum open"
+}

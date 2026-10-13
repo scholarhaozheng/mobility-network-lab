@@ -1,0 +1,24 @@
+{
+  "schema": "SHARED_CG_COMMON_EXPLICIT_CASE_R1",
+  "case_id": "chicago_T4_H",
+  "build_id": "sparse_common_dev3_exact_fixed",
+  "graph_type": "explicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev3_exact_fixed",
+  "input_manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\chicago_T4_H__sparse_common_dev1_manifest.json",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev3_exact_fixed\\chicago_T4_H\\solver",
+  "expected_source_hashes": {
+    "dynamic_arc.csv": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+    "dynamic_demand.csv": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b"
+  },
+  "expected_commodity_events": 4,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 120,
+  "phase_II_max_rounds": 100,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "release_relative_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "frozen original Chicago T4 30s dynamic CSV, all original arcs/capacities and four original demands"
+}

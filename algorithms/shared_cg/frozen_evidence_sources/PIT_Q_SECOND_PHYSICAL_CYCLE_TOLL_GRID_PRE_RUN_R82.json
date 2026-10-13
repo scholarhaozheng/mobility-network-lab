@@ -1,0 +1,46 @@
+{
+  "schema": "PIT_Q_SECOND_PHYSICAL_CYCLE_TOLL_GRID_PRE_RUN_R82",
+  "created_utc": "2026-10-12T21:21:30.087647+00:00",
+  "case_id": "pittsburgh_S2_Q",
+  "R31_result_sha256": "b3ff75fb8d71c014acbb2ff652f31619e454f1242772943b298e0443c953c502",
+  "R31_independent_certificate_sha256": "772369ff3b04afa6e1fd33b92bd0f980e9795204a9d824f5bd168acd7bb5852c",
+  "R64_trace_sha256": "e700837805752a1815a97d7f677a0e038342b35b49d34040ef9d950d7c5d90da",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "config_sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0",
+  "original_bridge_edge_index": 6410,
+  "bridge_price_first_step": 185,
+  "bridge_price_end_exclusive_step": 26799,
+  "bridge_factor_fixed": 0.12,
+  "cycle_original_physical_edges": [
+    5564,
+    5572
+  ],
+  "cycle_toll_end_exclusive_step": 26799,
+  "flat_loop_toll_grid_minutes": [
+    0.0005
+  ],
+  "selection": "both original physical arcs have >100000 repeated traversals among all 36 bridge OD x 5 pre-frozen release traces under accepted R77 vector; edge16684 is independently binding in R60 feasible original flow",
+  "dual": "nonnegative R31 bridge triangle plus equal nonnegative flat toll on two original cycle edges for t=0..26798; exact full original graph shortest path per affected original OD/release; subtract original physical row capacity times price",
+  "control": "retained R77 independently valid lower with zero new toll; original q, release, network, old prices and capacities unchanged",
+  "resource": "one common heavy lock <=2400 seconds for three complete original OD/release points; no old output overwrite",
+  "limit": "only valid full-graph dual lower after independent reprice; path sample is resource selection, not a primal or causal estimate",
+  "R74_result_sha256": "7d5bef36c1649cc706cec466e925cf60a9ca9044286777c9ec5fdb44aac08831",
+  "R75_independent_certificate_sha256": "5f3683d9b3fc16e9610ac5eec134e615cf13095264888b1761651f3bb6cf37c6",
+  "R68_independent_wide_control_certificate_sha256": "2bbf181cbf828704bb356016ed2697b5626d5df65171816d7f876f6fecfad66b",
+  "R77_independent_certificate_sha256": "919a1810c1ffbaaef2c36211d48b0bb7f139459f1f88c24b8d9344154f0d5cbb",
+  "R81_original_policy_trace_sha256": "467d54151f76f605a908a3106862cfae9646217662c4be4eab1efd63a05eff7b",
+  "R60_original_capacity_diagnostic_sha256": "0a296a87ad38cbac42d69f714d83ebc321476a3c1fa0c9bf4beb56ed8d7ef0e6",
+  "new_cycle_original_physical_edges": [
+    16682,
+    16684
+  ],
+  "new_cycle_flat_toll_grid_minutes": [
+    0.0005,
+    0.001,
+    0.002
+  ]
+}

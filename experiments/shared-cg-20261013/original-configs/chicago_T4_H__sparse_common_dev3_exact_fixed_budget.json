@@ -1,0 +1,16 @@
+{
+  "schema": "SHARED_CG_MONITORED_BUDGET_R1",
+  "case_id": "chicago_T4_H",
+  "build_id": "sparse_common_dev3_exact_fixed",
+  "frozen_before_solver": true,
+  "shared_lock": "mcl_batch_guard --kind heavy",
+  "solver_wall_seconds": 7500,
+  "guard_wall_seconds": 7620,
+  "minimum_launch_physical_bytes": 536870912,
+  "minimum_runtime_physical_bytes": 201326592,
+  "minimum_launch_pagefile_bytes": 4294967296,
+  "minimum_runtime_pagefile_bytes": 2147483648,
+  "maximum_tree_private_bytes": 3221225472,
+  "sampling_seconds": 2,
+  "science_policy": "Exact row and fixed one-path commodity elimination; original model and frozen tolerance unchanged; monitored 3 GiB private cap"
+}

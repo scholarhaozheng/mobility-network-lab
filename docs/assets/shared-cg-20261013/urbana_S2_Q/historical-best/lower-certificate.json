@@ -1,0 +1,88 @@
+{
+  "schema": "URBANA_S2_Q_R135_ONE_EXTENSION_GRID_INDEPENDENT_CERT_R139",
+  "status": "PASS_EXACT_FULL_ORIGINAL_GRAPH_DUAL_IMPROVED_OPEN_OPTIMALITY",
+  "original_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "original_horizon_steps": 57600,
+  "original_physical_arc_count": 11365,
+  "all_original_physical_capacity_rows": 654624000,
+  "affected_original_release_events_independently_repriced_per_point": 950400,
+  "unaffected_original_release_events_proven": 5068800,
+  "priced_destinations_per_point": 11,
+  "max_original_AON_arrival_step": 16822,
+  "independent_baseline_original_lower": 16060.100824539226,
+  "complete_grid": [
+    {
+      "factor_pair": [
+        0.9,
+        0.9
+      ],
+      "independent_exact_full_original_graph_dual_lower": 79694.66853347445,
+      "all_affected_event_cost_change": 0.0,
+      "incremental_original_capacity_price_constant": 0.0,
+      "max_producer_accounting_error": 0.0
+    },
+    {
+      "factor_pair": [
+        0.91,
+        0.9
+      ],
+      "independent_exact_full_original_graph_dual_lower": 80140.64737016706,
+      "all_affected_event_cost_change": 1240.5226452863644,
+      "incremental_original_capacity_price_constant": 794.5438085937507,
+      "max_producer_accounting_error": 0.0
+    },
+    {
+      "factor_pair": [
+        0.9,
+        0.91
+      ],
+      "independent_exact_full_original_graph_dual_lower": 79953.095537288,
+      "all_affected_event_cost_change": 803.7839738656301,
+      "incremental_original_capacity_price_constant": 545.3569700520839,
+      "max_producer_accounting_error": 0.0
+    },
+    {
+      "factor_pair": [
+        0.91,
+        0.91
+      ],
+      "independent_exact_full_original_graph_dual_lower": 80399.0743739806,
+      "all_affected_event_cost_change": 2044.3066191519943,
+      "incremental_original_capacity_price_constant": 1339.9007786458346,
+      "max_producer_accounting_error": 0.0
+    },
+    {
+      "factor_pair": [
+        0.92,
+        0.92
+      ],
+      "independent_exact_full_original_graph_dual_lower": 80103.34912461347,
+      "all_affected_event_cost_change": 3088.4821484306763,
+      "incremental_original_capacity_price_constant": 2679.8015572916693,
+      "max_producer_accounting_error": 0.0
+    }
+  ],
+  "selected_bridge_factor_pair": [
+    0.91,
+    0.91
+  ],
+  "R135_independent_lower": 79694.66853347445,
+  "independent_exact_full_original_graph_dual_lower": 80399.0743739806,
+  "R58_independent_feasible_upper": 87820.38242178303,
+  "relative_open_gap": 0.08450553098436103,
+  "max_producer_selected_event_price_error": 0.0,
+  "max_selected_producer_accounting_error": 0.0,
+  "producer_result_sha256": "a7dbab2663c9181bc9b919ed7fe4f098fa71793cbc650a13b00fb9fddbace7ed",
+  "producer_array_sha256": "280d18217e476ddd2fe8f218085d6e4ff6a8381a324ee76b346872bf0871e859",
+  "frozen_design_sha256": "27dedbdd58e35d80de7af4dbdd772bf0c05b5d9e160f038f7f0c839cd4bcb838",
+  "R135_certificate_sha256": "320ad352bc6d7eb3dbbcaa0fb8c7cdfbc35cb41933a60b537988da8c7efcf351",
+  "R136_conditional_rule_sha256": "6a7df65d6a2c4e245858fabe9f111aa36440a02ee228e8a932c8ebb645ead3c8",
+  "wall_seconds": 553.5789999999106,
+  "scientific_limit": "Exact full-original-graph dual grid and separate feasible primal; global optimum and same-build CG closure remain open."
+}

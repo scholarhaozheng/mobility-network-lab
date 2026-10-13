@@ -1,0 +1,24 @@
+{
+  "schema": "SHARED_CG_COMMON_EXPLICIT_CASE_R1",
+  "case_id": "sioux_250_H",
+  "build_id": "sparse_common_dev3_exact_fixed",
+  "graph_type": "explicit",
+  "input_manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_250_H__candidate2_explicit_dag_manifest.json",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev3_exact_fixed\\sioux_250_H\\solver",
+  "expected_source_hashes": {
+    "dynamic_arc.csv": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+    "dynamic_demand.csv": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26"
+  },
+  "expected_commodity_events": 250,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 120,
+  "phase_II_max_rounds": 100,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "release_relative_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "all original dynamic_arc.csv rows and capacity resources; all original positive demands; shared sparse path-CG solver",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev3_exact_fixed"
+}

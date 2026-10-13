@@ -1,0 +1,42 @@
+{
+  "case_id": "hong_kong_10_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "90bb697fa5795e564371d26b59689574280445b95636d5eb4bc75e271e215ce8",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/hong_kong_10_H/dev18/upper-certificate.json",
+    "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/hong_kong_10_H/dev18/lower-certificate.json",
+    "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for hong_kong_10_H / dev18: 111 physical edges; reconstructed path cost 75.0363298579483 matches selected U=75.0363298579483. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "exports": {
+    "png": "986f496dac79c198347f8254aef3ef1c045f72ca1fe31b191a513f8d35e3331e",
+    "svg": "a50ecc12e09a32f3e0e2bf0b1b84c920e5988488ba71aa789d3417634a277920"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/hong_kong_10_H/solver/COLUMN_POOL.npz",
+      "sha256": "82080874b32f493d8f16293f79a6383a6fc0c1170b52b9308bfa0d0d30a95e69"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/hong_kong_10_H/solver/LAST_RMP.npz",
+      "sha256": "80244e6bcae12cda2bfa03959f5d0d2209200d971b5027797c477e48504f117b"
+    },
+    {
+      "path": "SOURCE_AND_REPRODUCTION/workspace_snapshot/work/hong_kong_cg_completion_r5/case/dynamic_arc.csv",
+      "sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

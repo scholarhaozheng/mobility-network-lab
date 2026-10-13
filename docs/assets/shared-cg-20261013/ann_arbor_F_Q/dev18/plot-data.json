@@ -1,0 +1,23 @@
+{
+  "case_id": "ann_arbor_F_Q",
+  "evidence_id": "dev18",
+  "unit": "PCE minutes",
+  "U": 7509.095763624765,
+  "L": 7509.095763624765,
+  "gap_signed": 0.0,
+  "gap_display_pct": 0.0,
+  "history": [],
+  "rmp_calls": null,
+  "original_RMP_minRC": null,
+  "original_minRC_gate": -1e-06,
+  "upper_build": "Dev18",
+  "lower_build": "Dev18",
+  "nonbinding_checks": {
+    "AON_capacity_overloaded_original_edges": 0,
+    "AON_maximum_original_capacity_ratio": 0.6830239071239427,
+    "AON_worst_original_physical_edge_id": "road:osm:193245231:2037649180:2037649182:f",
+    "AON_worst_entry_step": 753,
+    "AON_worst_step_load_pce": 0.02845932946349761
+  },
+  "notes": "Original final-RMP gate: minRC ≥ −1e−6. Valid bound gap and final-RMP pricing are separate checks. Final shared-build cold regression remains pending."
+}

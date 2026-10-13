@@ -1,0 +1,42 @@
+{
+  "case_id": "boston_10_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "7b167f33de3dc3a6137d18c3061ee8ccc6113129f933d6e37cf4297a98dd7634",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/boston_10_H/dev18/upper-certificate.json",
+    "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/boston_10_H/dev18/lower-certificate.json",
+    "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for boston_10_H / dev18: 125 physical edges; reconstructed path cost 64.3968615115295 matches selected U=64.3968615115295. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "exports": {
+    "png": "4dcd96b4c4e6df3826676408ed1a807c8118b300c73717a9f63567d8c6b3c39c",
+    "svg": "5301e71b8bbeb3de27969585891d7c189efb6825e9dd840e117681f496058b99"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/boston_10_H/solver/COLUMN_POOL.npz",
+      "sha256": "4f220aede397b6836c55a7ea617328a87462387111373bf2685f92a9504bbe27"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/boston_10_H/solver/LAST_RMP.npz",
+      "sha256": "1f977966ea346e62aa02d45a17cef179edb079fadfc7ce154f2a65d668de96d6"
+    },
+    {
+      "path": "SOURCE_AND_REPRODUCTION/workspace_snapshot/work/boston_cg_pilot_r1/phase_ii_degeneracy_completion_r3/dynamic_inputs/dynamic_arc.csv",
+      "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

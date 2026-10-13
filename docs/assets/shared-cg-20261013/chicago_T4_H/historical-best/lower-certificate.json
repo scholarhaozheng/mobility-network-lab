@@ -1,0 +1,22 @@
+{
+  "schema": "SHARED_CG_EXPLICIT_INDEPENDENT_CERT_R1",
+  "status": "PASS_FULL_GRAPH",
+  "source_hashes": {
+    "dynamic_arc.csv": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+    "dynamic_demand.csv": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b"
+  },
+  "original_demands": 4,
+  "all_original_arcs": 1351628,
+  "all_shared_original_capacity_rows": 1351628,
+  "pool_columns": 80,
+  "max_original_demand_residual": 1.7763568394002505e-15,
+  "max_relative_demand_residual": 1.1371074156331385e-16,
+  "max_original_arc_capacity_excess": 1.7763568394002505e-15,
+  "maximum_original_path_cost_residual": 0.0,
+  "maximum_full_graph_potential_inequality_violation": 1.7763568394002505e-15,
+  "bad_finite_reachability_arc_count": 0,
+  "original_objective": 241.21852424494347,
+  "verified_full_graph_lower_bound": 241.21852424494332,
+  "relative_gap_raw": 5.891278358361774e-16,
+  "pricing_verifier": "every original dynamic arc plus every demand-specific source/sink mapping"
+}

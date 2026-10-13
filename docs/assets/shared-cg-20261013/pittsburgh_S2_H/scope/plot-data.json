@@ -1,0 +1,37 @@
+{
+  "case_id": "pittsburgh_S2_H",
+  "OD": 1406,
+  "events": 168720,
+  "dt_seconds": 30,
+  "release_steps": 120,
+  "horizon_steps": 320,
+  "scale": 2.0,
+  "base_demand": 2615.767323562197,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/pittsburgh_algorithm_transfer_r1/representative_demand_20261011/shared_core_input",
+    "parent_vehicle_OD_sha": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8",
+    "used_OD_sha": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8",
+    "OD_scope": "1406 frozen positive vehicle OD; all registered source OD",
+    "period": "Uniform release over one modeled hour",
+    "units": "PCE minutes",
+    "scale": 2.0,
+    "release_rule": "Equal releases over 120 steps; multiply parent vehicle demand by 2.0 once",
+    "time_model_id": "50ff83dea807158e4eae90efcc5bcc9bef16cac898aadc43e88a77549578fdd6",
+    "graph_id": "sha256:422e5b5f48aaeb694beb5c0e37007d300492d4983d35a1acdac3a5ab6a792af1",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "U:sparse_common_dev18_demand_weighted_columns_warm_continue60;L:sparse_common_dev18_demand_weighted_columns_cold57_60_mix",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/pittsburgh_S2_H__upper.json"
+  },
+  "parent_note": "Frozen parent vehicle demand; the CG selection changes only this assignment branch. S2 is a synthetic vehicle-demand ×2 stress case.",
+  "source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

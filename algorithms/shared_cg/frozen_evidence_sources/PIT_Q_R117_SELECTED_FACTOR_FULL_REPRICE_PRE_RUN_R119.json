@@ -1,0 +1,42 @@
+{
+  "schema": "PIT_Q_R117_SELECTED_FACTOR_FULL_REPRICE_PRE_RUN_R119",
+  "created_utc": "2026-10-13T00:14:19.716913+00:00",
+  "case_id": "pittsburgh_S2_Q",
+  "selection": "Single R118 independently selected factor 0.25 after fixed R117 grid, exact all-affected-original-destination reprice.",
+  "R103_result_sha256": "36bd685b7cac86505a4d5f433777b016e422e70756cab4c2aeb6e0cfcec0f94c",
+  "R104_independent_certificate_sha256": "45e2f42b76fc1be20d25f4552fad09ad10e5410a1c2eeefa8feaa3fdd3f848a3",
+  "R103_array_sha256": "d9bb3ae106c0a4bc0e4628041751514a1a81462e714021785d05baa63b89f321",
+  "R117_result_sha256": "dc691763088aca7710aec4080b8fbc446656d6734a57187ae529c1091bd8e0bf",
+  "R118_independent_complete_grid_certificate_sha256": "b864d4a3f7f56c7d954f570d19b60837249e11a3b856c822a5200203627d80c2",
+  "generic_price_core_sha256": "30d7e92bbf92f433341fb5793cb671e9fd5d0c1c842a7a2f23b4652504b4ccfc",
+  "source_config_sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "original_AON_array_sha256": "e704931ba19e5bb0682ab18a19773988d5a7ebf956cac431b42dd601e0c862f1",
+  "original_positive_OD": 1406,
+  "original_release_events": 20246400,
+  "exact_affected_original_release_events": 2736000,
+  "exact_affected_destinations": 29,
+  "affected_original_positive_OD": 190,
+  "selected_bridge_factor": 0.25,
+  "base_bridge_factor": 0.2,
+  "bridge_original_edge": 6410,
+  "bridge_first_step": 185,
+  "price_end_exclusive": 26799,
+  "fixed_original_physical_edge_price_map_minutes": {
+    "5564": 0.001,
+    "5572": 0.001,
+    "16682": 0.0005,
+    "16684": 0.0005,
+    "11624": 0.0005,
+    "11649": 0.0005,
+    "3103": 0.0005,
+    "3106": 0.0005
+  },
+  "independent_conservative_lower_gate": 29937.439871747316,
+  "resource": "one full original 29-destination producer and one separate original CSV independent verifier under shared heavy lock",
+  "scientific_limit": "Fixed original model and single dual point; no primal/global optimum claim."
+}

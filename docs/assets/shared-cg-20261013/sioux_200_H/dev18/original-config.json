@@ -1,0 +1,27 @@
+{
+  "schema": "SHARED_CG_COMMON_EXPLICIT_CASE_R1",
+  "case_id": "sioux_200_H",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "graph_type": "explicit",
+  "input_manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_200_H__candidate2_explicit_dag_manifest.json",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\sioux_200_H\\solver",
+  "expected_source_hashes": {
+    "dynamic_arc.csv": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+    "dynamic_demand.csv": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715"
+  },
+  "expected_commodity_events": 200,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 120,
+  "phase_II_max_rounds": 100,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "release_relative_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "all original dynamic_arc.csv rows and capacity resources; all original positive demands; shared sparse path-CG solver",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev18_demand_weighted_columns",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "checkpoint_every_rounds": 0,
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them"
+}

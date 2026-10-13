@@ -1,0 +1,38 @@
+{
+  "case_id": "pittsburgh_F_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "8924d5a34f141ed4466171443f2e088304843661d5a8d32df88cfd2d5efcae2b",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_H/dev18/upper-certificate.json",
+    "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_H/dev18/lower-certificate.json",
+    "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for pittsburgh_F_H / dev18: 17,534 physical edges; reconstructed path cost 12079.2665447375 matches selected U=12079.2665447358. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "59ea1956f6ceddfb81c9213e8819000cc27fa0343c0b4d10f7ce81d67d75a859",
+    "svg": "a8aeadad19690c5738625f075ec8907b03daf9574eec22843190c4c0d5057db8"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_F_H/solver/COLUMN_POOL.npz",
+      "sha256": "5fe426c500de1c9123cec4ca1cc20757ba38339a55d899bbe8e30b9aefec7f53"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_F_H/solver/LAST_RMP.npz",
+      "sha256": "e73878e012ea311de944d6d3909514bd3306465607c169a3deccead2e23ffd9d"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

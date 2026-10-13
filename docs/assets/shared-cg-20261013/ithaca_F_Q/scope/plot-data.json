@@ -1,0 +1,37 @@
+{
+  "case_id": "ithaca_F_Q",
+  "OD": 110,
+  "events": 1584000,
+  "dt_seconds": 0.25,
+  "release_steps": 14400,
+  "horizon_steps": 23423,
+  "scale": 1.0,
+  "base_demand": 421.2613256336401,
+  "layer": "Q",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/six_city_preflight_r1/cities/ithaca/representative_demand_20261011/input",
+    "parent_vehicle_OD_sha": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb",
+    "used_OD_sha": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb",
+    "OD_scope": "110 frozen positive vehicle OD; all registered source OD",
+    "period": "Uniform release over one modeled hour",
+    "units": "PCE minutes",
+    "scale": 1.0,
+    "release_rule": "Equal releases over 14400 steps; multiply parent vehicle demand by 1.0 once",
+    "time_model_id": "08241219dd2fd46daaf63b75c5b6f09d996025ea787b4b01b043df123a09b199",
+    "graph_id": "sha256:013fd7dfccc0268b7a3650f06b96900480e0ccd960a893941da3f856c672dd72",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "sparse_common_dev18_demand_weighted_columns",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/ithaca_F_Q__upper.json"
+  },
+  "parent_note": "Frozen parent vehicle demand; the CG selection changes only this assignment branch.",
+  "source_hashes": {
+    "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+    "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+    "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+  },
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

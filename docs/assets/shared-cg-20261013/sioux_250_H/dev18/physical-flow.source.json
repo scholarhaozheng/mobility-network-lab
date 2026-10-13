@@ -1,0 +1,42 @@
+{
+  "case_id": "sioux_250_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "d142fdfd8c52734c7825898b56e7d8ee2d05d5465141e3dfa7d0426770f46a06",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/sioux_250_H/dev18/upper-certificate.json",
+    "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/sioux_250_H/dev18/lower-certificate.json",
+    "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for sioux_250_H / dev18: 69 physical edges; reconstructed path cost 1521090.83662 matches selected U=1521090.83662. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "1f54f75697900b70f43859068b917e3ae7f23fa9b082d8bbb06659515c3e33d1",
+    "svg": "4dd3855eeefe7447ff93356e739e7c00f5131147f23ff022c5fc9bf75166ca5a"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/sioux_250_H/solver/COLUMN_POOL.npz",
+      "sha256": "4ba207771ac92b5ccb0bd322ec8a941f05945aa123e52f62f4c194ccd1d99344"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/sioux_250_H/solver/LAST_RMP.npz",
+      "sha256": "34135bc7a22afebe6f8980c51aefba06dee55227836c5877320f3a0237089057"
+    },
+    {
+      "path": "SOURCE_AND_REPRODUCTION/workspace_snapshot/work/boston_cg_pilot_r1/phase_ii_degeneracy_completion_r3/frozen_cases/250OD/dynamic_arc.csv",
+      "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

@@ -1,0 +1,42 @@
+{
+  "schema": "DEV41_WIDE_BRIDGE_CG_STAGE",
+  "status": "POOL_ADDED_PENDING_NEXT_RMP",
+  "design_sha256": "f64dbfa6ea2ac9adde7339d8f2610407245a4e8521c2a700f047f6403d077f9c",
+  "completed_rounds": 2,
+  "column_count": 1200,
+  "original_rows": 261645,
+  "matrix_sha256": "6cfdb05a2d6622b94373d3c1dc080839d1a76dfcd4cbb0086cd28af7f528368d",
+  "state_sha256": "4100ace62d2ac839ae373ddd8cfc8fb1079d8c44b361de23a06aca818c5b48a3",
+  "path_pool_sha256": "8922139faa367831cfaadc3831e3730d2d3de283e3894560513d1a0d4077b3e1",
+  "history": [
+    {
+      "round": 1,
+      "restricted_delta": 0.0,
+      "positive_columns": 0,
+      "columns_before": 0,
+      "pricing_mode": "partial",
+      "novel_nonpositive_current_rc": 2320,
+      "full_original_lower": null,
+      "max_capacity_excess": 0.0,
+      "RMP_iterations": 0,
+      "added": 600
+    },
+    {
+      "round": 2,
+      "restricted_delta": -1.1892163763213561,
+      "positive_columns": 314,
+      "columns_before": 600,
+      "pricing_mode": "partial",
+      "novel_nonpositive_current_rc": 1895,
+      "full_original_lower": null,
+      "max_capacity_excess": 1.3877787807814457e-17,
+      "RMP_iterations": 32,
+      "added": 600
+    }
+  ],
+  "source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  }
+}

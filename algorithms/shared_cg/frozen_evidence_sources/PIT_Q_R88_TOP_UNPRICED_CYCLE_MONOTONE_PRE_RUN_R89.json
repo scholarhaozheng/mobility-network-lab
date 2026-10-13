@@ -1,0 +1,46 @@
+{
+  "schema": "PIT_Q_R88_TOP_UNPRICED_CYCLE_MONOTONE_PRE_RUN_R89",
+  "created_utc": "2026-10-12T22:21:38.002268+00:00",
+  "case_id": "pittsburgh_S2_Q",
+  "R87_independent_full_graph_certificate_sha256": "43aaf8915560c55e821710c831c9142cea8c57fc10dfbb06b0c72abd426068f3",
+  "R88_original_path_sample_sha256": "13c2d190d6766bf87550aa52fcfd8a1688a1193fdc53768de7ae4149b1a85890",
+  "config_sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "base_bridge_factor": 0.2,
+  "base_old_cycle_original_edges": [
+    5564,
+    5572
+  ],
+  "base_old_cycle_flat_toll_minutes": 0.0005,
+  "base_second_cycle_original_edges": [
+    16682,
+    16684
+  ],
+  "base_second_cycle_flat_toll_minutes": 0.0005,
+  "candidate_new_original_physical_edges": [
+    11624,
+    11649
+  ],
+  "candidate_flat_toll_grid_minutes": [
+    0.0,
+    0.0005,
+    0.001,
+    0.002
+  ],
+  "candidate_price_time_support": [
+    0,
+    26799
+  ],
+  "bridge_destination_node_index": 33925,
+  "expected_exact_bridge_destination_events": 518400,
+  "expected_base_affected_events": 1929600,
+  "selection": "two highest unpriced original physical edges by R88 aggregate extra traversals; each >693000, tie by original edge index; fixed grid before new dual values",
+  "monotone_bound": "reprice every original R87 affected event of bridge destination exactly for added nonnegative physical toll; retain R87 independently certified shortest costs for all other destinations as lower bounds; subtract original physical capacity price for all 26799 entry steps on each candidate edge",
+  "control": "flat=0 reproduces independent R87 lower and every bridge-destination adjusted event value within 1e-7",
+  "resource": "one common heavy lock <=600s for four one-destination profiles, then independent audit; full all-destination reprice only if conservative lower improves",
+  "scientific_limit": "valid conservative dual only after independent audit; no primal change or global CG optimum"
+}

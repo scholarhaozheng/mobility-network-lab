@@ -1,0 +1,34 @@
+{
+  "case_id": "ann_arbor_F_Q",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "f2c8c3e13f143e31fc4cc2731f68d55e9575260958f88d3440937c1da6495e9a",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/ann_arbor_F_Q/historical-best/upper-certificate.json",
+    "sha256": "d825cad807892f2f1db2ca08997179d13f5756de25ee092a31d3880277ce86b2"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/ann_arbor_F_Q/historical-best/lower-certificate.json",
+    "sha256": "d825cad807892f2f1db2ca08997179d13f5756de25ee092a31d3880277ce86b2"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for ann_arbor_F_Q / historical-best: 5,138 physical edges; reconstructed path cost 7509.09576362476 matches selected U=7509.09576362476. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "exports": {
+    "png": "3d7d8aafee0b01149335447078b75a23b4d053b92536a194b3a904ac6af2b1c6",
+    "svg": "6b87365c9f5d68dd2d606597a231bfb955a2efac0ed6e28d03e50980d86db1fc"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/ann_arbor_F_Q/solver/UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "sha256": "b97eb780fefa2615d448b5d6aef70cefadeaefad3b3b13951bec7a88582b043e"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

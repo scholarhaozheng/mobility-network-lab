@@ -1,0 +1,37 @@
+{
+  "case_id": "ann_arbor_F_Q",
+  "OD": 600,
+  "events": 4320000,
+  "dt_seconds": 0.5,
+  "release_steps": 7200,
+  "horizon_steps": 28800,
+  "scale": 1.0,
+  "base_demand": 1569.5008966739672,
+  "layer": "Q",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/shared_cg_cross_city_r1/inputs/ann_arbor_choicefw600_static_normalized",
+    "parent_vehicle_OD_sha": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f",
+    "used_OD_sha": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f",
+    "OD_scope": "600 frozen positive vehicle OD; all registered source OD",
+    "period": "Uniform release over one modeled hour",
+    "units": "PCE minutes",
+    "scale": 1.0,
+    "release_rule": "Equal releases over 7200 steps; multiply parent vehicle demand by 1.0 once",
+    "time_model_id": "0f5640205bfb265109836aaf757239220e0c4c6cb00d60737331ec39f17e0f32",
+    "graph_id": "sha256:a152fa3c651b5fd5098164ee221345f9ffa17b9255be99ba17cb1f9276b116e4",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "sparse_common_dev18_demand_weighted_columns",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/ann_arbor_F_Q__upper.json"
+  },
+  "parent_note": "New ChoiceFW parent: 600 OD, 1569.500896674 PCE/h. Static FW 7511.745981436 uses another cost model; CG 7509.095763625 is not an algorithmic improvement comparison.",
+  "source_hashes": {
+    "network.csv": "eb5d486d108251b1d2bf5dd920f7fbe8765a74e8738502576fe19a321294e43b",
+    "access.csv": "31c7c1f54d75d8d68fed2684ba5aad8dd5dd382cfa07ee1e09053901b990046f",
+    "assignment_od_pce.csv": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f"
+  },
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

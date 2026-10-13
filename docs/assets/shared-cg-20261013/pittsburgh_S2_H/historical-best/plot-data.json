@@ -1,0 +1,17 @@
+{
+  "case_id": "pittsburgh_S2_H",
+  "evidence_id": "historical-best",
+  "unit": "PCE minutes",
+  "U": 24230.752843357463,
+  "L": 24229.438979559676,
+  "gap_signed": 5.422298705615759e-05,
+  "gap_display_pct": 0.005422298705615759,
+  "history": [],
+  "rmp_calls": null,
+  "original_RMP_minRC": null,
+  "original_minRC_gate": -1e-06,
+  "upper_build": "sparse_common_dev18_demand_weighted_columns_warm_continue60",
+  "lower_build": "sparse_common_dev18_demand_weighted_columns_cold57_60_mix",
+  "nonbinding_checks": {},
+  "notes": "Original final-RMP gate: minRC ≥ −1e−6. Valid bound gap and final-RMP pricing are separate checks. Final shared-build cold regression remains pending. Bounds retain their separate producer identities and are not one CG trajectory. Raw cold60 exited 2 with 0.011960883% gap; the accepted cold bound mixes duals from rounds 57/60. Warm historical U is separate."
+}

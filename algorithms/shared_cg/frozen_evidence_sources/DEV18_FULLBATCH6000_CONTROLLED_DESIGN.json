@@ -1,0 +1,27 @@
+{
+  "schema": "DEV18_FULLBATCH6000_CONTROLLED_DESIGN_R1",
+  "created_utc": "2026-10-12T09:49:06.317755+00:00",
+  "parent_case_config": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns.json",
+  "parent_case_config_sha256": "f728963055dec143ea3191477afaa4c79b1e5ad309fd55150a72092c1a0352bb",
+  "parent_budget": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+  "parent_budget_sha256": "d5ae9049b5cf22d958bf318c8998813dd13fd4d912048ac0366d2b375dbe634a",
+  "shared_source_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev18_demand_weighted_columns",
+  "source_hashes": {
+    "connector_contract.py": "569f41e175abff84efc0d3a0ae8590e0c40327d259c8ad88faa6b3085454231a",
+    "dag_k_shortest.py": "0b557cfde31f6ce6bd36e6a4f0e2014e2f1ee2405ad1d51752edd39f2753f94b",
+    "explicit_graph.py": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0",
+    "fifo_seed.py": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6",
+    "implicit_graph.py": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f",
+    "solve.py": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "sparse_rmp.py": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e",
+    "uniform_release.py": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63",
+    "__init__.py": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+  },
+  "new_config": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000.json",
+  "new_config_sha256": "c11ac425948642ef58a67fc060373d5375971cac21fc2078b2e1e87c548c198b",
+  "new_budget": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000_budget.json",
+  "new_budget_sha256": "17f7567d0aa46af701e626c77ed7b0d415251f2801b87c0bbca7e49456cfb3ad",
+  "comparison": "Pittsburgh S2 H original 1406 OD x120 releases, fixed model and scientific tolerance; increase per-round negative novel path batch 1000 to 6000 because 30-round observed backlog 4273-5854 each round",
+  "decision_rule": "Run once under original heavy lock and 3GiB/7200s gate; independently verify original-space primal and full-graph dual if solver leaves a solved Phase II stage. Do not claim optimum without frozen 1e-4 gap and pricing threshold. Do not reduce OD or alter time/network/capacity.",
+  "prior_11_case_dev18_status": "fresh independent PASS_FULL_GRAPH all 11; same source files, so no new regression needed solely for case-specific batching policy"
+}

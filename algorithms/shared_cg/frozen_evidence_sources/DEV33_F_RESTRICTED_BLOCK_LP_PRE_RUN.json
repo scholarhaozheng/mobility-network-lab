@@ -1,0 +1,55 @@
+{
+  "schema": "SHARED_CG_DEV33_F_RESTRICTED_BLOCK_COORDINATE_LP_PRE_RUN_R1",
+  "case_id": "urbana_F_Q",
+  "frozen_inputs": {
+    "R51_original_design": {
+      "relative_path": "Q_F_ALL_BRIDGE_FRAGMENTS_EXACT_PREFIX_PRE_RUN_R51.json",
+      "sha256": "86bca07d4a24104f016de709f2ee37da4937a1d0e9a3068e5046557a9f381ba9"
+    },
+    "R51_profile_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r51/PROFILE_RESULT.json",
+      "sha256": "86c69724241df3a43700de3a320543015bcc8dca4339166d81c2bf26cdeea0e7"
+    },
+    "R52_pattern_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r52/RESULT.json",
+      "sha256": "e0670d36363e8cad73bd3c23069bac4c7e4bd0d40ecb841f1e84eceaa48c796f"
+    },
+    "R53_original_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r53/RESULT.json",
+      "sha256": "07658c065f5c796a86261cf84502914dd3cee03835f78ed3da9cf2c57a178044"
+    },
+    "R54_independent_cert": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r53/INDEPENDENT_FULL_ORIGINAL_TIME_CERTIFICATE_R54.json",
+      "sha256": "e7ce0df3d12fc89777f1b6178ddaeacb489475cdbb74a56f2df7833d02e5eeb5"
+    }
+  },
+  "incumbent_certificate": "runs/dev32_f_followup_order_grid/ORDER_00/INDEPENDENT_CERT.json",
+  "incumbent_certificate_sha256": "c76465b162f84838654fe2d1aeece1331bb56b89e73f721c533a77e04a90dad6",
+  "incumbent_result": "runs/dev32_f_followup_order_grid/ORDER_00/RESULT.json",
+  "incumbent_result_sha256": "7cea82ee7e18bb0cd76066230ac4cb35690636ba616155f1da1bfbcbe31df4a0",
+  "incumbent_swap_array": "runs/dev32_f_followup_order_grid/ORDER_00/SWAP_VARIABLES.npz",
+  "incumbent_swap_array_sha256": "ed86d7032dc29c1ec5fddbe5b2c705b7920837a17e94fb0b97a4fcb508ca527c",
+  "incumbent_independent_feasible_upper_PCE_minutes": 11333.963303304185,
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "restricted_candidate_fragments": 305053,
+  "release_block_steps": 120,
+  "block_order": "descending_release_step",
+  "sweeps": 1,
+  "lp_method": "scipy.optimize.linprog(method=highs)",
+  "lp_options": {
+    "primal_feasibility_tolerance": 1E-09,
+    "dual_feasibility_tolerance": 1E-09,
+    "time_limit_seconds_per_block": 120
+  },
+  "variables": "all source positive-unit-saving R51 fragment swaps to exact R52 original paths; each 0<=x_j<=original fragment mass",
+  "constraints": "all touched original physical edge entry-time capacities, with exact other-block incumbent flow fixed; no row deletion",
+  "objective": "maximize total original PCE-minute saving from accepted R43 full-demand feasible source flow",
+  "work_rule": "one deterministic descending pass; save atomic checkpoint at every block; independent full original CSV replay before accepting final upper",
+  "compact_capacity_array_gate_bytes": 2000000000,
+  "shared_lock": "mcl_batch_guard heavy",
+  "not_claimed": "global restricted LP optimum, unrestricted CG optimum, DNL/DTA/DUE or local measured calibration",
+  "ordering_grid": [
+    "descending_release_120_step_block_LP"
+  ]
+}

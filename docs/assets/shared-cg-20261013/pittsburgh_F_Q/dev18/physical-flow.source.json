@@ -1,0 +1,34 @@
+{
+  "case_id": "pittsburgh_F_Q",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "2217aace904654936494159260d999d651fda22dabcd7f8c84c0c216e28075a8",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_Q/dev18/upper-certificate.json",
+    "sha256": "14732f4ad293532d2411b6060ba7a86ef4fe34d19d3a8d42e8395a72796d510c"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_Q/dev18/lower-certificate.json",
+    "sha256": "14732f4ad293532d2411b6060ba7a86ef4fe34d19d3a8d42e8395a72796d510c"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for pittsburgh_F_Q / dev18: 17,534 physical edges; reconstructed path cost 12079.2665447375 matches selected U=12079.2665447375. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "9201e9fcf18d38a62acaff33f1d2e19ee07160940c2b8ab859dd023bac1f84ba",
+    "svg": "30bf565b86034cf320f118a0bc77bf51750e505f88a187c29a2f0fde13e6389b"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_F_Q/solver/UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "sha256": "9e972c16a76831b922ba1489f029a45ca6e32a08da2fdb3e1df3e88f81d9f1ee"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

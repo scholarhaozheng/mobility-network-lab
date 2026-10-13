@@ -1,0 +1,33 @@
+{
+  "schema": "SHARED_CG_DEV34_F_INDEPENDENT_NUMERIC_GUARDED_BLOCK_LP_CERT_R1",
+  "dev34_design_sha256": "81cf4e9308d8db0451c9ea13c3a61171540214ff833c4aef47a65b9a3e63ef32",
+  "ordering_index": 0,
+  "ordering": "descending_release_120_step_block_LP_numeric_guard",
+  "status": "PASS_FULL_ORIGINAL_OD_RELEASE_PATH_TIME_CAPACITY_OBJECTIVE",
+  "design_sha256": "86bca07d4a24104f016de709f2ee37da4937a1d0e9a3068e5046557a9f381ba9",
+  "producer_result_sha256": "91c946083e7b3accba867831a7677dc547eb239377d64f299152be15baea84d3",
+  "R43_independent_certificate_sha256": "a572ddab6a72c3900b9e3d6c5bc615ad91ce9b98536bb9e9a4ac9bb648887ef1",
+  "original_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "selected_bridge_OD": 20,
+  "all_selected_R43_fragments": 305053,
+  "all_canonical_original_paths_independently_checked": 57390,
+  "all_pattern_original_arc_actions_checked": 42879765,
+  "positive_original_fragment_swaps": 90877,
+  "max_selected_per_release_mass_residual_PCE": 9.540979117872439e-18,
+  "max_original_pattern_cost_error_minutes": 1.5987211554602254e-13,
+  "all_changed_original_capacity_edges_checked": 3326,
+  "all_changed_original_capacity_rows_used": 34924263,
+  "max_original_capacity_excess_PCE": 1.054525980426213e-10,
+  "min_original_row_flow_PCE": -1.5178830414797062e-18,
+  "R43_independent_feasible_upper": 11364.69035613391,
+  "independent_full_original_feasible_upper": 11333.921650746439,
+  "independent_improvement_PCE_minutes": 30.768705387469787,
+  "wall_seconds": 15.281999999890104,
+  "scientific_limit": "All-original-release primal flow with exact original physical entry rows, fixed bridge service schedule; no full-graph dual closure or 16/16 optimum claim."
+}

@@ -1,0 +1,40 @@
+{
+  "case_id": "chicago_T4_H",
+  "OD": 4,
+  "events": 4,
+  "dt_seconds": 30,
+  "release_steps": null,
+  "horizon_steps": 169,
+  "scale": 1,
+  "base_demand": null,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/chicago_algorithm_transfer_r1/runs/T_case",
+    "parent_vehicle_OD_sha": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+    "used_OD_sha": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b",
+    "OD_scope": "4 frozen positive vehicle OD; selected benchmark/pilot pulse",
+    "period": "Frozen dynamic release records; not a full-hour city estimate",
+    "units": "PCE minutes",
+    "scale": 1,
+    "release_rule": "Frozen dynamic_demand.csv departure indices [5]; total pulse 66.53295454563035 original flow units",
+    "time_model_id": "6e4fa0f4202317139e9ea6a159dd7bfddd7b15925a0cdbd6858cfa35ed6df706",
+    "graph_id": "sha256:10ae733ff1335370e62123669da370e5d9feb63debaf78658a41b18af7bb444a",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "U:sparse_common_dev18_demand_weighted_columns;L:sparse_common_dev3_exact_fixed",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/chicago_T4_H__upper.json"
+  },
+  "parent_note": "Four selected OD on the frozen T4 graph. This pulse is not the full-hour city vehicle demand.",
+  "source_hashes": {
+    "dynamic_arc.csv": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+    "dynamic_demand.csv": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b"
+  },
+  "release_indices": [
+    5
+  ],
+  "pulse_volume": 66.53295454563035,
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

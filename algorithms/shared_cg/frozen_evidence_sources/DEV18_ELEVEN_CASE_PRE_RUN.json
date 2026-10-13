@@ -1,0 +1,21 @@
+{
+  "schema": "SHARED_CG_DEV18_ELEVEN_CASE_PRE_RUN_R1",
+  "candidate_build": "sparse_common_dev18_demand_weighted_columns",
+  "cases": [
+    "hong_kong_10_H",
+    "boston_10_H",
+    "sioux_200_H",
+    "sioux_250_H",
+    "berkeley_T4_H",
+    "chicago_T4_H",
+    "ithaca_F_Q",
+    "ann_arbor_F_Q",
+    "pittsburgh_F_Q",
+    "urbana_F_H",
+    "pittsburgh_F_H"
+  ],
+  "same_source_and_scientific_config_as_dev9": true,
+  "core_identity_sha256": "31513127e2b058a64ddda2934641025e39bcdf5a3fd5829bffa0beffce85ba8e",
+  "selection_change_only": "rank negative novel columns by demand times reduced cost; unaffected explicit and uniform-release adapters",
+  "gates_unchanged": true
+}

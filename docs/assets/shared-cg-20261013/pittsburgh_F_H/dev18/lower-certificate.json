@@ -1,0 +1,25 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_INDEPENDENT_CERT_R1",
+  "status": "PASS_FULL_GRAPH",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "positive_original_commodity_events": 168720,
+  "full_allowed_physical_arc_time_rows": 5610880,
+  "pool_columns": 168720,
+  "positive_columns": 168720,
+  "original_objective": 12079.26654473578,
+  "verified_full_graph_dual_lower_bound": 12079.266544737546,
+  "relative_gap_raw": -1.4622069181946852e-13,
+  "max_original_demand_residual": 0.0,
+  "max_relative_release_demand_residual": 0.0,
+  "max_original_capacity_excess": 0.0,
+  "maximum_full_graph_potential_inequality_violation": 0.0,
+  "bad_finite_reachability_arc_count": 0,
+  "original_capacity_rows_used": 890684,
+  "pricing_verifier": "all original physical/turn/time/wait/sink inequalities, separate numba kernel",
+  "producer_pricing_calls": 117,
+  "independent_potential_method": "recomputed from original arcs, all waits, original H and saved sparse capacity dual; no producer potential files"
+}

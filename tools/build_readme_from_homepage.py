@@ -154,6 +154,15 @@ class Exporter:
                 out.append('<tr>'+''.join(cells)+'</tr>')
         return '\n'.join(out+['</table>'])+'\n\n'
     def sioux_finite(self,stage):
+        if stage.select_one('.cg-component'):
+            out=[anchor(stage.get('id'))]
+            for child in stage.find_all(recursive=False):
+                if child.select('.sioux-instance-panel') or 'sioux-instance' in ' '.join(child.get('class',[])):continue
+                out.append(self.render(child))
+            for panel in stage.select('.sioux-instance-panel'):
+                out.append('##### Retained '+panel['data-sioux-od']+'-OD control evidence\n\n')
+                out.extend(self.render(child) for child in panel.children)
+            return ''.join(out)
         panels=stage.select('.sioux-instance-panel');out=[anchor(stage.get('id'))]
         for child in stage.find_all(recursive=False):
             if child.select('.sioux-instance-panel') or child in panels or 'sioux-instance' in ' '.join(child.get('class',[])):continue
@@ -209,6 +218,8 @@ class Exporter:
     def render(self,node):
         if isinstance(node,NavigableString):return ''
         cls=node.get('class',[])
+        if 'cg-metrics' in cls:
+            return '**'+ ' · '.join(x.find('dt').get_text(strip=True)+': '+x.find('dd').get_text(strip=True) for x in node.find_all('div',recursive=False))+'**\n\n'
         if 'scope-flow' in cls:return self.framework(node)
         if node.name in ('script','button') or node.get('id') in ('atlas-view-controls','atlas-compact-panel'):return ''
         if 'atlas-stage-prose' in cls or 'atlas-evidence-note' in cls:return str(clean(node))+'\n\n'

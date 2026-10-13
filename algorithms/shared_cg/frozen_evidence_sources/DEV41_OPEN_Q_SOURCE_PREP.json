@@ -1,0 +1,34 @@
+{
+  "schema": "SHARED_CG_DEV41_OPEN_Q_SOURCE_PREP_R1",
+  "created_utc": "2026-10-13T14:12:22.029881+00:00",
+  "status": "SOURCE_CONFIGS_FROZEN_COLD_SEEDS_UNRUN",
+  "cases": [
+    {
+      "case_id": "urbana_S2_Q",
+      "parent_config_sha256": "0a0f412c952859c56d5e54d2456602992ef452f84b39d4801c74320fc1a9dc4a",
+      "cold_config": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\urbana_S2_Q__sparse_common_dev41_wide_bridge_cg_cold_seed.json",
+      "cold_config_sha256": "240a2102dbe74913a199c37e8c772dd5780994d5648a5a5e52d0b408801dc9e4",
+      "source_hashes": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      },
+      "original_events": 6019200,
+      "demand_factor": 2.0
+    },
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "parent_config_sha256": "498d3ebef97b1d3b00749a67608364ba9ca4c2ed57bfaecd28cb4c99bf18cdf7",
+      "cold_config": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_Q__sparse_common_dev41_wide_bridge_cg_cold_seed.json",
+      "cold_config_sha256": "0870a5cb0807ac75f7a5083786defd9c4740fedd683e1bed91f617a9d6349cc3",
+      "source_hashes": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      },
+      "original_events": 20246400,
+      "demand_factor": 2.0
+    }
+  ],
+  "shared_core_build": "sparse_common_dev41_wide_bridge_cg"
+}

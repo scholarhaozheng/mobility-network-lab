@@ -1,0 +1,65 @@
+{
+  "schema": "SHARED_CG_DEV34_F_BLOCK_LP_NUMERIC_REVISION_PRE_RUN_R1",
+  "case_id": "urbana_F_Q",
+  "parent_design": "DEV33_F_RESTRICTED_BLOCK_LP_PRE_RUN.json",
+  "parent_design_sha256": "1ef65684dec32ec3fd00685aee4bff156b11ce8e1bf056e41535fadab451ee89",
+  "measured_failure_receipt": "runs\\dev33_f_restricted_block_lp\\ORDER_00\\BLOCK_FAILURE.json",
+  "measured_failure_sha256": "7344afc6bf9aa41fc6dbfe39714c49a2fd511e52b92551516b6effd1080a9bb9",
+  "independently_valid_partial_certificate": "runs\\dev33_f_restricted_block_lp\\ORDER_00\\PARTIAL_INDEPENDENT_CERT.json",
+  "partial_certificate_sha256": "2a2ed669e62e376feeb005fa339104d303c2688caeeb317cc48b0cd21d8c190c",
+  "same_original_OD": 418,
+  "same_original_release_events": 6019200,
+  "same_source_network_cost_capacity_and_paths": true,
+  "same_initial_incumbent": "runs/dev32_f_followup_order_grid/ORDER_00/SWAP_VARIABLES.npz",
+  "same_initial_incumbent_sha256": "ed86d7032dc29c1ec5fddbe5b2c705b7920837a17e94fb0b97a4fcb508ca527c",
+  "same_block_width": 120,
+  "same_descending_one_sweep": true,
+  "same_highs_primal_feasibility_tolerance": 1E-09,
+  "post_block_capacity_target_PCE": 1E-10,
+  "post_block_rule": "If the LP candidate would exceed target, move from old feasible block x toward LP x by the largest capacity-safe fraction; objective and bounds remain unchanged. Save actual fraction and independently replay final original capacity rows.",
+  "original_acceptance_capacity_tolerance_PCE": 1E-08,
+  "new_algorithm_output_dir": "runs/dev34_f_block_lp_numeric_revision/ORDER_00",
+  "frozen_inputs": {
+    "R51_original_design": {
+      "relative_path": "Q_F_ALL_BRIDGE_FRAGMENTS_EXACT_PREFIX_PRE_RUN_R51.json",
+      "sha256": "86bca07d4a24104f016de709f2ee37da4937a1d0e9a3068e5046557a9f381ba9"
+    },
+    "R51_profile_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r51/PROFILE_RESULT.json",
+      "sha256": "86c69724241df3a43700de3a320543015bcc8dca4339166d81c2bf26cdeea0e7"
+    },
+    "R52_pattern_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r52/RESULT.json",
+      "sha256": "e0670d36363e8cad73bd3c23069bac4c7e4bd0d40ecb841f1e84eceaa48c796f"
+    },
+    "R53_original_result": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r53/RESULT.json",
+      "sha256": "07658c065f5c796a86261cf84502914dd3cee03835f78ed3da9cf2c57a178044"
+    },
+    "R54_independent_cert": {
+      "relative_path": "runs/q_f_all_bridge_exact_prefix_r53/INDEPENDENT_FULL_ORIGINAL_TIME_CERTIFICATE_R54.json",
+      "sha256": "e7ce0df3d12fc89777f1b6178ddaeacb489475cdbb74a56f2df7833d02e5eeb5"
+    }
+  },
+  "ordering_grid": [
+    "descending_release_120_step_block_LP_numeric_guard"
+  ],
+  "scientific_limit": "Numerical repair to internal step; no change to source model or final acceptance gate; partial Dev33 result preserved.",
+  "incumbent_certificate": "runs/dev32_f_followup_order_grid/ORDER_00/INDEPENDENT_CERT.json",
+  "incumbent_certificate_sha256": "c76465b162f84838654fe2d1aeece1331bb56b89e73f721c533a77e04a90dad6",
+  "incumbent_result": "runs/dev32_f_followup_order_grid/ORDER_00/RESULT.json",
+  "incumbent_result_sha256": "7cea82ee7e18bb0cd76066230ac4cb35690636ba616155f1da1bfbcbe31df4a0",
+  "incumbent_swap_array": "runs/dev32_f_followup_order_grid/ORDER_00/SWAP_VARIABLES.npz",
+  "incumbent_swap_array_sha256": "ed86d7032dc29c1ec5fddbe5b2c705b7920837a17e94fb0b97a4fcb508ca527c",
+  "incumbent_independent_feasible_upper_PCE_minutes": 11333.963303304185,
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "restricted_candidate_fragments": 305053,
+  "release_block_steps": 120,
+  "lp_options": {
+    "primal_feasibility_tolerance": 1E-09,
+    "dual_feasibility_tolerance": 1E-09,
+    "time_limit_seconds_per_block": 120
+  },
+  "compact_capacity_array_gate_bytes": 2000000000
+}

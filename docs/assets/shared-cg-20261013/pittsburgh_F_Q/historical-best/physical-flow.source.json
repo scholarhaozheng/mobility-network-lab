@@ -1,0 +1,34 @@
+{
+  "case_id": "pittsburgh_F_Q",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "19ed8651bbbbdfe9432782951353522f3c1c1236b5f50b6752b3e56379c41686",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_Q/historical-best/upper-certificate.json",
+    "sha256": "14732f4ad293532d2411b6060ba7a86ef4fe34d19d3a8d42e8395a72796d510c"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/pittsburgh_F_Q/historical-best/lower-certificate.json",
+    "sha256": "14732f4ad293532d2411b6060ba7a86ef4fe34d19d3a8d42e8395a72796d510c"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for pittsburgh_F_Q / historical-best: 17,534 physical edges; reconstructed path cost 12079.2665447375 matches selected U=12079.2665447375. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "b6424cce4fb1f9d71d5cd58745f369061ad381a73f61119f8ded529744bc7473",
+    "svg": "b33835db3b8bba58c9a2ad0a2c47e3e267caefb2174737f2cacf5e36a9da5fab"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/pittsburgh_F_Q/solver/UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "sha256": "9e972c16a76831b922ba1489f029a45ca6e32a08da2fdb3e1df3e88f81d9f1ee"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

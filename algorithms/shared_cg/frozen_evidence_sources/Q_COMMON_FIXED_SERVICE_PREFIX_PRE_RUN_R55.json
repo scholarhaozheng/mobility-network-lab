@@ -1,0 +1,52 @@
+{
+  "schema": "Q_COMMON_FIXED_SERVICE_PREFIX_PRE_RUN_R55",
+  "created_utc": "2026-10-12T18:46:03.944006+00:00",
+  "cases": [
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "bottleneck_original_edge_index": 6413,
+      "expected_selected_OD": 36,
+      "expected_selected_fragments": 544663,
+      "max_fixed_service_delay_steps": 13421,
+      "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+      "config_sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0",
+      "R43_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\pittsburgh_S2_Q\\RESULT.json",
+      "R43_result_sha256": "42463ee2ffc02f9da87b8ae476a085041999866fbdeae92b405745e15865ba16",
+      "R43_independent_certificate_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\pittsburgh_S2_Q\\INDEPENDENT_ORIGINAL_TIME_CERTIFICATE.json",
+      "R43_independent_certificate_sha256": "873c7c37ca45044b820bff0a1902754c3d8c6271dedb55e8a2c7c5ff42bc814d",
+      "AON_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev9_delayed_zero_gc\\pittsburgh_S2_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "AON_sha256": "e704931ba19e5bb0682ab18a19773988d5a7ebf956cac431b42dd601e0c862f1",
+      "source_hashes": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      }
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "bottleneck_original_edge_index": 447,
+      "expected_selected_OD": 20,
+      "expected_selected_fragments": 366037,
+      "max_fixed_service_delay_steps": 21855,
+      "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\urbana_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+      "config_sha256": "d2f82c8b380c2c79b0b44c9ee93947581ebc6685a71be1ddcdc0da2f7546a907",
+      "R43_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\urbana_S2_Q\\RESULT.json",
+      "R43_result_sha256": "53a18f4cffe661266c77b6a5241aae6e0b63acad8880ad178559f20e8fd699d4",
+      "R43_independent_certificate_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\urbana_S2_Q\\INDEPENDENT_ORIGINAL_TIME_CERTIFICATE.json",
+      "R43_independent_certificate_sha256": "c81850c3848db3926f36d77b06e61e6c971649f7513aac8a93cf64c4afb97f38",
+      "AON_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev9_delayed_zero_gc\\urbana_S2_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "AON_sha256": "6b23c18ce57c987b2789029308195be550aae89efb41ca03df701dd6696046d7",
+      "source_hashes": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      }
+    }
+  ],
+  "selection": "all original AON OD using the single pre-specified first active bottleneck in each case, all 14400 original releases, all corresponding independently certified R43 fragments; all other original OD and fragments remain part of the full source model",
+  "core": "the same exact_prefix_policy function from q_f_fixed_bridge_exact_prefix_r49.py; original source graph and zero-time connector DAG, original 0.25s physical durations and costs",
+  "suffix_rule": "require no downstream R43 waiting after chosen bottleneck for selected OD; keep original AON suffix and exact certified bottleneck service step",
+  "path_rule": "exclude chosen bottleneck only in prefix and cross exactly once at fixed original service step; legal pre-bottleneck waiting/cycles retained",
+  "resource": "each profile under original shared heavy lock <=1800s, nominal 3GiB private memory; no OD or release fallback",
+  "scientific_limit": "Profiles are full-source path-cost screens, not jointly feasible new flows or unrestricted CG optima."
+}

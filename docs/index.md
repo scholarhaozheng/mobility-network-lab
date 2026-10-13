@@ -3440,3 +3440,21 @@ GMNS, `tap-b`/TAPLab and source datasets retain their upstream attribution; this
 The [open-data explorer](volumes/overview.html#src-docs-open-data-explorer-document) and data tools, including `mcl_data.py catalog-city-match` for named-entity matching of user-supplied catalogs, support source inspection. **These evidence layers are not additive.** [Data-tools instructions](volumes/overview.html#src-docs-data-tools-document) · [Source and access scope](volumes/overview.html#src-docs-open-data-document). Future directions such as Policy Bush remain outside the current demonstrated modules.
 
 [Complete overview and nine case volumes](volumes/overview.html) · [Architecture and project-map sources](volumes/overview.html#src-docs-architecture-document) · [Complete case/method coverage](volumes/overview.html#reading-section-3) · [Roadmap](volumes/overview.html#src-docs-roadmap-document).
+
+<!-- SHARED_CG_20261013_START -->
+### Shared CG: frozen 13 October 2026 increment
+
+The current rendered homepage and the nine existing city volumes include the
+16-instance CG catalog, separate Dev18 and historical evidence choices, and
+the Dev40/41 research checkpoints. The 19 comparison rows and all upstream
+four-stage calculations retain their existing identities. Four Dev18 instances
+still have an open original final-RMP pricing gate; three Q bound pairs are open.
+
+[Current homepage CG atlas](index.html?atlas-view=full#shared-cg-urbana-champaign) ·
+[Versioned code and preparation](reproduction.html#shared-cg-20261013) ·
+[Instance and parent-demand catalog](assets/shared-cg-20261013/catalog.json).
+
+Homepage maintenance follows the current HTML/atlas workflow. Export the
+GitHub README with `python tools/build_readme_from_homepage.py`; this exporter
+does not rebuild the homepage from an earlier Markdown snapshot.
+<!-- SHARED_CG_20261013_END -->

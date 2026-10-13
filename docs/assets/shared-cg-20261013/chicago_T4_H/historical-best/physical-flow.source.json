@@ -1,0 +1,42 @@
+{
+  "case_id": "chicago_T4_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "73b786f79c74da1cfe6ea75cf4ee91c6611a8f067efb11257850f576ba36bc26",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/chicago_T4_H/historical-best/upper-certificate.json",
+    "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/chicago_T4_H/historical-best/lower-certificate.json",
+    "sha256": "fa13242c62d9dba0bfb817421750562b0be75ee5a234874fda5b865f90f14cee"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for chicago_T4_H / historical-best: 19,202 physical edges; reconstructed path cost 241.218524244943 matches selected U=241.218524244943. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "exports": {
+    "png": "a5733e53db8e439a5591e0ac505537f28fb7cd9df96a0baacf682e0d763d96fe",
+    "svg": "dbf4df68524145a26046ffaaf76f9a7a99e5cf1a08847a661ec4d2896cf9072d"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/chicago_T4_H/solver/COLUMN_POOL.npz",
+      "sha256": "a5abcaedd05feceb356c2cc0f6c24d5df32fb8761c1742450d248b711eac72f5"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/chicago_T4_H/solver/LAST_RMP.npz",
+      "sha256": "71fb9554039c0450f9f4a4f360c2c551bae8bd148b5048b2d494a3fc4651d135"
+    },
+    {
+      "path": "SOURCE_AND_REPRODUCTION/workspace_snapshot/work/chicago_algorithm_transfer_r1/runs/T_case/dynamic_arc.csv",
+      "sha256": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

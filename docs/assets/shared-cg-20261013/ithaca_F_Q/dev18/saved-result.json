@@ -1,0 +1,48 @@
+{
+  "schema": "SHARED_CG_COMPRESSED_UNIFORM_AON_R1",
+  "status": "SOLVER_PRIMAL_DUAL_CLOSED",
+  "case_id": "ithaca_F_Q",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "graph_type": "uniform_release_implicit",
+  "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+  "config_sha256": "17bcea4a9cf939b3b6b367bb6e19256887b33cf143b908315f849a72dd47c6bb",
+  "source_hashes": {
+    "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+    "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+    "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+  },
+  "model": {
+    "schema": "SHARED_CG_COMPRESSED_UNIFORM_RELEASE_Q_MODEL_R1",
+    "case_id": "ithaca_F_Q",
+    "source_hashes": {
+      "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+      "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+      "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+    },
+    "dt_seconds": 0.25,
+    "release_steps": 14400,
+    "horizon_steps": 23423,
+    "demand_factor": 1.0,
+    "positive_original_OD": 110,
+    "positive_original_commodity_events": 1584000,
+    "original_edges": 47938,
+    "original_physical_edges": 15148,
+    "original_physical_entry_rows": 354811604,
+    "capacity_rule": "original hourly physical edge capacity * dt / 3600 at entry",
+    "wait_rule": "all node-time waits cost dt / 60 minutes",
+    "sink_rule": "original destination any arrival step <= H"
+  },
+  "path_file": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\ithaca_F_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+  "path_sha256": "a7872ad0f72226bb876c09c1a610c63a9287d7e5eb63084c93ac9fbf58eeeea1",
+  "full_graph_unconstrained_shortest_lower_bound": 1638.7311892680168,
+  "phase_II_objective": 1638.7311892680168,
+  "full_graph_lower_bound": 1638.7311892680168,
+  "relative_gap_raw": 0.0,
+  "AON_capacity_overloaded_original_edges": 0,
+  "AON_maximum_original_capacity_ratio": 0.11259252831957473,
+  "AON_worst_original_physical_edge_id": "p_20189928_0_F",
+  "AON_worst_entry_step": 1432,
+  "AON_worst_step_load_pce": 0.004691355346648947,
+  "max_release_plus_path_arrival_step": 16223,
+  "proof_scope": "Exact optimum only when original full-graph nonnegative-cost shortest construction is feasible on every original physical time-entry resource; otherwise AON is a screen, not a solver certificate."
+}

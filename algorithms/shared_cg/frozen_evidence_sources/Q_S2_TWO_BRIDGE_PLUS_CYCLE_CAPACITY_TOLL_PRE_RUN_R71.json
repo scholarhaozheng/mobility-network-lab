@@ -1,0 +1,45 @@
+{
+  "schema": "Q_S2_TWO_BRIDGE_PLUS_CYCLE_CAPACITY_TOLL_PRE_RUN_R71",
+  "created_utc": "2026-10-12T20:15:57.187357+00:00",
+  "case_id": "urbana_S2_Q",
+  "R28_result_sha256": "0ae1f9d5dd9af56d7dacbd9eef8fb754deb56744955e02d245d579704dc1b9cd",
+  "R28_independent_certificate_sha256": "b93875fb319d7f3b1d2c3e1c9eecba255173186dee57c5c6f5051d8bf7d8337c",
+  "R60_original_capacity_diagnostic_sha256": "6977aa7d5d5e4b02b20b70b7c822a22597a711d3b7a78ab088716612ff2f082a",
+  "F_R35_source_cycle_result_sha256": "d426451eb844c75575087b954ff2130030a7738bc16f5cfa21c4ed82685fc0eb",
+  "config_sha256": "d2f82c8b380c2c79b0b44c9ee93947581ebc6685a71be1ddcdc0da2f7546a907",
+  "original_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "AON_sha256": "6b23c18ce57c987b2789029308195be550aae89efb41ca03df701dd6696046d7",
+  "fixed_R28_original_edges": [
+    447,
+    2876
+  ],
+  "fixed_R28_factor_pair": [
+    0.885,
+    0.885
+  ],
+  "cycle_original_physical_edges": [
+    7079,
+    7084,
+    8211,
+    10494
+  ],
+  "cycle_toll_start_step": 0,
+  "cycle_toll_end_exclusive_step": 35491,
+  "flat_cycle_toll_grid_minutes": [
+    0.0,
+    0.0005,
+    0.001,
+    0.0015,
+    0.002,
+    0.003
+  ],
+  "selection": "intersection of R60 independently binding original S2 capacity resources and the four source-cycle physical arcs already identified for same original Urbana graph in accepted F R35",
+  "dual": "fixed R28 two original bridge triangle prices plus equal flat nonnegative price on each selected original physical capacity row for t<35491; exact all original OD/release repricing and original capacity subtraction",
+  "control": "flat=0 reproduces independent R28 lower within 1e-5",
+  "resource": "one common heavy lock <=1800 sec; original graph/source OD and all 14,400 releases, no compression of demand",
+  "limit": "new lower only after independent original graph reprise; fixed-cost time graph, not DNL/DTA"
+}

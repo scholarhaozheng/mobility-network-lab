@@ -1,0 +1,162 @@
+{
+  "schema": "DEV40_BRIDGE_MULTI_ORIGINAL_Q_JOINT_CG",
+  "status": "ROUND_LIMIT_OPEN",
+  "case_id": "urbana_F_Q",
+  "build_id": "sparse_common_dev40_bridge_multi_cg",
+  "source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "design_sha256": "109c69c41256c0f99fb5634532f71e14b964a01edd180dfa3568c3a6aaffd177",
+  "runner_sha256": "34adabb9a79239de22f0cd5a3a11ecb7faf774086e41d79c642cd886357f79ab",
+  "original_positive_OD": 418,
+  "original_release_events": 6019200,
+  "fresh_seed_receipt_sha256": "8ef74d50da8220ca8eaf9084c9cc733ec57d10d9d6360b3007cb4edcbb80a72d",
+  "initial_columns": 0,
+  "new_columns": 720,
+  "represented_source_events_or_fragments": 646,
+  "source_fragment_count": 606346,
+  "source_selected_bridge_edge": 447,
+  "source_bridge_weighted_wait_steps_PCE": 786935.516670179,
+  "source_bridge_eligible_fragments": 305053,
+  "unsplit_original_OD": 378,
+  "all_original_event_count": 6019200,
+  "round_history": [
+    {
+      "round": 1,
+      "restricted_delta": 0.0,
+      "positive_columns": 0,
+      "columns_before": 0,
+      "pricing_mode": "partial",
+      "novel_nonpositive_current_rc": 640,
+      "full_original_lower": null,
+      "max_capacity_excess": 0.0,
+      "RMP_iterations": 0,
+      "added": 240
+    },
+    {
+      "round": 2,
+      "restricted_delta": -0.28574350935152815,
+      "positive_columns": 80,
+      "columns_before": 240,
+      "pricing_mode": "partial",
+      "novel_nonpositive_current_rc": 560,
+      "full_original_lower": null,
+      "max_capacity_excess": 1.3877787807814457e-17,
+      "RMP_iterations": 0,
+      "added": 240
+    },
+    {
+      "round": 3,
+      "restricted_delta": -0.423396125867269,
+      "positive_columns": 160,
+      "columns_before": 480,
+      "pricing_mode": "partial",
+      "novel_nonpositive_current_rc": 480,
+      "full_original_lower": null,
+      "max_capacity_excess": 1.3877787807814457e-17,
+      "RMP_iterations": 0,
+      "added": 240
+    }
+  ],
+  "partial_price_receipts": [
+    {
+      "mode": "partial",
+      "original_events_total": 6019200,
+      "events_priced": 606346,
+      "freeflow_unsplit_shortcut": true,
+      "destination_calls": 2,
+      "capacity_price_rows": 0,
+      "negative_events": 575222,
+      "selected_windows": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "selected_events": 320,
+      "recovered_paths": 640,
+      "bridge_recovered_paths": 320,
+      "bridge_selected_windows": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "bridge_edge_original_index": 447,
+      "full_horizon_recovery_sweeps": 8,
+      "minimum_reduced_cost": -12.054166666666667,
+      "seconds": 318.8279999999795
+    },
+    {
+      "mode": "partial",
+      "original_events_total": 6019200,
+      "events_priced": 6049546,
+      "freeflow_unsplit_shortcut": false,
+      "destination_calls": 21,
+      "capacity_price_rows": 150,
+      "negative_events": 575222,
+      "selected_windows": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_events": 320,
+      "recovered_paths": 640,
+      "bridge_recovered_paths": 320,
+      "bridge_selected_windows": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "bridge_edge_original_index": 447,
+      "full_horizon_recovery_sweeps": 10,
+      "minimum_reduced_cost": -23.8,
+      "seconds": 862.905999999959
+    },
+    {
+      "mode": "partial",
+      "original_events_total": 6019200,
+      "events_priced": 6049546,
+      "freeflow_unsplit_shortcut": false,
+      "destination_calls": 21,
+      "capacity_price_rows": 252,
+      "negative_events": 575222,
+      "selected_windows": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "selected_events": 320,
+      "recovered_paths": 640,
+      "bridge_recovered_paths": 320,
+      "bridge_selected_windows": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "bridge_edge_original_index": 447,
+      "full_horizon_recovery_sweeps": 8,
+      "minimum_reduced_cost": -27.47800199999995,
+      "seconds": 823.5
+    }
+  ],
+  "exact_price_receipts": [],
+  "fresh_source_base_upper": 11364.69035613391,
+  "candidate_upper_pending_independent_replay": 11364.198075948214,
+  "historical_best_independent_upper_evaluation_only": 11333.921650746439,
+  "final_RMP_iterations": 0,
+  "final_positive_columns": 240,
+  "final_max_original_touched_capacity_excess": 1.3877787807814457e-17,
+  "final_max_group_demand_excess": 0.0,
+  "final_rmp_sha256": "7e106f6f6d638100d14a308ae015e6cda8b50400f9e68df56c4ee02aeae9f497",
+  "final_matrix_sha256": "8ec3f3d1a7c754970b5a8ea23d03fa673d6053ea4f3f345e434c66fe2e7b8eaf",
+  "path_pool_sha256": "453c9af02b04e79b8534e3301248db21cb22c8fbc088db7f4591b741746db608",
+  "wall_seconds": 2014.469000000041,
+  "scientific_limit": "Fresh source cold-start original Q candidate, partial pricing rounds; not full CG closure or final 16-case build."
+}

@@ -1,0 +1,42 @@
+{
+  "case_id": "berkeley_T4_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
+  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "style": "Existing atlas C / DejaVu Serif / navy and teal",
+  "data": "physical-flow.plot.json",
+  "data_sha256": "4f5d8ab5ceb0a77e7232c133c27aa126f4ea0ee816bdf78755e0e097cbda414b",
+  "upper_certificate": {
+    "path": "assets/shared-cg-20261013/berkeley_T4_H/dev18/upper-certificate.json",
+    "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+  },
+  "lower_certificate": {
+    "path": "assets/shared-cg-20261013/berkeley_T4_H/dev18/lower-certificate.json",
+    "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "Complete saved-path projection for berkeley_T4_H / dev18: 2,013 physical edges; reconstructed path cost 43.6674244080064 matches selected U=43.6674244080064. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "exports": {
+    "png": "c311e883465a100ea91b6da5e42df76f8295e7d9f7e202bbb88dc0a9a74c5a22",
+    "svg": "ec180e7ef2e6a258cc57172d6875806eea4aac446aaebf0257e6c98e42538ca7"
+  },
+  "style_helper": "tools/visuals/render_shared_cg_20261013.py",
+  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "complete_projection_inputs": [
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/berkeley_T4_H/solver/COLUMN_POOL.npz",
+      "sha256": "4845a556af6e51996a0a9e2992aef1d74beba4e484555815859f93be1931b7f7"
+    },
+    {
+      "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/berkeley_T4_H/solver/LAST_RMP.npz",
+      "sha256": "2ddc02b3b2723da6a636dd3c04514d514ead61d7bc5f2cd3b4ede64ccea4e5bd"
+    },
+    {
+      "path": "SOURCE_AND_REPRODUCTION/workspace_snapshot/work/berkeley_algorithm_transfer_r1/runs/T_case/dynamic_arc.csv",
+      "sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757"
+    }
+  ],
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

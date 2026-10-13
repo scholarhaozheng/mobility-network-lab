@@ -1,0 +1,40 @@
+{
+  "case_id": "boston_10_H",
+  "OD": 10,
+  "events": 10,
+  "dt_seconds": 3,
+  "release_steps": null,
+  "horizon_steps": 100,
+  "scale": 1,
+  "base_demand": null,
+  "layer": "H",
+  "lineage": {
+    "parent_four_stage_or_benchmark_id": "work/boston_cg_pilot_r1/phase_ii_degeneracy_completion_r3/dynamic_inputs",
+    "parent_vehicle_OD_sha": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+    "used_OD_sha": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565",
+    "OD_scope": "10 frozen positive vehicle OD; selected benchmark/pilot pulse",
+    "period": "Frozen dynamic release records; not a full-hour city estimate",
+    "units": "PCE minutes (source free-flow minutes per PCE x frozen PCE volume)",
+    "scale": 1,
+    "release_rule": "Frozen dynamic_demand.csv departure indices [0]; total pulse 26.20690346748992 original flow units",
+    "time_model_id": "fa4fc7dc4740ea006e7819cecd85f189591a54003c19b1367871ad5a6d04292a",
+    "graph_id": "sha256:63b23b4e09c5b9c1b3c938f8b48e766a4c13b91efb72f4a89a27b2e757902537",
+    "upstream_change": false,
+    "reconstruction_needed": "Saved paths/flows only for plotting; no solver or upstream rebuild",
+    "solver_build_id": "Evidence-specific: see evidence[].lineage.solver_build_id",
+    "certificate_ref": "Evidence-specific: see evidence[].lineage.certificate_ref",
+    "parent_resolution": "Frozen input parent is established by path and SHA; no unrecorded earlier parent hash inferred",
+    "historical_reference_build_id": "sparse_common_dev18_demand_weighted_columns",
+    "historical_reference_certificate": "RESULTS_AND_CERTIFICATES/KEY_CERTIFICATES/boston_10_H__upper.json"
+  },
+  "parent_note": "Frozen parent vehicle demand; the CG selection changes only this assignment branch.",
+  "source_hashes": {
+    "dynamic_arc.csv": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "dynamic_demand.csv": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565"
+  },
+  "release_indices": [
+    0
+  ],
+  "pulse_volume": 26.20690346748992,
+  "scope": "Saved demand compilation rule; not an optimizer history or observed departures"
+}

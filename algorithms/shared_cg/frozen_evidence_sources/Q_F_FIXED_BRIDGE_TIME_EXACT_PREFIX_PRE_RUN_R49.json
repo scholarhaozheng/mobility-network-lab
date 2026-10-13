@@ -1,0 +1,30 @@
+{
+  "schema": "Q_F_FIXED_BRIDGE_TIME_EXACT_PREFIX_PRE_RUN_R49",
+  "created_utc": "2026-10-12T18:24:48.430912+00:00",
+  "case_id": "urbana_F_Q",
+  "selection": "same 100 frozen R44 original OD-release events and every corresponding R43 positive flow fragment (103 expected); all other 6,019,100 original events fixed at certified R43 flow",
+  "selected_fragment_count": 103,
+  "max_fixed_bridge_delay_steps": 4112,
+  "bridge_original_edge_index": 447,
+  "prefix_policy": "full original network, original physical durations/costs and zero-time connectors, zero-cost/positive-cost arcs retained, forbid bridge 447 before final fixed crossing; minimum true cost from original origin/release to bridge-tail at each R43 certified bridge service step; waiting and legal cycles permitted",
+  "final_path": "cross original bridge at exactly fragment original service step, then retain its original AON suffix with certified downstream waits (zero in selected component)",
+  "capacity_master": "fractional swap per selected original R43 fragment, preserving its bridge time/resource row; exact original physical capacity on all candidate rows; no demand, time step or capacity changes",
+  "selection_rule": "all selected fragments; no post-outcome shortening, based only on R44 original event sample and R43 certified service times",
+  "original_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "resource": "one shared heavy-lock exact prefix DP and at most one sparse master, <=1800 seconds, target 3GiB",
+  "scientific_limit": "Fixed-bridge-time primal path enrichment on 100 original events; not unrestricted original-Q CG optimality.",
+  "source_config": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+  "source_config_sha256": "15ac0b8ca5762b3cbc1d548af7acbb3c2b5813b947184c6e256faa1eb3327fff",
+  "R43_result": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\urbana_F_Q\\RESULT.json",
+  "R43_result_sha256": "fd80db344379617ca7bbc722dd6374e5407a96ac868bca9e5b8fd69774855008",
+  "R43_independent_certificate": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_local_fifo_r43\\urbana_F_Q\\INDEPENDENT_ORIGINAL_TIME_CERTIFICATE.json",
+  "R43_independent_certificate_sha256": "a572ddab6a72c3900b9e3d6c5bc615ad91ce9b98536bb9e9a4ac9bb648887ef1",
+  "R44_array": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\Q_F_R35_R43_POLICY_COLUMNS_ARRAYS_R44.npz",
+  "R44_array_sha256": "3a3c9f9a424c782f2fef36a154da6578f1119309985d76ae14ae5ad768b053ac",
+  "original_AON": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev9_delayed_zero_gc\\urbana_F_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+  "original_AON_sha256": "54269b7a048142d2dd3cd1760cda01b2de595f816b29293dbfc8d74791ba039b"
+}

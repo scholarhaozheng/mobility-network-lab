@@ -1,0 +1,21 @@
+{
+  "case_id": "urbana_F_Q",
+  "renderer": "tools/visuals/render_shared_cg_scope_20261013.py",
+  "renderer_sha256": "435001fc9e8414a053f46d24041902fbf87030ef16fd5652e0d39b3afa092c5e",
+  "data": "plot-data.json",
+  "data_sha256": "bd9ed50b983d0ff4b0ed4c5cab6bda2188485900ba716632de6ea3447fa21211",
+  "input_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "snapshot": "2026-10-13 22:26 Asia/Shanghai",
+  "new_solver_run": false,
+  "caption": "urbana_F_Q: Equal releases over 14400 steps; multiply parent vehicle demand by 1.0 once. Graph horizon 57600 steps. Old frozen 418-OD parent: 1963.648312713 PCE/h; distinct from the later transit-choice demand (1667.09 PCE/h). The release count is not a CG iteration count. This scope diagram is shared by evidence versions of the same frozen case.",
+  "exports": {
+    "svg": "cd5df6189eef8bbda324f14d8e02b53018d35b2ee0c6a6b5a62b8946edcf0229",
+    "png": "ddc91799767f58750a2f2b42952e4d2a5a8c905dcb0e859f0b4d515771f5d080"
+  },
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json"
+}

@@ -1,0 +1,26 @@
+{
+  "schema": "SHARED_CG_UNIFORM_RELEASE_Q_CASE_CONFIG_R1",
+  "case_id": "urbana_S2_Q",
+  "build_id": "sparse_common_dev9_delayed_zero_gc",
+  "graph_type": "uniform_release_implicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev9_delayed_zero_gc",
+  "source_dir": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev9_delayed_zero_gc\\urbana_S2_Q\\solver",
+  "expected_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "physical_field": "arc_kind",
+  "physical_value": "physical",
+  "dt_seconds": 0.25,
+  "release_steps": 14400,
+  "horizon_steps": 57600,
+  "demand_factor": 2.0,
+  "expected_commodity_events": 6019200,
+  "relative_gap_tolerance": 0.0001,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "All original directed edges, all original positive OD and hourly uniform releases; exact capacity check on every physical entry time row. AON overcapacity remains OPEN, with no optimum claim.",
+  "algorithmic_batch_change": "dev9 delayed exact-zero pool GC only after round 21 and pool >150000; all scientific inputs and frozen stop/resource gates unchanged",
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them"
+}

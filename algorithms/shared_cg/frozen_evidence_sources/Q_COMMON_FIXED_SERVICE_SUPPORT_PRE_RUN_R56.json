@@ -1,0 +1,21 @@
+{
+  "schema": "Q_COMMON_FIXED_SERVICE_SUPPORT_PRE_RUN_R56",
+  "created_utc": "2026-10-12T18:48:43.143017+00:00",
+  "R55_frozen_design_sha256": "2c0b64c590f5d5da2fb2b9af01e37d7a0e6cbbf074a02be101e5a52ecb96fd66",
+  "cases": [
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "R55_profile_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_r55\\pittsburgh_S2_Q\\RESULT.json",
+      "R55_profile_result_sha256": "91da2289e2229855574103cccae93c7075047fc1b9487cd2d2472c26c6fa820d"
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "R55_profile_result_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\q_common_fixed_service_r55\\urbana_S2_Q\\RESULT.json",
+      "R55_profile_result_sha256": "3b309d3fc1ad7f1eb1599a99fc21bf92cdf5a93cdaf3e59b692c22ab4ddb707a"
+    }
+  ],
+  "scan": "every unique positive-gain (original OD, exact certified service delay) pattern from R55, full original prefix policy and source AON suffix; count every physical edge reachable under these candidates; no OD/release/fragment selection after outcomes",
+  "path_witness": "per original selected OD, min/median/max positive service delay with deterministic smallest release, complete original path and true cost replay",
+  "memory_rule": "if compact all-used-edge x required-time float64 load would exceed 1.5GiB, use disk-backed exact float64 row storage; never coarsen original time or capacity",
+  "scientific_limit": "support and path witness only; full source physical capacity flow remains subsequent stage."
+}

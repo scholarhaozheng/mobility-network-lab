@@ -584,7 +584,7 @@ scheduleReadingCardAlignment();
       stageOrder.forEach(function (stageKey, index) {
         var stage = stageFor(activeCity, stageKey);
         if (!stage) return;
-        if ((stage.status === 'not-run' || activeCity.textOnlyStages) && !availableCards(stage, activeCity, scale).length) { unavailableStages.push(stage); return; }
+        if (stageKey !== 'finite' && (stage.status === 'not-run' || activeCity.textOnlyStages) && !availableCards(stage, activeCity, scale).length) { unavailableStages.push(stage); return; }
         var panelMethods = stage.methods || model.methods && model.methods[stageKey] || DEFAULT_METHODS[stageKey] || [];
         var requestedMethod = state.cityMethods && state.cityMethods[stageKey];
         var panelMethod = panelMethods.some(function (m) { return m.id === requestedMethod; }) ? requestedMethod : panelMethods[0] && panelMethods[0].id;
@@ -622,7 +622,7 @@ scheduleReadingCardAlignment();
           panelControl.appendChild(node('span', 'av-overview-label', '1 of ' + overviewCount + ' figure' + (overviewCount === 1 ? '' : 's')));
         }
         cell.appendChild(panelControl);
-        if (card) {
+        if (stageKey === 'finite' && panelMethod === 'cg' && window.MCLSharedCG) { window.MCLSharedCG.mount(cell, activeCity.id, false, true); } else if (card) {
           cell.dataset.avFigure = card.id;
           var panelNote = model.comparisonNotes && model.comparisonNotes[stageKey] && model.comparisonNotes[stageKey][panelMethod] && model.comparisonNotes[stageKey][panelMethod][activeCity.id];
           figure(cell, activeCity, stage, card, false, selectedText(panelNote, scale));
@@ -685,13 +685,13 @@ scheduleReadingCardAlignment();
           var stage = stageFor(city, stageKey);if (!stage) return;
           var selection = comparisons && methods.length ? comparisons[method] && comparisons[method][city.id] : model.representatives && model.representatives[city.id] && model.representatives[city.id][stageKey];
           var card = findCard(stage, city, selection, scale);
-          if (!card && city.textOnlyStages) {textScopes.appendChild(node('dt', '', city.name));textScopes.appendChild(node('dd', '', methods.length ? (stage.scope + ' No saved ' + method + ' figure is supplied for this case.') : stage.scope));return;}
+          if (!card && city.textOnlyStages && !(stageKey === 'finite' && method === 'cg' && window.MCLSharedCG)) {textScopes.appendChild(node('dt', '', city.name));textScopes.appendChild(node('dd', '', methods.length ? (stage.scope + ' No saved ' + method + ' figure is supplied for this case.') : stage.scope));return;}
           var cell = node('article', 'av-card av-comparison-card');
           cell.dataset.avCity = city.id;
           cell.appendChild(node('h4', 'av-city-title', city.name));
           var note = model.comparisonNotes && model.comparisonNotes[stageKey] && model.comparisonNotes[stageKey][method] && model.comparisonNotes[stageKey][method][city.id];
           note = selectedText(note, scale);
-          if (card) {cell.dataset.avFigure = card.id;figure(cell, city, stage, card, true, note);}
+          if (stageKey === 'finite' && method === 'cg' && window.MCLSharedCG) {window.MCLSharedCG.mount(cell, city.id, false, true);} else if (card) {cell.dataset.avFigure = card.id;figure(cell, city, stage, card, true, note);}
           else empty(cell, city, stage, note);
           grid.appendChild(cell);
         });

@@ -1,0 +1,25 @@
+{
+  "schema": "SHARED_CG_STAGE_PRIMAL_INDEPENDENT_ORIGINAL_GRAPH_R1",
+  "status": "PASS_ORIGINAL_PRIMAL_FEASIBLE_OPEN_DUAL",
+  "case_id": "pittsburgh_S2_H",
+  "build_id": "sparse_common_dev18_demand_weighted_columns",
+  "checkpoint_round": 60,
+  "checkpoint_receipt": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev18_demand_weighted_columns\\pittsburgh_S2_H_fullbatch_continue60\\solver\\LATEST_STAGE_CHECKPOINT.json",
+  "checkpoint_pool_sha256": "6f6fe58f26e405322ce33deb745ed7578fb4713a393abd1ca40e6f218ac878f8",
+  "checkpoint_rmp_sha256": "0915e1193129d74f19aed0ec5f927c286ce47d4232ec1d4309fe866132c9f955",
+  "original_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "positive_original_commodity_events": 168720,
+  "full_allowed_physical_arc_time_rows": 5610880,
+  "pool_columns": 169222,
+  "positive_columns": 169222,
+  "original_primal_objective": 24230.752843357463,
+  "max_original_demand_residual": 8.147806431282878e-15,
+  "max_relative_release_demand_residual": 7.648235354996207e-11,
+  "max_original_capacity_excess": 1.4210854715202004e-14,
+  "original_capacity_rows_used": 898068,
+  "scientific_limit": "Independent full original graph primal feasibility only. Producer full-graph lower bound is not independently priced here; no optimality certificate."
+}
