@@ -5,3 +5,21 @@
 .av-card>.cg-component{border:0;margin:0;padding:0}.av-card>.cg-component .cg-gallery{grid-template-columns:1fr!important}.av-card>.cg-component .cg-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.cg-figure{scroll-margin-top:140px}
 .cg-metrics{grid-template-columns:repeat(4,minmax(0,1fr));margin:.7rem 0}.cg-metrics div:last-child{grid-column:auto}.cg-component>.cg-state{margin:.4rem 0}.cg-lineage{margin:1rem 0;font-size:.9em}.cg-lineage>summary{cursor:pointer}.cg-pricing-value{font-size:.85em}.cg-gallery>.cg-figure:only-child{max-width:850px;grid-column:1/-1}.cg-component>p{font-size:.9em}
 @media(max-width:700px){.cg-gallery{grid-template-columns:1fr!important}.cg-metrics{grid-template-columns:repeat(2,minmax(0,1fr))}.cg-component{padding-top:.8rem}.cg-controls{gap:.6rem}.cg-controls label{flex-basis:100%}.cg-metrics dd{font-size:.98em}.cg-component h4{font-size:1.03rem}}
+
+/* Same role order as the original Boston/Hong Kong atlas. */
+.cg-gallery{margin:.7rem 0 1.1rem}
+.cg-gallery[data-columns="3"]{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.cg-gallery[data-columns="1"]{grid-template-columns:1fr!important}
+.cg-certificate-scope{margin:1rem 0}.cg-certificate-scope>summary,.cg-figure .atlas-card-notes>summary{cursor:pointer;color:#526875;font-size:.85em}
+.cg-figure .atlas-card-notes{margin:.65rem 0}.cg-figure .atlas-card-notes .atlas-final-caption{margin:.6rem 0}
+.cg-gallery[data-cg-role="physical-output"]>.cg-figure:only-child{max-width:900px}
+.av-card>.cg-component .cg-gallery[data-columns]{grid-template-columns:1fr!important}
+@media(max-width:900px){.cg-gallery[data-columns="3"]{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+@media(max-width:700px){.cg-gallery[data-columns]{grid-template-columns:1fr!important}}
+
+/* 764e086 CG figure roles: two Phase-I alternatives, then three result views. */
+.cg-component[data-cg-template="764e086"]{border-top:0;padding-top:0}
+.cg-controls{gap:.7rem}.cg-controls label{flex:1 1 220px;font-size:.85em}
+.cg-unavailable{padding:1rem;border:1px solid #e2e8ea;border-radius:6px;color:#526875;background:#fafcfc}.cg-unavailable p{font-size:.85em}
+.cg-figure .atlas-image img{aspect-ratio:auto}.cg-body>.atlas-method-instance{font-size:.9em}
+.cg-body>.atlas-method-summary{font-size:.92em}.cg-controls select:disabled{color:#526875;opacity:1}

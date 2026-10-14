@@ -71,3 +71,9 @@ lockfile. Original third-party dependency licenses remain applicable.
 [Source and reuse notice](../../docs/assets/shared-cg-20261013/NOTICE.txt).
 
 Local publication validation prepared 13 registered Dev18 configurations from the supplied exact input bytes. This is a path/hash preparation check, not 13 solver runs. Three historical open-Q producer chains are not represented as baseline one-command reproductions.
+
+## Result-specific source selection · 2026-10-14
+
+The [result-to-code index](../../docs/assets/shared-cg-20261013/RESULT_CODE_INDEX.html) maps all 32 displayed evidence choices to their own upper/lower producers, checks, seed dependencies and exact source hashes. 184 frozen source/configuration files remain; 109 unrelated development copies were removed from this publication. Necessary older producer dependencies are retained. This source audit does not assert a new numerical replay.
+
+To redraw the saved figures, unpack the code ZIP retaining its paths, then run the three `tools/visuals/render_shared_cg*_20261013.py` scripts in core, supplement, scope order. They read saved data only; no optimizer is invoked. Complete physical geometry is stored alongside the selected CG flow, and the inherited serif style helpers are included.

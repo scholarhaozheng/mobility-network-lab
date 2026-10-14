@@ -1,0 +1,28 @@
+{
+  "decision_id": "MAINLINE_CG_REFERENCE764_FIVE_VIEWS_20261014",
+  "actor": "Mobility Computation Lab mainline",
+  "date": "2026-10-14",
+  "status": "LOCAL_CANDIDATE_COMPLETE_NOT_PUSHED",
+  "baseline_commit": "400e3e14502a47f024e10d058d8985b1a18959e6",
+  "reference_commit": "764e0862e4f9a8d473b7bbcc04545b47dd6b0178",
+  "supersedes_presentation_only": "MAINLINE_CG_TEMPLATE_AND_CODE_REVISION_20261014; earlier local three-process-card/map-plus-histogram candidate is not the current layout. Historical record retained.",
+  "basis": "User explicitly chose original 764e086 Boston/Hong Kong CG semantics plus five comparable views and saved OD/time/result switching. Existing source and numeric evidence reused.",
+  "roles": [
+    "Phase I total artificial flow",
+    "Phase I total plus per-OD heatmap",
+    "Phase II objective",
+    "Final physical-link movement map",
+    "Independent pricing closure"
+  ],
+  "style": "Existing C, white, DejaVu Serif, navy/teal; original seven atlas figures reused byte-identically; three extra reference views from existing CSV. Shared physical figures use CG map-only target.",
+  "controls": "OD/demand factor, saved time model/experiment, result version, and original-three/five arrangement in reference cities. No fabricated combinations.",
+  "limits": "Shared snapshots lack per-OD artificial-flow histories and independent per-OD pricing vectors; placeholders state the exact missing record. Global RMP diagnostics remain separately labelled. Three historical Q same-U maps remain unestablished.",
+  "scientific_result_changes": 0,
+  "solver_calls": 0,
+  "new_S0_signature": false,
+  "commit_push_deploy": false,
+  "code": "RESULT_CODE_INDEX.json: 32 shared result mappings plus two original reference records. 184 relevant shared source/config files retained; 109 unrelated copies removed. Original source identities unchanged.",
+  "reproduction": "Six PNGs recreated byte-identically from actual ZIP: three shared renderers and all three extra reference plots. This is plot replay, not a fresh optimization.",
+  "source_notice": "NOTICE.txt",
+  "ledger": "PUBLICATION_RECORDS_REFERENCE764_20261014.csv"
+}

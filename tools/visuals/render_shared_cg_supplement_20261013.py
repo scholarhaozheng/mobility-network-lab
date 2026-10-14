@@ -8,7 +8,7 @@ import json,logging
 from pathlib import Path
 import numpy as np
 from matplotlib.collections import LineCollection
-from matplotlib.colors import Normalize
+from matplotlib.colors import PowerNorm
 import render_shared_cg_20261013 as base
 logging.getLogger('fontTools.subset').setLevel(logging.ERROR)
 AS=base.AS;D=base.ROOT/'docs'
@@ -19,18 +19,25 @@ def save(fig,c,e,stem,title,caption,datafile='plot-data.json'):
  s.update(renderer=Path(__file__).relative_to(base.ROOT).as_posix(),renderer_sha256=base.sha(Path(__file__)),style_helper='tools/visuals/render_shared_cg_20261013.py',style_helper_sha256=base.sha(Path(base.__file__)),data=datafile,data_sha256=base.sha(p.parent/datafile))
  write(p,s);e['figures'][-1]['data']=(p.parent/datafile).relative_to(D).as_posix()
 def physical(c,e):
- data=base.load(D/e['physical_flow_data']);values=np.asarray([r['integrated_flow'] for r in data['rows']]);ids=[r['physical_link_id'] for r in data['rows']];geometry=data.get('geometry',{}).get('link_geometry',{});mapped=bool(geometry) and all(i in geometry for i in ids)
- fig=base.new_figure(c['city_name'],'Physical flow and distribution',c['case_id']+' · '+e['label'],figsize=(10,5.3));ax=fig.add_axes([.07,.23,.48,.48]);right=fig.add_axes([.66,.23,.30,.48]);base.format_axes(right)
- if mapped:
-  coords=[geometry[i] for i in ids];lc=LineCollection(coords,array=values,cmap='YlGnBu',norm=Normalize(0,max(values)),linewidths=.45+2.4*values/max(values));ax.add_collection(lc);ax.autoscale();ax.set_aspect('equal');ax.axis('off');cb=fig.colorbar(lc,ax=ax,fraction=.04,pad=.02);cb.set_label(data['physical_flow_unit']);ax.set_title('Same-U movement-flow projection',fontsize=10)
- else:
-  base.format_axes(ax);ax.plot(np.arange(1,len(values)+1),np.sort(values)[::-1],color=base.TEAL,lw=1.5);ax.set_xlabel('All physical model edges, sorted by flow');ax.set_ylabel('Integrated '+data['physical_flow_unit']);ax.set_title('Complete physical-edge distribution',fontsize=10)
- right.hist(values,bins=min(45,max(10,int(np.sqrt(len(values))))),color=base.TEAL,edgecolor='white',linewidth=.35);right.set_xlabel('Integrated '+data['physical_flow_unit']);right.set_ylabel('Number of physical edges');right.set_title('Same complete vector',fontsize=10)
- fig.text(.075,.105,f'{len(values):,} physical edges · {np.count_nonzero(values>1e-10):,} positive above 1e−10 · objective projection checked against selected U',fontsize=8.7)
- fig.text(.075,.048,'Time-integrated modeled movement; not observed traffic or an instantaneous v/c.',fontsize=8.5)
- cap=f"Complete saved-path projection for {c['case_id']} / {e['evidence_id']}: {len(values):,} physical edges; reconstructed path cost {data['projected_U']:.15g} matches selected U={e['U']:.15g}. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. "+('Only the already-published road geometry is reused; all flow values come from this selected run.' if mapped else 'This complete edge distribution does not assert an unverified geographic join.')
- save(fig,c,e,'physical-flow','Column generation: physical flow and distribution',cap,'physical-flow.plot.json')
- p=AS/c['case_id']/e['evidence_id']/'physical-flow.source.json';s=base.load(p);s['complete_projection_inputs']=data['inputs'];write(p,s)
+ data=base.load(D/e['physical_flow_data']);values=np.asarray([r['integrated_flow'] for r in data['rows']]);ids=[r['physical_link_id'] for r in data['rows']];geo=data.get('geometry',{});geometry=geo.get('link_geometry',{})
+ assert geometry and all(i in geometry for i in ids),'Complete same-ID geometry is required for the map template'
+ coords=[np.asarray(geometry[i],dtype=float) for i in ids]
+ local='Local kilometres' in geo.get('coordinate_system','');schematic='Schematic' in geo.get('coordinate_system','')
+ # Existing geographic sources use lon/lat. Draw a local-km frame like the reference atlas.
+ if not local and not schematic:
+  xy=np.concatenate(coords);lon0,lat0=xy.mean(axis=0);scale=np.array([111.32*np.cos(np.deg2rad(lat0)),110.57]);coords=[(x-[lon0,lat0])*scale for x in coords]
+ fig=base.new_figure(c['city_name'],'Final physical-link movement flow',c['case_id']+' / '+e['label'],figsize=(9,6))
+ ax=fig.add_axes([.10,.16,.73,.59]);base.format_axes(ax,True)
+ maximum=max(float(values.max()),1e-12);norm=PowerNorm(.5,vmin=0,vmax=maximum)
+ ax.add_collection(LineCollection(coords,colors=base.ROAD,linewidths=.55,zorder=1))
+ positive=values>0
+ lc=LineCollection([coords[i] for i in np.flatnonzero(positive)],array=values[positive],cmap=base.FLOW_CMAP,norm=norm,linewidths=.65+1.7*np.sqrt(values[positive]/maximum),zorder=2)
+ ax.add_collection(lc);ax.autoscale();ax.margins(.04);ax.set_aspect('equal');ax.set_xlabel('Schematic x' if schematic else 'Local easting (km)');ax.set_ylabel('Schematic y' if schematic else 'Local northing (km)')
+ cb=fig.colorbar(lc,ax=ax,fraction=.035,pad=.03);cb.set_label('Integrated '+data['physical_flow_unit'],fontsize=8);cb.ax.tick_params(labelsize=7)
+ cap=f"764e086 Boston/Hong Kong CG movement-only map template. Selected {c['case_id']} / {e['evidence_id']}: {len(values):,} directed physical links, {(values>0).sum():,} positive and {(values==0).sum():,} exact zeros. Projected path cost {data['projected_U']:.15g} matches U={e['U']:.15g}. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. "+('Schematic Sioux Falls topology, not geographic coordinates.' if schematic else 'Modelled accumulated movement, not observed traffic or instantaneous v/c.')
+ save(fig,c,e,'physical-flow','Final physical-link movement flow',cap,'physical-flow.plot.json')
+ p=AS/c['case_id']/e['evidence_id']/'physical-flow.source.json';s=base.load(p);s['complete_projection_inputs']=data['inputs'];s['geometry']={k:v for k,v in geo.items() if k!='link_geometry'};s['template_reference_commit']='764e086';s['plot_role']='CG physical movement map, not static assignment histogram';write(p,s)
+
 def research(c,e):
  data=base.load(AS/c['case_id']/e['evidence_id']/'plot-data.json')
  if e['evidence_id']=='dev40-research':

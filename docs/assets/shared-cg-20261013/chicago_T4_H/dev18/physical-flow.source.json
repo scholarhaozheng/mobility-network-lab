@@ -2,10 +2,10 @@
   "case_id": "chicago_T4_H",
   "evidence_id": "dev18",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
-  "data_sha256": "d2c26485b7e15a4d5b7959e4dcc92a249d4407c763dcf7d2e53105ade2cd8f6d",
+  "data_sha256": "68101ae2b16685dc59dd2b2a83d67b959be964b5ed94a0a82b614d898f6e2ff3",
   "upper_certificate": {
     "path": "assets/shared-cg-20261013/chicago_T4_H/dev18/upper-certificate.json",
     "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3"
@@ -16,13 +16,15 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for chicago_T4_H / dev18: 19,202 physical edges; reconstructed path cost 241.218524244943 matches selected U=241.218524244943. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected chicago_T4_H / dev18: 19,202 directed physical links, 532 positive and 18,670 exact zeros. Projected path cost 241.218524244943 matches U=241.218524244943. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Modelled accumulated movement, not observed traffic or instantaneous v/c.",
   "exports": {
-    "png": "e64648e9599b6eb62e98df184c56de1c704a868ddae201d45ee53d2976aa8d01",
-    "svg": "139bcad64a9ab31244d149c76b95e563f46fd5e329401451e2efb5925612da7d"
+    "png": "d76ba50103fa555b825175ccc577df95bc71c6ebbcc1806856737bb978ef5b16",
+    "svg": "36e79e7d8a8809ee4430a550060c6d87c4b81964c9506b3e41131df6fec2af89"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/chicago_T4_H/solver/COLUMN_POOL.npz",
@@ -37,6 +39,12 @@
       "sha256": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "assets/plot-semantics-r9/chicago/fw-physical-flow.plot_data.json",
+    "source_sha256": "e475a3e07fb7c36e4eac25656eb694e6d16049457ffabbb5177b103f779692ab",
+    "coordinate_system": "Local kilometres; EPSG:26916",
+    "join": "Exact persistent physical road ID; Pittsburgh P: is the explicit physical-arc namespace. Urbana A/B split IDs retain their separate published geometry halves. No flow is read from the geometry source."
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

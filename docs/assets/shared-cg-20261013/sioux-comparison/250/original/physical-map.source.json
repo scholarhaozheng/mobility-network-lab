@@ -1,0 +1,25 @@
+{
+  "instance": 250,
+  "branch": "original",
+  "renderer": "tools/visuals/render_sioux_cg_comparison_20261014.py",
+  "renderer_sha256": "81ccf4254a41f51d9bfd84415516420e1feb4ca63d8e63c1ec43372e086e2b8a",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux-comparison/250/historical-map-input.json",
+      "sha256": "7776fa25f6b3935bd9f6b329be5bea4756895c9f73d4530e3d99432e76434f18"
+    },
+    {
+      "path": "examples/sioux-falls/recovered-r14/cg/250od/saved/full_cg_v1_final_capacity_audit.csv",
+      "sha256": "6706db94ae84ed6acbd334a1bb5fbf8a1607e8056355d6f06a30413e6d02ade6"
+    }
+  ],
+  "data": "physical-map.plot.json",
+  "data_sha256": "7776fa25f6b3935bd9f6b329be5bea4756895c9f73d4530e3d99432e76434f18",
+  "exports": {
+    "png": "df0f169a5f2844a707b1e595ba586dfeebdc18938bcb3ce8675e48b27aae63a6",
+    "svg": "891274b9de1b179e6356fd01b93ee4ea151e022ed7a3823cad1cc3fc3175a98e"
+  },
+  "caption": "Historical 250-OD CG final movement-arc audit, summed by physical link: 69 selected links. Map-only alternative to the retained schematic-map/ranked-distribution card. Grey context is outside the selected graph, not measured zero. The 200/250 views share the same colour range. No Dev18 flow is borrowed.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

@@ -1,0 +1,21 @@
+{
+  "case_id": "sioux_200_original",
+  "evidence_id": "original",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/sioux/phase_i_r1/data/200_phase_ii_trace.csv",
+      "sha256": "df4a6f15e7b6010a8956f0787f5f0607f527f596f6cfe23ec22170953206b380"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "2da909aa3bdb60d0ece925cae547a5a2848fb063c300c4acf31e582499bb3643",
+  "exports": {
+    "png": "d621633d08413d6d696161cc3e6fca0cc6295877a93d245ec5066837cc94927e",
+    "svg": "428d9b29d738a9c3382afcd30a58ace565cff7437e1a06f30046ce4b5b08374f"
+  },
+  "caption": "sioux_200_original / original. Left: all 3 saved Phase II objective states, rounds 0\u20132, 1063900 \u2192 943155.589771 native cost \u00d7 original volume. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed same-graph arc-flow lp Jref=943155.5897710002 from this same instance and result version. Final signed difference=-2.328306436538696e-10 native cost \u00d7 original volume; relative difference=-2.468634509290257e-14%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

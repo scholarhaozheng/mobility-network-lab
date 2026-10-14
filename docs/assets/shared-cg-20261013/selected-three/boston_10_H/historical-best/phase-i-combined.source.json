@@ -1,0 +1,21 @@
+{
+  "case_id": "boston_10_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_cg_selected_three_20261014.py",
+  "renderer_sha256": "a086b29df1a0c84a335b7040957edb419792ef19f8ce1bbf3329e70135273fb6",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/catalog.json",
+      "sha256": "b45eef33f48d8855f12b1dbbcde9a9c0c1ef5e651288424113165c965f5285bf"
+    }
+  ],
+  "data": "phase-i-combined.plot.json",
+  "data_sha256": "a4178e0cd740a9ed7f4611601e7f93a1ae048e5b0d1e374048b5ec5256b06f6a",
+  "exports": {
+    "png": "a4732a38ea8b1cf6f3b5cc484da3e2d3e2ee59171c9011cafa5f3b90672edcda",
+    "svg": "105dfb40bacd640785c214e76e5ea437c14ffeca43fa0ac52339106ad99af42b"
+  },
+  "caption": "boston_10_H / historical-best: total artificial flow on the left; the missing per-OD history is explicitly identified on the right. All 11 saved Phase I states (rounds 1\u201311); 244.329668027423 \u2192 0 PCE. No smoothing, interpolation, new solve or cross-version substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

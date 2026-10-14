@@ -1,0 +1,29 @@
+{
+  "case_id": "sioux_250_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_250_H/dev18/plot-data.json",
+      "sha256": "37035534106ec3b6f97f402cdf2e41d9b10d1206cbfaab60b13c166b057a4d08"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_250_H/dev18/lower-certificate.json",
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_250_H/dev18/upper-certificate.json",
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "e9f42780b6793c6d683a9f097674a9889f0eda67f01d9735961b425b7c0d756d",
+  "exports": {
+    "png": "6b2777b3fbd4288c7d5262fbf682614abd48d7b9e8eaa45553c0382d27a56f7c",
+    "svg": "30b8a8f434ca748650a8898d4a894bfb0a04f8051e4c7380e3711e91fd0b282d"
+  },
+  "caption": "sioux_250_H / dev18. Left: all 1 saved Phase II objective states, rounds 1\u20131, 1521090.83662 \u2192 1521090.83662 native cost \u00d7 original volume. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed verified full-graph lower bound Jref=1521090.83662 from this same instance and result version. Final signed difference=2.328306436538696e-10 native cost \u00d7 original volume; relative difference=1.530682047702293e-14%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Only one Phase II state was saved; no transition or line is invented. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

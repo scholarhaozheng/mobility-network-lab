@@ -3457,4 +3457,6 @@ still have an open original final-RMP pricing gate; three Q bound pairs are open
 Homepage maintenance follows the current HTML/atlas workflow. Export the
 GitHub README with `python tools/build_readme_from_homepage.py`; this exporter
 does not rebuild the homepage from an earlier Markdown snapshot.
+
+CG figure maintenance (14 October): Boston, Hong Kong and Sioux Falls now use the selected three-card arrangement: Phase I total artificial flow beside the same-run per-OD heatmap, Phase II objective beside its signed relative gap to a fixed same-instance reference, and final physical-link movement flow. OD, time model and result selectors retain separate saved experiments; missing shared-core per-OD history is explicit. Independent pricing and earlier views remain in folded supporting records. [Per-result reproduction code](assets/shared-cg-20261013/RESULT_CODE_INDEX.html).
 <!-- SHARED_CG_20261013_END -->

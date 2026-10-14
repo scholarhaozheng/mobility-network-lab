@@ -1,0 +1,29 @@
+{
+  "case_id": "hong_kong_10_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/hong_kong_10_H/historical-best/plot-data.json",
+      "sha256": "2601a19e7cfced6934a073127ed7d0b6e7b0e1bb5fcc05727afd445657c7c0fb"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/hong_kong_10_H/historical-best/lower-certificate.json",
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/hong_kong_10_H/historical-best/upper-certificate.json",
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "dba079d055999cb2f90ce211439a4f43434116f82d1ddc60634dbaf5664d8307",
+  "exports": {
+    "png": "ca5582d9fb73ad93e806191dd4b737ca510703631d4c2db0da9a82f8a0bbe62e",
+    "svg": "3e0d6e1c10acb41006edc2f691b8f108d2177d192e3bda27365431c404ccf2d5"
+  },
+  "caption": "hong_kong_10_H / historical-best. Left: all 3 saved Phase II objective states, rounds 1\u20133, 75.03632985794835 \u2192 75.03632985794833 vehicle-min. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed verified full-graph lower bound Jref=75.03632985794832 from this same instance and result version. Final signed difference=1.4210854715202e-14 vehicle-min; relative difference=1.893863244924778e-14%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

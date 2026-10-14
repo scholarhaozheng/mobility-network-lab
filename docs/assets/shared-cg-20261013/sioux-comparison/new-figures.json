@@ -1,0 +1,120 @@
+{
+  "historical": {
+    "200": [
+      {
+        "id": "cg-sioux200-original-phase-i-total",
+        "title": "Phase I: total artificial flow",
+        "src": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-i-total.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-i-total.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-i-total.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-i-total.source.json",
+        "caption": "Historical 200-OD CG: 52 saved states, rounds 0–51; artificial flow 749.806844 → 0. The same saved run as the retained total/per-OD heatmap, not Dev18. No interpolation or new solve.",
+        "width": 2368,
+        "height": 1170
+      },
+      {
+        "id": "cg-sioux200-original-phase-ii",
+        "title": "Phase II objective",
+        "src": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-ii.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-ii.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-ii.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/200/original/phase-ii.source.json",
+        "caption": "Historical 200-OD CG: 3 saved Phase II objective states, 2 updates; 1063900 → 943155.589771; own-graph LP 943155.589771. Objective agreement is not an independent full-DAG pricing certificate. Original native units are retained.",
+        "width": 2419,
+        "height": 1170
+      },
+      {
+        "id": "cg-sioux200-original-physical-map",
+        "title": "Final physical-link movement flow",
+        "src": "assets/shared-cg-20261013/sioux-comparison/200/original/physical-map.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/200/original/physical-map.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/200/original/physical-map.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/200/original/physical-map.source.json",
+        "caption": "Historical 200-OD CG final movement-arc audit, summed by physical link: 64 selected links. Map-only alternative to the retained schematic-map/ranked-distribution card. Grey context is outside the selected graph, not measured zero. The 200/250 views share the same colour range. No Dev18 flow is borrowed.",
+        "width": 2250,
+        "height": 1283
+      }
+    ],
+    "250": [
+      {
+        "id": "cg-sioux250-original-phase-i-total",
+        "title": "Phase I: total artificial flow",
+        "src": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-i-total.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-i-total.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-i-total.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-i-total.source.json",
+        "caption": "Historical 250-OD CG: 63 saved states, rounds 0–62; artificial flow 4082.887577 → 0. The same saved run as the retained total/per-OD heatmap, not Dev18. No interpolation or new solve.",
+        "width": 2368,
+        "height": 1170
+      },
+      {
+        "id": "cg-sioux250-original-phase-ii",
+        "title": "Phase II objective",
+        "src": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-ii.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-ii.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-ii.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/250/original/phase-ii.source.json",
+        "caption": "Historical 250-OD CG: 3 saved Phase II objective states, 2 updates; 1694625.41141 → 1521090.83662; own-graph LP 1521090.83662. Objective agreement is not an independent full-DAG pricing certificate. Original native units are retained.",
+        "width": 2419,
+        "height": 1170
+      },
+      {
+        "id": "cg-sioux250-original-physical-map",
+        "title": "Final physical-link movement flow",
+        "src": "assets/shared-cg-20261013/sioux-comparison/250/original/physical-map.svg",
+        "png": "assets/shared-cg-20261013/sioux-comparison/250/original/physical-map.png",
+        "data": "assets/shared-cg-20261013/sioux-comparison/250/original/physical-map.plot.json",
+        "source": "assets/shared-cg-20261013/sioux-comparison/250/original/physical-map.source.json",
+        "caption": "Historical 250-OD CG final movement-arc audit, summed by physical link: 69 selected links. Map-only alternative to the retained schematic-map/ranked-distribution card. Grey context is outside the selected graph, not measured zero. The 200/250 views share the same colour range. No Dev18 flow is borrowed.",
+        "width": 2250,
+        "height": 1283
+      }
+    ]
+  },
+  "shared_certificates": {
+    "sioux_200_H/dev18": {
+      "id": "cg-sioux200-dev18-independent-certificate",
+      "title": "Independent pricing: aggregate full-graph certificate",
+      "src": "assets/shared-cg-20261013/sioux-comparison/200/dev18/independent-certificate.svg",
+      "png": "assets/shared-cg-20261013/sioux-comparison/200/dev18/independent-certificate.png",
+      "data": "assets/shared-cg-20261013/sioux-comparison/200/dev18/independent-certificate.plot.json",
+      "source": "assets/shared-cg-20261013/sioux-comparison/200/dev18/independent-certificate.source.json",
+      "caption": "dev18, 200 OD: saved independent verifier checks every original dynamic arc and demand source/sink. U=943155.589771, L=943155.589771, signed gap=-1.23431725464513e-16; maximum potential inequality violation=0. This is an aggregate full-graph certificate, not a per-OD ungenerated-path pricing bar chart. No per-OD pricing values are invented; the historical original CG branch does not inherit this certificate.",
+      "width": 2398,
+      "height": 1149
+    },
+    "sioux_200_H/historical-best": {
+      "id": "cg-sioux200-historical-best-independent-certificate",
+      "title": "Independent pricing: aggregate full-graph certificate",
+      "src": "assets/shared-cg-20261013/sioux-comparison/200/historical-best/independent-certificate.svg",
+      "png": "assets/shared-cg-20261013/sioux-comparison/200/historical-best/independent-certificate.png",
+      "data": "assets/shared-cg-20261013/sioux-comparison/200/historical-best/independent-certificate.plot.json",
+      "source": "assets/shared-cg-20261013/sioux-comparison/200/historical-best/independent-certificate.source.json",
+      "caption": "historical-best, 200 OD: saved independent verifier checks every original dynamic arc and demand source/sink. U=943155.589771, L=943155.589771, signed gap=-1.23431725464513e-16; maximum potential inequality violation=0. This is an aggregate full-graph certificate, not a per-OD ungenerated-path pricing bar chart. No per-OD pricing values are invented; the historical original CG branch does not inherit this certificate.",
+      "width": 2398,
+      "height": 1149
+    },
+    "sioux_250_H/dev18": {
+      "id": "cg-sioux250-dev18-independent-certificate",
+      "title": "Independent pricing: aggregate full-graph certificate",
+      "src": "assets/shared-cg-20261013/sioux-comparison/250/dev18/independent-certificate.svg",
+      "png": "assets/shared-cg-20261013/sioux-comparison/250/dev18/independent-certificate.png",
+      "data": "assets/shared-cg-20261013/sioux-comparison/250/dev18/independent-certificate.plot.json",
+      "source": "assets/shared-cg-20261013/sioux-comparison/250/dev18/independent-certificate.source.json",
+      "caption": "dev18, 250 OD: saved independent verifier checks every original dynamic arc and demand source/sink. U=1521090.83662, L=1521090.83662, signed gap=1.53068204770229e-16; maximum potential inequality violation=0. This is an aggregate full-graph certificate, not a per-OD ungenerated-path pricing bar chart. No per-OD pricing values are invented; the historical original CG branch does not inherit this certificate.",
+      "width": 2419,
+      "height": 1149
+    },
+    "sioux_250_H/historical-best": {
+      "id": "cg-sioux250-historical-best-independent-certificate",
+      "title": "Independent pricing: aggregate full-graph certificate",
+      "src": "assets/shared-cg-20261013/sioux-comparison/250/historical-best/independent-certificate.svg",
+      "png": "assets/shared-cg-20261013/sioux-comparison/250/historical-best/independent-certificate.png",
+      "data": "assets/shared-cg-20261013/sioux-comparison/250/historical-best/independent-certificate.plot.json",
+      "source": "assets/shared-cg-20261013/sioux-comparison/250/historical-best/independent-certificate.source.json",
+      "caption": "historical-best, 250 OD: saved independent verifier checks every original dynamic arc and demand source/sink. U=1521090.83662, L=1521090.83662, signed gap=0; maximum potential inequality violation=0. This is an aggregate full-graph certificate, not a per-OD ungenerated-path pricing bar chart. No per-OD pricing values are invented; the historical original CG branch does not inherit this certificate.",
+      "width": 2419,
+      "height": 1149
+    }
+  }
+}

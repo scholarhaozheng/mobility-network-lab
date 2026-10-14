@@ -2,7 +2,7 @@
   "case_id": "berkeley_T4_H",
   "evidence_id": "historical-best",
   "renderer": "tools/visuals/render_shared_cg_20261013.py",
-  "renderer_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "renderer_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "plot-data.json",
   "data_sha256": "255a3f1c9b59c854e54a637e156c6fbaf09045d782ec1cf8990af1dcef6e1c9e",
@@ -16,10 +16,10 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "All 2 saved Phase-I RMP states, at their actual round indices. Artificial flow is separate from the perturbed Phase-I objective; true zero is retained.",
+  "caption": "All 2 saved Phase-I RMP states, unsmoothed, including true zero. The quantity is the saved artificial-demand total, not the perturbed Phase-I objective. Boston/Hong Kong total-flow staircase template. The shared-core snapshot has no per-OD artificial-flow history, so its reference heatmap cannot be reproduced from these records.",
   "exports": {
-    "png": "74c03b8bf05f738497524000f71f6d7e2cbdfe6a2021e09491d5584b9d760729",
-    "svg": "26eafa3c5ba75317d41929f69b4341a741057a7f9445922c9986b54df213b019"
+    "png": "0fcfd0b66a948ad57a79b3235fddd858d073686b90d8022e8dbc9a126523829a",
+    "svg": "faf5b203fe7632fba33218ec4bfb698d8ebce6b77f3cdef5b8673f70e84d8264"
   },
   "source_and_reuse_notice": "../../NOTICE.txt",
   "source_basis": "../../SOURCE_BASIS.json"

@@ -1,0 +1,21 @@
+{
+  "instance": 250,
+  "branch": "historical-best",
+  "renderer": "tools/visuals/render_sioux_cg_comparison_20261014.py",
+  "renderer_sha256": "81ccf4254a41f51d9bfd84415516420e1feb4ca63d8e63c1ec43372e086e2b8a",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_250_H/historical-best/upper-certificate.json",
+      "sha256": "cdc780af90670df593a872aa08c97675ba3722aed4e0f748da2fc4d383471ff1"
+    }
+  ],
+  "data": "independent-certificate.plot.json",
+  "data_sha256": "cdc780af90670df593a872aa08c97675ba3722aed4e0f748da2fc4d383471ff1",
+  "exports": {
+    "png": "41603a096a11f44179d9bc147f67251a6411e0ccac230ef71829fbebfb6d8391",
+    "svg": "4695bb9c22580386fb8f743284fa1c98dd151eccb93f3e89beb7f6deb36de94c"
+  },
+  "caption": "historical-best, 250 OD: saved independent verifier checks every original dynamic arc and demand source/sink. U=1521090.83662, L=1521090.83662, signed gap=0; maximum potential inequality violation=0. This is an aggregate full-graph certificate, not a per-OD ungenerated-path pricing bar chart. No per-OD pricing values are invented; the historical original CG branch does not inherit this certificate.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

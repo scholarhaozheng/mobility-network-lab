@@ -1,0 +1,21 @@
+{
+  "case_id": "sioux_200_original",
+  "evidence_id": "original",
+  "renderer": "tools/visuals/render_cg_selected_three_20261014.py",
+  "renderer_sha256": "a086b29df1a0c84a335b7040957edb419792ef19f8ce1bbf3329e70135273fb6",
+  "inputs": [
+    {
+      "path": "docs/assets/sioux/phase_i_r1/data/200_phase_i_trace.csv",
+      "sha256": "a20adcf3370fc732540d33aab551b9617d533b0024fc0fa2bffba9bd1be0745a"
+    }
+  ],
+  "data": "phase-i-combined.plot.json",
+  "data_sha256": "6e7dba88d0abbb6134942b3f3a5e764b6068efcf000c550ece654b7b474e8967",
+  "exports": {
+    "png": "b7e47e40948db04e4ade1dae38acb648efaa1b952717b923f7dd390d8bf4d19f",
+    "svg": "47c8c94655317aa1dfbbbec6fd33dc8500bf3735738eec18511da73e43d17c48"
+  },
+  "caption": "sioux_200_original / original: total artificial flow on the left; each OD from the same saved run on the right. All 52 saved Phase I states (rounds 0\u201351); 749.806844 \u2192 0 original flow units. Heatmap colour is log10(1 + flow), with the same 0\u20134 scale for Sioux 200/250; saved numeric values remain untransformed. No smoothing, interpolation, new solve or cross-version substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

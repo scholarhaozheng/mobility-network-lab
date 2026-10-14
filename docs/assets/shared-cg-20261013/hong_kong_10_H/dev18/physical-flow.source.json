@@ -2,7 +2,7 @@
   "case_id": "hong_kong_10_H",
   "evidence_id": "dev18",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
   "data_sha256": "90bb697fa5795e564371d26b59689574280445b95636d5eb4bc75e271e215ce8",
@@ -16,13 +16,15 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for hong_kong_10_H / dev18: 111 physical edges; reconstructed path cost 75.0363298579483 matches selected U=75.0363298579483. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected hong_kong_10_H / dev18: 111 directed physical links, 69 positive and 42 exact zeros. Projected path cost 75.0363298579483 matches U=75.0363298579483. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Modelled accumulated movement, not observed traffic or instantaneous v/c.",
   "exports": {
-    "png": "986f496dac79c198347f8254aef3ef1c045f72ca1fe31b191a513f8d35e3331e",
-    "svg": "a50ecc12e09a32f3e0e2bf0b1b84c920e5988488ba71aa789d3417634a277920"
+    "png": "5a185b6c8cc0c1d09abf14e2dbd79acab8e0ea279ac2a9d035aea63f99115c0c",
+    "svg": "520e6dbc55cb3b8c28560ed493a7ce6a05c3f5f59e33c96d3062b3b3c830af47"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/hong_kong_10_H/solver/COLUMN_POOL.npz",
@@ -37,6 +39,10 @@
       "sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "assets/hong_kong/full_stack_r5/case/selected_physical_links.csv",
+    "source_sha256": "4741ebf5d2bf013ad122b38e2f563fd9194a1bc7d03324c759734cb1a3ad13c6"
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

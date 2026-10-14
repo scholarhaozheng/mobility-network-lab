@@ -1,0 +1,21 @@
+{
+  "case_id": "sioux_200_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_cg_selected_three_20261014.py",
+  "renderer_sha256": "a086b29df1a0c84a335b7040957edb419792ef19f8ce1bbf3329e70135273fb6",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/catalog.json",
+      "sha256": "b45eef33f48d8855f12b1dbbcde9a9c0c1ef5e651288424113165c965f5285bf"
+    }
+  ],
+  "data": "phase-i-combined.plot.json",
+  "data_sha256": "c7c8f20f2a22b789828a3fe6f0438d7dc4cc83a18fe0ab9bac6f4a6a9bea21d0",
+  "exports": {
+    "png": "6396045fb28ae08b78cf5fabc0d80ec20304d439f39bc53ab9868407ea9594fe",
+    "svg": "a73f1945529ff167caebbbb27b4d77fb84c9c82311df3631551d5d3c6632a7c5"
+  },
+  "caption": "sioux_200_H / historical-best: total artificial flow on the left; the missing per-OD history is explicitly identified on the right. All 2 saved Phase I states (rounds 1\u20132); 2200.672054 \u2192 0 original volume. No smoothing, interpolation, new solve or cross-version substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

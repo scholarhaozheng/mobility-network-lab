@@ -1,0 +1,34 @@
+{
+  "case_id": "hong_kong_reference_764e086",
+  "evidence_id": "original",
+  "round": [
+    0,
+    1
+  ],
+  "objective": [
+    75.07523596555359,
+    75.03632985794832
+  ],
+  "unit": "vehicle-min",
+  "fixed_reference": 75.03632985794819,
+  "reference_kind": "independent_arc_lp",
+  "reference_label": "Same-graph arc-flow LP",
+  "signed_difference": [
+    0.03890610760539914,
+    1.2789769243681803e-13
+  ],
+  "signed_relative_percent": [
+    0.05184969424684359,
+    1.7044769204323034e-13
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "composition": "left_right",
+  "saved_states": 2,
+  "recorded_transitions": 1
+}

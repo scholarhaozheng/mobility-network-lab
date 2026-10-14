@@ -1,0 +1,3613 @@
+{
+  "base_commit": "400e3e14502a47f024e10d058d8985b1a18959e6",
+  "selection": "Roots are actual displayed producer/verifier/seed entries; closure uses Python imports and exact file references. Original numerical source bytes retained.",
+  "result_count": 32,
+  "before": 293,
+  "kept": 184,
+  "removed": 109,
+  "results": [
+    {
+      "case_id": "sioux_200_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H_legacy_manifest.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "sioux_200_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_200_H_legacy_manifest.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "sioux_250_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/sioux_250_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "sioux_250_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev3_exact_fixed",
+      "lower_build": "sparse_common_dev3_exact_fixed",
+      "purpose": [
+        "Dev3 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "boston_10_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "boston_10_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "hong_kong_10_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "hong_kong_10_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_F_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_F_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev10_sidetrack_pricing",
+      "lower_build": "sparse_common_dev10_sidetrack_pricing",
+      "purpose": [
+        "Dev10 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/sidetrack.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_S2_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch120_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch120_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_S2_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch120_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch120_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_F_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "dev34_numeric_guarded_block_LP",
+      "lower_build": "dev26_full_original_dual_blend_alpha_0.001",
+      "purpose": [
+        "Dev34 upper / Dev26 lower, distinct sources and consumed Dev20 seed"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/prepare_dev26_dual_blend_support.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev26_full_original_dual_blend_alpha.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev34_f_numeric_guarded_block_lp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev26_full_original_dual_blend_alpha.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev34_f_numeric_guarded_block_lp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_open_implicit_dual_v2.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_checkpoint_primal.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/DEV26_FULL_ORIGINAL_DUAL_BLEND_GRID_DESIGN.json",
+        "algorithms/shared_cg/frozen_evidence_sources/DEV33_F_RESTRICTED_BLOCK_LP_PRE_RUN.json",
+        "algorithms/shared_cg/frozen_evidence_sources/DEV34_F_BLOCK_LP_NUMERIC_REVISION_PRE_RUN.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_F_ALL_BRIDGE_FRAGMENTS_EXACT_PREFIX_PRE_RUN_R51.json",
+        "algorithms/shared_cg/frozen_evidence_sources/prepare_dev26_dual_blend_support.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev26_full_original_dual_blend_alpha.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev34_f_numeric_guarded_block_lp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/rolling_price.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev21_third_rmp_dual_price.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev26_full_original_dual_blend_alpha.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev34_f_numeric_guarded_block_lp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_open_implicit_dual_v2.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_checkpoint_primal.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev20_rolling_path_recovery.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_F_Q",
+      "evidence_id": "dev40-research",
+      "upper_build": "Dev40 fresh source run",
+      "lower_build": "Dev40 full original Q dual check",
+      "purpose": [
+        "Dev40 own upper/lower producer, independent checks and consumed seed"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/price_dev40_bridge_multi_joint_full_q.py",
+        "algorithms/shared_cg/frozen_evidence_sources/probe_dev40_bridge_source.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev35_cold_source_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev40_bridge_multi_joint_cg_urbana_f.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev35_cold_source_fifo.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_cg_urbana_f.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_full_q.py"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/DEV40_BRIDGE_MULTI_JOINT_CG_DESIGN.json",
+        "algorithms/shared_cg/frozen_evidence_sources/price_dev40_bridge_multi_joint_full_q.py",
+        "algorithms/shared_cg/frozen_evidence_sources/probe_dev40_bridge_source.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev35_cold_source_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev40_bridge_multi_joint_cg_urbana_f.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/source_fifo.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/batch_rolling_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/bridge_prefix.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/full_event_selection.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/joint_cg_loop.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/joint_delta_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/rolling_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/rolling_price.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_bridge_candidates.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_full_event_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_uniform_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev22_batch_original_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev22_batch_rmp_dual_price.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev35_cold_source_fifo.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_cg_urbana_f.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_full_q.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev20_rolling_path_recovery.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev35_cold_seed.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_F_Q",
+      "evidence_id": "dev41-checkpoint",
+      "upper_build": "none certified",
+      "lower_build": "none certified",
+      "purpose": [
+        "Dev41 saved checkpoint producer and consumed fresh-seed/probe construction"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/probe_dev40_bridge_source.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev35_cold_source_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev41_wide_bridge_joint_cg_urbana_f.py"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/DEV41_WIDE_BRIDGE_JOINT_CG_DESIGN.json",
+        "algorithms/shared_cg/frozen_evidence_sources/probe_dev40_bridge_source.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev35_cold_source_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev41_wide_bridge_joint_cg_urbana_f.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/source_fifo.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/bridge_prefix.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_bridge_candidates.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_full_event_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_uniform_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/batch_rolling_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/bridge_prefix.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/full_event_selection.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/joint_cg_loop.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/joint_delta_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/rolling_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/rolling_price.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_bridge_candidates.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_full_event_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_uniform_base.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev22_batch_original_paths.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_dev35_cold_source_fifo.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev20_rolling_path_recovery.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev35_cold_seed.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "R57_fixed_service_greedy",
+      "lower_build": "R138_one_extension_grid_R139_independent",
+      "purpose": [
+        "R57/R58 upper and separately named historical lower pair"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/q_common_fixed_service_greedy_r57.py",
+        "algorithms/shared_cg/frozen_evidence_sources/urbana_s2_q_r135_one_extension_grid_r138.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_q_common_fixed_service_r58.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_urbana_s2_q_r135_one_extension_grid_r139.py",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_GREEDY_PRE_RUN_R57.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_PREFIX_PRE_RUN_R55.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_SUPPORT_PRE_RUN_R56.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_F_FIXED_BRIDGE_TIME_EXACT_PREFIX_PRE_RUN_R49.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_S2_TWO_BRIDGE_PLUS_CYCLE_CAPACITY_TOLL_PRE_RUN_R71.json",
+        "algorithms/shared_cg/frozen_evidence_sources/URBANA_S2_Q_CONDITIONAL_R135_ONE_EXTENSION_RULE_R136.json",
+        "algorithms/shared_cg/frozen_evidence_sources/URBANA_S2_Q_R135_ONE_EXTENSION_GRID_PRE_RUN_R137.json",
+        "algorithms/shared_cg/frozen_evidence_sources/original_time_path_column_core_r41.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_common_fixed_service_greedy_r57.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_f_fixed_bridge_exact_prefix_r49.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_profile_dp_probe_v2.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_s2_two_bridge_plus_cycle_toll_r71.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_sparse_time_astar_probe.py",
+        "algorithms/shared_cg/frozen_evidence_sources/urbana_s2_q_r135_one_extension_grid_r138.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_q_common_fixed_service_r58.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_q_s2_two_bridge_plus_cycle_r72.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_urbana_s2_q_r135_one_extension_grid_r139.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_F_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_F_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_S2_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18 cold60",
+      "lower_build": "Dev18 cold57/60 convex dual mix",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget_launch448.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_S2_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns_warm_continue60",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns_cold57_60_mix",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget_launch448.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_S2_H",
+      "evidence_id": "dev18-raw-cold",
+      "upper_build": "Dev18 cold60",
+      "lower_build": "Dev18 cold60",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+        "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+        "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+        "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget_launch448.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_F_Q",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_F_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "R57_fixed_service_greedy",
+      "lower_build": "R126_selected_repeated_pair_R127_independent",
+      "purpose": [
+        "R57/R58 upper and separately named historical lower pair"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/frozen_evidence_sources/pit_q_r125_selected_repeated_pair_full_reprice_r126.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_common_fixed_service_greedy_r57.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r125_selected_repeated_pair_full_reprice_r127.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_q_common_fixed_service_r58.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R117_SELECTED_FACTOR_FULL_REPRICE_PRE_RUN_R119.json",
+        "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R125_SELECTED_REPEATED_PAIR_FULL_REPRICE_PRE_RUN_R126.json",
+        "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R88_TOP_UNPRICED_CYCLE_MONOTONE_PRE_RUN_R89.json",
+        "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_SECOND_PHYSICAL_CYCLE_TOLL_GRID_PRE_RUN_R82.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_GREEDY_PRE_RUN_R57.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_PREFIX_PRE_RUN_R55.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_SUPPORT_PRE_RUN_R56.json",
+        "algorithms/shared_cg/frozen_evidence_sources/Q_F_FIXED_BRIDGE_TIME_EXACT_PREFIX_PRE_RUN_R49.json",
+        "algorithms/shared_cg/frozen_evidence_sources/original_time_path_column_core_r41.py",
+        "algorithms/shared_cg/frozen_evidence_sources/pit_q_r117_selected_factor_full_reprice_r119.py",
+        "algorithms/shared_cg/frozen_evidence_sources/pit_q_r125_selected_repeated_pair_full_reprice_r126.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_common_fixed_service_greedy_r57.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_f_fixed_bridge_exact_prefix_r49.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_original_dual_price_profile_common_r89.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_profile_dp_probe_v2.py",
+        "algorithms/shared_cg/frozen_evidence_sources/q_sparse_time_astar_probe.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r117_selected_factor_full_reprice_r120.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r125_selected_repeated_pair_full_reprice_r127.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r88_top_unpriced_cycle_monotone_r90.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_second_physical_cycle_toll_r83.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_q_common_fixed_service_r58.py",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+        "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "ithaca_F_Q",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "ithaca_F_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "berkeley_T4_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "berkeley_T4_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__candidate2_explicit_dag_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "chicago_T4_H",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev1_manifest.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "chicago_T4_H",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev3_exact_fixed",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/__init__.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/solve.py",
+        "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev1_manifest.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed.json",
+        "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "ann_arbor_F_Q",
+      "evidence_id": "dev18",
+      "upper_build": "Dev18",
+      "lower_build": "Dev18",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    },
+    {
+      "case_id": "ann_arbor_F_Q",
+      "evidence_id": "historical-best",
+      "upper_build": "sparse_common_dev18_demand_weighted_columns",
+      "lower_build": "sparse_common_dev18_demand_weighted_columns",
+      "purpose": [
+        "Dev18 mathematical core and matched independent verifier"
+      ],
+      "entrypoints": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "files": [
+        "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+        "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+        "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+        "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+        "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+        "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+        "algorithms/shared_cg/dev18/shared_cg/solve.py",
+        "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+        "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+        "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+        "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+        "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json"
+      ],
+      "replay_scope": "Source and frozen configs are provided. Full historical checkpoint replay also needs the named saved arrays; their large archive is not publicly hosted. No solver was executed for this revision."
+    }
+  ],
+  "files": [
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/__init__.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/connector_contract.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "569f41e175abff84efc0d3a0ae8590e0c40327d259c8ad88faa6b3085454231a"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/dag_k_shortest.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "0b557cfde31f6ce6bd36e6a4f0e2014e2f1ee2405ad1d51752edd39f2753f94b"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/explicit_graph.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/fifo_seed.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/implicit_graph.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/solve.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/sparse_rmp.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/shared_cg/uniform_release.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63"
+    },
+    {
+      "path": "algorithms/shared_cg/dev18/SOURCE_IDENTITY.json",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "31513127e2b058a64ddda2934641025e39bcdf5a3fd5829bffa0beffce85ba8e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch120_h.py",
+      "used_by": [
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best"
+      ],
+      "sha256": "59e797a982b6cfa2c3f4dafc118559a04d8257c7dbf5f527d6a1548b7591c567"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/continue_dev18_fullbatch_h.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "e3a17c8c02bab91e9f9911101cc41ffd292952d1a944070cdba91ea448bdb54c"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV18_ELEVEN_CASE_PRE_RUN.json",
+      "used_by": [
+        "preparation-input-identity"
+      ],
+      "sha256": "823105c19bb17c667f584b893366c55026c0fba79943049a96ab504b37ece052"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV26_FULL_ORIGINAL_DUAL_BLEND_GRID_DESIGN.json",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "fb5e65d94582e4b77ce4ed1e5adc65230cee4d0bc820f9fe94d29eafd16469bb"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV33_F_RESTRICTED_BLOCK_LP_PRE_RUN.json",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "1ef65684dec32ec3fd00685aee4bff156b11ce8e1bf056e41535fadab451ee89"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV34_F_BLOCK_LP_NUMERIC_REVISION_PRE_RUN.json",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "81cf4e9308d8db0451c9ea13c3a61171540214ff833c4aef47a65b9a3e63ef32"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV40_BRIDGE_MULTI_JOINT_CG_DESIGN.json",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "109c69c41256c0f99fb5634532f71e14b964a01edd180dfa3568c3a6aaffd177"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/DEV41_WIDE_BRIDGE_JOINT_CG_DESIGN.json",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "f64dbfa6ea2ac9adde7339d8f2610407245a4e8521c2a700f047f6403d077f9c"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/original_time_path_column_core_r41.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "73c89caf07120cb3e44310dba3b46afed3298e94607beb2de8551d14777784aa"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R117_SELECTED_FACTOR_FULL_REPRICE_PRE_RUN_R119.json",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "1fc84bd6c19ab9bce146bbaa4284e22ffec4c41396ca2a74d880aa48d2f62033"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/pit_q_r117_selected_factor_full_reprice_r119.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "0ef14879584c131535d81a6378c2a129eda63801c8a1d4f5c9fb5192434179ef"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R125_SELECTED_REPEATED_PAIR_FULL_REPRICE_PRE_RUN_R126.json",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "9e76e9192e02b1a091b646fbabf4da7c9f740c77ace1f02a1be688a45650a7d4"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/pit_q_r125_selected_repeated_pair_full_reprice_r126.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "048cba15c771144179a7610dabb42213e6c523655c0d30861c312d9e50e73565"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_R88_TOP_UNPRICED_CYCLE_MONOTONE_PRE_RUN_R89.json",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "3f119fff692882115a566a0e89e1a0f8cbf37b7c94c760b100f47ac6a7187a27"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/PIT_Q_SECOND_PHYSICAL_CYCLE_TOLL_GRID_PRE_RUN_R82.json",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "45b9af17560477d867ef2740fd64087fb6c5e03e612dc0748b915288787d0002"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/prepare_dev26_dual_blend_support.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "dfa9ef32cafc12b7dffe1b73bb3ba5b525ab66bbf7f181719aa3ba12242f919d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/price_dev40_bridge_multi_joint_full_q.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "77130bfe7f428fa978c6dd778b914d87054d8765256eaf84f4f9556e1904fb29"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/probe_dev40_bridge_source.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "051a719baddfb9d78816ddf1b1e27679ab27b15785c5567cb27464504132560f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_GREEDY_PRE_RUN_R57.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "c4d3c1d71d4c2ef2c6548f9031f8a845c5a0b91a00c641fa15f9b922effd9f31"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_common_fixed_service_greedy_r57.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "1fe56c7a9333738976c98c98fcbb18b08a90a7102327ef05d15d93c6db6db149"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_PREFIX_PRE_RUN_R55.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "2c0b64c590f5d5da2fb2b9af01e37d7a0e6cbbf074a02be101e5a52ecb96fd66"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_COMMON_FIXED_SERVICE_SUPPORT_PRE_RUN_R56.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "2fe9b5b09fe4a76fa93f04adf85f21eb1b24c59ded3c1e5b019b2162261fedcb"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_F_ALL_BRIDGE_FRAGMENTS_EXACT_PREFIX_PRE_RUN_R51.json",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "86bca07d4a24104f016de709f2ee37da4937a1d0e9a3068e5046557a9f381ba9"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_f_fixed_bridge_exact_prefix_r49.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "b77fc39a3fdf9b016d1d2f3bd2029dde10dc6da6eca558fa6f98106e16edd351"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_F_FIXED_BRIDGE_TIME_EXACT_PREFIX_PRE_RUN_R49.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "50154699137c6293e6b39c579c7b03142b3d4c09ce0ac2c7709c7bff75173e91"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_original_dual_price_profile_common_r89.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "30d7e92bbf92f433341fb5793cb671e9fd5d0c1c842a7a2f23b4652504b4ccfc"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_profile_dp_probe_v2.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "362356a7b918e8a7a569aab6ff8f5617967565805eaa00762a703b788bcc13c7"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/Q_S2_TWO_BRIDGE_PLUS_CYCLE_CAPACITY_TOLL_PRE_RUN_R71.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "62884a9148d49d7b0e28763a85dd4c2d72e376070236c9398f2b82547e029a9c"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_s2_two_bridge_plus_cycle_toll_r71.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "cecd0e31fa785466eb8fd0b951684522962ae8d24e54ab5a07cc0402371df455"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/q_sparse_time_astar_probe.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "64223f64df548ce1094a14f04a03737f9bc90d67a80cacf1600a54546f0aada4"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_case.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "sioux_250_H/historical-best",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_F_H/historical-best",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "66373d46abacfe2c6d64f939c728c764f2177363556d6599e94ce1634a99bf7a"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev18_case_and_verify.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "06d8a91c9f85ebdb757d9e9e1c56694fb979ceaf2c4d45aa3612ee2293d88c47"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev26_full_original_dual_blend_alpha.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "cc966cb5d0b6025ededbd3856b9ebac8a37f633c5d37362d156d989cfd18ae87"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev34_f_numeric_guarded_block_lp.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "8fb10aa90116282a908af607a7d9fee0408a2b1c76ca966d7c27d8be915f66c1"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev35_cold_source_seed.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "681ade62f1ae673f1b10df668b38e65b04487d9518e4632f0385275d33fee0db"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev40_bridge_multi_joint_cg_urbana_f.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "34adabb9a79239de22f0cd5a3a11ecb7faf774086e41d79c642cd886357f79ab"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_dev41_wide_bridge_joint_cg_urbana_f.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "33ff76d77cca99d6f52b866c7a8c22c6e34f6a320b0d8fa42a18307ce04d9201"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/run_sparse_case.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "sioux_250_H/historical-best",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_F_H/historical-best",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "984b8eb369bc4f3aaef9e2bfb7135eed946296d5203b0fe9c67f22bb7ccd7684"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/__init__.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/explicit_graph.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/fifo_seed.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/implicit_graph.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/sidetrack.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "9031521e903b317e455066d66ed31f4583ebe112d404c35a9a8328e81b38e03e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/solve.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "a77b8ddc436321904cc064a4062904ef08f30669b73d725483d75c59349807a0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/sparse_rmp.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev10_sidetrack_pricing/shared_cg/uniform_release.py",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/__init__.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/explicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/fifo_seed.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/implicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/rolling_price.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "5e05facfb953c5e1990c0eeadc1bd18ec56ff96d7c4c76cb78a7f77d8165e717"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/solve.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/sparse_rmp.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev20_rolling_path_recovery/shared_cg/uniform_release.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/__init__.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/explicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/fifo_seed.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/implicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/solve.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/source_fifo.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "8c64fed84ad0786dd9525cbe6b367eede0f86353863ea6c05d15d80e2ca9b569"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/sparse_rmp.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev35_joint_stabilized_cg/shared_cg/uniform_release.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "a0341463e25ce6cdf4de81d02c74437e711d39e31e7ca2370bc125c4d7b6ff63"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/__init__.py",
+      "used_by": [
+        "sioux_250_H/historical-best",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/explicit_graph.py",
+      "used_by": [
+        "sioux_250_H/historical-best",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/implicit_graph.py",
+      "used_by": [
+        "sioux_250_H/historical-best",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/solve.py",
+      "used_by": [
+        "sioux_250_H/historical-best",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "91479c4a76ebbc9495837e214451affd15b60a1e3b5d31c2d614bc5e9f147fbd"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev3_exact_fixed/shared_cg/sparse_rmp.py",
+      "used_by": [
+        "sioux_250_H/historical-best",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/__init__.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/batch_rolling_paths.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "089f859684099778be573e49694860ac0865efd6f5b59724c3410825aa383ee1"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/bridge_prefix.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "33d8011135dff651f7939718529cbdf0105d399c4817a43894717145a9015af9"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/full_event_selection.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "7d902ad3638a43890058b7a4b90fec67f91ad0bed5a71d1311cc38fb5537e574"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/implicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/joint_cg_loop.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "dfee57961ab401938f37d013d426ebae916c0ed7b79f6ec984a6cfb17e549fc8"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/joint_delta_rmp.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "086d8e756404831a115054f3060f3190974ae5c3caf93b263ff57001e0797208"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/rolling_paths.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "3a357473ecc23f9fdcb3bbffaf05e78727b75c3b534cc3411740c5f4729b2b1e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/rolling_price.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "5e05facfb953c5e1990c0eeadc1bd18ec56ff96d7c4c76cb78a7f77d8165e717"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_bridge_candidates.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "6a28de83289c94deac30446e73d7c7e4093bb48e25e2b6644b25254b88b367d1"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_full_event_base.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "63e2c4fdf7d051eb5427b8bc95e2f79f6135eb8c0543f1e699e04cc94e26dd6d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev40_bridge_multi_cg/shared_cg/source_uniform_base.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "beb12a819b27e9ec41407926af3003ca8a98454f47e8332dec002d0a4dd76b52"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/__init__.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "6025594666d73c5f22835787dbf752dcccc6d4c5997f64d45e4ce6ad0c98349d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/batch_rolling_paths.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "089f859684099778be573e49694860ac0865efd6f5b59724c3410825aa383ee1"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/bridge_prefix.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "33d8011135dff651f7939718529cbdf0105d399c4817a43894717145a9015af9"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/full_event_selection.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "7d902ad3638a43890058b7a4b90fec67f91ad0bed5a71d1311cc38fb5537e574"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/implicit_graph.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/joint_cg_loop.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "dfee57961ab401938f37d013d426ebae916c0ed7b79f6ec984a6cfb17e549fc8"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/joint_delta_rmp.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "086d8e756404831a115054f3060f3190974ae5c3caf93b263ff57001e0797208"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/rolling_paths.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "3a357473ecc23f9fdcb3bbffaf05e78727b75c3b534cc3411740c5f4729b2b1e"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/rolling_price.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "5e05facfb953c5e1990c0eeadc1bd18ec56ff96d7c4c76cb78a7f77d8165e717"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_bridge_candidates.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "dd5c684ed02187f91730affddd4f13c19be54213692131ff9553b74bd44c0271"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_full_event_base.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "63e2c4fdf7d051eb5427b8bc95e2f79f6135eb8c0543f1e699e04cc94e26dd6d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/sparse_common_dev41_wide_bridge_cg/shared_cg/source_uniform_base.py",
+      "used_by": [
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "beb12a819b27e9ec41407926af3003ca8a98454f47e8332dec002d0a4dd76b52"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/URBANA_S2_Q_CONDITIONAL_R135_ONE_EXTENSION_RULE_R136.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "6a7df65d6a2c4e245858fabe9f111aa36440a02ee228e8a932c8ebb645ead3c8"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/URBANA_S2_Q_R135_ONE_EXTENSION_GRID_PRE_RUN_R137.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "27dedbdd58e35d80de7af4dbdd772bf0c05b5d9e160f038f7f0c839cd4bcb838"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/urbana_s2_q_r135_one_extension_grid_r138.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "f70aeb454ace599ff5d973be050943f48a0ee5836cc95d32e408fae61e477066"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev21_third_rmp_dual_price.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "ebe7454350d35605a6ef5fa2ab949ac7bc15f4a9bd0b6b3e2481d7d8ee8d0fd0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev22_batch_original_paths.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "0335f530e78a690537f9dc7fb27ebf0282e11fdc7ed1c62bf76d291c920d38d1"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev22_batch_rmp_dual_price.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "4f7ca89046ca82a073dc2729df682d6c7769e9511bf47efa8dcd052d3858ffb3"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev26_full_original_dual_blend_alpha.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "682056270c221723104ee766fac1f12bf6f7a7f9b82fa00af5664c0e827f0527"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev34_f_numeric_guarded_block_lp.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "b6ed8fb7efe7204e5a17b8d15e37f56a81c3d0e9dfc59ecb606e4913f36f3f06"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev35_cold_source_fifo.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "7905d1f65628dff968a916611e0de8453905a8e521b2877a62aa87c962516f5b"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_cg_urbana_f.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "817563dc75d8471f2c5599b2e938272c601b0934b95a945fe274c8eed625a5ea"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_dev40_bridge_multi_joint_full_q.py",
+      "used_by": [
+        "urbana_F_Q/dev40-research"
+      ],
+      "sha256": "ee717e81a6044394976bfc99ce4fe86ff1a5d26010637977e15209cfa9e42da0"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_explicit.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "sioux_250_H/historical-best",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "468018cc00ae4e80b717ea8f55520ba7f7eb760032bbc374fd4d6ca7bd6f4de5"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_implicit_recompute.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_F_H/historical-best",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "8545ba2ede41cc5185dbe0c57e3b016f7da28629bf003ea8c5a1252344c02a8a"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_open_implicit_dual_v2.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "8b76cc36fd2c42bdff027f25cc8b9feaaf4d5940a70973a39801fb10ce189dc7"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r117_selected_factor_full_reprice_r120.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "73e4b4739d7082be027c0e72eef3061849286df515a7bf7c6c9cbc8abeae1ada"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r125_selected_repeated_pair_full_reprice_r127.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "66433c8a587022e4b7f4112c153c6e7243969372a1d8e6285a2fe96b576e7c7f"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_r88_top_unpriced_cycle_monotone_r90.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "a0eb13d43ea61efc25495a2e622b6950b12fc7c79e5db10b460c18f970accf42"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_pit_q_second_physical_cycle_toll_r83.py",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "532f0f8380dafe751eca69ce0190fab80c6f6f09b9a01a89b09046b7470bdead"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_q_common_fixed_service_r58.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "6b2f3021d03bc05f60581d1eb9527ca2db03aa892251e746dff849071ad48c11"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_q_s2_two_bridge_plus_cycle_r72.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "d3196bb0cdc1b20215e7d097caa1eb3922e87692bf1d0bdcd6a4bc81f092a99d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_stage_checkpoint_primal.py",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "df9d115733ac0f4c345db5b873a2bc78452984e517f38dae0e50c3491999cb0d"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_stage_dual_line_search.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "717efcfe26d399b4ffb028c5082327a6c4335fca6a54553200eb4f3b7130493a"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_uniform_release.py",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best",
+        "sioux_250_H/dev18",
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best",
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best",
+        "urbana_F_H/dev18",
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold",
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best",
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best",
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best",
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best",
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "0d61a30e174371438d956966c85ac644e697cfe1b7b8e9038951b255fb30ffb9"
+    },
+    {
+      "path": "algorithms/shared_cg/frozen_evidence_sources/verify_urbana_s2_q_r135_one_extension_grid_r139.py",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "090d05076292c7e72219d8219c1bcca41fa69b4d00ef0a57b9807d734016346b"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo.py",
+      "used_by": [
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "557313bc7d2876415a8b73e0ae1211ba70024d59eb6bffd48c86bf21377f62c7"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/construct_h_s2_selective_fifo_pit.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "b62796c12ce90f7ab1b5cf97fdf21b2123bdce87f28e26fef09d62dbb047adf1"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/PIT_S2_H_TWO_STAGE_DUAL_MIX_PRE_RUN.json",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "714c44e34250bdc0fddcbaf3953eaf5df9d39efb64db0daa1b6d630bbdd439bc"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/prepare_pit_h_fullbatch60_cold.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "672e0ac0f88610fc6d084baa9e46a933a7516c70217607dbbc57a6f9bfd010df"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/prepare_two_stage_mix_design.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "1fb35f589249833f215a80817baa005a5502aeb4fb7e67a5242bd88abb145bdb"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_independent.py",
+      "used_by": [
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "1a736b392fbe7205687407146254c9a1cafbee945bea536657d8ef193852c0aa"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/verify_h_s2_selective_fifo_pit_independent.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "d598ebddc60460fb10bbdf7ec87a7cdbc8ca546c3b7bc9d0a815b2975a2cd044"
+    },
+    {
+      "path": "algorithms/shared_cg/recovered_s2_helpers/verify_two_stage_dual_mix.py",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "c93abe3318fb89be786803362d839e1728f579d24009500a4addca4b0cb09221"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "77b6bd8fb1c9745dca57444c7fd580b1a3c22aa65572b0e27722a5825bd6d43f"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/ann_arbor_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "ann_arbor_F_Q/dev18",
+        "ann_arbor_F_Q/historical-best"
+      ],
+      "sha256": "b97b42b003835fc8ed3ad4163d59b37cfcf9386906b43216f6c320c88f58822d"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__candidate2_explicit_dag_manifest.json",
+      "used_by": [
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best"
+      ],
+      "sha256": "e40d1c7f2fff5b33afea7954245096ca1337f5df4e6b8a4d4b54f330c666f3b1"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best"
+      ],
+      "sha256": "cc251b9e52da2e47f8fe9c2d7066c508bb45955e144c7054053d9efefce90696"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/berkeley_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "berkeley_T4_H/dev18",
+        "berkeley_T4_H/historical-best"
+      ],
+      "sha256": "ad1cfd9270d67699b39fbbc36a36b8d6d074fce7caba307c8bc922a481a5b954"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/boston_10_H__candidate2_explicit_dag_manifest.json",
+      "used_by": [
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best"
+      ],
+      "sha256": "4c96c0a7ec3963247e4c791a1237eeac634bc17174bd018e2940c3d7a02ec65e"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best"
+      ],
+      "sha256": "d26ace3a6a0ea136f4027bc5b9b64dfd17dd129f95d27c4ca082736e40c6b35b"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/boston_10_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "boston_10_H/dev18",
+        "boston_10_H/historical-best"
+      ],
+      "sha256": "587cfb2ebe010a3c639468a4f86ce10f6b959148b1288449e714187e147bcbfd"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "1f65bbd917b637dd67479c0d78cb1f1c2bc973f3ae4c458f3eef00b34a3660a5"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "1a4b133e408c107bae77c0fa709c61cd597d309f4c2db485c05556d554c4054c"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev1_manifest.json",
+      "used_by": [
+        "chicago_T4_H/dev18",
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "3b36af02c4699b950adbe18553c4cf442be89dbfb4ff413a13b15609e80c36ec"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed.json",
+      "used_by": [
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "188bd99c79040d32c3ec84275a6523678bd1a0380f3ab052f42929f74b842ca5"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/chicago_T4_H__sparse_common_dev3_exact_fixed_budget.json",
+      "used_by": [
+        "chicago_T4_H/historical-best"
+      ],
+      "sha256": "8cd303c2a511231f9cb396f746d7ffd31b464b05bbc2bb7260fa02b33397d6cb"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__candidate2_explicit_dag_manifest.json",
+      "used_by": [
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best"
+      ],
+      "sha256": "ae84ea9b9c31d7e3505604507d3a461615a8430396300138454d7b3b3aaaeef2"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best"
+      ],
+      "sha256": "02349ebf92140e16918f292b3b5504fa3a7dbf25b07683bdf8e47d0431acb14d"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/hong_kong_10_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "hong_kong_10_H/dev18",
+        "hong_kong_10_H/historical-best"
+      ],
+      "sha256": "86579d0a046f319a09b4635ec67fbf87faf82616b11b59248bde984158aeff62"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best"
+      ],
+      "sha256": "17bcea4a9cf939b3b6b367bb6e19256887b33cf143b908315f849a72dd47c6bb"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/ithaca_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "ithaca_F_Q/dev18",
+        "ithaca_F_Q/historical-best"
+      ],
+      "sha256": "7b0f18325c56e5e0273f0c0f5aee795a84b70947ebfde01e2ccbf4d3bc2531ab"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best"
+      ],
+      "sha256": "324aa922cb851623f15e2fd396bc4494c7d0de5afd4a11d12cdd1a6a29c98833"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_F_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "pittsburgh_F_H/dev18",
+        "pittsburgh_F_H/historical-best"
+      ],
+      "sha256": "89547bbab0eb9235bc997ef89e6d246ed03196383f55b5333dfb7bec8f16172a"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best"
+      ],
+      "sha256": "911e7cf68d1fddeb8287b79d5099e2bbeee7a8980f9674693e65bc9e52894d4c"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_F_Q__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "pittsburgh_F_Q/dev18",
+        "pittsburgh_F_Q/historical-best"
+      ],
+      "sha256": "c3b49d04b780fd220abc65569a2427c9087986791a4247aad3d126a66a0b0a23"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_demand_weighted_columns_fullbatch6000.json",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "c11ac425948642ef58a67fc060373d5375971cac21fc2078b2e1e87c548c198b"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold.json",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "6588d4aa005e8f4e18f3b3b178ebe3767625f1d4963e921717ff234df65d0f4d"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch60_cold_budget.json",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "9cc0c5d6dc0225c9066f3dff4fc5f7a00f0f8224ef71407a8d9e4cc1bb7e037d"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60.json",
+      "used_by": [
+        "pittsburgh_S2_H/historical-best"
+      ],
+      "sha256": "28633130b3659b8a3c0ffa6f1c2daf84f317039c3d61a1bdce55afd77fdfc11c"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget.json",
+      "used_by": [
+        "pittsburgh_S2_H/historical-best"
+      ],
+      "sha256": "776353a5ac0331c0a23aa5a6757b1eee6b77b791d40f15475e061d019c622959"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_H__sparse_common_dev18_fullbatch_continue60_budget_launch448.json",
+      "used_by": [
+        "pittsburgh_S2_H/dev18",
+        "pittsburgh_S2_H/historical-best",
+        "pittsburgh_S2_H/dev18-raw-cold"
+      ],
+      "sha256": "0560d4021110246e463b8f3245b4e9045439fcb321555f310ae93fda9c7675a2"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "d8056dc1a16b5dfd86cf094c64d4f0c0c9b511c0701ecc927799ab2a6ce192f0"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/pittsburgh_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json",
+      "used_by": [
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "02ef5ccb9a870972a65471469849fbb0b2068026e0f1df497d27e2f39d0714a3"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_200_H__candidate2_explicit_dag_manifest.json",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best"
+      ],
+      "sha256": "d434b9c586d74f4e9445e0ad0a07b87e5e78609317dd77539562e0af225b68fc"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best"
+      ],
+      "sha256": "2ae02f4893763c1606f7707a94800f27e5822eddc4160bcf8273788030f698e3"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_200_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best"
+      ],
+      "sha256": "b8ce7f08e9de7c36ab1efb8aa606a20b452e2dfb3a64f419a5ae13ba99baecb7"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_200_H_legacy_manifest.json",
+      "used_by": [
+        "sioux_200_H/dev18",
+        "sioux_200_H/historical-best"
+      ],
+      "sha256": "3a788e4fc06fd9006dc4dec700a40e949a2fcca6b27013e25d685123f23c1556"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_250_H__candidate2_explicit_dag_manifest.json",
+      "used_by": [
+        "sioux_250_H/dev18"
+      ],
+      "sha256": "5dd711d5d54cc8d263da97e339919a12c23d3b55cce28a913736a3b8f29c3142"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "sioux_250_H/dev18"
+      ],
+      "sha256": "adb5c00893550e8a33b9b9680d12f9c4b4da5b7863e0a1b88dfb1a28565bc0e7"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/sioux_250_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "sioux_250_H/dev18"
+      ],
+      "sha256": "b322106d572c1f6ddbf2abf2ab9b08777c313e755db049cafa3f6b90219534f5"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing.json",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "01e6769746fc2906c3ce9bcb2dc9007b0dd191a254f2be95bff842fdc8dcbd74"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev10_sidetrack_pricing_budget.json",
+      "used_by": [
+        "urbana_F_H/historical-best"
+      ],
+      "sha256": "84b14b38c6d5572e1569d0e884cd12568176da30be183d61cb85c1953125bb5b"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns.json",
+      "used_by": [
+        "urbana_F_H/dev18"
+      ],
+      "sha256": "2a49c67b53bcac0d777eec37861387340aa420c459568e375d4aaa73c5fc3f00"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_H__sparse_common_dev18_demand_weighted_columns_budget.json",
+      "used_by": [
+        "urbana_F_H/dev18"
+      ],
+      "sha256": "44ad3ccd772b4526e1713402e34ac6cbaa37eada5bf39df3a622cb277c78678e"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev20_rolling_path_recovery.json",
+      "used_by": [
+        "urbana_F_Q/historical-best",
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "830f4bc823a576f5e349f63e42faa50a2697de2a6170f8f257c4ce6466da5a69"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev35_cold_seed.json",
+      "used_by": [
+        "urbana_F_Q/dev40-research",
+        "urbana_F_Q/dev41-checkpoint"
+      ],
+      "sha256": "af00c28236ce01769a23255258a55379cebcbfb03352be0347c5ddf646fb2141"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc.json",
+      "used_by": [
+        "urbana_F_Q/historical-best",
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "15ac0b8ca5762b3cbc1d548af7acbb3c2b5813b947184c6e256faa1eb3327fff"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_F_Q__sparse_common_dev9_delayed_zero_gc_budget.json",
+      "used_by": [
+        "urbana_F_Q/historical-best"
+      ],
+      "sha256": "3070c1f4228798c9370fc24ae0da1a5af5b1a21ae1d53c6c6f482b4425e7973c"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold.json",
+      "used_by": [
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best"
+      ],
+      "sha256": "a98925a69c6d5c2e3a6138e02fb20d32e72844682fba1bf0e19a42eb23d30196"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_S2_H__sparse_common_dev18_fullbatch120_cold_budget.json",
+      "used_by": [
+        "urbana_S2_H/dev18",
+        "urbana_S2_H/historical-best"
+      ],
+      "sha256": "a92f2733c5b7c60d92ad6d3823239e5892b20cf95c5b9a0cd7100fa9ae844902"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best",
+        "pittsburgh_S2_Q/historical-best"
+      ],
+      "sha256": "d2f82c8b380c2c79b0b44c9ee93947581ebc6685a71be1ddcdc0da2f7546a907"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-configs/urbana_S2_Q__sparse_common_dev9_delayed_zero_gc_budget.json",
+      "used_by": [
+        "urbana_S2_Q/historical-best"
+      ],
+      "sha256": "2e6337c6527637ad807440075520b3a927310072ff18a9d7ec7dd89f27c82449"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-preparation/prepare_reproduction.py",
+      "used_by": [
+        "preparation"
+      ],
+      "sha256": "7fd11146caf67363a9b897b741e53bb12af05a1a185a6da3226595fd6e8a1690"
+    },
+    {
+      "path": "experiments/shared-cg-20261013/original-preparation/requirements-observed.txt",
+      "used_by": [
+        "preparation"
+      ],
+      "sha256": "f989f1731864de51a9b45b2d6933796fba3342f56b0ef15af2ce785fb958cc6c"
+    }
+  ],
+  "numerical_check": "Static source/config/dependency identity audit; original producer bytes unchanged. No optimizer or full numerical replay executed.",
+  "plot_reproduction": {
+    "commands": [
+      "python -B tools/visuals/render_shared_cg_20261013.py",
+      "python -B tools/visuals/render_shared_cg_supplement_20261013.py",
+      "python -B tools/visuals/render_shared_cg_scope_20261013.py",
+      "python -B tools/visuals/render_cg_reference_764e086.py",
+      "python -B tools/visuals/render_sioux_cg_comparison_20261014.py",
+      "python -B tools/visuals/render_cg_selected_three_20261014.py",
+      "python -B tools/visuals/render_cg_phase_ii_pair_20261014.py"
+    ],
+    "input": "Saved catalog, plot JSON/CSV and complete per-link geometry in this code bundle. Unpack retaining paths.",
+    "requires": "Python, NumPy, Matplotlib, Pillow, fontTools; DejaVu Serif.",
+    "reference_note": "Three additional saved-data views; the seven original SVG assets are reused unchanged from 764e086. Original atlas producers are not re-executed."
+  },
+  "reference_results": [
+    {
+      "case_id": "boston_reference_764e086",
+      "records": [
+        "boston-finite-cg-pilot-r2-r3",
+        "boston-finite-cg-r4-pricing-closure"
+      ],
+      "source_roots": [
+        "algorithms/recovered_boston/finite"
+      ],
+      "manifest": "experiments/recovered/boston.json",
+      "note": "Original R3 objective/flow and separate R4 pricing continuation. Existing source and input identities retained; no solver rerun.",
+      "existing_source_files": [
+        {
+          "path": "algorithms/recovered_boston/finite/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/explicit_network_workflow.py",
+          "sha256": "02e8c61f14c83cd57cf3cdcbc1ef75e13e231fd04b36a526b2e753f2cdd0616a"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_network_input.py",
+          "sha256": "826f32029ca00a6e20d974adcde8a31449f030d6105204d742b741f7ab5bae09"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_ingest.py",
+          "sha256": "0118581548943ce706f65364df470de86ec419f9ddd0719b8db946db397a71f1"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/external_sioux_static_to_dynamic.py",
+          "sha256": "cf9639fccfe736ffedcc093706d9672d60326d6f22e1193fb87678ef88bf918f"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90"
+        },
+        {
+          "path": "algorithms/recovered_boston/finite/run_pricing_closure_continuation.py",
+          "sha256": "d1e19f554b9b8e8c7e9f301f16560d79d56ccfaec90eeb1f96fe515a95cca424"
+        }
+      ]
+    },
+    {
+      "case_id": "hong_kong_reference_764e086",
+      "records": [
+        "HK10-CG-R5",
+        "HK10-CG-R5-CLOSURE"
+      ],
+      "source_roots": [
+        "algorithms/recovered_hk/cg"
+      ],
+      "manifest": "experiments/recovered/hong-kong.json",
+      "note": "Original R5 Phase I / Phase II / final flow and independent pricing; unchanged scientific records.",
+      "existing_source_files": [
+        {
+          "path": "algorithms/recovered_hk/cg/build_sioux_harder_bounded_stage2.py",
+          "sha256": "8c0b33cd51e0a63955da524056c572419e3262d9c176e7fab7dd87760705f090"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/independent_pricing_closure.py",
+          "sha256": "0213709a512a6f21255bca71c088719498ec8f71f3680887392bf7aeb6b0a3df"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase1_artificial_dual_audit.py",
+          "sha256": "a3a4ef1911a7c5c5a73935732942c8bb4ab3809b6c851c16cbba5a6f36a34567"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase1_artificial_rmp_preflight.py",
+          "sha256": "1eded473cb01d44b8a18f991f7c54b056e8d962fa4a2e82dfb0a2c6fc529a2fb"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase1_closure_phase2_handoff_precheck.py",
+          "sha256": "dc7209c42185d518075e90949f143c8c3dd10b9b15c84a2342fd7ac0251a83ed"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase1_one_candidate_add_resolve.py",
+          "sha256": "66889f27de600e9e04e6a2f0c2a100d905350bd0971eb428413f09e1bd1d1403"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase1_pricing_candidate_diagnostic.py",
+          "sha256": "87074204011f7158cdb52fa1e29029322ce1a625227489f7bb8c3f73eb0bd415"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase2_dynamic_pricing_oracle_precheck.py",
+          "sha256": "e72d9eff9115fa0a74eea9b7566dceb8851e108f6c902e3552c8ffda0d6dbd2b"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase2_oracle_bounded_loop_diagnostic.py",
+          "sha256": "63642f372195f9ac34943d2a9fdff59039ab2bef43b3513d9e6573ef28153a7f"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase2_oracle_one_candidate_add_resolve.py",
+          "sha256": "5b779a0284f0467fca5deec8e9685aba28063b5558d4634a23679338e2bb3a91"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase2_pricing_candidate_diagnostic.py",
+          "sha256": "eaa396f554edf4b4a3a832499684f3c0b6b40c70dcc50bb89f96d426efb112d0"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase2_rmp_initialization_diagnostic.py",
+          "sha256": "c1c579dc4996cad4aa9a110532e88bd5071e4ce8d97e326c5d0b232d017da0f0"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase_i_dag_pricing.py",
+          "sha256": "d07632e273b787e154626b3d40345055111181320206e443d0dde212644ecea5"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/phase_i_general_pricing_oracle.py",
+          "sha256": "0554ae3c19248fc62a22a2d02d359df371887f62a0400f1ca55dcb8b60b1dc71"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/precheck_second_controlled_benchmark_current_pool_rmp.py",
+          "sha256": "4935bf268756e4da1d66bf7b8afaac6fd64fda4ae8c6c84cc8bff8493c06bb61"
+        },
+        {
+          "path": "algorithms/recovered_hk/cg/run_full_cg_v1.py",
+          "sha256": "ffeb757882dbde635bb3152daced08ac20e134c8e00f4d34dddf637834a6fe90"
+        }
+      ]
+    },
+    {
+      "case_id": "sioux_200_original",
+      "records": [
+        "sioux-cg-200"
+      ],
+      "manifest": "experiments/recovered/sioux-shared.json",
+      "note": "Historical original saved run. Independent full-DAG closure unestablished; retained original code/inputs are linked in the existing experiment catalog."
+    },
+    {
+      "case_id": "sioux_250_original",
+      "records": [
+        "sioux-cg-250"
+      ],
+      "manifest": "experiments/recovered/sioux-shared.json",
+      "note": "Historical original saved run. Independent full-DAG closure unestablished; retained original code/inputs are linked in the existing experiment catalog."
+    }
+  ],
+  "selected_three_cards": {
+    "cities": [
+      "boston",
+      "hong-kong",
+      "sioux-falls"
+    ],
+    "figure_index": "selected-three/figures.json",
+    "new_renderer": "python -B tools/visuals/render_cg_selected_three_20261014.py",
+    "scope": "Phase I left/right composition; Phase II objective/reference-gap pair; final physical-link map. Original scientific records and first/third card bytes retained.",
+    "solver_runs": 0,
+    "phase_ii_pair": {
+      "figure_index": "selected-three-phase-ii/figures.json",
+      "renderer": "python -B tools/visuals/render_cg_phase_ii_pair_20261014.py",
+      "meaning": "Actual objective beside signed relative difference to a fixed same-instance independent arc LP or verified lower bound. Display band is not a solver gate; one saved state is a point."
+    }
+  }
+}

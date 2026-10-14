@@ -9,7 +9,7 @@ import sys,json,hashlib,math
 import numpy as np
 ROOT=Path(__file__).resolve().parents[2]
 sys.path.insert(0,str(ROOT/'tools/visuals/berkeley_alignment_r2'))
-from atlas_style import new_figure,format_axes,compact_header,INK,TEAL,BLUE,GRID
+from atlas_style import new_figure,format_axes,compact_header,INK,TEAL,BLUE,GRID,ROAD,FLOW_CMAP
 from embed_serif_fonts import embed_serif_fonts
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -19,12 +19,13 @@ def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
 def unit(c):return 'native cost × original volume' if c['case_id'].startswith('sioux') else 'vehicle·min' if c['city']=='hong-kong' else 'PCE·min'
 def save(fig,c,e,stem,title,caption):
  out=AS/c['case_id']/e['evidence_id'];compact_header(fig)
+ # Reference atlas exports use 300 dpi PNG and embedded DejaVu Serif SVG.
  for ext in ['svg','png']:
-  fig.savefig(out/(stem+'.'+ext),dpi=220,bbox_inches='tight',pad_inches=.055,metadata={'Date':None} if ext=='svg' else None)
+  fig.savefig(out/(stem+'.'+ext),dpi=300,bbox_inches='tight',pad_inches=.055,metadata={'Date':None} if ext=='svg' else None)
  embed_serif_fonts(out/(stem+'.svg'));plt.close(fig)
  with Image.open(out/(stem+'.png')) as im:w,h=im.size
  (out/(stem+'.caption.txt')).write_text(caption+'\n',encoding='utf8')
- record={'case_id':c['case_id'],'evidence_id':e['evidence_id'],'renderer':'tools/visuals/render_shared_cg_20261013.py','renderer_sha256':sha(Path(__file__)),'style':'Existing atlas C / DejaVu Serif / navy and teal','data':'plot-data.json','data_sha256':sha(out/'plot-data.json'),'upper_certificate':e.get('upper_certificate'),'lower_certificate':e.get('lower_certificate'),'snapshot':'2026-10-13 22:26 Asia/Shanghai','new_solver_run':False,'caption':caption,'exports':{ext:sha(out/(stem+'.'+ext)) for ext in ['png','svg']}}
+ record={'case_id':c['case_id'],'evidence_id':e['evidence_id'],'renderer':'tools/visuals/render_shared_cg_20261013.py','renderer_sha256':sha(Path(__file__)),'style':'Existing atlas C / DejaVu Serif / navy and teal','data':'plot-data.json','data_sha256':sha(out/'plot-data.json'),'upper_certificate':e.get('upper_certificate'),'lower_certificate':e.get('lower_certificate'),'snapshot':'2026-10-13 22:26 Asia/Shanghai','new_solver_run':False,'source_and_reuse_notice':'../../NOTICE.txt','source_basis':'../../SOURCE_BASIS.json','caption':caption,'exports':{ext:sha(out/(stem+'.'+ext)) for ext in ['png','svg']}}
  (out/(stem+'.source.json')).write_text(json.dumps(record,indent=2,ensure_ascii=False)+'\n',encoding='utf8')
  base=(out/stem).relative_to(ROOT/'docs').as_posix()
  e['figures'].append({'id':'cg-'+c['case_id']+'-'+e['evidence_id']+'-'+stem,'title':title,'src':base+'.svg','png':base+'.png','data':(out/'plot-data.json').relative_to(ROOT/'docs').as_posix(),'source':base+'.source.json','caption':caption,'width':w,'height':h})
@@ -50,37 +51,52 @@ def bounds(c,e):
  save(fig,c,e,'bounds','Column generation: bounds and certificate',caption)
 
 def series(c,e,phase,stem):
- rows=[r for r in e['history'] if r['phase']==phase];fig=new_figure(c['city_name'],'Phase I: feasibility' if phase=='I' else 'Phase II: real objective and lower bound',c['case_id']+' · '+e['label'],figsize=(9,4.8));ax=fig.add_axes([.12,.23,.81,.47]);format_axes(ax)
+ rows=[r for r in e['history'] if r['phase']==phase]
+ fig=new_figure(c['city_name'],'Phase I restores feasibility' if phase=='I' else 'Phase II objective',c['case_id']+' / '+e['label'],figsize=(9,5.4))
+ ax=fig.add_axes([.13,.22,.80,.54]);format_axes(ax)
  if not rows:
-  ax.axis('off');ax.text(.5,.55,'No Phase-I RMP trace in this saved run.',ha='center',va='center',fontsize=12);ax.text(.5,.35,'Feasible FIFO seed → Phase II',ha='center',va='center',fontsize=10);caption='This cold S2 run starts from the separately stored feasible FIFO seed. There is no Phase-I curve to fabricate.'
+  ax.axis('off');ax.text(.5,.55,'Saved feasible FIFO seed',ha='center',fontsize=13,color=INK);ax.text(.5,.38,'No Phase-I RMP history',ha='center',fontsize=10)
+  caption='This run begins from the separately checked feasible FIFO seed. No Phase-I RMP states were saved; an artificial-flow trajectory is not inferred.'
  else:
-  x=[r['round'] for r in rows]
+  x=np.array([r['round'] for r in rows]);y=np.array([r['artificial_mass' if phase=='I' else 'true_primal_objective'] for r in rows],dtype=float)
+  ax.step(x,y,where='post',color=TEAL,lw=1.6)
   if phase=='I':
-   y=[r['artificial_mass'] for r in rows];ax.step(x,y,where='post',color=TEAL,lw=1.9);ax.scatter(x,y,s=12,color=TEAL,zorder=4);ax.axhline(1e-8,color=BLUE,ls='--',lw=1,label='Artificial-flow gate 1e−8');ax.set_ylabel('Artificial flow ('+('original volume' if c['city']=='sioux-falls' else 'vehicle' if c['city']=='hong-kong' else 'PCE')+')');ax.legend(fontsize=8);caption=f'All {len(rows)} saved Phase-I RMP states, at their actual round indices. Artificial flow is separate from the perturbed Phase-I objective; true zero is retained.'
+   ax.scatter(x,y,s=22,color=TEAL,zorder=4)
+   ax.set_ylabel('Artificial flow ('+('original volume' if c['city']=='sioux-falls' else 'vehicles' if c['city']=='hong-kong' else 'PCE')+')')
+   caption=f'All {len(rows)} saved Phase-I RMP states, unsmoothed, including true zero. The quantity is the saved artificial-demand total, not the perturbed Phase-I objective. Boston/Hong Kong total-flow staircase template. The shared-core snapshot has no per-OD artificial-flow history, so its reference heatmap cannot be reproduced from these records.'
   else:
-   up=[r['true_primal_objective'] for r in rows];lo=[r.get('full_graph_lower_bound') for r in rows]
-   ax.step(x,up,where='post',color=BLUE,lw=1.7,label='Saved feasible primal U');ax.scatter(x,up,s=13,color=BLUE,zorder=4)
-   good=[i for i,v in enumerate(lo) if v is not None and math.isfinite(v)]
-   ax.step([x[i] for i in good],[lo[i] for i in good],where='post',color=TEAL,lw=1.4,label='Saved full-graph L');ax.scatter([x[i] for i in good],[lo[i] for i in good],s=11,color=TEAL)
-   ax.set_ylabel(unit(c));ax.ticklabel_format(axis='y',style='plain',useOffset=False);ax.legend(fontsize=8)
-   caption=f'All {len(rows)} saved Phase-II RMP states from this run, without smoothing or cross-version joins. The historical run lower bound is preserved; independently rechecked certificate rounding and the separate Pittsburgh dual mix are not substituted into this trace.'
-  ax.set_xlabel('Saved Phase-'+phase+' RMP round (not LP internal iterations)')
+   delta=np.r_[np.nan,np.diff(y)];tol=np.maximum(1,np.abs(y))*1e-12
+   strict=delta < -tol;level=np.abs(delta)<=tol;other=~(strict|level)
+   for mask,mark,label,face in [(strict,'o','Saved objective decrease',TEAL),(level,'s','Saved numerical nonincrease','white'),(other,'D','Initial / other saved state',BLUE)]:
+    if mask.any():ax.scatter(x[mask],y[mask],s=24,marker=mark,facecolors=face,edgecolors=TEAL if face!=BLUE else BLUE,label=label,zorder=4)
+   # A dual certificate is not relabelled as an independently solved arc-flow LP.
+   same=e['upper_build']==e['lower_build'] and abs(e['gap_signed'])<=1e-8
+   if same:ax.axhline(e['L'],ls='--',color=BLUE,lw=1,label='Certified same-instance lower bound')
+   ax.set_ylabel('Objective ('+unit(c)+')');ax.ticklabel_format(axis='y',style='plain',useOffset=False);ax.legend(fontsize=8,loc='best')
+   caption=f'All {len(rows)} saved Phase-II real-cost states from this run. The Boston objective-staircase template is used; marker categories are derived from consecutive saved values (relative numerical comparison tolerance 1e−12), not claimed as original solver commit labels. Bounds belong to their separate certificate card and never replace this trajectory. No cross-version line joins.'
+  ax.set_xlabel('Saved Phase '+phase+' RMP round')
   if len(x)==1:ax.set_xlim(x[0]-.5,x[0]+.5);ax.set_xticks(x)
-  fig.text(.12,.07,f"{len(rows)} saved states · {e.get('rmp_calls')} total RMP calls in this run",fontsize=9)
+  else:ax.set_xlim(x[0]-.25,x[-1]+.3)
+  fig.text(.13,.065,f'{len(rows)} saved states; RMP rounds are distinct from internal LP iterations.',fontsize=8.5)
  save(fig,c,e,stem,'Column generation: Phase I feasibility' if phase=='I' else 'Column generation: Phase II real cost',caption)
 
 def pricing(c,e):
- fig=new_figure(c['city_name'],'Full-graph pricing: both phase units retained',c['case_id']+' · '+e['label'],figsize=(9,4.8))
- for j,phase in enumerate(['I','II']):
-  ax=fig.add_axes([.095+j*.475,.26,.375,.43]);format_axes(ax);rs=[r for r in e['history'] if r['phase']==phase]
+ fig=new_figure(c['city_name'],'Column pool and full-graph pricing',c['case_id']+' / '+e['label'],figsize=(12,7))
+ rows=e['history'];ph2=[r for r in rows if r['phase']=='II'];ph1=[r for r in rows if r['phase']=='I']
+ ax=fig.add_axes([.08,.49,.35,.25]);format_axes(ax);ax.set_title('a  Restricted-master pool',loc='left',weight='bold')
+ ax.step(range(1,len(rows)+1),[r['column_count'] for r in rows],where='post',color=TEAL,marker='o',ms=3);ax.set(xlabel='Saved RMP state (both phases)',ylabel='Columns')
+ for rs,pos,title,unit_label in [(ph2,[.57,.49,.35,.25],'b  Phase II reduced cost','Minimum reduced cost ('+('native cost' if c['city']=='sioux-falls' else 'min')+')'),(ph1,[.08,.12,.35,.23],'c  Phase I reduced cost','Phase-I objective units')]:
+  ax=fig.add_axes(pos);format_axes(ax);ax.set_title(title,loc='left',weight='bold')
   if rs:
-   x=[r['round'] for r in rs];y=[r['minimum_reduced_cost'] for r in rs];ax.step(x,y,where='post',color=TEAL,lw=1.6);ax.scatter(x,y,s=13,color=TEAL,zorder=4)
-   if len(x)==1:ax.set_xlim(x[0]-.5,x[0]+.5);ax.set_xticks(x)
-   ax.annotate(f"last {y[-1]:.6g}",(x[-1],y[-1]),xytext=(-3,10),textcoords='offset points',ha='right',fontsize=8)
-  else:ax.text(.5,.5,'No saved Phase-I RMP',ha='center',transform=ax.transAxes)
-  ax.axhline(-1e-6,color=BLUE,ls='--',lw=1,label='Original gate −1e−6');ax.set_xlabel('Saved RMP round');ax.set_title('Phase '+phase,fontsize=11);ax.set_ylabel('Minimum reduced cost\n'+('Phase-I objective units' if phase=='I' else ('native cost' if c['city']=='sioux-falls' else 'min')));ax.legend(fontsize=7.5,loc='lower right')
- fig.text(.10,.07,'A small bound gap does not imply the final RMP pricing gate is met.',fontsize=9)
- save(fig,c,e,'pricing','Column generation: original pricing gate','Every saved reduced cost is retained, separately for Phase I and Phase II. The original final-RMP gate is −1e−6. Negative endpoints are not removed when the bound-gap test passes. RMP rounds are distinct from internal LP iterations.')
+   xx=[r['round'] for r in rs];yy=[r['minimum_reduced_cost'] for r in rs];ax.step(xx,yy,where='post',color=BLUE,lw=1.4);ax.scatter(xx,yy,s=16,color=BLUE)
+   if len(xx)==1:ax.set_xlim(xx[0]-.5,xx[0]+.5);ax.set_xticks(xx)
+  else:ax.text(.5,.5,'No Phase-I RMP history',ha='center',transform=ax.transAxes,fontsize=9)
+  ax.axhline(-1e-6,color=INK,ls='--',lw=.8);ax.set(xlabel='Saved RMP round',ylabel=unit_label)
+ ax=fig.add_axes([.57,.12,.35,.23]);format_axes(ax);ax.set_title('d  Final original pricing gate',loc='left',weight='bold')
+ if ph2:
+  value=ph2[-1]['minimum_reduced_cost'];ax.scatter([0],[value],s=33,color=BLUE);ax.set_xticks([0],['Final Phase-II RMP']);lo=min(value,-1e-6);hi=max(value,0);margin=max(hi-lo,1e-6)*.28;ax.set_ylim(lo-margin,hi+margin);ax.set_xlim(-.6,.6);ax.annotate(f'{value:.7g}',(0,value),xytext=(8,8),textcoords='offset points',fontsize=8)
+ ax.axhline(-1e-6,color=INK,ls='--',label='Original −10⁻⁶ gate');ax.set_ylabel('Reduced cost ('+('native cost' if c['city']=='sioux-falls' else 'min')+')');ax.legend(fontsize=8,loc='lower right')
+ save(fig,c,e,'pricing','Column generation: pool growth and pricing','Boston four-panel pricing layout: complete saved pool growth, signed Phase-II and Phase-I pricing, and the final unchanged original gate. Phase-I objective units and Phase-II costs remain separate. Only a global pricing minimum was saved; no independent per-OD or ungenerated-path bars are manufactured. A small bound gap does not certify the final RMP pricing gate.')
 
 def nonbinding(c,e):
  ck=e['nonbinding_checks'];fig=new_figure(c['city_name'],'Nonbinding shortest-path certificate',c['case_id']+' · no CG outer iterations required',figsize=(9,4.5));ax=fig.add_axes([.13,.28,.8,.4]);format_axes(ax)
@@ -93,7 +109,7 @@ def render():
  cat=load(AS/'catalog.json')
  for c in cat['cases']:
   for e in c['evidence']:
-   e['figures']=[]
+   e['figures']=[f for f in e.get('figures',[]) if not any(f['id'].endswith('-'+s) for s in ['bounds','phase-i','phase-ii','pricing','nonbinding'])]
    if e.get('U') is None:continue
    bounds(c,e)
    if e['history']:

@@ -2,7 +2,7 @@
   "case_id": "boston_10_H",
   "evidence_id": "dev18",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
   "data_sha256": "7b167f33de3dc3a6137d18c3061ee8ccc6113129f933d6e37cf4297a98dd7634",
@@ -16,13 +16,15 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for boston_10_H / dev18: 125 physical edges; reconstructed path cost 64.3968615115295 matches selected U=64.3968615115295. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected boston_10_H / dev18: 125 directed physical links, 52 positive and 73 exact zeros. Projected path cost 64.3968615115295 matches U=64.3968615115295. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Modelled accumulated movement, not observed traffic or instantaneous v/c.",
   "exports": {
-    "png": "4dcd96b4c4e6df3826676408ed1a807c8118b300c73717a9f63567d8c6b3c39c",
-    "svg": "5301e71b8bbeb3de27969585891d7c189efb6825e9dd840e117681f496058b99"
+    "png": "66c707c6a6d79d122795c11a104905cb2b1a28d6b9d6bad8ee68b495d995f64b",
+    "svg": "77ee376b00acb1dfeef9efcf56f08164a5d988fc47e527d3d186ecc960b0d5f6"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/boston_10_H/solver/COLUMN_POOL.npz",
@@ -37,6 +39,10 @@
       "sha256": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "assets/boston/space_time_cg_r4/data/physical_link_flow_geometry.csv",
+    "source_sha256": "1742408b418981a9d8fb9a4012324792f423e0d40b5ff5311266910197a926c1"
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

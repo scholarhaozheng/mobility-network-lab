@@ -1,0 +1,25 @@
+{
+  "case_id": "boston_reference_764e086",
+  "evidence_id": "original",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/boston/space_time_cg_r4/data/phase_ii_objective.csv",
+      "sha256": "efa34bbc04850684c41a9d25e34bf12003f9b003e47ae9e96a27f3ceffaf4948"
+    },
+    {
+      "path": "docs/assets/boston/space_time_cg_r4/data/validation_summary.json",
+      "sha256": "8681515957040af9f3eb502bce37208e09a3e471941c908c5c156563eaf681c0"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "ebf1abfca1504a65bbe04d2338798fe7f00db108c987a1b106c8af7748386208",
+  "exports": {
+    "png": "8bbf9cd8d0ea95afeaae3ce60083aaa259f7ff475fb77954efbf114d302ed7b0",
+    "svg": "61d6c4c17bbf8bdb803e1f413f365bbf668947da2d4baf57e961f7e31a4b9a72"
+  },
+  "caption": "boston_reference_764e086 / original. Left: all 16 saved Phase II objective states, rounds 0\u201315, 64.82967648341466 \u2192 64.39686151152952 vehicle-min. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed same-graph arc-flow lp Jref=64.39686151152959 from this same instance and result version. Final signed difference=-7.105427357601002e-14 vehicle-min; relative difference=-1.103381001934209e-13%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

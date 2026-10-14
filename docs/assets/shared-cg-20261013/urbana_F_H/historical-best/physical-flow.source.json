@@ -2,10 +2,10 @@
   "case_id": "urbana_F_H",
   "evidence_id": "historical-best",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
-  "data_sha256": "9e8f567f92ae4e4593136f45fcc91258b884a464b6508474c8cf44d5da724465",
+  "data_sha256": "8910804594e3e6f0aa505cfb46a6c30730359ed9e2fb5aa2fc97ca570b4bbcf6",
   "upper_certificate": {
     "path": "assets/shared-cg-20261013/urbana_F_H/historical-best/upper-certificate.json",
     "sha256": "62fa31416fd709b6c9b1e09a837083ad8c41cbfc21d9e55832f8c8bdb293a39d"
@@ -16,13 +16,15 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for urbana_F_H / historical-best: 11,365 physical edges; reconstructed path cost 8033.68522982408 matches selected U=8033.68522982387. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected urbana_F_H / historical-best: 11,365 directed physical links, 3,797 positive and 7,568 exact zeros. Projected path cost 8033.68522982408 matches U=8033.68522982387. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Modelled accumulated movement, not observed traffic or instantaneous v/c.",
   "exports": {
-    "png": "434cd4d5907ba023e40fc155ac763adfcd9803ae7cec3e182c5cfdfdefeb4d41",
-    "svg": "1ded37983d8d7949ebb308d7574ace4e18fbed70e2360fc8df111b2908ea2714"
+    "png": "227dd5944ab673b7e170fbd42bffc6cb54d8dce07ef437c6dab0ddc0dcba35e4",
+    "svg": "f01318ec5b44a15756e63c93dbe1ec7f13424ac60ddf39fdc45935a30939c6b8"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev10_sidetrack_pricing/urbana_F_H/solver/COLUMN_POOL.npz",
@@ -33,6 +35,12 @@
       "sha256": "b92861701c6d31582900d3b568787abb266e7f680788340c9da8e4da18303eff"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "assets/plot-semantics-r9/urbana-champaign/fw-physical-flow.plot_data.json",
+    "source_sha256": "1206ba21a1fd650013fe237f73a1d31a27539c67d2a4691821b19d429b085fd3",
+    "coordinate_system": "Local kilometres; EPSG:26916",
+    "join": "Exact persistent physical road ID; Pittsburgh P: is the explicit physical-arc namespace. Urbana A/B split IDs retain their separate published geometry halves. No flow is read from the geometry source."
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

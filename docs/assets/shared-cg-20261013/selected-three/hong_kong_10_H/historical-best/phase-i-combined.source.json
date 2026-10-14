@@ -1,0 +1,21 @@
+{
+  "case_id": "hong_kong_10_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_cg_selected_three_20261014.py",
+  "renderer_sha256": "a086b29df1a0c84a335b7040957edb419792ef19f8ce1bbf3329e70135273fb6",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/catalog.json",
+      "sha256": "b45eef33f48d8855f12b1dbbcde9a9c0c1ef5e651288424113165c965f5285bf"
+    }
+  ],
+  "data": "phase-i-combined.plot.json",
+  "data_sha256": "3241db68f40f35a89555e526e58d959099b992e82fc4c9449a68519a7816cca7",
+  "exports": {
+    "png": "b8f7969cbdff6f7185314e4e86e75869cb30b7bc853bda85c775c844e35aafab",
+    "svg": "b2f72315c31c97a4f1b5f21d85b667e3184959f3a478355639a3188846c5d32c"
+  },
+  "caption": "hong_kong_10_H / historical-best: total artificial flow on the left; the missing per-OD history is explicitly identified on the right. All 3 saved Phase I states (rounds 1\u20133); 143.599366646655 \u2192 0 vehicles. No smoothing, interpolation, new solve or cross-version substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

@@ -33,12 +33,12 @@ def render_case(c):
  fig.text(.15,.105,period,fontsize=9)
  fig.text(.15,.045,'H/Q discretisation and synthetic ×2 stress do not recompute the upstream four stages.',fontsize=8.4)
  base.compact_header(fig)
- for ext in ['svg','png']:fig.savefig(out/('time-scope.'+ext),dpi=220,bbox_inches='tight',pad_inches=.055,metadata={'Date':None} if ext=='svg' else None)
+ for ext in ['svg','png']:fig.savefig(out/('time-scope.'+ext),dpi=300,bbox_inches='tight',pad_inches=.055,metadata={'Date':None} if ext=='svg' else None)
  base.embed_serif_fonts(out/'time-scope.svg');plt.close(fig)
  caption=(f"{c['case_id']}: {c['lineage']['release_rule']}. Graph horizon {c['horizon_steps']} steps. "
           +c['parent_note']+' The release count is not a CG iteration count. This scope diagram is shared by evidence versions of the same frozen case.')
  (out/'time-scope.caption.txt').write_text(caption+'\n',encoding='utf8')
- provenance={'case_id':c['case_id'],'renderer':Path(__file__).relative_to(base.ROOT).as_posix(),'renderer_sha256':base.sha(Path(__file__)),'data':'plot-data.json','data_sha256':base.sha(p),'input_hashes':c['source_hashes'],'snapshot':'2026-10-13 22:26 Asia/Shanghai','new_solver_run':False,'caption':caption,'exports':{ext:base.sha(out/('time-scope.'+ext)) for ext in ['svg','png']}}
+ provenance={'case_id':c['case_id'],'renderer':Path(__file__).relative_to(base.ROOT).as_posix(),'renderer_sha256':base.sha(Path(__file__)),'data':'plot-data.json','data_sha256':base.sha(p),'input_hashes':c['source_hashes'],'snapshot':'2026-10-13 22:26 Asia/Shanghai','new_solver_run':False,'source_and_reuse_notice':'../../NOTICE.txt','source_basis':'../../SOURCE_BASIS.json','caption':caption,'exports':{ext:base.sha(out/('time-scope.'+ext)) for ext in ['svg','png']}}
  (out/'time-scope.source.json').write_text(json.dumps(provenance,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
  with Image.open(out/'time-scope.png') as im:w,h=im.size
  rel=out.relative_to(base.ROOT/'docs').as_posix()

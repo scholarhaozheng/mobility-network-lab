@@ -2,10 +2,10 @@
   "case_id": "sioux_200_H",
   "evidence_id": "dev18",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
-  "data_sha256": "82b77fc8708305c9d5d8d9e1fd1a1f17c370e062d256e354f9601168ec2f7a3e",
+  "data_sha256": "b7d40fb43dfbe69e4cac80e2533ee6c55a48240187acf5e8d26721aac21bb40a",
   "upper_certificate": {
     "path": "assets/shared-cg-20261013/sioux_200_H/dev18/upper-certificate.json",
     "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
@@ -16,13 +16,15 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for sioux_200_H / dev18: 64 physical edges; reconstructed path cost 943155.589771 matches selected U=943155.589771. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. This complete edge distribution does not assert an unverified geographic join.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected sioux_200_H / dev18: 64 directed physical links, 63 positive and 1 exact zeros. Projected path cost 943155.589771 matches U=943155.589771. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Schematic Sioux Falls topology, not geographic coordinates.",
   "exports": {
-    "png": "fb7ec33df6946f0c13dc5b8862a381744bd5bf5d705eed88d0a003ea95de62be",
-    "svg": "620dd278a4bcd9758dd3484222e7a1b8f129e55747aa10f7959f2def8aa660ac"
+    "png": "8cf50ce949179fe138d99b06990133c974c4b38511629c04d97c8efd9d9db031",
+    "svg": "fffe4de8d1cfdf8ea64b8c3cc8f8e8104d77b5fc8c8a584a5ec91fff041b40fc"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/sioux_200_H/solver/COLUMN_POOL.npz",
@@ -37,6 +39,12 @@
       "sha256": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "examples/sioux-falls/native_l3_r1/inputs_snapshot/SiouxFalls/link.csv",
+    "source_sha256": "194ec70caf5647a22c01025c958f0b2bf2cd71730804800a26fd60e268f17c38",
+    "coordinate_system": "Schematic spring layout, seed24, 140 iterations; not geographic",
+    "join": "Exact registered directed link ID; same deterministic layout as reference Sioux atlas. Graph layout is for drawing only, not traffic optimization."
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

@@ -2,7 +2,7 @@
   "case_id": "ann_arbor_F_Q",
   "evidence_id": "historical-best",
   "renderer": "tools/visuals/render_shared_cg_supplement_20261013.py",
-  "renderer_sha256": "42d8a74e8e816a2c47e65d1cede3f8ada2b7886621eac21f4a7459d2745bfb09",
+  "renderer_sha256": "111590215282b021ad8baed34f4ec600a9b0f9202b81cac8ec880e3b1ec345ab",
   "style": "Existing atlas C / DejaVu Serif / navy and teal",
   "data": "physical-flow.plot.json",
   "data_sha256": "f2c8c3e13f143e31fc4cc2731f68d55e9575260958f88d3440937c1da6495e9a",
@@ -16,19 +16,25 @@
   },
   "snapshot": "2026-10-13 22:26 Asia/Shanghai",
   "new_solver_run": false,
-  "caption": "Complete saved-path projection for ann_arbor_F_Q / historical-best: 5,138 physical edges; reconstructed path cost 7509.09576362476 matches selected U=7509.09576362476. Movement flow is integrated over the frozen releases. Virtual/wait/connector arcs are excluded. Split physical model edges keep their separate IDs. Only the already-published road geometry is reused; all flow values come from this selected run.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "source_basis": "../../SOURCE_BASIS.json",
+  "caption": "764e086 Boston/Hong Kong CG movement-only map template. Selected ann_arbor_F_Q / historical-best: 5,138 directed physical links, 1,989 positive and 3,149 exact zeros. Projected path cost 7509.09576362476 matches U=7509.09576362476. Persistent IDs join this city's geometry; no static or other-method flow is reused. Square-root colour normalization; original integrated-flow units; virtual/wait/connector arcs excluded. Modelled accumulated movement, not observed traffic or instantaneous v/c.",
   "exports": {
-    "png": "3d7d8aafee0b01149335447078b75a23b4d053b92536a194b3a904ac6af2b1c6",
-    "svg": "6b87365c9f5d68dd2d606597a231bfb955a2efac0ed6e28d03e50980d86db1fc"
+    "png": "19bada78cfba853eb378be9c4dde5c4d1a66335891e436e56072d843e2d57870",
+    "svg": "5260eb131521aba40233156ad55464563012f774bd62af84a59b3b1bf7f17f4b"
   },
   "style_helper": "tools/visuals/render_shared_cg_20261013.py",
-  "style_helper_sha256": "039bc5e24a72e72176b037ef2e8ad8b5d3fbe32bffde8a6348080b87b6d64264",
+  "style_helper_sha256": "cc05c0f1e1fbc1661dfad8811806406f7886de9b90fb764c8d16663a553aada3",
   "complete_projection_inputs": [
     {
       "path": "RESULTS_AND_CERTIFICATES/shared_cg_snapshot/runs/sparse_common_dev18_demand_weighted_columns/ann_arbor_F_Q/solver/UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
       "sha256": "b97eb780fefa2615d448b5d6aef70cefadeaefad3b3b13951bec7a88582b043e"
     }
   ],
-  "source_and_reuse_notice": "../../NOTICE.txt",
-  "source_basis": "../../SOURCE_BASIS.json"
+  "geometry": {
+    "source": "assets/mainline-publication-20261009/ann-arbor/road-database/physical_road_links.csv",
+    "source_sha256": "9354521b28573a68057933873f9fc54b1546bc26eecb8984d7fab54901f571bf"
+  },
+  "template_reference_commit": "764e086",
+  "plot_role": "CG physical movement map, not static assignment histogram"
 }

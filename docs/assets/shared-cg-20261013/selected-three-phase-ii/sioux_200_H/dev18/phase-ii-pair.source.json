@@ -1,0 +1,29 @@
+{
+  "case_id": "sioux_200_H",
+  "evidence_id": "dev18",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_200_H/dev18/plot-data.json",
+      "sha256": "0ca6105fcace18f66c6e6fad8c989a30277163b1c6f4fb9f42932b0c654c8bfd"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_200_H/dev18/lower-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/sioux_200_H/dev18/upper-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "264b9e980b5fd73611427bf261f9b53ddb41d9d30272296b96f2e42526d6dd90",
+  "exports": {
+    "png": "239a59249a6a30de3c50073a060ec5b5c9f62812a45c019ac75f3e00a22a73cd",
+    "svg": "f4e0760c194b5086389060bd1ebe91aa8e9d32935d4e7675ba1ab1d7530775fd"
+  },
+  "caption": "sioux_200_H / dev18. Left: all 1 saved Phase II objective states, rounds 1\u20131, 943155.5897709999 \u2192 943155.5897709999 native cost \u00d7 original volume. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed verified full-graph lower bound Jref=943155.589771 from this same instance and result version. Final signed difference=-1.164153218269348e-10 native cost \u00d7 original volume; relative difference=-1.234317254645129e-14%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Only one Phase II state was saved; no transition or line is invented. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

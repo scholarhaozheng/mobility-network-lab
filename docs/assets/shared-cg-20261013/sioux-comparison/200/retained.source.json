@@ -1,0 +1,42 @@
+{
+  "figures": [
+    {
+      "id": "cg-sioux200-original-retained-phase1",
+      "title": "Phase I: total and per-OD heatmap",
+      "src": "assets/atlas/sioux-scale/r05-sioux200-cg-phase1.svg",
+      "width": 1750,
+      "height": 1000,
+      "caption": "Phase I: artificial-flow clearance · 200 OD. The 200-OD saved restricted-master history reaches zero total artificial flow at round 51. Every saved commodity and round is included; commodity order follows numeric XS IDs. The heatmap uses log10(1 + flow), preserving zero. These feasibility traces do not establish independent full-DAG pricing closure.",
+      "data": "assets/sioux/phase_i_r1/data/200_phase_i_trace.csv",
+      "source": "assets/shared-cg-20261013/sioux-comparison/200/retained.source.json",
+      "original_anchor": "figure-r05-sioux200-cg-phase1",
+      "original_sha256": "f61d08f91892f9892efd6adc9068ddbe4bd3dada56eee09bfa865a17535e85d7"
+    },
+    {
+      "id": "cg-sioux200-original-retained-exchange",
+      "title": "Shared-capacity exchange",
+      "src": "assets/atlas/sioux-scale/r05-sioux200-cg-exchange.svg",
+      "width": 1750,
+      "height": 1000,
+      "caption": "Shared-capacity exchange · 200 OD. At saved Phase I round 34 of the 200-OD run, XS170 releases 500 units on xs_link21_t1 and XS169 takes the same capacity. XS169 artificial flow decreases by 500 while total arc use remains 5,050.193. These before/after restricted-master optima document an exchange; they do not prove that the new XS170 column was uniquely necessary.",
+      "data": "assets/presentation_r5/data/sioux_shared_capacity_saved.csv",
+      "source": "assets/shared-cg-20261013/sioux-comparison/200/retained.source.json",
+      "original_anchor": "figure-r05-sioux200-cg-exchange",
+      "original_sha256": "0236e826d8636096770fbd4277ca53af9cf50303a2039a3fa78f275a3321f97d"
+    },
+    {
+      "id": "cg-sioux200-original-retained-flows",
+      "title": "Physical flow: map and ranked distribution",
+      "src": "assets/atlas/sioux-scale/r05-sioux200-cg-flows.svg",
+      "width": 1750,
+      "height": 1000,
+      "caption": "Final physical-link movement flow · 200 OD. The 200-OD saved final-capacity audit is summed over time by physical_link_id, yielding 64 selected directed physical-link totals. The map and ranked distribution show those same totals, including zero-flow selected links. Grey links show context outside the selected graph. Both scale views use one common absolute-flow range. No new pricing-closure certificate is implied.",
+      "data": null,
+      "source": "assets/shared-cg-20261013/sioux-comparison/200/retained.source.json",
+      "original_anchor": "figure-r05-sioux200-cg-flows",
+      "original_sha256": "182af3d2393e82852d3cb3f380ef93444c623d5d80cebab147dea5aa272f60db"
+    }
+  ],
+  "basis": "Existing published original Sioux CG figures and data; preserved unchanged. Independent full-DAG pricing was not established for this historical branch.",
+  "source_notice": "../../NOTICE.txt"
+}

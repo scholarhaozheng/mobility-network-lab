@@ -1,0 +1,24 @@
+{
+  "decision_id": "MAINLINE_CG_SELECTED_THREE_20261014",
+  "actor": "Mobility Computation Lab mainline",
+  "date": "2026-10-14",
+  "basis": "User selected three cards for Boston, Hong Kong and Sioux Falls. Existing public saved-result records and source notices are reused.",
+  "status": "LOCAL_CANDIDATE_COMPLETE_NOT_PUSHED",
+  "cards": [
+    "Phase I total artificial flow (left) + same-run per-OD heatmap (right)",
+    "Phase II objective",
+    "Final physical-link movement flow"
+  ],
+  "new_phase_i_composites": 12,
+  "actual_same_run_heatmaps": 4,
+  "shared_variants_with_explicit_missing_heatmap": 8,
+  "limits": "Shared-core per-OD matrices were not saved. The original historical Sioux branch does not inherit newer full-graph pricing certificates.",
+  "preserved": "Existing Phase II and map bytes, original figures and anchors, six other city presentations, 19-row comparison table, saved model identities. Earlier views and pricing evidence are folded.",
+  "solver_calls": 0,
+  "commit_push_deploy": false,
+  "plot_reproduction": "All 12 new PNGs reproduced byte-identically from downloadable code ZIP",
+  "source_notice": "NOTICE.txt",
+  "figure_index": "selected-three/figures.json",
+  "code_index": "RESULT_CODE_INDEX.json",
+  "preview": "http://127.0.0.1:8804/index.html?v=20261014-cg-selected-three&atlas-view=stage&stage=finite&method=cg&finite-method=cg&cg-compare=reference-three#atlas-compare-finite"
+}

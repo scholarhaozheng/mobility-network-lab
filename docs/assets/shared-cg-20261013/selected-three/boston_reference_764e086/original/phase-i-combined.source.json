@@ -1,0 +1,25 @@
+{
+  "case_id": "boston_reference_764e086",
+  "evidence_id": "original",
+  "renderer": "tools/visuals/render_cg_selected_three_20261014.py",
+  "renderer_sha256": "a086b29df1a0c84a335b7040957edb419792ef19f8ce1bbf3329e70135273fb6",
+  "inputs": [
+    {
+      "path": "docs/assets/boston/space_time_cg_r4/data/phase_i_total.csv",
+      "sha256": "c68bc7d8bcda8589fbedf1414c29689a7377349698c84429901e5e5247cdf2ad"
+    },
+    {
+      "path": "docs/assets/boston/space_time_cg_r4/data/phase_i_by_demand.csv",
+      "sha256": "1d1366820c59c58376601e60be94f5e7d37ae76f1320442534279de8b88a0624"
+    }
+  ],
+  "data": "phase-i-combined.plot.json",
+  "data_sha256": "61130232293eb466437b192ecf97928b8339d302e4b1090ff945202b34cfc42f",
+  "exports": {
+    "png": "05dd2c041429e8b8472cb2bedac90373d8af917e86b5c9b40357665c550b7739",
+    "svg": "d44fabd2db4e8b50a672a58f0f48bb9d1dca0b569ca6c19caea8670256d0de2f"
+  },
+  "caption": "boston_reference_764e086 / original: total artificial flow on the left; each OD from the same saved run on the right. All 91 saved Phase I states (rounds 0\u201390); 20.5536128973925 \u2192 0 vehicles. No smoothing, interpolation, new solve or cross-version substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

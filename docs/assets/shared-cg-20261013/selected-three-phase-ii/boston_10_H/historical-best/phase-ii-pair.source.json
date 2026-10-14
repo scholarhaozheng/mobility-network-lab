@@ -1,0 +1,29 @@
+{
+  "case_id": "boston_10_H",
+  "evidence_id": "historical-best",
+  "renderer": "tools/visuals/render_cg_phase_ii_pair_20261014.py",
+  "renderer_sha256": "96927faf31064a88d3198f4f0437b9f636ce9278f0b89cd1d6f0c84b993ff7d5",
+  "inputs": [
+    {
+      "path": "docs/assets/shared-cg-20261013/boston_10_H/historical-best/plot-data.json",
+      "sha256": "feab1d1d5bebee0e0c28b35c353c517fb0ad8e53cb0a777e52b0172e31d5f86a"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/boston_10_H/historical-best/lower-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    },
+    {
+      "path": "docs/assets/shared-cg-20261013/boston_10_H/historical-best/upper-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    }
+  ],
+  "data": "phase-ii-pair.plot.json",
+  "data_sha256": "77c2e0abec381d297a1bf6b8cf6e94d1c48cd22c86d49494d98ec84156f1550a",
+  "exports": {
+    "png": "eb63d3c36006644be6738ef7b56dafb659b48504a397fc59885e5dce125b7bbd",
+    "svg": "470e0b588108c458306133fe12736e2a5095541bd397ae87283d2bae8dae5378"
+  },
+  "caption": "boston_10_H / historical-best. Left: all 20 saved Phase II objective states, rounds 1\u201320, 64.58472372626578 \u2192 64.39686151152952 PCE-min. Right: signed 100 \u00d7 (J \u2212 Jref) / |Jref|, using the fixed verified full-graph lower bound Jref=64.39686151152951 from this same instance and result version. Final signed difference=1.4210854715202e-14 PCE-min; relative difference=2.206762003868421e-14%. The reference is fixed across rounds, not a time-varying lower-bound history. The symlog linear band \u00b11e-10 percentage points is for display and is not an acceptance threshold. True zero and negative rounding residuals are retained. Objective agreement is not independent pricing closure. No solver run, interpolation, smoothing or cross-instance substitution.",
+  "new_solver_run": false,
+  "source_and_reuse_notice": "../../../NOTICE.txt"
+}

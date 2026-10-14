@@ -1,0 +1,21 @@
+{
+  "reference_commit": "764e0862e4f9a8d473b7bbcc04545b47dd6b0178",
+  "city": "hong-kong",
+  "renderer": "tools/visuals/render_cg_reference_764e086.py",
+  "renderer_sha256": "c4afc82515c92b7bf8d61370347b41bbcaf8af30e38ac4816e7fa91117194295",
+  "inputs": [
+    {
+      "path": "docs/assets/hong_kong/full_stack_r5/cg_run/full_cg_v1_phase_ii_objective_trace.csv",
+      "sha256": "8468513da45d3c34719b54aa9c1de484c253851e8f8eb04db7446fe2bad2b458"
+    }
+  ],
+  "data": "phase-ii.plot.json",
+  "data_sha256": "3179945b191ee02335607f338f1cc5e63cca69f03deb0c86c9877eef2d8150ac",
+  "caption": "Original Hong Kong R5 saved Phase II states 0 and 1: one real update, not a sampled long trajectory. Objective 75.07523596555359 \u2192 75.03632985794832 vehicle-minutes; same-graph arc-flow LP 75.03632985794819. Uses the Boston 764e086 objective/LP-reference plotting target. Independent complete-path pricing closure remains a separate figure and certificate.",
+  "source_and_reuse_notice": "../../NOTICE.txt",
+  "new_solver_run": false,
+  "exports": {
+    "png": "903506463211db2bcfac345215579e172388d4a3a02a919eb3d51d6bbfbb13d1",
+    "svg": "503e9db5a1bd41e09e400f46dda0e7547956667f4802b9d7300598aafcd81e06"
+  }
+}

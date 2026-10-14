@@ -1,0 +1,38 @@
+{
+  "case_id": "sioux_200_original",
+  "evidence_id": "original",
+  "round": [
+    0,
+    1,
+    2
+  ],
+  "objective": [
+    1063900.0,
+    945199.2597,
+    943155.589771
+  ],
+  "unit": "native cost \u00d7 original volume",
+  "fixed_reference": 943155.5897710002,
+  "reference_kind": "independent_arc_lp",
+  "reference_label": "Same-graph arc-flow LP",
+  "signed_difference": [
+    120744.4102289998,
+    2043.6699289998505,
+    -2.3283064365386963e-10
+  ],
+  "signed_relative_percent": [
+    12.802172996537799,
+    0.21668428318344135,
+    -2.4686345092902573e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "composition": "left_right",
+  "saved_states": 3,
+  "recorded_transitions": 2
+}

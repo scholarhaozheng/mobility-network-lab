@@ -1,0 +1,30 @@
+{
+  "case_id": "sioux_200_H",
+  "evidence_id": "dev18",
+  "round": [
+    1
+  ],
+  "objective": [
+    943155.5897709999
+  ],
+  "unit": "native cost \u00d7 original volume",
+  "fixed_reference": 943155.589771,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_label": "Verified full-graph lower bound",
+  "signed_difference": [
+    -1.1641532182693481e-10
+  ],
+  "signed_relative_percent": [
+    -1.234317254645129e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "composition": "left_right",
+  "saved_states": 1,
+  "recorded_transitions": 0
+}

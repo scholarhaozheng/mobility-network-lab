@@ -1,0 +1,38 @@
+{
+  "case_id": "hong_kong_10_H",
+  "evidence_id": "dev18",
+  "round": [
+    1,
+    2,
+    3
+  ],
+  "objective": [
+    75.03632985794835,
+    75.03632985794835,
+    75.03632985794833
+  ],
+  "unit": "vehicle-min",
+  "fixed_reference": 75.03632985794832,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_label": "Verified full-graph lower bound",
+  "signed_difference": [
+    2.842170943040401e-14,
+    2.842170943040401e-14,
+    1.4210854715202004e-14
+  ],
+  "signed_relative_percent": [
+    3.787726489849557e-14,
+    3.787726489849557e-14,
+    1.8938632449247784e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "composition": "left_right",
+  "saved_states": 3,
+  "recorded_transitions": 2
+}

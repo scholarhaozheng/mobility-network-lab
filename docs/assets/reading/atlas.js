@@ -673,7 +673,7 @@ scheduleReadingCardAlignment();
           });
           methodSelect.addEventListener('change', function () { update({stage: stageKey, method: methodSelect.value}, 'method-' + stageKey); });
           methodLabel.appendChild(methodSelect);controls.appendChild(methodLabel);
-          if (stageKey === 'finite') scalePicker(controls, 'stage');
+          if (stageKey === 'finite' && method !== 'cg') scalePicker(controls, 'stage');
           header.appendChild(controls);
           var definition = methods.find(function (m) { return m.id === method; });
           paragraph(header, 'av-intro', definition && definition.description);
@@ -681,7 +681,18 @@ scheduleReadingCardAlignment();
         section.appendChild(header);
         var grid = node('div', 'av-comparison-grid');
         var textScopes = node('dl', 'av-coverage-list six-city-stage-scope');
+        var cgThree = stageKey === 'finite' && method === 'cg' && new URL(location.href).searchParams.get('cg-compare') === 'reference-three';
+        if (cgThree) grid.dataset.cgCompare = 'reference-three';
+        if (stageKey === 'finite' && method === 'cg') {
+          var compareNav = node('p', 'av-help');
+          [['reference-three','Compare Boston · Hong Kong · Sioux Falls'],['all','Show all cities']].forEach(function (item) {
+            var link = node('a','',item[1]);var url = new URL(location.href);
+            url.searchParams.set('atlas-view','stage');url.searchParams.set('stage','finite');url.searchParams.set('method','cg');url.searchParams.set('finite-method','cg');url.searchParams.set('cg-compare',item[0]);url.hash='atlas-compare-finite';link.href=url.href;
+            if(compareNav.childNodes.length)compareNav.appendChild(document.createTextNode(' · '));compareNav.appendChild(link);
+          });header.appendChild(compareNav);
+        }
         cities.forEach(function (city) {
+          if (cgThree && !['boston','hong-kong','sioux-falls'].includes(city.id)) return;
           var stage = stageFor(city, stageKey);if (!stage) return;
           var selection = comparisons && methods.length ? comparisons[method] && comparisons[method][city.id] : model.representatives && model.representatives[city.id] && model.representatives[city.id][stageKey];
           var card = findCard(stage, city, selection, scale);
