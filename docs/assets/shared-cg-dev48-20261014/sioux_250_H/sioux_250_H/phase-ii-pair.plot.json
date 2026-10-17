@@ -1,0 +1,230 @@
+{
+  "position": [
+    1
+  ],
+  "round": [
+    1
+  ],
+  "labels": null,
+  "objective": [
+    1521090.8366200002
+  ],
+  "saved_history_states": 1,
+  "final_solved_endpoint": false,
+  "endpoint_note": "One saved state; no within-phase trajectory.",
+  "phase_ii_status": "SAVED",
+  "history_endpoint_difference": 0.0,
+  "case_id": "sioux_250_H",
+  "run_id": "sioux_250_H",
+  "unit": "native cost × original volume",
+  "fixed_reference": 1521090.83662,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 956,
+    "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+    "source_mtime_utc": "2026-10-13T20:10:54.957700+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "reference_status": "SAVED",
+  "signed_difference": [
+    2.3283064365386963e-10
+  ],
+  "signed_relative_percent": [
+    1.5306820477022935e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": 1.5306820477022932e-16,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "sioux_250_H",
+    "model_id": "INDEX_CONTRACT_SHA256:e55b45b31c0804344306d77c747ced6785e6da45aae845f91107bb8f0472f062",
+    "model_id_status": "explicit signature if recorded; otherwise generated problem contract hash",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "explicit path-CG solve.py adapter",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "sioux_250_H",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_250_H__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1837,
+      "sha256": "edea465048bd9f1d51f4912b987150ed853ce227b1d385cc3261c90fbe5212a8",
+      "source_mtime_utc": "2026-10-13T18:44:58.264609+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 96469,
+      "sha256": "e5a0495eee4e97354cbfa06e470eedb806825f6d1688834736a3391dc86bea62",
+      "source_mtime_utc": "2026-10-13T20:10:52.762620+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_node.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 36048,
+        "sha256": "65b3289d4aec8f34c23be1995f624c66959f08402e47d391f8a4c57725e9ec64",
+        "source_mtime_utc": "2026-06-29T15:34:58.262679+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_arc.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 923377,
+        "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+        "source_mtime_utc": "2026-06-29T15:34:58.327216+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_demand.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 4960,
+        "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+        "source_mtime_utc": "2026-06-29T15:34:58.330418+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_columns.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 48851,
+        "sha256": "571f66213be51ec5eaedb9ef6be3ad3842edc6b8ab44d08a0bc1f46744c0a8b9",
+        "source_mtime_utc": "2026-06-29T15:34:58.334383+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\COLUMN_POOL.npz",
+        "sha256": "4ba207771ac92b5ccb0bd322ec8a941f05945aa123e52f62f4c194ccd1d99344"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\LAST_RMP.npz",
+        "sha256": "34135bc7a22afebe6f8980c51aefba06dee55227836c5877320f3a0237089057"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 956,
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+      "source_mtime_utc": "2026-10-13T20:10:54.957700+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 956,
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+      "source_mtime_utc": "2026-10-13T20:10:54.957700+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "per_round_pricing_closure",
+  "per_round_lower_bound": [
+    1521090.83662
+  ],
+  "per_round_gap_raw": [
+    1.5306820477022932e-16
+  ],
+  "per_round_gap_percent": [
+    1.5306820477022932e-14
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    0.0
+  ],
+  "per_round_column_count": [
+    295
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "Saved full-graph pricing bounds from this run; only the final independent certificate is independently verified.",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "e5a0495eee4e97354cbfa06e470eedb806825f6d1688834736a3391dc86bea62",
+    "fields": [
+      "history.phase",
+      "history.round",
+      "history.true_primal_objective",
+      "history.full_graph_lower_bound",
+      "history.relative_gap_raw",
+      "history.minimum_reduced_cost",
+      "history.column_count"
+    ]
+  },
+  "reference_display": "Final fixed independent bound retained only as a dashed reference in the left panel; not used for the right-panel gap.",
+  "panel_order": [
+    "objective",
+    "per_round_lower_bound_and_signed_gap"
+  ],
+  "maintenance_revision": "20261015-pricing-progress"
+}

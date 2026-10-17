@@ -1,0 +1,66 @@
+{
+  "case_id": "hong_kong_10_H",
+  "run_id": "hong_kong_10_H",
+  "model_id": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/result.json",
+    "sha256": "de2c0b9d3646be93fff022c1c28d65aec7059282ae41be387c96af1637ea67c5"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "All 3 saved Phase I states: capacity-resource slack 143.5993666 → 0 vehicles; path pool 10 → 21. Slack is summed over capacity-resource rows, not unmet OD demand or unserved vehicles. Both panels use the same run.",
+  "outputs": {
+    "svg": "2734c93e2d3c63af2b64171292baff2f8e16a225b472801aef840a820f475021",
+    "png": "445fb057ffd6c272ba0e6db74463d4398bebaf86d92765333db188c961c7552f",
+    "plot.json": "c0ccecdf187d4eb423d62bb01b9a924a983323f0aaec4c9d263d3bdb27c3137c"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/result.json",
+      "sha256": "de2c0b9d3646be93fff022c1c28d65aec7059282ae41be387c96af1637ea67c5"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/config.json",
+      "sha256": "2179514c18128ded9c7131a28752ee26d5c369051f80101e56ad34e4cb4ec2b0"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/upper-certificate.json",
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/lower-certificate.json",
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/acceptance-receipt.json",
+      "sha256": "6a35817d66353496c96a84f01d928b0fef6567fdb76691dee68fa739b67e49c9"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/phase-i-combined.plot.json",
+      "sha256": "71d91e3d346f38bde6352f2a49afa90aa31546cce12adb345c1a214509f78a8b"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/phase-ii-pair.plot.json",
+      "sha256": "a1f60daf39b33f3895b50d05110fb28ab9e88c46768aca03b40b4a8ad069bf2e"
+    }
+  ]
+}

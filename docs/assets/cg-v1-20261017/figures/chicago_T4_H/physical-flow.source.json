@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/result.json",
+      "sha256": "75d31321be9ae33a6db7c4467438a5f01a0906fafe787acb3c02b5e00a5abee9"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/upper-certificate.json",
+      "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/lower-certificate.json",
+      "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/phase-i-combined.plot.json",
+      "sha256": "408da233f144e27ea2369a58ef6ac478bd6936f31ca796d0becd20c4fbe4ecd7"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/phase-ii-pair.plot.json",
+      "sha256": "82cc52ad606c4437c7bb0f63fa90241f141f9430957d413619f7cd4abdca3a8a"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/chicago_T4_H/physical-flow.plot.json",
+      "sha256": "8f31e5faa6c52158230c84503bd6ce62f26f128818d5e317898869531b652fa3"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "chicago_T4_H / chicago_T4_H / Dev48. Full same-run movement vector: 19,202 directed model physical links, 532 positive and 18,670 exact zeros. Integrated over all 4 original release events and the full arrival tail; PCE, not hourly flow or instantaneous v/c. Recomputed original path cost 241.2185242449434; independent U=241.2185242449434. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Model scenario, not observed traffic.",
+  "outputs": {
+    "png": "9bd51ad5805ed24f4832847370e27f13a0d36c61f98cb173967123d5287ffb95",
+    "svg": "50f9c534ddaa2c9504acb3302e4c35150b28b3f759b7c638bedc92ac5c8ec4c0",
+    "plot.json": "8f31e5faa6c52158230c84503bd6ce62f26f128818d5e317898869531b652fa3"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "chicago_T4_H",
+  "run_id": "chicago_T4_H",
+  "model_id": "INDEX_CONTRACT_SHA256:2c6a593c0a51ceda4cf40f8f49bc9f82e9c099bb9e9f8f728c9947d09432d1af",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

@@ -1,0 +1,17 @@
+﻿case_id,city,run_id,OD,events,scale,dt_seconds,horizon_steps,U,L,gap_raw,accepted_at_frozen_gate,raw_pricing_status,raw_last_minimum_reduced_cost,actual_adapter,v1_saved_phase_i_states,v1_saved_phase_ii_states
+sioux_200_H,sioux-falls,sioux_200_H,200,200,1.0,,32,943155.5897709999,943155.589771,-1.234317254645129e-16,True,MET,0.0,explicit path-CG solve.py adapter,2,1
+sioux_250_H,sioux-falls,sioux_250_H,250,250,1.0,,32,1521090.8366200002,1521090.83662,1.5306820477022932e-16,True,MET,0.0,explicit path-CG solve.py adapter,4,1
+boston_10_H,boston,boston_10_H,10,10,1.0,3,100,64.39686151152952,64.39686151152951,2.2067620038684202e-16,True,MET,-2.220446049250313e-15,explicit path-CG solve.py adapter,11,20
+hong_kong_10_H,hong-kong,hong_kong_10_H,10,10,1.0,30,50,75.03632985794833,75.03632985794832,1.893863244924778e-16,True,MET,-1.3322676295501878e-15,explicit path-CG solve.py adapter,3,3
+urbana_F_H,urbana-champaign,urbana_F_H,418,50160,1.0,30,480,8033.703156321646,8033.6366542310625,8.277887456072661e-06,True,NOT_MET,-0.043734285714291055,implicit path-CG solve.py adapter,3,3
+urbana_S2_H,urbana-champaign,urbana_S2_H_accepted_cold,418,50160,2.0,30,480,17385.35834453124,17384.910486107397,2.576066681899264e-05,True,NOT_MET,-0.020386860903395032,implicit path-CG solve.py adapter,0,84
+urbana_F_Q,urbana-champaign,dev48_event_joint_cg_urbana_f,418,6019200,1.0,0.25,57600,11353.257405619659,7904.415027118645,0.30377558222135426,False,OPEN_PARTIAL_JOINT_PRICING,,joint_cg_loop with full-demand base and sparse delta master,0,4
+urbana_S2_Q,urbana-champaign,dev50_event_joint_cg_urbana_S2_Q,418,6019200,2.0,0.25,57600,87822.32866945985,15276.312993745125,0.8260543391961155,False,OPEN_PARTIAL_JOINT_PRICING,,joint_cg_loop with full-demand base and sparse delta master,0,4
+pittsburgh_F_H,pittsburgh,pittsburgh_F_H,1406,168720,1.0,30,320,12079.26654473578,12079.266544737546,-1.4622069181946852e-13,True,MET,-2.4868995751603507e-14,implicit path-CG solve.py adapter,1,1
+pittsburgh_S2_H,pittsburgh,pittsburgh_S2_H_accepted_cold_retry_v1,1406,168720,2.0,30,320,24231.037590422868,24229.438979559676,6.597368590700646e-05,True,NOT_MET,-0.15087426696668693,implicit path-CG solve.py adapter,0,60
+pittsburgh_F_Q,pittsburgh,pittsburgh_F_Q,1406,20246400,1.0,0.25,38400,12079.266544737542,12079.266544737542,0.0,True,NOT_APPLICABLE_EXACT_SHORTCUT,,uniform_release shortcut,0,0
+pittsburgh_S2_Q,pittsburgh,dev50_event_joint_cg_pittsburgh_S2_Q_v7,1406,20246400,2.0,0.25,38400,51001.18146917005,,,False,OPEN_PARTIAL_JOINT_PRICING,,joint_cg_loop with full-demand base and sparse delta master,0,4
+ithaca_F_Q,ithaca,ithaca_F_Q,110,1584000,1.0,0.25,23423,1638.7311892680166,1638.7311892680166,0.0,True,NOT_APPLICABLE_EXACT_SHORTCUT,,uniform_release shortcut,0,0
+berkeley_T4_H,berkeley,berkeley_T4_H,4,4,1.0,30,165,43.667424408006426,43.66742440800642,1.627168868768505e-16,True,MET,-1.7763568394002505e-15,explicit path-CG solve.py adapter,2,2
+chicago_T4_H,chicago,chicago_T4_H,4,4,1.0,30,169,241.21852424494344,241.20382545471173,6.0935578134867005e-05,True,NOT_MET,-0.0003315636681779921,explicit path-CG solve.py adapter,29,32
+ann_arbor_F_Q,ann-arbor,ann_arbor_F_Q,600,4320000,1.0,0.5,28800,7509.095763624765,7509.095763624765,0.0,True,NOT_APPLICABLE_EXACT_SHORTCUT,,uniform_release shortcut,0,0

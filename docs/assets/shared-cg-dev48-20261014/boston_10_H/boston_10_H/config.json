@@ -1,0 +1,28 @@
+{
+  "schema": "SHARED_CG_COMMON_EXPLICIT_CASE_R1",
+  "case_id": "boston_10_H",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "graph_type": "explicit",
+  "input_manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\boston_10_H__candidate2_explicit_dag_manifest.json",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\boston_10_H\\solver",
+  "expected_source_hashes": {
+    "dynamic_arc.csv": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+    "dynamic_demand.csv": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565"
+  },
+  "expected_commodity_events": 10,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 120,
+  "phase_II_max_rounds": 100,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "release_relative_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "all original dynamic_arc.csv rows and capacity resources; all original positive demands; shared sparse path-CG solver",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "checkpoint_every_rounds": 0,
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them",
+  "candidate_note": "Fresh Dev48 common-core regression; original registered inputs, H/Q identity, policy and resources unchanged."
+}

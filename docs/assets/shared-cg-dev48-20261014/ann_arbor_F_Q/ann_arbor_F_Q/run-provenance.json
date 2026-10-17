@@ -1,0 +1,132 @@
+{
+  "case_id": "ann_arbor_F_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:839cf9a02e5d37ecfcc1f4cafb1864f407564e16501e82c88951d9199c89f9f5",
+  "model_id_status": "generated hash of explicit frozen mathematical input contract when producer has no model_id",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "source_core_build_id": "sparse_common_dev48_balanced_selection",
+  "solver_branch": "retained_shared_cg_solve",
+  "actual_adapter": "uniform_release shortcut",
+  "actual_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "run_id": "ann_arbor_F_Q",
+  "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q",
+  "config_build_label": "sparse_common_dev48_balanced_selection",
+  "config": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\ann_arbor_F_Q__sparse_common_dev48_balanced_selection.json",
+    "role": "model/case configuration",
+    "exists": true,
+    "bytes": 1894,
+    "sha256": "7c622fa31c7ccca9da2b2e52ee31d3091ee96bac37217128fb3f9e7f2f01e525",
+    "source_mtime_utc": "2026-10-13T18:44:58.442827+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "result": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q\\solver\\RESULT.json",
+    "role": "actual selected-run producer result",
+    "exists": true,
+    "bytes": 2730,
+    "sha256": "6ee8a88d901ec56d061adcfae3bee5100bde2acb6d677d127249075ebb7472b3",
+    "source_mtime_utc": "2026-10-13T20:16:09.511149+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "core": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+    "role": "same Dev48 common source identity",
+    "exists": true,
+    "bytes": 3694,
+    "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+    "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\inputs\\ann_arbor_choicefw600_static_normalized\\network.csv",
+      "role": "original frozen input",
+      "exists": true,
+      "bytes": 1065187,
+      "sha256": "eb5d486d108251b1d2bf5dd920f7fbe8765a74e8738502576fe19a321294e43b",
+      "source_mtime_utc": "2026-10-11T16:46:41.938079+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+      "declared_sha256": "eb5d486d108251b1d2bf5dd920f7fbe8765a74e8738502576fe19a321294e43b",
+      "declared_sha256_matches": true
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\inputs\\ann_arbor_choicefw600_static_normalized\\access.csv",
+      "role": "original frozen input",
+      "exists": true,
+      "bytes": 444,
+      "sha256": "31c7c1f54d75d8d68fed2684ba5aad8dd5dd382cfa07ee1e09053901b990046f",
+      "source_mtime_utc": "2026-10-11T16:46:41.938079+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+      "declared_sha256": "31c7c1f54d75d8d68fed2684ba5aad8dd5dd382cfa07ee1e09053901b990046f",
+      "declared_sha256_matches": true
+    },
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\inputs\\ann_arbor_choicefw600_static_normalized\\assignment_od_pce.csv",
+      "role": "original frozen input",
+      "exists": true,
+      "bytes": 27867,
+      "sha256": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f",
+      "source_mtime_utc": "2026-10-11T16:46:41.940073+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+      "declared_sha256": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f",
+      "declared_sha256_matches": true
+    }
+  ],
+  "path_flow_inputs": [
+    {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+      "sha256": "b97eb780fefa2615d448b5d6aef70cefadeaefad3b3b13951bec7a88582b043e"
+    }
+  ],
+  "upper_certificate": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run independent primal/upper certificate",
+    "exists": true,
+    "bytes": 1606,
+    "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495",
+    "source_mtime_utc": "2026-10-13T20:16:10.928793+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "lower_certificate": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 1606,
+    "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495",
+    "source_mtime_utc": "2026-10-13T20:16:10.928793+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "accepted_at_frozen_gate": true,
+  "primal_verified": true,
+  "full_graph_lower_status": "VERIFIED_SAME_RUN",
+  "optimality_open": false,
+  "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+  "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+  "projected_by": "mainline read-only saved-data decoder; no new solve"
+}

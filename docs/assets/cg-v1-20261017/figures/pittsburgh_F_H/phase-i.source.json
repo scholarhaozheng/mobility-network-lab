@@ -1,0 +1,66 @@
+{
+  "case_id": "pittsburgh_F_H",
+  "run_id": "pittsburgh_F_H",
+  "model_id": "INDEX_CONTRACT_SHA256:bbd80db72e36aff12666cac25d2b5a178545fd0f33a257bded16a95dd57b17b6",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/result.json",
+    "sha256": "36dc2f7af183034774b39533ad53c4c306e1b5a45a2c6e31f789d3745ae7d7a8"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "All 1 saved Phase I states: capacity-resource slack 0 → 0 PCE; path pool 168,720 → 168,720. Slack is summed over capacity-resource rows, not unmet OD demand or unserved vehicles. Both panels use the same run.",
+  "outputs": {
+    "svg": "f4c56a564129e3114dbdbf02e2b45ee426057eb54a2e9ec6462ab2643b03ad18",
+    "png": "c1625c67ea087ef3e949110a4f5caf9cbeabfba4c4eac9ff549299b975314061",
+    "plot.json": "60e0825d0b46a8ed0f81a9e54252aca56abf95585babb355d37c5cc4c9c6d3a3"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/result.json",
+      "sha256": "36dc2f7af183034774b39533ad53c4c306e1b5a45a2c6e31f789d3745ae7d7a8"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/config.json",
+      "sha256": "2d8ff5d29f8b93220d7e8996331705351aa05d65d92ca3502ad615a19f84788e"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/upper-certificate.json",
+      "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/lower-certificate.json",
+      "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/acceptance-receipt.json",
+      "sha256": "8c227d5a7aafd29f6d4724c473beae359fab8dc7fe318b40c85ca851c03037eb"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/phase-i-combined.plot.json",
+      "sha256": "caad76f18c1cd54568439fb84df386007256f1b991ab8a1a5c612179bd0b4ade"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/phase-ii-pair.plot.json",
+      "sha256": "1d3aae4dac101f7ecf1c67a14c0dfb5b57ba6a5d845a1cb64ff5546b9fa8d614"
+    }
+  ]
+}

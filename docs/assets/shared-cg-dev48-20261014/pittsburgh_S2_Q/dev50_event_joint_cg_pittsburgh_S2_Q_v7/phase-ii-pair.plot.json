@@ -1,0 +1,254 @@
+{
+  "position": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "round": [
+    1,
+    2,
+    3,
+    null
+  ],
+  "labels": [
+    "RMP 1",
+    "RMP 2",
+    "RMP 3",
+    "Final RMP"
+  ],
+  "objective": [
+    51001.18780283195,
+    51001.18466840564,
+    51001.1827342487,
+    51001.18146917005
+  ],
+  "saved_history_states": 3,
+  "final_solved_endpoint": true,
+  "endpoint_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\FINAL_RMP.npz",
+    "sha256": "34a00e13cda71df9898edf14f2a262f1fa03625d2d9ed60d09ec2455dd35d9d5"
+  },
+  "endpoint_note": "Final solved RMP follows the final column addition; it is not an additional recorded CG outer round.",
+  "phase_ii_status": "SAVED",
+  "base_objective": 51007.10237234281,
+  "restricted_delta": [
+    -5.914569510863304,
+    -5.917703937162861,
+    -5.919638094103937
+  ],
+  "history_endpoint_difference": -0.0012650786520680413,
+  "case_id": "pittsburgh_S2_Q",
+  "run_id": "dev50_event_joint_cg_pittsburgh_S2_Q_v7",
+  "unit": "PCE-min",
+  "fixed_reference": null,
+  "reference_kind": null,
+  "reference_source": null,
+  "reference_status": "NOT_SAVED",
+  "signed_difference": null,
+  "signed_relative_percent": null,
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": null,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "pittsburgh_S2_Q",
+    "model_id": "INDEX_CONTRACT_SHA256:47f371bda0c4af986acf69f548a431356ba6feb093e969a67f83427e342f9268",
+    "model_id_status": "generated hash of explicit frozen mathematical input contract when producer has no model_id",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "new_joint_delta_cg",
+    "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\run_dev50_s2_joint_cg_pit_v7.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 1548,
+      "sha256": "952151dbfaac8d26b3163665a7849a37d07bdd7d0b0505634db9c59831244a74",
+      "source_mtime_utc": "2026-10-14T01:09:09.833881+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "dev50_event_joint_cg_pittsburgh_S2_Q_v7",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7",
+    "config_build_label": "sparse_common_dev41_wide_bridge_cg",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\pittsburgh_S2_Q__sparse_common_dev41_wide_bridge_cg_cold_seed.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1892,
+      "sha256": "0870a5cb0807ac75f7a5083786defd9c4740fedd683e1bed91f617a9d6349cc3",
+      "source_mtime_utc": "2026-10-13T14:12:22.021811+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 5248,
+      "sha256": "e9a99261d3bb762e064bd0e4b224bf4f4d3169d4ac83284e0bb780360f55b6aa",
+      "source_mtime_utc": "2026-10-14T02:50:19.367203+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input\\network.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 3773235,
+        "sha256": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "source_mtime_utc": "2026-10-06T15:43:15.926501+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input\\access.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1349,
+        "sha256": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "source_mtime_utc": "2026-10-04T20:45:10.503326+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input\\assignment_od_pce.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 142824,
+        "sha256": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8",
+        "source_mtime_utc": "2026-10-04T20:44:31.603690+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8",
+        "declared_sha256_matches": true
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev41_cold_source_seed_pittsburgh_S2_Q\\aon\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+        "sha256": "e704931ba19e5bb0682ab18a19773988d5a7ebf956cac431b42dd601e0c862f1"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev41_cold_source_seed_pittsburgh_S2_Q\\fifo\\FRAGMENTS.npz",
+        "sha256": "297ed8d8951f14e76c8fcffea44d90d38f3c0970ef7acc0c7e5cd67e3ea7c7a7"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_source_event_pool_pittsburgh_S2_Q_v7\\INITIAL_PATH_POOL.npz",
+        "sha256": "8f3c2072caaac5ad7103b62fa1924ee875e207c3fe5d6fd4fa6461cc9711116f"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\NEW_PATH_POOL.npz",
+        "sha256": "3b75c73121579df8dd4f5769e3921bea558e2214bc21078fe69431892ff6a514"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\FINAL_RMP.npz",
+        "sha256": "34a00e13cda71df9898edf14f2a262f1fa03625d2d9ed60d09ec2455dd35d9d5"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\STATE_MATRIX.npz",
+        "sha256": "d5e7bb11db8783aeb3f92c42c52d9804e3fc75510aa13969d24892e958f05045"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_pittsburgh_S2_Q_v7\\INDEPENDENT_CERT.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 1422,
+      "sha256": "9ffcec88a78d46fc8ac1f0a31a8f3ab3d8935ba9294d69239efe5d8df7cce93c",
+      "source_mtime_utc": "2026-10-14T04:57:05.038632+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": null,
+    "accepted_at_frozen_gate": false,
+    "primal_verified": true,
+    "full_graph_lower_status": "NOT_COMPLETED",
+    "optimality_open": true,
+    "producer_status": "ROUND_LIMIT_OPEN",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "signed_relative_gap_to_fixed_reference",
+  "per_round_lower_bound": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_raw": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_percent": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_column_count": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "NOT_SAVED_FULL_GRAPH_PER_ROUND",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "e9a99261d3bb762e064bd0e4b224bf4f4d3169d4ac83284e0bb780360f55b6aa",
+    "fields": [
+      "history",
+      "round_history"
+    ],
+    "new_solver_calls": 0
+  },
+  "reference_display": "Fixed same-run independent lower bound; it is not a per-round bound or an arc-flow LP optimum.",
+  "maintenance_revision": "20261015-online-template",
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "plotted_right_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "unplotted_diagnostic_fields": [
+    "per_round_lower_bound",
+    "per_round_gap_percent",
+    "per_round_minimum_reduced_cost"
+  ]
+}

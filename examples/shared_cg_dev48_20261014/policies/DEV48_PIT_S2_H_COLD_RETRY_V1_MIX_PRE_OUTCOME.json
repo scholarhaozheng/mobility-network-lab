@@ -1,0 +1,22 @@
+{
+  "schema": "DEV48_PIT_S2_H_RETRY_V1_MIX_PRE_OUTCOME",
+  "created_utc": "2026-10-13T21:41:37.606434+00:00",
+  "case_id": "pittsburgh_S2_H",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "retry_design_sha256": "d322495c47a17c48fee44c68344b8e56bc9f657f3bad090587e6e49d05531e6d",
+  "config_sha256": "fad98e64d7fdd50d805d5810b831b9934d24b61a3022ad169367b94bbc38bc8a",
+  "checkpoint_rounds": [
+    57,
+    60
+  ],
+  "alpha_grid": [
+    0,
+    0.25,
+    0.5,
+    0.75,
+    1
+  ],
+  "verifier_sha256": "c93abe3318fb89be786803362d839e1728f579d24009500a4addca4b0cb09221",
+  "primal_verifier_sha256": "df9d115733ac0f4c345db5b873a2bc78452984e517f38dae0e50c3491999cb0d",
+  "rule": "Only retry-v1 cold-run stages 57 and 60 and retry-v1 cold primal; independent original CSV full-time repricing at the old fixed five alphas, original 1e-4 gap. No failed-run or historical dual/flow carried into retry."
+}

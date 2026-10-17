@@ -1,0 +1,66 @@
+{
+  "case_id": "boston_10_H",
+  "run_id": "boston_10_H",
+  "model_id": "fa4fc7dc4740ea006e7819cecd85f189591a54003c19b1367871ad5a6d04292a",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/result.json",
+    "sha256": "4ac2c8697b23b398a6216d3c0f02148cab287ff6df99fc68da1ae9c76a7440c4"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "All 11 saved Phase I states: capacity-resource slack 244.329668 → 0 PCE; path pool 10 → 65. Slack is summed over capacity-resource rows, not unmet OD demand or unserved vehicles. Both panels use the same run.",
+  "outputs": {
+    "svg": "13b0845935220ea717790b79ae36530d4f951e180eeb8e522ad35c5d4dd9610b",
+    "png": "cb843092b91e80c53cba2d595d21afd1e2419478b2d10fff43dd5570e0478a4e",
+    "plot.json": "ec436db2ce73839c58f84c3d688d9ba114f8793d644e58f8e9dd909bc1c20be7"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/result.json",
+      "sha256": "4ac2c8697b23b398a6216d3c0f02148cab287ff6df99fc68da1ae9c76a7440c4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/config.json",
+      "sha256": "5e6d2d832638f04ac30f82c40c7b8a7ca070abe7defbc8a552eecdb5131fa560"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/upper-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/lower-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/acceptance-receipt.json",
+      "sha256": "43fdd15862d9001d851f4ca76091ec13206644236ed73acd9a4116f7a672612a"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/phase-i-combined.plot.json",
+      "sha256": "90675b591bbd0a39af6453703117b932d2d471f565f63ed09d72abcc197c8c5f"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/phase-ii-pair.plot.json",
+      "sha256": "7846223ece0670a45cf67e58eaff5ce1209bfab59ce36002ab4288bac3481211"
+    }
+  ]
+}

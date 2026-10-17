@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/result.json",
+      "sha256": "36dc2f7af183034774b39533ad53c4c306e1b5a45a2c6e31f789d3745ae7d7a8"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/upper-certificate.json",
+      "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/lower-certificate.json",
+      "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/phase-i-combined.plot.json",
+      "sha256": "caad76f18c1cd54568439fb84df386007256f1b991ab8a1a5c612179bd0b4ade"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/phase-ii-pair.plot.json",
+      "sha256": "1d3aae4dac101f7ecf1c67a14c0dfb5b57ba6a5d845a1cb64ff5546b9fa8d614"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/pittsburgh_F_H/physical-flow.plot.json",
+      "sha256": "13c0b46839b6b95c2be5e61fdceb2f959d1d4e9bbb4f91e2398bf27932b94ed0"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "pittsburgh_F_H / pittsburgh_F_H / Dev48. Full same-run movement vector: 17,534 directed model physical links, 4,971 positive and 12,563 exact zeros. Integrated over all 168,720 original release events and the full arrival tail; PCE, not hourly flow or instantaneous v/c. Recomputed original path cost 12079.26654473578; independent U=12079.26654473578. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Model scenario, not observed traffic.",
+  "outputs": {
+    "png": "f55198ce3ff2d7a808e06c1ebe45370f0b925c00ed9beb01d2395f896e1b3a01",
+    "svg": "0b03d009ac853c3afc6d62bcc77af0e5367e82aca4b388ed5a3b7d5fc769ea0a",
+    "plot.json": "13c0b46839b6b95c2be5e61fdceb2f959d1d4e9bbb4f91e2398bf27932b94ed0"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "pittsburgh_F_H",
+  "run_id": "pittsburgh_F_H",
+  "model_id": "INDEX_CONTRACT_SHA256:bbd80db72e36aff12666cac25d2b5a178545fd0f33a257bded16a95dd57b17b6",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

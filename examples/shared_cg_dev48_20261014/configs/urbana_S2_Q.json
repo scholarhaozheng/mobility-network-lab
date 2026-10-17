@@ -1,0 +1,24 @@
+{
+  "schema": "SHARED_CG_UNIFORM_RELEASE_Q_CASE_CONFIG_R1",
+  "case_id": "urbana_S2_Q",
+  "build_id": "sparse_common_dev41_wide_bridge_cg",
+  "graph_type": "uniform_release_implicit",
+  "expected_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "physical_field": "arc_kind",
+  "physical_value": "physical",
+  "dt_seconds": 0.25,
+  "release_steps": 14400,
+  "horizon_steps": 57600,
+  "demand_factor": 2.0,
+  "expected_commodity_events": 6019200,
+  "relative_gap_tolerance": 0.0001,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "All original directed edges, all original positive OD and hourly uniform releases; exact capacity check on every physical entry time row. AON overcapacity remains OPEN, with no optimum claim.",
+  "algorithmic_batch_change": "fresh source-only AON and FIFO feasibility construction before shared joint CG; original Q model unchanged",
+  "science_policy": "Original full graph/demand/time/capacity and frozen 30-round/3 GiB gates. Primary offers cannot be displaced; secondary offer only occupies spare quota. Final acceptance still requires cold fresh solve of every registered case.",
+  "cold_seed_scope": "No old saved path, flow, or dual imported into this new source construction."
+}

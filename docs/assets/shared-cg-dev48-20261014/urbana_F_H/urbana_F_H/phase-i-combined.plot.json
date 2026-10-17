@@ -1,0 +1,175 @@
+{
+  "case_id": "urbana_F_H",
+  "run_id": "urbana_F_H",
+  "round": [
+    1,
+    2,
+    3
+  ],
+  "total_artificial_capacity_slack": [
+    72.41724925763748,
+    11.576194896445603,
+    0.0
+  ],
+  "matrix": null,
+  "per_od_status": "NOT_SAVED_OR_NOT_OD_DEFINED",
+  "total_status": "SAVED",
+  "absence_reason": null,
+  "semantics": "Capacity-row slack s in A*x - s <= capacity; no unique OD attribution.",
+  "unit": "PCE",
+  "composition": "left_right",
+  "panel_order": [
+    "total_unmet_OD_artificial_flow",
+    "per_OD_unmet_artificial_flow_heatmap"
+  ],
+  "provenance": {
+    "case_id": "urbana_F_H",
+    "model_id": "INDEX_CONTRACT_SHA256:6fa2865dd991166a60186b5becef19544add8533676dee0e8f25271dd8922d6d",
+    "model_id_status": "generated hash of explicit frozen mathematical input contract when producer has no model_id",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "implicit path-CG solve.py adapter",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "urbana_F_H",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\urbana_F_H__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 2018,
+      "sha256": "f6487e7137b41fce1d144445142ca59595b06ad3e392519c2cd6a87ec98cd3c7",
+      "source_mtime_utc": "2026-10-13T18:44:58.283849+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 7977,
+      "sha256": "89c019086349a5dfc81b4bdbcc0188d52292d732de7c3bc7e8c2b29f83bb31ea",
+      "source_mtime_utc": "2026-10-13T20:12:10.786157+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\network.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1660379,
+        "sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "source_mtime_utc": "2026-10-05T04:00:47.726749+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\access.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1502,
+        "sha256": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "source_mtime_utc": "2026-10-05T04:00:47.736723+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\assignment_od_pce.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 33913,
+        "sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+        "source_mtime_utc": "2026-10-05T04:00:47.739831+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+        "declared_sha256_matches": true
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver\\COLUMN_POOL.npz",
+        "sha256": "14bc7cfed8338051613b3a30fe020b977620afd5094c7edf1855120e54e2664c"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver\\LAST_RMP.npz",
+        "sha256": "eb6b6e4825efff7d927c682625b795cafd99624c3c60e62aebc7a5b3e25f1dc2"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 1308,
+      "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1",
+      "source_mtime_utc": "2026-10-13T20:12:30.978627+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 1308,
+      "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1",
+      "source_mtime_utc": "2026-10-13T20:12:30.978627+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "phase_i_definition": "Capacity-resource slack s in A*x - s <= capacity; OD demand equalities are enforced.",
+  "per_od_absence_reason": "No same-run per-OD artificial-demand matrix is saved or defined. Capacity slack has no unique OD attribution.",
+  "original_version_definition": "Original reference cities use artificial unmet OD demand in B*x + a = q.",
+  "maintenance_revision": "20261015-online-template",
+  "plotted_quantity": "unmet_OD_artificial_flow",
+  "total_artificial_flow": null,
+  "per_od_artificial_flow": null,
+  "requested_quantity_status": "NOT_DEFINED_IN_SELECTED_RUN",
+  "plotted_rounds": [],
+  "unplotted_diagnostic_fields": [
+    "round",
+    "total_artificial_capacity_slack"
+  ],
+  "display_note": "Capacity-resource slack is a different quantity and is not plotted in these requested panels."
+}

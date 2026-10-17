@@ -1,0 +1,30 @@
+{
+  "schema": "SHARED_CG_Q_UNIFORM_INDEPENDENT_FULL_GRAPH_CERT_R1",
+  "status": "PASS_FULL_GRAPH",
+  "case_id": "ithaca_F_Q",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "original_source_hashes": {
+    "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+    "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+    "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+  },
+  "original_positive_OD": 110,
+  "original_release_commodity_events": 1584000,
+  "all_original_edges": 47938,
+  "all_original_physical_arcs": 15148,
+  "all_original_physical_entry_rows": 354811604,
+  "original_hourly_pce": 421.2613256336401,
+  "original_primal_objective": 1638.7311892680166,
+  "independent_full_graph_lower_bound": 1638.7311892680166,
+  "relative_gap_raw": 0.0,
+  "maximum_original_capacity_ratio": 0.11259252831957473,
+  "overcapacity_original_physical_edges": 0,
+  "worst_original_physical_edge_id": "p_20189928_0_F",
+  "worst_entry_step": 1432,
+  "worst_step_load_pce": 0.004691355346648947,
+  "max_original_OD_hourly_demand_residual": 0.0,
+  "all_original_release_events_served": true,
+  "max_release_plus_path_arrival_step": 16223,
+  "path_sha256": "a7872ad0f72226bb876c09c1a610c63a9287d7e5eb63084c93ac9fbf58eeeea1",
+  "proof_method": "independent original-source forward Dijkstra lower bound; every original edge/time path and all exact uniform release intervals checked; wait cost nonnegative; full physical time-entry capacity feasible"
+}

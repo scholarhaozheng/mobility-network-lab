@@ -1,0 +1,60 @@
+Dev48 minimum model inputs and executable source — 17 October 2026
+
+The project software retains the root MIT License. The code contains only the
+algorithm implementations and constructors/verifiers needed by the declared
+16 cases. Original source identities are recorded in provenance; current
+subset hashes are in EXECUTABLE_MANIFEST.json. New runs derive new path/hash
+bindings, and do not inherit the old selected run's acceptance certificate.
+
+The inputs/ tables are frozen modeled road networks, zone-access mappings,
+aggregate model OD demand and time-graph construction settings. They are
+engineering scenarios, not observed traveler records. They contain no raw
+GTFS feed, full timetable itinerary collection, GPS trajectory, API key or
+account credential. Source population/activity and timetable influences enter
+through the already-frozen parent model demand. They are not measured traffic
+or Census-published zone-level estimates.
+
+Road-derived network data in the six new-city groups: © OpenStreetMap
+contributors; ODbL 1.0, https://www.openstreetmap.org/copyright and
+https://opendatacommons.org/licenses/odbl/1-0/ . The actual bounded derivative
+network tables used by the CG models are provided in inputs/ together with
+the constructions needed to generate their expanded time graphs. The ODbL
+database notice applies to those road-derived tables; independent solver code
+retains its software license. Model demand and engineering parameter choices
+are identified separately and are not portrayed as OSM observations.
+
+Ann Arbor: Transit scheduling, geographic, and real-time data provided by
+permission of AAATA/TheRide. Historical engineering scenario, not a current
+journey planner; service date 2026-10-05 and modeled HBW 08:00–09:00. No operator
+logo or endorsement is used. The U-M raw GTFS, TheRide raw GTFS and substitute
+stop-by-stop timetable library are not distributed. This bundle includes only
+the ChoiceFW V002 aggregate parent vehicle demand and modeled road assignment
+inputs. Existing operator conditions and source details remain applicable:
+https://www.theride.org/business/software-developers
+https://ltp.umich.edu/campus-transit/
+../../docs/assets/mainline-publication-20261009/NOTICE.md
+
+The frozen parent demand groups retain their existing Census/ACS/LODES and
+activity-source attribution in the city volumes and prior source notices.
+They are project estimates, not Census-published model outputs. Relevant
+existing notices and data rules:
+../../DATA_LICENSES.md
+../../docs/assets/algorithm-transfer-r8/NOTICE.md
+../../docs/assets/mainline-publication-20261009/NOTICE.md
+
+Existing Hong Kong, Boston and Sioux inputs are referenced at their already
+published repository paths, not re-licensed or duplicated here. Hong Kong's
+government/GMNS and bounded data notices remain applicable. Sioux retains
+GMNS Plus Apache-2.0 and TransportationNetworks academic-use/source-credit
+notices. Its unavailable original provider revision is a declared upstream
+reconstruction boundary; exact modeled inputs are supplied.
+
+The current project publication includes these specific minimum model inputs
+under their stated conditions. Earlier results-only statements describe their
+older release scopes; they do not describe this explicit input addition.
+No third-party raw-feed or personal-data publication permission is implied.
+
+All generated networks, initial seeds/pools, solver states, full pricing arrays,
+results and certificates belong in the reader's separate output workspace.
+They are not preinstalled in this source directory. This update did not run
+the optimizers and does not claim a fresh numerical acceptance.

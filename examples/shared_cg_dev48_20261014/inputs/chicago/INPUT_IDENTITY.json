@@ -1,0 +1,288 @@
+{
+  "city_id": "chicago",
+  "experiment_id": "CHICAGO_JANE_BYRNE_R2_ALGORITHM_TRANSFER_R1_20261006",
+  "source_files": {
+    "network": {
+      "path": "input/static/link.csv",
+      "sha256": "cd90e83fcb047fbdcdeaf690e5cf175d2c2b1a4bedecde313c903949bfb62120"
+    },
+    "access": {
+      "path": "input/static/access.csv",
+      "sha256": "0968feac7bbc456ecb19e6d1c7ff42b0a19eb678546dfbea47dfb940a32d167f"
+    },
+    "stage3": {
+      "path": "input/static/assignment_od_pce.csv",
+      "sha256": "99b14b75028b986b0bd36134cbcabb29705619907f924e43b50658090734b95c"
+    }
+  },
+  "scope_id": "chicago_jane_byrne_west_loop_2023resident_2026activity_hbw_am",
+  "analysis_period": "generic_weekday_08_09_America_Chicago_one_hour",
+  "purpose": "HBW",
+  "static_claim": "SINGLE_PASS_ENGINEERING_SCENARIO_NOT_LOCALLY_CALIBRATED",
+  "selected_s_od": [
+    {
+      "origin": "32",
+      "destination": "33",
+      "volume_pce": 2.3949865879641994,
+      "selection_sha256": "0392915f68a671c71504dd6975918330e27596df25a3985410528d23272c26e6",
+      "origin_node": "osm:9913425856",
+      "destination_node": "osm:261207373",
+      "rounded_shortest_steps": 83,
+      "directed_reachable": true
+    },
+    {
+      "origin": "28",
+      "destination": "32",
+      "volume_pce": 531.9807316313291,
+      "selection_sha256": "376f2f03bd17bd0ed039b9f3d94638781706d954041840da97a9a4ab89de7937",
+      "origin_node": "osm:261881717",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 80,
+      "directed_reachable": true
+    },
+    {
+      "origin": "8",
+      "destination": "28",
+      "volume_pce": 187.46058445968495,
+      "selection_sha256": "3a46da8ec1aa271eb75d9c1de4c2c4951e02195ff479be5ed772b820ef898ca8",
+      "origin_node": "osm:5844620237",
+      "destination_node": "osm:261881717",
+      "rounded_shortest_steps": 134,
+      "directed_reachable": true
+    },
+    {
+      "origin": "24",
+      "destination": "32",
+      "volume_pce": 76.55915186858584,
+      "selection_sha256": "43f69c49d1643252616473e455635fbb4a364fe76f43e85283abc54aa690249a",
+      "origin_node": "osm:9708251508",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 129,
+      "directed_reachable": true
+    },
+    {
+      "origin": "33",
+      "destination": "28",
+      "volume_pce": 29.31611110088546,
+      "selection_sha256": "582f778c7deab996608836cd05b1bd8502ef07968d000440f6a4b758e9956249",
+      "origin_node": "osm:261207373",
+      "destination_node": "osm:261881717",
+      "rounded_shortest_steps": 134,
+      "directed_reachable": true
+    },
+    {
+      "origin": "24",
+      "destination": "33",
+      "volume_pce": 0.9125503943155583,
+      "selection_sha256": "605f61b030544b6a3839d291b5f355ccda02f02507dc06f562a213cb7a67298b",
+      "origin_node": "osm:9708251508",
+      "destination_node": "osm:261207373",
+      "rounded_shortest_steps": 206,
+      "directed_reachable": true
+    },
+    {
+      "origin": "32",
+      "destination": "24",
+      "volume_pce": 24.355318963674186,
+      "selection_sha256": "61f417aeff76c8660526241a6c5eb2024e7440472a484641cf48d531fde66c3c",
+      "origin_node": "osm:9913425856",
+      "destination_node": "osm:9708251508",
+      "rounded_shortest_steps": 150,
+      "directed_reachable": true
+    },
+    {
+      "origin": "33",
+      "destination": "32",
+      "volume_pce": 10.737667451244446,
+      "selection_sha256": "6b28bafadfa20e4f7658ffe3db166fd29a7d84ad71b579cdc5d8c86828682639",
+      "origin_node": "osm:261207373",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 99,
+      "directed_reachable": true
+    },
+    {
+      "origin": "33",
+      "destination": "24",
+      "volume_pce": 1.3945235429026879,
+      "selection_sha256": "6c7f7f95ac9610f1a0e8b0d6529fee3251ef0cdf3e869657c4c52b85cc85b284",
+      "origin_node": "osm:261207373",
+      "destination_node": "osm:9708251508",
+      "rounded_shortest_steps": 208,
+      "directed_reachable": true
+    },
+    {
+      "origin": "32",
+      "destination": "8",
+      "volume_pce": 55.90405102551843,
+      "selection_sha256": "785b1fba5edff29333ad3f14afc8ae13de11e2d53678e061fafe946d369897cf",
+      "origin_node": "osm:9913425856",
+      "destination_node": "osm:5844620237",
+      "rounded_shortest_steps": 81,
+      "directed_reachable": true
+    },
+    {
+      "origin": "24",
+      "destination": "28",
+      "volume_pce": 90.33304684953319,
+      "selection_sha256": "817f6c7285a7bd61dc86d568c41bc5f19ae9911ea71ee8d089eda4f352d21818",
+      "origin_node": "osm:9708251508",
+      "destination_node": "osm:261881717",
+      "rounded_shortest_steps": 81,
+      "directed_reachable": true
+    },
+    {
+      "origin": "24",
+      "destination": "8",
+      "volume_pce": 20.581133565605466,
+      "selection_sha256": "87bd35ddb47d5b88d0d4dd92f4d8b7de3a2b3e89a8cbf004284502b627a82499",
+      "origin_node": "osm:9708251508",
+      "destination_node": "osm:5844620237",
+      "rounded_shortest_steps": 90,
+      "directed_reachable": true
+    },
+    {
+      "origin": "32",
+      "destination": "28",
+      "volume_pce": 346.69204228816506,
+      "selection_sha256": "8e02cd6cbc014c6cb67eb68b4b5883a99e99a3b8f672e67e33adf12ec8550c5a",
+      "origin_node": "osm:9913425856",
+      "destination_node": "osm:261881717",
+      "rounded_shortest_steps": 106,
+      "directed_reachable": true
+    },
+    {
+      "origin": "8",
+      "destination": "33",
+      "volume_pce": 1.467823038006326,
+      "selection_sha256": "9ad0c6dec38f2342ac833baa73be76b7758dcc44adcdee3f8c525004a3d58ae2",
+      "origin_node": "osm:5844620237",
+      "destination_node": "osm:261207373",
+      "rounded_shortest_steps": 145,
+      "directed_reachable": true
+    },
+    {
+      "origin": "28",
+      "destination": "33",
+      "volume_pce": 9.31929514794115,
+      "selection_sha256": "9d25a71c4353935444e8edc1332ff4e3fa948a3e8d39da563b6ff8f2aef5d9e0",
+      "origin_node": "osm:261881717",
+      "destination_node": "osm:261207373",
+      "rounded_shortest_steps": 138,
+      "directed_reachable": true
+    },
+    {
+      "origin": "28",
+      "destination": "24",
+      "volume_pce": 45.142104910815284,
+      "selection_sha256": "a3187564fe93c7c38f4075582df67523bbde374542bc58a29776f143b38ebed2",
+      "origin_node": "osm:261881717",
+      "destination_node": "osm:9708251508",
+      "rounded_shortest_steps": 80,
+      "directed_reachable": true
+    },
+    {
+      "origin": "8",
+      "destination": "24",
+      "volume_pce": 8.101396159656117,
+      "selection_sha256": "bec5bbec14c78954f3791cb1db133c4d3f6b8e95471e502df248f6878f6b6ca5",
+      "origin_node": "osm:5844620237",
+      "destination_node": "osm:9708251508",
+      "rounded_shortest_steps": 87,
+      "directed_reachable": true
+    },
+    {
+      "origin": "33",
+      "destination": "8",
+      "volume_pce": 5.776072278750188,
+      "selection_sha256": "c05c5372caf68edbbdeefe08be42b90fd2de53a1b0cbdda65a0cc285559bd7f6",
+      "origin_node": "osm:261207373",
+      "destination_node": "osm:5844620237",
+      "rounded_shortest_steps": 148,
+      "directed_reachable": true
+    },
+    {
+      "origin": "8",
+      "destination": "32",
+      "volume_pce": 69.62796169906645,
+      "selection_sha256": "d4b69c61712ff433ad7a0745c028fda12efe76f980b07a975eb0bff9e343e217",
+      "origin_node": "osm:5844620237",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 71,
+      "directed_reachable": true
+    },
+    {
+      "origin": "28",
+      "destination": "8",
+      "volume_pce": 236.89169827608237,
+      "selection_sha256": "f7611cc693cd228921e7b79d666bca3ada504d78c05eed4b6c0b3aa2d2154330",
+      "origin_node": "osm:261881717",
+      "destination_node": "osm:5844620237",
+      "rounded_shortest_steps": 135,
+      "directed_reachable": true
+    }
+  ],
+  "S_cohort": "S20",
+  "major_count": 20,
+  "K_path_cap": 5,
+  "path_upper": 100,
+  "minor_upper": 80,
+  "basis_rank_targets": [
+    26,
+    52
+  ],
+  "hourly_q_pce": 1754.9482512397267,
+  "turn_semantics": "UNKNOWN_NOT_FETCHED; preserve original R2 adjacency; new-date sidecar excluded",
+  "seen_status": "R2 previously diagnosed/accepted; new method transfer post-diagnostic, not clean holdout",
+  "source_marker_sha256": "b1bc406e6f046896265eb04430647910c3942be4236ba467686a9cdc4d618aee",
+  "no_stage123_recompute": true,
+  "no_occupancy_or_pce_reconversion": true,
+  "T_selected_profile_input_only": "T4",
+  "T_selected_od": [
+    {
+      "origin": "32",
+      "destination": "33",
+      "volume_pce": 2.3949865879641994,
+      "selection_sha256": "0392915f68a671c71504dd6975918330e27596df25a3985410528d23272c26e6",
+      "origin_node": "osm:9913425856",
+      "destination_node": "osm:261207373",
+      "rounded_shortest_steps": 83,
+      "directed_reachable": true
+    },
+    {
+      "origin": "28",
+      "destination": "32",
+      "volume_pce": 531.9807316313291,
+      "selection_sha256": "376f2f03bd17bd0ed039b9f3d94638781706d954041840da97a9a4ab89de7937",
+      "origin_node": "osm:261881717",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 80,
+      "directed_reachable": true
+    },
+    {
+      "origin": "8",
+      "destination": "28",
+      "volume_pce": 187.46058445968495,
+      "selection_sha256": "3a46da8ec1aa271eb75d9c1de4c2c4951e02195ff479be5ed772b820ef898ca8",
+      "origin_node": "osm:5844620237",
+      "destination_node": "osm:261881717",
+      "rounded_shortest_steps": 134,
+      "directed_reachable": true
+    },
+    {
+      "origin": "24",
+      "destination": "32",
+      "volume_pce": 76.55915186858584,
+      "selection_sha256": "43f69c49d1643252616473e455635fbb4a364fe76f43e85283abc54aa690249a",
+      "origin_node": "osm:9708251508",
+      "destination_node": "osm:9913425856",
+      "rounded_shortest_steps": 129,
+      "directed_reachable": true
+    }
+  ],
+  "T_geometry_source": "R2 physical_crosswalk.csv, no observation data",
+  "T_profile_q_rule": "selected hourly Stage3 volume / 12",
+  "T_selected_q_pce": 66.53295454563035,
+  "T_excluded_total_from_hour_pce": 1688.4152966940962,
+  "T_excluded_other_11_bins_of_selected_od_pce": 731.8625000019339,
+  "T_excluded_unselected_od_hour_pce": 956.5527966921625
+}

@@ -1,0 +1,44 @@
+{
+  "admm": {
+    "abs_residual": 1e-05,
+    "capacity_abs": 1e-05,
+    "dual_update": 1e-07,
+    "kkt": 0.001,
+    "max_balance": 1e-05,
+    "max_outer": 300,
+    "objective_rel": 0.0001,
+    "projection": 1e-07,
+    "rel_residual": 0.0001,
+    "wall_seconds": 7200
+  },
+  "candidate_od": 10,
+  "capacity_pce_per_step": "R2 hourly capacity*dt/3600",
+  "cg": {
+    "phase_i_artificial_abs": 1e-08,
+    "pricing_reduced_cost_abs": 1e-07,
+    "wall_seconds": 5400
+  },
+  "departure": "first five-minute bin of 08:00-09:00, uniform 1/12 hourly PCE engineering assumption",
+  "departure_time_seconds": 150,
+  "exit_cost": 0.0,
+  "horizon": "at least 25min and last departure+maximum selected OD rounded shortest path+15min",
+  "lp": {
+    "dual_abs": 1e-06,
+    "primal_abs": 1e-06,
+    "wall_seconds": 7200
+  },
+  "lr": {
+    "bound_gap_rel": 0.01,
+    "wall_seconds": 5400
+  },
+  "memory_ceiling_bytes": 687203942,
+  "model": "full exact forward/backward reachability-pruned time-expanded arc-flow; shared physical capacity",
+  "resource_fallback_od": 4,
+  "selection_key": "same input-only SHA256 ordering as S",
+  "storage_spillback": false,
+  "temporary_disk_bytes": 5368709120,
+  "time_step_seconds": 30,
+  "travel_cost": "original physical free-flow time in minutes",
+  "travel_steps": "ceil(original physical vdf_fftt minutes*60/dt), at least 1",
+  "wait_cost": "30 seconds in minutes"
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "ann_arbor_F_Q",
+  "run_id": "ann_arbor_F_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:839cf9a02e5d37ecfcc1f4cafb1864f407564e16501e82c88951d9199c89f9f5",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/result.json",
+    "sha256": "6ee8a88d901ec56d061adcfae3bee5100bde2acb6d677d127249075ebb7472b3"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "Exact construction, no Phase II CG loop. Left: true objective in PCE-min. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=7509.095764. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "00047e9ffbe25bea06439cdbdf57419ab424fb7040a54b7edd47bbf1eb86ca6b",
+    "png": "b40b50f1088fe9bb552b78c4f2afcae2628655fb94d687850b9e80774ea99ee5",
+    "plot.json": "ddc2be5d59e4114c2ee0f3e8bc1fcca1736be7000eba348e3841cc3f2fd752e5"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/result.json",
+      "sha256": "6ee8a88d901ec56d061adcfae3bee5100bde2acb6d677d127249075ebb7472b3"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/config.json",
+      "sha256": "7c622fa31c7ccca9da2b2e52ee31d3091ee96bac37217128fb3f9e7f2f01e525"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/upper-certificate.json",
+      "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/lower-certificate.json",
+      "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/acceptance-receipt.json",
+      "sha256": "bd7a7e4ba8a17528dd80cf55fa8591b5838689fe744f90284586a480239e3be2"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/phase-i-combined.plot.json",
+      "sha256": "c0990e5bd8eeb57a421dc9bbb129b281361d4cb6d6b73906b13c8fffe397aae7"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/phase-ii-pair.plot.json",
+      "sha256": "24ea47c22591f0118fb0f01b11d1bea12c8486da939964de5bf1f6cd2cd3ef4e"
+    }
+  ]
+}

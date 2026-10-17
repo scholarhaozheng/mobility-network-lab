@@ -1,0 +1,66 @@
+{
+  "case_id": "pittsburgh_F_Q",
+  "run_id": "pittsburgh_F_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:cd463b4c56a6b2d1b7066064e6183e6189f858adfc834f316a6b047087b658f5",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/result.json",
+    "sha256": "b496539588811c887b0cf0c7507a62777d8647d90a6fa65579d632ccd33602a1"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "c843f17f93163a4c90ba2435b6de0ed6bcb4f2c8ff19a5c0787bb4c69569dd98",
+  "caption": "Exact construction, no Phase II CG loop. Left: true objective in PCE-min. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=12079.26654. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "978bcdb270641e1cb9a17710b2ed4a593848ace10416146d77b53c9c1b27a055",
+    "png": "8eab6130cd4fc5617324b6190bf841031f004e0b3c4b0268394068853d3ee121",
+    "plot.json": "3eebe468d07e00abc596d5f20ade1869aa6e14f979e9dddaea888c97453879a6"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/result.json",
+      "sha256": "b496539588811c887b0cf0c7507a62777d8647d90a6fa65579d632ccd33602a1"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/config.json",
+      "sha256": "d277215bb883ef6e1cf9ddd82b90615210b69cf3ac8ee66aaab439d4927695f5"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/upper-certificate.json",
+      "sha256": "addc719ebff015bfe22bcea1caa7a023f538e6b3810738c874363738dc1d4961"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/lower-certificate.json",
+      "sha256": "addc719ebff015bfe22bcea1caa7a023f538e6b3810738c874363738dc1d4961"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/acceptance-receipt.json",
+      "sha256": "5bc826a8b66d682f3fa7edbcff4c371be7b726c39ca7e89feb4c76e89f09319e"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/phase-i-combined.plot.json",
+      "sha256": "4169fb56c840932224438015dfcafde6dd29031ef0f13ac24ad9fa4f6ed475f3"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/phase-ii-pair.plot.json",
+      "sha256": "522a7863f03fb29507f39b0c543274c9974bf4ded8c2c7b02b2850653fe62d04"
+    }
+  ]
+}

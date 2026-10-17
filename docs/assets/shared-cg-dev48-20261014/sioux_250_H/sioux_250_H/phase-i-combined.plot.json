@@ -1,0 +1,177 @@
+{
+  "case_id": "sioux_250_H",
+  "run_id": "sioux_250_H",
+  "round": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "total_artificial_capacity_slack": [
+    15545.754336999998,
+    6690.1645659999995,
+    435.2468489999992,
+    0.0
+  ],
+  "matrix": null,
+  "per_od_status": "NOT_SAVED_OR_NOT_OD_DEFINED",
+  "total_status": "SAVED",
+  "absence_reason": null,
+  "semantics": "Capacity-row slack s in A*x - s <= capacity; no unique OD attribution.",
+  "unit": "native volume",
+  "composition": "left_right",
+  "panel_order": [
+    "total_artificial_capacity_slack",
+    "per_od_heatmap"
+  ],
+  "provenance": {
+    "case_id": "sioux_250_H",
+    "model_id": "INDEX_CONTRACT_SHA256:e55b45b31c0804344306d77c747ced6785e6da45aae845f91107bb8f0472f062",
+    "model_id_status": "explicit signature if recorded; otherwise generated problem contract hash",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "explicit path-CG solve.py adapter",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "sioux_250_H",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_250_H__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1837,
+      "sha256": "edea465048bd9f1d51f4912b987150ed853ce227b1d385cc3261c90fbe5212a8",
+      "source_mtime_utc": "2026-10-13T18:44:58.264609+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 96469,
+      "sha256": "e5a0495eee4e97354cbfa06e470eedb806825f6d1688834736a3391dc86bea62",
+      "source_mtime_utc": "2026-10-13T20:10:52.762620+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_node.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 36048,
+        "sha256": "65b3289d4aec8f34c23be1995f624c66959f08402e47d391f8a4c57725e9ec64",
+        "source_mtime_utc": "2026-06-29T15:34:58.262679+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_arc.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 923377,
+        "sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+        "source_mtime_utc": "2026-06-29T15:34:58.327216+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_demand.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 4960,
+        "sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+        "source_mtime_utc": "2026-06-29T15:34:58.330418+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD\\dynamic_columns.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 48851,
+        "sha256": "571f66213be51ec5eaedb9ef6be3ad3842edc6b8ab44d08a0bc1f46744c0a8b9",
+        "source_mtime_utc": "2026-06-29T15:34:58.334383+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\COLUMN_POOL.npz",
+        "sha256": "4ba207771ac92b5ccb0bd322ec8a941f05945aa123e52f62f4c194ccd1d99344"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\LAST_RMP.npz",
+        "sha256": "34135bc7a22afebe6f8980c51aefba06dee55227836c5877320f3a0237089057"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 956,
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+      "source_mtime_utc": "2026-10-13T20:10:54.957700+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_250_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 956,
+      "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+      "source_mtime_utc": "2026-10-13T20:10:54.957700+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "per_od_absence_reason": "No same-run per-OD artificial-demand matrix was saved; capacity-row slack has no unique OD attribution.",
+  "phase_i_definition": "Capacity-resource slack s: A*x - s <= capacity, with every OD demand equality enforced.",
+  "original_version_definition": "Artificial unmet OD demand a: B*x + a = q, with capacity constraints enforced.",
+  "comparison_note": "Original plots show unmet OD demand and single-column Phase I additions. This retained Dev48 branch shows capacity-resource slack and batch additions; totals and round counts are not directly comparable.",
+  "maintenance_revision": "20261015-pricing-progress"
+}

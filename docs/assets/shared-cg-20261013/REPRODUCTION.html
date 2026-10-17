@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Shared CG reproduction in the existing project</title><style>body{max-width:960px;margin:2rem auto;padding:1rem;font:17px/1.65 Georgia;color:#17374a}pre{white-space:pre-wrap;background:#eef4f5;padding:1rem}a{color:#137e83}</style><a href="../../reproduction.html#shared-cg-20261013">← Project reproduction guide</a><h1>Shared CG: evidence and computation</h1><p><a href="RESULT_CODE_INDEX.html">Per-result algorithm versions, source dependencies and exact hashes</a></p><p><a href="NOTICE.txt">Source and reuse notice</a> · <a href="SOURCE_BASIS.json">Source basis</a></p><p id="actual-downloads"><a href="../../downloads/shared-cg-20261013-code.zip">Versioned code</a> · <a href="../../downloads/shared-cg-20261013-model-inputs.zip">Frozen model inputs</a> · <a href="input-index.json">Input hashes and fields</a></p><pre>Shared CG · 13 October 2026 frozen research baseline
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width"><title>Shared CG reproduction in the existing project</title><style>body{max-width:960px;margin:2rem auto;padding:1rem;font:17px/1.65 Georgia;color:#17374a}pre{white-space:pre-wrap;background:#eef4f5;padding:1rem}a{color:#137e83}</style><a href="../../reproduction.html#shared-cg-20261013">← Project reproduction guide</a><aside class="notice"><strong>Historical CG record.</strong> This page preserves the earlier result, source and input identities. Superseded image exports are no longer distributed in the current tree. For the active results and available files, use the <a href="../../index.html?atlas-view=stage&amp;stage=finite&amp;finite-method=cg#atlas-compare-finite">current CG cards</a> and <a href="../shared-cg-dev48-20261014/REPRODUCTION.html">current reproduction guide</a>.</aside><h1>Shared CG: evidence and computation</h1><p><a href="RESULT_CODE_INDEX.html">Per-result algorithm versions, source dependencies and exact hashes</a></p><p><a href="NOTICE.txt">Source and reuse notice</a> · <a href="SOURCE_BASIS.json">Source basis</a></p><p id="actual-downloads"><a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/shared_cg_dev48_20261014">Current algorithm source</a> · <a href="https://github.com/scholarhaozheng/mobility-network-lab/tree/main/examples/shared_cg_dev48_20261014/inputs">Current minimum model inputs</a> · <a href="input-index.json">Input hashes and fields</a></p><pre>Shared CG · 13 October 2026 frozen research baseline
 
 The main website and the existing nine city volumes remain the reading entry.
 Dev18&#x27;s nine mathematical modules are byte-identical to the frozen source identity.
@@ -7,14 +7,15 @@ the separate original final-RMP minRC &gt;= -1e-6 gate. Four cases therefore ret
 an open pricing gate. Three Q bound pairs are open. No final-build 16-case cold
 regression is claimed. Dev40/41 are separate research implementations.
 
-Download in the existing site:
-../../downloads/shared-cg-20261013-code.zip
-../../downloads/shared-cg-20261013-model-inputs.zip
-These real local/Pages files contain the versioned source, original configs,
-frozen numerical model inputs and the two saved S2 FIFO seeds. They do not
-mirror raw GTFS, personal trips, the full local archive or GB-scale result arrays.
-The input index gives exact original relative model paths, hashes and fields.
-Road-derived input tables retain their city source notices and database duties.
+Current source and minimum inputs are linked above. The superseded code/input
+ZIPs and saved FIFO seed copies are no longer distributed in the current tree.
+The current run entry builds intermediate networks, path pools and seeds in the
+reader's output directory. Use the current reproduction guide for execution.
+
+The following commands and descriptions preserve the earlier release record;
+they are historical configuration and producer identities, not current download
+or one-command replay instructions. The input index retains original model
+paths, hashes and fields. Source notices and database duties remain applicable.
 
 1. Preparation and identity inspection (no optimizer)
    python -B algorithms/shared_cg/dev18/run_case.py list
@@ -48,7 +49,8 @@ frozen_evidence_sources. Their CLI --help documents the exact required files.
 They may write new certificates and can be computationally expensive; no
 full verifier was run while preparing this website increment.
 
-S2 H: original cold configs and exact saved FIFO seeds are supplied. The local
+S2 H: the historical release supplied original cold configs and exact saved FIFO
+seeds; these duplicate seed packages are no longer distributed here. The local
 historical seed constructors/checkers and two-stage mix entries are recovered
 in recovered_s2_helpers. The mix verifier SHA matches the preregistered design;
 helpers missing from the handoff manifest are identified as recovered source,

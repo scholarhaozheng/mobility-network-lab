@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/result.json",
+      "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/upper-certificate.json",
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/lower-certificate.json",
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/phase-i-combined.plot.json",
+      "sha256": "001be91511b91cf3e198c0f9142d64c75c5e253981107382f85b295d1644db7c"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/phase-ii-pair.plot.json",
+      "sha256": "0da0dbb2cea90102b228f5e61d125dec8ad2cf50c0311a87ffced41003ad2786"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/ithaca_F_Q/physical-flow.plot.json",
+      "sha256": "067548fe6398619e716cd63770bd6036d0d6765da815015c59bbb1fc156f7318"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "ithaca_F_Q / ithaca_F_Q / Dev48. Full same-run movement vector: 15,148 directed model physical links, 2,359 positive and 12,789 exact zeros. Integrated over all 1,584,000 original release events and the full arrival tail; PCE, not hourly flow or instantaneous v/c. Recomputed original path cost 1638.731189268017; independent U=1638.731189268017. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Model scenario, not observed traffic.",
+  "outputs": {
+    "png": "b3229412bc08452d1e72ebe7c43baed6d6c518a72e9d2823fcc3877a0050089b",
+    "svg": "5ff0210c25b3fa8c2fcd02050263ea5a91bfda07ce4cc6de6dd753b8c9bde62a",
+    "plot.json": "067548fe6398619e716cd63770bd6036d0d6765da815015c59bbb1fc156f7318"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "ithaca_F_Q",
+  "run_id": "ithaca_F_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:ef1edd4589da3229499b12358a66edfc87817524e392ee9183e64f5e43bc1b54",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

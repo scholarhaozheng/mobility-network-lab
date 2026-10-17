@@ -1,0 +1,66 @@
+{
+  "case_id": "berkeley_T4_H",
+  "run_id": "berkeley_T4_H",
+  "model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/result.json",
+    "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "All 2 saved Phase II states are retained. Left: true objective in PCE-min. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=43.66742441. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "88929d2aeb74edbbf4c79064fc56fe7e873c60e6e8f93b0911645e5c9841f581",
+    "png": "f7c758d2f773e860e9eb374c786045288c9339425876b520a1aaa197ec8169c4",
+    "plot.json": "2497a2e174d721596aa74578b898fba6b49f875c5f5c1e45e7e5d5fddf4a8943"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/result.json",
+      "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/config.json",
+      "sha256": "5448f4bcbd3dacd6302d6f4800361ffd4d50f05be69e9090f9f5e20b7b0090ad"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/upper-certificate.json",
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/lower-certificate.json",
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/acceptance-receipt.json",
+      "sha256": "8ad19919e973652cab4caf9ab16871dcf0bc67bb829a5ba11f06a59a153c862a"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/phase-i-combined.plot.json",
+      "sha256": "4aace389d5d36500a91a34122b455f1f3e7d309eb2e8be28f06d54e69caaa4d4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/phase-ii-pair.plot.json",
+      "sha256": "a334505967c3e16ee669aa0a640f44eed30ecae67aade8a37af1756897b87dbc"
+    }
+  ]
+}

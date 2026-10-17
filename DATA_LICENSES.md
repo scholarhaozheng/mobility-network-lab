@@ -1,5 +1,16 @@
 # Data licenses and publication boundaries
 
+## Current Dev48 minimal reproduction inputs (2026-10-17)
+
+This addition supersedes older results-only exclusions only for the files explicitly listed in [the current executable manifest](examples/shared_cg_dev48_20261014/EXECUTABLE_MANIFEST.json). The [case index](examples/shared_cg_dev48_20261014/cases.json) identifies each frozen model branch, parent input, demand factor and exact input SHA; the [run instructions](examples/shared_cg_dev48_20261014/README.md) generate intermediate networks, seeds, path pools and solver outputs instead of distributing their historical archives.
+
+The six new input groups in `examples/shared_cg_dev48_20261014/inputs/` contain the minimum prepared mathematical network, zone access, engineering OD demand and graph-construction parameters for Ann Arbor, Urbana–Champaign, Ithaca, Pittsburgh, Berkeley and Chicago. They are model inputs, not observed individual trips. The complete model network tables needed by these runs are supplied, including the static link databases from which the Berkeley and Chicago time-expanded graphs are regenerated. The two Sioux inputs, Boston input and Hong Kong input reuse their existing repository tables and existing source notices; they are not duplicated here.
+
+Road-derived databases retain **© OpenStreetMap contributors**, [OpenStreetMap attribution](https://www.openstreetmap.org/copyright) and [ODbL 1.0](https://opendatacommons.org/licenses/odbl/1-0/). These available same-version model network databases and the accompanying graph-construction code provide the data and method used for the corresponding Produced Works; the independent original algorithm implementation retains the project software license. The case-specific [notice](examples/shared_cg_dev48_20261014/NOTICE.txt) links the earlier source notices and defines the actual scope. Independent model demand and numerical results are engineering scenarios, not OSM observations, Census-published estimates or measured traffic.
+
+No raw GTFS archive, complete substitute timetable, personal GPS trace, credential, final path pool or solver checkpoint is added by this release. The existing four-stage and GPS acquisition/processing programs remain available with their own input and source requirements. Downloading a current upstream feed does not recreate a different historical snapshot; use the frozen model-input hashes for the displayed CG instances.
+
+
 ## Frozen Sioux finite-time inputs (2026-10-04)
 
 The four input CSVs in [`examples/sioux-falls/finite-time-r05/`](examples/sioux-falls/finite-time-r05/PROVENANCE.json) are included for academic reproduction of the declared 200-OD and 250-OD Lagrangian P07 and ADMM R2_S computations. They contain modeled arcs and selected benchmark demand, not observed person trajectories. SHA-256 hashes identify the exact frozen inputs. Reference metrics are checked after the fresh solve; saved solver state, a reference path pool and reference arc flows are not supplied to initialize it.

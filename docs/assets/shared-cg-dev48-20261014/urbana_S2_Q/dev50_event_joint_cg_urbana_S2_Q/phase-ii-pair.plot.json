@@ -1,0 +1,284 @@
+{
+  "position": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "round": [
+    1,
+    2,
+    3,
+    null
+  ],
+  "labels": [
+    "RMP 1",
+    "RMP 2",
+    "RMP 3",
+    "Final RMP"
+  ],
+  "objective": [
+    87822.32902456506,
+    87822.32887809609,
+    87822.32876674499,
+    87822.32866945985
+  ],
+  "saved_history_states": 3,
+  "final_solved_endpoint": true,
+  "endpoint_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\FINAL_RMP.npz",
+    "sha256": "65d6c16c7d63261d172fbf39d791389d1106cd3c3868007e41599c31b6954441"
+  },
+  "endpoint_note": "Final solved RMP follows the final column addition; it is not an additional recorded CG outer round.",
+  "phase_ii_status": "SAVED",
+  "base_objective": 87829.21359021582,
+  "restricted_delta": [
+    -6.88456565076178,
+    -6.884712119728287,
+    -6.884823470830422
+  ],
+  "history_endpoint_difference": -9.72851412370801e-05,
+  "case_id": "urbana_S2_Q",
+  "run_id": "dev50_event_joint_cg_urbana_S2_Q",
+  "unit": "PCE-min",
+  "fixed_reference": 15276.312993745125,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\FULL_PRICE\\INDEPENDENT_DUAL_CERT.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 1061,
+    "sha256": "75775300d078757c3867936859f57e89f7c3bf3bc0dab1df7fb3bfc96534fd90",
+    "source_mtime_utc": "2026-10-14T00:46:35.832770+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "reference_status": "SAVED",
+  "signed_difference": [
+    72546.01603081993,
+    72546.01588435096,
+    72546.01577299986,
+    72546.01567571472
+  ],
+  "signed_relative_percent": [
+    474.8921815134571,
+    474.89218055465915,
+    474.89217982574576,
+    474.8921791889092
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": 0.8260543391961155,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "urbana_S2_Q",
+    "model_id": "INDEX_CONTRACT_SHA256:8316e2cdd763fff8227a93c10d06eb359c8d1fe2382991d4c784ba8ca7c391a5",
+    "model_id_status": "generated hash of explicit frozen mathematical input contract when producer has no model_id",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "new_joint_delta_cg",
+    "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\run_dev50_s2_joint_cg.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 1534,
+      "sha256": "9cb585ee5ff364e52ba7b8d96c355a212f9c05bdef0ec2a8d4ecab04f7c3a9d4",
+      "source_mtime_utc": "2026-10-13T23:35:45.672806+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "dev50_event_joint_cg_urbana_S2_Q",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q",
+    "config_build_label": "sparse_common_dev41_wide_bridge_cg",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\urbana_S2_Q__sparse_common_dev41_wide_bridge_cg_cold_seed.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1877,
+      "sha256": "240a2102dbe74913a199c37e8c772dd5780994d5648a5a5e52d0b408801dc9e4",
+      "source_mtime_utc": "2026-10-13T14:12:21.978649+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 5245,
+      "sha256": "90bd54c6f6fb5e8d69c201af507cdf1f156b506c31816944bcff09497fc09a30",
+      "source_mtime_utc": "2026-10-14T00:30:30.552514+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\network.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1660379,
+        "sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "source_mtime_utc": "2026-10-05T04:00:47.726749+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\access.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1502,
+        "sha256": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "source_mtime_utc": "2026-10-05T04:00:47.736723+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input\\assignment_od_pce.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 33913,
+        "sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+        "source_mtime_utc": "2026-10-05T04:00:47.739831+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6",
+        "declared_sha256_matches": true
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev41_cold_source_seed_urbana_S2_Q\\aon\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+        "sha256": "6b23c18ce57c987b2789029308195be550aae89efb41ca03df701dd6696046d7"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev41_cold_source_seed_urbana_S2_Q\\fifo\\FRAGMENTS.npz",
+        "sha256": "9bd61b6b469e47e56fb124199376302ea35f63d43b8d146c5172a46476924eb9"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_source_event_pool_urbana_S2_Q_v5\\INITIAL_PATH_POOL.npz",
+        "sha256": "36d8dc71ae300af52dc68dc2d2ed0209f81abdb9994e65a4ca229e5cea975a0a"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\NEW_PATH_POOL.npz",
+        "sha256": "3efc9a46ac582af61a1aca06ff924ec2688d9bcfab73dbd62e6320186db1c09d"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\FINAL_RMP.npz",
+        "sha256": "65d6c16c7d63261d172fbf39d791389d1106cd3c3868007e41599c31b6954441"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\STATE_MATRIX.npz",
+        "sha256": "4ac0192914636eef3703612093e6f2c721f177d4bd29ec1ab34b24d197d33e2f"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\INDEPENDENT_CERT.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 1422,
+      "sha256": "ae658f1d48d6e5b0ae2b4730d7a3d5ab87a73c3b041d054e728e090d0acdc0cb",
+      "source_mtime_utc": "2026-10-14T00:33:33.722974+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\dev50_event_joint_cg_urbana_S2_Q\\FULL_PRICE\\INDEPENDENT_DUAL_CERT.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 1061,
+      "sha256": "75775300d078757c3867936859f57e89f7c3bf3bc0dab1df7fb3bfc96534fd90",
+      "source_mtime_utc": "2026-10-14T00:46:35.832770+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": false,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": true,
+    "producer_status": "ROUND_LIMIT_OPEN",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "signed_relative_gap_to_fixed_reference",
+  "per_round_lower_bound": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_raw": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_percent": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "per_round_column_count": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "NOT_SAVED_FULL_GRAPH_PER_ROUND",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "90bd54c6f6fb5e8d69c201af507cdf1f156b506c31816944bcff09497fc09a30",
+    "fields": [
+      "history",
+      "round_history"
+    ],
+    "new_solver_calls": 0
+  },
+  "reference_display": "Fixed same-run independent lower bound; it is not a per-round bound or an arc-flow LP optimum.",
+  "maintenance_revision": "20261015-online-template",
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "plotted_right_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "unplotted_diagnostic_fields": [
+    "per_round_lower_bound",
+    "per_round_gap_percent",
+    "per_round_minimum_reduced_cost"
+  ]
+}

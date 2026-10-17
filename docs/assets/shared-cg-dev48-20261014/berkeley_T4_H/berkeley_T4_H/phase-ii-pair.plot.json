@@ -1,0 +1,242 @@
+{
+  "position": [
+    1,
+    2
+  ],
+  "round": [
+    1,
+    2
+  ],
+  "labels": null,
+  "objective": [
+    43.667424408006426,
+    43.667424408006426
+  ],
+  "saved_history_states": 2,
+  "final_solved_endpoint": false,
+  "endpoint_note": "Every saved Phase II state is shown.",
+  "phase_ii_status": "SAVED",
+  "history_endpoint_difference": 0.0,
+  "case_id": "berkeley_T4_H",
+  "run_id": "berkeley_T4_H",
+  "unit": "PCE-min",
+  "fixed_reference": 43.66742440800642,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 975,
+    "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973",
+    "source_mtime_utc": "2026-10-13T20:15:35.308216+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "reference_status": "SAVED",
+  "signed_difference": [
+    7.105427357601002e-15,
+    7.105427357601002e-15
+  ],
+  "signed_relative_percent": [
+    1.6271688687685053e-14,
+    1.6271688687685053e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": 1.627168868768505e-16,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "berkeley_T4_H",
+    "model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+    "model_id_status": "explicit signature if recorded; otherwise generated problem contract hash",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "explicit path-CG solve.py adapter",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "berkeley_T4_H",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\berkeley_T4_H__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1841,
+      "sha256": "5448f4bcbd3dacd6302d6f4800361ffd4d50f05be69e9090f9f5e20b7b0090ad",
+      "source_mtime_utc": "2026-10-13T18:44:58.405203+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 7673,
+      "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9",
+      "source_mtime_utc": "2026-10-13T20:15:32.501456+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_case\\dynamic_node.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 1656945,
+        "sha256": "d98e78ef1391ec770339b4778b62243c7bc3fdd69df1e158dd5e1e996056a948",
+        "source_mtime_utc": "2026-10-05T18:14:59.977715+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_case\\dynamic_arc.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 19492347,
+        "sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+        "source_mtime_utc": "2026-10-05T18:14:59.742927+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_case\\dynamic_demand.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 199,
+        "sha256": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+        "source_mtime_utc": "2026-10-05T18:14:59.743929+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\berkeley_algorithm_transfer_r1\\runs\\T_case\\dynamic_columns.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 12891,
+        "sha256": "0e04a7d87ea3926048c247491f5847529106a979285706f679f7b5d346bf0c33",
+        "source_mtime_utc": "2026-10-05T18:26:22.334893+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\COLUMN_POOL.npz",
+        "sha256": "4845a556af6e51996a0a9e2992aef1d74beba4e484555815859f93be1931b7f7"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\LAST_RMP.npz",
+        "sha256": "2ddc02b3b2723da6a636dd3c04514d514ead61d7bc5f2cd3b4ede64ccea4e5bd"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 975,
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973",
+      "source_mtime_utc": "2026-10-13T20:15:35.308216+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 975,
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973",
+      "source_mtime_utc": "2026-10-13T20:15:35.308216+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "signed_relative_gap_to_fixed_reference",
+  "per_round_lower_bound": [
+    43.08302005495278,
+    43.66742440800641
+  ],
+  "per_round_gap_raw": [
+    0.013383073560585174,
+    3.25433773753701e-16
+  ],
+  "per_round_gap_percent": [
+    1.3383073560585175,
+    3.25433773753701e-14
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    -0.0671700000000004,
+    -1.7763568394002505e-15
+  ],
+  "per_round_column_count": [
+    5,
+    6
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "SAVED_PER_ROUND_LOWER_AND_GAP",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9",
+    "fields": [
+      "history",
+      "round_history"
+    ],
+    "new_solver_calls": 0
+  },
+  "reference_display": "Fixed same-run independent lower bound; it is not a per-round bound or an arc-flow LP optimum.",
+  "maintenance_revision": "20261015-online-template",
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "plotted_right_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "unplotted_diagnostic_fields": [
+    "per_round_lower_bound",
+    "per_round_gap_percent",
+    "per_round_minimum_reduced_cost"
+  ]
+}

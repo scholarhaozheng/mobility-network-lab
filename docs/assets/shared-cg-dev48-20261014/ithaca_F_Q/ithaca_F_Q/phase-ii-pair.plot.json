@@ -1,0 +1,232 @@
+{
+  "position": [
+    0
+  ],
+  "round": [
+    null
+  ],
+  "labels": [
+    "Exact shortcut"
+  ],
+  "objective": [
+    1638.7311892680166
+  ],
+  "saved_history_states": 0,
+  "final_solved_endpoint": true,
+  "endpoint_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run independent primal/upper certificate",
+    "exists": true,
+    "bytes": 1581,
+    "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+    "source_mtime_utc": "2026-10-13T20:15:29.473446+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "endpoint_note": "Uniform-release exact shortcut: one certified endpoint; no Phase II CG loop executed.",
+  "phase_ii_status": "NOT_APPLICABLE",
+  "history_endpoint_difference": null,
+  "case_id": "ithaca_F_Q",
+  "run_id": "ithaca_F_Q",
+  "unit": "PCE-min",
+  "fixed_reference": 1638.7311892680166,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 1581,
+    "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+    "source_mtime_utc": "2026-10-13T20:15:29.473446+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "reference_status": "SAVED",
+  "signed_difference": [
+    0.0
+  ],
+  "signed_relative_percent": [
+    0.0
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": 0.0,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "ithaca_F_Q",
+    "model_id": "INDEX_CONTRACT_SHA256:ef1edd4589da3229499b12358a66edfc87817524e392ee9183e64f5e43bc1b54",
+    "model_id_status": "generated hash of explicit frozen mathematical input contract when producer has no model_id",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "uniform_release shortcut",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "ithaca_F_Q",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\ithaca_F_Q__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1832,
+      "sha256": "9d2f247eb4681976b86f880ac3c1c0e4547bf4ae090326df0b4f8355cb832c64",
+      "source_mtime_utc": "2026-10-13T18:44:58.386064+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 2700,
+      "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa",
+      "source_mtime_utc": "2026-10-13T20:15:28.038266+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\representative_demand_20261011\\input\\network.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 6765644,
+        "sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+        "source_mtime_utc": "2026-10-11T07:52:23.420294+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\representative_demand_20261011\\input\\access.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 347,
+        "sha256": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+        "source_mtime_utc": "2026-10-11T07:52:23.429304+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\six_city_preflight_r1\\cities\\ithaca\\representative_demand_20261011\\input\\assignment_od_pce.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 10342,
+        "sha256": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb",
+        "source_mtime_utc": "2026-10-11T07:52:23.438613+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb",
+        "declared_sha256_matches": true
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\UNIFORM_AON_FULL_ORIGINAL_PATHS.npz",
+        "sha256": "a7872ad0f72226bb876c09c1a610c63a9287d7e5eb63084c93ac9fbf58eeeea1"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 1581,
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+      "source_mtime_utc": "2026-10-13T20:15:29.473446+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 1581,
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+      "source_mtime_utc": "2026-10-13T20:15:29.473446+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "signed_relative_gap_to_fixed_reference",
+  "per_round_lower_bound": [
+    null
+  ],
+  "per_round_gap_raw": [
+    null
+  ],
+  "per_round_gap_percent": [
+    null
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    null
+  ],
+  "per_round_column_count": [
+    null
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "NOT_APPLICABLE_EXACT_SHORTCUT",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa",
+    "fields": [
+      "history",
+      "round_history"
+    ],
+    "new_solver_calls": 0
+  },
+  "reference_display": "Fixed same-run independent lower bound; it is not a per-round bound or an arc-flow LP optimum.",
+  "maintenance_revision": "20261015-online-template",
+  "panel_order": [
+    "objective",
+    "signed_relative_gap_to_fixed_reference"
+  ],
+  "plotted_right_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "unplotted_diagnostic_fields": [
+    "per_round_lower_bound",
+    "per_round_gap_percent",
+    "per_round_minimum_reduced_cost"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "urbana_S2_H",
+  "run_id": "urbana_S2_H_accepted_cold",
+  "model_id": "INDEX_CONTRACT_SHA256:14ef40e2fe05088a43fc59655f7d8c19e1c7cf72c070e346006d7a42d8701146",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/result.json",
+    "sha256": "6f40e01a6ba9e74693e8c71fe98db85f5e9c328c46c3f5bb12a12c22e4f5becf"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "c843f17f93163a4c90ba2435b6de0ed6bcb4f2c8ff19a5c0787bb4c69569dd98",
+  "caption": "All 84 saved Phase II states are retained. Left: true objective in PCE-min. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=17384.91049. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "622dbc427724181938617f3c7724043e22ec2067dff83112ca4abe166f505902",
+    "png": "2c6d252debab7edf491da43e6390444a8ec2d60a223c63911d4e88f0bc3c8638",
+    "plot.json": "72ca1920b90923e961c447f33984633c5c0656039e7cc7f6980baaacb74a650a"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/result.json",
+      "sha256": "6f40e01a6ba9e74693e8c71fe98db85f5e9c328c46c3f5bb12a12c22e4f5becf"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/config.json",
+      "sha256": "80ec1aebd1dff8c69034bd79ed9aadde3abf70fbdec389edd9e003e29046d947"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/upper-certificate.json",
+      "sha256": "a99c7f153a278ef164add6e17728e6d5aa6b74a9f444db60c500b91357b78e29"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/lower-certificate.json",
+      "sha256": "a99c7f153a278ef164add6e17728e6d5aa6b74a9f444db60c500b91357b78e29"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/acceptance-receipt.json",
+      "sha256": "194cd5565ae97b61a861c77eae02e4fdf158a9825f1f6a68a5dd36dc5ccac8d3"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/phase-i-combined.plot.json",
+      "sha256": "41742f302b2336e6ec82d46a16355229c619dced346023c6bb9aaf587c9a9bdd"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/phase-ii-pair.plot.json",
+      "sha256": "8ef546d60426811c05319f0fe5805ffa8cb9491f2e81e18c1997b46e2724d11e"
+    }
+  ]
+}

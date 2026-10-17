@@ -1,0 +1,70 @@
+{
+  "status": "INPUT_ONLY_PRECHECK_COMPLETE",
+  "recorded_at": "2026-10-06T13:51:51.771567+00:00",
+  "memory_observed": {
+    "total": 16866873344,
+    "available": 295391232,
+    "percent": 98.2,
+    "used": 16571482112,
+    "free": 295391232
+  },
+  "process_memory_ceiling_bytes": 671088640,
+  "temporary_disk_bytes": 5368709120,
+  "T10": {
+    "od": 10,
+    "H_steps": 243,
+    "H_minutes": 121.5,
+    "rounded_shortest_steps": [
+      83,
+      80,
+      134,
+      129,
+      134,
+      206,
+      150,
+      99,
+      208,
+      81
+    ],
+    "physical_nodes": 15133,
+    "physical_links": 27129,
+    "departure_step": 5,
+    "candidate_movement_variables": 10275863,
+    "candidate_wait_variables": 5725805,
+    "candidate_total_variables_upper": 16004118,
+    "dynamic_arc_union_upper": 5951450,
+    "estimated_lp_peak_bytes": 20865749632,
+    "within_frozen_memory_ceiling": false,
+    "selected_q_pce": 76.75130641884206
+  },
+  "T4": {
+    "od": 4,
+    "H_steps": 169,
+    "H_minutes": 84.5,
+    "rounded_shortest_steps": [
+      83,
+      80,
+      134,
+      129
+    ],
+    "physical_nodes": 15133,
+    "physical_links": 27129,
+    "departure_step": 5,
+    "candidate_movement_variables": 1005392,
+    "candidate_wait_variables": 544558,
+    "candidate_total_variables_upper": 1550634,
+    "dynamic_arc_union_upper": 1352074,
+    "estimated_lp_peak_bytes": 2757215360,
+    "within_frozen_memory_ceiling": false,
+    "selected_q_pce": 66.53295454563035
+  },
+  "selected_profile": "T4",
+  "selected_T_resource_gate": "ESTIMATE_OVER_CEILING_REQUIRES_SHARED_RESOURCE_ADAPTER_CHECK_BEFORE_BUILD",
+  "S_path_cap": 100,
+  "S_major": 20,
+  "S_minor_upper": 80,
+  "shared_core_ready": "NOT_YET_AVAILABLE",
+  "optimizer_calls": 0,
+  "preflight_algorithm": "Accepted R1 exact rounded reachability estimate, memory-safe merged integer intervals replacing Python union set; no feasible-variable omission",
+  "queue_wait_seconds": "record at actual acquisition; wall solver budgets start afterward"
+}

@@ -1,0 +1,98 @@
+{
+  "urbana_S2_H": {
+    "original_npz_sha256": "2ff4dc3b768f7d674beba2b8df9b7d5e7f19d6409558500eb3c9d6ac937af0d3",
+    "arrays": {
+      "od_edge_offset": {
+        "dtype": "int64",
+        "shape": [
+          419
+        ],
+        "sha256": "8cf68d4463a03cb5d578575eedf10e62603856d16158c1f50bdb63406cf7cb98"
+      },
+      "edge_index": {
+        "dtype": "int32",
+        "shape": [
+          85412
+        ],
+        "sha256": "866f7a390801d9a111bf0c6a338fb74dc4e2785db380c156cd85c1877c58f58e"
+      },
+      "entry_offset_steps": {
+        "dtype": "int32",
+        "shape": [
+          85412
+        ],
+        "sha256": "a90f5f24a25ddaeddf885088b1e67318b395a95f3cecdb6a374fc49f70d19dbf"
+      },
+      "od_hourly_pce": {
+        "dtype": "float64",
+        "shape": [
+          418
+        ],
+        "sha256": "3766ac194b34e4635dbe2bea18cac9d4f55f11660ee4c0c636ec87e10d564b8e"
+      },
+      "od_static_shortest_cost": {
+        "dtype": "float64",
+        "shape": [
+          418
+        ],
+        "sha256": "4c7bffa14b068b9f82840fc6504c1903612f47d47793b7f05accd948a900c939"
+      },
+      "od_departure_steps": {
+        "dtype": "int32",
+        "shape": [
+          418
+        ],
+        "sha256": "2650cc9755b948c39c62d7e42e3d543eec50edb070e0af6d36686bb7f383aed4"
+      }
+    },
+    "role": "Numerical reference hashes only; arrays must be generated from packaged source inputs."
+  },
+  "pittsburgh_S2_H": {
+    "original_npz_sha256": "075fea10dbde27f780f4c6fcc3a3da169ee8a7fa49249bc282d67a35763a6ceb",
+    "arrays": {
+      "od_edge_offset": {
+        "dtype": "int64",
+        "shape": [
+          1407
+        ],
+        "sha256": "a2cbec41f8a60c82c62b8f2ac241c4aaf360b34d23f6e8aa0474223d968ec190"
+      },
+      "edge_index": {
+        "dtype": "int32",
+        "shape": [
+          258996
+        ],
+        "sha256": "b9ff03b7f1717b8eb50532e0c41a5c575c6f5d53bd55c635931ad5fddfbd7bcf"
+      },
+      "entry_offset_steps": {
+        "dtype": "int32",
+        "shape": [
+          258996
+        ],
+        "sha256": "c651114e1db37c9939cd296caa121d08bbcb1ee7b845c3a77a054668bcbdb694"
+      },
+      "od_hourly_pce": {
+        "dtype": "float64",
+        "shape": [
+          1406
+        ],
+        "sha256": "9372edca740b71d3a163b6739d0cdfb64db97e07b55b43800b78aabb60f885b9"
+      },
+      "od_static_shortest_cost": {
+        "dtype": "float64",
+        "shape": [
+          1406
+        ],
+        "sha256": "410bb11c079990bf93a107aa934044d7e5e2b867094f9ee6c37e1e7f9697c8fa"
+      },
+      "od_departure_steps": {
+        "dtype": "int32",
+        "shape": [
+          1406
+        ],
+        "sha256": "50c56cac91833f41e9c6c5f3e5b611940e822ee94134764fdf983b1a63259439"
+      }
+    },
+    "role": "Numerical reference hashes only; arrays must be generated from packaged source inputs."
+  }
+}

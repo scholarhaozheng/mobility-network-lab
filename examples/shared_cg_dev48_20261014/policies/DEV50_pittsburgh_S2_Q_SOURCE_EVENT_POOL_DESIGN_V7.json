@@ -1,0 +1,30 @@
+{
+  "schema": "DEV50_S2_FULL_DEMAND_SOURCE_NNZ_PREFIX_V7_PRE_RUN",
+  "created_utc": "2026-10-14T01:07:43.932029+00:00",
+  "case_id": "pittsburgh_S2_Q",
+  "parent_v6_stage_sha256": "62b2634470461d025e0a508522097bb3e3824fe56a900e14e146d0e28164d148",
+  "parent_v6_matrix_sha256": "a6c7ffafeaf716ecdcf5321ba481287c58b94718965b86564d001ca2605c0c09",
+  "parent_v6_state_sha256": "8a87b9a0fd8d24901c2caa8e7976b519dd755a595fd524954994aa7a2ff29192",
+  "parent_v6_path_pool_sha256": "74944e36d116222e3937b9b75b61463d6f29ac84e9ff81c2ebe82a794d1eb15b",
+  "failed_v6_solve_resource_receipt_sha256": "1d68cbf5d1d8626cc583637610f29496124c9c2b35dc9dcb6aaee053abc0e7c3",
+  "source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "original_positive_OD": 1406,
+  "original_release_events": 20246400,
+  "maximum_initial_nonzeros": 20000000,
+  "initial_source_prefix_columns": 1860,
+  "initial_source_prefix_nonzeros": 19991834,
+  "builder_sha256": "a099d5bd2db72f13875c44c1aad109628543c1c18cab2290241f4d87c17c6317",
+  "monitor_sha256": "379f750db60fe66e2edcc5bb5478dd9b4b8b941546a029b80208a643009a8703",
+  "resources": {
+    "heavy_lock": "mcl_batch_guard.py --kind heavy",
+    "maximum_tree_private_bytes": 7516192768,
+    "minimum_physical_available_bytes": 201326592,
+    "maximum_command_seconds": 7200
+  },
+  "scope": "Exact top-ranked prefix of the independent V6 source-generated pool, selected only by 20M sparse nonzero memory budget before any V7 solve. All original Pittsburgh OD and 14400 releases remain on the independent source FIFO base; shared CG pricing keeps the complete legal graph. No historical solved path, flow or dual is imported.",
+  "reason": "The original 8000-column V6 pool loaded but its joint solver measured 11098664960 tree-private bytes for at least three samples before the first RMP solve. A bounded initial column pool is a resource choice; no demand, horizon, capacity, or full-pricing domain is removed."
+}

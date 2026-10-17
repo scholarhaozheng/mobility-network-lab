@@ -1,0 +1,66 @@
+{
+  "case_id": "sioux_200_H",
+  "run_id": "sioux_200_H",
+  "model_id": "INDEX_CONTRACT_SHA256:029a7324934be612e54698ee8be2dc44a3622958b10f85aed1b61ece64a9cc2a",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/result.json",
+    "sha256": "e525c238da59bc0b048e8f81cdef8a75dc2de12b1bb12ea28e8fa3668d3a73b7"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "One solved Phase II state; the original pricing gate was met at the first check. Left: true objective in native cost × original volume. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=943155.5898. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "3ba619770f4086a8b671801bd984baf94be281d3bf5e617dfff5cdd02c72180e",
+    "png": "42fd55268c208775f7d2a5159b41ed211887282ff5cbcd996cb092a948ac2419",
+    "plot.json": "05d3e9fc4ffdfce12c061fd8395b600ceeef84227871eff89ff98142a238b7db"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/result.json",
+      "sha256": "e525c238da59bc0b048e8f81cdef8a75dc2de12b1bb12ea28e8fa3668d3a73b7"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/config.json",
+      "sha256": "da085a97ad65b758ee927c55bd8e28b05ef4922cfeca0091d22e3e01fa84f7ae"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/upper-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/lower-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/acceptance-receipt.json",
+      "sha256": "32acf05c8b2cba1fa6a3ed2461c7f914c00190fbdb9d8c81771d2456e32c31e0"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/phase-i-combined.plot.json",
+      "sha256": "f73abec01c0d15292a846c3a175a75a4261e06188f7e8ea14c55f0bf876448ac"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/phase-ii-pair.plot.json",
+      "sha256": "a3ab8dc86c67c24e02097aa0a4d10002912ea8ff07a365697937c20cbb730168"
+    }
+  ]
+}

@@ -1,0 +1,943 @@
+{
+  "version": "20261017-v1",
+  "purpose": "Approved V1 integrated into the existing complete website",
+  "cases": [
+    {
+      "case_id": "hong_kong_10_H",
+      "city": "hong-kong",
+      "city_name": "Hong Kong",
+      "run_id": "hong_kong_10_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 10,
+      "events": 10,
+      "dt_seconds": 30,
+      "horizon_steps": 50,
+      "scale": 1.0,
+      "U": 75.03632985794833,
+      "L": 75.03632985794832,
+      "gap_raw": 1.893863244924778e-16,
+      "raw_last_minimum_reduced_cost": -1.3322676295501878e-15,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/hong_kong_10_H/phase-i.svg",
+          "png": "figures/hong_kong_10_H/phase-i.png",
+          "data": "figures/hong_kong_10_H/phase-i.plot.json",
+          "source": "figures/hong_kong_10_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 3 个真实保存状态：容量资源松弛 143.5993666466553 → 0 vehicles；路径池 10 → 21。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/hong_kong_10_H/phase-ii.svg",
+          "png": "figures/hong_kong_10_H/phase-ii.png",
+          "data": "figures/hong_kong_10_H/phase-ii.plot.json",
+          "source": "figures/hong_kong_10_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=75.03632985794832，末端有符号参考差 1.893863244924778e-14%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/hong_kong_10_H/physical-flow.svg",
+          "png": "figures/hong_kong_10_H/physical-flow.png",
+          "data": "figures/hong_kong_10_H/physical-flow.plot.json",
+          "source": "figures/hong_kong_10_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "0a914b89ca84a37f5e421b6cc5f06b35333d5b874de392d02a3ab87ae826a89c"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/hong_kong_10_H/pricing-diagnostic.svg",
+        "png": "figures/hong_kong_10_H/pricing-diagnostic.png",
+        "data": "figures/hong_kong_10_H/pricing-diagnostic.plot.json",
+        "source": "figures/hong_kong_10_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 3,
+      "phase_ii_states": 3,
+      "model_id": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+      "release_steps": null,
+      "objective_unit": "vehicle-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H"
+    },
+    {
+      "case_id": "boston_10_H",
+      "city": "boston",
+      "city_name": "Boston",
+      "run_id": "boston_10_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 10,
+      "events": 10,
+      "dt_seconds": 3,
+      "horizon_steps": 100,
+      "scale": 1.0,
+      "U": 64.39686151152952,
+      "L": 64.39686151152951,
+      "gap_raw": 2.2067620038684202e-16,
+      "raw_last_minimum_reduced_cost": -2.220446049250313e-15,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/boston_10_H/phase-i.svg",
+          "png": "figures/boston_10_H/phase-i.png",
+          "data": "figures/boston_10_H/phase-i.plot.json",
+          "source": "figures/boston_10_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 11 个真实保存状态：容量资源松弛 244.3296680274233 → 0 PCE；路径池 10 → 65。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/boston_10_H/phase-ii.svg",
+          "png": "figures/boston_10_H/phase-ii.png",
+          "data": "figures/boston_10_H/phase-ii.plot.json",
+          "source": "figures/boston_10_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=64.39686151152951，末端有符号参考差 2.206762003868421e-14%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/boston_10_H/physical-flow.svg",
+          "png": "figures/boston_10_H/physical-flow.png",
+          "data": "figures/boston_10_H/physical-flow.plot.json",
+          "source": "figures/boston_10_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "898709e487f5b2940ec88a9e9d5945e3c834fe281b5689fc1928c73ddd28d0e3"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/boston_10_H/pricing-diagnostic.svg",
+        "png": "figures/boston_10_H/pricing-diagnostic.png",
+        "data": "figures/boston_10_H/pricing-diagnostic.plot.json",
+        "source": "figures/boston_10_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 11,
+      "phase_ii_states": 20,
+      "model_id": "fa4fc7dc4740ea006e7819cecd85f189591a54003c19b1367871ad5a6d04292a",
+      "release_steps": null,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\boston_10_H"
+    },
+    {
+      "case_id": "sioux_200_H",
+      "city": "sioux-falls",
+      "city_name": "Sioux Falls",
+      "run_id": "sioux_200_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 200,
+      "events": 200,
+      "dt_seconds": null,
+      "horizon_steps": 32,
+      "scale": 1.0,
+      "U": 943155.5897709999,
+      "L": 943155.589771,
+      "gap_raw": -1.234317254645129e-16,
+      "raw_last_minimum_reduced_cost": 0.0,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/sioux_200_H/phase-i.svg",
+          "png": "figures/sioux_200_H/phase-i.png",
+          "data": "figures/sioux_200_H/phase-i.plot.json",
+          "source": "figures/sioux_200_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 2 个真实保存状态：容量资源松弛 2200.672054 → 0 native volume；路径池 200 → 218。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/sioux_200_H/phase-ii.svg",
+          "png": "figures/sioux_200_H/phase-ii.png",
+          "data": "figures/sioux_200_H/phase-ii.plot.json",
+          "source": "figures/sioux_200_H/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=943155.589771，末端有符号参考差 -1.234317254645129e-14%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。首次Phase II检查即已闭合，未虚构前后两个求解状态。"
+        },
+        {
+          "src": "figures/sioux_200_H/physical-flow.svg",
+          "png": "figures/sioux_200_H/physical-flow.png",
+          "data": "figures/sioux_200_H/physical-flow.plot.json",
+          "source": "figures/sioux_200_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。Sioux为示意拓扑。",
+          "same_source_sha256": "ca406416f2e33dc575b20ce77b99f21ee0119bf0e99d3ebf72cee6e8a58b52ad"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/sioux_200_H/pricing-diagnostic.svg",
+        "png": "figures/sioux_200_H/pricing-diagnostic.png",
+        "data": "figures/sioux_200_H/pricing-diagnostic.plot.json",
+        "source": "figures/sioux_200_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 2,
+      "phase_ii_states": 1,
+      "model_id": "INDEX_CONTRACT_SHA256:029a7324934be612e54698ee8be2dc44a3622958b10f85aed1b61ece64a9cc2a",
+      "release_steps": null,
+      "objective_unit": "native cost × original volume",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H"
+    },
+    {
+      "case_id": "berkeley_T4_H",
+      "city": "berkeley",
+      "city_name": "Berkeley",
+      "run_id": "berkeley_T4_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 4,
+      "events": 4,
+      "dt_seconds": 30,
+      "horizon_steps": 165,
+      "scale": 1.0,
+      "U": 43.667424408006426,
+      "L": 43.66742440800642,
+      "gap_raw": 1.627168868768505e-16,
+      "raw_last_minimum_reduced_cost": -1.7763568394002505e-15,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/berkeley_T4_H/phase-i.svg",
+          "png": "figures/berkeley_T4_H/phase-i.png",
+          "data": "figures/berkeley_T4_H/phase-i.plot.json",
+          "source": "figures/berkeley_T4_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 2 个真实保存状态：容量资源松弛 70.82226931911947 → 0 PCE；路径池 4 → 5。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/berkeley_T4_H/phase-ii.svg",
+          "png": "figures/berkeley_T4_H/phase-ii.png",
+          "data": "figures/berkeley_T4_H/phase-ii.plot.json",
+          "source": "figures/berkeley_T4_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=43.66742440800642，末端有符号参考差 1.627168868768505e-14%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/berkeley_T4_H/physical-flow.svg",
+          "png": "figures/berkeley_T4_H/physical-flow.png",
+          "data": "figures/berkeley_T4_H/physical-flow.plot.json",
+          "source": "figures/berkeley_T4_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "52df6133e878f7f80b9e4a74085f75ec9840fa0c42ba6bebfd981885677eb1fc"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/berkeley_T4_H/pricing-diagnostic.svg",
+        "png": "figures/berkeley_T4_H/pricing-diagnostic.png",
+        "data": "figures/berkeley_T4_H/pricing-diagnostic.plot.json",
+        "source": "figures/berkeley_T4_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 2,
+      "phase_ii_states": 2,
+      "model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+      "release_steps": null,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H"
+    },
+    {
+      "case_id": "chicago_T4_H",
+      "city": "chicago",
+      "city_name": "Chicago",
+      "run_id": "chicago_T4_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 4,
+      "events": 4,
+      "dt_seconds": 30,
+      "horizon_steps": 169,
+      "scale": 1.0,
+      "U": 241.21852424494344,
+      "L": 241.20382545471173,
+      "gap_raw": 6.0935578134867005e-05,
+      "raw_last_minimum_reduced_cost": -0.0003315636681779921,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "tolerance",
+      "figures": [
+        {
+          "src": "figures/chicago_T4_H/phase-i.svg",
+          "png": "figures/chicago_T4_H/phase-i.png",
+          "data": "figures/chicago_T4_H/phase-i.plot.json",
+          "source": "figures/chicago_T4_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 29 个真实保存状态：容量资源松弛 3164.157772282343 → 0 PCE；路径池 4 → 40。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/chicago_T4_H/phase-ii.svg",
+          "png": "figures/chicago_T4_H/phase-ii.png",
+          "data": "figures/chicago_T4_H/phase-ii.plot.json",
+          "source": "figures/chicago_T4_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=241.2038254547117，末端有符号参考差 0.006093929150582604%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/chicago_T4_H/physical-flow.svg",
+          "png": "figures/chicago_T4_H/physical-flow.png",
+          "data": "figures/chicago_T4_H/physical-flow.plot.json",
+          "source": "figures/chicago_T4_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "5eaf3ace365272ad4d30b9a2caed35c75d1818262b81f15ddff516ed648cb199"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/chicago_T4_H/pricing-diagnostic.svg",
+        "png": "figures/chicago_T4_H/pricing-diagnostic.png",
+        "data": "figures/chicago_T4_H/pricing-diagnostic.plot.json",
+        "source": "figures/chicago_T4_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 29,
+      "phase_ii_states": 32,
+      "model_id": "INDEX_CONTRACT_SHA256:2c6a593c0a51ceda4cf40f8f49bc9f82e9c099bb9e9f8f728c9947d09432d1af",
+      "release_steps": null,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "NOT_MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\chicago_T4_H"
+    },
+    {
+      "case_id": "ann_arbor_F_Q",
+      "city": "ann-arbor",
+      "city_name": "Ann Arbor",
+      "run_id": "ann_arbor_F_Q",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 600,
+      "events": 4320000,
+      "dt_seconds": 0.5,
+      "horizon_steps": 28800,
+      "scale": 1.0,
+      "U": 7509.095763624765,
+      "L": 7509.095763624765,
+      "gap_raw": 0.0,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "uniform_release shortcut",
+      "type": "exact",
+      "figures": [
+        {
+          "src": "figures/ann_arbor_F_Q/phase-i.svg",
+          "png": "figures/ann_arbor_F_Q/phase-i.png",
+          "data": "figures/ann_arbor_F_Q/phase-i.plot.json",
+          "source": "figures/ann_arbor_F_Q/phase-i.source.json",
+          "caption": "精确构造无需 Phase I：最大时空入弧容量比 0.683023907124，所有 4,320,000 个释放事件需求均被服务，原 OD 残差为0。容量比来自同次独立证书，不用累计流量冒充峰值。"
+        },
+        {
+          "src": "figures/ann_arbor_F_Q/phase-ii.svg",
+          "png": "figures/ann_arbor_F_Q/phase-ii.png",
+          "data": "figures/ann_arbor_F_Q/phase-ii.plot.json",
+          "source": "figures/ann_arbor_F_Q/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=7509.095763624765，末端有符号参考差 0%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。精确构造未执行CG迭代。"
+        },
+        {
+          "src": "figures/ann_arbor_F_Q/physical-flow.svg",
+          "png": "figures/ann_arbor_F_Q/physical-flow.png",
+          "data": "figures/ann_arbor_F_Q/physical-flow.plot.json",
+          "source": "figures/ann_arbor_F_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "8a8ac0a694511787ba37423f999e45f8ed2233be4bc356aa48ce0797bda1ec83"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 0,
+      "model_id": "INDEX_CONTRACT_SHA256:839cf9a02e5d37ecfcc1f4cafb1864f407564e16501e82c88951d9199c89f9f5",
+      "release_steps": 7200,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "NOT_APPLICABLE_EXACT_SHORTCUT",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ann_arbor_F_Q"
+    },
+    {
+      "case_id": "ithaca_F_Q",
+      "city": "ithaca",
+      "city_name": "Ithaca",
+      "run_id": "ithaca_F_Q",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 110,
+      "events": 1584000,
+      "dt_seconds": 0.25,
+      "horizon_steps": 23423,
+      "scale": 1.0,
+      "U": 1638.7311892680166,
+      "L": 1638.7311892680166,
+      "gap_raw": 0.0,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "uniform_release shortcut",
+      "type": "exact",
+      "figures": [
+        {
+          "src": "figures/ithaca_F_Q/phase-i.svg",
+          "png": "figures/ithaca_F_Q/phase-i.png",
+          "data": "figures/ithaca_F_Q/phase-i.plot.json",
+          "source": "figures/ithaca_F_Q/phase-i.source.json",
+          "caption": "精确构造无需 Phase I：最大时空入弧容量比 0.11259252832，所有 1,584,000 个释放事件需求均被服务，原 OD 残差为0。容量比来自同次独立证书，不用累计流量冒充峰值。"
+        },
+        {
+          "src": "figures/ithaca_F_Q/phase-ii.svg",
+          "png": "figures/ithaca_F_Q/phase-ii.png",
+          "data": "figures/ithaca_F_Q/phase-ii.plot.json",
+          "source": "figures/ithaca_F_Q/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=1638.731189268017，末端有符号参考差 0%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。精确构造未执行CG迭代。"
+        },
+        {
+          "src": "figures/ithaca_F_Q/physical-flow.svg",
+          "png": "figures/ithaca_F_Q/physical-flow.png",
+          "data": "figures/ithaca_F_Q/physical-flow.plot.json",
+          "source": "figures/ithaca_F_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "2c89aa5a46e08f8e3864dee63e9b63f810f98bcf3bd32e2656f7df37a8b13a58"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 0,
+      "model_id": "INDEX_CONTRACT_SHA256:ef1edd4589da3229499b12358a66edfc87817524e392ee9183e64f5e43bc1b54",
+      "release_steps": 14400,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "NOT_APPLICABLE_EXACT_SHORTCUT",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\ithaca_F_Q"
+    },
+    {
+      "case_id": "pittsburgh_F_H",
+      "city": "pittsburgh",
+      "city_name": "Pittsburgh",
+      "run_id": "pittsburgh_F_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 1406,
+      "events": 168720,
+      "dt_seconds": 30,
+      "horizon_steps": 320,
+      "scale": 1.0,
+      "U": 12079.26654473578,
+      "L": 12079.266544737546,
+      "gap_raw": -1.4622069181946852e-13,
+      "raw_last_minimum_reduced_cost": -2.4868995751603507e-14,
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/pittsburgh_F_H/phase-i.svg",
+          "png": "figures/pittsburgh_F_H/phase-i.png",
+          "data": "figures/pittsburgh_F_H/phase-i.plot.json",
+          "source": "figures/pittsburgh_F_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 1 个真实保存状态：容量资源松弛 0 → 0 PCE；路径池 168720 → 168720。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/pittsburgh_F_H/phase-ii.svg",
+          "png": "figures/pittsburgh_F_H/phase-ii.png",
+          "data": "figures/pittsburgh_F_H/phase-ii.plot.json",
+          "source": "figures/pittsburgh_F_H/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=12079.26654473755，末端有符号参考差 -1.462206918194471e-11%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。首次Phase II检查即已闭合，未虚构前后两个求解状态。"
+        },
+        {
+          "src": "figures/pittsburgh_F_H/physical-flow.svg",
+          "png": "figures/pittsburgh_F_H/physical-flow.png",
+          "data": "figures/pittsburgh_F_H/physical-flow.plot.json",
+          "source": "figures/pittsburgh_F_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "c65797c3beba7e26b2753735d89a18f4af380f40ce1eb9d0a54e85615487b9be"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/pittsburgh_F_H/pricing-diagnostic.svg",
+        "png": "figures/pittsburgh_F_H/pricing-diagnostic.png",
+        "data": "figures/pittsburgh_F_H/pricing-diagnostic.plot.json",
+        "source": "figures/pittsburgh_F_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 1,
+      "phase_ii_states": 1,
+      "model_id": "INDEX_CONTRACT_SHA256:bbd80db72e36aff12666cac25d2b5a178545fd0f33a257bded16a95dd57b17b6",
+      "release_steps": 120,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\pittsburgh_F_H"
+    },
+    {
+      "case_id": "urbana_F_H",
+      "city": "urbana-champaign",
+      "city_name": "Urbana-Champaign",
+      "run_id": "urbana_F_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 418,
+      "events": 50160,
+      "dt_seconds": 30,
+      "horizon_steps": 480,
+      "scale": 1.0,
+      "U": 8033.703156321646,
+      "L": 8033.6366542310625,
+      "gap_raw": 8.277887456072661e-06,
+      "raw_last_minimum_reduced_cost": -0.043734285714291055,
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "type": "tolerance",
+      "figures": [
+        {
+          "src": "figures/urbana_F_H/phase-i.svg",
+          "png": "figures/urbana_F_H/phase-i.png",
+          "data": "figures/urbana_F_H/phase-i.plot.json",
+          "source": "figures/urbana_F_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 3 个真实保存状态：容量资源松弛 72.41724925763748 → 0 PCE；路径池 50160 → 52160。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/urbana_F_H/phase-ii.svg",
+          "png": "figures/urbana_F_H/phase-ii.png",
+          "data": "figures/urbana_F_H/phase-ii.plot.json",
+          "source": "figures/urbana_F_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=8033.636654231062，末端有符号参考差 0.0008277955980060631%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/urbana_F_H/physical-flow.svg",
+          "png": "figures/urbana_F_H/physical-flow.png",
+          "data": "figures/urbana_F_H/physical-flow.plot.json",
+          "source": "figures/urbana_F_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "de18a951c2a38b60319a98bcef4d60d702546cf76401a43f7d14df866994c636"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/urbana_F_H/pricing-diagnostic.svg",
+        "png": "figures/urbana_F_H/pricing-diagnostic.png",
+        "data": "figures/urbana_F_H/pricing-diagnostic.plot.json",
+        "source": "figures/urbana_F_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 3,
+      "phase_ii_states": 3,
+      "model_id": "INDEX_CONTRACT_SHA256:6fa2865dd991166a60186b5becef19544add8533676dee0e8f25271dd8922d6d",
+      "release_steps": 120,
+      "objective_unit": "PCE-min",
+      "accepted_at_frozen_gate": true,
+      "raw_pricing_status": "NOT_MET",
+      "actual_entry": {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+        "role": "actual source code",
+        "exists": true,
+        "bytes": 16372,
+        "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+        "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H"
+    },
+    {
+      "case_id": "sioux_250_H",
+      "city": "sioux-falls",
+      "city_name": "Sioux Falls",
+      "run_id": "sioux_250_H",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 250,
+      "events": 250,
+      "dt_seconds": null,
+      "horizon_steps": 32,
+      "scale": 1.0,
+      "U": 1521090.8366200002,
+      "L": 1521090.83662,
+      "gap_raw": 1.5306820477022932e-16,
+      "raw_last_minimum_reduced_cost": 0.0,
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "type": "closed",
+      "figures": [
+        {
+          "src": "figures/sioux_250_H/phase-i.svg",
+          "png": "figures/sioux_250_H/phase-i.png",
+          "data": "figures/sioux_250_H/phase-i.plot.json",
+          "source": "figures/sioux_250_H/phase-i.source.json",
+          "caption": "本次 Phase I 的 4 个真实保存状态：容量资源松弛 15545.754337 → 0 native volume；路径池 250 → 295。右图解释可行路径如何扩充，不冒充逐 OD 人工需求热图。"
+        },
+        {
+          "src": "figures/sioux_250_H/phase-ii.svg",
+          "png": "figures/sioux_250_H/phase-ii.png",
+          "data": "figures/sioux_250_H/phase-ii.plot.json",
+          "source": "figures/sioux_250_H/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=1521090.83662，末端有符号参考差 1.530682047702293e-14%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。首次Phase II检查即已闭合，未虚构前后两个求解状态。"
+        },
+        {
+          "src": "figures/sioux_250_H/physical-flow.svg",
+          "png": "figures/sioux_250_H/physical-flow.png",
+          "data": "figures/sioux_250_H/physical-flow.plot.json",
+          "source": "figures/sioux_250_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。Sioux为示意拓扑。",
+          "same_source_sha256": "fcae4b52bacd4d1ea1ea4fddba67ec3cbbd098f995f1693be623f44854de6532"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/sioux_250_H/pricing-diagnostic.svg",
+        "png": "figures/sioux_250_H/pricing-diagnostic.png",
+        "data": "figures/sioux_250_H/pricing-diagnostic.plot.json",
+        "source": "figures/sioux_250_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 4,
+      "phase_ii_states": 1
+    },
+    {
+      "case_id": "urbana_S2_H",
+      "city": "urbana-champaign",
+      "city_name": "Urbana-Champaign",
+      "run_id": "urbana_S2_H_accepted_cold",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 418,
+      "events": 50160,
+      "dt_seconds": 30,
+      "horizon_steps": 480,
+      "scale": 2.0,
+      "U": 17385.35834453124,
+      "L": 17384.910486107397,
+      "gap_raw": 2.576066681899264e-05,
+      "raw_last_minimum_reduced_cost": -0.020386860903395032,
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "type": "tolerance",
+      "figures": [
+        {
+          "src": "figures/urbana_S2_H/phase-i.svg",
+          "png": "figures/urbana_S2_H/phase-i.png",
+          "data": "figures/urbana_S2_H/phase-i.plot.json",
+          "source": "figures/urbana_S2_H/phase-i.source.json",
+          "caption": "Demand residual 2.22e-16 PCE; capacity excess 0 PCE. Phase I was not executed; the panels describe the actual seed/base and its represented demand or path pool."
+        },
+        {
+          "src": "figures/urbana_S2_H/phase-ii.svg",
+          "png": "figures/urbana_S2_H/phase-ii.png",
+          "data": "figures/urbana_S2_H/phase-ii.plot.json",
+          "source": "figures/urbana_S2_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=17384.9104861074，末端有符号参考差 0.002576133044804313%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/urbana_S2_H/physical-flow.svg",
+          "png": "figures/urbana_S2_H/physical-flow.png",
+          "data": "figures/urbana_S2_H/physical-flow.plot.json",
+          "source": "figures/urbana_S2_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "d6814ffc5c459d8b301d0a0ee422f8bdfc4089cf5a0fb241f41671a4cd32aab5"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/urbana_S2_H/pricing-diagnostic.svg",
+        "png": "figures/urbana_S2_H/pricing-diagnostic.png",
+        "data": "figures/urbana_S2_H/pricing-diagnostic.plot.json",
+        "source": "figures/urbana_S2_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 0,
+      "phase_ii_states": 84
+    },
+    {
+      "case_id": "pittsburgh_S2_H",
+      "city": "pittsburgh",
+      "city_name": "Pittsburgh",
+      "run_id": "pittsburgh_S2_H_accepted_cold_retry_v1",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 1406,
+      "events": 168720,
+      "dt_seconds": 30,
+      "horizon_steps": 320,
+      "scale": 2.0,
+      "U": 24231.037590422868,
+      "L": 24229.438979559676,
+      "gap_raw": 6.597368590700646e-05,
+      "raw_last_minimum_reduced_cost": -0.15087426696668693,
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "type": "tolerance",
+      "figures": [
+        {
+          "src": "figures/pittsburgh_S2_H/phase-i.svg",
+          "png": "figures/pittsburgh_S2_H/phase-i.png",
+          "data": "figures/pittsburgh_S2_H/phase-i.plot.json",
+          "source": "figures/pittsburgh_S2_H/phase-i.source.json",
+          "caption": "Demand residual 1.11e-16 PCE; capacity excess 0 PCE. Phase I was not executed; the panels describe the actual seed/base and its represented demand or path pool."
+        },
+        {
+          "src": "figures/pittsburgh_S2_H/phase-ii.svg",
+          "png": "figures/pittsburgh_S2_H/phase-ii.png",
+          "data": "figures/pittsburgh_S2_H/phase-ii.plot.json",
+          "source": "figures/pittsburgh_S2_H/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=24229.43897955968，末端有符号参考差 0.006597803872140983%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/pittsburgh_S2_H/physical-flow.svg",
+          "png": "figures/pittsburgh_S2_H/physical-flow.png",
+          "data": "figures/pittsburgh_S2_H/physical-flow.plot.json",
+          "source": "figures/pittsburgh_S2_H/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "23fd7ca3a6340657954b0eddc5205121d0a9e605e2dd02993330488ca85e60cf"
+        }
+      ],
+      "diagnostic": {
+        "src": "figures/pittsburgh_S2_H/pricing-diagnostic.svg",
+        "png": "figures/pittsburgh_S2_H/pricing-diagnostic.png",
+        "data": "figures/pittsburgh_S2_H/pricing-diagnostic.plot.json",
+        "source": "figures/pittsburgh_S2_H/pricing-diagnostic.source.json",
+        "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。"
+      },
+      "phase_i_states": 0,
+      "phase_ii_states": 60
+    },
+    {
+      "case_id": "pittsburgh_F_Q",
+      "city": "pittsburgh",
+      "city_name": "Pittsburgh",
+      "run_id": "pittsburgh_F_Q",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 1406,
+      "events": 20246400,
+      "dt_seconds": 0.25,
+      "horizon_steps": 38400,
+      "scale": 1.0,
+      "U": 12079.266544737542,
+      "L": 12079.266544737542,
+      "gap_raw": 0.0,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "uniform_release shortcut",
+      "type": "exact",
+      "figures": [
+        {
+          "src": "figures/pittsburgh_F_Q/phase-i.svg",
+          "png": "figures/pittsburgh_F_Q/phase-i.png",
+          "data": "figures/pittsburgh_F_Q/phase-i.plot.json",
+          "source": "figures/pittsburgh_F_Q/phase-i.source.json",
+          "caption": "精确构造无需 Phase I：最大时空入弧容量比 0.924094112112，所有 20,246,400 个释放事件需求均被服务，原 OD 残差为0。容量比来自同次独立证书，不用累计流量冒充峰值。"
+        },
+        {
+          "src": "figures/pittsburgh_F_Q/phase-ii.svg",
+          "png": "figures/pittsburgh_F_Q/phase-ii.png",
+          "data": "figures/pittsburgh_F_Q/phase-ii.plot.json",
+          "source": "figures/pittsburgh_F_Q/phase-ii.source.json",
+          "caption": "左：同次真实成本及独立下界的终点对照。右：100×(J−本次最终L)/|本次最终L|，固定参考L=12079.26654473754，末端有符号参考差 0%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。精确构造未执行CG迭代。"
+        },
+        {
+          "src": "figures/pittsburgh_F_Q/physical-flow.svg",
+          "png": "figures/pittsburgh_F_Q/physical-flow.png",
+          "data": "figures/pittsburgh_F_Q/physical-flow.plot.json",
+          "source": "figures/pittsburgh_F_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "119333c0427aea07bce67562f4ad426e749f53101187d86386b2b5dadb35657c"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 0
+    },
+    {
+      "case_id": "urbana_F_Q",
+      "city": "urbana-champaign",
+      "city_name": "Urbana-Champaign",
+      "run_id": "dev48_event_joint_cg_urbana_f",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 418,
+      "events": 6019200,
+      "dt_seconds": 0.25,
+      "horizon_steps": 57600,
+      "scale": 1.0,
+      "U": 11353.257405619659,
+      "L": 7904.415027118645,
+      "gap_raw": 0.30377558222135426,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "type": "open",
+      "figures": [
+        {
+          "src": "figures/urbana_F_Q/phase-i.svg",
+          "png": "figures/urbana_F_Q/phase-i.png",
+          "data": "figures/urbana_F_Q/phase-i.plot.json",
+          "source": "figures/urbana_F_Q/phase-i.source.json",
+          "caption": "Full-demand base + source-generated paths; final primal verified, full-graph optimality OPEN. Phase I was not executed; the panels describe the actual seed/base and its represented demand or path pool."
+        },
+        {
+          "src": "figures/urbana_F_Q/phase-ii.svg",
+          "png": "figures/urbana_F_Q/phase-ii.png",
+          "data": "figures/urbana_F_Q/phase-ii.plot.json",
+          "source": "figures/urbana_F_Q/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=7904.415027118645，末端有符号参考差 43.63184836156309%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/urbana_F_Q/physical-flow.svg",
+          "png": "figures/urbana_F_Q/physical-flow.png",
+          "data": "figures/urbana_F_Q/physical-flow.plot.json",
+          "source": "figures/urbana_F_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "7f47b17cbd5ae161b322c93e073304c9f81b6968ea118d90cd4de0c3c538222c"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 4
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "city": "urbana-champaign",
+      "city_name": "Urbana-Champaign",
+      "run_id": "dev50_event_joint_cg_urbana_S2_Q",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 418,
+      "events": 6019200,
+      "dt_seconds": 0.25,
+      "horizon_steps": 57600,
+      "scale": 2.0,
+      "U": 87822.32866945985,
+      "L": 15276.312993745125,
+      "gap_raw": 0.8260543391961155,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "type": "open",
+      "figures": [
+        {
+          "src": "figures/urbana_S2_Q/phase-i.svg",
+          "png": "figures/urbana_S2_Q/phase-i.png",
+          "data": "figures/urbana_S2_Q/phase-i.plot.json",
+          "source": "figures/urbana_S2_Q/phase-i.source.json",
+          "caption": "Full-demand base + source-generated paths; final primal verified, full-graph optimality OPEN. Phase I was not executed; the panels describe the actual seed/base and its represented demand or path pool."
+        },
+        {
+          "src": "figures/urbana_S2_Q/phase-ii.svg",
+          "png": "figures/urbana_S2_Q/phase-ii.png",
+          "data": "figures/urbana_S2_Q/phase-ii.plot.json",
+          "source": "figures/urbana_S2_Q/phase-ii.source.json",
+          "caption": "左：同次真实成本完整轨迹。右：100×(J−本次最终L)/|本次最终L|，固定参考L=15276.31299374512，末端有符号参考差 474.8921791889092%。这不是逐轮定价gap；0.01%只是读图尺度参考。页面验收gap另按(U−L)/|U|列出。没有平滑、截取尾段或补造点。"
+        },
+        {
+          "src": "figures/urbana_S2_Q/physical-flow.svg",
+          "png": "figures/urbana_S2_Q/physical-flow.png",
+          "data": "figures/urbana_S2_Q/physical-flow.plot.json",
+          "source": "figures/urbana_S2_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "6a160b8fb2b06897917823f52cb384aa53a1bbd17797f7f9addee9a1a55e3cbc"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 4
+    },
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "city": "pittsburgh",
+      "city_name": "Pittsburgh",
+      "run_id": "dev50_event_joint_cg_pittsburgh_S2_Q_v7",
+      "code_package": "sparse_common_dev48_balanced_selection",
+      "OD": 1406,
+      "events": 20246400,
+      "dt_seconds": 0.25,
+      "horizon_steps": 38400,
+      "scale": 2.0,
+      "U": 51001.18146917005,
+      "L": null,
+      "gap_raw": null,
+      "raw_last_minimum_reduced_cost": null,
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "type": "open",
+      "figures": [
+        {
+          "src": "figures/pittsburgh_S2_Q/phase-i.svg",
+          "png": "figures/pittsburgh_S2_Q/phase-i.png",
+          "data": "figures/pittsburgh_S2_Q/phase-i.plot.json",
+          "source": "figures/pittsburgh_S2_Q/phase-i.source.json",
+          "caption": "Full-demand base + source-generated paths; final primal verified, full-graph optimality OPEN. Phase I was not executed; the panels describe the actual seed/base and its represented demand or path pool."
+        },
+        {
+          "src": "figures/pittsburgh_S2_Q/phase-ii.svg",
+          "png": "figures/pittsburgh_S2_Q/phase-ii.png",
+          "data": "figures/pittsburgh_S2_Q/phase-ii.plot.json",
+          "source": "figures/pittsburgh_S2_Q/phase-ii.source.json",
+          "caption": "All three saved CG rounds and the final solved RMP are shown. No verified same-run full-graph lower bound is available; the right reference panel remains unavailable, and optimality remains OPEN."
+        },
+        {
+          "src": "figures/pittsburgh_S2_Q/physical-flow.svg",
+          "png": "figures/pittsburgh_S2_Q/physical-flow.png",
+          "data": "figures/pittsburgh_S2_Q/physical-flow.plot.json",
+          "source": "figures/pittsburgh_S2_Q/physical-flow.source.json",
+          "caption": "复用同次最终物理道路移动流量图；计入完整释放与到达尾段，排除等待、虚拟连接和转向弧。这是模型情景，不是实测交通。",
+          "same_source_sha256": "0c22cfe2ecdb1a08b6936e424831dbb14f2fa6894e2f83e7be0a114266261bb3"
+        }
+      ],
+      "diagnostic": null,
+      "phase_i_states": 0,
+      "phase_ii_states": 4
+    }
+  ],
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "website_modified": true,
+  "renderer": "tools/visuals/render_cg_v1_20261017.py"
+}

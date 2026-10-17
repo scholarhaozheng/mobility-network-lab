@@ -1,0 +1,967 @@
+{
+  "schema": "MCL_CURRENT_CG_SOURCE_INVENTORY_V2",
+  "selected_runs": [
+    {
+      "case_id": "sioux_200_H",
+      "selected_run_id": "sioux_200_H",
+      "model_id": "INDEX_CONTRACT_SHA256:029a7324934be612e54698ee8be2dc44a3622958b10f85aed1b61ece64a9cc2a",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "examples/sioux-falls/finite-time-r05/200od",
+      "input_kind": "existing_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\200OD",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+        "dynamic_demand.csv": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/config.json",
+          "sha256": "da085a97ad65b758ee927c55bd8e28b05ef4922cfeca0091d22e3e01fa84f7ae",
+          "bytes": 1837
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/result.json",
+          "sha256": "e525c238da59bc0b048e8f81cdef8a75dc2de12b1bb12ea28e8fa3668d3a73b7",
+          "bytes": 77059
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/upper-certificate.json",
+          "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03",
+          "bytes": 953
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/lower-certificate.json",
+          "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03",
+          "bytes": 953
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/acceptance-receipt.json",
+          "sha256": "32acf05c8b2cba1fa6a3ed2461c7f914c00190fbdb9d8c81771d2456e32c31e0",
+          "bytes": 1345
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/projection-checks.json",
+          "sha256": "48cb66047fb7e06ea877419bcdde3246c4e51b7b55efd485f1431b372c5433f6",
+          "bytes": 1076
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/physical-flow.csv",
+          "sha256": "e3edbcbfe511835740b433d71864e718b8f08cf58dc2af3d67685502b9b1576f",
+          "bytes": 711
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/run-provenance.json",
+          "sha256": "e80317f75a9c7bd32571edb3af934f263180a04e1995fba23c2631320df7a893",
+          "bytes": 7337
+        }
+      ]
+    },
+    {
+      "case_id": "sioux_250_H",
+      "selected_run_id": "sioux_250_H",
+      "model_id": "INDEX_CONTRACT_SHA256:e55b45b31c0804344306d77c747ced6785e6da45aae845f91107bb8f0472f062",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "examples/sioux-falls/finite-time-r05/250od",
+      "input_kind": "existing_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\frozen_cases\\250OD",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "b0c651d6f8bc5bef20c2ab957b8b96a604217a5e88e2d16f802434d8975eab07",
+        "dynamic_demand.csv": "67448c3788ec06014a3f85d3fe1c451e107723432336960ca08ed1bb2037ee26"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/config.json",
+          "sha256": "edea465048bd9f1d51f4912b987150ed853ce227b1d385cc3261c90fbe5212a8",
+          "bytes": 1837
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/result.json",
+          "sha256": "e5a0495eee4e97354cbfa06e470eedb806825f6d1688834736a3391dc86bea62",
+          "bytes": 96469
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/upper-certificate.json",
+          "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+          "bytes": 956
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/lower-certificate.json",
+          "sha256": "9667e0c3319c27bda689f94e164033ba10266f8c7c0ac57a218c16bf70932f86",
+          "bytes": 956
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/acceptance-receipt.json",
+          "sha256": "a7b76ba5de81589ff1fcd2e2fca2a90cafc5cfc09b56e453530774ffcb45d3d3",
+          "bytes": 1346
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/projection-checks.json",
+          "sha256": "4ff08432db9bf65beebecda402655f34f6b8ca964e3037d18dea5fbb708e3486",
+          "bytes": 1080
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/physical-flow.csv",
+          "sha256": "1e2a4eb4bebea916d1255919baa0406bfeea756b10d4e9d787e6b65f813035fb",
+          "bytes": 829
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/sioux_250_H/sioux_250_H/run-provenance.json",
+          "sha256": "8b9d23388595a4d5459371f2d2bea396d2026aeb23a6587e9ca5a46128d38938",
+          "bytes": 7337
+        }
+      ]
+    },
+    {
+      "case_id": "boston_10_H",
+      "selected_run_id": "boston_10_H",
+      "model_id": "fa4fc7dc4740ea006e7819cecd85f189591a54003c19b1367871ad5a6d04292a",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "examples/boston/recovered-r14/finite/dynamic",
+      "input_kind": "existing_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\boston_cg_pilot_r1\\phase_ii_degeneracy_completion_r3\\dynamic_inputs",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "66fbcd70d53fc18c483a11250cdc3a827e9c1b04f5c1e21a5e8453a6f4a9b672",
+        "dynamic_demand.csv": "37ad44232a0b333fbfc7070bb44a3789f467a04f888492118fe086a2b692c565"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/config.json",
+          "sha256": "5e6d2d832638f04ac30f82c40c7b8a7ca070abe7defbc8a552eecdb5131fa560",
+          "bytes": 1836
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/result.json",
+          "sha256": "4ac2c8697b23b398a6216d3c0f02148cab287ff6df99fc68da1ae9c76a7440c4",
+          "bytes": 29396
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/upper-certificate.json",
+          "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca",
+          "bytes": 1012
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/lower-certificate.json",
+          "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca",
+          "bytes": 1012
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/acceptance-receipt.json",
+          "sha256": "43fdd15862d9001d851f4ca76091ec13206644236ed73acd9a4116f7a672612a",
+          "bytes": 1346
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/projection-checks.json",
+          "sha256": "fe690f4e87f00f48e683126ebd8b3bab7ede87b52d86ca697b1f42bb45b4ec68",
+          "bytes": 1134
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/physical-flow.csv",
+          "sha256": "c28b898bb61ce8d4c5138e552e58d105cdd2e26e71a48f72d5a276b8861929d3",
+          "bytes": 2147
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/run-provenance.json",
+          "sha256": "d359d28ed442b2dbebf7a66b40daeb1c13fcf163e33b2f7bb180343e25936a9d",
+          "bytes": 7297
+        }
+      ]
+    },
+    {
+      "case_id": "hong_kong_10_H",
+      "selected_run_id": "hong_kong_10_H",
+      "model_id": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "docs/assets/hong_kong/full_stack_r5/r2r4_baseline/phase_c/case",
+      "input_kind": "existing_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\hong_kong_cg_completion_r5\\case",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+        "dynamic_demand.csv": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/config.json",
+          "sha256": "2179514c18128ded9c7131a28752ee26d5c369051f80101e56ad34e4cb4ec2b0",
+          "bytes": 1845
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/result.json",
+          "sha256": "de2c0b9d3646be93fff022c1c28d65aec7059282ae41be387c96af1637ea67c5",
+          "bytes": 11299
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/upper-certificate.json",
+          "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca",
+          "bytes": 975
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/lower-certificate.json",
+          "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca",
+          "bytes": 975
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/acceptance-receipt.json",
+          "sha256": "6a35817d66353496c96a84f01d928b0fef6567fdb76691dee68fa739b67e49c9",
+          "bytes": 1339
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/projection-checks.json",
+          "sha256": "a338a3e318333ffeeffba466c57da8de3a7e689db314f3b95e92bdcdbb7a3ab4",
+          "bytes": 1106
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/physical-flow.csv",
+          "sha256": "1efa12ece755e37c79d06162788726d98314fafcb9cd53a521285fb748af3387",
+          "bytes": 2375
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/hong_kong_10_H/hong_kong_10_H/run-provenance.json",
+          "sha256": "107a6aedd4d6728ff7e91451e6f4aaeb50c8fbf56b35fcd0a7472ea97704664e",
+          "bytes": 7175
+        }
+      ]
+    },
+    {
+      "case_id": "urbana_F_H",
+      "selected_run_id": "urbana_F_H",
+      "model_id": "INDEX_CONTRACT_SHA256:6fa2865dd991166a60186b5becef19544add8533676dee0e8f25271dd8922d6d",
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "urbana",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/config.json",
+          "sha256": "f6487e7137b41fce1d144445142ca59595b06ad3e392519c2cd6a87ec98cd3c7",
+          "bytes": 2018
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/result.json",
+          "sha256": "89c019086349a5dfc81b4bdbcc0188d52292d732de7c3bc7e8c2b29f83bb31ea",
+          "bytes": 7977
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/upper-certificate.json",
+          "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1",
+          "bytes": 1308
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/lower-certificate.json",
+          "sha256": "24062bd3fd09172bbe5276d0a487450736ca39c3567e42688396aaa691540ae1",
+          "bytes": 1308
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/acceptance-receipt.json",
+          "sha256": "6057ac5d37ad03d4297fa76706791a5c0a8bd28cecb8c32dfb44f8421e0e86b7",
+          "bytes": 1351
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/projection-checks.json",
+          "sha256": "027157573291d39125f6b72418ef21e1532a1091ae2eba9656adededb0bfae8f",
+          "bytes": 1122
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/physical-flow.csv",
+          "sha256": "f1486819e715efc221643e417e7c0c038e91c3022aa8780902f9f689da13074c",
+          "bytes": 195967
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_H/urbana_F_H/run-provenance.json",
+          "sha256": "33f61647c8685866a3de738b2f633058cd975a5042e39851d6f120f050385e03",
+          "bytes": 6945
+        }
+      ]
+    },
+    {
+      "case_id": "urbana_S2_H",
+      "selected_run_id": "urbana_S2_H_accepted_cold",
+      "model_id": "INDEX_CONTRACT_SHA256:14ef40e2fe05088a43fc59655f7d8c19e1c7cf72c070e346006d7a42d8701146",
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "urbana",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/config.json",
+          "sha256": "80ec1aebd1dff8c69034bd79ed9aadde3abf70fbdec389edd9e003e29046d947",
+          "bytes": 2337
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/result.json",
+          "sha256": "6f40e01a6ba9e74693e8c71fe98db85f5e9c328c46c3f5bb12a12c22e4f5becf",
+          "bytes": 68067
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/upper-certificate.json",
+          "sha256": "a99c7f153a278ef164add6e17728e6d5aa6b74a9f444db60c500b91357b78e29",
+          "bytes": 1347
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/lower-certificate.json",
+          "sha256": "a99c7f153a278ef164add6e17728e6d5aa6b74a9f444db60c500b91357b78e29",
+          "bytes": 1347
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/acceptance-receipt.json",
+          "sha256": "194cd5565ae97b61a861c77eae02e4fdf158a9825f1f6a68a5dd36dc5ccac8d3",
+          "bytes": 1373
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/projection-checks.json",
+          "sha256": "303903cb35dbf0cdd423d0cb5bb29be407d17941b4f858a288ff088e0d9fe7b3",
+          "bytes": 1190
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/physical-flow.csv",
+          "sha256": "1053800023363f279a2aa17376e33a91b3c12cd858b586a275d241c038156107",
+          "bytes": 201670
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_H/urbana_S2_H_accepted_cold/run-provenance.json",
+          "sha256": "aec9b31b46f1e6406d905a4e557af8c4b7485ec99d906fa98d3069ebc1a2fea9",
+          "bytes": 7067
+        }
+      ]
+    },
+    {
+      "case_id": "urbana_F_Q",
+      "selected_run_id": "dev48_event_joint_cg_urbana_f",
+      "model_id": "INDEX_CONTRACT_SHA256:b0de0ca1f08e38b39ae46877c3f6292bbd8a9f6e32a1b885a3c16aed5232d611",
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "accepted_at_frozen_gate": false,
+      "minimum_input_group": "urbana",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/config.json",
+          "sha256": "af00c28236ce01769a23255258a55379cebcbfb03352be0347c5ddf646fb2141",
+          "bytes": 1628
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/result.json",
+          "sha256": "ba004cdab16798f8796fb9f1ca6c0b708fa7e6d1d914edebb2fa6f2acf742bb4",
+          "bytes": 5296
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/upper-certificate.json",
+          "sha256": "c4edb800507ae0b031ff2547774ba455ff7e591b63e5c33c1d07cac8da58b50d",
+          "bytes": 1424
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/lower-certificate.json",
+          "sha256": "b915e685a09c370a5403cc136e6b57f68fbb1dccecc071eb2358e0c26195e73d",
+          "bytes": 1062
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/acceptance-receipt.json",
+          "sha256": "c4edb800507ae0b031ff2547774ba455ff7e591b63e5c33c1d07cac8da58b50d",
+          "bytes": 1424
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/projection-checks.json",
+          "sha256": "cf5a13b9655efa0dd2743af7d1b314a11b30cc8b82eabf2d05a0ada0a1807385",
+          "bytes": 1375
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/physical-flow.csv",
+          "sha256": "c65252dcce4ebe52373fe1e869515ebf52842c168a0a9e05faa9fcd365691d8b",
+          "bytes": 196750
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/run-provenance.json",
+          "sha256": "6d0316aba07a4b5731b5df79cc131eadca71d0d13d7ab8d69750b2c4ecc0dfe2",
+          "bytes": 7763
+        }
+      ]
+    },
+    {
+      "case_id": "urbana_S2_Q",
+      "selected_run_id": "dev50_event_joint_cg_urbana_S2_Q",
+      "model_id": "INDEX_CONTRACT_SHA256:8316e2cdd763fff8227a93c10d06eb359c8d1fe2382991d4c784ba8ca7c391a5",
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "accepted_at_frozen_gate": false,
+      "minimum_input_group": "urbana",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+        "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+        "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/config.json",
+          "sha256": "240a2102dbe74913a199c37e8c772dd5780994d5648a5a5e52d0b408801dc9e4",
+          "bytes": 1877
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/result.json",
+          "sha256": "90bd54c6f6fb5e8d69c201af507cdf1f156b506c31816944bcff09497fc09a30",
+          "bytes": 5245
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/upper-certificate.json",
+          "sha256": "ae658f1d48d6e5b0ae2b4730d7a3d5ab87a73c3b041d054e728e090d0acdc0cb",
+          "bytes": 1422
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/lower-certificate.json",
+          "sha256": "75775300d078757c3867936859f57e89f7c3bf3bc0dab1df7fb3bfc96534fd90",
+          "bytes": 1061
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/acceptance-receipt.json",
+          "sha256": "ae658f1d48d6e5b0ae2b4730d7a3d5ab87a73c3b041d054e728e090d0acdc0cb",
+          "bytes": 1422
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/projection-checks.json",
+          "sha256": "afbe0ac0f067fe090937fc2146a4e7d441efaecb55f270f35baac8f463b8d848",
+          "bytes": 1333
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/physical-flow.csv",
+          "sha256": "9f0086f7c21bd124fca926e418ac714be5b027f0eac244df23f062ea104b4ca9",
+          "bytes": 194373
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/run-provenance.json",
+          "sha256": "0a44e9eea34c90319dabc21972f7db6f0add68d34c6eb322266840f78c47c87c",
+          "bytes": 7798
+        }
+      ]
+    },
+    {
+      "case_id": "pittsburgh_F_H",
+      "selected_run_id": "pittsburgh_F_H",
+      "model_id": "INDEX_CONTRACT_SHA256:bbd80db72e36aff12666cac25d2b5a178545fd0f33a257bded16a95dd57b17b6",
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "pittsburgh",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/config.json",
+          "sha256": "2d8ff5d29f8b93220d7e8996331705351aa05d65d92ca3502ad615a19f84788e",
+          "bytes": 2049
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/result.json",
+          "sha256": "36dc2f7af183034774b39533ad53c4c306e1b5a45a2c6e31f789d3745ae7d7a8",
+          "bytes": 5005
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/upper-certificate.json",
+          "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec",
+          "bytes": 1277
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/lower-certificate.json",
+          "sha256": "3f572e741945aa93ae70b3dc4d21be759f917be20d92503960d95dc7da8c89ec",
+          "bytes": 1277
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/acceptance-receipt.json",
+          "sha256": "8c227d5a7aafd29f6d4724c473beae359fab8dc7fe318b40c85ca851c03037eb",
+          "bytes": 1355
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/projection-checks.json",
+          "sha256": "7dc9bcbba4c789d997e21b8b48c7b3e54ae2306c5d4dab4ba98d194035702103",
+          "bytes": 1118
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/physical-flow.csv",
+          "sha256": "f3265ec6074d8cb0596b04a988e3ceb9bc943dbdab03d58a8c16961ba2f47467",
+          "bytes": 292435
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_H/pittsburgh_F_H/run-provenance.json",
+          "sha256": "de5564b3210a9fc477969b7c4105f2e2ca936be92c33f0c4d8399a066b37191f",
+          "bytes": 7000
+        }
+      ]
+    },
+    {
+      "case_id": "pittsburgh_S2_H",
+      "selected_run_id": "pittsburgh_S2_H_accepted_cold_retry_v1",
+      "model_id": "INDEX_CONTRACT_SHA256:fbc0ed532afb2a808e174a9c1e518402de7b671cea42c29624f7f03550351ddc",
+      "actual_adapter": "implicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "pittsburgh",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/config.json",
+          "sha256": "fad98e64d7fdd50d805d5810b831b9934d24b61a3022ad169367b94bbc38bc8a",
+          "bytes": 2405
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/result.json",
+          "sha256": "e75eecb7332a7782d8a117309f73211fe7c1df3821f64fdf1220987dd41f3139",
+          "bytes": 50966
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/upper-certificate.json",
+          "sha256": "ea0b4c5abce615d3b3ef0926dac7166ce53d48d6b12d6f87f612cfd4642870d5",
+          "bytes": 1576
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/lower-certificate.json",
+          "sha256": "ce688092fdad32daad370f28d615be0d82ceb97bb4ab24910479bb88b31718d6",
+          "bytes": 3886
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/acceptance-receipt.json",
+          "sha256": "00819e4b72ebd837e707cac77d1ccb23b466da598f35bc462a0ebbe622c2205c",
+          "bytes": 1627
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/projection-checks.json",
+          "sha256": "4c906100422721df67428d92742bfd59cddd5c5ea4973464a4e80d14d6f0aca9",
+          "bytes": 1272
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/physical-flow.csv",
+          "sha256": "eac45da47a751bc36eeb1814281ba2fbb780ab8ff6d42ec58dd9fad4c2cbfb5a",
+          "bytes": 293585
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/run-provenance.json",
+          "sha256": "d0e34c08c8f4a78f762aac082b1d03ef2863284da426534cd99b8389b851d500",
+          "bytes": 7199
+        }
+      ]
+    },
+    {
+      "case_id": "pittsburgh_F_Q",
+      "selected_run_id": "pittsburgh_F_Q",
+      "model_id": "INDEX_CONTRACT_SHA256:cd463b4c56a6b2d1b7066064e6183e6189f858adfc834f316a6b047087b658f5",
+      "actual_adapter": "uniform_release shortcut",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "pittsburgh",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/config.json",
+          "sha256": "d277215bb883ef6e1cf9ddd82b90615210b69cf3ac8ee66aaab439d4927695f5",
+          "bytes": 1910
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/result.json",
+          "sha256": "b496539588811c887b0cf0c7507a62777d8647d90a6fa65579d632ccd33602a1",
+          "bytes": 2706
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/upper-certificate.json",
+          "sha256": "addc719ebff015bfe22bcea1caa7a023f538e6b3810738c874363738dc1d4961",
+          "bytes": 1578
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/lower-certificate.json",
+          "sha256": "addc719ebff015bfe22bcea1caa7a023f538e6b3810738c874363738dc1d4961",
+          "bytes": 1578
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/acceptance-receipt.json",
+          "sha256": "5bc826a8b66d682f3fa7edbcff4c371be7b726c39ca7e89feb4c76e89f09319e",
+          "bytes": 1343
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/projection-checks.json",
+          "sha256": "e7afc3bd7904270cf1fdb99ffbdc603bcb3891b0604831a54a18d2aeff01216c",
+          "bytes": 628
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/physical-flow.csv",
+          "sha256": "f249f069a327a1e449ad776d72fddb7b0ace63fa99c33d055b661d28181d549a",
+          "bytes": 292303
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_F_Q/pittsburgh_F_Q/run-provenance.json",
+          "sha256": "b60204baec27edf0e57a2cdce701351e0b35ba0ec2974c712cc5c1c130f76f19",
+          "bytes": 6747
+        }
+      ]
+    },
+    {
+      "case_id": "pittsburgh_S2_Q",
+      "selected_run_id": "dev50_event_joint_cg_pittsburgh_S2_Q_v7",
+      "model_id": "INDEX_CONTRACT_SHA256:47f371bda0c4af986acf69f548a431356ba6feb093e969a67f83427e342f9268",
+      "actual_adapter": "joint_cg_loop with full-demand base and sparse delta master",
+      "accepted_at_frozen_gate": false,
+      "minimum_input_group": "pittsburgh",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+        "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+        "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/config.json",
+          "sha256": "0870a5cb0807ac75f7a5083786defd9c4740fedd683e1bed91f617a9d6349cc3",
+          "bytes": 1892
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/result.json",
+          "sha256": "e9a99261d3bb762e064bd0e4b224bf4f4d3169d4ac83284e0bb780360f55b6aa",
+          "bytes": 5248
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/upper-certificate.json",
+          "sha256": "9ffcec88a78d46fc8ac1f0a31a8f3ab3d8935ba9294d69239efe5d8df7cce93c",
+          "bytes": 1422
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/acceptance-receipt.json",
+          "sha256": "9ffcec88a78d46fc8ac1f0a31a8f3ab3d8935ba9294d69239efe5d8df7cce93c",
+          "bytes": 1422
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/projection-checks.json",
+          "sha256": "2634f9bd782c0f6ac6fbcde4a8da070551b20b616866ebd2fb87d02c90602d6d",
+          "bytes": 1335
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/physical-flow.csv",
+          "sha256": "51d969ce59aceeb8812f4841a1d2f3f5ad3ed45a678e1bedaa8e9be6d6a170e5",
+          "bytes": 292027
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/pittsburgh_S2_Q/dev50_event_joint_cg_pittsburgh_S2_Q_v7/run-provenance.json",
+          "sha256": "669816ef3cddffc50fa523fd8bd5639acf1eb872bd4449d481a70fc9a393b58a",
+          "bytes": 7340
+        }
+      ]
+    },
+    {
+      "case_id": "ithaca_F_Q",
+      "selected_run_id": "ithaca_F_Q",
+      "model_id": "INDEX_CONTRACT_SHA256:ef1edd4589da3229499b12358a66edfc87817524e392ee9183e64f5e43bc1b54",
+      "actual_adapter": "uniform_release shortcut",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "ithaca",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\six_city_preflight_r1\\cities\\ithaca\\representative_demand_20261011\\input",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "36dd4422499dec3afdd28f1f94afa9e0f199dd56c0b1279055f48fd769a707de",
+        "access.csv": "728b3c15eecd8956594dcaaaca480b9ea72c7ca3877cfd347a907acbad38b9ff",
+        "assignment_od_pce.csv": "881df44416426abdca1b96216d96c4488af75ef8a680bc15de791eccf34b3dbb"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/config.json",
+          "sha256": "9d2f247eb4681976b86f880ac3c1c0e4547bf4ae090326df0b4f8355cb832c64",
+          "bytes": 1832
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/result.json",
+          "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa",
+          "bytes": 2700
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/upper-certificate.json",
+          "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+          "bytes": 1581
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/lower-certificate.json",
+          "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051",
+          "bytes": 1581
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/acceptance-receipt.json",
+          "sha256": "eeb6e7ab803d6a314e8365dff2be0f93a15c6975e7a286892fe34db5652e73d4",
+          "bytes": 1331
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/projection-checks.json",
+          "sha256": "ea94f60d0285839472976835c9f392f2c6ffa2f1c1f9ccb2013bef88768c68dd",
+          "bytes": 624
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/physical-flow.csv",
+          "sha256": "5da49fa15d32588de9e47d49422340d4fef3ef8ecaecf8775e30ced52ee212b8",
+          "bytes": 351785
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/run-provenance.json",
+          "sha256": "5d032ab4637ca06bad8eaee9a5d2c9baccd92da3a91ac8e238305e48941db1a8",
+          "bytes": 6692
+        }
+      ]
+    },
+    {
+      "case_id": "berkeley_T4_H",
+      "selected_run_id": "berkeley_T4_H",
+      "model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "berkeley",
+      "input_kind": "build_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\berkeley_algorithm_transfer_r1\\runs\\T_case",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+        "dynamic_demand.csv": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/config.json",
+          "sha256": "5448f4bcbd3dacd6302d6f4800361ffd4d50f05be69e9090f9f5e20b7b0090ad",
+          "bytes": 1841
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/result.json",
+          "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9",
+          "bytes": 7673
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/upper-certificate.json",
+          "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973",
+          "bytes": 975
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/lower-certificate.json",
+          "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973",
+          "bytes": 975
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/acceptance-receipt.json",
+          "sha256": "8ad19919e973652cab4caf9ab16871dcf0bc67bb829a5ba11f06a59a153c862a",
+          "bytes": 1351
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/projection-checks.json",
+          "sha256": "9ade74a5073b5ff74c5928a3239aef108cb9633b6a21ee1ca68c453a04c9cd48",
+          "bytes": 1106
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/physical-flow.csv",
+          "sha256": "a0086a9466b109f2c25c96993e5c4364f8032e0defb0fc5789629f4e31fee964",
+          "bytes": 24489
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/run-provenance.json",
+          "sha256": "3fe28faf16381f36435baaaa3eb8bbca15d0225b497bddee306dca883912110d",
+          "bytes": 7215
+        }
+      ]
+    },
+    {
+      "case_id": "chicago_T4_H",
+      "selected_run_id": "chicago_T4_H",
+      "model_id": "INDEX_CONTRACT_SHA256:2c6a593c0a51ceda4cf40f8f49bc9f82e9c099bb9e9f8f728c9947d09432d1af",
+      "actual_adapter": "explicit path-CG solve.py adapter",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "chicago",
+      "input_kind": "build_explicit",
+      "parent_input_identity": {
+        "source_label": "work\\chicago_algorithm_transfer_r1\\runs\\T_case",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "dynamic_arc.csv": "5437de3d8cf696d10665787ad8e19b28fc60b97075be6e66894a7c0d156f9df0",
+        "dynamic_demand.csv": "0221bf4ca6ce052ea1dacab9074c209449f31624326e84618038eeb493fc428b"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/config.json",
+          "sha256": "fddcaf370abdaef21ab2b79d842570db5623831a4487e0bc9271543b0d7b058f",
+          "bytes": 1814
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/result.json",
+          "sha256": "75d31321be9ae33a6db7c4467438a5f01a0906fafe787acb3c02b5e00a5abee9",
+          "bytes": 49120
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/upper-certificate.json",
+          "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3",
+          "bytes": 1037
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/lower-certificate.json",
+          "sha256": "2c82e9c4ca53c85b72e0087ec0df8d562b5431832ef73fe0f02d00a04904daa3",
+          "bytes": 1037
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/acceptance-receipt.json",
+          "sha256": "e0e9b3bb2e5717121caa2fbade41bda425b2009e73510f596d76b46e46fef2c6",
+          "bytes": 1349
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/projection-checks.json",
+          "sha256": "3fdd8a32cca4561c3480e69868b3ca1261af7a1724ef9ee45859223edebfe763",
+          "bytes": 1160
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/physical-flow.csv",
+          "sha256": "0b070b470b59fed9ebaa98836ade19394ec11f487f4319ad376ebc07b39cd396",
+          "bytes": 510714
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/chicago_T4_H/chicago_T4_H/run-provenance.json",
+          "sha256": "9cb38d8e40c7a9e49b8a8498678360425ccd0c70b0232383e7214c80b3287b36",
+          "bytes": 7229
+        }
+      ]
+    },
+    {
+      "case_id": "ann_arbor_F_Q",
+      "selected_run_id": "ann_arbor_F_Q",
+      "model_id": "INDEX_CONTRACT_SHA256:839cf9a02e5d37ecfcc1f4cafb1864f407564e16501e82c88951d9199c89f9f5",
+      "actual_adapter": "uniform_release shortcut",
+      "accepted_at_frozen_gate": true,
+      "minimum_input_group": "ann-arbor",
+      "input_kind": "implicit",
+      "parent_input_identity": {
+        "source_label": "work\\shared_cg_cross_city_r1\\inputs\\ann_arbor_choicefw600_static_normalized",
+        "role": "Frozen parent assignment/model input; not a fresh live-data snapshot"
+      },
+      "expected_mathematical_input_sha256": {
+        "network.csv": "eb5d486d108251b1d2bf5dd920f7fbe8765a74e8738502576fe19a321294e43b",
+        "access.csv": "31c7c1f54d75d8d68fed2684ba5aad8dd5dd382cfa07ee1e09053901b990046f",
+        "assignment_od_pce.csv": "5de10c9ce3d10d4cac41b48a74a6c0d404819ff9e2cd775e3ba7f8d830d9284f"
+      },
+      "selected_result_records": [
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/config.json",
+          "sha256": "7c622fa31c7ccca9da2b2e52ee31d3091ee96bac37217128fb3f9e7f2f01e525",
+          "bytes": 1894
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/result.json",
+          "sha256": "6ee8a88d901ec56d061adcfae3bee5100bde2acb6d677d127249075ebb7472b3",
+          "bytes": 2730
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/upper-certificate.json",
+          "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495",
+          "bytes": 1606
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/lower-certificate.json",
+          "sha256": "6fd15d28e96c0025f935a05728edf1f7a7eddef8200a7f42842311c5baed6495",
+          "bytes": 1606
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/acceptance-receipt.json",
+          "sha256": "bd7a7e4ba8a17528dd80cf55fa8591b5838689fe744f90284586a480239e3be2",
+          "bytes": 1339
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/projection-checks.json",
+          "sha256": "e5125f46c397bb8eb785f99b3cb96da6a042c3bf22f99d83be2bda4fc3517497",
+          "bytes": 623
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/physical-flow.csv",
+          "sha256": "4824f4514985e153b97b15030630bb0a656c593f9b8db119ca179e2dd73fe044",
+          "bytes": 262784
+        },
+        {
+          "path": "docs/assets/shared-cg-dev48-20261014/ann_arbor_F_Q/ann_arbor_F_Q/run-provenance.json",
+          "sha256": "a3b8e336a2fc4f01f058546b8b88d9de7c484f83b4be3bf104a9a78acb267182",
+          "bytes": 6704
+        }
+      ]
+    }
+  ],
+  "current_input_manifest": "DEPENDENCY_MANIFEST.json",
+  "source_code_manifest": "CODE_MANIFEST.json",
+  "included_model_network_databases": "Minimum same-version network/access tables in examples/shared_cg_dev48_20261014/inputs; existing old-city tables are reused. Graph builders generate expanded arcs. Display geometry remains in the canonical physical-flow.plot.json files.",
+  "notices": [
+    "NOTICE.txt",
+    "../cg-v1-20261017/NOTICE.txt",
+    "../../../DATA_LICENSES.md"
+  ],
+  "raw_GTFS_included": false,
+  "personal_trajectories_included": false,
+  "original_results_unchanged": true,
+  "new_solver_calls": 0,
+  "validation_scope": "Source, input, graph construction, read-only saved-result projection and presentation checks; no new optimization run is claimed."
+}

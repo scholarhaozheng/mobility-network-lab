@@ -1,0 +1,52 @@
+{
+  "input_network_sha256": "78b1ffe32b14e711cfe9069e21aa338a58670763e4192eae3acd73d9803129f3",
+  "available_memory_ceiling_bytes": 687203942,
+  "T10": {
+    "od": 10,
+    "H_steps": 165,
+    "H_minutes": 82.5,
+    "physical_nodes": 1261,
+    "physical_links": 2150,
+    "departure_step": 5,
+    "rounded_shortest_steps": [
+      94,
+      84,
+      130,
+      122,
+      71,
+      61,
+      20,
+      42,
+      105,
+      34
+    ],
+    "candidate_movement_variables": 840474,
+    "candidate_wait_variables": 479811,
+    "candidate_total_variables_upper": 1321955,
+    "dynamic_arc_union_upper": 356955,
+    "estimated_lp_peak_bytes": 1612523200,
+    "selected_q_pce": 15.046678195288731
+  },
+  "T4": {
+    "od": 4,
+    "H_steps": 165,
+    "H_minutes": 82.5,
+    "physical_nodes": 1261,
+    "physical_links": 2150,
+    "departure_step": 5,
+    "rounded_shortest_steps": [
+      94,
+      84,
+      130,
+      122
+    ],
+    "candidate_movement_variables": 246558,
+    "candidate_wait_variables": 139344,
+    "candidate_total_variables_upper": 386570,
+    "dynamic_arc_union_upper": 251336,
+    "estimated_lp_peak_bytes": 527174016,
+    "selected_q_pce": 10.439304601026278
+  },
+  "selected_profile": "T4",
+  "selection_reason": "pre-solve exact reachability/memory estimate only"
+}

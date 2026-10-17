@@ -1,0 +1,66 @@
+{
+  "case_id": "urbana_F_Q",
+  "run_id": "dev48_event_joint_cg_urbana_f",
+  "model_id": "INDEX_CONTRACT_SHA256:b0de0ca1f08e38b39ae46877c3f6292bbd8a9f6e32a1b885a3c16aed5232d611",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\run_dev48_event_joint_cg_urbana_f.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 18951,
+    "sha256": "8b82314c1c2ed6f3b886b59a460ae4c8325bcac952b05f657ee79395eafa2f56",
+    "source_mtime_utc": "2026-10-13T18:42:20.337253+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/result.json",
+    "sha256": "ba004cdab16798f8796fb9f1ca6c0b708fa7e6d1d914edebb2fa6f2acf742bb4"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "c843f17f93163a4c90ba2435b6de0ed6bcb4f2c8ff19a5c0787bb4c69569dd98",
+  "caption": "Three recorded CG rounds plus the final solved RMP; the final point is not a fourth CG round. Left: true objective in PCE-min. Right: signed 100(J − Lfinal)/|Lfinal|, with fixed same-run independently verified Lfinal=7904.415027. This is not per-round pricing gap. The 0.01% guide is a display reference; acceptance uses 100(U−L)/|U|. Signed roundoff and all states remain in plot data.",
+  "outputs": {
+    "svg": "e535aa249e4d81116df62c73e5ac3330a2e7213e89f5e874e39e5576520c46ec",
+    "png": "cc53fafbae7d99cb01c9cc61ce13b898678a66ff894f588ce57a3bad4411bdd8",
+    "plot.json": "419983577dde280d1c1b1a65e6b1ed3a247de0e5ef32ba1b214fab4f087c0d57"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/result.json",
+      "sha256": "ba004cdab16798f8796fb9f1ca6c0b708fa7e6d1d914edebb2fa6f2acf742bb4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/config.json",
+      "sha256": "af00c28236ce01769a23255258a55379cebcbfb03352be0347c5ddf646fb2141"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/upper-certificate.json",
+      "sha256": "c4edb800507ae0b031ff2547774ba455ff7e591b63e5c33c1d07cac8da58b50d"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/lower-certificate.json",
+      "sha256": "b915e685a09c370a5403cc136e6b57f68fbb1dccecc071eb2358e0c26195e73d"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/acceptance-receipt.json",
+      "sha256": "c4edb800507ae0b031ff2547774ba455ff7e591b63e5c33c1d07cac8da58b50d"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/phase-i-combined.plot.json",
+      "sha256": "c387e8e15f61d38bfebbef661cef309eb9a22d585a2a1e76f79189e97d63f1dc"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_F_Q/dev48_event_joint_cg_urbana_f/phase-ii-pair.plot.json",
+      "sha256": "4528ff032b372ff17c7dd55716e450405994a777eec82555347472006c576e4a"
+    }
+  ]
+}

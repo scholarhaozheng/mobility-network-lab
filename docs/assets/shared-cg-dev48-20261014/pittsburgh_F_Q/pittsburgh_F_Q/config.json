@@ -1,0 +1,27 @@
+{
+  "schema": "SHARED_CG_UNIFORM_RELEASE_Q_CASE_CONFIG_R1",
+  "case_id": "pittsburgh_F_Q",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "graph_type": "uniform_release_implicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection",
+  "source_dir": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\pittsburgh_F_Q\\solver",
+  "expected_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "physical_field": "arc_kind",
+  "physical_value": "physical",
+  "dt_seconds": 0.25,
+  "release_steps": 14400,
+  "horizon_steps": 38400,
+  "demand_factor": 1.0,
+  "expected_commodity_events": 20246400,
+  "relative_gap_tolerance": 0.0001,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "All original directed edges, all original positive OD and hourly uniform releases; exact capacity check on every physical entry time row. AON overcapacity remains OPEN, with no optimum claim.",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them",
+  "candidate_note": "Fresh Dev48 common-core regression; original registered inputs, H/Q identity, policy and resources unchanged."
+}

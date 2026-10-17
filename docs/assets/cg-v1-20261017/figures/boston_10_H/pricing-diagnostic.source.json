@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/result.json",
+      "sha256": "4ac2c8697b23b398a6216d3c0f02148cab287ff6df99fc68da1ae9c76a7440c4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/upper-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/lower-certificate.json",
+      "sha256": "da497b5fbb38cac00d3c99cb7502ffc0b444e0453121e17b905bae01d1db5aca"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/phase-i-combined.plot.json",
+      "sha256": "90675b591bbd0a39af6453703117b932d2d471f565f63ed09d72abcc197c8c5f"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/boston_10_H/boston_10_H/phase-ii-pair.plot.json",
+      "sha256": "7846223ece0670a45cf67e58eaff5ce1209bfab59ce36002ab4288bac3481211"
+    }
+  ],
+  "renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。",
+  "outputs": {
+    "png": "f920712e2295442a248cb34fb0783458b38508fe2d452630e8c759f937c05b98",
+    "svg": "d609c4962c99aedd7fccc18c99e90c52c03eeca15e99417198fee3d737a3aadc",
+    "plot.json": "9e8e2ff9ec4d16b490c2a70f28e20a94b1b7329417daf6040910b6094ac31038"
+  },
+  "case_id": "boston_10_H",
+  "run_id": "boston_10_H",
+  "model_id": "fa4fc7dc4740ea006e7819cecd85f189591a54003c19b1367871ad5a6d04292a",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "current_renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "current_renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

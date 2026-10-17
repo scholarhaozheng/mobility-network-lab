@@ -1,0 +1,33 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_CASE_CONFIG_R1",
+  "case_id": "urbana_F_H",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "source_dir": "E:\\mobility_computation_lab_v2\\work\\urbana_champaign_algorithm_transfer_r1\\representative_demand_20261011\\input",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\urbana_F_H\\solver",
+  "expected_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "dt_seconds": 30,
+  "horizon_steps": 480,
+  "release_steps": 120,
+  "demand_factor": 1.0,
+  "expected_commodity_events": 50160,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 30,
+  "phase_II_max_rounds": 30,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "original 30s H network, OD, release, horizon, cost and physical entry capacity; full legal travel/turn/all-node-wait/sink paths",
+  "release_relative_tolerance": 0.0001,
+  "graph_type": "implicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "checkpoint_every_rounds": 0,
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them",
+  "candidate_note": "Fresh Dev48 common-core regression; original registered inputs, H/Q identity, policy and resources unchanged."
+}

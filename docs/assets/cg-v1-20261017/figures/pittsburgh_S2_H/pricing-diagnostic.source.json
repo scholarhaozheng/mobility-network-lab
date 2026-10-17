@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/result.json",
+      "sha256": "e75eecb7332a7782d8a117309f73211fe7c1df3821f64fdf1220987dd41f3139"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/upper-certificate.json",
+      "sha256": "ea0b4c5abce615d3b3ef0926dac7166ce53d48d6b12d6f87f612cfd4642870d5"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/lower-certificate.json",
+      "sha256": "ce688092fdad32daad370f28d615be0d82ceb97bb4ab24910479bb88b31718d6"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/phase-i-combined.plot.json",
+      "sha256": "c077d7f87e6b7080cfa22f4d83f4570e02187d5769320fd9f9eeb1c32f3c0754"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/pittsburgh_S2_H/pittsburgh_S2_H_accepted_cold_retry_v1/phase-ii-pair.plot.json",
+      "sha256": "810ea036f226a187efa3247d9c01718a22aff3d0cbb2b940f4efae8b3e31eee9"
+    }
+  ],
+  "renderer_sha256": "e7fb28e9f00e71f01591a421b156d94cbdcfa00f6564805e382e7b24c9e4473a",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "caption": "完整逐轮定价诊断。当前L与已保存最佳L分别标示；最佳界不是原始曲线替代品。逐轮数据是求解器保存值，不能称每轮均已独立核验。",
+  "outputs": {
+    "png": "387b5c063ec1612aa75a9a42e38178ff4308c80012679c2a4ce1bfe36e2e06cf",
+    "svg": "987d5be421f1ebfa60cf8adf78d668389afa0346683d9e8393b0293f4f2f8b80",
+    "plot.json": "8547e917dd549505b7782e3dbdbdcc4ac1af36adaa266fc4014f09c24571f21b"
+  },
+  "case_id": "pittsburgh_S2_H",
+  "run_id": "pittsburgh_S2_H_accepted_cold_retry_v1",
+  "model_id": "INDEX_CONTRACT_SHA256:fbc0ed532afb2a808e174a9c1e518402de7b671cea42c29624f7f03550351ddc",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "current_renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "current_renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

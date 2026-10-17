@@ -1,0 +1,25 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_INDEPENDENT_CERT_R1",
+  "status": "PASS_FULL_GRAPH",
+  "original_source_hashes": {
+    "network.csv": "f451468b31e51dce09e62760768e5bd762437dc8c16ba3f43abfcfe68c340df0",
+    "access.csv": "ff57ab1e7e61a59fb2d1e1920cc279584c10698d312bf9cb3d07368f98faf123",
+    "assignment_od_pce.csv": "34b6ff081d51ad326871769c8231abf88a5a58b2904c3e160e500a5dfdadc4b6"
+  },
+  "positive_original_commodity_events": 50160,
+  "full_allowed_physical_arc_time_rows": 5455200,
+  "pool_columns": 123054,
+  "positive_columns": 50966,
+  "original_objective": 17385.35834453124,
+  "verified_full_graph_dual_lower_bound": 17384.910486107397,
+  "relative_gap_raw": 2.576066681899264e-05,
+  "max_original_demand_residual": 3.885780586188048e-15,
+  "max_relative_release_demand_residual": 8.620151946480508e-13,
+  "max_original_capacity_excess": 1.865174681370263e-14,
+  "maximum_full_graph_potential_inequality_violation": 1.7763568394002505e-15,
+  "bad_finite_reachability_arc_count": 0,
+  "original_capacity_rows_used": 706498,
+  "pricing_verifier": "all original physical/turn/time/wait/sink inequalities, separate numba kernel",
+  "producer_pricing_calls": 1764,
+  "independent_potential_method": "recomputed from original arcs, all waits, original H and saved sparse capacity dual; no producer potential files"
+}

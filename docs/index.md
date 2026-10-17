@@ -3442,21 +3442,21 @@ The [open-data explorer](volumes/overview.html#src-docs-open-data-explorer-docum
 [Complete overview and nine case volumes](volumes/overview.html) · [Architecture and project-map sources](volumes/overview.html#src-docs-architecture-document) · [Complete case/method coverage](volumes/overview.html#reading-section-3) · [Roadmap](volumes/overview.html#src-docs-roadmap-document).
 
 <!-- SHARED_CG_20261013_START -->
-### Shared CG: frozen 13 October 2026 increment
+### Shared CG: approved V1 / selected Dev48 runs
 
-The current rendered homepage and the nine existing city volumes include the
-16-instance CG catalog, separate Dev18 and historical evidence choices, and
-the Dev40/41 research checkpoints. The 19 comparison rows and all upstream
-four-stage calculations retain their existing identities. Four Dev18 instances
-still have an open original final-RMP pricing gate; three Q bound pairs are open.
+Nine city defaults and all 16 selected cases use their own Dev48 run. Thirteen
+meet their frozen branch-specific contract; three joint Q cases remain OPEN.
+The separate original raw pricing gate remains visible. V1 shows feasibility,
+true objective against a fixed same-run terminal bound, and physical movement
+flow. Same-run pricing diagnostics are a separate view. Historical algorithms
+are no longer mixed into current CG selectors; their local/Git records remain.
 
-[Current homepage CG atlas](index.html?atlas-view=full#shared-cg-urbana-champaign) ·
-[Versioned code and preparation](reproduction.html#shared-cg-20261013) ·
-[Instance and parent-demand catalog](assets/shared-cg-20261013/catalog.json).
+[Full homepage](index.html?atlas-view=full#shared-cg-boston) ·
+[Code and saved evidence](assets/shared-cg-dev48-20261014/REPRODUCTION.html) ·
+[Figure/run/data trace](assets/cg-v1-20261017/FIGURE_TRACE.csv).
 
-Homepage maintenance follows the current HTML/atlas workflow. Export the
-GitHub README with `python tools/build_readme_from_homepage.py`; this exporter
-does not rebuild the homepage from an earlier Markdown snapshot.
-
-CG figure maintenance (14 October): Boston, Hong Kong and Sioux Falls now use the selected three-card arrangement: Phase I total artificial flow beside the same-run per-OD heatmap, Phase II objective beside its signed relative gap to a fixed same-instance reference, and final physical-link movement flow. OD, time model and result selectors retain separate saved experiments; missing shared-core per-OD history is explicit. Independent pricing and earlier views remain in folded supporting records. [Per-result reproduction code](assets/shared-cg-20261013/RESULT_CODE_INDEX.html).
+Maintain existing HTML components with tools/visuals/integrate_cg_v1_20261017.py;
+export README with tools/build_readme_from_homepage.py. Do not rebuild this
+homepage from an older Markdown snapshot. The 19 comparison rows, four stages,
+other methods and nine canonical city volumes remain in place.
 <!-- SHARED_CG_20261013_END -->

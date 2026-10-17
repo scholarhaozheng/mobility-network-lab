@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/result.json",
+      "sha256": "e525c238da59bc0b048e8f81cdef8a75dc2de12b1bb12ea28e8fa3668d3a73b7"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/upper-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/lower-certificate.json",
+      "sha256": "76b57864be550ca94347d1206b49a7ac016a5676c2ae3f396f12d5b65d1c0f03"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/phase-i-combined.plot.json",
+      "sha256": "f73abec01c0d15292a846c3a175a75a4261e06188f7e8ea14c55f0bf876448ac"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/sioux_200_H/sioux_200_H/phase-ii-pair.plot.json",
+      "sha256": "a3ab8dc86c67c24e02097aa0a4d10002912ea8ff07a365697937c20cbb730168"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/sioux_200_H/physical-flow.plot.json",
+      "sha256": "2710027bd75c630ea70906a27a1d7693fed739f0c2be7555ab3c57867e2b80bd"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "sioux_200_H / sioux_200_H / Dev48. Full same-run movement vector: 64 directed model physical links, 63 positive and 1 exact zeros. Integrated over all 200 original release events and the full arrival tail; native volume, not hourly flow or instantaneous v/c. Recomputed original path cost 943155.5897709999; independent U=943155.5897709999. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Schematic Sioux topology, not geographic coordinates.",
+  "outputs": {
+    "png": "bb1dd1c4c726cec51e6a759c71736a072202023502a03b9d38e3ea8dc9d21180",
+    "svg": "6709de7260e03dea9bfac4591138ec15a6c3e5f34f706eb1bffb67a732956a64",
+    "plot.json": "2710027bd75c630ea70906a27a1d7693fed739f0c2be7555ab3c57867e2b80bd"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "sioux_200_H",
+  "run_id": "sioux_200_H",
+  "model_id": "INDEX_CONTRACT_SHA256:029a7324934be612e54698ee8be2dc44a3622958b10f85aed1b61ece64a9cc2a",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

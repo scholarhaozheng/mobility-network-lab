@@ -1,0 +1,250 @@
+{
+  "position": [
+    1,
+    2,
+    3
+  ],
+  "round": [
+    1,
+    2,
+    3
+  ],
+  "labels": null,
+  "objective": [
+    75.03632985794835,
+    75.03632985794835,
+    75.03632985794833
+  ],
+  "saved_history_states": 3,
+  "final_solved_endpoint": false,
+  "endpoint_note": "Every saved Phase II state is shown.",
+  "phase_ii_status": "SAVED",
+  "history_endpoint_difference": 0.0,
+  "case_id": "hong_kong_10_H",
+  "run_id": "hong_kong_10_H",
+  "unit": "vehicle-min",
+  "fixed_reference": 75.03632985794832,
+  "reference_kind": "verified_full_graph_lower_bound",
+  "reference_source": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+    "role": "same selected-run full-original-graph lower certificate",
+    "exists": true,
+    "bytes": 975,
+    "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca",
+    "source_mtime_utc": "2026-10-13T20:10:41.852100+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "reference_status": "SAVED",
+  "signed_difference": [
+    2.842170943040401e-14,
+    2.842170943040401e-14,
+    1.4210854715202004e-14
+  ],
+  "signed_relative_percent": [
+    3.787726489849557e-14,
+    3.787726489849557e-14,
+    1.8938632449247784e-14
+  ],
+  "relative_formula": "100 * (objective - fixed_reference) / abs(fixed_reference)",
+  "certificate_gap_raw": 1.893863244924778e-16,
+  "certificate_gap_formula": "(U-L)/abs(U)",
+  "display_scale": "symlog",
+  "display_linear_band_percent": 1e-10,
+  "composition": "left_right",
+  "provenance": {
+    "case_id": "hong_kong_10_H",
+    "model_id": "552877e54d71851891a8dc23a4d08fd14d1e6719ff60267713200912f0ef4847",
+    "model_id_status": "explicit signature if recorded; otherwise generated problem contract hash",
+    "code_package": "sparse_common_dev48_balanced_selection",
+    "source_core_build_id": "sparse_common_dev48_balanced_selection",
+    "solver_branch": "retained_shared_cg_solve",
+    "actual_adapter": "explicit path-CG solve.py adapter",
+    "actual_entry": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+      "role": "actual source code",
+      "exists": true,
+      "bytes": 16372,
+      "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+      "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "run_id": "hong_kong_10_H",
+    "source_run": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H",
+    "config_build_label": "sparse_common_dev48_balanced_selection",
+    "config": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\hong_kong_10_H__sparse_common_dev48_balanced_selection.json",
+      "role": "model/case configuration",
+      "exists": true,
+      "bytes": 1845,
+      "sha256": "2179514c18128ded9c7131a28752ee26d5c369051f80101e56ad34e4cb4ec2b0",
+      "source_mtime_utc": "2026-10-13T18:44:58.200920+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "result": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\RESULT.json",
+      "role": "actual selected-run producer result",
+      "exists": true,
+      "bytes": 11299,
+      "sha256": "de2c0b9d3646be93fff022c1c28d65aec7059282ae41be387c96af1637ea67c5",
+      "source_mtime_utc": "2026-10-13T20:10:41.095521+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "core": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\SOURCE_IDENTITY.json",
+      "role": "same Dev48 common source identity",
+      "exists": true,
+      "bytes": 3694,
+      "sha256": "0e0fd5ceaef09b63362f5fda615c247f26fb3fdde4ad000d757d22708b754473",
+      "source_mtime_utc": "2026-10-13T18:44:58.196928+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\hong_kong_cg_completion_r5\\case\\dynamic_node.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 365890,
+        "sha256": "5c74fe6d5a5bde3dc998eeb909e57f8751873387cb869656bfa6b736f9361c4e",
+        "source_mtime_utc": "2026-09-27T08:23:08.314357+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\hong_kong_cg_completion_r5\\case\\dynamic_arc.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 2912341,
+        "sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+        "source_mtime_utc": "2026-09-27T05:51:53.254828+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\hong_kong_cg_completion_r5\\case\\dynamic_demand.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 557,
+        "sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+        "source_mtime_utc": "2026-09-27T05:51:53.254828+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00",
+        "declared_sha256": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963",
+        "declared_sha256_matches": true
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\hong_kong_cg_completion_r5\\case\\dynamic_columns.csv",
+        "role": "original frozen input",
+        "exists": true,
+        "bytes": 25223,
+        "sha256": "663f62669debfac29eb130194e4a4f5e9f2b0576c8c41aaeb3b053bec61a2481",
+        "source_mtime_utc": "2026-09-27T05:56:11.289030+00:00",
+        "storage": "ORIGINAL_LOCAL_FILE",
+        "storage_compression": "none",
+        "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+      }
+    ],
+    "path_flow_inputs": [
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\COLUMN_POOL.npz",
+        "sha256": "82080874b32f493d8f16293f79a6383a6fc0c1170b52b9308bfa0d0d30a95e69"
+      },
+      {
+        "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\LAST_RMP.npz",
+        "sha256": "80244e6bcae12cda2bfa03959f5d0d2209200d971b5027797c477e48504f117b"
+      }
+    ],
+    "upper_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run independent primal/upper certificate",
+      "exists": true,
+      "bytes": 975,
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca",
+      "source_mtime_utc": "2026-10-13T20:10:41.852100+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "lower_certificate": {
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\INDEPENDENT_CERTIFICATE.json",
+      "role": "same selected-run full-original-graph lower certificate",
+      "exists": true,
+      "bytes": 975,
+      "sha256": "232c7a2c2d5915c7d9bbdc3aecc860b6d8efdd52cb94f18b7df4d0571012d2ca",
+      "source_mtime_utc": "2026-10-13T20:10:41.852100+00:00",
+      "storage": "ORIGINAL_LOCAL_FILE",
+      "storage_compression": "none",
+      "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+    },
+    "accepted_at_frozen_gate": true,
+    "primal_verified": true,
+    "full_graph_lower_status": "VERIFIED_SAME_RUN",
+    "optimality_open": false,
+    "producer_status": "SOLVER_PRIMAL_DUAL_CLOSED",
+    "index_snapshot_utc": "2026-10-14T06:00:27.201719+00:00",
+    "projected_by": "mainline read-only saved-data decoder; no new solve"
+  },
+  "right_panel_kind": "per_round_pricing_closure",
+  "per_round_lower_bound": [
+    67.67349773893368,
+    71.64314943433611,
+    75.03632985794833
+  ],
+  "per_round_gap_raw": [
+    0.09812356405161718,
+    0.04522050092316459,
+    0.0
+  ],
+  "per_round_gap_percent": [
+    9.812356405161719,
+    4.522050092316459,
+    0.0
+  ],
+  "per_round_gap_formula": "100 * (U_k - L_k) / max(abs(U_k), 1e-12)",
+  "per_round_minimum_reduced_cost": [
+    -0.7317542995000013,
+    -0.6577436810000008,
+    -1.3322676295501878e-15
+  ],
+  "per_round_column_count": [
+    21,
+    27,
+    29
+  ],
+  "relative_gap_gate": 0.0001,
+  "relative_gap_gate_percent": 0.01,
+  "per_round_bound_status": "Saved full-graph pricing bounds from this run; only the final independent certificate is independently verified.",
+  "progress_source": {
+    "path": "result.json",
+    "sha256": "de2c0b9d3646be93fff022c1c28d65aec7059282ae41be387c96af1637ea67c5",
+    "fields": [
+      "history.phase",
+      "history.round",
+      "history.true_primal_objective",
+      "history.full_graph_lower_bound",
+      "history.relative_gap_raw",
+      "history.minimum_reduced_cost",
+      "history.column_count"
+    ]
+  },
+  "reference_display": "Final fixed independent bound retained only as a dashed reference in the left panel; not used for the right-panel gap.",
+  "panel_order": [
+    "objective",
+    "per_round_lower_bound_and_signed_gap"
+  ],
+  "maintenance_revision": "20261015-pricing-progress"
+}

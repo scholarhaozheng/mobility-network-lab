@@ -1,0 +1,1321 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_SOLVE_R1",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_200_H__sparse_common_dev48_balanced_selection.json",
+  "config_sha256": "da085a97ad65b758ee927c55bd8e28b05ef4922cfeca0091d22e3e01fa84f7ae",
+  "source_files": {
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\implicit_graph.py": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\sparse_rmp.py": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\explicit_graph.py": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\fifo_seed.py": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+  },
+  "status": "SOLVER_PRIMAL_DUAL_CLOSED",
+  "model": {
+    "schema": "SHARED_CG_EXPLICIT_TIME_MODEL_R1",
+    "manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\sioux_200_H__candidate2_explicit_dag_manifest.json",
+    "manifest_sha256": "d434b9c586d74f4e9445e0ad0a07b87e5e78609317dd77539562e0af225b68fc",
+    "source_hashes": {
+      "dynamic_arc.csv": "788410034bd123069f6703cba0627e8177623f4ddc1b153f666b9d1af65bd97a",
+      "dynamic_demand.csv": "d3c8a44af15e89762a9edd69e67f6f35bb72db3f4cb6f811afb42470cdf58715"
+    },
+    "original_arc_count": 9406,
+    "original_time_node_count": 1192,
+    "original_positive_demands": 200,
+    "all_original_arc_capacity_rows": 9406,
+    "capacity_rule": "every original dynamic_arc.csv row, one shared resource",
+    "connector_rule": "exact source_<demand_id> and sink_<demand_id>_* original arc IDs"
+  },
+  "phase_I_artificial_mass": 0.0,
+  "phase_II_objective": 943155.5897709999,
+  "full_graph_lower_bound": 943155.589771,
+  "history": [
+    {
+      "phase": "I",
+      "round": 1,
+      "rmp_objective": 2200.6729954999996,
+      "true_primal_objective": null,
+      "artificial_mass": 2200.6720539999997,
+      "column_count": 200,
+      "capacity_row_count": 203,
+      "used_capacity_rows_before_exact_reduction": 637,
+      "exactly_redundant_capacity_rows": 434,
+      "fixed_commodity_count": 200,
+      "reduced_master_path_variables": 0,
+      "reduced_master_equality_rows": 0,
+      "minimum_reduced_cost": -1.999999999,
+      "full_graph_lower_bound": -14799.3269899,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 18,
+      "added_columns": 18,
+      "wall_seconds": 0.6410000000614673
+    },
+    {
+      "phase": "I",
+      "round": 2,
+      "rmp_objective": 0.0009431555897710001,
+      "true_primal_objective": null,
+      "artificial_mass": 0.0,
+      "column_count": 218,
+      "capacity_row_count": 206,
+      "used_capacity_rows_before_exact_reduction": 675,
+      "exactly_redundant_capacity_rows": 469,
+      "fixed_commodity_count": 182,
+      "reduced_master_path_variables": 36,
+      "reduced_master_equality_rows": 18,
+      "minimum_reduced_cost": -3.308722450212111e-24,
+      "full_graph_lower_bound": 0.0009431555897710001,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 0.6560000001918525
+    },
+    {
+      "phase": "II",
+      "round": 1,
+      "rmp_objective": 943155.589771,
+      "true_primal_objective": 943155.5897709999,
+      "artificial_mass": 0.0,
+      "column_count": 218,
+      "capacity_row_count": 206,
+      "used_capacity_rows_before_exact_reduction": 675,
+      "exactly_redundant_capacity_rows": 469,
+      "fixed_commodity_count": 182,
+      "reduced_master_path_variables": 36,
+      "reduced_master_equality_rows": 18,
+      "minimum_reduced_cost": 0.0,
+      "full_graph_lower_bound": 943155.589771,
+      "relative_gap_raw": -1.234317254645129e-16,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 0.6720000000204891
+    }
+  ],
+  "input_seed_columns": 200,
+  "initial_destination_pricing_calls": 200,
+  "rmp_calls": 3,
+  "destination_pricing_calls": 800,
+  "columns_added": 18,
+  "phase_I_status": "FEASIBLE_ARTIFICIAL_ZERO",
+  "relative_gap_raw": -1.234317254645129e-16,
+  "last_phase": "II",
+  "last_primal_audit": {
+    "max_original_commodity_residual": 0.0,
+    "max_relative_original_commodity_residual": 0.0,
+    "max_original_capacity_excess": 0.0,
+    "positive_columns": 202,
+    "used_capacity_rows": 650,
+    "objective_reconstructed": 943155.5897709999
+  },
+  "last_pricing": {
+    "minimum_reduced_cost": 0.0,
+    "full_graph_lagrangian_lower_bound": 943155.589771,
+    "negative_novel_candidates": 0,
+    "destination_pricing_calls": 200
+  },
+  "last_solved_column_count": 218,
+  "last_capacity_rows": 206,
+  "full_graph_potentials": [
+    {
+      "destination_node_index": 792,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_792.npz",
+      "sha256": "c663a512a63faafa21cc1b1b07d79d2cf8b26e1089599630a95149d1337920e7",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 793,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_793.npz",
+      "sha256": "77732cf9c0d29f638990564e42de95bde54b3aec63f7d1ac4aa21324a01620a0",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 794,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_794.npz",
+      "sha256": "5d01067f55a83f3adafa7df59d1f6e6371e3d23b4f583333485ae0fe6d9c6779",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 795,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_795.npz",
+      "sha256": "4b7e17027903c54af5c26c95654b50a2ff14eabb2b843c7205d3bef19284c4fa",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 796,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_796.npz",
+      "sha256": "afac4b538c371944bc8d69892f2ef4d96b9ff62717e96239a24fab8af80c8549",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 797,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_797.npz",
+      "sha256": "613ebfce3f86790cdb804b85d316eda2f92e2e042e30f3765f7d8731e04c623f",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 798,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_798.npz",
+      "sha256": "76d05b413ec5c1f27fb9bc436986e2269af0711970e14197610965d44f723361",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 799,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_799.npz",
+      "sha256": "3bac3c7d7f6fa5aea99989c201492f018a732efae9ad8459810962a1cf4d5b13",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 800,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_800.npz",
+      "sha256": "95746cbd3328e61b543d83fc361e9511328b218e0958905dba73db60794c4907",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 801,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_801.npz",
+      "sha256": "5e917cc244d9c3ed29127b311430fdc122a7b52d987fc42478a70930db865faa",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 802,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_802.npz",
+      "sha256": "0739d814fe34e9ca3f71715fcee34bf74e32c0e861190307ab728d68858a76fc",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 803,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_803.npz",
+      "sha256": "a0da650b428d3cd522ad3c222e25fe7b15cea130347264ded7bf10e12852bdb3",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 804,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_804.npz",
+      "sha256": "271e70b457a92464abbd9b54830e9e94874e6c027205a3a1a4694d2caa6e4525",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 805,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_805.npz",
+      "sha256": "f1f47f6dd8e0026f6044f4b80bc82cf5d07bcc537e507d6416d3faa4da9825a4",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 806,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_806.npz",
+      "sha256": "e85358bc77aacedce81c58c7fe97c574bed3f723919a255ab989234abd73bda4",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 807,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_807.npz",
+      "sha256": "0f2636d074fb00bb68a9365d6dde89c10697aede2e66b3f1eae0e328cf5e5158",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 808,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_808.npz",
+      "sha256": "c4a28791e919661c75770bdedd400e3e380d1408ec2185cdd94513193d30535f",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 809,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_809.npz",
+      "sha256": "925115f3870ac288eac7716eb868372209e2c4c13615e19748c33ba8dddbe010",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 810,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_810.npz",
+      "sha256": "11bb759c352cdaeb2023d25bb80594034735ea8b9f52eee751930e7c78d1fd23",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 811,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_811.npz",
+      "sha256": "1773be8862fdfe455e6b8338fca4f06a3b8ec2f533b7b121d5d66cb34c926702",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 812,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_812.npz",
+      "sha256": "cb33a850a908c86aad543ba61306aef0d015fb8c7273c91e4f06d9c2a5c85bac",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 813,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_813.npz",
+      "sha256": "1ad01a8e8c48bef25a8cd0346607aea3abeb320ed538ba7c7b2682d2ff9ac483",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 814,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_814.npz",
+      "sha256": "0c8e1b535b30cdc9617d8ff4d527168c3d20c35ed5e7b8c8ac3b479f29fe2089",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 815,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_815.npz",
+      "sha256": "b2049ab9676b4d3a5e62febb9d1e8328f30d7ca697cf84987f429ac2d1b23ed8",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 816,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_816.npz",
+      "sha256": "52a786deb84deb1fbf2fdba677ed6161fc17b175ca56aad299f08ed4c5b5e9f5",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 817,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_817.npz",
+      "sha256": "a14502f25f99e234b5017bee946e006f8dc3c3879ecd726cb7d79198158c521f",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 818,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_818.npz",
+      "sha256": "cf092d7bf735ef80a24a4d36991be19fa0600209cb267fbd2ee94aac3fa0156a",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 819,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_819.npz",
+      "sha256": "88e1ddcf57730a388211efbbae450ffcfc4ea52b010ec029d57c059dc8587409",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 820,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_820.npz",
+      "sha256": "ef71476e928bc09d4ac415c6eba7c2e74ed06d9de702cfa58a34bf01faf5acaa",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 821,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_821.npz",
+      "sha256": "50bf62098498896c1a73d90f647adb371ec5642e39a88f9c395879b0d919c7af",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 822,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_822.npz",
+      "sha256": "bb6e34b16dc18f0c63032dda5de3f9edad05bef0b0670361701683f5ea6ba8d1",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 823,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_823.npz",
+      "sha256": "4629038acfef4d7c0a5c6de0ac02a678e3b5bcfc5b09fb622bba15b3f14a8b9c",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 824,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_824.npz",
+      "sha256": "5da8745dd1696c9afc7a74568ee23f8d3d2fe18b6a37799eba690fcd7de5fe6c",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 825,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_825.npz",
+      "sha256": "f0e2c817dc30f654a7812d1b5f9df78dfacac10ee321f0abb5159943b5bd2fe4",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 826,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_826.npz",
+      "sha256": "82e3fa46585395c643ce8cdd009a0ed070a78822efdaa16f6004797fc2fdc5db",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 827,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_827.npz",
+      "sha256": "cd6a27ce4c4a0e257de1521cd11ed0c489c989fd0ace2f0103870ce9b4d19961",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 828,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_828.npz",
+      "sha256": "6301920d9aa2eb8dfcb986c50f65fd07b5ff9037978e684ee91fb1c5b335d3d9",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 829,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_829.npz",
+      "sha256": "2827241f7f3fe7c323f6688ccb47c8b364544dd0da43a8c6a2721f2117bfa772",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 830,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_830.npz",
+      "sha256": "d9ce128fd41a4ecdfc535edfa416a0d722bd7be15fcfa0762d872a36f6205745",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 831,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_831.npz",
+      "sha256": "349f4a2bb6f7dce78722e80eded1f4f10767f6b2db6861163b66e3aa3f590e96",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 832,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_832.npz",
+      "sha256": "337361b5227a223d4bf514f3d4f1654f4c11f55432547e2f50f1629e854835cc",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 833,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_833.npz",
+      "sha256": "aba958483cd191f48e90ab8613bee988a6453b1dd1b8afcd646fdb7ad17757bd",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 834,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_834.npz",
+      "sha256": "64e55cbe09c4e7ac6c48896aeb3f29eb4909c00b3fd98a9520d64feb8cd125c8",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 835,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_835.npz",
+      "sha256": "1c9e8a80415e8c8552309be5eddb12fea9a08d1a1022dc3f30d50b166d9fd315",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 836,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_836.npz",
+      "sha256": "c88ac91b68e5cf3e3022ff2164ac908aba4c6ba0d11cf5ad3ada054c6713cfe1",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 837,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_837.npz",
+      "sha256": "69a9b1ec7fcc01ff605a6d1ebc535032d2c87300d259efe73f84f6e23e1dfb0f",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 838,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_838.npz",
+      "sha256": "4fa698a9560fd526d3c52b575ef614dc8e9d29b6a17ed4888680a9a4118ed0dc",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 839,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_839.npz",
+      "sha256": "28dd8625d055bc048ac4c35ce1293031c652496481ca8fa8af6b1c0b9ad74321",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 840,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_840.npz",
+      "sha256": "a2c9dcdfcd1afd9ef90126db7977d23a43e3195146bb43ae61ea728bb0d37e52",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 841,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_841.npz",
+      "sha256": "b68efe35ed5cd853c0558e2b2a8f4825b0dd5e6d379deea21cdd7f174f859cf9",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 842,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_842.npz",
+      "sha256": "8acdcd6ec3fb098f1a084f3838724cf69f98c9870550b0f213131f30490aee61",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 843,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_843.npz",
+      "sha256": "8f354995bc2cafee3088705d13379da7cfec884ab0a1ddce71bffa801c0250f2",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 844,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_844.npz",
+      "sha256": "a5abbc7ca5fd99630be185dc239078a19f3f5ab7e4bc06bc8462cfac19617ecf",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 845,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_845.npz",
+      "sha256": "19a21309d8f9b7e323cfe60877bb09e16208182be64a942a43460cea343a3730",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 846,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_846.npz",
+      "sha256": "363cc3dcb0f4313e05f399faa61fcdb5f9c007afab9369f951e7eb8ac3c49e23",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 847,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_847.npz",
+      "sha256": "f81acc5e8bd85b26be9774a98f73e0d602197e84776b9624d4981068412c2f17",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 848,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_848.npz",
+      "sha256": "1eec4fb96d4041d528f8e014cd7c059903d97db36ed634e43a11c91e714eac45",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 849,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_849.npz",
+      "sha256": "f3feaecc5a2ece69f0268a7d79a9f0d080f2740b74f93173544d14363b7f7ea8",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 850,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_850.npz",
+      "sha256": "2cb872eaf9dd0acb490d1d8b3b66b48b1ac884307d04624063c87a21e6bd9505",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 851,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_851.npz",
+      "sha256": "51498ca3f3427a59498cf77f5e1fcc33f4cc74d51d23a1c90ac70df2ef0cba47",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 852,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_852.npz",
+      "sha256": "7317247b2e884c8c6e10321efc8abc5e8d2c2cbbf000561ebd6ecd64822727c7",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 853,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_853.npz",
+      "sha256": "8c0975ecd14ebe2da58d49618e2d749cc17de2e2797dcccca4ff44b0f3573b4f",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 854,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_854.npz",
+      "sha256": "3c7d2af560e5cdec46c6c4b5a19d3cc7f6434ed0f800e55043a9c957e399e516",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 855,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_855.npz",
+      "sha256": "f4bc1609624fe58d102f7178b0bf139135fd02a9a8c1d3b9a6be9c5190492dc9",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 856,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_856.npz",
+      "sha256": "d5c954d0f181cdfd10261461602d0ccf1f0dd0b68eb03a6257cd8db716ae08d7",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 857,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_857.npz",
+      "sha256": "63a9f3375abf59209b640e1b5c3178ea0b985b400db72dedce0920c3c608a29d",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 858,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_858.npz",
+      "sha256": "a3fc5af27aa8030ab7f503f5e9e17d0950a0d183f899bf6d61805c8fc312d843",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 859,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_859.npz",
+      "sha256": "4cdb9b58f3edd449a3ef42f60135677cb72fe82fded4d5f56543adc2281afa2f",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 860,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_860.npz",
+      "sha256": "422ffe0d400b13deee6b9f637c411b186a3453669fdc0e4c50f250b853246825",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 861,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_861.npz",
+      "sha256": "404b749243b4b7ce4694adba29e1659e63a58fba6d11f6b73d4de02d8b18e03f",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 862,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_862.npz",
+      "sha256": "f51af16daf87d182944c9ddb496588ed4899135997a1787f964ae5a7413feeae",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 863,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_863.npz",
+      "sha256": "4c4a06c29b51d19936a4cd07f85ead6b7eefa43d8c7b630c80053a34281fe55c",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 864,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_864.npz",
+      "sha256": "3b1444d6c6dd8bb6189aeb2e6b64f1bd9bfed69837cf6a4724bb8bf74f2ec31f",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 865,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_865.npz",
+      "sha256": "bc0870c58ee289d6e5b09ae3bb3792f3a3f0c36e32d342b38e6e9ecdd517ad2c",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 866,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_866.npz",
+      "sha256": "1bf0d65041687e38557bc274fd4c1bc12050688a6bc2e9d456ef9081c8c00fcd",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 867,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_867.npz",
+      "sha256": "591b0949fb6d2f64542fd8682218888d20c46a152c162fd3f72d59aa045de410",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 868,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_868.npz",
+      "sha256": "12fe01ca9646a0bccae6174c24c6a8e8201b03f3098056e167f8798c0c7abc95",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 869,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_869.npz",
+      "sha256": "9df408020322e754e2dda762e501da566d406c0ebdebc5c1402094f7dc98067e",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 870,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_870.npz",
+      "sha256": "c0cdf5323cb01e48ecb9e0b089a4f75635d3239d47fb8f828780891d3183de48",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 871,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_871.npz",
+      "sha256": "049b02400fbdd8bf339a0729a9c2f54e3e0df44afcefb56ccbad8e163b30216e",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 872,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_872.npz",
+      "sha256": "0c1574717026317d33b0daa6aec340ac32de37d1d68d5ff87121ef3b6f1bcf2a",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 873,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_873.npz",
+      "sha256": "f6d2a8ef567cad79d0a3fd20aa96adb24d43c1a9e232d86da8210d6c8a1d2ef3",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 874,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_874.npz",
+      "sha256": "5506c37fda963c0617c30db464d8fee3df736a7b4c02bc20f2f971187c1820b4",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 875,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_875.npz",
+      "sha256": "417b79e5985486ef1b3b9d60927844c670fabe2484fff5eb7e590e69f4fe0ded",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 876,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_876.npz",
+      "sha256": "b34b78129ffbe3972de573dde8a86aeaf0b1321bad9ec84b5146206118181d8a",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 877,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_877.npz",
+      "sha256": "9b40b62f707852905e7d91296b0ecb94bcc1e0c1a5fb3304aab53c1cdde60a6f",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 878,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_878.npz",
+      "sha256": "68bf9d0ec2ce5bbdd08ed4b1106e7c782ddc42d4a533323d755e296086a22c3c",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 879,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_879.npz",
+      "sha256": "0d92584b859ada185ec17da47e91e41ac82fdab8628214e23dc381a04d6348d7",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 880,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_880.npz",
+      "sha256": "8adf556bd3319e1ffe6759fcc3a3d6d1ff13e1affdbf0c7e4039b0a8070d4a7d",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 881,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_881.npz",
+      "sha256": "d469385775b4f49b2cb9328fdd53401eb300fb11e07e1f4483f6de1a5cecf1a6",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 882,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_882.npz",
+      "sha256": "6e11b05fddc077a363ed5626bdab9be69a1b578ab576adf6b63c24a3b4daffc0",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 883,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_883.npz",
+      "sha256": "50cafc04a4377ec83abcfbaed4ae0640e928ff15c423e78efc611666d705cc7c",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 884,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_884.npz",
+      "sha256": "5f44255917d1536fad4a0ca564984be82827e32fec663e1fee0050003fc52d49",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 885,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_885.npz",
+      "sha256": "8a85d81bd5669036e1f77a9254a873bb3c55dfa0ec6e569723903f3d2ca1bc89",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 886,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_886.npz",
+      "sha256": "8a52d7ba492b007416e75c04be5091bd7b7e3f21d45593820a17b0b2d61bcbd6",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 887,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_887.npz",
+      "sha256": "b256f9814af45023940e0b34e4113b63aef848ac2eba86438aa0d1c47a7cae15",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 888,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_888.npz",
+      "sha256": "7399cefec092e742667dcb5ac038052447be948b5112624c40f3cea590333312",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 889,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_889.npz",
+      "sha256": "dfa3305417e1bef6bc39d4fdb0f646cc3e47e25f0edf61dc88786758f8801b26",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 890,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_890.npz",
+      "sha256": "0c74c6b995b825f345d190bf308c9323c1a6e478403f2c710da95840ed861547",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 891,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_891.npz",
+      "sha256": "30823342245220335146369b2e0fd228866b63bc401164fdb58bcc25c78ef2f7",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 892,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_892.npz",
+      "sha256": "d9e9ea40e6f3453d2c13b20651f0d19edf37039c125514b9ab6d41a1388b9dd4",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 893,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_893.npz",
+      "sha256": "ee77e2032ced8ff93715ebb9ab29e84af34c567d18ea291604d0a6a8f9ea0411",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 894,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_894.npz",
+      "sha256": "b1777618bd91e5358eb17e1c6cce74ddea48af4c84de432df84a9a147916e12e",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 895,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_895.npz",
+      "sha256": "73cc054ae2d744a2a2b6d8401cdbd4ed8fb2280215f08ebf1e62e7a25e826208",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 896,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_896.npz",
+      "sha256": "15bbcd3992c4c9cf8fdc8799072996aad7cb84705d4eface97f76a87533389d4",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 897,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_897.npz",
+      "sha256": "50d21d1d8734d2f7b49aaf81f7345df47cc1dceffba8199b149b0f2d0431d501",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 898,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_898.npz",
+      "sha256": "26ebade87d2298219786430d7ad2b14ca02e22e8228910b49b595aa83a8e6e14",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 899,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_899.npz",
+      "sha256": "c7983322ff4246510ebed1ad1929731b3eff5528b06a396c220a6dc4c7fbb274",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 900,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_900.npz",
+      "sha256": "0cd8501734e0ff46c99086a420b63a490c34c257a1437544cdf223367dd810da",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 901,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_901.npz",
+      "sha256": "cc498bace472c19e5d2e17b5a2797eae5ea6091d545adfe7020af0470aed5815",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 902,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_902.npz",
+      "sha256": "4695a5506726914e225c4a84e9d60326b548e2a117afad86751cf4ac3180db23",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 903,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_903.npz",
+      "sha256": "3fd39e5ab64c10d635ee8b4b09630c321b3c8ea3294cc4d5fe983b74622fa460",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 904,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_904.npz",
+      "sha256": "fba5f0b265912212b2f26ecd0012ca931822392c59449906e23e2fce952227fd",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 905,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_905.npz",
+      "sha256": "f5d13ccc6d00c9a0c1153a512ee55d0f5f9fa1138354365a0eaaec9e03f52a45",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 906,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_906.npz",
+      "sha256": "8b7355a46ab523e0da8ddc873420e24969c8a2cd59a152ad938d82a87500b2ec",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 907,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_907.npz",
+      "sha256": "dd035ebe1f6b9d9a12abb5f1967200dcee08c34dd4ef20aee5bf92bbcf799822",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 908,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_908.npz",
+      "sha256": "f9af54482a1547a0f9cebc953aa2b1da1f2e7fde3d9b2bd74a3c4d3fae2c62a3",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 909,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_909.npz",
+      "sha256": "0f4bbe746bd3f40151ebeebfdc8813e3c3a72da39221312da1582e3088fa2a09",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 910,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_910.npz",
+      "sha256": "9f2f6109ff6d9b02cd96b48aa9b1607778dedb3f03325140fef6ed05ebd3be86",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 911,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_911.npz",
+      "sha256": "f57399b169c1c0f67082408f6ff3ffb1336aac42e6db1b8222945bf32b8374fc",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 912,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_912.npz",
+      "sha256": "a2d83910e502da2c2e2d451c7cbb1c5842f4bccc3130b60cd4b731479d43cc78",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 913,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_913.npz",
+      "sha256": "2aa5a6cb9a6893eb50dd133ec46b4a3f3e326ee5edaa9b822f7bdbf0db30d369",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 914,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_914.npz",
+      "sha256": "87ba3d7ac4d1177ec585032e14ff2dff9958880517349d24c12810b3656e02e0",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 915,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_915.npz",
+      "sha256": "1dc1c6d23f61ef049fae401afb75afe7edbadc99a4bee1c24c804715e021aacf",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 916,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_916.npz",
+      "sha256": "46610a5657c3824c6b76b84e4f919247bd237e84d496fe482e54418ae6b60c87",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 917,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_917.npz",
+      "sha256": "aad398bd9bc806f061b508f0e055b40bd4fff3ebfe2f7e8e89e10e35bbd8d5e9",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 918,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_918.npz",
+      "sha256": "0f145e3eb8d4bb2f909ad3921cf2d8c038c75681ff5c1bcd5f917028480997bc",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 919,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_919.npz",
+      "sha256": "5ecfbfb293f69e88b8ca036f0692654452bb552bf01fac0f3d4e0d59fd8ffd22",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 920,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_920.npz",
+      "sha256": "b220dc8d5f9694ebe9c2b37e34d742aea5c3b230beb43c69352d20ace48997d8",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 921,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_921.npz",
+      "sha256": "99a4eb1fc55073dbd6ccbecca367c889480db205875c076acd69e5fd5f3026a4",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 922,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_922.npz",
+      "sha256": "db4dab633759b42c7b517327d1e5e994ab86185936f191ffe3d9ff4eeb2723a0",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 923,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_923.npz",
+      "sha256": "8c2a625f7b7f6d1927ae80976d0ca2e7be369b286418d3168c9505351e790ac3",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 924,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_924.npz",
+      "sha256": "125872531210c6ad25a7a4849f6b32cf11ed511ed1cd8045a34eefdfa9278f0a",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 925,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_925.npz",
+      "sha256": "09c3041acf260016ea41045a736fd473331063fd0275c0932c4b91bc0b77c3ea",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 926,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_926.npz",
+      "sha256": "d0dd9d90790fb361de82cb90827bd5e2bd76b4f6c7e8ada4c43fec7c5bc21606",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 927,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_927.npz",
+      "sha256": "17c7fd52ebed3f03b06fdedb61ade505abadedab7dee159c4c4ecf88433d2280",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 928,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_928.npz",
+      "sha256": "5a988adc805bd9544c6f267263a816d10112aebf52ba02c7b2f0de14d27cc666",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 929,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_929.npz",
+      "sha256": "de151366b31ab28051e11a9e682d378876af5d843c5f490abbfdc6168e8c06a2",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 930,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_930.npz",
+      "sha256": "77e5f5d4cf6d481f31cf1f1fe212da80b4387c5e7c41e9d8db5822d7fc11e217",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 931,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_931.npz",
+      "sha256": "f972c88ee7bd9e4a9ff603a59212d9038e563488f9654d5450f057dbf2a6a4a8",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 932,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_932.npz",
+      "sha256": "b433527bf25d4040a897671249f572240e4737a3ce915950a9cc0f2909db86b0",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 933,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_933.npz",
+      "sha256": "88823a9b3488e791035734bd28072a9e6eccd86a433c2f4a49f673837694305c",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 934,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_934.npz",
+      "sha256": "9121e5345ed3b0468eae34d6e41fa32b66b9be2ac7ed77e9c671235ad5bc334d",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 935,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_935.npz",
+      "sha256": "ecad380d2de03770846962b39d6093744dbdda6edd2c3bede59efdf10a4c8895",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 936,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_936.npz",
+      "sha256": "7c94703f83d1253d8ef9021623473f85ca365755e5d850c13ceb117cc7790f8e",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 937,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_937.npz",
+      "sha256": "93611912a97c1cd1f2f574fc7200aaad4ef1d7b006350934a9a70a0a59c089bf",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 938,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_938.npz",
+      "sha256": "0fee4f4698a0aacf63f568b6d7e83a946667b6068438b3f08f8101754dc39299",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 939,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_939.npz",
+      "sha256": "7b5ee1c15358e52ddf23fa414435826e0b5440dc1efc18088bfd406a96f3a8fe",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 940,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_940.npz",
+      "sha256": "efb3e75f43087888dbc2538ef6b8b81deee21e8a147fb0fd291905a30fd87497",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 941,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_941.npz",
+      "sha256": "585fba006aa0977adc0e8bba00d58daa26a6003f4d065e898f0b71ea13d520ef",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 942,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_942.npz",
+      "sha256": "e6e8a9caa0007b93285f015dcc197d349add6f9492ff3671d589eac08cc3fc5c",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 943,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_943.npz",
+      "sha256": "2fdb554e370bd619a34df7150a03d791b23b670926e5554c7abaa6e640b028f6",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 944,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_944.npz",
+      "sha256": "0c74c34dad13f8ac8065ff9ec4e63d462d2a97d8eb55593d54e635058a90840c",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 945,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_945.npz",
+      "sha256": "a4d7b30d84c654304d15f18abcea8cec757a3e215abf98686814227b3490746b",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 946,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_946.npz",
+      "sha256": "3482a77058b377e2cda65788370deebea4f0a706780e4d239d782c5c1a9b4821",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 947,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_947.npz",
+      "sha256": "deab50cb7c29890c6ee4ae75b3d42acee8a574bff48eb4a056b3e0067ae0cf14",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 948,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_948.npz",
+      "sha256": "f45d3da46beb992a9dbff92ea36d105acfd1f22fc82367243ad60d82101f7a82",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 949,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_949.npz",
+      "sha256": "37c0197672ccf1034c825973fe8483bfac24d838d022168bdb7e42beb32deeca",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 950,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_950.npz",
+      "sha256": "a540b93d057427e3481bd4082da11e639cccd4a0257d1a2274328b43878600f5",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 951,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_951.npz",
+      "sha256": "fb8aea8c5bb6d7f76797b55805e12f74df1d334440fb62bb7db56e6cfccaf373",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 952,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_952.npz",
+      "sha256": "3ee65de1ee509505d7984a88d7149d1c6f4bf16ad4090e7f815ac95cbfddc571",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 953,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_953.npz",
+      "sha256": "2948685489b0be5efb4de9fa4ec5a4d01a2164b1a622e6a8652a2a55b758fb05",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 954,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_954.npz",
+      "sha256": "f7f2635ccb17de272228ff5b827b6520a0d9231cc43eb8c1ebc6f7a5b72f87df",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 955,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_955.npz",
+      "sha256": "bcee9dd3c7e38b030c8820df98ba359af03db8e112c961cfd6c4842b8319ba59",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 956,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_956.npz",
+      "sha256": "454e17eada4d532ecd785e75b311d9184aaaee36dec21a835e81e084c029f596",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 957,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_957.npz",
+      "sha256": "1ff6298692d0613c8b7a62d965f5dcabac1b1b210c4c62e36067d382bb506bab",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 958,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_958.npz",
+      "sha256": "96147cdef9276fc568af9066722abc4d9f414de7bee1e6a6b3595253d37e8cd3",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 959,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_959.npz",
+      "sha256": "97ac7c2da451f1bc93773d1c146ca2ca91b0144df8118075fb52a723e85efdb0",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 960,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_960.npz",
+      "sha256": "d6ce142c7732adab70b8e1c77a22371d81ae249ea63be01af5bc5bc03f3c21b1",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 961,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_961.npz",
+      "sha256": "87bb6221d24d6516478b8ed28dcba2b53201ab5f9f856bbee06e3ff0b720dd72",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 962,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_962.npz",
+      "sha256": "85623135444a84bbc24dc86362cd8a0845470114f0e8cf5c83f12b4fb3c32dc4",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 963,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_963.npz",
+      "sha256": "9afa069082b14300ffb06e1d09dc401026ea57ddf738920fee396fd818a80b08",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 964,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_964.npz",
+      "sha256": "bd27e92bd0d276621b6c37e5c7838aa939babce10b574c4360be4993b5cbca8c",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 965,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_965.npz",
+      "sha256": "cd4c9b24cb83ee4ac91d623184b328bb1a2a60a522995e6d881742fd29ae0471",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 966,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_966.npz",
+      "sha256": "efb63e64e8a691585896bb649cd219a40cd20582ff2a99faf221ebfbceeaa99f",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 967,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_967.npz",
+      "sha256": "4db571c5c19431999bf9b6b9e691067cef6c24e40d2b97c0915ae66c2968a73c",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 968,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_968.npz",
+      "sha256": "9ca07c6546c1303671432fa78492ce1d670d894478bdc17ea3af898929aafba1",
+      "finite_states": 713
+    },
+    {
+      "destination_node_index": 969,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_969.npz",
+      "sha256": "f11a4b79003ab0eee405853dd701c595cabced5e71a9ad9d96978933ab470ab9",
+      "finite_states": 643
+    },
+    {
+      "destination_node_index": 970,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_970.npz",
+      "sha256": "446fe8d1b0cf15700acc9222f1f319eef2349673e57c26616b1112a3377cc9c0",
+      "finite_states": 605
+    },
+    {
+      "destination_node_index": 971,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_971.npz",
+      "sha256": "e5ad515bcc7867c03301cf397da7bc5df8764c4e961eb4c509f3047af119e6a4",
+      "finite_states": 627
+    },
+    {
+      "destination_node_index": 972,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_972.npz",
+      "sha256": "4d895451114b45808e84db7fe43b3f82a4daba3412acc5ee914c324cd9e98a1c",
+      "finite_states": 663
+    },
+    {
+      "destination_node_index": 973,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_973.npz",
+      "sha256": "8c1db0b0729119da433d95898decf1494596fe2f35e5aab34f31bf2eb250c803",
+      "finite_states": 714
+    },
+    {
+      "destination_node_index": 974,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_974.npz",
+      "sha256": "0ffd29feb22f5c33c2f3654ab8243567f9f9b590f8586f7f4d6f140e594c075f",
+      "finite_states": 705
+    },
+    {
+      "destination_node_index": 975,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_975.npz",
+      "sha256": "766014726abb88d799088e90acdae762773a10f42b1aa6a30624eba41d1a7fd0",
+      "finite_states": 699
+    },
+    {
+      "destination_node_index": 976,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_976.npz",
+      "sha256": "3da08caa5fece355e737deb87877281cd6636d7673b99950206dfd17b7e17a56",
+      "finite_states": 709
+    },
+    {
+      "destination_node_index": 977,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_977.npz",
+      "sha256": "d79da69125d183d50276079999677383cdf0d4b2a4c783f2625e7861bdd3c1f8",
+      "finite_states": 707
+    },
+    {
+      "destination_node_index": 978,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_978.npz",
+      "sha256": "8121e4b6d23adc7707a56ed2d6dd4e7df830e22c10b1dafc8df13ba155b7827d",
+      "finite_states": 737
+    },
+    {
+      "destination_node_index": 979,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_979.npz",
+      "sha256": "14cb6c618920029e34724bb0cc261399e2c91465f6e9b51cd2df0585cece687d",
+      "finite_states": 704
+    },
+    {
+      "destination_node_index": 980,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_980.npz",
+      "sha256": "78b3d1075aecba15d7b79758ede12f05fc72f45f5edb7af614d8fb2b036caaa9",
+      "finite_states": 695
+    },
+    {
+      "destination_node_index": 981,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_981.npz",
+      "sha256": "5c9c3f6f524cf1b845dafa6b3b77240e962640ce54d4334cbf70367baa577aa5",
+      "finite_states": 676
+    },
+    {
+      "destination_node_index": 982,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_982.npz",
+      "sha256": "245709157cec5c33ab0fcb007c0a9d411c6e020084af85adf2eb6907ce9c59cc",
+      "finite_states": 653
+    },
+    {
+      "destination_node_index": 983,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_983.npz",
+      "sha256": "bc05d37b4e0f43a7b470001fadf2edfc2d166b5264173e34dd278132ddc1e40b",
+      "finite_states": 673
+    },
+    {
+      "destination_node_index": 984,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_984.npz",
+      "sha256": "2b3149b594f2f1cb5b6b20250e70233ae967231cbcbb172670643343190bff9a",
+      "finite_states": 689
+    },
+    {
+      "destination_node_index": 985,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_985.npz",
+      "sha256": "9caa4ebd2057ee1d579e31bca0256c59fb041bb75011f0652f670d01c7d99122",
+      "finite_states": 668
+    },
+    {
+      "destination_node_index": 986,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_986.npz",
+      "sha256": "cabb111757e49407cfc4b08cfc1ba8a3563d519821d9239acfc3c2904c48f866",
+      "finite_states": 687
+    },
+    {
+      "destination_node_index": 987,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_987.npz",
+      "sha256": "ac93c04abc1be5267235bf99de9ee70b59f470e32a00b1cfd5be96b4ed520c53",
+      "finite_states": 696
+    },
+    {
+      "destination_node_index": 988,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_988.npz",
+      "sha256": "2bec9096655d80d312f5256666a2f63263385e49a4f79071dc282d804026bad1",
+      "finite_states": 683
+    },
+    {
+      "destination_node_index": 989,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_989.npz",
+      "sha256": "633a87b5218336d5b8eb8c120610c3194101cbef0a80442677150344c3686693",
+      "finite_states": 650
+    },
+    {
+      "destination_node_index": 990,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_990.npz",
+      "sha256": "9591740813f3e9cccc98d23b902585dbef8bdf6d5e2a0c15b08689291acdc469",
+      "finite_states": 734
+    },
+    {
+      "destination_node_index": 991,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\sioux_200_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_991.npz",
+      "sha256": "d52dbc5b63146fb2e57fd27c2a907ff374eab1f691d7d9310fc06da6f2e5b4fe",
+      "finite_states": 714
+    }
+  ],
+  "wall_seconds": 1.6880000000819564
+}

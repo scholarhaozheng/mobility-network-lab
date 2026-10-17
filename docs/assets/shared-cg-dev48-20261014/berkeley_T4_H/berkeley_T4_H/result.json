@@ -1,0 +1,165 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_SOLVE_R1",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\berkeley_T4_H__sparse_common_dev48_balanced_selection.json",
+  "config_sha256": "5448f4bcbd3dacd6302d6f4800361ffd4d50f05be69e9090f9f5e20b7b0090ad",
+  "source_files": {
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\implicit_graph.py": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\sparse_rmp.py": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\explicit_graph.py": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\fifo_seed.py": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+  },
+  "status": "SOLVER_PRIMAL_DUAL_CLOSED",
+  "model": {
+    "schema": "SHARED_CG_EXPLICIT_TIME_MODEL_R1",
+    "manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\berkeley_T4_H__candidate2_explicit_dag_manifest.json",
+    "manifest_sha256": "e40d1c7f2fff5b33afea7954245096ca1337f5df4e6b8a4d4b54f330c666f3b1",
+    "source_hashes": {
+      "dynamic_arc.csv": "2868d90242364545eefe253c86d8281151edf7cf5f617b5c66833d861c07b757",
+      "dynamic_demand.csv": "1977c967cf140a89d7e37af6c909a421760959d1ab1d3b21182fb1c0c03d93ed"
+    },
+    "original_arc_count": 250886,
+    "original_time_node_count": 92578,
+    "original_positive_demands": 4,
+    "all_original_arc_capacity_rows": 250886,
+    "capacity_rule": "every original dynamic_arc.csv row, one shared resource",
+    "connector_rule": "exact source_<demand_id> and sink_<demand_id>_* original arc IDs"
+  },
+  "phase_I_artificial_mass": 0.0,
+  "phase_II_objective": 43.667424408006426,
+  "full_graph_lower_bound": 43.66742440800641,
+  "history": [
+    {
+      "phase": "I",
+      "round": 1,
+      "rmp_objective": 70.82226936270406,
+      "true_primal_objective": null,
+      "artificial_mass": 70.82226931911947,
+      "column_count": 4,
+      "capacity_row_count": 67,
+      "used_capacity_rows_before_exact_reduction": 396,
+      "exactly_redundant_capacity_rows": 329,
+      "fixed_commodity_count": 4,
+      "reduced_master_path_variables": 0,
+      "reduced_master_equality_rows": 0,
+      "minimum_reduced_cost": -58.999999999931,
+      "full_graph_lower_bound": -442.4999999558151,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 1,
+      "added_columns": 1,
+      "wall_seconds": 1.953999999910593
+    },
+    {
+      "phase": "I",
+      "round": 2,
+      "rmp_objective": 4.366742440800643e-08,
+      "true_primal_objective": null,
+      "artificial_mass": 0.0,
+      "column_count": 5,
+      "capacity_row_count": 129,
+      "used_capacity_rows_before_exact_reduction": 488,
+      "exactly_redundant_capacity_rows": 359,
+      "fixed_commodity_count": 3,
+      "reduced_master_path_variables": 2,
+      "reduced_master_equality_rows": 1,
+      "minimum_reduced_cost": -6.676500000000023e-11,
+      "full_graph_lower_bound": 4.308654370781845e-08,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 1.9689999998081475
+    },
+    {
+      "phase": "II",
+      "round": 1,
+      "rmp_objective": 43.667424408006426,
+      "true_primal_objective": 43.667424408006426,
+      "artificial_mass": 0.0,
+      "column_count": 5,
+      "capacity_row_count": 129,
+      "used_capacity_rows_before_exact_reduction": 488,
+      "exactly_redundant_capacity_rows": 359,
+      "fixed_commodity_count": 3,
+      "reduced_master_path_variables": 2,
+      "reduced_master_equality_rows": 1,
+      "minimum_reduced_cost": -0.0671700000000004,
+      "full_graph_lower_bound": 43.08302005495278,
+      "relative_gap_raw": 0.013383073560585174,
+      "novel_negative_candidates": 1,
+      "added_columns": 1,
+      "wall_seconds": 1.9849999998696148
+    },
+    {
+      "phase": "II",
+      "round": 2,
+      "rmp_objective": 43.667424408006426,
+      "true_primal_objective": 43.667424408006426,
+      "artificial_mass": 0.0,
+      "column_count": 6,
+      "capacity_row_count": 176,
+      "used_capacity_rows_before_exact_reduction": 558,
+      "exactly_redundant_capacity_rows": 382,
+      "fixed_commodity_count": 3,
+      "reduced_master_path_variables": 3,
+      "reduced_master_equality_rows": 1,
+      "minimum_reduced_cost": -1.7763568394002505e-15,
+      "full_graph_lower_bound": 43.66742440800641,
+      "relative_gap_raw": 3.25433773753701e-16,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 2.0
+    }
+  ],
+  "input_seed_columns": 4,
+  "initial_destination_pricing_calls": 4,
+  "rmp_calls": 4,
+  "destination_pricing_calls": 20,
+  "columns_added": 2,
+  "phase_I_status": "FEASIBLE_ARTIFICIAL_ZERO",
+  "relative_gap_raw": 3.25433773753701e-16,
+  "last_phase": "II",
+  "last_primal_audit": {
+    "max_original_commodity_residual": 0.0,
+    "max_relative_original_commodity_residual": 0.0,
+    "max_original_capacity_excess": 0.0,
+    "positive_columns": 5,
+    "used_capacity_rows": 488,
+    "objective_reconstructed": 43.667424408006426
+  },
+  "last_pricing": {
+    "minimum_reduced_cost": -1.7763568394002505e-15,
+    "full_graph_lagrangian_lower_bound": 43.66742440800641,
+    "negative_novel_candidates": 0,
+    "destination_pricing_calls": 4
+  },
+  "last_solved_column_count": 6,
+  "last_capacity_rows": 176,
+  "full_graph_potentials": [
+    {
+      "destination_node_index": 92570,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_92570.npz",
+      "sha256": "35779d344ced8ce5e7b517f07e4be5df71a3cb53eb13e0e1358156ad1f27696a",
+      "finite_states": 68393
+    },
+    {
+      "destination_node_index": 92571,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_92571.npz",
+      "sha256": "34c709feb6d72d0f4f1f8e069505bbd5c00906496bd6c1f5daaaae607806871d",
+      "finite_states": 70867
+    },
+    {
+      "destination_node_index": 92572,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_92572.npz",
+      "sha256": "4152b72d86948405ae24acbb02aa4d5fa094775a20179574035ecd163322c0ad",
+      "finite_states": 38519
+    },
+    {
+      "destination_node_index": 92573,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\berkeley_T4_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_92573.npz",
+      "sha256": "689fc6eddc5c78eeba67a234b0bef4ecfba357506906beb431ef4233444b7e4b",
+      "finite_states": 70867
+    }
+  ],
+  "wall_seconds": 2.0939999998081475
+}

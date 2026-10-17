@@ -1,0 +1,42 @@
+Dev48 selected actual runs — source and reuse notice
+
+All figures and modeled OD/cost/capacity/flow outputs are engineering research
+scenarios, not observed traffic, individual trajectories or policy measurements.
+Source snapshot: 2026-10-14 06:00 UTC. Mainline replayed saved paths, costs,
+demand and changed capacity rows, checked original signatures, and plotted the
+actual runs. Existing independent certificates retain their original author and
+scope. No solver, new pricing, source-pool construction or new independent dual
+optimization was executed for this website preparation.
+
+Ann Arbor, Urbana–Champaign, Ithaca, Berkeley, Chicago and Pittsburgh:
+© OpenStreetMap contributors. OSM-derived road databases remain under ODbL 1.0:
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+The minimum same-version model network/access/OD input tables are supplied in
+examples/shared_cg_dev48_20261014/inputs or referenced at identical existing
+repository paths by the case input manifest. Deterministic model construction
+code generates expanded networks and intermediate path pools at runtime.
+Original city source/change/geometry records remain in the canonical city
+volumes. See the linked source and input instructions for database access and
+reconstruction; no large solver-checkpoint archive is required. Independent
+original analysis code is not relicensed as ODbL by this statement.
+
+Ann Arbor parent ChoiceFW: service date 2026-10-05; historical engineering
+scenario, not a current journey planner. Transit scheduling, geographic, and
+real-time data provided by permission of AAATA/TheRide.
+https://www.theride.org/business/software-developers
+No logo, endorsement, U-M/TheRide GTFS or substitute timetable is included; no
+new U-M feed redistribution permission is asserted. Public model demand is
+aggregated generated OD, not individual travel records.
+
+Boston: existing GMNS Plus 21_Boston source identity and source notice retained,
+commit 116447ab641cca1ed34797d019c8e704063393c3; CG model arcs are distinct from
+MBTA raw feed and GPS data. Hong Kong: existing government road/source index
+and https://data.gov.hk/en/terms-and-conditions remain applicable. Sioux Falls:
+Transportation Networks benchmark https://github.com/bstabler/TransportationNetworks
+with schematic geometry and native cost×volume; physical seconds are unverified.
+
+Inherited source terms and notices in each canonical city volume continue to
+apply; no blanket license conversion is asserted. Exact frozen code remains
+under the repository's existing code license. Portable adapters are separate
+new files and do not re-sign old numerical certificates.

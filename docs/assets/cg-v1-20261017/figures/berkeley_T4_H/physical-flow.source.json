@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/result.json",
+      "sha256": "2dd3f39cbe573f64fb2544710892dda933324576208543bf848dd95b2504beb9"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/upper-certificate.json",
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/lower-certificate.json",
+      "sha256": "e9235a744ec897de9bf6cefcccc2ab4ef54e9428ecae5e3a2e6b3a43b33b7973"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/phase-i-combined.plot.json",
+      "sha256": "4aace389d5d36500a91a34122b455f1f3e7d309eb2e8be28f06d54e69caaa4d4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/berkeley_T4_H/berkeley_T4_H/phase-ii-pair.plot.json",
+      "sha256": "a334505967c3e16ee669aa0a640f44eed30ecae67aade8a37af1756897b87dbc"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/berkeley_T4_H/physical-flow.plot.json",
+      "sha256": "595e98a81ccbcfc9aab120b671439a6c7fdb2bb83fa1649089301f7e4b48eb7c"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "berkeley_T4_H / berkeley_T4_H / Dev48. Full same-run movement vector: 2,013 directed model physical links, 340 positive and 1,673 exact zeros. Integrated over all 4 original release events and the full arrival tail; PCE, not hourly flow or instantaneous v/c. Recomputed original path cost 43.66742440800643; independent U=43.66742440800643. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Model scenario, not observed traffic.",
+  "outputs": {
+    "png": "52d922f165447d1b370d2fbca2e8c327edfaf32667a2e08fc7b8f99641d91ae1",
+    "svg": "8c23146503de07ffb3fe8f23f9084c537402731999048b8dd699f28c1a1860c8",
+    "plot.json": "595e98a81ccbcfc9aab120b671439a6c7fdb2bb83fa1649089301f7e4b48eb7c"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "berkeley_T4_H",
+  "run_id": "berkeley_T4_H",
+  "model_id": "f0f3d0eb1caaf5b5632b7dd4337770f84357e555a00120993443003052b6fd1c",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

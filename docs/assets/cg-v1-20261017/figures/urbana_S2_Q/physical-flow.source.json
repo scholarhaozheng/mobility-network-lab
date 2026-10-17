@@ -1,0 +1,50 @@
+{
+  "source_dir": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/result.json",
+      "sha256": "90bd54c6f6fb5e8d69c201af507cdf1f156b506c31816944bcff09497fc09a30"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/upper-certificate.json",
+      "sha256": "ae658f1d48d6e5b0ae2b4730d7a3d5ab87a73c3b041d054e728e090d0acdc0cb"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/lower-certificate.json",
+      "sha256": "75775300d078757c3867936859f57e89f7c3bf3bc0dab1df7fb3bfc96534fd90"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/phase-i-combined.plot.json",
+      "sha256": "14f4aa902a47f21fc23335d1b58bff675c21f18d91d68e7d9f732e1fbe41f640"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/urbana_S2_Q/dev50_event_joint_cg_urbana_S2_Q/phase-ii-pair.plot.json",
+      "sha256": "7f03578082b99a1c19d55e32c9959211ed3ff564eacbc03675860709e45645b9"
+    },
+    {
+      "path": "assets/cg-v1-20261017/figures/urbana_S2_Q/physical-flow.plot.json",
+      "sha256": "e9a06daa742239937d921803ba8f27546043b232646c295113d32924609ba312"
+    }
+  ],
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "retained_map_renderer": {
+    "path": "tools/visuals/render_cg_dev48_20261014.py",
+    "sha256": "6f971b7d89252436819d4629984fdd3609419f10a02f57fe0dbd7c4200424ca6",
+    "original_export_sha256": "70e8aef29ee79117ab0ae03b6ed67afb4423686ffadda7bc26d5ebcd04b796e9",
+    "role": "Current reproduction helper; original physical plotting function preserved"
+  },
+  "caption": "urbana_S2_Q / dev50_event_joint_cg_urbana_S2_Q / Dev48. Full same-run movement vector: 11,365 directed model physical links, 3,716 positive and 7,649 exact zeros. Integrated over all 6,019,200 original release events and the full arrival tail; PCE, not hourly flow or instantaneous v/c. Recomputed original path cost 87822.32866945986; independent U=87822.32866945985. Full AON/FIFO base minus transferred donor mass plus selected replacement paths; signatures and shared group mass checked. Persistent physical IDs join same-city geometry only; no other-method traffic is reused. Virtual, wait, connector and turn arcs are excluded. Original separate physical subedges retain their geometry; no parent-road double aggregation. Square-root colour normalization spans the actual vector. Model scenario, not observed traffic.",
+  "outputs": {
+    "png": "ac0cf74ded3ca147d6fff89443df2df2d87fe469adee817dd8576708fb5cc2e6",
+    "svg": "fa39801ec5136e1e4a78b546f3fe3abb0f39c602670576a56efa869bf6a72e5a",
+    "plot.json": "e9a06daa742239937d921803ba8f27546043b232646c295113d32924609ba312"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "map_function": "tools/visuals/render_cg_dev48_20261014.py::physical(centered=True)",
+  "case_id": "urbana_S2_Q",
+  "run_id": "dev50_event_joint_cg_urbana_S2_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:8316e2cdd763fff8227a93c10d06eb359c8d1fe2382991d4c784ba8ca7c391a5",
+  "presentation": "20261017-cg-v1-source-inputs",
+  "packaging_note": "Canonical displayed plot data retained; duplicate source map/data files omitted. Scientific values and exported image bytes unchanged."
+}

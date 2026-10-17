@@ -1,0 +1,241 @@
+{
+  "schema": "SHARED_CG_IMPLICIT_SOLVE_R1",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "config_path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\hong_kong_10_H__sparse_common_dev48_balanced_selection.json",
+  "config_sha256": "2179514c18128ded9c7131a28752ee26d5c369051f80101e56ad34e4cb4ec2b0",
+  "source_files": {
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\implicit_graph.py": "3341d3e366595fb432cf56b4a58b8922dffbc372f5ec9d7059aec4445be1bc4f",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\sparse_rmp.py": "6122832b04e9faebfe25c76fe9d5bd119c8bcb9fd22011455c7a3b10576b560e",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\explicit_graph.py": "a4a2b7501277c208be934b5d194d40d8fb789f863da738cdb5c589ee3ab9f3b0",
+    "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\fifo_seed.py": "1f0cdbdbedf0bad8df0c6e64f13681e83787b0a8b9e5838ef28320d16f400ce6"
+  },
+  "status": "SOLVER_PRIMAL_DUAL_CLOSED",
+  "model": {
+    "schema": "SHARED_CG_EXPLICIT_TIME_MODEL_R1",
+    "manifest": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\cases\\hong_kong_10_H__candidate2_explicit_dag_manifest.json",
+    "manifest_sha256": "ae84ea9b9c31d7e3505604507d3a461615a8430396300138454d7b3b3aaaeef2",
+    "source_hashes": {
+      "dynamic_arc.csv": "49fe5250cdbef0297f2829e9443c4be01adc5342e81f72b63211c1a62f6cae28",
+      "dynamic_demand.csv": "30d4d9da040bd2500d6a93ef9561d8c51b15bd24ce71956824f53e803fb7f963"
+    },
+    "original_arc_count": 24910,
+    "original_time_node_count": 11954,
+    "original_positive_demands": 10,
+    "all_original_arc_capacity_rows": 24910,
+    "capacity_rule": "every original dynamic_arc.csv row, one shared resource",
+    "connector_rule": "exact source_<demand_id> and sink_<demand_id>_* original arc IDs"
+  },
+  "phase_I_artificial_mass": 0.0,
+  "phase_II_objective": 75.03632985794833,
+  "full_graph_lower_bound": 75.03632985794833,
+  "history": [
+    {
+      "phase": "I",
+      "round": 1,
+      "rmp_objective": 143.59936672011332,
+      "true_primal_objective": null,
+      "artificial_mass": 143.59936664665528,
+      "column_count": 10,
+      "capacity_row_count": 79,
+      "used_capacity_rows_before_exact_reduction": 514,
+      "exactly_redundant_capacity_rows": 435,
+      "fixed_commodity_count": 10,
+      "reduced_master_path_variables": 0,
+      "reduced_master_equality_rows": 0,
+      "minimum_reduced_cost": -35.9999999995,
+      "full_graph_lower_bound": -287.4999999217474,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 5,
+      "added_columns": 5,
+      "wall_seconds": 0.8119999999180436
+    },
+    {
+      "phase": "I",
+      "round": 2,
+      "rmp_objective": 81.96906726030404,
+      "true_primal_objective": null,
+      "artificial_mass": 81.96906718617339,
+      "column_count": 15,
+      "capacity_row_count": 116,
+      "used_capacity_rows_before_exact_reduction": 529,
+      "exactly_redundant_capacity_rows": 413,
+      "fixed_commodity_count": 5,
+      "reduced_master_path_variables": 10,
+      "reduced_master_equality_rows": 5,
+      "minimum_reduced_cost": -31.999999999657746,
+      "full_graph_lower_bound": -399.9999999202515,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 6,
+      "added_columns": 6,
+      "wall_seconds": 0.8119999999180436
+    },
+    {
+      "phase": "I",
+      "round": 3,
+      "rmp_objective": 7.613821823597182e-08,
+      "true_primal_objective": null,
+      "artificial_mass": 0.0,
+      "column_count": 21,
+      "capacity_row_count": 187,
+      "used_capacity_rows_before_exact_reduction": 616,
+      "exactly_redundant_capacity_rows": 429,
+      "fixed_commodity_count": 4,
+      "reduced_master_path_variables": 17,
+      "reduced_master_equality_rows": 6,
+      "minimum_reduced_cost": -5.452849060000037e-10,
+      "full_graph_lower_bound": 7.364128299087863e-08,
+      "relative_gap_raw": null,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 0.8279999999795109
+    },
+    {
+      "phase": "II",
+      "round": 1,
+      "rmp_objective": 75.03632985794835,
+      "true_primal_objective": 75.03632985794835,
+      "artificial_mass": 0.0,
+      "column_count": 21,
+      "capacity_row_count": 187,
+      "used_capacity_rows_before_exact_reduction": 616,
+      "exactly_redundant_capacity_rows": 429,
+      "fixed_commodity_count": 4,
+      "reduced_master_path_variables": 17,
+      "reduced_master_equality_rows": 6,
+      "minimum_reduced_cost": -0.7317542995000013,
+      "full_graph_lower_bound": 67.67349773893368,
+      "relative_gap_raw": 0.09812356405161718,
+      "novel_negative_candidates": 6,
+      "added_columns": 6,
+      "wall_seconds": 0.8279999999795109
+    },
+    {
+      "phase": "II",
+      "round": 2,
+      "rmp_objective": 75.03632985794835,
+      "true_primal_objective": 75.03632985794835,
+      "artificial_mass": 0.0,
+      "column_count": 27,
+      "capacity_row_count": 245,
+      "used_capacity_rows_before_exact_reduction": 743,
+      "exactly_redundant_capacity_rows": 498,
+      "fixed_commodity_count": 4,
+      "reduced_master_path_variables": 23,
+      "reduced_master_equality_rows": 6,
+      "minimum_reduced_cost": -0.6577436810000008,
+      "full_graph_lower_bound": 71.64314943433611,
+      "relative_gap_raw": 0.04522050092316459,
+      "novel_negative_candidates": 2,
+      "added_columns": 2,
+      "wall_seconds": 0.8430000001098961
+    },
+    {
+      "phase": "II",
+      "round": 3,
+      "rmp_objective": 75.03632985794835,
+      "true_primal_objective": 75.03632985794833,
+      "artificial_mass": 0.0,
+      "column_count": 29,
+      "capacity_row_count": 284,
+      "used_capacity_rows_before_exact_reduction": 824,
+      "exactly_redundant_capacity_rows": 540,
+      "fixed_commodity_count": 4,
+      "reduced_master_path_variables": 25,
+      "reduced_master_equality_rows": 6,
+      "minimum_reduced_cost": -1.3322676295501878e-15,
+      "full_graph_lower_bound": 75.03632985794833,
+      "relative_gap_raw": 0.0,
+      "novel_negative_candidates": 0,
+      "added_columns": 0,
+      "wall_seconds": 0.8430000001098961
+    }
+  ],
+  "input_seed_columns": 10,
+  "initial_destination_pricing_calls": 10,
+  "rmp_calls": 6,
+  "destination_pricing_calls": 70,
+  "columns_added": 19,
+  "phase_I_status": "FEASIBLE_ARTIFICIAL_ZERO",
+  "relative_gap_raw": 0.0,
+  "last_phase": "II",
+  "last_primal_audit": {
+    "max_original_commodity_residual": 0.0,
+    "max_relative_original_commodity_residual": 0.0,
+    "max_original_capacity_excess": 0.0,
+    "positive_columns": 14,
+    "used_capacity_rows": 605,
+    "objective_reconstructed": 75.03632985794833
+  },
+  "last_pricing": {
+    "minimum_reduced_cost": -1.3322676295501878e-15,
+    "full_graph_lagrangian_lower_bound": 75.03632985794833,
+    "negative_novel_candidates": 0,
+    "destination_pricing_calls": 10
+  },
+  "last_solved_column_count": 29,
+  "last_capacity_rows": 284,
+  "full_graph_potentials": [
+    {
+      "destination_node_index": 11934,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11934.npz",
+      "sha256": "a530e55d187b062970b63c2770a9d29560ac52d467f2e4f4ea976eb181313673",
+      "finite_states": 5344
+    },
+    {
+      "destination_node_index": 11935,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11935.npz",
+      "sha256": "5684971857e8473bd4fbd341ea0382decd34eae6cd7265a71834b524aefe98d4",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11936,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11936.npz",
+      "sha256": "3880caed5ea36bcb297141ef97c087a8357ecbbf391c49b8a22c055ea180f7f2",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11937,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11937.npz",
+      "sha256": "6bdb2d4440e93d6414d990d802332fa5552021bf9930e12ecf1399410706f21d",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11938,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11938.npz",
+      "sha256": "87c8ac6eed85c7d812ec3921f2f783c333570e664a6852a2fc876c53a68bc9dc",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11939,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11939.npz",
+      "sha256": "258d2756a37ad371bc810c6b54037f7cf88d8e8e23dfdd840134545bfd896a8e",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11940,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11940.npz",
+      "sha256": "d47ad747ba7f3931450776298f4a434d369b79aa3c76d9302027de5df822dc1c",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11941,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11941.npz",
+      "sha256": "4993dfc3c0ddb6d3c5b20b56a150cb4efa8352ab44cfc30b93b306e73de30a75",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11942,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11942.npz",
+      "sha256": "92a28789cde997c44729cf6da9622a43910b00960798ac767403d134a082618b",
+      "finite_states": 4938
+    },
+    {
+      "destination_node_index": 11943,
+      "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\hong_kong_10_H\\solver\\FULL_GRAPH_POTENTIALS\\destination_11943.npz",
+      "sha256": "0bbc314afaf9b9c857cb651ea6e07e01ede385f3cf70263ee682f806b4171c04",
+      "finite_states": 4938
+    }
+  ],
+  "wall_seconds": 0.9059999999590218
+}

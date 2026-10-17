@@ -1,0 +1,33 @@
+{
+  "schema": "SHARED_CG_COMMON_IMPLICIT_CASE_R1",
+  "case_id": "pittsburgh_F_H",
+  "build_id": "sparse_common_dev48_balanced_selection",
+  "graph_type": "implicit",
+  "core_root": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection",
+  "source_dir": "E:\\mobility_computation_lab_v2\\work\\pittsburgh_algorithm_transfer_r1\\representative_demand_20261011\\shared_core_input",
+  "output_dir": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\runs\\sparse_common_dev48_balanced_selection\\pittsburgh_F_H\\solver",
+  "expected_source_hashes": {
+    "network.csv": "1d990d591f4af6e6764b0f65320a202830420b887bc7fa60d6ab2f65a7e7893d",
+    "access.csv": "dc170cdb3bfe974b2e50399ee9aa2fd523010beb615fe0098bbe3d0c4a4db694",
+    "assignment_od_pce.csv": "a7f9ca33ddaa04fba690f8b5a9d9e5ef528de7355c2b9d6c9b8f8d7f5a7bbac8"
+  },
+  "dt_seconds": 30,
+  "horizon_steps": 320,
+  "release_steps": 120,
+  "demand_factor": 1.0,
+  "expected_commodity_events": 168720,
+  "phase_I_tie_break_epsilon": 1e-09,
+  "phase_I_max_rounds": 30,
+  "phase_II_max_rounds": 30,
+  "max_new_columns_per_round": 1000,
+  "phase_I_artificial_tolerance": 1e-08,
+  "relative_gap_tolerance": 0.0001,
+  "release_relative_tolerance": 0.0001,
+  "rmp_time_limit_seconds": 900,
+  "solver_wall_seconds": 7200,
+  "model_domain_note": "PIT East End corrected H320, all 1406 original OD x120 releases, original directed physical/turn arc costs and capacity; engineering factor 1.0",
+  "algorithmic_batch_change": "demand-weighted novel negative column ranking only; full graph and all scientific/resource gates unchanged",
+  "checkpoint_every_rounds": 0,
+  "science_policy": "Full original graph, OD releases, capacities, time steps and 30-round/3 GiB gates unchanged; late GC deletes only exact-zero columns across three RMPs, full graph pricing can restore them",
+  "candidate_note": "Fresh Dev48 common-core regression; original registered inputs, H/Q identity, policy and resources unchanged."
+}

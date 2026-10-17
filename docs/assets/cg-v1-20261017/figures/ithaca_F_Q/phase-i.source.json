@@ -1,0 +1,66 @@
+{
+  "case_id": "ithaca_F_Q",
+  "run_id": "ithaca_F_Q",
+  "model_id": "INDEX_CONTRACT_SHA256:ef1edd4589da3229499b12358a66edfc87817524e392ee9183e64f5e43bc1b54",
+  "code_package": "sparse_common_dev48_balanced_selection",
+  "actual_solver_entry": {
+    "path": "E:\\mobility_computation_lab_v2\\work\\shared_cg_cross_city_r1\\sparse_common_dev48_balanced_selection\\shared_cg\\solve.py",
+    "role": "actual source code",
+    "exists": true,
+    "bytes": 16372,
+    "sha256": "374c072976ae86436f97665eb03883859438ca0fb22685ad502cebee57515cbc",
+    "source_mtime_utc": "2026-10-12T09:00:40.516628+00:00",
+    "storage": "ORIGINAL_LOCAL_FILE",
+    "storage_compression": "none",
+    "observed_utc": "2026-10-14T06:00:27.201719+00:00"
+  },
+  "source_record": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/run-provenance.json",
+  "input_result": {
+    "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/result.json",
+    "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa"
+  },
+  "renderer": "tools/visuals/render_cg_v1_20261017.py",
+  "renderer_sha256": "b420ec9c8ccfe4bec73fd5fae2413f3636ea3695d24b6db8be7bc4270f4e2d6b",
+  "style_sha256": "e97d5f101d036b5a74eca19238f10bb8c1acd03eb4ec88e9702e69f9fed659f4",
+  "approved_asset_renderer_sha256": "829f928fb72fb7e064663e2d2935766f9e2264819d1b52294512079a6a205e77",
+  "caption": "Exact construction: maximum physical entry-time load/capacity 0.1125925283; all 1,584,000 releases served; original OD residual zero. The left panel is an entry-time peak, not cumulative flow divided by capacity. Phase I was not executed.",
+  "outputs": {
+    "svg": "c21fe710e234d12ef9f0e9d5d7f446dacab2d3dd10a31e9aa59e2d71a2595404",
+    "png": "7931762c86e5f5f9ff25670f5fe2df62bbff04cbfa91d92738f6c35e4b7fd735",
+    "plot.json": "e7762b0e0b67fcbd3b1a207e0871f152b400afcecd3060e5960aec61f40a2bcc"
+  },
+  "new_solver_calls": 0,
+  "new_pricing_calls": 0,
+  "notice": "assets/shared-cg-dev48-20261014/NOTICE.txt",
+  "presentation": "V1 approved design, same-run saved evidence",
+  "inputs": [
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/result.json",
+      "sha256": "b9383be7e698d4ab32792f261017f78f75fe430dcdcf5bf959b02ddae5e13eaa"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/config.json",
+      "sha256": "9d2f247eb4681976b86f880ac3c1c0e4547bf4ae090326df0b4f8355cb832c64"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/upper-certificate.json",
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/lower-certificate.json",
+      "sha256": "8337bf36754c241f9880a532a3b2cb4d734076105defe88c0025cad0020e2051"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/acceptance-receipt.json",
+      "sha256": "eeb6e7ab803d6a314e8365dff2be0f93a15c6975e7a286892fe34db5652e73d4"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/phase-i-combined.plot.json",
+      "sha256": "001be91511b91cf3e198c0f9142d64c75c5e253981107382f85b295d1644db7c"
+    },
+    {
+      "path": "assets/shared-cg-dev48-20261014/ithaca_F_Q/ithaca_F_Q/phase-ii-pair.plot.json",
+      "sha256": "0da0dbb2cea90102b228f5e61d125dec8ad2cf50c0311a87ffced41003ad2786"
+    }
+  ]
+}
